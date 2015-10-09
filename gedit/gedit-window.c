@@ -2369,12 +2369,15 @@ side_panel_visibility_changed (GtkWidget   *panel,
 		if (tokens)
 		{
 			gchar *layout_headerbar;
+			gchar *layout_headerbar2;
 
 			layout_headerbar = g_strdup_printf ("%c%s", ':', tokens[1]);
+			layout_headerbar2 = g_strdup_printf ("%s%c",  tokens[0], ':');
 			gtk_header_bar_set_decoration_layout (GTK_HEADER_BAR (window->priv->headerbar), layout_headerbar);
-			gtk_header_bar_set_decoration_layout (GTK_HEADER_BAR (window->priv->side_headerbar), tokens[0]);
+			gtk_header_bar_set_decoration_layout (GTK_HEADER_BAR (window->priv->side_headerbar), layout_headerbar2);
 
 			g_free (layout_headerbar);
+			g_free (layout_headerbar2);
 			g_strfreev (tokens);
 		}
 	}
