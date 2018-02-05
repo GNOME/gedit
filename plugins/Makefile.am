@@ -12,6 +12,7 @@ include plugins/externaltools/Makefile.am
 include plugins/filebrowser/Makefile.am
 include plugins/modelines/Makefile.am
 include plugins/pythonconsole/Makefile.am
+include plugins/quickhighlight/Makefile.am
 include plugins/quickopen/Makefile.am
 include plugins/snippets/Makefile.am
 include plugins/sort/Makefile.am
