@@ -32,34 +32,35 @@
 
 #include <glib/gi18n.h>
 
-#include "gedit-encodings-combo-box.h"
+#include "gedit-encoding-items.h"
 #include "gedit-debug.h"
 #include "gedit-enum-types.h"
 #include "gedit-settings.h"
 #include "gedit-utils.h"
+
+/* Choice IDs */
+#define ENCODING_CHOICE "encoding"
+#define NEWLINE_CHOICE  "newline"
 
 #define ALL_FILES		_("All Files")
 #define ALL_TEXT_FILES		_("All Text Files")
 
 struct _GeditFileChooserDialogGtk
 {
-	GtkFileChooserDialog parent_instance;
+	GObject parent_instance;
 
 	GSettings *filter_settings;
 
-	GtkWidget *option_menu;
-	GtkWidget *extra_widget;
-
-	GtkWidget *newline_label;
-	GtkWidget *newline_combo;
-	GtkListStore *newline_store;
+	GtkFileChooserNative *dialog;
+	GtkResponseType accept_response;
+	GtkResponseType cancel_response;
 };
 
 static void gedit_file_chooser_dialog_gtk_chooser_init (gpointer g_iface, gpointer iface_data);
 
 G_DEFINE_TYPE_EXTENDED (GeditFileChooserDialogGtk,
                         gedit_file_chooser_dialog_gtk,
-                        GTK_TYPE_FILE_CHOOSER_DIALOG,
+                        G_TYPE_OBJECT,
                         0,
                         G_IMPLEMENT_INTERFACE (GEDIT_TYPE_FILE_CHOOSER_DIALOG,
                                                gedit_file_chooser_dialog_gtk_chooser_init))
@@ -71,10 +72,9 @@ chooser_set_encoding (GeditFileChooserDialog  *dialog,
 {
 	GeditFileChooserDialogGtk *dialog_gtk = GEDIT_FILE_CHOOSER_DIALOG_GTK (dialog);
 
-	g_return_if_fail (GEDIT_IS_ENCODINGS_COMBO_BOX (dialog_gtk->option_menu));
-
-	gedit_encodings_combo_box_set_selected_encoding (GEDIT_ENCODINGS_COMBO_BOX (dialog_gtk->option_menu),
-	                                                 encoding);
+	gtk_file_chooser_set_choice (GTK_FILE_CHOOSER (dialog_gtk->dialog),
+				     ENCODING_CHOICE,
+				     gtk_source_encoding_get_charset (encoding));
 }
 
 static const GtkSourceEncoding *
@@ -82,40 +82,10 @@ chooser_get_encoding (GeditFileChooserDialog *dialog)
 {
 	GeditFileChooserDialogGtk *dialog_gtk = GEDIT_FILE_CHOOSER_DIALOG_GTK (dialog);
 
-	g_return_val_if_fail (GEDIT_IS_ENCODINGS_COMBO_BOX (dialog_gtk->option_menu), NULL);
-	g_return_val_if_fail ((gtk_file_chooser_get_action (GTK_FILE_CHOOSER (dialog)) == GTK_FILE_CHOOSER_ACTION_OPEN ||
-			       gtk_file_chooser_get_action (GTK_FILE_CHOOSER (dialog)) == GTK_FILE_CHOOSER_ACTION_SAVE), NULL);
+	const char *charset = gtk_file_chooser_get_choice (GTK_FILE_CHOOSER (dialog_gtk->dialog), ENCODING_CHOICE);
 
-	return gedit_encodings_combo_box_get_selected_encoding (
-				GEDIT_ENCODINGS_COMBO_BOX (dialog_gtk->option_menu));
-}
-
-static void
-set_enum_combo (GtkComboBox *combo,
-                gint         value)
-{
-	GtkTreeIter iter;
-	GtkTreeModel *model;
-
-	model = gtk_combo_box_get_model (combo);
-
-	if (!gtk_tree_model_get_iter_first (model, &iter))
-	{
-		return;
-	}
-
-	do
-	{
-		gint nt;
-
-		gtk_tree_model_get (model, &iter, 1, &nt, -1);
-
-		if (value == nt)
-		{
-			gtk_combo_box_set_active_iter (combo, &iter);
-			break;
-		}
-	} while (gtk_tree_model_iter_next (model, &iter));
+	g_return_val_if_fail (charset != NULL, NULL);
+	return gtk_source_encoding_get_from_charset (charset);
 }
 
 static void
@@ -123,31 +93,45 @@ chooser_set_newline_type (GeditFileChooserDialog *dialog,
                           GtkSourceNewlineType    newline_type)
 {
 	GeditFileChooserDialogGtk *dialog_gtk = GEDIT_FILE_CHOOSER_DIALOG_GTK (dialog);
+	GEnumClass *enum_class;
+	GEnumValue *enum_value;
 
-	g_return_if_fail (gtk_file_chooser_get_action (GTK_FILE_CHOOSER (dialog)) == GTK_FILE_CHOOSER_ACTION_SAVE);
+	g_return_if_fail (dialog_gtk->dialog != NULL);
+	g_return_if_fail (gtk_file_chooser_get_action (GTK_FILE_CHOOSER (dialog_gtk->dialog)) == GTK_FILE_CHOOSER_ACTION_SAVE);
 
-	set_enum_combo (GTK_COMBO_BOX (dialog_gtk->newline_combo), newline_type);
+	enum_class = g_type_class_ref (GTK_SOURCE_TYPE_NEWLINE_TYPE);
+	enum_value = g_enum_get_value (enum_class, newline_type);
+	g_assert (enum_value != NULL);
+
+	gtk_file_chooser_set_choice (GTK_FILE_CHOOSER (dialog_gtk->dialog),
+				     NEWLINE_CHOICE, enum_value->value_nick);
+
+	g_type_class_unref (enum_class);
 }
 
 static GtkSourceNewlineType
 chooser_get_newline_type (GeditFileChooserDialog *dialog)
 {
 	GeditFileChooserDialogGtk *dialog_gtk = GEDIT_FILE_CHOOSER_DIALOG_GTK (dialog);
-	GtkTreeIter iter;
+	const char *option_id;
+	GEnumClass *enum_class;
+	GEnumValue *enum_value;
 	GtkSourceNewlineType newline_type;
 
-	g_return_val_if_fail (gtk_file_chooser_get_action (GTK_FILE_CHOOSER (dialog)) == GTK_FILE_CHOOSER_ACTION_SAVE,
+	g_return_val_if_fail (dialog_gtk->dialog != NULL, GTK_SOURCE_NEWLINE_TYPE_DEFAULT);
+	g_return_val_if_fail (gtk_file_chooser_get_action (GTK_FILE_CHOOSER (dialog_gtk->dialog)) == GTK_FILE_CHOOSER_ACTION_SAVE,
 	                      GTK_SOURCE_NEWLINE_TYPE_DEFAULT);
 
-	gtk_combo_box_get_active_iter (GTK_COMBO_BOX (dialog_gtk->newline_combo),
-	                               &iter);
+	option_id = gtk_file_chooser_get_choice (GTK_FILE_CHOOSER (dialog_gtk->dialog), NEWLINE_CHOICE);
+	g_assert (option_id != NULL);
 
-	gtk_tree_model_get (GTK_TREE_MODEL (dialog_gtk->newline_store),
-	                    &iter,
-	                    1,
-	                    &newline_type,
-	                    -1);
+	enum_class = g_type_class_ref (GTK_SOURCE_TYPE_NEWLINE_TYPE);
+	enum_value = g_enum_get_value_by_nick (enum_class, option_id);
+	g_assert (enum_value != NULL);
 
+	newline_type = enum_value->value;
+
+	g_type_class_unref (enum_class);
 	return newline_type;
 }
 
@@ -155,6 +139,7 @@ static void
 chooser_set_current_folder (GeditFileChooserDialog *dialog,
                             GFile                  *folder)
 {
+	GeditFileChooserDialogGtk *dialog_gtk = GEDIT_FILE_CHOOSER_DIALOG_GTK (dialog);
 	gchar *uri = NULL;
 
 	if (folder != NULL)
@@ -162,7 +147,7 @@ chooser_set_current_folder (GeditFileChooserDialog *dialog,
 		uri = g_file_get_uri (folder);
 	}
 
-	gtk_file_chooser_set_current_folder_uri (GTK_FILE_CHOOSER (dialog), uri);
+	gtk_file_chooser_set_current_folder_uri (GTK_FILE_CHOOSER (dialog_gtk), uri);
 	g_free (uri);
 }
 
@@ -170,66 +155,75 @@ static void
 chooser_set_current_name (GeditFileChooserDialog *dialog,
                           const gchar            *name)
 {
-	gtk_file_chooser_set_current_name (GTK_FILE_CHOOSER (dialog), name);
+	GeditFileChooserDialogGtk *dialog_gtk = GEDIT_FILE_CHOOSER_DIALOG_GTK (dialog);
+
+	gtk_file_chooser_set_current_name (GTK_FILE_CHOOSER (dialog_gtk->dialog), name);
 }
 
 static void
 chooser_set_file (GeditFileChooserDialog *dialog,
                   GFile                  *file)
 {
-	gtk_file_chooser_set_file (GTK_FILE_CHOOSER (dialog), file, NULL);
+	GeditFileChooserDialogGtk *dialog_gtk = GEDIT_FILE_CHOOSER_DIALOG_GTK (dialog);
+
+	gtk_file_chooser_set_file (GTK_FILE_CHOOSER (dialog_gtk->dialog), file, NULL);
 }
 
 static GFile *
 chooser_get_file (GeditFileChooserDialog *dialog)
 {
-	return gtk_file_chooser_get_file (GTK_FILE_CHOOSER (dialog));
+	GeditFileChooserDialogGtk *dialog_gtk = GEDIT_FILE_CHOOSER_DIALOG_GTK (dialog);
+
+	return gtk_file_chooser_get_file (GTK_FILE_CHOOSER (dialog_gtk->dialog));
 }
 
 
 static GSList *
 chooser_get_files (GeditFileChooserDialog *dialog)
 {
-	return gtk_file_chooser_get_files (GTK_FILE_CHOOSER (dialog));
+	GeditFileChooserDialogGtk *dialog_gtk = GEDIT_FILE_CHOOSER_DIALOG_GTK (dialog);
+
+	return gtk_file_chooser_get_files (GTK_FILE_CHOOSER (dialog_gtk->dialog));
 }
 
 static void
 chooser_set_do_overwrite_confirmation (GeditFileChooserDialog *dialog,
                                        gboolean                overwrite_confirmation)
 {
-	gtk_file_chooser_set_do_overwrite_confirmation (GTK_FILE_CHOOSER (dialog), overwrite_confirmation);
+	GeditFileChooserDialogGtk *dialog_gtk = GEDIT_FILE_CHOOSER_DIALOG_GTK (dialog);
+
+	gtk_file_chooser_set_do_overwrite_confirmation (GTK_FILE_CHOOSER (dialog_gtk->dialog), overwrite_confirmation);
 }
 
 static void
 chooser_show (GeditFileChooserDialog *dialog)
 {
-	gtk_window_present (GTK_WINDOW (dialog));
-	gtk_widget_grab_focus (GTK_WIDGET (dialog));
+	GeditFileChooserDialogGtk *dialog_gtk = GEDIT_FILE_CHOOSER_DIALOG_GTK (dialog);
+
+	gtk_native_dialog_show (GTK_NATIVE_DIALOG (dialog_gtk->dialog));
 }
 
 static void
 chooser_hide (GeditFileChooserDialog *dialog)
 {
-	gtk_widget_hide (GTK_WIDGET (dialog));
+	GeditFileChooserDialogGtk *dialog_gtk = GEDIT_FILE_CHOOSER_DIALOG_GTK (dialog);
+
+	gtk_native_dialog_hide (GTK_NATIVE_DIALOG (dialog_gtk->dialog));
 }
 
 static void
 chooser_destroy (GeditFileChooserDialog *dialog)
 {
-	gtk_widget_destroy (GTK_WIDGET (dialog));
+	//gtk_widget_destroy (GTK_WIDGET (dialog));
 }
 
 static void
 chooser_set_modal (GeditFileChooserDialog *dialog,
                    gboolean is_modal)
 {
-	gtk_window_set_modal (GTK_WINDOW (dialog), is_modal);
-}
+	GeditFileChooserDialogGtk *dialog_gtk = GEDIT_FILE_CHOOSER_DIALOG_GTK (dialog);
 
-static GtkWindow *
-chooser_get_window (GeditFileChooserDialog *dialog)
-{
-	return GTK_WINDOW (dialog);
+	gtk_native_dialog_set_modal (GTK_NATIVE_DIALOG (dialog_gtk->dialog), is_modal);
 }
 
 static void
@@ -237,6 +231,8 @@ chooser_add_pattern_filter (GeditFileChooserDialog *dialog,
                             const gchar            *name,
                             const gchar            *pattern)
 {
+	GeditFileChooserDialogGtk *dialog_gtk = GEDIT_FILE_CHOOSER_DIALOG_GTK (dialog);
+	GtkFileChooser *chooser = GTK_FILE_CHOOSER (dialog_gtk->dialog);
 	GtkFileFilter *filter;
 
 	filter = gtk_file_filter_new ();
@@ -244,11 +240,11 @@ chooser_add_pattern_filter (GeditFileChooserDialog *dialog,
 	gtk_file_filter_set_name (filter, name);
 	gtk_file_filter_add_pattern (filter, pattern);
 
-	gtk_file_chooser_add_filter (GTK_FILE_CHOOSER (dialog), filter);
+	gtk_file_chooser_add_filter (chooser, filter);
 
-	if (gtk_file_chooser_get_filter (GTK_FILE_CHOOSER (dialog)) == NULL)
+	if (gtk_file_chooser_get_filter (chooser) == NULL)
 	{
-		gtk_file_chooser_set_filter (GTK_FILE_CHOOSER (dialog), filter);
+		gtk_file_chooser_set_filter (chooser, filter);
 	}
 }
 
@@ -274,7 +270,6 @@ gedit_file_chooser_dialog_gtk_chooser_init (gpointer g_iface,
 	iface->hide = chooser_hide;
 	iface->destroy = chooser_destroy;
 	iface->set_modal = chooser_set_modal;
-	iface->get_window = chooser_get_window;
 	iface->add_pattern_filter = chooser_add_pattern_filter;
 }
 
@@ -283,6 +278,7 @@ gedit_file_chooser_dialog_gtk_dispose (GObject *object)
 {
 	GeditFileChooserDialogGtk *dialog_gtk = GEDIT_FILE_CHOOSER_DIALOG_GTK (object);
 
+	g_clear_object (&dialog_gtk->dialog);
 	g_clear_object (&dialog_gtk->filter_settings);
 
 	G_OBJECT_CLASS (gedit_file_chooser_dialog_gtk_parent_class)->dispose (object);
@@ -297,130 +293,74 @@ gedit_file_chooser_dialog_gtk_class_init (GeditFileChooserDialogGtkClass *klass)
 }
 
 static void
-create_option_menu (GeditFileChooserDialogGtk *dialog,
-                    GeditFileChooserFlags      flags)
+create_encoding_choice (GeditFileChooserDialogGtk *dialog)
 {
-	GtkWidget *label;
-	GtkWidget *menu;
-	gboolean save_mode;
+	GPtrArray *options, *option_labels;
+	GSList *encodings;
+	const GSList *l;
 
-	label = gtk_label_new_with_mnemonic (_("C_haracter Encoding:"));
-	gtk_widget_set_halign (label, GTK_ALIGN_START);
+	options = g_ptr_array_new ();
+	option_labels = g_ptr_array_new ();
 
-	save_mode = (flags & GEDIT_FILE_CHOOSER_SAVE) != 0;
-	menu = gedit_encodings_combo_box_new (save_mode);
-
-	gtk_label_set_mnemonic_widget (GTK_LABEL (label), menu);
-
-	gtk_box_pack_start (GTK_BOX (dialog->extra_widget),
-	                    label,
-	                    FALSE,
-	                    TRUE,
-	                    0);
-
-	gtk_box_pack_start (GTK_BOX (dialog->extra_widget),
-	                    menu,
-	                    TRUE,
-	                    TRUE,
-	                    0);
-
-	gtk_widget_show (label);
-	gtk_widget_show (menu);
-
-	dialog->option_menu = menu;
-}
-
-static void
-update_newline_visibility (GeditFileChooserDialogGtk *dialog)
-{
-	gboolean visible = gtk_file_chooser_get_action (GTK_FILE_CHOOSER (dialog)) == GTK_FILE_CHOOSER_ACTION_SAVE;
-
-	gtk_widget_set_visible (dialog->newline_label, visible);
-	gtk_widget_set_visible (dialog->newline_combo, visible);
-}
-
-static void
-newline_combo_append (GtkComboBox          *combo,
-		      GtkListStore         *store,
-		      GtkTreeIter          *iter,
-		      const gchar          *label,
-		      GtkSourceNewlineType  newline_type)
-{
-	gtk_list_store_append (store, iter);
-	gtk_list_store_set (store, iter, 0, label, 1, newline_type, -1);
-
-	if (newline_type == GTK_SOURCE_NEWLINE_TYPE_DEFAULT)
+	encodings = gedit_encoding_items_get ();
+	for (l = encodings; l != NULL; l = l->next)
 	{
-		gtk_combo_box_set_active_iter (combo, iter);
+		GeditEncodingItem *item = l->data;
+
+		g_ptr_array_add (options, (gpointer)gtk_source_encoding_get_charset (gedit_encoding_item_get_encoding (item)));
+		g_ptr_array_add (option_labels, (gpointer)gedit_encoding_item_get_name (item));
 	}
+	g_ptr_array_add (options, NULL);
+	g_ptr_array_add (option_labels, NULL);
+
+	gtk_file_chooser_add_choice (GTK_FILE_CHOOSER (dialog->dialog),
+				     ENCODING_CHOICE, _("Character Encoding:"),
+				     (const char **)options->pdata,
+				     (const char **)option_labels->pdata);
+	gtk_file_chooser_set_choice (GTK_FILE_CHOOSER (dialog->dialog),
+				     ENCODING_CHOICE, g_ptr_array_index(options, 0));
+
+	g_ptr_array_free (options, TRUE);
+	g_ptr_array_free (option_labels, TRUE);
+	g_slist_free_full (encodings, (GDestroyNotify)gedit_encoding_item_free);
 }
 
 static void
-create_newline_combo (GeditFileChooserDialogGtk *dialog)
+create_newline_choice (GeditFileChooserDialogGtk *dialog)
 {
-	GtkWidget *label, *combo;
-	GtkListStore *store;
-	GtkCellRenderer *renderer;
-	GtkTreeIter iter;
+	GEnumClass *enum_class;
+	GPtrArray *options, *option_labels;
+	int i;
 
-	label = gtk_label_new_with_mnemonic (_("L_ine Ending:"));
-	gtk_widget_set_halign (label, GTK_ALIGN_START);
+	enum_class = g_type_class_ref (GTK_SOURCE_TYPE_NEWLINE_TYPE);
 
-	store = gtk_list_store_new (2, G_TYPE_STRING, GTK_SOURCE_TYPE_NEWLINE_TYPE);
-	combo = gtk_combo_box_new_with_model (GTK_TREE_MODEL (store));
-	renderer = gtk_cell_renderer_text_new ();
+	options = g_ptr_array_new ();
+	option_labels = g_ptr_array_new ();
 
-	gtk_cell_layout_pack_start (GTK_CELL_LAYOUT (combo),
-	                            renderer,
-	                            TRUE);
+	for (i = 0; i < enum_class->n_values; i++)
+	{
+		const GEnumValue *v = &enum_class->values[i];
+		g_ptr_array_add (options, (gpointer)v->value_nick);
+		g_ptr_array_add (option_labels, (gpointer)gedit_utils_newline_type_to_string(v->value));
+	}
+	g_ptr_array_add (options, NULL);
+	g_ptr_array_add (option_labels, NULL);
 
-	gtk_cell_layout_add_attribute (GTK_CELL_LAYOUT (combo),
-	                               renderer,
-	                               "text",
-	                               0);
+	gtk_file_chooser_add_choice (GTK_FILE_CHOOSER (dialog->dialog),
+				     NEWLINE_CHOICE, _("Line Ending:"),
+				     (const char **)options->pdata,
+				     (const char **)option_labels->pdata);
 
-	newline_combo_append (GTK_COMBO_BOX (combo),
-	                      store,
-	                      &iter,
-	                      gedit_utils_newline_type_to_string (GTK_SOURCE_NEWLINE_TYPE_LF),
-	                      GTK_SOURCE_NEWLINE_TYPE_LF);
+	g_ptr_array_free (options, TRUE);
+	g_ptr_array_free (option_labels, TRUE);
+	g_type_class_unref (enum_class);
 
-	newline_combo_append (GTK_COMBO_BOX (combo),
-	                      store,
-	                      &iter,
-	                      gedit_utils_newline_type_to_string (GTK_SOURCE_NEWLINE_TYPE_CR),
-	                      GTK_SOURCE_NEWLINE_TYPE_CR);
-
-	newline_combo_append (GTK_COMBO_BOX (combo),
-	                      store,
-	                      &iter,
-	                      gedit_utils_newline_type_to_string (GTK_SOURCE_NEWLINE_TYPE_CR_LF),
-	                      GTK_SOURCE_NEWLINE_TYPE_CR_LF);
-
-	gtk_label_set_mnemonic_widget (GTK_LABEL (label), combo);
-
-	gtk_box_pack_start (GTK_BOX (dialog->extra_widget),
-	                    label,
-	                    FALSE,
-	                    TRUE,
-	                    0);
-
-	gtk_box_pack_start (GTK_BOX (dialog->extra_widget),
-	                    combo,
-	                    TRUE,
-	                    TRUE,
-	                    0);
-
-	dialog->newline_combo = combo;
-	dialog->newline_label = label;
-	dialog->newline_store = store;
-
-	update_newline_visibility (dialog);
+	chooser_set_newline_type (GEDIT_FILE_CHOOSER_DIALOG (dialog), GTK_SOURCE_NEWLINE_TYPE_DEFAULT);
 }
 
 static void
-create_extra_widget (GeditFileChooserDialogGtk *dialog,
-                     GeditFileChooserFlags      flags)
+create_choices (GeditFileChooserDialogGtk *dialog,
+		GeditFileChooserFlags      flags)
 {
 	gboolean needs_encoding;
 	gboolean needs_line_ending;
@@ -428,56 +368,15 @@ create_extra_widget (GeditFileChooserDialogGtk *dialog,
 	needs_encoding = (flags & GEDIT_FILE_CHOOSER_ENABLE_ENCODING) != 0;
 	needs_line_ending = (flags & GEDIT_FILE_CHOOSER_ENABLE_LINE_ENDING) != 0;
 
-	if (!needs_encoding && !needs_line_ending)
-	{
-		return;
-	}
-
-	dialog->extra_widget = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 6);
-
-	gtk_widget_show (dialog->extra_widget);
-
 	if (needs_encoding)
 	{
-		create_option_menu (dialog, flags);
+		create_encoding_choice (dialog);
 	}
 
 	if (needs_line_ending)
 	{
-		create_newline_combo (dialog);
+		create_newline_choice (dialog);
 	}
-
-	gtk_file_chooser_set_extra_widget (GTK_FILE_CHOOSER (dialog), dialog->extra_widget);
-}
-
-static void
-action_changed (GeditFileChooserDialogGtk *dialog,
-		GParamSpec                *pspec,
-		gpointer                   data)
-{
-	GtkFileChooserAction action;
-
-	action = gtk_file_chooser_get_action (GTK_FILE_CHOOSER (dialog));
-
-	switch (action)
-	{
-		case GTK_FILE_CHOOSER_ACTION_OPEN:
-			g_object_set (dialog->option_menu,
-			              "save_mode", FALSE,
-			              NULL);
-			gtk_widget_show (dialog->option_menu);
-			break;
-		case GTK_FILE_CHOOSER_ACTION_SAVE:
-			g_object_set (dialog->option_menu,
-			              "save_mode", TRUE,
-			              NULL);
-			gtk_widget_show (dialog->option_menu);
-			break;
-		default:
-			gtk_widget_hide (dialog->option_menu);
-	}
-
-	update_newline_visibility (dialog);
 }
 
 static void
@@ -504,6 +403,22 @@ filter_changed (GeditFileChooserDialogGtk *dialog,
 		g_settings_set_int (dialog->filter_settings,
 				    GEDIT_SETTINGS_ACTIVE_FILE_FILTER, id);
 	}
+}
+
+static void
+dialog_response_cb (GtkNativeDialog           *dialog,
+		    gint                       response_id,
+		    GeditFileChooserDialogGtk *dialog_gtk)
+{
+	switch (response_id) {
+	case GTK_RESPONSE_ACCEPT:
+		response_id = dialog_gtk->accept_response;
+		break;
+	case GTK_RESPONSE_CANCEL:
+		response_id = dialog_gtk->cancel_response;
+		break;
+	}
+	g_signal_emit_by_name (dialog_gtk, "response", response_id);
 }
 
 /* FIXME: use globs too - Paolo (Aug. 27, 2007) */
@@ -617,24 +532,21 @@ gedit_file_chooser_dialog_gtk_create (const gchar             *title,
 		select_multiple = TRUE;
 	}
 
-	result = g_object_new (GEDIT_TYPE_FILE_CHOOSER_DIALOG_GTK,
-			       "title", title,
-			       "local-only", FALSE,
-			       "action", action,
-			       "select-multiple", select_multiple,
-			       NULL);
+	result = g_object_new (GEDIT_TYPE_FILE_CHOOSER_DIALOG_GTK, NULL);
+	result->cancel_response = cancel_response;
+	result->accept_response = accept_response;
+	result->dialog = gtk_file_chooser_native_new (
+		title, parent, action, accept_label, cancel_label);
+	g_object_set (result->dialog,
+		      "local-only", FALSE,
+		      "select-multiple", select_multiple,
+		      NULL);
 
-	create_extra_widget (result, flags);
-
-	g_signal_connect (result,
-			  "notify::action",
-			  G_CALLBACK (action_changed),
-			  NULL);
+	create_choices (result, flags);
 
 	if (encoding != NULL)
 	{
-		gedit_encodings_combo_box_set_selected_encoding (GEDIT_ENCODINGS_COMBO_BOX (result->option_menu),
-		                                                 encoding);
+		chooser_set_encoding (GEDIT_FILE_CHOOSER_DIALOG (result), encoding);
 	}
 
 	active_filter = g_settings_get_int (result->filter_settings, GEDIT_SETTINGS_ACTIVE_FILE_FILTER);
@@ -647,12 +559,12 @@ gedit_file_chooser_dialog_gtk_create (const gchar             *title,
 
 		gtk_file_filter_set_name (filter, ALL_FILES);
 		gtk_file_filter_add_pattern (filter, "*");
-		gtk_file_chooser_add_filter (GTK_FILE_CHOOSER (result), filter);
+		gtk_file_chooser_add_filter (GTK_FILE_CHOOSER (result->dialog), filter);
 
 		if (active_filter != 1)
 		{
 			/* Make this filter the default */
-			gtk_file_chooser_set_filter (GTK_FILE_CHOOSER (result), filter);
+			gtk_file_chooser_set_filter (GTK_FILE_CHOOSER (result->dialog), filter);
 		}
 
 		filter = gtk_file_filter_new ();
@@ -662,29 +574,21 @@ gedit_file_chooser_dialog_gtk_create (const gchar             *title,
 					    all_text_files_filter,
 					    NULL,
 					    NULL);
-		gtk_file_chooser_add_filter (GTK_FILE_CHOOSER (result), filter);
+		gtk_file_chooser_add_filter (GTK_FILE_CHOOSER (result->dialog), filter);
 
 		if (active_filter == 1)
 		{
 			/* Make this filter the default */
-			gtk_file_chooser_set_filter (GTK_FILE_CHOOSER (result), filter);
+			gtk_file_chooser_set_filter (GTK_FILE_CHOOSER (result->dialog), filter);
 		}
 
-		g_signal_connect (result,
+		g_signal_connect (result->dialog,
 				  "notify::filter",
 				  G_CALLBACK (filter_changed),
 				  NULL);
 	}
 
-	if (parent != NULL)
-	{
-		gtk_window_set_transient_for (GTK_WINDOW (result), parent);
-		gtk_window_set_destroy_with_parent (GTK_WINDOW (result), TRUE);
-	}
-
-	gtk_dialog_add_button (GTK_DIALOG (result), cancel_label, cancel_response);
-	gtk_dialog_add_button (GTK_DIALOG (result), accept_label, accept_response);
-	gtk_dialog_set_default_response (GTK_DIALOG (result), accept_response);
+	g_signal_connect (result->dialog, "response", G_CALLBACK (dialog_response_cb), result);
 
 	return GEDIT_FILE_CHOOSER_DIALOG (result);
 }
