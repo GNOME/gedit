@@ -422,17 +422,18 @@ dialog_response_cb (GtkNativeDialog           *dialog,
 }
 
 /* FIXME: use globs too - Paolo (Aug. 27, 2007) */
-static gboolean
-all_text_files_filter (const GtkFileFilterInfo *filter_info,
-		       gpointer                 data)
+static void
+add_all_text_files (GtkFileFilter *filter)
 {
 	static GSList *known_mime_types = NULL;
-	GSList *mime_types;
+	const GSList *mime_types;
 
 	if (known_mime_types == NULL)
 	{
 		GtkSourceLanguageManager *lm;
 		const gchar * const *languages;
+		GList *content_types;
+		const GList *l;
 
 		lm = gtk_source_language_manager_get_default ();
 		languages = gtk_source_language_manager_get_language_ids (lm);
@@ -444,7 +445,7 @@ all_text_files_filter (const GtkFileFilterInfo *filter_info,
 			GtkSourceLanguage *lang;
 
 			lang = gtk_source_language_manager_get_language (lm, *languages);
-			g_return_val_if_fail (GTK_SOURCE_IS_LANGUAGE (lang), FALSE);
+			g_return_if_fail (GTK_SOURCE_IS_LANGUAGE (lang));
 			++languages;
 
 			mime_types = gtk_source_language_get_mime_types (lang);
@@ -467,15 +468,28 @@ all_text_files_filter (const GtkFileFilterInfo *filter_info,
 			g_strfreev (mime_types);
 		}
 
+		// Add "text/*" mime types that don't subclass "text/plain"
+		content_types = g_content_types_get_registered ();
+		for (l = content_types; l != NULL; l = l->next)
+		{
+			const char *mime_type = l->data;
+			if (strncmp (mime_type, "text/", 5) != 0)
+				continue;
+			if (!g_content_type_is_a (mime_type, "text/plain"))
+			{
+				gedit_debug_message (DEBUG_COMMANDS,
+						     "Mime-type %s is not related to text/plain",
+						     mime_type);
+
+				known_mime_types = g_slist_prepend (known_mime_types,
+								    g_strdup (mime_type));
+			}
+		}
+		g_list_free_full (content_types, g_free);
+
 		/* known_mime_types always has "text/plain" as first item" */
 		known_mime_types = g_slist_prepend (known_mime_types, g_strdup ("text/plain"));
 	}
-
-	/* known mime_types contains "text/plain" and then the list of mime-types unrelated to "text/plain"
-	 * that gedit recognizes */
-
-	if (filter_info->mime_type == NULL)
-		return FALSE;
 
 	/*
 	 * The filter is matching:
@@ -483,20 +497,11 @@ all_text_files_filter (const GtkFileFilterInfo *filter_info,
 	 * - the mime-types inheriting from a known mime-type (note the text/plain is
 	 *   the first known mime-type)
 	 */
-
-	if (strncmp (filter_info->mime_type, "text/", 5) == 0)
-		return TRUE;
-
-	mime_types = known_mime_types;
-	while (mime_types != NULL)
+	for (mime_types = known_mime_types; mime_types != NULL; mime_types = mime_types->next)
 	{
-		if (g_content_type_is_a (filter_info->mime_type, (const gchar*)mime_types->data))
-			return TRUE;
-
-		mime_types = g_slist_next (mime_types);
+		const char *mime_type = mime_types->data;
+		gtk_file_filter_add_mime_type (filter, mime_type);
 	}
-
-	return FALSE;
 }
 
 static void
@@ -569,11 +574,7 @@ gedit_file_chooser_dialog_gtk_create (const gchar             *title,
 
 		filter = gtk_file_filter_new ();
 		gtk_file_filter_set_name (filter, ALL_TEXT_FILES);
-		gtk_file_filter_add_custom (filter,
-					    GTK_FILE_FILTER_MIME_TYPE,
-					    all_text_files_filter,
-					    NULL,
-					    NULL);
+		add_all_text_files (filter);
 		gtk_file_chooser_add_filter (GTK_FILE_CHOOSER (result->dialog), filter);
 
 		if (active_filter == 1)
