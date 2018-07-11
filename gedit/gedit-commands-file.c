@@ -442,7 +442,7 @@ _gedit_cmd_file_open (GSimpleAction *action,
 		{
 			g_return_if_fail (GEDIT_IS_FILE_CHOOSER_DIALOG (data));
 
-			gtk_window_present (GTK_WINDOW (data));
+			gedit_file_chooser_dialog_show (GEDIT_FILE_CHOOSER_DIALOG (data));
 
 			return;
 		}
