@@ -1135,7 +1135,7 @@ quit_if_needed (GeditWindow *window)
 		gtk_widget_destroy (GTK_WIDGET (window));
 	}
 
-	if (is_quitting_all)
+	if (is_quitting || is_quitting_all)
 	{
 		GtkApplication *app;
 
