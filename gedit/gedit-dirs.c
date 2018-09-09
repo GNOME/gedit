@@ -28,6 +28,8 @@
 #include <gtkosxapplication.h>
 #endif
 
+#include "gedit-utils.h"
+
 static gchar *user_config_dir        = NULL;
 static gchar *user_cache_dir         = NULL;
 static gchar *user_styles_dir        = NULL;
@@ -100,20 +102,44 @@ gedit_dirs_init ()
 	user_cache_dir = g_build_filename (g_get_user_cache_dir (),
 					   "gedit",
 					   NULL);
-	user_config_dir = g_build_filename (g_get_user_config_dir (),
-					    "gedit",
-					    NULL);
-	user_styles_dir = g_build_filename (g_get_user_data_dir (),
-					    "gedit",
-					    "styles",
-					    NULL);
-	user_plugins_dir = g_build_filename (g_get_user_data_dir (),
-					     "gedit",
-					     "plugins",
-					     NULL);
 	gedit_plugins_dir = g_build_filename (gedit_lib_dir,
 					      "plugins",
 					      NULL);
+
+	if (gedit_utils_is_flatpak ())
+	{
+		user_config_dir = g_build_filename (g_get_home_dir (),
+						    ".local",
+						    "share",
+						    "gedit",
+						    NULL);
+		user_styles_dir = g_build_filename (g_get_home_dir (),
+						    ".local",
+						    "share",
+						    "gedit",
+						    "styles",
+						    NULL);
+		user_plugins_dir = g_build_filename (g_get_home_dir (),
+						     ".local",
+						     "share",
+						     "gedit",
+						     "plugins",
+						     NULL);
+	}
+	else
+	{
+		user_config_dir = g_build_filename (g_get_user_config_dir (),
+						    "gedit",
+						    NULL);
+		user_styles_dir = g_build_filename (g_get_user_data_dir (),
+						    "gedit",
+						    "styles",
+						    NULL);
+		user_plugins_dir = g_build_filename (g_get_user_data_dir (),
+						     "gedit",
+						     "plugins",
+						     NULL);
+	}
 }
 
 void
