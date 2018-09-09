@@ -1470,4 +1470,34 @@ gedit_utils_newline_type_to_string (GtkSourceNewlineType newline_type)
 	return NULL;
 }
 
+/**
+ * gedit_utils_is_flatpak:
+ *
+ * Detect Flatpak runtime environment.
+ *
+ * Returns: %TRUE if the application is running within a Flatpak sandbox,
+ *          %FALSE otherwise.
+ */
+gboolean
+gedit_utils_is_flatpak (void)
+{
+	static gboolean checked;
+	static gboolean is_flatpak;
+
+	/* Copied from gnome-builder */
+
+	if (!checked)
+	{
+		g_autofree gchar *path = NULL;
+
+		path = g_build_filename (g_get_user_runtime_dir (),
+					 "flatpak-info",
+					 NULL);
+		is_flatpak = g_file_test (path, G_FILE_TEST_EXISTS);
+		checked = TRUE;
+	}
+
+	return is_flatpak;
+}
+
 /* ex:set ts=8 noet: */

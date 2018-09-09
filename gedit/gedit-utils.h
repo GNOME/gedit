@@ -139,6 +139,8 @@ gchar           *gedit_utils_set_direct_save_filename	(GdkDragContext *context);
 
 const gchar     *gedit_utils_newline_type_to_string	(GtkSourceNewlineType newline_type);
 
+gboolean	 gedit_utils_is_flatpak			(void);
+
 G_END_DECLS
 
 #endif /* GEDIT_UTILS_H */
