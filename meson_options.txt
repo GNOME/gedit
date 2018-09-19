@@ -1,0 +1,18 @@
+option('gir',
+       type: 'boolean', value: true,
+       description: 'Generate gir data (requires gobject-introspection)')
+option('vapi',
+       type: 'boolean', value: true,
+       description: 'Generate vapi data (requires vapigen)')
+
+option('plugins',
+       type: 'boolean', value: true,
+       description: 'Build core plugins')
+
+option('gtk_doc',
+       type: 'boolean', value: false,
+       description: 'Build reference manual (requires gtk-doc)')
+
+option('yelp_manual',
+       type: 'boolean', value: false,
+       description: 'Build user manual (requires itstool)')
