@@ -1,9 +1,9 @@
 # List of source files containing translatable strings.
 # Please keep this file sorted alphabetically.
-[encoding: UTF-8]
+# [encoding: UTF-8]
 data/org.gnome.gedit.appdata.xml.in
 data/org.gnome.gedit.desktop.in.in
-[type: gettext/gsettings]data/org.gnome.gedit.gschema.xml.in
+data/org.gnome.gedit.gschema.xml.in
 gedit/gedit-app.c
 gedit/gedit-app-osx.c
 gedit/gedit.c
@@ -38,26 +38,26 @@ gedit/gedit-utils.c
 gedit/gedit-view.c
 gedit/gedit-view-frame.c
 gedit/gedit-window.c
-[type: gettext/glade]gedit/resources/gtk/menus-common.ui
-[type: gettext/glade]gedit/resources/gtk/menus.ui
-[type: gettext/glade]gedit/resources/gtk/menus-traditional.ui
-[type: gettext/glade]gedit/resources/ui/gedit-encodings-dialog.ui
-[type: gettext/glade]gedit/resources/ui/gedit-highlight-mode-dialog.ui
-[type: gettext/glade]gedit/resources/ui/gedit-highlight-mode-selector.ui
-[type: gettext/glade]gedit/resources/ui/gedit-open-document-selector.ui
-[type: gettext/glade]gedit/resources/ui/gedit-preferences-dialog.ui
-[type: gettext/glade]gedit/resources/ui/gedit-print-preferences.ui
-[type: gettext/glade]gedit/resources/ui/gedit-print-preview.ui
-[type: gettext/glade]gedit/resources/ui/gedit-replace-dialog.ui
-[type: gettext/glade]gedit/resources/ui/gedit-shortcuts.ui
-[type: gettext/glade]gedit/resources/ui/gedit-tab-label.ui
-[type: gettext/glade]gedit/resources/ui/gedit-window.ui
+gedit/resources/gtk/menus-common.ui
+gedit/resources/gtk/menus.ui
+gedit/resources/gtk/menus-traditional.ui
+gedit/resources/ui/gedit-encodings-dialog.ui
+gedit/resources/ui/gedit-highlight-mode-dialog.ui
+gedit/resources/ui/gedit-highlight-mode-selector.ui
+gedit/resources/ui/gedit-open-document-selector.ui
+gedit/resources/ui/gedit-preferences-dialog.ui
+gedit/resources/ui/gedit-print-preferences.ui
+gedit/resources/ui/gedit-print-preview.ui
+gedit/resources/ui/gedit-replace-dialog.ui
+gedit/resources/ui/gedit-shortcuts.ui
+gedit/resources/ui/gedit-tab-label.ui
+gedit/resources/ui/gedit-window.ui
 plugins/checkupdate/checkupdate.plugin.desktop.in
 plugins/checkupdate/gedit-check-update-plugin.c
-[type: gettext/gsettings]plugins/checkupdate/org.gnome.gedit.plugins.checkupdate.gschema.xml.in
+plugins/checkupdate/org.gnome.gedit.plugins.checkupdate.gschema.xml.in
 plugins/docinfo/docinfo.plugin.desktop.in
 plugins/docinfo/gedit-docinfo-plugin.c
-[type: gettext/glade]plugins/docinfo/resources/ui/gedit-docinfo-plugin.ui
+plugins/docinfo/resources/ui/gedit-docinfo-plugin.ui
 plugins/externaltools/data/build.desktop.in
 plugins/externaltools/data/open-terminal-here.desktop.in
 plugins/externaltools/data/open-terminal-here-osx.desktop.in
@@ -65,15 +65,15 @@ plugins/externaltools/data/remove-trailing-spaces.desktop.in
 plugins/externaltools/data/run-command.desktop.in
 plugins/externaltools/data/send-to-fpaste.desktop.in
 plugins/externaltools/externaltools.plugin.desktop.in
-[type: gettext/gsettings]plugins/externaltools/org.gnome.gedit.plugins.externaltools.gschema.xml.in
+plugins/externaltools/org.gnome.gedit.plugins.externaltools.gschema.xml.in
 plugins/externaltools/tools/appactivatable.py
 plugins/externaltools/tools/capture.py
 plugins/externaltools/tools/functions.py
 plugins/externaltools/tools/__init__.py
 plugins/externaltools/tools/manager.py
 plugins/externaltools/tools/outputpanel.py
-[type: gettext/glade]plugins/externaltools/tools/outputpanel.ui
-[type: gettext/glade]plugins/externaltools/tools/tools.ui
+plugins/externaltools/tools/outputpanel.ui
+plugins/externaltools/tools/tools.ui
 plugins/externaltools/tools/windowactivatable.py
 plugins/filebrowser/filebrowser.plugin.desktop.in
 plugins/filebrowser/gedit-file-bookmarks-store.c
@@ -82,12 +82,12 @@ plugins/filebrowser/gedit-file-browser-store.c
 plugins/filebrowser/gedit-file-browser-utils.c
 plugins/filebrowser/gedit-file-browser-view.c
 plugins/filebrowser/gedit-file-browser-widget.c
-[type: gettext/gsettings]plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml.in
-[type: gettext/glade]plugins/filebrowser/resources/ui/gedit-file-browser-menus.ui
-[type: gettext/glade]plugins/filebrowser/resources/ui/gedit-file-browser-widget.ui
+plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml.in
+plugins/filebrowser/resources/ui/gedit-file-browser-menus.ui
+plugins/filebrowser/resources/ui/gedit-file-browser-widget.ui
 plugins/modelines/modelines.plugin.desktop.in
-[type: gettext/gsettings]plugins/pythonconsole/org.gnome.gedit.plugins.pythonconsole.gschema.xml.in
-[type: gettext/glade]plugins/pythonconsole/pythonconsole/config.ui
+plugins/pythonconsole/org.gnome.gedit.plugins.pythonconsole.gschema.xml.in
+plugins/pythonconsole/pythonconsole/config.ui
 plugins/pythonconsole/pythonconsole/__init__.py
 plugins/pythonconsole/pythonconsole.plugin.desktop.in
 plugins/quickhighlight/quickhighlight.plugin.desktop.in
@@ -101,16 +101,16 @@ plugins/snippets/snippets/importer.py
 plugins/snippets/snippets/manager.py
 plugins/snippets/snippets/placeholder.py
 plugins/snippets/snippets.plugin.desktop.in
-[type: gettext/glade]plugins/snippets/snippets/snippets.ui
+plugins/snippets/snippets/snippets.ui
 plugins/snippets/snippets/windowactivatable.py
 plugins/sort/gedit-sort-plugin.c
-[type: gettext/glade]plugins/sort/resources/ui/gedit-sort-plugin.ui
+plugins/sort/resources/ui/gedit-sort-plugin.ui
 plugins/sort/sort.plugin.desktop.in
 plugins/spell/gedit-spell-app-activatable.c
 plugins/spell/gedit-spell-plugin.c
 plugins/spell/spell.plugin.desktop.in
 plugins/time/gedit-time-plugin.c
-[type: gettext/gsettings]plugins/time/org.gnome.gedit.plugins.time.gschema.xml.in
-[type: gettext/glade]plugins/time/resources/ui/gedit-time-dialog.ui
-[type: gettext/glade]plugins/time/resources/ui/gedit-time-setup-dialog.ui
+plugins/time/org.gnome.gedit.plugins.time.gschema.xml.in
+plugins/time/resources/ui/gedit-time-dialog.ui
+plugins/time/resources/ui/gedit-time-setup-dialog.ui
 plugins/time/time.plugin.desktop.in
