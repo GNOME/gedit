@@ -2,10 +2,15 @@ data_desktopdir = $(datadir)/applications
 data_desktop_in_files = data/org.gnome.gedit.desktop.in
 data_desktop_DATA = $(data_desktop_in_files:.desktop.in=.desktop)
 
+$(data_desktop_DATA): $(data_desktop_in_files) $(wildcard $(top_srcdir)/po/*po)
+	$(AM_V_GEN)$(MSGFMT) --desktop --template $< -d $(top_srcdir)/po -o $@
+
 data_appdatadir = $(datadir)/metainfo
 data_appdata_in_files = data/org.gnome.gedit.appdata.xml.in
 data_appdata_DATA = $(data_appdata_in_files:.xml.in=.xml)
-@INTLTOOL_XML_RULE@
+
+$(data_appdata_DATA): $(data_appdata_in_files) $(wildcard $(top_srcdir)/po/*po)
+	$(AM_V_GEN)$(MSGFMT) --xml --template $< -d $(top_srcdir)/po -o $@
 
 data_servicedir = $(datadir)/dbus-1/services
 data_service_in_files = data/org.gnome.gedit.service.in
