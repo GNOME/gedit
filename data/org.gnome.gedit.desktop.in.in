@@ -1,28 +1,32 @@
 [Desktop Entry]
-_Name=Text Editor
-_Comment=Edit text files
+Name=Text Editor
+Comment=Edit text files
 Exec=gedit %U
 Terminal=false
 Type=Application
 StartupNotify=true
 MimeType=text/plain;
+# TRANSLATORS: Do NOT translate or transliterate this text!
+#              This is an icon file name.
 Icon=gedit
 Categories=GNOME;GTK;Utility;TextEditor;
 X-GNOME-DocPath=gedit/gedit.xml
-_X-GNOME-FullName=gedit Text Editor
 X-GNOME-Bugzilla-Bugzilla=GNOME
 X-GNOME-Bugzilla-Product=gedit
 X-GNOME-Bugzilla-Component=general
 X-GNOME-Bugzilla-Version=@VERSION@
 X-GNOME-Bugzilla-ExtraInfoScript=@FULL_LIBEXECDIR@/gedit/gedit-bugreport.sh
 Actions=new-window;new-document;
-_Keywords=Text;Editor;Plaintext;Write;
+# TRANSLATORS: Do NOT translate or localize the semicolons!
+#              The list MUST also end with a semicolon!
+#              Search terms to find this application.
+Keywords=Text;Editor;Plaintext;Write;
 DBusActivatable=true
 
 [Desktop Action new-window]
-_Name=New Window
+Name=New Window
 Exec=gedit --new-window
 
 [Desktop Action new-document]
-_Name=New Document
+Name=New Document
 Exec=gedit --new-document
