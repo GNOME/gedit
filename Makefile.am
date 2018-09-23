@@ -100,9 +100,6 @@ CLEANFILES += $(gsettings_SCHEMAS) $(gsettings_ENUMS) $(BUILT_SOURCES)
 DISTCLEANFILES += $(gsettings_SCHEMAS) $(gsettings_ENUMS) $(BUILT_SOURCES)
 MAINTAINERCLEANFILES += $(gsettings_SCHEMAS:.xml=.valid)
 
-@INTLTOOL_DESKTOP_RULE@
-@INTLTOOL_XML_RULE@
-
 dist-hook: dist-hook-cleanup
 
 dist-hook-cleanup:
