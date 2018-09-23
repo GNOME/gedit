@@ -10,16 +10,10 @@ endif
 EXTRA_DIST = 			\
 	HACKING			\
 	MAINTAINERS		\
-	gedit.doap		\
-	intltool-extract.in 	\
-	intltool-merge.in 	\
-	intltool-update.in
+	gedit.doap
 
 DISTCLEANFILES = 		\
-	gnome-doc-utils.make    \
-	intltool-extract 	\
-	intltool-merge 		\
-	intltool-update
+	gnome-doc-utils.make
 
 MAINTAINERCLEANFILES = 		\
 	$(GITIGNORE_MAINTAINERCLEANFILES_TOPLEVEL) \
@@ -99,9 +93,6 @@ include gedit/Makefile.am
 CLEANFILES += $(gsettings_SCHEMAS) $(gsettings_ENUMS) $(BUILT_SOURCES)
 DISTCLEANFILES += $(gsettings_SCHEMAS) $(gsettings_ENUMS) $(BUILT_SOURCES)
 MAINTAINERCLEANFILES += $(gsettings_SCHEMAS:.xml=.valid)
-
-@INTLTOOL_DESKTOP_RULE@
-@INTLTOOL_XML_RULE@
 
 dist-hook: dist-hook-cleanup
 

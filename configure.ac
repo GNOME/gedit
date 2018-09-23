@@ -174,9 +174,7 @@ dnl ================================================================
 dnl Gettext stuff.
 dnl ================================================================
 
-IT_PROG_INTLTOOL([0.50.1])
-
-AM_GNU_GETTEXT_VERSION([0.18])
+AM_GNU_GETTEXT_VERSION([0.19.8])
 AM_GNU_GETTEXT([external])
 
 AC_SUBST([GETTEXT_PACKAGE], [gedit])
