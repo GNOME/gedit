@@ -269,7 +269,7 @@ INTROSPECTION_SCANNER_ARGS = -I$(top_srcdir) --warn-all
 gedit_Gedit_3_0_gir_NAMESPACE = Gedit
 gedit_Gedit_3_0_gir_VERSION = 3.0
 gedit_Gedit_3_0_gir_PROGRAM = $(builddir)/gedit/gedit$(EXEEXT)
-gedit_Gedit_3_0_gir_INCLUDES = Gtk-3.0 GtkSource-3.0
+gedit_Gedit_3_0_gir_INCLUDES = Gtk-3.0 GtkSource-4
 gedit_Gedit_3_0_gir_EXPORT_PACKAGES = gedit
 gedit_Gedit_3_0_gir_SCANNERFLAGS = $(GEDIT_CFLAGS) $(foreach header,$(gedit_INST_H_FILES),--c-include="$(header)")
 gedit_Gedit_3_0_gir_FILES = 		\
@@ -295,7 +295,7 @@ gedit/gedit.vapi: gedit/Gedit-3.0.gir
 
 VAPIGEN_VAPIS = gedit/gedit.vapi
 
-gedit_gedit_vapi_DEPS = atk gdk-3.0 gio-2.0 gtk+-3.0 gtksourceview-3.0
+gedit_gedit_vapi_DEPS = atk gdk-3.0 gio-2.0 gtk+-3.0 gtksourceview-4
 gedit_gedit_vapi_METADATADIRS = $(top_srcdir)/gedit
 gedit_gedit_vapi_FILES = gedit/Gedit-3.0.gir
 
