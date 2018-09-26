@@ -1,6 +1,6 @@
 #!/bin/sh
 
-PKG_CONFIG_MODULES="glib-2.0 gtk+-3.0 gtksourceview-3.0 \
+PKG_CONFIG_MODULES="glib-2.0 gtk+-3.0 gtksourceview-4 \
 		    pygobject-2.0 \
 		    enchant iso-codes"
 

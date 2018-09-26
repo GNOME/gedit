@@ -104,7 +104,7 @@ remove_useless_stuff() {
   find installer/SourceDir -name *.exe | xargs strip
 
   # remove some translation which seem to add a lot of size
-  find installer/SourceDir/share/locale/ -type f | grep -v atk10.mo | grep -v libpeas.mo | grep -v gsettings-desktop-schemas.mo | grep -v json-glib-1.0.mo | grep -v glib20.mo | grep -v gedit.mo | grep -v gedit-plugins.mo | grep -v gdk-pixbuf.mo | grep -v gtk30.mo | grep -v gtk30-properties.mo | grep -v gtksourceview-3.0.mo | grep -v iso_*.mo | xargs rm
+  find installer/SourceDir/share/locale/ -type f | grep -v atk10.mo | grep -v libpeas.mo | grep -v gsettings-desktop-schemas.mo | grep -v json-glib-1.0.mo | grep -v glib20.mo | grep -v gedit.mo | grep -v gedit-plugins.mo | grep -v gdk-pixbuf.mo | grep -v gtk30.mo | grep -v gtk30-properties.mo | grep -v gtksourceview-4.mo | grep -v iso_*.mo | xargs rm
   find installer/SourceDir/share/locale -type d | xargs rmdir -p --ignore-fail-on-non-empty
 }
 

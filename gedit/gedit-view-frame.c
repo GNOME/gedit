@@ -323,12 +323,12 @@ start_search_finished (GtkSourceSearchContext *search_context,
 	gboolean found;
 	GtkSourceBuffer *buffer;
 
-	found = gtk_source_search_context_forward_finish2 (search_context,
-							   result,
-							   &match_start,
-							   &match_end,
-							   NULL,
-							   NULL);
+	found = gtk_source_search_context_forward_finish (search_context,
+							  result,
+							  &match_start,
+							  &match_end,
+							  NULL,
+							  NULL);
 
 	buffer = gtk_source_search_context_get_buffer (search_context);
 
@@ -387,12 +387,12 @@ forward_search_finished (GtkSourceSearchContext *search_context,
 	GtkTextIter match_end;
 	gboolean found;
 
-	found = gtk_source_search_context_forward_finish2 (search_context,
-							   result,
-							   &match_start,
-							   &match_end,
-							   NULL,
-							   NULL);
+	found = gtk_source_search_context_forward_finish (search_context,
+							  result,
+							  &match_start,
+							  &match_end,
+							  NULL,
+							  NULL);
 
 	if (found)
 	{
@@ -445,12 +445,12 @@ backward_search_finished (GtkSourceSearchContext *search_context,
 	gboolean found;
 	GtkSourceBuffer *buffer;
 
-	found = gtk_source_search_context_backward_finish2 (search_context,
-							    result,
-							    &match_start,
-							    &match_end,
-							    NULL,
-							    NULL);
+	found = gtk_source_search_context_backward_finish (search_context,
+							   result,
+							   &match_start,
+							   &match_end,
+							   NULL,
+							   NULL);
 
 	buffer = gtk_source_search_context_get_buffer (search_context);
 
@@ -852,11 +852,17 @@ search_entry_escaped (GtkSearchEntry *entry,
 	if (frame->search_mode == SEARCH &&
 	    search_context != NULL)
 	{
+		GtkSourceSearchContext *search_context;
+		GtkTextBuffer *buffer;
+
 		g_clear_object (&frame->search_settings);
 		frame->search_settings = copy_search_settings (frame->old_search_settings);
 
-		gtk_source_search_context_set_settings (search_context,
-		                                        frame->search_settings);
+		buffer = gtk_text_view_get_buffer (GTK_TEXT_VIEW (frame->view));
+		search_context = gtk_source_search_context_new (GTK_SOURCE_BUFFER (buffer),
+		                                                frame->search_settings);
+		gedit_document_set_search_context (GEDIT_DOCUMENT (buffer), search_context);
+		g_object_unref (search_context);
 
 		g_free (frame->search_text);
 		frame->search_text = NULL;
