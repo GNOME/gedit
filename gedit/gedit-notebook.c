@@ -146,7 +146,6 @@ gedit_notebook_button_press_event (GtkWidget      *widget,
 	GtkNotebook *notebook = GTK_NOTEBOOK (widget);
 
 	if (event->type == GDK_BUTTON_PRESS &&
-	    event->button == GDK_BUTTON_SECONDARY &&
 	    (event->state & gtk_accelerator_get_default_mod_mask ()) == 0)
 	{
 		gint tab_clicked;
@@ -158,9 +157,15 @@ gedit_notebook_button_press_event (GtkWidget      *widget,
 
 			tab = gtk_notebook_get_nth_page (notebook, tab_clicked);
 
-			g_signal_emit (G_OBJECT (widget), signals[SHOW_POPUP_MENU], 0, event, tab);
-
-			return GDK_EVENT_STOP;
+			switch(event->button)
+			{
+				case GDK_BUTTON_SECONDARY :
+					g_signal_emit (G_OBJECT (widget), signals[SHOW_POPUP_MENU], 0, event, tab);
+					return GDK_EVENT_STOP;
+				case GDK_BUTTON_MIDDLE :
+					g_signal_emit (G_OBJECT (notebook), signals[TAB_CLOSE_REQUEST], 0, tab);
+					return GDK_EVENT_STOP;
+			}
 		}
 	}
 
