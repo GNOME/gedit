@@ -854,7 +854,7 @@ handle_builder_error (const gchar *message, ...)
 	return label;
 }
 
-/* TODO: just add a translation_doamin arg to get_ui_objects method */
+/* TODO: just add a translation_domain arg to get_ui_objects method */
 static gboolean
 get_ui_objects_with_translation_domain (const gchar  *filename,
                                         const gchar  *translation_domain,
