@@ -95,9 +95,7 @@ Contributions
 To contribute changes to the project, please fork the project on [the GNOME gitlab instance](https://gitlab.gnome.org/GNOME/gedit) and open a merge request.
 If the change fixes an existing bug, add the issue number in the merge request comment.
 
-If you are interested in helping us to develop gedit, please see the 
-file 'AUTHOR' for contact information and/or send a message to the gedit
-mailing list. See also the file 'HACKING' for more detailed information.
+See the file 'HACKING' for more detailed information.
 
 
   The gedit team.
