@@ -20,26 +20,26 @@ plugins may also be written in other languages, like Vala and Python.
 
 Although new features are always under development, currently gedit has:
 
-    * Complete support for UTF-8 text
-    * Syntax highlighting
-    * Support for editing remote files
-    * Search and replace
-    * Printing and Print Previewing Support
-    * File Revert
-    * A complete preferences interface
-    * Configurable Plugin system, with optional python support
+* Complete support for UTF-8 text
+* Syntax highlighting
+* Support for editing remote files
+* Search and replace
+* Printing and Print Previewing Support
+* File Revert
+* A complete preferences interface
+* Configurable Plugin system, with optional python support
 
 
 Some of the plugins, packaged and installed with gedit include, among others:
 
-    * Word count
-    * Spell checker
-    * File Browser
-    * Automatic snippet expansion
-    * Sort
-    * Insert Date/Time
-    * External Tools
-    * Tag list
+* Word count
+* Spell checker
+* File Browser
+* Automatic snippet expansion
+* Sort
+* Insert Date/Time
+* External Tools
+* Tag list
 
 Other external plugins are also available.
 
@@ -64,24 +64,26 @@ Information about gedit mailing lists can be found at
 Installation
 ============
 
-gedit requires GTK+ >= 3.22.0, GtkSourceView >= 3.22.0 and
-libpeas >= 1.14.1 libraries. It also has a run-time dependency on an
+gedit requires `GTK+ >= 3.22.0`, `GtkSourceView >= 3.22.0` and
+`libpeas >= 1.14.1` libraries. It also has a run-time dependency on an
 icon theme for its icons. If gedit fails to display icons, installing
 GNOME's default adwaita-icon-theme is a simple way of providing them.
 
-PyGObject 3.0.x and gobject-introspection 0.9.0 are required to enable
+`PyGObject 3.0.x` and `gobject-introspection 0.9.0` are required to enable
 python plugins support.
 
-gspell >= 0.2.3 is required to enable the spell checking plugin.
+`gspell >= 0.2.3` is required to enable the spell checking plugin.
 
 Simple install procedure:
 
-  % tar Jxf gedit-3.31.2.tar.xz			# unpack the sources
-  % cd gedit-3.31.2				# change to the toplevel directory
-  % ./configure					# run the `configure' script
-  % make					# build gedit
-  [ Become root if necessary ]
-  % make install				# install gedit
+```
+% tar Jxf gedit-3.31.2.tar.xz			# unpack the sources
+% cd gedit-3.31.2				# change to the toplevel directory
+% ./configure					# run the `configure' script
+% make					# build gedit
+[ Become root if necessary ]
+% make install				# install gedit
+```
 
 See the file 'INSTALL' for more detailed information.
 
@@ -89,9 +91,7 @@ See the file 'INSTALL' for more detailed information.
 How to report bugs
 ==================
 
-Bugs should be reported to the GNOME bug tracking system:
-
-    https://wiki.gnome.org/Apps/Gedit/ReportingBugs
+Bugs should be reported to the [GNOME bug tracking system](https://wiki.gnome.org/Apps/Gedit/ReportingBugs).
 
 
 Patches
