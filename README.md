@@ -48,17 +48,12 @@ gedit is released under the GNU General Public License (GPL) version 2 or
 later, see the file 'COPYING' for more information.
 
 
-The official web site is:
+Resources
+=========
 
-    https://wiki.gnome.org/Apps/Gedit
-
-You can download the latest gedit tarball from:
-
-    https://download.gnome.org/sources/gedit/
-
-Information about gedit mailing lists can be found at
-
-    https://mail.gnome.org/mailman/listinfo/gedit-list
+* [Official web site](https://wiki.gnome.org/Apps/Gedit)
+* [Latest gedit tarball](https://download.gnome.org/sources/gedit/)
+* [Information about gedit mailing lists](https://mail.gnome.org/mailman/listinfo/gedit-list)
 
 
 Installation
