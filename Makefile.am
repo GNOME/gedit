@@ -10,6 +10,7 @@ endif
 EXTRA_DIST = 			\
 	HACKING			\
 	MAINTAINERS		\
+	README.md		\
 	gedit.doap
 
 DISTCLEANFILES = 		\
