@@ -59,15 +59,15 @@ Resources
 Installation
 ============
 
-gedit requires `GTK+ >= 3.22.0`, `GtkSourceView >= 3.22.0` and
+gedit requires `GTK+ >= 3.22.0`, `GtkSourceView >= 4.0.2` and
 `libpeas >= 1.14.1` libraries. It also has a run-time dependency on an
 icon theme for its icons. If gedit fails to display icons, installing
 GNOME's default adwaita-icon-theme is a simple way of providing them.
 
-`PyGObject 3.0.x` and `gobject-introspection 0.9.0` are required to enable
+`PyGObject 3.0.x` and `gobject-introspection 0.9.3` are required to enable
 python plugins support.
 
-`gspell >= 0.2.3` is required to enable the spell checking plugin.
+`gspell >= 0.2.5` is required to enable the spell checking plugin.
 
 Simple install procedure:
 
