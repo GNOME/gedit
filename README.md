@@ -89,17 +89,11 @@ How to report bugs
 Bugs should be reported to the [GNOME bug tracking system](https://wiki.gnome.org/Apps/Gedit/ReportingBugs).
 
 
-Patches
-=======
+Contributions
+=============
 
-Patches should also be submitted to bugzilla.gnome.org. If the patch
-fixes an existing bug, add the patch as an attachment to that bug
-report.
-
-Otherwise, enter a new bug report that describes the patch, and attach
-the patch to that bug report.
-
-Please create patches with the git format-patch command.
+To contribute changes to the project, please fork the project on [the GNOME gitlab instance](https://gitlab.gnome.org/GNOME/gedit) and open a merge request.
+If the change fixes an existing bug, add the issue number in the merge request comment.
 
 If you are interested in helping us to develop gedit, please see the 
 file 'AUTHOR' for contact information and/or send a message to the gedit
