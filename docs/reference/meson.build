@@ -7,6 +7,24 @@ gobject_docpath = join_paths(gobject_prefix, 'share', 'gtk-doc', 'html', 'gobjec
 gtk_prefix = gtk_dep.get_pkgconfig_variable('prefix')
 gtk_docpath = join_paths(gobject_prefix, 'share', 'gtk-doc', 'html', 'gtk')
 
+gedit_doc_deps = [
+  glib_dep,
+  gobject_dep,
+  gio_dep,
+  gtk_dep,
+  gtksourceview_dep,
+  libpeas_dep,
+  libpeas_gtk_dep,
+  libxml_dep,
+]
+
+gedit_doc_dep = declare_dependency(
+  link_with: libgedit_sha,
+  include_directories: rootdir,
+  dependencies: gedit_doc_deps,
+  sources: libgedit_dep_sources,
+)
+
 libgedit_reference_ignored_h = [
   'gedit-app-osx.h',
   'gedit-app-win32.h',
@@ -73,7 +91,7 @@ gnome.gtkdoc(
   package_name,
   main_sgml: 'gedit-docs.xml',
   src_dir: join_paths(srcdir, 'gedit'),
-  dependencies: libgedit_dep,
+  dependencies: gedit_doc_dep,
   scan_args: libgedit_reference_scan_args,
   mkdb_args: libgedit_reference_mkdb_args,
   fixxref_args: libgedit_reference_fixxref_args,
