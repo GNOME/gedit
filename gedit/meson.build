@@ -304,4 +304,5 @@ gedit_exe = executable(
   c_args: gedit_c_args,
   install: true,
   install_dir: bindir,
+  install_rpath: pkglibdir,
 )
