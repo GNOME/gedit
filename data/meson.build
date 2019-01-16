@@ -18,7 +18,7 @@ install_data(
   )
 )
 
-i18n.merge_file(
+appdata_file = i18n.merge_file(
   'appdata-file',
   input: 'org.gnome.gedit.appdata.xml.in',
   output: 'org.gnome.gedit.appdata.xml',
@@ -30,21 +30,31 @@ i18n.merge_file(
     'metainfo',
   )
 )
+appstream_util = find_program('appstream-util', required: false)
+if appstream_util.found()
+test(
+    'validate-appdata', appstream_util,
+    args: [
+        'validate-relax', '--nonet', appdata_file.full_path()
+    ]
+)
+endif
+
 
 desktop_in = configuration_data()
 desktop_in.set('VERSION', version)
 desktop_in.set('FULL_LIBEXECDIR', libexecdir)
 
-desktop_file = configure_file(
+desktop_file_configured = configure_file(
   input: 'org.gnome.gedit.desktop.in.in',
   output: 'org.gnome.gedit.desktop.in',
   configuration: desktop_in,
   install: false,
 )
 
-i18n.merge_file(
+desktop_file = i18n.merge_file(
   'desktop-file',
-  input: desktop_file,
+  input: desktop_file_configured,
   output: 'org.gnome.gedit.desktop',
   type: 'desktop',
   po_dir: join_paths(srcdir, 'po'),
@@ -54,6 +64,16 @@ i18n.merge_file(
     'applications',
   )
 )
+desktop_file_validate = find_program('desktop-file-validate', required: false)
+if desktop_file_validate.found()
+test(
+    'validate-desktop',
+    desktop_file_validate,
+    args: [
+        desktop_file.full_path()
+    ]
+)
+endif
 
 quoted_plugins = []
 foreach plugin_name:active_plugins
