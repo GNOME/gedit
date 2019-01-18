@@ -2,6 +2,9 @@ include: 'https://gitlab.gnome.org/GNOME/citemplates/raw/master/flatpak/flatpak_
 
 variables:
     BUNDLE: "gedit-nightly.flatpak"
+    GIT_SUBMODULE_STRATEGY: normal
+
+
 
 flatpak:
     image: 'registry.gitlab.gnome.org/gnome/gnome-runtime-images/gnome:master'
