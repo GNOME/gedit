@@ -128,6 +128,14 @@ configure_file(
   configuration: config_h
 )
 
+module_suffix = []
+# Keep the autotools convention for shared module suffix because GModule
+# depends on it: https://gitlab.gnome.org/GNOME/glib/issues/520
+if ['darwin', 'ios'].contains(host_machine.system())
+  module_suffix = 'so'
+  add_languages('objc')
+endif
+
 # Options
 build_plugins = get_option('plugins')
 

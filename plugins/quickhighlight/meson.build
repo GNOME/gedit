@@ -20,7 +20,8 @@ libquickhighlight_sha = shared_module(
   install_dir: join_paths(
     pkglibdir,
     'plugins',
-  )
+  ),
+  name_suffix: module_suffix,
 )
 
 custom_target(

@@ -137,9 +137,20 @@ libgedit_deps = [
 
 if windowing_target == 'quartz'
   libgedit_sources += files(
-    'gedit-app-osx.c',
-    'gedit-file-chooser-dialog-osx.c',
+    'gedit-app-osx.m',
+    'gedit-file-chooser-dialog-osx.m',
   )
+  libgedit_c_args += [
+    '-DOS_OSX=1',
+  ]
+  libgedit_link_args += [
+    '-Wl,-framework', '-Wl,Foundation',
+    '-Wl,-framework', '-Wl,AppKit',
+  ]
+  gtk_mac_integration_dep = dependency('gtk-mac-integration-gtk3')
+  libgedit_deps += [
+    gtk_mac_integration_dep,
+  ]
 elif windowing_target == 'win32'
   libgedit_sources += files(
     'gedit-app-win32.c',
@@ -292,6 +303,12 @@ gedit_sources = [
 gedit_c_args = [
   '-DHAVE_CONFIG_H',
 ]
+
+if windowing_target == 'quartz'
+  gedit_c_args += [
+    '-DOS_OSX=1',
+  ]
+endif
 
 gedit_deps = [
   libgedit_dep,
