@@ -119,6 +119,11 @@ config_h.set_quoted('LIBDIR', libdir)
 config_h.set_quoted('DATADIR', datadir)
 config_h.set_quoted('VERSION', version)
 
+enable_gvfs_metadata = get_option('enable-gvfs-metadata')
+if enable_gvfs_metadata == 'yes' or (enable_gvfs_metadata == 'auto' and host_machine.system() == 'linux')
+  config_h.set('ENABLE_GVFS_METADATA', 1)
+endif
+
 config_h.set('GEDIT_MAJOR_VERSION', version_major)
 config_h.set('GEDIT_MINOR_VERSION', version_minor)
 config_h.set('GEDIT_MICRO_VERSION', version_micro)
