@@ -12,3 +12,7 @@ option('plugins',
 option('documentation',
        type: 'boolean', value: false,
        description: 'Build reference manual (requires gtk-doc)')
+
+option('enable-gvfs-metadata',
+        type: 'combo', choices : ['yes', 'no', 'auto'], value : 'auto',
+        description: 'Enable using gvfs to store metadata')
