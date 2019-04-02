@@ -26,6 +26,7 @@
 #include <gedit/gedit-window.h>
 #include <gedit/gedit-window-activatable.h>
 #include <gspell/gspell.h>
+#include <libpeas-gtk/peas-gtk-configurable.h>
 
 #include "gedit-spell-app-activatable.h"
 
@@ -40,6 +41,7 @@
 #define SPELL_ENABLED_STR "1"
 
 static void gedit_window_activatable_iface_init (GeditWindowActivatableInterface *iface);
+static void peas_gtk_configurable_iface_init (PeasGtkConfigurableInterface *iface);
 
 struct _GeditSpellPluginPrivate
 {
@@ -58,6 +60,8 @@ G_DEFINE_DYNAMIC_TYPE_EXTENDED (GeditSpellPlugin,
 				0,
 				G_IMPLEMENT_INTERFACE_DYNAMIC (GEDIT_TYPE_WINDOW_ACTIVATABLE,
 							       gedit_window_activatable_iface_init)
+				G_IMPLEMENT_INTERFACE_DYNAMIC (PEAS_GTK_TYPE_CONFIGURABLE,
+							       peas_gtk_configurable_iface_init)
 				G_ADD_PRIVATE_DYNAMIC (GeditSpellPlugin))
 
 static void
@@ -708,6 +712,21 @@ peas_register_types (PeasObjectModule *module)
 	peas_object_module_register_extension_type (module,
 						    GEDIT_TYPE_WINDOW_ACTIVATABLE,
 						    GEDIT_TYPE_SPELL_PLUGIN);
+	peas_object_module_register_extension_type (module,
+						    PEAS_GTK_TYPE_CONFIGURABLE,
+						    GEDIT_TYPE_SPELL_PLUGIN);
+}
+
+static GtkWidget *
+gedit_spell_plugin_create_configure_widget (PeasGtkConfigurable *configurable)
+{
+	return NULL;
+}
+
+static void
+peas_gtk_configurable_iface_init (PeasGtkConfigurableInterface *iface)
+{
+	iface->create_configure_widget = gedit_spell_plugin_create_configure_widget;
 }
 
 /* ex:set ts=8 noet: */
