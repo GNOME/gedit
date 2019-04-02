@@ -51,6 +51,8 @@ struct _GeditOpenDocumentSelector
 	GtkWidget *placeholder_box;
 	GtkWidget *scrolled_window;
 
+	guint populate_listbox_id;
+
 	GdkRGBA name_label_color;
 	PangoFontDescription *name_font;
 	GdkRGBA path_label_color;
@@ -66,9 +68,6 @@ struct _GeditOpenDocumentSelector
 	GList *active_doc_dir_items;
 	GList *current_docs_items;
 	GList *all_items;
-
-	guint populate_liststore_is_idle : 1;
-	guint populate_scheduled : 1;
 };
 
 typedef enum
@@ -540,7 +539,6 @@ real_populate_liststore (gpointer data)
 	GList *filter_items = NULL;
 	gchar *filter;
 	GRegex *filter_regex = NULL;
-	selector->populate_liststore_is_idle = FALSE;
 
 	DEBUG_SELECTOR_TIMER_DECL
 	DEBUG_SELECTOR_TIMER_NEW
@@ -608,33 +606,25 @@ real_populate_liststore (gpointer data)
 	                          selector, DEBUG_SELECTOR_TIMER_GET););
 	DEBUG_SELECTOR_TIMER_DESTROY
 
-	if (selector->populate_scheduled)
-	{
-		selector->populate_scheduled = FALSE;
-		return G_SOURCE_CONTINUE;
-	}
-	else
-	{
-		return G_SOURCE_REMOVE;
-	}
+	selector->populate_listbox_id = 0;
+	return G_SOURCE_REMOVE;
 }
 
 static void
 populate_liststore (GeditOpenDocumentSelector *selector)
 {
 	/* Populate requests are compressed */
-	if (selector->populate_liststore_is_idle)
+	if (selector->populate_listbox_id != 0)
 	{
 		DEBUG_SELECTOR (g_print ("Selector(%p): populate liststore: idle\n", selector););
-
-		selector->populate_scheduled = TRUE;
 		return;
 	}
 
 	DEBUG_SELECTOR (g_print ("Selector(%p): populate liststore: scheduled\n", selector););
-
-	selector->populate_liststore_is_idle = TRUE;
-	gdk_threads_add_idle_full (G_PRIORITY_HIGH_IDLE + 30, real_populate_liststore, selector, NULL);
+	selector->populate_listbox_id = gdk_threads_add_idle_full (G_PRIORITY_HIGH_IDLE + 30,
+								   real_populate_liststore,
+								   selector,
+								   NULL);
 }
 
 static gboolean
@@ -740,12 +730,10 @@ gedit_open_document_selector_dispose (GObject *object)
 {
 	GeditOpenDocumentSelector *selector = GEDIT_OPEN_DOCUMENT_SELECTOR (object);
 
-	while (TRUE)
+	if (selector->populate_listbox_id != 0)
 	{
-		if (!g_idle_remove_by_data (selector))
-		{
-			break;
-		}
+		g_source_remove (selector->populate_listbox_id);
+		selector->populate_listbox_id = 0;
 	}
 
 	g_clear_pointer (&selector->name_font, pango_font_description_free);
