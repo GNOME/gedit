@@ -63,6 +63,10 @@ typedef struct
 {
 	GeditPluginsEngine *engine;
 
+#ifndef ENABLE_GVFS_METADATA
+	GeditMetadataManager *metadata_manager;
+#endif
+
 	GtkCssProvider     *theme_provider;
 
 	GeditLockdownMask  lockdown;
@@ -169,6 +173,10 @@ gedit_app_dispose (GObject *object)
 	GeditAppPrivate *priv;
 
 	priv = gedit_app_get_instance_private (GEDIT_APP (object));
+
+#ifndef ENABLE_GVFS_METADATA
+	g_clear_object (&priv->metadata_manager);
+#endif
 
 	g_clear_object (&priv->ui_settings);
 	g_clear_object (&priv->window_settings);
@@ -774,7 +782,7 @@ gedit_app_startup (GApplication *application)
 #ifndef ENABLE_GVFS_METADATA
 	cache_dir = gedit_dirs_get_user_cache_dir ();
 	metadata_filename = g_build_filename (cache_dir, "gedit-metadata.xml", NULL);
-	gedit_metadata_manager_init (metadata_filename);
+	priv->metadata_manager = gedit_metadata_manager_new (metadata_filename);
 	g_free (metadata_filename);
 #endif
 
@@ -1245,10 +1253,6 @@ gedit_app_shutdown (GApplication *app)
 	 * shutdown after.
 	 */
 	G_APPLICATION_CLASS (gedit_app_parent_class)->shutdown (app);
-
-#ifndef ENABLE_GVFS_METADATA
-	gedit_metadata_manager_shutdown ();
-#endif
 
 	gedit_dirs_shutdown ();
 }
@@ -1870,6 +1874,24 @@ _gedit_app_get_settings (GeditApp *app)
 
 	return priv->settings;
 }
+
+GeditMetadataManager *
+_gedit_app_get_metadata_manager (GeditApp *app)
+{
+#ifndef ENABLE_GVFS_METADATA
+	GeditAppPrivate *priv;
+
+	g_return_val_if_fail (GEDIT_IS_APP (app), NULL);
+
+	priv = gedit_app_get_instance_private (app);
+
+	return priv->metadata_manager;
+#elif
+	g_assert_not_reached ();
+	return NULL;
+#endif
+}
+
 
 GMenuModel *
 _gedit_app_get_hamburger_menu (GeditApp *app)
