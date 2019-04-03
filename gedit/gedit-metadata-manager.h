@@ -26,16 +26,20 @@
 
 G_BEGIN_DECLS
 
-void		 gedit_metadata_manager_init		(const gchar *metadata_filename);
+#define GEDIT_TYPE_METADATA_MANAGER (gedit_metadata_manager_get_type())
 
-void		 gedit_metadata_manager_shutdown 	(void);
+G_DECLARE_FINAL_TYPE (GeditMetadataManager, gedit_metadata_manager, GEDIT, METADATA_MANAGER, GObject)
 
+GeditMetadataManager *gedit_metadata_manager_new	(const gchar *metadata_filename);
 
-gchar		*gedit_metadata_manager_get 		(GFile       *location,
-					     		 const gchar *key);
-void		 gedit_metadata_manager_set		(GFile       *location,
-							 const gchar *key,
-							 const gchar *value);
+gchar		     *gedit_metadata_manager_get	(GeditMetadataManager *self,
+							 GFile                *location,
+							 const gchar          *key);
+
+void		      gedit_metadata_manager_set	(GeditMetadataManager *self,
+							 GFile                *location,
+							 const gchar          *key,
+							 const gchar          *value);
 
 G_END_DECLS
 
