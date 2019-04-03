@@ -31,6 +31,8 @@
 #include <string.h>
 #include <glib/gi18n.h>
 
+#include "gedit-app.h"
+#include "gedit-app-private.h"
 #include "gedit-settings.h"
 #include "gedit-debug.h"
 #include "gedit-utils.h"
@@ -66,6 +68,8 @@ typedef struct
 	 * replace. They are mutually exclusive.
 	 */
 	GtkSourceSearchContext *search_context;
+
+	GeditMetadataManager *metadata_manager;
 
 	guint user_action;
 
@@ -214,6 +218,7 @@ gedit_document_dispose (GObject *object)
 	g_clear_object (&priv->editor_settings);
 	g_clear_object (&priv->metadata_info);
 	g_clear_object (&priv->search_context);
+	g_clear_object (&priv->metadata_manager);
 
 	G_OBJECT_CLASS (gedit_document_parent_class)->dispose (object);
 }
@@ -378,6 +383,15 @@ gedit_document_constructed (GObject *object)
 	GeditDocumentPrivate *priv;
 
 	priv = gedit_document_get_instance_private (doc);
+
+	if (!priv->use_gvfs_metadata)
+	{
+		GeditMetadataManager *metadata_manager;
+
+		metadata_manager = _gedit_app_get_metadata_manager (GEDIT_APP (g_application_get_default ()));
+		g_assert (GEDIT_IS_METADATA_MANAGER (metadata_manager));
+		priv->metadata_manager = g_object_ref (metadata_manager);
+	}
 
 	/* Bind construct properties. */
 	g_settings_bind (priv->editor_settings,
@@ -1623,7 +1637,7 @@ get_metadata_from_metadata_manager (GeditDocument *doc,
 
 	if (location != NULL)
 	{
-		return gedit_metadata_manager_get (location, key);
+		return gedit_metadata_manager_get (priv->metadata_manager, location, key);
 	}
 
 	return NULL;
@@ -1751,7 +1765,7 @@ gedit_document_set_metadata (GeditDocument *doc,
 		}
 		else
 		{
-			gedit_metadata_manager_set (location, key, value);
+			gedit_metadata_manager_set (priv->metadata_manager, location, key, value);
 		}
 	}
 
