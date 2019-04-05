@@ -125,6 +125,7 @@ gedit_spell_plugin_dispose (GObject *object)
 	gedit_debug_message (DEBUG_PLUGINS, "GeditSpellPlugin disposing");
 
 	g_clear_object (&plugin->priv->window);
+	g_clear_object (&plugin->priv->settings);
 
 	G_OBJECT_CLASS (gedit_spell_plugin_parent_class)->dispose (object);
 }
