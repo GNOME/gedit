@@ -737,7 +737,7 @@ static void
 highlight_button_toggled (GtkToggleButton     *button,
 				 SpellConfigureWidget *widget)
 {
-	guint status = gtk_toggle_button_get_active (button);
+	gboolean status = gtk_toggle_button_get_active (button);
 	g_settings_set_boolean(widget->settings, SETTINGS_KEY_HIGHLIGHT_MISSPELLED, status);
 }
 
