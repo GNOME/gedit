@@ -12,6 +12,8 @@ libspell_c_args = [
   '-DHAVE_CONFIG_H',
 ]
 
+subdir('resources')
+
 libspell_sha = shared_module(
   'spell',
   sources: libspell_sources,
@@ -22,6 +24,17 @@ libspell_sha = shared_module(
   install_dir: join_paths(
     pkglibdir,
     'plugins',
+  )
+)
+
+configure_file(
+  input: 'org.gnome.gedit.plugins.spell.gschema.xml.in',
+  output: 'org.gnome.gedit.plugins.spell.gschema.xml',
+  configuration: gschema_xml,
+  install: true,
+  install_dir: join_paths(
+    glibdir,
+    'schemas',
   )
 )
 

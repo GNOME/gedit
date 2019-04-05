@@ -39,6 +39,8 @@
 #endif
 
 #define SPELL_ENABLED_STR "1"
+#define SPELL_BASE_SETTINGS	"org.gnome.gedit.plugins.spell"
+#define SETTINGS_KEY_HIGHLIGHT_MISSPELLED "highlight-misspelled"
 
 static void gedit_window_activatable_iface_init (GeditWindowActivatableInterface *iface);
 static void peas_gtk_configurable_iface_init (PeasGtkConfigurableInterface *iface);
@@ -46,12 +48,23 @@ static void peas_gtk_configurable_iface_init (PeasGtkConfigurableInterface *ifac
 struct _GeditSpellPluginPrivate
 {
 	GeditWindow *window;
+	GSettings   *settings;
 };
 
 enum
 {
 	PROP_0,
 	PROP_WINDOW
+};
+
+typedef struct _SpellConfigureWidget SpellConfigureWidget;
+
+struct _SpellConfigureWidget
+{
+	GtkWidget *content;
+	GtkWidget *highlight_button;
+
+	GSettings *settings;
 };
 
 G_DEFINE_DYNAMIC_TYPE_EXTENDED (GeditSpellPlugin,
@@ -139,6 +152,7 @@ gedit_spell_plugin_init (GeditSpellPlugin *plugin)
 	gedit_debug_message (DEBUG_PLUGINS, "GeditSpellPlugin initializing");
 
 	plugin->priv = gedit_spell_plugin_get_instance_private (plugin);
+	plugin->priv->settings = g_settings_new (SPELL_BASE_SETTINGS);
 }
 
 static GspellChecker *
@@ -389,13 +403,14 @@ setup_inline_checker_from_metadata (GeditSpellPlugin *plugin,
 				    GeditView        *view)
 {
 	GeditDocument *doc;
-	gboolean enabled = FALSE;
+	gboolean enabled;
 	gchar *enabled_str;
 	GspellTextView *gspell_view;
 	GeditView *active_view;
 
 	doc = GEDIT_DOCUMENT (gtk_text_view_get_buffer (GTK_TEXT_VIEW (view)));
 
+	enabled = g_settings_get_boolean(plugin->priv->settings, SETTINGS_KEY_HIGHLIGHT_MISSPELLED);
 	enabled_str = gedit_document_get_metadata (doc, GEDIT_METADATA_ATTRIBUTE_SPELL_ENABLED);
 	if (enabled_str != NULL)
 	{
@@ -717,10 +732,58 @@ peas_register_types (PeasObjectModule *module)
 						    GEDIT_TYPE_SPELL_PLUGIN);
 }
 
+static void
+highlight_button_toggled (GtkToggleButton     *button,
+				 SpellConfigureWidget *widget)
+{
+	guint status = gtk_toggle_button_get_active (button);
+	g_settings_set_boolean(widget->settings, SETTINGS_KEY_HIGHLIGHT_MISSPELLED, status);
+}
+
+static SpellConfigureWidget *
+get_configure_widget (GeditSpellPlugin *plugin)
+{
+	SpellConfigureWidget *widget;
+	GtkBuilder *builder;
+	gchar *root_objects[] = {
+		"spell_dialog_content",
+		NULL
+	};
+
+	gedit_debug (DEBUG_PLUGINS);
+
+	widget = g_slice_new (SpellConfigureWidget);
+	widget->settings = g_object_ref (plugin->priv->settings);
+
+	builder = gtk_builder_new ();
+	gtk_builder_add_objects_from_resource (builder, "/org/gnome/gedit/plugins/spell/ui/gedit-spell-setup-dialog.ui",
+	                                       root_objects, NULL);
+	widget->content = GTK_WIDGET (gtk_builder_get_object (builder, "spell_dialog_content"));
+	g_object_ref (widget->content);
+
+	widget->highlight_button = GTK_WIDGET (gtk_builder_get_object (builder, "highlight_button"));
+	g_object_unref (builder);
+
+	gboolean status = g_settings_get_boolean(widget->settings, SETTINGS_KEY_HIGHLIGHT_MISSPELLED);
+	gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (widget->highlight_button), status);
+
+	g_signal_connect (widget->highlight_button,
+		  "toggled",
+		  G_CALLBACK (highlight_button_toggled),
+		  widget);
+
+	return widget;
+}
+
+
 static GtkWidget *
 gedit_spell_plugin_create_configure_widget (PeasGtkConfigurable *configurable)
 {
-	return NULL;
+	SpellConfigureWidget *widget;
+
+	widget = get_configure_widget (GEDIT_SPELL_PLUGIN (configurable));
+
+	return widget->content;
 }
 
 static void
