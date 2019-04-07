@@ -741,6 +741,20 @@ highlight_button_toggled (GtkToggleButton     *button,
 	g_settings_set_boolean(widget->settings, SETTINGS_KEY_HIGHLIGHT_MISSPELLED, status);
 }
 
+static void
+configure_widget_destroyed (GtkWidget *widget,
+			    gpointer   data)
+{
+	SpellConfigureWidget *conf_widget = (SpellConfigureWidget *)data;
+
+	gedit_debug (DEBUG_PLUGINS);
+
+	g_object_unref (conf_widget->settings);
+	g_slice_free (SpellConfigureWidget, data);
+
+	gedit_debug_message (DEBUG_PLUGINS, "END");
+}
+
 static SpellConfigureWidget *
 get_configure_widget (GeditSpellPlugin *plugin)
 {
@@ -772,6 +786,11 @@ get_configure_widget (GeditSpellPlugin *plugin)
 		  "toggled",
 		  G_CALLBACK (highlight_button_toggled),
 		  widget);
+
+	g_signal_connect (widget->content,
+			  "destroy",
+			  G_CALLBACK (configure_widget_destroyed),
+			  widget);
 
 	return widget;
 }
