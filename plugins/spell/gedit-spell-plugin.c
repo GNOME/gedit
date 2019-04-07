@@ -783,9 +783,9 @@ get_configure_widget (GeditSpellPlugin *plugin)
 	gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (widget->highlight_button), status);
 
 	g_signal_connect (widget->highlight_button,
-		  "toggled",
-		  G_CALLBACK (highlight_button_toggled),
-		  widget);
+		          "toggled",
+		          G_CALLBACK (highlight_button_toggled),
+		          widget);
 
 	g_signal_connect (widget->content,
 			  "destroy",
