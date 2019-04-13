@@ -8,14 +8,6 @@ install_data('org.gnome.gedit-symbolic.svg',
 
 install_man('gedit.1')
 
-install_data(
-  'gedit-bugreport.sh',
-  install_dir: join_paths(
-    libexecdir,
-    package_name,
-  )
-)
-
 appdata_file = i18n.merge_file(
   'appdata-file',
   input: 'org.gnome.gedit.appdata.xml.in',
