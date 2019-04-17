@@ -59,6 +59,7 @@ libfilebrowser_enums_c = custom_target('libfilebrowser_enums_c',
 
 libfilebrowser_sources += [
   libfilebrowser_enums_c,
+  libfilebrowser_type_enums.get(1),
 ]
 
 subdir('resources')
