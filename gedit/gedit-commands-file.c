@@ -1089,9 +1089,6 @@ _gedit_cmd_file_save (GSimpleAction *action,
 		doc = gedit_tab_get_document (tab);
 		g_return_if_fail (doc != NULL);
 
-		/* Only save the file if changes have been made or if the file
-		 * is empty.
-		 */
 		if (_gedit_document_needs_saving (doc) ||
 		    gedit_document_is_untitled (doc))
 		{
@@ -1101,7 +1098,7 @@ _gedit_cmd_file_save (GSimpleAction *action,
 		{
 			gedit_statusbar_flash_message (GEDIT_STATUSBAR (window->priv->statusbar),
 						       window->priv->generic_message_cid,
-						       "No changes need to be saved");
+						       _("No changes need to be saved"));
 
 		}
 	}
