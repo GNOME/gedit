@@ -24,3 +24,5 @@ custom_target(
     'plugins',
   )
 )
+
+subdir('tests')

@@ -20,7 +20,7 @@ import unittest
 from linkparsing import LinkParser
 
 
-class LinkParserTest(unittest.TestCase):
+class TestLinkParser(unittest.TestCase):
 
     def setUp(self):
         self.p = LinkParser()
