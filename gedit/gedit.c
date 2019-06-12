@@ -65,7 +65,7 @@ gedit_w32_load_private_dll (void)
 		 * But since we only have one library, and its name is known, may as well
 		 * use gmodule.
 		 */
-		dllpath = g_build_filename (prefix, "lib", "gedit", "libgedit.dll", NULL);
+		dllpath = g_build_filename (prefix, "lib", "gedit", "lib" PACKAGE_STRING ".dll", NULL);
 		g_free (prefix);
 
 		libgedit_dll = g_module_open (dllpath, 0);
@@ -80,10 +80,10 @@ gedit_w32_load_private_dll (void)
 
 	if (libgedit_dll == NULL)
 	{
-		libgedit_dll = g_module_open ("libgedit.dll", 0);
+		libgedit_dll = g_module_open ("lib" PACKAGE_STRING ".dll", 0);
 		if (libgedit_dll == NULL)
 		{
-			g_printerr ("Failed to load 'libgedit.dll': %s\n",
+			g_printerr ("Failed to load 'lib" PACKAGE_STRING ".dll': %s\n",
 			            g_module_error ());
 		}
 	}
