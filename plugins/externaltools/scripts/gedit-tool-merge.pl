@@ -1,4 +1,4 @@
-#!/usr/bin/perl
+#!/usr/bin/env perl
 
 # gedit-tool-merge.pl
 # This file is part of gedit

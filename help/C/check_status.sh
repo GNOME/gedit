@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Produce a summary of the statuses of all of the .page topics
 # (Not done properly, but it's OK for a rough estimate)
