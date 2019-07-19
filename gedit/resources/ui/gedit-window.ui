@@ -71,24 +71,7 @@
                 <property name="pack_type">start</property>
               </packing>
             </child>
-            <child>
-              <object class="GtkButton" id="new_button">
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="can_default">True</property>
-                <property name="receives_default">False</property>
-                <property name="tooltip_text" translatable="yes">Create a new document</property>
-                <property name="valign">center</property>
-                <property name="action_name">win.new-tab</property>
-                <property name="image">new_tab_image</property>
-                <child internal-child="accessible">
-                  <object class="AtkObject" id="new_button_a11y">
-                    <property name="accessible-name" translatable="yes">New</property>
-                    <property name="accessible-description" translatable="yes">Create a new document</property>
-                  </object>
-                </child>
-              </object>
-            </child>
+
             <child>
               <object class="GtkMenuButton" id="gear_button">
                 <property name="visible">True</property>
@@ -100,25 +83,7 @@
                 <property name="pack_type">end</property>
               </packing>
             </child>
-            <child>
-              <object class="GtkButton" id="save_button">
-                <property name="label" translatable="yes">_Save</property>
-                <property name="use-underline">True</property>
-                <property name="visible">True</property>
-                <property name="valign">center</property>
-                <property name="tooltip_text" translatable="yes">Save the current file</property>
-                <property name="action_name">win.save</property>
-                <child internal-child="accessible">
-                  <object class="AtkObject" id="save_button_a11y">
-                    <property name="accessible-name" translatable="yes">Save</property>
-                    <property name="accessible-description" translatable="yes">Save the current file</property>
-                  </object>
-                </child>
-              </object>
-              <packing>
-                <property name="pack_type">end</property>
-              </packing>
-            </child>
+
           </object>
           <packing>
             <property name="shrink">False</property>
@@ -406,24 +371,7 @@
                         <property name="pack_type">start</property>
                       </packing>
                     </child>
-                    <child>
-                      <object class="GtkButton" id="fullscreen_new_button">
-                        <property name="visible">True</property>
-                        <property name="can_focus">True</property>
-                        <property name="can_default">True</property>
-                        <property name="receives_default">False</property>
-                        <property name="tooltip_text" translatable="yes">Create a new document</property>
-                        <property name="valign">center</property>
-                        <property name="action_name">win.new-tab</property>
-                        <property name="image">fullscreen_new_tab_image</property>
-                        <child internal-child="accessible">
-                          <object class="AtkObject" id="fullscreen_new_button_a11y">
-                            <property name="accessible-name" translatable="yes">New</property>
-                            <property name="accessible-description" translatable="yes">Create a new document</property>
-                          </object>
-                        </child>
-                      </object>
-                    </child>
+                   
                     <child>
                       <object class="GtkButton" id="leave_fullscreen_button">
                         <property name="visible">True</property>
@@ -452,24 +400,7 @@
                         <property name="pack_type">end</property>
                       </packing>
                     </child>
-                    <child>
-                      <object class="GtkButton" id="fullscreen_save_button">
-                        <property name="label" translatable="yes">Save</property>
-                        <property name="visible">True</property>
-                        <property name="valign">center</property>
-                        <property name="tooltip_text" translatable="yes">Save the current file</property>
-                        <property name="action_name">win.save</property>
-                        <child internal-child="accessible">
-                          <object class="AtkObject" id="fullscreen_save_button_a11y">
-                            <property name="accessible-name" translatable="yes">Save</property>
-                            <property name="accessible-description" translatable="yes">Save the current file</property>
-                          </object>
-                        </child>
-                      </object>
-                      <packing>
-                        <property name="pack_type">end</property>
-                      </packing>
-                    </child>
+
                   </object>
                 </child>
               </object>
@@ -513,20 +444,16 @@
   <object class="GtkSizeGroup">
     <property name="mode">vertical</property>
     <widgets>
-      <widget name="new_button"/>
       <widget name="open_button"/>
       <widget name="gear_button"/>
-      <widget name="save_button"/>
       <widget name="open_button"/>
     </widgets>
   </object>
   <object class="GtkSizeGroup">
     <property name="mode">vertical</property>
     <widgets>
-      <widget name="fullscreen_new_button"/>
       <widget name="fullscreen_open_button"/>
       <widget name="fullscreen_gear_button"/>
-      <widget name="fullscreen_save_button"/>
       <widget name="fullscreen_open_button"/>
       <widget name="leave_fullscreen_button"/>
     </widgets>
