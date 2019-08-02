@@ -132,6 +132,19 @@ calculate_info (GeditDocument *doc,
 				++(*words);
 		}
 
+		const gchar *end;
+		const gchar *p;
+
+		end = text + *chars;
+		for (p = text; p < end; p = g_utf8_next_char(p))
+		{
+			if(g_utf8_get_char(p)== 45)
+				--(*words);
+
+			if(g_utf8_get_char(p)== 39)
+				--(*words);
+		}
+
 		g_free (attrs);
 	}
 	else
