@@ -128,7 +128,7 @@ calculate_info (GeditDocument *doc,
 			if (attrs[i].is_white)
 				++(*white_chars);
 
-			if (attrs[i].is_word_start)
+			if (attrs[i].is_word_end)
 				++(*words);
 		}
 
