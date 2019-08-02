@@ -128,8 +128,21 @@ calculate_info (GeditDocument *doc,
 			if (attrs[i].is_white)
 				++(*white_chars);
 
-			if (attrs[i].is_word_start)
+			if(attrs[i].is_word_start)
 				++(*words);
+		}
+
+		const gchar *end;
+		const gchar *p;
+
+		end = text + *chars;
+		for (p = text; p < end; p = g_utf8_next_char(p))
+		{
+			if(g_utf8_get_char(p)== 45)
+				--(*words);
+
+			if(g_utf8_get_char(p)== 39)
+				--(*words);
 		}
 
 		g_free (attrs);
