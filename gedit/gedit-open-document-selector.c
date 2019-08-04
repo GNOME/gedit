@@ -41,6 +41,7 @@ struct _GeditOpenDocumentSelector
 	GtkBox parent_instance;
 
 	GeditWindow *window;
+	GtkWidget *header_title;
 	GtkWidget *search_entry;
 
 	GtkWidget *open_button;
