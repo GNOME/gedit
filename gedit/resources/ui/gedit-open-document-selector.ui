@@ -8,18 +8,37 @@
     <property name="orientation">vertical</property>
     <property name="spacing">6</property>
     <child>
+      <object class="GtkLabel" id="header_title">
+        <property name="visible">True</property>
+	<property name="hexpand">True</property>
+        <property name="vexpand">True</property>
+        <property name="can_focus">False</property>
+        <property name="label" translatable="yes">Recent files</property>
+        <property name="sensitive">True</property>
+        <property name="xalign">0</property>
+	<style>
+	  <class name="dim-label"/>
+	</style>
+      </object>
+    </child>
+    <child>
       <object class="GtkSearchEntry" id="search_entry">
         <property name="visible">True</property>
+	<property name="hexpand">True</property>
+        <property name="vexpand">False</property>
         <property name="can_focus">True</property>
         <property name="primary_icon_name">edit-find-symbolic</property>
         <property name="primary_icon_activatable">False</property>
         <property name="primary_icon_sensitive">False</property>
       </object>
-      <packing>
-        <property name="expand">False</property>
-        <property name="fill">False</property>
-        <property name="position">0</property>
-      </packing>
+    </child>
+    <child>
+     <object class="GtkSeparator">
+       <property name="visible">True</property>
+       <property name="hexpand">True</property>
+       <property name="vexpand">False</property>
+       <property name="can_focus">False</property>
+     </object>
     </child>
     <child>
       <object class="GtkFrame" id="placeholder_box">
@@ -59,11 +78,6 @@
           </object>
         </child>
       </object>
-      <packing>
-        <property name="expand">True</property>
-        <property name="fill">True</property>
-        <property name="position">1</property>
-      </packing>
     </child>
     <child>
       <object class="GtkScrolledWindow" id="scrolled_window">
@@ -86,15 +100,12 @@
           </object>
         </child>
       </object>
-      <packing>
-        <property name="expand">True</property>
-        <property name="fill">True</property>
-        <property name="position">2</property>
-      </packing>
     </child>
     <child>
       <object class="GtkButton" id="open_button">
-        <property name="label" translatable="yes">Other _Documents…</property>
+        <property name="label" translatable="yes">Browse _Documents…</property>
+        <property name="hexpand">False</property>
+        <property name="vexpand">True</property>
         <property name="use-underline">True</property>
         <property name="visible">True</property>
         <property name="can_focus">True</property>
@@ -105,11 +116,6 @@
           <class name="text-button"/>
         </style>
       </object>
-      <packing>
-        <property name="expand">False</property>
-        <property name="fill">True</property>
-        <property name="position">3</property>
-      </packing>
     </child>
   </template>
 </interface>
