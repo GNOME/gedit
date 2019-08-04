@@ -41,6 +41,7 @@ struct _GeditOpenDocumentSelector
 	GtkBox parent_instance;
 
 	GeditWindow *window;
+	GtkWidget *header_title;
 	GtkWidget *search_entry;
 
 	GtkWidget *open_button;
@@ -1021,6 +1022,7 @@ gedit_open_document_selector_class_init (GeditOpenDocumentSelectorClass *klass)
 	gtk_widget_class_bind_template_child (widget_class, GeditOpenDocumentSelector, placeholder_box);
 	gtk_widget_class_bind_template_child (widget_class, GeditOpenDocumentSelector, scrolled_window);
 	gtk_widget_class_bind_template_child (widget_class, GeditOpenDocumentSelector, search_entry);
+	gtk_widget_class_bind_template_child (widget_class, GeditOpenDocumentSelector, header_title);
 }
 
 static void
