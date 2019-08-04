@@ -6,7 +6,21 @@
     <property name="can_focus">False</property>
     <property name="border_width">9</property>
     <property name="orientation">vertical</property>
-    <property name="spacing">6</property>
+    <property name="spacing">9</property>
+    <child>
+      <object class="GtkLabel" id="header_title">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="label" translatable="yes">Recent files</property>
+        <property name="sensitive">True</property>
+        <property name="xalign">0</property>
+      </object>
+      <packing>
+        <property name="expand">True</property>
+        <property name="fill">True</property>
+        <property name="position">0</property>
+      </packing>
+    </child>
     <child>
       <object class="GtkSearchEntry" id="search_entry">
         <property name="visible">True</property>
@@ -18,8 +32,19 @@
       <packing>
         <property name="expand">False</property>
         <property name="fill">False</property>
-        <property name="position">0</property>
+        <property name="position">1</property>
       </packing>
+    </child>
+    <child>
+     <object class="GtkSeparator" id="separator1">
+       <property name="visible">True</property>
+       <property name="can_focus">False</property>
+     </object>
+     <packing>
+       <property name="expand">False</property>
+       <property name="fill">True</property>
+       <property name="position">2</property>
+     </packing>
     </child>
     <child>
       <object class="GtkFrame" id="placeholder_box">
@@ -62,7 +87,7 @@
       <packing>
         <property name="expand">True</property>
         <property name="fill">True</property>
-        <property name="position">1</property>
+        <property name="position">3</property>
       </packing>
     </child>
     <child>
@@ -89,12 +114,12 @@
       <packing>
         <property name="expand">True</property>
         <property name="fill">True</property>
-        <property name="position">2</property>
+        <property name="position">4</property>
       </packing>
     </child>
     <child>
       <object class="GtkButton" id="open_button">
-        <property name="label" translatable="yes">Other _Documents…</property>
+        <property name="label" translatable="yes">Browse Documents…</property>
         <property name="use-underline">True</property>
         <property name="visible">True</property>
         <property name="can_focus">True</property>
@@ -108,7 +133,7 @@
       <packing>
         <property name="expand">False</property>
         <property name="fill">True</property>
-        <property name="position">3</property>
+        <property name="position">5</property>
       </packing>
     </child>
   </template>
