@@ -40,10 +40,14 @@
     "modules" : [
         {
             "name" : "libpeas",
-            "cleanup" : [
+            "buildsystem": "meson",
+	    "builddir": true,
+	    "cleanup" : [
                 "/bin/*",
-                "/lib/peas-demo"
+                "/lib/peas-demo",
+                "/lib/libpeas-gtk*"
             ],
+
             "sources" : [
                 {
                     "type" : "git",
