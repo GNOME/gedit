@@ -40,40 +40,58 @@
     "modules" : [
         {
             "name" : "libpeas",
-            "buildsystem": "meson",
+            "buildsystem" : "meson",
             "cleanup" : [
-                "/bin/*",
-                "/lib/peas-demo"
+                "/bin/*"
+            ],
+            "config-opts" : [
+                "-Ddemos=false",
+                "-Dvapi=true",
+                "-Dgtk_doc=false"
             ],
             "sources" : [
                 {
-                    "type" : "git",
-                    "url" : "https://gitlab.gnome.org/GNOME/libpeas.git"
+                    "type" : "archive",
+                    "url" : "https://download.gnome.org/sources/libpeas/1.23/libpeas-1.23.90.1.tar.xz",
+                    "sha256" : "210d2a44a25934f4f4d359cf54faaff03c2cf6c7fd358ae9da89fba2bca0a2f3"
                 }
             ]
         },
         {
             "name" : "gtksourceview",
-            "buildsystem": "meson",
+            "buildsystem" : "meson",
+            "config-opts" : [
+                "-Dvapi=true",
+                "-Dgtk_doc=false"
+            ],
             "sources" : [
                 {
-                    "type" : "git",
-                    "url" : "https://gitlab.gnome.org/GNOME/gtksourceview.git"
+                    "type" : "archive",
+                    "url" : "https://download.gnome.org/sources/gtksourceview/4.3/gtksourceview-4.3.1.tar.xz",
+                    "sha256" : "b8ef118786f4e5c1ee20b986ac3914c60064a11acdee73645be3adb3543a2a5d"
                 }
             ]
         },
         {
             "name" : "gspell",
+            "config-opts" : [
+                "--disable-gtk-doc"
+            ],
             "sources" : [
                 {
-                    "type" : "git",
-                    "url" : "https://gitlab.gnome.org/GNOME/gspell.git"
+                    "type" : "archive",
+                    "url" : "https://download.gnome.org/sources/gspell/1.8/gspell-1.8.1.tar.xz",
+                    "sha256" : "819a1d23c7603000e73f5e738bdd284342e0cd345fb0c7650999c31ec741bbe5"
                 }
             ]
         },
         {
             "name" : "gedit",
-            "buildsystem": "meson",
+            "buildsystem" : "meson",
+            "config-opts" : [
+                "-Dvapi=true",
+                "-Dgtk_doc=false"
+            ],
             "sources" : [
                 {
                     "type" : "git",
@@ -83,7 +101,7 @@
         },
         {
             "name" : "gedit-plugins",
-            "buildsystem": "meson",
+            "buildsystem" : "meson",
             "sources" : [
                 {
                     "type" : "git",
