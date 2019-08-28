@@ -21,20 +21,20 @@ License
 -------
 
 gedit is released under the GNU General Public License (GPL) version 2 or
-later, see the file `COPYING` for more information.
+later, see the file [COPYING](COPYING) for more information.
 
 Dependencies
 ------------
 
 gedit uses the GTK GUI toolkit.
 
-For a complete list of dependencies, see the file `meson.build` and search
-the section “Dependencies”.
+For a complete list of dependencies, see the file [meson.build](meson.build) and
+search the section “Dependencies”.
 
 Installation
 ------------
 
-See the `docs/install.md` file.
+See the [docs/install.md](docs/install.md) file.
 
 How to report bugs
 ------------------
@@ -50,4 +50,4 @@ Contributions
 gedit development relies on voluntary contributions and everyone is invited
 to help.
 
-See the file `CONTRIBUTING.md` for more information.
+See the file [CONTRIBUTING.md](CONTRIBUTING.md) for more information.
