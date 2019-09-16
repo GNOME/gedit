@@ -1,14 +1,26 @@
 subdir('pythonconsole')
 
-configure_file(
+pythonconsole_gschema_file = configure_file(
   input: 'org.gnome.gedit.plugins.pythonconsole.gschema.xml.in',
   output: 'org.gnome.gedit.plugins.pythonconsole.gschema.xml',
-  configuration: gschema_xml,
+  configuration: gschema_in,
   install_dir: join_paths(
     glibdir,
     'schemas',
   )
 )
+
+if xmllint.found()
+  test(
+    'validate-pythonconsole-gschema',
+    xmllint,
+    args: [
+      '--noout',
+      '--dtdvalid', gschema_dtd,
+      pythonconsole_gschema_file,
+    ]
+  )
+endif
 
 custom_target(
   'pythonconsole.plugin',
