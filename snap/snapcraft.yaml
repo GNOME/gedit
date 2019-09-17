@@ -5,34 +5,13 @@ grade: stable # must be 'stable' to release into candidate/stable channels
 confinement: strict
 base: core18
 
-passthrough:
-  layout:
-    /usr/lib/$SNAPCRAFT_ARCH_TRIPLET/libpeas-1.0:
-      symlink: $SNAP/gnome-platform/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/libpeas-1.0
-    /usr/lib/$SNAPCRAFT_ARCH_TRIPLET/gedit:
-      symlink: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/gedit
-    /usr/share/gedit:
-      symlink: $SNAP/usr/share/gedit
-    /usr/share/xml/iso-codes:
-      symlink: $SNAP/gnome-platform/usr/share/xml/iso-codes
-
-plugs:
-  gnome-3-28-1804:
-    interface: content
-    target: $SNAP/gnome-platform
-    default-provider: gnome-3-28-1804
-  gtk-3-themes:
-    interface: content
-    target: $SNAP/data-dir/themes
-    default-provider: gtk-common-themes
-  icon-themes:
-    interface: content
-    target: $SNAP/data-dir/icons
-    default-provider: gtk-common-themes
-  sound-themes:
-    interface: content
-    target: $SNAP/data-dir/sounds
-    default-provider: gtk-common-themes
+layout:
+  /usr/lib/$SNAPCRAFT_ARCH_TRIPLET/libpeas-1.0:
+    symlink: $SNAP/gnome-platform/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/libpeas-1.0
+  /usr/lib/$SNAPCRAFT_ARCH_TRIPLET/gedit:
+    symlink: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/gedit
+  /usr/share/gedit:
+    symlink: $SNAP/usr/share/gedit
 
 slots:
   # for GtkApplication registration
@@ -43,19 +22,16 @@ slots:
 
 apps:
   gedit:
-    command: desktop-launch gedit
+    command: usr/bin/gedit
+    extensions: [gnome-3-28]
     plugs:
       - avahi-observe
       - cups-control
-      - desktop
-      - desktop-legacy
       - gsettings
       - home
       - network
       - mount-observe
       - removable-media
-      - unity7
-      - wayland
     common-id: org.gnome.gedit.desktop
     environment:
       GSETTINGS_SCHEMA_DIR: $SNAP/share/glib-2.0/schemas
@@ -65,18 +41,6 @@ apps:
       GTK_USE_PORTAL: 1
 
 parts:
-  desktop-gnome-platform:
-    source: https://github.com/ubuntu/snapcraft-desktop-helpers.git
-    source-subdir: gtk
-    plugin: make
-    make-parameters: ["FLAVOR=gtk3"]
-    build-packages:
-      - build-essential
-      - libgtk-3-dev
-    override-build: |
-      snapcraftctl build
-      mkdir -pv $SNAPCRAFT_PART_INSTALL/gnome-platform
-
   gtksourceview:
     source: https://gitlab.gnome.org/GNOME/gtksourceview.git
     source-type: git
@@ -106,7 +70,7 @@ parts:
        cp $SNAPCRAFT_PART_INSTALL/usr/share/vala/vapi/gtksource* /usr/share/vala/vapi
 
   gedit:
-    after: [desktop-gnome-platform, gtksourceview]
+    after: [gtksourceview]
     source: .
     source-type: git
     parse-info: [usr/share/metainfo/org.gnome.gedit.appdata.xml]
