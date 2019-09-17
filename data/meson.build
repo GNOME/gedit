@@ -20,6 +20,7 @@ appdata_file = i18n.merge_file(
     'metainfo',
   )
 )
+
 appstream_util = find_program('appstream-util', required: false)
 if appstream_util.found()
 test(
@@ -39,7 +40,6 @@ desktop_file_configured = configure_file(
   input: 'org.gnome.gedit.desktop.in.in',
   output: 'org.gnome.gedit.desktop.in',
   configuration: desktop_in,
-  install: false,
 )
 
 desktop_file = i18n.merge_file(
@@ -54,6 +54,7 @@ desktop_file = i18n.merge_file(
     'applications',
   )
 )
+
 desktop_file_validate = find_program('desktop-file-validate', required: false)
 if desktop_file_validate.found()
 test(
@@ -80,7 +81,6 @@ configure_file(
   input: 'org.gnome.gedit.gschema.xml.in',
   output: 'org.gnome.gedit.gschema.xml',
   configuration: gschema_xml,
-  install: true,
   install_dir: join_paths(
     glibdir,
     'schemas',
@@ -94,7 +94,6 @@ configure_file(
   input: 'org.gnome.gedit.service.in',
   output: 'org.gnome.gedit.service',
   configuration: service_in,
-  install: true,
   install_dir: join_paths(
     dbusdir,
     'services',
