@@ -29,7 +29,6 @@ configure_file(
   input: 'org.gnome.gedit.plugins.checkupdate.gschema.xml.in',
   output: 'org.gnome.gedit.plugins.checkupdate.gschema.xml',
   configuration: gschema_xml,
-  install: true,
   install_dir: join_paths(
     glibdir,
     'schemas',
