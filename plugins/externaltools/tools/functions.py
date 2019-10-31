@@ -86,7 +86,9 @@ def run_external_tool(window, panel, node):
         # Current line number
         piter = document.get_iter_at_mark(document.get_insert())
         capture.set_env(GEDIT_CURRENT_LINE_NUMBER=str(piter.get_line() + 1))
-
+        # Currebt line offset
+        capture.set_env(GEDIT_CURRENT_LINE_OFFSET=str(piter.get_line_offset() + 1))
+        
         # Current line text
         piter.set_line_offset(0)
         end = piter.copy()
