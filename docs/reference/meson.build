@@ -13,6 +13,7 @@ gedit_doc_deps = [
   gio_dep,
   gtk_dep,
   gtksourceview_dep,
+  tepl_dep,
   libpeas_dep,
   libpeas_gtk_dep,
   libxml_dep,
