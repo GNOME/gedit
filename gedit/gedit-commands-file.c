@@ -31,6 +31,7 @@
 #include <glib/gi18n.h>
 #include <gio/gio.h>
 #include <gtk/gtk.h>
+#include <tepl/tepl.h>
 
 #include "gedit-debug.h"
 #include "gedit-document.h"
@@ -548,7 +549,7 @@ replace_read_only_file (GtkWindow *parent,
 	 * though the dialog uses wrapped text, if the name doesn't contain
 	 * white space then the text-wrapping code is too stupid to wrap it.
 	 */
-	name_for_display = gedit_utils_str_middle_truncate (parse_name, 50);
+	name_for_display = tepl_utils_str_middle_truncate (parse_name, 50);
 	g_free (parse_name);
 
 	dialog = gtk_message_dialog_new (parent,
@@ -600,7 +601,7 @@ change_compression (GtkWindow *parent,
 	 * though the dialog uses wrapped text, if the name doesn't contain
 	 * white space then the text-wrapping code is too stupid to wrap it.
 	 */
-	name_for_display = gedit_utils_str_middle_truncate (parse_name, 50);
+	name_for_display = tepl_utils_str_middle_truncate (parse_name, 50);
 	g_free (parse_name);
 
 	if (compressed)
