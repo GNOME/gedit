@@ -23,12 +23,15 @@ appdata_file = i18n.merge_file(
 
 appstream_util = find_program('appstream-util', required: false)
 if appstream_util.found()
-test(
-    'validate-appdata', appstream_util,
+  test(
+    'validate-appdata',
+    appstream_util,
     args: [
-        'validate-relax', '--nonet', appdata_file.full_path()
+      'validate-relax',
+      '--nonet',
+      appdata_file.full_path()
     ]
-)
+  )
 endif
 
 
@@ -57,13 +60,13 @@ desktop_file = i18n.merge_file(
 
 desktop_file_validate = find_program('desktop-file-validate', required: false)
 if desktop_file_validate.found()
-test(
+  test(
     'validate-desktop',
     desktop_file_validate,
     args: [
-        desktop_file.full_path()
+      desktop_file.full_path(),
     ]
-)
+  )
 endif
 
 quoted_plugins = []
@@ -73,19 +76,37 @@ foreach plugin_name:active_plugins
   ]
 endforeach
 
-gschema_xml = configuration_data()
-gschema_xml.set('GETTEXT_PACKAGE', package_name)
-gschema_xml.set('ACTIVE_PLUGINS', ', '.join(quoted_plugins))
+gschema_in = configuration_data()
+gschema_in.set('GETTEXT_PACKAGE', package_name)
+gschema_in.set('ACTIVE_PLUGINS', ', '.join(quoted_plugins))
 
-configure_file(
+gschema_file = configure_file(
   input: 'org.gnome.gedit.gschema.xml.in',
   output: 'org.gnome.gedit.gschema.xml',
-  configuration: gschema_xml,
+  configuration: gschema_in,
   install_dir: join_paths(
     glibdir,
     'schemas',
   )
 )
+
+gschema_dtd = join_paths(
+  gio_dep.get_pkgconfig_variable('schemasdir'),
+  'gschema.dtd',
+)
+
+xmllint = find_program('xmllint', required: false)
+if xmllint.found()
+  test(
+    'validate-gschema',
+    xmllint,
+    args: [
+      '--noout',
+      '--dtdvalid', gschema_dtd,
+      gschema_file,
+    ]
+  )
+endif
 
 service_in = configuration_data()
 service_in.set('bindir', bindir)
