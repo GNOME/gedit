@@ -215,6 +215,14 @@ gedit_warning (GtkWindow *parent, const gchar *format, ...)
 	gtk_widget_show (dialog);
 }
 
+/**
+ * gedit_utils_str_middle_truncate:
+ * @string:
+ * @truncate_length:
+ *
+ * Returns:
+ * Deprecated: 3.36: Use tepl_utils_str_middle_truncate() instead.
+ */
 gchar *
 gedit_utils_str_middle_truncate (const gchar *string,
 				 guint        truncate_length)

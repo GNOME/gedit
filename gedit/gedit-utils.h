@@ -51,6 +51,7 @@ void                       gedit_utils_menu_position_under_widget             (G
 gboolean                   gedit_utils_menu_position_under_tree_view          (GtkTreeView     *tree_view,
                                                                                GdkRectangle    *rect);
 
+G_DEPRECATED_FOR (tepl_utils_str_middle_truncate)
 gchar                     *gedit_utils_str_middle_truncate                    (const gchar     *string,
                                                                                guint            truncate_length);
 G_DEPRECATED_FOR (tepl_utils_str_end_truncate)
