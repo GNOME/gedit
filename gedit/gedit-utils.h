@@ -53,6 +53,7 @@ gboolean                   gedit_utils_menu_position_under_tree_view          (G
 
 gchar                     *gedit_utils_str_middle_truncate                    (const gchar     *string,
                                                                                guint            truncate_length);
+G_DEPRECATED_FOR (tepl_utils_str_end_truncate)
 gchar                     *gedit_utils_str_end_truncate                       (const gchar     *string,
                                                                                guint            truncate_length);
 void                       gedit_utils_set_atk_name_description               (GtkWidget       *widget,
