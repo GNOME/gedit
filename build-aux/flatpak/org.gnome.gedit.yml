@@ -68,6 +68,16 @@ modules:
         url: https://download.gnome.org/sources/gspell/1.8/gspell-1.8.2.tar.xz
         sha256: bb9195c3a95bacf556d0203e9691f7489e0d3bc5ae1e5a440c89b2f2435d3ed6
 
+  - name: uchardet
+    buildsystem: cmake
+    builddir: true
+    config-opts:
+      - "-DCMAKE_INSTALL_LIBDIR=lib"
+    sources:
+      - type: archive
+        url: https://www.freedesktop.org/software/uchardet/releases/uchardet-0.0.6.tar.xz
+        sha256: 8351328cdfbcb2432e63938721dd781eb8c11ebc56e3a89d0f84576b96002c61
+
   - name: gedit
     buildsystem: meson
     config-opts:
