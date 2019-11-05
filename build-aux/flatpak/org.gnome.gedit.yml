@@ -7,6 +7,7 @@ command: gedit
 tags:
   - nightly
 desktop-file-name-prefix: "(Nightly) "
+
 finish-args:
   - "--share=ipc"
   - "--socket=x11"
@@ -16,11 +17,13 @@ finish-args:
   - "--filesystem=~/.config/dconf:ro"
   - "--talk-name=ca.desrt.dconf"
   - "--env=DCONF_USER_CONFIG_DIR=.config/dconf"
+
 build-options:
   cflags: "-O2 -g"
   cxxflags: "-O2 -g"
   env:
     V: '1'
+
 cleanup:
   - "/include"
   - "/lib/pkgconfig"
@@ -32,6 +35,7 @@ cleanup:
   - "/share/vala"
   - "*.la"
   - "*.a"
+
 modules:
   - name: libpeas
     buildsystem: meson
@@ -45,6 +49,7 @@ modules:
       - type: archive
         url: https://download.gnome.org/sources/libpeas/1.24/libpeas-1.24.0.tar.xz
         sha256: 0b9a00138c129a663de3eef5569b00ace03ce31d345f7af783768e9f35c8e6f9
+
   - name: gtksourceview
     buildsystem: meson
     config-opts:
@@ -54,6 +59,7 @@ modules:
       - type: archive
         url: https://download.gnome.org/sources/gtksourceview/4.4/gtksourceview-4.4.0.tar.xz
         sha256: 9ddb914aef70a29a66acd93b4f762d5681202e44094d2d6370e51c9e389e689a
+
   - name: gspell
     config-opts:
       - "--disable-gtk-doc"
@@ -61,6 +67,7 @@ modules:
       - type: archive
         url: https://download.gnome.org/sources/gspell/1.8/gspell-1.8.2.tar.xz
         sha256: bb9195c3a95bacf556d0203e9691f7489e0d3bc5ae1e5a440c89b2f2435d3ed6
+
   - name: gedit
     buildsystem: meson
     config-opts:
@@ -69,6 +76,7 @@ modules:
     sources:
       - type: git
         url: https://gitlab.gnome.org/GNOME/gedit.git
+
   - name: gedit-plugins
     buildsystem: meson
     sources:
