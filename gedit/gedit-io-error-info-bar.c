@@ -235,7 +235,7 @@ parse_gio_error (gint          code,
 						gchar *host_markup;
 						gchar *host_name;
 
-						host_name = gedit_utils_make_valid_utf8 (hn);
+						host_name = g_utf8_make_valid (hn, -1);
 						g_free (hn);
 
 						host_markup = g_markup_escape_text (host_name, -1);
