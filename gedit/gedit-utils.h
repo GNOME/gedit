@@ -64,6 +64,7 @@ void                       gedit_utils_set_atk_relation                       (G
 void                       gedit_warning                                       (GtkWindow      *parent,
                                                                                 const gchar    *format,
                                                                                 ...) G_GNUC_PRINTF(2, 3);
+G_DEPRECATED_FOR (g_utf8_make_valid)
 gchar                     *gedit_utils_make_valid_utf8                         (const char     *name);
 
 

@@ -60,7 +60,7 @@ libgd_sp = subproject(
 )
 
 # Dependencies
-glib_req = '>= 2.44.0'
+glib_req = '>= 2.52'
 gtk_req = '>= 3.22.0'
 gtksourceview_req = '>= 4.0.2'
 libpeas_req = '>= 1.14.1'
