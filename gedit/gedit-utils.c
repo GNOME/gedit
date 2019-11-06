@@ -771,7 +771,7 @@ gedit_utils_basename_for_display (GFile *location)
 
 		if  (hn != NULL)
 		{
-			hn_utf8 = gedit_utils_make_valid_utf8 (hn);
+			hn_utf8 = g_utf8_make_valid (hn, -1);
 		}
 		else
 		{
