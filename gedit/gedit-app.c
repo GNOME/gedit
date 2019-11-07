@@ -686,6 +686,7 @@ theme_changed (GtkSettings *settings,
 	       GeditApp    *app)
 {
 	GeditAppPrivate *priv;
+	GtkCssProvider *theme_provider;
 
 	priv = gedit_app_get_instance_private (app);
 
@@ -705,7 +706,13 @@ theme_changed (GtkSettings *settings,
 		g_clear_object (&priv->theme_provider);
 	}
 
-	priv->theme_provider = load_css_from_resource (theme_css, FALSE);
+	theme_provider = load_css_from_resource (theme_css, FALSE);
+	if (theme_provider == NULL)
+	{
+		theme_provider = load_css_from_resource ("gedit.adwaita.css", TRUE);
+	}
+
+	priv->theme_provider = theme_provider;
 
 	g_free (theme_css);
 }
@@ -762,7 +769,6 @@ static void
 gedit_app_startup (GApplication *application)
 {
 	GeditAppPrivate *priv;
-	GtkCssProvider *css_provider;
 	GtkSourceStyleSchemeManager *manager;
 #ifndef ENABLE_GVFS_METADATA
 	const gchar *cache_dir;
@@ -776,8 +782,6 @@ gedit_app_startup (GApplication *application)
 	/* Setup debugging */
 	gedit_debug_init ();
 	gedit_debug_message (DEBUG_APP, "Startup");
-
-	setup_theme_extensions (GEDIT_APP (application));
 
 #ifndef ENABLE_GVFS_METADATA
 	cache_dir = gedit_dirs_get_user_cache_dir ();
@@ -846,8 +850,9 @@ gedit_app_startup (GApplication *application)
 
 	/* Load custom css */
 	g_object_unref (load_css_from_resource ("gedit-style.css", TRUE));
-	css_provider = load_css_from_resource ("gedit-style-os.css", FALSE);
-	g_clear_object (&css_provider);
+	g_object_unref (load_css_from_resource ("gedit-style-os.css", FALSE));
+
+	setup_theme_extensions (GEDIT_APP (application));
 
 	/*
 	 * We use the default gtksourceview style scheme manager so that plugins
