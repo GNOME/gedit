@@ -1048,6 +1048,7 @@ gedit_file_browser_view_set_model (GeditFileBrowserView *tree_view,
 				   GtkTreeModel         *model)
 {
 	GtkTreeSelection *selection;
+	gint search_column;
 
 	if (tree_view->priv->model == model)
 		return;
@@ -1062,6 +1063,7 @@ gedit_file_browser_view_set_model (GeditFileBrowserView *tree_view,
 							 tree_view->priv->text_renderer,
 							 (GtkTreeCellDataFunc)cell_data_cb,
 							 tree_view, NULL);
+		search_column = GEDIT_FILE_BOOKMARKS_STORE_COLUMN_NAME;
 	}
 	else
 	{
@@ -1071,6 +1073,7 @@ gedit_file_browser_view_set_model (GeditFileBrowserView *tree_view,
 							 tree_view->priv->text_renderer,
 							 (GtkTreeCellDataFunc)cell_data_cb,
 							 tree_view, NULL);
+		search_column = GEDIT_FILE_BROWSER_STORE_COLUMN_NAME;
 
 		if (tree_view->priv->restore_expand_state)
 			install_restore_signals (tree_view, model);
@@ -1091,6 +1094,7 @@ gedit_file_browser_view_set_model (GeditFileBrowserView *tree_view,
 
 	tree_view->priv->model = model;
 	gtk_tree_view_set_model (GTK_TREE_VIEW (tree_view), model);
+	gtk_tree_view_set_search_column (GTK_TREE_VIEW (tree_view), search_column);
 }
 
 void
