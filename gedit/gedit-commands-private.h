@@ -114,7 +114,16 @@ void		_gedit_cmd_view_toggle_fullscreen_mode	(GSimpleAction *action,
 void		_gedit_cmd_view_leave_fullscreen_mode	(GSimpleAction *action,
 							 GVariant      *parameter,
 							 gpointer       user_data);
-void            _gedit_cmd_view_highlight_mode          (GSimpleAction *action,
+void		_gedit_cmd_view_highlight_mode		(GSimpleAction *action,
+							 GVariant      *parameter,
+							 gpointer       user_data);
+void		_gedit_cmd_view_increase_font_size	(GSimpleAction *action,
+							 GVariant      *parameter,
+							 gpointer       user_data);
+void		_gedit_cmd_view_decrease_font_size	(GSimpleAction *action,
+							 GVariant      *parameter,
+							 gpointer       user_data);
+void		_gedit_cmd_view_reset_font_size		(GSimpleAction *action,
 							 GVariant      *parameter,
 							 gpointer       user_data);
 
@@ -169,4 +178,5 @@ void		_gedit_cmd_file_close_notebook		(GeditWindow   *window,
 G_END_DECLS
 
 #endif /* GEDIT_COMMANDS_PRIVATE_H */
+
 /* ex:set ts=8 noet: */

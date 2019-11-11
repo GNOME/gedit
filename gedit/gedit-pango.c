@@ -204,3 +204,20 @@ gedit_pango_font_description_to_css (const PangoFontDescription *font_desc)
 #undef ADD_KEYVAL
 #undef ADD_KEYVAL_PRINTF
 }
+
+PangoFontDescription *
+gedit_pango_scale_font_description (const PangoFontDescription *font_desc,
+                                    gdouble                     font_scale)
+{
+	PangoFontDescription *font_desc_copy;
+	guint font_size;
+
+	g_return_val_if_fail (font_desc, NULL);
+
+	font_desc_copy = pango_font_description_copy (font_desc);
+	font_size = pango_font_description_get_size (font_desc);
+
+	pango_font_description_set_size (font_desc_copy, font_size * font_scale);
+
+	return font_desc_copy;
+}

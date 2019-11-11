@@ -167,4 +167,58 @@ _gedit_cmd_view_highlight_mode (GSimpleAction *action,
 	gtk_widget_show (GTK_WIDGET (dlg));
 }
 
+void
+_gedit_cmd_view_increase_font_size (GSimpleAction *action,
+                                    GVariant      *parameter,
+                                    gpointer       user_data)
+{
+	GeditWindow *window = GEDIT_WINDOW (user_data);
+	GeditView *active_view;
+
+	gedit_debug (DEBUG_COMMANDS);
+
+	active_view = gedit_window_get_active_view (window);
+
+	if (active_view)
+	{
+		gedit_view_increase_font_size (active_view);
+	}
+}
+
+void
+_gedit_cmd_view_decrease_font_size (GSimpleAction *action,
+                                    GVariant      *parameter,
+                                    gpointer       user_data)
+{
+	GeditWindow *window = GEDIT_WINDOW (user_data);
+	GeditView *active_view;
+
+	gedit_debug (DEBUG_COMMANDS);
+
+	active_view = gedit_window_get_active_view (window);
+
+	if (active_view)
+	{
+		gedit_view_decrease_font_size (active_view);
+	}
+}
+
+void
+_gedit_cmd_view_reset_font_size (GSimpleAction *action,
+                                 GVariant      *parameter,
+                                 gpointer       user_data)
+{
+	GeditWindow *window = GEDIT_WINDOW (user_data);
+	GeditView *active_view;
+
+	gedit_debug (DEBUG_COMMANDS);
+
+	active_view = gedit_window_get_active_view (window);
+
+	if (active_view)
+	{
+		gedit_view_reset_font_size (active_view);
+	}
+}
+
 /* ex:set ts=8 noet: */

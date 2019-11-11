@@ -836,6 +836,9 @@ gedit_app_startup (GApplication *application)
 	add_accelerator (GTK_APPLICATION (application), "win.side-panel", "F9");
 	add_accelerator (GTK_APPLICATION (application), "win.bottom-panel", "<Primary>F9");
 	add_accelerator (GTK_APPLICATION (application), "win.fullscreen", "F11");
+	add_accelerator (GTK_APPLICATION (application), "win.increase-font-size", "<Primary>plus");
+	add_accelerator (GTK_APPLICATION (application), "win.decrease-font-size", "<Primary>minus");
+	add_accelerator (GTK_APPLICATION (application), "win.reset-font-size", "<Primary>0");
 	add_accelerator (GTK_APPLICATION (application), "win.new-tab-group", "<Primary><Alt>N");
 	add_accelerator (GTK_APPLICATION (application), "win.previous-tab-group", "<Primary><Shift><Alt>Page_Up");
 	add_accelerator (GTK_APPLICATION (application), "win.next-tab-group", "<Primary><Shift><Alt>Page_Down");

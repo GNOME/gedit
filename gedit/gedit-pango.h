@@ -25,7 +25,10 @@
 
 G_BEGIN_DECLS
 
-gchar *gedit_pango_font_description_to_css (const PangoFontDescription *font_desc);
+gchar			*gedit_pango_font_description_to_css	(const PangoFontDescription *font_desc);
+
+PangoFontDescription	*gedit_pango_scale_font_description	(const PangoFontDescription *font_desc,
+								 gdouble                     font_scale);
 
 G_END_DECLS
 

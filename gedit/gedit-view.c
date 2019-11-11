@@ -42,6 +42,17 @@ enum
 	TARGET_XDNDDIRECTSAVE
 };
 
+enum {
+	FONT_SCALE_XX_SMALL,
+	FONT_SCALE_X_SMALL,
+	FONT_SCALE_SMALL,
+	FONT_SCALE_NORMAL,
+	FONT_SCALE_LARGE,
+	FONT_SCALE_X_LARGE,
+	FONT_SCALE_XX_LARGE,
+	LAST_FONT_SCALE
+};
+
 struct _GeditViewPrivate
 {
 	GSettings            *editor_settings;
@@ -51,6 +62,7 @@ struct _GeditViewPrivate
 
 	GtkCssProvider       *css_provider;
 	PangoFontDescription *font_desc;
+	guint                 font_scale;
 };
 
 G_DEFINE_TYPE_WITH_PRIVATE (GeditView, gedit_view, GTK_SOURCE_TYPE_VIEW)
@@ -62,6 +74,15 @@ enum
 };
 
 static guint view_signals[LAST_SIGNAL] = { 0 };
+static gdouble font_scales[LAST_FONT_SCALE] = {
+	PANGO_SCALE_XX_SMALL,
+	PANGO_SCALE_X_SMALL,
+	PANGO_SCALE_SMALL,
+	PANGO_SCALE_MEDIUM,
+	PANGO_SCALE_LARGE,
+	PANGO_SCALE_X_LARGE,
+	PANGO_SCALE_XX_LARGE,
+};
 
 static void
 file_read_only_notify_handler (GtkSourceFile *file,
@@ -201,6 +222,8 @@ gedit_view_constructed (GObject *object)
 
 	view = GEDIT_VIEW (object);
 	priv = view->priv;
+
+	view->priv->font_scale = FONT_SCALE_NORMAL;
 
 	use_default_font = g_settings_get_boolean (view->priv->editor_settings,
 	                                           GEDIT_SETTINGS_USE_DEFAULT_FONT);
@@ -967,18 +990,26 @@ gedit_view_scroll_to_cursor (GeditView *view)
 static void
 update_css_provider (GeditView *view)
 {
-	gchar *str;
-	gchar *css;
+	const PangoFontDescription *font_desc = view->priv->font_desc;
+	PangoFontDescription *copy = NULL;
+	gchar *desc, *css;
 
 	g_assert (GEDIT_IS_VIEW (view));
 	g_assert (view->priv->font_desc != NULL);
 
-	str = gedit_pango_font_description_to_css (view->priv->font_desc);
-	css = g_strdup_printf ("textview { %s }", str ? str : "");
+	if (view->priv->font_scale != FONT_SCALE_NORMAL)
+	{
+		font_desc = copy = gedit_pango_scale_font_description (font_desc,
+		                                                       font_scales[view->priv->font_scale]);
+	}
+
+	desc = gedit_pango_font_description_to_css (font_desc);
+	css = g_strdup_printf ("textview { %s }", desc ? desc : "");
 	gtk_css_provider_load_from_data (view->priv->css_provider, css, -1, NULL);
 
+	g_clear_pointer (&copy, pango_font_description_free);
 	g_free (css);
-	g_free (str);
+	g_free (desc);
 }
 
 /**
@@ -1022,6 +1053,45 @@ gedit_view_set_font (GeditView   *view,
 	g_return_if_fail (view->priv->font_desc != NULL);
 
 	update_css_provider (view);
+}
+
+void
+gedit_view_increase_font_size (GeditView *view)
+{
+	g_return_if_fail (GEDIT_IS_VIEW (view));
+
+	if (view->priv->font_scale < LAST_FONT_SCALE - 1)
+	{
+		view->priv->font_scale++;
+
+		update_css_provider (view);
+	}
+}
+
+void
+gedit_view_decrease_font_size (GeditView *view)
+{
+	g_return_if_fail (GEDIT_IS_VIEW (view));
+
+	if (view->priv->font_scale > 0)
+	{
+		view->priv->font_scale--;
+
+		update_css_provider (view);
+	}
+}
+
+void
+gedit_view_reset_font_size (GeditView *view)
+{
+	g_return_if_fail (GEDIT_IS_VIEW (view));
+
+	if (view->priv->font_scale != FONT_SCALE_NORMAL)
+	{
+		view->priv->font_scale = FONT_SCALE_NORMAL;
+
+		update_css_provider (view);
+	}
 }
 
 /* ex:set ts=8 noet: */

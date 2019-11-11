@@ -745,6 +745,18 @@ update_actions_sensitivity (GeditWindow *window)
 	                             (state != GEDIT_TAB_STATE_CLOSING) &&
 	                             (doc != NULL) && enable_syntax_highlighting);
 
+	action = g_action_map_lookup_action (G_ACTION_MAP (window), "increase-font-size");
+	g_simple_action_set_enabled (G_SIMPLE_ACTION (action),
+	                             (state != GEDIT_TAB_STATE_CLOSING) && (doc != NULL));
+
+	action = g_action_map_lookup_action (G_ACTION_MAP (window), "decrease-font-size");
+	g_simple_action_set_enabled (G_SIMPLE_ACTION (action),
+	                             (state != GEDIT_TAB_STATE_CLOSING) && (doc != NULL));
+
+	action = g_action_map_lookup_action (G_ACTION_MAP (window), "reset-font-size");
+	g_simple_action_set_enabled (G_SIMPLE_ACTION (action),
+	                             (state != GEDIT_TAB_STATE_CLOSING) && (doc != NULL));
+
 	action = g_action_map_lookup_action (G_ACTION_MAP (window), "move-to-new-window");
 	g_simple_action_set_enabled (G_SIMPLE_ACTION (action),
 	                             num_tabs > 1);
@@ -2701,6 +2713,9 @@ static GActionEntry win_entries[] = {
 	{ "bottom-panel", NULL, NULL, "false", _gedit_cmd_view_toggle_bottom_panel },
 	{ "fullscreen", NULL, NULL, "false", _gedit_cmd_view_toggle_fullscreen_mode },
 	{ "leave-fullscreen", _gedit_cmd_view_leave_fullscreen_mode },
+	{ "increase-font-size", _gedit_cmd_view_increase_font_size },
+	{ "decrease-font-size", _gedit_cmd_view_decrease_font_size },
+	{ "reset-font-size", _gedit_cmd_view_reset_font_size },
 	{ "find", _gedit_cmd_search_find },
 	{ "find-next", _gedit_cmd_search_find_next },
 	{ "find-prev", _gedit_cmd_search_find_prev },

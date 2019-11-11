@@ -75,6 +75,10 @@ void 		 gedit_view_set_font		(GeditView       *view,
 						 gboolean         default_font,
 						 const gchar     *font_name);
 
+void		 gedit_view_increase_font_size	(GeditView       *view);
+void		 gedit_view_decrease_font_size	(GeditView       *view);
+void		 gedit_view_reset_font_size	(GeditView       *view);
+
 G_END_DECLS
 
 #endif /* GEDIT_VIEW_H */
