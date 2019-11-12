@@ -23,14 +23,13 @@
 #endif
 
 #include "gedit-app.h"
-#ifdef OS_OSX
-#include "gedit-app-osx.h"
+
+#if defined OS_OSX
+#  include "gedit-app-osx.h"
+#elif defined G_OS_WIN32
+#  include "gedit-app-win32.h"
 #else
-#ifdef G_OS_WIN32
-#include "gedit-app-win32.h"
-#else
-#include "gedit-app-x11.h"
-#endif
+#  include "gedit-app-x11.h"
 #endif
 
 #include <glib.h>
@@ -100,7 +99,7 @@ gedit_w32_unload_private_dll (void)
 		libgedit_dll = NULL;
 	}
 }
-#endif
+#endif /* G_OS_WIN32 */
 
 int
 main (int argc, char *argv[])
@@ -110,10 +109,9 @@ main (int argc, char *argv[])
 	gint status;
 	const gchar *dir;
 
-#ifdef OS_OSX
+#if defined OS_OSX
 	type = GEDIT_TYPE_APP_OSX;
-#else
-#ifdef G_OS_WIN32
+#elif defined G_OS_WIN32
 	if (!gedit_w32_load_private_dll ())
 	{
 		return 1;
@@ -122,7 +120,6 @@ main (int argc, char *argv[])
 	type = GEDIT_TYPE_APP_WIN32;
 #else
 	type = GEDIT_TYPE_APP_X11;
-#endif
 #endif
 
 	/* NOTE: we should not make any calls to the gedit api before the
