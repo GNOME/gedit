@@ -1,9 +1,10 @@
 option('introspection',
        type: 'boolean', value: true,
-       description: 'Generate introspection data (requires gobject-introspection)')
+       description: 'Generate GObject Introspection data (requires gobject-introspection)')
+
 option('vapi',
        type: 'boolean', value: true,
-       description: 'Generate vapi data (requires vapigen)')
+       description: 'Generate vapi data for Vala (requires vapigen)')
 
 option('plugins',
        type: 'boolean', value: true,
@@ -11,8 +12,8 @@ option('plugins',
 
 option('documentation',
        type: 'boolean', value: false,
-       description: 'Build reference manual (requires gtk-doc)')
+       description: 'Build API reference for plugins (requires gtk-doc)')
 
 option('enable-gvfs-metadata',
-        type: 'combo', choices : ['yes', 'no', 'auto'], value : 'auto',
-        description: 'Enable using gvfs to store metadata')
+       type: 'combo', choices: ['yes', 'no', 'auto'], value: 'auto',
+       description: 'Enable using gvfs to store metadata')
