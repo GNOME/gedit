@@ -99,13 +99,26 @@ gedit_w32_unload_private_dll (void)
 }
 #endif /* G_OS_WIN32 */
 
+static void
+setup_i18n (void)
+{
+	const gchar *dir;
+
+	setlocale (LC_ALL, "");
+
+	dir = gedit_dirs_get_gedit_locale_dir ();
+	bindtextdomain (GETTEXT_PACKAGE, dir);
+
+	bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
+	textdomain (GETTEXT_PACKAGE);
+}
+
 int
 main (int argc, char *argv[])
 {
 	GType type;
 	GeditApp *app;
 	gint status;
-	const gchar *dir;
 
 #if defined OS_OSX
 	type = GEDIT_TYPE_APP_OSX;
@@ -124,14 +137,8 @@ main (int argc, char *argv[])
 	 * private library is loaded */
 	gedit_dirs_init ();
 
-	/* Setup locale/gettext */
-	setlocale (LC_ALL, "");
+	setup_i18n ();
 
-	dir = gedit_dirs_get_gedit_locale_dir ();
-	bindtextdomain (GETTEXT_PACKAGE, dir);
-
-	bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
-	textdomain (GETTEXT_PACKAGE);
 
 	app = g_object_new (type,
 	                    "application-id", "org.gnome.gedit",
