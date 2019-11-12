@@ -186,14 +186,18 @@ if build_plugins == true
 endif
 
 subdir('docs')
-subdir('help')
+
+if get_option('user-documentation')
+  subdir('help')
+endif
 
 summary = [
   '',
   '------',
   'gedit @0@ (@1@)'.format(version, api_version),
   '',
-  '  Documentation: @0@'.format(build_gtk_doc),
+  '       API docs: @0@'.format(build_gtk_doc),
+  '      User docs: @0@'.format(get_option('user-documentation')),
   '  Introspection: @0@'.format(generate_gir),
   '        Plugins: @0@'.format(build_plugins),
   '       Vala API: @0@'.format(generate_vapi),
