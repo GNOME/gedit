@@ -22,9 +22,7 @@
 /* TODO: Override set_extra_widget */
 /* TODO: add encoding property */
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
+#include "config.h"
 
 #include "gedit-file-chooser-dialog-gtk.h"
 

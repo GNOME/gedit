@@ -20,9 +20,7 @@
 
 #define G_LOG_DOMAIN "gedit-pango"
 
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
+#include "config.h"
 
 #include <gdk/gdk.h>
 #include <glib/gstdio.h>
