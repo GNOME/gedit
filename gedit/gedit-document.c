@@ -1250,25 +1250,6 @@ gedit_document_is_untitled (GeditDocument *doc)
 }
 
 /**
- * gedit_document_is_local:
- * @doc: a #GeditDocument.
- *
- * Returns: whether the document is local.
- * Deprecated: 3.18: Use gtk_source_file_is_local() instead.
- */
-gboolean
-gedit_document_is_local (GeditDocument *doc)
-{
-	GeditDocumentPrivate *priv;
-
-	g_return_val_if_fail (GEDIT_IS_DOCUMENT (doc), FALSE);
-
-	priv = gedit_document_get_instance_private (doc);
-
-	return gtk_source_file_is_local (priv->file);
-}
-
-/**
  * gedit_document_get_deleted:
  * @doc: a #GeditDocument.
  *
