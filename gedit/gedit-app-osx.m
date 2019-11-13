@@ -215,7 +215,7 @@ gedit_app_osx_show_help_impl (GeditApp    *app,
 {
 	gboolean ret = FALSE;
 
-	if (name == NULL || g_strcmp0 (name, "gedit.xml") == 0 || g_strcmp0 (name, "gedit") == 0)
+	if (name == NULL || g_strcmp0 (name, "gedit") == 0)
 	{
 		gchar *link;
 
