@@ -31,16 +31,6 @@ G_BEGIN_DECLS
 #define GBOOLEAN_TO_POINTER(i) (GINT_TO_POINTER ((i) ? 2 : 1))
 #define GPOINTER_TO_BOOLEAN(i) ((gboolean) ((GPOINTER_TO_INT(i) == 2) ? TRUE : FALSE))
 
-/**
- * IS_VALID_BOOLEAN:
- * @v: a gboolean.
- *
- * Deprecated: 3.18
- */
-#ifndef GEDIT_DISABLE_DEPRECATED
-#define IS_VALID_BOOLEAN(v) (((v == TRUE) || (v == FALSE)) ? TRUE : FALSE)
-#endif
-
 enum { GEDIT_ALL_WORKSPACES = 0xffffffff };
 
 void                       gedit_utils_menu_position_under_widget             (GtkMenu         *menu,
