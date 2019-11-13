@@ -64,9 +64,6 @@ gboolean	 gedit_document_is_untouched			(GeditDocument       *doc);
 
 gboolean	 gedit_document_is_untitled			(GeditDocument       *doc);
 
-G_DEPRECATED
-gboolean	 gedit_document_get_deleted			(GeditDocument       *doc);
-
 gboolean	 gedit_document_goto_line			(GeditDocument       *doc,
 								gint                 line);
 

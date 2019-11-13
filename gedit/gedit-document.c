@@ -1249,26 +1249,6 @@ gedit_document_is_untitled (GeditDocument *doc)
 	return gtk_source_file_get_location (priv->file) == NULL;
 }
 
-/**
- * gedit_document_get_deleted:
- * @doc: a #GeditDocument.
- *
- * Returns: whether the file has been deleted.
- *
- * Deprecated: 3.18: Unused function.
- */
-gboolean
-gedit_document_get_deleted (GeditDocument *doc)
-{
-	GeditDocumentPrivate *priv;
-
-	g_return_val_if_fail (GEDIT_IS_DOCUMENT (doc), FALSE);
-
-	priv = gedit_document_get_instance_private (doc);
-
-	return gtk_source_file_is_deleted (priv->file);
-}
-
 /*
  * Deletion and external modification is only checked for local files.
  */
