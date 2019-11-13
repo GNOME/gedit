@@ -17,7 +17,7 @@ version_major = version_arr[0]
 version_minor = version_arr[1]
 version_micro = version_arr[2]
 
-api_version = '3.14'
+api_version = '3.32'
 
 package_name = meson.project_name()
 package_string = '@0@-@1@'.format(package_name, api_version)
