@@ -253,11 +253,6 @@ gedit_app_show_help_impl (GeditApp    *app,
 	{
 		name = "gedit";
 	}
-	else if (strcmp (name, "gedit.xml") == 0)
-	{
-		g_warning ("%s: Using \"gedit.xml\" for the help name is deprecated, use \"gedit\" or simply NULL instead", G_STRFUNC);
-		name = "gedit";
-	}
 
 	link = GEDIT_APP_GET_CLASS (app)->help_link_id (app, name, link_id);
 
