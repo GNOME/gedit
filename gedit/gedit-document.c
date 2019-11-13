@@ -1367,44 +1367,6 @@ _gedit_document_get_seconds_since_last_save_or_load (GeditDocument *doc)
 	return (current_time.tv_sec - priv->time_of_last_save_or_load.tv_sec);
 }
 
-/**
- * gedit_document_get_newline_type:
- * @doc: a #GeditDocument.
- *
- * Returns: the newline type.
- * Deprecated: 3.14: use gtk_source_file_get_newline_type() instead.
- */
-GtkSourceNewlineType
-gedit_document_get_newline_type (GeditDocument *doc)
-{
-	GeditDocumentPrivate *priv;
-
-	g_return_val_if_fail (GEDIT_IS_DOCUMENT (doc), 0);
-
-	priv = gedit_document_get_instance_private (doc);
-
-	return gtk_source_file_get_newline_type (priv->file);
-}
-
-/**
- * gedit_document_get_compression_type:
- * @doc: a #GeditDocument.
- *
- * Returns: the compression type.
- * Deprecated: 3.14: use gtk_source_file_get_compression_type() instead.
- */
-GtkSourceCompressionType
-gedit_document_get_compression_type (GeditDocument *doc)
-{
-	GeditDocumentPrivate *priv;
-
-	g_return_val_if_fail (GEDIT_IS_DOCUMENT (doc), 0);
-
-	priv = gedit_document_get_instance_private (doc);
-
-	return gtk_source_file_get_compression_type (priv->file);
-}
-
 static gchar *
 get_metadata_from_metadata_manager (GeditDocument *doc,
 				    const gchar   *key)
