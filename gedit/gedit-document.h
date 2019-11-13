@@ -52,9 +52,6 @@ GeditDocument   *gedit_document_new				(void);
 
 GtkSourceFile	*gedit_document_get_file			(GeditDocument       *doc);
 
-G_DEPRECATED_FOR (gtk_source_file_get_location)
-GFile		*gedit_document_get_location		(GeditDocument       *doc);
-
 gchar		*gedit_document_get_uri_for_display		(GeditDocument       *doc);
 
 gchar		*gedit_document_get_short_name_for_display	(GeditDocument       *doc);

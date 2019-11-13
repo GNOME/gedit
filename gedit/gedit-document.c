@@ -981,32 +981,6 @@ set_content_type (GeditDocument *doc,
 }
 
 /**
- * gedit_document_get_location:
- * @doc: a #GeditDocument
- *
- * Returns: (allow-none) (transfer full): a copy of the internal #GFile
- *
- * Deprecated: 3.14: use gtk_source_file_get_location() instead. Attention,
- * gedit_document_get_location() has a transfer full for the return value, while
- * gtk_source_file_get_location() has a transfer none.
- */
-GFile *
-gedit_document_get_location (GeditDocument *doc)
-{
-	GeditDocumentPrivate *priv;
-	GFile *location;
-
-	priv = gedit_document_get_instance_private (doc);
-
-	g_return_val_if_fail (GEDIT_IS_DOCUMENT (doc), NULL);
-
-	location = gtk_source_file_get_location (priv->file);
-
-	return location != NULL ? g_object_ref (location) : NULL;
-}
-
-
-/**
  * gedit_document_get_uri_for_display:
  * @doc: a #GeditDocument.
  *
