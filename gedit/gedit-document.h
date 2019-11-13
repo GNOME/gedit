@@ -76,10 +76,6 @@ void 		 gedit_document_set_language			(GeditDocument       *doc,
 GtkSourceLanguage
 		*gedit_document_get_language			(GeditDocument       *doc);
 
-G_DEPRECATED_FOR (gtk_source_file_get_encoding)
-const GtkSourceEncoding
-		*gedit_document_get_encoding			(GeditDocument       *doc);
-
 G_DEPRECATED_FOR (gtk_source_file_get_newline_type)
 GtkSourceNewlineType
 		 gedit_document_get_newline_type		(GeditDocument       *doc);

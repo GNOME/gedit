@@ -1351,25 +1351,6 @@ gedit_document_get_language (GeditDocument *doc)
 	return gtk_source_buffer_get_language (GTK_SOURCE_BUFFER (doc));
 }
 
-/**
- * gedit_document_get_encoding:
- * @doc: a #GeditDocument.
- *
- * Returns: the encoding.
- * Deprecated: 3.14: use gtk_source_file_get_encoding() instead.
- */
-const GtkSourceEncoding *
-gedit_document_get_encoding (GeditDocument *doc)
-{
-	GeditDocumentPrivate *priv;
-
-	g_return_val_if_fail (GEDIT_IS_DOCUMENT (doc), NULL);
-
-	priv = gedit_document_get_instance_private (doc);
-
-	return gtk_source_file_get_encoding (priv->file);
-}
-
 glong
 _gedit_document_get_seconds_since_last_save_or_load (GeditDocument *doc)
 {
