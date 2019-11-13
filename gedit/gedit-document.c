@@ -91,7 +91,6 @@ enum
 	PROP_SHORTNAME,
 	PROP_CONTENT_TYPE,
 	PROP_MIME_TYPE,
-	PROP_READ_ONLY,
 	PROP_EMPTY_SEARCH,
 	PROP_USE_GVFS_METADATA,
 	LAST_PROP
@@ -262,10 +261,6 @@ gedit_document_get_property (GObject    *object,
 
 		case PROP_MIME_TYPE:
 			g_value_take_string (value, gedit_document_get_mime_type (doc));
-			break;
-
-		case PROP_READ_ONLY:
-			g_value_set_boolean (value, gtk_source_file_is_readonly (priv->file));
 			break;
 
 		case PROP_EMPTY_SEARCH:
@@ -448,20 +443,6 @@ gedit_document_class_init (GeditDocumentClass *klass)
 		                     "The document's MIME Type",
 		                     "text/plain",
 		                     G_PARAM_READABLE | G_PARAM_STATIC_STRINGS);
-
-	/**
-	 * GeditDocument:read-only:
-	 *
-	 * Whether the document is read-only or not.
-	 *
-	 * Deprecated: 3.18: Use the #GtkSourceFile API.
-	 */
-	properties[PROP_READ_ONLY] =
-		g_param_spec_boolean ("read-only",
-		                      "Read Only",
-		                      "Whether the document is read-only or not",
-		                      FALSE,
-		                      G_PARAM_READABLE | G_PARAM_STATIC_STRINGS | G_PARAM_DEPRECATED);
 
 	/**
 	 * GeditDocument:empty-search:
@@ -819,14 +800,6 @@ on_location_changed (GtkSourceFile *file,
 }
 
 static void
-on_readonly_changed (GtkSourceFile *file,
-		     GParamSpec    *pspec,
-		     GeditDocument *doc)
-{
-	g_object_notify_by_pspec (G_OBJECT (doc), properties[PROP_READ_ONLY]);
-}
-
-static void
 gedit_document_init (GeditDocument *doc)
 {
 	GeditDocumentPrivate *priv;
@@ -850,12 +823,6 @@ gedit_document_init (GeditDocument *doc)
 	g_signal_connect_object (priv->file,
 				 "notify::location",
 				 G_CALLBACK (on_location_changed),
-				 doc,
-				 0);
-
-	g_signal_connect_object (priv->file,
-				 "notify::read-only",
-				 G_CALLBACK (on_readonly_changed),
 				 doc,
 				 0);
 
