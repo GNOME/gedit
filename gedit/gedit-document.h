@@ -59,10 +59,6 @@ gchar		*gedit_document_get_uri_for_display		(GeditDocument       *doc);
 
 gchar		*gedit_document_get_short_name_for_display	(GeditDocument       *doc);
 
-G_DEPRECATED
-void		 gedit_document_set_short_name_for_display	(GeditDocument       *doc,
-								 const gchar         *short_name);
-
 gchar		*gedit_document_get_content_type		(GeditDocument       *doc);
 
 gchar		*gedit_document_get_mime_type			(GeditDocument       *doc);

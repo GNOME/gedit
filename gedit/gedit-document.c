@@ -54,7 +54,6 @@ typedef struct
 	GSettings   *editor_settings;
 
 	gint 	     untitled_number;
-	gchar       *short_name;
 
 	GFileInfo   *metadata_info;
 
@@ -236,7 +235,6 @@ gedit_document_finalize (GObject *object)
 	}
 
 	g_free (priv->content_type);
-	g_free (priv->short_name);
 
 	G_OBJECT_CLASS (gedit_document_parent_class)->finalize (object);
 }
@@ -295,12 +293,6 @@ gedit_document_set_property (GObject      *object,
 
 	switch (prop_id)
 	{
-		case PROP_SHORTNAME:
-			G_GNUC_BEGIN_IGNORE_DEPRECATIONS;
-			gedit_document_set_short_name_for_display (doc, g_value_get_string (value));
-			G_GNUC_END_IGNORE_DEPRECATIONS;
-			break;
-
 		case PROP_CONTENT_TYPE:
 			set_content_type (doc, g_value_get_string (value));
 			break;
@@ -431,7 +423,7 @@ gedit_document_class_init (GeditDocumentClass *klass)
 		                     "Short Name",
 		                     "The document's short name",
 		                     NULL,
-		                     G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS);
+		                     G_PARAM_READABLE | G_PARAM_STATIC_STRINGS);
 
 	/**
 	 * GeditDocument:content-type:
@@ -725,10 +717,6 @@ guess_language (GeditDocument *doc)
 		{
 			basename = g_file_get_basename (location);
 		}
-		else if (priv->short_name != NULL)
-		{
-			basename = g_strdup (priv->short_name);
-		}
 
 		language = gtk_source_language_manager_guess_language (manager,
 								       basename,
@@ -786,10 +774,7 @@ on_location_changed (GtkSourceFile *file,
 		priv->untitled_number = 0;
 	}
 
-	if (priv->short_name == NULL)
-	{
-		g_object_notify_by_pspec (G_OBJECT (doc), properties[PROP_SHORTNAME]);
-	}
+	g_object_notify_by_pspec (G_OBJECT (doc), properties[PROP_SHORTNAME]);
 
 	/* Load metadata for this location: we load sync since metadata is
 	 * always local so it should be fast and we need the information
@@ -1101,11 +1086,7 @@ gedit_document_get_short_name_for_display (GeditDocument *doc)
 
 	location = gtk_source_file_get_location (priv->file);
 
-	if (priv->short_name != NULL)
-	{
-		return g_strdup (priv->short_name);
-	}
-	else if (location == NULL)
+	if (location == NULL)
 	{
 		return g_strdup_printf (_("Untitled Document %d"),
 					priv->untitled_number);
@@ -1114,30 +1095,6 @@ gedit_document_get_short_name_for_display (GeditDocument *doc)
 	{
 		return gedit_utils_basename_for_display (location);
 	}
-}
-
-/**
- * gedit_document_set_short_name_for_display:
- * @doc:
- * @short_name: (allow-none):
- *
- * Deprecated: 3.18: Unused function. The intent is to change the
- * #GeditDocument:shortname property to be read-only.
- */
-void
-gedit_document_set_short_name_for_display (GeditDocument *doc,
-                                           const gchar   *short_name)
-{
-	GeditDocumentPrivate *priv;
-
-	g_return_if_fail (GEDIT_IS_DOCUMENT (doc));
-
-	priv = gedit_document_get_instance_private (doc);
-
-	g_free (priv->short_name);
-	priv->short_name = g_strdup (short_name);
-
-	g_object_notify_by_pspec (G_OBJECT (doc), properties[PROP_SHORTNAME]);
 }
 
 gchar *
