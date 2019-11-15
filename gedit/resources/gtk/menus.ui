@@ -27,12 +27,20 @@
         <attribute name="label" translatable="yes">_New Window</attribute>
         <attribute name="action">app.new-window</attribute>
       </item>
+      <item>
+        <attribute name="label" translatable="yes">_New Document</attribute>
+        <attribute name="action">win.new-tab</attribute>
+    </item>
     </section>
     <section>
       <attribute name="id">file-section</attribute>
     </section>
     <section>
       <attribute name="id">file-section-1</attribute>
+      <item>
+	<attribute name="label" translatable="yes">_Save</attribute>
+	<attribute name="action">win.save</attribute>
+      </item>
       <item>
         <attribute name="label" translatable="yes">_Save As…</attribute>
         <attribute name="action">win.save-as</attribute>
