@@ -1,3 +1,35 @@
+News in 3.35.2 - not yet released
+--------------
+
+User-visible changes:
+* File browser plugin: fix interactive search.
+
+Changes for packagers:
+* New dependency: Tepl, which itself depends on Amtk and uchardet.
+  https://wiki.gnome.org/Projects/Tepl
+  https://wiki.gnome.org/Projects/Amtk
+  https://www.freedesktop.org/wiki/Software/uchardet/
+* Removed dependency: libxml-2.0
+* Remove the enable-gvfs-metadata build option, it's now handled by Tepl, and
+  Tepl has a similar build option.
+
+Changes for plugins:
+* Bump gedit API version to 3.32.
+* Remove the deprecated API.
+
+Tepl-ification:
+* Use some tepl_utils functions.
+* Use TeplFileMetadata internally in GeditDocument, which has permitted to
+  remove GeditMetadataManager.
+
+Other changes:
+* Create a nightly app icon (but not yet used).
+* Automatically test that the GSettings schema files are valid.
+* Various small code refactorings.
+* Updates to the Flatpak and Snap packages.
+  Convert the Flatpak manifest to YAML.
+* Translation updates.
+
 News in 3.34.0, 2019-09-09
 --------------------------
 * Translation updates.
