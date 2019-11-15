@@ -29,8 +29,14 @@ Make the gedit source code more re-usable
 
 https://wiki.gnome.org/Apps/Gedit/ReusableCode
 
+Recently done:
+- gedit 3.35: start to use the [Tepl](https://wiki.gnome.org/Projects/Tepl)
+  library.
+
 Next steps:
-- Start to use the [Tepl](https://wiki.gnome.org/Projects/Tepl) library.
+- Use more features from the [Tepl](https://wiki.gnome.org/Projects/Tepl)
+  library, and develop Tepl alongside gedit. The goal is to reduce the amount of
+  code from the gedit core, by having re-usable code in Tepl instead.
 
 Credits: Sébastien Wilmet
 
@@ -53,8 +59,8 @@ Handle problem with large files or files containing very long lines
 
 **Status**: started in Tepl
 
-As a quick stopgap measure, prevent those files from being loaded in the first
-place, show an infobar with an error message.
+As a stopgap measure, prevent those files from being loaded in the first place,
+show an infobar with an error message.
 
 Longer-term solution: fix the performance problem in GTK for very long lines.
 
