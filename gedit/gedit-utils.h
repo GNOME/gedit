@@ -54,9 +54,6 @@ void                       gedit_utils_set_atk_relation                       (G
 void                       gedit_warning                                       (GtkWindow      *parent,
                                                                                 const gchar    *format,
                                                                                 ...) G_GNUC_PRINTF(2, 3);
-G_DEPRECATED_FOR (g_utf8_make_valid)
-gchar                     *gedit_utils_make_valid_utf8                         (const char     *name);
-
 
 gchar                     *gedit_utils_location_get_dirname_for_display        (GFile          *location);
 gchar                     *gedit_utils_replace_home_dir_with_tilde             (const gchar    *uri);
@@ -76,10 +73,9 @@ gboolean                   gedit_utils_decode_uri                             (c
                                                                                gchar       **port,
                                                                                gchar       **path);
 
-
-
 /* Turns data from a drop into a list of well formatted uris */
 gchar                    **gedit_utils_drop_get_uris                          (GtkSelectionData     *selection_data);
+
 GtkSourceCompressionType   gedit_utils_get_compression_type_from_content_type (const gchar          *content_type);
 gchar                     *gedit_utils_set_direct_save_filename               (GdkDragContext       *context);
 const gchar               *gedit_utils_newline_type_to_string                 (GtkSourceNewlineType  newline_type);
