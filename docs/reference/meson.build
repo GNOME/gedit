@@ -53,6 +53,7 @@ libgedit_reference_ignored_h = [
   'gedit-open-document-selector-store.h',
   'gedit-open-document-selector.h',
   'gedit-open-menu-button.h',
+  'gedit-pango.h',
   'gedit-plugins-engine.h',
   'gedit-preferences-dialog.h',
   'gedit-print-job.h',
