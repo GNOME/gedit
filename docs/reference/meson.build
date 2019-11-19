@@ -95,6 +95,9 @@ gnome.gtkdoc(
   scan_args: libgedit_reference_scan_args,
   mkdb_args: libgedit_reference_mkdb_args,
   fixxref_args: libgedit_reference_fixxref_args,
+  content_files : [
+    'api-breaks.xml'
+  ],
   install: true,
   install_dir: join_paths(
     gtkdocdir,
