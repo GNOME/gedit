@@ -45,6 +45,16 @@ widget_get_origin (GtkWidget *widget,
 	gdk_window_get_origin (window, x, y);
 }
 
+/**
+ * gedit_utils_menu_position_under_widget:
+ * @menu:
+ * @x:
+ * @y:
+ * @push_in:
+ * @user_data:
+ *
+ * Deprecated: 3.36: Use gtk_menu_popup_at_widget() instead.
+ */
 void
 gedit_utils_menu_position_under_widget (GtkMenu  *menu,
 					gint     *x,

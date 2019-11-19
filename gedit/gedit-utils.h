@@ -33,11 +33,6 @@ G_BEGIN_DECLS
 
 enum { GEDIT_ALL_WORKSPACES = 0xffffffff };
 
-void                       gedit_utils_menu_position_under_widget             (GtkMenu         *menu,
-                                                                               gint            *x,
-                                                                               gint            *y,
-                                                                               gboolean        *push_in,
-                                                                               gpointer         user_data);
 gboolean                   gedit_utils_menu_position_under_tree_view          (GtkTreeView     *tree_view,
                                                                                GdkRectangle    *rect);
 
@@ -80,6 +75,13 @@ GtkSourceCompressionType   gedit_utils_get_compression_type_from_content_type (c
 gchar                     *gedit_utils_set_direct_save_filename               (GdkDragContext       *context);
 const gchar               *gedit_utils_newline_type_to_string                 (GtkSourceNewlineType  newline_type);
 
+
+G_DEPRECATED_FOR (gtk_menu_popup_at_widget)
+void                       gedit_utils_menu_position_under_widget             (GtkMenu         *menu,
+                                                                               gint            *x,
+                                                                               gint            *y,
+                                                                               gboolean        *push_in,
+                                                                               gpointer         user_data);
 
 G_END_DECLS
 
