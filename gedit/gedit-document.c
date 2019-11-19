@@ -506,8 +506,6 @@ gedit_document_class_init (GeditDocumentClass *klass)
 	 * Before gedit 3.14 this signal contained parameters to configure the
 	 * file loading (the location, encoding, etc). Plugins should not need
 	 * those parameters.
-	 *
-	 * Since: 2.22
 	 */
 	document_signals[LOAD] =
 		g_signal_new ("load",
@@ -545,8 +543,6 @@ gedit_document_class_init (GeditDocumentClass *klass)
 	 * Before gedit 3.14 this signal contained parameters to configure the
 	 * file saving (the location, encoding, etc). Plugins should not need
 	 * those parameters.
-	 *
-	 * Since: 2.20
 	 */
 	document_signals[SAVE] =
 		g_signal_new ("save",

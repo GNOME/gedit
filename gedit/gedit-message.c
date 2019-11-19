@@ -37,8 +37,6 @@
  * A message can be seen as a method call, or signal emission depending on
  * who is the sender and who is the receiver. There is no explicit distinction
  * between methods and signals.
- *
- * Since: 2.26
  */
 
 struct _GeditMessagePrivate
