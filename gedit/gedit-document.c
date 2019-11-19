@@ -756,6 +756,7 @@ on_location_changed (GtkSourceFile *file,
 	/* Load metadata for this location: we load sync since metadata is
 	 * always local so it should be fast and we need the information
 	 * right after the location was set.
+	 * TODO: do async I/O for the metadata.
 	 */
 	if (priv->use_gvfs_metadata && location != NULL)
 	{
