@@ -160,7 +160,7 @@ if generate_vapi and not vapigen_dep.found()
   generate_vapi = false
 endif
 
-build_gtk_doc = get_option('documentation')
+build_gtk_doc = get_option('gtk_doc')
 if build_gtk_doc and not gtk_doc_dep.found()
   build_gtk_doc = false
 endif
