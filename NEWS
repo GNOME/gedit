@@ -1,8 +1,9 @@
-News in 3.35.2 - not yet released
---------------
+News in 3.35.1, 2019-11-22
+--------------------------
 
 User-visible changes:
 * File browser plugin: fix interactive search.
+* A few fixes in the CSS style.
 
 Changes for packagers:
 * New dependency: Tepl, which itself depends on Amtk and uchardet.
@@ -10,12 +11,15 @@ Changes for packagers:
   https://wiki.gnome.org/Projects/Amtk
   https://www.freedesktop.org/wiki/Software/uchardet/
 * Removed dependency: libxml-2.0
-* Remove the enable-gvfs-metadata build option, it's now handled by Tepl, and
+* Remove the 'enable-gvfs-metadata' build option, it's now handled by Tepl, and
   Tepl has a similar build option.
+* Rename the build option 'documentation' -> 'gtk_doc'.
 
 Changes for plugins:
-* Bump gedit API version to 3.32.
+* Bump gedit API version to 3.36.
 * Remove the deprecated API.
+* Deprecate some gedit_utils functions.
+* Write an API breaks section in the gtk-doc reference manual of gedit.
 
 Tepl-ification:
 * Use some tepl_utils functions.
