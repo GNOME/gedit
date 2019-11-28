@@ -43,9 +43,6 @@ gchar                     *gedit_utils_str_end_truncate                       (c
 void                       gedit_utils_set_atk_name_description               (GtkWidget       *widget,
                                                                                const gchar     *name,
                                                                                const gchar     *description);
-void                       gedit_utils_set_atk_relation                       (GtkWidget       *obj1,
-                                                                               GtkWidget       *obj2,
-                                                                               AtkRelationType  rel_type);
 void                       gedit_warning                                       (GtkWindow      *parent,
                                                                                 const gchar    *format,
                                                                                 ...) G_GNUC_PRINTF(2, 3);
@@ -82,6 +79,11 @@ void                       gedit_utils_menu_position_under_widget             (G
                                                                                gint            *y,
                                                                                gboolean        *push_in,
                                                                                gpointer         user_data);
+
+G_DEPRECATED
+void                       gedit_utils_set_atk_relation                       (GtkWidget       *obj1,
+                                                                               GtkWidget       *obj2,
+                                                                               AtkRelationType  rel_type);
 
 G_END_DECLS
 

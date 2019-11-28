@@ -150,13 +150,16 @@ gedit_utils_set_atk_name_description (GtkWidget   *widget,
 }
 
 /**
- * gedit_set_atk_relation:
+ * gedit_utils_set_atk_relation:
  * @obj1: specified widget.
  * @obj2: specified widget.
  * @rel_type: the type of relation to set up.
  *
  * This function establishes atk relation
  * between 2 specified widgets.
+ *
+ * Deprecated: 3.36: This function is no longer used by gedit. If you need it,
+ * copy it.
  */
 void
 gedit_utils_set_atk_relation (GtkWidget       *obj1,
