@@ -1077,28 +1077,13 @@ _gedit_cmd_file_save (GSimpleAction *action,
 {
 	GeditWindow *window = GEDIT_WINDOW (user_data);
 	GeditTab *tab;
-	GeditDocument *doc;
 
 	gedit_debug (DEBUG_COMMANDS);
 
 	tab = gedit_window_get_active_tab (window);
 	if (tab != NULL)
 	{
-		doc = gedit_tab_get_document (tab);
-		g_return_if_fail (doc != NULL);
-
-		if (_gedit_document_needs_saving (doc) ||
-		    gedit_document_is_untitled (doc))
-		{
-			save_tab (tab, window);
-		}
-		else
-		{
-			gedit_statusbar_flash_message (GEDIT_STATUSBAR (window->priv->statusbar),
-						       window->priv->generic_message_cid,
-						       _("No changes need to be saved"));
-
-		}
+		save_tab (tab, window);
 	}
 }
 
