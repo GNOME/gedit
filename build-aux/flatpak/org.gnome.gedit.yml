@@ -100,8 +100,6 @@ modules:
 
   - name: gedit-plugins
     buildsystem: meson
-    config-opts:
-      - "-Dplugin_zeitgeist=false"
     sources:
       - type: git
         url: https://gitlab.gnome.org/GNOME/gedit-plugins.git
