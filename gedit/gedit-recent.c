@@ -122,7 +122,7 @@ populate_filter_info (GtkRecentInfo        *info,
 	}
 	else
 	{
-		filter_info->uri = NULL;
+		filter_info->display_name = NULL;
 	}
 
 	if (needed & GTK_RECENT_FILTER_APPLICATION)
@@ -171,7 +171,7 @@ gedit_recent_configuration_init_default (GeditRecentConfiguration *config)
 
 	config->filter = gtk_recent_filter_new ();
 	gtk_recent_filter_add_application (config->filter, g_get_application_name ());
-	gtk_recent_filter_add_mime_type (config->filter, "text/plain");
+	/*gtk_recent_filter_add_mime_type (config->filter, "text/plain"); GtkRecentFilter works via an OR query, so if we enable this it will return too many results due to mime-type subclassing*/
 	g_object_ref_sink (config->filter);
 
 	settings = g_settings_new ("org.gnome.gedit.preferences.ui");
@@ -262,7 +262,6 @@ gedit_recent_get_items (GeditRecentConfiguration *config)
 				uri_normalized = g_utf8_normalize (gtk_recent_info_get_uri_display (info), -1, G_NORMALIZE_ALL);
 				uri_casefolded = g_utf8_casefold (uri_normalized, -1);
 				g_free (uri_normalized);
-
 				if (strstr (uri_casefolded, substring_filter) == NULL)
 				{
 					is_filtered = TRUE;
