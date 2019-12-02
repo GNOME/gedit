@@ -1450,22 +1450,6 @@ gedit_app_init (GeditApp *app)
 #endif
 }
 
-/* Generates a unique string for a window role */
-static gchar *
-gen_role (void)
-{
-	GTimeVal result;
-	static gint serial;
-
-	g_get_current_time (&result);
-
-	return g_strdup_printf ("gedit-window-%ld-%ld-%d-%s",
-				result.tv_sec,
-				result.tv_usec,
-				serial++,
-				g_get_host_name ());
-}
-
 /**
  * gedit_app_create_window:
  * @app: the #GeditApp
@@ -1481,7 +1465,6 @@ gedit_app_create_window (GeditApp  *app,
 {
 	GeditAppPrivate *priv;
 	GeditWindow *window;
-	gchar *role;
 	GdkWindowState state;
 	gint w, h;
 
@@ -1495,10 +1478,6 @@ gedit_app_create_window (GeditApp  *app,
 	{
 		gtk_window_set_screen (GTK_WINDOW (window), screen);
 	}
-
-	role = gen_role ();
-	gtk_window_set_role (GTK_WINDOW (window), role);
-	g_free (role);
 
 	state = g_settings_get_int (priv->window_settings,
 	                            GEDIT_SETTINGS_WINDOW_STATE);
