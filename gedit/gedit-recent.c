@@ -160,8 +160,6 @@ populate_filter_info (GtkRecentInfo        *info,
 void
 gedit_recent_configuration_init_default (GeditRecentConfiguration *config)
 {
-	GSettings *settings;
-
 	config->manager = gtk_recent_manager_get_default ();
 
 	if (config->filter != NULL)
@@ -174,15 +172,7 @@ gedit_recent_configuration_init_default (GeditRecentConfiguration *config)
 	gtk_recent_filter_add_mime_type (config->filter, "text/plain");
 	g_object_ref_sink (config->filter);
 
-	settings = g_settings_new ("org.gnome.gedit.preferences.ui");
-
-	g_settings_get (settings,
-	                GEDIT_SETTINGS_MAX_RECENTS,
-	                "u",
-	                &config->limit);
-
-	g_object_unref (settings);
-
+	config->limit = 5;
 	config->show_not_found = TRUE;
 	config->show_private = FALSE;
 	config->local_only = FALSE;
