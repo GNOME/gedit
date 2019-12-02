@@ -59,7 +59,7 @@ typedef struct
 
 	gchar	    *content_type;
 
-	GTimeVal     time_of_last_save_or_load;
+	GDateTime   *time_of_last_save_or_load;
 
 	/* The search context for the incremental search, or the search and
 	 * replace. They are mutually exclusive.
@@ -145,6 +145,19 @@ release_untitled_number (gint n)
 	g_return_if_fail (allocated_untitled_numbers != NULL);
 
 	g_hash_table_remove (allocated_untitled_numbers, GINT_TO_POINTER (n));
+}
+
+static void
+update_time_of_last_save_or_load (GeditDocument *doc)
+{
+	GeditDocumentPrivate *priv = gedit_document_get_instance_private (doc);
+
+	if (priv->time_of_last_save_or_load != NULL)
+	{
+		g_date_time_unref (priv->time_of_last_save_or_load);
+	}
+
+	priv->time_of_last_save_or_load = g_date_time_new_now_utc ();
 }
 
 static const gchar *
@@ -234,6 +247,11 @@ gedit_document_finalize (GObject *object)
 	}
 
 	g_free (priv->content_type);
+
+	if (priv->time_of_last_save_or_load != NULL)
+	{
+		g_date_time_unref (priv->time_of_last_save_or_load);
+	}
 
 	G_OBJECT_CLASS (gedit_document_parent_class)->finalize (object);
 }
@@ -812,7 +830,7 @@ gedit_document_init (GeditDocument *doc)
 	priv->language_set_by_user = FALSE;
 	priv->empty_search = TRUE;
 
-	g_get_current_time (&priv->time_of_last_save_or_load);
+	update_time_of_last_save_or_load (doc);
 
 	priv->file = gtk_source_file_new ();
 	priv->metadata_info = g_file_info_new ();
@@ -1130,8 +1148,7 @@ gedit_document_loaded_real (GeditDocument *doc)
 		set_language (doc, language, FALSE);
 	}
 
-	g_get_current_time (&priv->time_of_last_save_or_load);
-
+	update_time_of_last_save_or_load (doc);
 	set_content_type (doc, NULL);
 
 	location = gtk_source_file_get_location (priv->file);
@@ -1187,7 +1204,7 @@ saved_query_info_cb (GFile         *location,
 		g_object_unref (info);
 	}
 
-	g_get_current_time (&priv->time_of_last_save_or_load);
+	update_time_of_last_save_or_load (doc);
 
 	priv->create = FALSE;
 
@@ -1352,16 +1369,30 @@ glong
 _gedit_document_get_seconds_since_last_save_or_load (GeditDocument *doc)
 {
 	GeditDocumentPrivate *priv;
-	GTimeVal current_time;
+	GDateTime *now;
+	GTimeSpan n_microseconds;
+
 	gedit_debug (DEBUG_DOCUMENT);
 
 	g_return_val_if_fail (GEDIT_IS_DOCUMENT (doc), -1);
 
 	priv = gedit_document_get_instance_private (doc);
 
-	g_get_current_time (&current_time);
+	if (priv->time_of_last_save_or_load == NULL)
+	{
+		return -1;
+	}
 
-	return (current_time.tv_sec - priv->time_of_last_save_or_load.tv_sec);
+	now = g_date_time_new_now_utc ();
+	if (now == NULL)
+	{
+		return -1;
+	}
+
+	n_microseconds = g_date_time_difference (now, priv->time_of_last_save_or_load);
+	g_date_time_unref (now);
+
+	return n_microseconds / (1000 * 1000);
 }
 
 static gchar *
