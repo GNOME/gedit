@@ -1,8 +1,7 @@
 project(
   'gedit', 'c',
   version: '3.35.2',
-  meson_version: '>=0.49.0',
-  license: 'GPL2'
+  meson_version: '>= 0.49'
 )
 
 gnome = import('gnome')
