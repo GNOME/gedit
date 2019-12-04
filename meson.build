@@ -175,6 +175,13 @@ if get_option('user_documentation')
   subdir('help')
 endif
 
+meson.add_install_script(
+  'build-aux/meson/post_install.py',
+  libdir, datadir,
+)
+
+# Summary message
+
 summary = [
   '',
   '------',
@@ -193,10 +200,5 @@ summary = [
   '',
   '------',
 ]
-
-meson.add_install_script(
-  'build-aux/meson/post_install.py',
-  libdir, datadir,
-)
 
 message('\n'.join(summary))
