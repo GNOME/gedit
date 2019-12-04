@@ -2,17 +2,14 @@ subdir('icons')
 
 install_man('gedit.1')
 
+appdata = 'org.gnome.gedit.appdata.xml'
 appdata_file = i18n.merge_file(
-  'appdata-file',
-  input: 'org.gnome.gedit.appdata.xml.in',
-  output: 'org.gnome.gedit.appdata.xml',
-  type: 'xml',
-  po_dir: join_paths(srcdir, 'po'),
+  appdata,
+  input: appdata + '.in',
+  output: appdata,
+  po_dir: '../po/',
   install: true,
-  install_dir: join_paths(
-    datadir,
-    'metainfo',
-  )
+  install_dir: join_paths(get_option('prefix'), get_option('datadir'), 'metainfo')
 )
 
 appstream_util = find_program('appstream-util', required: false)
