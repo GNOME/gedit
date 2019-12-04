@@ -37,7 +37,7 @@ if not get_option('buildtype').contains('plain')
   run_command('git', '-C', meson.source_root(), 'submodule', 'update', '--init', '--recursive')
 endif
 
-libgd_sp = subproject(
+libgd_subproject = subproject(
   'libgd',
   default_options: [
     'with-tagged-entry=true',
@@ -69,7 +69,7 @@ libpeas_dep = dependency('libpeas-1.0', version: libpeas_req)
 libpeas_gtk_dep = dependency('libpeas-gtk-1.0', version: libpeas_req)
 libxml_dep = dependency('libxml-2.0', version: libxml_req)
 
-libgd_dep = libgd_sp.get_variable('libgd_dep')
+libgd_dep = libgd_subproject.get_variable('libgd_dep')
 
 libsoup_dep = dependency('libsoup-2.4', version: libsoup_req, required: true)
 gspell_dep = dependency('gspell-1', version: gspell_req, required: true)
