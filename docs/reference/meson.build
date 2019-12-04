@@ -89,7 +89,7 @@ libgedit_reference_fixxref_args = [
 ]
 
 gnome.gtkdoc(
-  package_name,
+  meson.project_name(),
   main_sgml: 'gedit-docs.xml',
   src_dir: join_paths(srcdir, 'gedit'),
   dependencies: gedit_doc_dep,
@@ -103,6 +103,6 @@ gnome.gtkdoc(
   install_dir: join_paths(
     gtkdocdir,
     'html',
-    package_name,
+    meson.project_name(),
   )
 )

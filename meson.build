@@ -11,8 +11,7 @@ python = import('python')
 
 api_version = '3.36'
 
-package_name = meson.project_name()
-package_string = '@0@-@1@'.format(package_name, api_version)
+package_string = '@0@-@1@'.format(meson.project_name(), api_version)
 
 # Paths
 rootdir = include_directories('.')
@@ -29,8 +28,8 @@ libexecdir = join_paths(prefix, get_option('libexecdir'))
 datadir = join_paths(prefix, get_option('datadir'))
 pkgincludedir = join_paths(includedir, package_string)
 pkgconfigdir = join_paths(libdir, 'pkgconfig')
-pkglibdir = join_paths(libdir, package_name)
-pkgdatadir = join_paths(datadir, package_name)
+pkglibdir = join_paths(libdir, meson.project_name())
+pkgdatadir = join_paths(datadir, meson.project_name())
 
 dbusdir = join_paths(datadir, 'dbus-1')
 glibdir = join_paths(datadir, 'glib-2.0')
@@ -102,10 +101,10 @@ else
 endif
 
 config_h = configuration_data()
-config_h.set_quoted('PACKAGE_NAME', package_name)
+config_h.set_quoted('PACKAGE_NAME', meson.project_name())
 config_h.set_quoted('PACKAGE_STRING', package_string)
 config_h.set_quoted('PACKAGE_VERSION', meson.project_version())
-config_h.set_quoted('GETTEXT_PACKAGE', package_name)
+config_h.set_quoted('GETTEXT_PACKAGE', meson.project_name())
 config_h.set_quoted('LOCALEDIR', localdir)
 config_h.set_quoted('LIBDIR', libdir)
 config_h.set_quoted('DATADIR', datadir)

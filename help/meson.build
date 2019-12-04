@@ -47,7 +47,7 @@ gedit_help_media = [
 ]
 
 gnome.yelp(
-  package_name,
+  meson.project_name(),
   sources: gedit_help_sources,
   media: gedit_help_media,
   symlink_media: true,

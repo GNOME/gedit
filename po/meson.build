@@ -1,5 +1,5 @@
 i18n.gettext(
-  package_name,
+  meson.project_name(),
   preset: 'glib',
   args: [
     '--keyword=Description',
