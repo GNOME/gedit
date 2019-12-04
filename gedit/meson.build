@@ -268,7 +268,7 @@ libgedit_pc = pkg.generate(
   name: package_name,
   description: 'GNOME text editor',
   requires: ['gtksourceview-4', 'libpeas-1.0', 'libpeas-gtk-1.0'],
-  version: version,
+  version: meson.project_version(),
   subdirs: package_string,
   libraries: libgedit_sha,
   install_dir: pkgconfigdir,

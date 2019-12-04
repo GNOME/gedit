@@ -36,7 +36,7 @@ endif
 
 
 desktop_in = configuration_data()
-desktop_in.set('VERSION', version)
+desktop_in.set('VERSION', meson.project_version())
 desktop_in.set('FULL_LIBEXECDIR', libexecdir)
 
 desktop_file_configured = configure_file(
