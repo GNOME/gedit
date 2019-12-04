@@ -15,7 +15,7 @@ subdir('resources')
 libdocinfo_sha = shared_module(
   'docinfo',
   sources: libdocinfo_sources,
-  include_directories: rootdir,
+  include_directories: root_include_dir,
   dependencies: libdocinfo_deps,
   c_args: libdocinfo_c_args,
   install: true,

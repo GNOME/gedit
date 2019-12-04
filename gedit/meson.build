@@ -193,7 +193,7 @@ install_headers(
 libgedit_sha = shared_library(
   package_string,
   libgedit_sources + [libgedit_enums.get(1), libgedit_res.get(1)],
-  include_directories: rootdir,
+  include_directories: root_include_dir,
   dependencies: libgedit_deps,
   c_args: libgedit_c_args,
   link_args: libgedit_link_args,
@@ -259,7 +259,7 @@ endif
 
 libgedit_dep = declare_dependency(
   link_with: libgedit_sha,
-  include_directories: rootdir,
+  include_directories: root_include_dir,
   dependencies: libgedit_deps,
   sources: libgedit_dep_sources,
 )

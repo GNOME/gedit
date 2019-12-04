@@ -14,7 +14,7 @@ api_version = '3.36'
 package_string = '@0@-@1@'.format(meson.project_name(), api_version)
 
 # Paths
-rootdir = include_directories('.')
+root_include_dir = include_directories('.')
 
 srcdir = meson.current_source_dir()
 builddir = meson.current_build_dir()

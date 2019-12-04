@@ -67,7 +67,7 @@ subdir('resources')
 libfilebrowser_sha = shared_module(
   'filebrowser',
   sources: libfilebrowser_sources,
-  include_directories: rootdir,
+  include_directories: root_include_dir,
   dependencies: libfilebrowser_deps,
   c_args: libfilebrowser_c_args,
   install: true,

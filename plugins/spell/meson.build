@@ -17,7 +17,7 @@ subdir('resources')
 libspell_sha = shared_module(
   'spell',
   sources: libspell_sources,
-  include_directories: rootdir,
+  include_directories: root_include_dir,
   dependencies: libspell_deps,
   c_args: libspell_c_args,
   install: true,

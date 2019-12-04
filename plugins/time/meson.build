@@ -31,7 +31,7 @@ subdir('resources')
 libtime_sha = shared_module(
   'time',
   sources: libtime_sources,
-  include_directories: rootdir,
+  include_directories: root_include_dir,
   dependencies: libtime_deps,
   c_args: libtime_c_args,
   install: true,

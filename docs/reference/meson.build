@@ -20,7 +20,7 @@ gedit_doc_deps = [
 
 gedit_doc_dep = declare_dependency(
   link_with: libgedit_sha,
-  include_directories: rootdir,
+  include_directories: root_include_dir,
   dependencies: gedit_doc_deps,
   sources: libgedit_dep_sources,
 )

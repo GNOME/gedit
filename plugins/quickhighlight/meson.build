@@ -13,7 +13,7 @@ libquickhighlight_c_args = [
 libquickhighlight_sha = shared_module(
   'quickhighlight',
   sources: libquickhighlight_sources,
-  include_directories: rootdir,
+  include_directories: root_include_dir,
   dependencies: libquickhighlight_deps,
   c_args: libquickhighlight_c_args,
   install: true,

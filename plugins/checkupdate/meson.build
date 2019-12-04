@@ -14,7 +14,7 @@ libcheckupdate_c_args = [
 libcheckupdate_sha = shared_module(
   'checkupdate',
   sources: libcheckupdate_sources,
-  include_directories: rootdir,
+  include_directories: root_include_dir,
   dependencies: libcheckupdate_deps,
   c_args: libcheckupdate_c_args,
   install: true,

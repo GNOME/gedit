@@ -15,7 +15,7 @@ subdir('resources')
 libsort_sha = shared_module(
   'sort',
   sources: libsort_sources,
-  include_directories: rootdir,
+  include_directories: root_include_dir,
   dependencies: libsort_deps,
   c_args: libsort_c_args,
   install: true,

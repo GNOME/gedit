@@ -14,7 +14,7 @@ libmodelines_c_args = [
 libmodelines_sha = shared_module(
   'modelines',
   sources: libmodelines_sources,
-  include_directories: rootdir,
+  include_directories: root_include_dir,
   dependencies: libmodelines_deps,
   c_args: libmodelines_c_args,
   install: true,
