@@ -25,28 +25,15 @@ if appstream_util.found()
   )
 endif
 
-
-desktop_in = configuration_data()
-desktop_in.set('VERSION', meson.project_version())
-desktop_in.set('FULL_LIBEXECDIR', libexecdir)
-
-desktop_file_configured = configure_file(
-  input: 'org.gnome.gedit.desktop.in.in',
-  output: 'org.gnome.gedit.desktop.in',
-  configuration: desktop_in,
-)
-
-desktop_file = i18n.merge_file(
-  'desktop-file',
-  input: desktop_file_configured,
-  output: 'org.gnome.gedit.desktop',
+desktop_file = 'org.gnome.gedit.desktop'
+desktop_output_file = i18n.merge_file(
+  desktop_file,
   type: 'desktop',
-  po_dir: join_paths(srcdir, 'po'),
+  input: desktop_file + '.in',
+  output: desktop_file,
+  po_dir: '../po/',
   install: true,
-  install_dir: join_paths(
-    datadir,
-    'applications',
-  )
+  install_dir: join_paths(get_option('prefix'), get_option('datadir'), 'applications')
 )
 
 desktop_file_validate = find_program('desktop-file-validate', required: false)
@@ -55,7 +42,7 @@ if desktop_file_validate.found()
     'validate-desktop',
     desktop_file_validate,
     args: [
-      desktop_file.full_path(),
+      desktop_output_file.full_path(),
     ]
   )
 endif
