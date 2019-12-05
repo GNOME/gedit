@@ -95,8 +95,8 @@ endif
 config_h = configuration_data()
 config_h.set_quoted('PACKAGE_STRING', package_string)
 config_h.set_quoted('GETTEXT_PACKAGE', meson.project_name())
-config_h.set_quoted('LIBDIR', libdir)
-config_h.set_quoted('DATADIR', datadir)
+config_h.set_quoted('LIBDIR', join_paths(get_option('prefix'), get_option('libdir')))
+config_h.set_quoted('DATADIR', join_paths(get_option('prefix'), get_option('datadir')))
 config_h.set_quoted('VERSION', meson.project_version())
 
 enable_gvfs_metadata = get_option('enable-gvfs-metadata')
