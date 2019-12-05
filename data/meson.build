@@ -81,14 +81,11 @@ if xmllint.found()
 endif
 
 service_in = configuration_data()
-service_in.set('bindir', bindir)
+service_in.set('bindir', join_paths(get_option('prefix'), get_option('bindir')))
 
 configure_file(
   input: 'org.gnome.gedit.service.in',
   output: 'org.gnome.gedit.service',
   configuration: service_in,
-  install_dir: join_paths(
-    dbusdir,
-    'services',
-  )
+  install_dir: join_paths(get_option('prefix'), get_option('datadir'), 'dbus-1/services')
 )

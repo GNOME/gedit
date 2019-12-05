@@ -27,7 +27,6 @@ pkgconfigdir = join_paths(libdir, 'pkgconfig')
 pkglibdir = join_paths(libdir, meson.project_name())
 pkgdatadir = join_paths(datadir, meson.project_name())
 
-dbusdir = join_paths(datadir, 'dbus-1')
 glibdir = join_paths(datadir, 'glib-2.0')
 gtkdocdir = join_paths(datadir, 'gtk-doc')
 vapidir = join_paths(datadir, 'vala', 'vapi')
