@@ -25,14 +25,9 @@ libcheckupdate_sha = shared_module(
   name_suffix: module_suffix,
 )
 
-configure_file(
-  input: 'org.gnome.gedit.plugins.checkupdate.gschema.xml.in',
-  output: 'org.gnome.gedit.plugins.checkupdate.gschema.xml',
-  configuration: gschema_xml,
-  install_dir: join_paths(
-    glibdir,
-    'schemas',
-  )
+install_data(
+  'org.gnome.gedit.plugins.checkupdate.gschema.xml',
+  install_dir: join_paths(get_option('prefix'), get_option('datadir'), 'glib-2.0/schemas')
 )
 
 custom_target(

@@ -55,7 +55,6 @@ foreach plugin_name:active_plugins
 endforeach
 
 gschema_in = configuration_data()
-gschema_in.set('GETTEXT_PACKAGE', meson.project_name())
 gschema_in.set('ACTIVE_PLUGINS', ', '.join(quoted_plugins))
 
 gschema_file = configure_file(

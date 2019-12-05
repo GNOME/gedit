@@ -101,14 +101,10 @@ custom_target(
   )
 )
 
-filebrowser_gschema_file = configure_file(
-  input: 'org.gnome.gedit.plugins.filebrowser.gschema.xml.in',
-  output: 'org.gnome.gedit.plugins.filebrowser.gschema.xml',
-  configuration: gschema_in,
-  install_dir: join_paths(
-    glibdir,
-    'schemas',
-  )
+filebrowser_gschema_file = files('org.gnome.gedit.plugins.filebrowser.gschema.xml')
+install_data(
+  filebrowser_gschema_file,
+  install_dir: join_paths(get_option('prefix'), get_option('datadir'), 'glib-2.0/schemas')
 )
 
 if xmllint.found()

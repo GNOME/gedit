@@ -2,14 +2,10 @@ subdir('scripts')
 subdir('tools')
 subdir('data')
 
-externaltools_gschema_file = configure_file(
-  input: 'org.gnome.gedit.plugins.externaltools.gschema.xml.in',
-  output: 'org.gnome.gedit.plugins.externaltools.gschema.xml',
-  configuration: gschema_in,
-  install_dir: join_paths(
-    glibdir,
-    'schemas',
-  )
+externaltools_gschema_file = files('org.gnome.gedit.plugins.externaltools.gschema.xml')
+install_data(
+  externaltools_gschema_file,
+  install_dir: join_paths(get_option('prefix'), get_option('datadir'), 'glib-2.0/schemas')
 )
 
 if xmllint.found()
