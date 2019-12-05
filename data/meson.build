@@ -48,10 +48,8 @@ if desktop_file_validate.found()
 endif
 
 quoted_plugins = []
-foreach plugin_name:active_plugins
-  quoted_plugins += [
-    '\'@0@\''.format(plugin_name)
-  ]
+foreach plugin_name : active_plugins
+  quoted_plugins += '\'@0@\''.format(plugin_name)
 endforeach
 
 gschema_in = configuration_data()
@@ -61,10 +59,7 @@ gschema_file = configure_file(
   input: 'org.gnome.gedit.gschema.xml.in',
   output: 'org.gnome.gedit.gschema.xml',
   configuration: gschema_in,
-  install_dir: join_paths(
-    glibdir,
-    'schemas',
-  )
+  install_dir: join_paths(get_option('prefix'), get_option('datadir'), 'glib-2.0/schemas')
 )
 
 gschema_dtd = join_paths(
