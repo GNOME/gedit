@@ -163,22 +163,16 @@ meson.add_install_script(
 # Summary message
 
 summary = [
+  'Configuration:',
   '',
-  '------',
-  'gedit @0@ (@1@)'.format(meson.project_version(), api_version),
+  '        gedit version @0@ (API version @1@)'.format(meson.project_version(), api_version),
   '',
-  '       API docs: @0@'.format(get_option('gtk_doc')),
-  '      User docs: @0@'.format(get_option('user_documentation')),
-  '  Introspection: @0@'.format(generate_gir),
-  '        Plugins: @0@'.format(get_option('plugins')),
-  '       Vala API: @0@'.format(generate_vapi),
-  '  Gvfs metadata: @0@'.format(enable_gvfs_metadata),
+  '        Prefix:                @0@'.format(get_option('prefix')),
+  '        API documentation:     @0@'.format(get_option('gtk_doc')),
+  '        User documentation:    @0@'.format(get_option('user_documentation')),
+  '        GObject Introspection: @0@'.format(generate_gir),
+  '        Vala API:              @0@'.format(generate_vapi),
+  '        Plugins:               @0@'.format(get_option('plugins')),
   '',
-  'Prefix: @0@'.format(get_option('prefix')),
-  '',
-  'Plugins:',
-  '',
-  '------',
 ]
-
 message('\n'.join(summary))
