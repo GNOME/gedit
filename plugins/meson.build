@@ -8,7 +8,7 @@ msgfmt_plugin_cmd = [
   '--output=@OUTPUT@'
 ]
 
-if windowing_target == 'win32'
+if host_machine.system() == 'windows'
   subdir('checkupdate')
 endif
 

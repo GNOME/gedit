@@ -4,11 +4,11 @@ externaltools_tools = [
   'send-to-fpaste',
 ]
 
-if windowing_target == 'quartz'
+if host_machine.system() == 'darwin'
   externaltools_tools += [
     'open-terminal-here-osx',
   ]
-elif windowing_target != 'win32'
+elif host_machine.system() != 'windows'
   externaltools_tools += [
     'open-terminal-here',
     'run-command',
