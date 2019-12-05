@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schemalist>
+<schemalist gettext-domain="gedit">
   <enum id="org.gnome.gedit.WrapMode">
     <value nick="none" value="0"/>
     <value nick="char" value="1"/>
@@ -19,18 +19,18 @@
     <value nick="grid" value="1"/>
   </enum>
 
-  <schema gettext-domain="@GETTEXT_PACKAGE@" id="org.gnome.gedit" path="/org/gnome/gedit/">
+  <schema id="org.gnome.gedit" path="/org/gnome/gedit/">
     <child name="preferences" schema="org.gnome.gedit.preferences"/>
     <child name="state" schema="org.gnome.gedit.state"/>
     <child name="plugins" schema="org.gnome.gedit.plugins"/>
   </schema>
-  <schema gettext-domain="@GETTEXT_PACKAGE@" id="org.gnome.gedit.preferences" path="/org/gnome/gedit/preferences/">
+  <schema id="org.gnome.gedit.preferences" path="/org/gnome/gedit/preferences/">
     <child name="editor" schema="org.gnome.gedit.preferences.editor"/>
     <child name="ui" schema="org.gnome.gedit.preferences.ui"/>
     <child name="print" schema="org.gnome.gedit.preferences.print"/>
     <child name="encodings" schema="org.gnome.gedit.preferences.encodings"/>
   </schema>
-  <schema gettext-domain="@GETTEXT_PACKAGE@" id="org.gnome.gedit.preferences.editor" path="/org/gnome/gedit/preferences/editor/">
+  <schema id="org.gnome.gedit.preferences.editor" path="/org/gnome/gedit/preferences/editor/">
     <key name="use-default-font" type="b">
       <default>true</default>
       <summary>Use Default Font</summary>
@@ -168,7 +168,7 @@
       <description>Whether gedit will ensure that documents always end with a trailing newline.</description>
     </key>
   </schema>
-  <schema gettext-domain="@GETTEXT_PACKAGE@" id="org.gnome.gedit.preferences.ui" path="/org/gnome/gedit/preferences/ui/">
+  <schema id="org.gnome.gedit.preferences.ui" path="/org/gnome/gedit/preferences/ui/">
     <key name="show-tabs-mode" enum="org.gnome.gedit.GeditNotebookShowTabsModeType">
       <default>'auto'</default>
       <summary>Notebook Show Tabs Mode</summary>
@@ -188,7 +188,7 @@
       <default>false</default>
     </key>
   </schema>
-  <schema gettext-domain="@GETTEXT_PACKAGE@" id="org.gnome.gedit.preferences.print" path="/org/gnome/gedit/preferences/print/">
+  <schema id="org.gnome.gedit.preferences.print" path="/org/gnome/gedit/preferences/print/">
     <key name="print-syntax-highlighting" type="b">
       <default>true</default>
       <summary>Print Syntax Highlighting</summary>
@@ -253,7 +253,7 @@
       <description>The bottom margin, in millimeters.</description>
     </key>
   </schema>
-  <schema gettext-domain="@GETTEXT_PACKAGE@" id="org.gnome.gedit.preferences.encodings" path="/org/gnome/gedit/preferences/encodings/">
+  <schema id="org.gnome.gedit.preferences.encodings" path="/org/gnome/gedit/preferences/encodings/">
     <key name="candidate-encodings" type="as">
       <default>['']</default>
       <summary>Candidate Encodings</summary>
@@ -300,7 +300,7 @@
       <default>['']</default>
     </key>
   </schema>
-  <schema gettext-domain="@GETTEXT_PACKAGE@" id="org.gnome.gedit.plugins" path="/org/gnome/gedit/plugins/">
+  <schema id="org.gnome.gedit.plugins" path="/org/gnome/gedit/plugins/">
     <key name="active-plugins" type="as">
       <default>[@ACTIVE_PLUGINS@]</default>
       <summary>Active plugins</summary>
