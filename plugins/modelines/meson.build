@@ -7,16 +7,11 @@ libmodelines_deps = [
   libgedit_dep,
 ]
 
-libmodelines_c_args = [
-  '-DHAVE_CONFIG_H',
-]
-
 libmodelines_sha = shared_module(
   'modelines',
   sources: libmodelines_sources,
   include_directories: root_include_dir,
   dependencies: libmodelines_deps,
-  c_args: libmodelines_c_args,
   install: true,
   install_dir: join_paths(
     pkglibdir,

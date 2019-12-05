@@ -23,10 +23,6 @@ libfilebrowser_deps = [
   libgedit_dep,
 ]
 
-libfilebrowser_c_args = [
-  '-DHAVE_CONFIG_H',
-]
-
 subdir('messages')
 
 libfilebrowser_register_enums = gnome.mkenums(
@@ -69,7 +65,6 @@ libfilebrowser_sha = shared_module(
   sources: libfilebrowser_sources,
   include_directories: root_include_dir,
   dependencies: libfilebrowser_deps,
-  c_args: libfilebrowser_c_args,
   install: true,
   install_dir: join_paths(
     pkglibdir,

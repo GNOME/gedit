@@ -6,10 +6,6 @@ libdocinfo_deps = [
   libgedit_dep,
 ]
 
-libdocinfo_c_args = [
-  '-DHAVE_CONFIG_H',
-]
-
 subdir('resources')
 
 libdocinfo_sha = shared_module(
@@ -17,7 +13,6 @@ libdocinfo_sha = shared_module(
   sources: libdocinfo_sources,
   include_directories: root_include_dir,
   dependencies: libdocinfo_deps,
-  c_args: libdocinfo_c_args,
   install: true,
   install_dir: join_paths(
     pkglibdir,

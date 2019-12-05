@@ -6,10 +6,6 @@ libsort_deps = [
   libgedit_dep,
 ]
 
-libsort_c_args = [
-  '-DHAVE_CONFIG_H',
-]
-
 subdir('resources')
 
 libsort_sha = shared_module(
@@ -17,7 +13,6 @@ libsort_sha = shared_module(
   sources: libsort_sources,
   include_directories: root_include_dir,
   dependencies: libsort_deps,
-  c_args: libsort_c_args,
   install: true,
   install_dir: join_paths(
     pkglibdir,

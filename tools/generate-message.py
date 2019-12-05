@@ -585,11 +585,7 @@ class Message:
         elif options.lgpl:
             self._write_lgpl(options, fname)
 
-        self._write("#ifdef HAVE_CONFIG_H")
-        self._write("#include <config.h>")
-        self._write("#endif")
-        self._write()
-
+        self._write('#include "config.h"')
         self._write('#include "%s.h"', self.filename)
 
         for inc in self.includes:

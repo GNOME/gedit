@@ -6,10 +6,6 @@ libtime_deps = [
   libgedit_dep,
 ]
 
-libtime_c_args = [
-  '-DHAVE_CONFIG_H',
-]
-
 gnome.mkenums(
   'org.gnome.gedit.plugins.time.enums.xml',
   sources: libtime_sources,
@@ -33,7 +29,6 @@ libtime_sha = shared_module(
   sources: libtime_sources,
   include_directories: root_include_dir,
   dependencies: libtime_deps,
-  c_args: libtime_c_args,
   install: true,
   install_dir: join_paths(
     pkglibdir,

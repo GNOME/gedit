@@ -7,16 +7,11 @@ libcheckupdate_deps = [
   libsoup_dep,
 ]
 
-libcheckupdate_c_args = [
-  '-DHAVE_CONFIG_H',
-]
-
 libcheckupdate_sha = shared_module(
   'checkupdate',
   sources: libcheckupdate_sources,
   include_directories: root_include_dir,
   dependencies: libcheckupdate_deps,
-  c_args: libcheckupdate_c_args,
   install: true,
   install_dir: join_paths(
     pkglibdir,

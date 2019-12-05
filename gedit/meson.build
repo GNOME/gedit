@@ -116,12 +116,8 @@ libgedit_sources = files(
   'gedit-window.c',
 )
 
-libgedit_c_args = [
-  '-DHAVE_CONFIG_H',
-]
-
-libgedit_link_args = [
-]
+libgedit_c_args = []
+libgedit_link_args = []
 
 libgedit_deps = [
   glib_dep,
@@ -301,9 +297,7 @@ gedit_sources = [
   'gedit.c',
 ]
 
-gedit_c_args = [
-  '-DHAVE_CONFIG_H',
-]
+gedit_c_args = []
 
 if windowing_target == 'quartz'
   gedit_c_args += [
