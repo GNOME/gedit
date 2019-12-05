@@ -4,6 +4,10 @@ project(
   meson_version: '>= 0.49'
 )
 
+if host_machine.system() == 'darwin'
+  add_languages('objc')
+endif
+
 gnome = import('gnome')
 i18n = import('i18n')
 pkg = import('pkgconfig')
@@ -111,14 +115,6 @@ configure_file(
   output: 'config.h',
   configuration: config_h
 )
-
-module_suffix = []
-# Keep the autotools convention for shared module suffix because GModule
-# depends on it: https://gitlab.gnome.org/GNOME/glib/issues/520
-if host_machine.system() == 'darwin'
-  module_suffix = 'so'
-  add_languages('objc')
-endif
 
 # Options
 generate_gir = get_option('introspection')
