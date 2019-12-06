@@ -181,8 +181,10 @@ libgedit_dep_sources = []
 install_headers(
   libgedit_public_h,
   install_dir: join_paths(
-    pkgincludedir,
-    'gedit',
+    get_option('prefix'),
+    get_option('includedir'),
+    package_string,
+    'gedit'
   )
 )
 
