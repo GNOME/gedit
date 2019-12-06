@@ -15,7 +15,7 @@ msgfmt_plugin_cmd = [
   '--output=@OUTPUT@'
 ]
 
-if host_machine.system() == 'windows'
+if build_checkupdate_plugin
   subdir('checkupdate')
 endif
 

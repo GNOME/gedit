@@ -72,7 +72,6 @@ libxml_dep = dependency('libxml-2.0', version: libxml_req)
 
 libgd_dep = libgd_subproject.get_variable('libgd_dep')
 
-libsoup_dep = dependency('libsoup-2.4', version: libsoup_req, required: true)
 gspell_dep = dependency('gspell-1', version: gspell_req, required: true)
 x11_dep = dependency('x11', required: false)
 
@@ -80,6 +79,11 @@ introspection_dep = dependency('gobject-introspection-1.0', version: introspecti
 vapigen_dep = dependency('vapigen', version: vala_req, required: false)
 
 python3 = python.find_installation('python3')
+
+build_checkupdate_plugin = host_machine.system() == 'windows'
+if build_checkupdate_plugin
+  libsoup_dep = dependency('libsoup-2.4', version: libsoup_req, required: true)
+endif
 
 # Configurations
 if ((host_machine.system() != 'darwin') and
@@ -135,7 +139,7 @@ active_plugins = [
   'time',
 ]
 
-if host_machine.system() == 'windows'
+if build_checkupdate_plugin
   active_plugins += 'checkupdate'
 endif
 
