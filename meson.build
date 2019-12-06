@@ -142,10 +142,7 @@ endif
 subdir('data')
 subdir('po')
 subdir('gedit')
-
-if get_option('plugins')
-  subdir('plugins')
-endif
+subdir('plugins')
 
 if get_option('gtk_doc')
   subdir('docs/reference')
@@ -172,7 +169,6 @@ summary = [
   '        User documentation:    @0@'.format(get_option('user_documentation')),
   '        GObject Introspection: @0@'.format(generate_gir),
   '        Vala API:              @0@'.format(generate_vapi),
-  '        Plugins:               @0@'.format(get_option('plugins')),
   '',
 ]
 message('\n'.join(summary))
