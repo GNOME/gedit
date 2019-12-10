@@ -82,11 +82,11 @@ parts:
     build-environment:
       - C_INCLUDE_PATH: $SNAPCRAFT_STAGE/usr/include/gtksourceview-4
     override-build: |
-       sed -i.bak -e 's|Icon=org.gnome.gedit$|Icon=${SNAP}/meta/gui/org.gnome.gedit.svg|g' data/org.gnome.gedit.desktop.in.in
+       sed -i.bak -e 's|Icon=org.gnome.gedit$|Icon=${SNAP}/meta/gui/org.gnome.gedit.svg|g' data/org.gnome.gedit.desktop.in
        sed -i.bak -e "s|symlink_media: true|symlink_media: false|g" help/meson.build
        snapcraftctl build
        mkdir -p $SNAPCRAFT_PART_INSTALL/meta/gui/
-       cp data/org.gnome.gedit.svg $SNAPCRAFT_PART_INSTALL/meta/gui/
+       cp data/icons/org.gnome.gedit.svg $SNAPCRAFT_PART_INSTALL/meta/gui/
        cp ../install/usr/share/applications/org.gnome.gedit.desktop $SNAPCRAFT_PART_INSTALL/meta/gui/
     build-packages:
       - desktop-file-utils
@@ -156,6 +156,11 @@ parts:
       - python-dbus-dev
       - python-gi-dev
       - yelp-tools
+    stage-packages:
+      - python3
+      - python3-dbus
+      - python3-gi
+      - python3-setuptools
 # Zeitgeist plugin isn't as useful in a Snap.
     stage:
       - -usr/lib/gedit/plugins/libzeitgeist.so
