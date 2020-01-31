@@ -1,3 +1,25 @@
+News in 3.35.90, 2020-01-31
+---------------------------
+* Remove text centering when in fullscreen mode and when a right margin was
+  set. For the explanation see: commit 8710e89d847b0bfc65d7833255090e304cf7c890
+* Make the scrollbars always visible around the main text area. For the
+  explanation see: commit 5e0909c19f267b4023131881fac89c58a2a17453
+* Remove the overview map. For the explanation see:
+  commit 26899e0ba7c1390c098b61fc7a901d700c4e745c
+* File chooser dialog: re-add the feature to be able to customize the list of
+  character encodings.
+* Open a file from the headerbar: re-implement the previous user interface: two
+  buttons, "Open" to open the dialog window, and an arrow to open the recent
+  menu. For the explanation see: commit 27f54a9aed82109a512743b5e819b18004c19de7
+* GSettings schema: enable more features by default (auto-indent,
+  display-line-numbers, highlight-current-line and bracket-matching) and set
+  default style scheme to 'tango'.
+* Bug fixes.
+* Code refactorings.
+* Lots of small improvements to the build system.
+* The libsoup dependency is required only on Windows for the checkupdate plugin.
+* Translation updates.
+
 News in 3.35.1, 2019-11-22
 --------------------------
 
