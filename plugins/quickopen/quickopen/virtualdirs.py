@@ -79,7 +79,7 @@ class CurrentDocumentsDirectory(VirtualDirectory):
 
     def fill(self, window):
         for doc in window.get_documents():
-            location = doc.get_location()
+            location = doc.get_file().get_location()
 
             if location:
                 self.append(location)
