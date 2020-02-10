@@ -5,6 +5,7 @@
 <info>
   <link type="guide" xref="gedit-plugin-guide#gedit-default-plugins"/>
   <revision pkgversion="3.8" date="2013-02-24" status="review"/>
+  <revision pkgversion="3.34" date="2020-02-10" status="review"/>
   <credit type="author">
     <name>Daniel Neel</name>
     <email>dneelyep@gmail.com</email>
@@ -21,16 +22,29 @@
 
   <p>As this name of this plugin suggests, the <gui>Insert Date/Time</gui>
   plugin allows you to insert the date and/or time at the current cursor
-  position. To enable this plugin, select <guiseq><gui style="menu">gedit</gui>
-  <gui style="menuitem">Preferences</gui><gui>Plugins</gui>
-  <gui>Insert Date/Time</gui></guiseq>. To use the plugin, press <guiseq>
-  <gui style="menu">Edit</gui><gui>Insert Date and Time</gui></guiseq>.</p>
+  position.</p>
+
+  <steps>
+    <title>To enable the plugin:</title>
+    <item>
+      <p>Press the menu button in the top-right corner of the window and select
+      <guiseq><gui style="menuitem">Preferences</gui>
+      <gui style="tab">Plugins</gui></guiseq>.</p>
+    </item>
+    <item>
+      <p>Select <gui style="menuitem">Insert Date/Time</gui> to enable the plugin.</p>
+    </item>
+  </steps>
+
+  <p>To use the plugin, press the menu button in the top-right corner of the
+  window and select <guiseq><gui style="menuitem">Tools</gui>
+  <gui style="menuitem">Insert Date and Time…</gui></guiseq>.</p>
 
   <p>By default, the <gui>Insert Date/Time</gui> plugin will prompt you to
   choose your preferred date/time format each time that you use the plugin.
-  However, you can choose your own default date and time format by selecting
-  <guiseq><gui style="menu">gedit</gui><gui style="menuitem">Preferences</gui>
-  <gui>Plugins</gui><gui>Insert Date/Time</gui><gui>Configure</gui></guiseq>.
-  </p>
+  However, you can choose your own default date and time format by pressing the
+  menu button in the top-right corner of the window and selecting <guiseq>
+  <gui style="menuitem">Preferences</gui><gui style="tab">Plugins</gui><gui>
+  Insert Date/Time</gui><gui style="button">Configure</gui></guiseq>.</p>
 
 </page>
