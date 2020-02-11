@@ -6,13 +6,13 @@
 # Jorge González <jorgegonz@svn.gnome.org>, 2006, 2007, 2009, 2010, 2011.
 # 
 # 
-# Daniel Mustieles <daniel.mustieles@gmail.com>, 2011-2019.
+# Daniel Mustieles <daniel.mustieles@gmail.com>, 2011-2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gedit.help.master\n"
-"POT-Creation-Date: 2019-06-18 05:00+0000\n"
-"PO-Revision-Date: 2019-06-20 11:02+0200\n"
+"POT-Creation-Date: 2020-02-10 21:39+0000\n"
+"PO-Revision-Date: 2020-02-11 09:03+0100\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: es <gnome-es-list@gnome.org>\n"
 "Language: es\n"
@@ -20,13 +20,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Gtranslator 3.32.0\n"
+"X-Generator: Gtranslator 3.34.0\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
 msgid "translator-credits"
 msgstr ""
-"Daniel Mustieles <daniel.mustieles@gmail.com>, 2011-2019\n"
+"Daniel Mustieles <daniel.mustieles@gmail.com>, 2011-2020\n"
 "Jorge González <jorgegonz@svn.gnome.org>, 2006-2011\n"
 "María Majadas <maria.majadas@hispalinux.es>, 2005"
 
@@ -44,7 +44,7 @@ msgstr "Cambiar los colores del texto y del fondo en gedit."
 #: C/gedit-open-recent.page:11 C/gedit-plugin-guide.page:13
 #: C/gedit-plugins-change-case.page:14 C/gedit-plugins-doc-stats.page:14
 #: C/gedit-plugins-external-tools.page:15 C/gedit-plugins-file-browser.page:15
-#: C/gedit-plugins-insert-date-time.page:14 C/gedit-plugins-install.page:8
+#: C/gedit-plugins-insert-date-time.page:15 C/gedit-plugins-install.page:8
 #: C/gedit-plugins-modelines.page:13 C/gedit-plugins-pyconsole.page:10
 #: C/gedit-plugins-quick-open.page:11 C/gedit-plugins-snippets.page:9
 #: C/gedit-plugins-sort.page:14 C/gedit-printing.page:10
@@ -863,7 +863,7 @@ msgstr "Complementos adicionales de gedit"
 #. (itstool) path: credit/name
 #: C/gedit-plugins-change-case.page:9 C/gedit-plugins-doc-stats.page:10
 #: C/gedit-plugins-external-tools.page:11 C/gedit-plugins-file-browser.page:11
-#: C/gedit-plugins-insert-date-time.page:9 C/gedit-plugins-install.page:12
+#: C/gedit-plugins-insert-date-time.page:10 C/gedit-plugins-install.page:12
 #: C/gedit-plugins-modelines.page:9 C/gedit-plugins-sort.page:10
 #: C/gedit-replace.page:18 C/gedit-search.page:16 C/gedit-tabs-moving.page:17
 #: C/gedit-tabs.page:18 C/gedit-undo-recent-action.page:16
@@ -1136,48 +1136,94 @@ msgstr ""
 "para ubicar y abrir los archivos que quiera."
 
 #. (itstool) path: info/desc
-#: C/gedit-plugins-insert-date-time.page:17
+#: C/gedit-plugins-insert-date-time.page:18
 msgid "Insert the current date/time at the cursor position."
 msgstr "Inserta la fecha y hora actuales en la posición del cursor."
 
 #. (itstool) path: page/title
-#: C/gedit-plugins-insert-date-time.page:20
+#: C/gedit-plugins-insert-date-time.page:21
 msgid "Insert date/time"
 msgstr "Insertar fecha/hora"
 
 #. (itstool) path: page/p
-#: C/gedit-plugins-insert-date-time.page:22
+#: C/gedit-plugins-insert-date-time.page:23
 msgid ""
 "As this name of this plugin suggests, the <gui>Insert Date/Time</gui> plugin "
-"allows you to insert the date and/or time at the current cursor position. To "
-"enable this plugin, select <guiseq><gui style=\"menu\">gedit</gui> <gui "
-"style=\"menuitem\">Preferences</gui><gui>Plugins</gui> <gui>Insert Date/"
-"Time</gui></guiseq>. To use the plugin, press <guiseq> <gui style=\"menu"
-"\">Edit</gui><gui>Insert Date and Time</gui></guiseq>."
+"allows you to insert the date and/or time at the current cursor position."
 msgstr ""
-"Como su propio nombre indica, el complemento <gui>Insertar fecha y hora</"
-"gui> le permite insertar la fecha y/o la hora en posición actual del cursor. "
-"Para activar este complemento, seleccione <guiseq><gui style=\"menu\">gedit</"
-"gui><gui> Preferencias</gui><gui>Complementos</gui><gui>Insertar fecha y "
-"hora</gui></guiseq>. Para usar el complemento, pulse <guiseq><gui style="
-"\"menu\">Editar</gui><gui>Insertar fecha y hora</gui></guiseq>."
+"como su propio nombre sugiere el complemento <gui>Insertar fecha y hora</"
+"gui> le permite insertar la fecha y/o la hora en la posición actual del "
+"cursor."
+
+#. (itstool) path: steps/title
+#: C/gedit-plugins-insert-date-time.page:28
+#| msgid "To enable Text Size plugin:"
+msgid "To enable the plugin:"
+msgstr "Para activar el complemento:"
+
+#. (itstool) path: item/p
+#: C/gedit-plugins-insert-date-time.page:30
+#| msgid ""
+#| "Press the menu button in the top-right corner of the window and select "
+#| "<guiseq><gui style=\"menuitem\">Preferences</gui><gui>Font &amp; Colors</"
+#| "gui></guiseq>."
+msgid ""
+"Press the menu button in the top-right corner of the window and select "
+"<guiseq><gui style=\"menuitem\">Preferences</gui> <gui style=\"tab"
+"\">Plugins</gui></guiseq>."
+msgstr ""
+"Pulse el botón de menú en la esquina superior derecha de la ventana y "
+"seleccione <guiseq><gui style=\"menuitem\">Preferencias</gui> "
+"<gui>Complementos</gui></guiseq>."
+
+#. (itstool) path: item/p
+#: C/gedit-plugins-insert-date-time.page:35
+#| msgid "Select <gui style=\"menuitem\">Text Size</gui> to enable the plugin."
+msgid ""
+"Select <gui style=\"menuitem\">Insert Date/Time</gui> to enable the plugin."
+msgstr ""
+"Seleccione <gui style=\"menuitem\">Insertar fecha y hora</gui> para activar "
+"el complemento."
 
 #. (itstool) path: page/p
-#: C/gedit-plugins-insert-date-time.page:29
+#: C/gedit-plugins-insert-date-time.page:39
+#| msgid ""
+#| "Press the menu button in the top-right corner of the window and select "
+#| "<guiseq><gui style=\"menuitem\">Preferences</gui><gui>Font &amp; Colors</"
+#| "gui></guiseq>."
+msgid ""
+"To use the plugin, press the menu button in the top-right corner of the "
+"window and select <guiseq><gui style=\"menuitem\">Tools</gui> <gui style="
+"\"menuitem\">Insert Date and Time…</gui></guiseq>."
+msgstr ""
+"Para usar el complemento pulse el botón de menú en la esquina superior "
+"derecha de la ventana y seleccione <guiseq><gui style=\"menuitem"
+"\">Herramientas</gui> <gui>Insertar fecha y hora…</gui></guiseq>."
+
+#. (itstool) path: page/p
+#: C/gedit-plugins-insert-date-time.page:43
+#| msgid ""
+#| "By default, the <gui>Insert Date/Time</gui> plugin will prompt you to "
+#| "choose your preferred date/time format each time that you use the plugin. "
+#| "However, you can choose your own default date and time format by "
+#| "selecting <guiseq><gui style=\"menu\">gedit</gui><gui style=\"menuitem"
+#| "\">Preferences</gui> <gui>Plugins</gui><gui>Insert Date/Time</"
+#| "gui><gui>Configure</gui></guiseq>."
 msgid ""
 "By default, the <gui>Insert Date/Time</gui> plugin will prompt you to choose "
 "your preferred date/time format each time that you use the plugin. However, "
-"you can choose your own default date and time format by selecting "
-"<guiseq><gui style=\"menu\">gedit</gui><gui style=\"menuitem\">Preferences</"
-"gui> <gui>Plugins</gui><gui>Insert Date/Time</gui><gui>Configure</gui></"
-"guiseq>."
+"you can choose your own default date and time format by pressing the menu "
+"button in the top-right corner of the window and selecting <guiseq> <gui "
+"style=\"menuitem\">Preferences</gui><gui style=\"tab\">Plugins</gui><gui> "
+"Insert Date/Time</gui><gui style=\"button\">Configure</gui></guiseq>."
 msgstr ""
 "De manera predeterminada, el complemento <gui>Insertar fecha y hora</gui> le "
 "pedirá su formato de fecha y hora preferido cada vez que use el complemento. "
 "Sin embargo, puede seleccionar el formato de fecha y hora predeterminado "
-"seleccionando <guiseq><gui style=\"menu\">gedit</gui><gui style=\"menuitem"
-"\">Preferencias</gui> <gui>Complementos</gui><gui>Insertar fecha y horar</"
-"gui><gui>Configurar</gui></guiseq>."
+"pulse el botón de menú en la esquina superior derecha de la ventana y "
+"seleccionando <guiseq> <gui style=\"menuitem\">Preferencias</gui><gui style="
+"\"tab\">Complementos</gui><gui> Insertar fecha y hora</gui><gui style="
+"\"button\">Configurar</gui></guiseq>."
 
 #. (itstool) path: info/desc
 #: C/gedit-plugins-install.page:15
@@ -1246,31 +1292,38 @@ msgstr ""
 
 #. (itstool) path: item/p
 #: C/gedit-plugins-install.page:41
+#| msgid ""
+#| "After you have placed the plugin files into the correct directory, the "
+#| "plugin will appear in the Preferences menu. Select <guiseq><gui>Edit </"
+#| "gui><gui style=\"menuitem\">Preferences</gui><gui>Plugins</gui> "
+#| "<gui>[Name of Plugin]</gui></guiseq> to enable the plugin."
 msgid ""
 "After you have placed the plugin files into the correct directory, the "
-"plugin will appear in the Preferences menu. Select <guiseq><gui>Edit </"
-"gui><gui style=\"menuitem\">Preferences</gui><gui>Plugins</gui> <gui>[Name "
-"of Plugin]</gui></guiseq> to enable the plugin."
+"plugin will appear in the Preferences menu. Press the menu button in the top-"
+"right corner of the window and select <guiseq><gui style=\"menuitem\"> "
+"Preferences</gui><gui style=\"tab\">Plugins</gui><gui>[Name of Plugin]</gui> "
+"</guiseq> to enable the plugin."
 msgstr ""
 "Después de mover el complemento a la carpeta correcta, aparecerá en el menú "
-"«Preferencias». Seleccione <guiseq><gui>Editar</gui><gui style=\"menuitem"
-"\">Preferencias</gui><gui>Complementos</gui><gui>[Nombre del complemento]</"
-"gui></guiseq> para activarlo."
+"«Preferencias». Pulse el botón de menú en la esquina superior derecha de la "
+"ventana y elija <guiseq><gui style=\"menuitem\">Preferencias</"
+"gui><gui>Complementos</gui><gui>[Nombre del complemento]</gui></guiseq> para "
+"activarlo."
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-install.page:45
+#: C/gedit-plugins-install.page:46
 msgid "Click <gui>Close</gui>."
 msgstr "Pulse <gui>Cerrar</gui>."
 
 #. (itstool) path: page/p
-#: C/gedit-plugins-install.page:48
+#: C/gedit-plugins-install.page:49
 msgid ""
 "After you have enabled the plugin, it should be available for you to use."
 msgstr ""
 "Después de activar el complemento, debería estar disponible para usarse."
 
 #. (itstool) path: note/p
-#: C/gedit-plugins-install.page:52
+#: C/gedit-plugins-install.page:53
 msgid ""
 "The <file>.local</file> directory is hidden by default. To view it and other "
 "hidden files, select <guiseq><gui>View</gui><gui>Show Hidden Files</gui></"
@@ -1282,7 +1335,7 @@ msgstr ""
 "keyseq>."
 
 #. (itstool) path: note/p
-#: C/gedit-plugins-install.page:59
+#: C/gedit-plugins-install.page:60
 msgid ""
 "If the directory <file>.local/share/gedit/plugins/</file> is not present on "
 "your system, you will need to create it."
@@ -3017,7 +3070,7 @@ msgstr "Tecla rápidas relacionadas con las pestañas"
 #: C/gedit-shortcut-keys.page:57 C/gedit-shortcut-keys.page:113
 #: C/gedit-shortcut-keys.page:167 C/gedit-shortcut-keys.page:253
 #: C/gedit-shortcut-keys.page:273 C/gedit-shortcut-keys.page:325
-#: C/gedit-shortcut-keys.page:358 C/gedit-shortcut-keys.page:392
+#: C/gedit-shortcut-keys.page:358 C/gedit-shortcut-keys.page:387
 msgid "Action"
 msgstr "Acción"
 
@@ -3025,7 +3078,7 @@ msgstr "Acción"
 #: C/gedit-shortcut-keys.page:58 C/gedit-shortcut-keys.page:114
 #: C/gedit-shortcut-keys.page:168 C/gedit-shortcut-keys.page:254
 #: C/gedit-shortcut-keys.page:274 C/gedit-shortcut-keys.page:326
-#: C/gedit-shortcut-keys.page:359 C/gedit-shortcut-keys.page:393
+#: C/gedit-shortcut-keys.page:359 C/gedit-shortcut-keys.page:388
 msgid "Keyboard shortcut"
 msgstr "Atajo del teclado"
 
@@ -3652,30 +3705,18 @@ msgstr "Listado de carpeta (con complemento)"
 msgid "<keyseq><key>Ctrl</key><key>Shift</key> <key>D</key></keyseq>"
 msgstr "<keyseq><key>Ctrl</key><key>Mayús</key> <key>D</key></keyseq>"
 
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:381
-#| msgid "Indent (with plugin)."
-msgid "Insert timestamp (with plugin)"
-msgstr "Insertar marca de tiempo (con complemento)"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:382
-#| msgid "<keyseq><key>Ctrl</key><key>Shift</key> <key>L</key></keyseq>"
-msgid "<keyseq><key>Ctrl</key><key>Shift</key> <key>B</key></keyseq>"
-msgstr "<keyseq><key>Ctrl</key><key>Mayús</key> <key>B</key></keyseq>"
-
 #. (itstool) path: table/title
-#: C/gedit-shortcut-keys.page:389
+#: C/gedit-shortcut-keys.page:384
 msgid "Shortcut keys for user help"
 msgstr "Teclas rápidas para la ayuda"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:398
+#: C/gedit-shortcut-keys.page:393
 msgid "Open the gedit user guide"
 msgstr "Abrir la guía de usuario de gedit"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:399
+#: C/gedit-shortcut-keys.page:394
 msgid "<key>F1</key>"
 msgstr "<key>F1</key>"
 
@@ -4369,6 +4410,31 @@ msgstr "Creative Commons de Atribución-Compartir Igual 3.0 sin soporte"
 #: C/legal.xml:3
 msgid "This work is licensed under a <_:link-1/>."
 msgstr "Este trabajo está licenciado bajo la <_:link-1/>."
+
+#~ msgid ""
+#~ "As this name of this plugin suggests, the <gui>Insert Date/Time</gui> "
+#~ "plugin allows you to insert the date and/or time at the current cursor "
+#~ "position. To enable this plugin, select <guiseq><gui style=\"menu"
+#~ "\">gedit</gui> <gui style=\"menuitem\">Preferences</gui><gui>Plugins</"
+#~ "gui> <gui>Insert Date/Time</gui></guiseq>. To use the plugin, press "
+#~ "<guiseq> <gui style=\"menu\">Edit</gui><gui>Insert Date and Time</gui></"
+#~ "guiseq>."
+#~ msgstr ""
+#~ "Como su propio nombre indica, el complemento <gui>Insertar fecha y hora</"
+#~ "gui> le permite insertar la fecha y/o la hora en posición actual del "
+#~ "cursor. Para activar este complemento, seleccione <guiseq><gui style="
+#~ "\"menu\">gedit</gui><gui> Preferencias</gui><gui>Complementos</"
+#~ "gui><gui>Insertar fecha y hora</gui></guiseq>. Para usar el complemento, "
+#~ "pulse <guiseq><gui style=\"menu\">Editar</gui><gui>Insertar fecha y hora</"
+#~ "gui></guiseq>."
+
+#~| msgid "Indent (with plugin)."
+#~ msgid "Insert timestamp (with plugin)"
+#~ msgstr "Insertar marca de tiempo (con complemento)"
+
+#~| msgid "<keyseq><key>Ctrl</key><key>Shift</key> <key>L</key></keyseq>"
+#~ msgid "<keyseq><key>Ctrl</key><key>Shift</key> <key>B</key></keyseq>"
+#~ msgstr "<keyseq><key>Ctrl</key><key>Mayús</key> <key>B</key></keyseq>"
 
 #~ msgid ""
 #~ "This will activate the <em>file-browser</em> mode of the <app>side pane</"
@@ -5607,14 +5673,6 @@ msgstr "Este trabajo está licenciado bajo la <_:link-1/>."
 
 #~ msgid "Enable Text Size Plugin"
 #~ msgstr "Activar el complemento Tamaño del texto"
-
-#~ msgid "To enable Text Size plugin:"
-#~ msgstr "Para activar el complemento Tamaño del texto:"
-
-#~ msgid "Select <gui style=\"menuitem\">Text Size</gui> to enable the plugin."
-#~ msgstr ""
-#~ "Seleccione <gui style=\"menuitem\">Tamaño del texto</gui> para activar el "
-#~ "complemento."
 
 #~ msgid "Use Text Size Plugin"
 #~ msgstr "Usar el complemento Tamaño del texto"
