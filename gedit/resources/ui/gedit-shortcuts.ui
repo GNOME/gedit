@@ -261,6 +261,34 @@
             <child>
               <object class="GtkShortcutsShortcut">
                 <property name="visible">1</property>
+                <property name="accelerator">Home</property>
+                <property name="title" translatable="yes" context="shortcut window">Move to the beginning of the current line</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkShortcutsShortcut">
+                <property name="visible">1</property>
+                <property name="accelerator">End</property>
+                <property name="title" translatable="yes" context="shortcut window">Move to the end of the current line</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkShortcutsShortcut">
+                <property name="visible">1</property>
+                <property name="accelerator">&lt;ctrl&gt;Home</property>
+                <property name="title" translatable="yes" context="shortcut window">Move to the beginning of the document</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkShortcutsShortcut">
+                <property name="visible">1</property>
+                <property name="accelerator">&lt;ctrl&gt;End</property>
+                <property name="title" translatable="yes" context="shortcut window">Move to the end of the document</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkShortcutsShortcut">
+                <property name="visible">1</property>
                 <property name="accelerator">&lt;alt&gt;&lt;shift&gt;Up</property>
                 <property name="title" translatable="yes" context="shortcut window">Move viewport up within the file</property>
               </object>
