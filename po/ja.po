@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: gedit master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gedit/issues\n"
 "POT-Creation-Date: 2020-01-21 14:57+0000\n"
-"PO-Revision-Date: 2020-01-15 23:40+0900\n"
+"PO-Revision-Date: 2020-02-20 23:00+0900\n"
 "Last-Translator: sicklylife <translation@sicklylife.jp>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
 "Language: ja\n"
@@ -30,7 +30,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 2.0.6\n"
 
 #: data/org.gnome.gedit.appdata.xml.in:7
 msgid "gedit"
@@ -527,7 +526,7 @@ msgstr ""
 
 #: gedit/gedit-app.c:103
 msgid "Show the application’s version"
-msgstr "バージョンを表示する"
+msgstr "アプリケーションのバージョンを表示する"
 
 #: gedit/gedit-app.c:109
 msgid "Display list of possible values for the encoding option"
@@ -537,7 +536,7 @@ msgstr "利用可能なエンコーディングオプションの値一覧を表
 msgid ""
 "Set the character encoding to be used to open the files listed on the "
 "command line"
-msgstr "オープンするファイルで使用する文字エンコーディングをセットする"
+msgstr "開くファイルで使用する文字エンコーディングを設定する"
 
 #: gedit/gedit-app.c:117
 msgid "ENCODING"
@@ -553,11 +552,11 @@ msgstr "すでに実行中の gedit に新しいドキュメントを作成す�
 
 #: gedit/gedit-app.c:137
 msgid "Open files and block process until files are closed"
-msgstr "ファイルを開き、ファイルが閉じられるまでブロックする処理を行う"
+msgstr "ファイルを開き、そのファイルを閉じるまでブロックする処理を行う"
 
 #: gedit/gedit-app.c:144
 msgid "Run gedit in standalone mode"
-msgstr "gedit をスタンドアローンモードで動かす"
+msgstr "gedit をスタンドアローンモードで実行する"
 
 #: gedit/gedit-app.c:151
 msgid "[FILE…] [+LINE[:COLUMN]]"
@@ -565,12 +564,12 @@ msgstr "[FILE…] [+LINE[:COLUMN]]"
 
 #: gedit/gedit-app.c:261
 msgid "There was an error displaying the help."
-msgstr "ヘルプを表示する際にエラーが発生しました。"
+msgstr "ヘルプを表示するときにエラーが発生しました。"
 
 #: gedit/gedit-app.c:957
 #, c-format
 msgid "%s: invalid encoding."
-msgstr "%s: 指定したエンコーディングは無効です。"
+msgstr "%s: 指定したエンコーディングは不正です。"
 
 #: gedit/gedit-close-confirmation-dialog.c:277
 msgid "Close _without Saving"
@@ -664,12 +663,12 @@ msgstr[0] "保存しないと %d 時間前からの変更内容が完全に失�
 #: gedit/gedit-close-confirmation-dialog.c:418
 #, c-format
 msgid "Changes to document “%s” will be permanently lost."
-msgstr "ドキュメント“%s”への変更が完全に失われます。"
+msgstr "ドキュメント“%s”への変更内容が完全に失われます。"
 
 #: gedit/gedit-close-confirmation-dialog.c:423
 #, c-format
 msgid "Save changes to document “%s” before closing?"
-msgstr "ドキュメント“%s”で変更した内容を閉じる前に保存しますか?"
+msgstr "ドキュメント“%s”の変更内容を閉じる前に保存しますか?"
 
 #: gedit/gedit-close-confirmation-dialog.c:438
 #: gedit/gedit-close-confirmation-dialog.c:562
@@ -688,8 +687,7 @@ msgid "There is %d document with unsaved changes. Save changes before closing?"
 msgid_plural ""
 "There are %d documents with unsaved changes. Save changes before closing?"
 msgstr[0] ""
-"まだ保存していないドキュメントが %d 個あります。閉じる前にそれらを保存します"
-"か?"
+"まだ保存していないドキュメントが %d 個あります。閉じる前に保存しますか?"
 
 #: gedit/gedit-close-confirmation-dialog.c:538
 msgid "Docum_ents with unsaved changes:"
@@ -701,18 +699,18 @@ msgstr "保存するドキュメントを選択してください(_E):"
 
 #: gedit/gedit-close-confirmation-dialog.c:566
 msgid "If you don’t save, all your changes will be permanently lost."
-msgstr "保存しないと変更した内容が完全に失われます。"
+msgstr "保存しないと変更内容が完全に失われます。"
 
 #: gedit/gedit-commands-file.c:260
 #, c-format
 msgid "Loading file “%s”…"
-msgstr "ファイル“%s”を読み込んでいます…"
+msgstr "ファイル“%s”を読み込み中…"
 
 #: gedit/gedit-commands-file.c:269
 #, c-format
 msgid "Loading %d file…"
 msgid_plural "Loading %d files…"
-msgstr[0] "%d 個のファイルを読み込んでいます…"
+msgstr[0] "%d 個のファイルを読み込み中…"
 
 #. Translators: "Open" is the title of the file chooser window.
 #: gedit/gedit-commands-file.c:451
@@ -732,7 +730,7 @@ msgstr "開く(_O)"
 #: gedit/gedit-commands-file.c:553
 #, c-format
 msgid "The file “%s” is read-only."
-msgstr "ファイル“%s”は読み込み専用です。"
+msgstr "ファイル“%s”は読み取り専用です。"
 
 #: gedit/gedit-commands-file.c:558
 msgid "Do you want to try to replace it with the one you are saving?"
@@ -757,8 +755,8 @@ msgid ""
 "The file “%s” was previously saved as plain text and will now be saved using "
 "compression."
 msgstr ""
-"ファイル“%s”は以前プレーンテキストで保存されていましたが、今回は圧縮をかけて"
-"保存しました。"
+"ファイル“%s”は以前はプレーンテキストで保存されていましたが、今回は圧縮をかけ"
+"て保存しました。"
 
 #: gedit/gedit-commands-file.c:624
 msgid "_Save Using Compression"
@@ -770,7 +768,7 @@ msgid ""
 "The file “%s” was previously saved using compression and will now be saved "
 "as plain text."
 msgstr ""
-"ファイル“%s”は圧縮されていますが、プレーンテキストとして保存しなおします。"
+"ファイル“%s”は圧縮されていますが、プレーンテキストとして保存し直します。"
 
 #: gedit/gedit-commands-file.c:632
 msgid "_Save As Plain Text"
@@ -779,7 +777,7 @@ msgstr "プレーンテキストで保存(_S)"
 #: gedit/gedit-commands-file.c:747 gedit/gedit-commands-file.c:1014
 #, c-format
 msgid "Saving file “%s”…"
-msgstr "ファイル“%s”を保存しています…"
+msgstr "ファイル“%s”を保存中…"
 
 #. Translators: "Save As" is the title of the file chooser window.
 #: gedit/gedit-commands-file.c:842
@@ -804,12 +802,12 @@ msgid ""
 msgid_plural ""
 "Changes made to the document in the last %ld seconds will be permanently "
 "lost."
-msgstr[0] "%ld 秒前に編集したドキュメントへの変更が完全に失われます。"
+msgstr[0] "%ld 秒前に編集したドキュメントへの変更内容が完全に失われます。"
 
 #: gedit/gedit-commands-file.c:1489
 msgid ""
 "Changes made to the document in the last minute will be permanently lost."
-msgstr "1 分前に編集したドキュメントへの変更が完全に失われます。"
+msgstr "1 分前に編集したドキュメントへの変更内容が完全に失われます。"
 
 #: gedit/gedit-commands-file.c:1495
 #, c-format
@@ -819,7 +817,8 @@ msgid ""
 msgid_plural ""
 "Changes made to the document in the last minute and %ld seconds will be "
 "permanently lost."
-msgstr[0] "1 分 %ld 秒前に編集したドキュメントへの変更が完全に失われます。"
+msgstr[0] ""
+"1 分 %ld 秒前に編集したドキュメントへの変更内容が完全に失われます。"
 
 #: gedit/gedit-commands-file.c:1505
 #, c-format
@@ -828,11 +827,11 @@ msgid ""
 msgid_plural ""
 "Changes made to the document in the last %ld minutes will be permanently "
 "lost."
-msgstr[0] "%ld 分前に編集したドキュメントへの変更が完全に失われます。"
+msgstr[0] "%ld 分前に編集したドキュメントへの変更内容が完全に失われます。"
 
 #: gedit/gedit-commands-file.c:1520
 msgid "Changes made to the document in the last hour will be permanently lost."
-msgstr "1 時間前に編集したドキュメントへの変更が完全に失われます。"
+msgstr "1 時間前に編集したドキュメントへの変更内容が完全に失われます。"
 
 #: gedit/gedit-commands-file.c:1526
 #, c-format
@@ -842,7 +841,8 @@ msgid ""
 msgid_plural ""
 "Changes made to the document in the last hour and %d minutes will be "
 "permanently lost."
-msgstr[0] "1 時間 %d 分前に編集したドキュメントへの変更が完全に失われます。"
+msgstr[0] ""
+"1 時間 %d 分前に編集したドキュメントへの変更内容が完全に失われます。"
 
 #: gedit/gedit-commands-file.c:1541
 #, c-format
@@ -850,7 +850,8 @@ msgid ""
 "Changes made to the document in the last %d hour will be permanently lost."
 msgid_plural ""
 "Changes made to the document in the last %d hours will be permanently lost."
-msgstr[0] "%d 時間前に編集したドキュメントへの変更が完全に失われます。"
+msgstr[0] ""
+"%d 時間前に編集したドキュメントへの変更内容が完全に失われます。"
 
 #: gedit/gedit-commands-file.c:1564
 msgid "_Revert"
@@ -859,7 +860,7 @@ msgstr "戻す(_R)"
 #: gedit/gedit-commands-help.c:108
 msgid "gedit is a small and lightweight text editor for the GNOME Desktop"
 msgstr ""
-"gedit は GNOME デスクトップ用に作られた小型軽量のテキストエディターです。"
+"gedit は GNOME デスクトップ用に作成された小型軽量のテキストエディターです。"
 
 #: gedit/gedit-commands-help.c:130
 msgid "translator-credits"
@@ -886,7 +887,7 @@ msgstr ""
 #, c-format
 msgid "Found and replaced %d occurrence"
 msgid_plural "Found and replaced %d occurrences"
-msgstr[0] "%d ヶ所で検索と置換を行いました。"
+msgstr[0] "%d ヶ所で検索と置換を行いました"
 
 #: gedit/gedit-commands-search.c:115
 msgid "Found and replaced one occurrence"
@@ -912,7 +913,7 @@ msgstr "新しいタブグループ %i"
 #: gedit/gedit-documents-panel.c:498 gedit/gedit-window.c:1094
 #: gedit/gedit-window.c:1100 gedit/gedit-window.c:1108
 msgid "Read-Only"
-msgstr "読み込み専用"
+msgstr "読み取り専用"
 
 #: gedit/gedit-encodings-combo-box.c:297
 #: gedit/gedit-file-chooser-dialog-osx.m:562
@@ -1004,7 +1005,7 @@ msgstr "ファイル“%s”が見つかりませんでした。"
 #: gedit/gedit-io-error-info-bar.c:165 gedit/gedit-io-error-info-bar.c:205
 #: gedit/gedit-io-error-info-bar.c:212
 msgid "Please check that you typed the location correctly and try again."
-msgstr "入力した場所が正しいか確認して、もう一度実行してみてください。"
+msgstr "入力した場所が正しいか確認して再試行してください。"
 
 #. Translators: %s is a URI scheme (like for example http:, ftp:, etc.)
 #: gedit/gedit-io-error-info-bar.c:184
@@ -1037,8 +1038,8 @@ msgid ""
 "Host “%s” could not be found. Please check that your proxy settings are "
 "correct and try again."
 msgstr ""
-"ホスト“%s”が見つかりませんでした。プロキシの設定が正しいか確認して、もう一度"
-"実行してみてください。"
+"ホスト“%s”が見つかりませんでした。プロキシの設定が正しいか確認して再試行し"
+"てください。"
 
 #: gedit/gedit-io-error-info-bar.c:261
 #, c-format
@@ -1046,8 +1047,7 @@ msgid ""
 "Hostname was invalid. Please check that you typed the location correctly and "
 "try again."
 msgstr ""
-"ホスト名が間違っています。入力した場所が正しいか確認して、もう一度実行してみ"
-"てください。"
+"ホスト名が間違っています。入力した場所が正しいか確認して再試行してください。"
 
 #: gedit/gedit-io-error-info-bar.c:269
 #, c-format
@@ -1056,7 +1056,7 @@ msgstr "“%s”は通常のファイルではありません。"
 
 #: gedit/gedit-io-error-info-bar.c:274
 msgid "Connection timed out. Please try again."
-msgstr "接続がタイムアウトしたので、もう一度実行してみてください。"
+msgstr "接続がタイムアウトしました。再試行してください。"
 
 #: gedit/gedit-io-error-info-bar.c:307
 #, c-format
@@ -1070,7 +1070,7 @@ msgstr "ファイルが見つかりません。少し前に削除された可能
 #: gedit/gedit-io-error-info-bar.c:353
 #, c-format
 msgid "Could not revert the file “%s”."
-msgstr "ファイル“%s”を元に戻せませんでした"
+msgstr "ファイル“%s”を元に戻せませんでした。"
 
 #: gedit/gedit-io-error-info-bar.c:380
 msgid "Ch_aracter Encoding:"
@@ -1097,8 +1097,7 @@ msgid ""
 "The number of followed links is limited and the actual file could not be "
 "found within this limit."
 msgstr ""
-"リンクの数が制限され、実際のファイルがこの制限内に見つけることができませんで"
-"した。"
+"リンクの数が制限され、この制限内に実際のファイルが見つかりませんでした。"
 
 #: gedit/gedit-io-error-info-bar.c:592
 msgid "You do not have the permissions necessary to open the file."
@@ -1106,7 +1105,7 @@ msgstr "そのファイルを開く権限がありません。"
 
 #: gedit/gedit-io-error-info-bar.c:598
 msgid "Unable to detect the character encoding."
-msgstr "文字エンコーディングを検出できませんでした。"
+msgstr "文字エンコーディングを検出できません。"
 
 #: gedit/gedit-io-error-info-bar.c:599 gedit/gedit-io-error-info-bar.c:623
 msgid "Please check that you are not trying to open a binary file."
@@ -1114,24 +1113,24 @@ msgstr "バイナリファイルを開こうとしていないか確認してく
 
 #: gedit/gedit-io-error-info-bar.c:600
 msgid "Select a character encoding from the menu and try again."
-msgstr "メニューから文字エンコーディングを選択して、もう一度実行してください。"
+msgstr "メニューから文字エンコーディングを選択して再試行してください。"
 
 #: gedit/gedit-io-error-info-bar.c:606
 #, c-format
 msgid "There was a problem opening the file “%s”."
-msgstr "ファイル“%s”を開く際にエラーが発生しました。"
+msgstr "ファイル“%s”を開くときにエラーが発生しました。"
 
 #: gedit/gedit-io-error-info-bar.c:608
 msgid ""
 "The file you opened has some invalid characters. If you continue editing "
 "this file you could corrupt this document."
 msgstr ""
-"開いたファイルに正しくない文字が含まれています。このファイルを編集し続ける"
-"と、この文書が壊れてしまうかもしれません。"
+"開いたファイルに不正な文字が含まれています。このファイルを編集し続けると、"
+"この文書が壊れてしまうかもしれません。"
 
 #: gedit/gedit-io-error-info-bar.c:611
 msgid "You can also choose another character encoding and try again."
-msgstr "メニューから文字エンコーディングを選択して、もう一度実行してください。"
+msgstr "メニューから文字エンコーディングを選択して再試行してください。"
 
 #: gedit/gedit-io-error-info-bar.c:620
 #, c-format
@@ -1141,7 +1140,7 @@ msgstr "ファイル“%s”を文字エンコーディング“%s”で開け�
 #: gedit/gedit-io-error-info-bar.c:624 gedit/gedit-io-error-info-bar.c:699
 msgid "Select a different character encoding from the menu and try again."
 msgstr ""
-"メニューから別の文字エンコーディングを選択して、もう一度実行してください。"
+"メニューから別の文字エンコーディングを選択して再試行してください。"
 
 #: gedit/gedit-io-error-info-bar.c:636
 #, c-format
@@ -1206,12 +1205,12 @@ msgstr ""
 #: gedit/gedit-io-error-info-bar.c:962
 #, c-format
 msgid "Could not create a backup file while saving “%s”"
-msgstr "“%s”を保存する際にバックアップファイルを作成できませんでした。"
+msgstr "“%s”を保存するときにバックアップファイルを作成できませんでした。"
 
 #: gedit/gedit-io-error-info-bar.c:967
 #, c-format
 msgid "Could not create a temporary backup file while saving “%s”"
-msgstr "“%s”を保存する際に作業用のバックアップファイルを作成できませんでした。"
+msgstr "“%s”を保存するときに作業用のバックアップファイルを作成できませんでした。"
 
 #: gedit/gedit-io-error-info-bar.c:984
 msgid ""
@@ -1231,16 +1230,16 @@ msgid ""
 "Cannot handle “%s:” locations in write mode. Please check that you typed the "
 "location correctly and try again."
 msgstr ""
-"場所“%s:”へ書き込めません。入力した場所が正しいことを確認して、もう一度実行し"
-"てみてください。"
+"場所“%s:”へ書き込めません。入力した場所が正しいことを確認して再試行してくださ"
+"い。"
 
 #: gedit/gedit-io-error-info-bar.c:1052
 msgid ""
 "Cannot handle this location in write mode. Please check that you typed the "
 "location correctly and try again."
 msgstr ""
-"この場所へ書き込めません。入力した場所が正しいことを確認して、もう一度実行し"
-"てみてください。"
+"この場所へ書き込めません。入力した場所が正しいことを確認して再試行してくださ"
+"い。"
 
 #: gedit/gedit-io-error-info-bar.c:1061
 #, c-format
@@ -1248,8 +1247,8 @@ msgid ""
 "“%s” is not a valid location. Please check that you typed the location "
 "correctly and try again."
 msgstr ""
-"場所“%s”が間違っています。入力した場所が正しいことを確認して、もう一度実行し"
-"てみてください。"
+"場所“%s”が間違っています。入力した場所が正しいことを確認して再試行してくださ"
+"い。"
 
 #: gedit/gedit-io-error-info-bar.c:1068
 msgid ""
@@ -1257,7 +1256,7 @@ msgid ""
 "that you typed the location correctly and try again."
 msgstr ""
 "そのファイルを保存するために必要な権限がありません。入力した場所が正しいか確"
-"認して、もう一度実行してみてください。"
+"認して再試行してください。"
 
 #: gedit/gedit-io-error-info-bar.c:1074
 msgid ""
@@ -1265,15 +1264,15 @@ msgid ""
 "and try again."
 msgstr ""
 "そのファイルを保存するのに十分な空き容量がありません。空き容量を増やしてか"
-"ら、もう一度実行してみてください。"
+"ら再試行してください。"
 
 #: gedit/gedit-io-error-info-bar.c:1079
 msgid ""
 "You are trying to save the file on a read-only disk. Please check that you "
 "typed the location correctly and try again."
 msgstr ""
-"読み込み専用のディスクにファイルを保存しようとしています。入力した場所が正し"
-"いか確認して、もう一度実行してみてください。"
+"読み取り専用のディスクにファイルを保存しようとしています。入力した場所が正し"
+"いか確認して再試行してください。"
 
 #: gedit/gedit-io-error-info-bar.c:1085
 msgid "A file with the same name already exists. Please use a different name."
@@ -1318,7 +1317,7 @@ msgstr "再読み込み(_R)"
 #: gedit/gedit-io-error-info-bar.c:1243
 #, c-format
 msgid "Some invalid chars have been detected while saving “%s”"
-msgstr "“%s”を保存する際に不正な文字を検出しました"
+msgstr "“%s”を保存するときに不正な文字を検出しました"
 
 #: gedit/gedit-io-error-info-bar.c:1259
 msgid ""
@@ -1341,7 +1340,7 @@ msgstr "システムの固定幅フォント (%s) を使用する(_U)"
 #, c-format
 msgid "Directory “%s” could not be created: g_mkdir_with_parents() failed: %s"
 msgstr ""
-"“%s”というフォルダーを生成できませんでした: g_mkdir_with_parents() に失敗: %s"
+"フォルダー“%s”を作成できませんでした: g_mkdir_with_parents() に失敗: %s"
 
 #: gedit/gedit-preferences-dialog.c:789
 msgid "The selected color scheme cannot be installed."
@@ -1349,11 +1348,11 @@ msgstr "指定したカラースキームをインストールできません。
 
 #: gedit/gedit-preferences-dialog.c:812
 msgid "Add Scheme"
-msgstr "スキームの追加"
+msgstr "スキームを追加"
 
 #: gedit/gedit-preferences-dialog.c:817
 msgid "A_dd Scheme"
-msgstr "スキームの追加(_D)"
+msgstr "スキームを追加(_D)"
 
 #: gedit/gedit-preferences-dialog.c:821
 msgid "Color Scheme Files"
@@ -1433,39 +1432,39 @@ msgstr "%s に戻しています"
 #: gedit/gedit-tab.c:844
 #, c-format
 msgid "Loading %s from %s"
-msgstr "%2$s から %1$s を読み込んでいます"
+msgstr "%2$s から %1$s を読み込み中"
 
 #: gedit/gedit-tab.c:851
 #, c-format
 msgid "Loading %s"
-msgstr "%s を読み込んでいます"
+msgstr "%s を読み込み中"
 
 #. Translators: the first %s is a file name (e.g. test.txt) the second one
 #. is a directory (e.g. ssh://master.gnome.org/home/users/paolo)
 #: gedit/gedit-tab.c:931
 #, c-format
 msgid "Saving %s to %s"
-msgstr "%s を %s へ保存しています"
+msgstr "%s を %s に保存中"
 
 #: gedit/gedit-tab.c:936
 #, c-format
 msgid "Saving %s"
-msgstr "%s を保存しています"
+msgstr "%s を保存中"
 
 #: gedit/gedit-tab.c:1539
 #, c-format
 msgid "Error opening file %s"
-msgstr "ファイル %s を読み込む際にエラー"
+msgstr "ファイル %s を開くときにエラーが発生しました"
 
 #: gedit/gedit-tab.c:1544
 #, c-format
 msgid "Error reverting file %s"
-msgstr "ファイル %s に戻す際にエラー"
+msgstr "ファイル %s に戻すときにエラーが発生しました"
 
 #: gedit/gedit-tab.c:1549
 #, c-format
 msgid "Error saving file %s"
-msgstr "ファイル %s を保存する際にエラー"
+msgstr "ファイル %s の保存中にエラーが発生しました"
 
 #: gedit/gedit-tab.c:1580
 msgid "Name:"
@@ -1540,16 +1539,16 @@ msgstr "カーソルを移動する行を入力してください"
 
 #: gedit/gedit-window.c:931
 msgid "Bracket match is out of range"
-msgstr "対応する括弧は対象範囲から外れています。"
+msgstr "対応する括弧は対象範囲から外れています"
 
 #: gedit/gedit-window.c:936
 msgid "Bracket match not found"
-msgstr "対応する括弧は見つかりません。"
+msgstr "対応する括弧が見つかりません"
 
 #: gedit/gedit-window.c:941
 #, c-format
 msgid "Bracket match found on line: %d"
-msgstr "対応する括弧が %d 行目に見つかりました。"
+msgstr "対応する括弧が %d 行目に見つかりました"
 
 #. Translators: "Ln" is an abbreviation for "Line", Col is an abbreviation for "Column". Please,
 #. use abbreviations if possible to avoid space problems.
@@ -1948,7 +1947,7 @@ msgstr "ファイルの保存"
 
 #: gedit/resources/ui/gedit-preferences-dialog.ui:413
 msgid "Create a _backup copy of files before saving"
-msgstr "保存する前にバックアップを生成する(_B)"
+msgstr "保存する前にバックアップを作成する(_B)"
 
 #: gedit/resources/ui/gedit-preferences-dialog.ui:428
 msgid "_Autosave files every"
@@ -1974,7 +1973,7 @@ msgstr "エディターのフォント(_F): "
 
 #: gedit/resources/ui/gedit-preferences-dialog.ui:575
 msgid "Pick the editor font"
-msgstr "エディターで使用するフォントの取得"
+msgstr "エディターで使用するフォントを取得"
 
 #: gedit/resources/ui/gedit-preferences-dialog.ui:616
 msgid "Color Scheme"
@@ -1987,7 +1986,7 @@ msgstr "スキームをインストールします"
 
 #: gedit/resources/ui/gedit-preferences-dialog.ui:665
 msgid "Install Scheme"
-msgstr "スキームのインストール"
+msgstr "スキームをインストール"
 
 #: gedit/resources/ui/gedit-preferences-dialog.ui:679
 #: gedit/resources/ui/gedit-preferences-dialog.ui:680
@@ -1996,7 +1995,7 @@ msgstr "スキームをアンインストールします"
 
 #: gedit/resources/ui/gedit-preferences-dialog.ui:681
 msgid "Uninstall Scheme"
-msgstr "スキームのアンインストール"
+msgstr "スキームをアンインストール"
 
 #: gedit/resources/ui/gedit-preferences-dialog.ui:721
 msgid "Font & Colors"
@@ -2313,7 +2312,7 @@ msgstr "すべてのテキストの選択を解除する"
 #: gedit/resources/ui/gedit-shortcuts.ui:226
 msgctxt "shortcut window"
 msgid "Copy and Paste"
-msgstr "コピーアンドペースト"
+msgstr "コピー / 貼り付け"
 
 #: gedit/resources/ui/gedit-shortcuts.ui:231
 msgctxt "shortcut window"
@@ -2343,22 +2342,22 @@ msgstr "指定行へ移動する"
 #: gedit/resources/ui/gedit-shortcuts.ui:265
 msgctxt "shortcut window"
 msgid "Move viewport up within the file"
-msgstr "上に移動する (カーソル位置は固定)"
+msgstr "上に移動する (カーソル位置はそのまま)"
 
 #: gedit/resources/ui/gedit-shortcuts.ui:272
 msgctxt "shortcut window"
 msgid "Move viewport down within the file"
-msgstr "下に移動する (カーソル位置は固定)"
+msgstr "下に移動する (カーソル位置はそのまま)"
 
 #: gedit/resources/ui/gedit-shortcuts.ui:279
 msgctxt "shortcut window"
 msgid "Move viewport to end of file"
-msgstr "末尾に移動する (カーソル位置は固定)"
+msgstr "末尾に移動する (カーソル位置はそのまま)"
 
 #: gedit/resources/ui/gedit-shortcuts.ui:286
 msgctxt "shortcut window"
 msgid "Move viewport to beginning of file"
-msgstr "先頭に移動する (カーソル位置は固定)"
+msgstr "先頭に移動する (カーソル位置はそのまま)"
 
 #: gedit/resources/ui/gedit-shortcuts.ui:293
 msgctxt "shortcut window"
@@ -2495,7 +2494,7 @@ msgstr "最新版の gedit をチェックします"
 
 #: plugins/checkupdate/gedit-check-update-plugin.c:243
 msgid "There was an error displaying the URI."
-msgstr "URI を表示する際にエラーが発生しました。"
+msgstr "URI を表示するときにエラーが発生しました。"
 
 #: plugins/checkupdate/gedit-check-update-plugin.c:280
 msgid "_Download"
@@ -2638,7 +2637,7 @@ msgstr "Pango フォント名。例: “Sans 12”、“Monospace Bold 14”"
 
 #: plugins/externaltools/tools/appactivatable.py:133
 msgid "Manage _External Tools…"
-msgstr "外部ツールの管理(_E)…"
+msgstr "外部ツールを管理(_E)…"
 
 #: plugins/externaltools/tools/appactivatable.py:138
 msgid "External _Tools"
@@ -2687,7 +2686,7 @@ msgstr "すでにこのアクセラレータは %s に割り当てられてい�
 
 #: plugins/externaltools/tools/manager.py:729
 msgid "Type a new accelerator, or press Backspace to clear"
-msgstr "(新しいアクセラレータを入力してください/[BS]キーでクリア)"
+msgstr "(新しいアクセラレータを入力してください / [BS] キーで消去)"
 
 #: plugins/externaltools/tools/manager.py:731
 msgid "Type a new accelerator"
@@ -2774,7 +2773,7 @@ msgstr "カーソルがある位置に挿入する"
 #: plugins/externaltools/tools/tools.ui:136
 #: plugins/externaltools/tools/tools.ui:146
 msgid "Manage External Tools"
-msgstr "外部ツールの管理"
+msgstr "外部ツールを管理"
 
 #: plugins/externaltools/tools/tools.ui:204
 msgid "Add a new tool"
@@ -2782,7 +2781,7 @@ msgstr "新しいツールを追加します"
 
 #: plugins/externaltools/tools/tools.ui:205
 msgid "Add Tool"
-msgstr "ツールの追加"
+msgstr "ツールを追加"
 
 #: plugins/externaltools/tools/tools.ui:219
 msgid "Remove selected tool"
@@ -2790,7 +2789,7 @@ msgstr "選択したツールを削除します"
 
 #: plugins/externaltools/tools/tools.ui:220
 msgid "Remove Tool"
-msgstr "ツールの削除"
+msgstr "ツールを削除"
 
 #: plugins/externaltools/tools/tools.ui:234
 msgid "Revert tool"
@@ -2846,31 +2845,31 @@ msgstr "ファイルブラウザー"
 
 #: plugins/filebrowser/gedit-file-browser-plugin.c:657
 msgid "An error occurred while creating a new directory"
-msgstr "新しいフォルダーを作成する際にエラーが発生しました"
+msgstr "新しいフォルダーの作成中にエラーが発生しました"
 
 #: plugins/filebrowser/gedit-file-browser-plugin.c:660
 msgid "An error occurred while creating a new file"
-msgstr "新しいファイルを作成する際にエラーが発生しました"
+msgstr "新しいファイルの作成中にエラーが発生しました"
 
 #: plugins/filebrowser/gedit-file-browser-plugin.c:663
 msgid "An error occurred while renaming a file or directory"
-msgstr "ファイルまたはフォルダーの名前を変更する際にエラーが発生しました"
+msgstr "ファイル名/フォルダー名の変更中にエラーが発生しました"
 
 #: plugins/filebrowser/gedit-file-browser-plugin.c:666
 msgid "An error occurred while deleting a file or directory"
-msgstr "ファイルまたはフォルダーを削除する際にエラーが発生しました"
+msgstr "ファイル/フォルダーの削除中にエラーが発生しました"
 
 #: plugins/filebrowser/gedit-file-browser-plugin.c:669
 msgid "An error occurred while opening a directory in the file manager"
-msgstr "ファイル参照ペインの中でフォルダーを開く際にエラーが発生しました"
+msgstr "ファイル参照ペインの中でフォルダーを開くときにエラーが発生しました"
 
 #: plugins/filebrowser/gedit-file-browser-plugin.c:672
 msgid "An error occurred while setting a root directory"
-msgstr "ルートフォルダーを設定する際にエラーが発生しました"
+msgstr "ルートフォルダーの設定中にエラーが発生しました"
 
 #: plugins/filebrowser/gedit-file-browser-plugin.c:675
 msgid "An error occurred while loading a directory"
-msgstr "フォルダーを読み込む際にエラーが発生しました"
+msgstr "フォルダーの読み込み中にエラーが発生しました"
 
 #: plugins/filebrowser/gedit-file-browser-plugin.c:678
 msgid "An error occurred"
@@ -2896,15 +2895,15 @@ msgstr "選択したファイルをゴミ箱へ移動できません。"
 #: plugins/filebrowser/gedit-file-browser-plugin.c:941
 #, c-format
 msgid "Are you sure you want to permanently delete “%s”?"
-msgstr "“%s”を完全に削除してもよろしいですか?"
+msgstr "本当に“%s”を完全に削除しますか?"
 
 #: plugins/filebrowser/gedit-file-browser-plugin.c:946
 msgid "Are you sure you want to permanently delete the selected files?"
-msgstr "選択したファイルを完全に削除してもよろしいですか?"
+msgstr "本当に選択したファイルを完全に削除しますか?"
 
 #: plugins/filebrowser/gedit-file-browser-plugin.c:949
 msgid "If you delete an item, it is permanently lost."
-msgstr "削除すると、そのアイテムは完全に無くなります。"
+msgstr "削除すると、そのアイテムは完全に失われます。"
 
 #: plugins/filebrowser/gedit-file-browser-store.c:1701
 msgid "(Empty)"
@@ -2915,8 +2914,8 @@ msgid ""
 "The renamed file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
 msgstr ""
-"新しい名前のファイルはフィルターの機能により表示されていません。そのファイル"
-"を表示するにはフィルターの設定を調整してください。"
+"新しい名前のファイルはフィルターの機能により表示されていないため、そのファイ"
+"ルを表示したい場合はフィルターの設定を調整してください"
 
 #. Translators: This is the default name of new files created by the file browser pane.
 #: plugins/filebrowser/gedit-file-browser-store.c:3576
@@ -2928,8 +2927,8 @@ msgid ""
 "The new file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
 msgstr ""
-"新しいファイルはフィルターの機能により表示されていません。そのファイルを表示"
-"するにはフィルターの設定を調整してください。"
+"新しいファイルはフィルターの機能により表示されていないため、そのファイルを表"
+"示したい場合はフィルターの設定を調整してください"
 
 #. Translators: This is the default name of new directories created by the file browser pane.
 #: plugins/filebrowser/gedit-file-browser-store.c:3633
@@ -2941,8 +2940,8 @@ msgid ""
 "The new directory is currently filtered out. You need to adjust your filter "
 "settings to make the directory visible"
 msgstr ""
-"新しいフォルダーはフィルターの機能により表示されていません。そのフォルダーを"
-"表示するにはフィルターの設定を調整してください。"
+"新しいフォルダーはフィルターの機能により表示されていないため、そのフォルダー"
+"を表示したい場合はフィルターの設定を調整してください"
 
 #: plugins/filebrowser/gedit-file-browser-widget.c:755
 msgid "Bookmarks"
@@ -2966,7 +2965,7 @@ msgstr "次のボリュームをマウントできませんでした: %s"
 #: plugins/filebrowser/gedit-file-browser-widget.c:2579
 #, c-format
 msgid "Error when loading “%s”: No such directory"
-msgstr "“%s”を読み込む際にエラー: そのようなフォルダーはありません"
+msgstr "“%s”の読み込みエラー: そのようなフォルダーはありません"
 
 #: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml:5
 msgid "Open With Tree View"
@@ -2977,8 +2976,8 @@ msgid ""
 "Open the tree view when the file browser plugin gets loaded instead of the "
 "bookmarks view"
 msgstr ""
-"ファイル参照プラグインを読み込んだ際に、ブックマーク表示ではなくツリー表示で"
-"開きます。"
+"ファイル参照プラグインを読み込んだときに、ブックマーク表示ではなくツリー表示"
+"で開きます"
 
 #: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml:10
 msgid "File Browser Root Directory"
@@ -3080,7 +3079,7 @@ msgstr "新しいファイル(_I)"
 
 #: plugins/filebrowser/resources/ui/gedit-file-browser-menus.ui:29
 msgid "_Rename…"
-msgstr "名前の変更(_R)…"
+msgstr "名前を変更(_R)…"
 
 #: plugins/filebrowser/resources/ui/gedit-file-browser-menus.ui:33
 msgid "_Move to Trash"
@@ -3088,7 +3087,7 @@ msgstr "ゴミ箱へ移動(_M)"
 
 #: plugins/filebrowser/resources/ui/gedit-file-browser-menus.ui:43
 msgid "Re_fresh View"
-msgstr "表示の更新(_F)"
+msgstr "表示を更新(_F)"
 
 #: plugins/filebrowser/resources/ui/gedit-file-browser-menus.ui:47
 msgid "_View Folder"
@@ -3198,7 +3197,7 @@ msgstr "検索ワードを入力…"
 
 #: plugins/snippets/snippets/appactivatable.py:88
 msgid "Manage _Snippets…"
-msgstr "スニペットの管理(_S)…"
+msgstr "スニペットを管理(_S)…"
 
 #. Do the fancy completion dialog
 #: plugins/snippets/snippets/document.py:64
@@ -3216,12 +3215,12 @@ msgstr "アーカイブ“%s”を作成できませんでした"
 #: plugins/snippets/snippets/exporter.py:105
 #, python-format
 msgid "Target directory “%s” does not exist"
-msgstr "対象のディレクトリ“%s”は存在しません"
+msgstr "対象のフォルダー“%s”は存在しません"
 
 #: plugins/snippets/snippets/exporter.py:108
 #, python-format
 msgid "Target directory “%s” is not a valid directory"
-msgstr "対象のディレクトリ“%s”は有効なディレクトリではありません"
+msgstr "対象のフォルダー“%s”は有効なフォルダーではありません"
 
 #: plugins/snippets/snippets/importer.py:55
 #: plugins/snippets/snippets/importer.py:116
@@ -3268,7 +3267,7 @@ msgstr "スニペットのアーカイブ"
 
 #: plugins/snippets/snippets/manager.py:74
 msgid "Add a new snippet…"
-msgstr "新しいスニペットの追加…"
+msgstr "新しいスニペットを追加…"
 
 #: plugins/snippets/snippets/manager.py:124
 msgid "Global"
@@ -3304,7 +3303,7 @@ msgstr "スニペットを実行するために [Tab] キーを押下する前�
 #: plugins/snippets/snippets/manager.py:766
 #, python-format
 msgid "The following error occurred while importing: %s"
-msgstr "インポートする際に次のエラーが発生しました: %s"
+msgstr "インポート中に次のエラーが発生しました: %s"
 
 #: plugins/snippets/snippets/manager.py:773
 msgid "Import successfully completed"
@@ -3347,7 +3346,7 @@ msgstr "すべてのファイル"
 #: plugins/snippets/snippets/manager.py:808
 #, python-format
 msgid "The following error occurred while exporting: %s"
-msgstr "スニペットを保存する際にエラーが発生しました: %s"
+msgstr "スニペットの保存中にエラーが発生しました: %s"
 
 #: plugins/snippets/snippets/manager.py:812
 msgid "Export successfully completed"
@@ -3367,11 +3366,11 @@ msgstr "保存するスニペットがありません"
 #: plugins/snippets/snippets/manager.py:872
 #: plugins/snippets/snippets/manager.py:910
 msgid "Export snippets"
-msgstr "スニペットの保存"
+msgstr "スニペットを保存"
 
 #: plugins/snippets/snippets/manager.py:1049
 msgid "Type a new shortcut, or press Backspace to clear"
-msgstr "(新しいショートカットを入力してください/[BS]キーでクリア)"
+msgstr "(新しいショートカットを入力してください / [BS] キーで消去)"
 
 #: plugins/snippets/snippets/manager.py:1051
 msgid "Type a new shortcut"
@@ -3391,29 +3390,29 @@ msgstr "Python コマンド (%s) の実行に失敗しました: %s"
 
 #: plugins/snippets/snippets.plugin.desktop.in:7
 msgid "Insert often-used pieces of text in a fast way"
-msgstr "よく使用する文字列をすばやく挿入します。"
+msgstr "よく使用する文字列をすばやく挿入します"
 
 #: plugins/snippets/snippets/snippets.ui:40
 #: plugins/snippets/snippets/snippets.ui:47
 msgid "Manage Snippets"
-msgstr "スニペットの管理"
+msgstr "スニペットを管理"
 
 #: plugins/snippets/snippets/snippets.ui:103
 #: plugins/snippets/snippets/snippets.ui:104
 msgid "Create new snippet"
-msgstr "新しいスニペットを生成します"
+msgstr "新しいスニペットを作成します"
 
 #: plugins/snippets/snippets/snippets.ui:105
 msgid "Add Snippet"
-msgstr "スニペットの追加"
+msgstr "スニペットを追加"
 
 #: plugins/snippets/snippets/snippets.ui:122
 msgid "Remove Snippet"
-msgstr "スニペットの削除"
+msgstr "スニペットを削除"
 
 #: plugins/snippets/snippets/snippets.ui:139
 msgid "Import Snippets"
-msgstr "スニペットのインポート"
+msgstr "スニペットをインポート"
 
 #: plugins/snippets/snippets/snippets.ui:154
 #: plugins/snippets/snippets/snippets.ui:155
@@ -3422,7 +3421,7 @@ msgstr "選択したスニペットを保存します"
 
 #: plugins/snippets/snippets/snippets.ui:156
 msgid "Export Snippets"
-msgstr "スニペットの保存"
+msgstr "スニペットを保存"
 
 #: plugins/snippets/snippets/snippets.ui:224
 msgid "Activation"
@@ -3447,12 +3446,12 @@ msgstr "挿入する対象(_D):"
 
 #: plugins/sort/gedit-sort-plugin.c:241
 msgid "S_ort…"
-msgstr "並び替え(_O)…"
+msgstr "並べ替え(_O)…"
 
 #: plugins/sort/resources/ui/gedit-sort-plugin.ui:13
 #: plugins/sort/sort.plugin.desktop.in:5
 msgid "Sort"
-msgstr "並び替え"
+msgstr "並べ替え"
 
 #: plugins/sort/resources/ui/gedit-sort-plugin.ui:38
 msgid "_Reverse order"
@@ -3464,7 +3463,7 @@ msgstr "重複する部分を削除する(_E)"
 
 #: plugins/sort/resources/ui/gedit-sort-plugin.ui:70
 msgid "C_ase sensitive"
-msgstr "大文字・小文字を区別する(_A)"
+msgstr "大/小文字を区別する(_A)"
 
 #: plugins/sort/resources/ui/gedit-sort-plugin.ui:93
 msgid "S_tart at column:"
@@ -3472,7 +3471,7 @@ msgstr "開始行(_T):"
 
 #: plugins/sort/resources/ui/gedit-sort-plugin.ui:150
 msgid "_Sort"
-msgstr "並び替え(_S)"
+msgstr "並べ替え(_S)"
 
 #: plugins/sort/sort.plugin.desktop.in:6
 msgid "Sorts a document or selected text."
@@ -3488,7 +3487,7 @@ msgstr "言語の設定(_L)…"
 
 #: plugins/spell/gedit-spell-app-activatable.c:151
 msgid "_Highlight Misspelled Words"
-msgstr "スペルミスの強調表示(_H)"
+msgstr "スペルミスを強調表示(_H)"
 
 #: plugins/spell/org.gnome.gedit.plugins.spell.gschema.xml:5
 #: plugins/spell/resources/ui/gedit-spell-setup-dialog.ui:75
@@ -3613,107 +3612,14 @@ msgstr "カーソル位置に現在の日付と時刻を挿入します。"
 #~ msgid "Whether the toolbar should be visible in editing windows."
 #~ msgstr "編集ウィンドウ内にツールバーを表示するかどうかを指定します。"
 
-#~ msgid "Maximum Recent Files"
-#~ msgstr "“最近使ったファイル”に表示する最大数"
-
-#~ msgid ""
-#~ "Specifies the maximum number of recently opened files that will be "
-#~ "displayed in the “Recent Files” submenu."
-#~ msgstr ""
-#~ "“最近使ったファイル”のサブメニューに表示するエントリの最大数を指定します。"
-
 #~ msgid "No changes need to be saved"
 #~ msgstr "保存が必要な変更はありません"
 
 #~ msgid "No results"
 #~ msgstr "一致なし"
 
-#~ msgid "Other _Documents…"
-#~ msgstr "他のドキュメント(_D)…"
-
 #~ msgid "Display _overview map"
 #~ msgstr "全体像を表示する(_O)"
-
-#~ msgid "Open"
-#~ msgstr "開く"
-
-#~ msgid "Open a file dialog"
-#~ msgstr "ファイルダイアログを開きます"
-
-#~ msgid "    "
-#~ msgstr "    "
-
-#~ msgid "org.gnome.gedit"
-#~ msgstr "org.gnome.gedit"
-
-#~ msgid "Please check your installation."
-#~ msgstr "gedit のインストールを確認してください。"
-
-#~ msgid "Unable to open UI file %s. Error: %s"
-#~ msgstr "UI ファイル %s を開けません。エラー: %s"
-
-#~ msgid "Unable to find the object “%s” inside file %s."
-#~ msgstr "オブジェクトの“%s”は %s というファイルの中にありませんでした。"
-
-#~ msgid "system-file-manager"
-#~ msgstr "system-file-manager"
-
-#~ msgid "text-x-script"
-#~ msgstr "text-x-script"
-
-#~ msgid "document-open"
-#~ msgstr "document-open"
-
-#~ msgid "view-sort-ascending"
-#~ msgstr "view-sort-ascending"
-
-#~ msgid "tools-check-spelling"
-#~ msgstr "tools-check-spelling"
-
-#~ msgid "Tools"
-#~ msgstr "ツール"
-
-#~ msgid "gedit Text Editor"
-#~ msgstr "gedit テキストエディター"
-
-#~ msgid "_About"
-#~ msgstr "このアプリケーションについて(_A)"
-
-#~ msgid "Manage _External Tools..."
-#~ msgstr "外部ツールの管理(_E)..."
-
-#~ msgid "Quick Open..."
-#~ msgstr "クイックオープン..."
-
-#~ msgid "Manage _Snippets..."
-#~ msgstr "スニペットの管理(_S)..."
-
-#~ msgid "Set _Language..."
-#~ msgstr "言語の設定(_L)..."
-
-#~ msgid "In_sert Date and Time..."
-#~ msgstr "日付/時刻の挿入(_S)"
-
-#~ msgid "_Ignore"
-#~ msgstr "無視(_I)"
-
-#~ msgid "Open a New Window"
-#~ msgstr "新しいウィンドウを開く"
-
-#~ msgid "Open a New Document"
-#~ msgstr "新しいドキュメントを作成"
-
-#~ msgid "Set the size and position of the window (WIDTHxHEIGHT+X+Y)"
-#~ msgstr "ウィンドウサイズと場所を指定します。(WIDTHxHEIGHT+X+Y)"
-
-#~ msgid "GEOMETRY"
-#~ msgstr "GEOMETRY"
-
-#~ msgid "Question"
-#~ msgstr "質問"
-
-#~ msgid "Help"
-#~ msgstr "ヘルプ"
 
 #~ msgid "(no suggested words)"
 #~ msgstr "(単語の候補なし)"
@@ -3721,138 +3627,5 @@ msgstr "カーソル位置に現在の日付と時刻を挿入します。"
 #~ msgid "_More..."
 #~ msgstr "詳細(_M)..."
 
-#~ msgid "_Ignore All"
-#~ msgstr "すべて無視(_I)"
-
-#~ msgid "_Add"
-#~ msgstr "追加(_A)"
-
-#~ msgid "_Spelling Suggestions..."
-#~ msgstr "スペルの提示(_S)..."
-
-#~ msgid "Error when checking the spelling of word “%s”: %s"
-#~ msgstr "単語“%s”のスペルチェック中にエラー: %s"
-
-#~ msgid "Error:"
-#~ msgstr "エラー:"
-
-#~ msgid "Completed spell checking"
-#~ msgstr "スペルチェック完了"
-
-#~ msgid "No misspelled words"
-#~ msgstr "スペルミスと思われる単語はありません"
-
 #~ msgid "(correct spelling)"
 #~ msgstr "(正しいつづり)"
-
-#~ msgid "Suggestions"
-#~ msgstr "提示"
-
-#~ msgctxt "language"
-#~ msgid "%s (%s)"
-#~ msgstr "%s (%s)"
-
-#~ msgctxt "language"
-#~ msgid "Unknown (%s)"
-#~ msgstr "不明 (%s)"
-
-#~ msgctxt "language"
-#~ msgid "Default"
-#~ msgstr "デフォルト"
-
-#~ msgid "Select the _language of the current document."
-#~ msgstr "このドキュメントの言語を選択してください(_L):"
-
-#~ msgid "Misspelled word:"
-#~ msgstr "スペルミスと思われる単語:"
-
-#~ msgid "word"
-#~ msgstr "単語"
-
-#~ msgid "Change _to:"
-#~ msgstr "変更先(_T):"
-
-#~ msgid "Check _Word"
-#~ msgstr "単語のチェック(_W)"
-
-#~ msgid "_Suggestions:"
-#~ msgstr "正解の候補(_S):"
-
-#~ msgid "Ignore _All"
-#~ msgstr "すべて無視(_A)"
-
-#~ msgid "Cha_nge"
-#~ msgstr "変更(_N)"
-
-#~ msgid "Change A_ll"
-#~ msgstr "すべて変更(_L)"
-
-#~ msgid "User dictionary:"
-#~ msgstr "ユーザー辞書:"
-
-#~ msgid "Add w_ord"
-#~ msgstr "単語の追加(_O)"
-
-#~ msgid "['UTF-8', 'CURRENT', 'ISO-8859-15', 'UTF-16']"
-#~ msgstr "['UTF-8', 'CURRENT', 'ISO-2022-JP', 'CP932', 'EUC-JP-MS']"
-
-#~ msgid "Automatically Detected Encodings"
-#~ msgstr "自動検出されたエンコーディング"
-
-#~ msgid ""
-#~ "Sorted list of encodings used by gedit for automatically detecting the "
-#~ "encoding of a file. \"CURRENT\" represents the current locale encoding. "
-#~ "Only recognized encodings are used."
-#~ msgstr ""
-#~ "ファイルのエンコーディングを自動検出する際に gedit が使用するエンコーディ"
-#~ "ングのリストです。\"CURRENT\" は現在使用しているロケールを表します。認識し"
-#~ "たエンコーディングのみ使用されます。"
-
-#~ msgid "['ISO-8859-15']"
-#~ msgstr "['ISO-2022-JP', 'CP932', 'EUC-JP-MS']"
-
-#~ msgid "Encodings shown in menu"
-#~ msgstr "メニューに表示するエンコーディング"
-
-#~ msgid ""
-#~ "List of encodings shown in the Character Encoding menu in open/save file "
-#~ "selector. Only recognized encodings are used."
-#~ msgstr ""
-#~ "開く/保存のファイル選択ダイアログの文字エンコーディングメニューの中に表示"
-#~ "するエンコーディングのリストです。認識したエンコーディングのみ使用します。"
-
-#~ msgid "RO"
-#~ msgstr "[書き込み禁止]"
-
-#~ msgid "Character encodings"
-#~ msgstr "文字エンコーディング"
-
-#~ msgid "_OK"
-#~ msgstr "OK(_O)"
-
-#~ msgid "E_ncodings shown in menu:"
-#~ msgstr "メニューに表示するエンコーディング(_N):"
-
-#~ msgid "You cannot undo a sort operation"
-#~ msgstr "並び替えの操作をやり直すことはできません"
-
-#~ msgid "Set language"
-#~ msgstr "言語の設定"
-
-#~ msgid "Languages"
-#~ msgstr "言語"
-
-#~ msgid "The document is empty."
-#~ msgstr "ドキュメントは空です。"
-
-#~ msgid "P_revious Page"
-#~ msgstr "前のページ(_R)"
-
-#~ msgid "_Next Page"
-#~ msgstr "次のページ(_N)"
-
-#~ msgid "Replace"
-#~ msgstr "置換"
-
-#~ msgid "_Search for: "
-#~ msgstr "検索する文字列(_S): "
