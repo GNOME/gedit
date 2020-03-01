@@ -13,13 +13,14 @@
 # - 이 프로그램의 이름인 gedit는 "지에디트"로 음역
 #   - 오류 메시지에서 gedit가 주어가 되는 경우가 많은데 이 경우 뜻이
 #     통하는 경우 생략한다. "지에디트가 ..." 식으로 번역하지 않는다.
-#
+# - 용어
+#   - indentation - 들여쓰기 (공백 없이)
 msgid ""
 msgstr ""
 "Project-Id-Version: gedit\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gedit/issues\n"
 "POT-Creation-Date: 2019-12-02 10:12+0000\n"
-"PO-Revision-Date: 2020-02-17 13:50+0900\n"
+"PO-Revision-Date: 2020-02-29 14:28+0900\n"
 "Last-Translator: Changwoo Ryu <cwryu@debian.org>\n"
 "Language-Team: GNOME Korea <gnome-kr@googlegroups.com>\n"
 "Language: ko\n"
@@ -43,7 +44,8 @@ msgid ""
 "text editor."
 msgstr ""
 "지에디트는 그놈 데스크톱 환경의 공식 텍스트 편집기입니다. 간단하고 쓰기 쉬운 "
-"편집기를 목표로 만들어졌지만, 강력한 일반적인 용도의 텍스트 편집기입니다."
+"텍스트 편집기를 목표로 하지만, 지에디트는 일반적 용도의 강력한 텍스트 편집기"
+"입니다."
 
 #: data/org.gnome.gedit.appdata.xml.in:15
 msgid ""
@@ -51,8 +53,8 @@ msgid ""
 "application, or simply taking some quick notes, gedit will be a reliable "
 "tool to accomplish your task."
 msgstr ""
-"베스트셀러 문학 작품을 쓰거나, 기발한 프로그램을 만들거나, 아니면 간단한 메모"
-"를 남길 때에도 지에디트가 해당 작업을 하기 좋은 프로그램입니다."
+"지에디트는 베스트셀러 문학 작품을 쓰거나, 혁신적인 프로그램을 개발하거나, 아"
+"니면 간단한 메모를 남기는데 써도 좋은 프로그램입니다."
 
 #: data/org.gnome.gedit.appdata.xml.in:20
 msgid ""
@@ -179,8 +181,8 @@ msgid ""
 msgstr ""
 "편집 영역에서 긴 줄을 바꾸는 방법을 지정합니다. 줄 바꿈을 하지 않으려면 "
 "“none”을, 단어 단위로 줄 바꿈을 하려면 “word”를, 문자 단위로 줄 바꿈을 하려"
-"면 “char”을 쓰십시오. 대소문자를 가리기 때문에 여기에 적힌대로 완벽히 입력해"
-"야 합니다."
+"면 “char”을 쓰십시오. 이 값은 대소문자를 구별하므로 여기 설명한 대로 정확히 "
+"입력해야 합니다."
 
 #: data/org.gnome.gedit.gschema.xml.in:86
 msgid "Last split mode choice for line wrapping mode"
@@ -217,11 +219,11 @@ msgstr "탭 대신에 공백을 넣습니다."
 
 #: data/org.gnome.gedit.gschema.xml.in:101
 msgid "Automatic indent"
-msgstr "자동 들여 쓰기"
+msgstr "자동 들여쓰기"
 
 #: data/org.gnome.gedit.gschema.xml.in:102
 msgid "Whether gedit should enable automatic indentation."
-msgstr "자동 들여 쓰기를 사용할지 여부."
+msgstr "자동 들여쓰기를 사용할지 여부."
 
 #: data/org.gnome.gedit.gschema.xml.in:106
 msgid "Display Line Numbers"
@@ -342,8 +344,8 @@ msgid ""
 msgstr ""
 "인쇄할 때 긴 줄을 바꾸는 방법을 지정합니다. 줄 바꿈을 하지 않으려면 "
 "“none”을, 단어 단위로 줄 바꿈을 하려면 “word”를, 문자 단위로 줄 바꿈을 하려"
-"면 “char”을 쓰십시오. 대소문자를 가리기 때문에 여기에 적힌대로 완벽히 입력해"
-"야 합니다."
+"면 “char”을 쓰십시오. 이 값은 대소문자를 구별하므로 여기 설명한 대로 정확히 "
+"입력해야 합니다."
 
 #: data/org.gnome.gedit.gschema.xml.in:174
 msgid "Status Bar is Visible"
@@ -392,8 +394,8 @@ msgid ""
 msgstr ""
 "인쇄할 때 긴 줄을 바꾸는 방법을 지정합니다. 줄 바꿈을 하지 않으려면 "
 "“none”을, 단어 단위로 줄 바꿈을 하려면 “word”를, 문자 단위로 줄 바꿈을 하려"
-"면 “char”을 쓰십시오. 대소문자를 가리기 때문에 여기에 적힌대로 완벽히 입력해"
-"야 합니다."
+"면 “char”을 쓰십시오. 이 값은 대소문자를 구별하므로 여기 설명한 대로 정확히 "
+"입력해야 합니다."
 
 #: data/org.gnome.gedit.gschema.xml.in:209
 msgid "Print Line Numbers"
@@ -1577,7 +1579,7 @@ msgstr "닫기(_C)"
 
 #: gedit/resources/gtk/menus-common.ui:35
 msgid "Automatic Indentation"
-msgstr "자동 들여 쓰기"
+msgstr "자동 들여쓰기"
 
 #: gedit/resources/gtk/menus-common.ui:58
 msgid "Use Spaces"
@@ -1906,7 +1908,7 @@ msgstr "탭 대신 공백 넣기(_S)"
 
 #: gedit/resources/ui/gedit-preferences-dialog.ui:359
 msgid "_Enable automatic indentation"
-msgstr "자동 들여 쓰기 사용(_E)"
+msgstr "자동 들여쓰기 사용(_E)"
 
 #: gedit/resources/ui/gedit-preferences-dialog.ui:394
 msgid "File Saving"
@@ -2705,9 +2707,10 @@ msgstr "현재 문서"
 msgid "Current selection"
 msgstr "현재 선택한 부분"
 
+# NOTE: 선택한 부분이 있으면 Current selection, 선택하지 않으면 Current document라는 의미
 #: plugins/externaltools/tools/tools.ui:61
 msgid "Current selection (default to document)"
-msgstr "현재 선택한 부분(문서에 대한 기본값)"
+msgstr "현재 선택한 부분 (선택하지 않으면 기본값은 문서)"
 
 #: plugins/externaltools/tools/tools.ui:65
 msgid "Current line"
