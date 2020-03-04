@@ -11,8 +11,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gedit.help.master\n"
-"POT-Creation-Date: 2020-02-10 21:39+0000\n"
-"PO-Revision-Date: 2020-02-11 09:03+0100\n"
+"POT-Creation-Date: 2020-03-02 09:24+0000\n"
+"PO-Revision-Date: 2020-03-04 16:52+0100\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: es <gnome-es-list@gnome.org>\n"
 "Language: es\n"
@@ -41,7 +41,7 @@ msgstr "Cambiar los colores del texto y del fondo en gedit."
 #: C/gedit-edit-as-root.page:10 C/gedit-files-basic.page:10
 #: C/gedit-full-screen.page:13 C/gedit-open-files-from-sidepane.page:11
 #: C/gedit-open-files.page:17 C/gedit-open-on-server.page:10
-#: C/gedit-open-recent.page:11 C/gedit-plugin-guide.page:13
+#: C/gedit-open-recent.page:12 C/gedit-plugin-guide.page:13
 #: C/gedit-plugins-change-case.page:14 C/gedit-plugins-doc-stats.page:14
 #: C/gedit-plugins-external-tools.page:15 C/gedit-plugins-file-browser.page:15
 #: C/gedit-plugins-insert-date-time.page:15 C/gedit-plugins-install.page:8
@@ -714,7 +714,7 @@ msgstr ""
 "codificación de caracteres apropiada."
 
 #. (itstool) path: item/p
-#: C/gedit-open-on-server.page:41 C/gedit-plugins-quick-open.page:44
+#: C/gedit-open-on-server.page:41 C/gedit-plugins-quick-open.page:46
 msgid "Click <gui>Open</gui>."
 msgstr "Pulse <gui>Abrir</gui>."
 
@@ -747,12 +747,12 @@ msgid "Access files that you have updated recently."
 msgstr "Acceder a archivos que ha actualizado recientemente."
 
 #. (itstool) path: page/title
-#: C/gedit-open-recent.page:17
+#: C/gedit-open-recent.page:18
 msgid "Reopen a recently-used file"
 msgstr "Reabrir un archivo usado recientemente"
 
 #. (itstool) path: page/p
-#: C/gedit-open-recent.page:19
+#: C/gedit-open-recent.page:20
 msgid ""
 "By default, <app>gedit</app> provides easy access to five of your most "
 "recently-used files. Here is how you can open a recently-used file:"
@@ -762,12 +762,15 @@ msgstr ""
 "un archivo usado recientemente."
 
 #. (itstool) path: item/p
-#: C/gedit-open-recent.page:22
-msgid "Click the <gui>Open</gui> button."
-msgstr "Pulse el botón <gui>Abrir</gui>."
+#: C/gedit-open-recent.page:23
+#| msgid ""
+#| "Click the downward-facing arrow to the right of the <gui>Open</gui> "
+#| "button."
+msgid "Click the arrow button next to the <gui>Open</gui> button."
+msgstr "Pulse el botón de flecha junto al botón <gui>Abrir</gui>."
 
 #. (itstool) path: item/p
-#: C/gedit-open-recent.page:23
+#: C/gedit-open-recent.page:24
 msgid ""
 "<app>gedit</app> will display a list of the five most-recently used files."
 msgstr ""
@@ -775,12 +778,12 @@ msgstr ""
 "usados."
 
 #. (itstool) path: item/p
-#: C/gedit-open-recent.page:25
+#: C/gedit-open-recent.page:26
 msgid "Select the desired file, and it will open in a new tab."
 msgstr "Seleccione el archivo que quiera y se abrirá en una pestaña nueva."
 
 #. (itstool) path: note/p
-#: C/gedit-open-recent.page:28
+#: C/gedit-open-recent.page:29
 msgid ""
 "To adjust the number of recently-used files that gedit displays, you will "
 "need to use the <app>dconf-editor</app> application."
@@ -789,7 +792,7 @@ msgstr ""
 "debe usar la aplicación <app>dconf-editor</app>."
 
 #. (itstool) path: item/p
-#: C/gedit-open-recent.page:32
+#: C/gedit-open-recent.page:33
 msgid ""
 "Launch <app>dconf-editor</app> and select <guiseq><gui>org</gui> <gui>gnome</"
 "gui><gui>gedit</gui><gui>preferences</gui><gui>ui</gui> <gui>max-recents</"
@@ -800,7 +803,7 @@ msgstr ""
 "<gui>max-recents</gui></guiseq>."
 
 #. (itstool) path: item/p
-#: C/gedit-open-recent.page:35
+#: C/gedit-open-recent.page:36
 msgid ""
 "Double-click on the number next to <gui>max-recents</gui> and change the "
 "number to your desired value."
@@ -1157,16 +1160,11 @@ msgstr ""
 
 #. (itstool) path: steps/title
 #: C/gedit-plugins-insert-date-time.page:28
-#| msgid "To enable Text Size plugin:"
 msgid "To enable the plugin:"
 msgstr "Para activar el complemento:"
 
 #. (itstool) path: item/p
 #: C/gedit-plugins-insert-date-time.page:30
-#| msgid ""
-#| "Press the menu button in the top-right corner of the window and select "
-#| "<guiseq><gui style=\"menuitem\">Preferences</gui><gui>Font &amp; Colors</"
-#| "gui></guiseq>."
 msgid ""
 "Press the menu button in the top-right corner of the window and select "
 "<guiseq><gui style=\"menuitem\">Preferences</gui> <gui style=\"tab"
@@ -1178,7 +1176,6 @@ msgstr ""
 
 #. (itstool) path: item/p
 #: C/gedit-plugins-insert-date-time.page:35
-#| msgid "Select <gui style=\"menuitem\">Text Size</gui> to enable the plugin."
 msgid ""
 "Select <gui style=\"menuitem\">Insert Date/Time</gui> to enable the plugin."
 msgstr ""
@@ -1187,10 +1184,6 @@ msgstr ""
 
 #. (itstool) path: page/p
 #: C/gedit-plugins-insert-date-time.page:39
-#| msgid ""
-#| "Press the menu button in the top-right corner of the window and select "
-#| "<guiseq><gui style=\"menuitem\">Preferences</gui><gui>Font &amp; Colors</"
-#| "gui></guiseq>."
 msgid ""
 "To use the plugin, press the menu button in the top-right corner of the "
 "window and select <guiseq><gui style=\"menuitem\">Tools</gui> <gui style="
@@ -1202,13 +1195,6 @@ msgstr ""
 
 #. (itstool) path: page/p
 #: C/gedit-plugins-insert-date-time.page:43
-#| msgid ""
-#| "By default, the <gui>Insert Date/Time</gui> plugin will prompt you to "
-#| "choose your preferred date/time format each time that you use the plugin. "
-#| "However, you can choose your own default date and time format by "
-#| "selecting <guiseq><gui style=\"menu\">gedit</gui><gui style=\"menuitem"
-#| "\">Preferences</gui> <gui>Plugins</gui><gui>Insert Date/Time</"
-#| "gui><gui>Configure</gui></guiseq>."
 msgid ""
 "By default, the <gui>Insert Date/Time</gui> plugin will prompt you to choose "
 "your preferred date/time format each time that you use the plugin. However, "
@@ -1292,11 +1278,6 @@ msgstr ""
 
 #. (itstool) path: item/p
 #: C/gedit-plugins-install.page:41
-#| msgid ""
-#| "After you have placed the plugin files into the correct directory, the "
-#| "plugin will appear in the Preferences menu. Select <guiseq><gui>Edit </"
-#| "gui><gui style=\"menuitem\">Preferences</gui><gui>Plugins</gui> "
-#| "<gui>[Name of Plugin]</gui></guiseq> to enable the plugin."
 msgid ""
 "After you have placed the plugin files into the correct directory, the "
 "plugin will appear in the Preferences menu. Press the menu button in the top-"
@@ -1627,8 +1608,17 @@ msgstr "Abrir rápidamente un archivo o un conjunto de archivos."
 msgid "Quick open"
 msgstr "Apertura rápida"
 
-#. (itstool) path: page/p
+#. (itstool) path: note/p
 #: C/gedit-plugins-quick-open.page:24
+msgid ""
+"This plugin currently <link href=\"https://gitlab.gnome.org/GNOME/gedit/"
+"issues/277\">does not work</link>!"
+msgstr ""
+"Actualmente este complemento <link href=\"https://gitlab.gnome.org/GNOME/"
+"gedit/issues/277\">no funciona</link>"
+
+#. (itstool) path: page/p
+#: C/gedit-plugins-quick-open.page:26
 msgid ""
 "As the name of this plugin would imply, the <app>Quick Open</app> plugin "
 "helps you to open files more quickly than using the usual ways of opening "
@@ -1642,7 +1632,7 @@ msgstr ""
 "gui></guiseq>."
 
 #. (itstool) path: page/p
-#: C/gedit-plugins-quick-open.page:29
+#: C/gedit-plugins-quick-open.page:31
 msgid ""
 "Once you have enabled the <app>Quick Open</app> plugin you can use it as "
 "follows:"
@@ -1651,7 +1641,7 @@ msgstr ""
 "usarlo de la siguiente manera:"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-quick-open.page:33
+#: C/gedit-plugins-quick-open.page:35
 msgid ""
 "Open the <app>Quick Open</app> dialog box by pressing <keyseq><key>Ctrl</"
 "key><key>Alt</key><key>O</key></keyseq>, or by selecting <gui style="
@@ -1662,17 +1652,17 @@ msgstr ""
 "\"menuitem\">Apertura rápida…</gui>."
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-quick-open.page:36
+#: C/gedit-plugins-quick-open.page:38
 msgid "The <gui>Quick Open</gui> file dialog will appear."
 msgstr "Aparecerá el diálogo <gui>Apertura rápida</gui> de archivos."
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-quick-open.page:37
+#: C/gedit-plugins-quick-open.page:39
 msgid "Use your mouse to select the file or files that you want to open."
 msgstr "Use su ratón para seleccionar los archivos que quiere abrir."
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-quick-open.page:39
+#: C/gedit-plugins-quick-open.page:41
 msgid ""
 "To select several individual files, hold down your <key>Ctrl</key> key while "
 "you click on the files that you want to open."
@@ -1681,7 +1671,7 @@ msgstr ""
 "<key>Ctrl</key> mientras pulsa sobre los archivos que quiere abrir."
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-quick-open.page:41
+#: C/gedit-plugins-quick-open.page:43
 msgid ""
 "To select a group of files, click on the first file that you want to open, "
 "hold down the <key>Shift</key> key, and then click on the last file in the "
@@ -1692,17 +1682,17 @@ msgstr ""
 "de la lista de archivos que quiera abrir."
 
 #. (itstool) path: page/p
-#: C/gedit-plugins-quick-open.page:47
+#: C/gedit-plugins-quick-open.page:49
 msgid "<app>Quick Open</app> will look for files in:"
 msgstr "<app>Apertura rápida</app> buscará archivos en:"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-quick-open.page:50
+#: C/gedit-plugins-quick-open.page:52
 msgid "The directory of the currently opened document"
 msgstr "La carpeta del documento abierto actualmente"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-quick-open.page:51
+#: C/gedit-plugins-quick-open.page:53
 msgid ""
 "The root directory of the <app xref=\"gedit-plugins-file-browser\">File "
 "Browser Pane</app> plugin"
@@ -1711,7 +1701,7 @@ msgstr ""
 "\">Panel del examinador de archivos</app> plugin"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-quick-open.page:54
+#: C/gedit-plugins-quick-open.page:56
 msgid ""
 "Recent documents which are also shown in the <file>Recent</file> folder in "
 "<app>Files</app>"
@@ -1720,22 +1710,22 @@ msgstr ""
 "<file>Recientes</file> en <app>Archivos</app>"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-quick-open.page:56
+#: C/gedit-plugins-quick-open.page:58
 msgid "Directories which you have bookmarked in <app>Files</app>"
 msgstr "Carpetas que ha añadido como marcadores en <app>Archivos</app>"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-quick-open.page:58
+#: C/gedit-plugins-quick-open.page:60
 msgid "Your <file>Desktop</file> directory"
 msgstr "Su carpeta <file>Escritorio</file>"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-quick-open.page:59
+#: C/gedit-plugins-quick-open.page:61
 msgid "Your <file>Home</file> directory"
 msgstr "Su <file>Carpeta personal</file>"
 
 #. (itstool) path: note/p
-#: C/gedit-plugins-quick-open.page:63
+#: C/gedit-plugins-quick-open.page:65
 msgid ""
 "<app>Quick Open</app> displays files in any of the above locations "
 "regardless of whether or not you have opened them previously."
@@ -2554,13 +2544,17 @@ msgstr ""
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
 #: C/gedit-quickstart.page:28
+#| msgctxt "_"
+#| msgid ""
+#| "external ref='figures/gedit3-screenshot.png' "
+#| "md5='bf1c5551e623923504e51c4f9fd885b7'"
 msgctxt "_"
 msgid ""
 "external ref='figures/gedit3-screenshot.png' "
-"md5='bf1c5551e623923504e51c4f9fd885b7'"
+"md5='5fd76174e1e72f99c870b9983034ccd1'"
 msgstr ""
 "external ref='figures/gedit3-screenshot.png' "
-"md5='bf1c5551e623923504e51c4f9fd885b7'"
+"md5='5fd76174e1e72f99c870b9983034ccd1'"
 
 #. (itstool) path: page/p
 #: C/gedit-quickstart.page:30
@@ -3068,17 +3062,17 @@ msgstr "Tecla rápidas relacionadas con las pestañas"
 
 #. (itstool) path: td/p
 #: C/gedit-shortcut-keys.page:57 C/gedit-shortcut-keys.page:113
-#: C/gedit-shortcut-keys.page:167 C/gedit-shortcut-keys.page:253
-#: C/gedit-shortcut-keys.page:273 C/gedit-shortcut-keys.page:325
-#: C/gedit-shortcut-keys.page:358 C/gedit-shortcut-keys.page:387
+#: C/gedit-shortcut-keys.page:158 C/gedit-shortcut-keys.page:244
+#: C/gedit-shortcut-keys.page:264 C/gedit-shortcut-keys.page:316
+#: C/gedit-shortcut-keys.page:349 C/gedit-shortcut-keys.page:378
 msgid "Action"
 msgstr "Acción"
 
 #. (itstool) path: td/p
 #: C/gedit-shortcut-keys.page:58 C/gedit-shortcut-keys.page:114
-#: C/gedit-shortcut-keys.page:168 C/gedit-shortcut-keys.page:254
-#: C/gedit-shortcut-keys.page:274 C/gedit-shortcut-keys.page:326
-#: C/gedit-shortcut-keys.page:359 C/gedit-shortcut-keys.page:388
+#: C/gedit-shortcut-keys.page:159 C/gedit-shortcut-keys.page:245
+#: C/gedit-shortcut-keys.page:265 C/gedit-shortcut-keys.page:317
+#: C/gedit-shortcut-keys.page:350 C/gedit-shortcut-keys.page:379
 msgid "Keyboard shortcut"
 msgstr "Atajo del teclado"
 
@@ -3108,7 +3102,7 @@ msgid "Close tab"
 msgstr "Cerrar pestaña"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:74 C/gedit-shortcut-keys.page:154
+#: C/gedit-shortcut-keys.page:74 C/gedit-shortcut-keys.page:145
 msgid "<keyseq><key>Ctrl</key><key>W</key></keyseq>"
 msgstr "<keyseq><key>Ctrl</key><key>W</key></keyseq>"
 
@@ -3227,496 +3221,476 @@ msgstr "<keyseq><key>Ctrl</key><key>O</key></keyseq>"
 
 #. (itstool) path: td/p
 #: C/gedit-shortcut-keys.page:131
-msgid "Open the <gui>Quick Open</gui> window"
-msgstr "Abra la ventana <gui>Apertura rápida</gui>"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:132
-msgid "<keyseq><key>Alt</key><key>O</key></keyseq>"
-msgstr "<keyseq><key>Alt</key><key>O</key></keyseq>"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:135
 msgid "Save the current document"
 msgstr "Guardar el documento actual"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:136
+#: C/gedit-shortcut-keys.page:132
 msgid "<keyseq><key>Ctrl</key><key>S</key></keyseq>"
 msgstr "<keyseq><key>Ctrl</key><key>S</key></keyseq>"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:139
+#: C/gedit-shortcut-keys.page:135
 msgid "Save the current document with a new filename"
 msgstr "Guardar el documento actual con un nombre de archivo nuevo"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:140
+#: C/gedit-shortcut-keys.page:136
 msgid "<keyseq><key>Ctrl</key><key>Shift</key> <key>S</key></keyseq>"
 msgstr "<keyseq><key>Ctrl</key><key>Mayús</key> <key>S</key></keyseq>"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:144
+#: C/gedit-shortcut-keys.page:140
 msgid "Print the current document"
 msgstr "Imprimir el documento actual"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:145
+#: C/gedit-shortcut-keys.page:141
 msgid "<keyseq><key>Ctrl </key><key>P</key></keyseq>"
 msgstr "<keyseq><key>Ctrl </key><key>P</key></keyseq>"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:148
-msgid "Print preview"
-msgstr "Vista previa de impresión"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:149
-msgid "<keyseq><key>Ctrl</key><key>Shift</key> <key>P</key></keyseq>"
-msgstr "<keyseq><key>Ctrl</key><key>Mayús</key> <key>P</key></keyseq>"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:153
+#: C/gedit-shortcut-keys.page:144
 msgid "Close the current document"
 msgstr "Cerrar el documento actual"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:157
+#: C/gedit-shortcut-keys.page:148
 msgid "Quit gedit"
 msgstr "Salir de gedit"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:158
+#: C/gedit-shortcut-keys.page:149
 msgid "<keyseq><key>Ctrl</key><key>Q</key></keyseq>"
 msgstr "<keyseq><key>Ctrl</key><key>Q</key></keyseq>"
 
 #. (itstool) path: table/title
-#: C/gedit-shortcut-keys.page:164
+#: C/gedit-shortcut-keys.page:155
 msgid "Shortcut keys for editing files"
 msgstr "Teclas rápidas para editar archivos"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:173
+#: C/gedit-shortcut-keys.page:164
 msgid "Move the selected word right one word"
 msgstr "Mover la palabra seleccionada una palabra a la derecha"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:174
+#: C/gedit-shortcut-keys.page:165
 msgid "<keyseq><key>Alt</key><key>Right Arrow</key></keyseq>"
 msgstr "<keyseq><key>Alt</key><key>Flecha derecha</key></keyseq>"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:177
+#: C/gedit-shortcut-keys.page:168
 msgid "Move the selected word left one word"
 msgstr "Mover la palabra seleccionada una palabra a la izquierda"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:178
+#: C/gedit-shortcut-keys.page:169
 msgid "<keyseq><key>Alt</key><key>Left Arrow</key></keyseq>"
 msgstr "<keyseq><key>Alt</key><key>Flecha izquierda</key></keyseq>"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:181
+#: C/gedit-shortcut-keys.page:172
 msgid "Undo the last action"
 msgstr "Deshacer la última acción"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:182
+#: C/gedit-shortcut-keys.page:173
 msgid "<keyseq><key>Ctrl</key><key>Z</key></keyseq>"
 msgstr "<keyseq><key>Ctrl</key><key>Z</key></keyseq>"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:185
+#: C/gedit-shortcut-keys.page:176
 msgid "Redo the last undone action"
 msgstr "Rehacer la última acción deshecha"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:186
+#: C/gedit-shortcut-keys.page:177
 msgid "<keyseq><key>Ctrl</key><key>Shift</key> <key>Z</key></keyseq>"
 msgstr "<keyseq><key>Ctrl</key><key>Mayús</key> <key>Z</key></keyseq>"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:190
+#: C/gedit-shortcut-keys.page:181
 msgid "Cut the selected text or region and place it on the clipboard"
 msgstr "Cortar el texto o región seleccionada y ubicarlo en el portapapeles"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:192
+#: C/gedit-shortcut-keys.page:183
 msgid "<keyseq><key>Ctrl</key><key>X</key></keyseq>"
 msgstr "<keyseq><key>Ctrl</key><key>X</key></keyseq>"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:195
+#: C/gedit-shortcut-keys.page:186
 msgid "Copy the selected text or region onto the clipboard"
 msgstr "Copiar el texto o región seleccionado al portapapeles"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:196
+#: C/gedit-shortcut-keys.page:187
 msgid "<keyseq><key>Ctrl</key><key>C</key></keyseq>"
 msgstr "<keyseq><key>Ctrl</key><key>C</key></keyseq>"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:199
+#: C/gedit-shortcut-keys.page:190
 msgid "Paste the contents of the clipboard"
 msgstr "Pegar el contenido del portapapeles"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:200
+#: C/gedit-shortcut-keys.page:191
 msgid "<keyseq><key>Ctrl</key><key>V</key></keyseq>"
 msgstr "<keyseq><key>Ctrl</key><key>V</key></keyseq>"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:203
+#: C/gedit-shortcut-keys.page:194
 msgid "Select all text in the file"
 msgstr "Seleccionar todo el texto en el archivo"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:204
+#: C/gedit-shortcut-keys.page:195
 msgid "<keyseq><key>Ctrl</key><key>A</key></keyseq>"
 msgstr "<keyseq><key>Ctrl</key><key>A</key></keyseq>"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:207
+#: C/gedit-shortcut-keys.page:198
 msgid "Unselect all text"
 msgstr "Deseleccionar todo el texto."
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:208
+#: C/gedit-shortcut-keys.page:199
 msgid "<keyseq><key>Ctrl</key><key>Backslash</key></keyseq>"
 msgstr "<keyseq><key>Ctrl</key><key>\\</key></keyseq>"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:211
+#: C/gedit-shortcut-keys.page:202
 msgid "Delete the current line"
 msgstr "Eliminar la línea actual"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:212
+#: C/gedit-shortcut-keys.page:203
 msgid "<keyseq><key>Ctrl</key><key>D</key></keyseq>"
 msgstr "<keyseq><key>Ctrl</key><key>D</key></keyseq>"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:215
+#: C/gedit-shortcut-keys.page:206
 msgid "Move the selected line up one line"
 msgstr "Mover la línea seleccionada una línea arriba"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:216
+#: C/gedit-shortcut-keys.page:207
 msgid "<keyseq><key>Alt</key><key>Up Arrow</key></keyseq>"
 msgstr "<keyseq><key>Alt</key><key>Flecha arriba</key></keyseq>"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:219
+#: C/gedit-shortcut-keys.page:210
 msgid "Move the selected line down one line"
 msgstr "Mover la línea seleccionada una línea abajo"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:220
+#: C/gedit-shortcut-keys.page:211
 msgid "<keyseq><key>Alt</key><key>Down Arrow</key></keyseq>"
 msgstr "<keyseq><key>Alt</key><key>Flecha abajo</key></keyseq>"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:223
+#: C/gedit-shortcut-keys.page:214
 msgid "Add a tab stop"
 msgstr "Añadir una tabulación"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:224
+#: C/gedit-shortcut-keys.page:215
 msgid "<keyseq><key>Tab</key></keyseq>"
 msgstr "<keyseq><key>Tab</key></keyseq>"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:227
+#: C/gedit-shortcut-keys.page:218
 msgid "Remove a tab stop"
 msgstr "Quitar una tabulación"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:228
+#: C/gedit-shortcut-keys.page:219
 msgid "<keyseq><key>Shift</key><key>Tab</key></keyseq>"
 msgstr "<keyseq><key>Mayús</key><key>Tab</key></keyseq>"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:231
+#: C/gedit-shortcut-keys.page:222
 msgid "Convert the selected text to upper case"
 msgstr "Convertir el texto seleccionado a mayúsculas"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:232
+#: C/gedit-shortcut-keys.page:223
 msgid "<keyseq><key>Ctrl</key><key>U</key></keyseq>"
 msgstr "<keyseq><key>Ctrl</key><key>U</key></keyseq>"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:235
+#: C/gedit-shortcut-keys.page:226
 msgid "Convert the selected text to lower case"
 msgstr "Convertir el texto seleccionado a minúsculas"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:236
+#: C/gedit-shortcut-keys.page:227
 msgid "<keyseq><key>Ctrl</key><key>L</key></keyseq>"
 msgstr "<keyseq><key>Ctrl</key><key>L</key></keyseq>"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:239
+#: C/gedit-shortcut-keys.page:230
 msgid "Toggle case of the selected text"
 msgstr "Cambiar la capitalización del texto seleccionado"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:240
+#: C/gedit-shortcut-keys.page:231
 msgid "<keyseq><key>Ctrl</key><key>~</key></keyseq>"
 msgstr "<keyseq><key>Ctrl</key><key>~</key></keyseq>"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:243
+#: C/gedit-shortcut-keys.page:234
 msgid "Toggle cursor visibility"
 msgstr "Conmutar la visibilidad del cursor"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:244
+#: C/gedit-shortcut-keys.page:235
 msgid "<keyseq><key>F7</key></keyseq>"
 msgstr "<keyseq><key>F7</key></keyseq>"
 
 #. (itstool) path: table/title
-#: C/gedit-shortcut-keys.page:250
+#: C/gedit-shortcut-keys.page:241
 msgid "Shortcut keys for showing and hiding panes"
 msgstr "Teclas rápidas para mostrar y ocultar paneles"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:259
+#: C/gedit-shortcut-keys.page:250
 msgid "Show / hide the side panel"
 msgstr "Mostrar/ocultar el panel lateral"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:260
+#: C/gedit-shortcut-keys.page:251
 msgid "<key>F9</key>"
 msgstr "<key>F9</key>"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:263
+#: C/gedit-shortcut-keys.page:254
 msgid "Open the file menu"
 msgstr "Abrir el menú del archivo"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:264
+#: C/gedit-shortcut-keys.page:255
 msgid "<key>F10</key>"
 msgstr "<key>F10</key>"
 
 #. (itstool) path: table/title
-#: C/gedit-shortcut-keys.page:270
+#: C/gedit-shortcut-keys.page:261
 msgid "Shortcut keys for navigation"
 msgstr "Atajos de teclas para la navegación"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:279
+#: C/gedit-shortcut-keys.page:270
 msgid "Move to matching bracket"
 msgstr "Mover al corchete coincidente"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:280
+#: C/gedit-shortcut-keys.page:271
 msgid "<keyseq><key>Ctrl</key><key>%</key></keyseq>"
 msgstr "<keyseq><key>Ctrl</key><key>%</key></keyseq>"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:283
+#: C/gedit-shortcut-keys.page:274
 msgid "Goto line"
 msgstr "Ir a la línea"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:284
+#: C/gedit-shortcut-keys.page:275
 msgid "<keyseq><key>Ctrl</key><key>I</key></keyseq>"
 msgstr "<keyseq><key>Ctrl</key><key>I</key></keyseq>"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:287
+#: C/gedit-shortcut-keys.page:278
 msgid "Move to the beginning of the current line"
 msgstr "Mover al principio de la línea actual"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:288
+#: C/gedit-shortcut-keys.page:279
 msgid "<key>Home</key>"
 msgstr "<key>Inicio</key>"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:291
+#: C/gedit-shortcut-keys.page:282
 msgid "Move to the end of the current line"
 msgstr "Mover al final de la línea actual"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:292
+#: C/gedit-shortcut-keys.page:283
 msgid "<key>End</key>"
 msgstr "<key>Fin</key>"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:295
+#: C/gedit-shortcut-keys.page:286
 msgid "Move to the beginning of the document"
 msgstr "Mover al principio del documento"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:296
+#: C/gedit-shortcut-keys.page:287
 msgid "<keyseq><key>Ctrl</key><key>Home</key></keyseq>"
 msgstr "<keyseq><key>Ctrl</key><key>Inicio</key></keyseq>"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:299
+#: C/gedit-shortcut-keys.page:290
 msgid "Move to the end of the document"
 msgstr "Mover al final del documento"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:300
+#: C/gedit-shortcut-keys.page:291
 msgid "<keyseq><key>Ctrl</key><key>End</key></keyseq>"
 msgstr "<keyseq><key>Ctrl</key><key>Fin</key></keyseq>"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:303
+#: C/gedit-shortcut-keys.page:294
 msgid "Move viewport up within the file"
 msgstr "Mover la sección hacia arriba en el archivo"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:304
+#: C/gedit-shortcut-keys.page:295
 msgid "<keyseq><key>Shift</key><key>Alt</key><key>Up</key></keyseq>"
 msgstr "<keyseq><key>Mayús</key><key>Alt</key><key>Arriba</key></keyseq>"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:307
+#: C/gedit-shortcut-keys.page:298
 msgid "Move viewport down within the file"
 msgstr "Mover la sección hacia abajo en el archivo"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:308
+#: C/gedit-shortcut-keys.page:299
 msgid "<keyseq><key>Shift</key><key>Alt</key><key>Down</key></keyseq>"
 msgstr "<keyseq><key>Mayús</key><key>Alt</key><key>Abajo</key></keyseq>"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:311
+#: C/gedit-shortcut-keys.page:302
 msgid "Move viewport to beginning of file"
 msgstr "Mover la sección al principio del archivo"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:312
+#: C/gedit-shortcut-keys.page:303
 msgid "<keyseq><key>Shift</key><key>Alt</key><key>Home</key></keyseq>"
 msgstr "<keyseq><key>Mayús</key><key>Alt</key><key>Inicio</key></keyseq>"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:315
+#: C/gedit-shortcut-keys.page:306
 msgid "Move viewport to end of file"
 msgstr "Mover la sección al final del archivo"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:316
+#: C/gedit-shortcut-keys.page:307
 msgid "<keyseq><key>Shift</key><key>Alt</key><key>End</key></keyseq>"
 msgstr "<keyseq><key>Mayús</key><key>Alt</key><key>Fin</key></keyseq>"
 
 #. (itstool) path: table/title
-#: C/gedit-shortcut-keys.page:322
+#: C/gedit-shortcut-keys.page:313
 msgid "Shortcut keys for searching"
 msgstr "Teclas rápidas para búsquedas"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:331
+#: C/gedit-shortcut-keys.page:322
 msgid "Find a string"
 msgstr "Buscar una cadena"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:332
+#: C/gedit-shortcut-keys.page:323
 msgid "<keyseq><key>Ctrl</key><key>F</key></keyseq>"
 msgstr "<keyseq><key>Ctrl</key><key>F</key></keyseq>"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:335
+#: C/gedit-shortcut-keys.page:326
 msgid "Find the next instance of the string"
 msgstr "Buscar la siguiente instancia de la cadena"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:336
+#: C/gedit-shortcut-keys.page:327
 msgid "<keyseq><key>Ctrl</key><key>G</key></keyseq>"
 msgstr "<keyseq><key>Ctrl</key><key>G</key></keyseq>"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:339
+#: C/gedit-shortcut-keys.page:330
 msgid "Find the previous instance of the string"
 msgstr "Buscar la instancia anterior de la cadena"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:340
+#: C/gedit-shortcut-keys.page:331
 msgid "<keyseq><key>Ctrl</key><key>Shift</key><key>G</key></keyseq>"
 msgstr "<keyseq><key>Ctrl</key><key>Mayús</key><key>G</key></keyseq>"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:343
+#: C/gedit-shortcut-keys.page:334
 msgid "Search and Replace"
 msgstr "Buscar y reemplazar"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:344
+#: C/gedit-shortcut-keys.page:335
 msgid "<keyseq><key>Ctrl</key><key>H</key></keyseq>"
 msgstr "<keyseq><key>Ctrl</key><key>H</key></keyseq>"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:347
+#: C/gedit-shortcut-keys.page:338
 msgid "Clear highlight"
 msgstr "Limpiar el resaltado"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:348
+#: C/gedit-shortcut-keys.page:339
 msgid "<keyseq><key>Ctrl</key><key>Shift</key> <key>K</key></keyseq>"
 msgstr "<keyseq><key>Ctrl</key><key>Mayús</key> <key>K</key></keyseq>"
 
 #. (itstool) path: table/title
-#: C/gedit-shortcut-keys.page:355
+#: C/gedit-shortcut-keys.page:346
 msgid "Shortcut keys for tools"
 msgstr "Teclas rápidas para las herramientas"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:364
+#: C/gedit-shortcut-keys.page:355
 msgid "Check spelling"
 msgstr "Comprobar ortografía"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:365
+#: C/gedit-shortcut-keys.page:356
 msgid "<keyseq><key>Shift</key><key>F7</key></keyseq>"
 msgstr "<keyseq><key>Mayús</key><key>F7</key></keyseq>"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:368
+#: C/gedit-shortcut-keys.page:359
 msgid "Remove trailing spaces (with plugin)"
 msgstr "Eliminar espacios finales (con complemento)"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:369
+#: C/gedit-shortcut-keys.page:360
 msgid "<keyseq><key>Alt</key><key>F12</key></keyseq>"
 msgstr "<keyseq><key>Alt</key><key>F12</key></keyseq>"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:372
+#: C/gedit-shortcut-keys.page:363
 msgid "Run \"make\" in the current directory (with plugin)"
 msgstr "Ejecutar «make» en la carpeta actual (con complemento)"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:373
+#: C/gedit-shortcut-keys.page:364
 msgid "<key>F8</key>"
 msgstr "<key>F8</key>"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:376
+#: C/gedit-shortcut-keys.page:367
 msgid "Directory listing (with plugin)"
 msgstr "Listado de carpeta (con complemento)"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:377
+#: C/gedit-shortcut-keys.page:368
 msgid "<keyseq><key>Ctrl</key><key>Shift</key> <key>D</key></keyseq>"
 msgstr "<keyseq><key>Ctrl</key><key>Mayús</key> <key>D</key></keyseq>"
 
 #. (itstool) path: table/title
-#: C/gedit-shortcut-keys.page:384
+#: C/gedit-shortcut-keys.page:375
 msgid "Shortcut keys for user help"
 msgstr "Teclas rápidas para la ayuda"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:393
+#: C/gedit-shortcut-keys.page:384
 msgid "Open the gedit user guide"
 msgstr "Abrir la guía de usuario de gedit"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:394
+#: C/gedit-shortcut-keys.page:385
 msgid "<key>F1</key>"
 msgstr "<key>F1</key>"
 
@@ -4411,6 +4385,21 @@ msgstr "Creative Commons de Atribución-Compartir Igual 3.0 sin soporte"
 msgid "This work is licensed under a <_:link-1/>."
 msgstr "Este trabajo está licenciado bajo la <_:link-1/>."
 
+#~ msgid "Click the <gui>Open</gui> button."
+#~ msgstr "Pulse el botón <gui>Abrir</gui>."
+
+#~ msgid "Open the <gui>Quick Open</gui> window"
+#~ msgstr "Abra la ventana <gui>Apertura rápida</gui>"
+
+#~ msgid "<keyseq><key>Alt</key><key>O</key></keyseq>"
+#~ msgstr "<keyseq><key>Alt</key><key>O</key></keyseq>"
+
+#~ msgid "Print preview"
+#~ msgstr "Vista previa de impresión"
+
+#~ msgid "<keyseq><key>Ctrl</key><key>Shift</key> <key>P</key></keyseq>"
+#~ msgstr "<keyseq><key>Ctrl</key><key>Mayús</key> <key>P</key></keyseq>"
+
 #~ msgid ""
 #~ "As this name of this plugin suggests, the <gui>Insert Date/Time</gui> "
 #~ "plugin allows you to insert the date and/or time at the current cursor "
@@ -4458,11 +4447,6 @@ msgstr "Este trabajo está licenciado bajo la <_:link-1/>."
 #~ msgstr ""
 #~ "Seleccione el icono <gui>Lápiz</gui> en la parte superior del diálogo "
 #~ "<gui>Abrir archivos</gui>."
-
-#~ msgid ""
-#~ "Click the downward-facing arrow to the right of the <gui>Open</gui> "
-#~ "button."
-#~ msgstr "Pulse la flecha hacia abajo junto al botón <gui>Abrir</gui>."
 
 #~ msgid ""
 #~ "To activate and use the <gui>side pane</gui>, select <guiseq><gui>View</"
