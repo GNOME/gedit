@@ -29,6 +29,8 @@
 #include "gedit-encodings-dialog.h"
 #include "gedit-utils.h"
 
+NSWindow *gdk_quartz_window_get_nswindow(GdkWindow *window);
+
 struct _GeditFileChooserDialogOSX
 {
 	GObject parent_instance;
