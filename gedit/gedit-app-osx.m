@@ -32,6 +32,10 @@
 #include "gedit-commands.h"
 #include "gedit-commands-private.h"
 #include "gedit-recent.h"
+#import <AppKit/AppKit.h>
+
+NSWindow *gdk_quartz_window_get_nswindow(GdkWindow *window);
+NSEvent *gdk_quartz_event_get_nsevent(GdkEvent *event);
 
 static GeditWindow *
 ensure_window (GeditAppOSX *app,
