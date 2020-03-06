@@ -1,7 +1,7 @@
 gedit - The GNOME text editor
 =============================
 
-This is version 3.35.90 of gedit.
+This is version 3.36.0 of gedit.
 
 gedit is the official text editor of the GNOME desktop environment.
 While aiming at simplicity and ease of use, gedit is a powerful general
