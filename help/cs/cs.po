@@ -3,13 +3,13 @@
 # This file is distributed under the same license as the gedit help.
 #
 # Lucas Lommer <llommer@svn.gnome.org>, 2009.
-# Marek Černocký <marek@manet.cz>, 2009, 2010, 2014, 2015, 2017, 2019.
+# Marek Černocký <marek@manet.cz>, 2009, 2010, 2014, 2015, 2017, 2019, 2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gedit master\n"
-"POT-Creation-Date: 2019-09-06 19:25+0000\n"
-"PO-Revision-Date: 2019-09-07 14:43+0200\n"
+"POT-Creation-Date: 2020-03-07 22:15+0000\n"
+"PO-Revision-Date: 2020-03-10 08:52+0100\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: čeština <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -40,10 +40,10 @@ msgstr "Jak změnit v editoru gedit barvy textu a pozadí."
 #: C/gedit-edit-as-root.page:10 C/gedit-files-basic.page:10
 #: C/gedit-full-screen.page:13 C/gedit-open-files-from-sidepane.page:11
 #: C/gedit-open-files.page:17 C/gedit-open-on-server.page:10
-#: C/gedit-open-recent.page:11 C/gedit-plugin-guide.page:13
+#: C/gedit-open-recent.page:12 C/gedit-plugin-guide.page:13
 #: C/gedit-plugins-change-case.page:14 C/gedit-plugins-doc-stats.page:14
 #: C/gedit-plugins-external-tools.page:15 C/gedit-plugins-file-browser.page:15
-#: C/gedit-plugins-insert-date-time.page:14 C/gedit-plugins-install.page:8
+#: C/gedit-plugins-insert-date-time.page:15 C/gedit-plugins-install.page:8
 #: C/gedit-plugins-modelines.page:13 C/gedit-plugins-pyconsole.page:10
 #: C/gedit-plugins-quick-open.page:11 C/gedit-plugins-snippets.page:9
 #: C/gedit-plugins-sort.page:14 C/gedit-printing.page:10
@@ -220,18 +220,16 @@ msgstr "Zavření souboru"
 #. (itstool) path: page/p
 #: C/gedit-close-file.page:20
 msgid ""
-"To close a file in <app>gedit</app>, select <gui style=\"menuitem\">Close</"
-"gui>. Alternately, you can click the small \"X\" that appears on the right-"
-"side of the file's tab, or press <keyseq><key>Ctrl</key> <key>W</key></"
-"keyseq>."
+"To close a file in <app>gedit</app>, click the <gui style=\"button\">×</gui> "
+"that appears on the right-side of the file's tab, or press "
+"<keyseq><key>Ctrl</key><key>W</key></keyseq>."
 msgstr ""
-"Když chcete v editoru <app>gedit</app> zavřít soubor, vyberte <gui style="
-"\"menuitem\">Zavřít</gui>. Případně můžete kliknout na malý křížek „×“, "
-"který je vidět na pravé straně karty, nebo zmáčknout <keyseq><key>Ctrl</key> "
-"<key>W</key></keyseq>."
+"Když chcete v editoru <app>gedit</app> zavřít soubor, klikněte na tlačítko "
+"<gui style=\"button\">×</gui> na pravé straně ouška karty nebo prostě "
+"zmáčkněte <keyseq><key>Ctrl</key><key>W</key></keyseq>."
 
 #. (itstool) path: page/p
-#: C/gedit-close-file.page:24
+#: C/gedit-close-file.page:23
 msgid ""
 "Any one of these actions will close a file in <app>gedit</app>. If your file "
 "contains changes that have not been saved, <app>gedit</app> will prompt you "
@@ -263,12 +261,12 @@ msgstr "Vytvoření nového souboru"
 #: C/gedit-create-new-file.page:24
 msgid ""
 "The easiest way to create a new file in <app>gedit</app>, is to click the "
-"<gui>Create a new document</gui> button on the left side of the toolbar, or "
-"press <keyseq><key>Ctrl</key><key>T</key></keyseq>."
+"<gui>Create a new document</gui> button on the left side of the header bar, "
+"or press <keyseq><key>Ctrl</key><key>T</key></keyseq>."
 msgstr ""
 "Nejjednodušším způsobem, jak vytvořit v editoru <app>gedit</app> nový "
 "soubor, je kliknout na tlačítko <gui>Vytvořit nový dokument</gui> na levé "
-"straně nástrojové lišty nebo zmáčknout <keyseq><key>Ctrl</key><key>T</key></"
+"straně záhlavní lišty nebo zmáčknout <keyseq><key>Ctrl</key><key>T</key></"
 "keyseq>."
 
 #. (itstool) path: page/p
@@ -370,7 +368,7 @@ msgstr "Základní práce se soubory: otevřít, zavřít a uložit"
 #: C/gedit-files-basic.page:18
 msgid ""
 "If you are new to <app>gedit</app>, these topics will help you with "
-"creating, saving, and opening and closing files."
+"creating, saving, opening and closing files."
 msgstr ""
 "Pokud jste v používání editoru <app>gedit</app> nováčci, tato kapitola vás "
 "seznámí s vytvářením, ukládáním, otevíráním a zavíráním souborů."
@@ -671,34 +669,25 @@ msgstr ""
 #. (itstool) path: item/p
 #: C/gedit-open-on-server.page:32
 msgid "In the header bar, click on <gui>Open</gui>."
-msgstr "V hlavičkové liště klikněte na <gui>Otevřít</gui>."
+msgstr "V záhlavní liště klikněte na <gui>Otevřít</gui>."
 
 #. (itstool) path: item/p
 #: C/gedit-open-on-server.page:33
-msgid "Click <gui>Other Documents…</gui>."
-msgstr "Klikněte na <gui>Další dokumenty…</gui>."
+msgid "Click <gui>Other Locations</gui>."
+msgstr "Klikněte na <gui>Další umístění</gui>."
 
 #. (itstool) path: item/p
 #: C/gedit-open-on-server.page:34
-msgid ""
-"Press <keyseq><key>Ctrl</key><key>L</key></keyseq> in the <gui>Open</gui> "
-"dialog."
-msgstr ""
-"V dialogovém okně <gui>Otevření</gui> zmáčkněte <keyseq><key>Ctrl</"
-"key><key>L</key></keyseq>."
-
-#. (itstool) path: item/p
-#: C/gedit-open-on-server.page:36
 msgid "Enter the IP Address or URL of the appropriate server."
 msgstr "Zadejte IP adresu nebo URL patřičného serveru."
 
 #. (itstool) path: item/p
-#: C/gedit-open-on-server.page:38
+#: C/gedit-open-on-server.page:36
 msgid "Find and select the file that you wish to open."
 msgstr "Najděte a vyberte soubor, který si přejete otevřít."
 
 #. (itstool) path: item/p
-#: C/gedit-open-on-server.page:39
+#: C/gedit-open-on-server.page:37
 msgid ""
 "Use the Character Encoding drop-down list to select the appropriate "
 "character coding."
@@ -707,21 +696,21 @@ msgstr ""
 "kódování znaků."
 
 #. (itstool) path: item/p
-#: C/gedit-open-on-server.page:41 C/gedit-plugins-quick-open.page:44
+#: C/gedit-open-on-server.page:39 C/gedit-plugins-quick-open.page:46
 msgid "Click <gui>Open</gui>."
 msgstr "Klikněte na <gui>Otevřít</gui>."
 
 #. (itstool) path: page/p
-#: C/gedit-open-on-server.page:44
+#: C/gedit-open-on-server.page:42
 msgid ""
 "Valid types of URI include http:, ftp:, file:, and all of the methods "
-"supported by <app>gvfs</app>."
+"supported by <app>GVfs</app>."
 msgstr ""
 "Mezi platné typy adres URI patří http:, ftp:, file:, a všechny metody "
-"podporované <app>gvfs</app>."
+"podporované <app>GVfs</app>."
 
 #. (itstool) path: note/p
-#: C/gedit-open-on-server.page:48
+#: C/gedit-open-on-server.page:46
 msgid ""
 "Files from some types of URI are opened as read-only, and any changes you "
 "make must be saved to a different location. For example, HTTP only allows "
@@ -735,67 +724,54 @@ msgstr ""
 
 #. (itstool) path: info/desc
 #: C/gedit-open-recent.page:7
-msgid "Access files that you have updated recently."
-msgstr "Jak se dostat k souborům, které byly nedávno změněny."
+msgid "Access files that you have previously opened in <app>gedit</app>."
+msgstr ""
+"Jak se dostat k souborům, které jste již dříve v aplikaci <app>gedit</app> "
+"otevřeli."
 
 #. (itstool) path: page/title
-#: C/gedit-open-recent.page:17
+#: C/gedit-open-recent.page:18
 msgid "Reopen a recently-used file"
 msgstr "Opětovné otevření nedávno použitého souboru"
 
 #. (itstool) path: page/p
-#: C/gedit-open-recent.page:19
+#: C/gedit-open-recent.page:20
 msgid ""
-"By default, <app>gedit</app> provides easy access to five of your most "
-"recently-used files. Here is how you can open a recently-used file:"
+"<app>gedit</app> provides easy access to your ten most recently-used files, "
+"that have been previously opened in <app>gedit</app>. Here is how you can "
+"open a recently-used file:"
 msgstr ""
-"Standardně poskytuje <app>gedit</app> přístup k posledním pěti nedávno "
-"použitým souborům. Zde je postup, jak můžete nedávno použitý soubor otevřít:"
+"<app>gedit</app> poskytuje přístup k několika nedávno použitým souborům, "
+"které jste dříve otevřeli v aplikaci <app>gedit</app>. Zde je postup, jak "
+"můžete nedávno použitý soubor otevřít:"
 
 #. (itstool) path: item/p
-#: C/gedit-open-recent.page:22
-msgid "Click the <gui>Open</gui> button."
-msgstr "Klikněte na tlačítko <gui>Otevřít</gui>."
-
-#. (itstool) path: item/p
-#: C/gedit-open-recent.page:23
+#: C/gedit-open-recent.page:24
 msgid ""
-"<app>gedit</app> will display a list of the five most-recently used files."
-msgstr "<app>gedit</app> zobrazí seznam posledních pěti použitých souborů."
+"Click the arrow button next to the <gui>Open</gui> button in the header bar."
+msgstr ""
+"Klikněte na tlačítko se šipkou vedle tlačítka <gui>Otevřít</gui> na záhlavní liště."
 
 #. (itstool) path: item/p
-#: C/gedit-open-recent.page:25
+#: C/gedit-open-recent.page:26
+msgid ""
+"<app>gedit</app> will display a menu with the ten most-recently used files."
+msgstr "<app>gedit</app> zobrazí nabídku s nedávno použitými soubory."
+
+#. (itstool) path: item/p
+#: C/gedit-open-recent.page:28
 msgid "Select the desired file, and it will open in a new tab."
 msgstr "Vyberte požadovaný soubor a ten se otevře v nové kartě."
 
 #. (itstool) path: note/p
-#: C/gedit-open-recent.page:28
+#: C/gedit-open-recent.page:31
 msgid ""
-"To adjust the number of recently-used files that gedit displays, you will "
-"need to use the <app>dconf-editor</app> application."
+"When hovering with the mouse a recently-used file from the menu, the full "
+"path to the file is displayed in the status bar at the bottom of the "
+"<app>gedit</app> window."
 msgstr ""
-"Jestli chcete změnit počet nedávno použitých souborů, které <app>gedit</app> "
-"zobrazuje, budete muset použít aplikaci <app>dconf-editor</app>."
-
-#. (itstool) path: item/p
-#: C/gedit-open-recent.page:32
-msgid ""
-"Launch <app>dconf-editor</app> and select <guiseq><gui>org</gui> <gui>gnome</"
-"gui><gui>gedit</gui><gui>preferences</gui><gui>ui</gui> <gui>max-recents</"
-"gui></guiseq>."
-msgstr ""
-"Spusťte <app>dconf-editor</app> a vyberte <guiseq><gui>org</gui> <gui>gnome</"
-"gui> <gui>gedit</gui> <gui>preferences</gui> <gui>ui</gui> <gui>max-recents</"
-"gui></guiseq>."
-
-#. (itstool) path: item/p
-#: C/gedit-open-recent.page:35
-msgid ""
-"Double-click on the number next to <gui>max-recents</gui> and change the "
-"number to your desired value."
-msgstr ""
-"Dvojitě klikněte na číslo vedle <gui>max-recents</gui> a změňte hodnotu na "
-"tu požadovanou."
+"Když najedete myší na nedávno použitý soubor v nabídce, zobrazí se vám ve "
+"stavové liště v dolní části okna <app>gedit</app> jeho plný název."
 
 #. (itstool) path: info/desc
 #: C/gedit-plugin-guide.page:9
@@ -852,7 +828,7 @@ msgstr "Dodatečné zásuvné moduly editoru gedit"
 #. (itstool) path: credit/name
 #: C/gedit-plugins-change-case.page:9 C/gedit-plugins-doc-stats.page:10
 #: C/gedit-plugins-external-tools.page:11 C/gedit-plugins-file-browser.page:11
-#: C/gedit-plugins-insert-date-time.page:9 C/gedit-plugins-install.page:12
+#: C/gedit-plugins-insert-date-time.page:10 C/gedit-plugins-install.page:12
 #: C/gedit-plugins-modelines.page:9 C/gedit-plugins-sort.page:10
 #: C/gedit-replace.page:18 C/gedit-search.page:16 C/gedit-tabs-moving.page:17
 #: C/gedit-tabs.page:18 C/gedit-undo-recent-action.page:16
@@ -1120,47 +1096,75 @@ msgstr ""
 "požadovaných souborů."
 
 #. (itstool) path: info/desc
-#: C/gedit-plugins-insert-date-time.page:17
+#: C/gedit-plugins-insert-date-time.page:18
 msgid "Insert the current date/time at the cursor position."
 msgstr "Jak vložit aktuální datum/čas na pozici kurzoru."
 
 #. (itstool) path: page/title
-#: C/gedit-plugins-insert-date-time.page:20
+#: C/gedit-plugins-insert-date-time.page:21
 msgid "Insert date/time"
 msgstr "Vložit datum/čas"
 
 #. (itstool) path: page/p
-#: C/gedit-plugins-insert-date-time.page:22
+#: C/gedit-plugins-insert-date-time.page:23
 msgid ""
 "As this name of this plugin suggests, the <gui>Insert Date/Time</gui> plugin "
-"allows you to insert the date and/or time at the current cursor position. To "
-"enable this plugin, select <guiseq><gui style=\"menu\">gedit</gui> <gui "
-"style=\"menuitem\">Preferences</gui><gui>Plugins</gui> <gui>Insert Date/"
-"Time</gui></guiseq>. To use the plugin, press <guiseq> <gui style=\"menu"
-"\">Edit</gui><gui>Insert Date and Time</gui></guiseq>."
+"allows you to insert the date and/or time at the current cursor position."
 msgstr ""
-"Jak už napovídá název tohoto zásuvného modulu <gui>Vložit datum/čas</gui>, "
-"jeho úkolem je vložit datum a/nebo čas na aktuální pozici kurzoru. Zásuvný "
-"modul povolíte pomocí <guiseq><gui style=\"menu\">gedit</gui> <gui style="
-"\"menuitem\">Předvolby</gui> <gui>Zásuvné moduly</gui> <gui>Vložit datum/"
-"čas</gui></guiseq>. Pro použití vyberte <guiseq><gui style=\"menu\">Upravit</"
-"gui> <gui>Vložit datum a čas</gui></guiseq>."
+"Jak se dá poznat z názvu <gui>Vložit datum/čas</gui>, zásuvný modul umožňuje "
+"vložení data a/nebo času na aktuální pozici kurzoru."
+
+#. (itstool) path: steps/title
+#: C/gedit-plugins-insert-date-time.page:28
+msgid "To enable the plugin:"
+msgstr "Abyste povolili zásuvný modul:"
+
+#. (itstool) path: item/p
+#: C/gedit-plugins-insert-date-time.page:30
+msgid ""
+"Press the menu button in the top-right corner of the window and select "
+"<guiseq><gui style=\"menuitem\">Preferences</gui> <gui style=\"tab"
+"\">Plugins</gui></guiseq>."
+msgstr ""
+"Zmáčkněte tlačítko nabídky v pravém horním rohu okna a vyberte <guiseq><gui "
+"style=\"menuitem\">Předvolby</gui> <gui style=\"tab\">Zásuvné moduly</gui>"
+"</guiseq>."
+
+#. (itstool) path: item/p
+#: C/gedit-plugins-insert-date-time.page:35
+msgid ""
+"Select <gui style=\"menuitem\">Insert Date/Time</gui> to enable the plugin."
+msgstr ""
+"Zaškrtnutím <gui style=\"menuitem\">Vložit datum/čas</gui> zásuvný modul "
+"povolíte."
 
 #. (itstool) path: page/p
-#: C/gedit-plugins-insert-date-time.page:29
+#: C/gedit-plugins-insert-date-time.page:39
+msgid ""
+"To use the plugin, press the menu button in the top-right corner of the "
+"window and select <guiseq><gui style=\"menuitem\">Tools</gui> <gui style="
+"\"menuitem\">Insert Date and Time…</gui></guiseq>."
+msgstr ""
+"Když chcete zásuvný modul využít, zmáčkněte tlačítko nabídky v pravém horním "
+"rohu okna a vyberte <guiseq><gui style=\"menuitem\">Nástroje</gui> <gui style="
+"\"menuitem\">Vložit datum a čas…</gui></guiseq>."
+
+#. (itstool) path: page/p
+#: C/gedit-plugins-insert-date-time.page:43
 msgid ""
 "By default, the <gui>Insert Date/Time</gui> plugin will prompt you to choose "
 "your preferred date/time format each time that you use the plugin. However, "
-"you can choose your own default date and time format by selecting "
-"<guiseq><gui style=\"menu\">gedit</gui><gui style=\"menuitem\">Preferences</"
-"gui> <gui>Plugins</gui><gui>Insert Date/Time</gui><gui>Configure</gui></"
-"guiseq>."
+"you can choose your own default date and time format by pressing the menu "
+"button in the top-right corner of the window and selecting <guiseq> <gui "
+"style=\"menuitem\">Preferences</gui><gui style=\"tab\">Plugins</gui><gui> "
+"Insert Date/Time</gui><gui style=\"button\">Configure</gui></guiseq>."
 msgstr ""
 "Standardně se zásuvný modul <gui>Vložit datum/čas</gui> při každém použití "
 "zeptá, jaký chcete zvolit formát data/času. Můžete si ale nastavit svůj "
-"výchozí formát pomocí <guiseq><gui style=\"menu\">gedit</gui> <gui style="
-"\"menuitem\">Předvolby</gui> <gui>Zásuvné moduly</gui> <gui>Vložit datum/"
-"čas</gui> <gui>Nastavit</gui></guiseq>."
+"výchozí formát tak, že zmáčknete tlačítko nabídky v pravém horním rohou okna "
+"a vyberete <guiseq><gui style=\"menuitem\">Předvolby</gui> <gui style=\"tab\">"
+"Zásuvné moduly</gui> <gui>Vložit datum/čas</gui> <gui style=\"button\">"
+"Nastavit</gui></guiseq>."
 
 #. (itstool) path: info/desc
 #: C/gedit-plugins-install.page:15
@@ -1231,28 +1235,30 @@ msgstr ""
 #: C/gedit-plugins-install.page:41
 msgid ""
 "After you have placed the plugin files into the correct directory, the "
-"plugin will appear in the Preferences menu. Select <guiseq><gui>Edit </"
-"gui><gui style=\"menuitem\">Preferences</gui><gui>Plugins</gui> <gui>[Name "
-"of Plugin]</gui></guiseq> to enable the plugin."
+"plugin will appear in the Preferences menu. Press the menu button in the top-"
+"right corner of the window and select <guiseq><gui style=\"menuitem\"> "
+"Preferences</gui><gui style=\"tab\">Plugins</gui><gui>[Name of Plugin]</gui> "
+"</guiseq> to enable the plugin."
 msgstr ""
 "Až máte soubory zásuvného modulu umístěny ve správné složce, objeví se "
-"dotyčný zásuvný modul v nabídce v předvolbách. Povolíte jej pomocí "
-"<guiseq><gui>Upravit</gui> <gui style=\"menuitem\">Předvolby</gui> "
-"<gui>Zásuvné moduly</gui> <gui>[název zásuvného modulu]</gui></guiseq>."
+"dotyčný zásuvný modul v nabídce v předvolbách. Zmáčkněte tlačítko nabídky v "
+"pravém horním rohu okna a vyberte <guiseq><gui style=\"menuitem\">Předvolby"
+"</gui> <gui style=\"tab\">Zásuvné moduly</gui> <gui>[název zásuvného modulu]"
+"</gui></guiseq>. Tím zásuvný modul povolíte."
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-install.page:45
+#: C/gedit-plugins-install.page:46
 msgid "Click <gui>Close</gui>."
 msgstr "Klikněte na <gui>Zavřít</gui>."
 
 #. (itstool) path: page/p
-#: C/gedit-plugins-install.page:48
+#: C/gedit-plugins-install.page:49
 msgid ""
 "After you have enabled the plugin, it should be available for you to use."
 msgstr "Jakmile máte zásuvný modul povolen, mělo by být možné jej používat."
 
 #. (itstool) path: note/p
-#: C/gedit-plugins-install.page:52
+#: C/gedit-plugins-install.page:53
 msgid ""
 "The <file>.local</file> directory is hidden by default. To view it and other "
 "hidden files, select <guiseq><gui>View</gui><gui>Show Hidden Files</gui></"
@@ -1264,7 +1270,7 @@ msgstr ""
 "<keyseq><key>Ctrl</key> <key>H</key></keyseq>."
 
 #. (itstool) path: note/p
-#: C/gedit-plugins-install.page:59
+#: C/gedit-plugins-install.page:60
 msgid ""
 "If the directory <file>.local/share/gedit/plugins/</file> is not present on "
 "your system, you will need to create it."
@@ -1449,8 +1455,8 @@ msgid ""
 "\"https://kate-editor.org/\">Kate website</link>."
 msgstr ""
 "Ohledně dalších informací k řádkům s režimem <app>Kate</app> navštivte <link "
-"href=\"https://kate-editor.org/\">webové stránky Kate</link> (odkazovaný text "
-"je v angličtině)."
+"href=\"https://kate-editor.org/\">webové stránky Kate</link> (odkazovaný "
+"text je v angličtině)."
 
 #. (itstool) path: section/title
 #: C/gedit-plugins-modelines.page:84
@@ -1500,8 +1506,8 @@ msgid ""
 "\"https://www.vim.org/\">Vim website</link>."
 msgstr ""
 "Ohledně dalších informací k řádkům s režimem <app>Vim</app> navštivte <link "
-"href=\"https://www.vim.org/\">webové stránky Vim</link> (odkazovaný text je v "
-"angličtině)."
+"href=\"https://www.vim.org/\">webové stránky Vim</link> (odkazovaný text je "
+"v angličtině)."
 
 #. (itstool) path: info/desc
 #: C/gedit-plugins-pyconsole.page:14
@@ -1555,8 +1561,17 @@ msgstr "Jak rychle otevřít soubor nebo sadu souborů."
 msgid "Quick open"
 msgstr "Rychle otevřít"
 
-#. (itstool) path: page/p
+#. (itstool) path: note/p
 #: C/gedit-plugins-quick-open.page:24
+msgid ""
+"This plugin currently <link href=\"https://gitlab.gnome.org/GNOME/gedit/"
+"issues/277\">does not work</link>!"
+msgstr ""
+"Tento zásuvný modul v současnosti link href=\"https://gitlab.gnome.org/GNOME/"
+"gedit/issues/277\">nefunguje</link>!"
+
+#. (itstool) path: page/p
+#: C/gedit-plugins-quick-open.page:26
 msgid ""
 "As the name of this plugin would imply, the <app>Quick Open</app> plugin "
 "helps you to open files more quickly than using the usual ways of opening "
@@ -1569,7 +1584,7 @@ msgstr ""
 "gui> <gui>Zásuvné moduly</gui> <gui>Rychle otevřít</gui></guiseq>."
 
 #. (itstool) path: page/p
-#: C/gedit-plugins-quick-open.page:29
+#: C/gedit-plugins-quick-open.page:31
 msgid ""
 "Once you have enabled the <app>Quick Open</app> plugin you can use it as "
 "follows:"
@@ -1578,7 +1593,7 @@ msgstr ""
 "následovně:"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-quick-open.page:33
+#: C/gedit-plugins-quick-open.page:35
 msgid ""
 "Open the <app>Quick Open</app> dialog box by pressing <keyseq><key>Ctrl</"
 "key><key>Alt</key><key>O</key></keyseq>, or by selecting <gui style="
@@ -1589,17 +1604,17 @@ msgstr ""
 "<gui style=\"menuitem\">Rychle otevřít…</gui>."
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-quick-open.page:36
+#: C/gedit-plugins-quick-open.page:38
 msgid "The <gui>Quick Open</gui> file dialog will appear."
 msgstr "Objeví se dialogové okno <gui>Rychlé otevření</gui>."
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-quick-open.page:37
+#: C/gedit-plugins-quick-open.page:39
 msgid "Use your mouse to select the file or files that you want to open."
 msgstr "Použijte myš k výběru souboru či souborů, které chcete otevřít."
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-quick-open.page:39
+#: C/gedit-plugins-quick-open.page:41
 msgid ""
 "To select several individual files, hold down your <key>Ctrl</key> key while "
 "you click on the files that you want to open."
@@ -1608,7 +1623,7 @@ msgstr ""
 "zmáčknutou klávesu <key>Ctrl</key>."
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-quick-open.page:41
+#: C/gedit-plugins-quick-open.page:43
 msgid ""
 "To select a group of files, click on the first file that you want to open, "
 "hold down the <key>Shift</key> key, and then click on the last file in the "
@@ -1619,17 +1634,17 @@ msgstr ""
 "soubor, který chcete otevřít."
 
 #. (itstool) path: page/p
-#: C/gedit-plugins-quick-open.page:47
+#: C/gedit-plugins-quick-open.page:49
 msgid "<app>Quick Open</app> will look for files in:"
 msgstr "<app>Rychlé otevření</app> bude hledat soubory v:"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-quick-open.page:50
+#: C/gedit-plugins-quick-open.page:52
 msgid "The directory of the currently opened document"
 msgstr "Složce aktuálního otevřeného dokumentu"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-quick-open.page:51
+#: C/gedit-plugins-quick-open.page:53
 msgid ""
 "The root directory of the <app xref=\"gedit-plugins-file-browser\">File "
 "Browser Pane</app> plugin"
@@ -1638,7 +1653,7 @@ msgstr ""
 "\">Panel prolížeče souborů</app>"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-quick-open.page:54
+#: C/gedit-plugins-quick-open.page:56
 msgid ""
 "Recent documents which are also shown in the <file>Recent</file> folder in "
 "<app>Files</app>"
@@ -1647,23 +1662,23 @@ msgstr ""
 "file> v aplikaci <app>Soubory</app>"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-quick-open.page:56
+#: C/gedit-plugins-quick-open.page:58
 msgid "Directories which you have bookmarked in <app>Files</app>"
 msgstr ""
 "Složkách, pro které máte v aplikaci <app>Soubory</app> vytvořeny záložky"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-quick-open.page:58
+#: C/gedit-plugins-quick-open.page:60
 msgid "Your <file>Desktop</file> directory"
 msgstr "Vaší složce <file>Plocha</file>"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-quick-open.page:59
+#: C/gedit-plugins-quick-open.page:61
 msgid "Your <file>Home</file> directory"
 msgstr "Vaší <file>Domovské</file> složce"
 
 #. (itstool) path: note/p
-#: C/gedit-plugins-quick-open.page:63
+#: C/gedit-plugins-quick-open.page:65
 msgid ""
 "<app>Quick Open</app> displays files in any of the above locations "
 "regardless of whether or not you have opened them previously."
@@ -2475,21 +2490,21 @@ msgstr ""
 msgctxt "_"
 msgid ""
 "external ref='figures/gedit3-screenshot.png' "
-"md5='bf1c5551e623923504e51c4f9fd885b7'"
+"md5='5fd76174e1e72f99c870b9983034ccd1'"
 msgstr ""
 "external ref='figures/gedit3-screenshot.png' "
-"md5='bf1c5551e623923504e51c4f9fd885b7'"
+"md5='5fd76174e1e72f99c870b9983034ccd1'"
 
 #. (itstool) path: page/p
 #: C/gedit-quickstart.page:30
 msgid ""
 "Once <app>gedit</app> launches, you can start writing right away. To save "
-"your text, just click the <gui>Save</gui> icon in the <app>gedit</app> "
-"toolbar."
+"your text, just click the <gui>Save</gui> button in the <app>gedit</app> "
+"header bar."
 msgstr ""
-"Jakmile <app>gedit</app> spustíte, můžete začít psát. Napsaný text stačí "
-"uložit kliknutím na ikonu <gui>Uložit</gui> na nástrojové liště <app>gedit</"
-"app>."
+"Jakmile <app>gedit</app> spustíte, můžete začít psát. Napsaný text uložíte "
+"prostým kliknutím na tlačítko <gui>Uložit</gui> v záhlavní liště okna <app>"
+"gedit</app>."
 
 #. (itstool) path: page/p
 #: C/gedit-quickstart.page:34
@@ -2744,15 +2759,15 @@ msgstr "Ukládání souboru"
 #: C/gedit-save-file.page:30
 msgid ""
 "To save a file in <app>gedit</app>, click on the <gui style=\"button\">Save</"
-"gui> button on the right side of the toolbar or just press "
+"gui> button on the right side of the header bar or just press "
 "<keyseq><key>Ctrl</key><key>S</key></keyseq>."
 msgstr ""
 "Když chcete v editoru <app>gedit</app> uložit soubor, klikněte na tlačítko "
-"<gui style=\"button\">Uložit</gui> na pravé straně nástrojové lišty nebo jen "
+"<gui style=\"button\">Uložit</gui> na pravé straně záhlavní lišty nebo jen "
 "zmáčkněte <keyseq><key>Ctrl</key> <key>S</key></keyseq>."
 
 #. (itstool) path: page/p
-#: C/gedit-save-file.page:32
+#: C/gedit-save-file.page:33
 msgid ""
 "If you are saving a new file, a dialog will appear, and you can select a "
 "name for the file, as well as the directory where you would like the file to "
@@ -2975,17 +2990,17 @@ msgstr "Klávesové zkratky vztahující se ke kartám"
 
 #. (itstool) path: td/p
 #: C/gedit-shortcut-keys.page:57 C/gedit-shortcut-keys.page:113
-#: C/gedit-shortcut-keys.page:167 C/gedit-shortcut-keys.page:253
-#: C/gedit-shortcut-keys.page:273 C/gedit-shortcut-keys.page:325
-#: C/gedit-shortcut-keys.page:358 C/gedit-shortcut-keys.page:387
+#: C/gedit-shortcut-keys.page:158 C/gedit-shortcut-keys.page:244
+#: C/gedit-shortcut-keys.page:264 C/gedit-shortcut-keys.page:316
+#: C/gedit-shortcut-keys.page:349 C/gedit-shortcut-keys.page:378
 msgid "Action"
 msgstr "Činnost"
 
 #. (itstool) path: td/p
 #: C/gedit-shortcut-keys.page:58 C/gedit-shortcut-keys.page:114
-#: C/gedit-shortcut-keys.page:168 C/gedit-shortcut-keys.page:254
-#: C/gedit-shortcut-keys.page:274 C/gedit-shortcut-keys.page:326
-#: C/gedit-shortcut-keys.page:359 C/gedit-shortcut-keys.page:388
+#: C/gedit-shortcut-keys.page:159 C/gedit-shortcut-keys.page:245
+#: C/gedit-shortcut-keys.page:265 C/gedit-shortcut-keys.page:317
+#: C/gedit-shortcut-keys.page:350 C/gedit-shortcut-keys.page:379
 msgid "Keyboard shortcut"
 msgstr "Klávesová zkratka"
 
@@ -3015,7 +3030,7 @@ msgid "Close tab"
 msgstr "Zavřít kartu"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:74 C/gedit-shortcut-keys.page:154
+#: C/gedit-shortcut-keys.page:74 C/gedit-shortcut-keys.page:145
 msgid "<keyseq><key>Ctrl</key><key>W</key></keyseq>"
 msgstr "<keyseq><key>Ctrl</key><key>W</key></keyseq>"
 
@@ -3134,496 +3149,476 @@ msgstr "<keyseq><key>Ctrl</key><key>O</key></keyseq>"
 
 #. (itstool) path: td/p
 #: C/gedit-shortcut-keys.page:131
-msgid "Open the <gui>Quick Open</gui> window"
-msgstr "Otevřít okno <gui>Rychlé otevření</gui>"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:132
-msgid "<keyseq><key>Alt</key><key>O</key></keyseq>"
-msgstr "<keyseq><key>Alt</key><key>O</key></keyseq>"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:135
 msgid "Save the current document"
 msgstr "Uložit aktuální dokument"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:136
+#: C/gedit-shortcut-keys.page:132
 msgid "<keyseq><key>Ctrl</key><key>S</key></keyseq>"
 msgstr "<keyseq><key>Ctrl</key><key>S</key></keyseq>"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:139
+#: C/gedit-shortcut-keys.page:135
 msgid "Save the current document with a new filename"
 msgstr "Uložit aktuální dokument pod novým názvem"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:140
+#: C/gedit-shortcut-keys.page:136
 msgid "<keyseq><key>Ctrl</key><key>Shift</key> <key>S</key></keyseq>"
 msgstr "<keyseq><key>Ctrl</key><key>Shift</key> <key>S</key></keyseq>"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:144
+#: C/gedit-shortcut-keys.page:140
 msgid "Print the current document"
 msgstr "Vytisknout aktuální dokument"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:145
+#: C/gedit-shortcut-keys.page:141
 msgid "<keyseq><key>Ctrl </key><key>P</key></keyseq>"
 msgstr "<keyseq><key>Ctrl </key><key>P</key></keyseq>"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:148
-msgid "Print preview"
-msgstr "Náhled tisku"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:149
-msgid "<keyseq><key>Ctrl</key><key>Shift</key> <key>P</key></keyseq>"
-msgstr "<keyseq><key>Ctrl</key><key>Shift</key> <key>P</key></keyseq>"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:153
+#: C/gedit-shortcut-keys.page:144
 msgid "Close the current document"
 msgstr "Zavřít aktuální dokument"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:157
+#: C/gedit-shortcut-keys.page:148
 msgid "Quit gedit"
 msgstr "Ukončit gedit"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:158
+#: C/gedit-shortcut-keys.page:149
 msgid "<keyseq><key>Ctrl</key><key>Q</key></keyseq>"
 msgstr "<keyseq><key>Ctrl</key><key>Q</key></keyseq>"
 
 #. (itstool) path: table/title
-#: C/gedit-shortcut-keys.page:164
+#: C/gedit-shortcut-keys.page:155
 msgid "Shortcut keys for editing files"
 msgstr "Klávesové zkratky pro úpravu souborů"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:173
+#: C/gedit-shortcut-keys.page:164
 msgid "Move the selected word right one word"
 msgstr "Přesunout vybrané slovo o slovo doprava"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:174
+#: C/gedit-shortcut-keys.page:165
 msgid "<keyseq><key>Alt</key><key>Right Arrow</key></keyseq>"
 msgstr "<keyseq><key>Alt</key><key>→</key></keyseq>"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:177
+#: C/gedit-shortcut-keys.page:168
 msgid "Move the selected word left one word"
 msgstr "Přesunout vybrané slovo o slovo doleva"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:178
+#: C/gedit-shortcut-keys.page:169
 msgid "<keyseq><key>Alt</key><key>Left Arrow</key></keyseq>"
 msgstr "<keyseq><key>Alt</key><key>←</key></keyseq>"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:181
+#: C/gedit-shortcut-keys.page:172
 msgid "Undo the last action"
 msgstr "Vrátit zpět poslední provedený úkon"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:182
+#: C/gedit-shortcut-keys.page:173
 msgid "<keyseq><key>Ctrl</key><key>Z</key></keyseq>"
 msgstr "<keyseq><key>Ctrl</key><key>Z</key></keyseq>"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:185
+#: C/gedit-shortcut-keys.page:176
 msgid "Redo the last undone action"
 msgstr "Znovu provést naposledy zpět vrácený úkon"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:186
+#: C/gedit-shortcut-keys.page:177
 msgid "<keyseq><key>Ctrl</key><key>Shift</key> <key>Z</key></keyseq>"
 msgstr "<keyseq><key>Ctrl</key><key>Shift</key> <key>Z</key></keyseq>"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:190
+#: C/gedit-shortcut-keys.page:181
 msgid "Cut the selected text or region and place it on the clipboard"
 msgstr "Vyjmout vybraný text nebo oblast a vložit ji do schránky"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:192
+#: C/gedit-shortcut-keys.page:183
 msgid "<keyseq><key>Ctrl</key><key>X</key></keyseq>"
 msgstr "<keyseq><key>Ctrl</key><key>X</key></keyseq>"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:195
+#: C/gedit-shortcut-keys.page:186
 msgid "Copy the selected text or region onto the clipboard"
 msgstr "Zkopírovat vybraný text nebo oblast do schránky"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:196
+#: C/gedit-shortcut-keys.page:187
 msgid "<keyseq><key>Ctrl</key><key>C</key></keyseq>"
 msgstr "<keyseq><key>Ctrl</key><key>C</key></keyseq>"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:199
+#: C/gedit-shortcut-keys.page:190
 msgid "Paste the contents of the clipboard"
 msgstr "Vložit obsah ze schránky"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:200
+#: C/gedit-shortcut-keys.page:191
 msgid "<keyseq><key>Ctrl</key><key>V</key></keyseq>"
 msgstr "<keyseq><key>Ctrl</key><key>V</key></keyseq>"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:203
+#: C/gedit-shortcut-keys.page:194
 msgid "Select all text in the file"
 msgstr "Vybrat všechen text v souboru"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:204
+#: C/gedit-shortcut-keys.page:195
 msgid "<keyseq><key>Ctrl</key><key>A</key></keyseq>"
 msgstr "<keyseq><key>Ctrl</key><key>A</key></keyseq>"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:207
+#: C/gedit-shortcut-keys.page:198
 msgid "Unselect all text"
 msgstr "Zrušit výběr veškerého textu"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:208
+#: C/gedit-shortcut-keys.page:199
 msgid "<keyseq><key>Ctrl</key><key>Backslash</key></keyseq>"
 msgstr "<keyseq><key>Ctrl</key><key>Backslash</key></keyseq>"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:211
+#: C/gedit-shortcut-keys.page:202
 msgid "Delete the current line"
 msgstr "Odstranit aktuální řádek"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:212
+#: C/gedit-shortcut-keys.page:203
 msgid "<keyseq><key>Ctrl</key><key>D</key></keyseq>"
 msgstr "<keyseq><key>Ctrl</key><key>D</key></keyseq>"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:215
+#: C/gedit-shortcut-keys.page:206
 msgid "Move the selected line up one line"
 msgstr "Přesunout vybraný řádek o řádek nahoru"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:216
+#: C/gedit-shortcut-keys.page:207
 msgid "<keyseq><key>Alt</key><key>Up Arrow</key></keyseq>"
 msgstr "<keyseq><key>Alt</key><key>Up Arrow</key></keyseq>"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:219
+#: C/gedit-shortcut-keys.page:210
 msgid "Move the selected line down one line"
 msgstr "Přesunout vybraný řádek o řádek dolů"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:220
+#: C/gedit-shortcut-keys.page:211
 msgid "<keyseq><key>Alt</key><key>Down Arrow</key></keyseq>"
 msgstr "<keyseq><key>Alt</key><key>Down Arrow</key></keyseq>"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:223
+#: C/gedit-shortcut-keys.page:214
 msgid "Add a tab stop"
 msgstr "Přidat tabulační zarážku"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:224
+#: C/gedit-shortcut-keys.page:215
 msgid "<keyseq><key>Tab</key></keyseq>"
 msgstr "<keyseq><key>Tab</key></keyseq>"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:227
+#: C/gedit-shortcut-keys.page:218
 msgid "Remove a tab stop"
 msgstr "Odstranit tabulační zarážku"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:228
+#: C/gedit-shortcut-keys.page:219
 msgid "<keyseq><key>Shift</key><key>Tab</key></keyseq>"
 msgstr "<keyseq><key>Shift</key><key>Tab</key></keyseq>"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:231
+#: C/gedit-shortcut-keys.page:222
 msgid "Convert the selected text to upper case"
 msgstr "Převést vybraný text na velká písmena"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:232
+#: C/gedit-shortcut-keys.page:223
 msgid "<keyseq><key>Ctrl</key><key>U</key></keyseq>"
 msgstr "<keyseq><key>Ctrl</key><key>U</key></keyseq>"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:235
+#: C/gedit-shortcut-keys.page:226
 msgid "Convert the selected text to lower case"
 msgstr "Převést vybraný text na malá písmena"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:236
+#: C/gedit-shortcut-keys.page:227
 msgid "<keyseq><key>Ctrl</key><key>L</key></keyseq>"
 msgstr "<keyseq><key>Ctrl</key><key>L</key></keyseq>"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:239
+#: C/gedit-shortcut-keys.page:230
 msgid "Toggle case of the selected text"
 msgstr "Přepnout velikost písmen ve vybraném textu"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:240
+#: C/gedit-shortcut-keys.page:231
 msgid "<keyseq><key>Ctrl</key><key>~</key></keyseq>"
 msgstr "<keyseq><key>Ctrl</key><key>~</key></keyseq>"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:243
+#: C/gedit-shortcut-keys.page:234
 msgid "Toggle cursor visibility"
 msgstr "Přepnout viditelnost kurzoru"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:244
+#: C/gedit-shortcut-keys.page:235
 msgid "<keyseq><key>F7</key></keyseq>"
 msgstr "<keyseq><key>F7</key></keyseq>"
 
 #. (itstool) path: table/title
-#: C/gedit-shortcut-keys.page:250
+#: C/gedit-shortcut-keys.page:241
 msgid "Shortcut keys for showing and hiding panes"
 msgstr "Klávesové zkratky pro zobrazování a skrývání panelů"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:259
+#: C/gedit-shortcut-keys.page:250
 msgid "Show / hide the side panel"
 msgstr "Zobrazit/skrýt postranní panel"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:260
+#: C/gedit-shortcut-keys.page:251
 msgid "<key>F9</key>"
 msgstr "<key>F9</key>"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:263
+#: C/gedit-shortcut-keys.page:254
 msgid "Open the file menu"
 msgstr "Otevřít nabídku pro soubor"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:264
+#: C/gedit-shortcut-keys.page:255
 msgid "<key>F10</key>"
 msgstr "<key>F10</key>"
 
 #. (itstool) path: table/title
-#: C/gedit-shortcut-keys.page:270
+#: C/gedit-shortcut-keys.page:261
 msgid "Shortcut keys for navigation"
 msgstr "Klávesové zkratky pro navigaci"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:279
+#: C/gedit-shortcut-keys.page:270
 msgid "Move to matching bracket"
 msgstr "Přejít na odpovídající závorku"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:280
+#: C/gedit-shortcut-keys.page:271
 msgid "<keyseq><key>Ctrl</key><key>%</key></keyseq>"
 msgstr "<keyseq><key>Ctrl</key><key>%</key></keyseq>"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:283
+#: C/gedit-shortcut-keys.page:274
 msgid "Goto line"
 msgstr "Přejít na řádek"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:284
+#: C/gedit-shortcut-keys.page:275
 msgid "<keyseq><key>Ctrl</key><key>I</key></keyseq>"
 msgstr "<keyseq><key>Ctrl</key><key>I</key></keyseq>"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:287
+#: C/gedit-shortcut-keys.page:278
 msgid "Move to the beginning of the current line"
 msgstr "Přesunout se na začátek aktuálního řádku"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:288
+#: C/gedit-shortcut-keys.page:279
 msgid "<key>Home</key>"
 msgstr "<key>Home</key>"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:291
+#: C/gedit-shortcut-keys.page:282
 msgid "Move to the end of the current line"
 msgstr "Přesunout se na konec aktuálního řádku"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:292
+#: C/gedit-shortcut-keys.page:283
 msgid "<key>End</key>"
 msgstr "<key>End</key>"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:295
+#: C/gedit-shortcut-keys.page:286
 msgid "Move to the beginning of the document"
 msgstr "Přesunout se na začátek dokumentu"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:296
+#: C/gedit-shortcut-keys.page:287
 msgid "<keyseq><key>Ctrl</key><key>Home</key></keyseq>"
 msgstr "<keyseq><key>Ctrl</key><key>Home</key></keyseq>"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:299
+#: C/gedit-shortcut-keys.page:290
 msgid "Move to the end of the document"
 msgstr "Přesunout se na konec dokumentu"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:300
+#: C/gedit-shortcut-keys.page:291
 msgid "<keyseq><key>Ctrl</key><key>End</key></keyseq>"
 msgstr "<keyseq><key>Ctrl</key><key>End</key></keyseq>"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:303
+#: C/gedit-shortcut-keys.page:294
 msgid "Move viewport up within the file"
 msgstr "Posunout se výřezem po souboru výš"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:304
+#: C/gedit-shortcut-keys.page:295
 msgid "<keyseq><key>Shift</key><key>Alt</key><key>Up</key></keyseq>"
 msgstr "<keyseq><key>Shift</key><key>Alt</key><key>Up</key></keyseq>"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:307
+#: C/gedit-shortcut-keys.page:298
 msgid "Move viewport down within the file"
 msgstr "Posunout se výřezem po souboru níž"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:308
+#: C/gedit-shortcut-keys.page:299
 msgid "<keyseq><key>Shift</key><key>Alt</key><key>Down</key></keyseq>"
 msgstr "<keyseq><key>Shift</key><key>Alt</key><key>Down</key></keyseq>"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:311
+#: C/gedit-shortcut-keys.page:302
 msgid "Move viewport to beginning of file"
 msgstr "Posunout se výřezem po souboru na začátek"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:312
+#: C/gedit-shortcut-keys.page:303
 msgid "<keyseq><key>Shift</key><key>Alt</key><key>Home</key></keyseq>"
 msgstr "<keyseq><key>Shift</key><key>Alt</key><key>Home</key></keyseq>"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:315
+#: C/gedit-shortcut-keys.page:306
 msgid "Move viewport to end of file"
 msgstr "Posunout se výřezem po souboru na konec"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:316
+#: C/gedit-shortcut-keys.page:307
 msgid "<keyseq><key>Shift</key><key>Alt</key><key>End</key></keyseq>"
 msgstr "<keyseq><key>Shift</key><key>Alt</key><key>End</key></keyseq>"
 
 #. (itstool) path: table/title
-#: C/gedit-shortcut-keys.page:322
+#: C/gedit-shortcut-keys.page:313
 msgid "Shortcut keys for searching"
 msgstr "Klávesové zkratky pro hledávání"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:331
+#: C/gedit-shortcut-keys.page:322
 msgid "Find a string"
 msgstr "Hledat řetězec"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:332
+#: C/gedit-shortcut-keys.page:323
 msgid "<keyseq><key>Ctrl</key><key>F</key></keyseq>"
 msgstr "<keyseq><key>Ctrl</key><key>F</key></keyseq>"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:335
+#: C/gedit-shortcut-keys.page:326
 msgid "Find the next instance of the string"
 msgstr "Hledat následující výskyt téhož řetězce"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:336
+#: C/gedit-shortcut-keys.page:327
 msgid "<keyseq><key>Ctrl</key><key>G</key></keyseq>"
 msgstr "<keyseq><key>Ctrl</key><key>G</key></keyseq>"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:339
+#: C/gedit-shortcut-keys.page:330
 msgid "Find the previous instance of the string"
 msgstr "Hledat předchozí výskyt téhož řetězce"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:340
+#: C/gedit-shortcut-keys.page:331
 msgid "<keyseq><key>Ctrl</key><key>Shift</key><key>G</key></keyseq>"
 msgstr "<keyseq><key>Ctrl</key><key>Shift</key><key>G</key></keyseq>"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:343
+#: C/gedit-shortcut-keys.page:334
 msgid "Search and Replace"
 msgstr "Vyhledat a nahradit"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:344
+#: C/gedit-shortcut-keys.page:335
 msgid "<keyseq><key>Ctrl</key><key>H</key></keyseq>"
 msgstr "<keyseq><key>Ctrl</key><key>H</key></keyseq>"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:347
+#: C/gedit-shortcut-keys.page:338
 msgid "Clear highlight"
 msgstr "Zrušit zvýrazňování"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:348
+#: C/gedit-shortcut-keys.page:339
 msgid "<keyseq><key>Ctrl</key><key>Shift</key> <key>K</key></keyseq>"
 msgstr "<keyseq><key>Ctrl</key><key>Shift</key> <key>K</key></keyseq>"
 
 #. (itstool) path: table/title
-#: C/gedit-shortcut-keys.page:355
+#: C/gedit-shortcut-keys.page:346
 msgid "Shortcut keys for tools"
 msgstr "Klávesové zkratky pro nástroje"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:364
+#: C/gedit-shortcut-keys.page:355
 msgid "Check spelling"
 msgstr "Zkontrolovat pravopis"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:365
+#: C/gedit-shortcut-keys.page:356
 msgid "<keyseq><key>Shift</key><key>F7</key></keyseq>"
 msgstr "<keyseq><key>Shift</key><key>F7</key></keyseq>"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:368
+#: C/gedit-shortcut-keys.page:359
 msgid "Remove trailing spaces (with plugin)"
 msgstr "Odstranit koncové mezery (se zásuvným modulem)"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:369
+#: C/gedit-shortcut-keys.page:360
 msgid "<keyseq><key>Alt</key><key>F12</key></keyseq>"
 msgstr "<keyseq><key>Alt</key><key>F12</key></keyseq>"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:372
+#: C/gedit-shortcut-keys.page:363
 msgid "Run \"make\" in the current directory (with plugin)"
 msgstr "Spustit „make“ v aktuální složce (se zásuvným modulem)"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:373
+#: C/gedit-shortcut-keys.page:364
 msgid "<key>F8</key>"
 msgstr "<key>F8</key>"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:376
+#: C/gedit-shortcut-keys.page:367
 msgid "Directory listing (with plugin)"
 msgstr "Výpis složky (se zásuvným modulem)"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:377
+#: C/gedit-shortcut-keys.page:368
 msgid "<keyseq><key>Ctrl</key><key>Shift</key> <key>D</key></keyseq>"
 msgstr "<keyseq><key>Ctrl</key><key>Shift</key> <key>D</key></keyseq>"
 
 #. (itstool) path: table/title
-#: C/gedit-shortcut-keys.page:384
+#: C/gedit-shortcut-keys.page:375
 msgid "Shortcut keys for user help"
 msgstr "Klávesové zkratky pro nápovědu"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:393
+#: C/gedit-shortcut-keys.page:384
 msgid "Open the gedit user guide"
 msgstr "Otevřít uživatelskou příručku k aplikaci gedit"
 
 #. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:394
+#: C/gedit-shortcut-keys.page:385
 msgid "<key>F1</key>"
 msgstr "<key>F1</key>"
 
@@ -4169,45 +4164,47 @@ msgstr "Přidávání a odebírání karet"
 #: C/gedit-tabs.page:39
 msgid ""
 "Working with tabs in <app>gedit</app> allows you to keep an eye on several "
-"files in a single window. The tab that is larger than the other tabs "
-"indicates the file that is currently open. The smaller tabs indicate other "
-"files that are available to work on."
+"files in a single window."
 msgstr ""
-"Díky práci s kartami v editoru <app>gedit</app> si můžete udržet na očích "
-"několik souborů v jediném okně. Karta, která je větší než ostatní, "
-"představuje aktuální soubor. Ostatní menší karty patří ostatním souborům, "
-"které jsou připraveny k práci."
+"Práce s kartami v aplikaci <app>gedit</app> umožňuje mít v jednom okně na "
+"očích několik souborů."
 
 #. (itstool) path: section/title
-#: C/gedit-tabs.page:45
+#: C/gedit-tabs.page:43
 msgid "Adding tabs"
 msgstr "Přidávání karet"
 
 #. (itstool) path: section/p
-#: C/gedit-tabs.page:46
+#: C/gedit-tabs.page:44
 msgid ""
-"To add a new tab, create a new file with <keyseq><key>Ctrl</key> <key>T</"
-"key></keyseq>. The tab will be added to the right side of any other tabs."
+"To add a new tab to create a new file, click the <gui>Create a new document</"
+"gui> button on the left side of the header bar, or press <keyseq><key>Ctrl</"
+"key><key>T</key></keyseq>. The tab will be added to the right side of any "
+"other tabs."
 msgstr ""
-"Když chcete přidat novou kartu, vytvořte nový soubor pomocí "
-"<keyseq><key>Ctrl</key> <key>T</key></keyseq>. Karta se přidá vpravo za "
-"ostatní karty."
+"Když chcete přidat novou kartu, která vytvoří nový soubor, klikněte na "
+"tlačítko <gui>Vytvořit nový dokument</gui> na levé straně záhlavní lišty, "
+"nebo zmáčkněte <keyseq><key>Ctrl</key> <key>T</key></keyseq>. Karta se přidá "
+"vpravo za ostatní karty."
 
 #. (itstool) path: section/title
-#: C/gedit-tabs.page:52
+#: C/gedit-tabs.page:51
 msgid "Removing tabs"
 msgstr "Odebírání karet"
 
 #. (itstool) path: section/p
-#: C/gedit-tabs.page:53
+#: C/gedit-tabs.page:52
 msgid ""
 "To remove a tab, click the <gui style=\"button\">×</gui> on the tab's right "
-"side. To remove all open tabs, press <keyseq><key>Ctrl</key> <key>Shift</"
-"key><key>W</key></keyseq>."
+"side, or press <keyseq><key>Ctrl</key><key>W</key></keyseq>. To remove all "
+"open tabs, press <keyseq><key>Ctrl</key> <key>Shift</key><key>W</key></"
+"keyseq>."
 msgstr ""
 "Když chcete kartu odstranit, klikněte na <gui style=\"button\">×</gui> na "
-"pravé straně karty. Pokud chcete odstranit všechny otevřené karty, zmáčkněte "
-"<keyseq><key>Ctrl</key> <key>Shift</key> <key>W</key></keyseq>."
+"pravé straně karty, nebo zmáčkněte kombinaci kláves <keyseq><key>Ctrl</key>"
+"<key>W</key></keyseq>. Pokud chcete odstranit všechny otevřené karty, "
+"zmáčkněte kombinaci <keyseq><key>Ctrl</key><key>Shift</key><key>W</key>"
+"</keyseq>."
 
 #. (itstool) path: info/desc
 #: C/gedit-undo-recent-action.page:8
