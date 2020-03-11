@@ -28,6 +28,46 @@
             <property name="visible">True</property>
             <property name="show_close_button">True</property>
             <child>
+              <object class="GtkBox">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <child>
+                  <object class="GtkButton" id="open_dialog_button">
+                    <property name="label" translatable="yes">_Open</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="receives_default">False</property>
+                    <property name="tooltip_text" translatable="yes">Open a file</property>
+                    <property name="valign">center</property>
+                    <property name="action_name">win.open</property>
+                    <property name="use_underline">True</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkMenuButton" id="open_recent_button">
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="receives_default">False</property>
+                    <property name="valign">center</property>
+                    <property name="image">open_recent_image</property>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">1</property>
+                  </packing>
+                </child>
+                <style>
+                  <class name="linked"/>
+                </style>
+              </object>
+            </child>
+            <child>
               <object class="GtkButton" id="new_button">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
@@ -44,6 +84,9 @@
                   </object>
                 </child>
               </object>
+              <packing>
+                <property name="position">1</property>
+              </packing>
             </child>
             <child>
               <object class="GtkMenuButton" id="gear_button">
@@ -322,6 +365,46 @@
                   <object class="GtkHeaderBar" id="fullscreen_headerbar">
                     <property name="visible">True</property>
                     <child>
+                      <object class="GtkBox">
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <child>
+                          <object class="GtkButton" id="fullscreen_open_dialog_button">
+                            <property name="label" translatable="yes">_Open</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="receives_default">False</property>
+                            <property name="tooltip_text" translatable="yes">Open a file</property>
+                            <property name="valign">center</property>
+                            <property name="action_name">win.open</property>
+                            <property name="use_underline">True</property>
+                          </object>
+                          <packing>
+                            <property name="expand">False</property>
+                            <property name="fill">True</property>
+                            <property name="position">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkMenuButton" id="fullscreen_open_recent_button">
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <property name="receives_default">False</property>
+                            <property name="valign">center</property>
+                            <property name="image">fullscreen_open_recent_image</property>
+                          </object>
+                          <packing>
+                            <property name="expand">False</property>
+                            <property name="fill">True</property>
+                            <property name="position">1</property>
+                          </packing>
+                        </child>
+                        <style>
+                          <class name="linked"/>
+                        </style>
+                      </object>
+                    </child>
+                    <child>
                       <object class="GtkButton" id="fullscreen_new_button">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
@@ -338,6 +421,9 @@
                           </object>
                         </child>
                       </object>
+                      <packing>
+                        <property name="position">1</property>
+                      </packing>
                     </child>
                     <child>
                       <object class="GtkButton" id="leave_fullscreen_button">
@@ -418,6 +504,16 @@
     <property name="visible">True</property>
     <property name="icon_name">window-close-symbolic</property>
   </object>
+  <object class="GtkImage" id="open_recent_image">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="icon_name">pan-down-symbolic</property>
+  </object>
+  <object class="GtkImage" id="fullscreen_open_recent_image">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="icon_name">pan-down-symbolic</property>
+  </object>
   <object class="GtkSizeGroup">
     <property name="mode">horizontal</property>
     <widgets>
@@ -428,6 +524,8 @@
   <object class="GtkSizeGroup">
     <property name="mode">vertical</property>
     <widgets>
+      <widget name="open_dialog_button"/>
+      <widget name="open_recent_button"/>
       <widget name="new_button"/>
       <widget name="gear_button"/>
       <widget name="save_button"/>
@@ -436,6 +534,8 @@
   <object class="GtkSizeGroup">
     <property name="mode">vertical</property>
     <widgets>
+      <widget name="fullscreen_open_dialog_button"/>
+      <widget name="fullscreen_open_recent_button"/>
       <widget name="fullscreen_new_button"/>
       <widget name="fullscreen_gear_button"/>
       <widget name="fullscreen_save_button"/>
