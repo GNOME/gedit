@@ -488,13 +488,14 @@ filter_changed (GeditFileChooserDialogGtk *dialog,
 	filter = gtk_file_chooser_get_filter (GTK_FILE_CHOOSER (dialog));
 	if (filter != NULL)
 	{
+		/* Store ID of selected filter */
 		const gchar *name;
 		gint id = 0;
 
 		name = gtk_file_filter_get_name (filter);
 		g_return_if_fail (name != NULL);
 
-		if (strcmp (name, ALL_TEXT_FILES) == 0)
+		if (strcmp (name, ALL_FILES) == 0)
 			id = 1;
 
 		gedit_debug_message (DEBUG_COMMANDS, "Active filter: %s (%d)", name, id);
@@ -640,19 +641,7 @@ gedit_file_chooser_dialog_gtk_create (const gchar             *title,
 
 	if ((flags & GEDIT_FILE_CHOOSER_ENABLE_DEFAULT_FILTERS) != 0)
 	{
-		/* Filters */
-		filter = gtk_file_filter_new ();
-
-		gtk_file_filter_set_name (filter, ALL_FILES);
-		gtk_file_filter_add_pattern (filter, "*");
-		gtk_file_chooser_add_filter (GTK_FILE_CHOOSER (result), filter);
-
-		if (active_filter != 1)
-		{
-			/* Make this filter the default */
-			gtk_file_chooser_set_filter (GTK_FILE_CHOOSER (result), filter);
-		}
-
+		/* "All Text Files" filter */
 		filter = gtk_file_filter_new ();
 		gtk_file_filter_set_name (filter, ALL_TEXT_FILES);
 		gtk_file_filter_add_custom (filter,
@@ -662,9 +651,21 @@ gedit_file_chooser_dialog_gtk_create (const gchar             *title,
 					    NULL);
 		gtk_file_chooser_add_filter (GTK_FILE_CHOOSER (result), filter);
 
+		if (active_filter != 1)
+		{
+			/* Use this filter if set by user and as default */
+			gtk_file_chooser_set_filter (GTK_FILE_CHOOSER (result), filter);
+		}
+
+		/* "All Files" filter */
+		filter = gtk_file_filter_new ();
+		gtk_file_filter_set_name (filter, ALL_FILES);
+		gtk_file_filter_add_pattern (filter, "*");
+		gtk_file_chooser_add_filter (GTK_FILE_CHOOSER (result), filter);
+
 		if (active_filter == 1)
 		{
-			/* Make this filter the default */
+			/* Use this filter if set by user */
 			gtk_file_chooser_set_filter (GTK_FILE_CHOOSER (result), filter);
 		}
 
