@@ -802,6 +802,7 @@ gedit_app_startup (GApplication *application)
 
 	add_accelerator (GTK_APPLICATION (application), "win.hamburger-menu", "F10");
 	add_accelerator (GTK_APPLICATION (application), "win.open", "<Primary>O");
+	add_accelerator (GTK_APPLICATION (application), "win.display-recent", "<Primary><Shift>O");
 	add_accelerator (GTK_APPLICATION (application), "win.save", "<Primary>S");
 	add_accelerator (GTK_APPLICATION (application), "win.save-as", "<Primary><Shift>S");
 	add_accelerator (GTK_APPLICATION (application), "win.save-all", "<Primary><Shift>L");
