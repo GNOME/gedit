@@ -450,8 +450,8 @@ _gedit_cmd_file_open (GSimpleAction *action,
 		gtk_widget_hide (GTK_WIDGET (window->priv->fullscreen_open_document_popover));
 	}
 
-	/* Translators: "Open" is the title of the file chooser window. */
-	open_dialog = gedit_file_chooser_dialog_create (C_("window title", "Open"),
+	/* Translators: "Open Files" is the title of the file chooser window. */
+	open_dialog = gedit_file_chooser_dialog_create (C_("window title", "Open Files"),
 							window != NULL ? GTK_WINDOW (window) : NULL,
 							GEDIT_FILE_CHOOSER_OPEN |
 							GEDIT_FILE_CHOOSER_ENABLE_ENCODING |
