@@ -95,7 +95,8 @@ def run_external_tool(window, panel, node):
             end.forward_to_line_end()
 
         capture.set_env(GEDIT_CURRENT_LINE=piter.get_text(end))
-
+        capture.set_env(GEDIT_CURRENT_LINE_OFFSET=str(piter.get_line_offset() + 1))
+        
         if document.get_language() is not None:
             capture.set_env(GEDIT_CURRRENT_DOCUMENT_LANGUAGE=document.get_language().get_id())
 
