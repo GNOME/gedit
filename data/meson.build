@@ -12,18 +12,16 @@ appdata_file = i18n.merge_file(
   install_dir: join_paths(get_option('prefix'), get_option('datadir'), 'metainfo')
 )
 
-appstream_util = find_program('appstream-util', required: false)
-if appstream_util.found()
-  test(
-    'validate-appdata',
-    appstream_util,
-    args: [
-      'validate-relax',
-      '--nonet',
-      appdata_file.full_path()
-    ]
-  )
-endif
+appstream_util = find_program('appstream-util')
+test(
+  'validate-appdata',
+  appstream_util,
+  args: [
+    'validate-relax',
+    '--nonet',
+    appdata_file.full_path()
+  ]
+)
 
 desktop_file = 'org.gnome.gedit.desktop'
 desktop_output_file = i18n.merge_file(
@@ -36,16 +34,14 @@ desktop_output_file = i18n.merge_file(
   install_dir: join_paths(get_option('prefix'), get_option('datadir'), 'applications')
 )
 
-desktop_file_validate = find_program('desktop-file-validate', required: false)
-if desktop_file_validate.found()
-  test(
-    'validate-desktop',
-    desktop_file_validate,
-    args: [
-      desktop_output_file.full_path(),
-    ]
-  )
-endif
+desktop_file_validate = find_program('desktop-file-validate')
+test(
+  'validate-desktop',
+  desktop_file_validate,
+  args: [
+    desktop_output_file.full_path(),
+  ]
+)
 
 active_plugins = [
   'docinfo',
@@ -79,18 +75,16 @@ gschema_dtd = join_paths(
   'gschema.dtd',
 )
 
-xmllint = find_program('xmllint', required: false)
-if xmllint.found()
-  test(
-    'validate-gschema',
-    xmllint,
-    args: [
-      '--noout',
-      '--dtdvalid', gschema_dtd,
-      gschema_file,
-    ]
-  )
-endif
+xmllint = find_program('xmllint')
+test(
+  'validate-gschema',
+  xmllint,
+  args: [
+    '--noout',
+    '--dtdvalid', gschema_dtd,
+    gschema_file,
+  ]
+)
 
 service_in = configuration_data()
 service_in.set('bindir', join_paths(get_option('prefix'), get_option('bindir')))
