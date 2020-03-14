@@ -47,6 +47,18 @@ if desktop_file_validate.found()
   )
 endif
 
+active_plugins = [
+  'docinfo',
+  'modelines',
+  'filebrowser',
+  'spell',
+  'time',
+]
+
+if build_checkupdate_plugin
+  active_plugins += 'checkupdate'
+endif
+
 quoted_plugins = []
 foreach plugin_name : active_plugins
   quoted_plugins += '\'@0@\''.format(plugin_name)

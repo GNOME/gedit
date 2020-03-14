@@ -102,18 +102,6 @@ configure_file(
   configuration: config_h
 )
 
-active_plugins = [
-  'docinfo',
-  'modelines',
-  'filebrowser',
-  'spell',
-  'time',
-]
-
-if build_checkupdate_plugin
-  active_plugins += 'checkupdate'
-endif
-
 subdir('data')
 subdir('po')
 subdir('gedit')
