@@ -50,9 +50,6 @@ libgd_subproject = subproject(
 libgd_dep = libgd_subproject.get_variable('libgd_dep')
 
 # Dependencies
-glib_req = '>= 2.52'
-gtk_req = '>= 3.22.0'
-gtksourceview_req = '>= 4.0.2'
 libpeas_req = '>= 1.14.1'
 libxml_req = '>= 2.5.0'
 libsoup_req = '>= 2.60.0'
@@ -61,9 +58,6 @@ pygobject_req = '>= 3.0.0'
 introspection_req = '>= 0.9.3'
 vala_req = '>= 0.25.1'
 
-glib_dep = dependency('glib-2.0', version: glib_req)
-gobject_dep = dependency('gobject-2.0', version: glib_req)
-gmodule_dep = dependency('gmodule-2.0', version: glib_req)
 gio_dep = dependency('gio-2.0', version: glib_req)
 gtk_dep = dependency('gtk+-3.0', version: gtk_req)
 gtksourceview_dep = dependency('gtksourceview-4', version: gtksourceview_req)
