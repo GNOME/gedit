@@ -56,12 +56,10 @@ modules:
         sha256: 4c13e30ab2e602abdc56f55d35f43c1142a79b1cd77aa8839d2fc85e966d9a85
 
   - name: gspell
-    config-opts:
-      - "--disable-gtk-doc"
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/gspell/1.8/gspell-1.8.2.tar.xz
-        sha256: bb9195c3a95bacf556d0203e9691f7489e0d3bc5ae1e5a440c89b2f2435d3ed6
+        url: https://download.gnome.org/sources/gspell/1.8/gspell-1.8.3.tar.xz
+        sha256: 5ae514dd0216be069176accf6d0049d6a01cfa6a50df4bc06be85f7080b62de8
 
   - name: uchardet
     buildsystem: cmake
