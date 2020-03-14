@@ -2644,19 +2644,20 @@ sync_fullscreen_actions (GeditWindow *window,
 	GtkMenuButton *button;
 	GPropertyAction *action;
 
-    /* Hamburger menu */
+	/* Hamburger menu */
 	button = fullscreen ? window->priv->fullscreen_gear_button : window->priv->gear_button;
 	g_action_map_remove_action (G_ACTION_MAP (window), "hamburger-menu");
 	action = g_property_action_new ("hamburger-menu", button, "active");
 	g_action_map_add_action (G_ACTION_MAP (window), G_ACTION (action));
 
-    /* Recently opened menu */
+	/* Recently opened menu */
 	button = fullscreen ? window->priv->fullscreen_open_recent_button : window->priv->open_recent_button;
 	g_action_map_remove_action (G_ACTION_MAP (window), "display-recent");
 	action = g_property_action_new ("display-recent", button, "active");
 	g_action_map_add_action (G_ACTION_MAP (window), G_ACTION (action));
 
 	g_object_unref (action);
+	g_object_unref (button);
 }
 
 static void
@@ -2675,11 +2676,13 @@ create_popover_menus (GeditWindow *window)
 	GtkWidget *recent_menu;
 	GMenuModel *hamburger_menu;
 
+	/* Recent documents menu */
 	amtk_window = amtk_application_window_get_from_gtk_application_window (GTK_APPLICATION_WINDOW (window));
 	recent_menu = amtk_application_window_create_open_recent_menu (amtk_window);
 	gtk_menu_button_set_popup (GTK_MENU_BUTTON (window->priv->open_recent_button), recent_menu);
 	gtk_menu_button_set_popup (GTK_MENU_BUTTON (window->priv->fullscreen_open_recent_button), recent_menu);
 
+	/* Hamburger menu */
 	hamburger_menu = _gedit_app_get_hamburger_menu (GEDIT_APP (g_application_get_default ()));
 	if (hamburger_menu)
 	{
