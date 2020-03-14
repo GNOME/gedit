@@ -84,9 +84,6 @@ modules:
 
   - name: gedit
     buildsystem: meson
-    config-opts:
-      - "-Dvapi=true"
-      - "-Dgtk_doc=false"
     sources:
       - type: git
         url: https://gitlab.gnome.org/GNOME/gedit.git
