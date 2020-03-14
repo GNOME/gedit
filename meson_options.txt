@@ -1,11 +1,3 @@
-option('introspection',
-       type: 'boolean', value: true,
-       description: 'Generate GObject Introspection data (requires gobject-introspection)')
-
-option('vapi',
-       type: 'boolean', value: true,
-       description: 'Generate vapi data for Vala (requires vapigen)')
-
 option('gtk_doc',
        type: 'boolean', value: false,
        description: 'Build API reference for plugins (requires gtk-doc)')

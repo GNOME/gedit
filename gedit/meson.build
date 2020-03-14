@@ -199,61 +199,59 @@ libgedit_sha = shared_library(
   install_dir: pkglibdir,
 )
 
-if generate_gir == true
-  libgedit_public_h += [
-    libgedit_enums.get(1),
-  ]
+# GObject Introspection
+libgedit_public_h += [
+  libgedit_enums.get(1),
+]
 
-  libgedit_gir_includes = [
-    'Gtk-3.0',
-    'GtkSource-4',
-  ]
+libgedit_gir_includes = [
+  'Gtk-3.0',
+  'GtkSource-4',
+]
 
-  libgedit_gir = gnome.generate_gir(
-    libgedit_sha,
-    sources: libgedit_sources + libgedit_public_h,
-    nsversion: '3.0',
-    namespace: 'Gedit',
-    symbol_prefix: 'gedit',
-    identifier_prefix: 'Gedit',
-    export_packages: [package_string],
-    includes: libgedit_gir_includes,
-    link_with: libgedit_sha,
-    install: true,
-    install_dir_gir: join_paths(pkgdatadir, 'gir-1.0'),
-    install_dir_typelib: join_paths(pkglibdir, 'girepository-1.0'),
+libgedit_gir = gnome.generate_gir(
+  libgedit_sha,
+  sources: libgedit_sources + libgedit_public_h,
+  nsversion: '3.0',
+  namespace: 'Gedit',
+  symbol_prefix: 'gedit',
+  identifier_prefix: 'Gedit',
+  export_packages: [package_string],
+  includes: libgedit_gir_includes,
+  link_with: libgedit_sha,
+  install: true,
+  install_dir_gir: join_paths(pkgdatadir, 'gir-1.0'),
+  install_dir_typelib: join_paths(pkglibdir, 'girepository-1.0'),
+)
+
+python3.install_sources(
+  'Gedit.py',
+  subdir: join_paths(
+    'gi',
+    'overrides',
   )
+)
 
-  python3.install_sources(
-    'Gedit.py',
-    subdir: join_paths(
-      'gi',
-      'overrides',
-    )
-  )
+libgedit_dep_sources += [
+  libgedit_gir,
+]
 
-  libgedit_dep_sources += [
-    libgedit_gir,
-  ]
+# Vala API
+libgedit_vapi_packages = [
+  'gio-2.0',
+  'atk',
+  'gdk-3.0',
+  'gtk+-3.0',
+  'gtksourceview-4',
+]
 
-  if generate_vapi == true
-    libgedit_vapi_packages = [
-      'gio-2.0',
-      'atk',
-      'gdk-3.0',
-      'gtk+-3.0',
-      'gtksourceview-4',
-    ]
-
-    libgedit_vapi = gnome.generate_vapi(
-      meson.project_name(),
-      sources: libgedit_gir.get(0),
-      packages: libgedit_vapi_packages,
-      install: true,
-      install_dir: vapidir,
-    )
-  endif
-endif
+libgedit_vapi = gnome.generate_vapi(
+  meson.project_name(),
+  sources: libgedit_gir.get(0),
+  packages: libgedit_vapi_packages,
+  install: true,
+  install_dir: vapidir,
+)
 
 libgedit_dep = declare_dependency(
   link_with: libgedit_sha,
