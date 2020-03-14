@@ -74,9 +74,6 @@ gboolean	 _gedit_tab_get_can_close		(GeditTab                 *tab);
 
 GeditViewFrame	*_gedit_tab_get_view_frame		(GeditTab                 *tab);
 
-void		 _gedit_tab_set_network_available	(GeditTab	     *tab,
-							 gboolean	     enable);
-
 G_END_DECLS
 
 #endif  /* GEDIT_TAB_PRIVATE_H */

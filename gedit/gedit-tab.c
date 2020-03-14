@@ -1300,53 +1300,6 @@ on_drop_uris (GeditView  *view,
 }
 
 static void
-network_available_warning_info_bar_response (GtkWidget *info_bar,
-					     gint       response_id,
-					     GeditTab  *tab)
-{
-	if (response_id == GTK_RESPONSE_CLOSE)
-	{
-		gtk_widget_hide (info_bar);
-	}
-}
-
-void
-_gedit_tab_set_network_available (GeditTab *tab,
-				  gboolean  enable)
-{
-	GeditDocument *doc;
-	GtkSourceFile *file;
-	GFile *location;
-
-	g_return_if_fail (GEDIT_IS_TAB (tab));
-
-	doc = gedit_tab_get_document (tab);
-	file = gedit_document_get_file (doc);
-	location = gtk_source_file_get_location (file);
-
-	if (gtk_source_file_is_local (file) || location == NULL)
-	{
-		return;
-	}
-
-	if (enable)
-	{
-		set_info_bar (tab, NULL, GTK_RESPONSE_NONE);
-	}
-	else
-	{
-		GtkWidget *info_bar = gedit_network_unavailable_info_bar_new (location);
-
-		g_signal_connect (info_bar,
-				  "response",
-				  G_CALLBACK (network_available_warning_info_bar_response),
-				  tab);
-
-		set_info_bar (tab, info_bar, GTK_RESPONSE_CLOSE);
-	}
-}
-
-static void
 gedit_tab_init (GeditTab *tab)
 {
 	GeditLockdownMask lockdown;
