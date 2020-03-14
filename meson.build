@@ -29,9 +29,7 @@ datadir = join_paths(get_option('prefix'), get_option('datadir'))
 pkgconfigdir = join_paths(libdir, 'pkgconfig')
 pkglibdir = join_paths(libdir, meson.project_name())
 pkgdatadir = join_paths(datadir, meson.project_name())
-
 glibdir = join_paths(datadir, 'glib-2.0')
-vapidir = join_paths(datadir, 'vala', 'vapi')
 
 # Subprojects
 if not get_option('buildtype').contains('plain')

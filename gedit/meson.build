@@ -247,7 +247,7 @@ libgedit_vapi = gnome.generate_vapi(
   sources: libgedit_gir.get(0),
   packages: libgedit_vapi_packages,
   install: true,
-  install_dir: vapidir,
+  install_dir: join_paths(get_option('prefix'), get_option('datadir'), 'vala', 'vapi'),
 )
 
 libgedit_dep = declare_dependency(
