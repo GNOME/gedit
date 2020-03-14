@@ -1,12 +1,19 @@
-option('gtk_doc',
-       type: 'boolean', value: false,
-       description: 'Build API reference for plugins (requires gtk-doc)')
+option(
+  'gtk_doc',
+  type: 'boolean', value: false,
+  description: 'Build API reference for plugins (requires gtk-doc)'
+)
 
 # This option exists for the developers, to speed up the install.
-option('user_documentation',
-       type: 'boolean', value: true,
-       description: 'Build user documentation')
+option(
+  'user_documentation',
+  type: 'boolean', value: true,
+  description: 'Build user documentation'
+)
 
-option('enable-gvfs-metadata',
-       type: 'combo', choices: ['yes', 'no', 'auto'], value: 'auto',
-       description: 'Enable using gvfs to store metadata')
+option(
+  'enable-gvfs-metadata',
+  type: 'combo',
+  choices: ['yes', 'no', 'auto'], value: 'auto',
+  description: 'Enable using gvfs to store metadata'
+)
