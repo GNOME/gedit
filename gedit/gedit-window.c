@@ -2679,6 +2679,7 @@ create_popover_menus (GeditWindow *window)
 	/* Recent documents menu */
 	amtk_window = amtk_application_window_get_from_gtk_application_window (GTK_APPLICATION_WINDOW (window));
 	recent_menu = amtk_application_window_create_open_recent_menu (amtk_window);
+	gtk_recent_chooser_menu_set_show_numbers (GTK_RECENT_CHOOSER_MENU (recent_menu), TRUE);
 	gtk_menu_button_set_popup (GTK_MENU_BUTTON (window->priv->open_recent_button), recent_menu);
 	gtk_menu_button_set_popup (GTK_MENU_BUTTON (window->priv->fullscreen_open_recent_button), recent_menu);
 
