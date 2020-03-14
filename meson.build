@@ -47,6 +47,8 @@ libgd_subproject = subproject(
   ]
 )
 
+libgd_dep = libgd_subproject.get_variable('libgd_dep')
+
 # Dependencies
 glib_req = '>= 2.52'
 gtk_req = '>= 3.22.0'
@@ -54,7 +56,7 @@ gtksourceview_req = '>= 4.0.2'
 libpeas_req = '>= 1.14.1'
 libxml_req = '>= 2.5.0'
 libsoup_req = '>= 2.60.0'
-gspell_req = '>= 0.2.5'
+gspell_req = '>= 1.0'
 pygobject_req = '>= 3.0.0'
 introspection_req = '>= 0.9.3'
 vala_req = '>= 0.25.1'
@@ -68,9 +70,6 @@ gtksourceview_dep = dependency('gtksourceview-4', version: gtksourceview_req)
 libpeas_dep = dependency('libpeas-1.0', version: libpeas_req)
 libpeas_gtk_dep = dependency('libpeas-gtk-1.0', version: libpeas_req)
 libxml_dep = dependency('libxml-2.0', version: libxml_req)
-
-libgd_dep = libgd_subproject.get_variable('libgd_dep')
-
 gspell_dep = dependency('gspell-1', version: gspell_req)
 x11_dep = dependency('x11', required: false)
 
