@@ -71,7 +71,7 @@ libxml_dep = dependency('libxml-2.0', version: libxml_req)
 
 libgd_dep = libgd_subproject.get_variable('libgd_dep')
 
-gspell_dep = dependency('gspell-1', version: gspell_req, required: true)
+gspell_dep = dependency('gspell-1', version: gspell_req)
 x11_dep = dependency('x11', required: false)
 
 introspection_dep = dependency('gobject-introspection-1.0', version: introspection_req)
@@ -81,7 +81,7 @@ python3 = python.find_installation('python3')
 
 build_checkupdate_plugin = host_machine.system() == 'windows'
 if build_checkupdate_plugin
-  libsoup_dep = dependency('libsoup-2.4', version: libsoup_req, required: true)
+  libsoup_dep = dependency('libsoup-2.4', version: libsoup_req)
 endif
 
 # Configurations
