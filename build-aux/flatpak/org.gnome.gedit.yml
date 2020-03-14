@@ -50,13 +50,10 @@ modules:
 
   - name: gtksourceview
     buildsystem: meson
-    config-opts:
-      - "-Dvapi=true"
-      - "-Dgtk_doc=false"
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/gtksourceview/4.4/gtksourceview-4.4.0.tar.xz
-        sha256: 9ddb914aef70a29a66acd93b4f762d5681202e44094d2d6370e51c9e389e689a
+        url: https://download.gnome.org/sources/gtksourceview/4.6/gtksourceview-4.6.0.tar.xz
+        sha256: 4c13e30ab2e602abdc56f55d35f43c1142a79b1cd77aa8839d2fc85e966d9a85
 
   - name: gspell
     config-opts:
