@@ -78,6 +78,8 @@ libgedit_reference_mkdb_args = [
   '--name-space=gedit',
 ]
 
+gtkdocdir = join_paths(get_option('prefix'), get_option('datadir'), 'gtk-doc')
+
 libgedit_reference_fixxref_args = [
   '--html-dir=@0@'.format(join_paths(gtkdocdir, 'html', package_string)),
   '--extra-dir=@0@'.format(glib_docpath),

@@ -31,7 +31,6 @@ pkglibdir = join_paths(libdir, meson.project_name())
 pkgdatadir = join_paths(datadir, meson.project_name())
 
 glibdir = join_paths(datadir, 'glib-2.0')
-gtkdocdir = join_paths(datadir, 'gtk-doc')
 vapidir = join_paths(datadir, 'vala', 'vapi')
 
 # Subprojects
