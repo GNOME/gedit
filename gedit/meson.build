@@ -141,9 +141,8 @@ if host_machine.system() == 'darwin'
     '-Wl,-framework', '-Wl,Foundation',
     '-Wl,-framework', '-Wl,AppKit',
   ]
-  gtk_mac_integration_dep = dependency('gtk-mac-integration-gtk3')
   libgedit_deps += [
-    gtk_mac_integration_dep,
+    dependency('gtk-mac-integration-gtk3'),
   ]
 elif host_machine.system() == 'windows'
   libgedit_sources += files(
@@ -153,7 +152,6 @@ else
   libgedit_sources += files(
     'gedit-app-x11.c',
   )
-
   libgedit_deps += [
     x11_dep,
   ]
