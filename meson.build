@@ -117,8 +117,8 @@ endif
 
 meson.add_install_script(
   'build-aux/meson/post_install.py',
-  join_paths(get_option('prefix'), get_option('libdir')),
-  join_paths(get_option('prefix'), get_option('datadir'))
+  get_option('prefix') / get_option('libdir'),
+  get_option('prefix') / get_option('datadir')
 )
 
 # Summary message
