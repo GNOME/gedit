@@ -9,7 +9,7 @@ appdata_file = i18n.merge_file(
   output: appdata,
   po_dir: '../po/',
   install: true,
-  install_dir: join_paths(get_option('prefix'), get_option('datadir'), 'metainfo')
+  install_dir: get_option('datadir') / 'metainfo'
 )
 
 appstream_util = find_program('appstream-util', required: get_option('require_all_tests'))
@@ -17,11 +17,7 @@ if appstream_util.found()
   test(
     'validate-appdata',
     appstream_util,
-    args: [
-      'validate-relax',
-      '--nonet',
-      appdata_file.full_path()
-    ]
+    args: ['validate-relax', '--nonet', appdata_file]
   )
 endif
 
@@ -33,7 +29,7 @@ desktop_output_file = i18n.merge_file(
   output: desktop_file,
   po_dir: '../po/',
   install: true,
-  install_dir: join_paths(get_option('prefix'), get_option('datadir'), 'applications')
+  install_dir: get_option('datadir') / 'applications'
 )
 
 desktop_file_validate = find_program('desktop-file-validate', required: get_option('require_all_tests'))
@@ -41,9 +37,7 @@ if desktop_file_validate.found()
   test(
     'validate-desktop',
     desktop_file_validate,
-    args: [
-      desktop_output_file.full_path(),
-    ]
+    args: [desktop_output_file]
   )
 endif
 
@@ -71,13 +65,10 @@ gschema_file = configure_file(
   input: 'org.gnome.gedit.gschema.xml.in',
   output: 'org.gnome.gedit.gschema.xml',
   configuration: gschema_in,
-  install_dir: join_paths(get_option('prefix'), get_option('datadir'), 'glib-2.0/schemas')
+  install_dir: get_option('datadir') / 'glib-2.0/schemas'
 )
 
-gschema_dtd = join_paths(
-  gio_dep.get_pkgconfig_variable('schemasdir'),
-  'gschema.dtd',
-)
+gschema_dtd = gio_dep.get_pkgconfig_variable('schemasdir') / 'gschema.dtd'
 
 xmllint = find_program('xmllint', required: get_option('require_all_tests'))
 if xmllint.found()
@@ -93,11 +84,11 @@ if xmllint.found()
 endif
 
 service_in = configuration_data()
-service_in.set('bindir', join_paths(get_option('prefix'), get_option('bindir')))
+service_in.set('bindir', get_option('prefix') / get_option('bindir'))
 
 configure_file(
   input: 'org.gnome.gedit.service.in',
   output: 'org.gnome.gedit.service',
   configuration: service_in,
-  install_dir: join_paths(get_option('prefix'), get_option('datadir'), 'dbus-1/services')
+  install_dir: get_option('datadir') / 'dbus-1/services'
 )
