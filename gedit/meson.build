@@ -157,11 +157,9 @@ else
   ]
 endif
 
-libgedit_enums = gnome.mkenums(
+libgedit_enums = gnome.mkenums_simple(
   'gedit-enum-types',
   sources: libgedit_public_h + ['gedit-notebook.h'],
-  h_template: 'gedit-enum-types.h.template',
-  c_template: 'gedit-enum-types.c.template',
 )
 
 subdir('resources')
