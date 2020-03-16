@@ -175,12 +175,7 @@ libgedit_dep_sources = []
 
 install_headers(
   libgedit_public_h,
-  install_dir: join_paths(
-    get_option('prefix'),
-    get_option('includedir'),
-    package_string,
-    'gedit'
-  )
+  subdir: 'gedit-@0@'.format(api_version) / 'gedit'
 )
 
 libgedit_sha = shared_library(
