@@ -12,7 +12,7 @@ appdata_file = i18n.merge_file(
   install_dir: join_paths(get_option('prefix'), get_option('datadir'), 'metainfo')
 )
 
-appstream_util = find_program('appstream-util', required: false)
+appstream_util = find_program('appstream-util', required: get_option('require_all_tests'))
 if appstream_util.found()
   test(
     'validate-appdata',
@@ -36,7 +36,7 @@ desktop_output_file = i18n.merge_file(
   install_dir: join_paths(get_option('prefix'), get_option('datadir'), 'applications')
 )
 
-desktop_file_validate = find_program('desktop-file-validate', required: false)
+desktop_file_validate = find_program('desktop-file-validate', required: get_option('require_all_tests'))
 if desktop_file_validate.found()
   test(
     'validate-desktop',
@@ -79,7 +79,7 @@ gschema_dtd = join_paths(
   'gschema.dtd',
 )
 
-xmllint = find_program('xmllint', required: false)
+xmllint = find_program('xmllint', required: get_option('require_all_tests'))
 if xmllint.found()
   test(
     'validate-gschema',

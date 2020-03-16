@@ -4,6 +4,16 @@ option(
   description: 'Build API reference for plugins (requires gtk-doc)'
 )
 
+# If this option is kept to false, then it's an automatic behavior: if the
+# third party program is found, then the test is defined.
+# Setting this option to true will stop the configure phase with a hard error
+# if a third party program is not found and is required to define a test.
+option(
+  'require_all_tests',
+  type: 'boolean', value: false,
+  description: 'Require that all tests can be run, even those that depend on third party programs'
+)
+
 # This option exists for the developers, to speed up the install.
 option(
   'user_documentation',
