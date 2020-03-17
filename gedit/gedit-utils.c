@@ -33,61 +33,6 @@
 
 #include "gedit-debug.h"
 
-static void
-widget_get_origin (GtkWidget *widget,
-		   gint      *x,
-		   gint      *y)
-
-{
-	GdkWindow *window;
-
-	window = gtk_widget_get_window (widget);
-	gdk_window_get_origin (window, x, y);
-}
-
-/**
- * gedit_utils_menu_position_under_widget:
- * @menu:
- * @x:
- * @y:
- * @push_in:
- * @user_data:
- *
- * Deprecated: 3.36: Use gtk_menu_popup_at_widget() instead.
- */
-void
-gedit_utils_menu_position_under_widget (GtkMenu  *menu,
-					gint     *x,
-					gint     *y,
-					gboolean *push_in,
-					gpointer  user_data)
-{
-	GtkWidget *widget;
-	GtkRequisition requisition;
-	GtkAllocation allocation;
-
-	widget = GTK_WIDGET (user_data);
-	widget_get_origin (widget, x, y);
-
-	gtk_widget_get_preferred_size (GTK_WIDGET (menu), &requisition,
-	                               NULL);
-
-	gtk_widget_get_allocation (widget, &allocation);
-
-	if (gtk_widget_get_direction (widget) == GTK_TEXT_DIR_RTL)
-	{
-		*x += allocation.x + allocation.width - requisition.width;
-	}
-	else
-	{
-		*x += allocation.x;
-	}
-
-	*y += allocation.y + allocation.height;
-
-	*push_in = TRUE;
-}
-
 gboolean
 gedit_utils_menu_position_under_tree_view (GtkTreeView  *tree_view,
 					   GdkRectangle *rect)
@@ -147,43 +92,6 @@ gedit_utils_set_atk_name_description (GtkWidget   *widget,
 
 	if (description)
 		atk_object_set_description (aobj, description);
-}
-
-/**
- * gedit_utils_set_atk_relation:
- * @obj1: specified widget.
- * @obj2: specified widget.
- * @rel_type: the type of relation to set up.
- *
- * This function establishes atk relation
- * between 2 specified widgets.
- *
- * Deprecated: 3.36: This function is no longer used by gedit. If you need it,
- * copy it.
- */
-void
-gedit_utils_set_atk_relation (GtkWidget       *obj1,
-			      GtkWidget       *obj2,
-			      AtkRelationType  rel_type)
-{
-	AtkObject *atk_obj1, *atk_obj2;
-	AtkRelationSet *relation_set;
-	AtkObject *targets[1];
-	AtkRelation *relation;
-
-	atk_obj1 = gtk_widget_get_accessible (obj1);
-	atk_obj2 = gtk_widget_get_accessible (obj2);
-
-	if (!(GTK_IS_ACCESSIBLE (atk_obj1)) || !(GTK_IS_ACCESSIBLE (atk_obj2)))
-		return;
-
-	relation_set = atk_object_ref_relation_set (atk_obj1);
-	targets[0] = atk_obj2;
-
-	relation = atk_relation_new (targets, 1, rel_type);
-	atk_relation_set_add (relation_set, relation);
-
-	g_object_unref (G_OBJECT (relation));
 }
 
 void
@@ -300,19 +208,6 @@ gedit_utils_str_end_truncate (const gchar *string,
 			      guint        truncate_length)
 {
 	return gedit_utils_str_truncate (string, truncate_length, FALSE);
-}
-
-/**
- * gedit_utils_make_valid_utf8:
- * @name:
- *
- * Returns:
- * Deprecated: 3.36: Use g_utf8_make_valid() instead.
- */
-gchar *
-gedit_utils_make_valid_utf8 (const char *name)
-{
-	return g_utf8_make_valid (name, -1);
 }
 
 static gchar *

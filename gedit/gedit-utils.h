@@ -72,19 +72,6 @@ GtkSourceCompressionType   gedit_utils_get_compression_type_from_content_type (c
 gchar                     *gedit_utils_set_direct_save_filename               (GdkDragContext       *context);
 const gchar               *gedit_utils_newline_type_to_string                 (GtkSourceNewlineType  newline_type);
 
-
-G_DEPRECATED_FOR (gtk_menu_popup_at_widget)
-void                       gedit_utils_menu_position_under_widget             (GtkMenu         *menu,
-                                                                               gint            *x,
-                                                                               gint            *y,
-                                                                               gboolean        *push_in,
-                                                                               gpointer         user_data);
-
-G_DEPRECATED
-void                       gedit_utils_set_atk_relation                       (GtkWidget       *obj1,
-                                                                               GtkWidget       *obj2,
-                                                                               AtkRelationType  rel_type);
-
 G_END_DECLS
 
 #endif /* GEDIT_UTILS_H */
