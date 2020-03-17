@@ -13,7 +13,7 @@ i18n = import('i18n')
 pkg = import('pkgconfig')
 python = import('python')
 
-api_version = '3.36'
+api_version = '3.38'
 
 package_string = '@0@-@1@'.format(meson.project_name(), api_version)
 
