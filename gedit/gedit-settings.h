@@ -24,9 +24,7 @@
 #ifndef GEDIT_SETTINGS_H
 #define GEDIT_SETTINGS_H
 
-#include <glib-object.h>
-#include <glib.h>
-#include "gedit-app.h"
+#include <gio/gio.h>
 
 G_BEGIN_DECLS
 
@@ -35,8 +33,6 @@ G_BEGIN_DECLS
 G_DECLARE_FINAL_TYPE (GeditSettings, gedit_settings, GEDIT, SETTINGS, GObject)
 
 GeditSettings		*gedit_settings_new				(void);
-
-GeditLockdownMask	 gedit_settings_get_lockdown			(GeditSettings *gs);
 
 gchar			*gedit_settings_get_system_font			(GeditSettings *gs);
 

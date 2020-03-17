@@ -66,8 +66,6 @@ typedef struct
 
 	GtkCssProvider     *theme_provider;
 
-	GeditLockdownMask  lockdown;
-
 	GtkPageSetup      *page_setup;
 	GtkPrintSettings  *print_settings;
 
@@ -92,15 +90,6 @@ typedef struct
 	gint column_position;
 	GApplicationCommandLine *command_line;
 } GeditAppPrivate;
-
-enum
-{
-	PROP_0,
-	PROP_LOCKDOWN,
-	LAST_PROP
-};
-
-static GParamSpec *properties[LAST_PROP];
 
 static const GOptionEntry options[] =
 {
@@ -201,25 +190,6 @@ gedit_app_dispose (GObject *object)
 	g_clear_object (&priv->line_col_menu);
 
 	G_OBJECT_CLASS (gedit_app_parent_class)->dispose (object);
-}
-
-static void
-gedit_app_get_property (GObject    *object,
-			guint       prop_id,
-			GValue     *value,
-			GParamSpec *pspec)
-{
-	GeditApp *app = GEDIT_APP (object);
-
-	switch (prop_id)
-	{
-		case PROP_LOCKDOWN:
-			g_value_set_flags (value, gedit_app_get_lockdown (app));
-			break;
-		default:
-			G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
-			break;
-	}
 }
 
 static gchar *
@@ -782,9 +752,6 @@ gedit_app_startup (GApplication *application)
 	priv->ui_settings = g_settings_new ("org.gnome.gedit.preferences.ui");
 	priv->window_settings = g_settings_new ("org.gnome.gedit.state.window");
 
-	/* initial lockdown state */
-	priv->lockdown = gedit_settings_get_lockdown (priv->settings);
-
 	g_action_map_add_action_entries (G_ACTION_MAP (application),
 	                                 app_entries,
 	                                 G_N_ELEMENTS (app_entries),
@@ -1294,7 +1261,6 @@ gedit_app_class_init (GeditAppClass *klass)
 	GApplicationClass *app_class = G_APPLICATION_CLASS (klass);
 
 	object_class->dispose = gedit_app_dispose;
-	object_class->get_property = gedit_app_get_property;
 
 	app_class->startup = gedit_app_startup;
 	app_class->activate = gedit_app_activate;
@@ -1307,16 +1273,6 @@ gedit_app_class_init (GeditAppClass *klass)
 	klass->help_link_id = gedit_app_help_link_id_impl;
 	klass->set_window_title = gedit_app_set_window_title_impl;
 	klass->create_window = gedit_app_create_window_impl;
-
-	properties[PROP_LOCKDOWN] =
-		g_param_spec_flags ("lockdown",
-		                    "Lockdown",
-		                    "The lockdown mask",
-		                    GEDIT_TYPE_LOCKDOWN_MASK,
-		                    0,
-		                    G_PARAM_READABLE | G_PARAM_STATIC_STRINGS);
-
-	g_object_class_install_properties (object_class, LAST_PROP, properties);
 }
 
 static void
@@ -1556,26 +1512,6 @@ gedit_app_get_views (GeditApp *app)
 	return res;
 }
 
-/**
- * gedit_app_get_lockdown:
- * @app: a #GeditApp
- *
- * Gets the lockdown mask (see #GeditLockdownMask) for the application.
- * The lockdown mask determines which functions are locked down using
- * the GNOME-wise lockdown GConf keys.
- **/
-GeditLockdownMask
-gedit_app_get_lockdown (GeditApp *app)
-{
-	GeditAppPrivate *priv;
-
-	g_return_val_if_fail (GEDIT_IS_APP (app), GEDIT_LOCKDOWN_ALL);
-
-	priv = gedit_app_get_instance_private (app);
-
-	return priv->lockdown;
-}
-
 gboolean
 gedit_app_show_help (GeditApp    *app,
                      GtkWindow   *parent,
@@ -1662,64 +1598,6 @@ find_extension_point_section (GMenuModel  *model,
 	}
 
 	return section;
-}
-
-static void
-app_lockdown_changed (GeditApp *app)
-{
-	GeditAppPrivate *priv;
-	GList *windows, *l;
-
-	priv = gedit_app_get_instance_private (app);
-
-	windows = gtk_application_get_windows (GTK_APPLICATION (app));
-	for (l = windows; l != NULL; l = g_list_next (l))
-	{
-		if (GEDIT_IS_WINDOW (l->data))
-		{
-			_gedit_window_set_lockdown (GEDIT_WINDOW (l->data),
-			                            priv->lockdown);
-		}
-	}
-
-	g_object_notify (G_OBJECT (app), "lockdown");
-}
-
-void
-_gedit_app_set_lockdown (GeditApp          *app,
-			 GeditLockdownMask  lockdown)
-{
-	GeditAppPrivate *priv;
-
-	g_return_if_fail (GEDIT_IS_APP (app));
-
-	priv = gedit_app_get_instance_private (app);
-
-	priv->lockdown = lockdown;
-	app_lockdown_changed (app);
-}
-
-void
-_gedit_app_set_lockdown_bit (GeditApp          *app,
-			     GeditLockdownMask  bit,
-			     gboolean           value)
-{
-	GeditAppPrivate *priv;
-
-	g_return_if_fail (GEDIT_IS_APP (app));
-
-	priv = gedit_app_get_instance_private (app);
-
-	if (value)
-	{
-		priv->lockdown |= bit;
-	}
-	else
-	{
-		priv->lockdown &= ~bit;
-	}
-
-	app_lockdown_changed (app);
 }
 
 /* Returns a copy */

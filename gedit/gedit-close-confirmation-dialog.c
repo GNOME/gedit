@@ -51,7 +51,6 @@ struct _GeditCloseConfirmationDialog
 	GList       *unsaved_documents;
 	GList       *selected_documents;
 	GtkWidget   *list_box;
-	gboolean     disable_save_to_disk;
 };
 
 enum
@@ -132,12 +131,6 @@ response_cb (GeditCloseConfirmationDialog *dlg,
 static void
 gedit_close_confirmation_dialog_init (GeditCloseConfirmationDialog *dlg)
 {
-	GeditLockdownMask lockdown;
-
-	lockdown = gedit_app_get_lockdown (GEDIT_APP (g_application_get_default ()));
-
-	dlg->disable_save_to_disk = (lockdown & GEDIT_LOCKDOWN_SAVE_TO_DISK) != 0;
-
 	gtk_window_set_title (GTK_WINDOW (dlg), "");
 	gtk_window_set_modal (GTK_WINDOW (dlg), TRUE);
 	gtk_window_set_destroy_with_parent (GTK_WINDOW (dlg), TRUE);
@@ -272,6 +265,7 @@ static void
 add_buttons (GeditCloseConfirmationDialog *dlg)
 {
         GtkWidget *close_button;
+	gboolean save_as = FALSE;
 
         close_button = gtk_dialog_add_button (GTK_DIALOG (dlg),
                                               _("Close _without Saving"),
@@ -282,36 +276,26 @@ add_buttons (GeditCloseConfirmationDialog *dlg)
 
 	gtk_dialog_add_button (GTK_DIALOG (dlg), _("_Cancel"), GTK_RESPONSE_CANCEL);
 
-	if (dlg->disable_save_to_disk)
+	if (GET_MODE (dlg) == SINGLE_DOC_MODE)
 	{
-		gtk_dialog_set_default_response	(GTK_DIALOG (dlg),
-						 GTK_RESPONSE_NO);
-	}
-	else
-	{
-		gboolean save_as = FALSE;
+		GeditDocument *doc;
+		GtkSourceFile *file;
 
-		if (GET_MODE (dlg) == SINGLE_DOC_MODE)
+		doc = GEDIT_DOCUMENT (dlg->unsaved_documents->data);
+		file = gedit_document_get_file (doc);
+
+		if (gtk_source_file_is_readonly (file) ||
+		    gedit_document_is_untitled (doc))
 		{
-			GeditDocument *doc;
-			GtkSourceFile *file;
-
-			doc = GEDIT_DOCUMENT (dlg->unsaved_documents->data);
-			file = gedit_document_get_file (doc);
-
-			if (gtk_source_file_is_readonly (file) ||
-			    gedit_document_is_untitled (doc))
-			{
-				save_as = TRUE;
-			}
+			save_as = TRUE;
 		}
-
-		gtk_dialog_add_button (GTK_DIALOG (dlg),
-				       save_as ? _("_Save As…") : _("_Save"),
-				       GTK_RESPONSE_YES);
-		gtk_dialog_set_default_response	(GTK_DIALOG (dlg),
-						 GTK_RESPONSE_YES);
 	}
+
+	gtk_dialog_add_button (GTK_DIALOG (dlg),
+			       save_as ? _("_Save As…") : _("_Save"),
+			       GTK_RESPONSE_YES);
+	gtk_dialog_set_default_response	(GTK_DIALOG (dlg),
+					 GTK_RESPONSE_YES);
 }
 
 static gchar *
@@ -413,16 +397,8 @@ build_single_doc_dialog (GeditCloseConfirmationDialog *dlg)
 	/* Primary message */
 	doc_name = gedit_document_get_short_name_for_display (doc);
 
-	if (dlg->disable_save_to_disk)
-	{
-		str = g_markup_printf_escaped (_("Changes to document “%s” will be permanently lost."),
-		                               doc_name);
-	}
-	else
-	{
-		str = g_markup_printf_escaped (_("Save changes to document “%s” before closing?"),
-		                               doc_name);
-	}
+	str = g_markup_printf_escaped (_("Save changes to document “%s” before closing?"),
+				       doc_name);
 
 	g_free (doc_name);
 
@@ -433,15 +409,7 @@ build_single_doc_dialog (GeditCloseConfirmationDialog *dlg)
 	g_free (markup_str);
 
 	/* Secondary message */
-	if (dlg->disable_save_to_disk)
-	{
-		str = g_strdup (_("Saving has been disabled by the system administrator."));
-	}
-	else
-	{
-		str = get_text_secondary_label (doc);
-	}
-
+	str = get_text_secondary_label (doc);
 	gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dlg), "%s", str);
 	g_free (str);
 }
@@ -498,24 +466,13 @@ build_multiple_docs_dialog (GeditCloseConfirmationDialog *dlg)
 	gtk_window_set_resizable (GTK_WINDOW (dlg), TRUE);
 
 	/* Primary message */
-	if (dlg->disable_save_to_disk)
-	{
-		str = g_strdup_printf (
-				ngettext ("Changes to %d document will be permanently lost.",
-					  "Changes to %d documents will be permanently lost.",
-					  g_list_length (dlg->unsaved_documents)),
-				g_list_length (dlg->unsaved_documents));
-	}
-	else
-	{
-		str = g_strdup_printf (
-				ngettext ("There is %d document with unsaved changes. "
-					  "Save changes before closing?",
-					  "There are %d documents with unsaved changes. "
-					  "Save changes before closing?",
-					  g_list_length (dlg->unsaved_documents)),
-				g_list_length (dlg->unsaved_documents));
-	}
+	str = g_strdup_printf (
+			ngettext ("There is %d document with unsaved changes. "
+				  "Save changes before closing?",
+				  "There are %d documents with unsaved changes. "
+				  "Save changes before closing?",
+				  g_list_length (dlg->unsaved_documents)),
+			g_list_length (dlg->unsaved_documents));
 
 	markup_str = g_strconcat ("<span weight=\"bold\" size=\"larger\">", str, "</span>", NULL);
 	g_free (str);
@@ -533,15 +490,7 @@ build_multiple_docs_dialog (GeditCloseConfirmationDialog *dlg)
 	gtk_widget_set_margin_bottom (vbox, 12);
 	gtk_box_pack_start (GTK_BOX (content_area), vbox, TRUE, TRUE, 0);
 
-	if (dlg->disable_save_to_disk)
-	{
-		select_label = gtk_label_new_with_mnemonic (_("Docum_ents with unsaved changes:"));
-	}
-	else
-	{
-		select_label = gtk_label_new_with_mnemonic (_("S_elect the documents you want to save:"));
-	}
-
+	select_label = gtk_label_new_with_mnemonic (_("S_elect the documents you want to save:"));
 	gtk_box_pack_start (GTK_BOX (vbox), select_label, FALSE, FALSE, 0);
 	gtk_label_set_line_wrap (GTK_LABEL (select_label), TRUE);
 	gtk_label_set_max_width_chars (GTK_LABEL (select_label), 72);
@@ -557,16 +506,8 @@ build_multiple_docs_dialog (GeditCloseConfirmationDialog *dlg)
 	gtk_container_add (GTK_CONTAINER (scrolledwindow), dlg->list_box);
 
 	/* Secondary label */
-	if (dlg->disable_save_to_disk)
-	{
-		secondary_label = gtk_label_new (_("Saving has been disabled by the system administrator."));
-	}
-	else
-	{
-		secondary_label = gtk_label_new (_("If you don’t save, "
-						   "all your changes will be permanently lost."));
-	}
-
+	secondary_label = gtk_label_new (_("If you don’t save, "
+					   "all your changes will be permanently lost."));
 	gtk_box_pack_start (GTK_BOX (vbox), secondary_label, FALSE, FALSE, 0);
 	gtk_label_set_line_wrap (GTK_LABEL (secondary_label), TRUE);
 	gtk_widget_set_halign (secondary_label, GTK_ALIGN_CENTER);

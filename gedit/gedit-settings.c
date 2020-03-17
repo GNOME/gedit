@@ -33,18 +33,12 @@
 #include "gedit-view.h"
 #include "gedit-window.h"
 
-#define GEDIT_SETTINGS_LOCKDOWN_COMMAND_LINE "disable-command-line"
-#define GEDIT_SETTINGS_LOCKDOWN_PRINTING "disable-printing"
-#define GEDIT_SETTINGS_LOCKDOWN_PRINT_SETUP "disable-print-setup"
-#define GEDIT_SETTINGS_LOCKDOWN_SAVE_TO_DISK "disable-save-to-disk"
-
 #define GEDIT_SETTINGS_SYSTEM_FONT "monospace-font-name"
 
 struct _GeditSettings
 {
 	GObject parent_instance;
 
-	GSettings *lockdown;
 	GSettings *interface;
 	GSettings *editor;
 	GSettings *ui;
@@ -69,49 +63,11 @@ gedit_settings_dispose (GObject *object)
 {
 	GeditSettings *gs = GEDIT_SETTINGS (object);
 
-	g_clear_object (&gs->lockdown);
 	g_clear_object (&gs->interface);
 	g_clear_object (&gs->editor);
 	g_clear_object (&gs->ui);
 
 	G_OBJECT_CLASS (gedit_settings_parent_class)->dispose (object);
-}
-
-static void
-on_lockdown_changed (GSettings   *settings,
-		     const gchar *key,
-		     gpointer     useless)
-{
-	gboolean locked;
-	GeditApp *app;
-
-	locked = g_settings_get_boolean (settings, key);
-	app = GEDIT_APP (g_application_get_default ());
-
-	if (strcmp (key, GEDIT_SETTINGS_LOCKDOWN_COMMAND_LINE) == 0)
-	{
-		_gedit_app_set_lockdown_bit (app,
-					     GEDIT_LOCKDOWN_COMMAND_LINE,
-					     locked);
-	}
-	else if (strcmp (key, GEDIT_SETTINGS_LOCKDOWN_PRINTING) == 0)
-	{
-		_gedit_app_set_lockdown_bit (app,
-					     GEDIT_LOCKDOWN_PRINTING,
-					     locked);
-	}
-	else if (strcmp (key, GEDIT_SETTINGS_LOCKDOWN_PRINT_SETUP) == 0)
-	{
-		_gedit_app_set_lockdown_bit (app,
-					     GEDIT_LOCKDOWN_PRINT_SETUP,
-					     locked);
-	}
-	else if (strcmp (key, GEDIT_SETTINGS_LOCKDOWN_SAVE_TO_DISK) == 0)
-	{
-		_gedit_app_set_lockdown_bit (app,
-					     GEDIT_LOCKDOWN_SAVE_TO_DISK,
-					     locked);
-	}
 }
 
 static void
@@ -336,14 +292,6 @@ gedit_settings_init (GeditSettings *gs)
 	gs->editor = g_settings_new ("org.gnome.gedit.preferences.editor");
 	gs->ui = g_settings_new ("org.gnome.gedit.preferences.ui");
 
-	/* Load settings */
-	gs->lockdown = g_settings_new ("org.gnome.desktop.lockdown");
-
-	g_signal_connect (gs->lockdown,
-			  "changed",
-			  G_CALLBACK (on_lockdown_changed),
-			  NULL);
-
 	gs->interface = g_settings_new ("org.gnome.desktop.interface");
 
 	g_signal_connect (gs->interface,
@@ -391,36 +339,6 @@ GeditSettings *
 gedit_settings_new ()
 {
 	return g_object_new (GEDIT_TYPE_SETTINGS, NULL);
-}
-
-GeditLockdownMask
-gedit_settings_get_lockdown (GeditSettings *gs)
-{
-	guint lockdown = 0;
-	gboolean command_line, printing, print_setup, save_to_disk;
-
-	command_line = g_settings_get_boolean (gs->lockdown,
-					       GEDIT_SETTINGS_LOCKDOWN_COMMAND_LINE);
-	printing = g_settings_get_boolean (gs->lockdown,
-					   GEDIT_SETTINGS_LOCKDOWN_PRINTING);
-	print_setup = g_settings_get_boolean (gs->lockdown,
-					      GEDIT_SETTINGS_LOCKDOWN_PRINT_SETUP);
-	save_to_disk = g_settings_get_boolean (gs->lockdown,
-					       GEDIT_SETTINGS_LOCKDOWN_SAVE_TO_DISK);
-
-	if (command_line)
-		lockdown |= GEDIT_LOCKDOWN_COMMAND_LINE;
-
-	if (printing)
-		lockdown |= GEDIT_LOCKDOWN_PRINTING;
-
-	if (print_setup)
-		lockdown |= GEDIT_LOCKDOWN_PRINT_SETUP;
-
-	if (save_to_disk)
-		lockdown |= GEDIT_LOCKDOWN_SAVE_TO_DISK;
-
-	return lockdown;
 }
 
 gchar *

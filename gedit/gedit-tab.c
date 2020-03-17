@@ -1302,12 +1302,10 @@ on_drop_uris (GeditView  *view,
 static void
 gedit_tab_init (GeditTab *tab)
 {
-	GeditLockdownMask lockdown;
 	gboolean auto_save;
 	gint auto_save_interval;
 	GeditDocument *doc;
 	GeditView *view;
-	GeditApp *app;
 	GtkSourceFile *file;
 
 	tab->state = GEDIT_TAB_STATE_NORMAL;
@@ -1326,13 +1324,7 @@ gedit_tab_init (GeditTab *tab)
 					    GEDIT_SETTINGS_AUTO_SAVE);
 	g_settings_get (tab->editor_settings, GEDIT_SETTINGS_AUTO_SAVE_INTERVAL,
 			"u", &auto_save_interval);
-
-	app = GEDIT_APP (g_application_get_default ());
-
-	lockdown = gedit_app_get_lockdown (app);
-	tab->auto_save = auto_save && !(lockdown & GEDIT_LOCKDOWN_SAVE_TO_DISK);
-	tab->auto_save = (tab->auto_save != FALSE);
-
+	tab->auto_save = auto_save != FALSE;
 	tab->auto_save_interval = auto_save_interval;
 
 	/* Create the frame */
@@ -2988,20 +2980,11 @@ void
 gedit_tab_set_auto_save_enabled	(GeditTab *tab,
 				 gboolean  enable)
 {
-	GeditLockdownMask lockdown;
-
 	gedit_debug (DEBUG_TAB);
 
 	g_return_if_fail (GEDIT_IS_TAB (tab));
 
 	enable = enable != FALSE;
-
-	/* Force disabling when lockdown is active */
-	lockdown = gedit_app_get_lockdown (GEDIT_APP (g_application_get_default ()));
-	if (lockdown & GEDIT_LOCKDOWN_SAVE_TO_DISK)
-	{
-		enable = FALSE;
-	}
 
 	if (tab->auto_save != enable)
 	{

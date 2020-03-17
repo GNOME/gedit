@@ -54,17 +54,6 @@ struct _GeditAppClass
 	                                         GdkEvent    *event);
 };
 
-typedef enum
-{
-	GEDIT_LOCKDOWN_COMMAND_LINE	= 1 << 0,
-	GEDIT_LOCKDOWN_PRINTING		= 1 << 1,
-	GEDIT_LOCKDOWN_PRINT_SETUP	= 1 << 2,
-	GEDIT_LOCKDOWN_SAVE_TO_DISK	= 1 << 3
-} GeditLockdownMask;
-
-/* We need to define this here to avoid problems with bindings and gsettings */
-#define GEDIT_LOCKDOWN_ALL 0xF
-
 GeditWindow	*gedit_app_create_window		(GeditApp    *app,
 							 GdkScreen   *screen);
 
@@ -73,9 +62,6 @@ GList		*gedit_app_get_main_windows		(GeditApp    *app);
 GList		*gedit_app_get_documents		(GeditApp    *app);
 
 GList		*gedit_app_get_views			(GeditApp    *app);
-
-/* Lockdown state */
-GeditLockdownMask gedit_app_get_lockdown		(GeditApp    *app);
 
 gboolean	 gedit_app_show_help			(GeditApp    *app,
                                                          GtkWindow   *parent,

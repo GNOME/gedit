@@ -28,19 +28,6 @@
 
 G_BEGIN_DECLS
 
-void		 _gedit_app_set_lockdown		(GeditApp          *app,
-							 GeditLockdownMask  lockdown);
-
-void		 _gedit_app_set_lockdown_bit		(GeditApp          *app,
-							 GeditLockdownMask  bit,
-							 gboolean           value);
-
-/* This one is a gedit-window function, but we declare it here to avoid
- * #include headaches since it needs the GeditLockdownMask declaration.
- */
-void		 _gedit_window_set_lockdown		(GeditWindow       *window,
-							 GeditLockdownMask  lockdown);
-
 /* global print config */
 GtkPageSetup		*_gedit_app_get_default_page_setup	(GeditApp         *app);
 void			 _gedit_app_set_default_page_setup	(GeditApp         *app,
