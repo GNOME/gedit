@@ -1,7 +1,7 @@
 project(
   'gedit', 'c',
   version: '3.37.0',
-  meson_version: '>= 0.53'
+  meson_version: '>= 0.49'
 )
 
 if host_machine.system() == 'darwin'
@@ -121,8 +121,17 @@ meson.add_install_script(
   get_option('prefix') / get_option('datadir')
 )
 
-summary('API version', api_version)
-summary('Prefix', get_option('prefix'))
-summary('API documentation', get_option('gtk_doc'))
-summary('User documentation', get_option('user_documentation'))
-summary('Require all tests', get_option('require_all_tests'))
+# Summary message
+
+summary = [
+  'Configuration:',
+  '',
+  '        gedit version @0@ (API version @1@)'.format(meson.project_version(), api_version),
+  '',
+  '        Prefix:                @0@'.format(get_option('prefix')),
+  '        API documentation:     @0@'.format(get_option('gtk_doc')),
+  '        User documentation:    @0@'.format(get_option('user_documentation')),
+  '        Require all tests:     @0@'.format(get_option('require_all_tests')),
+  '',
+]
+message('\n'.join(summary))
