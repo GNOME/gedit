@@ -148,10 +148,6 @@ elif host_machine.system() == 'windows'
   libgedit_sources += files(
     'gedit-app-win32.c',
   )
-else
-  libgedit_deps += [
-    x11_dep,
-  ]
 endif
 
 libgedit_enums = gnome.mkenums_simple(

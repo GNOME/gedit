@@ -61,7 +61,6 @@ gtksourceview_dep = dependency('gtksourceview-4', version: gtksourceview_req)
 libpeas_gtk_dep = dependency('libpeas-gtk-1.0', version: libpeas_req)
 libxml_dep = dependency('libxml-2.0', version: libxml_req)
 gspell_dep = dependency('gspell-1', version: gspell_req)
-x11_dep = dependency('x11', required: false)
 
 introspection_dep = dependency('gobject-introspection-1.0', version: introspection_req)
 vapigen_dep = dependency('vapigen', version: vala_req)
