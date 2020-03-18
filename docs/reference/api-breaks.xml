@@ -36,6 +36,14 @@
           <code>gedit_app_get_lockdown()</code> function has been removed.
         </para>
       </listitem>
+      <listitem>
+        <para>
+          The <code>gedit_utils_get_current_workspace()</code>,
+          <code>gedit_utils_get_window_workspace()</code> and
+          <code>gedit_utils_get_current_viewport()</code> functions have been
+          removed because workspaces information is not available on Wayland.
+        </para>
+      </listitem>
     </itemizedlist>
   </refsect1>
 

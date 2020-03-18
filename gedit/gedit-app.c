@@ -267,82 +267,19 @@ gedit_app_set_window_title_impl (GeditApp    *app,
 	gtk_window_set_title (GTK_WINDOW (window), title);
 }
 
-static gboolean
-is_in_viewport (GtkWindow    *window,
-		GdkScreen    *screen,
-		gint          workspace,
-		gint          viewport_x,
-		gint          viewport_y)
-{
-	GdkScreen *s;
-	GdkDisplay *display;
-	GdkMonitor *monitor;
-	GdkWindow *gdkwindow;
-	GdkRectangle geometry;
-	const gchar *cur_name;
-	const gchar *name;
-	gint ws;
-	gint x, y, width, height;
-
-	/* Check for screen and display match */
-	display = gdk_screen_get_display (screen);
-	cur_name = gdk_display_get_name (display);
-
-	s = gtk_window_get_screen (window);
-	display = gdk_screen_get_display (s);
-	name = gdk_display_get_name (display);
-
-	if (strcmp (cur_name, name) != 0)
-	{
-		return FALSE;
-	}
-
-	/* Check for workspace match */
-	ws = gedit_utils_get_window_workspace (window);
-
-	if (ws != workspace && ws != GEDIT_ALL_WORKSPACES)
-	{
-		return FALSE;
-	}
-
-	/* Check for viewport match */
-	gdkwindow = gtk_widget_get_window (GTK_WIDGET (window));
-	gdk_window_get_position (gdkwindow, &x, &y);
-	width = gdk_window_get_width (gdkwindow);
-	height = gdk_window_get_height (gdkwindow);
-
-	x += viewport_x;
-	y += viewport_y;
-
-	monitor = gdk_display_get_monitor_at_window(display, gdkwindow);
-	gdk_monitor_get_geometry(monitor, &geometry);
-
-	return x + width * .75 >= geometry.x &&
-	       x + width * .25 <= geometry.x + geometry.width &&
-	       y + height * .75 >= geometry.y &&
-	       y + height * .25 <= geometry.y + geometry.height;
-}
-
 static GeditWindow *
 get_active_window (GtkApplication *app)
 {
-	GdkScreen *screen;
-	guint workspace;
-	gint viewport_x, viewport_y;
-	GList *windows, *l;
+	GList *windows;
+	GList *l;
 
-	screen = gdk_screen_get_default ();
-
-	workspace = gedit_utils_get_current_workspace (screen);
-	gedit_utils_get_current_viewport (screen, &viewport_x, &viewport_y);
-
-	/* Gtk documentation says the window list is always in MRU order */
+	/* Gtk documentation says the window list is always in MRU order. */
 	windows = gtk_application_get_windows (app);
 	for (l = windows; l != NULL; l = l->next)
 	{
 		GtkWindow *window = l->data;
 
-		if (GEDIT_IS_WINDOW (window) && is_in_viewport (window, screen, workspace, viewport_x, viewport_y))
+		if (GEDIT_IS_WINDOW (window))
 		{
 			return GEDIT_WINDOW (window);
 		}
