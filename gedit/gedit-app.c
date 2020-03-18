@@ -150,7 +150,7 @@ static const GOptionEntry options[] =
 	{NULL}
 };
 
-G_DEFINE_ABSTRACT_TYPE_WITH_PRIVATE (GeditApp, gedit_app, GTK_TYPE_APPLICATION)
+G_DEFINE_TYPE_WITH_PRIVATE (GeditApp, gedit_app, GTK_TYPE_APPLICATION)
 
 static void
 gedit_app_dispose (GObject *object)

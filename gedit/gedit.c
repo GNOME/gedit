@@ -26,8 +26,6 @@
 #  include "gedit-app-osx.h"
 #elif defined G_OS_WIN32
 #  include "gedit-app-win32.h"
-#else
-#  include "gedit-app-x11.h"
 #endif
 
 #include <glib.h>
@@ -130,7 +128,7 @@ main (int argc, char *argv[])
 
 	type = GEDIT_TYPE_APP_WIN32;
 #else
-	type = GEDIT_TYPE_APP_X11;
+	type = GEDIT_TYPE_APP;
 #endif
 
 	/* NOTE: we should not make any calls to the gedit api before the

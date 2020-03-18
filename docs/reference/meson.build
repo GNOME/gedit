@@ -25,7 +25,6 @@ gedit_doc_dep = declare_dependency(
 libgedit_reference_ignored_h = [
   'gedit-app-osx.h',
   'gedit-app-win32.h',
-  'gedit-app-x11.h',
   'gedit-close-confirmation-dialog.h',
   'gedit-dirs.h',
   'gedit-document-private.h',
