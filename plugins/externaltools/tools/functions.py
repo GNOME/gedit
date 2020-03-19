@@ -97,7 +97,7 @@ def run_external_tool(window, panel, node):
         capture.set_env(GEDIT_CURRENT_LINE=piter.get_text(end))
 
         if document.get_language() is not None:
-            capture.set_env(GEDIT_CURRRENT_DOCUMENT_LANGUAGE=document.get_language().get_id())
+            capture.set_env(GEDIT_CURRENT_DOCUMENT_LANGUAGE=document.get_language().get_id())
 
         # Selected text (only if input is not selection)
         if node.input != 'selection' and node.input != 'selection-document':
