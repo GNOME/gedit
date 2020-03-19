@@ -81,7 +81,7 @@ def run_external_tool(window, panel, node):
     if view is not None:
         # Environment vars relative to current document
         document = view.get_buffer()
-        location = document.get_location()
+        location = document.get_file().get_location()
 
         # Current line number
         piter = document.get_iter_at_mark(document.get_insert())
@@ -124,9 +124,9 @@ def run_external_tool(window, panel, node):
                 capture.set_env(GEDIT_CURRENT_DOCUMENT_PATH=path,
                                 GEDIT_CURRENT_DOCUMENT_DIR=cwd)
 
-        documents_location = [doc.get_location()
+        documents_location = [doc.get_file().get_location()
                               for doc in window.get_documents()
-                              if doc.get_location() is not None]
+                              if doc.get_file().get_location() is not None]
         documents_uri = [location.get_uri()
                          for location in documents_location
                          if location.get_uri() is not None]
@@ -324,7 +324,7 @@ def capture_end_execute_panel(capture, exit_code, panel, view, output_type):
             mtype, uncertain = Gio.content_type_guess(None, doc.get_text(start, end, False).encode('utf-8'))
             lmanager = GtkSource.LanguageManager.get_default()
 
-            location = doc.get_location()
+            location = doc.get_file().get_location()
             if location:
                 uri = location.get_uri()
             language = lmanager.guess_language(uri, mtype)
