@@ -763,10 +763,6 @@ update_actions_sensitivity (GeditWindow *window)
 	g_simple_action_set_enabled (G_SIMPLE_ACTION (action),
 	                             num_notebooks > 1);
 
-	action = g_action_map_lookup_action (G_ACTION_MAP (window), "bottom-panel");
-	g_simple_action_set_enabled (G_SIMPLE_ACTION (action),
-	                             gtk_stack_get_visible_child (GTK_STACK (window->priv->bottom_panel)) != NULL);
-
 	/* We disable File->Quit/SaveAll/CloseAll while printing to avoid to have two
 	   operations (save and print/print preview) that uses the message area at
 	   the same time (may be we can remove this limitation in the future) */
@@ -2481,8 +2477,7 @@ bottom_panel_item_added (GtkStack    *panel,
 	n_children = g_list_length (children);
 	g_list_free (children);
 
-	/* if it's the first item added, set the menu item
-	 * sensitive and if needed show the panel */
+	/* First item added. */
 	if (n_children == 1)
 	{
 		gboolean show;
@@ -2561,13 +2556,6 @@ init_panels_visibility (GeditWindow *window)
 		}
 
 		g_free (panel_page);
-	}
-	else
-	{
-		GAction *action;
-
-		action = g_action_map_lookup_action (G_ACTION_MAP (window), "bottom-panel");
-		g_simple_action_set_enabled (G_SIMPLE_ACTION (action), FALSE);
 	}
 
 	/* start track sensitivity after the initial state is set */
