@@ -438,7 +438,7 @@ class Document(GObject.Object, Gedit.ViewActivatable, Signals):
 
         if isinstance(toplevel, Gedit.Window):
             for doc in toplevel.get_documents():
-                r = self.location_uri_for_env(doc.get_location())
+                r = self.location_uri_for_env(doc.get_file().get_location())
 
                 if isinstance(r, dict):
                     documents_uri['utf8'].append(r['utf8'])
@@ -457,7 +457,7 @@ class Document(GObject.Object, Gedit.ViewActivatable, Signals):
 
         if isinstance(toplevel, Gedit.Window):
             for doc in toplevel.get_documents():
-                r = self.location_path_for_env(doc.get_location())
+                r = self.location_path_for_env(doc.get_file().get_location())
 
                 if isinstance(r, dict):
                     documents_path['utf8'].append(r['utf8'])
@@ -497,7 +497,7 @@ class Document(GObject.Object, Gedit.ViewActivatable, Signals):
                 environ['utf8'][var] = v
                 environ['noenc'][var] = str(v)
 
-        self.env_add_for_location(environ, buf.get_location(), 'GEDIT_CURRENT_DOCUMENT')
+        self.env_add_for_location(environ, buf.get_file().get_location(), 'GEDIT_CURRENT_DOCUMENT')
 
         return environ
 
@@ -881,7 +881,7 @@ class Document(GObject.Object, Gedit.ViewActivatable, Signals):
         self.env_add_for_location(environ, gfile, 'GEDIT_DROP_DOCUMENT')
 
         buf = self.view.get_buffer()
-        location = buf.get_location()
+        location = buf.get_file().get_location()
 
         relpath = location.get_relative_path(gfile)
 
