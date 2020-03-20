@@ -32,10 +32,6 @@
 #include <libpeas/peas-extension-set.h>
 #include <gtksourceview/gtksource.h>
 
-#ifdef ENABLE_INTROSPECTION
-#include <girepository.h>
-#endif
-
 #include "gedit-commands-private.h"
 #include "gedit-notebook.h"
 #include "gedit-debug.h"
@@ -1293,10 +1289,6 @@ gedit_app_init (GeditApp *app)
 	gtk_window_set_default_icon_name ("gedit");
 
 	g_application_add_main_option_entries (G_APPLICATION (app), options);
-
-#ifdef ENABLE_INTROSPECTION
-	g_application_add_option_group (G_APPLICATION (app), g_irepository_get_option_group ());
-#endif
 }
 
 /**
