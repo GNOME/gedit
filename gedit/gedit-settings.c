@@ -1,9 +1,9 @@
 /*
- * gedit-settings.c
  * This file is part of gedit
  *
  * Copyright (C) 2002-2005 - Paolo Maggi
- *               2009 - Ignacio Casal Quinteiro
+ * Copyright (C) 2009 - Ignacio Casal Quinteiro
+ * Copyright (C) 2020 - Sébastien Wilmet <swilmet@gnome.org>
  *
  * gedit is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -46,17 +46,10 @@ struct _GeditSettings
 	gchar *old_scheme;
 };
 
+/* GeditSettings is a singleton. */
+static GeditSettings *singleton = NULL;
+
 G_DEFINE_TYPE (GeditSettings, gedit_settings, G_TYPE_OBJECT)
-
-static void
-gedit_settings_finalize (GObject *object)
-{
-	GeditSettings *gs = GEDIT_SETTINGS (object);
-
-	g_free (gs->old_scheme);
-
-	G_OBJECT_CLASS (gedit_settings_parent_class)->finalize (object);
-}
 
 static void
 gedit_settings_dispose (GObject *object)
@@ -71,8 +64,23 @@ gedit_settings_dispose (GObject *object)
 }
 
 static void
+gedit_settings_finalize (GObject *object)
+{
+	GeditSettings *gs = GEDIT_SETTINGS (object);
+
+	g_free (gs->old_scheme);
+
+	if (singleton == gs)
+	{
+		singleton = NULL;
+	}
+
+	G_OBJECT_CLASS (gedit_settings_parent_class)->finalize (object);
+}
+
+static void
 set_font (GeditSettings *gs,
-	  const gchar *font)
+	  const gchar   *font)
 {
 	GList *views, *l;
 	guint ts;
@@ -286,6 +294,15 @@ on_syntax_highlighting_changed (GSettings     *settings,
 }
 
 static void
+gedit_settings_class_init (GeditSettingsClass *klass)
+{
+	GObjectClass *object_class = G_OBJECT_CLASS (klass);
+
+	object_class->dispose = gedit_settings_dispose;
+	object_class->finalize = gedit_settings_finalize;
+}
+
+static void
 gedit_settings_init (GeditSettings *gs)
 {
 	gs->old_scheme = NULL;
@@ -326,19 +343,29 @@ gedit_settings_init (GeditSettings *gs)
 			  gs);
 }
 
-static void
-gedit_settings_class_init (GeditSettingsClass *klass)
+GeditSettings *
+_gedit_settings_get_singleton (void)
 {
-	GObjectClass *object_class = G_OBJECT_CLASS (klass);
+	if (singleton == NULL)
+	{
+		singleton = g_object_new (GEDIT_TYPE_SETTINGS, NULL);
+	}
 
-	object_class->finalize = gedit_settings_finalize;
-	object_class->dispose = gedit_settings_dispose;
+	return singleton;
 }
 
-GeditSettings *
-gedit_settings_new ()
+void
+gedit_settings_unref_singleton (void)
 {
-	return g_object_new (GEDIT_TYPE_SETTINGS, NULL);
+	if (singleton != NULL)
+	{
+		g_object_unref (singleton);
+	}
+
+	/* singleton is not set to NULL here, it is set to NULL in
+	 * gedit_settings_finalize() (i.e. when we are sure that the ref count
+	 * reaches 0).
+	 */
 }
 
 gchar *

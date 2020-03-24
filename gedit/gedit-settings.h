@@ -1,9 +1,9 @@
 /*
- * gedit-settings.h
  * This file is part of gedit
  *
+ * Copyright (C) 2002 - Paolo Maggi
  * Copyright (C) 2009 - Ignacio Casal Quinteiro
- *               2002 - Paolo Maggi
+ * Copyright (C) 2020 - Sébastien Wilmet <swilmet@gnome.org>
  *
  * gedit is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -32,19 +32,23 @@ G_BEGIN_DECLS
 
 G_DECLARE_FINAL_TYPE (GeditSettings, gedit_settings, GEDIT, SETTINGS, GObject)
 
-GeditSettings		*gedit_settings_new				(void);
+G_GNUC_INTERNAL
+GeditSettings *	_gedit_settings_get_singleton			(void);
 
-gchar			*gedit_settings_get_system_font			(GeditSettings *gs);
+void		gedit_settings_unref_singleton			(void);
 
-GSList			*gedit_settings_get_candidate_encodings		(gboolean      *default_candidates);
+gchar *		gedit_settings_get_system_font			(GeditSettings *gs);
+
+GSList *	gedit_settings_get_candidate_encodings		(gboolean *default_candidates);
 
 /* Utility functions */
-GSList			*gedit_settings_get_list			(GSettings     *settings,
-									 const gchar   *key);
 
-void			 gedit_settings_set_list			(GSettings     *settings,
-									 const gchar   *key,
-									 const GSList  *list);
+GSList *	gedit_settings_get_list				(GSettings   *settings,
+								 const gchar *key);
+
+void		gedit_settings_set_list				(GSettings    *settings,
+								 const gchar  *key,
+								 const GSList *list);
 
 /* key constants */
 #define GEDIT_SETTINGS_USE_DEFAULT_FONT			"use-default-font"

@@ -34,6 +34,7 @@
 
 #include "gedit-dirs.h"
 #include "gedit-debug.h"
+#include "gedit-settings.h"
 
 #ifdef G_OS_WIN32
 #include <gmodule.h>
@@ -143,6 +144,8 @@ main (int argc, char *argv[])
 	                    NULL);
 
 	status = g_application_run (G_APPLICATION (app), argc, argv);
+
+	gedit_settings_unref_singleton ();
 
 	/* Break reference cycles caused by the PeasExtensionSet
 	 * for GeditAppActivatable which holds a ref on the GeditApp
