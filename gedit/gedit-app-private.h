@@ -23,7 +23,6 @@
 
 #include "gedit-app.h"
 #include "gedit-metadata-manager.h"
-#include "gedit-settings.h"
 #include "gedit-menu-extension.h"
 
 G_BEGIN_DECLS
@@ -37,8 +36,6 @@ void			 _gedit_app_set_default_print_settings	(GeditApp         *app,
 								 GtkPrintSettings *settings);
 
 GeditMetadataManager	*_gedit_app_get_metadata_manager	(GeditApp  *app);
-
-GeditSettings		*_gedit_app_get_settings		(GeditApp  *app);
 
 GMenuModel		*_gedit_app_get_hamburger_menu		(GeditApp  *app);
 

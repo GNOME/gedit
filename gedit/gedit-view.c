@@ -31,8 +31,6 @@
 #include "gedit-pango.h"
 #include "gedit-utils.h"
 #include "gedit-settings.h"
-#include "gedit-app.h"
-#include "gedit-app-private.h"
 
 #define GEDIT_VIEW_SCROLL_MARGIN 0.02
 
@@ -1006,7 +1004,7 @@ gedit_view_set_font (GeditView   *view,
 		GeditSettings *settings;
 		gchar *font;
 
-		settings = _gedit_app_get_settings (GEDIT_APP (g_application_get_default ()));
+		settings = _gedit_settings_get_singleton ();
 		font = gedit_settings_get_system_font (settings);
 
 		view->priv->font_desc = pango_font_description_from_string (font);

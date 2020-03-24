@@ -39,8 +39,6 @@
 #include "gedit-settings.h"
 #include "gedit-utils.h"
 #include "gedit-file-chooser-dialog.h"
-#include "gedit-app.h"
-#include "gedit-app-private.h"
 
 /*
  * gedit-preferences dialog is a singleton since we don't
@@ -453,7 +451,7 @@ setup_font_colors_page_font_section (GeditPreferencesDialog *dlg)
 			 _("Click on this button to select the font to be used by the editor"));
 
 	/* Get values */
-	settings = _gedit_app_get_settings (GEDIT_APP (g_application_get_default ()));
+	settings = _gedit_settings_get_singleton ();
 	system_font = gedit_settings_get_system_font (settings);
 
 	label = g_strdup_printf(_("_Use the system fixed width font (%s)"),
