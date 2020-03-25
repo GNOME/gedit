@@ -662,13 +662,13 @@ get_default_style_scheme (GSettings *editor_settings)
 
 	if (def_style == NULL)
 	{
-		g_warning ("Default style scheme '%s' cannot be found, falling back to 'classic' style scheme ", scheme_id);
+		g_warning ("Default style scheme '%s' cannot be found, falling back to 'tango' style scheme.", scheme_id);
 
-		def_style = gtk_source_style_scheme_manager_get_scheme (manager, "classic");
+		def_style = gtk_source_style_scheme_manager_get_scheme (manager, "tango");
 
 		if (def_style == NULL)
 		{
-			g_warning ("Style scheme 'classic' cannot be found, check your GtkSourceView installation.");
+			g_warning ("Style scheme 'tango' cannot be found, check your GtkSourceView installation.");
 		}
 	}
 
