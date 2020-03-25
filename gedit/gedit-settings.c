@@ -22,16 +22,10 @@
  */
 
 #include "config.h"
-
 #include "gedit-settings.h"
-
-#include <string.h>
 #include <gtksourceview/gtksource.h>
-
 #include "gedit-app.h"
-#include "gedit-app-private.h"
 #include "gedit-view.h"
-#include "gedit-window.h"
 
 #define GEDIT_SETTINGS_SYSTEM_FONT "monospace-font-name"
 
@@ -54,11 +48,11 @@ G_DEFINE_TYPE (GeditSettings, gedit_settings, G_TYPE_OBJECT)
 static void
 gedit_settings_dispose (GObject *object)
 {
-	GeditSettings *gs = GEDIT_SETTINGS (object);
+	GeditSettings *self = GEDIT_SETTINGS (object);
 
-	g_clear_object (&gs->interface);
-	g_clear_object (&gs->editor);
-	g_clear_object (&gs->ui);
+	g_clear_object (&self->interface);
+	g_clear_object (&self->editor);
+	g_clear_object (&self->ui);
 
 	G_OBJECT_CLASS (gedit_settings_parent_class)->dispose (object);
 }
@@ -66,11 +60,11 @@ gedit_settings_dispose (GObject *object)
 static void
 gedit_settings_finalize (GObject *object)
 {
-	GeditSettings *gs = GEDIT_SETTINGS (object);
+	GeditSettings *self = GEDIT_SETTINGS (object);
 
-	g_free (gs->old_scheme);
+	g_free (self->old_scheme);
 
-	if (singleton == gs)
+	if (singleton == self)
 	{
 		singleton = NULL;
 	}
@@ -79,22 +73,24 @@ gedit_settings_finalize (GObject *object)
 }
 
 static void
-set_font (GeditSettings *gs,
+set_font (GeditSettings *self,
 	  const gchar   *font)
 {
-	GList *views, *l;
-	guint ts;
+	guint tabs_size;
+	GList *views;
+	GList *l;
 
-	g_settings_get (gs->editor, GEDIT_SETTINGS_TABS_SIZE, "u", &ts);
+	tabs_size = g_settings_get_uint (self->editor, GEDIT_SETTINGS_TABS_SIZE);
 
 	views = gedit_app_get_views (GEDIT_APP (g_application_get_default ()));
 
-	for (l = views; l != NULL; l = g_list_next (l))
+	for (l = views; l != NULL; l = l->next)
 	{
-		/* Note: we use def=FALSE to avoid GeditView to query dconf */
+		/* Note: we use def=FALSE to avoid GeditView to query dconf. */
 		gedit_view_set_font (GEDIT_VIEW (l->data), FALSE, font);
 
-		gtk_source_view_set_tab_width (GTK_SOURCE_VIEW (l->data), ts);
+		/* FIXME: setting the tab width seems unrelated to set_font(). */
+		gtk_source_view_set_tab_width (GTK_SOURCE_VIEW (l->data), tabs_size);
 	}
 
 	g_list_free (views);
@@ -103,20 +99,19 @@ set_font (GeditSettings *gs,
 static void
 on_system_font_changed (GSettings     *settings,
 			const gchar   *key,
-			GeditSettings *gs)
+			GeditSettings *self)
 {
 
 	gboolean use_default_font;
 
-	use_default_font = g_settings_get_boolean (gs->editor,
-						   GEDIT_SETTINGS_USE_DEFAULT_FONT);
+	use_default_font = g_settings_get_boolean (self->editor, GEDIT_SETTINGS_USE_DEFAULT_FONT);
 
 	if (use_default_font)
 	{
 		gchar *font;
 
 		font = g_settings_get_string (settings, key);
-		set_font (gs, font);
+		set_font (self, font);
 		g_free (font);
 	}
 }
@@ -124,25 +119,23 @@ on_system_font_changed (GSettings     *settings,
 static void
 on_use_default_font_changed (GSettings     *settings,
 			     const gchar   *key,
-			     GeditSettings *gs)
+			     GeditSettings *self)
 {
-	gboolean def;
+	gboolean use_default_font;
 	gchar *font;
 
-	def = g_settings_get_boolean (settings, key);
+	use_default_font = g_settings_get_boolean (settings, key);
 
-	if (def)
+	if (use_default_font)
 	{
-		font = g_settings_get_string (gs->interface,
-					      GEDIT_SETTINGS_SYSTEM_FONT);
+		font = g_settings_get_string (self->interface, GEDIT_SETTINGS_SYSTEM_FONT);
 	}
 	else
 	{
-		font = g_settings_get_string (gs->editor,
-					      GEDIT_SETTINGS_EDITOR_FONT);
+		font = g_settings_get_string (self->editor, GEDIT_SETTINGS_EDITOR_FONT);
 	}
 
-	set_font (gs, font);
+	set_font (self, font);
 
 	g_free (font);
 }
@@ -150,19 +143,18 @@ on_use_default_font_changed (GSettings     *settings,
 static void
 on_editor_font_changed (GSettings     *settings,
 			const gchar   *key,
-			GeditSettings *gs)
+			GeditSettings *self)
 {
 	gboolean use_default_font;
 
-	use_default_font = g_settings_get_boolean (gs->editor,
-						   GEDIT_SETTINGS_USE_DEFAULT_FONT);
+	use_default_font = g_settings_get_boolean (self->editor, GEDIT_SETTINGS_USE_DEFAULT_FONT);
 
 	if (!use_default_font)
 	{
 		gchar *font;
 
 		font = g_settings_get_string (settings, key);
-		set_font (gs, font);
+		set_font (self, font);
 		g_free (font);
 	}
 }
@@ -170,7 +162,7 @@ on_editor_font_changed (GSettings     *settings,
 static void
 on_scheme_changed (GSettings     *settings,
 		   const gchar   *key,
-		   GeditSettings *gs)
+		   GeditSettings *self)
 {
 	GtkSourceStyleSchemeManager *manager;
 	GtkSourceStyleScheme *style;
@@ -180,37 +172,35 @@ on_scheme_changed (GSettings     *settings,
 
 	scheme = g_settings_get_string (settings, key);
 
-	if (gs->old_scheme != NULL && (strcmp (scheme, gs->old_scheme) == 0))
+	if (self->old_scheme != NULL && g_str_equal (scheme, self->old_scheme))
 	{
 		g_free (scheme);
 		return;
 	}
 
-	g_free (gs->old_scheme);
-	gs->old_scheme = scheme;
+	g_free (self->old_scheme);
+	self->old_scheme = scheme;
 
 	manager = gtk_source_style_scheme_manager_get_default ();
 	style = gtk_source_style_scheme_manager_get_scheme (manager, scheme);
 	if (style == NULL)
 	{
-		g_warning ("Default style scheme '%s' not found, falling back to 'classic'", scheme);
+		g_warning ("Default style scheme '%s' not found, falling back to 'tango'", scheme);
 
-		style = gtk_source_style_scheme_manager_get_scheme (manager, "classic");
+		style = gtk_source_style_scheme_manager_get_scheme (manager, "tango");
 		if (style == NULL)
 		{
-			g_warning ("Style scheme 'classic' cannot be found, check your GtkSourceView installation.");
+			g_warning ("Style scheme 'tango' cannot be found, check your GtkSourceView installation.");
 			return;
 		}
 	}
 
 	docs = gedit_app_get_documents (GEDIT_APP (g_application_get_default ()));
 
-	for (l = docs; l != NULL; l = g_list_next (l))
+	for (l = docs; l != NULL; l = l->next)
 	{
-		g_return_if_fail (GTK_SOURCE_IS_BUFFER (l->data));
-
-		gtk_source_buffer_set_style_scheme (GTK_SOURCE_BUFFER (l->data),
-						    style);
+		GtkSourceBuffer *buffer = GTK_SOURCE_BUFFER (l->data);
+		gtk_source_buffer_set_style_scheme (buffer, style);
 	}
 
 	g_list_free (docs);
@@ -219,19 +209,19 @@ on_scheme_changed (GSettings     *settings,
 static void
 on_auto_save_changed (GSettings     *settings,
 		      const gchar   *key,
-		      GeditSettings *gs)
+		      GeditSettings *self)
 {
-	GList *docs, *l;
 	gboolean auto_save;
+	GList *docs;
+	GList *l;
 
 	auto_save = g_settings_get_boolean (settings, key);
 
 	docs = gedit_app_get_documents (GEDIT_APP (g_application_get_default ()));
 
-	for (l = docs; l != NULL; l = g_list_next (l))
+	for (l = docs; l != NULL; l = l->next)
 	{
 		GeditTab *tab = gedit_tab_get_from_document (GEDIT_DOCUMENT (l->data));
-
 		gedit_tab_set_auto_save_enabled (tab, auto_save);
 	}
 
@@ -241,19 +231,19 @@ on_auto_save_changed (GSettings     *settings,
 static void
 on_auto_save_interval_changed (GSettings     *settings,
 			       const gchar   *key,
-			       GeditSettings *gs)
+			       GeditSettings *self)
 {
-	GList *docs, *l;
-	gint auto_save_interval;
+	guint auto_save_interval;
+	GList *docs;
+	GList *l;
 
-	g_settings_get (settings, key, "u", &auto_save_interval);
+	auto_save_interval = g_settings_get_uint (settings, key);
 
 	docs = gedit_app_get_documents (GEDIT_APP (g_application_get_default ()));
 
-	for (l = docs; l != NULL; l = g_list_next (l))
+	for (l = docs; l != NULL; l = l->next)
 	{
 		GeditTab *tab = gedit_tab_get_from_document (GEDIT_DOCUMENT (l->data));
-
 		gedit_tab_set_auto_save_interval (tab, auto_save_interval);
 	}
 
@@ -263,18 +253,21 @@ on_auto_save_interval_changed (GSettings     *settings,
 static void
 on_syntax_highlighting_changed (GSettings     *settings,
 				const gchar   *key,
-				GeditSettings *gs)
+				GeditSettings *self)
 {
-	GList *docs, *windows, *l;
 	gboolean enable;
+	GList *docs;
+	GList *windows;
+	GList *l;
 
 	enable = g_settings_get_boolean (settings, key);
 
 	docs = gedit_app_get_documents (GEDIT_APP (g_application_get_default ()));
 
-	for (l = docs; l != NULL; l = g_list_next (l))
+	for (l = docs; l != NULL; l = l->next)
 	{
-		gtk_source_buffer_set_highlight_syntax (GTK_SOURCE_BUFFER (l->data), enable);
+		GtkSourceBuffer *buffer = GTK_SOURCE_BUFFER (l->data);
+		gtk_source_buffer_set_highlight_syntax (buffer, enable);
 	}
 
 	g_list_free (docs);
@@ -282,7 +275,7 @@ on_syntax_highlighting_changed (GSettings     *settings,
 	/* update the sensitivity of the Higlight Mode menu item */
 	windows = gedit_app_get_main_windows (GEDIT_APP (g_application_get_default ()));
 
-	for (l = windows; l != NULL; l = g_list_next (l))
+	for (l = windows; l != NULL; l = l->next)
 	{
 		GAction *action;
 
@@ -303,44 +296,49 @@ gedit_settings_class_init (GeditSettingsClass *klass)
 }
 
 static void
-gedit_settings_init (GeditSettings *gs)
+gedit_settings_init (GeditSettings *self)
 {
-	gs->old_scheme = NULL;
-	gs->editor = g_settings_new ("org.gnome.gedit.preferences.editor");
-	gs->ui = g_settings_new ("org.gnome.gedit.preferences.ui");
+	self->editor = g_settings_new ("org.gnome.gedit.preferences.editor");
+	self->ui = g_settings_new ("org.gnome.gedit.preferences.ui");
 
-	gs->interface = g_settings_new ("org.gnome.desktop.interface");
+	self->interface = g_settings_new ("org.gnome.desktop.interface");
 
-	g_signal_connect (gs->interface,
+	g_signal_connect (self->interface,
 			  "changed::monospace-font-name",
 			  G_CALLBACK (on_system_font_changed),
-			  gs);
+			  self);
 
 	/* editor changes */
-	g_signal_connect (gs->editor,
+
+	g_signal_connect (self->editor,
 			  "changed::use-default-font",
 			  G_CALLBACK (on_use_default_font_changed),
-			  gs);
-	g_signal_connect (gs->editor,
+			  self);
+
+	g_signal_connect (self->editor,
 			  "changed::editor-font",
 			  G_CALLBACK (on_editor_font_changed),
-			  gs);
-	g_signal_connect (gs->editor,
+			  self);
+
+	g_signal_connect (self->editor,
 			  "changed::scheme",
 			  G_CALLBACK (on_scheme_changed),
-			  gs);
-	g_signal_connect (gs->editor,
+			  self);
+
+	g_signal_connect (self->editor,
 			  "changed::auto-save",
 			  G_CALLBACK (on_auto_save_changed),
-			  gs);
-	g_signal_connect (gs->editor,
+			  self);
+
+	g_signal_connect (self->editor,
 			  "changed::auto-save-interval",
 			  G_CALLBACK (on_auto_save_interval_changed),
-			  gs);
-	g_signal_connect (gs->editor,
+			  self);
+
+	g_signal_connect (self->editor,
 			  "changed::syntax-highlighting",
 			  G_CALLBACK (on_syntax_highlighting_changed),
-			  gs);
+			  self);
 }
 
 GeditSettings *
@@ -369,16 +367,11 @@ gedit_settings_unref_singleton (void)
 }
 
 gchar *
-gedit_settings_get_system_font (GeditSettings *gs)
+gedit_settings_get_system_font (GeditSettings *self)
 {
-	gchar *system_font;
+	g_return_val_if_fail (GEDIT_IS_SETTINGS (self), NULL);
 
-	g_return_val_if_fail (GEDIT_IS_SETTINGS (gs), NULL);
-
-	system_font = g_settings_get_string (gs->interface,
-					     "monospace-font-name");
-
-	return system_font;
+	return g_settings_get_string (self->interface, "monospace-font-name");
 }
 
 GSList *
@@ -387,18 +380,16 @@ gedit_settings_get_list (GSettings   *settings,
 {
 	GSList *list = NULL;
 	gchar **values;
-	gsize i;
+	gint i;
 
 	g_return_val_if_fail (G_IS_SETTINGS (settings), NULL);
 	g_return_val_if_fail (key != NULL, NULL);
 
 	values = g_settings_get_strv (settings, key);
-	i = 0;
 
-	while (values[i] != NULL)
+	for (i = 0; values[i] != NULL; i++)
 	{
 		list = g_slist_prepend (list, values[i]);
-		i++;
 	}
 
 	g_free (values);
@@ -412,22 +403,24 @@ gedit_settings_set_list (GSettings    *settings,
 			 const GSList *list)
 {
 	gchar **values = NULL;
-	const GSList *l;
 
 	g_return_if_fail (G_IS_SETTINGS (settings));
 	g_return_if_fail (key != NULL);
 
 	if (list != NULL)
 	{
-		gint i, len;
+		gint list_length;
+		gint i;
+		const GSList *l;
 
-		len = g_slist_length ((GSList *)list);
-		values = g_new (gchar *, len + 1);
+		list_length = g_slist_length ((GSList *)list);
+		values = g_new (gchar *, list_length + 1);
 
-		for (l = list, i = 0; l != NULL; l = g_slist_next (l), i++)
+		for (l = list, i = 0; l != NULL; l = l->next, i++)
 		{
 			values[i] = l->data;
 		}
+
 		values[i] = NULL;
 	}
 
