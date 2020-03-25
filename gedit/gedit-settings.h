@@ -41,15 +41,6 @@ gchar *		gedit_settings_get_system_font			(GeditSettings *gs);
 
 GSList *	gedit_settings_get_candidate_encodings		(gboolean *default_candidates);
 
-/* Utility functions */
-
-GSList *	gedit_settings_get_list				(GSettings   *settings,
-								 const gchar *key);
-
-void		gedit_settings_set_list				(GSettings    *settings,
-								 const gchar  *key,
-								 const GSList *list);
-
 /* key constants */
 #define GEDIT_SETTINGS_USE_DEFAULT_FONT			"use-default-font"
 #define GEDIT_SETTINGS_EDITOR_FONT			"editor-font"

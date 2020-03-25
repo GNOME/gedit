@@ -374,60 +374,6 @@ gedit_settings_get_system_font (GeditSettings *self)
 	return g_settings_get_string (self->interface, "monospace-font-name");
 }
 
-GSList *
-gedit_settings_get_list (GSettings   *settings,
-			 const gchar *key)
-{
-	GSList *list = NULL;
-	gchar **values;
-	gint i;
-
-	g_return_val_if_fail (G_IS_SETTINGS (settings), NULL);
-	g_return_val_if_fail (key != NULL, NULL);
-
-	values = g_settings_get_strv (settings, key);
-
-	for (i = 0; values[i] != NULL; i++)
-	{
-		list = g_slist_prepend (list, values[i]);
-	}
-
-	g_free (values);
-
-	return g_slist_reverse (list);
-}
-
-void
-gedit_settings_set_list (GSettings    *settings,
-			 const gchar  *key,
-			 const GSList *list)
-{
-	gchar **values = NULL;
-
-	g_return_if_fail (G_IS_SETTINGS (settings));
-	g_return_if_fail (key != NULL);
-
-	if (list != NULL)
-	{
-		gint list_length;
-		gint i;
-		const GSList *l;
-
-		list_length = g_slist_length ((GSList *)list);
-		values = g_new (gchar *, list_length + 1);
-
-		for (l = list, i = 0; l != NULL; l = l->next, i++)
-		{
-			values[i] = l->data;
-		}
-
-		values[i] = NULL;
-	}
-
-	g_settings_set_strv (settings, key, (const gchar * const *)values);
-	g_free (values);
-}
-
 static gboolean
 strv_is_empty (gchar **strv)
 {
