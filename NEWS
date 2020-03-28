@@ -1,3 +1,26 @@
+News in 3.37.1, 2020-xx-yy (not yet released)
+--------------------------
+* Remove the support for X11 workspaces.
+  See: commit d0728e7d0c3e7fdc58f03f0af4e0ce64eb7aef6e
+* gedit no longer depends on X11, gedit is now a native app on Wayland.
+* Remove the support for the org.gnome.desktop.lockdown GSettings.
+  See: commit b6728797d6b308b46cf4e0dae4493dc62d3decda
+* Some updates to the user manual.
+* Improvements to the keyboard shortcuts window.
+* Build system: various small improvements.
+* Update the Flatpak.
+* Other small improvements and code refactorings.
+* Translation updates.
+
+Changes for plugins:
+* Bump API version to 3.38.
+* Remove all deprecated APIs.
+* See the list of API breaks and new deprecations in the API reference.
+
+Tepl-ification:
+* Move some utils functions to the Tepl library.
+* Refactor and move some I/O error infobars to Tepl.
+
 News in 3.36.1, 2020-03-20
 --------------------------
 * File chooser dialog: use text files filter by default.
