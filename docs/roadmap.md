@@ -11,19 +11,11 @@ See the [NEWS file](../NEWS) for a detailed history.
 
 If you often contribute to gedit, feel free to add your plans here.
 
-Task structure
---------------
-
-**Status**: todo/in progress/stalled/other text with more details
-
-Description.
-
 Making the gedit source code more re-usable
 -------------------------------------------
 
-**Status**: in progress
-
-https://wiki.gnome.org/Apps/Gedit/ReusableCode
+**Status**: [in progress](https://wiki.gnome.org/Apps/Gedit/ReusableCode) (this
+is an ongoing effort)
 
 Recently done:
 - gedit 3.36: start to use the [Tepl](https://wiki.gnome.org/Projects/Tepl)
@@ -33,6 +25,21 @@ Next steps:
 - Use more features from the [Tepl](https://wiki.gnome.org/Projects/Tepl)
   library, and develop Tepl alongside gedit. The goal is to reduce the amount of
   code from the gedit core, by having re-usable code in Tepl instead.
+
+Making gedit suitable on a smartphone
+-------------------------------------
+
+**Status**: [in progress](https://gitlab.gnome.org/GNOME/Initiatives/-/issues/13)
+
+gedit is installed by default with the [Librem 5](https://puri.sm/products/librem-5/)
+smartphone.
+
+Replace search and replace dialog window by an horizontal bar below the text
+----------------------------------------------------------------------------
+
+**Status**: [todo](https://gitlab.gnome.org/GNOME/gedit/-/issues/288)
+
+To not hide the text.
 
 Changing character encoding and line ending type of opened files
 ----------------------------------------------------------------
@@ -99,12 +106,18 @@ Improve printing UI workflow
 
 Implement it like in Firefox, show first a preview of the file to print.
 
-Replace search and replace dialog window by an horizontal bar above or below the text
--------------------------------------------------------------------------------------
+Avoid the need for gedit forks
+------------------------------
 
 **Status**: todo
 
-To not hide the text.
+There are several forks of gedit available: [Pluma](https://github.com/mate-desktop/pluma)
+(from the MATE desktop environment) and [xed](https://github.com/linuxmint/xed)
+(from the Linux Mint distribution). xed is a fork of Pluma, and Pluma is a fork
+of gedit.
+
+The goal is to make gedit suitable for MATE and Linux Mint. This can be
+implemented by adding a “gedit-classic” configuration option.
 
 Windows and Mac OS X support
 ----------------------------
