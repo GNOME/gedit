@@ -233,8 +233,6 @@ gedit_window_dispose (GObject *object)
 	 */
 	remove_actions (window);
 
-	window->priv->fullscreen_open_recent_button = NULL;
-
 	G_OBJECT_CLASS (gedit_window_parent_class)->dispose (object);
 }
 
@@ -454,6 +452,8 @@ gedit_window_class_init (GeditWindowClass *klass)
 	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, titlebar_paned);
 	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, side_headerbar);
 	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, headerbar);
+	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, open_dialog_button);
+	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, open_recent_button);
 	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, new_button);
 	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, gear_button);
 	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, hpaned);
@@ -471,6 +471,8 @@ gedit_window_class_init (GeditWindowClass *klass)
 	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, fullscreen_eventbox);
 	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, fullscreen_revealer);
 	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, fullscreen_headerbar);
+	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, fullscreen_open_dialog_button);
+	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, fullscreen_open_recent_button);
 	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, fullscreen_new_button);
 	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, fullscreen_gear_button);
 }
@@ -2599,11 +2601,20 @@ sync_fullscreen_actions (GeditWindow *window,
 	GtkMenuButton *button;
 	GPropertyAction *action;
 
+	/* Hamburger menu */
 	button = fullscreen ? window->priv->fullscreen_gear_button : window->priv->gear_button;
 	g_action_map_remove_action (G_ACTION_MAP (window), "hamburger-menu");
 	action = g_property_action_new ("hamburger-menu", button, "active");
 	g_action_map_add_action (G_ACTION_MAP (window), G_ACTION (action));
+
+	/* Recently opened menu */
+	button = fullscreen ? window->priv->fullscreen_open_recent_button : window->priv->open_recent_button;
+	g_action_map_remove_action (G_ACTION_MAP (window), "display-recent");
+	action = g_property_action_new ("display-recent", button, "active");
+	g_action_map_add_action (G_ACTION_MAP (window), G_ACTION (action));
+
 	g_object_unref (action);
+	g_object_unref (button);
 }
 
 static void
@@ -2615,57 +2626,39 @@ init_amtk_application_window (GeditWindow *gedit_window)
 	amtk_application_window_set_statusbar (amtk_window, GTK_STATUSBAR (gedit_window->priv->statusbar));
 }
 
-static GtkWidget *
-create_open_buttons (GeditWindow    *window,
-		     GtkMenuButton **open_recent_button)
+static void
+create_popover_menus (GeditWindow *window)
 {
-	GtkWidget *hgrid;
-	GtkStyleContext *style_context;
-	GtkWidget *open_dialog_button;
-	GtkWidget *my_open_recent_button;
 	AmtkApplicationWindow *amtk_window;
 	GtkWidget *recent_menu;
+	GMenuModel *hamburger_menu;
 
-	hgrid = gtk_grid_new ();
-	style_context = gtk_widget_get_style_context (hgrid);
-	gtk_style_context_add_class (style_context, GTK_STYLE_CLASS_LINKED);
-
-	open_dialog_button = gtk_button_new_with_mnemonic (_("_Open"));
-	gtk_widget_set_tooltip_text (open_dialog_button, _("Open a file"));
-	gtk_actionable_set_action_name (GTK_ACTIONABLE (open_dialog_button), "win.open");
-
-	my_open_recent_button = gtk_menu_button_new ();
-	gtk_widget_set_tooltip_text (my_open_recent_button, _("Open a recently used file"));
-
+	/* Recent documents menu */
 	amtk_window = amtk_application_window_get_from_gtk_application_window (GTK_APPLICATION_WINDOW (window));
 	recent_menu = amtk_application_window_create_open_recent_menu (amtk_window);
-	gtk_menu_button_set_popup (GTK_MENU_BUTTON (my_open_recent_button), recent_menu);
+	gtk_recent_chooser_menu_set_show_numbers (GTK_RECENT_CHOOSER_MENU (recent_menu), TRUE);
+	gtk_menu_button_set_popup (GTK_MENU_BUTTON (window->priv->open_recent_button), recent_menu);
+	gtk_menu_button_set_popup (GTK_MENU_BUTTON (window->priv->fullscreen_open_recent_button), recent_menu);
 
-	gtk_container_add (GTK_CONTAINER (hgrid), open_dialog_button);
-	gtk_container_add (GTK_CONTAINER (hgrid), my_open_recent_button);
-	gtk_widget_show_all (hgrid);
-
-	if (open_recent_button != NULL)
+	/* Hamburger menu */
+	hamburger_menu = _gedit_app_get_hamburger_menu (GEDIT_APP (g_application_get_default ()));
+	if (hamburger_menu)
 	{
-		*open_recent_button = GTK_MENU_BUTTON (my_open_recent_button);
+		gtk_menu_button_set_menu_model (window->priv->gear_button, hamburger_menu);
+		gtk_menu_button_set_menu_model (window->priv->fullscreen_gear_button, hamburger_menu);
+	}
+	else
+	{
+		gtk_widget_hide (GTK_WIDGET (window->priv->gear_button));
+		gtk_widget_hide (GTK_WIDGET (window->priv->fullscreen_gear_button));
+		gtk_widget_set_no_show_all (GTK_WIDGET (window->priv->gear_button), TRUE);
+		gtk_widget_set_no_show_all (GTK_WIDGET (window->priv->fullscreen_gear_button), TRUE);
 	}
 
-	return hgrid;
-}
-
-static void
-init_open_buttons (GeditWindow *window)
-{
-	gtk_container_add_with_properties (GTK_CONTAINER (window->priv->headerbar),
-					   create_open_buttons (window, NULL),
-					   "position", 0, /* The first on the left. */
-					   NULL);
-
-	gtk_container_add_with_properties (GTK_CONTAINER (window->priv->fullscreen_headerbar),
-					   create_open_buttons (window, &(window->priv->fullscreen_open_recent_button)),
-					   "position", 0, /* The first on the left. */
-					   NULL);
-
+	g_signal_connect (GTK_TOGGLE_BUTTON (window->priv->fullscreen_gear_button),
+	                  "toggled",
+	                  G_CALLBACK (on_fullscreen_toggle_button_toggled),
+	                  window);
 	g_signal_connect (GTK_TOGGLE_BUTTON (window->priv->fullscreen_open_recent_button),
 	                  "toggled",
 	                  G_CALLBACK (on_fullscreen_toggle_button_toggled),
@@ -2676,7 +2669,6 @@ static void
 gedit_window_init (GeditWindow *window)
 {
 	GtkTargetList *tl;
-	GMenuModel *hamburger_menu;
 
 	gedit_debug (DEBUG_WINDOW);
 
@@ -2700,7 +2692,6 @@ gedit_window_init (GeditWindow *window)
 
 	gtk_widget_init_template (GTK_WIDGET (window));
 	init_amtk_application_window (window);
-	init_open_buttons (window);
 
 	g_action_map_add_action_entries (G_ACTION_MAP (window),
 	                                 win_entries,
@@ -2713,24 +2704,8 @@ gedit_window_init (GeditWindow *window)
 	setup_fullscreen_eventbox (window);
 	sync_fullscreen_actions (window, FALSE);
 
-	hamburger_menu = _gedit_app_get_hamburger_menu (GEDIT_APP (g_application_get_default ()));
-	if (hamburger_menu)
-	{
-		gtk_menu_button_set_menu_model (window->priv->gear_button, hamburger_menu);
-		gtk_menu_button_set_menu_model (window->priv->fullscreen_gear_button, hamburger_menu);
-	}
-	else
-	{
-		gtk_widget_hide (GTK_WIDGET (window->priv->gear_button));
-		gtk_widget_hide (GTK_WIDGET (window->priv->fullscreen_gear_button));
-		gtk_widget_set_no_show_all (GTK_WIDGET (window->priv->gear_button), TRUE);
-		gtk_widget_set_no_show_all (GTK_WIDGET (window->priv->fullscreen_gear_button), TRUE);
-	}
-
-	g_signal_connect (GTK_TOGGLE_BUTTON (window->priv->fullscreen_gear_button),
-	                  "toggled",
-	                  G_CALLBACK (on_fullscreen_toggle_button_toggled),
-	                  window);
+	/* Popover menus */
+	create_popover_menus (window);
 
 	/* Setup status bar */
 	setup_statusbar (window);

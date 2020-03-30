@@ -57,9 +57,10 @@ struct _GeditWindowPrivate
 	GtkWidget      *fullscreen_eventbox;
 	GtkRevealer    *fullscreen_revealer;
 	GtkWidget      *fullscreen_headerbar;
+	GtkWidget      *fullscreen_open_dialog_button;
+	GtkMenuButton  *fullscreen_open_recent_button;
 	GtkWidget      *fullscreen_new_button;
 	GtkMenuButton  *fullscreen_gear_button;
-	GtkMenuButton  *fullscreen_open_recent_button;
 
 	/* statusbar and context ids for statusbar messages */
 	GtkWidget      *statusbar;
@@ -80,8 +81,9 @@ struct _GeditWindowPrivate
 	GtkWidget      *side_headerbar;
 	GtkWidget      *headerbar;
 
+	GtkWidget      *open_dialog_button;
+	GtkMenuButton  *open_recent_button;
 	GtkWidget      *new_button;
-
 	GtkMenuButton  *gear_button;
 
 	gint            num_tabs_with_error;
