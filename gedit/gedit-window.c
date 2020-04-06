@@ -346,6 +346,11 @@ gedit_window_key_press_event (GtkWidget   *widget,
 	/* handle focus widget key events */
 	if (!handled)
 	{
+		GeditTab *tab = gedit_multi_notebook_get_active_tab (GEDIT_WINDOW(window)->priv->multi_notebook);
+		if(event->type == GDK_KEY_PRESS && event->keyval == GDK_KEY_Return &&  gedit_tab_is_searching(tab)){
+			gedit_tab_forward_search(tab);
+			return TRUE;
+		}
 		handled = gtk_window_propagate_key_event (window, event);
 	}
 

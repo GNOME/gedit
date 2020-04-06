@@ -70,6 +70,10 @@ void		 gedit_tab_set_auto_save_interval	(GeditTab            *tab,
 void		 gedit_tab_set_info_bar			(GeditTab            *tab,
 							 GtkWidget           *info_bar);
 
+gboolean	gedit_tab_is_searching	(GeditTab	     *tab);
+
+void		gedit_tab_forward_search	(GeditTab *tab);
+
 G_END_DECLS
 
 #endif  /* GEDIT_TAB_H  */

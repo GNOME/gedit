@@ -40,6 +40,10 @@ void		 gedit_view_frame_popup_goto_line	(GeditViewFrame *frame);
 
 void		 gedit_view_frame_clear_search		(GeditViewFrame *frame);
 
+gboolean	 gedit_view_frame_is_searching		(GeditViewFrame *frame);
+
+void	 	gedit_view_frame_forward_search		(GeditViewFrame *frame);
+
 G_END_DECLS
 
 #endif /* GEDIT_VIEW_FRAME_H */

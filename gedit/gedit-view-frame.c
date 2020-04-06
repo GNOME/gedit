@@ -1594,3 +1594,12 @@ gedit_view_frame_clear_search (GeditViewFrame *frame)
 
 	gtk_widget_grab_focus (GTK_WIDGET (frame->view));
 }
+
+gboolean
+gedit_view_frame_is_searching		(GeditViewFrame *frame){
+	return frame->search_mode == SEARCH && frame->search_text != NULL && !(g_strcmp0 ("",frame->search_text) == 0);
+}
+
+void gedit_view_frame_forward_search(GeditViewFrame *frame){
+	forward_search(frame);
+}

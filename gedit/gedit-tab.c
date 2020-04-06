@@ -3060,4 +3060,15 @@ _gedit_tab_get_view_frame (GeditTab *tab)
 	return tab->frame;
 }
 
+gboolean
+gedit_tab_is_searching	(GeditTab	     *tab){
+	return tab->frame != NULL && gedit_view_frame_is_searching(tab->frame);
+
+}
+
+void
+gedit_tab_forward_search (GeditTab *tab)
+{
+	gedit_view_frame_forward_search(tab->frame);
+}
 /* ex:set ts=8 noet: */
