@@ -127,7 +127,7 @@ class PythonConsole(Gtk.ScrolledWindow):
                     except:
                         pass
 
-                if font_desc == None:
+                if font_desc is None:
                     try:
                         font_desc = Pango.FontDescription(self.DEFAULT_FONT)
                     except:

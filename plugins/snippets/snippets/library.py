@@ -68,7 +68,7 @@ class SnippetData:
         self.init_snippet_data(node)
 
     def init_snippet_data(self, node):
-        if node == None:
+        if node is None:
             return
 
         self.override = node.attrib.get('override')
@@ -551,7 +551,7 @@ class SnippetsUserFile(SnippetsSystemFile):
             return None
 
     def new_snippet(self, properties=None):
-        if (not self.ok) or self.root == None:
+        if (not self.ok) or self.root is None:
             return None
 
         element = et.SubElement(self.root, 'snippet')
@@ -609,7 +609,7 @@ class SnippetsUserFile(SnippetsSystemFile):
             Library().remove_library(self)
 
     def save(self):
-        if not self.ok or self.root == None or not self.tainted:
+        if not self.ok or self.root is None or not self.tainted:
             return
 
         path = os.path.dirname(self.path)
