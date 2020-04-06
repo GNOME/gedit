@@ -35,7 +35,7 @@ gedit_help_sources = [
   'gedit-tab-groups.page',
   'gedit-tabs-moving.page',
   'gedit-tabs.page',
-  'gedit-undo-recent-action.page',
+  'gedit-undo-redo.page',
   'index.page',
   'legal.xml',
 ]
