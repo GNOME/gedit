@@ -47,6 +47,7 @@ active_plugins = [
   'filebrowser',
   'spell',
   'time',
+  'uricontextmenu'
 ]
 
 if build_checkupdate_plugin
