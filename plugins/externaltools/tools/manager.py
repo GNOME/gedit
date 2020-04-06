@@ -310,11 +310,11 @@ class Manager(GObject.Object):
         t1 = model.get_value(iter1, self.TOOL_COLUMN)
         t2 = model.get_value(iter2, self.TOOL_COLUMN)
 
-        if model.iter_parent(iter1) == None:
-            if t1 == None:
+        if model.iter_parent(iter1) is None:
+            if t1 is None:
                 return -1
 
-            if t2 == None:
+            if t2 is None:
                 return 1
 
             def lang_name(lang):
@@ -769,8 +769,8 @@ class Manager(GObject.Object):
     def get_cell_data_cb(self, column, cell, model, piter, user_data=None):
         tool = model.get_value(piter, self.TOOL_COLUMN)
 
-        if tool == None or not isinstance(tool, Tool):
-            if tool == None:
+        if tool is None or not isinstance(tool, Tool):
+            if tool is None:
                 label = _('All Languages')
             elif not isinstance(tool, GtkSource.Language):
                 label = _('Plain Text')

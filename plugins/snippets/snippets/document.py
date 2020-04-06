@@ -116,7 +116,7 @@ class Document(GObject.Object, Gedit.ViewActivatable, Signals):
     def update_language(self):
         lang = self.view.get_buffer().get_language()
 
-        if lang == None and self.language_id == None:
+        if lang is None and self.language_id is None:
             return
         elif lang and lang.get_id() == self.language_id:
             return
@@ -232,7 +232,7 @@ class Document(GObject.Object, Gedit.ViewActivatable, Signals):
             # Find the current placeholder
             if piter.compare(begin) >= 0 and \
                     piter.compare(end) <= 0 and \
-                    current == None:
+                    current is None:
                 currentIndex = index
                 current = placeholder
 

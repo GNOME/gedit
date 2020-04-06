@@ -66,7 +66,7 @@ def get_trace_info(num_back_frames=0):
     try:
         for i in range(num_back_frames):
             back_frame = frame.f_back
-            if back_frame == None:
+            if back_frame is None:
                 break
             frame = back_frame
 
