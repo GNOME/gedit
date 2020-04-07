@@ -35,8 +35,18 @@
 
 struct _GeditUriContextMenuPluginPrivate
 {
-	GeditWindow		*window;
-	GList			*view_handles;
+	GeditWindow	*window;
+	GList		*view_handles;
+	gulong		tab_added_handle;
+	gulong		tab_removed_handle;
+};
+
+typedef struct _GeditViewHandleTuple GeditViewHandleTuple;
+
+struct _GeditViewHandleTuple
+{
+	GeditView	*view;
+	gulong		handle;
 };
 
 enum
@@ -96,6 +106,7 @@ gedit_uri_context_menu_plugin_connect_view (GeditUriContextMenuPlugin	*plugin,
 					    GeditView			*view)
 {
 	GList *list;
+	GeditViewHandleTuple *view_handle_tuple;
 	gulong handle_id;
 	g_return_if_fail (GEDIT_IS_URI_CONTEXT_MENU_PLUGIN (plugin));
 	g_return_if_fail (GEDIT_IS_VIEW (view));
@@ -105,8 +116,11 @@ gedit_uri_context_menu_plugin_connect_view (GeditUriContextMenuPlugin	*plugin,
 					    G_CALLBACK (gedit_uri_context_menu_plugin_on_populate_popup_cb),
 					    plugin);
 
+	view_handle_tuple = g_new (GeditViewHandleTuple, 1);
+	view_handle_tuple->view = view;
+	view_handle_tuple->handle = handle_id;
 	list = plugin->priv->view_handles;
-	plugin->priv->view_handles = g_list_prepend (list, handle_id);
+	plugin->priv->view_handles = g_list_prepend (list, view_handle_tuple);
 }
 
 static void
@@ -129,12 +143,33 @@ gedit_uri_context_menu_plugin_on_window_tab_removed_cb (GeditWindow			*window,
 						        GeditUriContextMenuPlugin	*plugin)
 {
 	GeditView *view;
+	GeditViewHandleTuple *view_handle_elem;
+	GList *list;
+
 	view = gedit_tab_get_view (tab);
+
 	g_return_if_fail (GEDIT_IS_URI_CONTEXT_MENU_PLUGIN (plugin));
 	g_return_if_fail (GEDIT_IS_VIEW (view));
 	g_warning ("TAB REMOVED");
 
-	gedit_uri_context_menu_plugin_connect_view (plugin, view);
+	/* Disconnect signal and remove from the list */
+	GList *l;
+	for (l = plugin->priv->view_handles; l != NULL; l = l->next)
+	{
+		view_handle_elem = (GeditViewHandleTuple*) l->data;
+		if (view_handle_elem->view == view)
+		{
+			g_warning ("Disconnecting tab signal!");
+			g_signal_handler_disconnect (view_handle_elem->view, view_handle_elem->handle);
+			list = g_list_remove (plugin->priv->view_handles, view_handle_elem);
+			if (list != NULL)
+			{
+				plugin->priv->view_handles = list;
+			}
+			g_free (view_handle_elem);
+			break;
+		}
+	}
 }
 
 static void
@@ -142,12 +177,9 @@ gedit_uri_context_menu_plugin_dispose (GObject *object)
 {
 	GeditUriContextMenuPlugin *plugin = GEDIT_URI_CONTEXT_MENU_PLUGIN (object);
 
-	g_clear_object (&plugin->priv->window);
+	//g_clear_object (&plugin->priv->window);
 
-	if (plugin->priv->view_handles != NULL)
-	{
-		g_list_free (plugin->priv->view_handles);
-	}
+	g_warning ("DISPOSE CALLED");
 
 	G_OBJECT_CLASS (gedit_uri_context_menu_plugin_parent_class)->dispose (object);
 }
@@ -229,7 +261,6 @@ gedit_uri_context_menu_plugin_activate (GeditWindowActivatable *activatable)
 {
 	GeditUriContextMenuPlugin *plugin;
 	GList *views;
-	GList *view_handles;
 	gulong handle_id;
 
 	gedit_debug (DEBUG_PLUGINS);
@@ -240,19 +271,17 @@ gedit_uri_context_menu_plugin_activate (GeditWindowActivatable *activatable)
 
 	g_return_if_fail (GEDIT_IS_WINDOW (plugin->priv->window));
 
-	view_handles = plugin->priv->view_handles;
 	handle_id = g_signal_connect (plugin->priv->window,
 				      "tab-added",
 				      G_CALLBACK (gedit_uri_context_menu_plugin_on_window_tab_added_cb),
 				      plugin);
-	plugin->priv->view_handles = g_list_prepend(view_handles, handle_id);
+	plugin->priv->tab_added_handle = handle_id;
 
-	view_handles = plugin->priv->view_handles;
 	handle_id = g_signal_connect (plugin->priv->window,
 				      "tab-removed",
 				      G_CALLBACK (gedit_uri_context_menu_plugin_on_window_tab_removed_cb),
 				      plugin);
-	plugin->priv->view_handles = g_list_prepend(view_handles, handle_id);
+	plugin->priv->tab_removed_handle = handle_id;
 
 
 	views = gedit_window_get_views(plugin->priv->window);
@@ -267,18 +296,33 @@ static void
 gedit_uri_context_menu_plugin_deactivate (GeditWindowActivatable *activatable)
 {
 	GeditUriContextMenuPlugin *plugin;
+	GList *view_handles;
+	GeditViewHandleTuple *view_handle;
 
 	gedit_debug (DEBUG_PLUGINS);
 
 	plugin = GEDIT_URI_CONTEXT_MENU_PLUGIN (activatable);
 
+	g_warning ("DEACTIVATE CALLD");
+
 	if (plugin->priv->view_handles != NULL)
 	{
-		g_list_free (plugin->priv->view_handles);
+		/* Disconnect all handles and then free structs */
+		view_handles = plugin->priv->view_handles;
+		GList *l;
+		for (l = view_handles; l != NULL; l = l->next)
+		{
+			view_handle = (GeditViewHandleTuple*) l->data;
+			g_signal_handler_disconnect (view_handle->view, view_handle->handle);
+		}
+
+		g_list_free_full (plugin->priv->view_handles, g_free);
 	}
 
 	if (plugin->priv->window != NULL)
 	{
+		g_signal_handler_disconnect (plugin->priv->window, plugin->priv->tab_added_handle);
+		g_signal_handler_disconnect (plugin->priv->window, plugin->priv->tab_removed_handle);
 		g_clear_object (&plugin->priv->window);
 	}
 }
