@@ -46,7 +46,8 @@ typedef struct _GeditViewHandleTuple GeditViewHandleTuple;
 struct _GeditViewHandleTuple
 {
 	GeditView	*view;
-	gulong		handle;
+	gulong		popup_handle;
+	gulong		button_handle;
 };
 
 enum
@@ -56,14 +57,16 @@ enum
 };
 
 static void gedit_window_activatable_iface_init (GeditWindowActivatableInterface *iface);
+static gboolean
+gedit_uri_context_menu_plugin_on_button_pressed_cb (GtkWidget *btn, GdkEventButton *event, gpointer userdata);
 
 G_DEFINE_DYNAMIC_TYPE_EXTENDED (GeditUriContextMenuPlugin,
-                                gedit_uri_context_menu_plugin,
-                                PEAS_TYPE_EXTENSION_BASE,
-                                0,
-                                G_IMPLEMENT_INTERFACE_DYNAMIC (GEDIT_TYPE_WINDOW_ACTIVATABLE,
-                                                               gedit_window_activatable_iface_init)
-                                G_ADD_PRIVATE_DYNAMIC (GeditUriContextMenuPlugin))
+				gedit_uri_context_menu_plugin,
+				PEAS_TYPE_EXTENSION_BASE,
+				0,
+				G_IMPLEMENT_INTERFACE_DYNAMIC (GEDIT_TYPE_WINDOW_ACTIVATABLE,
+							       gedit_window_activatable_iface_init)
+				G_ADD_PRIVATE_DYNAMIC (GeditUriContextMenuPlugin))
 
 static void
 gedit_uri_context_menu_plugin_on_populate_popup_cb (GtkTextView *view,
@@ -111,14 +114,21 @@ gedit_uri_context_menu_plugin_connect_view (GeditUriContextMenuPlugin	*plugin,
 	g_return_if_fail (GEDIT_IS_URI_CONTEXT_MENU_PLUGIN (plugin));
 	g_return_if_fail (GEDIT_IS_VIEW (view));
 
+	view_handle_tuple = g_new (GeditViewHandleTuple, 1);
+	view_handle_tuple->view = view;
+
 	handle_id = g_signal_connect_after (view,
 					    "populate-popup",
 					    G_CALLBACK (gedit_uri_context_menu_plugin_on_populate_popup_cb),
 					    plugin);
+	view_handle_tuple->popup_handle = handle_id;
 
-	view_handle_tuple = g_new (GeditViewHandleTuple, 1);
-	view_handle_tuple->view = view;
-	view_handle_tuple->handle = handle_id;
+	handle_id = g_signal_connect (view,
+				      "button-press-event",
+				      G_CALLBACK (gedit_uri_context_menu_plugin_on_button_pressed_cb),
+				      plugin);
+	view_handle_tuple->button_handle = handle_id;
+
 	list = plugin->priv->view_handles;
 	plugin->priv->view_handles = g_list_prepend (list, view_handle_tuple);
 }
@@ -139,8 +149,8 @@ gedit_uri_context_menu_plugin_on_window_tab_added_cb (GeditWindow		*window,
 
 static void
 gedit_uri_context_menu_plugin_on_window_tab_removed_cb (GeditWindow			*window,
-						        GeditTab			*tab,
-						        GeditUriContextMenuPlugin	*plugin)
+							GeditTab			*tab,
+							GeditUriContextMenuPlugin	*plugin)
 {
 	GeditView *view;
 	GeditViewHandleTuple *view_handle_elem;
@@ -160,7 +170,8 @@ gedit_uri_context_menu_plugin_on_window_tab_removed_cb (GeditWindow			*window,
 		if (view_handle_elem->view == view)
 		{
 			g_warning ("Disconnecting tab signal!");
-			g_signal_handler_disconnect (view_handle_elem->view, view_handle_elem->handle);
+			g_signal_handler_disconnect (view_handle_elem->view, view_handle_elem->popup_handle);
+			g_signal_handler_disconnect (view_handle_elem->view, view_handle_elem->button_handle);
 			list = g_list_remove (plugin->priv->view_handles, view_handle_elem);
 			if (list != NULL)
 			{
@@ -170,6 +181,16 @@ gedit_uri_context_menu_plugin_on_window_tab_removed_cb (GeditWindow			*window,
 			break;
 		}
 	}
+}
+
+static gboolean
+gedit_uri_context_menu_plugin_on_button_pressed_cb (GtkWidget *btn, GdkEventButton *event, gpointer userdata)
+{
+	if (event->type == GDK_BUTTON_PRESS  &&  event->button == 3)
+	{
+		g_warning ("RIGHT CLICK BUTTON at %f, %f", event->x, event->y);
+	}
+	return FALSE;
 }
 
 static void
@@ -194,9 +215,9 @@ gedit_uri_context_menu_plugin_finalize (GObject *object)
 
 static void
 gedit_uri_context_menu_plugin_get_property (GObject    *object,
-                                           guint       prop_id,
-                                           GValue     *value,
-                                           GParamSpec *pspec)
+					   guint       prop_id,
+					   GValue     *value,
+					   GParamSpec *pspec)
 {
 	GeditUriContextMenuPlugin *plugin = GEDIT_URI_CONTEXT_MENU_PLUGIN (object);
 
@@ -214,9 +235,9 @@ gedit_uri_context_menu_plugin_get_property (GObject    *object,
 
 static void
 gedit_uri_context_menu_plugin_set_property (GObject      *object,
-                                           guint         prop_id,
-                                           const GValue *value,
-                                           GParamSpec   *pspec)
+					   guint         prop_id,
+					   const GValue *value,
+					   GParamSpec   *pspec)
 {
 	GeditUriContextMenuPlugin *plugin = GEDIT_URI_CONTEXT_MENU_PLUGIN (object);
 
@@ -283,12 +304,11 @@ gedit_uri_context_menu_plugin_activate (GeditWindowActivatable *activatable)
 				      plugin);
 	plugin->priv->tab_removed_handle = handle_id;
 
-
 	views = gedit_window_get_views(plugin->priv->window);
 	GList *l;
 	for (l = views; l != NULL; l = l->next)
- 	{
- 		gedit_uri_context_menu_plugin_connect_view(plugin, l->data);
+	{
+		gedit_uri_context_menu_plugin_connect_view(plugin, l->data);
 	}
 }
 
@@ -313,7 +333,8 @@ gedit_uri_context_menu_plugin_deactivate (GeditWindowActivatable *activatable)
 		for (l = view_handles; l != NULL; l = l->next)
 		{
 			view_handle = (GeditViewHandleTuple*) l->data;
-			g_signal_handler_disconnect (view_handle->view, view_handle->handle);
+			g_signal_handler_disconnect (view_handle->view, view_handle->popup_handle);
+			g_signal_handler_disconnect (view_handle->view, view_handle->button_handle);
 		}
 
 		g_list_free_full (plugin->priv->view_handles, g_free);
@@ -340,8 +361,8 @@ peas_register_types (PeasObjectModule *module)
 	gedit_uri_context_menu_plugin_register_type (G_TYPE_MODULE (module));
 
 	peas_object_module_register_extension_type (module,
-	                                            GEDIT_TYPE_WINDOW_ACTIVATABLE,
-	                                            GEDIT_TYPE_URI_CONTEXT_MENU_PLUGIN);
+						    GEDIT_TYPE_WINDOW_ACTIVATABLE,
+						    GEDIT_TYPE_URI_CONTEXT_MENU_PLUGIN);
 }
 
 /* ex:set ts=8 noet: */
