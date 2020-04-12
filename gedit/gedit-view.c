@@ -255,17 +255,6 @@ gedit_view_constructed (GObject *object)
 	G_OBJECT_CLASS (gedit_view_parent_class)->constructed (object);
 }
 
-static gboolean
-gedit_view_focus_out (GtkWidget     *widget,
-		      GdkEventFocus *event)
-{
-	gtk_widget_queue_draw (widget);
-
-	GTK_WIDGET_CLASS (gedit_view_parent_class)->focus_out_event (widget, event);
-
-	return GDK_EVENT_PROPAGATE;
-}
-
 static GdkAtom
 drag_get_uri_target (GtkWidget      *widget,
 		     GdkDragContext *context)
@@ -705,7 +694,6 @@ gedit_view_class_init (GeditViewClass *klass)
 	widget_class->drag_data_received = gedit_view_drag_data_received;
 	widget_class->drag_drop = gedit_view_drag_drop;
 
-	widget_class->focus_out_event = gedit_view_focus_out;
 	widget_class->button_press_event = gedit_view_button_press_event;
 	widget_class->realize = gedit_view_realize;
 	widget_class->unrealize = gedit_view_unrealize;
