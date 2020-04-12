@@ -20,6 +20,8 @@
 
 #include "config.h"
 
+#include <math.h>
+
 #include <glib/gi18n.h>
 
 #include <gedit/gedit-debug.h>
@@ -39,6 +41,9 @@ struct _GeditUriContextMenuPluginPrivate
 	GList		*view_handles;
 	gulong		tab_added_handle;
 	gulong		tab_removed_handle;
+	GRegex		*uri_char_regex;
+	gdouble		x;
+	gdouble		y;
 };
 
 typedef struct _GeditViewHandleTuple GeditViewHandleTuple;
@@ -57,8 +62,9 @@ enum
 };
 
 static void gedit_window_activatable_iface_init (GeditWindowActivatableInterface *iface);
-static gboolean
-gedit_uri_context_menu_plugin_on_button_pressed_cb (GtkWidget *btn, GdkEventButton *event, gpointer userdata);
+static gboolean gedit_uri_context_menu_plugin_on_button_pressed_cb (GtkWidget			*btn,
+								    GdkEventButton		*event,
+								    GeditUriContextMenuPlugin	*plugin);
 
 G_DEFINE_DYNAMIC_TYPE_EXTENDED (GeditUriContextMenuPlugin,
 				gedit_uri_context_menu_plugin,
@@ -69,13 +75,20 @@ G_DEFINE_DYNAMIC_TYPE_EXTENDED (GeditUriContextMenuPlugin,
 				G_ADD_PRIVATE_DYNAMIC (GeditUriContextMenuPlugin))
 
 static void
-gedit_uri_context_menu_plugin_on_populate_popup_cb (GtkTextView *view,
-		      GtkMenu *popup,
-		      GeditUriContextMenuPlugin *plugin)
+gedit_uri_context_menu_plugin_on_populate_popup_cb (GtkTextView			*view,
+						    GtkMenu			*popup,
+						    GeditUriContextMenuPlugin	*plugin)
 {
-	g_warning ("PLUGIN POPUP OPENED!!!");
 	GtkMenuShell *menu;
 	GtkWidget *menu_item;
+	GtkTextIter start;
+	GtkTextIter end;
+	gint buffer_x;
+	gint buffer_y;
+	gunichar uri_test[2];
+	gchar *uri;
+	gboolean is_browser_uri;
+	gchar *uri_scheme;
 
 	if (!GTK_IS_MENU_SHELL (popup))
 	{
@@ -83,6 +96,62 @@ gedit_uri_context_menu_plugin_on_populate_popup_cb (GtkTextView *view,
 	}
 
 	menu = GTK_MENU_SHELL (popup);
+
+	g_return_if_fail (GEDIT_IS_URI_CONTEXT_MENU_PLUGIN (plugin));
+
+	uri_test[0] = 'X';
+	uri_test[1] = '\0';
+
+	g_warning ("PLUGIN POPUP OPENED!!! window %f, %f", plugin->priv->x, plugin->priv->y);
+	g_warning ("rounded %d, %d", (gint) rint(plugin->priv->x), (gint) rint(plugin->priv->y));
+
+	gtk_text_view_window_to_buffer_coords (view,
+                                       GTK_TEXT_WINDOW_TEXT,
+                                       (gint) rint(plugin->priv->x),
+                                       (gint) rint(plugin->priv->y),
+                                       &buffer_x,
+                                       &buffer_y);
+	if (buffer_x == NULL) {
+		g_warning ("NULL BUFFER X");
+	}
+	g_warning ("RIGHT CLICK BUFFER COORDS: %d, %d", buffer_x, buffer_y);
+	gtk_text_view_get_iter_at_location (view, &start, buffer_x, buffer_y);
+
+	end = start;
+
+	/* Move backwards one char to ensure we get the full string */
+	gtk_text_iter_backward_char(&end);
+	while (gtk_text_iter_forward_char(&end))
+	{
+		uri_test[0] = gtk_text_iter_get_char(&end);
+		if (!g_regex_match (plugin->priv->uri_char_regex, (const gchar *) &uri_test, 0, NULL))
+		{
+			break;
+		}
+	}
+	
+	while (gtk_text_iter_backward_char(&start))
+	{
+		uri_test[0] = gtk_text_iter_get_char(&start);
+		if (!g_regex_match (plugin->priv->uri_char_regex, (const gchar *) &uri_test, 0, NULL))
+		{
+			gtk_text_iter_forward_char(&start);
+			break;
+		}
+	}
+
+	uri = gtk_text_iter_get_text (&start, &end);
+	g_warning ("FOUND URI: %s", uri);
+
+	is_browser_uri = FALSE;
+	if (uri_scheme != NULL) {
+		if (g_strcmp0 (uri, "http:") == 0 || g_strcmp0 (uri, "https:") == 0 || g_strcmp0 (uri, "www.") == 0)
+		{
+			is_browser_uri = TRUE;
+		}
+		g_free (uri_scheme);
+	}
+	g_free(uri);
 
 	//GtkWidget *box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 6);
 	//GtkWidget *icon = gtk_image_new_from_stock (GTK_STOCK_JUMP_TO, GTK_ICON_SIZE_MENU);
@@ -184,11 +253,20 @@ gedit_uri_context_menu_plugin_on_window_tab_removed_cb (GeditWindow			*window,
 }
 
 static gboolean
-gedit_uri_context_menu_plugin_on_button_pressed_cb (GtkWidget *btn, GdkEventButton *event, gpointer userdata)
+gedit_uri_context_menu_plugin_on_button_pressed_cb (GtkWidget			*btn,
+						    GdkEventButton		*event,
+						    GeditUriContextMenuPlugin	*plugin)
 {
 	if (event->type == GDK_BUTTON_PRESS  &&  event->button == 3)
 	{
+		if (!GEDIT_IS_URI_CONTEXT_MENU_PLUGIN (plugin))
+		{
+			return FALSE;
+		}
 		g_warning ("RIGHT CLICK BUTTON at %f, %f", event->x, event->y);
+		plugin->priv->x = event->x;
+		plugin->priv->y = event->y;
+
 	}
 	return FALSE;
 }
@@ -214,10 +292,10 @@ gedit_uri_context_menu_plugin_finalize (GObject *object)
 }
 
 static void
-gedit_uri_context_menu_plugin_get_property (GObject    *object,
-					   guint       prop_id,
-					   GValue     *value,
-					   GParamSpec *pspec)
+gedit_uri_context_menu_plugin_get_property (GObject	*object,
+					    guint	prop_id,
+					    GValue	*value,
+					    GParamSpec	*pspec)
 {
 	GeditUriContextMenuPlugin *plugin = GEDIT_URI_CONTEXT_MENU_PLUGIN (object);
 
@@ -234,10 +312,10 @@ gedit_uri_context_menu_plugin_get_property (GObject    *object,
 }
 
 static void
-gedit_uri_context_menu_plugin_set_property (GObject      *object,
-					   guint         prop_id,
-					   const GValue *value,
-					   GParamSpec   *pspec)
+gedit_uri_context_menu_plugin_set_property (GObject		*object,
+					    guint		prop_id,
+					    const GValue	*value,
+					    GParamSpec		*pspec)
 {
 	GeditUriContextMenuPlugin *plugin = GEDIT_URI_CONTEXT_MENU_PLUGIN (object);
 
@@ -283,6 +361,8 @@ gedit_uri_context_menu_plugin_activate (GeditWindowActivatable *activatable)
 	GeditUriContextMenuPlugin *plugin;
 	GList *views;
 	gulong handle_id;
+	GRegex *uri_char_regex;
+	GError *err = NULL;
 
 	gedit_debug (DEBUG_PLUGINS);
 
@@ -291,6 +371,18 @@ gedit_uri_context_menu_plugin_activate (GeditWindowActivatable *activatable)
 	plugin = GEDIT_URI_CONTEXT_MENU_PLUGIN (activatable);
 
 	g_return_if_fail (GEDIT_IS_WINDOW (plugin->priv->window));
+
+	/* Unescaped: [\w#/\?:%@&\=\+\.\\~-]+ */
+	uri_char_regex = g_regex_new ("[\\w#/\\?:%@&\\=\\+\\.\\\\~-]+",
+				      G_REGEX_MULTILINE,
+				      0,
+				      &err);
+	if (err != NULL)
+	{
+		fprintf (stderr, "Regex compilation error: %s\n", err->message);
+		g_error_free (err);
+	}
+	plugin->priv->uri_char_regex = uri_char_regex;
 
 	handle_id = g_signal_connect (plugin->priv->window,
 				      "tab-added",
@@ -324,6 +416,8 @@ gedit_uri_context_menu_plugin_deactivate (GeditWindowActivatable *activatable)
 	plugin = GEDIT_URI_CONTEXT_MENU_PLUGIN (activatable);
 
 	g_warning ("DEACTIVATE CALLD");
+
+	g_regex_unref (plugin->priv->uri_char_regex);
 
 	if (plugin->priv->view_handles != NULL)
 	{
