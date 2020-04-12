@@ -42,7 +42,6 @@ enum
 
 struct _GeditViewPrivate
 {
-	GSettings *editor_settings;
 	GtkTextBuffer *current_buffer;
 	PeasExtensionSet *extensions;
 	gchar *direct_save_uri;
@@ -129,8 +128,6 @@ gedit_view_init (GeditView *view)
 
 	view->priv = gedit_view_get_instance_private (view);
 
-	view->priv->editor_settings = g_settings_new ("org.gnome.gedit.preferences.editor");
-
 	/* Drag and drop support */
 	view->priv->direct_save_uri = NULL;
 	target_list = gtk_drag_dest_get_target_list (GTK_WIDGET (view));
@@ -172,7 +169,6 @@ gedit_view_dispose (GObject *object)
 	GeditView *view = GEDIT_VIEW (object);
 
 	g_clear_object (&view->priv->extensions);
-	g_clear_object (&view->priv->editor_settings);
 
 	current_buffer_removed (view);
 
@@ -193,15 +189,15 @@ gedit_view_dispose (GObject *object)
 static void
 gedit_view_constructed (GObject *object)
 {
-	GeditView *view;
-	GeditViewPrivate *priv;
+	GeditView *view = GEDIT_VIEW (object);
+	GeditSettings *settings;
+	GSettings *editor_settings;
 	gboolean use_default_font;
 
-	view = GEDIT_VIEW (object);
-	priv = view->priv;
+	settings = _gedit_settings_get_singleton ();
+	editor_settings = _gedit_settings_peek_editor_settings (settings);
 
-	use_default_font = g_settings_get_boolean (view->priv->editor_settings,
-	                                           GEDIT_SETTINGS_USE_DEFAULT_FONT);
+	use_default_font = g_settings_get_boolean (editor_settings, GEDIT_SETTINGS_USE_DEFAULT_FONT);
 
 	if (use_default_font)
 	{
@@ -211,72 +207,49 @@ gedit_view_constructed (GObject *object)
 	{
 		gchar *editor_font;
 
-		editor_font = g_settings_get_string (view->priv->editor_settings,
-		                                     GEDIT_SETTINGS_EDITOR_FONT);
-
+		editor_font = g_settings_get_string (editor_settings, GEDIT_SETTINGS_EDITOR_FONT);
 		gedit_view_set_font (view, FALSE, editor_font);
-
 		g_free (editor_font);
 	}
 
-	g_settings_bind (priv->editor_settings,
-	                 GEDIT_SETTINGS_DISPLAY_LINE_NUMBERS,
-	                 view,
-	                 "show-line-numbers",
+	g_settings_bind (editor_settings, GEDIT_SETTINGS_DISPLAY_LINE_NUMBERS,
+	                 view, "show-line-numbers",
 	                 G_SETTINGS_BIND_GET);
 
-	g_settings_bind (priv->editor_settings,
-	                 GEDIT_SETTINGS_AUTO_INDENT,
-	                 view,
-	                 "auto-indent",
+	g_settings_bind (editor_settings, GEDIT_SETTINGS_AUTO_INDENT,
+	                 view, "auto-indent",
 	                 G_SETTINGS_BIND_GET);
 
-	g_settings_bind (priv->editor_settings,
-	                 GEDIT_SETTINGS_TABS_SIZE,
-	                 view,
-	                 "tab-width",
+	g_settings_bind (editor_settings, GEDIT_SETTINGS_TABS_SIZE,
+	                 view, "tab-width",
 	                 G_SETTINGS_BIND_GET);
 
-	g_settings_bind (priv->editor_settings,
-	                 GEDIT_SETTINGS_INSERT_SPACES,
-	                 view,
-	                 "insert-spaces-instead-of-tabs",
+	g_settings_bind (editor_settings, GEDIT_SETTINGS_INSERT_SPACES,
+	                 view, "insert-spaces-instead-of-tabs",
 	                 G_SETTINGS_BIND_GET);
 
-	g_settings_bind (priv->editor_settings,
-	                 GEDIT_SETTINGS_DISPLAY_RIGHT_MARGIN,
-	                 view,
-	                 "show-right-margin",
+	g_settings_bind (editor_settings, GEDIT_SETTINGS_DISPLAY_RIGHT_MARGIN,
+	                 view, "show-right-margin",
 	                 G_SETTINGS_BIND_GET);
 
-	g_settings_bind (priv->editor_settings,
-	                 GEDIT_SETTINGS_BACKGROUND_PATTERN,
-	                 view,
-	                 "background-pattern",
+	g_settings_bind (editor_settings, GEDIT_SETTINGS_BACKGROUND_PATTERN,
+	                 view, "background-pattern",
 	                 G_SETTINGS_BIND_GET);
 
-	g_settings_bind (priv->editor_settings,
-	                 GEDIT_SETTINGS_RIGHT_MARGIN_POSITION,
-	                 view,
-	                 "right-margin-position",
+	g_settings_bind (editor_settings, GEDIT_SETTINGS_RIGHT_MARGIN_POSITION,
+	                 view, "right-margin-position",
 	                 G_SETTINGS_BIND_GET);
 
-	g_settings_bind (priv->editor_settings,
-	                 GEDIT_SETTINGS_HIGHLIGHT_CURRENT_LINE,
-	                 view,
-	                 "highlight-current-line",
+	g_settings_bind (editor_settings, GEDIT_SETTINGS_HIGHLIGHT_CURRENT_LINE,
+	                 view, "highlight-current-line",
 	                 G_SETTINGS_BIND_GET);
 
-	g_settings_bind (priv->editor_settings,
-	                 GEDIT_SETTINGS_WRAP_MODE,
-	                 view,
-	                 "wrap-mode",
+	g_settings_bind (editor_settings, GEDIT_SETTINGS_WRAP_MODE,
+	                 view, "wrap-mode",
 	                 G_SETTINGS_BIND_GET);
 
-	g_settings_bind (priv->editor_settings,
-	                 GEDIT_SETTINGS_SMART_HOME_END,
-	                 view,
-	                 "smart-home-end",
+	g_settings_bind (editor_settings, GEDIT_SETTINGS_SMART_HOME_END,
+	                 view, "smart-home-end",
 	                 G_SETTINGS_BIND_GET);
 
 	gtk_source_view_set_indent_on_tab (GTK_SOURCE_VIEW (view), TRUE);
@@ -473,6 +446,8 @@ show_line_numbers_menu (GeditView      *view,
 {
 	GtkWidget *menu;
 	GtkWidget *item;
+	GeditSettings *settings;
+	GSettings *editor_settings;
 
 	menu = gtk_menu_new ();
 
@@ -480,10 +455,11 @@ show_line_numbers_menu (GeditView      *view,
 	gtk_check_menu_item_set_active (GTK_CHECK_MENU_ITEM (item),
 					gtk_source_view_get_show_line_numbers (GTK_SOURCE_VIEW (view)));
 
-	g_settings_bind (view->priv->editor_settings,
-			 GEDIT_SETTINGS_DISPLAY_LINE_NUMBERS,
-			 item,
-			 "active",
+	settings = _gedit_settings_get_singleton ();
+	editor_settings = _gedit_settings_peek_editor_settings (settings);
+
+	g_settings_bind (editor_settings, GEDIT_SETTINGS_DISPLAY_LINE_NUMBERS,
+			 item, "active",
 			 G_SETTINGS_BIND_SET);
 
 	gtk_menu_shell_append (GTK_MENU_SHELL (menu), item);
