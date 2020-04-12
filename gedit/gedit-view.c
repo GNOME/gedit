@@ -768,7 +768,9 @@ gedit_view_new (GeditDocument *doc)
 {
 	g_return_val_if_fail (GEDIT_IS_DOCUMENT (doc), NULL);
 
-	return GTK_WIDGET (g_object_new (GEDIT_TYPE_VIEW, "buffer", doc, NULL));
+	return g_object_new (GEDIT_TYPE_VIEW,
+			     "buffer", doc,
+			     NULL);
 }
 
 void
