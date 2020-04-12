@@ -43,7 +43,7 @@ typedef struct _GeditViewPrivate	GeditViewPrivate;
 
 struct _GeditView
 {
-	GtkSourceView     view;
+	GtkSourceView view;
 
 	/*< private >*/
 	GeditViewPrivate *priv;
@@ -51,29 +51,33 @@ struct _GeditView
 
 struct _GeditViewClass
 {
-	GtkSourceViewClass   parent_class;
+	GtkSourceViewClass parent_class;
 
-	void	           (*drop_uris)     (GeditView  *view,
-					     gchar     **uri_list);
+	void	(*drop_uris)	(GeditView  *view,
+				 gchar     **uri_list);
 
-	gpointer             padding;
+	gpointer padding;
 };
 
-GType		 gedit_view_get_type     	(void) G_GNUC_CONST;
+GType		gedit_view_get_type     	(void);
 
-GtkWidget	*gedit_view_new			(GeditDocument   *doc);
+GtkWidget *	gedit_view_new			(GeditDocument *doc);
 
-void		 gedit_view_cut_clipboard 	(GeditView       *view);
-void		 gedit_view_copy_clipboard 	(GeditView       *view);
-void		 gedit_view_paste_clipboard	(GeditView       *view);
-void		 gedit_view_delete_selection	(GeditView       *view);
-void		 gedit_view_select_all		(GeditView       *view);
+void		gedit_view_cut_clipboard 	(GeditView *view);
 
-void		 gedit_view_scroll_to_cursor 	(GeditView       *view);
+void		gedit_view_copy_clipboard 	(GeditView *view);
 
-void 		 gedit_view_set_font		(GeditView       *view,
-						 gboolean         default_font,
-						 const gchar     *font_name);
+void		gedit_view_paste_clipboard	(GeditView *view);
+
+void		gedit_view_delete_selection	(GeditView *view);
+
+void		gedit_view_select_all		(GeditView *view);
+
+void		gedit_view_scroll_to_cursor 	(GeditView *view);
+
+void		gedit_view_set_font		(GeditView   *view,
+						 gboolean     default_font,
+						 const gchar *font_name);
 
 G_END_DECLS
 

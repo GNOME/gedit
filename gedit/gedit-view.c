@@ -42,12 +42,12 @@ enum
 
 struct _GeditViewPrivate
 {
-	GSettings            *editor_settings;
-	GtkTextBuffer        *current_buffer;
-	PeasExtensionSet     *extensions;
-	gchar                *direct_save_uri;
+	GSettings *editor_settings;
+	GtkTextBuffer *current_buffer;
+	PeasExtensionSet *extensions;
+	gchar *direct_save_uri;
 
-	GtkCssProvider       *css_provider;
+	GtkCssProvider *css_provider;
 	PangoFontDescription *font_desc;
 };
 
