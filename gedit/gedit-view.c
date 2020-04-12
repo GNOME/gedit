@@ -194,6 +194,8 @@ gedit_view_constructed (GObject *object)
 	GSettings *editor_settings;
 	gboolean use_default_font;
 
+	G_OBJECT_CLASS (gedit_view_parent_class)->constructed (object);
+
 	settings = _gedit_settings_get_singleton ();
 	editor_settings = _gedit_settings_peek_editor_settings (settings);
 
@@ -251,8 +253,6 @@ gedit_view_constructed (GObject *object)
 	g_settings_bind (editor_settings, GEDIT_SETTINGS_SMART_HOME_END,
 	                 view, "smart-home-end",
 	                 G_SETTINGS_BIND_GET);
-
-	G_OBJECT_CLASS (gedit_view_parent_class)->constructed (object);
 }
 
 static GdkAtom
