@@ -252,8 +252,6 @@ gedit_view_constructed (GObject *object)
 	                 view, "smart-home-end",
 	                 G_SETTINGS_BIND_GET);
 
-	gtk_source_view_set_indent_on_tab (GTK_SOURCE_VIEW (view), TRUE);
-
 	G_OBJECT_CLASS (gedit_view_parent_class)->constructed (object);
 }
 
