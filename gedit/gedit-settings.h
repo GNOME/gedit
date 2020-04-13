@@ -37,7 +37,10 @@ GeditSettings *	_gedit_settings_get_singleton			(void);
 
 void		gedit_settings_unref_singleton			(void);
 
-gchar *		gedit_settings_get_system_font			(GeditSettings *gs);
+G_GNUC_INTERNAL
+GSettings *	_gedit_settings_peek_editor_settings		(GeditSettings *self);
+
+gchar *		gedit_settings_get_system_font			(GeditSettings *self);
 
 GSList *	gedit_settings_get_candidate_encodings		(gboolean *default_candidates);
 

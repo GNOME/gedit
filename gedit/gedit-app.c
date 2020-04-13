@@ -1272,7 +1272,7 @@ static void
 gedit_app_init (GeditApp *app)
 {
 	g_set_application_name ("gedit");
-	gtk_window_set_default_icon_name ("gedit");
+	gtk_window_set_default_icon_name ("org.gnome.gedit");
 
 	g_application_add_main_option_entries (G_APPLICATION (app), options);
 }

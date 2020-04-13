@@ -188,7 +188,7 @@ forward_search_finished (GtkSourceSearchContext *search_context,
 					      &match_start,
 					      &match_end);
 
-		gedit_view_scroll_to_cursor (view);
+		tepl_view_scroll_to_cursor (TEPL_VIEW (view));
 	}
 	else
 	{
@@ -294,7 +294,7 @@ backward_search_finished (GtkSourceSearchContext *search_context,
 					      &match_start,
 					      &match_end);
 
-		gedit_view_scroll_to_cursor (view);
+		tepl_view_scroll_to_cursor (TEPL_VIEW (view));
 	}
 	else
 	{

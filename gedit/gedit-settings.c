@@ -366,6 +366,14 @@ gedit_settings_unref_singleton (void)
 	 */
 }
 
+GSettings *
+_gedit_settings_peek_editor_settings (GeditSettings *self)
+{
+	g_return_val_if_fail (GEDIT_IS_SETTINGS (self), NULL);
+
+	return self->editor;
+}
+
 gchar *
 gedit_settings_get_system_font (GeditSettings *self)
 {

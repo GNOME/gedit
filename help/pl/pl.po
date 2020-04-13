@@ -7,8 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gedit-help\n"
-"POT-Creation-Date: 2020-03-02 09:24+0000\n"
-"PO-Revision-Date: 2020-03-03 19:08+0100\n"
+"POT-Creation-Date: 2020-04-05 11:13+0000\n"
+"PO-Revision-Date: 2020-04-10 14:02+0200\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <community-poland@mozilla.org>\n"
 "Language: pl\n"
@@ -698,7 +698,7 @@ msgstr ""
 "znaków."
 
 #. (itstool) path: item/p
-#: C/gedit-open-on-server.page:41 C/gedit-plugins-quick-open.page:46
+#: C/gedit-open-on-server.page:41 C/gedit-plugins-quick-open.page:44
 msgid "Click <gui>Open</gui>."
 msgstr "Kliknij przycisk <gui>Otwórz</gui>."
 
@@ -1165,14 +1165,14 @@ msgid ""
 "you can choose your own default date and time format by pressing the menu "
 "button in the top-right corner of the window and selecting <guiseq> <gui "
 "style=\"menuitem\">Preferences</gui><gui style=\"tab\">Plugins</gui><gui> "
-"Insert Date/Time</gui><gui style=\"button\">Configure</gui></guiseq>."
+"Insert Date/Time</gui><gui style=\"button\">Preferences</gui></guiseq>."
 msgstr ""
 "Domyślnie wtyczka <gui>Wstawianie daty/czasu</gui> pyta o preferowany format "
 "daty/czasu podczas każdego użycia. Można jednak wybrać domyślny format daty "
 "i czasu klikając przycisk menu w górnym prawym rogu okna i wybierając "
 "<guiseq> <gui style=\"menuitem\">Preferencje</gui><gui style=\"tab"
 "\">Wtyczki</gui><gui> Wstawianie daty/czasu</gui><gui style=\"button"
-"\">Skonfiguruj</gui></guiseq>."
+"\">Preferencje</gui></guiseq>."
 
 #. (itstool) path: info/desc
 #: C/gedit-plugins-install.page:15
@@ -1558,17 +1558,8 @@ msgstr "Szybkie otwieranie pliku lub zestawu plików."
 msgid "Quick open"
 msgstr "Szybkie otwarcie"
 
-#. (itstool) path: note/p
-#: C/gedit-plugins-quick-open.page:24
-msgid ""
-"This plugin currently <link href=\"https://gitlab.gnome.org/GNOME/gedit/"
-"issues/277\">does not work</link>!"
-msgstr ""
-"Ta wtyczka obecnie <link href=\"https://gitlab.gnome.org/GNOME/gedit/"
-"issues/277\">nie działa</link>!"
-
 #. (itstool) path: page/p
-#: C/gedit-plugins-quick-open.page:26
+#: C/gedit-plugins-quick-open.page:24
 msgid ""
 "As the name of this plugin would imply, the <app>Quick Open</app> plugin "
 "helps you to open files more quickly than using the usual ways of opening "
@@ -1581,7 +1572,7 @@ msgstr ""
 "guiseq>."
 
 #. (itstool) path: page/p
-#: C/gedit-plugins-quick-open.page:31
+#: C/gedit-plugins-quick-open.page:29
 msgid ""
 "Once you have enabled the <app>Quick Open</app> plugin you can use it as "
 "follows:"
@@ -1590,7 +1581,7 @@ msgstr ""
 "sposób:"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-quick-open.page:35
+#: C/gedit-plugins-quick-open.page:33
 msgid ""
 "Open the <app>Quick Open</app> dialog box by pressing <keyseq><key>Ctrl</"
 "key><key>Alt</key><key>O</key></keyseq>, or by selecting <gui style="
@@ -1601,17 +1592,17 @@ msgstr ""
 "<gui style=\"menuitem\">Szybko otwórz…</gui>."
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-quick-open.page:38
+#: C/gedit-plugins-quick-open.page:36
 msgid "The <gui>Quick Open</gui> file dialog will appear."
 msgstr "Pojawi się okno <gui>Szybkie otwarcie</gui>."
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-quick-open.page:39
+#: C/gedit-plugins-quick-open.page:37
 msgid "Use your mouse to select the file or files that you want to open."
 msgstr "Użyj myszy, aby zaznaczyć plik lub pliki do otwarcia."
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-quick-open.page:41
+#: C/gedit-plugins-quick-open.page:39
 msgid ""
 "To select several individual files, hold down your <key>Ctrl</key> key while "
 "you click on the files that you want to open."
@@ -1620,7 +1611,7 @@ msgstr ""
 "klikania."
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-quick-open.page:43
+#: C/gedit-plugins-quick-open.page:41
 msgid ""
 "To select a group of files, click on the first file that you want to open, "
 "hold down the <key>Shift</key> key, and then click on the last file in the "
@@ -1630,17 +1621,17 @@ msgstr ""
 "<key>Shift</key>, a następnie kliknij ostatni plik na liście."
 
 #. (itstool) path: page/p
-#: C/gedit-plugins-quick-open.page:49
+#: C/gedit-plugins-quick-open.page:47
 msgid "<app>Quick Open</app> will look for files in:"
 msgstr "<app>Szybkie otwarcie</app> wyszuka pliki w:"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-quick-open.page:52
+#: C/gedit-plugins-quick-open.page:50
 msgid "The directory of the currently opened document"
 msgstr "Katalogu obecnie otwartego dokumentu"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-quick-open.page:53
+#: C/gedit-plugins-quick-open.page:51
 msgid ""
 "The root directory of the <app xref=\"gedit-plugins-file-browser\">File "
 "Browser Pane</app> plugin"
@@ -1649,7 +1640,7 @@ msgstr ""
 "przeglądarki plików</app>"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-quick-open.page:56
+#: C/gedit-plugins-quick-open.page:54
 msgid ""
 "Recent documents which are also shown in the <file>Recent</file> folder in "
 "<app>Files</app>"
@@ -1658,22 +1649,22 @@ msgstr ""
 "używane</file> w <app>Menedżerze plików</app>"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-quick-open.page:58
+#: C/gedit-plugins-quick-open.page:56
 msgid "Directories which you have bookmarked in <app>Files</app>"
 msgstr "Katalogach z zakładkami w <app>Menedżerze plików</app>"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-quick-open.page:60
+#: C/gedit-plugins-quick-open.page:58
 msgid "Your <file>Desktop</file> directory"
 msgstr "Katalogu <file>Pulpit</file>"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-quick-open.page:61
+#: C/gedit-plugins-quick-open.page:59
 msgid "Your <file>Home</file> directory"
 msgstr "<file>Katalogu domowym</file>"
 
 #. (itstool) path: note/p
-#: C/gedit-plugins-quick-open.page:65
+#: C/gedit-plugins-quick-open.page:63
 msgid ""
 "<app>Quick Open</app> displays files in any of the above locations "
 "regardless of whether or not you have opened them previously."

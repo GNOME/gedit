@@ -380,7 +380,7 @@ class PlaceholderExpand(Placeholder):
                 if tabstop == 0:
                     continue
 
-                if self.mirror_text[tabstop] == None:
+                if self.mirror_text[tabstop] is None:
                     return False
 
         return self.run_update()
@@ -428,7 +428,7 @@ class PlaceholderShell(PlaceholderExpand):
 
         self.set_text(str.join('', self.shell_output).rstrip('\n'))
 
-        if self.default == None:
+        if self.default is None:
             self.default = self.get_text()
             self.leave()
 
@@ -615,7 +615,7 @@ class PlaceholderEval(PlaceholderExpand):
 
                 return False
 
-            if result == None:
+            if result is None:
                 # sys.stderr.write("%s:\n>> %s\n" % (_('The following python code, run in a snippet, does not return a value'), "\n>> ".join(self.command.split("\n"))))
                 result = ''
 

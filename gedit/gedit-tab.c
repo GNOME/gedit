@@ -1035,7 +1035,7 @@ scroll_to_cursor (GeditTab *tab)
 	GeditView *view;
 
 	view = gedit_tab_get_view (tab);
-	gedit_view_scroll_to_cursor (view);
+	tepl_view_scroll_to_cursor (TEPL_VIEW (view));
 
 	tab->idle_scroll = 0;
 	return G_SOURCE_REMOVE;
@@ -1632,9 +1632,11 @@ goto_line (GTask *loading_task)
 	/* Move the cursor at the requested line if any. */
 	if (data->line_pos > 0)
 	{
-		gedit_document_goto_line_offset (doc,
-						 data->line_pos - 1,
-						 MAX (0, data->column_pos - 1));
+		TeplView *view = TEPL_VIEW (gedit_tab_get_view (data->tab));
+
+		tepl_view_goto_line_offset (view,
+					    data->line_pos - 1,
+					    MAX (0, data->column_pos - 1));
 		return;
 	}
 

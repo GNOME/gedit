@@ -23,10 +23,8 @@
 #ifndef GEDIT_VIEW_H
 #define GEDIT_VIEW_H
 
-#include <gtk/gtk.h>
-
 #include <gedit/gedit-document.h>
-#include <gtksourceview/gtksource.h>
+#include <tepl/tepl.h>
 
 G_BEGIN_DECLS
 
@@ -43,7 +41,7 @@ typedef struct _GeditViewPrivate	GeditViewPrivate;
 
 struct _GeditView
 {
-	GtkSourceView     view;
+	TeplView view;
 
 	/*< private >*/
 	GeditViewPrivate *priv;
@@ -51,29 +49,39 @@ struct _GeditView
 
 struct _GeditViewClass
 {
-	GtkSourceViewClass   parent_class;
+	TeplViewClass parent_class;
 
-	void	           (*drop_uris)     (GeditView  *view,
-					     gchar     **uri_list);
+	void	(*drop_uris)	(GeditView  *view,
+				 gchar     **uri_list);
 
-	gpointer             padding;
+	gpointer padding;
 };
 
-GType		 gedit_view_get_type     	(void) G_GNUC_CONST;
+GType		gedit_view_get_type     	(void);
 
-GtkWidget	*gedit_view_new			(GeditDocument   *doc);
+GtkWidget *	gedit_view_new			(GeditDocument *doc);
 
-void		 gedit_view_cut_clipboard 	(GeditView       *view);
-void		 gedit_view_copy_clipboard 	(GeditView       *view);
-void		 gedit_view_paste_clipboard	(GeditView       *view);
-void		 gedit_view_delete_selection	(GeditView       *view);
-void		 gedit_view_select_all		(GeditView       *view);
+void		gedit_view_set_font		(GeditView   *view,
+						 gboolean     default_font,
+						 const gchar *font_name);
 
-void		 gedit_view_scroll_to_cursor 	(GeditView       *view);
+G_DEPRECATED_FOR (tepl_view_cut_clipboard)
+void		gedit_view_cut_clipboard 	(GeditView *view);
 
-void 		 gedit_view_set_font		(GeditView       *view,
-						 gboolean         default_font,
-						 const gchar     *font_name);
+G_DEPRECATED_FOR (tepl_view_copy_clipboard)
+void		gedit_view_copy_clipboard 	(GeditView *view);
+
+G_DEPRECATED_FOR (tepl_view_paste_clipboard)
+void		gedit_view_paste_clipboard	(GeditView *view);
+
+G_DEPRECATED_FOR (tepl_view_delete_selection)
+void		gedit_view_delete_selection	(GeditView *view);
+
+G_DEPRECATED_FOR (tepl_view_select_all)
+void		gedit_view_select_all		(GeditView *view);
+
+G_DEPRECATED_FOR (tepl_view_scroll_to_cursor)
+void		gedit_view_scroll_to_cursor 	(GeditView *view);
 
 G_END_DECLS
 

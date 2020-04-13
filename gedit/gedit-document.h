@@ -64,13 +64,6 @@ gboolean	 gedit_document_is_untouched			(GeditDocument       *doc);
 
 gboolean	 gedit_document_is_untitled			(GeditDocument       *doc);
 
-gboolean	 gedit_document_goto_line			(GeditDocument       *doc,
-								gint                 line);
-
-gboolean	 gedit_document_goto_line_offset		(GeditDocument       *doc,
-								 gint                 line,
-								 gint                 line_offset);
-
 void 		 gedit_document_set_language			(GeditDocument       *doc,
 								 GtkSourceLanguage   *lang);
 GtkSourceLanguage
@@ -88,6 +81,15 @@ void		 gedit_document_set_search_context		(GeditDocument          *doc,
 
 GtkSourceSearchContext *
 		 gedit_document_get_search_context		(GeditDocument       *doc);
+
+G_DEPRECATED_FOR (tepl_view_goto_line)
+gboolean	 gedit_document_goto_line			(GeditDocument       *doc,
+								 gint                 line);
+
+G_DEPRECATED_FOR (tepl_view_goto_line_offset)
+gboolean	 gedit_document_goto_line_offset		(GeditDocument       *doc,
+								 gint                 line,
+								 gint                 line_offset);
 
 G_END_DECLS
 

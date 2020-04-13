@@ -178,17 +178,17 @@ class SubstitutionParser:
         tokens = self._remains(tokens, 2)
         condition, tokens = self._condition_value(tokens)
 
-        if condition == None or self._peek(tokens) != ',':
+        if condition is None or self._peek(tokens) != ',':
             raise ParseError
 
         truepart, tokens = self._parse(self._remains(tokens), ',')
 
-        if truepart == None:
+        if truepart is None:
             raise ParseError
 
         falsepart, tokens = self._parse(tokens, ')')
 
-        if falsepart == None:
+        if falsepart is None:
             raise ParseError
 
         if condition:

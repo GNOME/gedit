@@ -156,26 +156,24 @@ load_file_list (GeditWindow             *window,
 		{
 			if (l == files)
 			{
-				GeditDocument *doc;
+				TeplView *view;
 
 				gedit_window_set_active_tab (window, tab);
 				jump_to = FALSE;
-				doc = gedit_tab_get_document (tab);
+				view = TEPL_VIEW (gedit_tab_get_view (tab));
 
 				if (line_pos > 0)
 				{
 					if (column_pos > 0)
 					{
-						gedit_document_goto_line_offset (doc,
-						                                 line_pos - 1,
-						                                 column_pos - 1);
+						tepl_view_goto_line_offset (view,
+									    line_pos - 1,
+									    column_pos - 1);
 					}
 					else
 					{
-						gedit_document_goto_line (doc, line_pos - 1);
+						tepl_view_goto_line (view, line_pos - 1);
 					}
-
-					gedit_view_scroll_to_cursor (gedit_tab_get_view (tab));
 				}
 			}
 
