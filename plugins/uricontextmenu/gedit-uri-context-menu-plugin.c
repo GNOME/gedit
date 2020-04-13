@@ -158,10 +158,6 @@ gedit_uri_context_menu_plugin_on_populate_popup_cb (GtkTextView			*view,
 		g_string_prepend (plugin->priv->uri, "http://");
 	}
 
-	menu_item = gtk_separator_menu_item_new ();
-	gtk_menu_shell_prepend (menu, menu_item);
-	gtk_widget_show (menu_item);
-
 	menu_item = gtk_menu_item_new_with_label ("Open Link");
 	g_signal_connect (menu_item, "activate", G_CALLBACK (gedit_uri_context_menu_plugin_open_link_cb), plugin);
 
@@ -258,10 +254,7 @@ gedit_uri_context_menu_plugin_on_window_tab_removed_cb (GeditWindow			*window,
 			g_signal_handler_disconnect (view_handle_elem->view, view_handle_elem->popup_handle);
 			g_signal_handler_disconnect (view_handle_elem->view, view_handle_elem->button_handle);
 			list = g_list_remove (plugin->priv->view_handles, view_handle_elem);
-			if (list != NULL)
-			{
-				plugin->priv->view_handles = list;
-			}
+			plugin->priv->view_handles = list;
 			g_free (view_handle_elem);
 			break;
 		}
@@ -416,8 +409,6 @@ gedit_uri_context_menu_plugin_deactivate (GeditWindowActivatable *activatable)
 	GList *view_handles;
 	GeditViewHandleTuple *view_handle;
 
-	gedit_debug (DEBUG_PLUGINS);
-
 	plugin = GEDIT_URI_CONTEXT_MENU_PLUGIN (activatable);
 
 	g_regex_unref (plugin->priv->uri_char_regex);
@@ -426,6 +417,14 @@ gedit_uri_context_menu_plugin_deactivate (GeditWindowActivatable *activatable)
 	{
 		g_string_free (plugin->priv->uri, TRUE);
 		plugin->priv->uri = NULL;
+	}
+
+	if (plugin->priv->window != NULL)
+	{
+		g_signal_handler_disconnect (plugin->priv->window, plugin->priv->tab_added_handle);
+		g_signal_handler_disconnect (plugin->priv->window, plugin->priv->tab_removed_handle);
+		g_clear_object (&plugin->priv->window);
+		plugin->priv->window = NULL;
 	}
 
 	if (plugin->priv->view_handles != NULL)
@@ -439,16 +438,10 @@ gedit_uri_context_menu_plugin_deactivate (GeditWindowActivatable *activatable)
 			g_signal_handler_disconnect (view_handle->view, view_handle->popup_handle);
 			g_signal_handler_disconnect (view_handle->view, view_handle->button_handle);
 		}
-
 		g_list_free_full (plugin->priv->view_handles, g_free);
+		plugin->priv->view_handles = NULL;
 	}
 
-	if (plugin->priv->window != NULL)
-	{
-		g_signal_handler_disconnect (plugin->priv->window, plugin->priv->tab_added_handle);
-		g_signal_handler_disconnect (plugin->priv->window, plugin->priv->tab_removed_handle);
-		g_clear_object (&plugin->priv->window);
-	}
 }
 
 static void
