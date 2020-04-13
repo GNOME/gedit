@@ -23,6 +23,7 @@
 #include <math.h>
 
 #include <glib/gi18n.h>
+#include <gmodule.h>
 
 #include <gedit/gedit-debug.h>
 #include <gedit/gedit-tab.h>
@@ -42,6 +43,7 @@ struct _GeditUriContextMenuPluginPrivate
 	gulong		tab_added_handle;
 	gulong		tab_removed_handle;
 	GRegex		*uri_char_regex;
+	GString		*uri;
 	gdouble		x;
 	gdouble		y;
 };
@@ -65,6 +67,8 @@ static void gedit_window_activatable_iface_init (GeditWindowActivatableInterface
 static gboolean gedit_uri_context_menu_plugin_on_button_pressed_cb (GtkWidget			*btn,
 								    GdkEventButton		*event,
 								    GeditUriContextMenuPlugin	*plugin);
+static gboolean gedit_uri_context_menu_plugin_open_link_cb (GtkWidget			*menu_item,
+							    GeditUriContextMenuPlugin	*plugin);
 
 G_DEFINE_DYNAMIC_TYPE_EXTENDED (GeditUriContextMenuPlugin,
 				gedit_uri_context_menu_plugin,
@@ -86,9 +90,6 @@ gedit_uri_context_menu_plugin_on_populate_popup_cb (GtkTextView			*view,
 	gint buffer_x;
 	gint buffer_y;
 	gunichar uri_test[2];
-	gchar *uri;
-	gboolean is_browser_uri;
-	gchar *uri_scheme;
 
 	if (!GTK_IS_MENU_SHELL (popup))
 	{
@@ -99,78 +100,96 @@ gedit_uri_context_menu_plugin_on_populate_popup_cb (GtkTextView			*view,
 
 	g_return_if_fail (GEDIT_IS_URI_CONTEXT_MENU_PLUGIN (plugin));
 
-	uri_test[0] = 'X';
+	if (plugin->priv->uri != NULL)
+	{
+		g_string_free (plugin->priv->uri, TRUE);
+		plugin->priv->uri = NULL;
+	}
+
 	uri_test[1] = '\0';
 
-	g_warning ("PLUGIN POPUP OPENED!!! window %f, %f", plugin->priv->x, plugin->priv->y);
-	g_warning ("rounded %d, %d", (gint) rint(plugin->priv->x), (gint) rint(plugin->priv->y));
-
 	gtk_text_view_window_to_buffer_coords (view,
-                                       GTK_TEXT_WINDOW_TEXT,
-                                       (gint) rint(plugin->priv->x),
-                                       (gint) rint(plugin->priv->y),
-                                       &buffer_x,
-                                       &buffer_y);
-	if (buffer_x == NULL) {
-		g_warning ("NULL BUFFER X");
-	}
-	g_warning ("RIGHT CLICK BUFFER COORDS: %d, %d", buffer_x, buffer_y);
+					       GTK_TEXT_WINDOW_TEXT,
+					       (gint) rint (plugin->priv->x),
+					       (gint) rint (plugin->priv->y),
+					       &buffer_x,
+					       &buffer_y);
+
 	gtk_text_view_get_iter_at_location (view, &start, buffer_x, buffer_y);
 
 	end = start;
 
 	/* Move backwards one char to ensure we get the full string */
-	gtk_text_iter_backward_char(&end);
-	while (gtk_text_iter_forward_char(&end))
+	gtk_text_iter_backward_char (&end);
+	while (gtk_text_iter_forward_char (&end))
 	{
-		uri_test[0] = gtk_text_iter_get_char(&end);
+		uri_test[0] = gtk_text_iter_get_char (&end);
 		if (!g_regex_match (plugin->priv->uri_char_regex, (const gchar *) &uri_test, 0, NULL))
 		{
 			break;
 		}
 	}
 	
-	while (gtk_text_iter_backward_char(&start))
+	while (gtk_text_iter_backward_char (&start))
 	{
-		uri_test[0] = gtk_text_iter_get_char(&start);
+		uri_test[0] = gtk_text_iter_get_char (&start);
 		if (!g_regex_match (plugin->priv->uri_char_regex, (const gchar *) &uri_test, 0, NULL))
 		{
-			gtk_text_iter_forward_char(&start);
+			gtk_text_iter_forward_char (&start);
 			break;
 		}
 	}
 
-	uri = gtk_text_iter_get_text (&start, &end);
-	g_warning ("FOUND URI: %s", uri);
+	plugin->priv->uri = g_string_new (gtk_text_iter_get_text (&start, &end));
 
-	is_browser_uri = FALSE;
-	if (uri_scheme != NULL) {
-		if (g_strcmp0 (uri, "http:") == 0 || g_strcmp0 (uri, "https:") == 0 || g_strcmp0 (uri, "www.") == 0)
-		{
-			is_browser_uri = TRUE;
-		}
-		g_free (uri_scheme);
+
+	if (!g_str_has_prefix (plugin->priv->uri->str, "http:")		&&
+	    !g_str_has_prefix (plugin->priv->uri->str, "https:")	&&
+	    !g_str_has_prefix (plugin->priv->uri->str, "www."))
+	{
+		g_string_free (plugin->priv->uri, TRUE);
+		plugin->priv->uri = NULL;
+		return;
 	}
-	g_free(uri);
 
-	//GtkWidget *box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 6);
-	//GtkWidget *icon = gtk_image_new_from_stock (GTK_STOCK_JUMP_TO, GTK_ICON_SIZE_MENU);
-	//GtkWidget *label = gtk_label_new ("Open link");
+	/* We must prepend the scheme or the gtk URL opening function fails */
+	if (g_str_has_prefix (plugin->priv->uri->str, "www."))
+	{
+		g_string_prepend (plugin->priv->uri, "http://");
+	}
+
 	menu_item = gtk_separator_menu_item_new ();
 	gtk_menu_shell_prepend (menu, menu_item);
 	gtk_widget_show (menu_item);
 
 	menu_item = gtk_menu_item_new_with_label ("Open Link");
-
-	//gtk_container_add (GTK_CONTAINER (box), icon);
-	//gtk_container_add (GTK_CONTAINER (box), label);
-
-	//gtk_container_add (GTK_CONTAINER (menu_item), box);
+	g_signal_connect (menu_item, "activate", G_CALLBACK (gedit_uri_context_menu_plugin_open_link_cb), plugin);
 
 	gtk_widget_show (menu_item);
-
 	gtk_menu_shell_prepend (menu, menu_item);
+}
 
+static gboolean
+gedit_uri_context_menu_plugin_open_link_cb (GtkWidget			*menu_item,
+					    GeditUriContextMenuPlugin	*plugin)
+{
+	GError *err;
+	gboolean success;
+	g_return_val_if_fail (GEDIT_IS_URI_CONTEXT_MENU_PLUGIN (plugin), TRUE);
+
+	success = gtk_show_uri_on_window ((GtkWindow*) plugin->priv->window,
+					  plugin->priv->uri->str,
+					  GDK_CURRENT_TIME,
+					  &err);
+	if (!success)
+	{
+		g_warning ("Unable to open URI '%s': %s", plugin->priv->uri->str, err->message);
+		g_error_free (err);
+	}
+
+	g_string_free (plugin->priv->uri, TRUE);
+	plugin->priv->uri = NULL;
+	return TRUE;
 }
 
 static void
@@ -211,7 +230,6 @@ gedit_uri_context_menu_plugin_on_window_tab_added_cb (GeditWindow		*window,
 	view = gedit_tab_get_view (tab);
 	g_return_if_fail (GEDIT_IS_URI_CONTEXT_MENU_PLUGIN (plugin));
 	g_return_if_fail (GEDIT_IS_VIEW (view));
-	g_warning ("TAB ADDED");
 
 	gedit_uri_context_menu_plugin_connect_view (plugin, view);
 }
@@ -229,7 +247,6 @@ gedit_uri_context_menu_plugin_on_window_tab_removed_cb (GeditWindow			*window,
 
 	g_return_if_fail (GEDIT_IS_URI_CONTEXT_MENU_PLUGIN (plugin));
 	g_return_if_fail (GEDIT_IS_VIEW (view));
-	g_warning ("TAB REMOVED");
 
 	/* Disconnect signal and remove from the list */
 	GList *l;
@@ -238,7 +255,6 @@ gedit_uri_context_menu_plugin_on_window_tab_removed_cb (GeditWindow			*window,
 		view_handle_elem = (GeditViewHandleTuple*) l->data;
 		if (view_handle_elem->view == view)
 		{
-			g_warning ("Disconnecting tab signal!");
 			g_signal_handler_disconnect (view_handle_elem->view, view_handle_elem->popup_handle);
 			g_signal_handler_disconnect (view_handle_elem->view, view_handle_elem->button_handle);
 			list = g_list_remove (plugin->priv->view_handles, view_handle_elem);
@@ -257,16 +273,14 @@ gedit_uri_context_menu_plugin_on_button_pressed_cb (GtkWidget			*btn,
 						    GdkEventButton		*event,
 						    GeditUriContextMenuPlugin	*plugin)
 {
-	if (event->type == GDK_BUTTON_PRESS  &&  event->button == 3)
+	if (event->type == GDK_BUTTON_PRESS && event->button == 3)
 	{
 		if (!GEDIT_IS_URI_CONTEXT_MENU_PLUGIN (plugin))
 		{
 			return FALSE;
 		}
-		g_warning ("RIGHT CLICK BUTTON at %f, %f", event->x, event->y);
 		plugin->priv->x = event->x;
 		plugin->priv->y = event->y;
-
 	}
 	return FALSE;
 }
@@ -274,20 +288,12 @@ gedit_uri_context_menu_plugin_on_button_pressed_cb (GtkWidget			*btn,
 static void
 gedit_uri_context_menu_plugin_dispose (GObject *object)
 {
-	GeditUriContextMenuPlugin *plugin = GEDIT_URI_CONTEXT_MENU_PLUGIN (object);
-
-	//g_clear_object (&plugin->priv->window);
-
-	g_warning ("DISPOSE CALLED");
-
 	G_OBJECT_CLASS (gedit_uri_context_menu_plugin_parent_class)->dispose (object);
 }
 
 static void
 gedit_uri_context_menu_plugin_finalize (GObject *object)
 {
-	GeditUriContextMenuPlugin *plugin = GEDIT_URI_CONTEXT_MENU_PLUGIN (object);
-
 	G_OBJECT_CLASS (gedit_uri_context_menu_plugin_parent_class)->finalize (object);
 }
 
@@ -366,8 +372,6 @@ gedit_uri_context_menu_plugin_activate (GeditWindowActivatable *activatable)
 
 	gedit_debug (DEBUG_PLUGINS);
 
-	g_warning ("URI CONTEXT MENU ACTIVATED XXX");
-
 	plugin = GEDIT_URI_CONTEXT_MENU_PLUGIN (activatable);
 
 	g_return_if_fail (GEDIT_IS_WINDOW (plugin->priv->window));
@@ -383,6 +387,7 @@ gedit_uri_context_menu_plugin_activate (GeditWindowActivatable *activatable)
 		g_error_free (err);
 	}
 	plugin->priv->uri_char_regex = uri_char_regex;
+	plugin->priv->uri = NULL;
 
 	handle_id = g_signal_connect (plugin->priv->window,
 				      "tab-added",
@@ -396,11 +401,11 @@ gedit_uri_context_menu_plugin_activate (GeditWindowActivatable *activatable)
 				      plugin);
 	plugin->priv->tab_removed_handle = handle_id;
 
-	views = gedit_window_get_views(plugin->priv->window);
+	views = gedit_window_get_views (plugin->priv->window);
 	GList *l;
 	for (l = views; l != NULL; l = l->next)
 	{
-		gedit_uri_context_menu_plugin_connect_view(plugin, l->data);
+		gedit_uri_context_menu_plugin_connect_view (plugin, l->data);
 	}
 }
 
@@ -415,9 +420,13 @@ gedit_uri_context_menu_plugin_deactivate (GeditWindowActivatable *activatable)
 
 	plugin = GEDIT_URI_CONTEXT_MENU_PLUGIN (activatable);
 
-	g_warning ("DEACTIVATE CALLD");
-
 	g_regex_unref (plugin->priv->uri_char_regex);
+
+	if (plugin->priv->uri != NULL)
+	{
+		g_string_free (plugin->priv->uri, TRUE);
+		plugin->priv->uri = NULL;
+	}
 
 	if (plugin->priv->view_handles != NULL)
 	{
