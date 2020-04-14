@@ -173,7 +173,7 @@ gedit_uri_context_menu_plugin_open_link_cb (GtkWidget			*menu_item,
 	gboolean success;
 	g_return_val_if_fail (GEDIT_IS_URI_CONTEXT_MENU_PLUGIN (plugin), TRUE);
 
-	success = gtk_show_uri_on_window ((GtkWindow*) plugin->priv->window,
+	success = gtk_show_uri_on_window (GTK_WINDOW (plugin->priv->window),
 					  plugin->priv->uri->str,
 					  GDK_CURRENT_TIME,
 					  &err);
@@ -321,7 +321,7 @@ gedit_uri_context_menu_plugin_set_property (GObject		*object,
 	switch (prop_id)
 	{
 		case PROP_WINDOW:
-			plugin->priv->window = GEDIT_WINDOW (g_value_dup_object (value));
+			g_set_object (&plugin->priv->window, g_value_get_object (value));
 			break;
 
 		default:
@@ -424,7 +424,6 @@ gedit_uri_context_menu_plugin_deactivate (GeditWindowActivatable *activatable)
 		g_signal_handler_disconnect (plugin->priv->window, plugin->priv->tab_added_handle);
 		g_signal_handler_disconnect (plugin->priv->window, plugin->priv->tab_removed_handle);
 		g_clear_object (&plugin->priv->window);
-		plugin->priv->window = NULL;
 	}
 
 	if (plugin->priv->view_handles != NULL)
