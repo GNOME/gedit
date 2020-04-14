@@ -67,15 +67,14 @@ First contribution
 ------------------
 
 See the [Newcomers](https://wiki.gnome.org/Newcomers/) page to start
-contributing to GNOME in general.
+contributing to GNOME in general. But perhaps some things explained there are
+not relevant for gedit, in case of doubt the gedit documentation takes
+precedence.
 
 To know how to contribute to gedit specifically, read the
 [README.md](../README.md) and [CONTRIBUTING.md](../CONTRIBUTING.md) files
 present in the Git repository (and then you'll see that the `CONTRIBUTING.md`
 file refers to this file, but please don't end up in an infinite reading loop).
-
-To find something interesting to do, […]. TODO: provide list of easy tasks in
-gedit itself.
 
 A good way to learn a lot of things is to write a new plugin (as a third-party
 plugin first). To have some inspiration, see the wiki page
@@ -87,6 +86,13 @@ or critical message, it is also a good idea to fix it.
 
 Improvements to the documentation (for users or developers) or the wiki is also
 useful.
+
+Note that gedit, although simple to use, is old. Some parts of the code is
+legacy code. The remaining tasks to do are often not simple, the codebase needs
+a lot of refactoring, and to do it properly an experienced developer is advised.
+That's why writing plugins is normally easier; except that there is not a lot of
+documentation for plugin authors (another thing that needs to be improved over
+time).
 
 Interesting article to read, written by a GNOME developer:
 [Working on Free Software](http://ometer.com/hacking.html)
