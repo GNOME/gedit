@@ -5,9 +5,8 @@ gedit development relies on voluntary contributions and everyone is invited to
 help.
 
 If you are interested in helping us to improve gedit, please contact the
-developers on IRC and/or send a message to the gedit mailing list and offer your
-help. See the “Getting in Touch” section on the
-[gedit wiki page](https://wiki.gnome.org/Apps/Gedit).
+developers on the gedit mailing list and offer your help. See the “Getting in
+Touch” section on the [gedit wiki page](https://wiki.gnome.org/Apps/Gedit).
 
 Contributions other than software development
 ---------------------------------------------
