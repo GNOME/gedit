@@ -14,7 +14,7 @@ If you often contribute to gedit, feel free to add your plans here.
 Making the gedit source code more re-usable
 -------------------------------------------
 
-**Status**: [in progress](https://wiki.gnome.org/Apps/Gedit/ReusableCode) (this
+Status: **[in progress](https://wiki.gnome.org/Apps/Gedit/ReusableCode)** (this
 is an ongoing effort)
 
 Recently done:
@@ -23,13 +23,13 @@ Recently done:
 
 Next steps:
 - Use more features from the [Tepl](https://wiki.gnome.org/Projects/Tepl)
-  library, and develop Tepl alongside gedit. The goal is to reduce the amount of
-  code from the gedit core, by having re-usable code in Tepl instead.
+  library, and develop Tepl alongside gedit. The goal is to reduce the amount
+  of code in gedit, by having re-usable code in Tepl instead.
 
 Making gedit suitable on a smartphone
 -------------------------------------
 
-**Status**: [in progress](https://gitlab.gnome.org/GNOME/Initiatives/-/issues/13)
+Status: **[in progress](https://gitlab.gnome.org/GNOME/Initiatives/-/issues/13)**
 
 gedit is installed by default with the [Librem 5](https://puri.sm/products/librem-5/)
 smartphone.
@@ -37,14 +37,14 @@ smartphone.
 Replace search and replace dialog window by an horizontal bar below the text
 ----------------------------------------------------------------------------
 
-**Status**: [todo](https://gitlab.gnome.org/GNOME/gedit/-/issues/288)
+Status: **[todo](https://gitlab.gnome.org/GNOME/gedit/-/issues/288)**
 
 To not hide the text.
 
 Changing character encoding and line ending type of opened files
 ----------------------------------------------------------------
 
-**Status**: started in Tepl
+Status: **todo**
 
 To fully support GtkFileChooserNative and better sandboxing.
 
@@ -56,7 +56,7 @@ browser.
 Handle problem with large files or files containing very long lines
 -------------------------------------------------------------------
 
-**Status**: started in Tepl
+Status: **started in Tepl**
 
 As a stopgap measure, prevent those files from being loaded in the first place,
 show first an infobar with a warning message.
@@ -70,7 +70,7 @@ implementation for the GtkTextView API.
 Do not allow incompatible plugins to be loaded
 ----------------------------------------------
 
-**Status**: todo
+Status: **todo**
 
 There are currently no checks to see if a plugin is compatible with the gedit
 version. Currently enabling a plugin can make gedit to crash.
@@ -82,7 +82,7 @@ plugins need to be installed. Better solution: see
 Be able to quit the application with all documents saved, and restored on next start
 ------------------------------------------------------------------------------------
 
-**Status**: todo
+Status: **todo**
 
 Even for unsaved and untitled files, be able to quit gedit, restart it later and
 come back to the state before with all tabs restored.
@@ -90,7 +90,7 @@ come back to the state before with all tabs restored.
 Better C language support
 -------------------------
 
-**Status**: todo
+Status: **todo**
 
 - Code completion with Clang.
 - Align function parameters on the parenthesis (function definition /
@@ -102,14 +102,14 @@ Better C language support
 Improve printing UI workflow
 ----------------------------
 
-**Status**: todo
+Status: **todo**
 
 Implement it like in Firefox, show first a preview of the file to print.
 
 Avoid the need for gedit forks
 ------------------------------
 
-**Status**: todo
+Status: **todo**
 
 There are several forks of gedit available: [Pluma](https://github.com/mate-desktop/pluma)
 (from the MATE desktop environment) and [xed](https://github.com/linuxmint/xed)
@@ -119,20 +119,20 @@ of gedit.
 The goal is to make gedit suitable for MATE and Linux Mint. This can be
 implemented by adding a “gedit-classic” configuration option.
 
-Windows and Mac OS X support
-----------------------------
+Windows and macOS support
+-------------------------
 
 To release new versions. And adapt/port the code if needed. This is an ongoing
 effort.
 
 ### Windows
 
-**Status**: stalled
+Status: **stalled**
 
 Credits: Ignacio Casal Quinteiro
 
-### Mac OS X
+### macOS
 
-**Status**: stalled
+Status: **stalled**
 
 Credits: Jesse van den Kieboom
