@@ -36,8 +36,6 @@ struct _GeditSettings
 	GSettings *interface;
 	GSettings *editor;
 	GSettings *ui;
-
-	gchar *old_scheme;
 };
 
 /* GeditSettings is a singleton. */
@@ -61,8 +59,6 @@ static void
 gedit_settings_finalize (GObject *object)
 {
 	GeditSettings *self = GEDIT_SETTINGS (object);
-
-	g_free (self->old_scheme);
 
 	if (singleton == self)
 	{
@@ -157,53 +153,6 @@ on_editor_font_changed (GSettings     *settings,
 		set_font (self, font);
 		g_free (font);
 	}
-}
-
-static void
-on_scheme_changed (GSettings     *settings,
-		   const gchar   *key,
-		   GeditSettings *self)
-{
-	GtkSourceStyleSchemeManager *manager;
-	GtkSourceStyleScheme *style;
-	gchar *scheme;
-	GList *docs;
-	GList *l;
-
-	scheme = g_settings_get_string (settings, key);
-
-	if (self->old_scheme != NULL && g_str_equal (scheme, self->old_scheme))
-	{
-		g_free (scheme);
-		return;
-	}
-
-	g_free (self->old_scheme);
-	self->old_scheme = scheme;
-
-	manager = gtk_source_style_scheme_manager_get_default ();
-	style = gtk_source_style_scheme_manager_get_scheme (manager, scheme);
-	if (style == NULL)
-	{
-		g_warning ("Default style scheme '%s' not found, falling back to 'tango'", scheme);
-
-		style = gtk_source_style_scheme_manager_get_scheme (manager, "tango");
-		if (style == NULL)
-		{
-			g_warning ("Style scheme 'tango' cannot be found, check your GtkSourceView installation.");
-			return;
-		}
-	}
-
-	docs = gedit_app_get_documents (GEDIT_APP (g_application_get_default ()));
-
-	for (l = docs; l != NULL; l = l->next)
-	{
-		GtkSourceBuffer *buffer = GTK_SOURCE_BUFFER (l->data);
-		gtk_source_buffer_set_style_scheme (buffer, style);
-	}
-
-	g_list_free (docs);
 }
 
 static void
@@ -318,11 +267,6 @@ gedit_settings_init (GeditSettings *self)
 	g_signal_connect (self->editor,
 			  "changed::editor-font",
 			  G_CALLBACK (on_editor_font_changed),
-			  self);
-
-	g_signal_connect (self->editor,
-			  "changed::scheme",
-			  G_CALLBACK (on_scheme_changed),
 			  self);
 
 	g_signal_connect (self->editor,

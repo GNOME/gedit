@@ -649,32 +649,75 @@ save_encoding_metadata (GeditDocument *doc)
 				     NULL);
 }
 
-static GtkSourceStyleScheme *
-get_default_style_scheme (GSettings *editor_settings)
+static gchar *
+get_default_style_scheme_id (void)
 {
+	GeditSettings *settings;
+	GSettings *editor_settings;
+	GVariant *default_value;
+	gchar *default_style_scheme_id;
+
+	settings = _gedit_settings_get_singleton ();
+	editor_settings = _gedit_settings_peek_editor_settings (settings);
+
+	default_value = g_settings_get_default_value (editor_settings, GEDIT_SETTINGS_SCHEME);
+	default_style_scheme_id = g_variant_dup_string (default_value, NULL);
+	g_variant_unref (default_value);
+
+	return default_style_scheme_id;
+}
+
+static void
+update_style_scheme (GeditDocument *doc)
+{
+	GeditSettings *settings;
+	GSettings *editor_settings;
+	gchar *style_scheme_id;
 	GtkSourceStyleSchemeManager *manager;
-	gchar *scheme_id;
-	GtkSourceStyleScheme *def_style;
+	GtkSourceStyleScheme *style_scheme = NULL;
+
+	settings = _gedit_settings_get_singleton ();
+	editor_settings = _gedit_settings_peek_editor_settings (settings);
+	style_scheme_id = g_settings_get_string (editor_settings, GEDIT_SETTINGS_SCHEME);
 
 	manager = gtk_source_style_scheme_manager_get_default ();
-	scheme_id = g_settings_get_string (editor_settings, GEDIT_SETTINGS_SCHEME);
-	def_style = gtk_source_style_scheme_manager_get_scheme (manager, scheme_id);
 
-	if (def_style == NULL)
+	if (style_scheme_id != NULL)
 	{
-		g_warning ("Default style scheme '%s' cannot be found, falling back to 'tango' style scheme.", scheme_id);
-
-		def_style = gtk_source_style_scheme_manager_get_scheme (manager, "tango");
-
-		if (def_style == NULL)
-		{
-			g_warning ("Style scheme 'tango' cannot be found, check your GtkSourceView installation.");
-		}
+		style_scheme = gtk_source_style_scheme_manager_get_scheme (manager, style_scheme_id);
 	}
 
-	g_free (scheme_id);
+	if (style_scheme == NULL)
+	{
+		gchar *default_style_scheme_id;
 
-	return def_style;
+		default_style_scheme_id = get_default_style_scheme_id ();
+
+		g_warning_once ("Style scheme '%s' cannot be found, falling back to '%s' default style scheme.",
+				style_scheme_id,
+				default_style_scheme_id);
+
+		style_scheme = gtk_source_style_scheme_manager_get_scheme (manager, default_style_scheme_id);
+		if (style_scheme == NULL)
+		{
+			g_warning_once ("Default style scheme '%s' cannot be found, check your GtkSourceView installation.",
+					default_style_scheme_id);
+		}
+
+		g_free (default_style_scheme_id);
+	}
+
+	gtk_source_buffer_set_style_scheme (GTK_SOURCE_BUFFER (doc), style_scheme);
+
+	g_free (style_scheme_id);
+}
+
+static void
+editor_settings_scheme_changed_cb (GSettings     *editor_settings,
+				   const gchar   *key,
+				   GeditDocument *doc)
+{
+	update_style_scheme (doc);
 }
 
 static GtkSourceLanguage *
@@ -817,8 +860,9 @@ on_location_changed (GtkSourceFile *file,
 static void
 gedit_document_init (GeditDocument *doc)
 {
+	GeditSettings *settings;
+	GSettings *editor_settings;
 	GeditDocumentPrivate *priv;
-	GtkSourceStyleScheme *style_scheme;
 
 	gedit_debug (DEBUG_DOCUMENT);
 
@@ -859,11 +903,15 @@ gedit_document_init (GeditDocument *doc)
 	                 "highlight-matching-brackets",
 	                 G_SETTINGS_BIND_GET | G_SETTINGS_BIND_NO_SENSITIVITY);
 
-	style_scheme = get_default_style_scheme (priv->editor_settings);
-	if (style_scheme != NULL)
-	{
-		gtk_source_buffer_set_style_scheme (GTK_SOURCE_BUFFER (doc), style_scheme);
-	}
+	settings = _gedit_settings_get_singleton ();
+	editor_settings = _gedit_settings_peek_editor_settings (settings);
+	g_signal_connect_object (editor_settings,
+				 "changed::" GEDIT_SETTINGS_SCHEME,
+				 G_CALLBACK (editor_settings_scheme_changed_cb),
+				 doc,
+				 0);
+
+	update_style_scheme (doc);
 
 	g_signal_connect (doc,
 			  "notify::content-type",

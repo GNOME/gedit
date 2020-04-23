@@ -47,6 +47,8 @@ libgd_subproject = subproject(
 libgd_dep = libgd_subproject.get_variable('libgd_dep')
 
 # Dependencies
+glib_req = '>= 2.64'
+gtk_req = '>= 2.22'
 libpeas_req = '>= 1.14.1'
 libxml_req = '>= 2.5.0'
 libsoup_req = '>= 2.60.0'
