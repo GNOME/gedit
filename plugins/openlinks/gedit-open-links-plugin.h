@@ -1,5 +1,5 @@
 /*
- * gedit-uri-context-menu-plugin.h
+ * gedit-open-links-plugin.h
  *
  * Copyright (C) 2020 James Seibel
  *
@@ -18,8 +18,8 @@
  *
  */
 
-#ifndef GEDIT_URI_CONTEXT_MENU_PLUGIN_H
-#define GEDIT_URI_CONTEXT_MENU_PLUGIN_H
+#ifndef GEDIT_OPEN_LINKS_PLUGIN_H
+#define GEDIT_OPEN_LINKS_PLUGIN_H
 
 #include <glib.h>
 #include <glib-object.h>
@@ -29,36 +29,36 @@
 
 G_BEGIN_DECLS
 
-#define GEDIT_TYPE_URI_CONTEXT_MENU_PLUGIN	 		(gedit_uri_context_menu_plugin_get_type ())
-#define GEDIT_URI_CONTEXT_MENU_PLUGIN(o)		 	(G_TYPE_CHECK_INSTANCE_CAST ((o), GEDIT_TYPE_URI_CONTEXT_MENU_PLUGIN, GeditUriContextMenuPlugin))
-#define GEDIT_URI_CONTEXT_MENU_PLUGIN_CLASS(k)	 	(G_TYPE_CHECK_CLASS_CAST((k), GEDIT_TYPE_URI_CONTEXT_MENU_PLUGIN, GeditUriContextMenuPluginClass))
-#define GEDIT_IS_URI_CONTEXT_MENU_PLUGIN(o)	 		(G_TYPE_CHECK_INSTANCE_TYPE ((o), GEDIT_TYPE_URI_CONTEXT_MENU_PLUGIN))
-#define GEDIT_IS_URI_CONTEXT_MENU_PLUGIN_CLASS(k) 	(G_TYPE_CHECK_CLASS_TYPE ((k), GEDIT_TYPE_URI_CONTEXT_MENU_PLUGIN))
-#define GEDIT_URI_CONTEXT_MENU_GET_CLASS(o)	 		(G_TYPE_INSTANCE_GET_CLASS ((o), GEDIT_TYPE_URI_CONTEXT_MENU_PLUGIN, GeditUriContextMenuPluginClass))
+#define GEDIT_TYPE_OPEN_LINKS_PLUGIN	 		(gedit_open_links_plugin_get_type ())
+#define GEDIT_OPEN_LINKS_PLUGIN(o)		 		(G_TYPE_CHECK_INSTANCE_CAST ((o), GEDIT_TYPE_OPEN_LINKS_PLUGIN, GeditOpenLinksPlugin))
+#define GEDIT_OPEN_LINKS_PLUGIN_CLASS(k)	 	(G_TYPE_CHECK_CLASS_CAST((k), GEDIT_TYPE_OPEN_LINKS_PLUGIN, GeditOpenLinksPluginClass))
+#define GEDIT_IS_OPEN_LINKS_PLUGIN(o)	 		(G_TYPE_CHECK_INSTANCE_TYPE ((o), GEDIT_TYPE_OPEN_LINKS_PLUGIN))
+#define GEDIT_IS_OPEN_LINKS_PLUGIN_CLASS(k) 	(G_TYPE_CHECK_CLASS_TYPE ((k), GEDIT_TYPE_OPEN_LINKS_PLUGIN))
+#define GEDIT_OPEN_LINKS_GET_CLASS(o)	 		(G_TYPE_INSTANCE_GET_CLASS ((o), GEDIT_TYPE_OPEN_LINKS_PLUGIN, GeditOpenLinksPluginClass))
 
-typedef struct _GeditUriContextMenuPlugin			GeditUriContextMenuPlugin;
-typedef struct _GeditUriContextMenuPluginPrivate	GeditUriContextMenuPluginPrivate;
-typedef struct _GeditUriContextMenuPluginClass		GeditUriContextMenuPluginClass;
+typedef struct _GeditOpenLinksPlugin			GeditOpenLinksPlugin;
+typedef struct _GeditOpenLinksPluginPrivate		GeditOpenLinksPluginPrivate;
+typedef struct _GeditOpenLinksPluginClass		GeditOpenLinksPluginClass;
 
-struct _GeditUriContextMenuPlugin
+struct _GeditOpenLinksPlugin
 {
 	PeasExtensionBase parent_instance;
 
 	/* < private > */
-	GeditUriContextMenuPluginPrivate *priv;
+	GeditOpenLinksPluginPrivate *priv;
 };
 
-struct _GeditUriContextMenuPluginClass
+struct _GeditOpenLinksPluginClass
 {
 	PeasExtensionBaseClass parent_class;
 };
 
-GType                gedit_uri_context_menu_plugin_get_type (void) G_GNUC_CONST;
+GType					gedit_open_links_plugin_get_type (void) G_GNUC_CONST;
 
-G_MODULE_EXPORT void peas_register_types                   (PeasObjectModule *module);
+G_MODULE_EXPORT void 	peas_register_types	(PeasObjectModule *module);
 
 G_END_DECLS
 
-#endif /* GEDIT_URI_CONTEXT_MENU_PLUGIN_H */
+#endif /* GEDIT_OPEN_LINKS_PLUGIN_H */
 
 /* ex:set ts=8 noet: */
