@@ -30,3 +30,5 @@ custom_target(
     'plugins',
   )
 )
+
+subdir('unit-tests')
