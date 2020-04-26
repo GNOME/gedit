@@ -47,6 +47,7 @@ active_plugins = [
   'openlinks',
   'modelines',
   'sort',
+  'openlinks',
   'spell',
 ]
 
