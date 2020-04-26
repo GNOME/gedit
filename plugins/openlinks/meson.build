@@ -1,16 +1,16 @@
-liburicontextmenu_sources = files(
-  'gedit-uri-context-menu-plugin.c',
+libopenlinks_sources = files(
+  'gedit-open-links-plugin.c',
 )
 
-liburicontextmenu_deps = [
+libopenlinks_deps = [
   libgedit_dep,
 ]
 
-liburicontextmenu_sha = shared_module(
-  'uricontextmenu',
-  sources: liburicontextmenu_sources,
+libopenlinks_sha = shared_module(
+  'openlinks',
+  sources: libopenlinks_sources,
   include_directories: root_include_dir,
-  dependencies: liburicontextmenu_deps,
+  dependencies: libopenlinks_deps,
   install: true,
   install_dir: join_paths(
     pkglibdir,
@@ -20,9 +20,9 @@ liburicontextmenu_sha = shared_module(
 )
 
 custom_target(
-  'uricontextmenu.plugin',
-  input: 'uricontextmenu.plugin.desktop.in',
-  output: 'uricontextmenu.plugin',
+  'openlinks.plugin',
+  input: 'openlinks.plugin.desktop.in',
+  output: 'openlinks.plugin',
   command: msgfmt_plugin_cmd,
   install: true,
   install_dir: join_paths(
