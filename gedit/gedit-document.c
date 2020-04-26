@@ -49,8 +49,6 @@ typedef struct
 
 	TeplMetadata *metadata;
 
-	GSettings   *editor_settings;
-
 	gint 	     untitled_number;
 
 	gchar	    *content_type;
@@ -251,7 +249,6 @@ gedit_document_dispose (GObject *object)
 	}
 
 	g_clear_object (&priv->file);
-	g_clear_object (&priv->editor_settings);
 	g_clear_object (&priv->search_context);
 
 	G_OBJECT_CLASS (gedit_document_parent_class)->dispose (object);
@@ -399,15 +396,15 @@ static void
 gedit_document_constructed (GObject *object)
 {
 	GeditDocument *doc = GEDIT_DOCUMENT (object);
-	GeditDocumentPrivate *priv;
+	GeditSettings *settings;
+	GSettings *editor_settings;
 
-	priv = gedit_document_get_instance_private (doc);
+	settings = _gedit_settings_get_singleton ();
+	editor_settings = _gedit_settings_peek_editor_settings (settings);
 
 	/* Bind construct properties. */
-	g_settings_bind (priv->editor_settings,
-			 GEDIT_SETTINGS_ENSURE_TRAILING_NEWLINE,
-			 doc,
-			 "implicit-trailing-newline",
+	g_settings_bind (editor_settings, GEDIT_SETTINGS_ENSURE_TRAILING_NEWLINE,
+			 doc, "implicit-trailing-newline",
 			 G_SETTINGS_BIND_GET | G_SETTINGS_BIND_NO_SENSITIVITY);
 
 	G_OBJECT_CLASS (gedit_document_parent_class)->constructed (object);
@@ -808,15 +805,15 @@ on_location_changed (GtkSourceFile *file,
 static void
 gedit_document_init (GeditDocument *doc)
 {
+	GeditDocumentPrivate *priv = gedit_document_get_instance_private (doc);
 	GeditSettings *settings;
 	GSettings *editor_settings;
-	GeditDocumentPrivate *priv;
 
 	gedit_debug (DEBUG_DOCUMENT);
 
-	priv = gedit_document_get_instance_private (doc);
+	settings = _gedit_settings_get_singleton ();
+	editor_settings = _gedit_settings_peek_editor_settings (settings);
 
-	priv->editor_settings = g_settings_new ("org.gnome.gedit.preferences.editor");
 	priv->untitled_number = get_untitled_number ();
 	priv->content_type = get_default_content_type ();
 	priv->language_set_by_user = FALSE;
@@ -833,26 +830,18 @@ gedit_document_init (GeditDocument *doc)
 				 doc,
 				 0);
 
-	g_settings_bind (priv->editor_settings,
-	                 GEDIT_SETTINGS_MAX_UNDO_ACTIONS,
-	                 doc,
-	                 "max-undo-levels",
+	g_settings_bind (editor_settings, GEDIT_SETTINGS_MAX_UNDO_ACTIONS,
+	                 doc, "max-undo-levels",
 	                 G_SETTINGS_BIND_GET | G_SETTINGS_BIND_NO_SENSITIVITY);
 
-	g_settings_bind (priv->editor_settings,
-			 GEDIT_SETTINGS_SYNTAX_HIGHLIGHTING,
-			 doc,
-			 "highlight-syntax",
+	g_settings_bind (editor_settings, GEDIT_SETTINGS_SYNTAX_HIGHLIGHTING,
+			 doc, "highlight-syntax",
 			 G_SETTINGS_BIND_GET | G_SETTINGS_BIND_NO_SENSITIVITY);
 
-	g_settings_bind (priv->editor_settings,
-	                 GEDIT_SETTINGS_BRACKET_MATCHING,
-	                 doc,
-	                 "highlight-matching-brackets",
+	g_settings_bind (editor_settings, GEDIT_SETTINGS_BRACKET_MATCHING,
+	                 doc, "highlight-matching-brackets",
 	                 G_SETTINGS_BIND_GET | G_SETTINGS_BIND_NO_SENSITIVITY);
 
-	settings = _gedit_settings_get_singleton ();
-	editor_settings = _gedit_settings_peek_editor_settings (settings);
 	g_signal_connect_object (editor_settings,
 				 "changed::" GEDIT_SETTINGS_SCHEME,
 				 G_CALLBACK (editor_settings_scheme_changed_cb),
@@ -1553,10 +1542,15 @@ gedit_document_set_search_context (GeditDocument          *doc,
 
 	if (search_context != NULL)
 	{
+		GeditSettings *settings;
+		GSettings *editor_settings;
+
 		g_object_ref (search_context);
 
-		g_settings_bind (priv->editor_settings,
-				 GEDIT_SETTINGS_SEARCH_HIGHLIGHTING,
+		settings = _gedit_settings_get_singleton ();
+		editor_settings = _gedit_settings_peek_editor_settings (settings);
+
+		g_settings_bind (editor_settings, GEDIT_SETTINGS_SEARCH_HIGHLIGHTING,
 				 search_context, "highlight",
 				 G_SETTINGS_BIND_GET | G_SETTINGS_BIND_NO_SENSITIVITY);
 
