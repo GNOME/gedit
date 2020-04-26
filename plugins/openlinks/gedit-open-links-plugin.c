@@ -1,5 +1,5 @@
 /*
- * gedit-uri-context-menu-plugin.c
+ * gedit-open-links-plugin.c
  *
  * Copyright (C) 2020 James Seibel
  *
@@ -34,9 +34,9 @@
 #include <glib-object.h>
 #include <gobject/gvaluecollector.h>
 
-#include "gedit-uri-context-menu-plugin.h"
+#include "gedit-open-links-plugin.h"
 
-struct _GeditUriContextMenuPluginPrivate
+struct _GeditOpenLinksPluginPrivate
 {
 	GeditWindow	*window;
 	GList		*view_handles;
@@ -63,25 +63,25 @@ enum
 	PROP_WINDOW
 };
 
-static void gedit_window_activatable_iface_init (GeditWindowActivatableInterface *iface);
-static gboolean gedit_uri_context_menu_plugin_on_button_pressed_cb (GtkWidget			*btn,
-								    GdkEventButton		*event,
-								    GeditUriContextMenuPlugin	*plugin);
-static gboolean gedit_uri_context_menu_plugin_open_link_cb (GtkWidget			*menu_item,
-							    GeditUriContextMenuPlugin	*plugin);
+static void 	gedit_window_activatable_iface_init (GeditWindowActivatableInterface *iface);
+static gboolean gedit_open_links_plugin_on_button_pressed_cb (GtkWidget			*btn,
+							      GdkEventButton		*event,
+							      GeditOpenLinksPlugin	*plugin);
+static gboolean gedit_open_links_plugin_open_link_cb (GtkWidget			*menu_item,
+						      GeditOpenLinksPlugin	*plugin);
 
-G_DEFINE_DYNAMIC_TYPE_EXTENDED (GeditUriContextMenuPlugin,
-				gedit_uri_context_menu_plugin,
+G_DEFINE_DYNAMIC_TYPE_EXTENDED (GeditOpenLinksPlugin,
+				gedit_open_links_plugin,
 				PEAS_TYPE_EXTENSION_BASE,
 				0,
 				G_IMPLEMENT_INTERFACE_DYNAMIC (GEDIT_TYPE_WINDOW_ACTIVATABLE,
 							       gedit_window_activatable_iface_init)
-				G_ADD_PRIVATE_DYNAMIC (GeditUriContextMenuPlugin))
+				G_ADD_PRIVATE_DYNAMIC (GeditOpenLinksPlugin))
 
 static void
-gedit_uri_context_menu_plugin_on_populate_popup_cb (GtkTextView			*view,
-						    GtkMenu			*popup,
-						    GeditUriContextMenuPlugin	*plugin)
+gedit_open_links_plugin_on_populate_popup_cb (GtkTextView		*view,
+					      GtkMenu			*popup,
+					      GeditOpenLinksPlugin	*plugin)
 {
 	GtkMenuShell *menu;
 	GtkWidget *menu_item;
@@ -98,7 +98,7 @@ gedit_uri_context_menu_plugin_on_populate_popup_cb (GtkTextView			*view,
 
 	menu = GTK_MENU_SHELL (popup);
 
-	g_return_if_fail (GEDIT_IS_URI_CONTEXT_MENU_PLUGIN (plugin));
+	g_return_if_fail (GEDIT_IS_OPEN_LINKS_PLUGIN (plugin));
 
 	if (plugin->priv->uri != NULL)
 	{
@@ -159,19 +159,19 @@ gedit_uri_context_menu_plugin_on_populate_popup_cb (GtkTextView			*view,
 	}
 
 	menu_item = gtk_menu_item_new_with_label ("Open Link");
-	g_signal_connect (menu_item, "activate", G_CALLBACK (gedit_uri_context_menu_plugin_open_link_cb), plugin);
+	g_signal_connect (menu_item, "activate", G_CALLBACK (gedit_open_links_plugin_open_link_cb), plugin);
 
 	gtk_widget_show (menu_item);
 	gtk_menu_shell_prepend (menu, menu_item);
 }
 
 static gboolean
-gedit_uri_context_menu_plugin_open_link_cb (GtkWidget			*menu_item,
-					    GeditUriContextMenuPlugin	*plugin)
+gedit_open_links_plugin_open_link_cb (GtkWidget			*menu_item,
+				      GeditOpenLinksPlugin	*plugin)
 {
 	GError *err;
 	gboolean success;
-	g_return_val_if_fail (GEDIT_IS_URI_CONTEXT_MENU_PLUGIN (plugin), TRUE);
+	g_return_val_if_fail (GEDIT_IS_OPEN_LINKS_PLUGIN (plugin), TRUE);
 
 	success = gtk_show_uri_on_window (GTK_WINDOW (plugin->priv->window),
 					  plugin->priv->uri->str,
@@ -189,13 +189,13 @@ gedit_uri_context_menu_plugin_open_link_cb (GtkWidget			*menu_item,
 }
 
 static void
-gedit_uri_context_menu_plugin_connect_view (GeditUriContextMenuPlugin	*plugin,
-					    GeditView			*view)
+gedit_open_links_plugin_connect_view (GeditOpenLinksPlugin	*plugin,
+				      GeditView			*view)
 {
 	GList *list;
 	GeditViewHandleTuple *view_handle_tuple;
 	gulong handle_id;
-	g_return_if_fail (GEDIT_IS_URI_CONTEXT_MENU_PLUGIN (plugin));
+	g_return_if_fail (GEDIT_IS_OPEN_LINKS_PLUGIN (plugin));
 	g_return_if_fail (GEDIT_IS_VIEW (view));
 
 	view_handle_tuple = g_new (GeditViewHandleTuple, 1);
@@ -203,13 +203,13 @@ gedit_uri_context_menu_plugin_connect_view (GeditUriContextMenuPlugin	*plugin,
 
 	handle_id = g_signal_connect_after (view,
 					    "populate-popup",
-					    G_CALLBACK (gedit_uri_context_menu_plugin_on_populate_popup_cb),
+					    G_CALLBACK (gedit_open_links_plugin_on_populate_popup_cb),
 					    plugin);
 	view_handle_tuple->popup_handle = handle_id;
 
 	handle_id = g_signal_connect (view,
 				      "button-press-event",
-				      G_CALLBACK (gedit_uri_context_menu_plugin_on_button_pressed_cb),
+				      G_CALLBACK (gedit_open_links_plugin_on_button_pressed_cb),
 				      plugin);
 	view_handle_tuple->button_handle = handle_id;
 
@@ -218,22 +218,22 @@ gedit_uri_context_menu_plugin_connect_view (GeditUriContextMenuPlugin	*plugin,
 }
 
 static void
-gedit_uri_context_menu_plugin_on_window_tab_added_cb (GeditWindow		*window,
-						      GeditTab			*tab,
-						      GeditUriContextMenuPlugin	*plugin)
+gedit_open_links_plugin_on_window_tab_added_cb (GeditWindow		*window,
+						GeditTab		*tab,
+						GeditOpenLinksPlugin	*plugin)
 {
 	GeditView *view;
 	view = gedit_tab_get_view (tab);
-	g_return_if_fail (GEDIT_IS_URI_CONTEXT_MENU_PLUGIN (plugin));
+	g_return_if_fail (GEDIT_IS_OPEN_LINKS_PLUGIN (plugin));
 	g_return_if_fail (GEDIT_IS_VIEW (view));
 
-	gedit_uri_context_menu_plugin_connect_view (plugin, view);
+	gedit_open_links_plugin_connect_view (plugin, view);
 }
 
 static void
-gedit_uri_context_menu_plugin_on_window_tab_removed_cb (GeditWindow			*window,
-							GeditTab			*tab,
-							GeditUriContextMenuPlugin	*plugin)
+gedit_open_links_plugin_on_window_tab_removed_cb (GeditWindow		*window,
+						  GeditTab		*tab,
+						  GeditOpenLinksPlugin	*plugin)
 {
 	GeditView *view;
 	GeditViewHandleTuple *view_handle_elem;
@@ -241,7 +241,7 @@ gedit_uri_context_menu_plugin_on_window_tab_removed_cb (GeditWindow			*window,
 
 	view = gedit_tab_get_view (tab);
 
-	g_return_if_fail (GEDIT_IS_URI_CONTEXT_MENU_PLUGIN (plugin));
+	g_return_if_fail (GEDIT_IS_OPEN_LINKS_PLUGIN (plugin));
 	g_return_if_fail (GEDIT_IS_VIEW (view));
 
 	/* Disconnect signal and remove from the list */
@@ -262,13 +262,13 @@ gedit_uri_context_menu_plugin_on_window_tab_removed_cb (GeditWindow			*window,
 }
 
 static gboolean
-gedit_uri_context_menu_plugin_on_button_pressed_cb (GtkWidget			*btn,
-						    GdkEventButton		*event,
-						    GeditUriContextMenuPlugin	*plugin)
+gedit_open_links_plugin_on_button_pressed_cb (GtkWidget			*btn,
+					      GdkEventButton		*event,
+					      GeditOpenLinksPlugin	*plugin)
 {
 	if (event->type == GDK_BUTTON_PRESS && event->button == 3)
 	{
-		if (!GEDIT_IS_URI_CONTEXT_MENU_PLUGIN (plugin))
+		if (!GEDIT_IS_OPEN_LINKS_PLUGIN (plugin))
 		{
 			return FALSE;
 		}
@@ -279,24 +279,24 @@ gedit_uri_context_menu_plugin_on_button_pressed_cb (GtkWidget			*btn,
 }
 
 static void
-gedit_uri_context_menu_plugin_dispose (GObject *object)
+gedit_open_links_plugin_dispose (GObject *object)
 {
-	G_OBJECT_CLASS (gedit_uri_context_menu_plugin_parent_class)->dispose (object);
+	G_OBJECT_CLASS (gedit_open_links_plugin_parent_class)->dispose (object);
 }
 
 static void
-gedit_uri_context_menu_plugin_finalize (GObject *object)
+gedit_open_links_plugin_finalize (GObject *object)
 {
-	G_OBJECT_CLASS (gedit_uri_context_menu_plugin_parent_class)->finalize (object);
+	G_OBJECT_CLASS (gedit_open_links_plugin_parent_class)->finalize (object);
 }
 
 static void
-gedit_uri_context_menu_plugin_get_property (GObject	*object,
-					    guint	prop_id,
-					    GValue	*value,
-					    GParamSpec	*pspec)
+gedit_open_links_plugin_get_property (GObject		*object,
+				      guint		prop_id,
+				      GValue		*value,
+				      GParamSpec	*pspec)
 {
-	GeditUriContextMenuPlugin *plugin = GEDIT_URI_CONTEXT_MENU_PLUGIN (object);
+	GeditOpenLinksPlugin *plugin = GEDIT_OPEN_LINKS_PLUGIN (object);
 
 	switch (prop_id)
 	{
@@ -311,12 +311,12 @@ gedit_uri_context_menu_plugin_get_property (GObject	*object,
 }
 
 static void
-gedit_uri_context_menu_plugin_set_property (GObject		*object,
-					    guint		prop_id,
-					    const GValue	*value,
-					    GParamSpec		*pspec)
+gedit_open_links_plugin_set_property (GObject		*object,
+				      guint		prop_id,
+				      const GValue	*value,
+				      GParamSpec	*pspec)
 {
-	GeditUriContextMenuPlugin *plugin = GEDIT_URI_CONTEXT_MENU_PLUGIN (object);
+	GeditOpenLinksPlugin *plugin = GEDIT_OPEN_LINKS_PLUGIN (object);
 
 	switch (prop_id)
 	{
@@ -331,33 +331,33 @@ gedit_uri_context_menu_plugin_set_property (GObject		*object,
 }
 
 static void
-gedit_uri_context_menu_plugin_class_init (GeditUriContextMenuPluginClass *klass)
+gedit_open_links_plugin_class_init (GeditOpenLinksPluginClass *klass)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
 
-	object_class->dispose = gedit_uri_context_menu_plugin_dispose;
-	object_class->finalize = gedit_uri_context_menu_plugin_finalize;
-	object_class->set_property = gedit_uri_context_menu_plugin_set_property;
-	object_class->get_property = gedit_uri_context_menu_plugin_get_property;
+	object_class->dispose = gedit_open_links_plugin_dispose;
+	object_class->finalize = gedit_open_links_plugin_finalize;
+	object_class->set_property = gedit_open_links_plugin_set_property;
+	object_class->get_property = gedit_open_links_plugin_get_property;
 
 	g_object_class_override_property (object_class, PROP_WINDOW, "window");
 }
 
 static void
-gedit_uri_context_menu_plugin_class_finalize (GeditUriContextMenuPluginClass *klass)
+gedit_open_links_plugin_class_finalize (GeditOpenLinksPluginClass *klass)
 {
 }
 
 static void
-gedit_uri_context_menu_plugin_init (GeditUriContextMenuPlugin *plugin)
+gedit_open_links_plugin_init (GeditOpenLinksPlugin *plugin)
 {
-	plugin->priv = gedit_uri_context_menu_plugin_get_instance_private (plugin);
+	plugin->priv = gedit_open_links_plugin_get_instance_private (plugin);
 }
 
 static void
-gedit_uri_context_menu_plugin_activate (GeditWindowActivatable *activatable)
+gedit_open_links_plugin_activate (GeditWindowActivatable *activatable)
 {
-	GeditUriContextMenuPlugin *plugin;
+	GeditOpenLinksPlugin *plugin;
 	GList *views;
 	gulong handle_id;
 	GRegex *uri_char_regex;
@@ -365,7 +365,7 @@ gedit_uri_context_menu_plugin_activate (GeditWindowActivatable *activatable)
 
 	gedit_debug (DEBUG_PLUGINS);
 
-	plugin = GEDIT_URI_CONTEXT_MENU_PLUGIN (activatable);
+	plugin = GEDIT_OPEN_LINKS_PLUGIN (activatable);
 
 	g_return_if_fail (GEDIT_IS_WINDOW (plugin->priv->window));
 
@@ -384,13 +384,13 @@ gedit_uri_context_menu_plugin_activate (GeditWindowActivatable *activatable)
 
 	handle_id = g_signal_connect (plugin->priv->window,
 				      "tab-added",
-				      G_CALLBACK (gedit_uri_context_menu_plugin_on_window_tab_added_cb),
+				      G_CALLBACK (gedit_open_links_plugin_on_window_tab_added_cb),
 				      plugin);
 	plugin->priv->tab_added_handle = handle_id;
 
 	handle_id = g_signal_connect (plugin->priv->window,
 				      "tab-removed",
-				      G_CALLBACK (gedit_uri_context_menu_plugin_on_window_tab_removed_cb),
+				      G_CALLBACK (gedit_open_links_plugin_on_window_tab_removed_cb),
 				      plugin);
 	plugin->priv->tab_removed_handle = handle_id;
 
@@ -398,18 +398,18 @@ gedit_uri_context_menu_plugin_activate (GeditWindowActivatable *activatable)
 	GList *l;
 	for (l = views; l != NULL; l = l->next)
 	{
-		gedit_uri_context_menu_plugin_connect_view (plugin, l->data);
+		gedit_open_links_plugin_connect_view (plugin, l->data);
 	}
 }
 
 static void
-gedit_uri_context_menu_plugin_deactivate (GeditWindowActivatable *activatable)
+gedit_open_links_plugin_deactivate (GeditWindowActivatable *activatable)
 {
-	GeditUriContextMenuPlugin *plugin;
+	GeditOpenLinksPlugin *plugin;
 	GList *view_handles;
 	GeditViewHandleTuple *view_handle;
 
-	plugin = GEDIT_URI_CONTEXT_MENU_PLUGIN (activatable);
+	plugin = GEDIT_OPEN_LINKS_PLUGIN (activatable);
 
 	g_regex_unref (plugin->priv->uri_char_regex);
 
@@ -446,18 +446,18 @@ gedit_uri_context_menu_plugin_deactivate (GeditWindowActivatable *activatable)
 static void
 gedit_window_activatable_iface_init (GeditWindowActivatableInterface *iface)
 {
-	iface->activate = gedit_uri_context_menu_plugin_activate;
-	iface->deactivate = gedit_uri_context_menu_plugin_deactivate;
+	iface->activate = gedit_open_links_plugin_activate;
+	iface->deactivate = gedit_open_links_plugin_deactivate;
 }
 
 G_MODULE_EXPORT void
 peas_register_types (PeasObjectModule *module)
 {
-	gedit_uri_context_menu_plugin_register_type (G_TYPE_MODULE (module));
+	gedit_open_links_plugin_register_type (G_TYPE_MODULE (module));
 
 	peas_object_module_register_extension_type (module,
 						    GEDIT_TYPE_WINDOW_ACTIVATABLE,
-						    GEDIT_TYPE_URI_CONTEXT_MENU_PLUGIN);
+						    GEDIT_TYPE_OPEN_LINKS_PLUGIN);
 }
 
 /* ex:set ts=8 noet: */

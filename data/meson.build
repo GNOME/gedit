@@ -45,9 +45,9 @@ active_plugins = [
   'docinfo',
   'modelines',
   'filebrowser',
+  'openlinks',
   'spell',
-  'time',
-  'uricontextmenu'
+  'time'
 ]
 
 if build_checkupdate_plugin
