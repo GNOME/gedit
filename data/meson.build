@@ -43,10 +43,10 @@ endif
 
 active_plugins = [
   'docinfo',
-  'modelines',
   'filebrowser',
+  'modelines',
+  'sort',
   'spell',
-  'time',
 ]
 
 quoted_plugins = []
