@@ -15,10 +15,6 @@ msgfmt_plugin_cmd = [
   '--output=@OUTPUT@'
 ]
 
-if build_checkupdate_plugin
-  subdir('checkupdate')
-endif
-
 subdir('docinfo')
 subdir('externaltools')
 subdir('filebrowser')
