@@ -56,7 +56,7 @@ parts:
     source: https://gitlab.gnome.org/GNOME/tepl.git
     source-type: git
     plugin: meson
-    configflags:
+    meson-parameters:
       - --prefix=/usr
     organize:
       snap/gedit/current/usr: usr
