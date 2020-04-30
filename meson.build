@@ -71,7 +71,7 @@ python3 = python.find_installation('python3')
 
 # Configurations
 config_h = configuration_data()
-config_h.set_quoted('PACKAGE_STRING', package_string)
+config_h.set_quoted('PACKAGE_STRING', 'gedit-@0@'.format(api_version))
 config_h.set_quoted('GETTEXT_PACKAGE', meson.project_name())
 config_h.set_quoted('LIBDIR', join_paths(get_option('prefix'), get_option('libdir')))
 config_h.set_quoted('DATADIR', join_paths(get_option('prefix'), get_option('datadir')))
@@ -87,11 +87,6 @@ endif
 if enable_gvfs_metadata
   config_h.set('ENABLE_GVFS_METADATA', 1)
 endif
-
-version_array = meson.project_version().split('.')
-config_h.set('GEDIT_MAJOR_VERSION', version_array[0])
-config_h.set('GEDIT_MINOR_VERSION', version_array[1])
-config_h.set('GEDIT_MICRO_VERSION', version_array[2])
 
 configure_file(
   output: 'config.h',
