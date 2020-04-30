@@ -49,10 +49,6 @@ active_plugins = [
   'time',
 ]
 
-if build_checkupdate_plugin
-  active_plugins += 'checkupdate'
-endif
-
 quoted_plugins = []
 foreach plugin_name : active_plugins
   quoted_plugins += '\'@0@\''.format(plugin_name)

@@ -51,7 +51,6 @@ glib_req = '>= 2.64'
 gtk_req = '>= 2.22'
 libpeas_req = '>= 1.14.1'
 libxml_req = '>= 2.5.0'
-libsoup_req = '>= 2.60.0'
 gspell_req = '>= 1.0'
 pygobject_req = '>= 3.0.0'
 introspection_req = '>= 0.9.3'
@@ -68,11 +67,6 @@ introspection_dep = dependency('gobject-introspection-1.0', version: introspecti
 vapigen_dep = dependency('vapigen', version: vala_req)
 
 python3 = python.find_installation('python3')
-
-build_checkupdate_plugin = host_machine.system() == 'windows'
-if build_checkupdate_plugin
-  libsoup_dep = dependency('libsoup-2.4', version: libsoup_req)
-endif
 
 # Configurations
 config_h = configuration_data()
