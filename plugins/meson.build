@@ -16,7 +16,6 @@ msgfmt_plugin_cmd = [
 ]
 
 subdir('docinfo')
-subdir('externaltools')
 subdir('filebrowser')
 subdir('modelines')
 subdir('pythonconsole')
@@ -26,3 +25,7 @@ subdir('snippets')
 subdir('sort')
 subdir('spell')
 subdir('time')
+
+if get_option('plugin_externaltools')
+  subdir('externaltools')
+endif
