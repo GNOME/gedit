@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gedit\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gedit/issues\n"
-"POT-Creation-Date: 2020-04-04 08:49+0000\n"
-"PO-Revision-Date: 2020-04-06 16:13+0300\n"
+"POT-Creation-Date: 2020-04-30 20:27+0000\n"
+"PO-Revision-Date: 2020-05-01 09:18+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -518,12 +518,9 @@ msgid "Active plugins"
 msgstr "Активні модулі"
 
 #: data/org.gnome.gedit.gschema.xml.in:302
-msgid ""
-"List of active plugins. It contains the “Location” of the active plugins. "
-"See the .gedit-plugin file for obtaining the “Location” of a given plugin."
-msgstr ""
-"Перелік активних модулів. Він містить «Адресу» активного модуля. Див. файл ."
-"gedit-plugin для отримання «адреси» даного модуля."
+#| msgid "Active plugins"
+msgid "List of active plugins."
+msgstr "Список активних модулів."
 
 #: gedit/gedit-app.c:85
 msgid "Show the application’s version"
@@ -568,7 +565,7 @@ msgstr "[ФАЙЛ…] [+РЯДОК[:СТОВПЧИК]]"
 msgid "There was an error displaying the help."
 msgstr "Помилка при показі довідки."
 
-#: gedit/gedit-app.c:854
+#: gedit/gedit-app.c:888
 #, c-format
 msgid "%s: invalid encoding."
 msgstr "%s: неправильне кодування."
@@ -577,10 +574,10 @@ msgstr "%s: неправильне кодування."
 msgid "Close _without Saving"
 msgstr "_Закрити без збереження"
 
-#: gedit/gedit-close-confirmation-dialog.c:277 gedit/gedit-commands-file.c:462
-#: gedit/gedit-commands-file.c:567 gedit/gedit-commands-file.c:643
-#: gedit/gedit-commands-file.c:854 gedit/gedit-commands-file.c:1568
-#: gedit/gedit-encodings-dialog.c:192 gedit/gedit-preferences-dialog.c:814
+#: gedit/gedit-close-confirmation-dialog.c:277 gedit/gedit-commands-file.c:460
+#: gedit/gedit-commands-file.c:565 gedit/gedit-commands-file.c:641
+#: gedit/gedit-commands-file.c:852 gedit/gedit-commands-file.c:1566
+#: gedit/gedit-encodings-dialog.c:192 gedit/gedit-preferences-dialog.c:773
 #: gedit/gedit-progress-info-bar.c:49
 #: gedit/resources/ui/gedit-encodings-dialog.ui:44
 #: gedit/resources/ui/gedit-highlight-mode-dialog.ui:31
@@ -599,9 +596,9 @@ msgstr "_Скасувати"
 msgid "_Save As…"
 msgstr "_Зберегти як…"
 
-#: gedit/gedit-close-confirmation-dialog.c:295 gedit/gedit-commands-file.c:855
+#: gedit/gedit-close-confirmation-dialog.c:295 gedit/gedit-commands-file.c:853
 #: gedit/resources/gtk/menus-common.ui:127
-#: gedit/resources/ui/gedit-window.ui:61
+#: gedit/resources/ui/gedit-window.ui:59
 #: plugins/snippets/snippets/manager.py:875
 #: plugins/snippets/snippets/manager.py:913
 msgid "_Save"
@@ -721,12 +718,12 @@ msgstr "_Виберіть документи, які необхідно збер
 msgid "If you don’t save, all your changes will be permanently lost."
 msgstr "Якщо ви не збережете, всі зміни будуть остаточно втрачені."
 
-#: gedit/gedit-commands-file.c:265
+#: gedit/gedit-commands-file.c:263
 #, c-format
 msgid "Loading file “%s”…"
 msgstr "Завантажується файл «%s»…"
 
-#: gedit/gedit-commands-file.c:274
+#: gedit/gedit-commands-file.c:272
 #, c-format
 msgid "Loading %d file…"
 msgid_plural "Loading %d files…"
@@ -735,13 +732,12 @@ msgstr[1] "Завантажуються %d файли…"
 msgstr[2] "Завантажуються %d файлів…"
 
 #. Translators: "Open Files" is the title of the file chooser window.
-#: gedit/gedit-commands-file.c:456
-#| msgid "Open a file"
+#: gedit/gedit-commands-file.c:454
 msgctxt "window title"
 msgid "Open Files"
 msgstr "Відкриття файлів"
 
-#: gedit/gedit-commands-file.c:463 gedit/gedit-window.c:2637
+#: gedit/gedit-commands-file.c:461 gedit/gedit-window.c:2636
 #: gedit/resources/gtk/menus-common.ui:100
 #: gedit/resources/gtk/menus-common.ui:106
 #: plugins/filebrowser/resources/ui/gedit-file-browser-menus.ui:7
@@ -750,29 +746,29 @@ msgstr "Відкриття файлів"
 msgid "_Open"
 msgstr "_Відкрити"
 
-#: gedit/gedit-commands-file.c:558
+#: gedit/gedit-commands-file.c:556
 #, c-format
 msgid "The file “%s” is read-only."
 msgstr "Файл «%s» лише для читання."
 
-#: gedit/gedit-commands-file.c:563
+#: gedit/gedit-commands-file.c:561
 msgid "Do you want to try to replace it with the one you are saving?"
 msgstr "Спробувати замінити його файлом, що ви записуєте?"
 
-#: gedit/gedit-commands-file.c:568
+#: gedit/gedit-commands-file.c:566
 #: gedit/resources/ui/gedit-replace-dialog.ui:55
 msgid "_Replace"
 msgstr "За_мінити"
 
-#: gedit/gedit-commands-file.c:608
+#: gedit/gedit-commands-file.c:606
 msgid "Save the file using compression?"
 msgstr "Зберегти файл зі стисненням?"
 
-#: gedit/gedit-commands-file.c:612
+#: gedit/gedit-commands-file.c:610
 msgid "Save the file as plain text?"
 msgstr "Зберегти файл у форматі простого тесту?"
 
-#: gedit/gedit-commands-file.c:625
+#: gedit/gedit-commands-file.c:623
 #, c-format
 msgid ""
 "The file “%s” was previously saved as plain text and will now be saved using "
@@ -781,11 +777,11 @@ msgstr ""
 "Файл «%s» було раніше збережено у форматі простого тексту і тепер буде "
 "збережено з використанням стиснення."
 
-#: gedit/gedit-commands-file.c:629
+#: gedit/gedit-commands-file.c:627
 msgid "_Save Using Compression"
 msgstr "З_берегти зі стисненням"
 
-#: gedit/gedit-commands-file.c:634
+#: gedit/gedit-commands-file.c:632
 #, c-format
 msgid ""
 "The file “%s” was previously saved using compression and will now be saved "
@@ -794,32 +790,32 @@ msgstr ""
 "Файл «%s» раніше був збережений з використанням стиснення і тепер "
 "зберігається у форматі простого тексту."
 
-#: gedit/gedit-commands-file.c:637
+#: gedit/gedit-commands-file.c:635
 msgid "_Save As Plain Text"
 msgstr "З_берегти як звичайний"
 
-#: gedit/gedit-commands-file.c:752 gedit/gedit-commands-file.c:1019
+#: gedit/gedit-commands-file.c:750 gedit/gedit-commands-file.c:1017
 #, c-format
 msgid "Saving file “%s”…"
 msgstr "Зберігається файл «%s»…"
 
 #. Translators: "Save As" is the title of the file chooser window.
-#: gedit/gedit-commands-file.c:847
+#: gedit/gedit-commands-file.c:845
 msgctxt "window title"
 msgid "Save As"
 msgstr "Зберегти як"
 
-#: gedit/gedit-commands-file.c:1429
+#: gedit/gedit-commands-file.c:1427
 #, c-format
 msgid "Reverting the document “%s”…"
 msgstr "Відновлення документу «%s»…"
 
-#: gedit/gedit-commands-file.c:1476
+#: gedit/gedit-commands-file.c:1474
 #, c-format
 msgid "Revert unsaved changes to document “%s”?"
 msgstr "Відновити незбережені зміни в документі «%s»?"
 
-#: gedit/gedit-commands-file.c:1485
+#: gedit/gedit-commands-file.c:1483
 #, c-format
 msgid ""
 "Changes made to the document in the last %ld second will be permanently lost."
@@ -833,13 +829,13 @@ msgstr[1] ""
 msgstr[2] ""
 "Зміни, внесені в документ за останні %ld секунд, будуть остаточно втрачені."
 
-#: gedit/gedit-commands-file.c:1494
+#: gedit/gedit-commands-file.c:1492
 msgid ""
 "Changes made to the document in the last minute will be permanently lost."
 msgstr ""
 "Зміни, внесені в документ за останню хвилину, будуть остаточно втрачені."
 
-#: gedit/gedit-commands-file.c:1500
+#: gedit/gedit-commands-file.c:1498
 #, c-format
 msgid ""
 "Changes made to the document in the last minute and %ld second will be "
@@ -857,7 +853,7 @@ msgstr[2] ""
 "Зміни, внесені в документ за останню хвилину та %ld секунд, будуть остаточно "
 "втрачені."
 
-#: gedit/gedit-commands-file.c:1510
+#: gedit/gedit-commands-file.c:1508
 #, c-format
 msgid ""
 "Changes made to the document in the last %ld minute will be permanently lost."
@@ -871,12 +867,12 @@ msgstr[1] ""
 msgstr[2] ""
 "Зміни, внесені в документ за останні %ld хвилини, будуть остаточно втрачені."
 
-#: gedit/gedit-commands-file.c:1525
+#: gedit/gedit-commands-file.c:1523
 msgid "Changes made to the document in the last hour will be permanently lost."
 msgstr ""
 "Зміни, внесені в документ за останню годину, будуть остаточно втрачені."
 
-#: gedit/gedit-commands-file.c:1531
+#: gedit/gedit-commands-file.c:1529
 #, c-format
 msgid ""
 "Changes made to the document in the last hour and %d minute will be "
@@ -894,7 +890,7 @@ msgstr[2] ""
 "Зміни, внесені в документ за останню годину та %d хвилин, будуть остаточно "
 "втрачені."
 
-#: gedit/gedit-commands-file.c:1546
+#: gedit/gedit-commands-file.c:1544
 #, c-format
 msgid ""
 "Changes made to the document in the last %d hour will be permanently lost."
@@ -907,7 +903,7 @@ msgstr[1] ""
 msgstr[2] ""
 "Зміни, внесені в документ за останні %d годин, будуть остаточно втрачені."
 
-#: gedit/gedit-commands-file.c:1569
+#: gedit/gedit-commands-file.c:1567
 msgid "_Revert"
 msgstr "Від_новити"
 
@@ -942,7 +938,7 @@ msgstr "Знайдено та замінено один випадок"
 msgid "“%s” not found"
 msgstr "Фрази «%s» не існує"
 
-#: gedit/gedit-document.c:969 gedit/gedit-document.c:998
+#: gedit/gedit-document.c:993 gedit/gedit-document.c:1022
 #, c-format
 msgid "Untitled Document %d"
 msgstr "Неназваний документ %d"
@@ -952,8 +948,8 @@ msgstr "Неназваний документ %d"
 msgid "Tab Group %i"
 msgstr "Група вкладок %i"
 
-#: gedit/gedit-documents-panel.c:498 gedit/gedit-window.c:1083
-#: gedit/gedit-window.c:1089 gedit/gedit-window.c:1097
+#: gedit/gedit-documents-panel.c:498 gedit/gedit-window.c:1082
+#: gedit/gedit-window.c:1088 gedit/gedit-window.c:1096
 msgid "Read-Only"
 msgstr "Лише читання"
 
@@ -1003,7 +999,7 @@ msgid "Move to a lower priority"
 msgstr "Пересунути на нижчий пріоритет "
 
 #: gedit/gedit-file-chooser-dialog-gtk.c:39
-#: gedit/gedit-preferences-dialog.c:823
+#: gedit/gedit-preferences-dialog.c:782
 msgid "All Files"
 msgstr "Всі файли"
 
@@ -1027,7 +1023,7 @@ msgstr "Кодування символів:"
 msgid "Line Ending:"
 msgstr "Кодування рядка:"
 
-#: gedit/gedit-highlight-mode-selector.c:269 gedit/gedit-window.c:1167
+#: gedit/gedit-highlight-mode-selector.c:269 gedit/gedit-window.c:1166
 #: plugins/externaltools/tools/manager.py:115
 #: plugins/externaltools/tools/manager.py:324
 #: plugins/externaltools/tools/manager.py:440
@@ -1294,38 +1290,38 @@ msgstr ""
 msgid "Could not save the file “%s”."
 msgstr "Неможливо зберегти файл «%s»."
 
-#: gedit/gedit-preferences-dialog.c:444
+#: gedit/gedit-preferences-dialog.c:442
 msgid "Click on this button to select the font to be used by the editor"
 msgstr "Натисніть цю кнопку для вибору шрифту редактора"
 
-#: gedit/gedit-preferences-dialog.c:450
+#: gedit/gedit-preferences-dialog.c:448
 #, c-format
 msgid "_Use the system fixed width font (%s)"
 msgstr "_Використовувати системний моноширинний шрифт (%s)"
 
-#: gedit/gedit-preferences-dialog.c:590
+#: gedit/gedit-preferences-dialog.c:556
 #, c-format
 msgid "Directory “%s” could not be created: g_mkdir_with_parents() failed: %s"
 msgstr ""
 "Не вдається створити каталог '%s': помилка у g_mkdir_with_parents(): %s"
 
-#: gedit/gedit-preferences-dialog.c:787
+#: gedit/gedit-preferences-dialog.c:748
 msgid "The selected color scheme cannot be installed."
 msgstr "Обрана схема кольорів не може бути встановлена."
 
-#: gedit/gedit-preferences-dialog.c:810
+#: gedit/gedit-preferences-dialog.c:769
 msgid "Add Scheme"
 msgstr "Додати схему"
 
-#: gedit/gedit-preferences-dialog.c:815
+#: gedit/gedit-preferences-dialog.c:774
 msgid "A_dd Scheme"
 msgstr "_Додати схему"
 
-#: gedit/gedit-preferences-dialog.c:819
+#: gedit/gedit-preferences-dialog.c:778
 msgid "Color Scheme Files"
 msgstr "Файли схеми кольорів"
 
-#: gedit/gedit-preferences-dialog.c:850
+#: gedit/gedit-preferences-dialog.c:815
 #, c-format
 msgid "Could not remove color scheme “%s”."
 msgstr "Не вдалось вилучити схему кольорів «%s»."
@@ -1465,7 +1461,7 @@ msgstr "Mac OS Classic"
 msgid "Windows"
 msgstr "ОС Windows"
 
-#: gedit/gedit-view.c:479 gedit/resources/ui/gedit-preferences-dialog.ui:41
+#: gedit/gedit-view.c:438 gedit/resources/ui/gedit-preferences-dialog.ui:41
 msgid "_Display line numbers"
 msgstr "Показувати _номери рядків"
 
@@ -1506,48 +1502,48 @@ msgstr "Рядок, яку треба знайти"
 msgid "Line you want to move the cursor to"
 msgstr "Рядок, куди треба перемістити курсор"
 
-#: gedit/gedit-window.c:920
+#: gedit/gedit-window.c:919
 msgid "Bracket match is out of range"
 msgstr "Відповідна дужка поза межами діапазону"
 
-#: gedit/gedit-window.c:925
+#: gedit/gedit-window.c:924
 msgid "Bracket match not found"
 msgstr "Не знайдено відповідну дужку"
 
-#: gedit/gedit-window.c:930
+#: gedit/gedit-window.c:929
 #, c-format
 msgid "Bracket match found on line: %d"
 msgstr "Відповідну дужку знайдено у рядку: %d"
 
 #. Translators: "Ln" is an abbreviation for "Line", Col is an abbreviation for "Column". Please,
 #. use abbreviations if possible to avoid space problems.
-#: gedit/gedit-window.c:965
+#: gedit/gedit-window.c:964
 #, c-format
 msgid "  Ln %d, Col %d"
 msgstr " Ряд. %d, Ст. %d"
 
-#: gedit/gedit-window.c:1149
+#: gedit/gedit-window.c:1148
 #, c-format
 msgid "Tab Width: %u"
 msgstr "Ширина табуляції: %u"
 
-#: gedit/gedit-window.c:1494
+#: gedit/gedit-window.c:1493
 msgid "There are unsaved documents"
 msgstr "Є незбережені документи "
 
-#: gedit/gedit-window.c:2331
+#: gedit/gedit-window.c:2330
 msgid "Change side panel page"
 msgstr "Змінити сторінку бокової панелі"
 
-#: gedit/gedit-window.c:2351 gedit/resources/ui/gedit-window.ui:19
+#: gedit/gedit-window.c:2350 gedit/resources/ui/gedit-window.ui:19
 msgid "Documents"
 msgstr "Документи"
 
-#: gedit/gedit-window.c:2638
+#: gedit/gedit-window.c:2637
 msgid "Open a file"
 msgstr "Відкрити файл"
 
-#: gedit/gedit-window.c:2642
+#: gedit/gedit-window.c:2641
 msgid "Open a recently used file"
 msgstr "Відкрити файл, що нещодавно редагувався"
 
@@ -1951,29 +1947,29 @@ msgstr "Виберіть колір редактора"
 msgid "Color Scheme"
 msgstr "Схема кольорів"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:663
-#: gedit/resources/ui/gedit-preferences-dialog.ui:664
+#: gedit/resources/ui/gedit-preferences-dialog.ui:652
+#: gedit/resources/ui/gedit-preferences-dialog.ui:653
 msgid "Install scheme"
 msgstr "Встановити схему"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:665
+#: gedit/resources/ui/gedit-preferences-dialog.ui:654
 msgid "Install Scheme"
 msgstr "Встановити схему"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:679
-#: gedit/resources/ui/gedit-preferences-dialog.ui:680
+#: gedit/resources/ui/gedit-preferences-dialog.ui:668
+#: gedit/resources/ui/gedit-preferences-dialog.ui:669
 msgid "Uninstall scheme"
 msgstr "Вилучити схему"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:681
+#: gedit/resources/ui/gedit-preferences-dialog.ui:670
 msgid "Uninstall Scheme"
 msgstr "Вилучити схему"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:721
+#: gedit/resources/ui/gedit-preferences-dialog.ui:710
 msgid "Font & Colors"
 msgstr "Шрифти й кольори"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:746
+#: gedit/resources/ui/gedit-preferences-dialog.ui:735
 msgid "Plugins"
 msgstr "Модулі"
 
@@ -2312,28 +2308,21 @@ msgid "Go to line"
 msgstr "Перейти на певний рядок"
 
 #: gedit/resources/ui/gedit-shortcuts.ui:265
-#| msgctxt "shortcut window"
-#| msgid "Move viewport to beginning of file"
 msgctxt "shortcut window"
 msgid "Move to the beginning of the current line"
 msgstr "Перейти до початку поточного рядка"
 
 #: gedit/resources/ui/gedit-shortcuts.ui:272
-#| msgid "Checks the spelling of the current document."
 msgctxt "shortcut window"
 msgid "Move to the end of the current line"
 msgstr "Перейти в кінець поточного рядка"
 
 #: gedit/resources/ui/gedit-shortcuts.ui:279
-#| msgctxt "shortcut window"
-#| msgid "Move viewport to beginning of file"
 msgctxt "shortcut window"
 msgid "Move to the beginning of the document"
 msgstr "Перейти до початку документа"
 
 #: gedit/resources/ui/gedit-shortcuts.ui:286
-#| msgctxt "shortcut window"
-#| msgid "Switch to the next document"
 msgctxt "shortcut window"
 msgid "Move to the end of the document"
 msgstr "Перейти на кінець документа"
@@ -2385,92 +2374,85 @@ msgstr "Вилучити поточний рядок"
 
 #: gedit/resources/ui/gedit-shortcuts.ui:355
 msgctxt "shortcut window"
-msgid "Join selected lines"
-msgstr "Об'єднати вибрані рядки"
-
-#: gedit/resources/ui/gedit-shortcuts.ui:362
-msgctxt "shortcut window"
 msgid "Move current line up"
 msgstr "Перенести поточний рядок вище"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:369
+#: gedit/resources/ui/gedit-shortcuts.ui:362
 msgctxt "shortcut window"
 msgid "Move current line down"
 msgstr "Перенести поточний рядок нижче"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:376
+#: gedit/resources/ui/gedit-shortcuts.ui:369
 msgctxt "shortcut window"
 msgid "Move current word left"
 msgstr "Перенести поточне слово ліворуч"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:383
+#: gedit/resources/ui/gedit-shortcuts.ui:376
 msgctxt "shortcut window"
 msgid "Move current word right"
 msgstr "Перенести поточне слово праворуч"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:390
+#: gedit/resources/ui/gedit-shortcuts.ui:383
 msgctxt "shortcut window"
 msgid "Convert to uppercase"
 msgstr "Зробити великими буквами"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:397
+#: gedit/resources/ui/gedit-shortcuts.ui:390
 msgctxt "shortcut window"
 msgid "Convert to lowercase"
 msgstr "Зробити маленькими буквами"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:404
+#: gedit/resources/ui/gedit-shortcuts.ui:397
 msgctxt "shortcut window"
 msgid "Invert case"
 msgstr "Зробити навиворіт"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:411
+#: gedit/resources/ui/gedit-shortcuts.ui:404
 msgctxt "shortcut window"
 msgid "Increment number at cursor"
 msgstr "Збільшити числа на курсорі"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:418
+#: gedit/resources/ui/gedit-shortcuts.ui:411
 msgctxt "shortcut window"
 msgid "Decrement number at cursor"
 msgstr "Зменшити число на курсорі"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:426
+#: gedit/resources/ui/gedit-shortcuts.ui:419
 msgctxt "shortcut window"
 msgid "Tools"
 msgstr "Засоби"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:431
+#: gedit/resources/ui/gedit-shortcuts.ui:424
 msgctxt "shortcut window"
 msgid "Check spelling"
 msgstr "Перевірити орфографію"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:438
+#: gedit/resources/ui/gedit-shortcuts.ui:431
 msgctxt "shortcut window"
 msgid "Print the document"
 msgstr "Надрукувати документ"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:445
+#: gedit/resources/ui/gedit-shortcuts.ui:438
 msgctxt "shortcut window"
 msgid "Show completion window"
 msgstr "Показати вікно заповнення"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:453
+#: gedit/resources/ui/gedit-shortcuts.ui:446
 msgctxt "shortcut window"
 msgid "General"
 msgstr "Загальні"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:458
+#: gedit/resources/ui/gedit-shortcuts.ui:451
 msgctxt "shortcut window"
 msgid "Show help"
 msgstr "Показати довідку"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:465
-#| msgid "Open history menu"
+#: gedit/resources/ui/gedit-shortcuts.ui:458
 msgctxt "shortcut window"
 msgid "Open menu"
 msgstr "Відкрити меню"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:472
-#| msgid "_Keyboard Shortcuts"
+#: gedit/resources/ui/gedit-shortcuts.ui:465
 msgctxt "shortcut window"
 msgid "Keyboard shortcuts"
 msgstr "Клавіатурні скорочення"
@@ -2479,77 +2461,36 @@ msgstr "Клавіатурні скорочення"
 msgid "Close Document"
 msgstr "Закрити документ"
 
-#: gedit/resources/ui/gedit-window.ui:36 gedit/resources/ui/gedit-window.ui:43
-#: gedit/resources/ui/gedit-window.ui:330
-#: gedit/resources/ui/gedit-window.ui:337
+#: gedit/resources/ui/gedit-window.ui:36 gedit/resources/ui/gedit-window.ui:42
+#: gedit/resources/ui/gedit-window.ui:327
+#: gedit/resources/ui/gedit-window.ui:333
 msgid "Create a new document"
 msgstr "Створити новий документ"
 
-#: gedit/resources/ui/gedit-window.ui:42 gedit/resources/ui/gedit-window.ui:336
+#: gedit/resources/ui/gedit-window.ui:41 gedit/resources/ui/gedit-window.ui:332
 msgid "New"
 msgstr "Створити"
 
-#: gedit/resources/ui/gedit-window.ui:65 gedit/resources/ui/gedit-window.ui:70
-#: gedit/resources/ui/gedit-window.ui:375
-#: gedit/resources/ui/gedit-window.ui:380
+#: gedit/resources/ui/gedit-window.ui:62 gedit/resources/ui/gedit-window.ui:67
+#: gedit/resources/ui/gedit-window.ui:368
+#: gedit/resources/ui/gedit-window.ui:373
 msgid "Save the current file"
 msgstr "Зберегти поточний файл"
 
-#: gedit/resources/ui/gedit-window.ui:69 gedit/resources/ui/gedit-window.ui:372
-#: gedit/resources/ui/gedit-window.ui:379
+#: gedit/resources/ui/gedit-window.ui:66 gedit/resources/ui/gedit-window.ui:366
+#: gedit/resources/ui/gedit-window.ui:372
 msgid "Save"
 msgstr "Зберегти"
 
-#: gedit/resources/ui/gedit-window.ui:212
+#: gedit/resources/ui/gedit-window.ui:209
 msgid "Hide panel"
 msgstr "Сховати панель"
 
+#: gedit/resources/ui/gedit-window.ui:341
 #: gedit/resources/ui/gedit-window.ui:346
-#: gedit/resources/ui/gedit-window.ui:351
-#: gedit/resources/ui/gedit-window.ui:352
+#: gedit/resources/ui/gedit-window.ui:347
 msgid "Leave Fullscreen"
 msgstr "Залишити повноекранний режим"
-
-#: plugins/checkupdate/checkupdate.plugin.desktop.in:5
-msgid "Check update"
-msgstr "Перевірити наявність оновлень"
-
-#: plugins/checkupdate/checkupdate.plugin.desktop.in:6
-msgid "Check for latest version of gedit"
-msgstr "Перевірити наявність останньої версії gedit"
-
-#: plugins/checkupdate/gedit-check-update-plugin.c:243
-msgid "There was an error displaying the URI."
-msgstr "Помилка при показі URI."
-
-#: plugins/checkupdate/gedit-check-update-plugin.c:280
-msgid "_Download"
-msgstr "_Завантажити"
-
-#: plugins/checkupdate/gedit-check-update-plugin.c:281
-msgid "_Ignore Version"
-msgstr "_Ігнорувати версію"
-
-#: plugins/checkupdate/gedit-check-update-plugin.c:286
-msgid "There is a new version of gedit"
-msgstr "Знайдено нову версію gedit"
-
-#: plugins/checkupdate/gedit-check-update-plugin.c:289
-msgid ""
-"You can download the new version of gedit by clicking on the download button "
-"or ignore that version and wait for a new one"
-msgstr ""
-"Ви можете завантажити нову версію gedit, натиснувши на кнопці завантаження "
-"або ігнорувати цю версію доки не вийде ще новіша"
-
-#: plugins/checkupdate/org.gnome.gedit.plugins.checkupdate.gschema.xml:5
-msgid "Version to Ignore"
-msgstr "Версія, що ігнорується"
-
-#. This is releated to the next gedit version to be released
-#: plugins/checkupdate/org.gnome.gedit.plugins.checkupdate.gschema.xml:7
-msgid "Version to ignore until a newer version is released."
-msgstr "Версія, яку ігнорувати до випуску нової версії."
 
 #: plugins/docinfo/docinfo.plugin.desktop.in:5
 #: plugins/docinfo/resources/ui/gedit-docinfo-plugin.ui:7
@@ -3621,6 +3562,48 @@ msgstr "Вставити час або дату"
 #: plugins/time/time.plugin.desktop.in:6
 msgid "Inserts current date and time at the cursor position."
 msgstr "Вставляє поточну дату й час в позицію курсора"
+
+#~ msgid ""
+#~ "List of active plugins. It contains the “Location” of the active plugins. "
+#~ "See the .gedit-plugin file for obtaining the “Location” of a given plugin."
+#~ msgstr ""
+#~ "Перелік активних модулів. Він містить «Адресу» активного модуля. Див. "
+#~ "файл .gedit-plugin для отримання «адреси» даного модуля."
+
+#~ msgctxt "shortcut window"
+#~ msgid "Join selected lines"
+#~ msgstr "Об'єднати вибрані рядки"
+
+#~ msgid "Check update"
+#~ msgstr "Перевірити наявність оновлень"
+
+#~ msgid "Check for latest version of gedit"
+#~ msgstr "Перевірити наявність останньої версії gedit"
+
+#~ msgid "There was an error displaying the URI."
+#~ msgstr "Помилка при показі URI."
+
+#~ msgid "_Download"
+#~ msgstr "_Завантажити"
+
+#~ msgid "_Ignore Version"
+#~ msgstr "_Ігнорувати версію"
+
+#~ msgid "There is a new version of gedit"
+#~ msgstr "Знайдено нову версію gedit"
+
+#~ msgid ""
+#~ "You can download the new version of gedit by clicking on the download "
+#~ "button or ignore that version and wait for a new one"
+#~ msgstr ""
+#~ "Ви можете завантажити нову версію gedit, натиснувши на кнопці "
+#~ "завантаження або ігнорувати цю версію доки не вийде ще новіша"
+
+#~ msgid "Version to Ignore"
+#~ msgstr "Версія, що ігнорується"
+
+#~ msgid "Version to ignore until a newer version is released."
+#~ msgstr "Версія, яку ігнорувати до випуску нової версії."
 
 #~ msgid "Changes to document “%s” will be permanently lost."
 #~ msgstr "Зміни у документі «%s» буде остаточно втрачено."
