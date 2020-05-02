@@ -34,6 +34,7 @@
 
 #include "gedit-dirs.h"
 #include "gedit-debug.h"
+#include "gedit-factory.h"
 #include "gedit-settings.h"
 
 #ifdef G_OS_WIN32
@@ -116,6 +117,7 @@ int
 main (int argc, char *argv[])
 {
 	GType type;
+	GeditFactory *factory;
 	GeditApp *app;
 	gint status;
 
@@ -138,6 +140,8 @@ main (int argc, char *argv[])
 
 	setup_i18n ();
 	tepl_init ();
+	factory = gedit_factory_new ();
+	tepl_abstract_factory_set_singleton (TEPL_ABSTRACT_FACTORY (factory));
 
 	app = g_object_new (type,
 	                    "application-id", "org.gnome.gedit",
