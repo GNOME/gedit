@@ -637,54 +637,6 @@ show_menubar (void)
 	return result;
 }
 
-static GFile *
-get_metadata_manager_file (void)
-{
-	return g_file_new_build_filename (gedit_dirs_get_user_data_dir (),
-					  "gedit-metadata.xml",
-					  NULL);
-}
-
-static void
-load_metadata_manager (void)
-{
-	TeplMetadataManager *manager;
-	GFile *file;
-	GError *error = NULL;
-
-	manager = tepl_metadata_manager_get_singleton ();
-	file = get_metadata_manager_file ();
-	tepl_metadata_manager_load_from_disk (manager, file, &error);
-
-	if (error != NULL)
-	{
-		g_warning ("Failed to load metadata: %s", error->message);
-		g_clear_error (&error);
-	}
-
-	g_object_unref (file);
-}
-
-static void
-save_metadata_manager (void)
-{
-	TeplMetadataManager *manager;
-	GFile *file;
-	GError *error = NULL;
-
-	manager = tepl_metadata_manager_get_singleton ();
-	file = get_metadata_manager_file ();
-	tepl_metadata_manager_save_to_disk (manager, file, TRUE, &error);
-
-	if (error != NULL)
-	{
-		g_warning ("Failed to save metadata: %s", error->message);
-		g_clear_error (&error);
-	}
-
-	g_object_unref (file);
-}
-
 static void
 gedit_app_startup (GApplication *application)
 {
@@ -699,8 +651,6 @@ gedit_app_startup (GApplication *application)
 	/* Setup debugging */
 	gedit_debug_init ();
 	gedit_debug_message (DEBUG_APP, "Startup");
-
-	load_metadata_manager ();
 
 	setup_theme_extensions (GEDIT_APP (application));
 
@@ -1163,7 +1113,6 @@ gedit_app_shutdown (GApplication *app)
 	save_accels ();
 	save_page_setup (GEDIT_APP (app));
 	save_print_settings (GEDIT_APP (app));
-	save_metadata_manager ();
 
 	G_APPLICATION_CLASS (gedit_app_parent_class)->shutdown (app);
 
@@ -1306,10 +1255,15 @@ load_print_settings (GeditApp *app)
 static void
 gedit_app_init (GeditApp *app)
 {
+	TeplApplication *tepl_app;
+
 	g_set_application_name ("gedit");
 	gtk_window_set_default_icon_name ("org.gnome.gedit");
 
 	g_application_add_main_option_entries (G_APPLICATION (app), options);
+
+	tepl_app = tepl_application_get_from_gtk_application (GTK_APPLICATION (app));
+	tepl_application_handle_metadata (tepl_app);
 }
 
 /**
