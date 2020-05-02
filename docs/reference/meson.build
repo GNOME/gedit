@@ -33,6 +33,7 @@ libgedit_reference_ignored_h = [
   'gedit-encoding-items.h',
   'gedit-encodings-dialog.h',
   'gedit-enum-types.h',
+  'gedit-factory.h',
   'gedit-file-chooser-dialog-gtk.h',
   'gedit-file-chooser-dialog-osx.h',
   'gedit-file-chooser-dialog.h',
