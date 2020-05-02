@@ -13,22 +13,22 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gedit 3.3.7\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gedit/issues\n"
-"POT-Creation-Date: 2019-12-03 15:59+0000\n"
-"PO-Revision-Date: 2020-01-21 18:56+0800\n"
-"Last-Translator: Yi-Jyun Pan <pan93412@gmail.com>\n"
+"POT-Creation-Date: 2020-04-30 20:27+0000\n"
+"PO-Revision-Date: 2020-05-02 15:28+0800\n"
+"Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
 "Language-Team: Chinese <zh-l10n@linux.org.tw>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 2.2.4\n"
+"X-Generator: Poedit 2.3\n"
 
 #: data/org.gnome.gedit.appdata.xml.in:7
 msgid "gedit"
 msgstr "gedit"
 
-#: data/org.gnome.gedit.appdata.xml.in:8 data/org.gnome.gedit.desktop.in.in:4
+#: data/org.gnome.gedit.appdata.xml.in:8 data/org.gnome.gedit.desktop.in:4
 msgid "Edit text files"
 msgstr "編輯文字檔"
 
@@ -56,22 +56,22 @@ msgid ""
 "needs and adapt it to your workflow."
 msgstr "它多樣化的外掛程式系統允許您自訂應用程式以符合您的需求與工作流程。"
 
-#: data/org.gnome.gedit.desktop.in.in:3 gedit/gedit-print-job.c:730
+#: data/org.gnome.gedit.desktop.in:3 gedit/gedit-print-job.c:730
 msgid "Text Editor"
 msgstr "文字編輯器"
 
 #. TRANSLATORS: Do NOT translate or localize the semicolons!
 #. The list MUST also end with a semicolon!
 #. Search terms to find this application.
-#: data/org.gnome.gedit.desktop.in.in:18
+#: data/org.gnome.gedit.desktop.in:18
 msgid "Text;Editor;Plaintext;Write;gedit;"
 msgstr "Text;Editor;Plaintext;Write;gedit;文字;編輯器;純文字;撰寫;編寫;"
 
-#: data/org.gnome.gedit.desktop.in.in:22
+#: data/org.gnome.gedit.desktop.in:22
 msgid "New Window"
 msgstr "新增視窗"
 
-#: data/org.gnome.gedit.desktop.in.in:26
+#: data/org.gnome.gedit.desktop.in:26
 msgid "New Document"
 msgstr "新增文件"
 
@@ -153,7 +153,7 @@ msgstr "復原動作次數上限"
 msgid ""
 "Maximum number of actions that gedit will be able to undo or redo. Use “-1” "
 "for unlimited number of actions."
-msgstr "gedit 中復原或取消復原次數的上限。設為「-1」則為無限次。y"
+msgstr "gedit 中復原或取消復原次數的上限。設為「-1」則為無限次。"
 
 #: data/org.gnome.gedit.gschema.xml.in:77
 msgid "Line Wrapping Mode"
@@ -200,7 +200,7 @@ msgstr "插入空格"
 
 #: data/org.gnome.gedit.gschema.xml.in:97
 msgid "Whether gedit should insert spaces instead of tabs."
-msgstr "gedit 應否使用空格來代替 Tab 字元。"
+msgstr "gedit 是否應使用空格來代替 Tab 字元。"
 
 #: data/org.gnome.gedit.gschema.xml.in:101
 msgid "Automatic indent"
@@ -216,15 +216,15 @@ msgstr "顯示列號"
 
 #: data/org.gnome.gedit.gschema.xml.in:107
 msgid "Whether gedit should display line numbers in the editing area."
-msgstr "gedit 應否在編輯區域中顯示列號。"
+msgstr "gedit 是否應在編輯區域中顯示列號。"
 
 #: data/org.gnome.gedit.gschema.xml.in:111
 msgid "Highlight Current Line"
-msgstr "標明目前的行"
+msgstr "標明目前的列"
 
 #: data/org.gnome.gedit.gschema.xml.in:112
 msgid "Whether gedit should highlight the current line."
-msgstr "gedit 應否在當前的行上啟用色彩標明功能。"
+msgstr "gedit 是否應以色彩標明目前的列。"
 
 #: data/org.gnome.gedit.gschema.xml.in:116
 msgid "Highlight Matching Brackets"
@@ -232,7 +232,7 @@ msgstr "標明顯示成對的括號"
 
 #: data/org.gnome.gedit.gschema.xml.in:117
 msgid "Whether gedit should highlight matching brackets."
-msgstr "gedit 是否應以色彩標明與目前選取的成對的弧號。"
+msgstr "gedit 是否應以色彩標明與目前選取相成對的弧號。"
 
 #: data/org.gnome.gedit.gschema.xml.in:121
 msgid "Display Right Margin"
@@ -240,7 +240,7 @@ msgstr "顯示右邊邊界"
 
 #: data/org.gnome.gedit.gschema.xml.in:122
 msgid "Whether gedit should display the right margin in the editing area."
-msgstr "gedit 應否在編輯區域中顯示右邊邊界。"
+msgstr "gedit 是否應在編輯區域中顯示右邊邊界。"
 
 #: data/org.gnome.gedit.gschema.xml.in:126
 msgid "Right Margin Position"
@@ -286,7 +286,7 @@ msgstr "回復先前的游標位置"
 msgid ""
 "Whether gedit should restore the previous cursor position when a file is "
 "loaded."
-msgstr "gedit 載入檔案後應否回到先前的游標位置。"
+msgstr "gedit 載入檔案時是否應回到上次的游標位置。"
 
 #: data/org.gnome.gedit.gschema.xml.in:152
 msgid "Enable Syntax Highlighting"
@@ -294,7 +294,7 @@ msgstr "啟用語法色彩標明"
 
 #: data/org.gnome.gedit.gschema.xml.in:153
 msgid "Whether gedit should enable syntax highlighting."
-msgstr "gedit 應否啟用語法色彩標明的功能。"
+msgstr "gedit 是否應啟用語法色彩標明的功能。"
 
 #: data/org.gnome.gedit.gschema.xml.in:157
 msgid "Enable Search Highlighting"
@@ -303,7 +303,7 @@ msgstr "啟用搜尋標明功能"
 #: data/org.gnome.gedit.gschema.xml.in:158
 msgid ""
 "Whether gedit should highlight all the occurrences of the searched text."
-msgstr "gedit 應否在搜尋後替比對到的字串處加上標明。"
+msgstr "gedit 是否應在搜尋後將比對到的字串處加上色彩標明。"
 
 #: data/org.gnome.gedit.gschema.xml.in:162
 msgid "Ensure Trailing Newline"
@@ -312,7 +312,7 @@ msgstr "確保結尾以 Newline 結束"
 #: data/org.gnome.gedit.gschema.xml.in:163
 msgid ""
 "Whether gedit will ensure that documents always end with a trailing newline."
-msgstr "gedit 應否確保文件結尾是以新列(newline)結束。"
+msgstr "gedit 是否應確保文件結尾總是以新列 (newline) 結束。"
 
 #: data/org.gnome.gedit.gschema.xml.in:169
 msgid "Notebook Show Tabs Mode"
@@ -353,7 +353,7 @@ msgstr "列印語法色彩標明"
 
 #: data/org.gnome.gedit.gschema.xml.in:190
 msgid "Whether gedit should print syntax highlighting when printing documents."
-msgstr "gedit 應否在列印文件時加上語法色彩標明。"
+msgstr "gedit 是否應在列印文件時加上語法色彩標明。"
 
 #: data/org.gnome.gedit.gschema.xml.in:194
 msgid "Print Header"
@@ -361,7 +361,7 @@ msgstr "列印頁首"
 
 #: data/org.gnome.gedit.gschema.xml.in:195
 msgid "Whether gedit should include a document header when printing documents."
-msgstr "gedit 應否在列印文件時加上頁首。"
+msgstr "gedit 是否應在列印文件時加入文件的頁首。"
 
 #: data/org.gnome.gedit.gschema.xml.in:204
 msgid "Printing Line Wrapping Mode"
@@ -496,72 +496,68 @@ msgid "Active plugins"
 msgstr "啟用外掛程式"
 
 #: data/org.gnome.gedit.gschema.xml.in:302
-msgid ""
-"List of active plugins. It contains the “Location” of the active plugins. "
-"See the .gedit-plugin file for obtaining the “Location” of a given plugin."
-msgstr ""
-"可用的外掛程式的清單。這包括可用的外掛程式的「位置」。參閱 .gedit-plugin 檔來"
-"取得特定的外掛程式的「位置」。"
+msgid "List of active plugins."
+msgstr "啟用的外掛程式清單。"
 
-#: gedit/gedit-app.c:103
+#: gedit/gedit-app.c:85
 msgid "Show the application’s version"
 msgstr "顯示應用程式的版本"
 
-#: gedit/gedit-app.c:109
+#: gedit/gedit-app.c:91
 msgid "Display list of possible values for the encoding option"
 msgstr "顯示編碼選項可用數值的清單"
 
-#: gedit/gedit-app.c:116
+#: gedit/gedit-app.c:98
 msgid ""
 "Set the character encoding to be used to open the files listed on the "
 "command line"
 msgstr "設定在命令列中開啟檔案時所使用的文字編碼"
 
-#: gedit/gedit-app.c:117
+#: gedit/gedit-app.c:99
 msgid "ENCODING"
 msgstr "編碼"
 
-#: gedit/gedit-app.c:123
+#: gedit/gedit-app.c:105
 msgid "Create a new top-level window in an existing instance of gedit"
 msgstr "建立一個屬於執行中的 gedit 實體的新的頂層視窗"
 
-#: gedit/gedit-app.c:130
+#: gedit/gedit-app.c:112
 msgid "Create a new document in an existing instance of gedit"
 msgstr "在執行中的 gedit 建立新的文件"
 
-#: gedit/gedit-app.c:137
+#: gedit/gedit-app.c:119
 msgid "Open files and block process until files are closed"
 msgstr "開啟檔案並阻擋程序直到檔案關閉"
 
-#: gedit/gedit-app.c:144
+#: gedit/gedit-app.c:126
 msgid "Run gedit in standalone mode"
 msgstr "以單獨模式執行 gedit"
 
-#: gedit/gedit-app.c:151
+#: gedit/gedit-app.c:133
 msgid "[FILE…] [+LINE[:COLUMN]]"
 msgstr "[FILE...] [+LINE[:COLUMN]]"
 
-#: gedit/gedit-app.c:261
+#: gedit/gedit-app.c:223
 msgid "There was an error displaying the help."
 msgstr "顯示說明文件時發生錯誤。"
 
-#: gedit/gedit-app.c:957
+#: gedit/gedit-app.c:888
 #, c-format
 msgid "%s: invalid encoding."
 msgstr "%s：無效的編碼。"
 
-#: gedit/gedit-close-confirmation-dialog.c:277
+#: gedit/gedit-close-confirmation-dialog.c:271
 msgid "Close _without Saving"
 msgstr "關閉但不儲存(_W)"
 
-#: gedit/gedit-close-confirmation-dialog.c:283 gedit/gedit-commands-file.c:457
-#: gedit/gedit-commands-file.c:562 gedit/gedit-commands-file.c:638
-#: gedit/gedit-commands-file.c:849 gedit/gedit-commands-file.c:1563
-#: gedit/gedit-encodings-dialog.c:192 gedit/gedit-preferences-dialog.c:816
+#: gedit/gedit-close-confirmation-dialog.c:277 gedit/gedit-commands-file.c:460
+#: gedit/gedit-commands-file.c:565 gedit/gedit-commands-file.c:641
+#: gedit/gedit-commands-file.c:852 gedit/gedit-commands-file.c:1566
+#: gedit/gedit-encodings-dialog.c:192 gedit/gedit-preferences-dialog.c:773
 #: gedit/gedit-progress-info-bar.c:49
 #: gedit/resources/ui/gedit-encodings-dialog.ui:44
 #: gedit/resources/ui/gedit-highlight-mode-dialog.ui:31
-#: plugins/filebrowser/gedit-file-browser-utils.c:213
+#: plugins/filebrowser/gedit-file-browser-utils.c:211
 #: plugins/quickopen/quickopen/popup.py:45
 #: plugins/snippets/snippets/manager.py:789
 #: plugins/snippets/snippets/manager.py:874
@@ -571,20 +567,20 @@ msgstr "關閉但不儲存(_W)"
 msgid "_Cancel"
 msgstr "取消(_C)"
 
-#: gedit/gedit-close-confirmation-dialog.c:310 gedit/resources/gtk/menus.ui:37
+#: gedit/gedit-close-confirmation-dialog.c:295 gedit/resources/gtk/menus.ui:37
 #: gedit/resources/gtk/menus-traditional.ui:33
 msgid "_Save As…"
 msgstr "另存為(_S)…"
 
-#: gedit/gedit-close-confirmation-dialog.c:310 gedit/gedit-commands-file.c:850
+#: gedit/gedit-close-confirmation-dialog.c:295 gedit/gedit-commands-file.c:853
 #: gedit/resources/gtk/menus-common.ui:127
-#: gedit/resources/ui/gedit-window.ui:61
+#: gedit/resources/ui/gedit-window.ui:59
 #: plugins/snippets/snippets/manager.py:875
 #: plugins/snippets/snippets/manager.py:913
 msgid "_Save"
 msgstr "儲存(_S)"
 
-#: gedit/gedit-close-confirmation-dialog.c:328
+#: gedit/gedit-close-confirmation-dialog.c:312
 #, c-format
 msgid ""
 "If you don’t save, changes from the last %ld second will be permanently lost."
@@ -593,12 +589,12 @@ msgid_plural ""
 "lost."
 msgstr[0] "如果不儲存，將會永久地失去 %ld 秒前所作的修改。"
 
-#: gedit/gedit-close-confirmation-dialog.c:337
+#: gedit/gedit-close-confirmation-dialog.c:321
 msgid ""
 "If you don’t save, changes from the last minute will be permanently lost."
 msgstr "如果不儲存，將會永久地失去 1 分鐘前所作的修改。"
 
-#: gedit/gedit-close-confirmation-dialog.c:343
+#: gedit/gedit-close-confirmation-dialog.c:327
 #, c-format
 msgid ""
 "If you don’t save, changes from the last minute and %ld second will be "
@@ -608,7 +604,7 @@ msgid_plural ""
 "permanently lost."
 msgstr[0] "如果不儲存，將會永久地失去 1 分 %ld 秒前所作的修改。"
 
-#: gedit/gedit-close-confirmation-dialog.c:353
+#: gedit/gedit-close-confirmation-dialog.c:337
 #, c-format
 msgid ""
 "If you don’t save, changes from the last %ld minute will be permanently lost."
@@ -617,11 +613,11 @@ msgid_plural ""
 "lost."
 msgstr[0] "如果不儲存，將會永久地失去  %ld 分前所作的修改。"
 
-#: gedit/gedit-close-confirmation-dialog.c:368
+#: gedit/gedit-close-confirmation-dialog.c:352
 msgid "If you don’t save, changes from the last hour will be permanently lost."
 msgstr "如果不儲存，將會永久地失去 1 小時前所作的修改。"
 
-#: gedit/gedit-close-confirmation-dialog.c:374
+#: gedit/gedit-close-confirmation-dialog.c:358
 #, c-format
 msgid ""
 "If you don’t save, changes from the last hour and %d minute will be "
@@ -631,7 +627,7 @@ msgid_plural ""
 "permanently lost."
 msgstr[0] "如果不儲存，將會永久地失去 1 小時 %d 分前所作的修改。"
 
-#: gedit/gedit-close-confirmation-dialog.c:389
+#: gedit/gedit-close-confirmation-dialog.c:373
 #, c-format
 msgid ""
 "If you don’t save, changes from the last %d hour will be permanently lost."
@@ -639,64 +635,45 @@ msgid_plural ""
 "If you don’t save, changes from the last %d hours will be permanently lost."
 msgstr[0] "如果不儲存，將會永久地失去  %d 小時前所作的修改。"
 
-#: gedit/gedit-close-confirmation-dialog.c:418
-#, c-format
-msgid "Changes to document “%s” will be permanently lost."
-msgstr "將會永久地失去對文件「%s」所作的修改。"
-
-#: gedit/gedit-close-confirmation-dialog.c:423
+#: gedit/gedit-close-confirmation-dialog.c:400
 #, c-format
 msgid "Save changes to document “%s” before closing?"
 msgstr "在關閉前將變更儲存到文件「%s」？"
 
-#: gedit/gedit-close-confirmation-dialog.c:438
-#: gedit/gedit-close-confirmation-dialog.c:562
-msgid "Saving has been disabled by the system administrator."
-msgstr "儲存功能已被管理員禁用。"
-
-#: gedit/gedit-close-confirmation-dialog.c:504
-#, c-format
-msgid "Changes to %d document will be permanently lost."
-msgid_plural "Changes to %d documents will be permanently lost."
-msgstr[0] "將會永久地失去對 %d 個文件所作的修改。"
-
-#: gedit/gedit-close-confirmation-dialog.c:512
+#: gedit/gedit-close-confirmation-dialog.c:470
 #, c-format
 msgid "There is %d document with unsaved changes. Save changes before closing?"
 msgid_plural ""
 "There are %d documents with unsaved changes. Save changes before closing?"
 msgstr[0] "還有 %d 份已修改的文件未儲存。離開前要先儲存文件嗎？"
 
-#: gedit/gedit-close-confirmation-dialog.c:538
-msgid "Docum_ents with unsaved changes:"
-msgstr "已修改但未儲存的文件(_E):"
-
-#: gedit/gedit-close-confirmation-dialog.c:542
+#: gedit/gedit-close-confirmation-dialog.c:493
 msgid "S_elect the documents you want to save:"
 msgstr "請選擇需要儲存的文件(_E):"
 
-#: gedit/gedit-close-confirmation-dialog.c:566
+#. Secondary label
+#: gedit/gedit-close-confirmation-dialog.c:509
 msgid "If you don’t save, all your changes will be permanently lost."
 msgstr "如果不儲存，所有已修改的部份將會永久地遺失。"
 
-#: gedit/gedit-commands-file.c:260
+#: gedit/gedit-commands-file.c:263
 #, c-format
 msgid "Loading file “%s”…"
 msgstr "正在載入檔案「%s」…"
 
-#: gedit/gedit-commands-file.c:269
+#: gedit/gedit-commands-file.c:272
 #, c-format
 msgid "Loading %d file…"
 msgid_plural "Loading %d files…"
 msgstr[0] "正在載入 %d 個檔案…"
 
-#. Translators: "Open" is the title of the file chooser window.
-#: gedit/gedit-commands-file.c:451
+#. Translators: "Open Files" is the title of the file chooser window.
+#: gedit/gedit-commands-file.c:454
 msgctxt "window title"
-msgid "Open"
-msgstr "開啟"
+msgid "Open Files"
+msgstr "開啟檔案"
 
-#: gedit/gedit-commands-file.c:458 gedit/gedit-window.c:2676
+#: gedit/gedit-commands-file.c:461 gedit/gedit-window.c:2636
 #: gedit/resources/gtk/menus-common.ui:100
 #: gedit/resources/gtk/menus-common.ui:106
 #: plugins/filebrowser/resources/ui/gedit-file-browser-menus.ui:7
@@ -705,72 +682,72 @@ msgstr "開啟"
 msgid "_Open"
 msgstr "開啟(_O)"
 
-#: gedit/gedit-commands-file.c:553
+#: gedit/gedit-commands-file.c:556
 #, c-format
 msgid "The file “%s” is read-only."
 msgstr "檔案「%s」是唯讀檔案。"
 
-#: gedit/gedit-commands-file.c:558
+#: gedit/gedit-commands-file.c:561
 msgid "Do you want to try to replace it with the one you are saving?"
 msgstr "您是否嘗試以準備儲存的版本覆寫該檔案？"
 
-#: gedit/gedit-commands-file.c:563
+#: gedit/gedit-commands-file.c:566
 #: gedit/resources/ui/gedit-replace-dialog.ui:55
 msgid "_Replace"
 msgstr "取代(_R)"
 
-#: gedit/gedit-commands-file.c:603
+#: gedit/gedit-commands-file.c:606
 msgid "Save the file using compression?"
 msgstr "是否使用壓縮儲存檔案？"
 
-#: gedit/gedit-commands-file.c:607
+#: gedit/gedit-commands-file.c:610
 msgid "Save the file as plain text?"
 msgstr "是否使用純文字儲存檔案？"
 
-#: gedit/gedit-commands-file.c:620
+#: gedit/gedit-commands-file.c:623
 #, c-format
 msgid ""
 "The file “%s” was previously saved as plain text and will now be saved using "
 "compression."
 msgstr "檔案「%s」原先是儲存為純文字，現在將以壓縮的方式儲存。"
 
-#: gedit/gedit-commands-file.c:624
+#: gedit/gedit-commands-file.c:627
 msgid "_Save Using Compression"
 msgstr "使用壓縮儲存(_S)"
 
-#: gedit/gedit-commands-file.c:629
+#: gedit/gedit-commands-file.c:632
 #, c-format
 msgid ""
 "The file “%s” was previously saved using compression and will now be saved "
 "as plain text."
 msgstr "檔案「%s」原先是以壓縮的方式儲存，現在將儲存為純文字。"
 
-#: gedit/gedit-commands-file.c:632
+#: gedit/gedit-commands-file.c:635
 msgid "_Save As Plain Text"
 msgstr "儲存為純文字(_S)"
 
-#: gedit/gedit-commands-file.c:747 gedit/gedit-commands-file.c:1014
+#: gedit/gedit-commands-file.c:750 gedit/gedit-commands-file.c:1017
 #, c-format
 msgid "Saving file “%s”…"
 msgstr "正在儲存檔案「%s」…"
 
 #. Translators: "Save As" is the title of the file chooser window.
-#: gedit/gedit-commands-file.c:842
+#: gedit/gedit-commands-file.c:845
 msgctxt "window title"
 msgid "Save As"
 msgstr "另存為"
 
-#: gedit/gedit-commands-file.c:1424
+#: gedit/gedit-commands-file.c:1427
 #, c-format
 msgid "Reverting the document “%s”…"
 msgstr "正在還原文件「%s」…"
 
-#: gedit/gedit-commands-file.c:1471
+#: gedit/gedit-commands-file.c:1474
 #, c-format
 msgid "Revert unsaved changes to document “%s”?"
 msgstr "是否將未儲存的文件「%s」還原？"
 
-#: gedit/gedit-commands-file.c:1480
+#: gedit/gedit-commands-file.c:1483
 #, c-format
 msgid ""
 "Changes made to the document in the last %ld second will be permanently lost."
@@ -779,12 +756,12 @@ msgid_plural ""
 "lost."
 msgstr[0] "將會永久地失去 %ld 秒前對文件所作的修改。"
 
-#: gedit/gedit-commands-file.c:1489
+#: gedit/gedit-commands-file.c:1492
 msgid ""
 "Changes made to the document in the last minute will be permanently lost."
 msgstr "將會永久地失去 1 分鐘秒前對文件所作的修改。"
 
-#: gedit/gedit-commands-file.c:1495
+#: gedit/gedit-commands-file.c:1498
 #, c-format
 msgid ""
 "Changes made to the document in the last minute and %ld second will be "
@@ -794,7 +771,7 @@ msgid_plural ""
 "permanently lost."
 msgstr[0] "將會永久地失去 1 分 %ld 秒前對文件所作的修改。"
 
-#: gedit/gedit-commands-file.c:1505
+#: gedit/gedit-commands-file.c:1508
 #, c-format
 msgid ""
 "Changes made to the document in the last %ld minute will be permanently lost."
@@ -803,11 +780,11 @@ msgid_plural ""
 "lost."
 msgstr[0] "將會永久地失去 %ld 分鐘前對文件所作的修改。"
 
-#: gedit/gedit-commands-file.c:1520
+#: gedit/gedit-commands-file.c:1523
 msgid "Changes made to the document in the last hour will be permanently lost."
 msgstr "將會永久地失去 1 小時前對文件所作的修改。"
 
-#: gedit/gedit-commands-file.c:1526
+#: gedit/gedit-commands-file.c:1529
 #, c-format
 msgid ""
 "Changes made to the document in the last hour and %d minute will be "
@@ -817,7 +794,7 @@ msgid_plural ""
 "permanently lost."
 msgstr[0] "將會永久地失去 %d 分鐘前對文件所作的修改。"
 
-#: gedit/gedit-commands-file.c:1541
+#: gedit/gedit-commands-file.c:1544
 #, c-format
 msgid ""
 "Changes made to the document in the last %d hour will be permanently lost."
@@ -825,7 +802,7 @@ msgid_plural ""
 "Changes made to the document in the last %d hours will be permanently lost."
 msgstr[0] "將會永久地失去 %d 小時前對文件所作的修改。"
 
-#: gedit/gedit-commands-file.c:1564
+#: gedit/gedit-commands-file.c:1567
 msgid "_Revert"
 msgstr "還原(_R)"
 
@@ -862,7 +839,7 @@ msgstr "找到及取代了一個字串"
 msgid "“%s” not found"
 msgstr "找不到「%s」"
 
-#: gedit/gedit-document.c:969 gedit/gedit-document.c:998
+#: gedit/gedit-document.c:993 gedit/gedit-document.c:1022
 #, c-format
 msgid "Untitled Document %d"
 msgstr "無標題文件 %d"
@@ -872,18 +849,18 @@ msgstr "無標題文件 %d"
 msgid "Tab Group %i"
 msgstr "分頁群組 %i"
 
-#: gedit/gedit-documents-panel.c:498 gedit/gedit-window.c:1094
-#: gedit/gedit-window.c:1100 gedit/gedit-window.c:1108
+#: gedit/gedit-documents-panel.c:498 gedit/gedit-window.c:1082
+#: gedit/gedit-window.c:1088 gedit/gedit-window.c:1096
 msgid "Read-Only"
 msgstr "唯讀"
 
 #: gedit/gedit-encodings-combo-box.c:297
-#: gedit/gedit-file-chooser-dialog-osx.m:562
+#: gedit/gedit-file-chooser-dialog-osx.m:564
 msgid "Automatically Detected"
 msgstr "自動偵測"
 
 #: gedit/gedit-encodings-combo-box.c:326
-#: gedit/gedit-file-chooser-dialog-osx.m:571
+#: gedit/gedit-file-chooser-dialog-osx.m:573
 msgid "Add or Remove…"
 msgstr "加入或移除…"
 
@@ -923,7 +900,7 @@ msgid "Move to a lower priority"
 msgstr "移至較低優先等級"
 
 #: gedit/gedit-file-chooser-dialog-gtk.c:39
-#: gedit/gedit-preferences-dialog.c:825
+#: gedit/gedit-preferences-dialog.c:782
 msgid "All Files"
 msgstr "所有檔案"
 
@@ -939,15 +916,15 @@ msgstr "字元編碼(_H)："
 msgid "L_ine Ending:"
 msgstr "列結尾(_I)："
 
-#: gedit/gedit-file-chooser-dialog-osx.m:544
+#: gedit/gedit-file-chooser-dialog-osx.m:546
 msgid "Character Encoding:"
 msgstr "字元編碼："
 
-#: gedit/gedit-file-chooser-dialog-osx.m:617
+#: gedit/gedit-file-chooser-dialog-osx.m:619
 msgid "Line Ending:"
 msgstr "列結尾："
 
-#: gedit/gedit-highlight-mode-selector.c:269 gedit/gedit-window.c:1178
+#: gedit/gedit-highlight-mode-selector.c:269 gedit/gedit-window.c:1166
 #: plugins/externaltools/tools/manager.py:115
 #: plugins/externaltools/tools/manager.py:324
 #: plugins/externaltools/tools/manager.py:440
@@ -955,186 +932,160 @@ msgstr "列結尾："
 msgid "Plain Text"
 msgstr "純文字"
 
-#: gedit/gedit-io-error-info-bar.c:143 gedit/gedit-io-error-info-bar.c:492
+#: gedit/gedit-io-error-info-bar.c:135 gedit/gedit-io-error-info-bar.c:415
 msgid "_Retry"
 msgstr "重試(_R)"
 
-#: gedit/gedit-io-error-info-bar.c:163
+#: gedit/gedit-io-error-info-bar.c:155
 #, c-format
 msgid "Could not find the file “%s”."
 msgstr "找不到檔案「%s」。"
 
-#: gedit/gedit-io-error-info-bar.c:165 gedit/gedit-io-error-info-bar.c:205
-#: gedit/gedit-io-error-info-bar.c:212
+#: gedit/gedit-io-error-info-bar.c:157 gedit/gedit-io-error-info-bar.c:197
+#: gedit/gedit-io-error-info-bar.c:204
 msgid "Please check that you typed the location correctly and try again."
 msgstr "檢查所輸入的位置是否正確後再試一次。"
 
 #. Translators: %s is a URI scheme (like for example http:, ftp:, etc.)
-#: gedit/gedit-io-error-info-bar.c:184
+#: gedit/gedit-io-error-info-bar.c:176
 #, c-format
 msgid "Unable to handle “%s:” locations."
 msgstr "無法處理「%s:」位置。"
 
-#: gedit/gedit-io-error-info-bar.c:190
+#: gedit/gedit-io-error-info-bar.c:182
 msgid "Unable to handle this location."
 msgstr "無法處理這個位置。"
 
-#: gedit/gedit-io-error-info-bar.c:199
+#: gedit/gedit-io-error-info-bar.c:191
 msgid "The location of the file cannot be accessed."
 msgstr "此檔案的位置不能被存取。"
 
-#: gedit/gedit-io-error-info-bar.c:203
+#: gedit/gedit-io-error-info-bar.c:195
 #, c-format
 msgid "“%s” is a directory."
 msgstr "「%s」是一個目錄。"
 
-#: gedit/gedit-io-error-info-bar.c:210
+#: gedit/gedit-io-error-info-bar.c:202
 #, c-format
 msgid "“%s” is not a valid location."
 msgstr "「%s」不是有效的位置。"
 
 #. Translators: %s is a host name
-#: gedit/gedit-io-error-info-bar.c:246
+#: gedit/gedit-io-error-info-bar.c:238
 #, c-format
 msgid ""
 "Host “%s” could not be found. Please check that your proxy settings are "
 "correct and try again."
 msgstr "無法找到主機「%s」。請檢查代理伺服器的設定是否正確後再試一次。"
 
-#: gedit/gedit-io-error-info-bar.c:261
+#: gedit/gedit-io-error-info-bar.c:253
 #, c-format
 msgid ""
 "Hostname was invalid. Please check that you typed the location correctly and "
 "try again."
 msgstr "主機名稱無效。請檢查您所輸入的位置是否正確後再試一次。"
 
-#: gedit/gedit-io-error-info-bar.c:269
+#: gedit/gedit-io-error-info-bar.c:261
 #, c-format
 msgid "“%s” is not a regular file."
 msgstr "「%s」不是正規的檔案。"
 
-#: gedit/gedit-io-error-info-bar.c:274
+#: gedit/gedit-io-error-info-bar.c:266
 msgid "Connection timed out. Please try again."
 msgstr "連線逾時，請再嘗試。"
 
-#: gedit/gedit-io-error-info-bar.c:307
+#: gedit/gedit-io-error-info-bar.c:299
 #, c-format
 msgid "Unexpected error: %s"
 msgstr "無法預期錯誤：%s"
 
-#: gedit/gedit-io-error-info-bar.c:343
+#: gedit/gedit-io-error-info-bar.c:335
 msgid "Cannot find the requested file. Perhaps it has recently been deleted."
 msgstr "找不到要求的檔案。可能它剛剛被刪除。"
 
-#: gedit/gedit-io-error-info-bar.c:353
+#: gedit/gedit-io-error-info-bar.c:345
 #, c-format
 msgid "Could not revert the file “%s”."
 msgstr "無法復原「%s」檔案。"
 
-#: gedit/gedit-io-error-info-bar.c:380
+#: gedit/gedit-io-error-info-bar.c:372
 msgid "Ch_aracter Encoding:"
 msgstr "字元編碼(_A)："
 
-#: gedit/gedit-io-error-info-bar.c:441
-#, c-format
-msgid "The location “%s” is not currently reachable."
-msgstr "位置「%s」目前無法到達。"
-
-#: gedit/gedit-io-error-info-bar.c:456
-msgid "Your system is offline. Check your network."
-msgstr "您的系統已離線。請檢查您的網路。"
-
 #. Translators: the access key chosen for this string should be
 #. different from other main menu access keys (Open, Edit, View...)
-#: gedit/gedit-io-error-info-bar.c:500 gedit/gedit-io-error-info-bar.c:765
+#: gedit/gedit-io-error-info-bar.c:423
 msgid "Edit Any_way"
 msgstr "強制編輯(_W)"
 
-#: gedit/gedit-io-error-info-bar.c:588
+#: gedit/gedit-io-error-info-bar.c:511
 msgid ""
 "The number of followed links is limited and the actual file could not be "
 "found within this limit."
 msgstr "連結的數量被限制而在此限制內找不到實際的檔案。"
 
-#: gedit/gedit-io-error-info-bar.c:592
+#: gedit/gedit-io-error-info-bar.c:515
 msgid "You do not have the permissions necessary to open the file."
 msgstr "您沒有足夠的權限來開啟檔案。"
 
-#: gedit/gedit-io-error-info-bar.c:598
+#: gedit/gedit-io-error-info-bar.c:521
 msgid "Unable to detect the character encoding."
 msgstr "無法偵測字元編碼。"
 
-#: gedit/gedit-io-error-info-bar.c:599 gedit/gedit-io-error-info-bar.c:623
+#: gedit/gedit-io-error-info-bar.c:522 gedit/gedit-io-error-info-bar.c:546
 msgid "Please check that you are not trying to open a binary file."
 msgstr "請檢查是否在嘗試開啟二元碼檔案。"
 
-#: gedit/gedit-io-error-info-bar.c:600
+#: gedit/gedit-io-error-info-bar.c:523
 msgid "Select a character encoding from the menu and try again."
 msgstr "在選單中選取字元編碼後再試一次。"
 
-#: gedit/gedit-io-error-info-bar.c:606
+#: gedit/gedit-io-error-info-bar.c:529
 #, c-format
 msgid "There was a problem opening the file “%s”."
 msgstr "開啟「%s」檔案時發生錯誤。"
 
-#: gedit/gedit-io-error-info-bar.c:608
+#: gedit/gedit-io-error-info-bar.c:531
 msgid ""
 "The file you opened has some invalid characters. If you continue editing "
 "this file you could corrupt this document."
 msgstr ""
 "您所開啟的檔案有部分無效的字元。如果您繼續編輯這個檔案可能會損毀這個文件。"
 
-#: gedit/gedit-io-error-info-bar.c:611
+#: gedit/gedit-io-error-info-bar.c:534
 msgid "You can also choose another character encoding and try again."
 msgstr "您可以選擇別的字元編碼後再試一次。"
 
-#: gedit/gedit-io-error-info-bar.c:620
+#: gedit/gedit-io-error-info-bar.c:543
 #, c-format
 msgid "Could not open the file “%s” using the “%s” character encoding."
 msgstr "無法使用「%2$s」字元編碼來開啟「%1$s」檔案。"
 
-#: gedit/gedit-io-error-info-bar.c:624 gedit/gedit-io-error-info-bar.c:699
+#: gedit/gedit-io-error-info-bar.c:547 gedit/gedit-io-error-info-bar.c:622
 msgid "Select a different character encoding from the menu and try again."
 msgstr "在選單中選取其他的字元編碼後再試一次。"
 
-#: gedit/gedit-io-error-info-bar.c:636
+#: gedit/gedit-io-error-info-bar.c:559
 #, c-format
 msgid "Could not open the file “%s”."
 msgstr "無法開啟檔案「%s」。"
 
-#: gedit/gedit-io-error-info-bar.c:694
+#: gedit/gedit-io-error-info-bar.c:617
 #, c-format
 msgid "Could not save the file “%s” using the “%s” character encoding."
 msgstr "無法使用「%2$s」字元編碼來儲存「%1$s」檔案。"
 
-#: gedit/gedit-io-error-info-bar.c:697
+#: gedit/gedit-io-error-info-bar.c:620
 msgid ""
 "The document contains one or more characters that cannot be encoded using "
 "the specified character encoding."
 msgstr "文件中包含了一個或更多無法使用指定編碼來儲存的字元。"
 
-#. Translators: the access key chosen for this string should be
-#. different from other main menu access keys (Open, Edit, View...)
-#: gedit/gedit-io-error-info-bar.c:770
-msgid "D_on’t Edit"
-msgstr "不要編輯(_O)"
-
-#: gedit/gedit-io-error-info-bar.c:780
-#, c-format
-msgid "This file “%s” is already open in another window."
-msgstr "「%s」檔案已在其他的視窗中開啟。"
-
-#: gedit/gedit-io-error-info-bar.c:794
-msgid "Do you want to edit it anyway?"
-msgstr "您是否想要強制編輯它？"
-
-#: gedit/gedit-io-error-info-bar.c:850 gedit/gedit-io-error-info-bar.c:940
-#: gedit/gedit-io-error-info-bar.c:1230
+#: gedit/gedit-io-error-info-bar.c:691
 msgid "S_ave Anyway"
 msgstr "仍然儲存(_A)"
 
-#: gedit/gedit-io-error-info-bar.c:853 gedit/gedit-io-error-info-bar.c:943
-#: gedit/gedit-io-error-info-bar.c:1233
+#: gedit/gedit-io-error-info-bar.c:694
 msgid "D_on’t Save"
 msgstr "不要儲存(_O)"
 
@@ -1142,84 +1093,65 @@ msgstr "不要儲存(_O)"
 #. * could be interpreted as the changes he made in the document. beside "reading" is
 #. * not accurate (since last load/save)
 #.
-#: gedit/gedit-io-error-info-bar.c:867
+#: gedit/gedit-io-error-info-bar.c:708
 #, c-format
 msgid "The file “%s” has been modified since reading it."
 msgstr "「%s」檔案在讀取前已被修改。"
 
-#: gedit/gedit-io-error-info-bar.c:882
+#: gedit/gedit-io-error-info-bar.c:723
 msgid "If you save it, all the external changes could be lost. Save it anyway?"
 msgstr "如果儲存它，將會失去所有外部作出的變更。仍要儲存它？"
 
-#: gedit/gedit-io-error-info-bar.c:962
-#, c-format
-msgid "Could not create a backup file while saving “%s”"
-msgstr "儲存「%s」時無法建立備份檔案"
-
-#: gedit/gedit-io-error-info-bar.c:967
-#, c-format
-msgid "Could not create a temporary backup file while saving “%s”"
-msgstr "儲存「%s」時無法建立暫存備份檔案"
-
-#: gedit/gedit-io-error-info-bar.c:984
-msgid ""
-"Could not back up the old copy of the file before saving the new one. You "
-"can ignore this warning and save the file anyway, but if an error occurs "
-"while saving, you could lose the old copy of the file. Save anyway?"
-msgstr ""
-"在儲存新的檔案前無法備份舊的檔案。您可以忽略此警告訊息，然後繼續儲存；但如果"
-"儲存時發生錯誤，您將會失去檔案的舊版本。仍要儲存？"
-
 #. Translators: %s is a URI scheme (like for example http:, ftp:, etc.)
-#: gedit/gedit-io-error-info-bar.c:1044
+#: gedit/gedit-io-error-info-bar.c:781
 #, c-format
 msgid ""
 "Cannot handle “%s:” locations in write mode. Please check that you typed the "
 "location correctly and try again."
 msgstr "無法以寫入模式處理「%s:」位置。請檢查所輸入的位置是否正確後再試。"
 
-#: gedit/gedit-io-error-info-bar.c:1052
+#: gedit/gedit-io-error-info-bar.c:789
 msgid ""
 "Cannot handle this location in write mode. Please check that you typed the "
 "location correctly and try again."
 msgstr "無法以寫入模式處理此位置。請檢查所輸入的位置是否正確後再試一次。"
 
-#: gedit/gedit-io-error-info-bar.c:1061
+#: gedit/gedit-io-error-info-bar.c:798
 #, c-format
 msgid ""
 "“%s” is not a valid location. Please check that you typed the location "
 "correctly and try again."
 msgstr "「%s」並不是一個有效的位置。請檢查所輸入的位置是否正確後再試一次。"
 
-#: gedit/gedit-io-error-info-bar.c:1068
+#: gedit/gedit-io-error-info-bar.c:805
 msgid ""
 "You do not have the permissions necessary to save the file. Please check "
 "that you typed the location correctly and try again."
 msgstr "您沒有足夠的權限來儲存檔案。檢查所輸入的位置是否正確後再試一次。"
 
-#: gedit/gedit-io-error-info-bar.c:1074
+#: gedit/gedit-io-error-info-bar.c:811
 msgid ""
 "There is not enough disk space to save the file. Please free some disk space "
 "and try again."
 msgstr "剩餘的磁碟空間不足以儲存檔案。請先騰空部份磁碟空間後再試一次。"
 
-#: gedit/gedit-io-error-info-bar.c:1079
+#: gedit/gedit-io-error-info-bar.c:816
 msgid ""
 "You are trying to save the file on a read-only disk. Please check that you "
 "typed the location correctly and try again."
 msgstr "嘗試將檔案寫入唯讀的磁碟上。檢查所輸入的位置是否正確後再試一次。"
 
-#: gedit/gedit-io-error-info-bar.c:1085
+#: gedit/gedit-io-error-info-bar.c:822
 msgid "A file with the same name already exists. Please use a different name."
 msgstr "相同名稱的檔案已經存在，請使用其它名稱。"
 
-#: gedit/gedit-io-error-info-bar.c:1090
+#: gedit/gedit-io-error-info-bar.c:827
 msgid ""
 "The disk where you are trying to save the file has a limitation on length of "
 "the file names. Please use a shorter name."
 msgstr "準備用來儲存檔案的磁碟有檔案長度的限制。請使用較短的名稱。"
 
-#: gedit/gedit-io-error-info-bar.c:1101
+#: gedit/gedit-io-error-info-bar.c:838
 msgid ""
 "The disk where you are trying to save the file has a limitation on file "
 "sizes. Please try saving a smaller file or saving it to a disk that does not "
@@ -1228,66 +1160,42 @@ msgstr ""
 "準備用來儲存檔案的磁碟加上了有關檔案大小的限制。請嘗試儲存較小的檔案，或儲存"
 "至另一個沒有檔案大小限制的磁碟。"
 
-#: gedit/gedit-io-error-info-bar.c:1118
+#: gedit/gedit-io-error-info-bar.c:855
 #, c-format
 msgid "Could not save the file “%s”."
 msgstr "無法儲存檔案「%s」。"
 
-#: gedit/gedit-io-error-info-bar.c:1158
-#, c-format
-msgid "The file “%s” changed on disk."
-msgstr "檔案「%s」在磁碟上已變更。"
-
-#: gedit/gedit-io-error-info-bar.c:1169
-msgid "Drop Changes and _Reload"
-msgstr "放棄變更並重新載入(_R)"
-
-#: gedit/gedit-io-error-info-bar.c:1179 gedit/resources/gtk/menus-common.ui:148
-#: gedit/resources/gtk/menus.ui:9 gedit/resources/gtk/menus-traditional.ui:9
-msgid "_Reload"
-msgstr "重新載入(_R)"
-
-#: gedit/gedit-io-error-info-bar.c:1243
-#, c-format
-msgid "Some invalid chars have been detected while saving “%s”"
-msgstr "當儲存「%s」時偵測到一些無效的字元"
-
-#: gedit/gedit-io-error-info-bar.c:1259
-msgid ""
-"If you continue saving this file you can corrupt the document.  Save anyway?"
-msgstr "如果您繼續儲存這個檔案可能會損毀這份文件。要強制儲存嗎？"
-
-#: gedit/gedit-preferences-dialog.c:446
+#: gedit/gedit-preferences-dialog.c:442
 msgid "Click on this button to select the font to be used by the editor"
 msgstr "按下此按鈕以選擇編輯器要使用的字型"
 
-#: gedit/gedit-preferences-dialog.c:452
+#: gedit/gedit-preferences-dialog.c:448
 #, c-format
 msgid "_Use the system fixed width font (%s)"
 msgstr "使用系統固定寬度字型 [%s](_U)"
 
-#: gedit/gedit-preferences-dialog.c:592
+#: gedit/gedit-preferences-dialog.c:556
 #, c-format
 msgid "Directory “%s” could not be created: g_mkdir_with_parents() failed: %s"
 msgstr "無法建立目錄「%s」： g_mkdir_with_parents() 失敗：%s"
 
-#: gedit/gedit-preferences-dialog.c:789
+#: gedit/gedit-preferences-dialog.c:748
 msgid "The selected color scheme cannot be installed."
 msgstr "無法安裝所選的色彩配置。"
 
-#: gedit/gedit-preferences-dialog.c:812
+#: gedit/gedit-preferences-dialog.c:769
 msgid "Add Scheme"
 msgstr "加入配色"
 
-#: gedit/gedit-preferences-dialog.c:817
+#: gedit/gedit-preferences-dialog.c:774
 msgid "A_dd Scheme"
 msgstr "加入配色(_D)"
 
-#: gedit/gedit-preferences-dialog.c:821
+#: gedit/gedit-preferences-dialog.c:778
 msgid "Color Scheme Files"
 msgstr "色彩配置檔案"
 
-#: gedit/gedit-preferences-dialog.c:852
+#: gedit/gedit-preferences-dialog.c:815
 #, c-format
 msgid "Could not remove color scheme “%s”."
 msgstr "無法移除色彩配置「%s」。"
@@ -1380,52 +1288,52 @@ msgstr "儲存 %s 至 %s"
 msgid "Saving %s"
 msgstr "正在儲存 %s"
 
-#: gedit/gedit-tab.c:1539
+#: gedit/gedit-tab.c:1485
 #, c-format
 msgid "Error opening file %s"
 msgstr "開啟 %s 時出現錯誤"
 
-#: gedit/gedit-tab.c:1544
+#: gedit/gedit-tab.c:1490
 #, c-format
 msgid "Error reverting file %s"
 msgstr "還原檔案 %s 時出現錯誤"
 
-#: gedit/gedit-tab.c:1549
+#: gedit/gedit-tab.c:1495
 #, c-format
 msgid "Error saving file %s"
 msgstr "儲存檔案 %s 時出現錯誤"
 
-#: gedit/gedit-tab.c:1580
+#: gedit/gedit-tab.c:1526
 msgid "Name:"
 msgstr "名稱："
 
-#: gedit/gedit-tab.c:1581
+#: gedit/gedit-tab.c:1527
 msgid "MIME Type:"
 msgstr "MIME 類型："
 
-#: gedit/gedit-tab.c:1582
+#: gedit/gedit-tab.c:1528
 msgid "Encoding:"
 msgstr "編碼："
 
 #. Translators: '/ on <remote-share>'
-#: gedit/gedit-utils.c:764
+#: gedit/gedit-utils.c:436
 #, c-format
 msgid "/ on %s"
 msgstr "/ 於 %s"
 
-#: gedit/gedit-utils.c:1068
+#: gedit/gedit-utils.c:610
 msgid "Unix/Linux"
 msgstr "Unix/Linux"
 
-#: gedit/gedit-utils.c:1070
+#: gedit/gedit-utils.c:612
 msgid "Mac OS Classic"
 msgstr "Mac OS Classic"
 
-#: gedit/gedit-utils.c:1072
+#: gedit/gedit-utils.c:614
 msgid "Windows"
 msgstr "Windows"
 
-#: gedit/gedit-view.c:481 gedit/resources/ui/gedit-preferences-dialog.ui:41
+#: gedit/gedit-view.c:438 gedit/resources/ui/gedit-preferences-dialog.ui:41
 msgid "_Display line numbers"
 msgstr "顯示列號(_D)"
 
@@ -1466,48 +1374,48 @@ msgstr "要搜尋的字串"
 msgid "Line you want to move the cursor to"
 msgstr "游標要移至的列"
 
-#: gedit/gedit-window.c:931
+#: gedit/gedit-window.c:919
 msgid "Bracket match is out of range"
 msgstr "對稱括號超出範圍"
 
-#: gedit/gedit-window.c:936
+#: gedit/gedit-window.c:924
 msgid "Bracket match not found"
 msgstr "找不到成對括弧"
 
-#: gedit/gedit-window.c:941
+#: gedit/gedit-window.c:929
 #, c-format
 msgid "Bracket match found on line: %d"
 msgstr "對稱括弧於列：%d"
 
 #. Translators: "Ln" is an abbreviation for "Line", Col is an abbreviation for "Column". Please,
 #. use abbreviations if possible to avoid space problems.
-#: gedit/gedit-window.c:976
+#: gedit/gedit-window.c:964
 #, c-format
 msgid "  Ln %d, Col %d"
 msgstr "  第 %d 列，第 %d 字"
 
-#: gedit/gedit-window.c:1160
+#: gedit/gedit-window.c:1148
 #, c-format
 msgid "Tab Width: %u"
 msgstr "Tab 寬度：%u"
 
-#: gedit/gedit-window.c:1529
+#: gedit/gedit-window.c:1493
 msgid "There are unsaved documents"
 msgstr "尚有未儲存的文件"
 
-#: gedit/gedit-window.c:2366
+#: gedit/gedit-window.c:2330
 msgid "Change side panel page"
 msgstr "改變側面窗格頁面"
 
-#: gedit/gedit-window.c:2386 gedit/resources/ui/gedit-window.ui:19
+#: gedit/gedit-window.c:2350 gedit/resources/ui/gedit-window.ui:19
 msgid "Documents"
 msgstr "文件"
 
-#: gedit/gedit-window.c:2677
+#: gedit/gedit-window.c:2637
 msgid "Open a file"
 msgstr "開啟檔案"
 
-#: gedit/gedit-window.c:2681
+#: gedit/gedit-window.c:2641
 msgid "Open a recently used file"
 msgstr "開啟最近使用的檔案"
 
@@ -1585,6 +1493,11 @@ msgstr "另存為(_A)…"
 msgid "_New Window"
 msgstr "新增視窗(_N)"
 
+#: gedit/resources/gtk/menus-common.ui:148 gedit/resources/gtk/menus.ui:9
+#: gedit/resources/gtk/menus-traditional.ui:9
+msgid "_Reload"
+msgstr "重新載入(_R)"
+
 #: gedit/resources/gtk/menus-common.ui:155 gedit/resources/gtk/menus.ui:14
 #: gedit/resources/gtk/menus-traditional.ui:14
 msgid "_Print…"
@@ -1620,8 +1533,8 @@ msgid "_Paste"
 msgstr "貼上(_P)"
 
 #: gedit/resources/gtk/menus-common.ui:207
-#: plugins/filebrowser/gedit-file-browser-plugin.c:919
-#: plugins/filebrowser/gedit-file-browser-plugin.c:957
+#: plugins/filebrowser/gedit-file-browser-plugin.c:917
+#: plugins/filebrowser/gedit-file-browser-plugin.c:955
 #: plugins/filebrowser/resources/ui/gedit-file-browser-menus.ui:37
 msgid "_Delete"
 msgstr "刪除(_D)"
@@ -1747,7 +1660,7 @@ msgstr "求助(_H)"
 #: gedit/resources/gtk/menus-common.ui:394 gedit/resources/gtk/menus.ui:127
 #: gedit/resources/gtk/menus-traditional.ui:123
 msgid "_About Text Editor"
-msgstr "關於文字編輯器(_A)"
+msgstr "關於《文字編輯器》(_A)"
 
 #: gedit/resources/gtk/menus.ui:41 gedit/resources/gtk/menus-traditional.ui:37
 msgid "Save _All"
@@ -1890,8 +1803,8 @@ msgid "Editor"
 msgstr "編輯器"
 
 #: gedit/resources/ui/gedit-preferences-dialog.ui:514
-#: plugins/externaltools/org.gnome.gedit.plugins.externaltools.gschema.xml.in:14
-#: plugins/pythonconsole/org.gnome.gedit.plugins.pythonconsole.gschema.xml.in:24
+#: plugins/externaltools/org.gnome.gedit.plugins.externaltools.gschema.xml:14
+#: plugins/pythonconsole/org.gnome.gedit.plugins.pythonconsole.gschema.xml:24
 msgid "Font"
 msgstr "字型"
 
@@ -1907,29 +1820,29 @@ msgstr "請指定編輯器字型"
 msgid "Color Scheme"
 msgstr "色彩配置"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:663
-#: gedit/resources/ui/gedit-preferences-dialog.ui:664
+#: gedit/resources/ui/gedit-preferences-dialog.ui:652
+#: gedit/resources/ui/gedit-preferences-dialog.ui:653
 msgid "Install scheme"
 msgstr "安裝配色"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:665
+#: gedit/resources/ui/gedit-preferences-dialog.ui:654
 msgid "Install Scheme"
 msgstr "安裝顏色配置"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:679
-#: gedit/resources/ui/gedit-preferences-dialog.ui:680
+#: gedit/resources/ui/gedit-preferences-dialog.ui:668
+#: gedit/resources/ui/gedit-preferences-dialog.ui:669
 msgid "Uninstall scheme"
 msgstr "解除安裝配色"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:681
+#: gedit/resources/ui/gedit-preferences-dialog.ui:670
 msgid "Uninstall Scheme"
 msgstr "解除安裝顏色配置"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:721
+#: gedit/resources/ui/gedit-preferences-dialog.ui:710
 msgid "Font & Colors"
 msgstr "字型及顏色"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:746
+#: gedit/resources/ui/gedit-preferences-dialog.ui:735
 msgid "Plugins"
 msgstr "外掛程式"
 
@@ -1954,7 +1867,7 @@ msgstr "列印列號(_M)"
 #. 'Number every' from 'Number every 3 lines' in the 'Text Editor' tab of the print preferences.
 #: gedit/resources/ui/gedit-print-preferences.ui:129
 msgid "_Number every"
-msgstr "每隔指定列數加上列號(_N)："
+msgstr "每隔指定列數加上列號(_N)"
 
 #. 'lines' from 'Number every 3 lines' in the 'Text Editor' tab of the print preferences.
 #: gedit/resources/ui/gedit-print-preferences.ui:157
@@ -2062,11 +1975,11 @@ msgstr "尋找(_F)"
 #: gedit/resources/ui/gedit-replace-dialog.ui:105
 msgctxt "label on the left of the GtkEntry containing text to search"
 msgid "F_ind "
-msgstr "尋找(_I)"
+msgstr "尋找(_I) "
 
 #: gedit/resources/ui/gedit-replace-dialog.ui:120
 msgid "Replace _with "
-msgstr "取代為(_W)"
+msgstr "取代為(_W) "
 
 #: gedit/resources/ui/gedit-replace-dialog.ui:138
 msgid "_Match case"
@@ -2271,187 +2184,188 @@ msgstr "移至列號"
 
 #: gedit/resources/ui/gedit-shortcuts.ui:265
 msgctxt "shortcut window"
+msgid "Move to the beginning of the current line"
+msgstr "移動到目前列的開頭"
+
+#: gedit/resources/ui/gedit-shortcuts.ui:272
+msgctxt "shortcut window"
+msgid "Move to the end of the current line"
+msgstr "移動到目前列的結尾"
+
+#: gedit/resources/ui/gedit-shortcuts.ui:279
+msgctxt "shortcut window"
+msgid "Move to the beginning of the document"
+msgstr "移動到文件的開頭"
+
+#: gedit/resources/ui/gedit-shortcuts.ui:286
+msgctxt "shortcut window"
+msgid "Move to the end of the document"
+msgstr "移動到文件的結尾"
+
+#: gedit/resources/ui/gedit-shortcuts.ui:293
+msgctxt "shortcut window"
 msgid "Move viewport up within the file"
 msgstr "在檔案內向上移動一個視區"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:272
+#: gedit/resources/ui/gedit-shortcuts.ui:300
 msgctxt "shortcut window"
 msgid "Move viewport down within the file"
 msgstr "在檔案內向下移動一個視區"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:279
+#: gedit/resources/ui/gedit-shortcuts.ui:307
 msgctxt "shortcut window"
 msgid "Move viewport to end of file"
 msgstr "移動視區至檔案結尾"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:286
+#: gedit/resources/ui/gedit-shortcuts.ui:314
 msgctxt "shortcut window"
 msgid "Move viewport to beginning of file"
 msgstr "移動視區至檔案開頭"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:293
+#: gedit/resources/ui/gedit-shortcuts.ui:321
 msgctxt "shortcut window"
 msgid "Move to matching bracket"
 msgstr "移至成對括號"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:301
+#: gedit/resources/ui/gedit-shortcuts.ui:329
 msgctxt "shortcut window"
 msgid "Editing"
 msgstr "正在編輯"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:306
+#: gedit/resources/ui/gedit-shortcuts.ui:334
 msgctxt "shortcut window"
 msgid "Toggle insert / overwrite"
 msgstr "切換插入/覆寫"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:313
+#: gedit/resources/ui/gedit-shortcuts.ui:341
+msgctxt "shortcut window"
+msgid "Toggle cursor visibility"
+msgstr "切換游標的可見與否"
+
+#: gedit/resources/ui/gedit-shortcuts.ui:348
 msgctxt "shortcut window"
 msgid "Delete current line"
 msgstr "刪除目前的列"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:320
-msgctxt "shortcut window"
-msgid "Join selected lines"
-msgstr "連結選取的列"
-
-#: gedit/resources/ui/gedit-shortcuts.ui:327
+#: gedit/resources/ui/gedit-shortcuts.ui:355
 msgctxt "shortcut window"
 msgid "Move current line up"
 msgstr "目前的列上移"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:334
+#: gedit/resources/ui/gedit-shortcuts.ui:362
 msgctxt "shortcut window"
 msgid "Move current line down"
 msgstr "目前的列下移"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:341
+#: gedit/resources/ui/gedit-shortcuts.ui:369
 msgctxt "shortcut window"
 msgid "Move current word left"
 msgstr "目前字詞左移"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:348
+#: gedit/resources/ui/gedit-shortcuts.ui:376
 msgctxt "shortcut window"
 msgid "Move current word right"
 msgstr "目前字詞右移"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:355
+#: gedit/resources/ui/gedit-shortcuts.ui:383
 msgctxt "shortcut window"
 msgid "Convert to uppercase"
 msgstr "轉換為大寫"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:362
+#: gedit/resources/ui/gedit-shortcuts.ui:390
 msgctxt "shortcut window"
 msgid "Convert to lowercase"
 msgstr "轉換為小寫"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:369
+#: gedit/resources/ui/gedit-shortcuts.ui:397
 msgctxt "shortcut window"
 msgid "Invert case"
 msgstr "反轉大小寫"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:376
+#: gedit/resources/ui/gedit-shortcuts.ui:404
 msgctxt "shortcut window"
 msgid "Increment number at cursor"
 msgstr "游標處的遞增數"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:383
+#: gedit/resources/ui/gedit-shortcuts.ui:411
 msgctxt "shortcut window"
 msgid "Decrement number at cursor"
 msgstr "游標處的遞減數"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:391
+#: gedit/resources/ui/gedit-shortcuts.ui:419
 msgctxt "shortcut window"
 msgid "Tools"
 msgstr "工具"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:396
+#: gedit/resources/ui/gedit-shortcuts.ui:424
 msgctxt "shortcut window"
 msgid "Check spelling"
 msgstr "拼字檢查"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:403
+#: gedit/resources/ui/gedit-shortcuts.ui:431
 msgctxt "shortcut window"
 msgid "Print the document"
 msgstr "列印文件"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:410
+#: gedit/resources/ui/gedit-shortcuts.ui:438
 msgctxt "shortcut window"
 msgid "Show completion window"
 msgstr "顯示補齊視窗"
+
+#: gedit/resources/ui/gedit-shortcuts.ui:446
+msgctxt "shortcut window"
+msgid "General"
+msgstr "一般"
+
+#: gedit/resources/ui/gedit-shortcuts.ui:451
+msgctxt "shortcut window"
+msgid "Show help"
+msgstr "顯示幫助說明"
+
+#: gedit/resources/ui/gedit-shortcuts.ui:458
+msgctxt "shortcut window"
+msgid "Open menu"
+msgstr "開啟選單"
+
+#: gedit/resources/ui/gedit-shortcuts.ui:465
+msgctxt "shortcut window"
+msgid "Keyboard shortcuts"
+msgstr "鍵盤快捷鍵"
 
 #: gedit/resources/ui/gedit-tab-label.ui:34
 msgid "Close Document"
 msgstr "關閉文件"
 
-#: gedit/resources/ui/gedit-window.ui:36 gedit/resources/ui/gedit-window.ui:43
-#: gedit/resources/ui/gedit-window.ui:330
-#: gedit/resources/ui/gedit-window.ui:337
+#: gedit/resources/ui/gedit-window.ui:36 gedit/resources/ui/gedit-window.ui:42
+#: gedit/resources/ui/gedit-window.ui:327
+#: gedit/resources/ui/gedit-window.ui:333
 msgid "Create a new document"
 msgstr "建立新的文件"
 
-#: gedit/resources/ui/gedit-window.ui:42 gedit/resources/ui/gedit-window.ui:336
+#: gedit/resources/ui/gedit-window.ui:41 gedit/resources/ui/gedit-window.ui:332
 msgid "New"
 msgstr "新增"
 
-#: gedit/resources/ui/gedit-window.ui:65 gedit/resources/ui/gedit-window.ui:70
-#: gedit/resources/ui/gedit-window.ui:375
-#: gedit/resources/ui/gedit-window.ui:380
+#: gedit/resources/ui/gedit-window.ui:62 gedit/resources/ui/gedit-window.ui:67
+#: gedit/resources/ui/gedit-window.ui:368
+#: gedit/resources/ui/gedit-window.ui:373
 msgid "Save the current file"
 msgstr "儲存目前的檔案"
 
-#: gedit/resources/ui/gedit-window.ui:69 gedit/resources/ui/gedit-window.ui:372
-#: gedit/resources/ui/gedit-window.ui:379
+#: gedit/resources/ui/gedit-window.ui:66 gedit/resources/ui/gedit-window.ui:366
+#: gedit/resources/ui/gedit-window.ui:372
 msgid "Save"
 msgstr "儲存"
 
-#: gedit/resources/ui/gedit-window.ui:212
+#: gedit/resources/ui/gedit-window.ui:209
 msgid "Hide panel"
 msgstr "隱藏面板"
 
+#: gedit/resources/ui/gedit-window.ui:341
 #: gedit/resources/ui/gedit-window.ui:346
-#: gedit/resources/ui/gedit-window.ui:351
-#: gedit/resources/ui/gedit-window.ui:352
+#: gedit/resources/ui/gedit-window.ui:347
 msgid "Leave Fullscreen"
 msgstr "離開全螢幕"
-
-#: plugins/checkupdate/checkupdate.plugin.desktop.in:5
-msgid "Check update"
-msgstr "檢查更新"
-
-#: plugins/checkupdate/checkupdate.plugin.desktop.in:6
-msgid "Check for latest version of gedit"
-msgstr "檢查 gedit 的最新版本"
-
-#: plugins/checkupdate/gedit-check-update-plugin.c:245
-msgid "There was an error displaying the URI."
-msgstr "顯示這個 URI 時發生錯誤。"
-
-#: plugins/checkupdate/gedit-check-update-plugin.c:282
-msgid "_Download"
-msgstr "下載(_D)"
-
-#: plugins/checkupdate/gedit-check-update-plugin.c:283
-msgid "_Ignore Version"
-msgstr "忽略版本(_I)"
-
-#: plugins/checkupdate/gedit-check-update-plugin.c:288
-msgid "There is a new version of gedit"
-msgstr "已有新版本的 gedit"
-
-#: plugins/checkupdate/gedit-check-update-plugin.c:291
-msgid ""
-"You can download the new version of gedit by clicking on the download button "
-"or ignore that version and wait for a new one"
-msgstr "您可以按「下載」按鈕來下載最新版 gedit 或是忽略那個版本等待更新的"
-
-#: plugins/checkupdate/org.gnome.gedit.plugins.checkupdate.gschema.xml.in:5
-msgid "Version to Ignore"
-msgstr "要忽略的版本"
-
-#. This is releated to the next gedit version to be released
-#: plugins/checkupdate/org.gnome.gedit.plugins.checkupdate.gschema.xml.in:7
-msgid "Version to ignore until a newer version is released."
-msgstr "在下個版本釋出前要忽略的版本。"
 
 #: plugins/docinfo/docinfo.plugin.desktop.in:5
 #: plugins/docinfo/resources/ui/gedit-docinfo-plugin.ui:7
@@ -2463,7 +2377,7 @@ msgstr "文件統計"
 msgid "Report the number of words, lines and characters in a document."
 msgstr "回報文件中的字數、列數、字元數目。"
 
-#: plugins/docinfo/gedit-docinfo-plugin.c:537
+#: plugins/docinfo/gedit-docinfo-plugin.c:535
 msgid "_Document Statistics"
 msgstr "文件統計(_D)"
 
@@ -2545,12 +2459,12 @@ msgstr "外部工具"
 msgid "Execute external commands and shell scripts."
 msgstr "執行外部指令及 shell script。"
 
-#: plugins/externaltools/org.gnome.gedit.plugins.externaltools.gschema.xml.in:5
-#: plugins/pythonconsole/org.gnome.gedit.plugins.pythonconsole.gschema.xml.in:15
+#: plugins/externaltools/org.gnome.gedit.plugins.externaltools.gschema.xml:5
+#: plugins/pythonconsole/org.gnome.gedit.plugins.pythonconsole.gschema.xml:15
 msgid "Whether to use the system font"
 msgstr "是否使用系統字型"
 
-#: plugins/externaltools/org.gnome.gedit.plugins.externaltools.gschema.xml.in:6
+#: plugins/externaltools/org.gnome.gedit.plugins.externaltools.gschema.xml:6
 msgid ""
 "If true, the external tools will use the desktop-global standard font if "
 "it’s monospace (and the most similar font it can come up with otherwise)."
@@ -2558,8 +2472,8 @@ msgstr ""
 "如設定為 true，外部工具會採用桌面整體指定的標準字型 (如果它是固定寬度字型；否"
 "則會使用最接近的字型)。"
 
-#: plugins/externaltools/org.gnome.gedit.plugins.externaltools.gschema.xml.in:15
-#: plugins/pythonconsole/org.gnome.gedit.plugins.pythonconsole.gschema.xml.in:25
+#: plugins/externaltools/org.gnome.gedit.plugins.externaltools.gschema.xml:15
+#: plugins/pythonconsole/org.gnome.gedit.plugins.pythonconsole.gschema.xml:25
 msgid "A Pango font name. Examples are “Sans 12” or “Monospace Bold 14”."
 msgstr "Pango 字型名稱，例如：「Sans 12」、「Monospace Bold 14」"
 
@@ -2767,43 +2681,43 @@ msgstr "家目錄"
 msgid "File System"
 msgstr "檔案系統"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:523
+#: plugins/filebrowser/gedit-file-browser-plugin.c:521
 msgid "File Browser"
 msgstr "檔案瀏覽器"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:659
+#: plugins/filebrowser/gedit-file-browser-plugin.c:657
 msgid "An error occurred while creating a new directory"
 msgstr "建構新的資料夾時發生錯誤"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:662
+#: plugins/filebrowser/gedit-file-browser-plugin.c:660
 msgid "An error occurred while creating a new file"
 msgstr "建構新的檔案時發生錯誤"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:665
+#: plugins/filebrowser/gedit-file-browser-plugin.c:663
 msgid "An error occurred while renaming a file or directory"
 msgstr "變更檔案或資料夾名稱時發生錯誤"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:668
+#: plugins/filebrowser/gedit-file-browser-plugin.c:666
 msgid "An error occurred while deleting a file or directory"
 msgstr "刪除檔案或資料夾時發生錯誤"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:671
+#: plugins/filebrowser/gedit-file-browser-plugin.c:669
 msgid "An error occurred while opening a directory in the file manager"
 msgstr "在檔案管理員中開啟資料夾時發生錯誤"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:674
+#: plugins/filebrowser/gedit-file-browser-plugin.c:672
 msgid "An error occurred while setting a root directory"
 msgstr "設定根資料夾時發生錯誤"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:677
+#: plugins/filebrowser/gedit-file-browser-plugin.c:675
 msgid "An error occurred while loading a directory"
 msgstr "載入資料夾時發生錯誤"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:680
+#: plugins/filebrowser/gedit-file-browser-plugin.c:678
 msgid "An error occurred"
 msgstr "發生錯誤"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:902
+#: plugins/filebrowser/gedit-file-browser-plugin.c:900
 msgid ""
 "Cannot move file to trash, do you\n"
 "want to delete permanently?"
@@ -2811,99 +2725,99 @@ msgstr ""
 "檔案無法移至垃圾桶，\n"
 "要把它永久地刪除嗎？"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:907
+#: plugins/filebrowser/gedit-file-browser-plugin.c:905
 #, c-format
 msgid "The file “%s” cannot be moved to the trash."
 msgstr "檔案「%s」無法移至垃圾桶。"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:912
+#: plugins/filebrowser/gedit-file-browser-plugin.c:910
 msgid "The selected files cannot be moved to the trash."
 msgstr "所選的檔案無法移至垃圾桶。"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:943
+#: plugins/filebrowser/gedit-file-browser-plugin.c:941
 #, c-format
 msgid "Are you sure you want to permanently delete “%s”?"
 msgstr "確定要永遠刪除「%s」嗎？"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:948
+#: plugins/filebrowser/gedit-file-browser-plugin.c:946
 msgid "Are you sure you want to permanently delete the selected files?"
 msgstr "確定要永久刪除已選的檔案嗎？"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:951
+#: plugins/filebrowser/gedit-file-browser-plugin.c:949
 msgid "If you delete an item, it is permanently lost."
 msgstr "如果將項目刪除，它將會永久失去。"
 
-#: plugins/filebrowser/gedit-file-browser-store.c:1703
+#: plugins/filebrowser/gedit-file-browser-store.c:1701
 msgid "(Empty)"
 msgstr "（空的）"
 
-#: plugins/filebrowser/gedit-file-browser-store.c:3327
+#: plugins/filebrowser/gedit-file-browser-store.c:3325
 msgid ""
 "The renamed file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
 msgstr "目前重新命名的檔案已被過濾。您需要調整過濾器設定來使檔案重新顯示"
 
 #. Translators: This is the default name of new files created by the file browser pane.
-#: plugins/filebrowser/gedit-file-browser-store.c:3578
+#: plugins/filebrowser/gedit-file-browser-store.c:3576
 msgid "Untitled File"
 msgstr "無標題檔案"
 
-#: plugins/filebrowser/gedit-file-browser-store.c:3606
+#: plugins/filebrowser/gedit-file-browser-store.c:3604
 msgid ""
 "The new file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
 msgstr "目前新的檔案已被過濾。您需要調整過濾器設定來使檔案重新顯示"
 
 #. Translators: This is the default name of new directories created by the file browser pane.
-#: plugins/filebrowser/gedit-file-browser-store.c:3635
+#: plugins/filebrowser/gedit-file-browser-store.c:3633
 msgid "Untitled Folder"
 msgstr "無標題資料夾"
 
-#: plugins/filebrowser/gedit-file-browser-store.c:3658
+#: plugins/filebrowser/gedit-file-browser-store.c:3656
 msgid ""
 "The new directory is currently filtered out. You need to adjust your filter "
 "settings to make the directory visible"
 msgstr "目前新的目錄已被過濾。您需要調整過濾器設定來使目錄重新顯示"
 
-#: plugins/filebrowser/gedit-file-browser-widget.c:757
+#: plugins/filebrowser/gedit-file-browser-widget.c:755
 msgid "Bookmarks"
 msgstr "書籤"
 
-#: plugins/filebrowser/gedit-file-browser-widget.c:1957
+#: plugins/filebrowser/gedit-file-browser-widget.c:1955
 #, c-format
 msgid "No mount object for mounted volume: %s"
 msgstr "掛載的儲存裝置沒有掛載物件：%s"
 
-#: plugins/filebrowser/gedit-file-browser-widget.c:2026
+#: plugins/filebrowser/gedit-file-browser-widget.c:2024
 #, c-format
 msgid "Could not open media: %s"
 msgstr "無法開啟媒體：%s"
 
-#: plugins/filebrowser/gedit-file-browser-widget.c:2069
+#: plugins/filebrowser/gedit-file-browser-widget.c:2067
 #, c-format
 msgid "Could not mount volume: %s"
 msgstr "無法掛載儲存裝置：%s"
 
-#: plugins/filebrowser/gedit-file-browser-widget.c:2581
+#: plugins/filebrowser/gedit-file-browser-widget.c:2579
 #, c-format
 msgid "Error when loading “%s”: No such directory"
 msgstr "載入「%s」時發生錯誤：沒有這個目錄"
 
-#: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml.in:5
+#: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml:5
 msgid "Open With Tree View"
 msgstr "以樹狀顯示模式開啟"
 
-#: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml.in:6
+#: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml:6
 msgid ""
 "Open the tree view when the file browser plugin gets loaded instead of the "
 "bookmarks view"
 msgstr "載入檔案瀏覽器外掛程式時，是否開啟樹狀顯示模式取代書籤顯示模式"
 
-#: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml.in:10
+#: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml:10
 msgid "File Browser Root Directory"
 msgstr "檔案瀏覽器根資料夾"
 
-#: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml.in:11
+#: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml:11
 msgid ""
 "The file browser root directory to use when loading the file browser plugin "
 "and onload/tree_view is TRUE."
@@ -2911,11 +2825,11 @@ msgstr ""
 "檔案瀏覽器根資料夾是用於載入檔案瀏覽器外掛程式及 onload/tree_view 設定為"
 "「TRUE」時。"
 
-#: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml.in:15
+#: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml:15
 msgid "File Browser Virtual Root Directory"
 msgstr "檔案瀏覽器虛擬根資料夾"
 
-#: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml.in:16
+#: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml:16
 msgid ""
 "The file browser virtual root directory to use when loading the file browser "
 "plugin when onload/tree_view is TRUE. The virtual root must always be below "
@@ -2924,19 +2838,19 @@ msgstr ""
 "檔案瀏覽器虛擬根資料夾是用於載入檔案瀏覽器外掛程式及 onload/tree_view 設定為"
 "「TRUE」時。虛擬根資料夾必須是處於真正的根資料夾之下。"
 
-#: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml.in:20
+#: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml:20
 msgid "Enable Restore of Remote Locations"
 msgstr "啟用遠端位置回復"
 
-#: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml.in:21
+#: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml:21
 msgid "Sets whether to enable restoring of remote locations."
 msgstr "設定是否啟用遠端位置回復。"
 
-#: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml.in:25
+#: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml:25
 msgid "Set Location to First Document"
 msgstr "設定第一個文件的位置"
 
-#: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml.in:26
+#: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml:26
 msgid ""
 "If TRUE the file browser plugin will view the directory of the first opened "
 "document given that the file browser hasn’t been used yet. (Thus this "
@@ -2946,11 +2860,11 @@ msgstr ""
 "如設定為 TRUE，當從未使用過檔案瀏覽器時，則檔案瀏覽器外掛程式會顯示第一個開啟"
 "的檔案所在的目錄。（這通常會用於在命令列或 Nautilus 等程式中開啟文件時）"
 
-#: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml.in:30
+#: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml:30
 msgid "File Browser Filter Mode"
 msgstr "檔案瀏覽器過濾器模式"
 
-#: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml.in:31
+#: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml:31
 msgid ""
 "This value determines what files get filtered from the file browser. Valid "
 "values are: none (filter nothing), hide-hidden (filter hidden files) and "
@@ -2959,21 +2873,21 @@ msgstr ""
 "本數值決定哪些檔案在檔案瀏覽器中會被過濾。有效的數值為「none」 (不過濾)，"
 "「hide-hidden」(只過濾隱藏檔) 和「hide-binary」(只過濾二位元檔)。"
 
-#: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml.in:35
+#: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml:35
 msgid "File Browser Filter Pattern"
 msgstr "檔案瀏覽器過濾器樣式"
 
-#: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml.in:36
+#: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml:36
 msgid ""
 "The filter pattern to filter the file browser with. This filter works on top "
 "of the filter_mode."
 msgstr "過濾器樣式用於檔案瀏覽器過濾檔案。此過濾器會在 filter_mode 上使用。"
 
-#: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml.in:40
+#: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml:40
 msgid "File Browser Binary Patterns"
 msgstr "檔案瀏覽器二元檔樣式"
 
-#: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml.in:41
+#: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml:41
 msgid "The supplemental patterns to use when filtering binary files."
 msgstr "過濾二元檔案時要使用的補充樣式。"
 
@@ -3040,25 +2954,25 @@ msgstr "Modelines"
 
 #: plugins/modelines/modelines.plugin.desktop.in:6
 msgid "Emacs, Kate and Vim-style modelines support for gedit."
-msgstr "gedit 的 Emacs, Kate 及 Vim 風格的 modeline 支援。"
+msgstr "gedit 的 Emacs、Kate、Vim 風格的 modeline 支援。"
 
-#: plugins/pythonconsole/org.gnome.gedit.plugins.pythonconsole.gschema.xml.in:5
+#: plugins/pythonconsole/org.gnome.gedit.plugins.pythonconsole.gschema.xml:5
 msgid "Command Color Text"
 msgstr "指令顏色文字"
 
-#: plugins/pythonconsole/org.gnome.gedit.plugins.pythonconsole.gschema.xml.in:6
+#: plugins/pythonconsole/org.gnome.gedit.plugins.pythonconsole.gschema.xml:6
 msgid "The command color text"
 msgstr "指令顏色文字"
 
-#: plugins/pythonconsole/org.gnome.gedit.plugins.pythonconsole.gschema.xml.in:10
+#: plugins/pythonconsole/org.gnome.gedit.plugins.pythonconsole.gschema.xml:10
 msgid "Error Color Text"
 msgstr "錯誤顏色文字"
 
-#: plugins/pythonconsole/org.gnome.gedit.plugins.pythonconsole.gschema.xml.in:11
+#: plugins/pythonconsole/org.gnome.gedit.plugins.pythonconsole.gschema.xml:11
 msgid "The error color text"
 msgstr "錯誤顏色文字"
 
-#: plugins/pythonconsole/org.gnome.gedit.plugins.pythonconsole.gschema.xml.in:16
+#: plugins/pythonconsole/org.gnome.gedit.plugins.pythonconsole.gschema.xml:16
 msgid ""
 "If true, the terminal will use the desktop-global standard font if it’s "
 "monospace (and the most similar font it can come up with otherwise)."
@@ -3350,7 +3264,7 @@ msgstr "該文字片段的捷徑鍵已在使用中"
 msgid "_Drop targets:"
 msgstr "拖放目標(_D)："
 
-#: plugins/sort/gedit-sort-plugin.c:243
+#: plugins/sort/gedit-sort-plugin.c:241
 msgid "S_ort…"
 msgstr "排序(_O)…"
 
@@ -3395,12 +3309,12 @@ msgstr "設定語言(_L)…"
 msgid "_Highlight Misspelled Words"
 msgstr "標明拼錯字詞(_H)"
 
-#: plugins/spell/org.gnome.gedit.plugins.spell.gschema.xml.in:5
+#: plugins/spell/org.gnome.gedit.plugins.spell.gschema.xml:5
 #: plugins/spell/resources/ui/gedit-spell-setup-dialog.ui:75
 msgid "Highlight misspelled words"
 msgstr "標明拼錯字詞"
 
-#: plugins/spell/org.gnome.gedit.plugins.spell.gschema.xml.in:6
+#: plugins/spell/org.gnome.gedit.plugins.spell.gschema.xml:6
 msgid "Default setting for highlight misspelled words."
 msgstr "標明拼錯字詞的預設設定。"
 
@@ -3420,37 +3334,37 @@ msgstr "拼字檢查程式"
 msgid "Checks the spelling of the current document."
 msgstr "檢查目前文件中的拼字。"
 
-#: plugins/time/gedit-time-plugin.c:265
+#: plugins/time/gedit-time-plugin.c:263
 msgid "In_sert Date and Time…"
 msgstr "插入日期及時間(_S)…"
 
-#: plugins/time/gedit-time-plugin.c:491
+#: plugins/time/gedit-time-plugin.c:489
 msgid "Available formats"
 msgstr "可用的格式"
 
-#: plugins/time/org.gnome.gedit.plugins.time.gschema.xml.in:5
+#: plugins/time/org.gnome.gedit.plugins.time.gschema.xml:5
 msgid "Prompt Type"
 msgstr "提示類型"
 
-#: plugins/time/org.gnome.gedit.plugins.time.gschema.xml.in:6
+#: plugins/time/org.gnome.gedit.plugins.time.gschema.xml:6
 msgid ""
 "If the user should be prompted for a format or if the selected or custom "
 "format should be used."
 msgstr "要提示使用者關於格式的問題或是使用已選取或自訂的格式。"
 
-#: plugins/time/org.gnome.gedit.plugins.time.gschema.xml.in:10
+#: plugins/time/org.gnome.gedit.plugins.time.gschema.xml:10
 msgid "Selected Format"
 msgstr "選取的格式"
 
-#: plugins/time/org.gnome.gedit.plugins.time.gschema.xml.in:11
+#: plugins/time/org.gnome.gedit.plugins.time.gschema.xml:11
 msgid "The selected format used when inserting the date/time."
 msgstr "當插入日期/時刻的時候使用選取的格式。"
 
-#: plugins/time/org.gnome.gedit.plugins.time.gschema.xml.in:15
+#: plugins/time/org.gnome.gedit.plugins.time.gschema.xml:15
 msgid "Custom Format"
 msgstr "自訂格式"
 
-#: plugins/time/org.gnome.gedit.plugins.time.gschema.xml.in:16
+#: plugins/time/org.gnome.gedit.plugins.time.gschema.xml:16
 msgid "The custom format used when inserting the date/time."
 msgstr "當加入日期/時刻時使用自訂的格式。"
 
@@ -3503,6 +3417,106 @@ msgstr "插入日期/時間"
 #: plugins/time/time.plugin.desktop.in:6
 msgid "Inserts current date and time at the cursor position."
 msgstr "在游標目前的位置插入現在的日期及時間。"
+
+#~ msgid ""
+#~ "List of active plugins. It contains the “Location” of the active plugins. "
+#~ "See the .gedit-plugin file for obtaining the “Location” of a given plugin."
+#~ msgstr ""
+#~ "可用的外掛程式的清單。這包括可用的外掛程式的「位置」。參閱 .gedit-plugin "
+#~ "檔來取得特定的外掛程式的「位置」。"
+
+#~ msgid "Changes to document “%s” will be permanently lost."
+#~ msgstr "將會永久地失去對文件「%s」所作的修改。"
+
+#~ msgid "Saving has been disabled by the system administrator."
+#~ msgstr "儲存功能已被管理員禁用。"
+
+#~ msgid "Changes to %d document will be permanently lost."
+#~ msgid_plural "Changes to %d documents will be permanently lost."
+#~ msgstr[0] "將會永久地失去對 %d 個文件所作的修改。"
+
+#~ msgid "Docum_ents with unsaved changes:"
+#~ msgstr "已修改但未儲存的文件(_E):"
+
+#~ msgctxt "window title"
+#~ msgid "Open"
+#~ msgstr "開啟"
+
+#~ msgid "The location “%s” is not currently reachable."
+#~ msgstr "位置「%s」目前無法到達。"
+
+#~ msgid "Your system is offline. Check your network."
+#~ msgstr "您的系統已離線。請檢查您的網路。"
+
+#~ msgid "D_on’t Edit"
+#~ msgstr "不要編輯(_O)"
+
+#~ msgid "This file “%s” is already open in another window."
+#~ msgstr "「%s」檔案已在其他的視窗中開啟。"
+
+#~ msgid "Do you want to edit it anyway?"
+#~ msgstr "您是否想要強制編輯它？"
+
+#~ msgid "Could not create a backup file while saving “%s”"
+#~ msgstr "儲存「%s」時無法建立備份檔案"
+
+#~ msgid "Could not create a temporary backup file while saving “%s”"
+#~ msgstr "儲存「%s」時無法建立暫存備份檔案"
+
+#~ msgid ""
+#~ "Could not back up the old copy of the file before saving the new one. You "
+#~ "can ignore this warning and save the file anyway, but if an error occurs "
+#~ "while saving, you could lose the old copy of the file. Save anyway?"
+#~ msgstr ""
+#~ "在儲存新的檔案前無法備份舊的檔案。您可以忽略此警告訊息，然後繼續儲存；但如"
+#~ "果儲存時發生錯誤，您將會失去檔案的舊版本。仍要儲存？"
+
+#~ msgid "The file “%s” changed on disk."
+#~ msgstr "檔案「%s」在磁碟上已變更。"
+
+#~ msgid "Drop Changes and _Reload"
+#~ msgstr "放棄變更並重新載入(_R)"
+
+#~ msgid "Some invalid chars have been detected while saving “%s”"
+#~ msgstr "當儲存「%s」時偵測到一些無效的字元"
+
+#~ msgid ""
+#~ "If you continue saving this file you can corrupt the document.  Save "
+#~ "anyway?"
+#~ msgstr "如果您繼續儲存這個檔案可能會損毀這份文件。要強制儲存嗎？"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Join selected lines"
+#~ msgstr "連結選取的列"
+
+#~ msgid "Check update"
+#~ msgstr "檢查更新"
+
+#~ msgid "Check for latest version of gedit"
+#~ msgstr "檢查 gedit 的最新版本"
+
+#~ msgid "There was an error displaying the URI."
+#~ msgstr "顯示這個 URI 時發生錯誤。"
+
+#~ msgid "_Download"
+#~ msgstr "下載(_D)"
+
+#~ msgid "_Ignore Version"
+#~ msgstr "忽略版本(_I)"
+
+#~ msgid "There is a new version of gedit"
+#~ msgstr "已有新版本的 gedit"
+
+#~ msgid ""
+#~ "You can download the new version of gedit by clicking on the download "
+#~ "button or ignore that version and wait for a new one"
+#~ msgstr "您可以按「下載」按鈕來下載最新版 gedit 或是忽略那個版本等待更新的"
+
+#~ msgid "Version to Ignore"
+#~ msgstr "要忽略的版本"
+
+#~ msgid "Version to ignore until a newer version is released."
+#~ msgstr "在下個版本釋出前要忽略的版本。"
 
 #~ msgid "Display Overview Map"
 #~ msgstr "顯示概覽地圖"
