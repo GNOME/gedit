@@ -18,12 +18,24 @@
  */
 
 #include "gedit-factory.h"
+#include "gedit-dirs.h"
 
 G_DEFINE_TYPE (GeditFactory, gedit_factory, TEPL_TYPE_ABSTRACT_FACTORY)
+
+static GFile *
+gedit_factory_create_metadata_manager_file (TeplAbstractFactory *factory)
+{
+	return g_file_new_build_filename (gedit_dirs_get_user_data_dir (),
+					  "gedit-metadata.xml",
+					  NULL);
+}
 
 static void
 gedit_factory_class_init (GeditFactoryClass *klass)
 {
+	TeplAbstractFactoryClass *factory_class = TEPL_ABSTRACT_FACTORY_CLASS (klass);
+
+	factory_class->create_metadata_manager_file = gedit_factory_create_metadata_manager_file;
 }
 
 static void
