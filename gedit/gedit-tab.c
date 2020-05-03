@@ -1242,7 +1242,6 @@ display_externally_modified_notification (GeditTab *tab)
 
 	document_modified = gtk_text_buffer_get_modified (GTK_TEXT_BUFFER (doc));
 	info_bar = tepl_io_error_info_bar_externally_modified (location, document_modified);
-	tepl_info_bar_set_buttons_orientation (info_bar, GTK_ORIENTATION_HORIZONTAL);
 
 	set_info_bar (tab, GTK_WIDGET (info_bar), GTK_RESPONSE_OK);
 
@@ -1757,7 +1756,6 @@ successful_load (GTask *loading_task)
 		set_editable (data->tab, FALSE);
 
 		info_bar = tepl_io_error_info_bar_file_already_open (location);
-		tepl_info_bar_set_buttons_orientation (info_bar, GTK_ORIENTATION_HORIZONTAL);
 
 		g_signal_connect (info_bar,
 				  "response",
@@ -2313,8 +2311,6 @@ save_cb (GtkSourceFileSaver *saver,
 			info_bar = GTK_WIDGET (tepl_io_error_info_bar_cant_create_backup (location, error));
 			g_return_if_fail (info_bar != NULL);
 
-			tepl_info_bar_set_buttons_orientation (TEPL_INFO_BAR (info_bar), GTK_ORIENTATION_HORIZONTAL);
-
 			g_signal_connect (info_bar,
 					  "response",
 					  G_CALLBACK (cant_create_backup_error_info_bar_response),
@@ -2328,8 +2324,6 @@ save_cb (GtkSourceFileSaver *saver,
 			 */
 			info_bar = GTK_WIDGET (tepl_io_error_info_bar_invalid_characters (location));
 			g_return_if_fail (info_bar != NULL);
-
-			tepl_info_bar_set_buttons_orientation (TEPL_INFO_BAR (info_bar), GTK_ORIENTATION_HORIZONTAL);
 
 			g_signal_connect (info_bar,
 			                  "response",
