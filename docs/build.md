@@ -59,7 +59,6 @@ JHBuild tips:
 - Try `ignore_suggests = True` in your jhbuildrc to have fewer dependencies to
   build (see the difference with "jhbuild list gedit"). Another solution is to
   put some modules in the skip variable in jhbuildrc.
-- Build also the dconf module to get preferences saved.
 
 Building the gedit module manually
 ----------------------------------
@@ -89,5 +88,5 @@ $ ninja install              # Installation
 
 Just change the above `meson` command by:
 ```
-$ meson --prefix YOUR_PREFIX
+$ meson --prefix /an/other/path
 ```
