@@ -26,6 +26,13 @@ Next steps:
   library, and develop Tepl alongside gedit. The goal is to reduce the amount
   of code in gedit, by having re-usable code in Tepl instead.
 
+New version of gedit on Windows
+-------------------------------
+
+Status: **done**
+
+[gedit on the Microsoft Store](https://www.microsoft.com/store/apps/9PL1J21XF0PT).
+
 Making gedit suitable on a smartphone
 -------------------------------------
 
@@ -118,21 +125,3 @@ of gedit.
 
 The goal is to make gedit suitable for MATE and Linux Mint. This can be
 implemented by adding a “gedit-classic” configuration option.
-
-Windows and macOS support
--------------------------
-
-To release new versions. And adapt/port the code if needed. This is an ongoing
-effort.
-
-### Windows
-
-Status: **stalled**
-
-Credits: Ignacio Casal Quinteiro
-
-### macOS
-
-Status: **stalled**
-
-Credits: Jesse van den Kieboom
