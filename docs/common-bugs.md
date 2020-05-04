@@ -12,12 +12,3 @@ supported by gedit, there can be performance problems or freezes.
 
 [GitLab issue](https://gitlab.gnome.org/GNOME/gtk/issues/229). See also the
 [gedit FAQ](https://wiki.gnome.org/Apps/Gedit/FAQ).
-
-Windows and macOS support
--------------------------
-
-The latest binaries of gedit available for Windows and macOS may not work
-correctly on a recent version of these operating systems.
-
-There is work in progress to have a more recent gedit version available on
-Windows.
