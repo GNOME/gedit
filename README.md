@@ -44,6 +44,15 @@ Please read
 it contains a list of frequently reported bugs and a link to the bug
 tracker.
 
+Development resources
+---------------------
+
+- [gedit on GitLab](https://gitlab.gnome.org/GNOME/gedit)
+- [gedit-plugins on GitLab](https://gitlab.gnome.org/GNOME/gedit-plugins)
+- [Tarballs](https://download.gnome.org/sources/gedit/)
+- [Roadmap](docs/roadmap.md)
+- [gedit wiki attic](https://wiki.gnome.org/Apps/Gedit/Attic)
+
 Contributions
 -------------
 
