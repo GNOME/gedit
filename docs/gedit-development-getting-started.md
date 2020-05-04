@@ -77,22 +77,19 @@ present in the Git repository (and then you'll see that the `CONTRIBUTING.md`
 file refers to this file, but please don't end up in an infinite reading loop).
 
 A good way to learn a lot of things is to write a new plugin (as a third-party
-plugin first). To have some inspiration, see the wiki page
-[RequestedPlugins](https://wiki.gnome.org/Apps/Gedit/RequestedPlugins).
+plugin first).
 
 A potentially easy task (but not always) is to fix compilation warnings, for
 example when a deprecated function is used. If you encounter a runtime warning
 or critical message, it is also a good idea to fix it.
 
-Improvements to the documentation (for users or developers) or the wiki is also
-useful.
+Improvements to the documentation (for users or developers) is also useful,
+especially to improve the API reference for developing gedit plugins.
 
 Note that gedit, although simple to use, is old. Some parts of the code is
 legacy code. The remaining tasks to do are often not simple, the codebase needs
 a lot of refactoring, and to do it properly an experienced developer is advised.
-That's why writing plugins is normally easier; except that there is not a lot of
-documentation for plugin authors (another thing that needs to be improved over
-time).
+That's why writing plugins is normally easier.
 
 Interesting article to read, written by a GNOME developer:
 [Working on Free Software](http://ometer.com/hacking.html)
