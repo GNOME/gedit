@@ -38,3 +38,8 @@ More documentation and tips
 
 More documentation, for example a tutorial, would be useful. In the meantime,
 the recommended thing to do is to see how core gedit plugins are implemented.
+
+### Unofficial documentation and tutorials (may be outdated)
+
+- [Writing plugins in Python](https://wiki.gnome.org/Apps/Gedit/PythonPluginHowTo) (a little outdated)
+- [Writing plugins in Vala](https://wiki.gnome.org/Projects/Vala/Gedit3PluginSample) (maybe outdated)
