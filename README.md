@@ -3,16 +3,10 @@ gedit - The GNOME text editor
 
 This is version 3.37.2 of gedit.
 
-gedit is the official text editor of the GNOME desktop environment.
-While aiming at simplicity and ease of use, gedit is a powerful general
-purpose text editor.
+gedit is the text editor of the GNOME desktop environment.
 
-Whether you are writing the next bestseller, programming an innovative
-application, or simply taking some quick notes, gedit will be a reliable
-tool to accomplish your task.
-
-Its flexible plugin system allows you to tailor the application to your
-needs and adapt it to your workflow.
+The first goal of gedit is to be easy to use, with a simple interface by
+default. More advanced features are available by enabling plugins.
 
 See the [gedit official website](https://wiki.gnome.org/Apps/Gedit) for
 more information.
