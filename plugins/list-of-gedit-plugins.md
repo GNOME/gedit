@@ -8,13 +8,13 @@ Plugins that are distributed with gedit itself.
 
 - **Document Statistics** - *Report the number of words, lines and characters in a document.*
 - **External Tools** - *Execute external commands and shell scripts.*
-- **File Browser Panel** - *Easy file access from the side panel*
+- **File Browser Panel** - *Easy file access from the side panel.*
 - **Insert Date/Time** - *Inserts current date and time at the cursor position.*
 - **Modelines** - *Emacs, Kate and Vim-style modelines support for gedit.*
-- **Python Console** - *Interactive Python console standing in the bottom panel*
+- **Python Console** - *Interactive Python console standing in the bottom panel.*
 - **Quick Highlight** - *Highlights every occurrences of selected text.*
-- **Quick Open** - *Quickly open files*
-- **Snippets** - *Insert often-used pieces of text in a fast way*
+- **Quick Open** - *Quickly open files.*
+- **Snippets** - *Insert often-used pieces of text in a fast way.*
 - **Sort** - *Sorts a document or selected text.*
 - **Spell Checker** - *Checks the spelling of the current document.*
 
