@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gedit\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gedit/issues\n"
-"POT-Creation-Date: 2020-04-30 20:27+0000\n"
-"PO-Revision-Date: 2020-05-01 09:18+0300\n"
+"POT-Creation-Date: 2020-05-05 15:42+0000\n"
+"PO-Revision-Date: 2020-05-05 18:44+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -32,32 +32,17 @@ msgid "Edit text files"
 msgstr "Редактор текстових файлів"
 
 #: data/org.gnome.gedit.appdata.xml.in:10
-msgid ""
-"gedit is the official text editor of the GNOME desktop environment. While "
-"aiming at simplicity and ease of use, gedit is a powerful general purpose "
-"text editor."
-msgstr ""
-"Gedit — офіційний текстовий редактор стільничного середовища GNOME. Попри "
-"намагання бути простим і зручним, Gedit — одночасно потужний текстовий "
-"редактор."
+msgid "gedit is the text editor of the GNOME desktop environment."
+msgstr "gedit — текстовий редактор стільничного середовища GNOME."
 
-#: data/org.gnome.gedit.appdata.xml.in:15
+#: data/org.gnome.gedit.appdata.xml.in:13
 msgid ""
-"Whether you are writing the next bestseller, programming an innovative "
-"application, or simply taking some quick notes, gedit will be a reliable "
-"tool to accomplish your task."
+"The first goal of gedit is to be easy to use, with a simple interface by "
+"default. More advanced features are available by enabling plugins."
 msgstr ""
-"Чи ви пишете ваш наступний шедевр, чи програмуєте новаторську програму, чи "
-"записуєте нашвидкуруч примітки, Gedit залишаєтеся надійним інструментом для "
-"ваших завдань."
-
-#: data/org.gnome.gedit.appdata.xml.in:20
-msgid ""
-"Its flexible plugin system allows you to tailor the application to your "
-"needs and adapt it to your workflow."
-msgstr ""
-"Гнучка система додатків дозволяє підкоригувати програму до ваших потреб і "
-"пристосувати до вашого способу роботи."
+"Gedit, передусім, проста у користуванні програма і типовим простим "
+"інтерфейсом. Доступ до додаткових можливостей відкривається за допомогою "
+"додатків."
 
 #: data/org.gnome.gedit.desktop.in:3 gedit/gedit-print-job.c:730
 msgid "Text Editor"
@@ -518,7 +503,6 @@ msgid "Active plugins"
 msgstr "Активні модулі"
 
 #: data/org.gnome.gedit.gschema.xml.in:302
-#| msgid "Active plugins"
 msgid "List of active plugins."
 msgstr "Список активних модулів."
 
@@ -565,7 +549,7 @@ msgstr "[ФАЙЛ…] [+РЯДОК[:СТОВПЧИК]]"
 msgid "There was an error displaying the help."
 msgstr "Помилка при показі довідки."
 
-#: gedit/gedit-app.c:888
+#: gedit/gedit-app.c:838
 #, c-format
 msgid "%s: invalid encoding."
 msgstr "%s: неправильне кодування."
@@ -1416,30 +1400,30 @@ msgstr "Зберігається «%s» у «%s»"
 msgid "Saving %s"
 msgstr "Зберігається «%s»"
 
-#: gedit/gedit-tab.c:1485
+#: gedit/gedit-tab.c:1484
 #, c-format
 msgid "Error opening file %s"
 msgstr "Помилка відкривання файлу «%s»"
 
-#: gedit/gedit-tab.c:1490
+#: gedit/gedit-tab.c:1489
 #, c-format
 msgid "Error reverting file %s"
 msgstr "Помилка відновлення файлу «%s»"
 
-#: gedit/gedit-tab.c:1495
+#: gedit/gedit-tab.c:1494
 #, c-format
 msgid "Error saving file %s"
 msgstr "Помилка збереження файлу «%s»"
 
-#: gedit/gedit-tab.c:1526
+#: gedit/gedit-tab.c:1525
 msgid "Name:"
 msgstr "Назва:"
 
-#: gedit/gedit-tab.c:1527
+#: gedit/gedit-tab.c:1526
 msgid "MIME Type:"
 msgstr "MIME тип:"
 
-#: gedit/gedit-tab.c:1528
+#: gedit/gedit-tab.c:1527
 msgid "Encoding:"
 msgstr "Кодування:"
 
@@ -2797,8 +2781,9 @@ msgid "File Browser Panel"
 msgstr "Панель переглядача файлів"
 
 #: plugins/filebrowser/filebrowser.plugin.desktop.in:7
-msgid "Easy file access from the side panel"
-msgstr "Простий доступ до файлів з бічної панелі"
+#| msgid "Easy file access from the side panel"
+msgid "Easy file access from the side panel."
+msgstr "Простий доступ до файлів з бічної панелі."
 
 #: plugins/filebrowser/gedit-file-bookmarks-store.c:200
 msgid "Home"
@@ -3133,8 +3118,9 @@ msgid "Python Console"
 msgstr "Консоль python"
 
 #: plugins/pythonconsole/pythonconsole.plugin.desktop.in:7
-msgid "Interactive Python console standing in the bottom panel"
-msgstr "Інтерактивна консоль python у нижній панелі"
+#| msgid "Interactive Python console standing in the bottom panel"
+msgid "Interactive Python console standing in the bottom panel."
+msgstr "Інтерактивна консоль python у нижній панелі."
 
 #: plugins/quickhighlight/quickhighlight.plugin.desktop.in:5
 msgid "Quick Highlight"
@@ -3154,8 +3140,9 @@ msgid "Quick Open"
 msgstr "Швидке відкривання"
 
 #: plugins/quickopen/quickopen.plugin.desktop.in:7
-msgid "Quickly open files"
-msgstr "Швидко відкрити файли"
+#| msgid "Quickly open files"
+msgid "Quickly open files."
+msgstr "Швидко відкрити файли."
 
 #: plugins/quickopen/quickopen/popup.py:90
 msgid "Type to search…"
@@ -3351,8 +3338,9 @@ msgid "Execution of the Python command (%s) failed: %s"
 msgstr "Не вдається виконати команду Python (%s): %s"
 
 #: plugins/snippets/snippets.plugin.desktop.in:7
-msgid "Insert often-used pieces of text in a fast way"
-msgstr "Швидкий спосіб вставки фрагментів тексту, що часто використовуються"
+#| msgid "Insert often-used pieces of text in a fast way"
+msgid "Insert often-used pieces of text in a fast way."
+msgstr "Швидкий спосіб вставки фрагментів тексту, що часто використовуються."
 
 #: plugins/snippets/snippets/snippets.ui:40
 #: plugins/snippets/snippets/snippets.ui:47
@@ -3562,6 +3550,31 @@ msgstr "Вставити час або дату"
 #: plugins/time/time.plugin.desktop.in:6
 msgid "Inserts current date and time at the cursor position."
 msgstr "Вставляє поточну дату й час в позицію курсора"
+
+#~ msgid ""
+#~ "gedit is the official text editor of the GNOME desktop environment. While "
+#~ "aiming at simplicity and ease of use, gedit is a powerful general purpose "
+#~ "text editor."
+#~ msgstr ""
+#~ "Gedit — офіційний текстовий редактор стільничного середовища GNOME. Попри "
+#~ "намагання бути простим і зручним, Gedit — одночасно потужний текстовий "
+#~ "редактор."
+
+#~ msgid ""
+#~ "Whether you are writing the next bestseller, programming an innovative "
+#~ "application, or simply taking some quick notes, gedit will be a reliable "
+#~ "tool to accomplish your task."
+#~ msgstr ""
+#~ "Чи ви пишете ваш наступний шедевр, чи програмуєте новаторську програму, "
+#~ "чи записуєте нашвидкуруч примітки, Gedit залишаєтеся надійним "
+#~ "інструментом для ваших завдань."
+
+#~ msgid ""
+#~ "Its flexible plugin system allows you to tailor the application to your "
+#~ "needs and adapt it to your workflow."
+#~ msgstr ""
+#~ "Гнучка система додатків дозволяє підкоригувати програму до ваших потреб і "
+#~ "пристосувати до вашого способу роботи."
 
 #~ msgid ""
 #~ "List of active plugins. It contains the “Location” of the active plugins. "
