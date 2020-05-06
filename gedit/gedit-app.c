@@ -1143,8 +1143,6 @@ gedit_app_shutdown (GApplication *app)
 	 * shutdown after.
 	 */
 	G_APPLICATION_CLASS (gedit_app_parent_class)->shutdown (app);
-
-	gedit_dirs_shutdown ();
 }
 
 static gboolean

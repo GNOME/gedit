@@ -132,8 +132,9 @@ main (int argc, char *argv[])
 	type = GEDIT_TYPE_APP;
 #endif
 
-	/* NOTE: we should not make any calls to the gedit api before the
-	 * private library is loaded */
+	/* NOTE: we should not make any calls to the gedit API before the
+	 * private library is loaded.
+	 */
 	gedit_dirs_init ();
 
 	setup_i18n ();
@@ -160,6 +161,8 @@ main (int argc, char *argv[])
 		gedit_debug_message (DEBUG_APP, "Leaking with %i refs",
 		                     G_OBJECT (app)->ref_count);
 	}
+
+	gedit_dirs_shutdown ();
 
 #ifdef G_OS_WIN32
 	gedit_w32_unload_private_dll ();
