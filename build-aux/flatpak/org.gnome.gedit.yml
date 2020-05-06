@@ -12,8 +12,11 @@ finish-args:
   - "--share=ipc"
   - "--socket=x11"
   - "--socket=wayland"
+  - "--metadata=X-DConf=migrate-path=/org/gnome/gedit/"
   # Needed at least for the integrated file browser plugin:
   - "--filesystem=host"
+  # For opening files from remote locations (with GVfs):
+  - "--talk-name=org.gtk.vfs.*"
 
 build-options:
   cflags: "-O2 -g"
@@ -30,6 +33,7 @@ cleanup:
   - "/share/man"
   - "/share/gtk-doc"
   - "/share/vala"
+  - "/share/gir-1.0"
   - "*.la"
   - "*.a"
 
@@ -40,22 +44,22 @@ modules:
       - "-Dlua51=false"
       - "-Dvapi=true"
       - "-Ddemos=false"
+      - "-Dglade_catalog=false"
     sources:
       - type: archive
         url: https://download.gnome.org/sources/libpeas/1.26/libpeas-1.26.0.tar.xz
         sha256: a976d77e20496479a8e955e6a38fb0e5c5de89cf64d9f44e75c2213ee14f7376
 
   - name: gspell
+    cleanup:
+      - "/bin"
     sources:
       - type: archive
         url: https://download.gnome.org/sources/gspell/1.8/gspell-1.8.3.tar.xz
         sha256: 5ae514dd0216be069176accf6d0049d6a01cfa6a50df4bc06be85f7080b62de8
 
   - name: uchardet
-    buildsystem: cmake
-    builddir: true
-    config-opts:
-      - "-DCMAKE_INSTALL_LIBDIR=lib"
+    buildsystem: cmake-ninja
     sources:
       - type: archive
         url: https://www.freedesktop.org/software/uchardet/releases/uchardet-0.0.6.tar.xz
