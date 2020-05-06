@@ -1115,8 +1115,6 @@ gedit_app_shutdown (GApplication *app)
 	save_print_settings (GEDIT_APP (app));
 
 	G_APPLICATION_CLASS (gedit_app_parent_class)->shutdown (app);
-
-	gedit_dirs_shutdown ();
 }
 
 static gboolean
