@@ -115,14 +115,14 @@ gedit_dirs_init ()
 void
 gedit_dirs_shutdown ()
 {
-	g_free (user_config_dir);
-	g_free (user_data_dir);
-	g_free (user_styles_dir);
-	g_free (user_plugins_dir);
-	g_free (gedit_locale_dir);
-	g_free (gedit_lib_dir);
-	g_free (gedit_plugins_dir);
-	g_free (gedit_plugins_data_dir);
+	g_clear_pointer (&user_config_dir, g_free);
+	g_clear_pointer (&user_data_dir, g_free);
+	g_clear_pointer (&user_styles_dir, g_free);
+	g_clear_pointer (&user_plugins_dir, g_free);
+	g_clear_pointer (&gedit_locale_dir, g_free);
+	g_clear_pointer (&gedit_lib_dir, g_free);
+	g_clear_pointer (&gedit_plugins_dir, g_free);
+	g_clear_pointer (&gedit_plugins_data_dir, g_free);
 }
 
 const gchar *
