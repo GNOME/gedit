@@ -18,6 +18,26 @@ libgedit_public_headers = [
   'gedit-window.h',
 ]
 
+libgedit_public_sources = [
+  'gedit-app-activatable.c',
+  'gedit-app.c',
+  'gedit-commands-file.c',
+  'gedit-debug.c',
+  'gedit-document.c',
+  'gedit-encodings-combo-box.c',
+  'gedit-menu-extension.c',
+  'gedit-message-bus.c',
+  'gedit-message.c',
+  'gedit-progress-info-bar.c',
+  'gedit-statusbar.c',
+  'gedit-tab.c',
+  'gedit-utils.c',
+  'gedit-view-activatable.c',
+  'gedit-view.c',
+  'gedit-window-activatable.c',
+  'gedit-window.c',
+]
+
 libgedit_private_headers = [
   'gedit-app-osx.h',
   'gedit-app-win32.h',
@@ -54,23 +74,17 @@ libgedit_private_headers = [
   'gedit-window-private.h',
 ]
 
-libgedit_sources = [
-  'gedit-app-activatable.c',
-  'gedit-app.c',
+libgedit_private_sources = [
   'gedit-close-confirmation-dialog.c',
   'gedit-commands-documents.c',
   'gedit-commands-edit.c',
-  'gedit-commands-file.c',
   'gedit-commands-file-print.c',
   'gedit-commands-help.c',
   'gedit-commands-search.c',
   'gedit-commands-view.c',
-  'gedit-debug.c',
   'gedit-dirs.c',
-  'gedit-document.c',
   'gedit-documents-panel.c',
   'gedit-encoding-items.c',
-  'gedit-encodings-combo-box.c',
   'gedit-encodings-dialog.c',
   'gedit-factory.c',
   'gedit-file-chooser-dialog.c',
@@ -79,10 +93,7 @@ libgedit_sources = [
   'gedit-highlight-mode-selector.c',
   'gedit-history-entry.c',
   'gedit-io-error-info-bar.c',
-  'gedit-menu-extension.c',
   'gedit-menu-stack-switcher.c',
-  'gedit-message-bus.c',
-  'gedit-message.c',
   'gedit-multi-notebook.c',
   'gedit-notebook.c',
   'gedit-notebook-popup-menu.c',
@@ -92,20 +103,17 @@ libgedit_sources = [
   'gedit-preferences-dialog.c',
   'gedit-print-job.c',
   'gedit-print-preview.c',
-  'gedit-progress-info-bar.c',
   'gedit-recent.c',
   'gedit-replace-dialog.c',
   'gedit-settings.c',
-  'gedit-statusbar.c',
   'gedit-status-menu-button.c',
-  'gedit-tab.c',
   'gedit-tab-label.c',
-  'gedit-utils.c',
-  'gedit-view-activatable.c',
-  'gedit-view.c',
   'gedit-view-frame.c',
-  'gedit-window-activatable.c',
-  'gedit-window.c',
+]
+
+libgedit_sources = [
+  libgedit_public_sources,
+  libgedit_private_sources
 ]
 
 libgedit_c_args = []
