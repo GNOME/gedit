@@ -193,9 +193,9 @@ GEDIT_STATUSBAR_GET_CLASS
 
 <SECTION>
 <FILE>gedit-tab</FILE>
-GeditTabState
 <TITLE>GeditTab</TITLE>
 GeditTab
+GeditTabState
 gedit_tab_get_view
 gedit_tab_get_document
 gedit_tab_get_from_document
@@ -213,6 +213,8 @@ gedit_tab_get_type
 GEDIT_TAB_CLASS
 GEDIT_IS_TAB_CLASS
 GEDIT_TAB_GET_CLASS
+GEDIT_TYPE_TAB_STATE
+gedit_tab_state_get_type
 </SECTION>
 
 <SECTION>
@@ -255,10 +257,9 @@ gedit_view_activatable_get_type
 
 <SECTION>
 <FILE>gedit-window</FILE>
-GeditWindowState
-GeditWindowPrivate
 <TITLE>GeditWindow</TITLE>
 GeditWindow
+GeditWindowState
 gedit_window_create_tab
 gedit_window_create_tab_from_location
 gedit_window_create_tab_from_stream
@@ -287,6 +288,9 @@ gedit_window_get_type
 GEDIT_WINDOW_CLASS
 GEDIT_IS_WINDOW_CLASS
 GEDIT_WINDOW_GET_CLASS
+GEDIT_TYPE_WINDOW_STATE
+GeditWindowPrivate
+gedit_window_state_get_type
 </SECTION>
 
 <SECTION>
@@ -323,6 +327,9 @@ gedit_debug_init
 gedit_debug
 gedit_debug_message
 gedit_debug_plugin_message
+<SUBSECTION Standard>
+GEDIT_TYPE_DEBUG_SECTION
+gedit_debug_section_get_type
 </SECTION>
 
 <SECTION>
