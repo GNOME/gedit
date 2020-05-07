@@ -18,10 +18,10 @@ libgedit_public_h = files(
   'gedit-window.h',
 )
 
-libgedit_private_h = files(
-  'gedit-app-private.h',
+libgedit_private_h = [
+  'gedit-app-osx.h',
+  'gedit-app-win32.h',
   'gedit-close-confirmation-dialog.h',
-  'gedit-commands-private.h',
   'gedit-dirs.h',
   'gedit-document-private.h',
   'gedit-documents-panel.h',
@@ -29,6 +29,7 @@ libgedit_private_h = files(
   'gedit-encodings-dialog.h',
   'gedit-file-chooser-dialog-gtk.h',
   'gedit-file-chooser-dialog.h',
+  'gedit-file-chooser-dialog-osx.h',
   'gedit-highlight-mode-dialog.h',
   'gedit-highlight-mode-selector.h',
   'gedit-history-entry.h',
@@ -56,7 +57,7 @@ libgedit_private_h = files(
   'gedit-view-centering.h',
   'gedit-view-frame.h',
   'gedit-window-private.h',
-)
+]
 
 libgedit_sources = files(
   'gedit-app-activatable.c',
