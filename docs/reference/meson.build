@@ -25,45 +25,6 @@ gedit_doc_dep = declare_dependency(
   sources: libgedit_dep_sources,
 )
 
-libgedit_private_headers = [
-  'gedit-app-osx.h',
-  'gedit-app-win32.h',
-  'gedit-close-confirmation-dialog.h',
-  'gedit-dirs.h',
-  'gedit-document-private.h',
-  'gedit-documents-panel.h',
-  'gedit-encoding-items.h',
-  'gedit-encodings-dialog.h',
-  'gedit-enum-types.h',
-  'gedit-factory.h',
-  'gedit-file-chooser-dialog-gtk.h',
-  'gedit-file-chooser-dialog-osx.h',
-  'gedit-file-chooser-dialog.h',
-  'gedit-highlight-mode-dialog.h',
-  'gedit-highlight-mode-selector.h',
-  'gedit-history-entry.h',
-  'gedit-io-error-info-bar.h',
-  'gedit-menu-stack-switcher.h',
-  'gedit-multi-notebook.h',
-  'gedit-notebook-popup-menu.h',
-  'gedit-notebook-stack-switcher.h',
-  'gedit-notebook.h',
-  'gedit-open-menu-button.h',
-  'gedit-pango.h',
-  'gedit-plugins-engine.h',
-  'gedit-preferences-dialog.h',
-  'gedit-print-job.h',
-  'gedit-print-preview.h',
-  'gedit-recent.h',
-  'gedit-replace-dialog.h',
-  'gedit-settings.h',
-  'gedit-small-button.h',
-  'gedit-status-menu-button.h',
-  'gedit-tab-label.h',
-  'gedit-view-frame.h',
-  'gedit-window-private.h',
-]
-
 gnome.gtkdoc(
   'gedit',
   main_xml: 'gedit-docs.xml',
@@ -85,6 +46,6 @@ gnome.gtkdoc(
   content_files: [
     'api-breaks.xml'
   ],
-  ignore_headers: libgedit_private_headers,
+  ignore_headers: libgedit_private_h,
   install: true,
 )
