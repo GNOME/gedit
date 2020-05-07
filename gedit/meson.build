@@ -121,7 +121,6 @@ libgedit_link_args = []
 
 libgedit_deps = [
   deps_basic_list,
-  introspection_dep,
   libgd_dep,
 ]
 
