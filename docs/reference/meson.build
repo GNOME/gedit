@@ -46,6 +46,6 @@ gnome.gtkdoc(
   content_files: [
     'api-breaks.xml'
   ],
-  ignore_headers: libgedit_private_h,
+  ignore_headers: libgedit_private_headers,
   install: true,
 )

@@ -1,4 +1,4 @@
-libgedit_public_h = files(
+libgedit_public_headers = files(
   'gedit-app-activatable.h',
   'gedit-app.h',
   'gedit-commands.h',
@@ -18,7 +18,7 @@ libgedit_public_h = files(
   'gedit-window.h',
 )
 
-libgedit_private_h = [
+libgedit_private_headers = [
   'gedit-app-osx.h',
   'gedit-app-win32.h',
   'gedit-close-confirmation-dialog.h',
@@ -144,7 +144,7 @@ endif
 
 libgedit_enums = gnome.mkenums_simple(
   'gedit-enum-types',
-  sources: libgedit_public_h + ['gedit-notebook.h'],
+  sources: libgedit_public_headers + ['gedit-notebook.h'],
 )
 
 subdir('resources')
@@ -157,7 +157,7 @@ libgedit_sources += [
 libgedit_dep_sources = []
 
 install_headers(
-  libgedit_public_h,
+  libgedit_public_headers,
   subdir: 'gedit-@0@'.format(api_version) / 'gedit'
 )
 
@@ -173,7 +173,7 @@ libgedit_sha = shared_library(
 )
 
 # GObject Introspection
-libgedit_public_h += [
+libgedit_public_headers += [
   libgedit_enums.get(1),
 ]
 
@@ -184,7 +184,7 @@ libgedit_gir_includes = [
 
 libgedit_gir = gnome.generate_gir(
   libgedit_sha,
-  sources: libgedit_sources + libgedit_public_h,
+  sources: libgedit_sources + libgedit_public_headers,
   nsversion: '3.0',
   namespace: 'Gedit',
   symbol_prefix: 'gedit',
@@ -246,7 +246,7 @@ libgedit_pc = pkg.generate(
 # FIXME: https://github.com/mesonbuild/meson/issues/1687
 custom_target(
   'org.gnome.gedit.enums.xml',
-  input : libgedit_sources + libgedit_public_h + ['gedit-notebook.h'],
+  input : libgedit_sources + libgedit_public_headers + ['gedit-notebook.h'],
   output: 'org.gnome.gedit.enums.xml',
   capture: true,
   command: [
