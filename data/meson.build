@@ -79,6 +79,13 @@ if xmllint.found()
   )
 endif
 
+if host_machine.system() == 'windows'
+  install_data(
+    'org.gnome.gedit-ms-windows.gschema.override',
+    install_dir: get_option('datadir') / 'glib-2.0/schemas'
+  )
+endif
+
 service_in = configuration_data()
 service_in.set('bindir', get_option('prefix') / get_option('bindir'))
 
