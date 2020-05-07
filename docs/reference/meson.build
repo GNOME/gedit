@@ -1,3 +1,5 @@
+html_dir = get_option('prefix') / gnome.gtkdoc_html_dir('gedit')
+
 glib_docpath = dependency('glib-2.0').get_pkgconfig_variable('prefix') / 'share/gtk-doc/html/glib'
 gobject_docpath = dependency('gobject-2.0').get_pkgconfig_variable('prefix') / 'share/gtk-doc/html/gobject'
 gio_docpath = dependency('gio-2.0').get_pkgconfig_variable('prefix') / 'share/gtk-doc/html/gio'
@@ -21,7 +23,7 @@ gedit_doc_dep = declare_dependency(
   sources: libgedit_dep_sources,
 )
 
-libgedit_reference_ignored_h = [
+libgedit_private_headers = [
   'gedit-app-osx.h',
   'gedit-app-win32.h',
   'gedit-close-confirmation-dialog.h',
@@ -64,36 +66,14 @@ libgedit_reference_ignored_h = [
   'gedit-window-private.h',
 ]
 
-libgedit_reference_scan_args = [
-  '--rebuild-types',
-  '--deprecated-guards=GEDIT_DISABLE_DEPRECATED',
-  '--ignore-headers=' + ' '.join(libgedit_reference_ignored_h),
-]
-
-libgedit_reference_mkdb_args = [
-  '--xml-mode',
-  '--output-format=xml',
-  '--name-space=gedit',
-]
-
-gtkdocdir = join_paths(get_option('prefix'), get_option('datadir'), 'gtk-doc')
-
-libgedit_reference_fixxref_args = [
-  '--html-dir=@0@'.format(join_paths(gtkdocdir, 'html', package_string)),
-  '--extra-dir=@0@'.format(glib_docpath),
-  '--extra-dir=@0@'.format(gobject_docpath),
-  '--extra-dir=@0@'.format(gtk_docpath),
-]
-
 gnome.gtkdoc(
-  meson.project_name(),
-  main_sgml: 'gedit-docs.xml',
-  src_dir: join_paths(srcdir, 'gedit'),
+  'gedit',
+  main_xml: 'gedit-docs.xml',
+  src_dir: include_directories('../../gedit/'),
   dependencies: gedit_doc_dep,
-  scan_args: libgedit_reference_scan_args,
-  mkdb_args: libgedit_reference_mkdb_args,
+  scan_args: ['--rebuild-types'],
   fixxref_args: [
-    '--html-dir=@0@'.format(join_paths(gtkdocdir, 'html', package_string)),
+    '--html-dir=@0@'.format(html_dir),
     '--extra-dir=@0@'.format(glib_docpath),
     '--extra-dir=@0@'.format(gobject_docpath),
     '--extra-dir=@0@'.format(gio_docpath),
@@ -102,13 +82,9 @@ gnome.gtkdoc(
     '--extra-dir=@0@'.format(gsv_docpath),
     '--extra-dir=@0@'.format(libpeas_docpath),
   ],
-  content_files : [
+  content_files: [
     'api-breaks.xml'
   ],
+  ignore_headers: libgedit_private_headers,
   install: true,
-  install_dir: join_paths(
-    gtkdocdir,
-    'html',
-    meson.project_name(),
-  )
 )
