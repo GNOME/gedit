@@ -48,11 +48,6 @@ libgd_dep = libgd_subproject.get_variable('libgd_dep')
 
 # Dependencies
 gio_dep = dependency('gio-2.0', version: '>= 2.64')
-gspell_dep = dependency('gspell-1', version: '>= 1.0')
-vapigen_dep = dependency('vapigen', version: '>= 0.25.1')
-
-python3 = python.find_installation('python3')
-
 deps_basic_list = [
   gio_dep,
   dependency('gtk+-3.0', version: '>= 3.22'),
@@ -60,6 +55,9 @@ deps_basic_list = [
   dependency('libpeas-gtk-1.0', version: '>= 1.14.1'),
   dependency('gobject-introspection-1.0'),
 ]
+
+gspell_dep = dependency('gspell-1', version: '>= 1.0')
+python3 = python.find_installation('python3')
 
 # Configurations
 config_h = configuration_data()
