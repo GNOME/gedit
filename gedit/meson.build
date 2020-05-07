@@ -1,4 +1,4 @@
-libgedit_public_headers = files(
+libgedit_public_headers = [
   'gedit-app-activatable.h',
   'gedit-app.h',
   'gedit-commands.h',
@@ -16,7 +16,7 @@ libgedit_public_headers = files(
   'gedit-view.h',
   'gedit-window-activatable.h',
   'gedit-window.h',
-)
+]
 
 libgedit_private_headers = [
   'gedit-app-osx.h',
@@ -54,7 +54,7 @@ libgedit_private_headers = [
   'gedit-window-private.h',
 ]
 
-libgedit_sources = files(
+libgedit_sources = [
   'gedit-app-activatable.c',
   'gedit-app.c',
   'gedit-close-confirmation-dialog.c',
@@ -106,7 +106,7 @@ libgedit_sources = files(
   'gedit-view-frame.c',
   'gedit-window-activatable.c',
   'gedit-window.c',
-)
+]
 
 libgedit_c_args = []
 libgedit_link_args = []
