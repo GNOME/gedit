@@ -58,9 +58,6 @@ introspection_req = '>= 0.9.3'
 vala_req = '>= 0.25.1'
 
 gio_dep = dependency('gio-2.0', version: glib_req)
-gtk_dep = dependency('gtk+-3.0', version: gtk_req)
-gtksourceview_dep = dependency('gtksourceview-4', version: gtksourceview_req)
-libpeas_gtk_dep = dependency('libpeas-gtk-1.0', version: libpeas_req)
 libxml_dep = dependency('libxml-2.0', version: libxml_req)
 gspell_dep = dependency('gspell-1', version: gspell_req)
 
@@ -71,9 +68,9 @@ python3 = python.find_installation('python3')
 
 deps_basic_list = [
   gio_dep,
-  gtk_dep,
-  gtksourceview_dep,
-  libpeas_gtk_dep,
+  dependency('gtk+-3.0', version: gtk_req),
+  dependency('gtksourceview-4', version: gtksourceview_req),
+  dependency('libpeas-gtk-1.0', version: libpeas_req),
 ]
 
 # Configurations
