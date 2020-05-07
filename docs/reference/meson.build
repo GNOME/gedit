@@ -8,18 +8,10 @@ gtk_docpath = dependency('gtk+-3.0').get_pkgconfig_variable('prefix') / 'share/g
 gsv_docpath = dependency('gtksourceview-4').get_pkgconfig_variable('prefix') / 'share/gtk-doc/html/gtksourceview-4.0'
 libpeas_docpath = dependency('libpeas-1.0').get_pkgconfig_variable('prefix') / 'share/gtk-doc/html/libpeas'
 
-gedit_doc_deps = [
-  gio_dep,
-  gtk_dep,
-  gtksourceview_dep,
-  libpeas_gtk_dep,
-  libxml_dep,
-]
-
 gedit_doc_dep = declare_dependency(
   link_with: libgedit_sha,
   include_directories: root_include_dir,
-  dependencies: gedit_doc_deps,
+  dependencies: deps_basic_list + [libxml_dep],
   sources: libgedit_dep_sources,
 )
 
