@@ -54,14 +54,12 @@ libpeas_req = '>= 1.14.1'
 libxml_req = '>= 2.5.0'
 gspell_req = '>= 1.0'
 pygobject_req = '>= 3.0.0'
-introspection_req = '>= 0.9.3'
 vala_req = '>= 0.25.1'
 
 gio_dep = dependency('gio-2.0', version: glib_req)
 libxml_dep = dependency('libxml-2.0', version: libxml_req)
 gspell_dep = dependency('gspell-1', version: gspell_req)
 
-introspection_dep = dependency('gobject-introspection-1.0', version: introspection_req)
 vapigen_dep = dependency('vapigen', version: vala_req)
 
 python3 = python.find_installation('python3')
@@ -71,6 +69,7 @@ deps_basic_list = [
   dependency('gtk+-3.0', version: gtk_req),
   dependency('gtksourceview-4', version: gtksourceview_req),
   dependency('libpeas-gtk-1.0', version: libpeas_req),
+  dependency('gobject-introspection-1.0'),
 ]
 
 # Configurations
