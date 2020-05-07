@@ -134,10 +134,10 @@ libgedit_deps = [
 ]
 
 if host_machine.system() == 'darwin'
-  libgedit_sources += files(
+  libgedit_sources += [
     'gedit-app-osx.m',
     'gedit-file-chooser-dialog-osx.m',
-  )
+  ]
   libgedit_c_args += [
     '-DOS_OSX=1',
   ]
@@ -149,9 +149,9 @@ if host_machine.system() == 'darwin'
     dependency('gtk-mac-integration-gtk3'),
   ]
 elif host_machine.system() == 'windows'
-  libgedit_sources += files(
+  libgedit_sources += [
     'gedit-app-win32.c',
-  )
+  ]
 endif
 
 libgedit_enums = gnome.mkenums_simple(
