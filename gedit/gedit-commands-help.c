@@ -107,17 +107,7 @@ _gedit_cmd_help_about (GeditWindow *window)
 	static const gchar comments[] = \
 		N_("gedit is a small and lightweight text editor for the GNOME Desktop");
 
-	GdkPixbuf *logo;
-	GError *error = NULL;
-
 	gedit_debug (DEBUG_COMMANDS);
-
-	logo = gdk_pixbuf_new_from_resource ("/org/gnome/gedit/pixmaps/gedit-logo.png", &error);
-	if (error != NULL)
-	{
-		g_warning ("Error when loading the gedit logo: %s", error->message);
-		g_clear_error (&error);
-	}
 
 	gtk_show_about_dialog (GTK_WINDOW (window),
 			       "program-name", "gedit",
@@ -125,15 +115,13 @@ _gedit_cmd_help_about (GeditWindow *window)
 			       "comments", _(comments),
 			       "copyright", copyright,
 			       "license-type", GTK_LICENSE_GPL_2_0,
+			       "logo-icon-name", "org.gnome.gedit",
 			       "documenters", documenters,
-			       "logo", logo,
 			       "translator-credits", _("translator-credits"),
 			       "version", VERSION,
 			       "website", "http://www.gedit.org",
 			       "website-label", "www.gedit.org",
 			       NULL);
-
-	g_clear_object (&logo);
 }
 
 /* ex:set ts=8 noet: */
