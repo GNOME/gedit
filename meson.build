@@ -60,8 +60,6 @@ gio_dep = dependency('gio-2.0', version: glib_req)
 libxml_dep = dependency('libxml-2.0', version: libxml_req)
 gspell_dep = dependency('gspell-1', version: gspell_req)
 
-vapigen_dep = dependency('vapigen', version: vala_req)
-
 python3 = python.find_installation('python3')
 
 deps_basic_list = [
