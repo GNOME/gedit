@@ -59,6 +59,14 @@ vapigen_dep = dependency('vapigen', version: '>= 0.25.1')
 
 python3 = python.find_installation('python3')
 
+deps_basic_list = [
+  gio_dep,
+  gtk_dep,
+  gtksourceview_dep,
+  tepl_dep,
+  libpeas_gtk_dep,
+]
+
 # Configurations
 config_h = configuration_data()
 config_h.set_quoted('PACKAGE_STRING', 'gedit-@0@'.format(api_version))

@@ -120,12 +120,8 @@ libgedit_c_args = []
 libgedit_link_args = []
 
 libgedit_deps = [
-  gio_dep,
-  gtk_dep,
-  gtksourceview_dep,
-  tepl_dep,
+  deps_basic_list,
   introspection_dep,
-  libpeas_gtk_dep,
   libgd_dep,
 ]
 

@@ -10,18 +10,10 @@ amtk_docpath = dependency('amtk-5').get_pkgconfig_variable('prefix') / 'share/gt
 tepl_docpath = dependency('tepl-5').get_pkgconfig_variable('prefix') / 'share/gtk-doc/html/tepl-5'
 libpeas_docpath = dependency('libpeas-1.0').get_pkgconfig_variable('prefix') / 'share/gtk-doc/html/libpeas'
 
-gedit_doc_deps = [
-  gio_dep,
-  gtk_dep,
-  gtksourceview_dep,
-  tepl_dep,
-  libpeas_gtk_dep,
-]
-
 gedit_doc_dep = declare_dependency(
   link_with: libgedit_sha,
   include_directories: root_include_dir,
-  dependencies: gedit_doc_deps,
+  dependencies: deps_basic_list,
   sources: libgedit_dep_sources,
 )
 
