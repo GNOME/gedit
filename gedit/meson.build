@@ -257,29 +257,17 @@ custom_target(
   install_dir: get_option('datadir') / 'glib-2.0/schemas'
 )
 
-gedit_sources = [
-  'gedit.c',
-]
-
 gedit_c_args = []
-
 if host_machine.system() == 'darwin'
-  gedit_c_args += [
-    '-DOS_OSX=1',
-  ]
+  gedit_c_args += '-DOS_OSX=1'
 endif
 
-gedit_deps = [
-  libgedit_dep,
-]
-
 gedit_exe = executable(
-  meson.project_name(),
-  gedit_sources,
-  dependencies: gedit_deps,
+  'gedit',
+  'gedit.c',
+  dependencies: libgedit_dep,
   c_args: gedit_c_args,
   install: true,
-  install_dir: bindir,
-  install_rpath: pkglibdir,
+  install_rpath: get_option('prefix') / get_option('libdir') / 'gedit',
   gui_app: true,
 )

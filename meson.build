@@ -20,7 +20,6 @@ root_include_dir = include_directories('.')
 
 srcdir = meson.current_source_dir()
 
-bindir = get_option('prefix') / get_option('bindir')
 pkglibdir = get_option('prefix') / get_option('libdir') / 'gedit'
 pkgdatadir = get_option('prefix') / get_option('datadir') / 'gedit'
 glibdir = get_option('prefix') / get_option('datadir') / 'glib-2.0'
