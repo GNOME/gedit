@@ -253,7 +253,7 @@ if host_machine.system() == 'darwin'
   gedit_c_args += '-DOS_OSX=1'
 endif
 
-gedit_exe = executable(
+executable(
   'gedit',
   'gedit.c',
   dependencies: libgedit_dep,
