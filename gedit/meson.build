@@ -227,14 +227,14 @@ libgedit_dep = declare_dependency(
   dependencies: libgedit_deps,
 )
 
-libgedit_pc = pkg.generate(
-  name: meson.project_name(),
+pkg_config.generate(
+  libgedit_shared_lib,
+  filebase: 'gedit',
+  name: 'gedit',
   description: 'GNOME text editor',
-  requires: ['gtksourceview-4', 'libpeas-1.0', 'libpeas-gtk-1.0'],
-  version: meson.project_version(),
   subdirs: 'gedit-@0@'.format(api_version),
-  libraries: libgedit_shared_lib,
-  install_dir: pkgconfigdir,
+  libraries: libgedit_public_deps,
+  install_dir: get_option('libdir') / 'pkgconfig'
 )
 
 libgedit_sources = [
