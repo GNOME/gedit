@@ -164,6 +164,8 @@ libgedit_private_enum_types = gnome.mkenums_simple(
   sources: ['gedit-notebook.h'],
 )
 
+libgedit_private_headers += 'gedit-enum-types-private.h'
+
 subdir('resources')
 
 libgedit_sources += [
