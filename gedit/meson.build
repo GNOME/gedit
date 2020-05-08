@@ -179,7 +179,7 @@ libgedit_sources = [
   libgedit_gresources[0],
 ]
 
-libgedit_sha = shared_library(
+libgedit_shared_lib = shared_library(
   package_string,
   libgedit_sources + [libgedit_public_enum_types[1], libgedit_private_enum_types[1], libgedit_gresources[1]],
   include_directories: root_include_dir,
@@ -201,7 +201,7 @@ libgedit_gir_includes = [
 ]
 
 libgedit_gir = gnome.generate_gir(
-  libgedit_sha,
+  libgedit_shared_lib,
   sources: libgedit_sources + libgedit_public_headers,
   nsversion: '3.0',
   namespace: 'Gedit',
@@ -209,7 +209,7 @@ libgedit_gir = gnome.generate_gir(
   identifier_prefix: 'Gedit',
   export_packages: [package_string],
   includes: libgedit_gir_includes,
-  link_with: libgedit_sha,
+  link_with: libgedit_shared_lib,
   install: true,
   install_dir_gir: join_paths(pkgdatadir, 'gir-1.0'),
   install_dir_typelib: join_paths(pkglibdir, 'girepository-1.0'),
@@ -241,7 +241,7 @@ libgedit_vapi = gnome.generate_vapi(
 )
 
 libgedit_dep = declare_dependency(
-  link_with: libgedit_sha,
+  link_with: libgedit_shared_lib,
   include_directories: root_include_dir,
   dependencies: libgedit_deps,
   sources: libgedit_gir,
@@ -253,7 +253,7 @@ libgedit_pc = pkg.generate(
   requires: ['gtksourceview-4', 'libpeas-1.0', 'libpeas-gtk-1.0'],
   version: meson.project_version(),
   subdirs: package_string,
-  libraries: libgedit_sha,
+  libraries: libgedit_shared_lib,
   install_dir: pkgconfigdir,
 )
 

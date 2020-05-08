@@ -9,7 +9,7 @@ gsv_docpath = dependency('gtksourceview-4').get_pkgconfig_variable('prefix') / '
 libpeas_docpath = dependency('libpeas-1.0').get_pkgconfig_variable('prefix') / 'share/gtk-doc/html/libpeas'
 
 gedit_doc_dep = declare_dependency(
-  link_with: libgedit_sha,
+  link_with: libgedit_shared_lib,
   include_directories: root_include_dir,
   dependencies: deps_basic_list + [libxml_dep],
 )
