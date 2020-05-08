@@ -237,22 +237,10 @@ pkg_config.generate(
   install_dir: get_option('libdir') / 'pkgconfig'
 )
 
-libgedit_sources = [
-  libgedit_public_sources,
-  libgedit_private_sources,
-  libgedit_public_enum_types[0],
-  libgedit_private_enum_types[0],
-  libgedit_gresources[0],
-]
-
-libgedit_public_headers += [
-  libgedit_public_enum_types[1],
-]
-
 # FIXME: https://github.com/mesonbuild/meson/issues/1687
 custom_target(
   'org.gnome.gedit.enums.xml',
-  input : libgedit_sources + libgedit_public_headers + ['gedit-notebook.h'],
+  input : ['gedit-notebook.h'],
   output: 'org.gnome.gedit.enums.xml',
   capture: true,
   command: [
@@ -266,10 +254,7 @@ custom_target(
     '@INPUT@'
   ],
   install: true,
-  install_dir: join_paths(
-    glibdir,
-    'schemas',
-  )
+  install_dir: get_option('datadir') / 'glib-2.0/schemas'
 )
 
 gedit_sources = [
