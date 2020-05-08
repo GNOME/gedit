@@ -187,14 +187,24 @@ libgedit_shared_lib = shared_library(
 )
 
 # GObject Introspection
-libgedit_public_headers += [
-  libgedit_public_enum_types[1],
-]
-
-libgedit_gir_includes = [
-  'Gtk-3.0',
-  'GtkSource-4',
-]
+libgedit_gir = gnome.generate_gir(
+  libgedit_shared_lib,
+  sources: [
+    libgedit_public_headers,
+    libgedit_public_sources,
+    libgedit_public_enum_types,
+  ],
+  nsversion: '3.0',
+  namespace: 'Gedit',
+  symbol_prefix: 'gedit',
+  identifier_prefix: 'Gedit',
+  export_packages: 'gedit-@0@'.format(api_version),
+  includes: ['Gtk-3.0', 'GtkSource-4'],
+  link_with: libgedit_shared_lib,
+  install: true,
+  install_dir_gir: get_option('datadir') / 'gedit/gir-1.0',
+  install_dir_typelib: get_option('libdir') / 'gedit/girepository-1.0',
+)
 
 libgedit_sources = [
   libgedit_public_sources,
@@ -204,20 +214,9 @@ libgedit_sources = [
   libgedit_gresources[0],
 ]
 
-libgedit_gir = gnome.generate_gir(
-  libgedit_shared_lib,
-  sources: libgedit_sources + libgedit_public_headers,
-  nsversion: '3.0',
-  namespace: 'Gedit',
-  symbol_prefix: 'gedit',
-  identifier_prefix: 'Gedit',
-  export_packages: 'gedit-@0@'.format(api_version),
-  includes: libgedit_gir_includes,
-  link_with: libgedit_shared_lib,
-  install: true,
-  install_dir_gir: join_paths(pkgdatadir, 'gir-1.0'),
-  install_dir_typelib: join_paths(pkglibdir, 'girepository-1.0'),
-)
+libgedit_public_headers += [
+  libgedit_public_enum_types[1],
+]
 
 python3.install_sources(
   'Gedit.py',
