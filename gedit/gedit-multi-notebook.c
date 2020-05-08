@@ -22,7 +22,7 @@
 
 #include "gedit-multi-notebook.h"
 
-#include "gedit-enum-types.h"
+#include "gedit-enum-types-private.h"
 #include "gedit-settings.h"
 #include "gedit-tab-private.h"
 #include "gedit-tab.h"
