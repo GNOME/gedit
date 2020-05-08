@@ -212,20 +212,12 @@ python3.install_sources(
 )
 
 # Vala API
-libgedit_vapi_packages = [
-  'gio-2.0',
-  'atk',
-  'gdk-3.0',
-  'gtk+-3.0',
-  'gtksourceview-4',
-]
-
 libgedit_vapi = gnome.generate_vapi(
-  meson.project_name(),
-  sources: libgedit_gir.get(0),
-  packages: libgedit_vapi_packages,
+  'gedit',
+  sources: libgedit_gir[0],
+  packages: ['gio-2.0', 'atk', 'gdk-3.0', 'gtk+-3.0', 'gtksourceview-4'],
   install: true,
-  install_dir: join_paths(get_option('prefix'), get_option('datadir'), 'vala', 'vapi'),
+  install_dir: get_option('datadir') / 'vala/vapi',
 )
 
 libgedit_dep = declare_dependency(
