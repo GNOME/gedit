@@ -162,8 +162,8 @@ libgedit_enums = gnome.mkenums_simple(
 subdir('resources')
 
 libgedit_sources += [
-  libgedit_enums.get(0),
-  libgedit_gresources.get(0),
+  libgedit_enums[0],
+  libgedit_gresources[0],
 ]
 
 libgedit_dep_sources = []
@@ -175,7 +175,7 @@ install_headers(
 
 libgedit_sha = shared_library(
   package_string,
-  libgedit_sources + [libgedit_enums.get(1), libgedit_gresources.get(1)],
+  libgedit_sources + [libgedit_enums[1], libgedit_gresources[1]],
   include_directories: root_include_dir,
   dependencies: libgedit_deps,
   c_args: libgedit_c_args,
@@ -186,7 +186,7 @@ libgedit_sha = shared_library(
 
 # GObject Introspection
 libgedit_public_headers += [
-  libgedit_enums.get(1),
+  libgedit_enums[1],
 ]
 
 libgedit_gir_includes = [
