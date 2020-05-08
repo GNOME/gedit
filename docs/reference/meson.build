@@ -11,7 +11,7 @@ tepl_docpath = dependency('tepl-5').get_pkgconfig_variable('prefix') / 'share/gt
 libpeas_docpath = dependency('libpeas-1.0').get_pkgconfig_variable('prefix') / 'share/gtk-doc/html/libpeas'
 
 gedit_doc_dep = declare_dependency(
-  link_with: libgedit_sha,
+  link_with: libgedit_shared_lib,
   include_directories: root_include_dir,
   dependencies: deps_basic_list,
 )
