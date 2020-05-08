@@ -10,7 +10,7 @@ endif
 
 gnome = import('gnome')
 i18n = import('i18n')
-pkg = import('pkgconfig')
+pkg_config = import('pkgconfig')
 python = import('python')
 
 api_version = '3.38'
@@ -21,7 +21,6 @@ root_include_dir = include_directories('.')
 srcdir = meson.current_source_dir()
 
 bindir = get_option('prefix') / get_option('bindir')
-pkgconfigdir = get_option('prefix') / get_option('libdir') / 'pkgconfig'
 pkglibdir = get_option('prefix') / get_option('libdir') / 'gedit'
 pkgdatadir = get_option('prefix') / get_option('datadir') / 'gedit'
 glibdir = get_option('prefix') / get_option('datadir') / 'glib-2.0'
@@ -43,11 +42,16 @@ libgd_dep = libgd_subproject.get_variable('libgd_dep')
 
 # Dependencies
 gio_dep = dependency('gio-2.0', version: '>= 2.64')
-deps_basic_list = [
+
+libgedit_public_deps = [
   gio_dep,
   dependency('gtk+-3.0', version: '>= 3.22'),
   dependency('tepl-5', version: '>= 4.99.1'),
-  dependency('libpeas-gtk-1.0', version: '>= 1.14.1'),
+  dependency('libpeas-gtk-1.0'),
+]
+
+deps_basic_list = [
+  libgedit_public_deps,
   dependency('gobject-introspection-1.0'),
 ]
 
