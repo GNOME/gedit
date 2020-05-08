@@ -20,14 +20,11 @@ root_include_dir = include_directories('.')
 
 srcdir = meson.current_source_dir()
 
-bindir = join_paths(get_option('prefix'), get_option('bindir'))
-libdir = join_paths(get_option('prefix'), get_option('libdir'))
-libexecdir = join_paths(get_option('prefix'), get_option('libexecdir'))
-datadir = join_paths(get_option('prefix'), get_option('datadir'))
-pkgconfigdir = join_paths(libdir, 'pkgconfig')
-pkglibdir = join_paths(libdir, meson.project_name())
-pkgdatadir = join_paths(datadir, meson.project_name())
-glibdir = join_paths(datadir, 'glib-2.0')
+bindir = get_option('prefix') / get_option('bindir')
+pkgconfigdir = get_option('prefix') / get_option('libdir') / 'pkgconfig'
+pkglibdir = get_option('prefix') / get_option('libdir') / 'gedit'
+pkgdatadir = get_option('prefix') / get_option('datadir') / 'gedit'
+glibdir = get_option('prefix') / get_option('datadir') / 'glib-2.0'
 
 # Subprojects
 if not get_option('buildtype').contains('plain')
