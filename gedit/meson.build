@@ -180,7 +180,7 @@ libgedit_sources = [
 ]
 
 libgedit_shared_lib = shared_library(
-  package_string,
+  'gedit-@0@'.format(api_version),
   libgedit_sources + [libgedit_public_enum_types[1], libgedit_private_enum_types[1], libgedit_gresources[1]],
   include_directories: root_include_dir,
   dependencies: libgedit_deps,
@@ -207,7 +207,7 @@ libgedit_gir = gnome.generate_gir(
   namespace: 'Gedit',
   symbol_prefix: 'gedit',
   identifier_prefix: 'Gedit',
-  export_packages: [package_string],
+  export_packages: 'gedit-@0@'.format(api_version),
   includes: libgedit_gir_includes,
   link_with: libgedit_shared_lib,
   install: true,
@@ -252,7 +252,7 @@ libgedit_pc = pkg.generate(
   description: 'GNOME text editor',
   requires: ['gtksourceview-4', 'libpeas-1.0', 'libpeas-gtk-1.0'],
   version: meson.project_version(),
-  subdirs: package_string,
+  subdirs: 'gedit-@0@'.format(api_version),
   libraries: libgedit_shared_lib,
   install_dir: pkgconfigdir,
 )
