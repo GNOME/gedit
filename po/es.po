@@ -19,8 +19,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gedit.master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gedit/issues\n"
-"POT-Creation-Date: 2020-04-30 20:27+0000\n"
-"PO-Revision-Date: 2020-05-04 14:06+0200\n"
+"POT-Creation-Date: 2020-05-07 00:43+0000\n"
+"PO-Revision-Date: 2020-05-08 13:05+0200\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: es <gnome-es-list@gnome.org>\n"
 "Language: es\n"
@@ -39,32 +39,18 @@ msgid "Edit text files"
 msgstr "Edite archivos de texto"
 
 #: data/org.gnome.gedit.appdata.xml.in:10
-msgid ""
-"gedit is the official text editor of the GNOME desktop environment. While "
-"aiming at simplicity and ease of use, gedit is a powerful general purpose "
-"text editor."
-msgstr ""
-"gedit es el editor de texto oficial del entorno de escritorio GNOME. Aunque "
-"es sencillo y fácil de usar, gedit es un editor de texto de propósito "
-"general muy potente."
+#| msgid "gedit is a small and lightweight text editor for the GNOME Desktop"
+msgid "gedit is the text editor of the GNOME desktop environment."
+msgstr "gedit es el editor de texto del Escritorio GNOME."
 
-#: data/org.gnome.gedit.appdata.xml.in:15
+#: data/org.gnome.gedit.appdata.xml.in:13
 msgid ""
-"Whether you are writing the next bestseller, programming an innovative "
-"application, or simply taking some quick notes, gedit will be a reliable "
-"tool to accomplish your task."
+"The first goal of gedit is to be easy to use, with a simple interface by "
+"default. More advanced features are available by enabling plugins."
 msgstr ""
-"Cuando esté escribiendo el próximo «best seller», programación una "
-"innovadora aplicación o simplemente tomando notas rápidas, gedit será una "
-"herramienta de confianza para realizar el trabajo."
-
-#: data/org.gnome.gedit.appdata.xml.in:20
-msgid ""
-"Its flexible plugin system allows you to tailor the application to your "
-"needs and adapt it to your workflow."
-msgstr ""
-"Su flexible sistema de complementos le permite adaptarse a sus necesidades y "
-"adaptarlo a su flujo de trabajo."
+"El principal objetivo de gedit es que sea fácil de usar, con una interfaz "
+"predeterminada sencilla. Hay disponibles más funcionalidades mediante la "
+"activación de complementos."
 
 #: data/org.gnome.gedit.desktop.in:3 gedit/gedit-print-job.c:730
 msgid "Text Editor"
@@ -544,7 +530,6 @@ msgid "Active plugins"
 msgstr "Complementos activos"
 
 #: data/org.gnome.gedit.gschema.xml.in:302
-#| msgid "Active plugins"
 msgid "List of active plugins."
 msgstr "Lista de complementos activos."
 
@@ -596,7 +581,7 @@ msgstr "[ARCHIVO...] [+LÍNEA[:COLUMNA]]"
 msgid "There was an error displaying the help."
 msgstr "Hubo un error al mostrar la ayuda."
 
-#: gedit/gedit-app.c:888
+#: gedit/gedit-app.c:838
 #, c-format
 msgid "%s: invalid encoding."
 msgstr "%s: codificación no válida."
@@ -923,11 +908,12 @@ msgstr[1] ""
 msgid "_Revert"
 msgstr "Re_vertir"
 
-#: gedit/gedit-commands-help.c:108
-msgid "gedit is a small and lightweight text editor for the GNOME Desktop"
+#: gedit/gedit-commands-help.c:110
+#| msgid "gedit is a small and lightweight text editor for the GNOME Desktop"
+msgid "gedit is a small and lightweight text editor for the GNOME desktop"
 msgstr "gedit es un editor de texto pequeño y ligero para el Escritorio GNOME"
 
-#: gedit/gedit-commands-help.c:130
+#: gedit/gedit-commands-help.c:115
 msgid "translator-credits"
 msgstr ""
 "Daniel Mustieles <daniel.mustieles@gmail.com>, 2011-2015\n"
@@ -1443,30 +1429,30 @@ msgstr "Guardando %s en %s"
 msgid "Saving %s"
 msgstr "Guardando %s"
 
-#: gedit/gedit-tab.c:1485
+#: gedit/gedit-tab.c:1484
 #, c-format
 msgid "Error opening file %s"
 msgstr "Error al abrir el archivo %s"
 
-#: gedit/gedit-tab.c:1490
+#: gedit/gedit-tab.c:1489
 #, c-format
 msgid "Error reverting file %s"
 msgstr "Error al revertir el archivo %s"
 
-#: gedit/gedit-tab.c:1495
+#: gedit/gedit-tab.c:1494
 #, c-format
 msgid "Error saving file %s"
 msgstr "Error al guardar el archivo %s"
 
-#: gedit/gedit-tab.c:1526
+#: gedit/gedit-tab.c:1525
 msgid "Name:"
 msgstr "Nombre:"
 
-#: gedit/gedit-tab.c:1527
+#: gedit/gedit-tab.c:1526
 msgid "MIME Type:"
 msgstr "Tipo MIME:"
 
-#: gedit/gedit-tab.c:1528
+#: gedit/gedit-tab.c:1527
 msgid "Encoding:"
 msgstr "Codificación:"
 
@@ -2827,8 +2813,9 @@ msgid "File Browser Panel"
 msgstr "Panel del examinador de archivos"
 
 #: plugins/filebrowser/filebrowser.plugin.desktop.in:7
-msgid "Easy file access from the side panel"
-msgstr "Acceso a archivos fácil desde el panel lateral"
+#| msgid "Easy file access from the side panel"
+msgid "Easy file access from the side panel."
+msgstr "Acceso a archivos fácil desde el panel lateral."
 
 #: plugins/filebrowser/gedit-file-bookmarks-store.c:200
 msgid "Home"
@@ -3167,8 +3154,9 @@ msgid "Python Console"
 msgstr "Consola Python"
 
 #: plugins/pythonconsole/pythonconsole.plugin.desktop.in:7
-msgid "Interactive Python console standing in the bottom panel"
-msgstr "Consola interactiva python en el panel inferior"
+#| msgid "Interactive Python console standing in the bottom panel"
+msgid "Interactive Python console standing in the bottom panel."
+msgstr "Consola interactiva python en el panel inferior."
 
 #: plugins/quickhighlight/quickhighlight.plugin.desktop.in:5
 msgid "Quick Highlight"
@@ -3188,8 +3176,9 @@ msgid "Quick Open"
 msgstr "Apertura rápida"
 
 #: plugins/quickopen/quickopen.plugin.desktop.in:7
-msgid "Quickly open files"
-msgstr "Abrir documentos rápidamente"
+#| msgid "Quickly open files"
+msgid "Quickly open files."
+msgstr "Abrir archivos rápidamente."
 
 #: plugins/quickopen/quickopen/popup.py:90
 msgid "Type to search…"
@@ -3386,9 +3375,10 @@ msgid "Execution of the Python command (%s) failed: %s"
 msgstr "Falló la ejecución del comando Python (%s): %s"
 
 #: plugins/snippets/snippets.plugin.desktop.in:7
-msgid "Insert often-used pieces of text in a fast way"
+#| msgid "Insert often-used pieces of text in a fast way"
+msgid "Insert often-used pieces of text in a fast way."
 msgstr ""
-"Insertar fragmentos de texto usados frecientemente de una manera rápida"
+"Insertar fragmentos de texto usados frecuentemente de una manera rápida."
 
 #: plugins/snippets/snippets/snippets.ui:40
 #: plugins/snippets/snippets/snippets.ui:47
@@ -3597,6 +3587,31 @@ msgstr "Insertar fecha/hora"
 #: plugins/time/time.plugin.desktop.in:6
 msgid "Inserts current date and time at the cursor position."
 msgstr "Inserta la fecha y hora actual en la posición del cursor."
+
+#~ msgid ""
+#~ "gedit is the official text editor of the GNOME desktop environment. While "
+#~ "aiming at simplicity and ease of use, gedit is a powerful general purpose "
+#~ "text editor."
+#~ msgstr ""
+#~ "gedit es el editor de texto oficial del entorno de escritorio GNOME. "
+#~ "Aunque es sencillo y fácil de usar, gedit es un editor de texto de "
+#~ "propósito general muy potente."
+
+#~ msgid ""
+#~ "Whether you are writing the next bestseller, programming an innovative "
+#~ "application, or simply taking some quick notes, gedit will be a reliable "
+#~ "tool to accomplish your task."
+#~ msgstr ""
+#~ "Cuando esté escribiendo el próximo «best seller», programación una "
+#~ "innovadora aplicación o simplemente tomando notas rápidas, gedit será una "
+#~ "herramienta de confianza para realizar el trabajo."
+
+#~ msgid ""
+#~ "Its flexible plugin system allows you to tailor the application to your "
+#~ "needs and adapt it to your workflow."
+#~ msgstr ""
+#~ "Su flexible sistema de complementos le permite adaptarse a sus "
+#~ "necesidades y adaptarlo a su flujo de trabajo."
 
 #~ msgid ""
 #~ "List of active plugins. It contains the “Location” of the active plugins. "
