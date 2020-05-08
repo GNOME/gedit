@@ -149,11 +149,6 @@ elif host_machine.system() == 'windows'
   ]
 endif
 
-libgedit_sources = [
-  libgedit_public_sources,
-  libgedit_private_sources
-]
-
 libgedit_public_enum_types = gnome.mkenums_simple(
   'gedit-enum-types',
   sources: libgedit_public_headers,
@@ -168,13 +163,13 @@ libgedit_private_headers += 'gedit-enum-types-private.h'
 
 subdir('resources')
 
-libgedit_sources += [
+libgedit_sources = [
+  libgedit_public_sources,
+  libgedit_private_sources,
   libgedit_public_enum_types[0],
   libgedit_private_enum_types[0],
   libgedit_gresources[0],
 ]
-
-libgedit_dep_sources = []
 
 install_headers(
   libgedit_public_headers,
@@ -225,10 +220,6 @@ python3.install_sources(
   )
 )
 
-libgedit_dep_sources += [
-  libgedit_gir,
-]
-
 # Vala API
 libgedit_vapi_packages = [
   'gio-2.0',
@@ -250,7 +241,7 @@ libgedit_dep = declare_dependency(
   link_with: libgedit_sha,
   include_directories: root_include_dir,
   dependencies: libgedit_deps,
-  sources: libgedit_dep_sources,
+  sources: libgedit_gir,
 )
 
 libgedit_pc = pkg.generate(

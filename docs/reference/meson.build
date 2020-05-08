@@ -12,7 +12,6 @@ gedit_doc_dep = declare_dependency(
   link_with: libgedit_sha,
   include_directories: root_include_dir,
   dependencies: deps_basic_list + [libxml_dep],
-  sources: libgedit_dep_sources,
 )
 
 gnome.gtkdoc(
