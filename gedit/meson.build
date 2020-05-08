@@ -171,23 +171,19 @@ libgedit_private_headers += 'gedit-enum-types-private.h'
 
 subdir('resources')
 
-libgedit_sources = [
-  libgedit_public_sources,
-  libgedit_private_sources,
-  libgedit_public_enum_types[0],
-  libgedit_private_enum_types[0],
-  libgedit_gresources[0],
-]
-
 libgedit_shared_lib = shared_library(
   'gedit-@0@'.format(api_version),
-  libgedit_sources + [libgedit_public_enum_types[1], libgedit_private_enum_types[1], libgedit_gresources[1]],
+  [libgedit_public_sources,
+   libgedit_private_sources,
+   libgedit_public_enum_types,
+   libgedit_private_enum_types,
+   libgedit_gresources],
   include_directories: root_include_dir,
   dependencies: libgedit_deps,
   c_args: libgedit_c_args,
   link_args: libgedit_link_args,
   install: true,
-  install_dir: pkglibdir,
+  install_dir: get_option('libdir') / 'gedit',
 )
 
 # GObject Introspection
@@ -198,6 +194,14 @@ libgedit_public_headers += [
 libgedit_gir_includes = [
   'Gtk-3.0',
   'GtkSource-4',
+]
+
+libgedit_sources = [
+  libgedit_public_sources,
+  libgedit_private_sources,
+  libgedit_public_enum_types[0],
+  libgedit_private_enum_types[0],
+  libgedit_gresources[0],
 ]
 
 libgedit_gir = gnome.generate_gir(
