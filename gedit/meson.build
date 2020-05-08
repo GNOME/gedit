@@ -111,11 +111,6 @@ libgedit_private_sources = [
   'gedit-view-frame.c',
 ]
 
-libgedit_sources = [
-  libgedit_public_sources,
-  libgedit_private_sources
-]
-
 libgedit_c_args = []
 libgedit_link_args = []
 
@@ -125,7 +120,7 @@ libgedit_deps = [
 ]
 
 if host_machine.system() == 'darwin'
-  libgedit_sources += [
+  libgedit_private_sources += [
     'gedit-app-osx.m',
     'gedit-file-chooser-dialog-osx.m',
   ]
@@ -140,10 +135,15 @@ if host_machine.system() == 'darwin'
     dependency('gtk-mac-integration-gtk3'),
   ]
 elif host_machine.system() == 'windows'
-  libgedit_sources += [
+  libgedit_private_sources += [
     'gedit-app-win32.c',
   ]
 endif
+
+libgedit_sources = [
+  libgedit_public_sources,
+  libgedit_private_sources
+]
 
 libgedit_enums = gnome.mkenums_simple(
   'gedit-enum-types',
