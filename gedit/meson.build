@@ -149,9 +149,17 @@ elif host_machine.system() == 'windows'
   ]
 endif
 
+headers_install_dir = get_option('includedir') / 'gedit-@0@/gedit/'.format(api_version)
+install_headers(
+  libgedit_public_headers,
+  install_dir: headers_install_dir,
+)
+
 libgedit_public_enum_types = gnome.mkenums_simple(
   'gedit-enum-types',
   sources: libgedit_public_headers,
+  install_header: true,
+  install_dir: headers_install_dir,
 )
 
 libgedit_private_enum_types = gnome.mkenums_simple(
@@ -170,11 +178,6 @@ libgedit_sources = [
   libgedit_private_enum_types[0],
   libgedit_gresources[0],
 ]
-
-install_headers(
-  libgedit_public_headers,
-  subdir: 'gedit-@0@'.format(api_version) / 'gedit'
-)
 
 libgedit_sha = shared_library(
   package_string,
