@@ -145,15 +145,21 @@ libgedit_sources = [
   libgedit_private_sources
 ]
 
-libgedit_enums = gnome.mkenums_simple(
+libgedit_public_enum_types = gnome.mkenums_simple(
   'gedit-enum-types',
-  sources: libgedit_public_headers + ['gedit-notebook.h'],
+  sources: libgedit_public_headers,
+)
+
+libgedit_private_enum_types = gnome.mkenums_simple(
+  'gedit-enum-types-private',
+  sources: ['gedit-notebook.h'],
 )
 
 subdir('resources')
 
 libgedit_sources += [
-  libgedit_enums[0],
+  libgedit_public_enum_types[0],
+  libgedit_private_enum_types[0],
   libgedit_gresources[0],
 ]
 
@@ -166,7 +172,7 @@ install_headers(
 
 libgedit_sha = shared_library(
   package_string,
-  libgedit_sources + [libgedit_enums[1], libgedit_gresources[1]],
+  libgedit_sources + [libgedit_public_enum_types[1], libgedit_private_enum_types[1], libgedit_gresources[1]],
   include_directories: root_include_dir,
   dependencies: libgedit_deps,
   c_args: libgedit_c_args,
@@ -177,7 +183,7 @@ libgedit_sha = shared_library(
 
 # GObject Introspection
 libgedit_public_headers += [
-  libgedit_enums[1],
+  libgedit_public_enum_types[1],
 ]
 
 libgedit_gir_includes = [
