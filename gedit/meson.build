@@ -206,24 +206,9 @@ libgedit_gir = gnome.generate_gir(
   install_dir_typelib: get_option('libdir') / 'gedit/girepository-1.0',
 )
 
-libgedit_sources = [
-  libgedit_public_sources,
-  libgedit_private_sources,
-  libgedit_public_enum_types[0],
-  libgedit_private_enum_types[0],
-  libgedit_gresources[0],
-]
-
-libgedit_public_headers += [
-  libgedit_public_enum_types[1],
-]
-
 python3.install_sources(
   'Gedit.py',
-  subdir: join_paths(
-    'gi',
-    'overrides',
-  )
+  subdir: 'gi/overrides',
 )
 
 # Vala API
@@ -259,6 +244,18 @@ libgedit_pc = pkg.generate(
   libraries: libgedit_shared_lib,
   install_dir: pkgconfigdir,
 )
+
+libgedit_sources = [
+  libgedit_public_sources,
+  libgedit_private_sources,
+  libgedit_public_enum_types[0],
+  libgedit_private_enum_types[0],
+  libgedit_gresources[0],
+]
+
+libgedit_public_headers += [
+  libgedit_public_enum_types[1],
+]
 
 # FIXME: https://github.com/mesonbuild/meson/issues/1687
 custom_target(
