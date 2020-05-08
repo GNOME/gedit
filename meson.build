@@ -15,8 +15,6 @@ python = import('python')
 
 api_version = '3.38'
 
-package_string = '@0@-@1@'.format(meson.project_name(), api_version)
-
 # Paths
 root_include_dir = include_directories('.')
 
