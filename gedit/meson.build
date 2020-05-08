@@ -221,10 +221,10 @@ libgedit_vapi = gnome.generate_vapi(
 )
 
 libgedit_dep = declare_dependency(
-  link_with: libgedit_shared_lib,
   include_directories: root_include_dir,
+  link_with: libgedit_shared_lib,
+  sources: [libgedit_public_enum_types[1], libgedit_private_enum_types[1]],
   dependencies: libgedit_deps,
-  sources: libgedit_gir,
 )
 
 libgedit_pc = pkg.generate(
