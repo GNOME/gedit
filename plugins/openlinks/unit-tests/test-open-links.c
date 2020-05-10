@@ -19,12 +19,51 @@
 
 #include <glib.h>
 #include <glib/gi18n.h>
+#include <gtk/gtk.h>
+#include "../gedit-open-links-plugin.c"
 
 static void
-test_uri_detection_positive (void)
+test_uri_detection (void)
 {
-	g_assert (FALSE);
+	GtkTextBuffer *buffer;
+	GtkTextIter start;
+	GString *uri;
+	gboolean is_uri;
+	GRegex *uri_char_regex;
+
+	uri_char_regex = gedit_open_links_plugin_get_uri_regex();
+	buffer = gtk_text_buffer_new (NULL);
+	
+	/* Invalid URIs */
+
+	gtk_text_buffer_set_text (buffer, "Not a valid URI", -1);
+	gtk_text_buffer_get_start_iter (buffer, &start);
+	is_uri = gedit_open_links_plugin_get_uri (&start, uri_char_regex, &uri);
+	g_assert_false (is_uri);
+
+	gtk_text_buffer_set_text (buffer, "http//foo.bar/", -1);
+	gtk_text_buffer_get_start_iter (buffer, &start);
+	is_uri = gedit_open_links_plugin_get_uri (&start, uri_char_regex, &uri);
+	g_assert_false (is_uri);
+
+	/* Valid URIs */
+
+	gtk_text_buffer_set_text (buffer, "https://wiki.gnome.org/Apps/Gedit", -1);
+	gtk_text_buffer_get_start_iter (buffer, &start);
+	is_uri = gedit_open_links_plugin_get_uri (&start, uri_char_regex, &uri);
+	g_assert_true (is_uri);
+
+	gtk_text_buffer_set_text (buffer, "http://gedit.org/", -1);
+	gtk_text_buffer_get_start_iter (buffer, &start);
+	is_uri = gedit_open_links_plugin_get_uri (&start, uri_char_regex, &uri);
+	g_assert_true (is_uri);
+
+	gtk_text_buffer_set_text (buffer, "www.google.com", -1);
+	gtk_text_buffer_get_start_iter (buffer, &start);
+	is_uri = gedit_open_links_plugin_get_uri (&start, uri_char_regex, &uri);
+	g_assert_true (is_uri);
 }
+
 
 int
 main (int    argc,
@@ -32,7 +71,7 @@ main (int    argc,
 {
 	g_test_init (&argc, &argv, NULL);
 
-	g_test_add_func ("/openlinks/test_uri_detection_positive", test_uri_detection_positive);
+	g_test_add_func ("/openlinks/test_uri_detection", test_uri_detection);
 
 	return g_test_run ();
 }

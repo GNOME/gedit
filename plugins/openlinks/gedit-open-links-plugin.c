@@ -78,6 +78,62 @@ G_DEFINE_DYNAMIC_TYPE_EXTENDED (GeditOpenLinksPlugin,
 							       gedit_window_activatable_iface_init)
 				G_ADD_PRIVATE_DYNAMIC (GeditOpenLinksPlugin))
 
+/* Returns TRUE if found and new GString allocated in **uri, which must be freed by caller */
+static gboolean
+gedit_open_links_plugin_get_uri (GtkTextIter *start,
+				 GRegex      *uri_char_regex,
+				 GString     **uri)
+{
+	GtkTextIter *end;
+	gunichar uri_test[2];
+	uri_test[1] = '\0';
+
+	end = g_malloc (sizeof (GtkTextIter));
+	memcpy (end, start, sizeof (GtkTextIter));
+
+	/* Move backwards one char to ensure we get the full string */
+	gtk_text_iter_backward_char (end);
+	while (gtk_text_iter_forward_char (end))
+	{
+		uri_test[0] = gtk_text_iter_get_char (end);
+		if (!g_regex_match (uri_char_regex, (const gchar *) &uri_test, 0, NULL))
+		{
+			break;
+		}
+	}
+	
+	while (gtk_text_iter_backward_char (start))
+	{
+		uri_test[0] = gtk_text_iter_get_char (start);
+		if (!g_regex_match (uri_char_regex, (const gchar *) &uri_test, 0, NULL))
+		{
+			gtk_text_iter_forward_char (start);
+			break;
+		}
+	}
+
+	*uri = g_string_new (gtk_text_iter_get_text (start, end));
+
+	g_free (end);
+
+	if (!g_str_has_prefix ((*uri)->str, "http:")	&&
+	    !g_str_has_prefix ((*uri)->str, "https:")	&&
+	    !g_str_has_prefix ((*uri)->str, "www."))
+	{
+		g_string_free (*uri, TRUE);
+		*uri = NULL;
+
+		return FALSE;
+	}
+
+	/* We must prepend the scheme or the gtk URL opening function fails */
+	if (g_str_has_prefix ((*uri)->str, "www."))
+	{
+		g_string_prepend (*uri, "http://");
+	}
+	return TRUE;
+}
+
 static void
 gedit_open_links_plugin_on_populate_popup_cb (GtkTextView		*view,
 					      GtkMenu			*popup,
@@ -86,10 +142,9 @@ gedit_open_links_plugin_on_populate_popup_cb (GtkTextView		*view,
 	GtkMenuShell *menu;
 	GtkWidget *menu_item;
 	GtkTextIter start;
-	GtkTextIter end;
 	gint buffer_x;
 	gint buffer_y;
-	gunichar uri_test[2];
+	gboolean uri_success;
 
 	if (!GTK_IS_MENU_SHELL (popup))
 	{
@@ -106,8 +161,6 @@ gedit_open_links_plugin_on_populate_popup_cb (GtkTextView		*view,
 		plugin->priv->uri = NULL;
 	}
 
-	uri_test[1] = '\0';
-
 	gtk_text_view_window_to_buffer_coords (view,
 					       GTK_TEXT_WINDOW_TEXT,
 					       (gint) rint (plugin->priv->x),
@@ -117,45 +170,13 @@ gedit_open_links_plugin_on_populate_popup_cb (GtkTextView		*view,
 
 	gtk_text_view_get_iter_at_location (view, &start, buffer_x, buffer_y);
 
-	end = start;
+	uri_success = gedit_open_links_plugin_get_uri (&start,
+						       plugin->priv->uri_char_regex,
+						       &plugin->priv->uri);
 
-	/* Move backwards one char to ensure we get the full string */
-	gtk_text_iter_backward_char (&end);
-	while (gtk_text_iter_forward_char (&end))
+	if (!uri_success)
 	{
-		uri_test[0] = gtk_text_iter_get_char (&end);
-		if (!g_regex_match (plugin->priv->uri_char_regex, (const gchar *) &uri_test, 0, NULL))
-		{
-			break;
-		}
-	}
-	
-	while (gtk_text_iter_backward_char (&start))
-	{
-		uri_test[0] = gtk_text_iter_get_char (&start);
-		if (!g_regex_match (plugin->priv->uri_char_regex, (const gchar *) &uri_test, 0, NULL))
-		{
-			gtk_text_iter_forward_char (&start);
-			break;
-		}
-	}
-
-	plugin->priv->uri = g_string_new (gtk_text_iter_get_text (&start, &end));
-
-
-	if (!g_str_has_prefix (plugin->priv->uri->str, "http:")		&&
-	    !g_str_has_prefix (plugin->priv->uri->str, "https:")	&&
-	    !g_str_has_prefix (plugin->priv->uri->str, "www."))
-	{
-		g_string_free (plugin->priv->uri, TRUE);
-		plugin->priv->uri = NULL;
 		return;
-	}
-
-	/* We must prepend the scheme or the gtk URL opening function fails */
-	if (g_str_has_prefix (plugin->priv->uri->str, "www."))
-	{
-		g_string_prepend (plugin->priv->uri, "http://");
 	}
 
 	menu_item = gtk_menu_item_new_with_label ("Open Link");
@@ -354,20 +375,11 @@ gedit_open_links_plugin_init (GeditOpenLinksPlugin *plugin)
 	plugin->priv = gedit_open_links_plugin_get_instance_private (plugin);
 }
 
-static void
-gedit_open_links_plugin_activate (GeditWindowActivatable *activatable)
+static GRegex*
+gedit_open_links_plugin_get_uri_regex ()
 {
-	GeditOpenLinksPlugin *plugin;
-	GList *views;
-	gulong handle_id;
 	GRegex *uri_char_regex;
 	GError *err = NULL;
-
-	gedit_debug (DEBUG_PLUGINS);
-
-	plugin = GEDIT_OPEN_LINKS_PLUGIN (activatable);
-
-	g_return_if_fail (GEDIT_IS_WINDOW (plugin->priv->window));
 
 	/* Unescaped: [\w#/\?:%@&\=\+\.\\~-]+ */
 	uri_char_regex = g_regex_new ("[\\w#/\\?:%@&\\=\\+\\.\\\\~-]+",
@@ -379,7 +391,23 @@ gedit_open_links_plugin_activate (GeditWindowActivatable *activatable)
 		fprintf (stderr, "Regex compilation error: %s\n", err->message);
 		g_error_free (err);
 	}
-	plugin->priv->uri_char_regex = uri_char_regex;
+	return uri_char_regex;
+}
+
+static void
+gedit_open_links_plugin_activate (GeditWindowActivatable *activatable)
+{
+	GeditOpenLinksPlugin *plugin;
+	GList *views;
+	gulong handle_id;
+
+	gedit_debug (DEBUG_PLUGINS);
+
+	plugin = GEDIT_OPEN_LINKS_PLUGIN (activatable);
+
+	g_return_if_fail (GEDIT_IS_WINDOW (plugin->priv->window));
+
+	plugin->priv->uri_char_regex = gedit_open_links_plugin_get_uri_regex ();
 	plugin->priv->uri = NULL;
 
 	handle_id = g_signal_connect (plugin->priv->window,
