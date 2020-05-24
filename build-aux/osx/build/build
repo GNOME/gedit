@@ -51,7 +51,7 @@ function checkout_jhbuild() {
 
 	mkdir -p $(dirname "$JHBUILD_SOURCED")
 
-	git clone git://git.gnome.org/jhbuild "$JHBUILD_SOURCED" || do_exit "Failed to clone jhbuild."
+	git clone https://gitlab.gnome.org/GNOME/jhbuild.git "$JHBUILD_SOURCED" || do_exit "Failed to clone jhbuild."
 	#git --work-tree "$JHBUILD_SOURCED" checkout -b stable $JHBUILD_REVISION || do_exit "Failed to checkout stable jhbuild revision."
 }
 
