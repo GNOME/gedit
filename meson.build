@@ -1,6 +1,6 @@
 project(
   'gedit', 'c',
-  version: '3.37.2',
+  version: '3.37.3',
   meson_version: '>= 0.53'
 )
 
