@@ -13,16 +13,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gedit 3.3.7\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gedit/issues\n"
-"POT-Creation-Date: 2020-04-30 20:27+0000\n"
-"PO-Revision-Date: 2020-05-02 15:28+0800\n"
-"Last-Translator: Cheng-Chia Tseng <pswo10680@gmail.com>\n"
+"POT-Creation-Date: 2020-05-29 11:11+0000\n"
+"PO-Revision-Date: 2020-06-01 01:20+0800\n"
+"Last-Translator: Yi-Jyun Pan <pan93412@gmail.com>\n"
 "Language-Team: Chinese <zh-l10n@linux.org.tw>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 2.3\n"
+"X-Generator: Poedit 2.3.1\n"
 
 #: data/org.gnome.gedit.appdata.xml.in:7
 msgid "gedit"
@@ -33,28 +33,16 @@ msgid "Edit text files"
 msgstr "編輯文字檔"
 
 #: data/org.gnome.gedit.appdata.xml.in:10
-msgid ""
-"gedit is the official text editor of the GNOME desktop environment. While "
-"aiming at simplicity and ease of use, gedit is a powerful general purpose "
-"text editor."
-msgstr ""
-"gedit 是 GNOME 桌面環境的官方文字編輯器。著重於簡單、易用，gedit 是一個功能強"
-"大的多用途文字編輯器。"
+msgid "gedit is the text editor of the GNOME desktop environment."
+msgstr "gedit 是 GNOME 桌面環境的文字編輯器。"
 
-#: data/org.gnome.gedit.appdata.xml.in:15
+#: data/org.gnome.gedit.appdata.xml.in:13
 msgid ""
-"Whether you are writing the next bestseller, programming an innovative "
-"application, or simply taking some quick notes, gedit will be a reliable "
-"tool to accomplish your task."
+"The first goal of gedit is to be easy to use, with a simple interface by "
+"default. More advanced features are available by enabling plugins."
 msgstr ""
-"無論您是在寫下一本暢銷書、設計創新的應用程式、單純做個快速筆記等，gedit 都是"
-"能完成您工作的可靠工具。"
-
-#: data/org.gnome.gedit.appdata.xml.in:20
-msgid ""
-"Its flexible plugin system allows you to tailor the application to your "
-"needs and adapt it to your workflow."
-msgstr "它多樣化的外掛程式系統允許您自訂應用程式以符合您的需求與工作流程。"
+"gedit 的首要之務便是易於使用，預設即有簡單的介面。更多進階功能可藉啟用「外掛"
+"程式」使用。"
 
 #: data/org.gnome.gedit.desktop.in:3 gedit/gedit-print-job.c:730
 msgid "Text Editor"
@@ -541,7 +529,7 @@ msgstr "[FILE...] [+LINE[:COLUMN]]"
 msgid "There was an error displaying the help."
 msgstr "顯示說明文件時發生錯誤。"
 
-#: gedit/gedit-app.c:888
+#: gedit/gedit-app.c:838
 #, c-format
 msgid "%s: invalid encoding."
 msgstr "%s：無效的編碼。"
@@ -806,11 +794,11 @@ msgstr[0] "將會永久地失去 %d 小時前對文件所作的修改。"
 msgid "_Revert"
 msgstr "還原(_R)"
 
-#: gedit/gedit-commands-help.c:108
-msgid "gedit is a small and lightweight text editor for the GNOME Desktop"
-msgstr "gedit 是一個小巧的文字編輯器，適用於 GNOME 桌面"
+#: gedit/gedit-commands-help.c:110
+msgid "gedit is a small and lightweight text editor for the GNOME desktop"
+msgstr "gedit 是為 GNOME 量身打造，小巧又輕量的文字編輯器"
 
-#: gedit/gedit-commands-help.c:130
+#: gedit/gedit-commands-help.c:115
 msgid "translator-credits"
 msgstr ""
 "如對翻譯有任何意見，請送一封電子郵件給\n"
@@ -1288,30 +1276,30 @@ msgstr "儲存 %s 至 %s"
 msgid "Saving %s"
 msgstr "正在儲存 %s"
 
-#: gedit/gedit-tab.c:1485
+#: gedit/gedit-tab.c:1484
 #, c-format
 msgid "Error opening file %s"
 msgstr "開啟 %s 時出現錯誤"
 
-#: gedit/gedit-tab.c:1490
+#: gedit/gedit-tab.c:1489
 #, c-format
 msgid "Error reverting file %s"
 msgstr "還原檔案 %s 時出現錯誤"
 
-#: gedit/gedit-tab.c:1495
+#: gedit/gedit-tab.c:1494
 #, c-format
 msgid "Error saving file %s"
 msgstr "儲存檔案 %s 時出現錯誤"
 
-#: gedit/gedit-tab.c:1526
+#: gedit/gedit-tab.c:1525
 msgid "Name:"
 msgstr "名稱："
 
-#: gedit/gedit-tab.c:1527
+#: gedit/gedit-tab.c:1526
 msgid "MIME Type:"
 msgstr "MIME 類型："
 
-#: gedit/gedit-tab.c:1528
+#: gedit/gedit-tab.c:1527
 msgid "Encoding:"
 msgstr "編碼："
 
@@ -2227,107 +2215,117 @@ msgctxt "shortcut window"
 msgid "Move to matching bracket"
 msgstr "移至成對括號"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:329
+#: gedit/resources/ui/gedit-shortcuts.ui:328
+msgctxt "shortcut window"
+msgid "Go to previous tab group"
+msgstr "前往上一個分頁群組"
+
+#: gedit/resources/ui/gedit-shortcuts.ui:335
+msgctxt "shortcut window"
+msgid "Go to next tab group"
+msgstr "前往下一個分頁群組"
+
+#: gedit/resources/ui/gedit-shortcuts.ui:343
 msgctxt "shortcut window"
 msgid "Editing"
 msgstr "正在編輯"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:334
+#: gedit/resources/ui/gedit-shortcuts.ui:348
 msgctxt "shortcut window"
 msgid "Toggle insert / overwrite"
 msgstr "切換插入/覆寫"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:341
+#: gedit/resources/ui/gedit-shortcuts.ui:355
 msgctxt "shortcut window"
 msgid "Toggle cursor visibility"
 msgstr "切換游標的可見與否"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:348
+#: gedit/resources/ui/gedit-shortcuts.ui:362
 msgctxt "shortcut window"
 msgid "Delete current line"
 msgstr "刪除目前的列"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:355
+#: gedit/resources/ui/gedit-shortcuts.ui:369
 msgctxt "shortcut window"
 msgid "Move current line up"
 msgstr "目前的列上移"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:362
+#: gedit/resources/ui/gedit-shortcuts.ui:376
 msgctxt "shortcut window"
 msgid "Move current line down"
 msgstr "目前的列下移"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:369
+#: gedit/resources/ui/gedit-shortcuts.ui:383
 msgctxt "shortcut window"
 msgid "Move current word left"
 msgstr "目前字詞左移"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:376
+#: gedit/resources/ui/gedit-shortcuts.ui:390
 msgctxt "shortcut window"
 msgid "Move current word right"
 msgstr "目前字詞右移"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:383
+#: gedit/resources/ui/gedit-shortcuts.ui:397
 msgctxt "shortcut window"
 msgid "Convert to uppercase"
 msgstr "轉換為大寫"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:390
+#: gedit/resources/ui/gedit-shortcuts.ui:404
 msgctxt "shortcut window"
 msgid "Convert to lowercase"
 msgstr "轉換為小寫"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:397
+#: gedit/resources/ui/gedit-shortcuts.ui:411
 msgctxt "shortcut window"
 msgid "Invert case"
 msgstr "反轉大小寫"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:404
+#: gedit/resources/ui/gedit-shortcuts.ui:418
 msgctxt "shortcut window"
 msgid "Increment number at cursor"
 msgstr "游標處的遞增數"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:411
+#: gedit/resources/ui/gedit-shortcuts.ui:425
 msgctxt "shortcut window"
 msgid "Decrement number at cursor"
 msgstr "游標處的遞減數"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:419
+#: gedit/resources/ui/gedit-shortcuts.ui:433
 msgctxt "shortcut window"
 msgid "Tools"
 msgstr "工具"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:424
+#: gedit/resources/ui/gedit-shortcuts.ui:438
 msgctxt "shortcut window"
 msgid "Check spelling"
 msgstr "拼字檢查"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:431
+#: gedit/resources/ui/gedit-shortcuts.ui:445
 msgctxt "shortcut window"
 msgid "Print the document"
 msgstr "列印文件"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:438
+#: gedit/resources/ui/gedit-shortcuts.ui:452
 msgctxt "shortcut window"
 msgid "Show completion window"
 msgstr "顯示補齊視窗"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:446
+#: gedit/resources/ui/gedit-shortcuts.ui:460
 msgctxt "shortcut window"
 msgid "General"
 msgstr "一般"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:451
+#: gedit/resources/ui/gedit-shortcuts.ui:465
 msgctxt "shortcut window"
 msgid "Show help"
 msgstr "顯示幫助說明"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:458
+#: gedit/resources/ui/gedit-shortcuts.ui:472
 msgctxt "shortcut window"
 msgid "Open menu"
 msgstr "開啟選單"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:465
+#: gedit/resources/ui/gedit-shortcuts.ui:479
 msgctxt "shortcut window"
 msgid "Keyboard shortcuts"
 msgstr "鍵盤快捷鍵"
@@ -2670,8 +2668,8 @@ msgid "File Browser Panel"
 msgstr "檔案瀏覽器面板"
 
 #: plugins/filebrowser/filebrowser.plugin.desktop.in:7
-msgid "Easy file access from the side panel"
-msgstr "輕鬆地從側邊面板存取檔案"
+msgid "Easy file access from the side panel."
+msgstr "輕鬆地從側邊面板存取檔案。"
 
 #: plugins/filebrowser/gedit-file-bookmarks-store.c:200
 msgid "Home"
@@ -2994,8 +2992,8 @@ msgid "Python Console"
 msgstr "Python 終端"
 
 #: plugins/pythonconsole/pythonconsole.plugin.desktop.in:7
-msgid "Interactive Python console standing in the bottom panel"
-msgstr "在底部面板的互動式 Python 主控臺"
+msgid "Interactive Python console standing in the bottom panel."
+msgstr "在底部面板的互動式 Python 主控臺。"
 
 # zh_HK: msgstr "打印時顯示語法色彩"
 #: plugins/quickhighlight/quickhighlight.plugin.desktop.in:5
@@ -3016,8 +3014,8 @@ msgid "Quick Open"
 msgstr "快速開啟"
 
 #: plugins/quickopen/quickopen.plugin.desktop.in:7
-msgid "Quickly open files"
-msgstr "快速開啟檔案"
+msgid "Quickly open files."
+msgstr "快速開啟檔案。"
 
 #: plugins/quickopen/quickopen/popup.py:90
 msgid "Type to search…"
@@ -3209,8 +3207,8 @@ msgid "Execution of the Python command (%s) failed: %s"
 msgstr "Python 指令 (%s) 的執行失敗：%s"
 
 #: plugins/snippets/snippets.plugin.desktop.in:7
-msgid "Insert often-used pieces of text in a fast way"
-msgstr "以快速的方式插入經常使用的文字片段"
+msgid "Insert often-used pieces of text in a fast way."
+msgstr "以快速的方式插入經常使用的文字片段。"
 
 #: plugins/snippets/snippets/snippets.ui:40
 #: plugins/snippets/snippets/snippets.ui:47
@@ -3417,6 +3415,27 @@ msgstr "插入日期/時間"
 #: plugins/time/time.plugin.desktop.in:6
 msgid "Inserts current date and time at the cursor position."
 msgstr "在游標目前的位置插入現在的日期及時間。"
+
+#~ msgid ""
+#~ "gedit is the official text editor of the GNOME desktop environment. While "
+#~ "aiming at simplicity and ease of use, gedit is a powerful general purpose "
+#~ "text editor."
+#~ msgstr ""
+#~ "gedit 是 GNOME 桌面環境的官方文字編輯器。著重於簡單、易用，gedit 是一個功"
+#~ "能強大的多用途文字編輯器。"
+
+#~ msgid ""
+#~ "Whether you are writing the next bestseller, programming an innovative "
+#~ "application, or simply taking some quick notes, gedit will be a reliable "
+#~ "tool to accomplish your task."
+#~ msgstr ""
+#~ "無論您是在寫下一本暢銷書、設計創新的應用程式、單純做個快速筆記等，gedit 都"
+#~ "是能完成您工作的可靠工具。"
+
+#~ msgid ""
+#~ "Its flexible plugin system allows you to tailor the application to your "
+#~ "needs and adapt it to your workflow."
+#~ msgstr "它多樣化的外掛程式系統允許您自訂應用程式以符合您的需求與工作流程。"
 
 #~ msgid ""
 #~ "List of active plugins. It contains the “Location” of the active plugins. "
