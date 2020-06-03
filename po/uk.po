@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gedit\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gedit/issues\n"
-"POT-Creation-Date: 2020-06-03 15:36+0000\n"
-"PO-Revision-Date: 2020-06-03 18:47+0300\n"
+"POT-Creation-Date: 2020-06-03 17:28+0000\n"
+"PO-Revision-Date: 2020-06-03 20:31+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -561,7 +561,7 @@ msgstr "_Закрити без збереження"
 #: gedit/gedit-close-confirmation-dialog.c:277 gedit/gedit-commands-file.c:460
 #: gedit/gedit-commands-file.c:565 gedit/gedit-commands-file.c:641
 #: gedit/gedit-commands-file.c:852 gedit/gedit-commands-file.c:1566
-#: gedit/gedit-encodings-dialog.c:192 gedit/gedit-preferences-dialog.c:731
+#: gedit/gedit-encodings-dialog.c:192 gedit/gedit-preferences-dialog.c:721
 #: gedit/gedit-progress-info-bar.c:49
 #: gedit/resources/ui/gedit-encodings-dialog.ui:44
 #: gedit/resources/ui/gedit-highlight-mode-dialog.ui:31
@@ -984,7 +984,7 @@ msgid "Move to a lower priority"
 msgstr "Пересунути на нижчий пріоритет"
 
 #: gedit/gedit-file-chooser-dialog-gtk.c:39
-#: gedit/gedit-preferences-dialog.c:740
+#: gedit/gedit-preferences-dialog.c:730
 msgid "All Files"
 msgstr "Всі файли"
 
@@ -1275,38 +1275,39 @@ msgstr ""
 msgid "Could not save the file “%s”."
 msgstr "Неможливо зберегти файл «%s»."
 
-#: gedit/gedit-preferences-dialog.c:442
+#: gedit/gedit-preferences-dialog.c:433
 msgid "Click on this button to select the font to be used by the editor"
 msgstr "Натисніть цю кнопку для вибору шрифту редактора"
 
-#: gedit/gedit-preferences-dialog.c:448
+#: gedit/gedit-preferences-dialog.c:439
 #, c-format
 msgid "_Use the system fixed width font (%s)"
 msgstr "_Використовувати системний моноширинний шрифт (%s)"
 
-#: gedit/gedit-preferences-dialog.c:697
+#: gedit/gedit-preferences-dialog.c:685
 #, c-format
-#| msgid "The selected color scheme cannot be installed."
 msgid "The selected color scheme cannot be installed: %s"
 msgstr "Обрана схема кольорів не може бути встановлена: %s"
 
-#: gedit/gedit-preferences-dialog.c:703
+#: gedit/gedit-preferences-dialog.c:691
 msgid "The selected color scheme cannot be installed."
 msgstr "Обрана схема кольорів не може бути встановлена."
 
-#: gedit/gedit-preferences-dialog.c:727
-msgid "Add Scheme"
-msgstr "Додати схему"
+#: gedit/gedit-preferences-dialog.c:717
+#| msgid "Color Scheme"
+msgid "Add Color Scheme"
+msgstr "Додати схему кольорів"
 
-#: gedit/gedit-preferences-dialog.c:732
-msgid "A_dd Scheme"
+#: gedit/gedit-preferences-dialog.c:720
+#| msgid "Add Scheme"
+msgid "_Add Scheme"
 msgstr "_Додати схему"
 
-#: gedit/gedit-preferences-dialog.c:736
+#: gedit/gedit-preferences-dialog.c:725
 msgid "Color Scheme Files"
 msgstr "Файли схеми кольорів"
 
-#: gedit/gedit-preferences-dialog.c:773
+#: gedit/gedit-preferences-dialog.c:763
 #, c-format
 msgid "Could not remove color scheme “%s”."
 msgstr "Не вдалось вилучити схему кольорів «%s»."
@@ -3557,6 +3558,9 @@ msgstr "Вставити час або дату"
 #: plugins/time/time.plugin.desktop.in:6
 msgid "Inserts current date and time at the cursor position."
 msgstr "Вставляє поточну дату й час в позицію курсора."
+
+#~ msgid "A_dd Scheme"
+#~ msgstr "_Додати схему"
 
 #~ msgid ""
 #~ "Directory “%s” could not be created: g_mkdir_with_parents() failed: %s"
