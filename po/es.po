@@ -19,8 +19,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gedit.master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gedit/issues\n"
-"POT-Creation-Date: 2020-05-29 11:11+0000\n"
-"PO-Revision-Date: 2020-06-03 11:44+0200\n"
+"POT-Creation-Date: 2020-06-04 07:14+0000\n"
+"PO-Revision-Date: 2020-06-04 09:51+0200\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: es <gnome-es-list@gnome.org>\n"
 "Language: es\n"
@@ -592,7 +592,7 @@ msgstr "Cerrar _sin guardar"
 #: gedit/gedit-close-confirmation-dialog.c:277 gedit/gedit-commands-file.c:460
 #: gedit/gedit-commands-file.c:565 gedit/gedit-commands-file.c:641
 #: gedit/gedit-commands-file.c:852 gedit/gedit-commands-file.c:1566
-#: gedit/gedit-encodings-dialog.c:192 gedit/gedit-preferences-dialog.c:773
+#: gedit/gedit-encodings-dialog.c:192 gedit/gedit-preferences-dialog.c:721
 #: gedit/gedit-progress-info-bar.c:49
 #: gedit/resources/ui/gedit-encodings-dialog.ui:44
 #: gedit/resources/ui/gedit-highlight-mode-dialog.ui:31
@@ -1002,7 +1002,7 @@ msgid "Move to a lower priority"
 msgstr "Disminuir la prioridad"
 
 #: gedit/gedit-file-chooser-dialog-gtk.c:39
-#: gedit/gedit-preferences-dialog.c:782
+#: gedit/gedit-preferences-dialog.c:730
 msgid "All Files"
 msgstr "Todos los archivos"
 
@@ -1010,11 +1010,11 @@ msgstr "Todos los archivos"
 msgid "All Text Files"
 msgstr "Todos los archivos de texto"
 
-#: gedit/gedit-file-chooser-dialog-gtk.c:305
+#: gedit/gedit-file-chooser-dialog-gtk.c:277
 msgid "C_haracter Encoding:"
 msgstr "Codificación de ca_racteres:"
 
-#: gedit/gedit-file-chooser-dialog-gtk.c:364
+#: gedit/gedit-file-chooser-dialog-gtk.c:336
 msgid "L_ine Ending:"
 msgstr "_Final de línea:"
 
@@ -1302,38 +1302,41 @@ msgstr ""
 msgid "Could not save the file “%s”."
 msgstr "No se pudo guardar el archivo «%s»."
 
-#: gedit/gedit-preferences-dialog.c:442
+#: gedit/gedit-preferences-dialog.c:433
 msgid "Click on this button to select the font to be used by the editor"
 msgstr ""
 "Pulsar este botón para seleccionar la tipografía que utilizará el editor"
 
-#: gedit/gedit-preferences-dialog.c:448
+#: gedit/gedit-preferences-dialog.c:439
 #, c-format
 msgid "_Use the system fixed width font (%s)"
 msgstr "_Usar la tipografía de anchura fijo del sistema (%s)"
 
-#: gedit/gedit-preferences-dialog.c:556
+#: gedit/gedit-preferences-dialog.c:685
 #, c-format
-msgid "Directory “%s” could not be created: g_mkdir_with_parents() failed: %s"
-msgstr "No se pudo crear la carpeta «%s»: falló g_mkdir_with_parents(): %s"
+#| msgid "The selected color scheme cannot be installed."
+msgid "The selected color scheme cannot be installed: %s"
+msgstr "No se puede instalar el esquema de color seleccionado: %s"
 
-#: gedit/gedit-preferences-dialog.c:748
+#: gedit/gedit-preferences-dialog.c:691
 msgid "The selected color scheme cannot be installed."
 msgstr "No se puede instalar el estilo de color seleccionado."
 
-#: gedit/gedit-preferences-dialog.c:769
-msgid "Add Scheme"
-msgstr "Añadir estilo"
+#: gedit/gedit-preferences-dialog.c:717
+#| msgid "Color Scheme"
+msgid "Add Color Scheme"
+msgstr "Añadir esquema de color"
 
-#: gedit/gedit-preferences-dialog.c:774
-msgid "A_dd Scheme"
-msgstr "_Añadir estilo"
+#: gedit/gedit-preferences-dialog.c:720
+#| msgid "Add Scheme"
+msgid "_Add Scheme"
+msgstr "_Añadir esquema"
 
-#: gedit/gedit-preferences-dialog.c:778
+#: gedit/gedit-preferences-dialog.c:725
 msgid "Color Scheme Files"
 msgstr "Archivos de estilos de color"
 
-#: gedit/gedit-preferences-dialog.c:815
+#: gedit/gedit-preferences-dialog.c:763
 #, c-format
 msgid "Could not remove color scheme “%s”."
 msgstr "No se pudo quitar el estilo «%s»."
@@ -2364,13 +2367,11 @@ msgid "Move to matching bracket"
 msgstr "Mover al corchete coincidente"
 
 #: gedit/resources/ui/gedit-shortcuts.ui:328
-#| msgid "P_revious Tab Group"
 msgctxt "shortcut window"
 msgid "Go to previous tab group"
 msgstr "Ir al grupo de pestañas anterior"
 
 #: gedit/resources/ui/gedit-shortcuts.ui:335
-#| msgid "Go to next location"
 msgctxt "shortcut window"
 msgid "Go to next tab group"
 msgstr "Ir al siguiente grupo de pestañas"
@@ -3593,6 +3594,13 @@ msgstr "Insertar fecha/hora"
 #: plugins/time/time.plugin.desktop.in:6
 msgid "Inserts current date and time at the cursor position."
 msgstr "Inserta la fecha y hora actual en la posición del cursor."
+
+#~ msgid ""
+#~ "Directory “%s” could not be created: g_mkdir_with_parents() failed: %s"
+#~ msgstr "No se pudo crear la carpeta «%s»: falló g_mkdir_with_parents(): %s"
+
+#~ msgid "A_dd Scheme"
+#~ msgstr "_Añadir estilo"
 
 #~ msgid ""
 #~ "gedit is the official text editor of the GNOME desktop environment. While "
