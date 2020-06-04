@@ -892,14 +892,13 @@ on_parent_destroyed (GtkWindow                 *parent,
 }
 
 GeditFileChooserDialog *
-gedit_file_chooser_dialog_osx_create (const gchar             *title,
-			              GtkWindow               *parent,
-			              GeditFileChooserFlags    flags,
-			              const GtkSourceEncoding *encoding,
-			              const gchar             *cancel_label,
-			              GtkResponseType          cancel_response,
-			              const gchar             *accept_label,
-			              GtkResponseType          accept_response)
+gedit_file_chooser_dialog_osx_create (const gchar           *title,
+			              GtkWindow             *parent,
+			              GeditFileChooserFlags  flags,
+			              const gchar           *cancel_label,
+			              GtkResponseType        cancel_response,
+			              const gchar           *accept_label,
+			              GtkResponseType        accept_response)
 {
 	GeditFileChooserDialogOSX *ret;
 	gchar *nomnem;

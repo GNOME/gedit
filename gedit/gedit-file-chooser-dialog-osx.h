@@ -29,16 +29,17 @@ G_BEGIN_DECLS
 
 #define GEDIT_TYPE_FILE_CHOOSER_DIALOG_OSX (gedit_file_chooser_dialog_osx_get_type ())
 
-G_DECLARE_FINAL_TYPE (GeditFileChooserDialogOSX, gedit_file_chooser_dialog_osx, GEDIT, FILE_CHOOSER_DIALOG_OSX, GObject)
+G_DECLARE_FINAL_TYPE (GeditFileChooserDialogOSX, gedit_file_chooser_dialog_osx,
+		      GEDIT, FILE_CHOOSER_DIALOG_OSX,
+		      GObject)
 
-GeditFileChooserDialog	*gedit_file_chooser_dialog_osx_create		(const gchar              *title,
-									 GtkWindow                *parent,
-									 GeditFileChooserFlags     flags,
-									 const GtkSourceEncoding  *encoding,
-									 const gchar              *cancel_label,
-									 GtkResponseType           cancel_response,
-									 const gchar              *accept_label,
-									 GtkResponseType           accept_response);
+GeditFileChooserDialog *	gedit_file_chooser_dialog_osx_create	(const gchar           *title,
+									 GtkWindow             *parent,
+									 GeditFileChooserFlags  flags,
+									 const gchar           *cancel_label,
+									 GtkResponseType        cancel_response,
+									 const gchar           *accept_label,
+									 GtkResponseType        accept_response);
 
 G_END_DECLS
 

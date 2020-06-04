@@ -590,14 +590,13 @@ gedit_file_chooser_dialog_gtk_init (GeditFileChooserDialogGtk *dialog)
 }
 
 GeditFileChooserDialog *
-gedit_file_chooser_dialog_gtk_create (const gchar             *title,
-			              GtkWindow               *parent,
-			              GeditFileChooserFlags    flags,
-			              const GtkSourceEncoding *encoding,
-				      const gchar             *cancel_label,
-				      GtkResponseType          cancel_response,
-				      const gchar             *accept_label,
-				      GtkResponseType          accept_response)
+gedit_file_chooser_dialog_gtk_create (const gchar           *title,
+				      GtkWindow             *parent,
+				      GeditFileChooserFlags  flags,
+				      const gchar           *cancel_label,
+				      GtkResponseType        cancel_response,
+				      const gchar           *accept_label,
+				      GtkResponseType        accept_response)
 {
 	GeditFileChooserDialogGtk *result;
 	GtkFileFilter *filter;
@@ -629,12 +628,6 @@ gedit_file_chooser_dialog_gtk_create (const gchar             *title,
 			  "notify::action",
 			  G_CALLBACK (action_changed),
 			  NULL);
-
-	if (encoding != NULL)
-	{
-		gedit_encodings_combo_box_set_selected_encoding (GEDIT_ENCODINGS_COMBO_BOX (result->option_menu),
-		                                                 encoding);
-	}
 
 	active_filter = g_settings_get_int (result->filter_settings, GEDIT_SETTINGS_ACTIVE_FILE_FILTER);
 	gedit_debug_message (DEBUG_COMMANDS, "Active filter: %d", active_filter);

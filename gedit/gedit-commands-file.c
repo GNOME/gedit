@@ -457,7 +457,6 @@ _gedit_cmd_file_open (GSimpleAction *action,
 							GEDIT_FILE_CHOOSER_OPEN |
 							GEDIT_FILE_CHOOSER_ENABLE_ENCODING |
 							GEDIT_FILE_CHOOSER_ENABLE_DEFAULT_FILTERS,
-							NULL,
 							_("_Cancel"), GTK_RESPONSE_CANCEL,
 							_("_Open"), GTK_RESPONSE_OK);
 
@@ -849,7 +848,6 @@ save_as_tab_async (GeditTab            *tab,
 							GEDIT_FILE_CHOOSER_ENABLE_ENCODING |
 							GEDIT_FILE_CHOOSER_ENABLE_LINE_ENDING |
 							GEDIT_FILE_CHOOSER_ENABLE_DEFAULT_FILTERS,
-							NULL,
 							_("_Cancel"), GTK_RESPONSE_CANCEL,
 							_("_Save"), GTK_RESPONSE_OK);
 

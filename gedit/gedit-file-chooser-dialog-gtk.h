@@ -29,16 +29,17 @@ G_BEGIN_DECLS
 
 #define GEDIT_TYPE_FILE_CHOOSER_DIALOG_GTK (gedit_file_chooser_dialog_gtk_get_type ())
 
-G_DECLARE_FINAL_TYPE (GeditFileChooserDialogGtk, gedit_file_chooser_dialog_gtk, GEDIT, FILE_CHOOSER_DIALOG_GTK, GtkFileChooserDialog)
+G_DECLARE_FINAL_TYPE (GeditFileChooserDialogGtk, gedit_file_chooser_dialog_gtk,
+		      GEDIT, FILE_CHOOSER_DIALOG_GTK,
+		      GtkFileChooserDialog)
 
-GeditFileChooserDialog	*gedit_file_chooser_dialog_gtk_create		(const gchar             *title,
-									 GtkWindow               *parent,
-									 GeditFileChooserFlags    flags,
-									 const GtkSourceEncoding *encoding,
-									 const gchar             *cancel_label,
-									 GtkResponseType          cancel_response,
-									 const gchar             *accept_label,
-									 GtkResponseType          accept_response);
+GeditFileChooserDialog *	gedit_file_chooser_dialog_gtk_create	(const gchar           *title,
+									 GtkWindow             *parent,
+									 GeditFileChooserFlags  flags,
+									 const gchar           *cancel_label,
+									 GtkResponseType        cancel_response,
+									 const gchar           *accept_label,
+									 GtkResponseType        accept_response);
 
 G_END_DECLS
 
