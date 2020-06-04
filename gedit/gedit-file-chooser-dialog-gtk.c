@@ -420,16 +420,12 @@ static void
 create_extra_widget (GeditFileChooserDialogGtk *dialog,
                      GeditFileChooserFlags      flags)
 {
-	gboolean needs_line_ending;
-
-	needs_line_ending = (flags & GEDIT_FILE_CHOOSER_ENABLE_LINE_ENDING) != 0;
-
 	dialog->extra_widget = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 6);
 	gtk_widget_show (dialog->extra_widget);
 
 	create_option_menu (dialog, flags);
 
-	if (needs_line_ending)
+	if ((flags & GEDIT_FILE_CHOOSER_SAVE) != 0)
 	{
 		create_newline_combo (dialog);
 	}

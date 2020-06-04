@@ -82,9 +82,8 @@ struct _GeditFileChooserDialogInterface
 
 typedef enum
 {
-	GEDIT_FILE_CHOOSER_SAVE                   = 1 << 0,
-	GEDIT_FILE_CHOOSER_OPEN                   = 1 << 1,
-	GEDIT_FILE_CHOOSER_ENABLE_LINE_ENDING     = 1 << 2
+	GEDIT_FILE_CHOOSER_SAVE = 1 << 0,
+	GEDIT_FILE_CHOOSER_OPEN = 1 << 1
 } GeditFileChooserFlags;
 
 GeditFileChooserDialog *

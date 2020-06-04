@@ -660,22 +660,16 @@ create_newline_combo (GeditFileChooserDialogOSX *dialog,
 static void
 create_extra_widget (GeditFileChooserDialogOSX *dialog)
 {
-	gboolean needs_line_ending;
-	GeditFileChooserFlags flags;
 	NSSize size;
 	NSView *parent;
 	NSView *container;
 	gint minw = 0;
 
-	flags = dialog->flags;
-
-	needs_line_ending = (flags & GEDIT_FILE_CHOOSER_ENABLE_LINE_ENDING) != 0;
-
 	container = [[NSView alloc] initWithFrame:NSMakeRect(0, 0, 400, 30)];
 
 	minw += create_encoding_combo (dialog, container);
 
-	if (needs_line_ending)
+	if ((dialog->flags & GEDIT_FILE_CHOOSER_SAVE) != 0)
 	{
 		minw += create_newline_combo (dialog, container);
 	}
