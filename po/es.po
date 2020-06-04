@@ -19,8 +19,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gedit.master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gedit/issues\n"
-"POT-Creation-Date: 2020-05-07 00:43+0000\n"
-"PO-Revision-Date: 2020-05-08 13:05+0200\n"
+"POT-Creation-Date: 2020-05-29 11:11+0000\n"
+"PO-Revision-Date: 2020-06-03 11:44+0200\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: es <gnome-es-list@gnome.org>\n"
 "Language: es\n"
@@ -39,7 +39,6 @@ msgid "Edit text files"
 msgstr "Edite archivos de texto"
 
 #: data/org.gnome.gedit.appdata.xml.in:10
-#| msgid "gedit is a small and lightweight text editor for the GNOME Desktop"
 msgid "gedit is the text editor of the GNOME desktop environment."
 msgstr "gedit es el editor de texto del Escritorio GNOME."
 
@@ -909,7 +908,6 @@ msgid "_Revert"
 msgstr "Re_vertir"
 
 #: gedit/gedit-commands-help.c:110
-#| msgid "gedit is a small and lightweight text editor for the GNOME Desktop"
 msgid "gedit is a small and lightweight text editor for the GNOME desktop"
 msgstr "gedit es un editor de texto pequeño y ligero para el Escritorio GNOME"
 
@@ -2365,107 +2363,119 @@ msgctxt "shortcut window"
 msgid "Move to matching bracket"
 msgstr "Mover al corchete coincidente"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:329
+#: gedit/resources/ui/gedit-shortcuts.ui:328
+#| msgid "P_revious Tab Group"
+msgctxt "shortcut window"
+msgid "Go to previous tab group"
+msgstr "Ir al grupo de pestañas anterior"
+
+#: gedit/resources/ui/gedit-shortcuts.ui:335
+#| msgid "Go to next location"
+msgctxt "shortcut window"
+msgid "Go to next tab group"
+msgstr "Ir al siguiente grupo de pestañas"
+
+#: gedit/resources/ui/gedit-shortcuts.ui:343
 msgctxt "shortcut window"
 msgid "Editing"
 msgstr "Editando"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:334
+#: gedit/resources/ui/gedit-shortcuts.ui:348
 msgctxt "shortcut window"
 msgid "Toggle insert / overwrite"
 msgstr "Cambiar entre insertar/sobrescribir"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:341
+#: gedit/resources/ui/gedit-shortcuts.ui:355
 msgctxt "shortcut window"
 msgid "Toggle cursor visibility"
 msgstr "Cambiar la visibilidad del cursor"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:348
+#: gedit/resources/ui/gedit-shortcuts.ui:362
 msgctxt "shortcut window"
 msgid "Delete current line"
 msgstr "Eliminar la línea actual"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:355
+#: gedit/resources/ui/gedit-shortcuts.ui:369
 msgctxt "shortcut window"
 msgid "Move current line up"
 msgstr "Subir la línea actual"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:362
+#: gedit/resources/ui/gedit-shortcuts.ui:376
 msgctxt "shortcut window"
 msgid "Move current line down"
 msgstr "Bajar la línea actual"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:369
+#: gedit/resources/ui/gedit-shortcuts.ui:383
 msgctxt "shortcut window"
 msgid "Move current word left"
 msgstr "Mover la palabra actual a la izquierda"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:376
+#: gedit/resources/ui/gedit-shortcuts.ui:390
 msgctxt "shortcut window"
 msgid "Move current word right"
 msgstr "Mover la palabra actual a la derecha"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:383
+#: gedit/resources/ui/gedit-shortcuts.ui:397
 msgctxt "shortcut window"
 msgid "Convert to uppercase"
 msgstr "Convertir a mayúsculas"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:390
+#: gedit/resources/ui/gedit-shortcuts.ui:404
 msgctxt "shortcut window"
 msgid "Convert to lowercase"
 msgstr "Convertir a minúsculas"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:397
+#: gedit/resources/ui/gedit-shortcuts.ui:411
 msgctxt "shortcut window"
 msgid "Invert case"
 msgstr "Invertir mayúsculas y minúsculas"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:404
+#: gedit/resources/ui/gedit-shortcuts.ui:418
 msgctxt "shortcut window"
 msgid "Increment number at cursor"
 msgstr "Incrementar el número del cursor"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:411
+#: gedit/resources/ui/gedit-shortcuts.ui:425
 msgctxt "shortcut window"
 msgid "Decrement number at cursor"
 msgstr "Reducir el número del cursor"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:419
+#: gedit/resources/ui/gedit-shortcuts.ui:433
 msgctxt "shortcut window"
 msgid "Tools"
 msgstr "Herramientas"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:424
+#: gedit/resources/ui/gedit-shortcuts.ui:438
 msgctxt "shortcut window"
 msgid "Check spelling"
 msgstr "Comprobar ortografía"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:431
+#: gedit/resources/ui/gedit-shortcuts.ui:445
 msgctxt "shortcut window"
 msgid "Print the document"
 msgstr "Imprimir el documento"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:438
+#: gedit/resources/ui/gedit-shortcuts.ui:452
 msgctxt "shortcut window"
 msgid "Show completion window"
 msgstr "Mostrar la ventana de completado"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:446
+#: gedit/resources/ui/gedit-shortcuts.ui:460
 msgctxt "shortcut window"
 msgid "General"
 msgstr "General"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:451
+#: gedit/resources/ui/gedit-shortcuts.ui:465
 msgctxt "shortcut window"
 msgid "Show help"
 msgstr "Mostrar ayuda"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:458
+#: gedit/resources/ui/gedit-shortcuts.ui:472
 msgctxt "shortcut window"
 msgid "Open menu"
 msgstr "Abrir el menú"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:465
+#: gedit/resources/ui/gedit-shortcuts.ui:479
 msgctxt "shortcut window"
 msgid "Keyboard shortcuts"
 msgstr "Atajos del teclado"
@@ -2813,7 +2823,6 @@ msgid "File Browser Panel"
 msgstr "Panel del examinador de archivos"
 
 #: plugins/filebrowser/filebrowser.plugin.desktop.in:7
-#| msgid "Easy file access from the side panel"
 msgid "Easy file access from the side panel."
 msgstr "Acceso a archivos fácil desde el panel lateral."
 
@@ -3154,7 +3163,6 @@ msgid "Python Console"
 msgstr "Consola Python"
 
 #: plugins/pythonconsole/pythonconsole.plugin.desktop.in:7
-#| msgid "Interactive Python console standing in the bottom panel"
 msgid "Interactive Python console standing in the bottom panel."
 msgstr "Consola interactiva python en el panel inferior."
 
@@ -3176,7 +3184,6 @@ msgid "Quick Open"
 msgstr "Apertura rápida"
 
 #: plugins/quickopen/quickopen.plugin.desktop.in:7
-#| msgid "Quickly open files"
 msgid "Quickly open files."
 msgstr "Abrir archivos rápidamente."
 
@@ -3375,7 +3382,6 @@ msgid "Execution of the Python command (%s) failed: %s"
 msgstr "Falló la ejecución del comando Python (%s): %s"
 
 #: plugins/snippets/snippets.plugin.desktop.in:7
-#| msgid "Insert often-used pieces of text in a fast way"
 msgid "Insert often-used pieces of text in a fast way."
 msgstr ""
 "Insertar fragmentos de texto usados frecuentemente de una manera rápida."
@@ -4443,9 +4449,6 @@ msgstr "Inserta la fecha y hora actual en la posición del cursor."
 
 #~ msgid "Next location"
 #~ msgstr "Siguiente lugar"
-
-#~ msgid "Go to next location"
-#~ msgstr "Ir al siguiente lugar"
 
 #~ msgid ""
 #~ "List of VFS schemes gedit supports in write mode. The 'file' scheme is "
