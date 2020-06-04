@@ -455,8 +455,8 @@ _gedit_cmd_file_open (GSimpleAction *action,
 	open_dialog = gedit_file_chooser_dialog_create (C_("window title", "Open Files"),
 							window != NULL ? GTK_WINDOW (window) : NULL,
 							GEDIT_FILE_CHOOSER_OPEN,
-							_("_Cancel"), GTK_RESPONSE_CANCEL,
-							_("_Open"), GTK_RESPONSE_ACCEPT);
+							_("_Cancel"),
+							_("_Open"));
 
 	if (window != NULL)
 	{
@@ -843,8 +843,8 @@ save_as_tab_async (GeditTab            *tab,
 	save_dialog = gedit_file_chooser_dialog_create (C_("window title", "Save As"),
 							GTK_WINDOW (window),
 							GEDIT_FILE_CHOOSER_SAVE,
-							_("_Cancel"), GTK_RESPONSE_CANCEL,
-							_("_Save"), GTK_RESPONSE_ACCEPT);
+							_("_Cancel"),
+							_("_Save"));
 
 	gedit_file_chooser_dialog_set_do_overwrite_confirmation (save_dialog, TRUE);
 

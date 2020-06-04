@@ -91,9 +91,7 @@ GeditFileChooserDialog *
 								 GtkWindow                *parent,
 								 GeditFileChooserFlags     flags,
 								 const gchar              *cancel_label,
-								 GtkResponseType           cancel_response,
-								 const gchar              *accept_label,
-								 GtkResponseType           accept_response);
+								 const gchar              *accept_label);
 
 void		 gedit_file_chooser_dialog_destroy		(GeditFileChooserDialog   *dialog);
 

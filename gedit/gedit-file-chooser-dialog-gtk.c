@@ -579,9 +579,7 @@ gedit_file_chooser_dialog_gtk_create (const gchar           *title,
 				      GtkWindow             *parent,
 				      GeditFileChooserFlags  flags,
 				      const gchar           *cancel_label,
-				      GtkResponseType        cancel_response,
-				      const gchar           *accept_label,
-				      GtkResponseType        accept_response)
+				      const gchar           *accept_label)
 {
 	GeditFileChooserDialogGtk *result;
 	GtkFileFilter *filter;
@@ -656,9 +654,9 @@ gedit_file_chooser_dialog_gtk_create (const gchar           *title,
 		gtk_window_set_destroy_with_parent (GTK_WINDOW (result), TRUE);
 	}
 
-	gtk_dialog_add_button (GTK_DIALOG (result), cancel_label, cancel_response);
-	gtk_dialog_add_button (GTK_DIALOG (result), accept_label, accept_response);
-	gtk_dialog_set_default_response (GTK_DIALOG (result), accept_response);
+	gtk_dialog_add_button (GTK_DIALOG (result), cancel_label, GTK_RESPONSE_CANCEL);
+	gtk_dialog_add_button (GTK_DIALOG (result), accept_label, GTK_RESPONSE_ACCEPT);
+	gtk_dialog_set_default_response (GTK_DIALOG (result), GTK_RESPONSE_ACCEPT);
 
 	return GEDIT_FILE_CHOOSER_DIALOG (result);
 }

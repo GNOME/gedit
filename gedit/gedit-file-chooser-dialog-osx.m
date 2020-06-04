@@ -46,9 +46,6 @@ struct _GeditFileChooserDialogOSX
 	gboolean is_modal;
 	gboolean is_running;
 
-	GtkResponseType cancel_response;
-	GtkResponseType accept_response;
-
 	gulong destroy_id;
 
 	GeditFileChooserFlags flags;
@@ -714,11 +711,11 @@ chooser_show (GeditFileChooserDialog *dialog)
 
 		if (result == NSFileHandlingPanelOKButton)
 		{
-			response = dialog_osx->accept_response;
+			response = GTK_RESPONSE_ACCEPT;
 		}
 		else
 		{
-			response = dialog_osx->cancel_response;
+			response = GTK_RESPONSE_CANCEL;
 		}
 
 		g_signal_emit_by_name (dialog, "response", response);
@@ -880,17 +877,12 @@ gedit_file_chooser_dialog_osx_create (const gchar           *title,
 			              GtkWindow             *parent,
 			              GeditFileChooserFlags  flags,
 			              const gchar           *cancel_label,
-			              GtkResponseType        cancel_response,
-			              const gchar           *accept_label,
-			              GtkResponseType        accept_response)
+			              const gchar           *accept_label)
 {
 	GeditFileChooserDialogOSX *ret;
 	gchar *nomnem;
 
 	ret = g_object_new (GEDIT_TYPE_FILE_CHOOSER_DIALOG_OSX, NULL);
-
-	ret->cancel_response = cancel_response;
-	ret->accept_response = accept_response;
 
 	if ((flags & GEDIT_FILE_CHOOSER_SAVE) != 0)
 	{
