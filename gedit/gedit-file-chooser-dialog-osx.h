@@ -36,8 +36,8 @@ G_DECLARE_FINAL_TYPE (GeditFileChooserDialogOSX, gedit_file_chooser_dialog_osx,
 GeditFileChooserDialog *	gedit_file_chooser_dialog_osx_create	(const gchar           *title,
 									 GtkWindow             *parent,
 									 GeditFileChooserFlags  flags,
-									 const gchar           *cancel_label,
-									 const gchar           *accept_label);
+									 const gchar           *accept_label,
+									 const gchar           *cancel_label);
 
 G_END_DECLS
 

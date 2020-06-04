@@ -578,8 +578,8 @@ GeditFileChooserDialog *
 gedit_file_chooser_dialog_gtk_create (const gchar           *title,
 				      GtkWindow             *parent,
 				      GeditFileChooserFlags  flags,
-				      const gchar           *cancel_label,
-				      const gchar           *accept_label)
+				      const gchar           *accept_label,
+				      const gchar           *cancel_label)
 {
 	GeditFileChooserDialogGtk *result;
 	GtkFileFilter *filter;

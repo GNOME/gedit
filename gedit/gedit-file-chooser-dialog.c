@@ -71,21 +71,21 @@ GeditFileChooserDialog *
 gedit_file_chooser_dialog_create (const gchar           *title,
 				  GtkWindow             *parent,
 				  GeditFileChooserFlags  flags,
-				  const gchar           *cancel_label,
-				  const gchar           *accept_label)
+				  const gchar           *accept_label,
+				  const gchar           *cancel_label)
 {
 #ifdef OS_OSX
 	return gedit_file_chooser_dialog_osx_create (title,
 	                                             parent,
 	                                             flags,
-	                                             cancel_label,
-	                                             accept_label);
+	                                             accept_label,
+	                                             cancel_label);
 #else
 	return gedit_file_chooser_dialog_gtk_create (title,
 	                                             parent,
 	                                             flags,
-	                                             cancel_label,
-	                                             accept_label);
+	                                             accept_label,
+	                                             cancel_label);
 #endif
 }
 
