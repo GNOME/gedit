@@ -360,17 +360,6 @@ _gedit_cmd_load_files_from_prompt (GeditWindow             *window,
 }
 
 static void
-open_dialog_destroyed (GeditWindow            *window,
-		       GeditFileChooserDialog *dialog)
-{
-	gedit_debug (DEBUG_COMMANDS);
-
-	g_object_set_data (G_OBJECT (window),
-			   GEDIT_OPEN_DIALOG_KEY,
-			   NULL);
-}
-
-static void
 open_dialog_response_cb (GeditFileChooserDialog *dialog,
                          gint                    response_id,
                          GeditWindow            *window)
@@ -384,6 +373,11 @@ open_dialog_response_cb (GeditFileChooserDialog *dialog,
 	if (response_id != GTK_RESPONSE_ACCEPT)
 	{
 		gedit_file_chooser_dialog_destroy (dialog);
+		if (window != NULL)
+		{
+			g_object_set_data (G_OBJECT (window), GEDIT_OPEN_DIALOG_KEY, NULL);
+		}
+
 		return;
 	}
 
@@ -393,6 +387,10 @@ open_dialog_response_cb (GeditFileChooserDialog *dialog,
 	encoding = gedit_file_chooser_dialog_get_encoding (dialog);
 
 	gedit_file_chooser_dialog_destroy (dialog);
+	if (window != NULL)
+	{
+		g_object_set_data (G_OBJECT (window), GEDIT_OPEN_DIALOG_KEY, NULL);
+	}
 
 	if (window == NULL)
 	{
@@ -424,25 +422,20 @@ _gedit_cmd_file_open (GSimpleAction *action,
 	GeditWindow *window = NULL;
 	GeditFileChooserDialog *open_dialog;
 
+	gedit_debug (DEBUG_COMMANDS);
+
 	if (GEDIT_IS_WINDOW (user_data))
 	{
 		window = user_data;
 	}
 
-	gedit_debug (DEBUG_COMMANDS);
-
 	if (window != NULL)
 	{
-		gpointer data;
-
-		data = g_object_get_data (G_OBJECT (window), GEDIT_OPEN_DIALOG_KEY);
-
-		if (data != NULL)
+		open_dialog = GEDIT_FILE_CHOOSER_DIALOG (g_object_get_data (G_OBJECT (window),
+									    GEDIT_OPEN_DIALOG_KEY));
+		if (open_dialog != NULL)
 		{
-			g_return_if_fail (GEDIT_IS_FILE_CHOOSER_DIALOG (data));
-
-			gtk_window_present (GTK_WINDOW (data));
-
+			gedit_file_chooser_dialog_show (open_dialog);
 			return;
 		}
 
@@ -466,13 +459,10 @@ _gedit_cmd_file_open (GSimpleAction *action,
 		/* The file chooser dialog for opening files is not modal, so
 		 * ensure that at most one file chooser is opened.
 		 */
-		g_object_set_data (G_OBJECT (window),
-				   GEDIT_OPEN_DIALOG_KEY,
-				   open_dialog);
-
-		g_object_weak_ref (G_OBJECT (open_dialog),
-				   (GWeakNotify) open_dialog_destroyed,
-				   window);
+		g_object_set_data_full (G_OBJECT (window),
+					GEDIT_OPEN_DIALOG_KEY,
+					g_object_ref (open_dialog),
+					g_object_unref);
 
 		/* Set the current folder */
 		doc = gedit_window_get_active_document (window);
