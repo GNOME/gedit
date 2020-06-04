@@ -82,6 +82,9 @@ modules:
     sources:
       - type: git
         url: https://gitlab.gnome.org/GNOME/gedit.git
+        # To build a local branch, comment out 'url' and uncomment:
+        # path: ../../
+        # branch: wip/misc
 
   - name: gedit-plugins
     buildsystem: meson
