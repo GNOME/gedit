@@ -420,25 +420,14 @@ static void
 create_extra_widget (GeditFileChooserDialogGtk *dialog,
                      GeditFileChooserFlags      flags)
 {
-	gboolean needs_encoding;
 	gboolean needs_line_ending;
 
-	needs_encoding = (flags & GEDIT_FILE_CHOOSER_ENABLE_ENCODING) != 0;
 	needs_line_ending = (flags & GEDIT_FILE_CHOOSER_ENABLE_LINE_ENDING) != 0;
 
-	if (!needs_encoding && !needs_line_ending)
-	{
-		return;
-	}
-
 	dialog->extra_widget = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 6);
-
 	gtk_widget_show (dialog->extra_widget);
 
-	if (needs_encoding)
-	{
-		create_option_menu (dialog, flags);
-	}
+	create_option_menu (dialog, flags);
 
 	if (needs_line_ending)
 	{
