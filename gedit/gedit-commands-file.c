@@ -454,8 +454,7 @@ _gedit_cmd_file_open (GSimpleAction *action,
 	/* Translators: "Open Files" is the title of the file chooser window. */
 	open_dialog = gedit_file_chooser_dialog_create (C_("window title", "Open Files"),
 							window != NULL ? GTK_WINDOW (window) : NULL,
-							GEDIT_FILE_CHOOSER_OPEN |
-							GEDIT_FILE_CHOOSER_ENABLE_DEFAULT_FILTERS,
+							GEDIT_FILE_CHOOSER_OPEN,
 							_("_Cancel"), GTK_RESPONSE_CANCEL,
 							_("_Open"), GTK_RESPONSE_OK);
 
@@ -844,8 +843,7 @@ save_as_tab_async (GeditTab            *tab,
 	save_dialog = gedit_file_chooser_dialog_create (C_("window title", "Save As"),
 							GTK_WINDOW (window),
 							GEDIT_FILE_CHOOSER_SAVE |
-							GEDIT_FILE_CHOOSER_ENABLE_LINE_ENDING |
-							GEDIT_FILE_CHOOSER_ENABLE_DEFAULT_FILTERS,
+							GEDIT_FILE_CHOOSER_ENABLE_LINE_ENDING,
 							_("_Cancel"), GTK_RESPONSE_CANCEL,
 							_("_Save"), GTK_RESPONSE_OK);
 

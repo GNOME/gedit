@@ -621,41 +621,38 @@ gedit_file_chooser_dialog_gtk_create (const gchar           *title,
 	active_filter = g_settings_get_int (result->filter_settings, GEDIT_SETTINGS_ACTIVE_FILE_FILTER);
 	gedit_debug_message (DEBUG_COMMANDS, "Active filter: %d", active_filter);
 
-	if ((flags & GEDIT_FILE_CHOOSER_ENABLE_DEFAULT_FILTERS) != 0)
+	/* "All Text Files" filter */
+	filter = gtk_file_filter_new ();
+	gtk_file_filter_set_name (filter, ALL_TEXT_FILES);
+	gtk_file_filter_add_custom (filter,
+				    GTK_FILE_FILTER_MIME_TYPE,
+				    all_text_files_filter,
+				    NULL,
+				    NULL);
+	gtk_file_chooser_add_filter (GTK_FILE_CHOOSER (result), filter);
+
+	if (active_filter != 1)
 	{
-		/* "All Text Files" filter */
-		filter = gtk_file_filter_new ();
-		gtk_file_filter_set_name (filter, ALL_TEXT_FILES);
-		gtk_file_filter_add_custom (filter,
-					    GTK_FILE_FILTER_MIME_TYPE,
-					    all_text_files_filter,
-					    NULL,
-					    NULL);
-		gtk_file_chooser_add_filter (GTK_FILE_CHOOSER (result), filter);
-
-		if (active_filter != 1)
-		{
-			/* Use this filter if set by user and as default */
-			gtk_file_chooser_set_filter (GTK_FILE_CHOOSER (result), filter);
-		}
-
-		/* "All Files" filter */
-		filter = gtk_file_filter_new ();
-		gtk_file_filter_set_name (filter, ALL_FILES);
-		gtk_file_filter_add_pattern (filter, "*");
-		gtk_file_chooser_add_filter (GTK_FILE_CHOOSER (result), filter);
-
-		if (active_filter == 1)
-		{
-			/* Use this filter if set by user */
-			gtk_file_chooser_set_filter (GTK_FILE_CHOOSER (result), filter);
-		}
-
-		g_signal_connect (result,
-				  "notify::filter",
-				  G_CALLBACK (filter_changed),
-				  NULL);
+		/* Use this filter if set by user and as default */
+		gtk_file_chooser_set_filter (GTK_FILE_CHOOSER (result), filter);
 	}
+
+	/* "All Files" filter */
+	filter = gtk_file_filter_new ();
+	gtk_file_filter_set_name (filter, ALL_FILES);
+	gtk_file_filter_add_pattern (filter, "*");
+	gtk_file_chooser_add_filter (GTK_FILE_CHOOSER (result), filter);
+
+	if (active_filter == 1)
+	{
+		/* Use this filter if set by user */
+		gtk_file_chooser_set_filter (GTK_FILE_CHOOSER (result), filter);
+	}
+
+	g_signal_connect (result,
+			  "notify::filter",
+			  G_CALLBACK (filter_changed),
+			  NULL);
 
 	if (parent != NULL)
 	{
