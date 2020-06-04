@@ -381,7 +381,7 @@ open_dialog_response_cb (GeditFileChooserDialog *dialog,
 
 	gedit_debug (DEBUG_COMMANDS);
 
-	if (response_id != GTK_RESPONSE_OK)
+	if (response_id != GTK_RESPONSE_ACCEPT)
 	{
 		gedit_file_chooser_dialog_destroy (dialog);
 		return;
@@ -456,7 +456,7 @@ _gedit_cmd_file_open (GSimpleAction *action,
 							window != NULL ? GTK_WINDOW (window) : NULL,
 							GEDIT_FILE_CHOOSER_OPEN,
 							_("_Cancel"), GTK_RESPONSE_CANCEL,
-							_("_Open"), GTK_RESPONSE_OK);
+							_("_Open"), GTK_RESPONSE_ACCEPT);
 
 	if (window != NULL)
 	{
@@ -701,7 +701,7 @@ save_dialog_response_cb (GeditFileChooserDialog *dialog,
 	tab = g_task_get_source_object (task);
 	window = g_task_get_task_data (task);
 
-	if (response_id != GTK_RESPONSE_OK)
+	if (response_id != GTK_RESPONSE_ACCEPT)
 	{
 		gedit_file_chooser_dialog_destroy (dialog);
 		g_task_return_boolean (task, FALSE);
@@ -844,7 +844,7 @@ save_as_tab_async (GeditTab            *tab,
 							GTK_WINDOW (window),
 							GEDIT_FILE_CHOOSER_SAVE,
 							_("_Cancel"), GTK_RESPONSE_CANCEL,
-							_("_Save"), GTK_RESPONSE_OK);
+							_("_Save"), GTK_RESPONSE_ACCEPT);
 
 	gedit_file_chooser_dialog_set_do_overwrite_confirmation (save_dialog, TRUE);
 
