@@ -366,7 +366,7 @@ open_dialog_response_cb (GeditFileChooserDialog *dialog,
 {
 	GSList *files;
 	const GtkSourceEncoding *encoding;
-	GSList *loaded;
+	GSList *loaded_files;
 
 	gedit_debug (DEBUG_COMMANDS);
 
@@ -394,8 +394,7 @@ open_dialog_response_cb (GeditFileChooserDialog *dialog,
 
 	if (window == NULL)
 	{
-		window = gedit_app_create_window (GEDIT_APP (g_application_get_default ()),
-		                                  NULL);
+		window = gedit_app_create_window (GEDIT_APP (g_application_get_default ()), NULL);
 
 		gtk_widget_show (GTK_WIDGET (window));
 		gtk_window_present (GTK_WINDOW (window));
@@ -404,13 +403,9 @@ open_dialog_response_cb (GeditFileChooserDialog *dialog,
 	/* Remember the folder we navigated to */
 	_gedit_window_set_default_location (window, files->data);
 
-	loaded = gedit_commands_load_locations (window,
-	                                        files,
-	                                        encoding,
-	                                        0,
-	                                        0);
+	loaded_files = gedit_commands_load_locations (window, files, encoding, 0, 0);
 
-	g_slist_free (loaded);
+	g_slist_free (loaded_files);
 	g_slist_free_full (files, g_object_unref);
 }
 
@@ -454,10 +449,11 @@ _gedit_cmd_file_open (GSimpleAction *action,
 	if (window != NULL)
 	{
 		GeditDocument *doc;
-		GFile *default_path = NULL;
+		GFile *default_folder = NULL;
 
 		/* The file chooser dialog for opening files is not modal, so
-		 * ensure that at most one file chooser is opened.
+		 * ensure that at most one file chooser is opened per main
+		 * window.
 		 */
 		g_object_set_data_full (G_OBJECT (window),
 					GEDIT_OPEN_DIALOG_KEY,
@@ -474,19 +470,19 @@ _gedit_cmd_file_open (GSimpleAction *action,
 
 			if (location != NULL)
 			{
-				default_path = g_file_get_parent (location);
+				default_folder = g_file_get_parent (location);
 			}
 		}
 
-		if (default_path == NULL)
+		if (default_folder == NULL)
 		{
-			default_path = _gedit_window_get_default_location (window);
+			default_folder = _gedit_window_get_default_location (window);
 		}
 
-		if (default_path != NULL)
+		if (default_folder != NULL)
 		{
-			gedit_file_chooser_dialog_set_current_folder (open_dialog, default_path);
-			g_object_unref (default_path);
+			gedit_file_chooser_dialog_set_current_folder (open_dialog, default_folder);
+			g_object_unref (default_folder);
 		}
 	}
 
