@@ -94,7 +94,10 @@ GSList *	gedit_settings_get_candidate_encodings		(gboolean *default_candidates);
 #define GEDIT_SETTINGS_SIDE_PANEL_ACTIVE_PAGE		"side-panel-active-page"
 #define GEDIT_SETTINGS_BOTTOM_PANEL_SIZE		"bottom-panel-size"
 #define GEDIT_SETTINGS_BOTTOM_PANEL_ACTIVE_PAGE		"bottom-panel-active-page"
+
+/* file chooser state keys */
 #define GEDIT_SETTINGS_ACTIVE_FILE_FILTER		"filter-id"
+#define GEDIT_SETTINGS_FILE_CHOOSER_OPEN_RECENT		"open-recent"
 
 G_END_DECLS
 
