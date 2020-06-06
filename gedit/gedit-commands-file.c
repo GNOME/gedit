@@ -42,9 +42,10 @@
 #include "gedit-statusbar.h"
 #include "gedit-utils.h"
 #include "gedit-file-chooser-dialog.h"
+#include "gedit-file-chooser-open.h"
 #include "gedit-close-confirmation-dialog.h"
 
-#define GEDIT_OPEN_DIALOG_KEY "gedit-open-dialog-key"
+#define GEDIT_FILE_CHOOSER_OPEN_KEY "gedit-file-chooser-open-key"
 #define GEDIT_IS_CLOSING_ALL "gedit-is-closing-all"
 #define GEDIT_NOTEBOOK_TO_CLOSE "gedit-notebook-to-close"
 #define GEDIT_IS_QUITTING "gedit-is-quitting"
@@ -360,9 +361,9 @@ _gedit_cmd_load_files_from_prompt (GeditWindow             *window,
 }
 
 static void
-open_dialog_response_cb (GeditFileChooserDialog *dialog,
-                         gint                    response_id,
-                         GeditWindow            *window)
+file_chooser_open_done_cb (GeditFileChooserOpen *file_chooser,
+			   gboolean              accept,
+			   GeditWindow          *window)
 {
 	GSList *files;
 	const GtkSourceEncoding *encoding;
@@ -370,24 +371,23 @@ open_dialog_response_cb (GeditFileChooserDialog *dialog,
 
 	gedit_debug (DEBUG_COMMANDS);
 
-	if (response_id != GTK_RESPONSE_ACCEPT)
+	if (!accept)
 	{
-		gedit_file_chooser_dialog_destroy (dialog);
+		g_object_unref (file_chooser);
 		if (window != NULL)
 		{
-			g_object_set_data (G_OBJECT (window), GEDIT_OPEN_DIALOG_KEY, NULL);
+			g_object_set_data (G_OBJECT (window), GEDIT_FILE_CHOOSER_OPEN_KEY, NULL);
 		}
-
 		return;
 	}
 
-	files = gedit_file_chooser_dialog_get_files (dialog);
-	encoding = gedit_file_chooser_dialog_get_encoding (dialog);
+	files = _gedit_file_chooser_open_get_files (file_chooser);
+	encoding = _gedit_file_chooser_open_get_encoding (file_chooser);
 
-	gedit_file_chooser_dialog_destroy (dialog);
+	g_object_unref (file_chooser);
 	if (window != NULL)
 	{
-		g_object_set_data (G_OBJECT (window), GEDIT_OPEN_DIALOG_KEY, NULL);
+		g_object_set_data (G_OBJECT (window), GEDIT_FILE_CHOOSER_OPEN_KEY, NULL);
 	}
 
 	if (window == NULL)
@@ -416,7 +416,7 @@ _gedit_cmd_file_open (GSimpleAction *action,
                       gpointer       user_data)
 {
 	GeditWindow *window = NULL;
-	GeditFileChooserDialog *open_dialog;
+	GeditFileChooserOpen *file_chooser;
 
 	gedit_debug (DEBUG_COMMANDS);
 
@@ -427,11 +427,11 @@ _gedit_cmd_file_open (GSimpleAction *action,
 
 	if (window != NULL)
 	{
-		open_dialog = GEDIT_FILE_CHOOSER_DIALOG (g_object_get_data (G_OBJECT (window),
-									    GEDIT_OPEN_DIALOG_KEY));
-		if (open_dialog != NULL)
+		file_chooser = GEDIT_FILE_CHOOSER_OPEN (g_object_get_data (G_OBJECT (window),
+									   GEDIT_FILE_CHOOSER_OPEN_KEY));
+		if (file_chooser != NULL)
 		{
-			gedit_file_chooser_dialog_show (open_dialog);
+			_gedit_file_chooser_open_show (file_chooser);
 			return;
 		}
 
@@ -440,25 +440,22 @@ _gedit_cmd_file_open (GSimpleAction *action,
 		gtk_widget_hide (GTK_WIDGET (window->priv->fullscreen_open_document_popover));
 	}
 
-	/* Translators: "Open Files" is the title of the file chooser window. */
-	open_dialog = gedit_file_chooser_dialog_create (C_("window title", "Open Files"),
-							window != NULL ? GTK_WINDOW (window) : NULL,
-							GEDIT_FILE_CHOOSER_OPEN,
-							_("_Open"),
-							_("_Cancel"));
+	file_chooser = _gedit_file_chooser_open_new ();
 
 	if (window != NULL)
 	{
 		GeditDocument *doc;
 		GFile *default_folder = NULL;
 
-		/* The file chooser dialog for opening files is not modal, so
-		 * ensure that at most one file chooser is opened per main
-		 * window.
+		_gedit_file_chooser_open_set_transient_for (file_chooser, GTK_WINDOW (window));
+
+		/* The file chooser dialog for opening files is not necessarily
+		 * modal, so ensure that at most one file chooser is opened per
+		 * main window.
 		 */
 		g_object_set_data_full (G_OBJECT (window),
-					GEDIT_OPEN_DIALOG_KEY,
-					g_object_ref (open_dialog),
+					GEDIT_FILE_CHOOSER_OPEN_KEY,
+					g_object_ref (file_chooser),
 					g_object_unref);
 
 		/* Set the current folder */
@@ -482,17 +479,22 @@ _gedit_cmd_file_open (GSimpleAction *action,
 
 		if (default_folder != NULL)
 		{
-			gedit_file_chooser_dialog_set_current_folder (open_dialog, default_folder);
+			gchar *default_folder_uri;
+
+			default_folder_uri = g_file_get_uri (default_folder);
+			_gedit_file_chooser_open_set_current_folder_uri (file_chooser, default_folder_uri);
+
 			g_object_unref (default_folder);
+			g_free (default_folder_uri);
 		}
 	}
 
-	g_signal_connect (open_dialog,
-			  "response",
-			  G_CALLBACK (open_dialog_response_cb),
+	g_signal_connect (file_chooser,
+			  "done",
+			  G_CALLBACK (file_chooser_open_done_cb),
 			  window);
 
-	gedit_file_chooser_dialog_show (open_dialog);
+	_gedit_file_chooser_open_show (file_chooser);
 }
 
 void
