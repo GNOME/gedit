@@ -45,7 +45,6 @@
 #include "gedit-file-chooser-open.h"
 #include "gedit-close-confirmation-dialog.h"
 
-#define GEDIT_FILE_CHOOSER_OPEN_KEY "gedit-file-chooser-open-key"
 #define GEDIT_IS_CLOSING_ALL "gedit-is-closing-all"
 #define GEDIT_NOTEBOOK_TO_CLOSE "gedit-notebook-to-close"
 #define GEDIT_IS_QUITTING "gedit-is-quitting"
@@ -374,21 +373,12 @@ file_chooser_open_done_cb (GeditFileChooserOpen *file_chooser,
 	if (!accept)
 	{
 		g_object_unref (file_chooser);
-		if (window != NULL)
-		{
-			g_object_set_data (G_OBJECT (window), GEDIT_FILE_CHOOSER_OPEN_KEY, NULL);
-		}
 		return;
 	}
 
 	files = _gedit_file_chooser_open_get_files (file_chooser);
 	encoding = _gedit_file_chooser_open_get_encoding (file_chooser);
-
 	g_object_unref (file_chooser);
-	if (window != NULL)
-	{
-		g_object_set_data (G_OBJECT (window), GEDIT_FILE_CHOOSER_OPEN_KEY, NULL);
-	}
 
 	if (window == NULL)
 	{
@@ -425,21 +415,6 @@ _gedit_cmd_file_open (GSimpleAction *action,
 		window = GEDIT_WINDOW (user_data);
 	}
 
-	if (window != NULL)
-	{
-		file_chooser = GEDIT_FILE_CHOOSER_OPEN (g_object_get_data (G_OBJECT (window),
-									   GEDIT_FILE_CHOOSER_OPEN_KEY));
-		if (file_chooser != NULL)
-		{
-			_gedit_file_chooser_open_show (file_chooser);
-			return;
-		}
-
-		/* FIXME: this should be in GeditWindow. */
-		gtk_widget_hide (GTK_WIDGET (window->priv->open_document_popover));
-		gtk_widget_hide (GTK_WIDGET (window->priv->fullscreen_open_document_popover));
-	}
-
 	file_chooser = _gedit_file_chooser_open_new ();
 
 	if (window != NULL)
@@ -448,15 +423,6 @@ _gedit_cmd_file_open (GSimpleAction *action,
 		GFile *default_folder = NULL;
 
 		_gedit_file_chooser_open_set_transient_for (file_chooser, GTK_WINDOW (window));
-
-		/* The file chooser dialog for opening files is not necessarily
-		 * modal, so ensure that at most one file chooser is opened per
-		 * main window.
-		 */
-		g_object_set_data_full (G_OBJECT (window),
-					GEDIT_FILE_CHOOSER_OPEN_KEY,
-					g_object_ref (file_chooser),
-					g_object_unref);
 
 		/* Set the current folder */
 		doc = gedit_window_get_active_document (window);
