@@ -21,14 +21,15 @@
 #ifndef GEDIT_FILE_CHOOSER_DIALOG_H
 #define GEDIT_FILE_CHOOSER_DIALOG_H
 
-#include <gtk/gtk.h>
 #include <gtksourceview/gtksource.h>
 
 G_BEGIN_DECLS
 
 #define GEDIT_TYPE_FILE_CHOOSER_DIALOG (gedit_file_chooser_dialog_get_type ())
 
-G_DECLARE_INTERFACE (GeditFileChooserDialog, gedit_file_chooser_dialog, GEDIT, FILE_CHOOSER_DIALOG, GObject)
+G_DECLARE_INTERFACE (GeditFileChooserDialog, gedit_file_chooser_dialog,
+		     GEDIT, FILE_CHOOSER_DIALOG,
+		     GObject)
 
 struct _GeditFileChooserDialogInterface
 {
@@ -82,8 +83,8 @@ struct _GeditFileChooserDialogInterface
 
 typedef enum
 {
-	GEDIT_FILE_CHOOSER_SAVE = 1 << 0,
-	GEDIT_FILE_CHOOSER_OPEN = 1 << 1
+	GEDIT_FILE_CHOOSER_FLAG_SAVE = 1 << 0,
+	GEDIT_FILE_CHOOSER_FLAG_OPEN = 1 << 1
 } GeditFileChooserFlags;
 
 GeditFileChooserDialog *

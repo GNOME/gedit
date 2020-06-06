@@ -402,7 +402,7 @@ fill_encodings (GeditFileChooserDialogOSX *dialog)
 		{
 			i++;
 
-			if ((dialog->flags & GEDIT_FILE_CHOOSER_OPEN) != 0 && first == 0)
+			if ((dialog->flags & GEDIT_FILE_CHOOSER_FLAG_OPEN) != 0 && first == 0)
 			{
 				first = i;
 			}
@@ -554,7 +554,7 @@ create_encoding_combo (GeditFileChooserDialogOSX *dialog,
 
 	menu = [button menu];
 
-	if ((dialog->flags & GEDIT_FILE_CHOOSER_OPEN) != 0)
+	if ((dialog->flags & GEDIT_FILE_CHOOSER_FLAG_OPEN) != 0)
 	{
 		NSString *title;
 
@@ -666,7 +666,7 @@ create_extra_widget (GeditFileChooserDialogOSX *dialog)
 
 	minw += create_encoding_combo (dialog, container);
 
-	if ((dialog->flags & GEDIT_FILE_CHOOSER_SAVE) != 0)
+	if ((dialog->flags & GEDIT_FILE_CHOOSER_FLAG_SAVE) != 0)
 	{
 		minw += create_newline_combo (dialog, container);
 	}
@@ -884,7 +884,7 @@ gedit_file_chooser_dialog_osx_create (const gchar           *title,
 
 	ret = g_object_new (GEDIT_TYPE_FILE_CHOOSER_DIALOG_OSX, NULL);
 
-	if ((flags & GEDIT_FILE_CHOOSER_SAVE) != 0)
+	if ((flags & GEDIT_FILE_CHOOSER_FLAG_SAVE) != 0)
 	{
 		NSSavePanel *panel = [[NSSavePanel savePanel] retain];
 

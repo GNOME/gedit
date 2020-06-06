@@ -831,7 +831,7 @@ save_as_tab_async (GeditTab            *tab,
 	/* Translators: "Save As" is the title of the file chooser window. */
 	save_dialog = gedit_file_chooser_dialog_create (C_("window title", "Save As"),
 							GTK_WINDOW (window),
-							GEDIT_FILE_CHOOSER_SAVE,
+							GEDIT_FILE_CHOOSER_FLAG_SAVE,
 							_("_Save"),
 							_("_Cancel"));
 

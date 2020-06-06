@@ -305,7 +305,7 @@ create_option_menu (GeditFileChooserDialogGtk *dialog,
 	label = gtk_label_new_with_mnemonic (_("C_haracter Encoding:"));
 	gtk_widget_set_halign (label, GTK_ALIGN_START);
 
-	save_mode = (flags & GEDIT_FILE_CHOOSER_SAVE) != 0;
+	save_mode = (flags & GEDIT_FILE_CHOOSER_FLAG_SAVE) != 0;
 	menu = gedit_encodings_combo_box_new (save_mode);
 
 	gtk_label_set_mnemonic_widget (GTK_LABEL (label), menu);
@@ -425,7 +425,7 @@ create_extra_widget (GeditFileChooserDialogGtk *dialog,
 
 	create_option_menu (dialog, flags);
 
-	if ((flags & GEDIT_FILE_CHOOSER_SAVE) != 0)
+	if ((flags & GEDIT_FILE_CHOOSER_FLAG_SAVE) != 0)
 	{
 		create_newline_combo (dialog);
 	}
@@ -587,7 +587,7 @@ gedit_file_chooser_dialog_gtk_create (const gchar           *title,
 	GtkFileChooserAction action;
 	gboolean select_multiple;
 
-	if ((flags & GEDIT_FILE_CHOOSER_SAVE) != 0)
+	if ((flags & GEDIT_FILE_CHOOSER_FLAG_SAVE) != 0)
 	{
 		action = GTK_FILE_CHOOSER_ACTION_SAVE;
 		select_multiple = FALSE;
