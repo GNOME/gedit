@@ -112,6 +112,13 @@ create_dialog (GeditFileChooserOpen *chooser,
 								  _("_Open"),
 								  _("_Cancel"));
 
+	/* No need to manually add the dialog window to the GtkWindowGroup of
+	 * the parent, setting the parent above is enough.
+	 * (but not tested on macOS).
+	 */
+
+	gedit_file_chooser_dialog_set_modal (chooser->priv->dialog, TRUE);
+
 	g_signal_connect (chooser->priv->dialog,
 			  "response",
 			  G_CALLBACK (dialog_response_cb),
