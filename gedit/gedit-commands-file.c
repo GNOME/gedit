@@ -419,9 +419,9 @@ _gedit_cmd_file_open (GSimpleAction *action,
 
 	gedit_debug (DEBUG_COMMANDS);
 
-	if (GEDIT_IS_WINDOW (user_data))
+	if (user_data != NULL)
 	{
-		window = user_data;
+		window = GEDIT_WINDOW (user_data);
 	}
 
 	if (window != NULL)
