@@ -160,3 +160,12 @@ _gedit_file_chooser_open_set_current_folder_uri (GeditFileChooserOpen *chooser,
 
 	gtk_file_chooser_set_current_folder_uri (GTK_FILE_CHOOSER (chooser->priv->chooser_native), uri);
 }
+
+const GtkSourceEncoding *
+_gedit_file_chooser_open_get_encoding (GeditFileChooserOpen *chooser)
+{
+	g_return_val_if_fail (GEDIT_IS_FILE_CHOOSER_OPEN (chooser), NULL);
+
+	/* Stub */
+	return NULL;
+}

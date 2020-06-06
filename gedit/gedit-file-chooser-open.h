@@ -70,6 +70,10 @@ G_GNUC_INTERNAL
 void			_gedit_file_chooser_open_set_current_folder_uri	(GeditFileChooserOpen *chooser,
 									 const gchar          *uri);
 
+G_GNUC_INTERNAL
+const GtkSourceEncoding *
+			_gedit_file_chooser_open_get_encoding		(GeditFileChooserOpen *chooser);
+
 G_END_DECLS
 
 #endif /* GEDIT_FILE_CHOOSER_OPEN_H */
