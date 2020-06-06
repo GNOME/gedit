@@ -36,6 +36,7 @@ struct _GeditSettings
 	GSettings *settings_interface;
 	GSettings *settings_editor;
 	GSettings *settings_ui;
+	GSettings *settings_file_chooser_state;
 };
 
 /* GeditSettings is a singleton. */
@@ -51,6 +52,7 @@ gedit_settings_dispose (GObject *object)
 	g_clear_object (&self->settings_interface);
 	g_clear_object (&self->settings_editor);
 	g_clear_object (&self->settings_ui);
+	g_clear_object (&self->settings_file_chooser_state);
 
 	G_OBJECT_CLASS (gedit_settings_parent_class)->dispose (object);
 }
@@ -249,6 +251,7 @@ gedit_settings_init (GeditSettings *self)
 {
 	self->settings_editor = g_settings_new ("org.gnome.gedit.preferences.editor");
 	self->settings_ui = g_settings_new ("org.gnome.gedit.preferences.ui");
+	self->settings_file_chooser_state = g_settings_new ("org.gnome.gedit.state.file-chooser");
 
 	self->settings_interface = g_settings_new ("org.gnome.desktop.interface");
 
@@ -316,6 +319,14 @@ _gedit_settings_peek_editor_settings (GeditSettings *self)
 	g_return_val_if_fail (GEDIT_IS_SETTINGS (self), NULL);
 
 	return self->settings_editor;
+}
+
+GSettings *
+_gedit_settings_peek_file_chooser_state_settings (GeditSettings *self)
+{
+	g_return_val_if_fail (GEDIT_IS_SETTINGS (self), NULL);
+
+	return self->settings_file_chooser_state;
 }
 
 gchar *

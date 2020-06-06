@@ -33,16 +33,19 @@ G_BEGIN_DECLS
 G_DECLARE_FINAL_TYPE (GeditSettings, gedit_settings, GEDIT, SETTINGS, GObject)
 
 G_GNUC_INTERNAL
-GeditSettings *	_gedit_settings_get_singleton			(void);
+GeditSettings *	_gedit_settings_get_singleton				(void);
 
-void		gedit_settings_unref_singleton			(void);
+void		gedit_settings_unref_singleton				(void);
 
 G_GNUC_INTERNAL
-GSettings *	_gedit_settings_peek_editor_settings		(GeditSettings *self);
+GSettings *	_gedit_settings_peek_editor_settings			(GeditSettings *self);
 
-gchar *		gedit_settings_get_system_font			(GeditSettings *self);
+G_GNUC_INTERNAL
+GSettings *	_gedit_settings_peek_file_chooser_state_settings	(GeditSettings *self);
 
-GSList *	gedit_settings_get_candidate_encodings		(gboolean *default_candidates);
+gchar *		gedit_settings_get_system_font				(GeditSettings *self);
+
+GSList *	gedit_settings_get_candidate_encodings			(gboolean *default_candidates);
 
 /* key constants */
 #define GEDIT_SETTINGS_USE_DEFAULT_FONT			"use-default-font"
