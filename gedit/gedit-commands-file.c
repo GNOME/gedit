@@ -366,7 +366,7 @@ open_dialog_response_cb (GeditFileChooserDialog *dialog,
 {
 	GSList *files;
 	const GtkSourceEncoding *encoding;
-	GSList *loaded_files;
+	GSList *loaded_documents;
 
 	gedit_debug (DEBUG_COMMANDS);
 
@@ -382,8 +382,6 @@ open_dialog_response_cb (GeditFileChooserDialog *dialog,
 	}
 
 	files = gedit_file_chooser_dialog_get_files (dialog);
-	g_return_if_fail (files != NULL);
-
 	encoding = gedit_file_chooser_dialog_get_encoding (dialog);
 
 	gedit_file_chooser_dialog_destroy (dialog);
@@ -400,12 +398,15 @@ open_dialog_response_cb (GeditFileChooserDialog *dialog,
 		gtk_window_present (GTK_WINDOW (window));
 	}
 
-	/* Remember the folder we navigated to */
-	_gedit_window_set_default_location (window, files->data);
+	/* Remember the folder we navigated to. */
+	if (files != NULL)
+	{
+		_gedit_window_set_default_location (window, files->data);
+	}
 
-	loaded_files = gedit_commands_load_locations (window, files, encoding, 0, 0);
+	loaded_documents = gedit_commands_load_locations (window, files, encoding, 0, 0);
 
-	g_slist_free (loaded_files);
+	g_slist_free (loaded_documents);
 	g_slist_free_full (files, g_object_unref);
 }
 
