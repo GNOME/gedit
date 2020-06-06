@@ -215,7 +215,6 @@ gedit_window_dispose (GObject *object)
 
 	g_clear_object (&window->priv->message_bus);
 	g_clear_object (&window->priv->window_group);
-	g_clear_object (&window->priv->default_location);
 
 	/* We must free the settings after saving the panels */
 	g_clear_object (&window->priv->editor_settings);
@@ -246,6 +245,7 @@ gedit_window_finalize (GObject *object)
 {
 	GeditWindow *window = GEDIT_WINDOW (object);
 
+	g_free (window->priv->file_chooser_folder_uri);
 	g_slist_free_full (window->priv->closed_docs_stack, (GDestroyNotify)g_object_unref);
 
 	G_OBJECT_CLASS (gedit_window_parent_class)->finalize (object);
@@ -3434,26 +3434,31 @@ _gedit_window_get_default_location (GeditWindow *window)
 {
 	g_return_val_if_fail (GEDIT_IS_WINDOW (window), NULL);
 
-	return window->priv->default_location != NULL ?
-		g_object_ref (window->priv->default_location) : NULL;
+	if (window->priv->file_chooser_folder_uri == NULL)
+	{
+		return NULL;
+	}
+
+	return g_file_new_for_uri (window->priv->file_chooser_folder_uri);
 }
 
 void
 _gedit_window_set_default_location (GeditWindow *window,
 				    GFile       *location)
 {
-	GFile *dir;
+	GFile *folder;
 
 	g_return_if_fail (GEDIT_IS_WINDOW (window));
 	g_return_if_fail (G_IS_FILE (location));
 
-	dir = g_file_get_parent (location);
-	g_return_if_fail (dir != NULL);
+	folder = g_file_get_parent (location);
+	if (folder != NULL)
+	{
+		g_free (window->priv->file_chooser_folder_uri);
+		window->priv->file_chooser_folder_uri = g_file_get_uri (folder);
 
-	if (window->priv->default_location != NULL)
-		g_object_unref (window->priv->default_location);
-
-	window->priv->default_location = dir;
+		g_object_unref (folder);
+	}
 }
 
 static void

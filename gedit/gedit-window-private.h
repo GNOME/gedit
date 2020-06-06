@@ -107,7 +107,7 @@ struct _GeditWindowPrivate
 
 	GtkWindowGroup *window_group;
 
-	GFile          *default_location;
+	gchar          *file_chooser_folder_uri;
 
 	gchar          *direct_save_uri;
 
