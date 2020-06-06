@@ -95,7 +95,6 @@ libgedit_private_sources = [
   'gedit-encodings-dialog.c',
   'gedit-file-chooser-dialog.c',
   'gedit-file-chooser-dialog-gtk.c',
-  'gedit-file-chooser-open.c',
   'gedit-highlight-mode-dialog.c',
   'gedit-highlight-mode-selector.c',
   'gedit-history-entry.c',
@@ -120,6 +119,10 @@ libgedit_private_sources = [
   'gedit-status-menu-button.c',
   'gedit-tab-label.c',
   'gedit-view-frame.c',
+
+  # Feature toggle:
+  #'gedit-file-chooser-open.c',
+  'gedit-file-chooser-open-adapter.c',
 ]
 
 libgedit_c_args = []
