@@ -862,23 +862,26 @@ save_as_tab_async (GeditTab            *tab,
 	}
 	else
 	{
-		GFile *default_path;
+		GFile *default_folder;
 		gchar *docname;
 
-		default_path = _gedit_window_get_default_location (window);
-		docname = gedit_document_get_short_name_for_display (doc);
-
-		if (default_path != NULL)
+		default_folder = _gedit_window_get_default_location (window);
+		if (default_folder == NULL)
 		{
-			gedit_file_chooser_dialog_set_current_folder (save_dialog,
-								      default_path);
-
-			g_object_unref (default_path);
+			/* It's logical to take the home dir by default, and it fixes
+			 * a problem on MS Windows (hang in C:\windows\system32).
+			 *
+			 * FIXME: it would be better to use GtkFileChooserNative
+			 * to permanently fix the hang problem on MS Windows.
+			 */
+			default_folder = g_file_new_for_path (g_get_home_dir ());
 		}
 
-		gedit_file_chooser_dialog_set_current_name (save_dialog,
-							    docname);
+		gedit_file_chooser_dialog_set_current_folder (save_dialog, default_folder);
+		g_object_unref (default_folder);
 
+		docname = gedit_document_get_short_name_for_display (doc);
+		gedit_file_chooser_dialog_set_current_name (save_dialog, docname);
 		g_free (docname);
 	}
 
