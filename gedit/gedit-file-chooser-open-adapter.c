@@ -21,6 +21,17 @@
 #include <glib/gi18n.h>
 #include "gedit-file-chooser-dialog.h"
 
+/* This file implements the gedit-file-chooser-open.h C interface by using a
+ * GeditFileChooserDialog. It's an adapter to be able to use
+ * GeditFileChooserDialog through the newer GeditFileChooserOpen interface.
+ *
+ * The goal is to port gedit gradually to GtkFileChooserNative, to get rid of
+ * GeditFileChooserDialog.
+ *
+ * When gedit-file-chooser-open.c is fully implemented, we can toggle to it,
+ * just removing this file and build the other one instead.
+ */
+
 struct _GeditFileChooserOpenPrivate
 {
 	GeditFileChooserDialog *dialog;
