@@ -155,7 +155,7 @@ gboolean	 _gedit_window_is_removing_tabs		(GeditWindow         *window);
 GFile		*_gedit_window_get_default_location 	(GeditWindow         *window);
 
 void		 _gedit_window_set_default_location 	(GeditWindow         *window,
-							 GFile               *location);
+							 GFile               *folder);
 
 void		 _gedit_window_fullscreen		(GeditWindow         *window);
 

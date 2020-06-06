@@ -366,6 +366,8 @@ file_chooser_open_done_cb (GeditFileChooserOpen *file_chooser,
 {
 	GSList *files;
 	const GtkSourceEncoding *encoding;
+	gchar *folder_uri;
+	GFile *folder = NULL;
 	GSList *loaded_documents;
 
 	gedit_debug (DEBUG_COMMANDS);
@@ -378,6 +380,7 @@ file_chooser_open_done_cb (GeditFileChooserOpen *file_chooser,
 
 	files = _gedit_file_chooser_open_get_files (file_chooser);
 	encoding = _gedit_file_chooser_open_get_encoding (file_chooser);
+	folder_uri = _gedit_file_chooser_open_get_current_folder_uri (file_chooser);
 	g_object_unref (file_chooser);
 
 	if (window == NULL)
@@ -389,10 +392,13 @@ file_chooser_open_done_cb (GeditFileChooserOpen *file_chooser,
 	}
 
 	/* Remember the folder we navigated to. */
-	if (files != NULL)
+	if (folder_uri != NULL)
 	{
-		_gedit_window_set_default_location (window, files->data);
+		folder = g_file_new_for_uri (folder_uri);
+		g_free (folder_uri);
 	}
+	_gedit_window_set_default_location (window, folder);
+	g_clear_object (&folder);
 
 	loaded_documents = gedit_commands_load_locations (window, files, encoding, 0, 0);
 
@@ -706,7 +712,16 @@ save_dialog_response_cb (GeditFileChooserDialog *dialog,
 	g_free (parse_name);
 
 	/* Let's remember the dir we navigated to, even if the saving fails... */
-	_gedit_window_set_default_location (window, location);
+	{
+		GFile *folder;
+
+		folder = g_file_get_parent (location);
+		if (folder != NULL)
+		{
+			_gedit_window_set_default_location (window, folder);
+			g_object_unref (folder);
+		}
+	}
 
 	_gedit_tab_save_as_async (tab,
 				  location,

@@ -3444,20 +3444,17 @@ _gedit_window_get_default_location (GeditWindow *window)
 
 void
 _gedit_window_set_default_location (GeditWindow *window,
-				    GFile       *location)
+				    GFile       *folder)
 {
-	GFile *folder;
-
 	g_return_if_fail (GEDIT_IS_WINDOW (window));
-	g_return_if_fail (G_IS_FILE (location));
+	g_return_if_fail (folder == NULL || G_IS_FILE (folder));
 
-	folder = g_file_get_parent (location);
+	g_free (window->priv->file_chooser_folder_uri);
+	window->priv->file_chooser_folder_uri = NULL;
+
 	if (folder != NULL)
 	{
-		g_free (window->priv->file_chooser_folder_uri);
 		window->priv->file_chooser_folder_uri = g_file_get_uri (folder);
-
-		g_object_unref (folder);
 	}
 }
 
