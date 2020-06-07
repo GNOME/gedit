@@ -29,7 +29,6 @@ gedit_help_sources = [
   'gedit-replace.page',
   'gedit-save-file.page',
   'gedit-search.page',
-  'gedit-shortcut-keys.page',
   'gedit-spellcheck.page',
   'gedit-syntax-highlighting.page',
   'gedit-tab-groups.page',
