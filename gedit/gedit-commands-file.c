@@ -391,7 +391,7 @@ file_chooser_open_done_cb (GeditFileChooserOpen *file_chooser,
 	}
 
 	/* Remember the folder we navigated to. */
-	_gedit_window_set_file_chooser_folder_uri (window, folder_uri);
+	_gedit_window_set_file_chooser_folder_uri (window, GTK_FILE_CHOOSER_ACTION_OPEN, folder_uri);
 	g_free (folder_uri);
 
 	loaded_documents = gedit_commands_load_locations (window, files, encoding, 0, 0);
@@ -423,7 +423,7 @@ _gedit_cmd_file_open (GSimpleAction *action,
 
 		_gedit_file_chooser_open_set_transient_for (file_chooser, GTK_WINDOW (window));
 
-		folder_uri = _gedit_window_get_file_chooser_folder_uri (window);
+		folder_uri = _gedit_window_get_file_chooser_folder_uri (window, GTK_FILE_CHOOSER_ACTION_OPEN);
 		if (folder_uri != NULL)
 		{
 			_gedit_file_chooser_open_set_current_folder_uri (file_chooser, folder_uri);
@@ -690,7 +690,9 @@ save_dialog_response_cb (GeditFileChooserDialog *dialog,
 			gchar *folder_uri;
 
 			folder_uri = g_file_get_uri (folder);
-			_gedit_window_set_file_chooser_folder_uri (window, folder_uri);
+			_gedit_window_set_file_chooser_folder_uri (window,
+								   GTK_FILE_CHOOSER_ACTION_SAVE,
+								   folder_uri);
 
 			g_object_unref (folder);
 			g_free (folder_uri);
@@ -824,7 +826,8 @@ save_as_tab_async (GeditTab            *tab,
 		GFile *default_folder;
 		gchar *docname;
 
-		default_folder_uri = _gedit_window_get_file_chooser_folder_uri (window);
+		default_folder_uri = _gedit_window_get_file_chooser_folder_uri (window,
+										GTK_FILE_CHOOSER_ACTION_SAVE);
 		if (default_folder_uri != NULL)
 		{
 			default_folder = g_file_new_for_uri (default_folder_uri);

@@ -3430,18 +3430,24 @@ gedit_window_get_state (GeditWindow *window)
 }
 
 const gchar *
-_gedit_window_get_file_chooser_folder_uri (GeditWindow *window)
+_gedit_window_get_file_chooser_folder_uri (GeditWindow          *window,
+					   GtkFileChooserAction  action)
 {
 	g_return_val_if_fail (GEDIT_IS_WINDOW (window), NULL);
+	g_return_val_if_fail ((action == GTK_FILE_CHOOSER_ACTION_OPEN) ||
+			      (action == GTK_FILE_CHOOSER_ACTION_SAVE), NULL);
 
 	return window->priv->file_chooser_folder_uri;
 }
 
 void
-_gedit_window_set_file_chooser_folder_uri (GeditWindow *window,
-					   const gchar *folder_uri)
+_gedit_window_set_file_chooser_folder_uri (GeditWindow          *window,
+					   GtkFileChooserAction  action,
+					   const gchar          *folder_uri)
 {
 	g_return_if_fail (GEDIT_IS_WINDOW (window));
+	g_return_if_fail ((action == GTK_FILE_CHOOSER_ACTION_OPEN) ||
+			  (action == GTK_FILE_CHOOSER_ACTION_SAVE));
 
 	g_free (window->priv->file_chooser_folder_uri);
 	window->priv->file_chooser_folder_uri = g_strdup (folder_uri);

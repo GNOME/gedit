@@ -153,11 +153,13 @@ void             _gedit_window_move_tab_to_new_tab_group(GeditWindow         *wi
 gboolean	 _gedit_window_is_removing_tabs		(GeditWindow         *window);
 
 const gchar	*_gedit_window_get_file_chooser_folder_uri
-							(GeditWindow         *window);
+							(GeditWindow          *window,
+							 GtkFileChooserAction  action);
 
 void		 _gedit_window_set_file_chooser_folder_uri
-							(GeditWindow         *window,
-							 const gchar         *folder_uri);
+							(GeditWindow          *window,
+							 GtkFileChooserAction  action,
+							 const gchar          *folder_uri);
 
 void		 _gedit_window_fullscreen		(GeditWindow         *window);
 
