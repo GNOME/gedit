@@ -3437,6 +3437,21 @@ _gedit_window_get_file_chooser_folder_uri (GeditWindow          *window,
 	g_return_val_if_fail ((action == GTK_FILE_CHOOSER_ACTION_OPEN) ||
 			      (action == GTK_FILE_CHOOSER_ACTION_SAVE), NULL);
 
+	if (action == GTK_FILE_CHOOSER_ACTION_OPEN)
+	{
+		GeditSettings *settings;
+		GSettings *file_chooser_state_settings;
+
+		settings = _gedit_settings_get_singleton ();
+		file_chooser_state_settings = _gedit_settings_peek_file_chooser_state_settings (settings);
+
+		if (g_settings_get_boolean (file_chooser_state_settings,
+					    GEDIT_SETTINGS_FILE_CHOOSER_OPEN_RECENT))
+		{
+			return NULL;
+		}
+	}
+
 	return window->priv->file_chooser_folder_uri;
 }
 
@@ -3448,6 +3463,28 @@ _gedit_window_set_file_chooser_folder_uri (GeditWindow          *window,
 	g_return_if_fail (GEDIT_IS_WINDOW (window));
 	g_return_if_fail ((action == GTK_FILE_CHOOSER_ACTION_OPEN) ||
 			  (action == GTK_FILE_CHOOSER_ACTION_SAVE));
+
+	if (action == GTK_FILE_CHOOSER_ACTION_OPEN)
+	{
+		GeditSettings *settings;
+		GSettings *file_chooser_state_settings;
+		gboolean open_recent = folder_uri == NULL;
+
+		settings = _gedit_settings_get_singleton ();
+		file_chooser_state_settings = _gedit_settings_peek_file_chooser_state_settings (settings);
+
+		g_settings_set_boolean (file_chooser_state_settings,
+					GEDIT_SETTINGS_FILE_CHOOSER_OPEN_RECENT,
+					open_recent);
+
+		if (open_recent)
+		{
+			/* Do not set window->priv->file_chooser_folder_uri to
+			 * NULL, to not lose the folder for the Save action.
+			 */
+			return;
+		}
+	}
 
 	g_free (window->priv->file_chooser_folder_uri);
 	window->priv->file_chooser_folder_uri = g_strdup (folder_uri);
