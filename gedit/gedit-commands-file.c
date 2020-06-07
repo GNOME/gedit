@@ -425,30 +425,12 @@ _gedit_cmd_file_open (GSimpleAction *action,
 
 	if (window != NULL)
 	{
-		GeditDocument *doc;
 		GFile *default_folder = NULL;
 
 		_gedit_file_chooser_open_set_transient_for (file_chooser, GTK_WINDOW (window));
 
 		/* Set the current folder */
-		doc = gedit_window_get_active_document (window);
-
-		if (doc != NULL)
-		{
-			GtkSourceFile *file = gedit_document_get_file (doc);
-			GFile *location = gtk_source_file_get_location (file);
-
-			if (location != NULL)
-			{
-				default_folder = g_file_get_parent (location);
-			}
-		}
-
-		if (default_folder == NULL)
-		{
-			default_folder = _gedit_window_get_default_location (window);
-		}
-
+		default_folder = _gedit_window_get_default_location (window);
 		if (default_folder != NULL)
 		{
 			gchar *default_folder_uri;
