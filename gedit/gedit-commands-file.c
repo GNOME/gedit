@@ -367,7 +367,6 @@ file_chooser_open_done_cb (GeditFileChooserOpen *file_chooser,
 	GSList *files;
 	const GtkSourceEncoding *encoding;
 	gchar *folder_uri;
-	GFile *folder = NULL;
 	GSList *loaded_documents;
 
 	gedit_debug (DEBUG_COMMANDS);
@@ -392,13 +391,8 @@ file_chooser_open_done_cb (GeditFileChooserOpen *file_chooser,
 	}
 
 	/* Remember the folder we navigated to. */
-	if (folder_uri != NULL)
-	{
-		folder = g_file_new_for_uri (folder_uri);
-		g_free (folder_uri);
-	}
-	_gedit_window_set_default_location (window, folder);
-	g_clear_object (&folder);
+	_gedit_window_set_file_chooser_folder_uri (window, folder_uri);
+	g_free (folder_uri);
 
 	loaded_documents = gedit_commands_load_locations (window, files, encoding, 0, 0);
 
@@ -425,21 +419,14 @@ _gedit_cmd_file_open (GSimpleAction *action,
 
 	if (window != NULL)
 	{
-		GFile *default_folder = NULL;
+		const gchar *folder_uri;
 
 		_gedit_file_chooser_open_set_transient_for (file_chooser, GTK_WINDOW (window));
 
-		/* Set the current folder */
-		default_folder = _gedit_window_get_default_location (window);
-		if (default_folder != NULL)
+		folder_uri = _gedit_window_get_file_chooser_folder_uri (window);
+		if (folder_uri != NULL)
 		{
-			gchar *default_folder_uri;
-
-			default_folder_uri = g_file_get_uri (default_folder);
-			_gedit_file_chooser_open_set_current_folder_uri (file_chooser, default_folder_uri);
-
-			g_object_unref (default_folder);
-			g_free (default_folder_uri);
+			_gedit_file_chooser_open_set_current_folder_uri (file_chooser, folder_uri);
 		}
 	}
 
@@ -700,8 +687,13 @@ save_dialog_response_cb (GeditFileChooserDialog *dialog,
 		folder = g_file_get_parent (location);
 		if (folder != NULL)
 		{
-			_gedit_window_set_default_location (window, folder);
+			gchar *folder_uri;
+
+			folder_uri = g_file_get_uri (folder);
+			_gedit_window_set_file_chooser_folder_uri (window, folder_uri);
+
 			g_object_unref (folder);
+			g_free (folder_uri);
 		}
 	}
 
@@ -828,11 +820,16 @@ save_as_tab_async (GeditTab            *tab,
 	}
 	else
 	{
+		const gchar *default_folder_uri;
 		GFile *default_folder;
 		gchar *docname;
 
-		default_folder = _gedit_window_get_default_location (window);
-		if (default_folder == NULL)
+		default_folder_uri = _gedit_window_get_file_chooser_folder_uri (window);
+		if (default_folder_uri != NULL)
+		{
+			default_folder = g_file_new_for_uri (default_folder_uri);
+		}
+		else
 		{
 			/* It's logical to take the home dir by default, and it fixes
 			 * a problem on MS Windows (hang in C:\windows\system32).

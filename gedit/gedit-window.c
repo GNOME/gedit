@@ -3429,33 +3429,22 @@ gedit_window_get_state (GeditWindow *window)
 	return window->priv->state;
 }
 
-GFile *
-_gedit_window_get_default_location (GeditWindow *window)
+const gchar *
+_gedit_window_get_file_chooser_folder_uri (GeditWindow *window)
 {
 	g_return_val_if_fail (GEDIT_IS_WINDOW (window), NULL);
 
-	if (window->priv->file_chooser_folder_uri == NULL)
-	{
-		return NULL;
-	}
-
-	return g_file_new_for_uri (window->priv->file_chooser_folder_uri);
+	return window->priv->file_chooser_folder_uri;
 }
 
 void
-_gedit_window_set_default_location (GeditWindow *window,
-				    GFile       *folder)
+_gedit_window_set_file_chooser_folder_uri (GeditWindow *window,
+					   const gchar *folder_uri)
 {
 	g_return_if_fail (GEDIT_IS_WINDOW (window));
-	g_return_if_fail (folder == NULL || G_IS_FILE (folder));
 
 	g_free (window->priv->file_chooser_folder_uri);
-	window->priv->file_chooser_folder_uri = NULL;
-
-	if (folder != NULL)
-	{
-		window->priv->file_chooser_folder_uri = g_file_get_uri (folder);
-	}
+	window->priv->file_chooser_folder_uri = g_strdup (folder_uri);
 }
 
 static void
