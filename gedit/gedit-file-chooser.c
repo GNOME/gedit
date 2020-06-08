@@ -78,42 +78,35 @@ get_supported_mime_types (void)
 		g_strfreev (mime_types);
 	}
 
+	// Note that all "text/*" mime-types are subclasses of "text/plain", see:
+	// https://specifications.freedesktop.org/shared-mime-info-spec/shared-mime-info-spec-latest.html#subclassing
 	supported_mime_types = g_slist_prepend (supported_mime_types, g_strdup ("text/plain"));
 
 	initialized = TRUE;
 	return supported_mime_types;
 }
 
-/* FIXME: use globs too - Paolo (Aug. 27, 2007) */
-static gboolean
-all_text_files_filter (const GtkFileFilterInfo *filter_info,
-		       gpointer                 data)
+static GtkFileFilter *
+create_all_text_files_filter (void)
 {
+	GtkFileFilter *filter;
 	GSList *supported_mime_types;
 	GSList *l;
 
-	if (filter_info->mime_type == NULL)
-	{
-		return FALSE;
-	}
+	filter = gtk_file_filter_new ();
+	gtk_file_filter_set_name (filter, ALL_TEXT_FILES);
 
 	supported_mime_types = get_supported_mime_types ();
 	for (l = supported_mime_types; l != NULL; l = l->next)
 	{
-		const gchar *cur_supported_mime_type = l->data;
+		const gchar *mime_type = l->data;
 
-		// Note that "text/plain" is the first supported mime-type in
-		// the list.
-		//
-		// All "text/*" types are subclasses of "text/plain", see:
-		// https://specifications.freedesktop.org/shared-mime-info-spec/shared-mime-info-spec-latest.html#subclassing
-		if (g_content_type_is_a (filter_info->mime_type, cur_supported_mime_type))
-		{
-			return TRUE;
-		}
+		gtk_file_filter_add_mime_type (filter, mime_type);
 	}
 
-	return FALSE;
+	/* FIXME: use globs too - Paolo (Aug. 27, 2007) */
+
+	return filter;
 }
 
 static void
@@ -161,13 +154,7 @@ _gedit_file_chooser_setup_filters (GtkFileChooser *chooser)
 	active_filter = g_settings_get_int (file_chooser_state_settings, GEDIT_SETTINGS_ACTIVE_FILE_FILTER);
 
 	/* "All Text Files" filter */
-	filter = gtk_file_filter_new ();
-	gtk_file_filter_set_name (filter, ALL_TEXT_FILES);
-	gtk_file_filter_add_custom (filter,
-				    GTK_FILE_FILTER_MIME_TYPE,
-				    all_text_files_filter,
-				    NULL,
-				    NULL);
+	filter = create_all_text_files_filter ();
 
 	g_object_ref_sink (filter);
 	gtk_file_chooser_add_filter (chooser, filter);
