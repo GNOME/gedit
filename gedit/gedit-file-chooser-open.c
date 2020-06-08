@@ -106,6 +106,8 @@ _gedit_file_chooser_open_init (GeditFileChooserOpen *chooser)
 	 */
 	gtk_native_dialog_set_modal (GTK_NATIVE_DIALOG (chooser->priv->chooser_native), TRUE);
 
+	gtk_file_chooser_set_local_only (GTK_FILE_CHOOSER (chooser->priv->chooser_native), FALSE);
+
 	g_signal_connect (chooser->priv->chooser_native,
 			  "response",
 			  G_CALLBACK (chooser_native_response_cb),
