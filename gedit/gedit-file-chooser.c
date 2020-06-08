@@ -153,25 +153,29 @@ _gedit_file_chooser_setup_filters (GtkFileChooser *chooser)
 				    all_text_files_filter,
 				    NULL,
 				    NULL);
-	gtk_file_chooser_add_filter (chooser, filter);
 
+	g_object_ref_sink (filter);
+	gtk_file_chooser_add_filter (chooser, filter);
 	if (active_filter != 1)
 	{
 		/* Use this filter if set by user and as default. */
 		gtk_file_chooser_set_filter (chooser, filter);
 	}
+	g_object_unref (filter);
 
 	/* "All Files" filter */
 	filter = gtk_file_filter_new ();
 	gtk_file_filter_set_name (filter, ALL_FILES);
 	gtk_file_filter_add_pattern (filter, "*");
-	gtk_file_chooser_add_filter (chooser, filter);
 
+	g_object_ref_sink (filter);
+	gtk_file_chooser_add_filter (chooser, filter);
 	if (active_filter == 1)
 	{
 		/* Use this filter if set by user. */
 		gtk_file_chooser_set_filter (chooser, filter);
 	}
+	g_object_unref (filter);
 
 	g_signal_connect (chooser,
 			  "notify::filter",
