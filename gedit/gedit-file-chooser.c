@@ -27,6 +27,13 @@
 #define ALL_FILES		_("All Files")
 #define ALL_TEXT_FILES		_("All Text Files")
 
+#ifdef G_OS_WIN32
+#  define MIME_TYPES_ARE_SUPPORTED FALSE
+#else
+#  define MIME_TYPES_ARE_SUPPORTED TRUE
+#endif
+
+#if MIME_TYPES_ARE_SUPPORTED
 /* Returns: (transfer none) (element-type utf8): a list containing "text/plain"
  * first and then the list of mime-types unrelated to "text/plain" that
  * GtkSourceView supports for the syntax highlighting.
@@ -86,25 +93,379 @@ get_supported_mime_types (void)
 	return supported_mime_types;
 }
 
+#else
+
+static const gchar * const *
+get_supported_globs (void)
+{
+	/* List generated with Tepl's shared-mime-info-list-text-plain-globs
+	 * tool.
+	 *
+	 * TODO: can be improved by including globs from GtkSourceLanguage's.
+	 */
+	static const gchar * const supported_globs[] =
+	{
+		"*.abw",
+		"*.adb",
+		"*.ads",
+		"*.al",
+		"*.asc",
+		"*.asp",
+		"*.ass",
+		"*.atom",
+		"*.automount",
+		"*.awk",
+		"*.bib",
+		"*.build",
+		"*.c",
+		"*.c++",
+		"*.cbl",
+		"*.cc",
+		"*.ccmx",
+		"*.cl",
+		"*.cls",
+		"*.cmake",
+		"*.cob",
+		"*.coffee",
+		"*.cpp",
+		"*.cs",
+		"*.csh",
+		"*.css",
+		"*.csv",
+		"*.csvs",
+		"*.cue",
+		"*.cxx",
+		"*.d",
+		"*.dbk",
+		"*.dcl",
+		"*.desktop",
+		"*.device",
+		"*.di",
+		"*.dia",
+		"*.diff",
+		"*.docbook",
+		"*.dot",
+		"*.dsl",
+		"*.dtd",
+		"*.dtx",
+		"*.e",
+		"*.eif",
+		"*.el",
+		"*.eml",
+		"*.ent",
+		"*.eps",
+		"*.epsf",
+		"*.epsi",
+		"*.erl",
+		"*.es",
+		"*.etx",
+		"*.f",
+		"*.f90",
+		"*.f95",
+		"*.fb2",
+		"*.feature",
+		"*.fl",
+		"*.flatpakref",
+		"*.flatpakrepo",
+		"*.fo",
+		"*.fodg",
+		"*.fodp",
+		"*.fods",
+		"*.fodt",
+		"*.for",
+		"*.gcode",
+		"*.gcrd",
+		"*.geojson",
+		"*.glade",
+		"*.gml",
+		"*.gnuplot",
+		"*.go",
+		"*.gp",
+		"*.gpg",
+		"*.gplt",
+		"*.gpx",
+		"*.gradle",
+		"*.groovy",
+		"*.gs",
+		"*.gsf",
+		"*.gsh",
+		"*.gv",
+		"*.gvp",
+		"*.gvy",
+		"*.gy",
+		"*.h",
+		"*.h++",
+		"*.hh",
+		"*.hp",
+		"*.hpp",
+		"*.hs",
+		"*.htm",
+		"*.html",
+		"*.hxx",
+		"*.ica",
+		"*.ics",
+		"*.idl",
+		"*.iges",
+		"*.igs",
+		"*.ime",
+		"*.imy",
+		"*.ins",
+		"*.iptables",
+		"*.ipynb",
+		"*.it87",
+		"*.jad",
+		"*.java",
+		"*.jnlp",
+		"*.jrd",
+		"*.js",
+		"*.jsm",
+		"*.json",
+		"*.jsonld",
+		"*.json-patch",
+		"*.kdelnk",
+		"*.key",
+		"*.kino",
+		"*.kml",
+		"*.la",
+		"*.latex",
+		"*.ldif",
+		"*.lhs",
+		"*.log",
+		"*.ltx",
+		"*.lua",
+		"*.ly",
+		"*.lyx",
+		"*.m",
+		"*.m1u",
+		"*.m3u",
+		"*.m3u8",
+		"*.m4",
+		"*.m4u",
+		"*.mab",
+		"*.mak",
+		"*.man",
+		"*.manifest",
+		"*.markdown",
+		"*.mbox",
+		"*.mc2",
+		"*.md",
+		"*.me",
+		"*.meta4",
+		"*.metalink",
+		"*.mgp",
+		"*.mjs",
+		"*.mk",
+		"*.mkd",
+		"*.ml",
+		"*.mli",
+		"*.mm",
+		"*.mml",
+		"*.mo",
+		"*.moc",
+		"*.mof",
+		"*.mount",
+		"*.mrl",
+		"*.mrml",
+		"*.ms",
+		"*.mup",
+		"*.mxu",
+		"*.nb",
+		"*.nfo",
+		"*.not",
+		"*.nzb",
+		"*.ocl",
+		"*.ooc",
+		"*.opml",
+		"*.owl",
+		"*.owx",
+		"*.p",
+		"*.p7s",
+		"*.pas",
+		"*.patch",
+		"*.path",
+		"*.perl",
+		"*.pfa",
+		"*.pfb",
+		"*.pgn",
+		"*.pgp",
+		"*.php",
+		"*.php3",
+		"*.php4",
+		"*.php5",
+		"*.phps",
+		"*.pkr",
+		"*.pl",
+		"*.pm",
+		"*.po",
+		"*.pod",
+		"*.pot",
+		"*.ps",
+		"*.py",
+		"*.py3",
+		"*.py3x",
+		"*.pyx",
+		"*.qml",
+		"*.qmlproject",
+		"*.qmltypes",
+		"*.qti",
+		"*.raml",
+		"*.rb",
+		"*.rdf",
+		"*.rdfs",
+		"*.rej",
+		"*.rnc",
+		"*.rng",
+		"*.roff",
+		"*.rs",
+		"*.rss",
+		"*.rst",
+		"*.rt",
+		"*.rtf",
+		"*.rtx",
+		"*.sami",
+		"*.sass",
+		"*.scala",
+		"*.scm",
+		"*.scope",
+		"*.scss",
+		"*.sdp",
+		"*.service",
+		"*.sgf",
+		"*.sgm",
+		"*.sgml",
+		"*.sh",
+		"*.shape",
+		"*.sig",
+		"*.siv",
+		"*.skr",
+		"*.slice",
+		"*.slk",
+		"*.smi",
+		"*.smil",
+		"*.sml",
+		"*.socket",
+		"*.spec",
+		"*.sql",
+		"*.src",
+		"*.srt",
+		"*.ss",
+		"*.ssa",
+		"*.sty",
+		"*.sub",
+		"*.sv",
+		"*.svg",
+		"*.svh",
+		"*.swap",
+		"*.sylk",
+		"*.t",
+		"*.t2t",
+		"*.target",
+		"*.tcl",
+		"*.tex",
+		"*.texi",
+		"*.texinfo",
+		"*.theme",
+		"*.timer",
+		"*.tk",
+		"*.toc",
+		"*.tr",
+		"*.trig",
+		"*.ts",
+		"*.tsv",
+		"*.ttl",
+		"*.ttx",
+		"*.twig",
+		"*.txt",
+		"*.ufraw",
+		"*.ui",
+		"*.uil",
+		"*.uue",
+		"*.v",
+		"*.vala",
+		"*.vapi",
+		"*.vcard",
+		"*.vcf",
+		"*.vcs",
+		"*.vct",
+		"*.vhd",
+		"*.vhdl",
+		"*.vlc",
+		"*.vrm",
+		"*.vrml",
+		"*.vtt",
+		"*.wml",
+		"*.wmls",
+		"*.wrl",
+		"*.wsgi",
+		"*.xbel",
+		"*.xbl",
+		"*.xht",
+		"*.xhtml",
+		"*.xlf",
+		"*.xliff",
+		"*.xmi",
+		"*.xml",
+		"*.xsd",
+		"*.xsl",
+		"*.xslfo",
+		"*.xslt",
+		"*.xspf",
+		"*.xul",
+		"*.yaml",
+		"*.yml",
+		"*.zabw",
+		NULL
+	};
+
+	return supported_globs;
+}
+#endif
+
 static GtkFileFilter *
 create_all_text_files_filter (void)
 {
 	GtkFileFilter *filter;
-	GSList *supported_mime_types;
-	GSList *l;
 
 	filter = gtk_file_filter_new ();
 	gtk_file_filter_set_name (filter, ALL_TEXT_FILES);
 
-	supported_mime_types = get_supported_mime_types ();
-	for (l = supported_mime_types; l != NULL; l = l->next)
+#if MIME_TYPES_ARE_SUPPORTED
 	{
-		const gchar *mime_type = l->data;
+		GSList *supported_mime_types;
+		GSList *l;
 
-		gtk_file_filter_add_mime_type (filter, mime_type);
+		supported_mime_types = get_supported_mime_types ();
+		for (l = supported_mime_types; l != NULL; l = l->next)
+		{
+			const gchar *mime_type = l->data;
+
+			gtk_file_filter_add_mime_type (filter, mime_type);
+		}
+
+		/* FIXME: use globs too - Paolo (Aug. 27, 2007).
+		 *
+		 * Yes, use globs too - swilmet (June 2020). Get the list of
+		 * globs from GtkSourceLanguage's, and add them to the filter
+		 * (only those that are not covered by a previously added
+		 * mime-type). Note that the list of extra globs here must be
+		 * computed differently than the list of extra globs for
+		 * get_supported_globs() (see the TODO comment there).
+		 */
 	}
+#else
+	{
+		const gchar * const *supported_globs;
+		gint i;
 
-	/* FIXME: use globs too - Paolo (Aug. 27, 2007) */
+		supported_globs = get_supported_globs ();
+		for (i = 0; supported_globs != NULL && supported_globs[i] != NULL; i++)
+		{
+			const gchar *glob = supported_globs[i];
+
+			gtk_file_filter_add_pattern (filter, glob);
+		}
+	}
+#endif
 
 	return filter;
 }
