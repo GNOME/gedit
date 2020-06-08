@@ -97,22 +97,16 @@ all_text_files_filter (const GtkFileFilterInfo *filter_info,
 		return FALSE;
 	}
 
-	/* The filter is matching:
-	 * - the mime-types beginning with "text/".
-	 * - the mime-types inheriting from a supported mime-type (note that
-	 *   "text/plain" is the first supported mime-type).
-	 */
-
-	if (g_str_has_prefix (filter_info->mime_type, "text/"))
-	{
-		return TRUE;
-	}
-
 	supported_mime_types = get_supported_mime_types ();
 	for (l = supported_mime_types; l != NULL; l = l->next)
 	{
 		const gchar *cur_supported_mime_type = l->data;
 
+		// Note that "text/plain" is the first supported mime-type in
+		// the list.
+		//
+		// All "text/*" types are subclasses of "text/plain", see:
+		// https://specifications.freedesktop.org/shared-mime-info-spec/shared-mime-info-spec-latest.html#subclassing
 		if (g_content_type_is_a (filter_info->mime_type, cur_supported_mime_type))
 		{
 			return TRUE;
