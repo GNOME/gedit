@@ -109,26 +109,28 @@ notify_filter_cb (GtkFileChooser *chooser,
 		  gpointer        user_data)
 {
 	GtkFileFilter *filter;
+	const gchar *name;
+	gint id = 0;
+	GeditSettings *settings;
+	GSettings *file_chooser_state_settings;
+
+	/* Remember the selected filter. */
 
 	filter = gtk_file_chooser_get_filter (chooser);
-	if (filter != NULL)
+	if (filter == NULL)
 	{
-		/* Store ID of selected filter */
-		const gchar *name;
-		gint id = 0;
-		GeditSettings *settings;
-		GSettings *file_chooser_state_settings;
-
-		name = gtk_file_filter_get_name (filter);
-		g_return_if_fail (name != NULL);
-
-		if (strcmp (name, ALL_FILES) == 0)
-			id = 1;
-
-		settings = _gedit_settings_get_singleton ();
-		file_chooser_state_settings = _gedit_settings_peek_file_chooser_state_settings (settings);
-		g_settings_set_int (file_chooser_state_settings, GEDIT_SETTINGS_ACTIVE_FILE_FILTER, id);
+		return;
 	}
+
+	name = gtk_file_filter_get_name (filter);
+	if (g_strcmp0 (name, ALL_FILES) == 0)
+	{
+		id = 1;
+	}
+
+	settings = _gedit_settings_get_singleton ();
+	file_chooser_state_settings = _gedit_settings_peek_file_chooser_state_settings (settings);
+	g_settings_set_int (file_chooser_state_settings, GEDIT_SETTINGS_ACTIVE_FILE_FILTER, id);
 }
 
 void
