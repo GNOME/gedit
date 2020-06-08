@@ -19,6 +19,7 @@
 
 #include "gedit-file-chooser-open.h"
 #include <glib/gi18n.h>
+#include "gedit-file-chooser.h"
 
 struct _GeditFileChooserOpenPrivate
 {
@@ -108,6 +109,7 @@ _gedit_file_chooser_open_init (GeditFileChooserOpen *chooser)
 
 	gtk_file_chooser_set_local_only (GTK_FILE_CHOOSER (chooser->priv->chooser_native), FALSE);
 	gtk_file_chooser_set_select_multiple (GTK_FILE_CHOOSER (chooser->priv->chooser_native), TRUE);
+	_gedit_file_chooser_setup_filters (GTK_FILE_CHOOSER (chooser->priv->chooser_native));
 
 	g_signal_connect (chooser->priv->chooser_native,
 			  "response",
