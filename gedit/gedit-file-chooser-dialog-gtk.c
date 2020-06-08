@@ -23,27 +23,19 @@
 /* TODO: add encoding property */
 
 #include "config.h"
-
 #include "gedit-file-chooser-dialog-gtk.h"
-
 #include <string.h>
-
 #include <glib/gi18n.h>
-
 #include "gedit-encodings-combo-box.h"
 #include "gedit-debug.h"
 #include "gedit-enum-types.h"
 #include "gedit-settings.h"
 #include "gedit-utils.h"
-
-#define ALL_FILES		_("All Files")
-#define ALL_TEXT_FILES		_("All Text Files")
+#include "gedit-file-chooser.h"
 
 struct _GeditFileChooserDialogGtk
 {
 	GtkFileChooserDialog parent_instance;
-
-	GSettings *filter_settings;
 
 	GtkWidget *option_menu;
 	GtkWidget *extra_widget;
@@ -277,21 +269,8 @@ gedit_file_chooser_dialog_gtk_chooser_init (gpointer g_iface,
 }
 
 static void
-gedit_file_chooser_dialog_gtk_dispose (GObject *object)
-{
-	GeditFileChooserDialogGtk *dialog_gtk = GEDIT_FILE_CHOOSER_DIALOG_GTK (object);
-
-	g_clear_object (&dialog_gtk->filter_settings);
-
-	G_OBJECT_CLASS (gedit_file_chooser_dialog_gtk_parent_class)->dispose (object);
-}
-
-static void
 gedit_file_chooser_dialog_gtk_class_init (GeditFileChooserDialogGtkClass *klass)
 {
-	GObjectClass *object_class = G_OBJECT_CLASS (klass);
-
-	object_class->dispose = gedit_file_chooser_dialog_gtk_dispose;
 }
 
 static void
@@ -464,114 +443,8 @@ action_changed (GeditFileChooserDialogGtk *dialog,
 }
 
 static void
-filter_changed (GeditFileChooserDialogGtk *dialog,
-		GParamSpec	       *pspec,
-		gpointer		data)
-{
-	GtkFileFilter *filter;
-
-	filter = gtk_file_chooser_get_filter (GTK_FILE_CHOOSER (dialog));
-	if (filter != NULL)
-	{
-		/* Store ID of selected filter */
-		const gchar *name;
-		gint id = 0;
-
-		name = gtk_file_filter_get_name (filter);
-		g_return_if_fail (name != NULL);
-
-		if (strcmp (name, ALL_FILES) == 0)
-			id = 1;
-
-		gedit_debug_message (DEBUG_COMMANDS, "Active filter: %s (%d)", name, id);
-
-		g_settings_set_int (dialog->filter_settings,
-				    GEDIT_SETTINGS_ACTIVE_FILE_FILTER, id);
-	}
-}
-
-/* FIXME: use globs too - Paolo (Aug. 27, 2007) */
-static gboolean
-all_text_files_filter (const GtkFileFilterInfo *filter_info,
-		       gpointer                 data)
-{
-	static GSList *known_mime_types = NULL;
-	GSList *mime_types;
-
-	if (known_mime_types == NULL)
-	{
-		GtkSourceLanguageManager *lm;
-		const gchar * const *languages;
-
-		lm = gtk_source_language_manager_get_default ();
-		languages = gtk_source_language_manager_get_language_ids (lm);
-
-		while ((languages != NULL) && (*languages != NULL))
-		{
-			gchar **mime_types;
-			gint i;
-			GtkSourceLanguage *lang;
-
-			lang = gtk_source_language_manager_get_language (lm, *languages);
-			g_return_val_if_fail (GTK_SOURCE_IS_LANGUAGE (lang), FALSE);
-			++languages;
-
-			mime_types = gtk_source_language_get_mime_types (lang);
-			if (mime_types == NULL)
-				continue;
-
-			for (i = 0; mime_types[i] != NULL; i++)
-			{
-				if (!g_content_type_is_a (mime_types[i], "text/plain"))
-				{
-					gedit_debug_message (DEBUG_COMMANDS,
-							     "Mime-type %s is not related to text/plain",
-							     mime_types[i]);
-
-					known_mime_types = g_slist_prepend (known_mime_types,
-									    g_strdup (mime_types[i]));
-				}
-			}
-
-			g_strfreev (mime_types);
-		}
-
-		/* known_mime_types always has "text/plain" as first item" */
-		known_mime_types = g_slist_prepend (known_mime_types, g_strdup ("text/plain"));
-	}
-
-	/* known mime_types contains "text/plain" and then the list of mime-types unrelated to "text/plain"
-	 * that gedit recognizes */
-
-	if (filter_info->mime_type == NULL)
-		return FALSE;
-
-	/*
-	 * The filter is matching:
-	 * - the mime-types beginning with "text/"
-	 * - the mime-types inheriting from a known mime-type (note the text/plain is
-	 *   the first known mime-type)
-	 */
-
-	if (strncmp (filter_info->mime_type, "text/", 5) == 0)
-		return TRUE;
-
-	mime_types = known_mime_types;
-	while (mime_types != NULL)
-	{
-		if (g_content_type_is_a (filter_info->mime_type, (const gchar*)mime_types->data))
-			return TRUE;
-
-		mime_types = g_slist_next (mime_types);
-	}
-
-	return FALSE;
-}
-
-static void
 gedit_file_chooser_dialog_gtk_init (GeditFileChooserDialogGtk *dialog)
 {
-	dialog->filter_settings = g_settings_new ("org.gnome.gedit.state.file-chooser");
 }
 
 GeditFileChooserDialog *
@@ -582,8 +455,6 @@ gedit_file_chooser_dialog_gtk_create (const gchar           *title,
 				      const gchar           *cancel_label)
 {
 	GeditFileChooserDialogGtk *result;
-	GtkFileFilter *filter;
-	gint active_filter;
 	GtkFileChooserAction action;
 	gboolean select_multiple;
 
@@ -612,41 +483,7 @@ gedit_file_chooser_dialog_gtk_create (const gchar           *title,
 			  G_CALLBACK (action_changed),
 			  NULL);
 
-	active_filter = g_settings_get_int (result->filter_settings, GEDIT_SETTINGS_ACTIVE_FILE_FILTER);
-	gedit_debug_message (DEBUG_COMMANDS, "Active filter: %d", active_filter);
-
-	/* "All Text Files" filter */
-	filter = gtk_file_filter_new ();
-	gtk_file_filter_set_name (filter, ALL_TEXT_FILES);
-	gtk_file_filter_add_custom (filter,
-				    GTK_FILE_FILTER_MIME_TYPE,
-				    all_text_files_filter,
-				    NULL,
-				    NULL);
-	gtk_file_chooser_add_filter (GTK_FILE_CHOOSER (result), filter);
-
-	if (active_filter != 1)
-	{
-		/* Use this filter if set by user and as default */
-		gtk_file_chooser_set_filter (GTK_FILE_CHOOSER (result), filter);
-	}
-
-	/* "All Files" filter */
-	filter = gtk_file_filter_new ();
-	gtk_file_filter_set_name (filter, ALL_FILES);
-	gtk_file_filter_add_pattern (filter, "*");
-	gtk_file_chooser_add_filter (GTK_FILE_CHOOSER (result), filter);
-
-	if (active_filter == 1)
-	{
-		/* Use this filter if set by user */
-		gtk_file_chooser_set_filter (GTK_FILE_CHOOSER (result), filter);
-	}
-
-	g_signal_connect (result,
-			  "notify::filter",
-			  G_CALLBACK (filter_changed),
-			  NULL);
+	_gedit_file_chooser_setup_filters (GTK_FILE_CHOOSER (result));
 
 	if (parent != NULL)
 	{
