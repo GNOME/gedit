@@ -27,77 +27,96 @@
 #define ALL_FILES		_("All Files")
 #define ALL_TEXT_FILES		_("All Text Files")
 
+/* Returns: (transfer none) (element-type utf8): a list containing "text/plain"
+ * first and then the list of mime-types unrelated to "text/plain" that
+ * GtkSourceView supports for the syntax highlighting.
+ */
+static GSList *
+get_supported_mime_types (void)
+{
+	static GSList *supported_mime_types = NULL;
+	static gboolean initialized = FALSE;
+
+	GtkSourceLanguageManager *language_manager;
+	const gchar * const *language_ids;
+	gint language_num;
+
+	if (initialized)
+	{
+		return supported_mime_types;
+	}
+
+	language_manager = gtk_source_language_manager_get_default ();
+	language_ids = gtk_source_language_manager_get_language_ids (language_manager);
+	for (language_num = 0; language_ids != NULL && language_ids[language_num] != NULL; language_num++)
+	{
+		const gchar *cur_language_id = language_ids[language_num];
+		GtkSourceLanguage *language;
+		gchar **mime_types;
+		gint mime_type_num;
+
+		language = gtk_source_language_manager_get_language (language_manager, cur_language_id);
+		mime_types = gtk_source_language_get_mime_types (language);
+
+		if (mime_types == NULL)
+		{
+			continue;
+		}
+
+		for (mime_type_num = 0; mime_types[mime_type_num] != NULL; mime_type_num++)
+		{
+			const gchar *cur_mime_type = mime_types[mime_type_num];
+
+			if (!g_content_type_is_a (cur_mime_type, "text/plain"))
+			{
+				//g_message ("Mime-type '%s' is not related to 'text/plain'", cur_mime_type);
+				supported_mime_types = g_slist_prepend (supported_mime_types,
+									g_strdup (cur_mime_type));
+			}
+		}
+
+		g_strfreev (mime_types);
+	}
+
+	supported_mime_types = g_slist_prepend (supported_mime_types, g_strdup ("text/plain"));
+
+	initialized = TRUE;
+	return supported_mime_types;
+}
+
 /* FIXME: use globs too - Paolo (Aug. 27, 2007) */
 static gboolean
 all_text_files_filter (const GtkFileFilterInfo *filter_info,
 		       gpointer                 data)
 {
-	static GSList *known_mime_types = NULL;
-	GSList *mime_types;
-
-	if (known_mime_types == NULL)
-	{
-		GtkSourceLanguageManager *lm;
-		const gchar * const *languages;
-
-		lm = gtk_source_language_manager_get_default ();
-		languages = gtk_source_language_manager_get_language_ids (lm);
-
-		while ((languages != NULL) && (*languages != NULL))
-		{
-			gchar **mime_types;
-			gint i;
-			GtkSourceLanguage *lang;
-
-			lang = gtk_source_language_manager_get_language (lm, *languages);
-			g_return_val_if_fail (GTK_SOURCE_IS_LANGUAGE (lang), FALSE);
-			++languages;
-
-			mime_types = gtk_source_language_get_mime_types (lang);
-			if (mime_types == NULL)
-				continue;
-
-			for (i = 0; mime_types[i] != NULL; i++)
-			{
-				if (!g_content_type_is_a (mime_types[i], "text/plain"))
-				{
-					//g_message ("Mime-type '%s' is not related to 'text/plain'", mime_types[i]);
-
-					known_mime_types = g_slist_prepend (known_mime_types,
-									    g_strdup (mime_types[i]));
-				}
-			}
-
-			g_strfreev (mime_types);
-		}
-
-		/* known_mime_types always has "text/plain" as first item" */
-		known_mime_types = g_slist_prepend (known_mime_types, g_strdup ("text/plain"));
-	}
-
-	/* known mime_types contains "text/plain" and then the list of mime-types unrelated to "text/plain"
-	 * that gedit recognizes */
+	GSList *supported_mime_types;
+	GSList *l;
 
 	if (filter_info->mime_type == NULL)
+	{
 		return FALSE;
+	}
 
-	/*
-	 * The filter is matching:
-	 * - the mime-types beginning with "text/"
-	 * - the mime-types inheriting from a known mime-type (note the text/plain is
-	 *   the first known mime-type)
+	/* The filter is matching:
+	 * - the mime-types beginning with "text/".
+	 * - the mime-types inheriting from a supported mime-type (note that
+	 *   "text/plain" is the first supported mime-type).
 	 */
 
-	if (strncmp (filter_info->mime_type, "text/", 5) == 0)
-		return TRUE;
-
-	mime_types = known_mime_types;
-	while (mime_types != NULL)
+	if (g_str_has_prefix (filter_info->mime_type, "text/"))
 	{
-		if (g_content_type_is_a (filter_info->mime_type, (const gchar*)mime_types->data))
-			return TRUE;
+		return TRUE;
+	}
 
-		mime_types = g_slist_next (mime_types);
+	supported_mime_types = get_supported_mime_types ();
+	for (l = supported_mime_types; l != NULL; l = l->next)
+	{
+		const gchar *cur_supported_mime_type = l->data;
+
+		if (g_content_type_is_a (filter_info->mime_type, cur_supported_mime_type))
+		{
+			return TRUE;
+		}
 	}
 
 	return FALSE;
