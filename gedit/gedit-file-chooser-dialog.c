@@ -19,14 +19,8 @@
  */
 
 #include "config.h"
-
 #include "gedit-file-chooser-dialog.h"
-
-#ifdef OS_OSX
-#include "gedit-file-chooser-dialog-osx.h"
-#else
 #include "gedit-file-chooser-dialog-gtk.h"
-#endif
 
 G_DEFINE_INTERFACE (GeditFileChooserDialog, gedit_file_chooser_dialog, G_TYPE_OBJECT)
 
@@ -74,19 +68,11 @@ gedit_file_chooser_dialog_create (const gchar           *title,
 				  const gchar           *accept_label,
 				  const gchar           *cancel_label)
 {
-#ifdef OS_OSX
-	return gedit_file_chooser_dialog_osx_create (title,
-	                                             parent,
-	                                             flags,
-	                                             accept_label,
-	                                             cancel_label);
-#else
 	return gedit_file_chooser_dialog_gtk_create (title,
 	                                             parent,
 	                                             flags,
 	                                             accept_label,
 	                                             cancel_label);
-#endif
 }
 
 void

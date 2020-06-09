@@ -50,7 +50,6 @@ libgedit_private_headers = [
   'gedit-encodings-dialog.h',
   'gedit-file-chooser-dialog-gtk.h',
   'gedit-file-chooser-dialog.h',
-  'gedit-file-chooser-dialog-osx.h',
   'gedit-file-chooser.h',
   'gedit-file-chooser-open.h',
   'gedit-highlight-mode-dialog.h',
@@ -138,7 +137,6 @@ libgedit_deps = [
 if host_machine.system() == 'darwin'
   libgedit_private_sources += [
     'gedit-app-osx.m',
-    'gedit-file-chooser-dialog-osx.m',
   ]
   libgedit_c_args += [
     '-DOS_OSX=1',
