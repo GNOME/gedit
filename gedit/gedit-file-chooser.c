@@ -27,6 +27,9 @@
 #define ALL_FILES		_("All Files")
 #define ALL_TEXT_FILES		_("All Text Files")
 
+/* See the GtkFileChooserNative documentation, a GtkFileFilter with mime-types
+ * is not supported on Windows.
+ */
 #ifdef G_OS_WIN32
 #  define MIME_TYPES_ARE_SUPPORTED FALSE
 #else
