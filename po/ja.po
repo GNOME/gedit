@@ -1,5 +1,5 @@
 # gedit ja.po.
-# Copyright (C) 1999-2020 Free Software Foundation, Inc.
+# Copyright (C) 1999-2016, 2018-2020 Free Software Foundation, Inc.
 # Akira Higuchi <a-higuti@math.sci.hokudai.ac.jp>, 1999
 # Yuusuke Tahara <tahara@gnome.gr.jp>
 # Yukihiro Nakai <nakai@gnome.gr.jp>
@@ -12,7 +12,7 @@
 # Shushi Kurose <md81bird@hitaki.net>, 2010-2011, 2014.
 # Takayuki KUSANO <AE5T-KSN@asahi-net.or.jp>, 2010-2012.
 # Hajime Taira <htaira@redhat.com>, 2011.
-# Jiro Matsuzawa <jmatsuzawa@gnome.org>, 2011, 2013, 2014, 2015, 2016.
+# Jiro Matsuzawa <jmatsuzawa@gnome.org>, 2011, 2013-2016.
 # Kenichi Ito <ken.i54k@gmail.com>, 2016.
 # sujiniku <sujinikusityuu@gmail.com>, 2018.
 # sicklylife <translation@sicklylife.jp>, 2019-2020.
@@ -22,7 +22,7 @@ msgstr ""
 "Project-Id-Version: gedit master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gedit/issues\n"
 "POT-Creation-Date: 2020-06-09 22:13+0000\n"
-"PO-Revision-Date: 2020-02-22 00:00+0900\n"
+"PO-Revision-Date: 2020-06-10 18:45+0900\n"
 "Last-Translator: sicklylife <translation@sicklylife.jp>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
 "Language: ja\n"
@@ -40,17 +40,16 @@ msgid "Edit text files"
 msgstr "テキストファイルを編集します"
 
 #: data/org.gnome.gedit.appdata.xml.in:10
-#, fuzzy
-#| msgid "gedit is a small and lightweight text editor for the GNOME Desktop"
 msgid "gedit is the text editor of the GNOME desktop environment."
-msgstr ""
-"gedit は GNOME デスクトップ用に作成された小型軽量のテキストエディターです。"
+msgstr "gedit は GNOME デスクトップ環境のテキストエディターです。"
 
 #: data/org.gnome.gedit.appdata.xml.in:13
 msgid ""
 "The first goal of gedit is to be easy to use, with a simple interface by "
 "default. More advanced features are available by enabling plugins."
 msgstr ""
+"gedit の第一目標は、デフォルトのインターフェースがシンプルで、使いやすい"
+"ことです。プラグインを有効にすることで、より高度な機能を利用できます。"
 
 #: data/org.gnome.gedit.desktop.in:3 gedit/gedit-print-job.c:730
 msgid "Text Editor"
@@ -503,10 +502,8 @@ msgid "Active plugins"
 msgstr "利用可能なプラグイン"
 
 #: data/org.gnome.gedit.gschema.xml.in:305
-#, fuzzy
-#| msgid "Active plugins"
 msgid "List of active plugins."
-msgstr "利用可能なプラグイン"
+msgstr "利用可能なプラグインの一覧です。"
 
 #: gedit/gedit-app.c:85
 msgid "Show the application’s version"
@@ -806,11 +803,9 @@ msgid "_Revert"
 msgstr "戻す(_R)"
 
 #: gedit/gedit-commands-help.c:110
-#, fuzzy
-#| msgid "gedit is a small and lightweight text editor for the GNOME Desktop"
 msgid "gedit is a small and lightweight text editor for the GNOME desktop"
 msgstr ""
-"gedit は GNOME デスクトップ用に作成された小型軽量のテキストエディターです。"
+"gedit は GNOME デスクトップ用に作成された小型軽量のテキストエディターです"
 
 #: gedit/gedit-commands-help.c:115
 msgid "translator-credits"
@@ -928,11 +923,9 @@ msgstr "改行文字(_I):"
 #. Translators: "Open Files" is the title of the file chooser window.
 #: gedit/gedit-file-chooser-open-adapter.c:109
 #: gedit/gedit-file-chooser-open.c:87
-#, fuzzy
-#| msgid "Open a file"
 msgctxt "window title"
 msgid "Open Files"
-msgstr "ファイルを開きます"
+msgstr "ファイルを開く"
 
 #: gedit/gedit-file-chooser-open-adapter.c:112 gedit/gedit-window.c:2636
 #: gedit/resources/gtk/menus-common.ui:100
@@ -1221,26 +1214,21 @@ msgid "_Use the system fixed width font (%s)"
 msgstr "システムの固定幅フォント (%s) を使用する(_U)"
 
 #: gedit/gedit-preferences-dialog.c:685
-#, fuzzy, c-format
-#| msgid "The selected color scheme cannot be installed."
+#, c-format
 msgid "The selected color scheme cannot be installed: %s"
-msgstr "指定したカラースキームをインストールできません。"
+msgstr "指定したカラースキームをインストールできません: %s"
 
 #: gedit/gedit-preferences-dialog.c:691
 msgid "The selected color scheme cannot be installed."
 msgstr "指定したカラースキームをインストールできません。"
 
 #: gedit/gedit-preferences-dialog.c:717
-#, fuzzy
-#| msgid "Color Scheme"
 msgid "Add Color Scheme"
-msgstr "カラースキーム"
+msgstr "カラースキームを追加"
 
 #: gedit/gedit-preferences-dialog.c:720
-#, fuzzy
-#| msgid "Add Scheme"
 msgid "_Add Scheme"
-msgstr "スキームを追加"
+msgstr "スキームを追加(_A)"
 
 #: gedit/gedit-preferences-dialog.c:725
 msgid "Color Scheme Files"
@@ -2233,55 +2221,44 @@ msgid "Go to line"
 msgstr "指定行へ移動する"
 
 #: gedit/resources/ui/gedit-shortcuts.ui:265
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Move viewport to beginning of file"
 msgctxt "shortcut window"
 msgid "Move to the beginning of the current line"
-msgstr "先頭に移動する (カーソル位置はそのまま)"
+msgstr "現在の行の先頭へ移動する"
 
 #: gedit/resources/ui/gedit-shortcuts.ui:272
-#, fuzzy
-#| msgid "Checks the spelling of the current document."
 msgctxt "shortcut window"
 msgid "Move to the end of the current line"
-msgstr "このドキュメントのスペルをチェックします。"
+msgstr "現在の行の末尾へ移動する"
 
 #: gedit/resources/ui/gedit-shortcuts.ui:279
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Move viewport to beginning of file"
 msgctxt "shortcut window"
 msgid "Move to the beginning of the document"
-msgstr "先頭に移動する (カーソル位置はそのまま)"
+msgstr "ドキュメントの先頭へ移動する"
 
 #: gedit/resources/ui/gedit-shortcuts.ui:286
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Switch to the next document"
 msgctxt "shortcut window"
 msgid "Move to the end of the document"
-msgstr "次のドキュメントに切り替える"
+msgstr "ドキュメントの末尾へ移動する"
 
 #: gedit/resources/ui/gedit-shortcuts.ui:293
 msgctxt "shortcut window"
 msgid "Move viewport up within the file"
-msgstr "上に移動する (カーソル位置はそのまま)"
+msgstr "上へ移動する (カーソル位置はそのまま)"
 
 #: gedit/resources/ui/gedit-shortcuts.ui:300
 msgctxt "shortcut window"
 msgid "Move viewport down within the file"
-msgstr "下に移動する (カーソル位置はそのまま)"
+msgstr "下へ移動する (カーソル位置はそのまま)"
 
 #: gedit/resources/ui/gedit-shortcuts.ui:307
 msgctxt "shortcut window"
 msgid "Move viewport to end of file"
-msgstr "末尾に移動する (カーソル位置はそのまま)"
+msgstr "末尾へ移動する (カーソル位置はそのまま)"
 
 #: gedit/resources/ui/gedit-shortcuts.ui:314
 msgctxt "shortcut window"
 msgid "Move viewport to beginning of file"
-msgstr "先頭に移動する (カーソル位置はそのまま)"
+msgstr "先頭へ移動する (カーソル位置はそのまま)"
 
 #: gedit/resources/ui/gedit-shortcuts.ui:321
 msgctxt "shortcut window"
@@ -2289,19 +2266,14 @@ msgid "Move to matching bracket"
 msgstr "対応するカッコに移動する"
 
 #: gedit/resources/ui/gedit-shortcuts.ui:328
-#, fuzzy
-#| msgid "P_revious Tab Group"
 msgctxt "shortcut window"
 msgid "Go to previous tab group"
-msgstr "前のタブグループ(_R)"
+msgstr "前のタブグループへ移動する"
 
 #: gedit/resources/ui/gedit-shortcuts.ui:335
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Create a new tab group"
 msgctxt "shortcut window"
 msgid "Go to next tab group"
-msgstr "新しいタブグループを作成する"
+msgstr "次のタブグループへ移動する"
 
 #: gedit/resources/ui/gedit-shortcuts.ui:343
 msgctxt "shortcut window"
@@ -2316,7 +2288,7 @@ msgstr "挿入/上書きモードを切り替える"
 #: gedit/resources/ui/gedit-shortcuts.ui:355
 msgctxt "shortcut window"
 msgid "Toggle cursor visibility"
-msgstr ""
+msgstr "カーソルの表示/非表示を切り替える"
 
 #: gedit/resources/ui/gedit-shortcuts.ui:362
 msgctxt "shortcut window"
@@ -2391,26 +2363,22 @@ msgstr "補完ウィンドウを表示する"
 #: gedit/resources/ui/gedit-shortcuts.ui:460
 msgctxt "shortcut window"
 msgid "General"
-msgstr ""
+msgstr "全般"
 
 #: gedit/resources/ui/gedit-shortcuts.ui:465
 msgctxt "shortcut window"
 msgid "Show help"
-msgstr ""
+msgstr "ヘルプを表示する"
 
 #: gedit/resources/ui/gedit-shortcuts.ui:472
-#, fuzzy
-#| msgid "Open history menu"
 msgctxt "shortcut window"
 msgid "Open menu"
-msgstr "履歴メニューを開きます"
+msgstr "メニューを開く"
 
 #: gedit/resources/ui/gedit-shortcuts.ui:479
-#, fuzzy
-#| msgid "_Keyboard Shortcuts"
 msgctxt "shortcut window"
 msgid "Keyboard shortcuts"
-msgstr "キーボードショートカット(_K)"
+msgstr "キーボードショートカットを表示する"
 
 #: gedit/resources/ui/gedit-tab-label.ui:34
 msgid "Close Document"
@@ -2750,8 +2718,6 @@ msgid "File Browser Panel"
 msgstr "ファイル参照パネル"
 
 #: plugins/filebrowser/filebrowser.plugin.desktop.in:7
-#, fuzzy
-#| msgid "Easy file access from the side panel"
 msgid "Easy file access from the side panel."
 msgstr "サイドパネルから簡単にファイルにアクセスできます。"
 
@@ -3091,8 +3057,6 @@ msgid "Python Console"
 msgstr "Python コンソール"
 
 #: plugins/pythonconsole/pythonconsole.plugin.desktop.in:7
-#, fuzzy
-#| msgid "Interactive Python console standing in the bottom panel"
 msgid "Interactive Python console standing in the bottom panel."
 msgstr "ボトムパネルに対話式の Python コンソールを開きます。"
 
@@ -3114,10 +3078,8 @@ msgid "Quick Open"
 msgstr "クイックオープン"
 
 #: plugins/quickopen/quickopen.plugin.desktop.in:7
-#, fuzzy
-#| msgid "Quickly open files"
 msgid "Quickly open files."
-msgstr "素早くファイルを開きます"
+msgstr "素早くファイルを開きます。"
 
 #: plugins/quickopen/quickopen/popup.py:90
 msgid "Type to search…"
@@ -3317,10 +3279,8 @@ msgid "Execution of the Python command (%s) failed: %s"
 msgstr "Python コマンド (%s) の実行に失敗しました: %s"
 
 #: plugins/snippets/snippets.plugin.desktop.in:7
-#, fuzzy
-#| msgid "Insert often-used pieces of text in a fast way"
 msgid "Insert often-used pieces of text in a fast way."
-msgstr "よく使用する文字列をすばやく挿入します"
+msgstr "よく使用する文字列をすばやく挿入します。"
 
 #: plugins/snippets/snippets/snippets.ui:40
 #: plugins/snippets/snippets/snippets.ui:47
