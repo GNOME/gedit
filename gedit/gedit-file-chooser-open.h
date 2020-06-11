@@ -21,6 +21,7 @@
 #define GEDIT_FILE_CHOOSER_OPEN_H
 
 #include <gtksourceview/gtksource.h>
+#include "gedit-file-chooser.h"
 
 G_BEGIN_DECLS
 
@@ -37,14 +38,14 @@ typedef struct _GeditFileChooserOpenPrivate  GeditFileChooserOpenPrivate;
 
 struct _GeditFileChooserOpen
 {
-	GObject parent;
+	GeditFileChooser parent;
 
 	GeditFileChooserOpenPrivate *priv;
 };
 
 struct _GeditFileChooserOpenClass
 {
-	GObjectClass parent_class;
+	GeditFileChooserClass parent_class;
 };
 
 G_GNUC_INTERNAL

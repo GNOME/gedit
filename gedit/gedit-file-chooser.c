@@ -481,7 +481,7 @@ create_all_text_files_filter (void)
 }
 
 static void
-notify_filter_cb (GtkFileChooser *chooser,
+notify_filter_cb (GtkFileChooser *gtk_chooser,
 		  GParamSpec     *pspec,
 		  gpointer        user_data)
 {
@@ -493,7 +493,7 @@ notify_filter_cb (GtkFileChooser *chooser,
 
 	/* Remember the selected filter. */
 
-	filter = gtk_file_chooser_get_filter (chooser);
+	filter = gtk_file_chooser_get_filter (gtk_chooser);
 	if (filter == NULL)
 	{
 		return;
@@ -551,14 +551,15 @@ _gedit_file_chooser_set_gtk_file_chooser (GeditFileChooser *chooser,
 }
 
 void
-_gedit_file_chooser_setup_filters (GtkFileChooser *chooser)
+_gedit_file_chooser_setup_filters (GeditFileChooser *chooser)
 {
 	GeditSettings *settings;
 	GSettings *file_chooser_state_settings;
 	gint active_filter;
 	GtkFileFilter *filter;
 
-	g_return_if_fail (GTK_IS_FILE_CHOOSER (chooser));
+	g_return_if_fail (GEDIT_IS_FILE_CHOOSER (chooser));
+	g_return_if_fail (chooser->priv->gtk_chooser != NULL);
 
 	settings = _gedit_settings_get_singleton ();
 	file_chooser_state_settings = _gedit_settings_peek_file_chooser_state_settings (settings);
@@ -568,11 +569,11 @@ _gedit_file_chooser_setup_filters (GtkFileChooser *chooser)
 	filter = create_all_text_files_filter ();
 
 	g_object_ref_sink (filter);
-	gtk_file_chooser_add_filter (chooser, filter);
+	gtk_file_chooser_add_filter (chooser->priv->gtk_chooser, filter);
 	if (active_filter != 1)
 	{
 		/* Use this filter if set by user and as default. */
-		gtk_file_chooser_set_filter (chooser, filter);
+		gtk_file_chooser_set_filter (chooser->priv->gtk_chooser, filter);
 	}
 	g_object_unref (filter);
 
@@ -582,15 +583,15 @@ _gedit_file_chooser_setup_filters (GtkFileChooser *chooser)
 	gtk_file_filter_add_pattern (filter, "*");
 
 	g_object_ref_sink (filter);
-	gtk_file_chooser_add_filter (chooser, filter);
+	gtk_file_chooser_add_filter (chooser->priv->gtk_chooser, filter);
 	if (active_filter == 1)
 	{
 		/* Use this filter if set by user. */
-		gtk_file_chooser_set_filter (chooser, filter);
+		gtk_file_chooser_set_filter (chooser->priv->gtk_chooser, filter);
 	}
 	g_object_unref (filter);
 
-	g_signal_connect (chooser,
+	g_signal_connect (chooser->priv->gtk_chooser,
 			  "notify::filter",
 			  G_CALLBACK (notify_filter_cb),
 			  NULL);

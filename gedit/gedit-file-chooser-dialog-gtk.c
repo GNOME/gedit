@@ -37,6 +37,8 @@ struct _GeditFileChooserDialogGtk
 {
 	GtkFileChooserDialog parent_instance;
 
+	GeditFileChooser *gedit_file_chooser;
+
 	GtkWidget *option_menu;
 	GtkWidget *extra_widget;
 
@@ -261,8 +263,21 @@ gedit_file_chooser_dialog_gtk_chooser_init (gpointer g_iface,
 }
 
 static void
+gedit_file_chooser_dialog_gtk_dispose (GObject *object)
+{
+	GeditFileChooserDialogGtk *dialog = GEDIT_FILE_CHOOSER_DIALOG_GTK (object);
+
+	g_clear_object (&dialog->gedit_file_chooser);
+
+	G_OBJECT_CLASS (gedit_file_chooser_dialog_gtk_parent_class)->dispose (object);
+}
+
+static void
 gedit_file_chooser_dialog_gtk_class_init (GeditFileChooserDialogGtkClass *klass)
 {
+	GObjectClass *object_class = G_OBJECT_CLASS (klass);
+
+	object_class->dispose = gedit_file_chooser_dialog_gtk_dispose;
 }
 
 static void
@@ -475,7 +490,14 @@ gedit_file_chooser_dialog_gtk_create (const gchar           *title,
 			  G_CALLBACK (action_changed),
 			  NULL);
 
-	_gedit_file_chooser_setup_filters (GTK_FILE_CHOOSER (result));
+	/* FIXME: attention, there is a ref cycle here. This will be fixed when
+	 * GeditFileChooserSave will be created (and this class removed).
+	 */
+	result->gedit_file_chooser = _gedit_file_chooser_new ();
+	_gedit_file_chooser_set_gtk_file_chooser (result->gedit_file_chooser,
+						  GTK_FILE_CHOOSER (result));
+
+	_gedit_file_chooser_setup_filters (result->gedit_file_chooser);
 
 	if (parent != NULL)
 	{

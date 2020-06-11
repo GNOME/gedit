@@ -34,7 +34,7 @@ enum
 
 static guint signals[N_SIGNALS];
 
-G_DEFINE_TYPE_WITH_PRIVATE (GeditFileChooserOpen, _gedit_file_chooser_open, G_TYPE_OBJECT)
+G_DEFINE_TYPE_WITH_PRIVATE (GeditFileChooserOpen, _gedit_file_chooser_open, GEDIT_TYPE_FILE_CHOOSER)
 
 static void
 _gedit_file_chooser_open_dispose (GObject *object)
@@ -109,7 +109,10 @@ _gedit_file_chooser_open_init (GeditFileChooserOpen *chooser)
 
 	gtk_file_chooser_set_local_only (GTK_FILE_CHOOSER (chooser->priv->chooser_native), FALSE);
 	gtk_file_chooser_set_select_multiple (GTK_FILE_CHOOSER (chooser->priv->chooser_native), TRUE);
-	_gedit_file_chooser_setup_filters (GTK_FILE_CHOOSER (chooser->priv->chooser_native));
+
+	_gedit_file_chooser_set_gtk_file_chooser (GEDIT_FILE_CHOOSER (chooser),
+						  GTK_FILE_CHOOSER (chooser->priv->chooser_native));
+	_gedit_file_chooser_setup_filters (GEDIT_FILE_CHOOSER (chooser));
 
 	g_signal_connect (chooser->priv->chooser_native,
 			  "response",
