@@ -596,3 +596,10 @@ _gedit_file_chooser_set_gtk_file_chooser (GeditFileChooser *chooser,
 
 	setup_filters (chooser);
 }
+
+GtkFileChooser *
+_gedit_file_chooser_get_gtk_file_chooser (GeditFileChooser *chooser)
+{
+	g_return_val_if_fail (GEDIT_IS_FILE_CHOOSER (chooser), NULL);
+	return chooser->priv->gtk_chooser;
+}
