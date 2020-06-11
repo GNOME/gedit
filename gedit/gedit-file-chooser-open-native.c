@@ -74,7 +74,7 @@ _gedit_file_chooser_open_native_init (GeditFileChooserOpenNative *chooser)
 	chooser->priv = _gedit_file_chooser_open_native_get_instance_private (chooser);
 }
 
-GeditFileChooserOpenNative *
+GeditFileChooserOpen *
 _gedit_file_chooser_open_native_new (void)
 {
 	return g_object_new (GEDIT_TYPE_FILE_CHOOSER_OPEN_NATIVE, NULL);

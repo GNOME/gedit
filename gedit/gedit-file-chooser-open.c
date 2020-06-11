@@ -18,6 +18,7 @@
  */
 
 #include "gedit-file-chooser-open.h"
+#include "gedit-file-chooser-open-native.h"
 
 struct _GeditFileChooserOpenPrivate
 {
@@ -87,7 +88,7 @@ _gedit_file_chooser_open_init (GeditFileChooserOpen *chooser)
 GeditFileChooserOpen *
 _gedit_file_chooser_open_new (void)
 {
-	return g_object_new (GEDIT_TYPE_FILE_CHOOSER_OPEN, NULL);
+	return _gedit_file_chooser_open_native_new ();
 }
 
 GSList *

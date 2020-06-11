@@ -48,10 +48,10 @@ struct _GeditFileChooserOpenNativeClass
 };
 
 G_GNUC_INTERNAL
-GType				_gedit_file_chooser_open_native_get_type	(void);
+GType			_gedit_file_chooser_open_native_get_type	(void);
 
 G_GNUC_INTERNAL
-GeditFileChooserOpenNative *	_gedit_file_chooser_open_native_new		(void);
+GeditFileChooserOpen *	_gedit_file_chooser_open_native_new		(void);
 
 G_END_DECLS
 
