@@ -48,10 +48,17 @@ struct _GeditFileChooserClass
 };
 
 G_GNUC_INTERNAL
-GType	_gedit_file_chooser_get_type		(void);
+GType			_gedit_file_chooser_get_type			(void);
 
 G_GNUC_INTERNAL
-void	_gedit_file_chooser_setup_filters	(GtkFileChooser *chooser);
+GeditFileChooser *	_gedit_file_chooser_new				(void);
+
+G_GNUC_INTERNAL
+void			_gedit_file_chooser_set_gtk_file_chooser	(GeditFileChooser *chooser,
+									 GtkFileChooser   *gtk_chooser);
+
+G_GNUC_INTERNAL
+void			_gedit_file_chooser_setup_filters		(GtkFileChooser *chooser);
 
 G_END_DECLS
 

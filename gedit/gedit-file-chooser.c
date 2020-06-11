@@ -26,7 +26,7 @@
 
 struct _GeditFileChooserPrivate
 {
-	gint something;
+	GtkFileChooser *gtk_chooser;
 };
 
 G_DEFINE_TYPE_WITH_PRIVATE (GeditFileChooser, _gedit_file_chooser, G_TYPE_OBJECT)
@@ -513,6 +513,9 @@ notify_filter_cb (GtkFileChooser *chooser,
 static void
 _gedit_file_chooser_dispose (GObject *object)
 {
+	GeditFileChooser *chooser = GEDIT_FILE_CHOOSER (object);
+
+	g_clear_object (&chooser->priv->gtk_chooser);
 
 	G_OBJECT_CLASS (_gedit_file_chooser_parent_class)->dispose (object);
 }
@@ -529,6 +532,22 @@ static void
 _gedit_file_chooser_init (GeditFileChooser *chooser)
 {
 	chooser->priv = _gedit_file_chooser_get_instance_private (chooser);
+}
+
+GeditFileChooser *
+_gedit_file_chooser_new (void)
+{
+	return g_object_new (GEDIT_TYPE_FILE_CHOOSER, NULL);
+}
+
+void
+_gedit_file_chooser_set_gtk_file_chooser (GeditFileChooser *chooser,
+					  GtkFileChooser   *gtk_chooser)
+{
+	g_return_if_fail (GEDIT_IS_FILE_CHOOSER (chooser));
+	g_return_if_fail (GTK_IS_FILE_CHOOSER (gtk_chooser));
+
+	g_set_object (&chooser->priv->gtk_chooser, gtk_chooser);
 }
 
 void
