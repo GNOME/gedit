@@ -59,8 +59,6 @@ struct _GeditFileChooserDialogInterface
 
 	GFile *	(*get_file)		(GeditFileChooserDialog *dialog);
 
-	GSList *(*get_files)		(GeditFileChooserDialog *dialog);
-
 	void	(*set_do_overwrite_confirmation)
 					(GeditFileChooserDialog *dialog,
 					 gboolean                overwrite_confirmation);
@@ -118,8 +116,6 @@ void		 gedit_file_chooser_dialog_set_file		(GeditFileChooserDialog   *dialog,
 								 GFile                    *file);
 
 GFile		*gedit_file_chooser_dialog_get_file		(GeditFileChooserDialog   *dialog);
-
-GSList		*gedit_file_chooser_dialog_get_files		(GeditFileChooserDialog   *dialog);
 
 void		 gedit_file_chooser_dialog_set_do_overwrite_confirmation (
 								 GeditFileChooserDialog   *dialog,

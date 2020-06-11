@@ -176,13 +176,6 @@ chooser_get_file (GeditFileChooserDialog *dialog)
 	return gtk_file_chooser_get_file (GTK_FILE_CHOOSER (dialog));
 }
 
-
-static GSList *
-chooser_get_files (GeditFileChooserDialog *dialog)
-{
-	return gtk_file_chooser_get_files (GTK_FILE_CHOOSER (dialog));
-}
-
 static void
 chooser_set_do_overwrite_confirmation (GeditFileChooserDialog *dialog,
                                        gboolean                overwrite_confirmation)
@@ -258,7 +251,6 @@ gedit_file_chooser_dialog_gtk_chooser_init (gpointer g_iface,
 	iface->set_current_name = chooser_set_current_name;
 	iface->set_file = chooser_set_file;
 	iface->get_file = chooser_get_file;
-	iface->get_files = chooser_get_files;
 	iface->set_do_overwrite_confirmation = chooser_set_do_overwrite_confirmation;
 	iface->show = chooser_show;
 	iface->hide = chooser_hide;

@@ -173,19 +173,6 @@ gedit_file_chooser_dialog_set_file (GeditFileChooserDialog *dialog,
 	iface->set_file (dialog, file);
 }
 
-GSList *
-gedit_file_chooser_dialog_get_files (GeditFileChooserDialog *dialog)
-{
-	GeditFileChooserDialogInterface *iface;
-
-	g_return_val_if_fail (GEDIT_IS_FILE_CHOOSER_DIALOG (dialog), NULL);
-
-	iface = GEDIT_FILE_CHOOSER_DIALOG_GET_IFACE (dialog);
-	g_return_val_if_fail (iface->get_files != NULL, NULL);
-
-	return iface->get_files (dialog);
-}
-
 GFile *
 gedit_file_chooser_dialog_get_file (GeditFileChooserDialog *dialog)
 {
