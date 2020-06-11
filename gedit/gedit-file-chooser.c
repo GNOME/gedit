@@ -24,6 +24,13 @@
 
 /* Common code between the different GeditFileChooser's. */
 
+struct _GeditFileChooserPrivate
+{
+	gint something;
+};
+
+G_DEFINE_TYPE_WITH_PRIVATE (GeditFileChooser, _gedit_file_chooser, G_TYPE_OBJECT)
+
 #define ALL_FILES		_("All Files")
 #define ALL_TEXT_FILES		_("All Text Files")
 
@@ -501,6 +508,27 @@ notify_filter_cb (GtkFileChooser *chooser,
 	settings = _gedit_settings_get_singleton ();
 	file_chooser_state_settings = _gedit_settings_peek_file_chooser_state_settings (settings);
 	g_settings_set_int (file_chooser_state_settings, GEDIT_SETTINGS_ACTIVE_FILE_FILTER, id);
+}
+
+static void
+_gedit_file_chooser_dispose (GObject *object)
+{
+
+	G_OBJECT_CLASS (_gedit_file_chooser_parent_class)->dispose (object);
+}
+
+static void
+_gedit_file_chooser_class_init (GeditFileChooserClass *klass)
+{
+	GObjectClass *object_class = G_OBJECT_CLASS (klass);
+
+	object_class->dispose = _gedit_file_chooser_dispose;
+}
+
+static void
+_gedit_file_chooser_init (GeditFileChooser *chooser)
+{
+	chooser->priv = _gedit_file_chooser_get_instance_private (chooser);
 }
 
 void

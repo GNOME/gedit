@@ -24,6 +24,32 @@
 
 G_BEGIN_DECLS
 
+#define GEDIT_TYPE_FILE_CHOOSER             (_gedit_file_chooser_get_type ())
+#define GEDIT_FILE_CHOOSER(obj)             (G_TYPE_CHECK_INSTANCE_CAST ((obj), GEDIT_TYPE_FILE_CHOOSER, GeditFileChooser))
+#define GEDIT_FILE_CHOOSER_CLASS(klass)     (G_TYPE_CHECK_CLASS_CAST ((klass), GEDIT_TYPE_FILE_CHOOSER, GeditFileChooserClass))
+#define GEDIT_IS_FILE_CHOOSER(obj)          (G_TYPE_CHECK_INSTANCE_TYPE ((obj), GEDIT_TYPE_FILE_CHOOSER))
+#define GEDIT_IS_FILE_CHOOSER_CLASS(klass)  (G_TYPE_CHECK_CLASS_TYPE ((klass), GEDIT_TYPE_FILE_CHOOSER))
+#define GEDIT_FILE_CHOOSER_GET_CLASS(obj)   (G_TYPE_INSTANCE_GET_CLASS ((obj), GEDIT_TYPE_FILE_CHOOSER, GeditFileChooserClass))
+
+typedef struct _GeditFileChooser         GeditFileChooser;
+typedef struct _GeditFileChooserClass    GeditFileChooserClass;
+typedef struct _GeditFileChooserPrivate  GeditFileChooserPrivate;
+
+struct _GeditFileChooser
+{
+	GObject parent;
+
+	GeditFileChooserPrivate *priv;
+};
+
+struct _GeditFileChooserClass
+{
+	GObjectClass parent_class;
+};
+
+G_GNUC_INTERNAL
+GType	_gedit_file_chooser_get_type		(void);
+
 G_GNUC_INTERNAL
 void	_gedit_file_chooser_setup_filters	(GtkFileChooser *chooser);
 
