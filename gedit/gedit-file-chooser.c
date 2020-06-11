@@ -607,7 +607,8 @@ _gedit_file_chooser_init (GeditFileChooser *chooser)
 	klass = GEDIT_FILE_CHOOSER_GET_CLASS (chooser);
 	if (klass->create_gtk_file_chooser != NULL)
 	{
-		_gedit_file_chooser_set_gtk_file_chooser (chooser, klass->create_gtk_file_chooser (chooser));
+		chooser->priv->gtk_chooser = klass->create_gtk_file_chooser (chooser);
+		setup_filters (chooser);
 		set_modal (chooser);
 		gtk_file_chooser_set_local_only (chooser->priv->gtk_chooser, FALSE);
 	}
@@ -627,7 +628,7 @@ _gedit_file_chooser_set_gtk_file_chooser (GeditFileChooser *chooser,
 	g_return_if_fail (GTK_IS_FILE_CHOOSER (gtk_chooser));
 	g_return_if_fail (chooser->priv->gtk_chooser == NULL);
 
-	chooser->priv->gtk_chooser = g_object_ref (gtk_chooser);
+	chooser->priv->gtk_chooser = g_object_ref_sink (gtk_chooser);
 	setup_filters (chooser);
 }
 

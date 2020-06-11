@@ -46,6 +46,7 @@ struct _GeditFileChooserClass
 {
 	GObjectClass parent_class;
 
+	/* Returns: (transfer full). */
 	GtkFileChooser *	(* create_gtk_file_chooser)	(GeditFileChooser *chooser);
 };
 
