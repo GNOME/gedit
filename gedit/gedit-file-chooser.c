@@ -34,16 +34,19 @@ G_DEFINE_TYPE_WITH_PRIVATE (GeditFileChooser, _gedit_file_chooser, G_TYPE_OBJECT
 #define ALL_FILES		_("All Files")
 #define ALL_TEXT_FILES		_("All Text Files")
 
-/* See the GtkFileChooserNative documentation, a GtkFileFilter with mime-types
- * is not supported on Windows.
- */
+static gboolean
+mime_types_are_supported (void)
+{
 #ifdef G_OS_WIN32
-#  define MIME_TYPES_ARE_SUPPORTED FALSE
+	/* See the GtkFileChooserNative documentation, a GtkFileFilter with
+	 * mime-types is not supported on Windows.
+	 */
+	return FALSE;
 #else
-#  define MIME_TYPES_ARE_SUPPORTED TRUE
+	return TRUE;
 #endif
+}
 
-#if MIME_TYPES_ARE_SUPPORTED
 /* Returns: (transfer none) (element-type utf8): a list containing "text/plain"
  * first and then the list of mime-types unrelated to "text/plain" that
  * GtkSourceView supports for the syntax highlighting.
@@ -102,8 +105,6 @@ get_supported_mime_types (void)
 	initialized = TRUE;
 	return supported_mime_types;
 }
-
-#else
 
 static const gchar * const *
 get_supported_globs (void)
@@ -429,7 +430,6 @@ get_supported_globs (void)
 
 	return supported_globs;
 }
-#endif
 
 static GtkFileFilter *
 create_all_text_files_filter (void)
@@ -439,7 +439,7 @@ create_all_text_files_filter (void)
 	filter = gtk_file_filter_new ();
 	gtk_file_filter_set_name (filter, ALL_TEXT_FILES);
 
-#if MIME_TYPES_ARE_SUPPORTED
+	if (mime_types_are_supported ())
 	{
 		GSList *supported_mime_types;
 		GSList *l;
@@ -462,7 +462,7 @@ create_all_text_files_filter (void)
 		 * get_supported_globs() (see the TODO comment there).
 		 */
 	}
-#else
+	else
 	{
 		const gchar * const *supported_globs;
 		gint i;
@@ -475,7 +475,6 @@ create_all_text_files_filter (void)
 			gtk_file_filter_add_pattern (filter, glob);
 		}
 	}
-#endif
 
 	return filter;
 }
