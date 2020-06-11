@@ -23,7 +23,7 @@
 
 struct _GeditFileChooserOpenPrivate
 {
-	GtkFileChooserNative *chooser_native;
+	gint something;
 };
 
 enum
@@ -36,23 +36,21 @@ static guint signals[N_SIGNALS];
 
 G_DEFINE_TYPE_WITH_PRIVATE (GeditFileChooserOpen, _gedit_file_chooser_open, GEDIT_TYPE_FILE_CHOOSER)
 
-static void
-_gedit_file_chooser_open_dispose (GObject *object)
+static GtkFileChooser *
+get_gtk_file_chooser (GeditFileChooserOpen *chooser)
 {
-	GeditFileChooserOpen *chooser = GEDIT_FILE_CHOOSER_OPEN (object);
+	return _gedit_file_chooser_get_gtk_file_chooser (GEDIT_FILE_CHOOSER (chooser));
+}
 
-	g_clear_object (&chooser->priv->chooser_native);
-
-	G_OBJECT_CLASS (_gedit_file_chooser_open_parent_class)->dispose (object);
+static GtkNativeDialog *
+get_native_dialog (GeditFileChooserOpen *chooser)
+{
+	return GTK_NATIVE_DIALOG (get_gtk_file_chooser (chooser));
 }
 
 static void
 _gedit_file_chooser_open_class_init (GeditFileChooserOpenClass *klass)
 {
-	GObjectClass *object_class = G_OBJECT_CLASS (klass);
-
-	object_class->dispose = _gedit_file_chooser_open_dispose;
-
 	/*
 	 * GeditFileChooserOpen::done:
 	 * @chooser: the #GeditFileChooserOpen emitting the signal.
@@ -68,9 +66,9 @@ _gedit_file_chooser_open_class_init (GeditFileChooserOpenClass *klass)
 }
 
 static void
-chooser_native_response_cb (GtkFileChooserNative *chooser_native,
-			    gint                  response_id,
-			    GeditFileChooserOpen *chooser)
+response_cb (GtkFileChooserNative *chooser_native,
+	     gint                  response_id,
+	     GeditFileChooserOpen *chooser)
 {
 	gboolean accept;
 
@@ -81,14 +79,16 @@ chooser_native_response_cb (GtkFileChooserNative *chooser_native,
 static void
 _gedit_file_chooser_open_init (GeditFileChooserOpen *chooser)
 {
+	GtkFileChooserNative *native_chooser;
+
 	chooser->priv = _gedit_file_chooser_open_get_instance_private (chooser);
 
 	/* Translators: "Open Files" is the title of the file chooser window. */
-	chooser->priv->chooser_native = gtk_file_chooser_native_new (C_("window title", "Open Files"),
-								     NULL,
-								     GTK_FILE_CHOOSER_ACTION_OPEN,
-								     NULL,
-								     NULL);
+	native_chooser = gtk_file_chooser_native_new (C_("window title", "Open Files"),
+						      NULL,
+						      GTK_FILE_CHOOSER_ACTION_OPEN,
+						      NULL,
+						      NULL);
 
 	/* Set the dialog as modal. It's a workaround for this bug:
 	 * https://gitlab.gnome.org/GNOME/gtk/issues/2824
@@ -105,17 +105,17 @@ _gedit_file_chooser_open_init (GeditFileChooserOpen *chooser)
 	 * modal, except if there was a good reason for not being modal (what
 	 * reason(s)?).
 	 */
-	gtk_native_dialog_set_modal (GTK_NATIVE_DIALOG (chooser->priv->chooser_native), TRUE);
+	gtk_native_dialog_set_modal (GTK_NATIVE_DIALOG (native_chooser), TRUE);
 
-	gtk_file_chooser_set_local_only (GTK_FILE_CHOOSER (chooser->priv->chooser_native), FALSE);
-	gtk_file_chooser_set_select_multiple (GTK_FILE_CHOOSER (chooser->priv->chooser_native), TRUE);
+	gtk_file_chooser_set_local_only (GTK_FILE_CHOOSER (native_chooser), FALSE);
+	gtk_file_chooser_set_select_multiple (GTK_FILE_CHOOSER (native_chooser), TRUE);
 
 	_gedit_file_chooser_set_gtk_file_chooser (GEDIT_FILE_CHOOSER (chooser),
-						  GTK_FILE_CHOOSER (chooser->priv->chooser_native));
+						  GTK_FILE_CHOOSER (native_chooser));
 
-	g_signal_connect (chooser->priv->chooser_native,
+	g_signal_connect (native_chooser,
 			  "response",
-			  G_CALLBACK (chooser_native_response_cb),
+			  G_CALLBACK (response_cb),
 			  chooser);
 }
 
@@ -132,7 +132,7 @@ _gedit_file_chooser_open_set_transient_for (GeditFileChooserOpen *chooser,
 	g_return_if_fail (GEDIT_IS_FILE_CHOOSER_OPEN (chooser));
 	g_return_if_fail (parent == NULL || GTK_IS_WINDOW (parent));
 
-	gtk_native_dialog_set_transient_for (GTK_NATIVE_DIALOG (chooser->priv->chooser_native), parent);
+	gtk_native_dialog_set_transient_for (get_native_dialog (chooser), parent);
 }
 
 void
@@ -140,7 +140,7 @@ _gedit_file_chooser_open_show (GeditFileChooserOpen *chooser)
 {
 	g_return_if_fail (GEDIT_IS_FILE_CHOOSER_OPEN (chooser));
 
-	gtk_native_dialog_show (GTK_NATIVE_DIALOG (chooser->priv->chooser_native));
+	gtk_native_dialog_show (get_native_dialog (chooser));
 }
 
 GSList *
@@ -148,7 +148,7 @@ _gedit_file_chooser_open_get_files (GeditFileChooserOpen *chooser)
 {
 	g_return_val_if_fail (GEDIT_IS_FILE_CHOOSER_OPEN (chooser), NULL);
 
-	return gtk_file_chooser_get_files (GTK_FILE_CHOOSER (chooser->priv->chooser_native));
+	return gtk_file_chooser_get_files (get_gtk_file_chooser (chooser));
 }
 
 gchar *
@@ -156,7 +156,7 @@ _gedit_file_chooser_open_get_current_folder_uri (GeditFileChooserOpen *chooser)
 {
 	g_return_val_if_fail (GEDIT_IS_FILE_CHOOSER_OPEN (chooser), NULL);
 
-	return gtk_file_chooser_get_current_folder_uri (GTK_FILE_CHOOSER (chooser->priv->chooser_native));
+	return gtk_file_chooser_get_current_folder_uri (get_gtk_file_chooser (chooser));
 }
 
 void
@@ -165,7 +165,7 @@ _gedit_file_chooser_open_set_current_folder_uri (GeditFileChooserOpen *chooser,
 {
 	g_return_if_fail (GEDIT_IS_FILE_CHOOSER_OPEN (chooser));
 
-	gtk_file_chooser_set_current_folder_uri (GTK_FILE_CHOOSER (chooser->priv->chooser_native), uri);
+	gtk_file_chooser_set_current_folder_uri (get_gtk_file_chooser (chooser), uri);
 }
 
 const GtkSourceEncoding *
