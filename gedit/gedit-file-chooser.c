@@ -511,55 +511,12 @@ notify_filter_cb (GtkFileChooser *gtk_chooser,
 }
 
 static void
-_gedit_file_chooser_dispose (GObject *object)
-{
-	GeditFileChooser *chooser = GEDIT_FILE_CHOOSER (object);
-
-	g_clear_object (&chooser->priv->gtk_chooser);
-
-	G_OBJECT_CLASS (_gedit_file_chooser_parent_class)->dispose (object);
-}
-
-static void
-_gedit_file_chooser_class_init (GeditFileChooserClass *klass)
-{
-	GObjectClass *object_class = G_OBJECT_CLASS (klass);
-
-	object_class->dispose = _gedit_file_chooser_dispose;
-}
-
-static void
-_gedit_file_chooser_init (GeditFileChooser *chooser)
-{
-	chooser->priv = _gedit_file_chooser_get_instance_private (chooser);
-}
-
-GeditFileChooser *
-_gedit_file_chooser_new (void)
-{
-	return g_object_new (GEDIT_TYPE_FILE_CHOOSER, NULL);
-}
-
-void
-_gedit_file_chooser_set_gtk_file_chooser (GeditFileChooser *chooser,
-					  GtkFileChooser   *gtk_chooser)
-{
-	g_return_if_fail (GEDIT_IS_FILE_CHOOSER (chooser));
-	g_return_if_fail (GTK_IS_FILE_CHOOSER (gtk_chooser));
-
-	g_set_object (&chooser->priv->gtk_chooser, gtk_chooser);
-}
-
-void
-_gedit_file_chooser_setup_filters (GeditFileChooser *chooser)
+setup_filters (GeditFileChooser *chooser)
 {
 	GeditSettings *settings;
 	GSettings *file_chooser_state_settings;
 	gint active_filter;
 	GtkFileFilter *filter;
-
-	g_return_if_fail (GEDIT_IS_FILE_CHOOSER (chooser));
-	g_return_if_fail (chooser->priv->gtk_chooser != NULL);
 
 	settings = _gedit_settings_get_singleton ();
 	file_chooser_state_settings = _gedit_settings_peek_file_chooser_state_settings (settings);
@@ -595,4 +552,47 @@ _gedit_file_chooser_setup_filters (GeditFileChooser *chooser)
 			  "notify::filter",
 			  G_CALLBACK (notify_filter_cb),
 			  NULL);
+}
+
+static void
+_gedit_file_chooser_dispose (GObject *object)
+{
+	GeditFileChooser *chooser = GEDIT_FILE_CHOOSER (object);
+
+	g_clear_object (&chooser->priv->gtk_chooser);
+
+	G_OBJECT_CLASS (_gedit_file_chooser_parent_class)->dispose (object);
+}
+
+static void
+_gedit_file_chooser_class_init (GeditFileChooserClass *klass)
+{
+	GObjectClass *object_class = G_OBJECT_CLASS (klass);
+
+	object_class->dispose = _gedit_file_chooser_dispose;
+}
+
+static void
+_gedit_file_chooser_init (GeditFileChooser *chooser)
+{
+	chooser->priv = _gedit_file_chooser_get_instance_private (chooser);
+}
+
+GeditFileChooser *
+_gedit_file_chooser_new (void)
+{
+	return g_object_new (GEDIT_TYPE_FILE_CHOOSER, NULL);
+}
+
+void
+_gedit_file_chooser_set_gtk_file_chooser (GeditFileChooser *chooser,
+					  GtkFileChooser   *gtk_chooser)
+{
+	g_return_if_fail (GEDIT_IS_FILE_CHOOSER (chooser));
+	g_return_if_fail (GTK_IS_FILE_CHOOSER (gtk_chooser));
+	g_return_if_fail (chooser->priv->gtk_chooser == NULL);
+
+	chooser->priv->gtk_chooser = g_object_ref (gtk_chooser);
+
+	setup_filters (chooser);
 }

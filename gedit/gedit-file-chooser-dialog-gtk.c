@@ -497,8 +497,6 @@ gedit_file_chooser_dialog_gtk_create (const gchar           *title,
 	_gedit_file_chooser_set_gtk_file_chooser (result->gedit_file_chooser,
 						  GTK_FILE_CHOOSER (result));
 
-	_gedit_file_chooser_setup_filters (result->gedit_file_chooser);
-
 	if (parent != NULL)
 	{
 		gtk_window_set_transient_for (GTK_WINDOW (result), parent);

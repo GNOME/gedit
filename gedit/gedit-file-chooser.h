@@ -57,9 +57,6 @@ G_GNUC_INTERNAL
 void			_gedit_file_chooser_set_gtk_file_chooser	(GeditFileChooser *chooser,
 									 GtkFileChooser   *gtk_chooser);
 
-G_GNUC_INTERNAL
-void			_gedit_file_chooser_setup_filters		(GeditFileChooser *chooser);
-
 G_END_DECLS
 
 #endif /* GEDIT_FILE_CHOOSER_H */

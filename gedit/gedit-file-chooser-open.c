@@ -112,7 +112,6 @@ _gedit_file_chooser_open_init (GeditFileChooserOpen *chooser)
 
 	_gedit_file_chooser_set_gtk_file_chooser (GEDIT_FILE_CHOOSER (chooser),
 						  GTK_FILE_CHOOSER (chooser->priv->chooser_native));
-	_gedit_file_chooser_setup_filters (GEDIT_FILE_CHOOSER (chooser));
 
 	g_signal_connect (chooser->priv->chooser_native,
 			  "response",
