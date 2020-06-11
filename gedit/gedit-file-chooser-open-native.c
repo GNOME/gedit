@@ -18,6 +18,7 @@
  */
 
 #include "gedit-file-chooser-open-native.h"
+#include <glib/gi18n.h>
 
 struct _GeditFileChooserOpenNativePrivate
 {
@@ -26,6 +27,14 @@ struct _GeditFileChooserOpenNativePrivate
 
 G_DEFINE_TYPE_WITH_PRIVATE (GeditFileChooserOpenNative, _gedit_file_chooser_open_native, GEDIT_TYPE_FILE_CHOOSER_OPEN)
 
+#if 0
+static GtkNativeDialog *
+get_native_dialog (GeditFileChooserOpenNative *chooser)
+{
+	return GTK_NATIVE_DIALOG (_gedit_file_chooser_get_gtk_file_chooser (GEDIT_FILE_CHOOSER (chooser)));
+}
+#endif
+
 static void
 _gedit_file_chooser_open_native_dispose (GObject *object)
 {
@@ -33,12 +42,30 @@ _gedit_file_chooser_open_native_dispose (GObject *object)
 	G_OBJECT_CLASS (_gedit_file_chooser_open_native_parent_class)->dispose (object);
 }
 
+static GtkFileChooser *
+chooser_create_gtk_file_chooser (GeditFileChooser *chooser)
+{
+	GtkFileChooserNative *native_chooser;
+
+	/* Translators: "Open Files" is the title of the file chooser window. */
+	native_chooser = gtk_file_chooser_native_new (C_("window title", "Open Files"),
+						      NULL,
+						      GTK_FILE_CHOOSER_ACTION_OPEN,
+						      NULL,
+						      NULL);
+
+	return GTK_FILE_CHOOSER (native_chooser);
+}
+
 static void
 _gedit_file_chooser_open_native_class_init (GeditFileChooserOpenNativeClass *klass)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
+	GeditFileChooserClass *chooser_class = GEDIT_FILE_CHOOSER_CLASS (klass);
 
 	object_class->dispose = _gedit_file_chooser_open_native_dispose;
+
+	chooser_class->create_gtk_file_chooser = chooser_create_gtk_file_chooser;
 }
 
 static void

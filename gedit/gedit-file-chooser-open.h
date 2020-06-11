@@ -55,13 +55,6 @@ G_GNUC_INTERNAL
 GeditFileChooserOpen *	_gedit_file_chooser_open_new			(void);
 
 G_GNUC_INTERNAL
-void			_gedit_file_chooser_open_set_transient_for	(GeditFileChooserOpen *chooser,
-									 GtkWindow            *parent);
-
-G_GNUC_INTERNAL
-void			_gedit_file_chooser_open_show			(GeditFileChooserOpen *chooser);
-
-G_GNUC_INTERNAL
 GSList *		_gedit_file_chooser_open_get_files		(GeditFileChooserOpen *chooser);
 
 G_GNUC_INTERNAL

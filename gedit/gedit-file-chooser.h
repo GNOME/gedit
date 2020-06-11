@@ -45,6 +45,8 @@ struct _GeditFileChooser
 struct _GeditFileChooserClass
 {
 	GObjectClass parent_class;
+
+	GtkFileChooser *	(* create_gtk_file_chooser)	(GeditFileChooser *chooser);
 };
 
 G_GNUC_INTERNAL
@@ -59,6 +61,13 @@ void			_gedit_file_chooser_set_gtk_file_chooser	(GeditFileChooser *chooser,
 
 G_GNUC_INTERNAL
 GtkFileChooser *	_gedit_file_chooser_get_gtk_file_chooser	(GeditFileChooser *chooser);
+
+G_GNUC_INTERNAL
+void			_gedit_file_chooser_set_transient_for		(GeditFileChooser *chooser,
+									 GtkWindow        *parent);
+
+G_GNUC_INTERNAL
+void			_gedit_file_chooser_show			(GeditFileChooser *chooser);
 
 G_END_DECLS
 

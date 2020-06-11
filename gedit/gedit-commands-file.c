@@ -421,7 +421,8 @@ _gedit_cmd_file_open (GSimpleAction *action,
 	{
 		const gchar *folder_uri;
 
-		_gedit_file_chooser_open_set_transient_for (file_chooser, GTK_WINDOW (window));
+		_gedit_file_chooser_set_transient_for (GEDIT_FILE_CHOOSER (file_chooser),
+						       GTK_WINDOW (window));
 
 		folder_uri = _gedit_window_get_file_chooser_folder_uri (window, GTK_FILE_CHOOSER_ACTION_OPEN);
 		if (folder_uri != NULL)
@@ -435,7 +436,7 @@ _gedit_cmd_file_open (GSimpleAction *action,
 			  G_CALLBACK (file_chooser_open_done_cb),
 			  window);
 
-	_gedit_file_chooser_open_show (file_chooser);
+	_gedit_file_chooser_show (GEDIT_FILE_CHOOSER (file_chooser));
 }
 
 void

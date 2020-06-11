@@ -18,8 +18,6 @@
  */
 
 #include "gedit-file-chooser-open.h"
-#include <glib/gi18n.h>
-#include "gedit-file-chooser.h"
 
 struct _GeditFileChooserOpenPrivate
 {
@@ -42,12 +40,6 @@ get_gtk_file_chooser (GeditFileChooserOpen *chooser)
 	return _gedit_file_chooser_get_gtk_file_chooser (GEDIT_FILE_CHOOSER (chooser));
 }
 
-static GtkNativeDialog *
-get_native_dialog (GeditFileChooserOpen *chooser)
-{
-	return GTK_NATIVE_DIALOG (get_gtk_file_chooser (chooser));
-}
-
 static void
 _gedit_file_chooser_open_class_init (GeditFileChooserOpenClass *klass)
 {
@@ -66,7 +58,7 @@ _gedit_file_chooser_open_class_init (GeditFileChooserOpenClass *klass)
 }
 
 static void
-response_cb (GtkFileChooserNative *chooser_native,
+response_cb (GtkFileChooser       *gtk_chooser,
 	     gint                  response_id,
 	     GeditFileChooserOpen *chooser)
 {
@@ -79,41 +71,14 @@ response_cb (GtkFileChooserNative *chooser_native,
 static void
 _gedit_file_chooser_open_init (GeditFileChooserOpen *chooser)
 {
-	GtkFileChooserNative *native_chooser;
+	GtkFileChooser *gtk_chooser;
 
 	chooser->priv = _gedit_file_chooser_open_get_instance_private (chooser);
 
-	/* Translators: "Open Files" is the title of the file chooser window. */
-	native_chooser = gtk_file_chooser_native_new (C_("window title", "Open Files"),
-						      NULL,
-						      GTK_FILE_CHOOSER_ACTION_OPEN,
-						      NULL,
-						      NULL);
+	gtk_chooser = get_gtk_file_chooser (chooser);
+	gtk_file_chooser_set_select_multiple (gtk_chooser, TRUE);
 
-	/* Set the dialog as modal. It's a workaround for this bug:
-	 * https://gitlab.gnome.org/GNOME/gtk/issues/2824
-	 * "GtkNativeDialog: non-modal and gtk_native_dialog_show(), doesn't
-	 * present the window"
-	 *
-	 * - Drag-and-drop files from the file chooser to the GeditWindow: OK,
-	 *   it still works.
-	 * - Other main windows not being "blocked"/insensitive
-	 *   (GtkWindowGroup): OK, calling gtk_native_dialog_set_transient_for()
-	 *   does the right thing.
-	 *
-	 * Even if the above GTK bug is fixed, the file chooser can be kept
-	 * modal, except if there was a good reason for not being modal (what
-	 * reason(s)?).
-	 */
-	gtk_native_dialog_set_modal (GTK_NATIVE_DIALOG (native_chooser), TRUE);
-
-	gtk_file_chooser_set_local_only (GTK_FILE_CHOOSER (native_chooser), FALSE);
-	gtk_file_chooser_set_select_multiple (GTK_FILE_CHOOSER (native_chooser), TRUE);
-
-	_gedit_file_chooser_set_gtk_file_chooser (GEDIT_FILE_CHOOSER (chooser),
-						  GTK_FILE_CHOOSER (native_chooser));
-
-	g_signal_connect (native_chooser,
+	g_signal_connect (gtk_chooser,
 			  "response",
 			  G_CALLBACK (response_cb),
 			  chooser);
@@ -123,24 +88,6 @@ GeditFileChooserOpen *
 _gedit_file_chooser_open_new (void)
 {
 	return g_object_new (GEDIT_TYPE_FILE_CHOOSER_OPEN, NULL);
-}
-
-void
-_gedit_file_chooser_open_set_transient_for (GeditFileChooserOpen *chooser,
-					    GtkWindow            *parent)
-{
-	g_return_if_fail (GEDIT_IS_FILE_CHOOSER_OPEN (chooser));
-	g_return_if_fail (parent == NULL || GTK_IS_WINDOW (parent));
-
-	gtk_native_dialog_set_transient_for (get_native_dialog (chooser), parent);
-}
-
-void
-_gedit_file_chooser_open_show (GeditFileChooserOpen *chooser)
-{
-	g_return_if_fail (GEDIT_IS_FILE_CHOOSER_OPEN (chooser));
-
-	gtk_native_dialog_show (get_native_dialog (chooser));
 }
 
 GSList *
