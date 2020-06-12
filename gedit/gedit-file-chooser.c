@@ -29,6 +29,14 @@ struct _GeditFileChooserPrivate
 	GtkFileChooser *gtk_chooser;
 };
 
+enum
+{
+	SIGNAL_DONE,
+	N_SIGNALS
+};
+
+static guint signals[N_SIGNALS];
+
 G_DEFINE_TYPE_WITH_PRIVATE (GeditFileChooser, _gedit_file_chooser, G_TYPE_OBJECT)
 
 #define ALL_FILES		_("All Files")
@@ -580,6 +588,17 @@ set_modal (GeditFileChooser *chooser)
 }
 
 static void
+response_cb (GtkFileChooser   *gtk_chooser,
+	     gint              response_id,
+	     GeditFileChooser *chooser)
+{
+	gboolean accept;
+
+	accept = response_id == GTK_RESPONSE_ACCEPT;
+	g_signal_emit (chooser, signals[SIGNAL_DONE], 0, accept);
+}
+
+static void
 _gedit_file_chooser_constructed (GObject *object)
 {
 	GeditFileChooser *chooser = GEDIT_FILE_CHOOSER (object);
@@ -598,6 +617,12 @@ _gedit_file_chooser_constructed (GObject *object)
 		setup_filters (chooser);
 		set_modal (chooser);
 		gtk_file_chooser_set_local_only (chooser->priv->gtk_chooser, FALSE);
+
+		g_signal_connect_object (chooser->priv->gtk_chooser,
+					 "response",
+					 G_CALLBACK (response_cb),
+					 chooser,
+					 0);
 	}
 }
 
@@ -618,6 +643,19 @@ _gedit_file_chooser_class_init (GeditFileChooserClass *klass)
 
 	object_class->constructed = _gedit_file_chooser_constructed;
 	object_class->dispose = _gedit_file_chooser_dispose;
+
+	/*
+	 * GeditFileChooser::done:
+	 * @chooser: the #GeditFileChooser emitting the signal.
+	 * @accept: whether the response code is %GTK_RESPONSE_ACCEPT.
+	 */
+	signals[SIGNAL_DONE] =
+		g_signal_new ("done",
+			      G_TYPE_FROM_CLASS (klass),
+			      G_SIGNAL_RUN_FIRST,
+			      0, NULL, NULL, NULL,
+			      G_TYPE_NONE,
+			      1, G_TYPE_BOOLEAN);
 }
 
 static void
