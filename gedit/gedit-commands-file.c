@@ -378,8 +378,8 @@ file_chooser_open_done_cb (GeditFileChooserOpen *file_chooser,
 	}
 
 	files = _gedit_file_chooser_open_get_files (file_chooser);
-	encoding = _gedit_file_chooser_open_get_encoding (file_chooser);
-	folder_uri = _gedit_file_chooser_open_get_current_folder_uri (file_chooser);
+	encoding = _gedit_file_chooser_get_encoding (GEDIT_FILE_CHOOSER (file_chooser));
+	folder_uri = _gedit_file_chooser_get_current_folder_uri (GEDIT_FILE_CHOOSER (file_chooser));
 	g_object_unref (file_chooser);
 
 	if (window == NULL)
@@ -427,7 +427,8 @@ _gedit_cmd_file_open (GSimpleAction *action,
 		folder_uri = _gedit_window_get_file_chooser_folder_uri (window, GTK_FILE_CHOOSER_ACTION_OPEN);
 		if (folder_uri != NULL)
 		{
-			_gedit_file_chooser_open_set_current_folder_uri (file_chooser, folder_uri);
+			_gedit_file_chooser_set_current_folder_uri (GEDIT_FILE_CHOOSER (file_chooser),
+								    folder_uri);
 		}
 	}
 

@@ -20,7 +20,7 @@
 #ifndef GEDIT_FILE_CHOOSER_H
 #define GEDIT_FILE_CHOOSER_H
 
-#include <gtk/gtk.h>
+#include <gtksourceview/gtksource.h>
 
 G_BEGIN_DECLS
 
@@ -69,6 +69,17 @@ void			_gedit_file_chooser_set_transient_for		(GeditFileChooser *chooser,
 
 G_GNUC_INTERNAL
 void			_gedit_file_chooser_show			(GeditFileChooser *chooser);
+
+G_GNUC_INTERNAL
+gchar *			_gedit_file_chooser_get_current_folder_uri	(GeditFileChooser *chooser);
+
+G_GNUC_INTERNAL
+void			_gedit_file_chooser_set_current_folder_uri	(GeditFileChooser *chooser,
+									 const gchar      *uri);
+
+G_GNUC_INTERNAL
+const GtkSourceEncoding *
+			_gedit_file_chooser_get_encoding		(GeditFileChooser *chooser);
 
 G_END_DECLS
 

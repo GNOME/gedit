@@ -73,29 +73,3 @@ _gedit_file_chooser_open_get_files (GeditFileChooserOpen *chooser)
 
 	return gtk_file_chooser_get_files (get_gtk_file_chooser (chooser));
 }
-
-gchar *
-_gedit_file_chooser_open_get_current_folder_uri (GeditFileChooserOpen *chooser)
-{
-	g_return_val_if_fail (GEDIT_IS_FILE_CHOOSER_OPEN (chooser), NULL);
-
-	return gtk_file_chooser_get_current_folder_uri (get_gtk_file_chooser (chooser));
-}
-
-void
-_gedit_file_chooser_open_set_current_folder_uri (GeditFileChooserOpen *chooser,
-						 const gchar          *uri)
-{
-	g_return_if_fail (GEDIT_IS_FILE_CHOOSER_OPEN (chooser));
-
-	gtk_file_chooser_set_current_folder_uri (get_gtk_file_chooser (chooser), uri);
-}
-
-const GtkSourceEncoding *
-_gedit_file_chooser_open_get_encoding (GeditFileChooserOpen *chooser)
-{
-	g_return_val_if_fail (GEDIT_IS_FILE_CHOOSER_OPEN (chooser), NULL);
-
-	/* Stub */
-	return NULL;
-}

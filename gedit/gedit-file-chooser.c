@@ -19,7 +19,6 @@
 
 #include "gedit-file-chooser.h"
 #include <glib/gi18n.h>
-#include <gtksourceview/gtksource.h>
 #include "gedit-settings.h"
 
 /* Common code between the different GeditFileChooser's. */
@@ -719,4 +718,30 @@ _gedit_file_chooser_show (GeditFileChooser *chooser)
 	{
 		g_warn_if_reached ();
 	}
+}
+
+gchar *
+_gedit_file_chooser_get_current_folder_uri (GeditFileChooser *chooser)
+{
+	g_return_val_if_fail (GEDIT_IS_FILE_CHOOSER (chooser), NULL);
+
+	return gtk_file_chooser_get_current_folder_uri (chooser->priv->gtk_chooser);
+}
+
+void
+_gedit_file_chooser_set_current_folder_uri (GeditFileChooser *chooser,
+					    const gchar      *uri)
+{
+	g_return_if_fail (GEDIT_IS_FILE_CHOOSER (chooser));
+
+	gtk_file_chooser_set_current_folder_uri (chooser->priv->gtk_chooser, uri);
+}
+
+const GtkSourceEncoding *
+_gedit_file_chooser_get_encoding (GeditFileChooser *chooser)
+{
+	g_return_val_if_fail (GEDIT_IS_FILE_CHOOSER (chooser), NULL);
+
+	/* Stub */
+	return NULL;
 }
