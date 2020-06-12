@@ -553,24 +553,6 @@ setup_filters (GeditFileChooser *chooser)
 			  NULL);
 }
 
-static void
-_gedit_file_chooser_dispose (GObject *object)
-{
-	GeditFileChooser *chooser = GEDIT_FILE_CHOOSER (object);
-
-	g_clear_object (&chooser->priv->gtk_chooser);
-
-	G_OBJECT_CLASS (_gedit_file_chooser_parent_class)->dispose (object);
-}
-
-static void
-_gedit_file_chooser_class_init (GeditFileChooserClass *klass)
-{
-	GObjectClass *object_class = G_OBJECT_CLASS (klass);
-
-	object_class->dispose = _gedit_file_chooser_dispose;
-}
-
 /* Set the dialog as modal. It's a workaround for this bug:
  * https://gitlab.gnome.org/GNOME/gtk/issues/2824
  * "GtkNativeDialog: non-modal and gtk_native_dialog_show(), doesn't present the
@@ -598,20 +580,50 @@ set_modal (GeditFileChooser *chooser)
 }
 
 static void
-_gedit_file_chooser_init (GeditFileChooser *chooser)
+_gedit_file_chooser_constructed (GObject *object)
 {
-	GeditFileChooserClass *klass;
+	GeditFileChooser *chooser = GEDIT_FILE_CHOOSER (object);
+	GeditFileChooserClass *klass = GEDIT_FILE_CHOOSER_GET_CLASS (chooser);
 
-	chooser->priv = _gedit_file_chooser_get_instance_private (chooser);
+	if (G_OBJECT_CLASS (_gedit_file_chooser_parent_class)->constructed != NULL)
+	{
+		G_OBJECT_CLASS (_gedit_file_chooser_parent_class)->constructed (object);
+	}
 
-	klass = GEDIT_FILE_CHOOSER_GET_CLASS (chooser);
 	if (klass->create_gtk_file_chooser != NULL)
 	{
+		g_return_if_fail (chooser->priv->gtk_chooser == NULL);
 		chooser->priv->gtk_chooser = klass->create_gtk_file_chooser (chooser);
+
 		setup_filters (chooser);
 		set_modal (chooser);
 		gtk_file_chooser_set_local_only (chooser->priv->gtk_chooser, FALSE);
 	}
+}
+
+static void
+_gedit_file_chooser_dispose (GObject *object)
+{
+	GeditFileChooser *chooser = GEDIT_FILE_CHOOSER (object);
+
+	g_clear_object (&chooser->priv->gtk_chooser);
+
+	G_OBJECT_CLASS (_gedit_file_chooser_parent_class)->dispose (object);
+}
+
+static void
+_gedit_file_chooser_class_init (GeditFileChooserClass *klass)
+{
+	GObjectClass *object_class = G_OBJECT_CLASS (klass);
+
+	object_class->constructed = _gedit_file_chooser_constructed;
+	object_class->dispose = _gedit_file_chooser_dispose;
+}
+
+static void
+_gedit_file_chooser_init (GeditFileChooser *chooser)
+{
+	chooser->priv = _gedit_file_chooser_get_instance_private (chooser);
 }
 
 GeditFileChooser *

@@ -42,8 +42,43 @@ get_gtk_file_chooser (GeditFileChooserOpen *chooser)
 }
 
 static void
+response_cb (GtkFileChooser       *gtk_chooser,
+	     gint                  response_id,
+	     GeditFileChooserOpen *chooser)
+{
+	gboolean accept;
+
+	accept = response_id == GTK_RESPONSE_ACCEPT;
+	g_signal_emit (chooser, signals[SIGNAL_DONE], 0, accept);
+}
+
+static void
+_gedit_file_chooser_open_constructed (GObject *object)
+{
+	GeditFileChooserOpen *chooser = GEDIT_FILE_CHOOSER_OPEN (object);
+	GtkFileChooser *gtk_chooser;
+
+	if (G_OBJECT_CLASS (_gedit_file_chooser_open_parent_class)->constructed != NULL)
+	{
+		G_OBJECT_CLASS (_gedit_file_chooser_open_parent_class)->constructed (object);
+	}
+
+	gtk_chooser = get_gtk_file_chooser (chooser);
+	gtk_file_chooser_set_select_multiple (gtk_chooser, TRUE);
+
+	g_signal_connect (gtk_chooser,
+			  "response",
+			  G_CALLBACK (response_cb),
+			  chooser);
+}
+
+static void
 _gedit_file_chooser_open_class_init (GeditFileChooserOpenClass *klass)
 {
+	GObjectClass *object_class = G_OBJECT_CLASS (klass);
+
+	object_class->constructed = _gedit_file_chooser_open_constructed;
+
 	/*
 	 * GeditFileChooserOpen::done:
 	 * @chooser: the #GeditFileChooserOpen emitting the signal.
@@ -59,30 +94,9 @@ _gedit_file_chooser_open_class_init (GeditFileChooserOpenClass *klass)
 }
 
 static void
-response_cb (GtkFileChooser       *gtk_chooser,
-	     gint                  response_id,
-	     GeditFileChooserOpen *chooser)
-{
-	gboolean accept;
-
-	accept = response_id == GTK_RESPONSE_ACCEPT;
-	g_signal_emit (chooser, signals[SIGNAL_DONE], 0, accept);
-}
-
-static void
 _gedit_file_chooser_open_init (GeditFileChooserOpen *chooser)
 {
-	GtkFileChooser *gtk_chooser;
-
 	chooser->priv = _gedit_file_chooser_open_get_instance_private (chooser);
-
-	gtk_chooser = get_gtk_file_chooser (chooser);
-	gtk_file_chooser_set_select_multiple (gtk_chooser, TRUE);
-
-	g_signal_connect (gtk_chooser,
-			  "response",
-			  G_CALLBACK (response_cb),
-			  chooser);
 }
 
 GeditFileChooserOpen *
