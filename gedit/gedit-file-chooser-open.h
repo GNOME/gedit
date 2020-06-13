@@ -33,13 +33,10 @@ G_BEGIN_DECLS
 
 typedef struct _GeditFileChooserOpen         GeditFileChooserOpen;
 typedef struct _GeditFileChooserOpenClass    GeditFileChooserOpenClass;
-typedef struct _GeditFileChooserOpenPrivate  GeditFileChooserOpenPrivate;
 
 struct _GeditFileChooserOpen
 {
 	GeditFileChooser parent;
-
-	GeditFileChooserOpenPrivate *priv;
 };
 
 struct _GeditFileChooserOpenClass

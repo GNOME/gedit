@@ -21,6 +21,8 @@
 #include <glib/gi18n.h>
 #include "gedit-encodings-combo-box.h"
 
+/* A GtkFileChooserDialog to *open* files. */
+
 struct _GeditFileChooserOpenDialogPrivate
 {
 	GeditEncodingsComboBox *encodings_combo_box;

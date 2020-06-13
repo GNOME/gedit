@@ -21,12 +21,9 @@
 #include "gedit-file-chooser-open-dialog.h"
 #include "gedit-file-chooser-open-native.h"
 
-struct _GeditFileChooserOpenPrivate
-{
-	gint something;
-};
+/* Common code for file choosers that *open* files. */
 
-G_DEFINE_TYPE_WITH_PRIVATE (GeditFileChooserOpen, _gedit_file_chooser_open, GEDIT_TYPE_FILE_CHOOSER)
+G_DEFINE_TYPE (GeditFileChooserOpen, _gedit_file_chooser_open, GEDIT_TYPE_FILE_CHOOSER)
 
 static GtkFileChooser *
 get_gtk_file_chooser (GeditFileChooserOpen *chooser)
@@ -58,7 +55,6 @@ _gedit_file_chooser_open_class_init (GeditFileChooserOpenClass *klass)
 static void
 _gedit_file_chooser_open_init (GeditFileChooserOpen *chooser)
 {
-	chooser->priv = _gedit_file_chooser_open_get_instance_private (chooser);
 }
 
 GeditFileChooserOpen *

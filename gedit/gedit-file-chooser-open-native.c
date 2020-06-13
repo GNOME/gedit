@@ -20,6 +20,9 @@
 #include "gedit-file-chooser-open-native.h"
 #include <glib/gi18n.h>
 
+/* A GtkFileChooserNative to *open* files. */
+/* TODO: finish the implementation. */
+
 struct _GeditFileChooserOpenNativePrivate
 {
 	gint something;

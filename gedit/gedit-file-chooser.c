@@ -45,12 +45,17 @@ G_DEFINE_TYPE_WITH_PRIVATE (GeditFileChooser, _gedit_file_chooser, G_TYPE_OBJECT
 gboolean
 _gedit_file_chooser_is_native (void)
 {
+	/* TODO: finish the implementation of the native variants. */
 	return FALSE;
 }
 
 static gboolean
 mime_types_are_supported (void)
 {
+/* Note that the #ifdef could be moved to where this function is called, to have
+ * much more code between the #ifdef/#else/#endif. The goal is to always compile
+ * all the code on all platforms, to catch compilation problems earlier.
+ */
 #ifdef G_OS_WIN32
 	/* See the GtkFileChooserNative documentation, a GtkFileFilter with
 	 * mime-types is not supported on Windows.
