@@ -41,6 +41,13 @@ G_DEFINE_TYPE_WITH_PRIVATE (GeditFileChooser, _gedit_file_chooser, G_TYPE_OBJECT
 #define ALL_FILES		_("All Files")
 #define ALL_TEXT_FILES		_("All Text Files")
 
+/* Whether to use GtkFileChooserNative or GtkFileChooserDialog. */
+gboolean
+_gedit_file_chooser_is_native (void)
+{
+	return FALSE;
+}
+
 static gboolean
 mime_types_are_supported (void)
 {
@@ -576,17 +583,13 @@ setup_filters (GeditFileChooser *chooser)
 static void
 set_modal (GeditFileChooser *chooser)
 {
-	if (GTK_IS_NATIVE_DIALOG (chooser->priv->gtk_chooser))
+	if (_gedit_file_chooser_is_native ())
 	{
 		gtk_native_dialog_set_modal (GTK_NATIVE_DIALOG (chooser->priv->gtk_chooser), TRUE);
 	}
-	else if (GTK_IS_WINDOW (chooser->priv->gtk_chooser))
-	{
-		gtk_window_set_modal (GTK_WINDOW (chooser->priv->gtk_chooser), TRUE);
-	}
 	else
 	{
-		g_warn_if_reached ();
+		gtk_window_set_modal (GTK_WINDOW (chooser->priv->gtk_chooser), TRUE);
 	}
 }
 
@@ -636,13 +639,13 @@ _gedit_file_chooser_dispose (GObject *object)
 
 	if (chooser->priv->gtk_chooser != NULL)
 	{
-		if (GTK_IS_WIDGET (chooser->priv->gtk_chooser))
+		if (_gedit_file_chooser_is_native ())
 		{
-			gtk_widget_destroy (GTK_WIDGET (chooser->priv->gtk_chooser));
+			g_object_unref (chooser->priv->gtk_chooser);
 		}
 		else
 		{
-			g_object_unref (chooser->priv->gtk_chooser);
+			gtk_widget_destroy (GTK_WIDGET (chooser->priv->gtk_chooser));
 		}
 
 		chooser->priv->gtk_chooser = NULL;
@@ -712,11 +715,11 @@ _gedit_file_chooser_set_transient_for (GeditFileChooser *chooser,
 	g_return_if_fail (GEDIT_IS_FILE_CHOOSER (chooser));
 	g_return_if_fail (parent == NULL || GTK_IS_WINDOW (parent));
 
-	if (GTK_IS_NATIVE_DIALOG (chooser->priv->gtk_chooser))
+	if (_gedit_file_chooser_is_native ())
 	{
 		gtk_native_dialog_set_transient_for (GTK_NATIVE_DIALOG (chooser->priv->gtk_chooser), parent);
 	}
-	else if (GTK_IS_WINDOW (chooser->priv->gtk_chooser))
+	else
 	{
 		gtk_window_set_transient_for (GTK_WINDOW (chooser->priv->gtk_chooser), parent);
 
@@ -725,10 +728,6 @@ _gedit_file_chooser_set_transient_for (GeditFileChooser *chooser,
 			gtk_window_set_destroy_with_parent (GTK_WINDOW (chooser->priv->gtk_chooser), TRUE);
 		}
 	}
-	else
-	{
-		g_warn_if_reached ();
-	}
 }
 
 void
@@ -736,17 +735,13 @@ _gedit_file_chooser_show (GeditFileChooser *chooser)
 {
 	g_return_if_fail (GEDIT_IS_FILE_CHOOSER (chooser));
 
-	if (GTK_IS_NATIVE_DIALOG (chooser->priv->gtk_chooser))
+	if (_gedit_file_chooser_is_native ())
 	{
 		gtk_native_dialog_show (GTK_NATIVE_DIALOG (chooser->priv->gtk_chooser));
 	}
-	else if (GTK_IS_WINDOW (chooser->priv->gtk_chooser))
-	{
-		gtk_window_present (GTK_WINDOW (chooser->priv->gtk_chooser));
-	}
 	else
 	{
-		g_warn_if_reached ();
+		gtk_window_present (GTK_WINDOW (chooser->priv->gtk_chooser));
 	}
 }
 

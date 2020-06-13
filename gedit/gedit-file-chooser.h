@@ -51,6 +51,9 @@ struct _GeditFileChooserClass
 };
 
 G_GNUC_INTERNAL
+gboolean		_gedit_file_chooser_is_native			(void);
+
+G_GNUC_INTERNAL
 GType			_gedit_file_chooser_get_type			(void);
 
 G_GNUC_INTERNAL

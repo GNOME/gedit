@@ -64,7 +64,11 @@ _gedit_file_chooser_open_init (GeditFileChooserOpen *chooser)
 GeditFileChooserOpen *
 _gedit_file_chooser_open_new (void)
 {
-	//return _gedit_file_chooser_open_native_new ();
+	if (_gedit_file_chooser_is_native ())
+	{
+		return _gedit_file_chooser_open_native_new ();
+	}
+
 	return _gedit_file_chooser_open_dialog_new ();
 }
 
