@@ -47,7 +47,9 @@ struct _GeditFileChooserClass
 	GObjectClass parent_class;
 
 	/* Returns: (transfer full). */
-	GtkFileChooser *	(* create_gtk_file_chooser)	(GeditFileChooser *chooser);
+	GtkFileChooser *		(* create_gtk_file_chooser)	(GeditFileChooser *chooser);
+
+	const GtkSourceEncoding *	(* get_encoding)		(GeditFileChooser *chooser);
 };
 
 G_GNUC_INTERNAL

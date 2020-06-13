@@ -90,6 +90,14 @@ chooser_create_gtk_file_chooser (GeditFileChooser *chooser)
 	return GTK_FILE_CHOOSER (file_chooser);
 }
 
+static const GtkSourceEncoding *
+chooser_get_encoding (GeditFileChooser *_chooser)
+{
+	GeditFileChooserOpenDialog *chooser = GEDIT_FILE_CHOOSER_OPEN_DIALOG (_chooser);
+
+	return gedit_encodings_combo_box_get_selected_encoding (chooser->priv->encodings_combo_box);
+}
+
 static void
 _gedit_file_chooser_open_dialog_class_init (GeditFileChooserOpenDialogClass *klass)
 {
@@ -99,6 +107,7 @@ _gedit_file_chooser_open_dialog_class_init (GeditFileChooserOpenDialogClass *kla
 	object_class->dispose = _gedit_file_chooser_open_dialog_dispose;
 
 	file_chooser_class->create_gtk_file_chooser = chooser_create_gtk_file_chooser;
+	file_chooser_class->get_encoding = chooser_get_encoding;
 }
 
 static void

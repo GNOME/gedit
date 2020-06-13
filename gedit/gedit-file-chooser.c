@@ -765,8 +765,12 @@ _gedit_file_chooser_set_current_folder_uri (GeditFileChooser *chooser,
 const GtkSourceEncoding *
 _gedit_file_chooser_get_encoding (GeditFileChooser *chooser)
 {
+	GeditFileChooserClass *klass;
+
 	g_return_val_if_fail (GEDIT_IS_FILE_CHOOSER (chooser), NULL);
 
-	/* Stub */
-	return NULL;
+	klass = GEDIT_FILE_CHOOSER_GET_CLASS (chooser);
+	g_return_val_if_fail (klass->get_encoding != NULL, NULL);
+
+	return klass->get_encoding (chooser);
 }
