@@ -18,6 +18,7 @@
  */
 
 #include "gedit-file-chooser-open-dialog.h"
+#include <glib/gi18n.h>
 
 struct _GeditFileChooserOpenDialogPrivate
 {
@@ -33,12 +34,38 @@ _gedit_file_chooser_open_dialog_dispose (GObject *object)
 	G_OBJECT_CLASS (_gedit_file_chooser_open_dialog_parent_class)->dispose (object);
 }
 
+static GtkFileChooser *
+chooser_create_gtk_file_chooser (GeditFileChooser *chooser)
+{
+	GtkWidget *file_chooser;
+
+	/* Translators: "Open Files" is the title of the file chooser window. */
+	file_chooser = gtk_file_chooser_dialog_new (C_("window title", "Open Files"),
+						    NULL,
+						    GTK_FILE_CHOOSER_ACTION_OPEN,
+						    _("_Cancel"), GTK_RESPONSE_CANCEL,
+						    _("_Open"), GTK_RESPONSE_ACCEPT,
+						    NULL);
+
+	gtk_dialog_set_default_response (GTK_DIALOG (file_chooser), GTK_RESPONSE_ACCEPT);
+
+	if (g_object_is_floating (file_chooser))
+	{
+		g_object_ref_sink (file_chooser);
+	}
+
+	return GTK_FILE_CHOOSER (file_chooser);
+}
+
 static void
 _gedit_file_chooser_open_dialog_class_init (GeditFileChooserOpenDialogClass *klass)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
+	GeditFileChooserClass *file_chooser_class = GEDIT_FILE_CHOOSER_CLASS (klass);
 
 	object_class->dispose = _gedit_file_chooser_open_dialog_dispose;
+
+	file_chooser_class->create_gtk_file_chooser = chooser_create_gtk_file_chooser;
 }
 
 static void

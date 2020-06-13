@@ -580,6 +580,10 @@ set_modal (GeditFileChooser *chooser)
 	{
 		gtk_native_dialog_set_modal (GTK_NATIVE_DIALOG (chooser->priv->gtk_chooser), TRUE);
 	}
+	else if (GTK_IS_WINDOW (chooser->priv->gtk_chooser))
+	{
+		gtk_window_set_modal (GTK_WINDOW (chooser->priv->gtk_chooser), TRUE);
+	}
 	else
 	{
 		g_warn_if_reached ();
@@ -630,7 +634,19 @@ _gedit_file_chooser_dispose (GObject *object)
 {
 	GeditFileChooser *chooser = GEDIT_FILE_CHOOSER (object);
 
-	g_clear_object (&chooser->priv->gtk_chooser);
+	if (chooser->priv->gtk_chooser != NULL)
+	{
+		if (GTK_IS_WIDGET (chooser->priv->gtk_chooser))
+		{
+			gtk_widget_destroy (GTK_WIDGET (chooser->priv->gtk_chooser));
+		}
+		else
+		{
+			g_object_unref (chooser->priv->gtk_chooser);
+		}
+
+		chooser->priv->gtk_chooser = NULL;
+	}
 
 	G_OBJECT_CLASS (_gedit_file_chooser_parent_class)->dispose (object);
 }
@@ -669,6 +685,7 @@ _gedit_file_chooser_new (void)
 	return g_object_new (GEDIT_TYPE_FILE_CHOOSER, NULL);
 }
 
+/* TODO: this function will go away. */
 void
 _gedit_file_chooser_set_gtk_file_chooser (GeditFileChooser *chooser,
 					  GtkFileChooser   *gtk_chooser)
@@ -699,6 +716,15 @@ _gedit_file_chooser_set_transient_for (GeditFileChooser *chooser,
 	{
 		gtk_native_dialog_set_transient_for (GTK_NATIVE_DIALOG (chooser->priv->gtk_chooser), parent);
 	}
+	else if (GTK_IS_WINDOW (chooser->priv->gtk_chooser))
+	{
+		gtk_window_set_transient_for (GTK_WINDOW (chooser->priv->gtk_chooser), parent);
+
+		if (parent != NULL)
+		{
+			gtk_window_set_destroy_with_parent (GTK_WINDOW (chooser->priv->gtk_chooser), TRUE);
+		}
+	}
 	else
 	{
 		g_warn_if_reached ();
@@ -713,6 +739,10 @@ _gedit_file_chooser_show (GeditFileChooser *chooser)
 	if (GTK_IS_NATIVE_DIALOG (chooser->priv->gtk_chooser))
 	{
 		gtk_native_dialog_show (GTK_NATIVE_DIALOG (chooser->priv->gtk_chooser));
+	}
+	else if (GTK_IS_WINDOW (chooser->priv->gtk_chooser))
+	{
+		gtk_window_present (GTK_WINDOW (chooser->priv->gtk_chooser));
 	}
 	else
 	{
