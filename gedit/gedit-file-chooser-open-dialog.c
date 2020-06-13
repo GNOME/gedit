@@ -19,17 +19,47 @@
 
 #include "gedit-file-chooser-open-dialog.h"
 #include <glib/gi18n.h>
+#include "gedit-encodings-combo-box.h"
 
 struct _GeditFileChooserOpenDialogPrivate
 {
-	gint something;
+	GeditEncodingsComboBox *encodings_combo_box;
 };
 
 G_DEFINE_TYPE_WITH_PRIVATE (GeditFileChooserOpenDialog, _gedit_file_chooser_open_dialog, GEDIT_TYPE_FILE_CHOOSER_OPEN)
 
 static void
+setup_encoding_extra_widget (GeditFileChooserOpenDialog *chooser,
+			     GtkFileChooser             *gtk_chooser)
+{
+	GtkWidget *label;
+	GtkWidget *encodings_combo_box;
+	GtkWidget *hgrid;
+
+	g_assert (chooser->priv->encodings_combo_box == NULL);
+
+	label = gtk_label_new_with_mnemonic (_("C_haracter Encoding:"));
+	encodings_combo_box = gedit_encodings_combo_box_new (FALSE);
+	gtk_label_set_mnemonic_widget (GTK_LABEL (label), encodings_combo_box);
+
+	hgrid = gtk_grid_new ();
+	gtk_grid_set_column_spacing (GTK_GRID (hgrid), 6);
+	gtk_container_add (GTK_CONTAINER (hgrid), label);
+	gtk_container_add (GTK_CONTAINER (hgrid), encodings_combo_box);
+
+	chooser->priv->encodings_combo_box = GEDIT_ENCODINGS_COMBO_BOX (encodings_combo_box);
+	g_object_ref_sink (chooser->priv->encodings_combo_box);
+
+	gtk_widget_show_all (hgrid);
+	gtk_file_chooser_set_extra_widget (gtk_chooser, hgrid);
+}
+
+static void
 _gedit_file_chooser_open_dialog_dispose (GObject *object)
 {
+	GeditFileChooserOpenDialog *chooser = GEDIT_FILE_CHOOSER_OPEN_DIALOG (object);
+
+	g_clear_object (&chooser->priv->encodings_combo_box);
 
 	G_OBJECT_CLASS (_gedit_file_chooser_open_dialog_parent_class)->dispose (object);
 }
@@ -48,6 +78,9 @@ chooser_create_gtk_file_chooser (GeditFileChooser *chooser)
 						    NULL);
 
 	gtk_dialog_set_default_response (GTK_DIALOG (file_chooser), GTK_RESPONSE_ACCEPT);
+
+	setup_encoding_extra_widget (GEDIT_FILE_CHOOSER_OPEN_DIALOG (chooser),
+				     GTK_FILE_CHOOSER (file_chooser));
 
 	if (g_object_is_floating (file_chooser))
 	{
