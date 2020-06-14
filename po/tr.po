@@ -17,8 +17,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gedit\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gedit/issues\n"
-"POT-Creation-Date: 2020-05-07 00:43+0000\n"
-"PO-Revision-Date: 2020-05-16 14:40+0300\n"
+"POT-Creation-Date: 2020-06-09 22:13+0000\n"
+"PO-Revision-Date: 2020-06-14 09:57+0300\n"
 "Last-Translator: Emin Tufan Çetin <etcetin@gmail.com>\n"
 "Language-Team: Türkçe <gnome-turk@gnome.org>\n"
 "Language: tr\n"
@@ -258,7 +258,7 @@ msgstr "Belge arkaplanı desen türü"
 
 #: data/org.gnome.gedit.gschema.xml.in:132
 msgid "Whether the document will get a background pattern painted."
-msgstr "Belgenin boyalı bir desenli arka plan içerip içermeyeceği."
+msgstr "Belgenin arka plan deseniyle boyanıp boyanmayacağı."
 
 #: data/org.gnome.gedit.gschema.xml.in:142
 msgid "Smart Home End"
@@ -504,11 +504,11 @@ msgstr ""
 "eder. Yalnızca tanınmış kodlamalar kullanılır. Öntanımlı değer gedit "
 "ülkenize ve dilinize göre uygun varsayılanları seçmediği sürece boş listedir."
 
-#: data/org.gnome.gedit.gschema.xml.in:301
+#: data/org.gnome.gedit.gschema.xml.in:304
 msgid "Active plugins"
 msgstr "Etkin eklentiler"
 
-#: data/org.gnome.gedit.gschema.xml.in:302
+#: data/org.gnome.gedit.gschema.xml.in:305
 msgid "List of active plugins."
 msgstr "Etkin eklentilerin listesi."
 
@@ -532,7 +532,7 @@ msgstr "KODLAMA"
 
 #: gedit/gedit-app.c:105
 msgid "Create a new top-level window in an existing instance of gedit"
-msgstr "gedit’in geçerli bir örneğinde yeni bir en üst düzey pencere yarat"
+msgstr "gedit’in geçerli örneğinde yeni en üst düzey pencere yarat"
 
 #: gedit/gedit-app.c:112
 msgid "Create a new document in an existing instance of gedit"
@@ -552,7 +552,7 @@ msgstr "[DOSYA…] [+SATIR[:SÜTUN]]"
 
 #: gedit/gedit-app.c:223
 msgid "There was an error displaying the help."
-msgstr "Yardım görüntülenirken bir hata oluştu."
+msgstr "Yardım görüntülenirken hata oluştu."
 
 #: gedit/gedit-app.c:838
 #, c-format
@@ -563,11 +563,11 @@ msgstr "%s: geçersiz kodlama."
 msgid "Close _without Saving"
 msgstr "Kaydetmeden _Kapat"
 
-#: gedit/gedit-close-confirmation-dialog.c:277 gedit/gedit-commands-file.c:460
-#: gedit/gedit-commands-file.c:565 gedit/gedit-commands-file.c:641
-#: gedit/gedit-commands-file.c:852 gedit/gedit-commands-file.c:1566
-#: gedit/gedit-encodings-dialog.c:192 gedit/gedit-preferences-dialog.c:773
-#: gedit/gedit-progress-info-bar.c:49
+#: gedit/gedit-close-confirmation-dialog.c:277 gedit/gedit-commands-file.c:496
+#: gedit/gedit-commands-file.c:572 gedit/gedit-commands-file.c:796
+#: gedit/gedit-commands-file.c:1518 gedit/gedit-encodings-dialog.c:192
+#: gedit/gedit-file-chooser-open-adapter.c:113
+#: gedit/gedit-preferences-dialog.c:721 gedit/gedit-progress-info-bar.c:49
 #: gedit/resources/ui/gedit-encodings-dialog.ui:44
 #: gedit/resources/ui/gedit-highlight-mode-dialog.ui:31
 #: plugins/filebrowser/gedit-file-browser-utils.c:211
@@ -585,7 +585,7 @@ msgstr "_İptal"
 msgid "_Save As…"
 msgstr "Farklı _Kaydet…"
 
-#: gedit/gedit-close-confirmation-dialog.c:295 gedit/gedit-commands-file.c:853
+#: gedit/gedit-close-confirmation-dialog.c:295 gedit/gedit-commands-file.c:795
 #: gedit/resources/gtk/menus-common.ui:127
 #: gedit/resources/ui/gedit-window.ui:59
 #: plugins/snippets/snippets/manager.py:875
@@ -601,14 +601,14 @@ msgid_plural ""
 "If you don’t save, changes from the last %ld seconds will be permanently "
 "lost."
 msgstr[0] ""
-"Kaydetmediğiniz takdirde son %ld saniyede yaptığınız değişiklikler kalıcı "
+"Kaydetmezseniz son %ld saniyede yaptığınız değişiklikler kalıcı "
 "olarak kaybolacak."
 
 #: gedit/gedit-close-confirmation-dialog.c:321
 msgid ""
 "If you don’t save, changes from the last minute will be permanently lost."
 msgstr ""
-"Kaydetmediğiniz takdirde son bir dakika içerisinde yaptığınız değişiklikler "
+"Kaydetmezseniz son bir dakika içerisinde yaptığınız değişiklikler "
 "kaybolacak."
 
 #: gedit/gedit-close-confirmation-dialog.c:327
@@ -620,7 +620,7 @@ msgid_plural ""
 "If you don’t save, changes from the last minute and %ld seconds will be "
 "permanently lost."
 msgstr[0] ""
-"Kaydetmediğiniz takdirde son bir dakika ve %ld saniye içerisinde yaptığınız "
+"Kaydetmezseniz son bir dakika ve %ld saniye içerisinde yaptığınız "
 "değişiklikler kaybolacak."
 
 #: gedit/gedit-close-confirmation-dialog.c:337
@@ -631,13 +631,13 @@ msgid_plural ""
 "If you don’t save, changes from the last %ld minutes will be permanently "
 "lost."
 msgstr[0] ""
-"Kaydetmediğiniz takdirde son %ld dakika içerisinde yaptığınız değişiklikler "
+"Kaydetmezseniz son %ld dakika içerisinde yaptığınız değişiklikler "
 "kaybolacak."
 
 #: gedit/gedit-close-confirmation-dialog.c:352
 msgid "If you don’t save, changes from the last hour will be permanently lost."
 msgstr ""
-"Kaydetmediğiniz takdirde son saatte yaptığınız değişiklikler kalıcı olarak "
+"Kaydetmezseniz son saatte yaptığınız değişiklikler kalıcı olarak "
 "kaybolacak."
 
 #: gedit/gedit-close-confirmation-dialog.c:358
@@ -649,7 +649,7 @@ msgid_plural ""
 "If you don’t save, changes from the last hour and %d minutes will be "
 "permanently lost."
 msgstr[0] ""
-"Kaydetmediğiniz takdirde son bir saat ve %d dakika içerisinde yaptığınız "
+"Kaydetmezseniz son bir saat ve %d dakika içerisinde yaptığınız "
 "değişiklikler kaybolacak."
 
 #: gedit/gedit-close-confirmation-dialog.c:373
@@ -659,7 +659,7 @@ msgid ""
 msgid_plural ""
 "If you don’t save, changes from the last %d hours will be permanently lost."
 msgstr[0] ""
-"Kaydetmediğiniz takdirde son %d saatte yaptığınız değişiklikler kalıcı "
+"Kaydetmezseniz son %d saatte yaptığınız değişiklikler kalıcı "
 "olarak kaybolacak."
 
 #: gedit/gedit-close-confirmation-dialog.c:400
@@ -696,44 +696,29 @@ msgid "Loading %d file…"
 msgid_plural "Loading %d files…"
 msgstr[0] "%d dosya yükleniyor…"
 
-#. Translators: "Open Files" is the title of the file chooser window.
-#: gedit/gedit-commands-file.c:454
-msgctxt "window title"
-msgid "Open Files"
-msgstr "Dosyaları Aç"
-
-#: gedit/gedit-commands-file.c:461 gedit/gedit-window.c:2636
-#: gedit/resources/gtk/menus-common.ui:100
-#: gedit/resources/gtk/menus-common.ui:106
-#: plugins/filebrowser/resources/ui/gedit-file-browser-menus.ui:7
-#: plugins/quickopen/quickopen/popup.py:46
-#: plugins/snippets/snippets/manager.py:790
-msgid "_Open"
-msgstr "_Aç"
-
-#: gedit/gedit-commands-file.c:556
+#: gedit/gedit-commands-file.c:487
 #, c-format
 msgid "The file “%s” is read-only."
 msgstr "“%s” dosyası salt-okunur."
 
-#: gedit/gedit-commands-file.c:561
+#: gedit/gedit-commands-file.c:492
 msgid "Do you want to try to replace it with the one you are saving?"
 msgstr "Onu kaydettiğiniz ile değiştirmeyi denemek ister misiniz?"
 
-#: gedit/gedit-commands-file.c:566
+#: gedit/gedit-commands-file.c:497
 #: gedit/resources/ui/gedit-replace-dialog.ui:55
 msgid "_Replace"
 msgstr "_Değiştir"
 
-#: gedit/gedit-commands-file.c:606
+#: gedit/gedit-commands-file.c:537
 msgid "Save the file using compression?"
 msgstr "Dosya sıkıştırılarak kaydedilsin mi ?"
 
-#: gedit/gedit-commands-file.c:610
+#: gedit/gedit-commands-file.c:541
 msgid "Save the file as plain text?"
 msgstr "Düz yazı olarak kaydedilsin mi?"
 
-#: gedit/gedit-commands-file.c:623
+#: gedit/gedit-commands-file.c:554
 #, c-format
 msgid ""
 "The file “%s” was previously saved as plain text and will now be saved using "
@@ -742,11 +727,11 @@ msgstr ""
 "“%s” dosyası daha önce düz metin olarak kaydedildi ve şimdi sıkıştırılarak "
 "kaydedilecek."
 
-#: gedit/gedit-commands-file.c:627
+#: gedit/gedit-commands-file.c:558
 msgid "_Save Using Compression"
 msgstr "_Sıkıştırarak Kaydet"
 
-#: gedit/gedit-commands-file.c:632
+#: gedit/gedit-commands-file.c:563
 #, c-format
 msgid ""
 "The file “%s” was previously saved using compression and will now be saved "
@@ -755,33 +740,33 @@ msgstr ""
 "“%s” dosyası daha önce sıkıştırılarak kaydedilmiş ve şimdi düz metin olarak "
 "kaydedilecek."
 
-#: gedit/gedit-commands-file.c:635
+#: gedit/gedit-commands-file.c:566
 msgid "_Save As Plain Text"
 msgstr "Düz Metin Olarak _Kaydet"
 
-#: gedit/gedit-commands-file.c:750 gedit/gedit-commands-file.c:1017
+#: gedit/gedit-commands-file.c:681 gedit/gedit-commands-file.c:969
 #, c-format
 msgid "Saving file “%s”…"
 msgstr "“%s” dosyası kaydediliyor…"
 
 #. Translators: "Save As" is the title of the file chooser window.
-#: gedit/gedit-commands-file.c:845
+#: gedit/gedit-commands-file.c:792
 msgctxt "window title"
 msgid "Save As"
 msgstr "Farklı Kaydet"
 
-#: gedit/gedit-commands-file.c:1427
+#: gedit/gedit-commands-file.c:1379
 #, c-format
 msgid "Reverting the document “%s”…"
 msgstr "“%s” belgesi eski durumuna getiriliyor…"
 
-#: gedit/gedit-commands-file.c:1474
+#: gedit/gedit-commands-file.c:1426
 #, c-format
 msgid "Revert unsaved changes to document “%s”?"
 msgstr ""
 "“%s” belgesi içerisinde yapılan değişiklikler eski durumuna döndürülsün mü?"
 
-#: gedit/gedit-commands-file.c:1483
+#: gedit/gedit-commands-file.c:1435
 #, c-format
 msgid ""
 "Changes made to the document in the last %ld second will be permanently lost."
@@ -791,12 +776,12 @@ msgid_plural ""
 msgstr[0] ""
 "Belge içerisinde son %ld saat içerisinde yapılan değişiklikler kaybolacak."
 
-#: gedit/gedit-commands-file.c:1492
+#: gedit/gedit-commands-file.c:1444
 msgid ""
 "Changes made to the document in the last minute will be permanently lost."
 msgstr "Belge içerisinde son bir dakikada yapılan değişiklikler kaybolacak."
 
-#: gedit/gedit-commands-file.c:1498
+#: gedit/gedit-commands-file.c:1450
 #, c-format
 msgid ""
 "Changes made to the document in the last minute and %ld second will be "
@@ -808,7 +793,7 @@ msgstr[0] ""
 "Belge içerisinde son bir dakikada ve %ld saniyede yapılan değişiklikler "
 "kaybolacak."
 
-#: gedit/gedit-commands-file.c:1508
+#: gedit/gedit-commands-file.c:1460
 #, c-format
 msgid ""
 "Changes made to the document in the last %ld minute will be permanently lost."
@@ -817,12 +802,12 @@ msgid_plural ""
 "lost."
 msgstr[0] "Belge içerisinde son %ld dakikada yapılan değişiklikler kaybolacak."
 
-#: gedit/gedit-commands-file.c:1523
+#: gedit/gedit-commands-file.c:1475
 msgid "Changes made to the document in the last hour will be permanently lost."
 msgstr ""
 "Belge içerisinde son %d saat içerisinde yapılan değişiklikler kaybolacak."
 
-#: gedit/gedit-commands-file.c:1529
+#: gedit/gedit-commands-file.c:1481
 #, c-format
 msgid ""
 "Changes made to the document in the last hour and %d minute will be "
@@ -834,7 +819,7 @@ msgstr[0] ""
 "Belge içerisinde son bir saatte ve son %d dakikada yapılan değişiklikler "
 "kaybolacak."
 
-#: gedit/gedit-commands-file.c:1544
+#: gedit/gedit-commands-file.c:1496
 #, c-format
 msgid ""
 "Changes made to the document in the last %d hour will be permanently lost."
@@ -843,7 +828,7 @@ msgid_plural ""
 msgstr[0] ""
 "Belge içerisinde son %d saat içerisinde yapılan değişiklikler kaybolacak."
 
-#: gedit/gedit-commands-file.c:1567
+#: gedit/gedit-commands-file.c:1519
 msgid "_Revert"
 msgstr "_Eski Durumuna Döndür"
 
@@ -883,7 +868,7 @@ msgstr "Adsız Belge %d"
 #: gedit/gedit-documents-panel.c:398
 #, c-format
 msgid "Tab Group %i"
-msgstr "Sekme Grubu %i"
+msgstr "Sekme Kümesi %i"
 
 #: gedit/gedit-documents-panel.c:498 gedit/gedit-window.c:1082
 #: gedit/gedit-window.c:1088 gedit/gedit-window.c:1096
@@ -891,12 +876,10 @@ msgid "Read-Only"
 msgstr "Salt Okunur"
 
 #: gedit/gedit-encodings-combo-box.c:297
-#: gedit/gedit-file-chooser-dialog-osx.m:564
 msgid "Automatically Detected"
 msgstr "Kendiliğinden Algıla"
 
 #: gedit/gedit-encodings-combo-box.c:326
-#: gedit/gedit-file-chooser-dialog-osx.m:573
 msgid "Add or Remove…"
 msgstr "Ekle ya da Kaldır…"
 
@@ -929,36 +912,44 @@ msgstr "Kaldır"
 
 #: gedit/gedit-encodings-dialog.c:783
 msgid "Move to a higher priority"
-msgstr "Daha yüksek bir önceliğe taşı"
+msgstr "Daha yüksek önceliğe taşı"
 
 #: gedit/gedit-encodings-dialog.c:794
 msgid "Move to a lower priority"
-msgstr "Daha düşük bir önceliğe taşı"
+msgstr "Daha düşük önceliğe taşı"
 
-#: gedit/gedit-file-chooser-dialog-gtk.c:39
-#: gedit/gedit-preferences-dialog.c:782
+#. Common code between the different GeditFileChooser's.
+#: gedit/gedit-file-chooser.c:27 gedit/gedit-preferences-dialog.c:730
 msgid "All Files"
 msgstr "Tüm Dosyalar"
 
-#: gedit/gedit-file-chooser-dialog-gtk.c:40
+#: gedit/gedit-file-chooser.c:28
 msgid "All Text Files"
 msgstr "Tüm Metin Dosyaları"
 
-#: gedit/gedit-file-chooser-dialog-gtk.c:305
+#: gedit/gedit-file-chooser-dialog-gtk.c:256
 msgid "C_haracter Encoding:"
 msgstr "Karakter _Kodlaması:"
 
-#: gedit/gedit-file-chooser-dialog-gtk.c:364
+#: gedit/gedit-file-chooser-dialog-gtk.c:315
 msgid "L_ine Ending:"
 msgstr "Sat_ır Kodlaması:"
 
-#: gedit/gedit-file-chooser-dialog-osx.m:546
-msgid "Character Encoding:"
-msgstr "Karakter Kodlaması:"
+#. Translators: "Open Files" is the title of the file chooser window.
+#: gedit/gedit-file-chooser-open-adapter.c:109
+#: gedit/gedit-file-chooser-open.c:87
+msgctxt "window title"
+msgid "Open Files"
+msgstr "Dosyaları Aç"
 
-#: gedit/gedit-file-chooser-dialog-osx.m:619
-msgid "Line Ending:"
-msgstr "Satır Sonu:"
+#: gedit/gedit-file-chooser-open-adapter.c:112 gedit/gedit-window.c:2636
+#: gedit/resources/gtk/menus-common.ui:100
+#: gedit/resources/gtk/menus-common.ui:106
+#: plugins/filebrowser/resources/ui/gedit-file-browser-menus.ui:7
+#: plugins/quickopen/quickopen/popup.py:46
+#: plugins/snippets/snippets/manager.py:790
+msgid "_Open"
+msgstr "_Aç"
 
 #: gedit/gedit-highlight-mode-selector.c:269 gedit/gedit-window.c:1166
 #: plugins/externaltools/tools/manager.py:115
@@ -999,12 +990,12 @@ msgstr "Dosyanın konumuna erişilemiyor."
 #: gedit/gedit-io-error-info-bar.c:195
 #, c-format
 msgid "“%s” is a directory."
-msgstr "“%s” bir dizindir."
+msgstr "“%s” dizindir."
 
 #: gedit/gedit-io-error-info-bar.c:202
 #, c-format
 msgid "“%s” is not a valid location."
-msgstr "“%s” geçerli bir konum değil."
+msgstr "“%s” geçerli konum değil."
 
 #. Translators: %s is a host name
 #: gedit/gedit-io-error-info-bar.c:238
@@ -1028,7 +1019,7 @@ msgstr ""
 #: gedit/gedit-io-error-info-bar.c:261
 #, c-format
 msgid "“%s” is not a regular file."
-msgstr "“%s” sıradan bir dosya değil."
+msgstr "“%s” sıradan dosya değil."
 
 #: gedit/gedit-io-error-info-bar.c:266
 msgid "Connection timed out. Please try again."
@@ -1076,16 +1067,16 @@ msgstr "Karakter kodlaması tespit edilemiyor."
 
 #: gedit/gedit-io-error-info-bar.c:522 gedit/gedit-io-error-info-bar.c:546
 msgid "Please check that you are not trying to open a binary file."
-msgstr "Lütfen bir ikili dosya açmadığınızdan emin olun."
+msgstr "Lütfen ikili dosya açmadığınızdan emin olun."
 
 #: gedit/gedit-io-error-info-bar.c:523
 msgid "Select a character encoding from the menu and try again."
-msgstr "Menüden bir karakter kodlaması seçin ve yeniden deneyin."
+msgstr "Menüden karakter kodlaması seç ve yeniden dene."
 
 #: gedit/gedit-io-error-info-bar.c:529
 #, c-format
 msgid "There was a problem opening the file “%s”."
-msgstr "“%s” dosyası açılırken bir sorun oluştu."
+msgstr "“%s” dosyası açılırken sorun oluştu."
 
 #: gedit/gedit-io-error-info-bar.c:531
 msgid ""
@@ -1097,7 +1088,7 @@ msgstr ""
 
 #: gedit/gedit-io-error-info-bar.c:534
 msgid "You can also choose another character encoding and try again."
-msgstr "Ayrıca başka bir karakter kodlaması seçip yeniden deneyebilirsiniz."
+msgstr "Ayrıca başka karakter kodlaması seçip yeniden deneyebilirsiniz."
 
 #: gedit/gedit-io-error-info-bar.c:543
 #, c-format
@@ -1106,7 +1097,7 @@ msgstr "“%s” dosyası, “%s” karakter kodlaması kullanılarak açılamad
 
 #: gedit/gedit-io-error-info-bar.c:547 gedit/gedit-io-error-info-bar.c:622
 msgid "Select a different character encoding from the menu and try again."
-msgstr "Menüden başka bir karakter kodlaması seçin ve yeniden deneyin."
+msgstr "Menüden başka karakter kodlaması seç ve yeniden dene."
 
 #: gedit/gedit-io-error-info-bar.c:559
 #, c-format
@@ -1124,7 +1115,7 @@ msgid ""
 "the specified character encoding."
 msgstr ""
 "Belge, belirtilen karakter kodlaması kullanarak kodlanamayacak bir ya da "
-"daha fazla karakter içeriyor."
+"daha çok karakter içeriyor."
 
 #: gedit/gedit-io-error-info-bar.c:691
 msgid "S_ave Anyway"
@@ -1173,7 +1164,7 @@ msgid ""
 "“%s” is not a valid location. Please check that you typed the location "
 "correctly and try again."
 msgstr ""
-"“%s” geçerli bir konum değil. Lütfen konumu doğru yazdığınızdan emin olun ve "
+"“%s” geçerli konum değil. Lütfen konumu doğru yazdığınızdan emin olun ve "
 "yeniden deneyin."
 
 #: gedit/gedit-io-error-info-bar.c:805
@@ -1197,12 +1188,12 @@ msgid ""
 "You are trying to save the file on a read-only disk. Please check that you "
 "typed the location correctly and try again."
 msgstr ""
-"Dosyayı salt okunur bir diske kaydetmeye çalışıyorsunuz. Lütfen konumu doğru "
+"Dosyayı salt okunur diske kaydetmeye çalışıyorsunuz. Lütfen konumu doğru "
 "yazdığınıza emin olun ve yeniden deneyin."
 
 #: gedit/gedit-io-error-info-bar.c:822
 msgid "A file with the same name already exists. Please use a different name."
-msgstr "Aynı adda başka bir dosya zaten var. Lütfen başka bir ad kullanın."
+msgstr "Aynı adda başka dosya zaten var. Lütfen başka ad kullanın."
 
 #: gedit/gedit-io-error-info-bar.c:827
 msgid ""
@@ -1210,7 +1201,7 @@ msgid ""
 "the file names. Please use a shorter name."
 msgstr ""
 "Dosyayı kaydetmeye çalıştığınız diskte dosya boyutu sınırı var. Lütfen daha "
-"kısa bir ad kullanın."
+"kısa ad kullanın."
 
 #: gedit/gedit-io-error-info-bar.c:838
 msgid ""
@@ -1219,7 +1210,7 @@ msgid ""
 "have this limitation."
 msgstr ""
 "Dosyayı kaydetmeye çalıştığınız diskte dosya boyutu sınırı var. Lütfen daha "
-"küçük bir dosyayı kaydetmeye çalışın ya da sınırlaması olmayan bir disk "
+"küçük dosyayı kaydetmeye çalışın ya da sınırlaması olmayan disk "
 "kullanın."
 
 #: gedit/gedit-io-error-info-bar.c:855
@@ -1227,39 +1218,39 @@ msgstr ""
 msgid "Could not save the file “%s”."
 msgstr "“%s” dosyası kaydedilemedi."
 
-#: gedit/gedit-preferences-dialog.c:442
+#: gedit/gedit-preferences-dialog.c:433
 msgid "Click on this button to select the font to be used by the editor"
 msgstr ""
 "Düzenleyici tarafından kullanılacak yazı tipini seçmek için bu düğmeye "
 "tıklayın"
 
-#: gedit/gedit-preferences-dialog.c:448
+#: gedit/gedit-preferences-dialog.c:439
 #, c-format
 msgid "_Use the system fixed width font (%s)"
 msgstr "_Sistem eş aralıklı yazı tipini (%s) kullan"
 
-#: gedit/gedit-preferences-dialog.c:556
+#: gedit/gedit-preferences-dialog.c:685
 #, c-format
-msgid "Directory “%s” could not be created: g_mkdir_with_parents() failed: %s"
-msgstr "“%s” dizini oluşturulamadı: g_mkdir_with_parents() başarısız oldu: %s"
+msgid "The selected color scheme cannot be installed: %s"
+msgstr "Seçilen renk şeması yüklenemedi: %s"
 
-#: gedit/gedit-preferences-dialog.c:748
+#: gedit/gedit-preferences-dialog.c:691
 msgid "The selected color scheme cannot be installed."
 msgstr "Seçilen renk şeması yüklenemedi."
 
-#: gedit/gedit-preferences-dialog.c:769
-msgid "Add Scheme"
-msgstr "Şema Ekle"
+#: gedit/gedit-preferences-dialog.c:717
+msgid "Add Color Scheme"
+msgstr "Renk Şeması Ekle"
 
-#: gedit/gedit-preferences-dialog.c:774
-msgid "A_dd Scheme"
+#: gedit/gedit-preferences-dialog.c:720
+msgid "_Add Scheme"
 msgstr "Şema _Ekle"
 
-#: gedit/gedit-preferences-dialog.c:778
+#: gedit/gedit-preferences-dialog.c:725
 msgid "Color Scheme Files"
 msgstr "Renk Şeması Dosyalar"
 
-#: gedit/gedit-preferences-dialog.c:815
+#: gedit/gedit-preferences-dialog.c:763
 #, c-format
 msgid "Could not remove color scheme “%s”."
 msgstr "“%s” renk şeması silinemedi."
@@ -1497,7 +1488,7 @@ msgstr "Yeni _Pencereye Taşı"
 
 #: gedit/resources/gtk/menus-common.ui:21
 msgid "Move to New Tab _Group"
-msgstr "Yeni Sekme _Grubuna Taşı"
+msgstr "Yeni Sekme _Kümesine Taşı"
 
 #: gedit/resources/gtk/menus-common.ui:27
 #: gedit/resources/gtk/menus-common.ui:163
@@ -1691,15 +1682,15 @@ msgstr "_Tümünü Kapat"
 
 #: gedit/resources/gtk/menus-common.ui:346
 msgid "_New Tab Group"
-msgstr "Ye_ni Sekme Grubu"
+msgstr "Ye_ni Sekme Kümesi"
 
 #: gedit/resources/gtk/menus-common.ui:351
 msgid "P_revious Tab Group"
-msgstr "Önceki Sekme G_rubu"
+msgstr "_Önceki Sekme Kümesi"
 
 #: gedit/resources/gtk/menus-common.ui:356
 msgid "Nex_t Tab Group"
-msgstr "Sonrak_i Sekme Grubu"
+msgstr "Sonrak_i Sekme Kümesi"
 
 #: gedit/resources/gtk/menus-common.ui:364
 msgid "_Previous Document"
@@ -2022,7 +2013,7 @@ msgstr "Sayfa Önizleme"
 
 #: gedit/resources/ui/gedit-print-preview.ui:375
 msgid "The preview of a page in the document to be printed"
-msgstr "Yazdırılacak belgedeki bir sayfanın önizlemesi"
+msgstr "Yazdırılacak belgedeki sayfanın önizlemesi"
 
 #: gedit/resources/ui/gedit-replace-dialog.ui:39
 msgid "Replace _All"
@@ -2070,7 +2061,7 @@ msgstr "Belgeler"
 #: gedit/resources/ui/gedit-shortcuts.ui:19
 msgctxt "shortcut window"
 msgid "Create a new document in a tab"
-msgstr "Bir sekmede yeni belge oluştur"
+msgstr "Sekmede yeni belge oluştur"
 
 #: gedit/resources/ui/gedit-shortcuts.ui:26
 msgctxt "shortcut window"
@@ -2085,7 +2076,7 @@ msgstr "Belgeyi kaydet"
 #: gedit/resources/ui/gedit-shortcuts.ui:40
 msgctxt "shortcut window"
 msgid "Save the document with a new filename"
-msgstr "Belgeyi yeni bir dosya adı ile kaydet"
+msgstr "Belgeyi yeni dosya adıyla kaydet"
 
 #: gedit/resources/ui/gedit-shortcuts.ui:47
 msgctxt "shortcut window"
@@ -2130,12 +2121,12 @@ msgstr "Pencereler ve Paneller"
 #: gedit/resources/ui/gedit-shortcuts.ui:102
 msgctxt "shortcut window"
 msgid "Create a new document in a window"
-msgstr "Bir pencerede yeni bir belge oluştur"
+msgstr "Pencerede yeni belge oluştur"
 
 #: gedit/resources/ui/gedit-shortcuts.ui:109
 msgctxt "shortcut window"
 msgid "Create a new tab group"
-msgstr "Yeni bir sekme grubu oluştur"
+msgstr "Yeni sekme kümesi oluştur"
 
 #: gedit/resources/ui/gedit-shortcuts.ui:116
 msgctxt "shortcut window"
@@ -2288,107 +2279,117 @@ msgctxt "shortcut window"
 msgid "Move to matching bracket"
 msgstr "Eşleşen paranteze git"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:329
+#: gedit/resources/ui/gedit-shortcuts.ui:328
+msgctxt "shortcut window"
+msgid "Go to previous tab group"
+msgstr "Önceki sekme kümesine git"
+
+#: gedit/resources/ui/gedit-shortcuts.ui:335
+msgctxt "shortcut window"
+msgid "Go to next tab group"
+msgstr "Sonraki sekme kümesine git"
+
+#: gedit/resources/ui/gedit-shortcuts.ui:343
 msgctxt "shortcut window"
 msgid "Editing"
 msgstr "Düzenleme"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:334
+#: gedit/resources/ui/gedit-shortcuts.ui:348
 msgctxt "shortcut window"
 msgid "Toggle insert / overwrite"
 msgstr "Araya ekleme / üzerine yazmayı aç/kapat"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:341
+#: gedit/resources/ui/gedit-shortcuts.ui:355
 msgctxt "shortcut window"
 msgid "Toggle cursor visibility"
 msgstr "İmleç görünürlüğünü değiştir"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:348
+#: gedit/resources/ui/gedit-shortcuts.ui:362
 msgctxt "shortcut window"
 msgid "Delete current line"
 msgstr "Geçerli satırı sil"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:355
+#: gedit/resources/ui/gedit-shortcuts.ui:369
 msgctxt "shortcut window"
 msgid "Move current line up"
 msgstr "Geçerli satırı yukarı taşı"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:362
+#: gedit/resources/ui/gedit-shortcuts.ui:376
 msgctxt "shortcut window"
 msgid "Move current line down"
 msgstr "Geçerli satırı aşağı taşı"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:369
+#: gedit/resources/ui/gedit-shortcuts.ui:383
 msgctxt "shortcut window"
 msgid "Move current word left"
 msgstr "Geçerli sözcüğü sola taşı"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:376
+#: gedit/resources/ui/gedit-shortcuts.ui:390
 msgctxt "shortcut window"
 msgid "Move current word right"
 msgstr "Geçerli sözcüğü sağa taşı"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:383
+#: gedit/resources/ui/gedit-shortcuts.ui:397
 msgctxt "shortcut window"
 msgid "Convert to uppercase"
 msgstr "Büyük harfe dönüştür"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:390
+#: gedit/resources/ui/gedit-shortcuts.ui:404
 msgctxt "shortcut window"
 msgid "Convert to lowercase"
 msgstr "Küçük harfe dönüştür"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:397
+#: gedit/resources/ui/gedit-shortcuts.ui:411
 msgctxt "shortcut window"
 msgid "Invert case"
 msgstr "BÜYÜK/küçük harf değiştir"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:404
+#: gedit/resources/ui/gedit-shortcuts.ui:418
 msgctxt "shortcut window"
 msgid "Increment number at cursor"
 msgstr "İmleçteki sayıyı artır"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:411
+#: gedit/resources/ui/gedit-shortcuts.ui:425
 msgctxt "shortcut window"
 msgid "Decrement number at cursor"
 msgstr "İmleçteki sayıyı azalt"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:419
+#: gedit/resources/ui/gedit-shortcuts.ui:433
 msgctxt "shortcut window"
 msgid "Tools"
 msgstr "Araçlar"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:424
+#: gedit/resources/ui/gedit-shortcuts.ui:438
 msgctxt "shortcut window"
 msgid "Check spelling"
 msgstr "Yazım denetimi yap"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:431
+#: gedit/resources/ui/gedit-shortcuts.ui:445
 msgctxt "shortcut window"
 msgid "Print the document"
 msgstr "Belgeyi yazdır"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:438
+#: gedit/resources/ui/gedit-shortcuts.ui:452
 msgctxt "shortcut window"
 msgid "Show completion window"
 msgstr "Tamamlama penceresini göster"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:446
+#: gedit/resources/ui/gedit-shortcuts.ui:460
 msgctxt "shortcut window"
 msgid "General"
 msgstr "Genel"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:451
+#: gedit/resources/ui/gedit-shortcuts.ui:465
 msgctxt "shortcut window"
 msgid "Show help"
 msgstr "Yardımı göster"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:458
+#: gedit/resources/ui/gedit-shortcuts.ui:472
 msgctxt "shortcut window"
 msgid "Open menu"
 msgstr "Menüyü aç"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:465
+#: gedit/resources/ui/gedit-shortcuts.ui:479
 msgctxt "shortcut window"
 msgid "Keyboard shortcuts"
 msgstr "Klavye kısayolları"
@@ -2401,7 +2402,7 @@ msgstr "Belgeyi Kapat"
 #: gedit/resources/ui/gedit-window.ui:327
 #: gedit/resources/ui/gedit-window.ui:333
 msgid "Create a new document"
-msgstr "Yeni bir belge oluştur"
+msgstr "Yeni belge oluştur"
 
 #: gedit/resources/ui/gedit-window.ui:41 gedit/resources/ui/gedit-window.ui:332
 msgid "New"
@@ -2486,7 +2487,7 @@ msgstr "Burada uçbirim aç"
 #: plugins/externaltools/data/open-terminal-here.desktop.in:4
 #: plugins/externaltools/data/open-terminal-here-osx.desktop.in:4
 msgid "Open a terminal in the document location"
-msgstr "Belge konumunda bir uçbirim aç"
+msgstr "Belge konumunda uçbirim aç"
 
 #: plugins/externaltools/data/remove-trailing-spaces.desktop.in:3
 msgid "Remove trailing spaces"
@@ -2502,7 +2503,7 @@ msgstr "Komut çalıştır"
 
 #: plugins/externaltools/data/run-command.desktop.in:4
 msgid "Execute a custom command and put its output in a new document"
-msgstr "Harici bir özel komut çalıştır ve çıktıyı yeni bir belgeye koy"
+msgstr "Özel komut çalıştır ve çıktıyı yeni belgeye koy"
 
 #: plugins/externaltools/data/send-to-fpaste.desktop.in:3
 msgid "Send to fpaste"
@@ -2590,11 +2591,11 @@ msgstr "Bu hızlandırıcı zaten %s ile bağlı"
 #: plugins/externaltools/tools/manager.py:729
 msgid "Type a new accelerator, or press Backspace to clear"
 msgstr ""
-"Yeni bir hızlandırıcı belirtin, ya da temizlemek için Backspace tuşuna basın"
+"Yeni hızlandırıcı belirt, ya da temizlemek için Backspace tuşuna bas"
 
 #: plugins/externaltools/tools/manager.py:731
 msgid "Type a new accelerator"
-msgstr "Yeni bir hızlandırıcı belirtin"
+msgstr "Yeni hızlandırıcı belirt"
 
 #: plugins/externaltools/tools/outputpanel.py:129
 msgid "Stopped."
@@ -2681,7 +2682,7 @@ msgstr "Harici Araçları Yönet"
 
 #: plugins/externaltools/tools/tools.ui:204
 msgid "Add a new tool"
-msgstr "Yeni bir araç ekle"
+msgstr "Yeni araç ekle"
 
 #: plugins/externaltools/tools/tools.ui:205
 msgid "Add Tool"
@@ -2749,35 +2750,35 @@ msgstr "Dosya Yöneticisi"
 
 #: plugins/filebrowser/gedit-file-browser-plugin.c:657
 msgid "An error occurred while creating a new directory"
-msgstr "Yeni bir dizin oluşturulurken bir hata oluştu"
+msgstr "Yeni dizin oluşturulurken hata oluştu"
 
 #: plugins/filebrowser/gedit-file-browser-plugin.c:660
 msgid "An error occurred while creating a new file"
-msgstr "Yeni bir dosya oluşturulurken bir hata oluştu"
+msgstr "Yeni dosya oluşturulurken hata oluştu"
 
 #: plugins/filebrowser/gedit-file-browser-plugin.c:663
 msgid "An error occurred while renaming a file or directory"
-msgstr "Bir dosyanın ya da dizinin adı değiştirilirken hata oluştu"
+msgstr "Dosyanın ya da dizinin adı değiştirilirken hata oluştu"
 
 #: plugins/filebrowser/gedit-file-browser-plugin.c:666
 msgid "An error occurred while deleting a file or directory"
-msgstr "Bir dosya ya da dizin silinirken hata oluştu"
+msgstr "Dosya ya da dizin silinirken hata oluştu"
 
 #: plugins/filebrowser/gedit-file-browser-plugin.c:669
 msgid "An error occurred while opening a directory in the file manager"
-msgstr "Bir dizin dosya yöneticisinde açılırken hata oluştu"
+msgstr "Dizin dosya yöneticisinde açılırken hata oluştu"
 
 #: plugins/filebrowser/gedit-file-browser-plugin.c:672
 msgid "An error occurred while setting a root directory"
-msgstr "Başlangıç dizini atanırken bir hata oluştu"
+msgstr "Başlangıç dizini atanırken hata oluştu"
 
 #: plugins/filebrowser/gedit-file-browser-plugin.c:675
 msgid "An error occurred while loading a directory"
-msgstr "Bir dizin yüklenirken hata oluştu"
+msgstr "Dizin yüklenirken hata oluştu"
 
 #: plugins/filebrowser/gedit-file-browser-plugin.c:678
 msgid "An error occurred"
-msgstr "Bir hata oluştu"
+msgstr "Hata oluştu"
 
 #: plugins/filebrowser/gedit-file-browser-plugin.c:900
 msgid ""
@@ -2807,7 +2808,7 @@ msgstr "Seçili dosyaları kalıcı olarak silmek istediğinizden emin misiniz?"
 
 #: plugins/filebrowser/gedit-file-browser-plugin.c:949
 msgid "If you delete an item, it is permanently lost."
-msgstr "Eğer bir öğeyi silerseniz, kalıcı biçimde kaybolur."
+msgstr "Eğer ögeyi silerseniz kalıcı biçimde kaybolur."
 
 #: plugins/filebrowser/gedit-file-browser-store.c:1701
 msgid "(Empty)"
@@ -2818,8 +2819,8 @@ msgid ""
 "The renamed file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
 msgstr ""
-"Adı değiştirilen dosya şu anda filtrelendi. Dosyayı görünebilir yapmak için "
-"filtrenizi ayarlamanız gerekiyor"
+"Adı değiştirilen dosya şu anda süzüldü. Dosyayı görünebilir yapmak için "
+"süzgecinizi ayarlamanız gerekiyor"
 
 #. Translators: This is the default name of new files created by the file browser pane.
 #: plugins/filebrowser/gedit-file-browser-store.c:3576
@@ -2831,7 +2832,7 @@ msgid ""
 "The new file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
 msgstr ""
-"Yeni dosya şu anda filtrelendi. Dosyayı görünebilir yapmak için filtrenizi "
+"Yeni dosya şu anda süzüldü. Dosyayı görünebilir yapmak için süzgecinizi "
 "ayarlamanız gerekiyor"
 
 #. Translators: This is the default name of new directories created by the file browser pane.
@@ -2844,7 +2845,7 @@ msgid ""
 "The new directory is currently filtered out. You need to adjust your filter "
 "settings to make the directory visible"
 msgstr ""
-"Yeni dizin şu anda filtrelendi. Dizini görünebilir yapmak için filtrenizi "
+"Yeni dizin şu anda süzüldü. Dizini görünebilir yapmak için süzgecinizi "
 "ayarlamanız gerekiyor"
 
 #: plugins/filebrowser/gedit-file-browser-widget.c:755
@@ -2869,7 +2870,7 @@ msgstr "Sistem bağlanamadı: %s"
 #: plugins/filebrowser/gedit-file-browser-widget.c:2579
 #, c-format
 msgid "Error when loading “%s”: No such directory"
-msgstr "“%s” yüklenirken hata oluştu: Böyle bir dizin yok"
+msgstr "“%s” yüklenirken hata oluştu: Böyle dizin yok"
 
 #: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml:5
 msgid "Open With Tree View"
@@ -2929,12 +2930,12 @@ msgid ""
 "with Nautilus, etc.)"
 msgstr ""
 "Eğer DOĞRU (TRUE) ise, dosya tarayıcısı eklentisi dosya tarayıcısı ilk defa "
-"kullanılıyorsa ilk açılan belgenin dizinini gösterir. (Bu genel olarak bir "
+"kullanılıyorsa ilk açılan belgenin dizinini gösterir. (Bu genel olarak "
 "belgeyi komut satırında ya da Nautilus vb. ile açıldığında da geçerlidir.)"
 
 #: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml:30
 msgid "File Browser Filter Mode"
-msgstr "Dosya Tarayıcısı Filtre Kipi"
+msgstr "Dosya Tarayıcısı Süzgeç Kipi"
 
 #: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml:31
 msgid ""
@@ -2948,15 +2949,15 @@ msgstr ""
 
 #: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml:35
 msgid "File Browser Filter Pattern"
-msgstr "Dosya Tarayıcısı Filtre Dokusu"
+msgstr "Dosya Tarayıcısı Süzgeç Dokusu"
 
 #: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml:36
 msgid ""
 "The filter pattern to filter the file browser with. This filter works on top "
 "of the filter_mode."
 msgstr ""
-"Dosya tarayıcısının kullanacaği filtre dokusu. Bu filtre filter_mode "
-"üstündeçalışır."
+"Dosya tarayıcısının kullanacaği süzgeç dokusu. Bu süzgeç filter_mode "
+"üstünde çalışır."
 
 #: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml:40
 msgid "File Browser Binary Patterns"
@@ -3001,7 +3002,7 @@ msgstr "Uçbirimde _Aç"
 
 #: plugins/filebrowser/resources/ui/gedit-file-browser-menus.ui:56
 msgid "_Filter"
-msgstr "_Filtre"
+msgstr "_Süzgeç"
 
 #: plugins/filebrowser/resources/ui/gedit-file-browser-menus.ui:59
 msgid "Show _Hidden"
@@ -3122,7 +3123,7 @@ msgstr "Hedef dizin “%s” yok"
 #: plugins/snippets/snippets/exporter.py:108
 #, python-format
 msgid "Target directory “%s” is not a valid directory"
-msgstr "Hedef dizin “%s” geçerli bir dizin değil"
+msgstr "Hedef dizin “%s”, geçerli dizin değil"
 
 #: plugins/snippets/snippets/importer.py:55
 #: plugins/snippets/snippets/importer.py:116
@@ -3133,12 +3134,12 @@ msgstr "“%s” dosyası yok"
 #: plugins/snippets/snippets/importer.py:58
 #, python-format
 msgid "File “%s” is not a valid snippets file"
-msgstr "“%s” dosyası geçerli bir parçalar dosyası değil"
+msgstr "“%s” dosyası geçerli parçalar dosyası değil"
 
 #: plugins/snippets/snippets/importer.py:75
 #, python-format
 msgid "Imported file “%s” is not a valid snippets file"
-msgstr "İçe aktarılan “%s” dosyası geçerli bir parçalar dosyası değil"
+msgstr "İçe aktarılan “%s” dosyası geçerli parçalar dosyası değil"
 
 #: plugins/snippets/snippets/importer.py:85
 #, python-format
@@ -3154,7 +3155,7 @@ msgstr "Bu dosyalar aktarılamadı: %s"
 #: plugins/snippets/snippets/importer.py:132
 #, python-format
 msgid "File “%s” is not a valid snippets archive"
-msgstr "“%s” dosyası geçerli bir parçalar arşivi değil"
+msgstr "“%s” dosyası geçerli parçalar arşivi değil"
 
 #: plugins/snippets/snippets/manager.py:50
 msgid "Snippets archive"
@@ -3162,7 +3163,7 @@ msgstr "Parçalar arşivi"
 
 #: plugins/snippets/snippets/manager.py:74
 msgid "Add a new snippet…"
-msgstr "Yeni bir parça ekle…"
+msgstr "Yeni parça ekle…"
 
 #: plugins/snippets/snippets/manager.py:124
 msgid "Global"
@@ -3185,9 +3186,9 @@ msgid ""
 "characters (or _, : and .) or a single (non-alphanumeric) character like: {, "
 "[, etc."
 msgstr ""
-"Bu geçerli bir sekme tetikleyicisi değildir. Tetikleyiciler ya alfasayısal "
+"Bu, geçerli sekme tetikleyicisi değildir. Tetikleyiciler ya alfasayısal "
 "karakterler (rakamlar ve harfler) (veya _, : ve .) ya da {, [ vb. gibi "
-"(alfasayısal olmayan) tek bir karakter içerebilir."
+"(alfasayısal olmayan) tek karakter içerebilir."
 
 #. self['hbox_tab_trigger'].set_spacing(0)
 #: plugins/snippets/snippets/manager.py:677
@@ -3266,11 +3267,11 @@ msgstr "Parçaları aktar"
 
 #: plugins/snippets/snippets/manager.py:1049
 msgid "Type a new shortcut, or press Backspace to clear"
-msgstr "Yeni bir kısayol yazın, ya da temizlemek için Geri Silme tuşuna basın"
+msgstr "Yeni kısayol yaz, ya da temizlemek için Geri Silme tuşuna bas"
 
 #: plugins/snippets/snippets/manager.py:1051
 msgid "Type a new shortcut"
-msgstr "Yeni bir kısayol yaz"
+msgstr "Yeni kısayol yaz"
 
 #: plugins/snippets/snippets/placeholder.py:605
 #, python-format
@@ -3297,7 +3298,7 @@ msgstr "Parçaları Yönet"
 #: plugins/snippets/snippets/snippets.ui:103
 #: plugins/snippets/snippets/snippets.ui:104
 msgid "Create new snippet"
-msgstr "Yeni bir parça oluştur"
+msgstr "Yeni parça oluştur"
 
 #: plugins/snippets/snippets/snippets.ui:105
 msgid "Add Snippet"
@@ -3428,7 +3429,7 @@ msgid ""
 "If the user should be prompted for a format or if the selected or custom "
 "format should be used."
 msgstr ""
-"Kullanıcıdan bir biçim mi istensin yoksa seçili ya da özel biçim mi "
+"Kullanıcıdan biçim mi istensin yoksa seçili ya da özel biçim mi "
 "kullanılsın."
 
 #: plugins/time/org.gnome.gedit.plugins.time.gschema.xml:10
@@ -3496,6 +3497,20 @@ msgstr "Tarih/Zaman Ekle"
 #: plugins/time/time.plugin.desktop.in:6
 msgid "Inserts current date and time at the cursor position."
 msgstr "İmlecin bulunduğu yere şimdiki tarihi ve zamanı ekler."
+
+#~ msgid "Character Encoding:"
+#~ msgstr "Karakter Kodlaması:"
+
+#~ msgid "Line Ending:"
+#~ msgstr "Satır Sonu:"
+
+#~ msgid ""
+#~ "Directory “%s” could not be created: g_mkdir_with_parents() failed: %s"
+#~ msgstr ""
+#~ "“%s” dizini oluşturulamadı: g_mkdir_with_parents() başarısız oldu: %s"
+
+#~ msgid "A_dd Scheme"
+#~ msgstr "Şema _Ekle"
 
 #~ msgid ""
 #~ "gedit is the official text editor of the GNOME desktop environment. While "
