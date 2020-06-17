@@ -11,9 +11,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gedit\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gedit/issues\n"
-"POT-Creation-Date: 2020-05-11 14:13+0000\n"
-"PO-Revision-Date: 2020-05-22 15:30+0300\n"
-"Last-Translator: Florentina Mușat <emryslokadottir [at] gmail [dot] com>\n"
+"POT-Creation-Date: 2020-06-15 15:31+0000\n"
+"PO-Revision-Date: 2020-06-17 18:54+0300\n"
+"Last-Translator: Florentina Mușat <florentina [dot] musat [dot] 28 [at] "
+"gmail [dot] com>\n"
 "Language-Team: Gnome Romanian Translation Team\n"
 "Language: ro\n"
 "MIME-Version: 1.0\n"
@@ -519,11 +520,11 @@ msgstr ""
 "Valoarea implicită este o listă goală, caz în care gedit va alege valori "
 "implicite în funcție de țară și limbă."
 
-#: data/org.gnome.gedit.gschema.xml.in:301
+#: data/org.gnome.gedit.gschema.xml.in:304
 msgid "Active plugins"
 msgstr "Module active"
 
-#: data/org.gnome.gedit.gschema.xml.in:302
+#: data/org.gnome.gedit.gschema.xml.in:305
 msgid "List of active plugins."
 msgstr "Listă de module active."
 
@@ -582,11 +583,11 @@ msgstr "%s: codare nevalidă."
 msgid "Close _without Saving"
 msgstr "Închide _fără a salva"
 
-#: gedit/gedit-close-confirmation-dialog.c:277 gedit/gedit-commands-file.c:460
-#: gedit/gedit-commands-file.c:565 gedit/gedit-commands-file.c:641
-#: gedit/gedit-commands-file.c:852 gedit/gedit-commands-file.c:1566
-#: gedit/gedit-encodings-dialog.c:192 gedit/gedit-preferences-dialog.c:773
-#: gedit/gedit-progress-info-bar.c:49
+#: gedit/gedit-close-confirmation-dialog.c:277 gedit/gedit-commands-file.c:492
+#: gedit/gedit-commands-file.c:568 gedit/gedit-commands-file.c:791
+#: gedit/gedit-commands-file.c:1513 gedit/gedit-encodings-dialog.c:192
+#: gedit/gedit-file-chooser-open-dialog.c:78
+#: gedit/gedit-preferences-dialog.c:721 gedit/gedit-progress-info-bar.c:49
 #: gedit/resources/ui/gedit-encodings-dialog.ui:44
 #: gedit/resources/ui/gedit-highlight-mode-dialog.ui:31
 #: plugins/filebrowser/gedit-file-browser-utils.c:211
@@ -604,7 +605,7 @@ msgstr "_Anulează"
 msgid "_Save As…"
 msgstr "_Salvează ca…"
 
-#: gedit/gedit-close-confirmation-dialog.c:295 gedit/gedit-commands-file.c:853
+#: gedit/gedit-close-confirmation-dialog.c:295 gedit/gedit-commands-file.c:790
 #: gedit/resources/gtk/menus-common.ui:127
 #: gedit/resources/ui/gedit-window.ui:59
 #: plugins/snippets/snippets/manager.py:875
@@ -736,12 +737,12 @@ msgstr "S_electați documentele pe care doriți să le salvați:"
 msgid "If you don’t save, all your changes will be permanently lost."
 msgstr "Dacă nu salvați, toate modificările aduse vor fi pierdute definitiv."
 
-#: gedit/gedit-commands-file.c:263
+#: gedit/gedit-commands-file.c:257
 #, c-format
 msgid "Loading file “%s”…"
 msgstr "Se încarcă fișierul „%s”…"
 
-#: gedit/gedit-commands-file.c:272
+#: gedit/gedit-commands-file.c:266
 #, c-format
 msgid "Loading %d file…"
 msgid_plural "Loading %d files…"
@@ -749,44 +750,29 @@ msgstr[0] "Se încarcă %d fișier…"
 msgstr[1] "Se încarcă %d fișiere…"
 msgstr[2] "Se încarcă %d de fișiere…"
 
-#. Translators: "Open Files" is the title of the file chooser window.
-#: gedit/gedit-commands-file.c:454
-msgctxt "window title"
-msgid "Open Files"
-msgstr "Deschide fișiere"
-
-#: gedit/gedit-commands-file.c:461 gedit/gedit-window.c:2636
-#: gedit/resources/gtk/menus-common.ui:100
-#: gedit/resources/gtk/menus-common.ui:106
-#: plugins/filebrowser/resources/ui/gedit-file-browser-menus.ui:7
-#: plugins/quickopen/quickopen/popup.py:46
-#: plugins/snippets/snippets/manager.py:790
-msgid "_Open"
-msgstr "D_eschide"
-
-#: gedit/gedit-commands-file.c:556
+#: gedit/gedit-commands-file.c:483
 #, c-format
 msgid "The file “%s” is read-only."
 msgstr "Fișierul „%s” poate fi doar citit."
 
-#: gedit/gedit-commands-file.c:561
+#: gedit/gedit-commands-file.c:488
 msgid "Do you want to try to replace it with the one you are saving?"
 msgstr "Doriți să încercați să-l înlocuiți cu cel pe care îl salvați?"
 
-#: gedit/gedit-commands-file.c:566
+#: gedit/gedit-commands-file.c:493
 #: gedit/resources/ui/gedit-replace-dialog.ui:55
 msgid "_Replace"
 msgstr "Î_nlocuiește"
 
-#: gedit/gedit-commands-file.c:606
+#: gedit/gedit-commands-file.c:533
 msgid "Save the file using compression?"
 msgstr "Salvați fișierul utilizând compresie?"
 
-#: gedit/gedit-commands-file.c:610
+#: gedit/gedit-commands-file.c:537
 msgid "Save the file as plain text?"
 msgstr "Salvați fișierul ca text simplu?"
 
-#: gedit/gedit-commands-file.c:623
+#: gedit/gedit-commands-file.c:550
 #, c-format
 msgid ""
 "The file “%s” was previously saved as plain text and will now be saved using "
@@ -795,11 +781,11 @@ msgstr ""
 "Fișierul „%s” a fost salvat în trecut ca text simplu, iar acum va fi salvat "
 "utilizând compresie."
 
-#: gedit/gedit-commands-file.c:627
+#: gedit/gedit-commands-file.c:554
 msgid "_Save Using Compression"
 msgstr "_Salvează utilizând compresie"
 
-#: gedit/gedit-commands-file.c:632
+#: gedit/gedit-commands-file.c:559
 #, c-format
 msgid ""
 "The file “%s” was previously saved using compression and will now be saved "
@@ -808,32 +794,32 @@ msgstr ""
 "Fișierul „%s” a fost salvat în trecut utilizând compresie, iar acum va fi "
 "salvat ca text simplu."
 
-#: gedit/gedit-commands-file.c:635
+#: gedit/gedit-commands-file.c:562
 msgid "_Save As Plain Text"
 msgstr "_Salvează ca text simplu"
 
-#: gedit/gedit-commands-file.c:750 gedit/gedit-commands-file.c:1017
+#: gedit/gedit-commands-file.c:677 gedit/gedit-commands-file.c:964
 #, c-format
 msgid "Saving file “%s”…"
 msgstr "Se salvează fișierul „%s”…"
 
 #. Translators: "Save As" is the title of the file chooser window.
-#: gedit/gedit-commands-file.c:845
+#: gedit/gedit-commands-file.c:788
 msgctxt "window title"
 msgid "Save As"
 msgstr "Salvează ca"
 
-#: gedit/gedit-commands-file.c:1427
+#: gedit/gedit-commands-file.c:1374
 #, c-format
 msgid "Reverting the document “%s”…"
 msgstr "Se restaurează documentul „%s”…"
 
-#: gedit/gedit-commands-file.c:1474
+#: gedit/gedit-commands-file.c:1421
 #, c-format
 msgid "Revert unsaved changes to document “%s”?"
 msgstr "Anulați modificările nesalvate ale documentului „%s”?"
 
-#: gedit/gedit-commands-file.c:1483
+#: gedit/gedit-commands-file.c:1430
 #, c-format
 msgid ""
 "Changes made to the document in the last %ld second will be permanently lost."
@@ -850,13 +836,13 @@ msgstr[2] ""
 "Modificările aduse documentului în ultimele %ld de secunde vor fi pierdute "
 "definitiv."
 
-#: gedit/gedit-commands-file.c:1492
+#: gedit/gedit-commands-file.c:1439
 msgid ""
 "Changes made to the document in the last minute will be permanently lost."
 msgstr ""
 "Modificările aduse documentului în ultimul minut vor fi pierdute definitiv."
 
-#: gedit/gedit-commands-file.c:1498
+#: gedit/gedit-commands-file.c:1445
 #, c-format
 msgid ""
 "Changes made to the document in the last minute and %ld second will be "
@@ -874,7 +860,7 @@ msgstr[2] ""
 "Modificările aduse documentului în ultimul minut și %ld de secunde vor fi "
 "pierdute definitiv."
 
-#: gedit/gedit-commands-file.c:1508
+#: gedit/gedit-commands-file.c:1455
 #, c-format
 msgid ""
 "Changes made to the document in the last %ld minute will be permanently lost."
@@ -891,12 +877,12 @@ msgstr[2] ""
 "Modificările aduse documentului în ultimele %ld de minute vor fi pierdute "
 "definitiv."
 
-#: gedit/gedit-commands-file.c:1523
+#: gedit/gedit-commands-file.c:1470
 msgid "Changes made to the document in the last hour will be permanently lost."
 msgstr ""
 "Modificările aduse documentului în ultima oră vor fi pierdute definitiv."
 
-#: gedit/gedit-commands-file.c:1529
+#: gedit/gedit-commands-file.c:1476
 #, c-format
 msgid ""
 "Changes made to the document in the last hour and %d minute will be "
@@ -914,7 +900,7 @@ msgstr[2] ""
 "Modificările aduse documentului în ultima oră și %d de minute vor fi "
 "pierdute definitiv."
 
-#: gedit/gedit-commands-file.c:1544
+#: gedit/gedit-commands-file.c:1491
 #, c-format
 msgid ""
 "Changes made to the document in the last %d hour will be permanently lost."
@@ -928,7 +914,7 @@ msgstr[2] ""
 "Modificările aduse documentului în ultimele %d de ore vor fi pierdute "
 "definitiv."
 
-#: gedit/gedit-commands-file.c:1567
+#: gedit/gedit-commands-file.c:1514
 msgid "_Revert"
 msgstr "_Anulează"
 
@@ -946,7 +932,8 @@ msgstr ""
 "Lucian Adrian Grijincu <lucian.grijincu@gmail.com>\n"
 "Bogdan Mințoi <mintoi.bogdan@gmail.com>, 2014\n"
 "Daniel Șerbănescu <daniel [at] serbanescu [dot] dk>, 2016\n"
-"Florentina Mușat <emryslokadottir [at] gmail [dot] com>, 2019-2020\n"
+"Florentina Mușat <florentina [dot] musat [dot] 28 [at] gmail [dot] com>, "
+"2019-2020\n"
 "\n"
 "Contribuții Launchpad:\n"
 "  Adi Roiban https://launchpad.net/~adiroiban\n"
@@ -995,12 +982,10 @@ msgid "Read-Only"
 msgstr "Doar citire"
 
 #: gedit/gedit-encodings-combo-box.c:297
-#: gedit/gedit-file-chooser-dialog-osx.m:564
 msgid "Automatically Detected"
 msgstr "Detectată automat"
 
 #: gedit/gedit-encodings-combo-box.c:326
-#: gedit/gedit-file-chooser-dialog-osx.m:573
 msgid "Add or Remove…"
 msgstr "Adaugă sau elimină…"
 
@@ -1039,30 +1024,38 @@ msgstr "Mută la o prioritate mai ridicată"
 msgid "Move to a lower priority"
 msgstr "Mută la o prioritate mai scăzută"
 
-#: gedit/gedit-file-chooser-dialog-gtk.c:39
-#: gedit/gedit-preferences-dialog.c:782
+#: gedit/gedit-file-chooser.c:41 gedit/gedit-preferences-dialog.c:730
 msgid "All Files"
 msgstr "Toate fișierele"
 
-#: gedit/gedit-file-chooser-dialog-gtk.c:40
+#: gedit/gedit-file-chooser.c:42
 msgid "All Text Files"
 msgstr "Toate fișierele text"
 
-#: gedit/gedit-file-chooser-dialog-gtk.c:305
+#: gedit/gedit-file-chooser-dialog-gtk.c:262
+#: gedit/gedit-file-chooser-open-dialog.c:43
 msgid "C_haracter Encoding:"
 msgstr "Codare c_aracter:"
 
-#: gedit/gedit-file-chooser-dialog-gtk.c:364
+#: gedit/gedit-file-chooser-dialog-gtk.c:321
 msgid "L_ine Ending:"
 msgstr "Sfârș_it de rând:"
 
-#: gedit/gedit-file-chooser-dialog-osx.m:546
-msgid "Character Encoding:"
-msgstr "Codare caracter:"
+#. Translators: "Open Files" is the title of the file chooser window.
+#: gedit/gedit-file-chooser-open-dialog.c:75
+#: gedit/gedit-file-chooser-open-native.c:54
+msgctxt "window title"
+msgid "Open Files"
+msgstr "Deschide fișiere"
 
-#: gedit/gedit-file-chooser-dialog-osx.m:619
-msgid "Line Ending:"
-msgstr "Sfârșit de rând:"
+#: gedit/gedit-file-chooser-open-dialog.c:79 gedit/gedit-window.c:2636
+#: gedit/resources/gtk/menus-common.ui:100
+#: gedit/resources/gtk/menus-common.ui:106
+#: plugins/filebrowser/resources/ui/gedit-file-browser-menus.ui:7
+#: plugins/quickopen/quickopen/popup.py:46
+#: plugins/snippets/snippets/manager.py:790
+msgid "_Open"
+msgstr "D_eschide"
 
 #: gedit/gedit-highlight-mode-selector.c:269 gedit/gedit-window.c:1166
 #: plugins/externaltools/tools/manager.py:115
@@ -1333,39 +1326,39 @@ msgstr ""
 msgid "Could not save the file “%s”."
 msgstr "Fișierul „%s” nu a putut fi salvat."
 
-#: gedit/gedit-preferences-dialog.c:442
+#: gedit/gedit-preferences-dialog.c:433
 msgid "Click on this button to select the font to be used by the editor"
 msgstr ""
 "Apăsați pe acest buton pentru a selecta fontul care trebuie utilizat de "
 "către editor"
 
-#: gedit/gedit-preferences-dialog.c:448
+#: gedit/gedit-preferences-dialog.c:439
 #, c-format
 msgid "_Use the system fixed width font (%s)"
 msgstr "_Utilizează fontul monospațiat din sistem (%s)"
 
-#: gedit/gedit-preferences-dialog.c:556
+#: gedit/gedit-preferences-dialog.c:685
 #, c-format
-msgid "Directory “%s” could not be created: g_mkdir_with_parents() failed: %s"
-msgstr "Dosarul „%s” nu a putut fi creat: g_mkdir_with_parents() a eșuat: %s"
+msgid "The selected color scheme cannot be installed: %s"
+msgstr "Schema de culori selectată nu poate fi instalată: %s"
 
-#: gedit/gedit-preferences-dialog.c:748
+#: gedit/gedit-preferences-dialog.c:691
 msgid "The selected color scheme cannot be installed."
 msgstr "Schema de culori selectată nu poate fi instalată."
 
-#: gedit/gedit-preferences-dialog.c:769
-msgid "Add Scheme"
-msgstr "Adăugare schemă"
+#: gedit/gedit-preferences-dialog.c:717
+msgid "Add Color Scheme"
+msgstr "Adaugă o schemă de culori"
 
-#: gedit/gedit-preferences-dialog.c:774
-msgid "A_dd Scheme"
-msgstr "A_daugă schema"
+#: gedit/gedit-preferences-dialog.c:720
+msgid "_Add Scheme"
+msgstr "_Adaugă o schemă"
 
-#: gedit/gedit-preferences-dialog.c:778
+#: gedit/gedit-preferences-dialog.c:725
 msgid "Color Scheme Files"
 msgstr "Fișiere cu scheme de culori"
 
-#: gedit/gedit-preferences-dialog.c:815
+#: gedit/gedit-preferences-dialog.c:763
 #, c-format
 msgid "Could not remove color scheme “%s”."
 msgstr "Nu s-a putut elimina schema de culori „%s”."
@@ -2397,107 +2390,117 @@ msgctxt "shortcut window"
 msgid "Move to matching bracket"
 msgstr "Mută la paranteza pereche"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:329
+#: gedit/resources/ui/gedit-shortcuts.ui:328
+msgctxt "shortcut window"
+msgid "Go to previous tab group"
+msgstr "Salt la grupul de file precedent"
+
+#: gedit/resources/ui/gedit-shortcuts.ui:335
+msgctxt "shortcut window"
+msgid "Go to next tab group"
+msgstr "Salt la grupul de file următor"
+
+#: gedit/resources/ui/gedit-shortcuts.ui:343
 msgctxt "shortcut window"
 msgid "Editing"
 msgstr "Editare"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:334
+#: gedit/resources/ui/gedit-shortcuts.ui:348
 msgctxt "shortcut window"
 msgid "Toggle insert / overwrite"
 msgstr "Comută introducere / suprascriere"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:341
+#: gedit/resources/ui/gedit-shortcuts.ui:355
 msgctxt "shortcut window"
 msgid "Toggle cursor visibility"
 msgstr "Comută vizibilitatea cursorului"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:348
+#: gedit/resources/ui/gedit-shortcuts.ui:362
 msgctxt "shortcut window"
 msgid "Delete current line"
 msgstr "Șterge linia curentă"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:355
+#: gedit/resources/ui/gedit-shortcuts.ui:369
 msgctxt "shortcut window"
 msgid "Move current line up"
 msgstr "Mută linia curentă în sus"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:362
+#: gedit/resources/ui/gedit-shortcuts.ui:376
 msgctxt "shortcut window"
 msgid "Move current line down"
 msgstr "Mută linia curentă în jos"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:369
+#: gedit/resources/ui/gedit-shortcuts.ui:383
 msgctxt "shortcut window"
 msgid "Move current word left"
 msgstr "Mută cuvântul curent la stânga"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:376
+#: gedit/resources/ui/gedit-shortcuts.ui:390
 msgctxt "shortcut window"
 msgid "Move current word right"
 msgstr "Mută cuvântul curent la dreapta"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:383
+#: gedit/resources/ui/gedit-shortcuts.ui:397
 msgctxt "shortcut window"
 msgid "Convert to uppercase"
 msgstr "Convertește la majuscule"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:390
+#: gedit/resources/ui/gedit-shortcuts.ui:404
 msgctxt "shortcut window"
 msgid "Convert to lowercase"
 msgstr "Convertește la minuscule"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:397
+#: gedit/resources/ui/gedit-shortcuts.ui:411
 msgctxt "shortcut window"
 msgid "Invert case"
 msgstr "Inversează mărimile"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:404
+#: gedit/resources/ui/gedit-shortcuts.ui:418
 msgctxt "shortcut window"
 msgid "Increment number at cursor"
 msgstr "Incrementează numărul de la cursor"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:411
+#: gedit/resources/ui/gedit-shortcuts.ui:425
 msgctxt "shortcut window"
 msgid "Decrement number at cursor"
 msgstr "Decrementează numărul de la cursor"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:419
+#: gedit/resources/ui/gedit-shortcuts.ui:433
 msgctxt "shortcut window"
 msgid "Tools"
 msgstr "Unelte"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:424
+#: gedit/resources/ui/gedit-shortcuts.ui:438
 msgctxt "shortcut window"
 msgid "Check spelling"
 msgstr "Verifică ortografia"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:431
+#: gedit/resources/ui/gedit-shortcuts.ui:445
 msgctxt "shortcut window"
 msgid "Print the document"
 msgstr "Tipărește documentul"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:438
+#: gedit/resources/ui/gedit-shortcuts.ui:452
 msgctxt "shortcut window"
 msgid "Show completion window"
 msgstr "Arată fereastra de completare"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:446
+#: gedit/resources/ui/gedit-shortcuts.ui:460
 msgctxt "shortcut window"
 msgid "General"
 msgstr "Generale"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:451
+#: gedit/resources/ui/gedit-shortcuts.ui:465
 msgctxt "shortcut window"
 msgid "Show help"
 msgstr "Arată ajutorul"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:458
+#: gedit/resources/ui/gedit-shortcuts.ui:472
 msgctxt "shortcut window"
 msgid "Open menu"
 msgstr "Deschide meniul"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:465
+#: gedit/resources/ui/gedit-shortcuts.ui:479
 msgctxt "shortcut window"
 msgid "Keyboard shortcuts"
 msgstr "Scurtături de tastatură"
@@ -3617,6 +3620,20 @@ msgstr "Inserare dată și oră"
 msgid "Inserts current date and time at the cursor position."
 msgstr "Inserează data și ora curentă la poziția cursorului."
 
+#~ msgid "Character Encoding:"
+#~ msgstr "Codare caracter:"
+
+#~ msgid "Line Ending:"
+#~ msgstr "Sfârșit de rând:"
+
+#~ msgid ""
+#~ "Directory “%s” could not be created: g_mkdir_with_parents() failed: %s"
+#~ msgstr ""
+#~ "Dosarul „%s” nu a putut fi creat: g_mkdir_with_parents() a eșuat: %s"
+
+#~ msgid "A_dd Scheme"
+#~ msgstr "A_daugă schema"
+
 #~ msgid ""
 #~ "gedit is the official text editor of the GNOME desktop environment. While "
 #~ "aiming at simplicity and ease of use, gedit is a powerful general purpose "
@@ -4407,9 +4424,6 @@ msgstr "Inserează data și ora curentă la poziția cursorului."
 
 #~ msgid "Next location"
 #~ msgstr "Adresa următoare"
-
-#~ msgid "Go to next location"
-#~ msgstr "Salt la adresa următoare"
 
 #~ msgid "_Snippets:"
 #~ msgstr "_Fragmente de text:"
