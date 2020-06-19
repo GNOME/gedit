@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gedit\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gedit/issues\n"
-"POT-Creation-Date: 2020-04-06 15:48+0000\n"
-"PO-Revision-Date: 2020-04-30 00:15+0200\n"
+"POT-Creation-Date: 2020-06-09 22:13+0000\n"
+"PO-Revision-Date: 2020-06-19 19:04+0200\n"
 "Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.3\n"
+"X-Generator: Poedit 2.3.1\n"
 
 #: data/org.gnome.gedit.appdata.xml.in:7
 msgid "gedit"
@@ -32,32 +32,17 @@ msgid "Edit text files"
 msgstr "Redigera textfiler"
 
 #: data/org.gnome.gedit.appdata.xml.in:10
-msgid ""
-"gedit is the official text editor of the GNOME desktop environment. While "
-"aiming at simplicity and ease of use, gedit is a powerful general purpose "
-"text editor."
-msgstr ""
-"gedit är den officiella textredigeraren för skrivbordsmiljön GNOME. Även om "
-"målet är att vara enkel och lättanvänd, så är gedit ändå en kraftfull "
-"textredigerare med många användningsområden."
+msgid "gedit is the text editor of the GNOME desktop environment."
+msgstr "gedit är textredigeraren för skrivbordsmiljön GNOME."
 
-#: data/org.gnome.gedit.appdata.xml.in:15
+#: data/org.gnome.gedit.appdata.xml.in:13
 msgid ""
-"Whether you are writing the next bestseller, programming an innovative "
-"application, or simply taking some quick notes, gedit will be a reliable "
-"tool to accomplish your task."
+"The first goal of gedit is to be easy to use, with a simple interface by "
+"default. More advanced features are available by enabling plugins."
 msgstr ""
-"Oavsett om du skriver den nya kioskvältaren, programmerar ett innovativt "
-"program, eller helt enkelt skriver ner några snabba anteckningar, så kommer "
-"gedit vara ett pålitligt verktyg för att slutföra din uppgift."
-
-#: data/org.gnome.gedit.appdata.xml.in:20
-msgid ""
-"Its flexible plugin system allows you to tailor the application to your "
-"needs and adapt it to your workflow."
-msgstr ""
-"Dess flexibla system med insticksmoduler tillåter dig att skräddarsy "
-"programmet efter dina behov och anpassa det till ditt arbetsflöde."
+"Det främsta målet för gedit är att vara lättanvänt, med ett enkelt "
+"standardgränssnitt. Mer avancerade funktioner finns tillgängliga genom att "
+"aktivera insticksmoduler."
 
 #: data/org.gnome.gedit.desktop.in:3 gedit/gedit-print-job.c:730
 msgid "Text Editor"
@@ -516,19 +501,13 @@ msgstr ""
 "kodningar som känns igen används. Standardvärdet är en tom lista, i vilket "
 "fall gedit kommer att välja bra standardvärden beroende på land och språk."
 
-#: data/org.gnome.gedit.gschema.xml.in:301
+#: data/org.gnome.gedit.gschema.xml.in:304
 msgid "Active plugins"
 msgstr "Aktiva insticksmoduler"
 
-# Osäker.
-#: data/org.gnome.gedit.gschema.xml.in:302
-msgid ""
-"List of active plugins. It contains the “Location” of the active plugins. "
-"See the .gedit-plugin file for obtaining the “Location” of a given plugin."
-msgstr ""
-"Lista med aktiva insticksmoduler. Den innehåller ”platsen” för de aktiva "
-"insticksmodulerna. Se filen .gedit-plugin för att få tag i ”platsen” för en "
-"given insticksmodul."
+#: data/org.gnome.gedit.gschema.xml.in:305
+msgid "List of active plugins."
+msgstr "Lista över aktiva insticksmoduler."
 
 #: gedit/gedit-app.c:85
 msgid "Show the application’s version"
@@ -574,7 +553,7 @@ msgstr "[FIL…] [+RAD[:KOLUMN]]"
 msgid "There was an error displaying the help."
 msgstr "Ett fel inträffade vid visning av hjälpen."
 
-#: gedit/gedit-app.c:854
+#: gedit/gedit-app.c:838
 #, c-format
 msgid "%s: invalid encoding."
 msgstr "%s: ogiltig kodning."
@@ -583,11 +562,11 @@ msgstr "%s: ogiltig kodning."
 msgid "Close _without Saving"
 msgstr "Stäng _utan att spara"
 
-#: gedit/gedit-close-confirmation-dialog.c:277 gedit/gedit-commands-file.c:462
-#: gedit/gedit-commands-file.c:567 gedit/gedit-commands-file.c:643
-#: gedit/gedit-commands-file.c:854 gedit/gedit-commands-file.c:1568
-#: gedit/gedit-encodings-dialog.c:192 gedit/gedit-preferences-dialog.c:814
-#: gedit/gedit-progress-info-bar.c:49
+#: gedit/gedit-close-confirmation-dialog.c:277 gedit/gedit-commands-file.c:496
+#: gedit/gedit-commands-file.c:572 gedit/gedit-commands-file.c:796
+#: gedit/gedit-commands-file.c:1518 gedit/gedit-encodings-dialog.c:192
+#: gedit/gedit-file-chooser-open-adapter.c:113
+#: gedit/gedit-preferences-dialog.c:721 gedit/gedit-progress-info-bar.c:49
 #: gedit/resources/ui/gedit-encodings-dialog.ui:44
 #: gedit/resources/ui/gedit-highlight-mode-dialog.ui:31
 #: plugins/filebrowser/gedit-file-browser-utils.c:211
@@ -605,7 +584,7 @@ msgstr "A_vbryt"
 msgid "_Save As…"
 msgstr "Spara s_om…"
 
-#: gedit/gedit-close-confirmation-dialog.c:295 gedit/gedit-commands-file.c:855
+#: gedit/gedit-close-confirmation-dialog.c:295 gedit/gedit-commands-file.c:795
 #: gedit/resources/gtk/menus-common.ui:127
 #: gedit/resources/ui/gedit-window.ui:59
 #: plugins/snippets/snippets/manager.py:875
@@ -724,56 +703,41 @@ msgid "If you don’t save, all your changes will be permanently lost."
 msgstr ""
 "Om du inte sparar kommer alla dina ändringar att vara borta för alltid."
 
-#: gedit/gedit-commands-file.c:265
+#: gedit/gedit-commands-file.c:263
 #, c-format
 msgid "Loading file “%s”…"
 msgstr "Läser in filen ”%s”…"
 
-#: gedit/gedit-commands-file.c:274
+#: gedit/gedit-commands-file.c:272
 #, c-format
 msgid "Loading %d file…"
 msgid_plural "Loading %d files…"
 msgstr[0] "Läser in %d fil…"
 msgstr[1] "Läser in %d filer…"
 
-#. Translators: "Open Files" is the title of the file chooser window.
-#: gedit/gedit-commands-file.c:456
-msgctxt "window title"
-msgid "Open Files"
-msgstr "Öppna filer"
-
-#: gedit/gedit-commands-file.c:463 gedit/gedit-window.c:2637
-#: gedit/resources/gtk/menus-common.ui:100
-#: gedit/resources/gtk/menus-common.ui:106
-#: plugins/filebrowser/resources/ui/gedit-file-browser-menus.ui:7
-#: plugins/quickopen/quickopen/popup.py:46
-#: plugins/snippets/snippets/manager.py:790
-msgid "_Open"
-msgstr "Ö_ppna"
-
-#: gedit/gedit-commands-file.c:558
+#: gedit/gedit-commands-file.c:487
 #, c-format
 msgid "The file “%s” is read-only."
 msgstr "Filen ”%s” är skrivskyddad."
 
-#: gedit/gedit-commands-file.c:563
+#: gedit/gedit-commands-file.c:492
 msgid "Do you want to try to replace it with the one you are saving?"
 msgstr "Vill du försöka ersätta den med den fil som du vill spara?"
 
-#: gedit/gedit-commands-file.c:568
+#: gedit/gedit-commands-file.c:497
 #: gedit/resources/ui/gedit-replace-dialog.ui:55
 msgid "_Replace"
 msgstr "_Ersätt"
 
-#: gedit/gedit-commands-file.c:608
+#: gedit/gedit-commands-file.c:537
 msgid "Save the file using compression?"
 msgstr "Spara filen med komprimering?"
 
-#: gedit/gedit-commands-file.c:612
+#: gedit/gedit-commands-file.c:541
 msgid "Save the file as plain text?"
 msgstr "Spara filen som vanlig text?"
 
-#: gedit/gedit-commands-file.c:625
+#: gedit/gedit-commands-file.c:554
 #, c-format
 msgid ""
 "The file “%s” was previously saved as plain text and will now be saved using "
@@ -782,11 +746,11 @@ msgstr ""
 "Filen ”%s” sparades tidigare som vanlig text och kommer nu att sparas med "
 "komprimering."
 
-#: gedit/gedit-commands-file.c:629
+#: gedit/gedit-commands-file.c:558
 msgid "_Save Using Compression"
 msgstr "_Spara med komprimering"
 
-#: gedit/gedit-commands-file.c:634
+#: gedit/gedit-commands-file.c:563
 #, c-format
 msgid ""
 "The file “%s” was previously saved using compression and will now be saved "
@@ -795,32 +759,32 @@ msgstr ""
 "Filen ”%s” sparades tidigare med komprimering och kommer nu att sparas som "
 "vanlig text."
 
-#: gedit/gedit-commands-file.c:637
+#: gedit/gedit-commands-file.c:566
 msgid "_Save As Plain Text"
 msgstr "_Spara som vanlig text"
 
-#: gedit/gedit-commands-file.c:752 gedit/gedit-commands-file.c:1019
+#: gedit/gedit-commands-file.c:681 gedit/gedit-commands-file.c:969
 #, c-format
 msgid "Saving file “%s”…"
 msgstr "Sparar filen ”%s”…"
 
 #. Translators: "Save As" is the title of the file chooser window.
-#: gedit/gedit-commands-file.c:847
+#: gedit/gedit-commands-file.c:792
 msgctxt "window title"
 msgid "Save As"
 msgstr "Spara som"
 
-#: gedit/gedit-commands-file.c:1429
+#: gedit/gedit-commands-file.c:1379
 #, c-format
 msgid "Reverting the document “%s”…"
 msgstr "Återställer dokumentet ”%s”…"
 
-#: gedit/gedit-commands-file.c:1476
+#: gedit/gedit-commands-file.c:1426
 #, c-format
 msgid "Revert unsaved changes to document “%s”?"
 msgstr "Återställ osparade ändringar i dokumentet ”%s”?"
 
-#: gedit/gedit-commands-file.c:1485
+#: gedit/gedit-commands-file.c:1435
 #, c-format
 msgid ""
 "Changes made to the document in the last %ld second will be permanently lost."
@@ -834,14 +798,14 @@ msgstr[1] ""
 "Ändringar i dokumentet gjorda under de senaste %ld sekunderna kommer att "
 "vara borta för alltid."
 
-#: gedit/gedit-commands-file.c:1494
+#: gedit/gedit-commands-file.c:1444
 msgid ""
 "Changes made to the document in the last minute will be permanently lost."
 msgstr ""
 "Ändringar i dokumentet gjorda under den senaste minuten kommer att vara "
 "borta för alltid."
 
-#: gedit/gedit-commands-file.c:1500
+#: gedit/gedit-commands-file.c:1450
 #, c-format
 msgid ""
 "Changes made to the document in the last minute and %ld second will be "
@@ -856,7 +820,7 @@ msgstr[1] ""
 "Ändringar i dokumentet gjorda under den senaste minuten och %ld sekunderna "
 "kommer att vara borta för alltid."
 
-#: gedit/gedit-commands-file.c:1510
+#: gedit/gedit-commands-file.c:1460
 #, c-format
 msgid ""
 "Changes made to the document in the last %ld minute will be permanently lost."
@@ -870,13 +834,13 @@ msgstr[1] ""
 "Ändringar i dokumentet gjorda under de senaste %ld minuterna kommer att vara "
 "borta för alltid."
 
-#: gedit/gedit-commands-file.c:1525
+#: gedit/gedit-commands-file.c:1475
 msgid "Changes made to the document in the last hour will be permanently lost."
 msgstr ""
 "Ändringar i dokumentet gjorda under den senaste timmen kommer att vara borta "
 "för alltid."
 
-#: gedit/gedit-commands-file.c:1531
+#: gedit/gedit-commands-file.c:1481
 #, c-format
 msgid ""
 "Changes made to the document in the last hour and %d minute will be "
@@ -891,7 +855,7 @@ msgstr[1] ""
 "Ändringar i dokumentet gjorda under den senaste timmen och %d minuterna "
 "kommer att vara borta för alltid."
 
-#: gedit/gedit-commands-file.c:1546
+#: gedit/gedit-commands-file.c:1496
 #, c-format
 msgid ""
 "Changes made to the document in the last %d hour will be permanently lost."
@@ -904,15 +868,15 @@ msgstr[1] ""
 "Ändringar i dokumentet gjorda under de senaste %d timmarna kommer att vara "
 "borta för alltid."
 
-#: gedit/gedit-commands-file.c:1569
+#: gedit/gedit-commands-file.c:1519
 msgid "_Revert"
 msgstr "_Återställ"
 
-#: gedit/gedit-commands-help.c:108
-msgid "gedit is a small and lightweight text editor for the GNOME Desktop"
+#: gedit/gedit-commands-help.c:110
+msgid "gedit is a small and lightweight text editor for the GNOME desktop"
 msgstr "gedit är en liten och enkel textredigerare för GNOME-skrivbordet"
 
-#: gedit/gedit-commands-help.c:130
+#: gedit/gedit-commands-help.c:115
 msgid "translator-credits"
 msgstr ""
 "Daniel Nylander <po@danielnylander.se>\n"
@@ -943,7 +907,7 @@ msgstr "Hittade och ersatte en förekomst"
 msgid "“%s” not found"
 msgstr "”%s” hittades inte"
 
-#: gedit/gedit-document.c:969 gedit/gedit-document.c:998
+#: gedit/gedit-document.c:993 gedit/gedit-document.c:1022
 #, c-format
 msgid "Untitled Document %d"
 msgstr "Namnlöst dokument %d"
@@ -953,18 +917,16 @@ msgstr "Namnlöst dokument %d"
 msgid "Tab Group %i"
 msgstr "Flikgrupp %i"
 
-#: gedit/gedit-documents-panel.c:498 gedit/gedit-window.c:1083
-#: gedit/gedit-window.c:1089 gedit/gedit-window.c:1097
+#: gedit/gedit-documents-panel.c:498 gedit/gedit-window.c:1082
+#: gedit/gedit-window.c:1088 gedit/gedit-window.c:1096
 msgid "Read-Only"
 msgstr "Skrivskyddad"
 
 #: gedit/gedit-encodings-combo-box.c:297
-#: gedit/gedit-file-chooser-dialog-osx.m:564
 msgid "Automatically Detected"
 msgstr "Automatiskt identifierad"
 
 #: gedit/gedit-encodings-combo-box.c:326
-#: gedit/gedit-file-chooser-dialog-osx.m:573
 msgid "Add or Remove…"
 msgstr "Lägg till eller ta bort…"
 
@@ -1004,32 +966,40 @@ msgstr "Flytta till en högre prioritet"
 msgid "Move to a lower priority"
 msgstr "Flytta till en lägre prioritet"
 
-#: gedit/gedit-file-chooser-dialog-gtk.c:39
-#: gedit/gedit-preferences-dialog.c:823
+#. Common code between the different GeditFileChooser's.
+#: gedit/gedit-file-chooser.c:27 gedit/gedit-preferences-dialog.c:730
 msgid "All Files"
 msgstr "Alla filer"
 
-#: gedit/gedit-file-chooser-dialog-gtk.c:40
+#: gedit/gedit-file-chooser.c:28
 msgid "All Text Files"
 msgstr "Alla textfiler"
 
-#: gedit/gedit-file-chooser-dialog-gtk.c:305
+#: gedit/gedit-file-chooser-dialog-gtk.c:256
 msgid "C_haracter Encoding:"
 msgstr "Tec_kenkodning:"
 
-#: gedit/gedit-file-chooser-dialog-gtk.c:364
+#: gedit/gedit-file-chooser-dialog-gtk.c:315
 msgid "L_ine Ending:"
 msgstr "Rads_lut:"
 
-#: gedit/gedit-file-chooser-dialog-osx.m:546
-msgid "Character Encoding:"
-msgstr "Teckenkodning:"
+#. Translators: "Open Files" is the title of the file chooser window.
+#: gedit/gedit-file-chooser-open-adapter.c:109
+#: gedit/gedit-file-chooser-open.c:87
+msgctxt "window title"
+msgid "Open Files"
+msgstr "Öppna filer"
 
-#: gedit/gedit-file-chooser-dialog-osx.m:619
-msgid "Line Ending:"
-msgstr "Radslut:"
+#: gedit/gedit-file-chooser-open-adapter.c:112 gedit/gedit-window.c:2636
+#: gedit/resources/gtk/menus-common.ui:100
+#: gedit/resources/gtk/menus-common.ui:106
+#: plugins/filebrowser/resources/ui/gedit-file-browser-menus.ui:7
+#: plugins/quickopen/quickopen/popup.py:46
+#: plugins/snippets/snippets/manager.py:790
+msgid "_Open"
+msgstr "Ö_ppna"
 
-#: gedit/gedit-highlight-mode-selector.c:269 gedit/gedit-window.c:1167
+#: gedit/gedit-highlight-mode-selector.c:269 gedit/gedit-window.c:1166
 #: plugins/externaltools/tools/manager.py:115
 #: plugins/externaltools/tools/manager.py:324
 #: plugins/externaltools/tools/manager.py:440
@@ -1296,40 +1266,39 @@ msgstr ""
 msgid "Could not save the file “%s”."
 msgstr "Kunde inte spara filen ”%s”."
 
-#: gedit/gedit-preferences-dialog.c:444
+#: gedit/gedit-preferences-dialog.c:433
 msgid "Click on this button to select the font to be used by the editor"
 msgstr ""
 "Tryck på denna knapp för att välja det typsnitt som ska användas av "
 "redigeraren"
 
-#: gedit/gedit-preferences-dialog.c:450
+#: gedit/gedit-preferences-dialog.c:439
 #, c-format
 msgid "_Use the system fixed width font (%s)"
 msgstr "_Använd systemets typsnitt med fast breddsteg (%s)"
 
-#: gedit/gedit-preferences-dialog.c:590
+#: gedit/gedit-preferences-dialog.c:685
 #, c-format
-msgid "Directory “%s” could not be created: g_mkdir_with_parents() failed: %s"
-msgstr ""
-"Katalogen ”%s” kunde inte skapas: g_mkdir_with_parents() misslyckades: %s"
+msgid "The selected color scheme cannot be installed: %s"
+msgstr "Det valda färgschemat kan inte installeras: %s"
 
-#: gedit/gedit-preferences-dialog.c:787
+#: gedit/gedit-preferences-dialog.c:691
 msgid "The selected color scheme cannot be installed."
 msgstr "Det valda färgschemat kan inte installeras."
 
-#: gedit/gedit-preferences-dialog.c:810
-msgid "Add Scheme"
-msgstr "Lägg till schema"
+#: gedit/gedit-preferences-dialog.c:717
+msgid "Add Color Scheme"
+msgstr "Lägg till färgschema"
 
-#: gedit/gedit-preferences-dialog.c:815
-msgid "A_dd Scheme"
-msgstr "Lä_gg till schema"
+#: gedit/gedit-preferences-dialog.c:720
+msgid "_Add Scheme"
+msgstr "_Lägg till schema"
 
-#: gedit/gedit-preferences-dialog.c:819
+#: gedit/gedit-preferences-dialog.c:725
 msgid "Color Scheme Files"
 msgstr "Färgschemafiler"
 
-#: gedit/gedit-preferences-dialog.c:850
+#: gedit/gedit-preferences-dialog.c:763
 #, c-format
 msgid "Could not remove color scheme “%s”."
 msgstr "Kunde inte ta bort färgschemat ”%s”."
@@ -1423,30 +1392,30 @@ msgstr "Sparar %s till %s"
 msgid "Saving %s"
 msgstr "Sparar %s"
 
-#: gedit/gedit-tab.c:1485
+#: gedit/gedit-tab.c:1484
 #, c-format
 msgid "Error opening file %s"
 msgstr "Fel vid öppning av filen %s"
 
-#: gedit/gedit-tab.c:1490
+#: gedit/gedit-tab.c:1489
 #, c-format
 msgid "Error reverting file %s"
 msgstr "Fel vid återställning av filen %s"
 
-#: gedit/gedit-tab.c:1495
+#: gedit/gedit-tab.c:1494
 #, c-format
 msgid "Error saving file %s"
 msgstr "Fel vid sparande av filen %s"
 
-#: gedit/gedit-tab.c:1526
+#: gedit/gedit-tab.c:1525
 msgid "Name:"
 msgstr "Namn:"
 
-#: gedit/gedit-tab.c:1527
+#: gedit/gedit-tab.c:1526
 msgid "MIME Type:"
 msgstr "MIME-typ:"
 
-#: gedit/gedit-tab.c:1528
+#: gedit/gedit-tab.c:1527
 msgid "Encoding:"
 msgstr "Kodning:"
 
@@ -1468,7 +1437,7 @@ msgstr "Mac OS Classic"
 msgid "Windows"
 msgstr "Windows"
 
-#: gedit/gedit-view.c:479 gedit/resources/ui/gedit-preferences-dialog.ui:41
+#: gedit/gedit-view.c:438 gedit/resources/ui/gedit-preferences-dialog.ui:41
 msgid "_Display line numbers"
 msgstr "_Visa radnummer"
 
@@ -1509,48 +1478,48 @@ msgstr "Sträng du vill söka efter"
 msgid "Line you want to move the cursor to"
 msgstr "Rad du vill flytta markören till"
 
-#: gedit/gedit-window.c:920
+#: gedit/gedit-window.c:919
 msgid "Bracket match is out of range"
 msgstr "Parentesmatchning är utanför intervallet"
 
-#: gedit/gedit-window.c:925
+#: gedit/gedit-window.c:924
 msgid "Bracket match not found"
 msgstr "Parentesmatchning hittades inte"
 
-#: gedit/gedit-window.c:930
+#: gedit/gedit-window.c:929
 #, c-format
 msgid "Bracket match found on line: %d"
 msgstr "Parentesmatchning hittades på rad: %d"
 
 #. Translators: "Ln" is an abbreviation for "Line", Col is an abbreviation for "Column". Please,
 #. use abbreviations if possible to avoid space problems.
-#: gedit/gedit-window.c:965
+#: gedit/gedit-window.c:964
 #, c-format
 msgid "  Ln %d, Col %d"
 msgstr "  Rad %d, kolumn %d"
 
-#: gedit/gedit-window.c:1149
+#: gedit/gedit-window.c:1148
 #, c-format
 msgid "Tab Width: %u"
 msgstr "Tabulatorbredd: %u"
 
-#: gedit/gedit-window.c:1494
+#: gedit/gedit-window.c:1493
 msgid "There are unsaved documents"
 msgstr "Det finns dokument som ej sparats"
 
-#: gedit/gedit-window.c:2331
+#: gedit/gedit-window.c:2330
 msgid "Change side panel page"
 msgstr "Ändra sida för sidopanel"
 
-#: gedit/gedit-window.c:2351 gedit/resources/ui/gedit-window.ui:19
+#: gedit/gedit-window.c:2350 gedit/resources/ui/gedit-window.ui:19
 msgid "Documents"
 msgstr "Dokument"
 
-#: gedit/gedit-window.c:2638
+#: gedit/gedit-window.c:2637
 msgid "Open a file"
 msgstr "Öppna en fil"
 
-#: gedit/gedit-window.c:2642
+#: gedit/gedit-window.c:2641
 msgid "Open a recently used file"
 msgstr "Öppna en tidigare använd fil"
 
@@ -1955,29 +1924,29 @@ msgstr "Välj redigerartypsnittet"
 msgid "Color Scheme"
 msgstr "Färgschema"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:663
-#: gedit/resources/ui/gedit-preferences-dialog.ui:664
+#: gedit/resources/ui/gedit-preferences-dialog.ui:652
+#: gedit/resources/ui/gedit-preferences-dialog.ui:653
 msgid "Install scheme"
 msgstr "Installera schema"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:665
+#: gedit/resources/ui/gedit-preferences-dialog.ui:654
 msgid "Install Scheme"
 msgstr "Installera schema"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:679
-#: gedit/resources/ui/gedit-preferences-dialog.ui:680
+#: gedit/resources/ui/gedit-preferences-dialog.ui:668
+#: gedit/resources/ui/gedit-preferences-dialog.ui:669
 msgid "Uninstall scheme"
 msgstr "Avinstallera schema"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:681
+#: gedit/resources/ui/gedit-preferences-dialog.ui:670
 msgid "Uninstall Scheme"
 msgstr "Avinstallera schema"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:721
+#: gedit/resources/ui/gedit-preferences-dialog.ui:710
 msgid "Font & Colors"
 msgstr "Typsnitt och färger"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:746
+#: gedit/resources/ui/gedit-preferences-dialog.ui:735
 msgid "Plugins"
 msgstr "Insticksmoduler"
 
@@ -2360,107 +2329,117 @@ msgctxt "shortcut window"
 msgid "Move to matching bracket"
 msgstr "Gå till matchande parentes"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:329
+#: gedit/resources/ui/gedit-shortcuts.ui:328
+msgctxt "shortcut window"
+msgid "Go to previous tab group"
+msgstr "Gå till föregående flikgrupp"
+
+#: gedit/resources/ui/gedit-shortcuts.ui:335
+msgctxt "shortcut window"
+msgid "Go to next tab group"
+msgstr "Gå till nästa flikgrupp"
+
+#: gedit/resources/ui/gedit-shortcuts.ui:343
 msgctxt "shortcut window"
 msgid "Editing"
 msgstr "Redigering"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:334
+#: gedit/resources/ui/gedit-shortcuts.ui:348
 msgctxt "shortcut window"
 msgid "Toggle insert / overwrite"
 msgstr "Växla infognings- / överskrivningsläge"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:341
+#: gedit/resources/ui/gedit-shortcuts.ui:355
 msgctxt "shortcut window"
 msgid "Toggle cursor visibility"
 msgstr "Växla markörsynlighet"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:348
+#: gedit/resources/ui/gedit-shortcuts.ui:362
 msgctxt "shortcut window"
 msgid "Delete current line"
 msgstr "Ta bort aktuell rad"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:355
+#: gedit/resources/ui/gedit-shortcuts.ui:369
 msgctxt "shortcut window"
 msgid "Move current line up"
 msgstr "Flytta aktuell rad uppåt"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:362
+#: gedit/resources/ui/gedit-shortcuts.ui:376
 msgctxt "shortcut window"
 msgid "Move current line down"
 msgstr "Flytta aktuell rad nedåt"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:369
+#: gedit/resources/ui/gedit-shortcuts.ui:383
 msgctxt "shortcut window"
 msgid "Move current word left"
 msgstr "Flytta aktuellt ord åt vänster"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:376
+#: gedit/resources/ui/gedit-shortcuts.ui:390
 msgctxt "shortcut window"
 msgid "Move current word right"
 msgstr "Flytta aktuellt ord åt höger"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:383
+#: gedit/resources/ui/gedit-shortcuts.ui:397
 msgctxt "shortcut window"
 msgid "Convert to uppercase"
 msgstr "Konvertera till versaler"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:390
+#: gedit/resources/ui/gedit-shortcuts.ui:404
 msgctxt "shortcut window"
 msgid "Convert to lowercase"
 msgstr "Konvertera till gemener"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:397
+#: gedit/resources/ui/gedit-shortcuts.ui:411
 msgctxt "shortcut window"
 msgid "Invert case"
 msgstr "Invertera skiftläge"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:404
+#: gedit/resources/ui/gedit-shortcuts.ui:418
 msgctxt "shortcut window"
 msgid "Increment number at cursor"
 msgstr "Öka nummer vid markör"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:411
+#: gedit/resources/ui/gedit-shortcuts.ui:425
 msgctxt "shortcut window"
 msgid "Decrement number at cursor"
 msgstr "Minska nummer vid markör"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:419
+#: gedit/resources/ui/gedit-shortcuts.ui:433
 msgctxt "shortcut window"
 msgid "Tools"
 msgstr "Verktyg"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:424
+#: gedit/resources/ui/gedit-shortcuts.ui:438
 msgctxt "shortcut window"
 msgid "Check spelling"
 msgstr "Kontrollera stavning"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:431
+#: gedit/resources/ui/gedit-shortcuts.ui:445
 msgctxt "shortcut window"
 msgid "Print the document"
 msgstr "Skriv ut dokumentet"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:438
+#: gedit/resources/ui/gedit-shortcuts.ui:452
 msgctxt "shortcut window"
 msgid "Show completion window"
 msgstr "Visa kompletteringsfönstret"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:446
+#: gedit/resources/ui/gedit-shortcuts.ui:460
 msgctxt "shortcut window"
 msgid "General"
 msgstr "Allmänt"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:451
+#: gedit/resources/ui/gedit-shortcuts.ui:465
 msgctxt "shortcut window"
 msgid "Show help"
 msgstr "Visa hjälp"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:458
+#: gedit/resources/ui/gedit-shortcuts.ui:472
 msgctxt "shortcut window"
 msgid "Open menu"
 msgstr "Öppna meny"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:465
+#: gedit/resources/ui/gedit-shortcuts.ui:479
 msgctxt "shortcut window"
 msgid "Keyboard shortcuts"
 msgstr "Tangentbordsgenvägar"
@@ -2499,47 +2478,6 @@ msgstr "Dölj panel"
 #: gedit/resources/ui/gedit-window.ui:347
 msgid "Leave Fullscreen"
 msgstr "Lämna helskärmsläge"
-
-#: plugins/checkupdate/checkupdate.plugin.desktop.in:5
-msgid "Check update"
-msgstr "Leta efter uppdatering"
-
-#: plugins/checkupdate/checkupdate.plugin.desktop.in:6
-msgid "Check for latest version of gedit"
-msgstr "Leta efter senaste versionen av gedit"
-
-#: plugins/checkupdate/gedit-check-update-plugin.c:243
-msgid "There was an error displaying the URI."
-msgstr "Ett fel inträffade vid visning av URI:n."
-
-#: plugins/checkupdate/gedit-check-update-plugin.c:280
-msgid "_Download"
-msgstr "_Hämta"
-
-#: plugins/checkupdate/gedit-check-update-plugin.c:281
-msgid "_Ignore Version"
-msgstr "_Ignorera version"
-
-#: plugins/checkupdate/gedit-check-update-plugin.c:286
-msgid "There is a new version of gedit"
-msgstr "Det finns en ny version av gedit"
-
-#: plugins/checkupdate/gedit-check-update-plugin.c:289
-msgid ""
-"You can download the new version of gedit by clicking on the download button "
-"or ignore that version and wait for a new one"
-msgstr ""
-"Du kan hämta den nya versionen av gedit genom att trycka på hämtningsknappen "
-"eller ignorera den versionen och vänta på nästa"
-
-#: plugins/checkupdate/org.gnome.gedit.plugins.checkupdate.gschema.xml:5
-msgid "Version to Ignore"
-msgstr "Version att ignorera"
-
-#. This is releated to the next gedit version to be released
-#: plugins/checkupdate/org.gnome.gedit.plugins.checkupdate.gschema.xml:7
-msgid "Version to ignore until a newer version is released."
-msgstr "Version att ignorera tills nästa version har getts ut."
 
 #: plugins/docinfo/docinfo.plugin.desktop.in:5
 #: plugins/docinfo/resources/ui/gedit-docinfo-plugin.ui:7
@@ -2846,8 +2784,8 @@ msgid "File Browser Panel"
 msgstr "Filbläddrarpanel"
 
 #: plugins/filebrowser/filebrowser.plugin.desktop.in:7
-msgid "Easy file access from the side panel"
-msgstr "Enkel filåtkomst från sidopanelen"
+msgid "Easy file access from the side panel."
+msgstr "Enkel filåtkomst från sidopanelen."
 
 #: plugins/filebrowser/gedit-file-bookmarks-store.c:200
 msgid "Home"
@@ -3185,8 +3123,8 @@ msgid "Python Console"
 msgstr "Python-konsol"
 
 #: plugins/pythonconsole/pythonconsole.plugin.desktop.in:7
-msgid "Interactive Python console standing in the bottom panel"
-msgstr "Interaktiv Python-konsol stående i underpanelen"
+msgid "Interactive Python console standing in the bottom panel."
+msgstr "Interaktiv Python-konsol stående i underpanelen."
 
 #: plugins/quickhighlight/quickhighlight.plugin.desktop.in:5
 msgid "Quick Highlight"
@@ -3206,8 +3144,8 @@ msgid "Quick Open"
 msgstr "Snabböppna"
 
 #: plugins/quickopen/quickopen.plugin.desktop.in:7
-msgid "Quickly open files"
-msgstr "Snabböppna filer"
+msgid "Quickly open files."
+msgstr "Snabböppna filer."
 
 #: plugins/quickopen/quickopen/popup.py:90
 msgid "Type to search…"
@@ -3403,8 +3341,8 @@ msgid "Execution of the Python command (%s) failed: %s"
 msgstr "Körning av Python-kommandot (%s) misslyckades: %s"
 
 #: plugins/snippets/snippets.plugin.desktop.in:7
-msgid "Insert often-used pieces of text in a fast way"
-msgstr "Infoga ofta använda textdelar på ett snabbt sätt"
+msgid "Insert often-used pieces of text in a fast way."
+msgstr "Infoga ofta använda textdelar på ett snabbt sätt."
 
 #: plugins/snippets/snippets/snippets.ui:40
 #: plugins/snippets/snippets/snippets.ui:47
@@ -3613,6 +3551,85 @@ msgstr "Infoga datum/tid"
 #: plugins/time/time.plugin.desktop.in:6
 msgid "Inserts current date and time at the cursor position."
 msgstr "Infogar aktuellt datum och tid vid markörpositionen."
+
+#~ msgid ""
+#~ "gedit is the official text editor of the GNOME desktop environment. While "
+#~ "aiming at simplicity and ease of use, gedit is a powerful general purpose "
+#~ "text editor."
+#~ msgstr ""
+#~ "gedit är den officiella textredigeraren för skrivbordsmiljön GNOME. Även "
+#~ "om målet är att vara enkel och lättanvänd, så är gedit ändå en kraftfull "
+#~ "textredigerare med många användningsområden."
+
+#~ msgid ""
+#~ "Whether you are writing the next bestseller, programming an innovative "
+#~ "application, or simply taking some quick notes, gedit will be a reliable "
+#~ "tool to accomplish your task."
+#~ msgstr ""
+#~ "Oavsett om du skriver den nya kioskvältaren, programmerar ett innovativt "
+#~ "program, eller helt enkelt skriver ner några snabba anteckningar, så "
+#~ "kommer gedit vara ett pålitligt verktyg för att slutföra din uppgift."
+
+#~ msgid ""
+#~ "Its flexible plugin system allows you to tailor the application to your "
+#~ "needs and adapt it to your workflow."
+#~ msgstr ""
+#~ "Dess flexibla system med insticksmoduler tillåter dig att skräddarsy "
+#~ "programmet efter dina behov och anpassa det till ditt arbetsflöde."
+
+# Osäker.
+#~ msgid ""
+#~ "List of active plugins. It contains the “Location” of the active plugins. "
+#~ "See the .gedit-plugin file for obtaining the “Location” of a given plugin."
+#~ msgstr ""
+#~ "Lista med aktiva insticksmoduler. Den innehåller ”platsen” för de aktiva "
+#~ "insticksmodulerna. Se filen .gedit-plugin för att få tag i ”platsen” för "
+#~ "en given insticksmodul."
+
+#~ msgid "Character Encoding:"
+#~ msgstr "Teckenkodning:"
+
+#~ msgid "Line Ending:"
+#~ msgstr "Radslut:"
+
+#~ msgid ""
+#~ "Directory “%s” could not be created: g_mkdir_with_parents() failed: %s"
+#~ msgstr ""
+#~ "Katalogen ”%s” kunde inte skapas: g_mkdir_with_parents() misslyckades: %s"
+
+#~ msgid "A_dd Scheme"
+#~ msgstr "Lä_gg till schema"
+
+#~ msgid "Check update"
+#~ msgstr "Leta efter uppdatering"
+
+#~ msgid "Check for latest version of gedit"
+#~ msgstr "Leta efter senaste versionen av gedit"
+
+#~ msgid "There was an error displaying the URI."
+#~ msgstr "Ett fel inträffade vid visning av URI:n."
+
+#~ msgid "_Download"
+#~ msgstr "_Hämta"
+
+#~ msgid "_Ignore Version"
+#~ msgstr "_Ignorera version"
+
+#~ msgid "There is a new version of gedit"
+#~ msgstr "Det finns en ny version av gedit"
+
+#~ msgid ""
+#~ "You can download the new version of gedit by clicking on the download "
+#~ "button or ignore that version and wait for a new one"
+#~ msgstr ""
+#~ "Du kan hämta den nya versionen av gedit genom att trycka på "
+#~ "hämtningsknappen eller ignorera den versionen och vänta på nästa"
+
+#~ msgid "Version to Ignore"
+#~ msgstr "Version att ignorera"
+
+#~ msgid "Version to ignore until a newer version is released."
+#~ msgstr "Version att ignorera tills nästa version har getts ut."
 
 #~ msgid "Toolbar is Visible"
 #~ msgstr "Verktygsfältet är synligt"
