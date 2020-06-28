@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gedit master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gedit/issues\n"
-"POT-Creation-Date: 2020-06-01 19:27+0000\n"
-"PO-Revision-Date: 2020-06-26 08:33+0500\n"
+"POT-Creation-Date: 2020-06-26 03:36+0000\n"
+"PO-Revision-Date: 2020-06-28 23:06+0500\n"
 "Last-Translator: Baurzhan Muftakhidinov <baurthefirst@gmail.com>\n"
 "Language-Team: Kazakh <kk_KZ@googlegroups.com>\n"
 "Language: kk\n"
@@ -27,31 +27,17 @@ msgid "Edit text files"
 msgstr "Мәтіндік файлдарды түзету"
 
 #: data/org.gnome.gedit.appdata.xml.in:10
-msgid ""
-"gedit is the official text editor of the GNOME desktop environment. While "
-"aiming at simplicity and ease of use, gedit is a powerful general purpose "
-"text editor."
+msgid "gedit is the text editor of the GNOME desktop environment."
 msgstr ""
-"gedit - бұл GNOME жұмыс үстел ортасының мәтіндік файлдардың ресми түзеткіші. "
-"Қарапайымдылық және қолдану жеңілдігіне мақсатталған болса да, gedit "
-"мүмкіндіктері көп мәтіндік түзеткіші болып табылады."
+"gedit - бұл GNOME жұмыс үстелі үшін жеңіл әрі жылдам мәтіндік түзетушісі."
 
-#: data/org.gnome.gedit.appdata.xml.in:15
+#: data/org.gnome.gedit.appdata.xml.in:13
 msgid ""
-"Whether you are writing the next bestseller, programming an innovative "
-"application, or simply taking some quick notes, gedit will be a reliable "
-"tool to accomplish your task."
+"The first goal of gedit is to be easy to use, with a simple interface by "
+"default. More advanced features are available by enabling plugins."
 msgstr ""
-"Кітап, қолданба бағдарламасын немесе жылдам естеліктерді жазсаңыз, gedit сіз "
-"үшін тапсырманы орындаудың сенімді сайманы болады."
-
-#: data/org.gnome.gedit.appdata.xml.in:20
-msgid ""
-"Its flexible plugin system allows you to tailor the application to your "
-"needs and adapt it to your workflow."
-msgstr ""
-"Оның икемді плагиндер жүйесі қолданбаны өз ыңғайыңызға қарай баптап, жұмыс "
-"тәртібіңізге сай жасауды мүмкін қылады."
+"gedit-тің бірінші мақсаты - қарапайым интерфейсі бар, күнделікті пайдалануға "
+"оңай болу. Қосымша мүмкіндіктер плагиндерді іске қосу арқылы қол жетімді."
 
 #: data/org.gnome.gedit.desktop.in:3 gedit/gedit-print-job.c:730
 msgid "Text Editor"
@@ -61,7 +47,6 @@ msgstr "Мәтін түзетушісі"
 #. The list MUST also end with a semicolon!
 #. Search terms to find this application.
 #: data/org.gnome.gedit.desktop.in:18
-#| msgid "Text;Editor;Plaintext;Write;"
 msgid "Text;Editor;Plaintext;Write;gedit;"
 msgstr "Text;Editor;Plaintext;Write;gedit;Мәтін;Түзеткіш;Ашық мәтін;Жазу;"
 
@@ -310,6 +295,8 @@ msgstr "Құжат жол тасымалдауымен аяқталуды қам
 msgid ""
 "Whether gedit will ensure that documents always end with a trailing newline."
 msgstr ""
+"gedit құжаттардың әрқашан жаңа жолмен аяқталуын қамтамасыз етеді ме, соны "
+"көрсетеді."
 
 #: data/org.gnome.gedit.gschema.xml.in:169
 msgid "Notebook Show Tabs Mode"
@@ -372,6 +359,10 @@ msgid ""
 "individual character boundaries. Note that the values are case-sensitive, so "
 "make sure they appear exactly as mentioned here."
 msgstr ""
+"Баспаға шығару үшін ұзын жолдарды тасымалдау тәсілін көрсетеді. Тасымалдамау "
+"үшін \"none\", сөз бойынша тасымалдау үшін \"word\" және жеке таңбалар "
+"бойынша тасымалдау үшін \"char\" қолданыңыз. Бұл мәндер регистрге сезімтал, "
+"оларды көрсетілгендей жазыңыз."
 
 #: data/org.gnome.gedit.gschema.xml.in:209
 msgid "Print Line Numbers"
@@ -413,6 +404,9 @@ msgid ""
 "Specifies the font to use for page headers when printing a document. This "
 "will only take effect if the “Print Header” option is turned on."
 msgstr ""
+"Құжатты басып шығарғанда бет тақырыптары үшін қолданатын қаріпті көрсетеді. "
+"Бұл \"Тақырыптаманы баспаға шығару\" параметрі іске қосылған жағдайда ғана "
+"күшіне енеді."
 
 #. Translators: This is a GSettings default value. Do NOT change or localize the quotation marks!
 #: data/org.gnome.gedit.gschema.xml.in:226
@@ -428,6 +422,9 @@ msgid ""
 "Specifies the font to use for line numbers when printing. This will only "
 "take effect if the “Print Line Numbers” option is non-zero."
 msgstr ""
+"Басып шығару кезінде жол нөмірлері үшін қолданатын қаріпті көрсетеді. Бұл "
+"\"Жол нөмірлерін баспаға шығару\" параметрі нөл емес жағдайда ғана күшіне "
+"енеді."
 
 #: data/org.gnome.gedit.gschema.xml.in:232
 msgid "Margin Left"
@@ -473,25 +470,23 @@ msgid ""
 "case gedit will choose good defaults depending on the country and language."
 msgstr ""
 
-#: data/org.gnome.gedit.gschema.xml.in:301
+#: data/org.gnome.gedit.gschema.xml.in:304
 msgid "Active plugins"
 msgstr "Белсенді плагиндер"
 
-#: data/org.gnome.gedit.gschema.xml.in:302
-msgid ""
-"List of active plugins. It contains the “Location” of the active plugins. "
-"See the .gedit-plugin file for obtaining the “Location” of a given plugin."
-msgstr ""
+#: data/org.gnome.gedit.gschema.xml.in:305
+msgid "List of active plugins."
+msgstr "Белсенді плагиндер тізімі."
 
-#: gedit/gedit-app.c:101
+#: gedit/gedit-app.c:85
 msgid "Show the application’s version"
 msgstr "Қолданба нұсқасын көрсету"
 
-#: gedit/gedit-app.c:107
+#: gedit/gedit-app.c:91
 msgid "Display list of possible values for the encoding option"
 msgstr "Кодталу опциясы үшін мүмкін мәндер тізімін көрсету"
 
-#: gedit/gedit-app.c:114
+#: gedit/gedit-app.c:98
 msgid ""
 "Set the character encoding to be used to open the files listed on the "
 "command line"
@@ -499,49 +494,49 @@ msgstr ""
 "Командалық жолда көрсетілген файлдарды ашуға қолданылатын таңбалар кодталуын "
 "орнату"
 
-#: gedit/gedit-app.c:115
+#: gedit/gedit-app.c:99
 msgid "ENCODING"
 msgstr "КОДТАЛУЫ"
 
-#: gedit/gedit-app.c:121
+#: gedit/gedit-app.c:105
 msgid "Create a new top-level window in an existing instance of gedit"
 msgstr ""
 "Жаңа жоғары деңгейлі терезені gedit-тің бар болып тұрған нұсқасында жасау"
 
-#: gedit/gedit-app.c:128
+#: gedit/gedit-app.c:112
 msgid "Create a new document in an existing instance of gedit"
 msgstr "Жаңа құжатты gedit-тің бар болып тұрған нұсқасында жасау"
 
-#: gedit/gedit-app.c:135
+#: gedit/gedit-app.c:119
 msgid "Open files and block process until files are closed"
 msgstr "Файлдарды ашу және файлдар жабылғанша дейін процесті блоктау"
 
-#: gedit/gedit-app.c:142
+#: gedit/gedit-app.c:126
 msgid "Run gedit in standalone mode"
 msgstr "gedit-ті автономды режимде орындау"
 
-#: gedit/gedit-app.c:149
+#: gedit/gedit-app.c:133
 msgid "[FILE…] [+LINE[:COLUMN]]"
 msgstr "[ФАЙЛ…] [+ЖОЛ[:БАҒАН]]"
 
-#: gedit/gedit-app.c:259
+#: gedit/gedit-app.c:223
 msgid "There was an error displaying the help."
 msgstr "Көмекті көрсету кезінде қате кетті."
 
-#: gedit/gedit-app.c:955
+#: gedit/gedit-app.c:838
 #, c-format
 msgid "%s: invalid encoding."
 msgstr "%s: кодталуы қате."
 
-#: gedit/gedit-close-confirmation-dialog.c:277
+#: gedit/gedit-close-confirmation-dialog.c:271
 msgid "Close _without Saving"
 msgstr "Сақтамай-ақ _жабу"
 
-#: gedit/gedit-close-confirmation-dialog.c:283 gedit/gedit-commands-file.c:457
-#: gedit/gedit-commands-file.c:562 gedit/gedit-commands-file.c:638
-#: gedit/gedit-commands-file.c:849 gedit/gedit-commands-file.c:1563
-#: gedit/gedit-encodings-dialog.c:192 gedit/gedit-preferences-dialog.c:816
-#: gedit/gedit-progress-info-bar.c:49
+#: gedit/gedit-close-confirmation-dialog.c:277 gedit/gedit-commands-file.c:492
+#: gedit/gedit-commands-file.c:568 gedit/gedit-commands-file.c:791
+#: gedit/gedit-commands-file.c:1513 gedit/gedit-encodings-dialog.c:192
+#: gedit/gedit-file-chooser-open-dialog.c:78
+#: gedit/gedit-preferences-dialog.c:721 gedit/gedit-progress-info-bar.c:49
 #: gedit/resources/ui/gedit-encodings-dialog.ui:44
 #: gedit/resources/ui/gedit-highlight-mode-dialog.ui:31
 #: plugins/filebrowser/gedit-file-browser-utils.c:211
@@ -554,12 +549,12 @@ msgstr "Сақтамай-ақ _жабу"
 msgid "_Cancel"
 msgstr "Ба_с тарту"
 
-#: gedit/gedit-close-confirmation-dialog.c:310 gedit/resources/gtk/menus.ui:37
+#: gedit/gedit-close-confirmation-dialog.c:295 gedit/resources/gtk/menus.ui:37
 #: gedit/resources/gtk/menus-traditional.ui:33
 msgid "_Save As…"
 msgstr "Қала_йша сақтау…"
 
-#: gedit/gedit-close-confirmation-dialog.c:310 gedit/gedit-commands-file.c:850
+#: gedit/gedit-close-confirmation-dialog.c:295 gedit/gedit-commands-file.c:790
 #: gedit/resources/gtk/menus-common.ui:127
 #: gedit/resources/ui/gedit-window.ui:59
 #: plugins/snippets/snippets/manager.py:875
@@ -567,7 +562,7 @@ msgstr "Қала_йша сақтау…"
 msgid "_Save"
 msgstr "_Сақтау"
 
-#: gedit/gedit-close-confirmation-dialog.c:328
+#: gedit/gedit-close-confirmation-dialog.c:312
 #, c-format
 msgid ""
 "If you don’t save, changes from the last %ld second will be permanently lost."
@@ -576,12 +571,12 @@ msgid_plural ""
 "lost."
 msgstr[0] "Сақтамасаңыз, соңғы %ld секундта жасалған өзгерістер жоғалады."
 
-#: gedit/gedit-close-confirmation-dialog.c:337
+#: gedit/gedit-close-confirmation-dialog.c:321
 msgid ""
 "If you don’t save, changes from the last minute will be permanently lost."
 msgstr "Сақтамасаңыз, соңғы минутта жасалған өзгерістер жоғалады."
 
-#: gedit/gedit-close-confirmation-dialog.c:343
+#: gedit/gedit-close-confirmation-dialog.c:327
 #, c-format
 msgid ""
 "If you don’t save, changes from the last minute and %ld second will be "
@@ -592,7 +587,7 @@ msgid_plural ""
 msgstr[0] ""
 "Сақтамасаңыз, соңғы минут және %ld секундта жасалған өзгерістер жоғалады."
 
-#: gedit/gedit-close-confirmation-dialog.c:353
+#: gedit/gedit-close-confirmation-dialog.c:337
 #, c-format
 msgid ""
 "If you don’t save, changes from the last %ld minute will be permanently lost."
@@ -601,11 +596,11 @@ msgid_plural ""
 "lost."
 msgstr[0] "Сақтамасаңыз, соңғы %ld минутта жасалған өзгерістер жоғалады."
 
-#: gedit/gedit-close-confirmation-dialog.c:368
+#: gedit/gedit-close-confirmation-dialog.c:352
 msgid "If you don’t save, changes from the last hour will be permanently lost."
 msgstr "Сақтамасаңыз, соңғы сағатта жасалған өзгерістер жоғалады."
 
-#: gedit/gedit-close-confirmation-dialog.c:374
+#: gedit/gedit-close-confirmation-dialog.c:358
 #, c-format
 msgid ""
 "If you don’t save, changes from the last hour and %d minute will be "
@@ -616,7 +611,7 @@ msgid_plural ""
 msgstr[0] ""
 "Сақтамасаңыз, соңғы сағат және %d минутта жасалған өзгерістер жоғалады."
 
-#: gedit/gedit-close-confirmation-dialog.c:389
+#: gedit/gedit-close-confirmation-dialog.c:373
 #, c-format
 msgid ""
 "If you don’t save, changes from the last %d hour will be permanently lost."
@@ -624,28 +619,12 @@ msgid_plural ""
 "If you don’t save, changes from the last %d hours will be permanently lost."
 msgstr[0] "Сақтамасаңыз, соңғы %d сағатта жасалған өзгерістер жоғалады."
 
-#: gedit/gedit-close-confirmation-dialog.c:418
-#, c-format
-msgid "Changes to document “%s” will be permanently lost."
-msgstr "\"%s\" құжат өзгерістері қайтарылмастай жоғалады."
-
-#: gedit/gedit-close-confirmation-dialog.c:423
+#: gedit/gedit-close-confirmation-dialog.c:400
 #, c-format
 msgid "Save changes to document “%s” before closing?"
 msgstr "Жабу алдында \"%s\" құжат өзгерістерін сақтау керек пе?"
 
-#: gedit/gedit-close-confirmation-dialog.c:438
-#: gedit/gedit-close-confirmation-dialog.c:562
-msgid "Saving has been disabled by the system administrator."
-msgstr "Жүйелік әкімші сақтау мүмкіндігін сөндірген."
-
-#: gedit/gedit-close-confirmation-dialog.c:504
-#, c-format
-msgid "Changes to %d document will be permanently lost."
-msgid_plural "Changes to %d documents will be permanently lost."
-msgstr[0] "%d құжат өзгерістері қайтарылмастай жоғалатын болады."
-
-#: gedit/gedit-close-confirmation-dialog.c:512
+#: gedit/gedit-close-confirmation-dialog.c:470
 #, c-format
 msgid "There is %d document with unsaved changes. Save changes before closing?"
 msgid_plural ""
@@ -654,67 +633,49 @@ msgstr[0] ""
 "Сақталмаған өзгерістері бар %d құжат бар болып тұр. Жабу алдында "
 "өзгерістерді сақтау керек пе?"
 
-#: gedit/gedit-close-confirmation-dialog.c:538
-msgid "Docum_ents with unsaved changes:"
-msgstr "Сақталмаған өзгерістері бар құ_жаттар:"
-
-#: gedit/gedit-close-confirmation-dialog.c:542
+#: gedit/gedit-close-confirmation-dialog.c:493
 msgid "S_elect the documents you want to save:"
 msgstr "Сақ_тауға тиісті құжаттарды таңдаңыз:"
 
-#: gedit/gedit-close-confirmation-dialog.c:566
+#. Secondary label
+#: gedit/gedit-close-confirmation-dialog.c:509
 msgid "If you don’t save, all your changes will be permanently lost."
 msgstr "Сақтамасаңыз, барлық өзгерістер қайтарылмастай жоғалады."
 
-#: gedit/gedit-commands-file.c:260
+#: gedit/gedit-commands-file.c:257
 #, c-format
 msgid "Loading file “%s”…"
 msgstr "\"%s\" файлы жүктелуде…"
 
-#: gedit/gedit-commands-file.c:269
+#: gedit/gedit-commands-file.c:266
 #, c-format
 msgid "Loading %d file…"
 msgid_plural "Loading %d files…"
 msgstr[0] "%d файл жүктелуде…"
 
-#. Translators: "Open" is the title of the file chooser window.
-#: gedit/gedit-commands-file.c:451
-msgctxt "window title"
-msgid "Open"
-msgstr "Ашу"
-
-#: gedit/gedit-commands-file.c:458 gedit/gedit-window.c:2668
-#: gedit/resources/gtk/menus-common.ui:100
-#: gedit/resources/gtk/menus-common.ui:106
-#: plugins/filebrowser/resources/ui/gedit-file-browser-menus.ui:7
-#: plugins/quickopen/quickopen/popup.py:46
-#: plugins/snippets/snippets/manager.py:790
-msgid "_Open"
-msgstr "А_шу"
-
-#: gedit/gedit-commands-file.c:553
+#: gedit/gedit-commands-file.c:483
 #, c-format
 msgid "The file “%s” is read-only."
 msgstr "\"%s\" файлы тек оқу үшін."
 
-#: gedit/gedit-commands-file.c:558
+#: gedit/gedit-commands-file.c:488
 msgid "Do you want to try to replace it with the one you are saving?"
 msgstr "Оны сіз сақтаймын деген нұсқамен алмастыру керек пе?"
 
-#: gedit/gedit-commands-file.c:563
+#: gedit/gedit-commands-file.c:493
 #: gedit/resources/ui/gedit-replace-dialog.ui:55
 msgid "_Replace"
 msgstr "А_лмастыру"
 
-#: gedit/gedit-commands-file.c:603
+#: gedit/gedit-commands-file.c:533
 msgid "Save the file using compression?"
 msgstr "Файлды сығуды қолданып сақтау керек пе?"
 
-#: gedit/gedit-commands-file.c:607
+#: gedit/gedit-commands-file.c:537
 msgid "Save the file as plain text?"
 msgstr "Файлды қарапайым мәтін ретінде сақтау керек пе?"
 
-#: gedit/gedit-commands-file.c:620
+#: gedit/gedit-commands-file.c:550
 #, c-format
 msgid ""
 "The file “%s” was previously saved as plain text and will now be saved using "
@@ -723,11 +684,11 @@ msgstr ""
 "\"%s\" файлы алдында қарапайым мәтін ретінде сақталған болатын, енді ол "
 "сығуды қолданып сақталатын болады."
 
-#: gedit/gedit-commands-file.c:624
+#: gedit/gedit-commands-file.c:554
 msgid "_Save Using Compression"
 msgstr "Сығуды қолданып _сақтау"
 
-#: gedit/gedit-commands-file.c:629
+#: gedit/gedit-commands-file.c:559
 #, c-format
 msgid ""
 "The file “%s” was previously saved using compression and will now be saved "
@@ -736,32 +697,32 @@ msgstr ""
 "\"%s\" файлы алдында сығуды қолданып сақталған болатын, енді ол қарапайым "
 "мәтін ретінде сақталатын болады."
 
-#: gedit/gedit-commands-file.c:632
+#: gedit/gedit-commands-file.c:562
 msgid "_Save As Plain Text"
 msgstr "Қарапайым мәтін ретінде _сақтау"
 
-#: gedit/gedit-commands-file.c:747 gedit/gedit-commands-file.c:1014
+#: gedit/gedit-commands-file.c:677 gedit/gedit-commands-file.c:964
 #, c-format
 msgid "Saving file “%s”…"
 msgstr "\"%s\" файлы сақталуда…"
 
 #. Translators: "Save As" is the title of the file chooser window.
-#: gedit/gedit-commands-file.c:842
+#: gedit/gedit-commands-file.c:788
 msgctxt "window title"
 msgid "Save As"
 msgstr "Қалайша сақтау"
 
-#: gedit/gedit-commands-file.c:1424
+#: gedit/gedit-commands-file.c:1374
 #, c-format
 msgid "Reverting the document “%s”…"
 msgstr "\"%s\" құжатын қайтару…"
 
-#: gedit/gedit-commands-file.c:1471
+#: gedit/gedit-commands-file.c:1421
 #, c-format
 msgid "Revert unsaved changes to document “%s”?"
 msgstr "\"%s\" құжатындағы сақталмаған өзгерістерді болдырмау керек пе?"
 
-#: gedit/gedit-commands-file.c:1480
+#: gedit/gedit-commands-file.c:1430
 #, c-format
 msgid ""
 "Changes made to the document in the last %ld second will be permanently lost."
@@ -770,12 +731,12 @@ msgid_plural ""
 "lost."
 msgstr[0] "Соңғы %ld секундта жасалған өзгерістер жоғалады."
 
-#: gedit/gedit-commands-file.c:1489
+#: gedit/gedit-commands-file.c:1439
 msgid ""
 "Changes made to the document in the last minute will be permanently lost."
 msgstr "Соңғы минутта жасалған өзгерістер жоғалады."
 
-#: gedit/gedit-commands-file.c:1495
+#: gedit/gedit-commands-file.c:1445
 #, c-format
 msgid ""
 "Changes made to the document in the last minute and %ld second will be "
@@ -785,7 +746,7 @@ msgid_plural ""
 "permanently lost."
 msgstr[0] "Соңғы минут және %ld секундта жасалған өзгерістер жоғалады."
 
-#: gedit/gedit-commands-file.c:1505
+#: gedit/gedit-commands-file.c:1455
 #, c-format
 msgid ""
 "Changes made to the document in the last %ld minute will be permanently lost."
@@ -794,11 +755,11 @@ msgid_plural ""
 "lost."
 msgstr[0] "Соңғы %ld минутта жасалған өзгерістер жоғалады."
 
-#: gedit/gedit-commands-file.c:1520
+#: gedit/gedit-commands-file.c:1470
 msgid "Changes made to the document in the last hour will be permanently lost."
 msgstr "Соңғы сағатта жасалған өзгерістер жоғалады."
 
-#: gedit/gedit-commands-file.c:1526
+#: gedit/gedit-commands-file.c:1476
 #, c-format
 msgid ""
 "Changes made to the document in the last hour and %d minute will be "
@@ -808,7 +769,7 @@ msgid_plural ""
 "permanently lost."
 msgstr[0] "Соңғы сағат және %d минутта жасалған өзгерістер жоғалады."
 
-#: gedit/gedit-commands-file.c:1541
+#: gedit/gedit-commands-file.c:1491
 #, c-format
 msgid ""
 "Changes made to the document in the last %d hour will be permanently lost."
@@ -816,16 +777,16 @@ msgid_plural ""
 "Changes made to the document in the last %d hours will be permanently lost."
 msgstr[0] "Соңғы %d сағатта жасалған өзгерістер жоғалады."
 
-#: gedit/gedit-commands-file.c:1564
+#: gedit/gedit-commands-file.c:1514
 msgid "_Revert"
 msgstr "Қай_тару"
 
-#: gedit/gedit-commands-help.c:108
-msgid "gedit is a small and lightweight text editor for the GNOME Desktop"
+#: gedit/gedit-commands-help.c:110
+msgid "gedit is a small and lightweight text editor for the GNOME desktop"
 msgstr ""
 "gedit - бұл GNOME жұмыс үстелі үшін жеңіл әрі жылдам мәтіндік түзетушісі"
 
-#: gedit/gedit-commands-help.c:130
+#: gedit/gedit-commands-help.c:115
 msgid "translator-credits"
 msgstr "Baurzhan Muftakhidinov <baurthefirst@gmail.com>"
 
@@ -846,7 +807,7 @@ msgstr "Бір сәйкестік табылды және алмастырылд
 msgid "“%s” not found"
 msgstr "\"%s\" табылмады"
 
-#: gedit/gedit-document.c:969 gedit/gedit-document.c:998
+#: gedit/gedit-document.c:993 gedit/gedit-document.c:1022
 #, c-format
 msgid "Untitled Document %d"
 msgstr "Атаусыз құжат %d"
@@ -856,18 +817,16 @@ msgstr "Атаусыз құжат %d"
 msgid "Tab Group %i"
 msgstr "Беттер тобы %i"
 
-#: gedit/gedit-documents-panel.c:498 gedit/gedit-window.c:1090
-#: gedit/gedit-window.c:1096 gedit/gedit-window.c:1104
+#: gedit/gedit-documents-panel.c:498 gedit/gedit-window.c:1082
+#: gedit/gedit-window.c:1088 gedit/gedit-window.c:1096
 msgid "Read-Only"
 msgstr "Тек оқу"
 
 #: gedit/gedit-encodings-combo-box.c:297
-#: gedit/gedit-file-chooser-dialog-osx.m:564
 msgid "Automatically Detected"
 msgstr "Автоанықтау"
 
 #: gedit/gedit-encodings-combo-box.c:326
-#: gedit/gedit-file-chooser-dialog-osx.m:573
 msgid "Add or Remove…"
 msgstr "Қосу немесе өшіру…"
 
@@ -906,32 +865,40 @@ msgstr "Жоғарылау приоритетке жылжыту"
 msgid "Move to a lower priority"
 msgstr "Төмендеу приоритетке жылжыту"
 
-#: gedit/gedit-file-chooser-dialog-gtk.c:39
-#: gedit/gedit-preferences-dialog.c:825
+#: gedit/gedit-file-chooser.c:41 gedit/gedit-preferences-dialog.c:730
 msgid "All Files"
 msgstr "Барлық файлдар"
 
-#: gedit/gedit-file-chooser-dialog-gtk.c:40
+#: gedit/gedit-file-chooser.c:42
 msgid "All Text Files"
 msgstr "Барлық мәтіндік файлдар"
 
-#: gedit/gedit-file-chooser-dialog-gtk.c:305
+#: gedit/gedit-file-chooser-dialog-gtk.c:262
+#: gedit/gedit-file-chooser-open-dialog.c:43
 msgid "C_haracter Encoding:"
 msgstr "Таң_балар кодталуы:"
 
-#: gedit/gedit-file-chooser-dialog-gtk.c:364
+#: gedit/gedit-file-chooser-dialog-gtk.c:321
 msgid "L_ine Ending:"
 msgstr "Ж_ол аяқталуы:"
 
-#: gedit/gedit-file-chooser-dialog-osx.m:546
-msgid "Character Encoding:"
-msgstr "Таңбалар кодталуы:"
+#. Translators: "Open Files" is the title of the file chooser window.
+#: gedit/gedit-file-chooser-open-dialog.c:75
+#: gedit/gedit-file-chooser-open-native.c:54
+msgctxt "window title"
+msgid "Open Files"
+msgstr "Файлдарды ашу"
 
-#: gedit/gedit-file-chooser-dialog-osx.m:619
-msgid "Line Ending:"
-msgstr "Жол аяқталуы:"
+#: gedit/gedit-file-chooser-open-dialog.c:79 gedit/gedit-window.c:2636
+#: gedit/resources/gtk/menus-common.ui:100
+#: gedit/resources/gtk/menus-common.ui:106
+#: plugins/filebrowser/resources/ui/gedit-file-browser-menus.ui:7
+#: plugins/quickopen/quickopen/popup.py:46
+#: plugins/snippets/snippets/manager.py:790
+msgid "_Open"
+msgstr "А_шу"
 
-#: gedit/gedit-highlight-mode-selector.c:269 gedit/gedit-window.c:1174
+#: gedit/gedit-highlight-mode-selector.c:269 gedit/gedit-window.c:1166
 #: plugins/externaltools/tools/manager.py:115
 #: plugins/externaltools/tools/manager.py:324
 #: plugins/externaltools/tools/manager.py:440
@@ -939,53 +906,53 @@ msgstr "Жол аяқталуы:"
 msgid "Plain Text"
 msgstr "Ашық мәтін"
 
-#: gedit/gedit-io-error-info-bar.c:143 gedit/gedit-io-error-info-bar.c:423
+#: gedit/gedit-io-error-info-bar.c:135 gedit/gedit-io-error-info-bar.c:415
 msgid "_Retry"
 msgstr "Қа_йталау"
 
-#: gedit/gedit-io-error-info-bar.c:163
+#: gedit/gedit-io-error-info-bar.c:155
 #, c-format
 msgid "Could not find the file “%s”."
 msgstr "\"%s\" файлын табу мүмкін емес."
 
-#: gedit/gedit-io-error-info-bar.c:165 gedit/gedit-io-error-info-bar.c:205
-#: gedit/gedit-io-error-info-bar.c:212
+#: gedit/gedit-io-error-info-bar.c:157 gedit/gedit-io-error-info-bar.c:197
+#: gedit/gedit-io-error-info-bar.c:204
 msgid "Please check that you typed the location correctly and try again."
 msgstr "Орналасуды дұрыс енгізгеніңізді тексеріп, қайталап көріңіз."
 
 #. Translators: %s is a URI scheme (like for example http:, ftp:, etc.)
-#: gedit/gedit-io-error-info-bar.c:184
+#: gedit/gedit-io-error-info-bar.c:176
 #, c-format
 msgid "Unable to handle “%s:” locations."
 msgstr "\"%s:\" тектес орналасуларды өңдеу мүмкін емес."
 
-#: gedit/gedit-io-error-info-bar.c:190
+#: gedit/gedit-io-error-info-bar.c:182
 msgid "Unable to handle this location."
 msgstr "Бұл орналасулды өңдеу мүмкін емес."
 
-#: gedit/gedit-io-error-info-bar.c:199
+#: gedit/gedit-io-error-info-bar.c:191
 msgid "The location of the file cannot be accessed."
 msgstr "Файл орналасуына қатынау мүмкін емес."
 
-#: gedit/gedit-io-error-info-bar.c:203
+#: gedit/gedit-io-error-info-bar.c:195
 #, c-format
 msgid "“%s” is a directory."
 msgstr "“%s” бума болып тұр."
 
-#: gedit/gedit-io-error-info-bar.c:210
+#: gedit/gedit-io-error-info-bar.c:202
 #, c-format
 msgid "“%s” is not a valid location."
 msgstr "“%s” дұрыс орналасу емес."
 
 #. Translators: %s is a host name
-#: gedit/gedit-io-error-info-bar.c:246
+#: gedit/gedit-io-error-info-bar.c:238
 #, c-format
 msgid ""
 "Host “%s” could not be found. Please check that your proxy settings are "
 "correct and try again."
 msgstr "\"%s\" хосты табылмады. Прокси баптауларын тексеріп, қайталап көріңіз."
 
-#: gedit/gedit-io-error-info-bar.c:261
+#: gedit/gedit-io-error-info-bar.c:253
 #, c-format
 msgid ""
 "Hostname was invalid. Please check that you typed the location correctly and "
@@ -994,67 +961,67 @@ msgstr ""
 "Хост аты жарамсыз. Орналасуды дұрыс енгізгеніңізді тексеріп, қайталап "
 "көріңіз."
 
-#: gedit/gedit-io-error-info-bar.c:269
+#: gedit/gedit-io-error-info-bar.c:261
 #, c-format
 msgid "“%s” is not a regular file."
 msgstr "“%s” қалыпты файл емес."
 
-#: gedit/gedit-io-error-info-bar.c:274
+#: gedit/gedit-io-error-info-bar.c:266
 msgid "Connection timed out. Please try again."
 msgstr "Байланыс орнату уақыты бітті. Қайталап көріңіз."
 
-#: gedit/gedit-io-error-info-bar.c:307
+#: gedit/gedit-io-error-info-bar.c:299
 #, c-format
 msgid "Unexpected error: %s"
 msgstr "Күтпеген қате: %s"
 
-#: gedit/gedit-io-error-info-bar.c:343
+#: gedit/gedit-io-error-info-bar.c:335
 msgid "Cannot find the requested file. Perhaps it has recently been deleted."
 msgstr "Сұралған файлды табу мүмкін емес. Ол жақында өшірілген шығар."
 
-#: gedit/gedit-io-error-info-bar.c:353
+#: gedit/gedit-io-error-info-bar.c:345
 #, c-format
 msgid "Could not revert the file “%s”."
 msgstr "\"%s\" файлын қайтару мүмкін емес."
 
-#: gedit/gedit-io-error-info-bar.c:380
+#: gedit/gedit-io-error-info-bar.c:372
 msgid "Ch_aracter Encoding:"
 msgstr "Таңбалар код_талуы:"
 
 #. Translators: the access key chosen for this string should be
 #. different from other main menu access keys (Open, Edit, View...)
-#: gedit/gedit-io-error-info-bar.c:431 gedit/gedit-io-error-info-bar.c:696
+#: gedit/gedit-io-error-info-bar.c:423
 msgid "Edit Any_way"
 msgstr "Со_нда да түзету"
 
-#: gedit/gedit-io-error-info-bar.c:519
+#: gedit/gedit-io-error-info-bar.c:511
 msgid ""
 "The number of followed links is limited and the actual file could not be "
 "found within this limit."
 msgstr ""
 
-#: gedit/gedit-io-error-info-bar.c:523
+#: gedit/gedit-io-error-info-bar.c:515
 msgid "You do not have the permissions necessary to open the file."
 msgstr "Файлды ашу үшін керек рұқсаттарыңыз жоқ."
 
-#: gedit/gedit-io-error-info-bar.c:529
+#: gedit/gedit-io-error-info-bar.c:521
 msgid "Unable to detect the character encoding."
 msgstr "Таңбалар кодталуын анықтау мүмкін емес."
 
-#: gedit/gedit-io-error-info-bar.c:530 gedit/gedit-io-error-info-bar.c:554
+#: gedit/gedit-io-error-info-bar.c:522 gedit/gedit-io-error-info-bar.c:546
 msgid "Please check that you are not trying to open a binary file."
 msgstr "Екілік (бинарлы) файлды ашып тұрмағаныңызға көз жеткізіңіз."
 
-#: gedit/gedit-io-error-info-bar.c:531
+#: gedit/gedit-io-error-info-bar.c:523
 msgid "Select a character encoding from the menu and try again."
 msgstr "Мәзірден таңбалар кодталуын таңдап, қайталап көріңіз."
 
-#: gedit/gedit-io-error-info-bar.c:537
+#: gedit/gedit-io-error-info-bar.c:529
 #, c-format
 msgid "There was a problem opening the file “%s”."
 msgstr "\"%s\" файлын ашу кезінде қате орын алды."
 
-#: gedit/gedit-io-error-info-bar.c:539
+#: gedit/gedit-io-error-info-bar.c:531
 msgid ""
 "The file you opened has some invalid characters. If you continue editing "
 "this file you could corrupt this document."
@@ -1062,30 +1029,30 @@ msgstr ""
 "Сіз ашқан файлда бірнеше жарамсыз таңбалар бар. Бұл файлды түзетуді "
 "жалғастырсаңыз, құжатты зақымдауыңыз мүмкін."
 
-#: gedit/gedit-io-error-info-bar.c:542
+#: gedit/gedit-io-error-info-bar.c:534
 msgid "You can also choose another character encoding and try again."
 msgstr "Басқа таңбалар кодталуын таңдап, қайталап көруге болады."
 
-#: gedit/gedit-io-error-info-bar.c:551
+#: gedit/gedit-io-error-info-bar.c:543
 #, c-format
 msgid "Could not open the file “%s” using the “%s” character encoding."
 msgstr "\"%s\" файлын \"%s\" кодталуын қолданып, ашу мүмкін емес."
 
-#: gedit/gedit-io-error-info-bar.c:555 gedit/gedit-io-error-info-bar.c:630
+#: gedit/gedit-io-error-info-bar.c:547 gedit/gedit-io-error-info-bar.c:622
 msgid "Select a different character encoding from the menu and try again."
 msgstr "Мәзірден басқа таңбалар кодталуын таңдап, қайталап көріңіз."
 
-#: gedit/gedit-io-error-info-bar.c:567
+#: gedit/gedit-io-error-info-bar.c:559
 #, c-format
 msgid "Could not open the file “%s”."
 msgstr "\"%s\" файлын ашу мүмкін емес."
 
-#: gedit/gedit-io-error-info-bar.c:625
+#: gedit/gedit-io-error-info-bar.c:617
 #, c-format
 msgid "Could not save the file “%s” using the “%s” character encoding."
 msgstr "\"%s\" файлын \"%s\" кодталуын қолданып, сақтау мүмкін емес."
 
-#: gedit/gedit-io-error-info-bar.c:628
+#: gedit/gedit-io-error-info-bar.c:620
 msgid ""
 "The document contains one or more characters that cannot be encoded using "
 "the specified character encoding."
@@ -1093,28 +1060,11 @@ msgstr ""
 "Құжат ішінде көрсетілген кодталуда декодтауға келмейтін бір немесе бірнеше "
 "таңба бар."
 
-#. Translators: the access key chosen for this string should be
-#. different from other main menu access keys (Open, Edit, View...)
-#: gedit/gedit-io-error-info-bar.c:701
-msgid "D_on’t Edit"
-msgstr "_Түзетпеу"
-
-#: gedit/gedit-io-error-info-bar.c:711
-#, c-format
-msgid "This file “%s” is already open in another window."
-msgstr "\"%s\" файлы басқа терезеде ашық тұр."
-
-#: gedit/gedit-io-error-info-bar.c:725
-msgid "Do you want to edit it anyway?"
-msgstr "Сонда да оны түзетуді қалайсыз ба?"
-
-#: gedit/gedit-io-error-info-bar.c:781 gedit/gedit-io-error-info-bar.c:871
-#: gedit/gedit-io-error-info-bar.c:1161
+#: gedit/gedit-io-error-info-bar.c:691
 msgid "S_ave Anyway"
 msgstr "Сонда да с_ақтау"
 
-#: gedit/gedit-io-error-info-bar.c:784 gedit/gedit-io-error-info-bar.c:874
-#: gedit/gedit-io-error-info-bar.c:1164
+#: gedit/gedit-io-error-info-bar.c:694
 msgid "D_on’t Save"
 msgstr "Сақ_тамау"
 
@@ -1122,40 +1072,19 @@ msgstr "Сақ_тамау"
 #. * could be interpreted as the changes he made in the document. beside "reading" is
 #. * not accurate (since last load/save)
 #.
-#: gedit/gedit-io-error-info-bar.c:798
+#: gedit/gedit-io-error-info-bar.c:708
 #, c-format
 msgid "The file “%s” has been modified since reading it."
 msgstr "\"%s\" файлы оны оқығаннан кейін өзгертілген."
 
-#: gedit/gedit-io-error-info-bar.c:813
+#: gedit/gedit-io-error-info-bar.c:723
 msgid "If you save it, all the external changes could be lost. Save it anyway?"
 msgstr ""
 "Оны сақтасаңыз, барлық сыртқы өзгерістер жоғалатын болады. Сонда да сақтау "
 "керек пе?"
 
-#: gedit/gedit-io-error-info-bar.c:893
-#, c-format
-msgid "Could not create a backup file while saving “%s”"
-msgstr "\"%s\" сақтау кезінде қор көшірме файлын жасау сәтсіз аяқталды"
-
-#: gedit/gedit-io-error-info-bar.c:898
-#, c-format
-msgid "Could not create a temporary backup file while saving “%s”"
-msgstr "\"%s\" сақтау кезінде уақытша қор көшірме файлын жасау сәтсіз аяқталды"
-
-#: gedit/gedit-io-error-info-bar.c:915
-msgid ""
-"Could not back up the old copy of the file before saving the new one. You "
-"can ignore this warning and save the file anyway, but if an error occurs "
-"while saving, you could lose the old copy of the file. Save anyway?"
-msgstr ""
-"Файлдың жаңа нұсқасын сақтау алдында ескі нұсқаның қор көшірмесін жасау "
-"сәтсіз аяқталды. Сіз бұны елемей, файлды сонда да сақтай аласыз, бірақ, "
-"сақтау кезінде қате орын алса, файлдың ескі нұсқасын жоғалуыңыз мүмкін. "
-"Сонда да сақтау керек пе?"
-
 #. Translators: %s is a URI scheme (like for example http:, ftp:, etc.)
-#: gedit/gedit-io-error-info-bar.c:975
+#: gedit/gedit-io-error-info-bar.c:781
 #, c-format
 msgid ""
 "Cannot handle “%s:” locations in write mode. Please check that you typed the "
@@ -1164,7 +1093,7 @@ msgstr ""
 "\"%s:\" түрдегі орналасуларды жазу режимінде өңдеу мүмкін емес. Мақсат "
 "орналасуын дұрыс енгізгеніңізді тексеріп, қайталап көріңіз."
 
-#: gedit/gedit-io-error-info-bar.c:983
+#: gedit/gedit-io-error-info-bar.c:789
 msgid ""
 "Cannot handle this location in write mode. Please check that you typed the "
 "location correctly and try again."
@@ -1172,7 +1101,7 @@ msgstr ""
 "Бұл орналасуды жазу режимінде өңдеу мүмкін емес. Мақсат орналасуын дұрыс "
 "енгізгеніңізді тексеріп, қайталап көріңіз."
 
-#: gedit/gedit-io-error-info-bar.c:992
+#: gedit/gedit-io-error-info-bar.c:798
 #, c-format
 msgid ""
 "“%s” is not a valid location. Please check that you typed the location "
@@ -1181,7 +1110,7 @@ msgstr ""
 "\"%s\" дұрыс орналасу емес. Мақсат орналасуын дұрыс енгізгеніңізді тексеріп, "
 "қайталап көріңіз."
 
-#: gedit/gedit-io-error-info-bar.c:999
+#: gedit/gedit-io-error-info-bar.c:805
 msgid ""
 "You do not have the permissions necessary to save the file. Please check "
 "that you typed the location correctly and try again."
@@ -1189,7 +1118,7 @@ msgstr ""
 "Файлды сақтауға керек рұқсаттарыңыз жоқ. Мақсат орналасуын дұрыс "
 "енгізгеніңізді тексеріп, қайталап көріңіз."
 
-#: gedit/gedit-io-error-info-bar.c:1005
+#: gedit/gedit-io-error-info-bar.c:811
 msgid ""
 "There is not enough disk space to save the file. Please free some disk space "
 "and try again."
@@ -1197,7 +1126,7 @@ msgstr ""
 "Файлды сақтау үшін диск орны жеткіліксіз. Біраз орынды босатып, қайталап "
 "көріңіз."
 
-#: gedit/gedit-io-error-info-bar.c:1010
+#: gedit/gedit-io-error-info-bar.c:816
 msgid ""
 "You are trying to save the file on a read-only disk. Please check that you "
 "typed the location correctly and try again."
@@ -1205,85 +1134,63 @@ msgstr ""
 "Сіз файлды тек оқу үшін қолжетерлік дискіге жазу талабын жасадыңыз. Мақсат "
 "орналасуын дұрыс енгізгеніңізді тексеріп, қайталап көріңіз."
 
-#: gedit/gedit-io-error-info-bar.c:1016
+#: gedit/gedit-io-error-info-bar.c:822
 msgid "A file with the same name already exists. Please use a different name."
 msgstr "Олай аталатын файл бар болып тұр. Басқа атын таңдаңыз."
 
-#: gedit/gedit-io-error-info-bar.c:1021
+#: gedit/gedit-io-error-info-bar.c:827
 msgid ""
 "The disk where you are trying to save the file has a limitation on length of "
 "the file names. Please use a shorter name."
 msgstr ""
+"Файлды сақтағыңыз келген дискіде файл атауларының ұзындығына шектеу бар. "
+"Қысқалау атауын пайдаланыңыз."
 
-#: gedit/gedit-io-error-info-bar.c:1032
+#: gedit/gedit-io-error-info-bar.c:838
 msgid ""
 "The disk where you are trying to save the file has a limitation on file "
 "sizes. Please try saving a smaller file or saving it to a disk that does not "
 "have this limitation."
 msgstr ""
+"Файлды сақтағыңыз келген дискіде файл өлшеміне шектеу бар. Кішірек файлды "
+"қолданыңыз немесе оны осы шектеулері жоқ дискіге сақтап көріңіз."
 
-#: gedit/gedit-io-error-info-bar.c:1049
+#: gedit/gedit-io-error-info-bar.c:855
 #, c-format
 msgid "Could not save the file “%s”."
 msgstr "\"%s\" файлын сақтау мүмкін емес."
 
-#: gedit/gedit-io-error-info-bar.c:1089
-#, c-format
-msgid "The file “%s” changed on disk."
-msgstr "\"%s\" файлы дискте өзгертілген."
-
-#: gedit/gedit-io-error-info-bar.c:1100
-msgid "Drop Changes and _Reload"
-msgstr "Өзгерістерді тастап, қа_йта жүктеу"
-
-#: gedit/gedit-io-error-info-bar.c:1110 gedit/resources/gtk/menus-common.ui:148
-#: gedit/resources/gtk/menus.ui:9 gedit/resources/gtk/menus-traditional.ui:9
-msgid "_Reload"
-msgstr "Қа_йта жүктеу"
-
-#: gedit/gedit-io-error-info-bar.c:1174
-#, c-format
-msgid "Some invalid chars have been detected while saving “%s”"
-msgstr "\"%s\" сақтау кезінде кейбір қате таңбалар табылды"
-
-#: gedit/gedit-io-error-info-bar.c:1190
-msgid ""
-"If you continue saving this file you can corrupt the document.  Save anyway?"
-msgstr ""
-"Бұл файлды сақтауды жалғастырсаңыз, файл зақымдалуы мүмкін. Сонда да сақтау "
-"керек пе?"
-
-#: gedit/gedit-preferences-dialog.c:446
+#: gedit/gedit-preferences-dialog.c:433
 msgid "Click on this button to select the font to be used by the editor"
 msgstr "Түзеткіш қолданатын қаріпті орнату үшін бұл батырманы басыңыз"
 
-#: gedit/gedit-preferences-dialog.c:452
+#: gedit/gedit-preferences-dialog.c:439
 #, c-format
 msgid "_Use the system fixed width font (%s)"
 msgstr "Жүйелік ені біркелкі қаріпті қ_олдану (%s)"
 
-#: gedit/gedit-preferences-dialog.c:592
+#: gedit/gedit-preferences-dialog.c:685
 #, c-format
-msgid "Directory “%s” could not be created: g_mkdir_with_parents() failed: %s"
-msgstr "\"%s\" бумасын жасау мүмкін емес: g_mkdir_with_parents() сәтсіз: %s"
+msgid "The selected color scheme cannot be installed: %s"
+msgstr "Таңдалған түстер схемасын орнату мүмкін емес: %s"
 
-#: gedit/gedit-preferences-dialog.c:789
+#: gedit/gedit-preferences-dialog.c:691
 msgid "The selected color scheme cannot be installed."
 msgstr "Таңдалған түстер схемасын орнату мүмкін емес."
 
-#: gedit/gedit-preferences-dialog.c:812
-msgid "Add Scheme"
-msgstr "Схеманы қосу"
+#: gedit/gedit-preferences-dialog.c:717
+msgid "Add Color Scheme"
+msgstr "Түстер схемасын қосу"
 
-#: gedit/gedit-preferences-dialog.c:817
-msgid "A_dd Scheme"
+#: gedit/gedit-preferences-dialog.c:720
+msgid "_Add Scheme"
 msgstr "Схеманы қ_осу"
 
-#: gedit/gedit-preferences-dialog.c:821
+#: gedit/gedit-preferences-dialog.c:725
 msgid "Color Scheme Files"
 msgstr "Түстер схемалар файлдары"
 
-#: gedit/gedit-preferences-dialog.c:852
+#: gedit/gedit-preferences-dialog.c:763
 #, c-format
 msgid "Could not remove color scheme “%s”."
 msgstr "\"%s\" түстер схемасын өшіру мүмкін емес."
@@ -1376,52 +1283,52 @@ msgstr "%s сақтау, %s ішіне"
 msgid "Saving %s"
 msgstr "%s сақтау"
 
-#: gedit/gedit-tab.c:1492
+#: gedit/gedit-tab.c:1484
 #, c-format
 msgid "Error opening file %s"
 msgstr "%s файлын ашу қатемен аяқталды"
 
-#: gedit/gedit-tab.c:1497
+#: gedit/gedit-tab.c:1489
 #, c-format
 msgid "Error reverting file %s"
 msgstr "%s файлын қайтару қатемен аяқталды"
 
-#: gedit/gedit-tab.c:1502
+#: gedit/gedit-tab.c:1494
 #, c-format
 msgid "Error saving file %s"
 msgstr "%s файлын сақтау қатемен аяқталды"
 
-#: gedit/gedit-tab.c:1533
+#: gedit/gedit-tab.c:1525
 msgid "Name:"
 msgstr "Аты:"
 
-#: gedit/gedit-tab.c:1534
+#: gedit/gedit-tab.c:1526
 msgid "MIME Type:"
 msgstr "MIME түрі:"
 
-#: gedit/gedit-tab.c:1535
+#: gedit/gedit-tab.c:1527
 msgid "Encoding:"
 msgstr "Кодталуы:"
 
 #. Translators: '/ on <remote-share>'
-#: gedit/gedit-utils.c:764
+#: gedit/gedit-utils.c:436
 #, c-format
 msgid "/ on %s"
 msgstr "/, %s жерінде"
 
-#: gedit/gedit-utils.c:1068
+#: gedit/gedit-utils.c:610
 msgid "Unix/Linux"
 msgstr "Unix/Linux"
 
-#: gedit/gedit-utils.c:1070
+#: gedit/gedit-utils.c:612
 msgid "Mac OS Classic"
 msgstr "Mac OS Classic"
 
-#: gedit/gedit-utils.c:1072
+#: gedit/gedit-utils.c:614
 msgid "Windows"
 msgstr "Windows"
 
-#: gedit/gedit-view.c:481 gedit/resources/ui/gedit-preferences-dialog.ui:41
+#: gedit/gedit-view.c:438 gedit/resources/ui/gedit-preferences-dialog.ui:41
 msgid "_Display line numbers"
 msgstr "Жо_лдар нөмірлерін көрсету"
 
@@ -1462,48 +1369,48 @@ msgstr "Ізделетін жол"
 msgid "Line you want to move the cursor to"
 msgstr "Курсорды жылжыту үшін жол нөмірі"
 
-#: gedit/gedit-window.c:927
+#: gedit/gedit-window.c:919
 msgid "Bracket match is out of range"
 msgstr "Жақша сәйкестігі ауқымнан тыс"
 
-#: gedit/gedit-window.c:932
+#: gedit/gedit-window.c:924
 msgid "Bracket match not found"
 msgstr "Жақша сәйкестігі табылмады"
 
-#: gedit/gedit-window.c:937
+#: gedit/gedit-window.c:929
 #, c-format
 msgid "Bracket match found on line: %d"
 msgstr "Жақша сәйкестігі табылған жол нөмірі: %d"
 
 #. Translators: "Ln" is an abbreviation for "Line", Col is an abbreviation for "Column". Please,
 #. use abbreviations if possible to avoid space problems.
-#: gedit/gedit-window.c:972
+#: gedit/gedit-window.c:964
 #, c-format
 msgid "  Ln %d, Col %d"
 msgstr "  Жол %d, Бағ %d"
 
-#: gedit/gedit-window.c:1156
+#: gedit/gedit-window.c:1148
 #, c-format
 msgid "Tab Width: %u"
 msgstr "Табуляция ені: %u"
 
-#: gedit/gedit-window.c:1525
+#: gedit/gedit-window.c:1493
 msgid "There are unsaved documents"
 msgstr "Сақталмаған құжаттар бар"
 
-#: gedit/gedit-window.c:2362
+#: gedit/gedit-window.c:2330
 msgid "Change side panel page"
 msgstr "Бүйір панель бетін ауыстыру"
 
-#: gedit/gedit-window.c:2382 gedit/resources/ui/gedit-window.ui:19
+#: gedit/gedit-window.c:2350 gedit/resources/ui/gedit-window.ui:19
 msgid "Documents"
 msgstr "Құжаттар"
 
-#: gedit/gedit-window.c:2669
+#: gedit/gedit-window.c:2637
 msgid "Open a file"
 msgstr "Файлды ашу"
 
-#: gedit/gedit-window.c:2673
+#: gedit/gedit-window.c:2641
 msgid "Open a recently used file"
 msgstr "Жуырда пайдаланылған файлды ашу"
 
@@ -1580,6 +1487,11 @@ msgstr "Қал_айша сақтау…"
 #: gedit/resources/gtk/menus-common.ui:140 gedit/resources/gtk/menus.ui:27
 msgid "_New Window"
 msgstr "Жаңа тере_зе"
+
+#: gedit/resources/gtk/menus-common.ui:148 gedit/resources/gtk/menus.ui:9
+#: gedit/resources/gtk/menus-traditional.ui:9
+msgid "_Reload"
+msgstr "Қа_йта жүктеу"
 
 #: gedit/resources/gtk/menus-common.ui:155 gedit/resources/gtk/menus.ui:14
 #: gedit/resources/gtk/menus-traditional.ui:14
@@ -1902,29 +1814,29 @@ msgstr "Түзеткіш қарібін таңдаңыз"
 msgid "Color Scheme"
 msgstr "Түстер схемасы"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:663
-#: gedit/resources/ui/gedit-preferences-dialog.ui:664
+#: gedit/resources/ui/gedit-preferences-dialog.ui:652
+#: gedit/resources/ui/gedit-preferences-dialog.ui:653
 msgid "Install scheme"
 msgstr "Схеманы орнату"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:665
+#: gedit/resources/ui/gedit-preferences-dialog.ui:654
 msgid "Install Scheme"
 msgstr "Схеманы орнату"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:679
-#: gedit/resources/ui/gedit-preferences-dialog.ui:680
+#: gedit/resources/ui/gedit-preferences-dialog.ui:668
+#: gedit/resources/ui/gedit-preferences-dialog.ui:669
 msgid "Uninstall scheme"
 msgstr "Схеманы өшіру"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:681
+#: gedit/resources/ui/gedit-preferences-dialog.ui:670
 msgid "Uninstall Scheme"
 msgstr "Схеманы өшіру"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:721
+#: gedit/resources/ui/gedit-preferences-dialog.ui:710
 msgid "Font & Colors"
 msgstr "Қаріп және түстер"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:746
+#: gedit/resources/ui/gedit-preferences-dialog.ui:735
 msgid "Plugins"
 msgstr "Плагиндер"
 
@@ -2264,113 +2176,163 @@ msgstr "Жолға өту"
 
 #: gedit/resources/ui/gedit-shortcuts.ui:265
 msgctxt "shortcut window"
+msgid "Move to the beginning of the current line"
+msgstr "Ағымдағы жолдын басына жылжу"
+
+#: gedit/resources/ui/gedit-shortcuts.ui:272
+msgctxt "shortcut window"
+msgid "Move to the end of the current line"
+msgstr "Ағымдағы жолдын соңына жылжу"
+
+#: gedit/resources/ui/gedit-shortcuts.ui:279
+msgctxt "shortcut window"
+msgid "Move to the beginning of the document"
+msgstr "Құжаттың басына жылжу"
+
+#: gedit/resources/ui/gedit-shortcuts.ui:286
+msgctxt "shortcut window"
+msgid "Move to the end of the document"
+msgstr "Құжаттың соңына жылжу"
+
+#: gedit/resources/ui/gedit-shortcuts.ui:293
+msgctxt "shortcut window"
 msgid "Move viewport up within the file"
 msgstr "Көріну аймағын файл бойымен жоғары жылжыту"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:272
+#: gedit/resources/ui/gedit-shortcuts.ui:300
 msgctxt "shortcut window"
 msgid "Move viewport down within the file"
 msgstr "Көріну аймағын файл бойымен төмен жылжыту"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:279
+#: gedit/resources/ui/gedit-shortcuts.ui:307
 msgctxt "shortcut window"
 msgid "Move viewport to end of file"
 msgstr "Көріну аймағын файл соңына жылжыту"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:286
+#: gedit/resources/ui/gedit-shortcuts.ui:314
 msgctxt "shortcut window"
 msgid "Move viewport to beginning of file"
 msgstr "Көріну аймағын файл басына жылжыту"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:293
+#: gedit/resources/ui/gedit-shortcuts.ui:321
 msgctxt "shortcut window"
 msgid "Move to matching bracket"
 msgstr "Сәйкес жақшаға жылжыту"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:301
+#: gedit/resources/ui/gedit-shortcuts.ui:328
+msgctxt "shortcut window"
+msgid "Go to previous tab group"
+msgstr "Алдыңғы беттер тобына өту"
+
+#: gedit/resources/ui/gedit-shortcuts.ui:335
+msgctxt "shortcut window"
+msgid "Go to next tab group"
+msgstr "Келесі беттер тобына өту"
+
+#: gedit/resources/ui/gedit-shortcuts.ui:343
 msgctxt "shortcut window"
 msgid "Editing"
 msgstr "Түзету"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:306
+#: gedit/resources/ui/gedit-shortcuts.ui:348
 msgctxt "shortcut window"
 msgid "Toggle insert / overwrite"
 msgstr "Енгізу/үстінен жазу режимдерін ауыстыру"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:313
+#: gedit/resources/ui/gedit-shortcuts.ui:355
+msgctxt "shortcut window"
+msgid "Toggle cursor visibility"
+msgstr "Курсор көрінуін ауыстыру"
+
+#: gedit/resources/ui/gedit-shortcuts.ui:362
 msgctxt "shortcut window"
 msgid "Delete current line"
 msgstr "Ағымдағы жолды өшіру"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:320
-msgctxt "shortcut window"
-msgid "Join selected lines"
-msgstr "Таңдалған жолдарды біріктіру"
-
-#: gedit/resources/ui/gedit-shortcuts.ui:327
+#: gedit/resources/ui/gedit-shortcuts.ui:369
 msgctxt "shortcut window"
 msgid "Move current line up"
 msgstr "Ағымдағы жолды жоғары жылжыту"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:334
+#: gedit/resources/ui/gedit-shortcuts.ui:376
 msgctxt "shortcut window"
 msgid "Move current line down"
 msgstr "Ағымдағы жолды төмен жылжыту"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:341
+#: gedit/resources/ui/gedit-shortcuts.ui:383
 msgctxt "shortcut window"
 msgid "Move current word left"
 msgstr "Ағымдағы сөзді солға жылжыту"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:348
+#: gedit/resources/ui/gedit-shortcuts.ui:390
 msgctxt "shortcut window"
 msgid "Move current word right"
 msgstr "Ағымдағы сөзді оңға жылжыту"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:355
+#: gedit/resources/ui/gedit-shortcuts.ui:397
 msgctxt "shortcut window"
 msgid "Convert to uppercase"
 msgstr "Бас әріптерге түрлендіру"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:362
+#: gedit/resources/ui/gedit-shortcuts.ui:404
 msgctxt "shortcut window"
 msgid "Convert to lowercase"
 msgstr "Кіші әріптерге түрлендіру"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:369
+#: gedit/resources/ui/gedit-shortcuts.ui:411
 msgctxt "shortcut window"
 msgid "Invert case"
 msgstr "Регистрді терістеу"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:376
+#: gedit/resources/ui/gedit-shortcuts.ui:418
 msgctxt "shortcut window"
 msgid "Increment number at cursor"
 msgstr "Курсор астындағы санды арттыру"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:383
+#: gedit/resources/ui/gedit-shortcuts.ui:425
 msgctxt "shortcut window"
 msgid "Decrement number at cursor"
 msgstr "Курсор астындағы санды кеміту"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:391
+#: gedit/resources/ui/gedit-shortcuts.ui:433
 msgctxt "shortcut window"
 msgid "Tools"
 msgstr "Саймандар"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:396
+#: gedit/resources/ui/gedit-shortcuts.ui:438
 msgctxt "shortcut window"
 msgid "Check spelling"
 msgstr "Емлені тексеру"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:403
+#: gedit/resources/ui/gedit-shortcuts.ui:445
 msgctxt "shortcut window"
 msgid "Print the document"
 msgstr "Құжатты баспаға шығару"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:410
+#: gedit/resources/ui/gedit-shortcuts.ui:452
 msgctxt "shortcut window"
 msgid "Show completion window"
 msgstr "Толықтырулар терезесін көрсету"
+
+#: gedit/resources/ui/gedit-shortcuts.ui:460
+msgctxt "shortcut window"
+msgid "General"
+msgstr "Жалпы"
+
+#: gedit/resources/ui/gedit-shortcuts.ui:465
+msgctxt "shortcut window"
+msgid "Show help"
+msgstr "Көмекті көрсету"
+
+#: gedit/resources/ui/gedit-shortcuts.ui:472
+msgctxt "shortcut window"
+msgid "Open menu"
+msgstr "Мәзірді ашу"
+
+#: gedit/resources/ui/gedit-shortcuts.ui:479
+msgctxt "shortcut window"
+msgid "Keyboard shortcuts"
+msgstr "Пернетақта жарлықтары"
 
 #: gedit/resources/ui/gedit-tab-label.ui:34
 msgid "Close Document"
@@ -2406,45 +2368,6 @@ msgstr "Панельді жасыру"
 #: gedit/resources/ui/gedit-window.ui:347
 msgid "Leave Fullscreen"
 msgstr "Толық экраннан шығу"
-
-#: plugins/checkupdate/checkupdate.plugin.desktop.in:5
-msgid "Check update"
-msgstr "Жаңартуды тексеру"
-
-#: plugins/checkupdate/checkupdate.plugin.desktop.in:6
-msgid "Check for latest version of gedit"
-msgstr "gedit-тің соңғы нұсқасын тексеру"
-
-#: plugins/checkupdate/gedit-check-update-plugin.c:243
-msgid "There was an error displaying the URI."
-msgstr "URI көрсету кезінде қате орын алды."
-
-#: plugins/checkupdate/gedit-check-update-plugin.c:280
-msgid "_Download"
-msgstr "Жү_ктеп алу"
-
-#: plugins/checkupdate/gedit-check-update-plugin.c:281
-msgid "_Ignore Version"
-msgstr "_Нұсқаны елемеу"
-
-#: plugins/checkupdate/gedit-check-update-plugin.c:286
-msgid "There is a new version of gedit"
-msgstr "gedit-тің жаңа нұсқасы бар"
-
-#: plugins/checkupdate/gedit-check-update-plugin.c:289
-msgid ""
-"You can download the new version of gedit by clicking on the download button "
-"or ignore that version and wait for a new one"
-msgstr ""
-
-#: plugins/checkupdate/org.gnome.gedit.plugins.checkupdate.gschema.xml:5
-msgid "Version to Ignore"
-msgstr "Елемеу үшін нұсқа"
-
-#. This is releated to the next gedit version to be released
-#: plugins/checkupdate/org.gnome.gedit.plugins.checkupdate.gschema.xml:7
-msgid "Version to ignore until a newer version is released."
-msgstr ""
 
 #: plugins/docinfo/docinfo.plugin.desktop.in:5
 #: plugins/docinfo/resources/ui/gedit-docinfo-plugin.ui:7
@@ -2747,8 +2670,8 @@ msgid "File Browser Panel"
 msgstr "Файлдық шолушы панелі"
 
 #: plugins/filebrowser/filebrowser.plugin.desktop.in:7
-msgid "Easy file access from the side panel"
-msgstr "Бүйір панелінен файлдарға жеңіл қатынау"
+msgid "Easy file access from the side panel."
+msgstr "Бүйір панелінен файлдарға жеңіл қатынау."
 
 #: plugins/filebrowser/gedit-file-bookmarks-store.c:200
 msgid "Home"
@@ -2833,6 +2756,8 @@ msgid ""
 "The renamed file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
 msgstr ""
+"Атауы өзгертілген файл қазір сүзіліп жатыр. Файлды көрінетін ету үшін сүзгі "
+"параметрлерін реттеу қажет"
 
 #. Translators: This is the default name of new files created by the file browser pane.
 #: plugins/filebrowser/gedit-file-browser-store.c:3576
@@ -2844,6 +2769,8 @@ msgid ""
 "The new file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
 msgstr ""
+"Жаңа файл қазір сүзіліп жатыр. Файлды көрінетін ету үшін сүзгі параметрлерін "
+"реттеу қажет"
 
 #. Translators: This is the default name of new directories created by the file browser pane.
 #: plugins/filebrowser/gedit-file-browser-store.c:3633
@@ -2855,6 +2782,8 @@ msgid ""
 "The new directory is currently filtered out. You need to adjust your filter "
 "settings to make the directory visible"
 msgstr ""
+"Жаңа бума қазір сүзіліп жатыр. Буманы көрінетін ету үшін сүзгі параметрлерін "
+"реттеу қажет"
 
 #: plugins/filebrowser/gedit-file-browser-widget.c:755
 msgid "Bookmarks"
@@ -2863,7 +2792,7 @@ msgstr "Бетбелгілер"
 #: plugins/filebrowser/gedit-file-browser-widget.c:1955
 #, c-format
 msgid "No mount object for mounted volume: %s"
-msgstr ""
+msgstr "Тіркелген том үшін тіркеу объекті жоқ: %s"
 
 #: plugins/filebrowser/gedit-file-browser-widget.c:2024
 #, c-format
@@ -2889,6 +2818,8 @@ msgid ""
 "Open the tree view when the file browser plugin gets loaded instead of the "
 "bookmarks view"
 msgstr ""
+"Бетбелгілер көрінісінің орнына файл браузерінің плагин модулі жүктелген "
+"кезде ағаш көрінісін ашу"
 
 #: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml:10
 msgid "File Browser Root Directory"
@@ -2963,7 +2894,7 @@ msgstr ""
 #: plugins/filebrowser/resources/ui/gedit-file-browser-menus.ui:13
 #: plugins/filebrowser/resources/ui/gedit-file-browser-menus.ui:79
 msgid "_Set Root to Active Document"
-msgstr ""
+msgstr "_Түбірді белсенді құжатқа орнату"
 
 #: plugins/filebrowser/resources/ui/gedit-file-browser-menus.ui:19
 msgid "_New Folder"
@@ -3061,8 +2992,8 @@ msgid "Python Console"
 msgstr "Python консолі"
 
 #: plugins/pythonconsole/pythonconsole.plugin.desktop.in:7
-msgid "Interactive Python console standing in the bottom panel"
-msgstr "Төмендегі панельде орналасқан интерактивті Python консолі"
+msgid "Interactive Python console standing in the bottom panel."
+msgstr "Төмендегі панельде орналасқан интерактивті Python консолі."
 
 #: plugins/quickhighlight/quickhighlight.plugin.desktop.in:5
 msgid "Quick Highlight"
@@ -3082,8 +3013,8 @@ msgid "Quick Open"
 msgstr "Жылдам ашу"
 
 #: plugins/quickopen/quickopen.plugin.desktop.in:7
-msgid "Quickly open files"
-msgstr "Файлдарды жылдам ашу"
+msgid "Quickly open files."
+msgstr "Файлдарды жылдам ашу."
 
 #: plugins/quickopen/quickopen/popup.py:90
 msgid "Type to search…"
@@ -3275,8 +3206,8 @@ msgid "Execution of the Python command (%s) failed: %s"
 msgstr "(%s) Python командасын орындау сәтсіз аяқталды: %s"
 
 #: plugins/snippets/snippets.plugin.desktop.in:7
-msgid "Insert often-used pieces of text in a fast way"
-msgstr "Жиі қолданылатын мәтін блоктарын жылдам кірістіру"
+msgid "Insert often-used pieces of text in a fast way."
+msgstr "Жиі қолданылатын мәтін блоктарын жылдам кірістіру."
 
 #: plugins/snippets/snippets/snippets.ui:40
 #: plugins/snippets/snippets/snippets.ui:47
@@ -3483,6 +3414,127 @@ msgstr "Күн / Уақытты кірістіру"
 #: plugins/time/time.plugin.desktop.in:6
 msgid "Inserts current date and time at the cursor position."
 msgstr "Курсор тұрған орынға ағымдағы күнді және уақытты кірістіру."
+
+#~ msgid ""
+#~ "gedit is the official text editor of the GNOME desktop environment. While "
+#~ "aiming at simplicity and ease of use, gedit is a powerful general purpose "
+#~ "text editor."
+#~ msgstr ""
+#~ "gedit - бұл GNOME жұмыс үстел ортасының мәтіндік файлдардың ресми "
+#~ "түзеткіші. Қарапайымдылық және қолдану жеңілдігіне мақсатталған болса да, "
+#~ "gedit мүмкіндіктері көп мәтіндік түзеткіші болып табылады."
+
+#~ msgid ""
+#~ "Whether you are writing the next bestseller, programming an innovative "
+#~ "application, or simply taking some quick notes, gedit will be a reliable "
+#~ "tool to accomplish your task."
+#~ msgstr ""
+#~ "Кітап, қолданба бағдарламасын немесе жылдам естеліктерді жазсаңыз, gedit "
+#~ "сіз үшін тапсырманы орындаудың сенімді сайманы болады."
+
+#~ msgid ""
+#~ "Its flexible plugin system allows you to tailor the application to your "
+#~ "needs and adapt it to your workflow."
+#~ msgstr ""
+#~ "Оның икемді плагиндер жүйесі қолданбаны өз ыңғайыңызға қарай баптап, "
+#~ "жұмыс тәртібіңізге сай жасауды мүмкін қылады."
+
+#~ msgid "Changes to document “%s” will be permanently lost."
+#~ msgstr "\"%s\" құжат өзгерістері қайтарылмастай жоғалады."
+
+#~ msgid "Saving has been disabled by the system administrator."
+#~ msgstr "Жүйелік әкімші сақтау мүмкіндігін сөндірген."
+
+#~ msgid "Changes to %d document will be permanently lost."
+#~ msgid_plural "Changes to %d documents will be permanently lost."
+#~ msgstr[0] "%d құжат өзгерістері қайтарылмастай жоғалатын болады."
+
+#~ msgid "Docum_ents with unsaved changes:"
+#~ msgstr "Сақталмаған өзгерістері бар құ_жаттар:"
+
+#~ msgctxt "window title"
+#~ msgid "Open"
+#~ msgstr "Ашу"
+
+#~ msgid "Character Encoding:"
+#~ msgstr "Таңбалар кодталуы:"
+
+#~ msgid "Line Ending:"
+#~ msgstr "Жол аяқталуы:"
+
+#~ msgid "D_on’t Edit"
+#~ msgstr "_Түзетпеу"
+
+#~ msgid "This file “%s” is already open in another window."
+#~ msgstr "\"%s\" файлы басқа терезеде ашық тұр."
+
+#~ msgid "Do you want to edit it anyway?"
+#~ msgstr "Сонда да оны түзетуді қалайсыз ба?"
+
+#~ msgid "Could not create a backup file while saving “%s”"
+#~ msgstr "\"%s\" сақтау кезінде қор көшірме файлын жасау сәтсіз аяқталды"
+
+#~ msgid "Could not create a temporary backup file while saving “%s”"
+#~ msgstr ""
+#~ "\"%s\" сақтау кезінде уақытша қор көшірме файлын жасау сәтсіз аяқталды"
+
+#~ msgid ""
+#~ "Could not back up the old copy of the file before saving the new one. You "
+#~ "can ignore this warning and save the file anyway, but if an error occurs "
+#~ "while saving, you could lose the old copy of the file. Save anyway?"
+#~ msgstr ""
+#~ "Файлдың жаңа нұсқасын сақтау алдында ескі нұсқаның қор көшірмесін жасау "
+#~ "сәтсіз аяқталды. Сіз бұны елемей, файлды сонда да сақтай аласыз, бірақ, "
+#~ "сақтау кезінде қате орын алса, файлдың ескі нұсқасын жоғалуыңыз мүмкін. "
+#~ "Сонда да сақтау керек пе?"
+
+#~ msgid "The file “%s” changed on disk."
+#~ msgstr "\"%s\" файлы дискте өзгертілген."
+
+#~ msgid "Drop Changes and _Reload"
+#~ msgstr "Өзгерістерді тастап, қа_йта жүктеу"
+
+#~ msgid "Some invalid chars have been detected while saving “%s”"
+#~ msgstr "\"%s\" сақтау кезінде кейбір қате таңбалар табылды"
+
+#~ msgid ""
+#~ "If you continue saving this file you can corrupt the document.  Save "
+#~ "anyway?"
+#~ msgstr ""
+#~ "Бұл файлды сақтауды жалғастырсаңыз, файл зақымдалуы мүмкін. Сонда да "
+#~ "сақтау керек пе?"
+
+#~ msgid ""
+#~ "Directory “%s” could not be created: g_mkdir_with_parents() failed: %s"
+#~ msgstr "\"%s\" бумасын жасау мүмкін емес: g_mkdir_with_parents() сәтсіз: %s"
+
+#~ msgid "A_dd Scheme"
+#~ msgstr "Схеманы қ_осу"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Join selected lines"
+#~ msgstr "Таңдалған жолдарды біріктіру"
+
+#~ msgid "Check update"
+#~ msgstr "Жаңартуды тексеру"
+
+#~ msgid "Check for latest version of gedit"
+#~ msgstr "gedit-тің соңғы нұсқасын тексеру"
+
+#~ msgid "There was an error displaying the URI."
+#~ msgstr "URI көрсету кезінде қате орын алды."
+
+#~ msgid "_Download"
+#~ msgstr "Жү_ктеп алу"
+
+#~ msgid "_Ignore Version"
+#~ msgstr "_Нұсқаны елемеу"
+
+#~ msgid "There is a new version of gedit"
+#~ msgstr "gedit-тің жаңа нұсқасы бар"
+
+#~ msgid "Version to Ignore"
+#~ msgstr "Елемеу үшін нұсқа"
 
 #~ msgid "org.gnome.gedit"
 #~ msgstr "org.gnome.gedit"
@@ -3738,9 +3790,6 @@ msgstr "Курсор тұрған орынға ағымдағы күнді жә�
 
 #~ msgid "[FILE...]"
 #~ msgstr "[ФАЙЛ...]"
-
-#~ msgid "Open Files"
-#~ msgstr "Файлдарды ашу"
 
 #~ msgid "Arabic"
 #~ msgstr "Араб"
