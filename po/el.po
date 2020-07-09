@@ -36,16 +36,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: el\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gedit/issues\n"
-"POT-Creation-Date: 2020-05-07 00:43+0000\n"
-"PO-Revision-Date: 2020-05-15 23:53+0300\n"
-"Last-Translator: Efstathios Iosifidis <eiosifidis@gnome.org>\n"
+"POT-Creation-Date: 2020-07-08 15:13+0000\n"
+"PO-Revision-Date: 2020-07-09 17:09+0300\n"
+"Last-Translator: Efstathios Iosifidis <iosifidis@opensuse.org>\n"
 "Language-Team: Ελληνικά <opensuse-translation-el@opensuse.org>\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.7.1\n"
+"X-Generator: Poedit 2.3\n"
 "X-Project-Style: gnome\n"
 
 #: data/org.gnome.gedit.appdata.xml.in:7
@@ -544,13 +544,13 @@ msgstr ""
 "αυτήν την περίπτωση το gedit θα επιλέξει καλές προεπιλογές ανάλογα με τη "
 "χώρα και τη γλώσσα."
 
-#: data/org.gnome.gedit.gschema.xml.in:301
+#: data/org.gnome.gedit.gschema.xml.in:304
 msgid "Active plugins"
 msgstr "Ενεργά πρόσθετα"
 
-#: data/org.gnome.gedit.gschema.xml.in:302
+#: data/org.gnome.gedit.gschema.xml.in:305
 msgid "List of active plugins."
-msgstr "Λίστα ενεργών προσθέτων"
+msgstr "Λίστα ενεργών προσθέτων."
 
 #: gedit/gedit-app.c:85
 msgid "Show the application’s version"
@@ -606,11 +606,11 @@ msgstr "%s: μη έγκυρη κωδικοποίηση."
 msgid "Close _without Saving"
 msgstr "Κλείσιμο _χωρίς αποθήκευση"
 
-#: gedit/gedit-close-confirmation-dialog.c:277 gedit/gedit-commands-file.c:460
-#: gedit/gedit-commands-file.c:565 gedit/gedit-commands-file.c:641
-#: gedit/gedit-commands-file.c:852 gedit/gedit-commands-file.c:1566
-#: gedit/gedit-encodings-dialog.c:192 gedit/gedit-preferences-dialog.c:773
-#: gedit/gedit-progress-info-bar.c:49
+#: gedit/gedit-close-confirmation-dialog.c:277 gedit/gedit-commands-file.c:492
+#: gedit/gedit-commands-file.c:568 gedit/gedit-commands-file.c:791
+#: gedit/gedit-commands-file.c:1513 gedit/gedit-encodings-dialog.c:192
+#: gedit/gedit-file-chooser-open-dialog.c:78
+#: gedit/gedit-preferences-dialog.c:721 gedit/gedit-progress-info-bar.c:49
 #: gedit/resources/ui/gedit-encodings-dialog.ui:44
 #: gedit/resources/ui/gedit-highlight-mode-dialog.ui:31
 #: plugins/filebrowser/gedit-file-browser-utils.c:211
@@ -628,7 +628,7 @@ msgstr "_Ακύρωση"
 msgid "_Save As…"
 msgstr "Αποθήκευση _ως…"
 
-#: gedit/gedit-close-confirmation-dialog.c:295 gedit/gedit-commands-file.c:853
+#: gedit/gedit-close-confirmation-dialog.c:295 gedit/gedit-commands-file.c:790
 #: gedit/resources/gtk/menus-common.ui:127
 #: gedit/resources/ui/gedit-window.ui:59
 #: plugins/snippets/snippets/manager.py:875
@@ -746,57 +746,42 @@ msgstr "Επι_λέξτε τα έγγραφα που θέλετε να αποθ�
 msgid "If you don’t save, all your changes will be permanently lost."
 msgstr "Αν δεν αποθηκεύσετε, όλες οι αλλαγές θα χαθούν οριστικά."
 
-#: gedit/gedit-commands-file.c:263
+#: gedit/gedit-commands-file.c:257
 #, c-format
 msgid "Loading file “%s”…"
 msgstr "Φόρτωση αρχείου «%s»…"
 
-#: gedit/gedit-commands-file.c:272
+#: gedit/gedit-commands-file.c:266
 #, c-format
 msgid "Loading %d file…"
 msgid_plural "Loading %d files…"
 msgstr[0] "Φόρτωση %d αρχείου…"
 msgstr[1] "Φόρτωση %d αρχείων…"
 
-#. Translators: "Open Files" is the title of the file chooser window.
-#: gedit/gedit-commands-file.c:454
-msgctxt "window title"
-msgid "Open Files"
-msgstr "Άνοιγμα αρχείων"
-
-#: gedit/gedit-commands-file.c:461 gedit/gedit-window.c:2636
-#: gedit/resources/gtk/menus-common.ui:100
-#: gedit/resources/gtk/menus-common.ui:106
-#: plugins/filebrowser/resources/ui/gedit-file-browser-menus.ui:7
-#: plugins/quickopen/quickopen/popup.py:46
-#: plugins/snippets/snippets/manager.py:790
-msgid "_Open"
-msgstr "Ά_νοιγμα"
-
-#: gedit/gedit-commands-file.c:556
+#: gedit/gedit-commands-file.c:483
 #, c-format
 msgid "The file “%s” is read-only."
 msgstr "Το αρχείο «%s» είναι μόνο για ανάγνωση."
 
-#: gedit/gedit-commands-file.c:561
+#: gedit/gedit-commands-file.c:488
 msgid "Do you want to try to replace it with the one you are saving?"
 msgstr ""
 "Θέλετε να γίνει προσπάθεια να το αντικαταστήσετε με αυτό που αποθηκεύετε;"
 
-#: gedit/gedit-commands-file.c:566
+#: gedit/gedit-commands-file.c:493
 #: gedit/resources/ui/gedit-replace-dialog.ui:55
 msgid "_Replace"
 msgstr "_Αντικατάσταση"
 
-#: gedit/gedit-commands-file.c:606
+#: gedit/gedit-commands-file.c:533
 msgid "Save the file using compression?"
 msgstr "Αποθήκευση του αρχείου με χρήση συμπίεσης;"
 
-#: gedit/gedit-commands-file.c:610
+#: gedit/gedit-commands-file.c:537
 msgid "Save the file as plain text?"
 msgstr "Αποθήκευση αρχείου ως απλό κείμενο;"
 
-#: gedit/gedit-commands-file.c:623
+#: gedit/gedit-commands-file.c:550
 #, c-format
 msgid ""
 "The file “%s” was previously saved as plain text and will now be saved using "
@@ -805,11 +790,11 @@ msgstr ""
 "Το αρχείο «%s» είχε αποθηκευτεί ως απλό κείμενο και τώρα θα αποθηκευτεί με "
 "χρήση συμπίεσης."
 
-#: gedit/gedit-commands-file.c:627
+#: gedit/gedit-commands-file.c:554
 msgid "_Save Using Compression"
 msgstr "_Αποθήκευση με χρήση συμπίεσης"
 
-#: gedit/gedit-commands-file.c:632
+#: gedit/gedit-commands-file.c:559
 #, c-format
 msgid ""
 "The file “%s” was previously saved using compression and will now be saved "
@@ -818,32 +803,32 @@ msgstr ""
 "Το αρχείο «%s» είχε αποθηκευθεί με χρήση συμπίεσης και τώρα θα αποθηκευτεί "
 "ως απλό κείμενο."
 
-#: gedit/gedit-commands-file.c:635
+#: gedit/gedit-commands-file.c:562
 msgid "_Save As Plain Text"
 msgstr "_Αποθήκευση ως απλό κείμενο"
 
-#: gedit/gedit-commands-file.c:750 gedit/gedit-commands-file.c:1017
+#: gedit/gedit-commands-file.c:677 gedit/gedit-commands-file.c:964
 #, c-format
 msgid "Saving file “%s”…"
 msgstr "Αποθήκευση αρχείου «%s»…"
 
 #. Translators: "Save As" is the title of the file chooser window.
-#: gedit/gedit-commands-file.c:845
+#: gedit/gedit-commands-file.c:788
 msgctxt "window title"
 msgid "Save As"
 msgstr "Αποθήκευση ως"
 
-#: gedit/gedit-commands-file.c:1427
+#: gedit/gedit-commands-file.c:1374
 #, c-format
 msgid "Reverting the document “%s”…"
 msgstr "Γίνεται επαναφορά του εγγράφου «%s»…"
 
-#: gedit/gedit-commands-file.c:1474
+#: gedit/gedit-commands-file.c:1421
 #, c-format
 msgid "Revert unsaved changes to document “%s”?"
 msgstr "Επαναφορά μη αποθηκευμένων αλλαγών στο έγγραφο «%s»;"
 
-#: gedit/gedit-commands-file.c:1483
+#: gedit/gedit-commands-file.c:1430
 #, c-format
 msgid ""
 "Changes made to the document in the last %ld second will be permanently lost."
@@ -857,13 +842,13 @@ msgstr[1] ""
 "Οι αλλαγές που έγιναν στο έγγραφο τα τελευταία %ld δευτερόλεπτα θα χαθούν "
 "οριστικά."
 
-#: gedit/gedit-commands-file.c:1492
+#: gedit/gedit-commands-file.c:1439
 msgid ""
 "Changes made to the document in the last minute will be permanently lost."
 msgstr ""
 "Οι αλλαγές που έγιναν στο έγγραφο το τελευταίο λεπτό θα χαθούν οριστικά."
 
-#: gedit/gedit-commands-file.c:1498
+#: gedit/gedit-commands-file.c:1445
 #, c-format
 msgid ""
 "Changes made to the document in the last minute and %ld second will be "
@@ -878,7 +863,7 @@ msgstr[1] ""
 "Οι αλλαγές που έγιναν στο έγγραφο το τελευταίο λεπτό και %ld δευτερόλεπτα θα "
 "χαθούν οριστικά."
 
-#: gedit/gedit-commands-file.c:1508
+#: gedit/gedit-commands-file.c:1455
 #, c-format
 msgid ""
 "Changes made to the document in the last %ld minute will be permanently lost."
@@ -890,12 +875,12 @@ msgstr[0] ""
 msgstr[1] ""
 "Οι αλλαγές που έγιναν στο έγγραφο τα τελευταία %ld λεπτά θα χαθούν οριστικά."
 
-#: gedit/gedit-commands-file.c:1523
+#: gedit/gedit-commands-file.c:1470
 msgid "Changes made to the document in the last hour will be permanently lost."
 msgstr ""
 "Οι αλλαγές που έγιναν στο έγγραφο την τελευταία ώρα θα χαθούν οριστικά."
 
-#: gedit/gedit-commands-file.c:1529
+#: gedit/gedit-commands-file.c:1476
 #, c-format
 msgid ""
 "Changes made to the document in the last hour and %d minute will be "
@@ -910,7 +895,7 @@ msgstr[1] ""
 "Οι αλλαγές που έγιναν στο έγγραφο την τελευταία ώρα και %d λεπτά θα χαθούν "
 "οριστικά."
 
-#: gedit/gedit-commands-file.c:1544
+#: gedit/gedit-commands-file.c:1491
 #, c-format
 msgid ""
 "Changes made to the document in the last %d hour will be permanently lost."
@@ -921,7 +906,7 @@ msgstr[0] ""
 msgstr[1] ""
 "Οι αλλαγές που έγιναν στο έγγραφο τις τελευταίες %d ώρες θα χαθούν οριστικά."
 
-#: gedit/gedit-commands-file.c:1567
+#: gedit/gedit-commands-file.c:1514
 msgid "_Revert"
 msgstr "Επανα_φορά"
 
@@ -983,12 +968,10 @@ msgid "Read-Only"
 msgstr "Μόνο για ανάγνωση"
 
 #: gedit/gedit-encodings-combo-box.c:297
-#: gedit/gedit-file-chooser-dialog-osx.m:564
 msgid "Automatically Detected"
 msgstr "Αυτόματος εντοπισμός"
 
 #: gedit/gedit-encodings-combo-box.c:326
-#: gedit/gedit-file-chooser-dialog-osx.m:573
 msgid "Add or Remove…"
 msgstr "Προσθήκη ή αφαίρεση…"
 
@@ -1029,30 +1012,38 @@ msgstr "Μετακίνηση σε υψηλότερη προτεραιότητα"
 msgid "Move to a lower priority"
 msgstr "Μετακίνηση σε χαμηλότερη προτεραιότητα"
 
-#: gedit/gedit-file-chooser-dialog-gtk.c:39
-#: gedit/gedit-preferences-dialog.c:782
+#: gedit/gedit-file-chooser.c:41 gedit/gedit-preferences-dialog.c:730
 msgid "All Files"
 msgstr "Όλα τα αρχεία"
 
-#: gedit/gedit-file-chooser-dialog-gtk.c:40
+#: gedit/gedit-file-chooser.c:42
 msgid "All Text Files"
 msgstr "Όλα τα αρχεία κειμένου"
 
-#: gedit/gedit-file-chooser-dialog-gtk.c:305
+#: gedit/gedit-file-chooser-dialog-gtk.c:262
+#: gedit/gedit-file-chooser-open-dialog.c:43
 msgid "C_haracter Encoding:"
 msgstr "Κωδικοποίηση _χαρακτήρων:"
 
-#: gedit/gedit-file-chooser-dialog-gtk.c:364
+#: gedit/gedit-file-chooser-dialog-gtk.c:321
 msgid "L_ine Ending:"
 msgstr "Τέ_λος γραμμής:"
 
-#: gedit/gedit-file-chooser-dialog-osx.m:546
-msgid "Character Encoding:"
-msgstr "Κωδικοποίηση χαρακτήρων:"
+#. Translators: "Open Files" is the title of the file chooser window.
+#: gedit/gedit-file-chooser-open-dialog.c:75
+#: gedit/gedit-file-chooser-open-native.c:54
+msgctxt "window title"
+msgid "Open Files"
+msgstr "Άνοιγμα αρχείων"
 
-#: gedit/gedit-file-chooser-dialog-osx.m:619
-msgid "Line Ending:"
-msgstr "Τέλος γραμμής:"
+#: gedit/gedit-file-chooser-open-dialog.c:79 gedit/gedit-window.c:2636
+#: gedit/resources/gtk/menus-common.ui:100
+#: gedit/resources/gtk/menus-common.ui:106
+#: plugins/filebrowser/resources/ui/gedit-file-browser-menus.ui:7
+#: plugins/quickopen/quickopen/popup.py:46
+#: plugins/snippets/snippets/manager.py:790
+msgid "_Open"
+msgstr "Ά_νοιγμα"
 
 #: gedit/gedit-highlight-mode-selector.c:269 gedit/gedit-window.c:1166
 #: plugins/externaltools/tools/manager.py:115
@@ -1340,44 +1331,42 @@ msgstr ""
 msgid "Could not save the file “%s”."
 msgstr "Αδύνατη η αποθήκευση του αρχείου “%s”."
 
-#: gedit/gedit-preferences-dialog.c:442
+#: gedit/gedit-preferences-dialog.c:433
 msgid "Click on this button to select the font to be used by the editor"
 msgstr ""
 "Πατήστε αυτό το κουμπί για να επιλέξετε τη γραμματοσειρά που θα "
 "χρησιμοποιείται από τον επεξεργαστή"
 
-#: gedit/gedit-preferences-dialog.c:448
+#: gedit/gedit-preferences-dialog.c:439
 #, c-format
 msgid "_Use the system fixed width font (%s)"
 msgstr ""
 "_Χρήση της προκαθορισμένης γραμματοσειράς σταθερού πλάτους του συστήματος "
 "(%s)"
 
-#: gedit/gedit-preferences-dialog.c:556
+#: gedit/gedit-preferences-dialog.c:685
 #, c-format
-msgid "Directory “%s” could not be created: g_mkdir_with_parents() failed: %s"
-msgstr ""
-"Δεν είναι δυνατή η δημιουργία του καταλόγου «%s»: αποτυχία "
-"g_mkdir_with_parents() : %s"
+msgid "The selected color scheme cannot be installed: %s"
+msgstr "Ο επιλεγμένος χρωματικός συνδυασμός δεν μπορεί να εγκατασταθεί: %s"
 
-#: gedit/gedit-preferences-dialog.c:748
+#: gedit/gedit-preferences-dialog.c:691
 msgid "The selected color scheme cannot be installed."
 msgstr ""
 "Το επιλεγμένο σχήμα χρώματος δεν μπορεί να μετακινηθεί στα απορρίμματα."
 
-#: gedit/gedit-preferences-dialog.c:769
-msgid "Add Scheme"
-msgstr "Προσθήκη σχήματος"
+#: gedit/gedit-preferences-dialog.c:717
+msgid "Add Color Scheme"
+msgstr "Προσθήκη χρωματικού συνδυασμού"
 
-#: gedit/gedit-preferences-dialog.c:774
-msgid "A_dd Scheme"
-msgstr "Προ_σθήκη σχήματος"
+#: gedit/gedit-preferences-dialog.c:720
+msgid "_Add Scheme"
+msgstr "_Προσθήκη σχήματος"
 
-#: gedit/gedit-preferences-dialog.c:778
+#: gedit/gedit-preferences-dialog.c:725
 msgid "Color Scheme Files"
 msgstr "Αρχεία χρωματικών συνδυασμών"
 
-#: gedit/gedit-preferences-dialog.c:815
+#: gedit/gedit-preferences-dialog.c:763
 #, c-format
 msgid "Could not remove color scheme “%s”."
 msgstr "Αδυναμία αφαίρεσης σχήματος χρώματος «%s»."
@@ -2407,107 +2396,117 @@ msgctxt "shortcut window"
 msgid "Move to matching bracket"
 msgstr "Μετακίνηση σε αντίστοιχο βραχίονα"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:329
+#: gedit/resources/ui/gedit-shortcuts.ui:328
+msgctxt "shortcut window"
+msgid "Go to previous tab group"
+msgstr "Μετάβαση στην προηγούμενη ομάδα καρτελών"
+
+#: gedit/resources/ui/gedit-shortcuts.ui:335
+msgctxt "shortcut window"
+msgid "Go to next tab group"
+msgstr "Μετάβαση στην επόμενη ομάδα καρτελών"
+
+#: gedit/resources/ui/gedit-shortcuts.ui:343
 msgctxt "shortcut window"
 msgid "Editing"
 msgstr "Επεξεργασία"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:334
+#: gedit/resources/ui/gedit-shortcuts.ui:348
 msgctxt "shortcut window"
 msgid "Toggle insert / overwrite"
 msgstr "Εναλλαγή εισαγωγή / αντικατάσταση"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:341
+#: gedit/resources/ui/gedit-shortcuts.ui:355
 msgctxt "shortcut window"
 msgid "Toggle cursor visibility"
 msgstr "Εναλλαγή ορατότητας δρομέα"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:348
+#: gedit/resources/ui/gedit-shortcuts.ui:362
 msgctxt "shortcut window"
 msgid "Delete current line"
 msgstr "Διαγραφή της τρέχουσας γραμμής"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:355
+#: gedit/resources/ui/gedit-shortcuts.ui:369
 msgctxt "shortcut window"
 msgid "Move current line up"
 msgstr "Μετακίνηση της τρέχουσας γραμμής πάνω"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:362
+#: gedit/resources/ui/gedit-shortcuts.ui:376
 msgctxt "shortcut window"
 msgid "Move current line down"
 msgstr "Μετακίνηση της τρέχουσας γραμμής κάτω"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:369
+#: gedit/resources/ui/gedit-shortcuts.ui:383
 msgctxt "shortcut window"
 msgid "Move current word left"
 msgstr "Μετακίνηση της τρέχουσας λέξης αριστερά"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:376
+#: gedit/resources/ui/gedit-shortcuts.ui:390
 msgctxt "shortcut window"
 msgid "Move current word right"
 msgstr "Μετακίνηση της τρέχουσας λέξης δεξιά"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:383
+#: gedit/resources/ui/gedit-shortcuts.ui:397
 msgctxt "shortcut window"
 msgid "Convert to uppercase"
 msgstr "Μετατροπή σε κεφαλαία"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:390
+#: gedit/resources/ui/gedit-shortcuts.ui:404
 msgctxt "shortcut window"
 msgid "Convert to lowercase"
 msgstr "Μετατροπή σε πεζά"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:397
+#: gedit/resources/ui/gedit-shortcuts.ui:411
 msgctxt "shortcut window"
 msgid "Invert case"
 msgstr "Εναλλαγή πεζών κεφαλαίων"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:404
+#: gedit/resources/ui/gedit-shortcuts.ui:418
 msgctxt "shortcut window"
 msgid "Increment number at cursor"
 msgstr "Αύξηση αριθμού στον δρομέα"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:411
+#: gedit/resources/ui/gedit-shortcuts.ui:425
 msgctxt "shortcut window"
 msgid "Decrement number at cursor"
 msgstr "Μείωση αριθμού στον δρομέα"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:419
+#: gedit/resources/ui/gedit-shortcuts.ui:433
 msgctxt "shortcut window"
 msgid "Tools"
 msgstr "Εργαλεία"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:424
+#: gedit/resources/ui/gedit-shortcuts.ui:438
 msgctxt "shortcut window"
 msgid "Check spelling"
 msgstr "Έλεγχος ορθογραφίας"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:431
+#: gedit/resources/ui/gedit-shortcuts.ui:445
 msgctxt "shortcut window"
 msgid "Print the document"
 msgstr "Εκτύπωση εγγράφου"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:438
+#: gedit/resources/ui/gedit-shortcuts.ui:452
 msgctxt "shortcut window"
 msgid "Show completion window"
 msgstr "Εμφάνιση παραθύρου ολοκλήρωσης"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:446
+#: gedit/resources/ui/gedit-shortcuts.ui:460
 msgctxt "shortcut window"
 msgid "General"
 msgstr "Γενικά"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:451
+#: gedit/resources/ui/gedit-shortcuts.ui:465
 msgctxt "shortcut window"
 msgid "Show help"
 msgstr "Εμφάνιση βοήθειας"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:458
+#: gedit/resources/ui/gedit-shortcuts.ui:472
 msgctxt "shortcut window"
 msgid "Open menu"
 msgstr "Άνοιγμα μενού"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:465
+#: gedit/resources/ui/gedit-shortcuts.ui:479
 msgctxt "shortcut window"
 msgid "Keyboard shortcuts"
 msgstr "Συντομεύσεις πληκτρολογίου"
@@ -3637,6 +3636,21 @@ msgstr "Εισαγωγή ημερομηνίας/ώρας"
 msgid "Inserts current date and time at the cursor position."
 msgstr "Εισαγωγή τρέχουσας ημ/νίας και ώρας στη θέση του δρομέα."
 
+#~ msgid "Character Encoding:"
+#~ msgstr "Κωδικοποίηση χαρακτήρων:"
+
+#~ msgid "Line Ending:"
+#~ msgstr "Τέλος γραμμής:"
+
+#~ msgid ""
+#~ "Directory “%s” could not be created: g_mkdir_with_parents() failed: %s"
+#~ msgstr ""
+#~ "Δεν είναι δυνατή η δημιουργία του καταλόγου «%s»: αποτυχία "
+#~ "g_mkdir_with_parents() : %s"
+
+#~ msgid "A_dd Scheme"
+#~ msgstr "Προ_σθήκη σχήματος"
+
 #~ msgid ""
 #~ "gedit is the official text editor of the GNOME desktop environment. While "
 #~ "aiming at simplicity and ease of use, gedit is a powerful general purpose "
@@ -4481,9 +4495,6 @@ msgstr "Εισαγωγή τρέχουσας ημ/νίας και ώρας στη
 
 #~ msgid "Next location"
 #~ msgstr "Επόμενη τοποθεσία"
-
-#~ msgid "Go to next location"
-#~ msgstr "Μετάβαση στην επόμενη τοποθεσία"
 
 #~ msgid "External Tools Manager"
 #~ msgstr "Διαχείριση εξωτερικών εργαλείων"
