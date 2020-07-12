@@ -25,8 +25,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gedit master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gedit/issues\n"
-"POT-Creation-Date: 2020-06-09 22:13+0000\n"
-"PO-Revision-Date: 2020-06-23 17:23-0400\n"
+"POT-Creation-Date: 2020-07-08 15:13+0000\n"
+"PO-Revision-Date: 2020-07-11 22:02-0400\n"
 "Last-Translator: Boyuan Yang <073plan@gmail.com>\n"
 "Language-Team: Chinese (China) <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
@@ -538,10 +538,10 @@ msgstr "%s：无效的编码。"
 msgid "Close _without Saving"
 msgstr "不保存退出(_W)"
 
-#: gedit/gedit-close-confirmation-dialog.c:277 gedit/gedit-commands-file.c:496
-#: gedit/gedit-commands-file.c:572 gedit/gedit-commands-file.c:796
-#: gedit/gedit-commands-file.c:1518 gedit/gedit-encodings-dialog.c:192
-#: gedit/gedit-file-chooser-open-adapter.c:113
+#: gedit/gedit-close-confirmation-dialog.c:277 gedit/gedit-commands-file.c:492
+#: gedit/gedit-commands-file.c:568 gedit/gedit-commands-file.c:791
+#: gedit/gedit-commands-file.c:1513 gedit/gedit-encodings-dialog.c:192
+#: gedit/gedit-file-chooser-open-dialog.c:78
 #: gedit/gedit-preferences-dialog.c:721 gedit/gedit-progress-info-bar.c:49
 #: gedit/resources/ui/gedit-encodings-dialog.ui:44
 #: gedit/resources/ui/gedit-highlight-mode-dialog.ui:31
@@ -560,7 +560,7 @@ msgstr "取消(_C)"
 msgid "_Save As…"
 msgstr "另存为(_S)…"
 
-#: gedit/gedit-close-confirmation-dialog.c:295 gedit/gedit-commands-file.c:795
+#: gedit/gedit-close-confirmation-dialog.c:295 gedit/gedit-commands-file.c:790
 #: gedit/resources/gtk/menus-common.ui:127
 #: gedit/resources/ui/gedit-window.ui:59
 #: plugins/snippets/snippets/manager.py:875
@@ -644,83 +644,83 @@ msgstr "选择想要保存的文档(_E)："
 msgid "If you don’t save, all your changes will be permanently lost."
 msgstr "如果您不保存，您所做的全部更改将永久丢失。"
 
-#: gedit/gedit-commands-file.c:263
+#: gedit/gedit-commands-file.c:257
 #, c-format
 msgid "Loading file “%s”…"
 msgstr "正在载入文件“%s”…"
 
-#: gedit/gedit-commands-file.c:272
+#: gedit/gedit-commands-file.c:266
 #, c-format
 msgid "Loading %d file…"
 msgid_plural "Loading %d files…"
 msgstr[0] "正在载入 %d 个文件…"
 
-#: gedit/gedit-commands-file.c:487
+#: gedit/gedit-commands-file.c:483
 #, c-format
 msgid "The file “%s” is read-only."
 msgstr "文件“%s”为只读。"
 
-#: gedit/gedit-commands-file.c:492
+#: gedit/gedit-commands-file.c:488
 msgid "Do you want to try to replace it with the one you are saving?"
 msgstr "您想要尝试将其替换为正在保存的文件吗？"
 
-#: gedit/gedit-commands-file.c:497
+#: gedit/gedit-commands-file.c:493
 #: gedit/resources/ui/gedit-replace-dialog.ui:55
 msgid "_Replace"
 msgstr "替换(_R)"
 
-#: gedit/gedit-commands-file.c:537
+#: gedit/gedit-commands-file.c:533
 msgid "Save the file using compression?"
 msgstr "是否压缩保存文件？"
 
-#: gedit/gedit-commands-file.c:541
+#: gedit/gedit-commands-file.c:537
 msgid "Save the file as plain text?"
 msgstr "是否保存为纯文本文件？"
 
-#: gedit/gedit-commands-file.c:554
+#: gedit/gedit-commands-file.c:550
 #, c-format
 msgid ""
 "The file “%s” was previously saved as plain text and will now be saved using "
 "compression."
 msgstr "文件“%s”上次保存为纯文本，现在将使用压缩方式保存。"
 
-#: gedit/gedit-commands-file.c:558
+#: gedit/gedit-commands-file.c:554
 msgid "_Save Using Compression"
 msgstr "使用压缩保存(_S)"
 
-#: gedit/gedit-commands-file.c:563
+#: gedit/gedit-commands-file.c:559
 #, c-format
 msgid ""
 "The file “%s” was previously saved using compression and will now be saved "
 "as plain text."
 msgstr "文件“%s”上次使用压缩方式保存，现在将保存为纯文本。"
 
-#: gedit/gedit-commands-file.c:566
+#: gedit/gedit-commands-file.c:562
 msgid "_Save As Plain Text"
 msgstr "保存为纯文本(_S)"
 
-#: gedit/gedit-commands-file.c:681 gedit/gedit-commands-file.c:969
+#: gedit/gedit-commands-file.c:677 gedit/gedit-commands-file.c:964
 #, c-format
 msgid "Saving file “%s”…"
 msgstr "正在保存文件“%s”…"
 
 #. Translators: "Save As" is the title of the file chooser window.
-#: gedit/gedit-commands-file.c:792
+#: gedit/gedit-commands-file.c:788
 msgctxt "window title"
 msgid "Save As"
 msgstr "另存为"
 
-#: gedit/gedit-commands-file.c:1379
+#: gedit/gedit-commands-file.c:1374
 #, c-format
 msgid "Reverting the document “%s”…"
 msgstr "正在还原文档“%s”…"
 
-#: gedit/gedit-commands-file.c:1426
+#: gedit/gedit-commands-file.c:1421
 #, c-format
 msgid "Revert unsaved changes to document “%s”?"
 msgstr "是否放弃对文档“%s”所作的未保存更改？"
 
-#: gedit/gedit-commands-file.c:1435
+#: gedit/gedit-commands-file.c:1430
 #, c-format
 msgid ""
 "Changes made to the document in the last %ld second will be permanently lost."
@@ -729,12 +729,12 @@ msgid_plural ""
 "lost."
 msgstr[0] "之前 %ld 秒内对文档所作的更改将永久丢失。"
 
-#: gedit/gedit-commands-file.c:1444
+#: gedit/gedit-commands-file.c:1439
 msgid ""
 "Changes made to the document in the last minute will be permanently lost."
 msgstr "之前 1 分钟内对文档所作的更改将永久丢失。"
 
-#: gedit/gedit-commands-file.c:1450
+#: gedit/gedit-commands-file.c:1445
 #, c-format
 msgid ""
 "Changes made to the document in the last minute and %ld second will be "
@@ -744,7 +744,7 @@ msgid_plural ""
 "permanently lost."
 msgstr[0] "之前 1 分 %ld 秒内对文档所作的更改将永久丢失。"
 
-#: gedit/gedit-commands-file.c:1460
+#: gedit/gedit-commands-file.c:1455
 #, c-format
 msgid ""
 "Changes made to the document in the last %ld minute will be permanently lost."
@@ -753,11 +753,11 @@ msgid_plural ""
 "lost."
 msgstr[0] "之前 %ld 分钟内对文档所作的更改将永久丢失。"
 
-#: gedit/gedit-commands-file.c:1475
+#: gedit/gedit-commands-file.c:1470
 msgid "Changes made to the document in the last hour will be permanently lost."
 msgstr "之前 1 小时内对文档所作的更改将永久丢失。"
 
-#: gedit/gedit-commands-file.c:1481
+#: gedit/gedit-commands-file.c:1476
 #, c-format
 msgid ""
 "Changes made to the document in the last hour and %d minute will be "
@@ -767,7 +767,7 @@ msgid_plural ""
 "permanently lost."
 msgstr[0] "之前 1 小时 %d 分钟内对文档所作的更改将永久丢失。"
 
-#: gedit/gedit-commands-file.c:1496
+#: gedit/gedit-commands-file.c:1491
 #, c-format
 msgid ""
 "Changes made to the document in the last %d hour will be permanently lost."
@@ -775,7 +775,7 @@ msgid_plural ""
 "Changes made to the document in the last %d hours will be permanently lost."
 msgstr[0] "之前 %d 小时内对文档所做的更改将永久丢失。"
 
-#: gedit/gedit-commands-file.c:1519
+#: gedit/gedit-commands-file.c:1514
 msgid "_Revert"
 msgstr "还原(_R)"
 
@@ -881,31 +881,31 @@ msgstr "优先级提高一级"
 msgid "Move to a lower priority"
 msgstr "优先级降低一级"
 
-#. Common code between the different GeditFileChooser's.
-#: gedit/gedit-file-chooser.c:27 gedit/gedit-preferences-dialog.c:730
+#: gedit/gedit-file-chooser.c:41 gedit/gedit-preferences-dialog.c:730
 msgid "All Files"
 msgstr "所有文件"
 
-#: gedit/gedit-file-chooser.c:28
+#: gedit/gedit-file-chooser.c:42
 msgid "All Text Files"
 msgstr "所有文本文件"
 
-#: gedit/gedit-file-chooser-dialog-gtk.c:256
+#: gedit/gedit-file-chooser-dialog-gtk.c:262
+#: gedit/gedit-file-chooser-open-dialog.c:43
 msgid "C_haracter Encoding:"
 msgstr "字符编码(_H)："
 
-#: gedit/gedit-file-chooser-dialog-gtk.c:315
+#: gedit/gedit-file-chooser-dialog-gtk.c:321
 msgid "L_ine Ending:"
 msgstr "行尾(_I)"
 
 #. Translators: "Open Files" is the title of the file chooser window.
-#: gedit/gedit-file-chooser-open-adapter.c:109
-#: gedit/gedit-file-chooser-open.c:87
+#: gedit/gedit-file-chooser-open-dialog.c:75
+#: gedit/gedit-file-chooser-open-native.c:54
 msgctxt "window title"
 msgid "Open Files"
 msgstr "打开文件"
 
-#: gedit/gedit-file-chooser-open-adapter.c:112 gedit/gedit-window.c:2636
+#: gedit/gedit-file-chooser-open-dialog.c:79 gedit/gedit-window.c:2636
 #: gedit/resources/gtk/menus-common.ui:100
 #: gedit/resources/gtk/menus-common.ui:106
 #: plugins/filebrowser/resources/ui/gedit-file-browser-menus.ui:7
@@ -2191,12 +2191,12 @@ msgstr "切换到文档末尾"
 #: gedit/resources/ui/gedit-shortcuts.ui:293
 msgctxt "shortcut window"
 msgid "Move viewport up within the file"
-msgstr "上移文件内的视区"
+msgstr "在文件内上移视区"
 
 #: gedit/resources/ui/gedit-shortcuts.ui:300
 msgctxt "shortcut window"
 msgid "Move viewport down within the file"
-msgstr "下移文件内的视区"
+msgstr "在文件内下移视区"
 
 #: gedit/resources/ui/gedit-shortcuts.ui:307
 msgctxt "shortcut window"
