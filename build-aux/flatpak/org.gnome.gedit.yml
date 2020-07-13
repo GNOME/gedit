@@ -38,6 +38,16 @@ cleanup:
   - "*.la"
   - "*.a"
 
+add-extensions:
+  org.gnome.gedit.Plugin:
+    version: "master"
+    directory: "extensions"
+    add-ld-path: "lib"
+    merge-dirs: "lib/gedit/plugins"
+    subdirectories: true
+    no-autodownload: true
+    autodelete: true
+
 modules:
   - name: libpeas
     buildsystem: meson
