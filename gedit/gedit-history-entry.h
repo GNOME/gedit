@@ -1,5 +1,4 @@
 /*
- * gedit-history-entry.h
  * This file is part of gedit
  *
  * Copyright (C) 2006 - Paolo Borelli
@@ -27,30 +26,32 @@ G_BEGIN_DECLS
 
 #define GEDIT_TYPE_HISTORY_ENTRY (gedit_history_entry_get_type ())
 
-G_DECLARE_FINAL_TYPE (GeditHistoryEntry, gedit_history_entry, GEDIT, HISTORY_ENTRY, GtkComboBoxText)
+G_DECLARE_FINAL_TYPE (GeditHistoryEntry, gedit_history_entry,
+		      GEDIT, HISTORY_ENTRY,
+		      GtkComboBoxText)
 
-GtkWidget	*gedit_history_entry_new			(const gchar       *history_id,
-								 gboolean           enable_completion);
+GtkWidget *	gedit_history_entry_new				(const gchar *history_id,
+								 gboolean     enable_completion);
 
-void		 gedit_history_entry_prepend_text		(GeditHistoryEntry *entry,
+void		gedit_history_entry_prepend_text		(GeditHistoryEntry *entry,
 								 const gchar       *text);
 
-void		 gedit_history_entry_append_text		(GeditHistoryEntry *entry,
+void		gedit_history_entry_append_text			(GeditHistoryEntry *entry,
 								 const gchar       *text);
 
-void		 gedit_history_entry_clear			(GeditHistoryEntry *entry);
+void		gedit_history_entry_clear			(GeditHistoryEntry *entry);
 
-void		 gedit_history_entry_set_history_length		(GeditHistoryEntry *entry,
+void		gedit_history_entry_set_history_length		(GeditHistoryEntry *entry,
 								 guint              max_saved);
 
-guint		 gedit_history_entry_get_history_length		(GeditHistoryEntry *gentry);
+guint		gedit_history_entry_get_history_length		(GeditHistoryEntry *gentry);
 
 void		gedit_history_entry_set_enable_completion	(GeditHistoryEntry *entry,
 								 gboolean           enable);
 
 gboolean	gedit_history_entry_get_enable_completion	(GeditHistoryEntry *entry);
 
-GtkWidget	*gedit_history_entry_get_entry			(GeditHistoryEntry *entry);
+GtkWidget *	gedit_history_entry_get_entry			(GeditHistoryEntry *entry);
 
 G_END_DECLS
 

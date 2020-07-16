@@ -1,5 +1,4 @@
 /*
- * gedit-history-entry.c
  * This file is part of gedit
  *
  * Copyright (C) 2006 - Paolo Borelli
@@ -19,12 +18,9 @@
  */
 
 #include "config.h"
-
 #include "gedit-history-entry.h"
-
 #include <string.h>
 #include <glib/gi18n.h>
-#include <gtk/gtk.h>
 
 #define MIN_ITEM_LEN 3
 
@@ -32,25 +28,26 @@
 
 struct _GeditHistoryEntry
 {
-	GtkComboBoxText     parent_instance;
+	GtkComboBoxText parent_instance;
 
-	gchar              *history_id;
-	guint               history_length;
+	gchar *history_id;
+	guint history_length;
 
 	GtkEntryCompletion *completion;
 
-	GSettings          *settings;
+	GSettings *settings;
 };
 
-enum {
+enum
+{
 	PROP_0,
 	PROP_HISTORY_ID,
 	PROP_HISTORY_LENGTH,
 	PROP_ENABLE_COMPLETION,
-	LAST_PROP
+	N_PROPERTIES
 };
 
-static GParamSpec *properties[LAST_PROP];
+static GParamSpec *properties[N_PROPERTIES];
 
 G_DEFINE_TYPE (GeditHistoryEntry, gedit_history_entry, GTK_TYPE_COMBO_BOX_TEXT)
 
@@ -60,25 +57,22 @@ gedit_history_entry_set_property (GObject      *object,
 				  const GValue *value,
 				  GParamSpec   *spec)
 {
-	GeditHistoryEntry *entry;
-
-	g_return_if_fail (GEDIT_IS_HISTORY_ENTRY (object));
-
-	entry = GEDIT_HISTORY_ENTRY (object);
+	GeditHistoryEntry *entry = GEDIT_HISTORY_ENTRY (object);
 
 	switch (prop_id)
 	{
 		case PROP_HISTORY_ID:
 			entry->history_id = g_value_dup_string (value);
 			break;
+
 		case PROP_HISTORY_LENGTH:
-			gedit_history_entry_set_history_length (entry,
-								g_value_get_uint (value));
+			gedit_history_entry_set_history_length (entry, g_value_get_uint (value));
 			break;
+
 		case PROP_ENABLE_COMPLETION:
-			gedit_history_entry_set_enable_completion (entry,
-			                                           g_value_get_boolean (value));
+			gedit_history_entry_set_enable_completion (entry, g_value_get_boolean (value));
 			break;
+
 		default:
 			G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, spec);
 	}
@@ -90,23 +84,22 @@ gedit_history_entry_get_property (GObject    *object,
 				  GValue     *value,
 				  GParamSpec *spec)
 {
-	GeditHistoryEntry *entry;
-
-	g_return_if_fail (GEDIT_IS_HISTORY_ENTRY (object));
-
-	entry = GEDIT_HISTORY_ENTRY (object);
+	GeditHistoryEntry *entry = GEDIT_HISTORY_ENTRY (object);
 
 	switch (prop_id)
 	{
 		case PROP_HISTORY_ID:
 			g_value_set_string (value, entry->history_id);
 			break;
+
 		case PROP_HISTORY_LENGTH:
 			g_value_set_uint (value, entry->history_length);
 			break;
+
 		case PROP_ENABLE_COMPLETION:
-			g_value_set_boolean (value, gedit_history_entry_get_enable_completion (GEDIT_HISTORY_ENTRY (object)));
+			g_value_set_boolean (value, gedit_history_entry_get_enable_completion (entry));
 			break;
+
 		default:
 			G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, spec);
 	}
@@ -190,7 +183,7 @@ gedit_history_entry_class_init (GeditHistoryEntryClass *klass)
 		                      TRUE,
 		                      G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS);
 
-	g_object_class_install_properties (object_class, LAST_PROP, properties);
+	g_object_class_install_properties (object_class, N_PROPERTIES, properties);
 }
 
 static GtkListStore *
