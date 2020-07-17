@@ -36,8 +36,6 @@ GtkWidget *	gedit_history_entry_new				(const gchar *history_id,
 void		gedit_history_entry_prepend_text		(GeditHistoryEntry *entry,
 								 const gchar       *text);
 
-void		gedit_history_entry_clear			(GeditHistoryEntry *entry);
-
 void		gedit_history_entry_set_history_length		(GeditHistoryEntry *entry,
 								 guint              max_saved);
 

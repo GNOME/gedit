@@ -341,16 +341,6 @@ gedit_history_entry_prepend_text (GeditHistoryEntry *entry,
 	gedit_history_entry_save_history (entry);
 }
 
-void
-gedit_history_entry_clear (GeditHistoryEntry *entry)
-{
-	g_return_if_fail (GEDIT_IS_HISTORY_ENTRY (entry));
-
-	gtk_combo_box_text_remove_all (GTK_COMBO_BOX_TEXT (entry));
-
-	gedit_history_entry_save_history (entry);
-}
-
 static void
 gedit_history_entry_init (GeditHistoryEntry *entry)
 {
