@@ -39,7 +39,7 @@ void		gedit_history_entry_prepend_text		(GeditHistoryEntry *entry,
 void		gedit_history_entry_set_history_length		(GeditHistoryEntry *entry,
 								 guint              max_saved);
 
-guint		gedit_history_entry_get_history_length		(GeditHistoryEntry *gentry);
+guint		gedit_history_entry_get_history_length		(GeditHistoryEntry *entry);
 
 void		gedit_history_entry_set_enable_completion	(GeditHistoryEntry *entry,
 								 gboolean           enable);

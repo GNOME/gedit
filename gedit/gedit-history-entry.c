@@ -23,8 +23,7 @@
 #include <glib/gi18n.h>
 
 #define MIN_ITEM_LEN 3
-
-#define GEDIT_HISTORY_ENTRY_HISTORY_LENGTH_DEFAULT 10
+#define HISTORY_LENGTH_DEFAULT 10
 
 struct _GeditHistoryEntry
 {
@@ -93,7 +92,7 @@ gedit_history_entry_get_property (GObject    *object,
 			break;
 
 		case PROP_HISTORY_LENGTH:
-			g_value_set_uint (value, entry->history_length);
+			g_value_set_uint (value, gedit_history_entry_get_history_length (entry));
 			break;
 
 		case PROP_ENABLE_COMPLETION:
@@ -162,26 +161,30 @@ gedit_history_entry_class_init (GeditHistoryEntryClass *klass)
 
 	properties[PROP_HISTORY_ID] =
 		g_param_spec_string ("history-id",
-		                     "History ID",
-		                     "History ID",
-		                     NULL,
-		                     G_PARAM_READWRITE | G_PARAM_CONSTRUCT_ONLY | G_PARAM_STATIC_STRINGS);
+				     "history-id",
+				     "",
+				     NULL,
+				     G_PARAM_READWRITE |
+				     G_PARAM_CONSTRUCT_ONLY |
+				     G_PARAM_STATIC_STRINGS);
 
 	properties[PROP_HISTORY_LENGTH] =
 		g_param_spec_uint ("history-length",
-		                   "Max History Length",
-		                   "Max History Length",
-		                   0,
-		                   G_MAXUINT,
-		                   GEDIT_HISTORY_ENTRY_HISTORY_LENGTH_DEFAULT,
-		                   G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS);
+				   "history-length",
+				   "",
+				   0,
+				   G_MAXUINT,
+				   HISTORY_LENGTH_DEFAULT,
+				   G_PARAM_READWRITE |
+				   G_PARAM_STATIC_STRINGS);
 
 	properties[PROP_ENABLE_COMPLETION] =
 		g_param_spec_boolean ("enable-completion",
-		                      "Enable Completion",
-		                      "Wether the completion is enabled",
-		                      TRUE,
-		                      G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS);
+				      "enable-completion",
+				      "",
+				      TRUE,
+				      G_PARAM_READWRITE |
+				      G_PARAM_STATIC_STRINGS);
 
 	g_object_class_install_properties (object_class, N_PROPERTIES, properties);
 }
@@ -345,7 +348,7 @@ static void
 gedit_history_entry_init (GeditHistoryEntry *entry)
 {
 	entry->history_id = NULL;
-	entry->history_length = GEDIT_HISTORY_ENTRY_HISTORY_LENGTH_DEFAULT;
+	entry->history_length = HISTORY_LENGTH_DEFAULT;
 
 	entry->completion = NULL;
 
