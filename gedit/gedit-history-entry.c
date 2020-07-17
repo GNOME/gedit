@@ -316,58 +316,29 @@ clamp_list_store (GtkListStore *store,
 	gtk_tree_path_free (path);
 }
 
-static void
-insert_history_item (GeditHistoryEntry *entry,
-		     const gchar       *text,
-		     gboolean           prepend)
+void
+gedit_history_entry_prepend_text (GeditHistoryEntry *entry,
+				  const gchar       *text)
 {
 	GtkListStore *store;
 
+	g_return_if_fail (GEDIT_IS_HISTORY_ENTRY (entry));
+	g_return_if_fail (text != NULL);
+
 	if (g_utf8_strlen (text, -1) <= MIN_ITEM_LEN)
+	{
 		return;
+	}
 
 	store = get_history_store (entry);
-
-	/* remove the text from the store if it was already
-	 * present. If it wasn't, clamp to max history - 1
-	 * before inserting the new row, otherwise appending
-	 * would not work */
 
 	if (!remove_item (entry, text))
 	{
 		clamp_list_store (store, entry->history_length - 1);
 	}
 
-	if (prepend)
-	{
-		gtk_combo_box_text_prepend_text (GTK_COMBO_BOX_TEXT (entry), text);
-	}
-	else
-	{
-		gtk_combo_box_text_append_text (GTK_COMBO_BOX_TEXT (entry), text);
-	}
-
+	gtk_combo_box_text_prepend_text (GTK_COMBO_BOX_TEXT (entry), text);
 	gedit_history_entry_save_history (entry);
-}
-
-void
-gedit_history_entry_prepend_text (GeditHistoryEntry *entry,
-				  const gchar       *text)
-{
-	g_return_if_fail (GEDIT_IS_HISTORY_ENTRY (entry));
-	g_return_if_fail (text != NULL);
-
-	insert_history_item (entry, text, TRUE);
-}
-
-void
-gedit_history_entry_append_text (GeditHistoryEntry *entry,
-				 const gchar       *text)
-{
-	g_return_if_fail (GEDIT_IS_HISTORY_ENTRY (entry));
-	g_return_if_fail (text != NULL);
-
-	insert_history_item (entry, text, FALSE);
 }
 
 void
