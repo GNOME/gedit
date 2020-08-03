@@ -4,15 +4,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gedit\n"
-"POT-Creation-Date: 2020-03-02 09:24+0000\n"
-"PO-Revision-Date: 2020-03-04 00:56+0100\n"
+"POT-Creation-Date: 2020-07-08 15:05+0000\n"
+"PO-Revision-Date: 2020-08-03 02:57+0200\n"
 "Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.3\n"
+"X-Generator: Poedit 2.3.1\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
@@ -40,10 +40,9 @@ msgstr "Ändra text- och bakgrundsfärgerna i gedit."
 #: C/gedit-plugins-quick-open.page:11 C/gedit-plugins-snippets.page:9
 #: C/gedit-plugins-sort.page:14 C/gedit-printing.page:10
 #: C/gedit-quickstart.page:12 C/gedit-replace.page:14 C/gedit-save-file.page:13
-#: C/gedit-search.page:12 C/gedit-shortcut-keys.page:14
-#: C/gedit-spellcheck.page:12 C/gedit-syntax-highlighting.page:10
-#: C/gedit-tabs-moving.page:13 C/gedit-tabs.page:14
-#: C/gedit-undo-recent-action.page:12 C/index.page:14
+#: C/gedit-search.page:12 C/gedit-spellcheck.page:12
+#: C/gedit-syntax-highlighting.page:10 C/gedit-tabs-moving.page:13
+#: C/gedit-tabs.page:14 C/gedit-undo-redo.page:12 C/index.page:14
 msgid "Jim Campbell"
 msgstr "Jim Campbell"
 
@@ -54,13 +53,11 @@ msgstr "Jana Svarova"
 
 #. (itstool) path: credit/years
 #: C/gedit-change-color-scheme.page:20 C/gedit-change-color-scheme.page:25
-#: C/gedit-shortcut-keys.page:41
 msgid "2015"
 msgstr "2015"
 
 #. (itstool) path: credit/name
 #: C/gedit-change-color-scheme.page:23 C/gedit-replace.page:26
-#: C/gedit-shortcut-keys.page:39
 msgid "Ekaterina Gerasimova"
 msgstr "Ekaterina Gerasimova"
 
@@ -214,18 +211,16 @@ msgstr "Stäng en fil"
 #. (itstool) path: page/p
 #: C/gedit-close-file.page:20
 msgid ""
-"To close a file in <app>gedit</app>, select <gui style=\"menuitem\">Close</"
-"gui>. Alternately, you can click the small \"X\" that appears on the right-"
-"side of the file's tab, or press <keyseq><key>Ctrl</key> <key>W</key></"
-"keyseq>."
+"To close a file in <app>gedit</app>, click the <gui style=\"button\">×</gui> "
+"that appears on the right-side of the file's tab, or press "
+"<keyseq><key>Ctrl</key><key>W</key></keyseq>."
 msgstr ""
-"För att stänga en fil i <app>gedit</app>, välj <gui style=\"menuitem"
-"\">Stäng</gui>. Alternativt kan du klicka på det lilla ”X” som dyker upp på "
-"högersidan av filens flik, eller trycka <keyseq><key>Ctrl</key> <key>W</"
-"key></keyseq>."
+"För att stänga en fil i <app>gedit</app>, klicka på knappen <gui style="
+"\"button\">×</gui> till höger i filens flik, eller tryck <keyseq><key>Ctrl</"
+"key><key>W</key></keyseq>."
 
 #. (itstool) path: page/p
-#: C/gedit-close-file.page:24
+#: C/gedit-close-file.page:23
 msgid ""
 "Any one of these actions will close a file in <app>gedit</app>. If your file "
 "contains changes that have not been saved, <app>gedit</app> will prompt you "
@@ -244,7 +239,7 @@ msgstr "Öppna en ny fil för redigering."
 #: C/gedit-create-new-file.page:16 C/gedit-full-screen.page:17
 #: C/gedit-open-files.page:21 C/gedit-plugins-quick-open.page:15
 #: C/gedit-replace.page:30 C/gedit-save-file.page:21 C/gedit-search.page:24
-#: C/gedit-tabs.page:31 C/gedit-undo-recent-action.page:24
+#: C/gedit-tabs.page:31 C/gedit-undo-redo.page:24
 msgid "Shobha Tyagi"
 msgstr "Shobha Tyagi"
 
@@ -257,12 +252,12 @@ msgstr "Skapa en ny fil"
 #: C/gedit-create-new-file.page:24
 msgid ""
 "The easiest way to create a new file in <app>gedit</app>, is to click the "
-"<gui>Create a new document</gui> button on the left side of the toolbar, or "
-"press <keyseq><key>Ctrl</key><key>T</key></keyseq>."
+"<gui>Create a new document</gui> button on the left side of the header bar, "
+"or press <keyseq><key>Ctrl</key><key>T</key></keyseq>."
 msgstr ""
 "Det enklaste sättet att skapa en ny fil i <app>gedit</app> är att klicka på "
-"knappen <gui>Skapa nytt dokument</gui> på vänstersidan av verktygsfältet, "
-"eller trycka <keyseq><key>Ctrl</key><key>T</key></keyseq>."
+"knappen <gui>Skapa nytt dokument</gui> till vänster i rubrikraden, eller "
+"trycka <keyseq><key>Ctrl</key><key>T</key></keyseq>."
 
 #. (itstool) path: page/p
 #: C/gedit-create-new-file.page:28
@@ -364,7 +359,7 @@ msgstr "Filgrunder: öppna, stänga och spara filer"
 #: C/gedit-files-basic.page:18
 msgid ""
 "If you are new to <app>gedit</app>, these topics will help you with "
-"creating, saving, and opening and closing files."
+"creating, saving, opening and closing files."
 msgstr ""
 "Om du är nybörjare med <app>gedit</app> kommer dessa ämnen att hjälpa dig "
 "med att skapa, spara, öppna och stänga filer."
@@ -507,6 +502,7 @@ msgstr "Öppna filer från sidopanelen"
 
 #. (itstool) path: section/p
 #: C/gedit-open-files-from-sidepane.page:40
+#: C/gedit-plugins-file-browser.page:34
 msgid ""
 "To open files from the side panel, first open the side panel by selecting "
 "<guiseq><gui>View</gui> <gui>Side Panel</gui></guiseq> (or just press "
@@ -520,6 +516,7 @@ msgstr ""
 
 #. (itstool) path: section/p
 #: C/gedit-open-files-from-sidepane.page:48
+#: C/gedit-plugins-file-browser.page:42
 msgid ""
 "This will activate the <em>File Browser</em> mode of the side panel. You can "
 "then use the navigation buttons at the top of the panel to locate and open "
@@ -667,30 +664,21 @@ msgstr "Klicka på <gui>Öppna</gui> i rubrikraden."
 
 #. (itstool) path: item/p
 #: C/gedit-open-on-server.page:33
-msgid "Click <gui>Other Documents…</gui>."
-msgstr "Klicka på <gui>Andra dokument…</gui>."
+msgid "Click <gui>Other Locations</gui>."
+msgstr "Klicka på <gui>Andra platser</gui>."
 
 #. (itstool) path: item/p
 #: C/gedit-open-on-server.page:34
-msgid ""
-"Press <keyseq><key>Ctrl</key><key>L</key></keyseq> in the <gui>Open</gui> "
-"dialog."
-msgstr ""
-"Tryck <keyseq><key>Ctrl</key><key>L</key></keyseq> i dialogrutan <gui>Öppna</"
-"gui>."
-
-#. (itstool) path: item/p
-#: C/gedit-open-on-server.page:36
 msgid "Enter the IP Address or URL of the appropriate server."
 msgstr "Ange IP-adress eller URL för lämplig server."
 
 #. (itstool) path: item/p
-#: C/gedit-open-on-server.page:38
+#: C/gedit-open-on-server.page:36
 msgid "Find and select the file that you wish to open."
 msgstr "Hitta och välj filen som du vill öppna."
 
 #. (itstool) path: item/p
-#: C/gedit-open-on-server.page:39
+#: C/gedit-open-on-server.page:37
 msgid ""
 "Use the Character Encoding drop-down list to select the appropriate "
 "character coding."
@@ -698,21 +686,21 @@ msgstr ""
 "Använd rullgardinsmenyn Teckenkodning för att välja lämplig teckenkodning."
 
 #. (itstool) path: item/p
-#: C/gedit-open-on-server.page:41 C/gedit-plugins-quick-open.page:46
+#: C/gedit-open-on-server.page:39 C/gedit-plugins-quick-open.page:44
 msgid "Click <gui>Open</gui>."
 msgstr "Klicka på <gui>Öppna</gui>."
 
 #. (itstool) path: page/p
-#: C/gedit-open-on-server.page:44
+#: C/gedit-open-on-server.page:42
 msgid ""
 "Valid types of URI include http:, ftp:, file:, and all of the methods "
-"supported by <app>gvfs</app>."
+"supported by <app>GVfs</app>."
 msgstr ""
 "Giltiga typer av URI inkluderar http:, ftp:, file: och alla de metoder som "
-"stöds av <app>gvfs</app>."
+"stöds av <app>GVfs</app>."
 
 #. (itstool) path: note/p
-#: C/gedit-open-on-server.page:48
+#: C/gedit-open-on-server.page:46
 msgid ""
 "Files from some types of URI are opened as read-only, and any changes you "
 "make must be saved to a different location. For example, HTTP only allows "
@@ -726,8 +714,8 @@ msgstr ""
 
 #. (itstool) path: info/desc
 #: C/gedit-open-recent.page:7
-msgid "Access files that you have updated recently."
-msgstr "Kom åt filer som du har uppdaterat nyligen."
+msgid "Access files that you have previously opened in <app>gedit</app>."
+msgstr "Kom åt filer som du har öppnat tidigare i <app>gedit</app>."
 
 #. (itstool) path: page/title
 #: C/gedit-open-recent.page:18
@@ -737,58 +725,43 @@ msgstr "Återöppna en nyligen använd fil"
 #. (itstool) path: page/p
 #: C/gedit-open-recent.page:20
 msgid ""
-"By default, <app>gedit</app> provides easy access to five of your most "
-"recently-used files. Here is how you can open a recently-used file:"
+"<app>gedit</app> provides easy access to your ten most recently-used files, "
+"that have been previously opened in <app>gedit</app>. Here is how you can "
+"open a recently-used file:"
 msgstr ""
-"Som standard tillhandahåller <app>gedit</app> lätt åtkomst till fem av dina "
-"senast använda filer. Här kan du se hur du kan öppna en nyligen använd fil:"
-
-#. (itstool) path: item/p
-#: C/gedit-open-recent.page:23
-msgid "Click the arrow button next to the <gui>Open</gui> button."
-msgstr "Klicka på pilknappen intill knappen <gui>Öppna</gui>."
+"<app>gedit</app> tillhandahåller lätt åtkomst till dina tio senast använda "
+"filer, som tidigare har öppnats i <app>gedit</app>. Här kan du se hur du kan "
+"öppna en nyligen använd fil:"
 
 #. (itstool) path: item/p
 #: C/gedit-open-recent.page:24
 msgid ""
-"<app>gedit</app> will display a list of the five most-recently used files."
-msgstr ""
-"<app>gedit</app> kommer att visa en lista över de fem senast använda filerna."
+"Click the arrow button next to the <gui>Open</gui> button in the header bar."
+msgstr "Klicka på pilknappen intill knappen <gui>Öppna</gui> i rubrikraden."
 
 #. (itstool) path: item/p
 #: C/gedit-open-recent.page:26
+msgid ""
+"<app>gedit</app> will display a menu with the ten most-recently used files."
+msgstr ""
+"<app>gedit</app> kommer att visa en meny med de tio senast använda filerna."
+
+#. (itstool) path: item/p
+#: C/gedit-open-recent.page:28
 msgid "Select the desired file, and it will open in a new tab."
 msgstr "Välj den önskade filen så kommer den öppnas i en ny flik."
 
-# TODO: <app>-taggar saknas.
+# TODO: *over* a recently-used file
+# https://gitlab.gnome.org/GNOME/gedit/-/issues/349
 #. (itstool) path: note/p
-#: C/gedit-open-recent.page:29
+#: C/gedit-open-recent.page:31
 msgid ""
-"To adjust the number of recently-used files that gedit displays, you will "
-"need to use the <app>dconf-editor</app> application."
+"When hovering with the mouse a recently-used file from the menu, the full "
+"path to the file is displayed in the status bar at the bottom of the "
+"<app>gedit</app> window."
 msgstr ""
-"För att justera antalet nyligen använda filer som gedit visar kommer du att "
-"behöva använda programmet <app>dconf-editor</app>."
-
-#. (itstool) path: item/p
-#: C/gedit-open-recent.page:33
-msgid ""
-"Launch <app>dconf-editor</app> and select <guiseq><gui>org</gui> <gui>gnome</"
-"gui><gui>gedit</gui><gui>preferences</gui><gui>ui</gui> <gui>max-recents</"
-"gui></guiseq>."
-msgstr ""
-"Starta <app>dconf-editor</app> och välj <guiseq><gui>org</gui> <gui>gnome</"
-"gui><gui>gedit</gui><gui>preferences</gui><gui>ui</gui> <gui>max-recents</"
-"gui></guiseq>."
-
-#. (itstool) path: item/p
-#: C/gedit-open-recent.page:36
-msgid ""
-"Double-click on the number next to <gui>max-recents</gui> and change the "
-"number to your desired value."
-msgstr ""
-"Dubbelklicka på talet intill <gui>max-recents</gui> och ändra talet till "
-"ditt önskade värde."
+"Vid hovring med musen över en nyligen använd fil från menyn visas filens "
+"fullständiga sökväg i statusraden längst ner i <app>gedit</app>-fönstret."
 
 #. (itstool) path: info/desc
 #: C/gedit-plugin-guide.page:9
@@ -848,7 +821,7 @@ msgstr "Ytterligare insticksmoduler för gedit"
 #: C/gedit-plugins-insert-date-time.page:10 C/gedit-plugins-install.page:12
 #: C/gedit-plugins-modelines.page:9 C/gedit-plugins-sort.page:10
 #: C/gedit-replace.page:18 C/gedit-search.page:16 C/gedit-tabs-moving.page:17
-#: C/gedit-tabs.page:18 C/gedit-undo-recent-action.page:16
+#: C/gedit-tabs.page:18 C/gedit-undo-redo.page:16
 msgid "Daniel Neel"
 msgstr "Daniel Neel"
 
@@ -1073,7 +1046,7 @@ msgstr "Filbläddrarpanel"
 #: C/gedit-plugins-file-browser.page:23
 msgid ""
 "Depending on how you use <app>gedit</app>, you may find it helpful to use "
-"the <app>File Browser pane</app> plugin. This plugin embeds a <app>file "
+"the <app>File Browser panel</app> plugin. This plugin embeds a <app>file "
 "browser</app> in the side panel, giving you easy access to your frequently-"
 "used files."
 msgstr ""
@@ -1092,30 +1065,6 @@ msgstr ""
 "Du kan aktivera sidopanelen genom att välja <guiseq><gui style=\"menu"
 "\">gedit</gui><gui style=\"menuitem\">Inställningar</gui> "
 "<gui>Insticksmoduler</gui><gui>Filbläddrarpanel</gui></guiseq>."
-
-#. (itstool) path: section/p
-#: C/gedit-plugins-file-browser.page:34
-msgid ""
-"To open files from the side panel, first open the side panel by selecting "
-"<guiseq><gui>View</gui> <gui>Side Panel</gui></guiseq> (or just press "
-"<key>F9</key>), and then choose <gui>File Browser</gui> from the dropdown at "
-"the top of the pane."
-msgstr ""
-"För att öppna filer från sidopanelen, öppna först sidopanelen genom att "
-"välja <guiseq><gui>Visa</gui> <gui>Sidopanel</gui></guiseq> (eller tryck "
-"helt enkelt <key>F9</key>), och välj sedan <gui>Filbläddrare</gui> från "
-"rullgardinsmenyn högst upp i panelen."
-
-#. (itstool) path: section/p
-#: C/gedit-plugins-file-browser.page:42
-msgid ""
-"This will activate the <em>File Browser</em> mode of the side panel. You can "
-"then use the navigation buttons at the top of the pane to locate and open "
-"your desired files."
-msgstr ""
-"Detta kommer aktivera <em>filbläddrar</em>läget för sidopanelen. Du kan "
-"sedan använda navigeringsknapparna högst upp i panelen för att hitta och "
-"öppna dina önskade filer."
 
 #. (itstool) path: info/desc
 #: C/gedit-plugins-insert-date-time.page:18
@@ -1179,7 +1128,7 @@ msgid ""
 "you can choose your own default date and time format by pressing the menu "
 "button in the top-right corner of the window and selecting <guiseq> <gui "
 "style=\"menuitem\">Preferences</gui><gui style=\"tab\">Plugins</gui><gui> "
-"Insert Date/Time</gui><gui style=\"button\">Configure</gui></guiseq>."
+"Insert Date/Time</gui><gui style=\"button\">Preferences</gui></guiseq>."
 msgstr ""
 "Som standard kommer insticksmodulen <gui>Infoga datum/tid</gui> att be dig "
 "att välja ditt föredragna format för datum/tid varje gång du använder "
@@ -1187,7 +1136,7 @@ msgstr ""
 "tid genom att trycka på menyknappen i fönstrets övre högra hörn och välja "
 "<guiseq> <gui style=\"menuitem\">Inställningar</gui> <gui style=\"tab"
 "\">Insticksmoduler</gui><gui>Infoga datum/tid</gui><gui style=\"button"
-"\">Konfigurera</gui></guiseq>."
+"\">Inställningar</gui></guiseq>."
 
 #. (itstool) path: info/desc
 #: C/gedit-plugins-install.page:15
@@ -1584,17 +1533,8 @@ msgstr "Öppna snabbt en fil eller en uppsättning filer."
 msgid "Quick open"
 msgstr "Snabböppna"
 
-#. (itstool) path: note/p
-#: C/gedit-plugins-quick-open.page:24
-msgid ""
-"This plugin currently <link href=\"https://gitlab.gnome.org/GNOME/gedit/"
-"issues/277\">does not work</link>!"
-msgstr ""
-"Denna insticksmodul <link href=\"https://gitlab.gnome.org/GNOME/gedit/"
-"issues/277\">fungerar inte för tillfället</link>!"
-
 #. (itstool) path: page/p
-#: C/gedit-plugins-quick-open.page:26
+#: C/gedit-plugins-quick-open.page:24
 msgid ""
 "As the name of this plugin would imply, the <app>Quick Open</app> plugin "
 "helps you to open files more quickly than using the usual ways of opening "
@@ -1608,7 +1548,7 @@ msgstr ""
 "guiseq>."
 
 #. (itstool) path: page/p
-#: C/gedit-plugins-quick-open.page:31
+#: C/gedit-plugins-quick-open.page:29
 msgid ""
 "Once you have enabled the <app>Quick Open</app> plugin you can use it as "
 "follows:"
@@ -1617,7 +1557,7 @@ msgstr ""
 "enligt följande:"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-quick-open.page:35
+#: C/gedit-plugins-quick-open.page:33
 msgid ""
 "Open the <app>Quick Open</app> dialog box by pressing <keyseq><key>Ctrl</"
 "key><key>Alt</key><key>O</key></keyseq>, or by selecting <gui style="
@@ -1628,17 +1568,17 @@ msgstr ""
 "\"menuitem\">Snabböppna…</gui>."
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-quick-open.page:38
+#: C/gedit-plugins-quick-open.page:36
 msgid "The <gui>Quick Open</gui> file dialog will appear."
 msgstr "Fildialogen <gui>Snabböppna</gui> kommer att dyka upp."
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-quick-open.page:39
+#: C/gedit-plugins-quick-open.page:37
 msgid "Use your mouse to select the file or files that you want to open."
 msgstr "Använd musen för att välja filen eller filerna som du vill öppna."
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-quick-open.page:41
+#: C/gedit-plugins-quick-open.page:39
 msgid ""
 "To select several individual files, hold down your <key>Ctrl</key> key while "
 "you click on the files that you want to open."
@@ -1647,7 +1587,7 @@ msgstr ""
 "medan du klickar på filerna som du vill öppna."
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-quick-open.page:43
+#: C/gedit-plugins-quick-open.page:41
 msgid ""
 "To select a group of files, click on the first file that you want to open, "
 "hold down the <key>Shift</key> key, and then click on the last file in the "
@@ -1658,26 +1598,26 @@ msgstr ""
 "filer som du vill öppna."
 
 #. (itstool) path: page/p
-#: C/gedit-plugins-quick-open.page:49
+#: C/gedit-plugins-quick-open.page:47
 msgid "<app>Quick Open</app> will look for files in:"
 msgstr "<app>Snabböppna</app> kommer att leta efter filer i:"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-quick-open.page:52
+#: C/gedit-plugins-quick-open.page:50
 msgid "The directory of the currently opened document"
 msgstr "Katalogen för det aktuella öppnade dokumentet"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-quick-open.page:53
+#: C/gedit-plugins-quick-open.page:51
 msgid ""
 "The root directory of the <app xref=\"gedit-plugins-file-browser\">File "
-"Browser Pane</app> plugin"
+"Browser Panel</app> plugin"
 msgstr ""
 "Rotkatalogen för insticksmodulen <app xref=\"gedit-plugins-file-browser"
 "\">Filbläddrarpanel</app>"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-quick-open.page:56
+#: C/gedit-plugins-quick-open.page:54
 msgid ""
 "Recent documents which are also shown in the <file>Recent</file> folder in "
 "<app>Files</app>"
@@ -1686,22 +1626,22 @@ msgstr ""
 "<app>Filer</app>"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-quick-open.page:58
+#: C/gedit-plugins-quick-open.page:56
 msgid "Directories which you have bookmarked in <app>Files</app>"
 msgstr "Kataloger som du har bokmärkt i <app>Filer</app>"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-quick-open.page:60
+#: C/gedit-plugins-quick-open.page:58
 msgid "Your <file>Desktop</file> directory"
 msgstr "Din <file>Skrivbords</file>katalog"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-quick-open.page:61
+#: C/gedit-plugins-quick-open.page:59
 msgid "Your <file>Home</file> directory"
 msgstr "Din <file>Hem</file>katalog"
 
 #. (itstool) path: note/p
-#: C/gedit-plugins-quick-open.page:65
+#: C/gedit-plugins-quick-open.page:63
 msgid ""
 "<app>Quick Open</app> displays files in any of the above locations "
 "regardless of whether or not you have opened them previously."
@@ -1714,9 +1654,9 @@ msgstr ""
 #: C/gedit-printing-order.page:15 C/gedit-printing.page:14
 #: C/gedit-printing-select.page:14 C/gedit-quickstart.page:16
 #: C/gedit-replace.page:22 C/gedit-save-file.page:17 C/gedit-search.page:20
-#: C/gedit-shortcut-keys.page:30 C/gedit-spellcheck.page:20
-#: C/gedit-syntax-highlighting.page:14 C/gedit-tabs-moving.page:21
-#: C/gedit-tabs.page:22 C/gedit-undo-recent-action.page:20 C/index.page:18
+#: C/gedit-spellcheck.page:20 C/gedit-syntax-highlighting.page:14
+#: C/gedit-tabs-moving.page:21 C/gedit-tabs.page:22 C/gedit-undo-redo.page:20
+#: C/index.page:18
 msgid "Sindhu S"
 msgstr "Sindhu S"
 
@@ -2102,8 +2042,8 @@ msgstr "För att använda insticksmodulen <gui>Sortera</gui>:"
 
 #. (itstool) path: item/p
 #: C/gedit-plugins-sort.page:55
-msgid "Drag and highlight the desired lines of text."
-msgstr "Dra och markera de önskade textraderna."
+msgid "Select the desired lines of text."
+msgstr "Markera de önskade textraderna."
 
 #. (itstool) path: item/p
 #: C/gedit-plugins-sort.page:58
@@ -2520,10 +2460,6 @@ msgstr ""
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
 #: C/gedit-quickstart.page:28
-#| msgctxt "_"
-#| msgid ""
-#| "external ref='figures/gedit3-screenshot.png' "
-#| "md5='bf1c5551e623923504e51c4f9fd885b7'"
 msgctxt "_"
 msgid ""
 "external ref='figures/gedit3-screenshot.png' "
@@ -2536,12 +2472,12 @@ msgstr ""
 #: C/gedit-quickstart.page:30
 msgid ""
 "Once <app>gedit</app> launches, you can start writing right away. To save "
-"your text, just click the <gui>Save</gui> icon in the <app>gedit</app> "
-"toolbar."
+"your text, just click the <gui>Save</gui> button in the <app>gedit</app> "
+"header bar."
 msgstr ""
 "Då <app>gedit</app> startar kan du börja skriva direkt. För att spara din "
-"text klickar du bara på <gui>Spara</gui>-ikonen i <app>gedit</app>-"
-"verktygsfältet."
+"text klickar du bara på <gui>Spara</gui>-ikonen i <app>gedit</app>s "
+"rubrikrad."
 
 #. (itstool) path: page/p
 #: C/gedit-quickstart.page:34
@@ -2794,15 +2730,15 @@ msgstr "Spara en fil"
 #: C/gedit-save-file.page:30
 msgid ""
 "To save a file in <app>gedit</app>, click on the <gui style=\"button\">Save</"
-"gui> button on the right side of the toolbar or just press "
+"gui> button on the right side of the header bar or just press "
 "<keyseq><key>Ctrl</key><key>S</key></keyseq>."
 msgstr ""
 "För att spara en fil i <app>gedit</app>, klicka på knappen <gui style="
-"\"button\">Spara</gui> till höger i verktygsfältet eller tryck bara "
+"\"button\">Spara</gui> till höger i rubrikraden eller tryck helt enkelt "
 "<keyseq><key>Ctrl</key><key>S</key></keyseq>."
 
 #. (itstool) path: page/p
-#: C/gedit-save-file.page:32
+#: C/gedit-save-file.page:33
 msgid ""
 "If you are saving a new file, a dialog will appear, and you can select a "
 "name for the file, as well as the directory where you would like the file to "
@@ -2966,698 +2902,6 @@ msgstr ""
 "du har avslutat din sökning. För att ta bort färgmarkeringen, klicka <gui "
 "style=\"menuitem\">Rensa färgmarkering</gui>, eller tryck <keyseq><key>Ctrl</"
 "key><key>Skift</key><key>K</key></keyseq>."
-
-#. (itstool) path: info/desc
-#: C/gedit-shortcut-keys.page:9
-msgid "Use keyboard shortcuts to help you work more quickly."
-msgstr "Använd tangentbordsgenvägar för att få hjälp att arbeta snabbare."
-
-#. (itstool) path: credit/name
-#: C/gedit-shortcut-keys.page:18
-msgid "Paolo Borelli"
-msgstr "Paolo Borelli"
-
-#. (itstool) path: credit/name
-#: C/gedit-shortcut-keys.page:21
-msgid "Jesse van den Kieboom"
-msgstr "Jesse van den Kieboom"
-
-#. (itstool) path: credit/name
-#: C/gedit-shortcut-keys.page:24
-msgid "Steve Frécinaux"
-msgstr "Steve Frécinaux"
-
-#. (itstool) path: credit/name
-#: C/gedit-shortcut-keys.page:27
-msgid "Ignacio Casal Quinteiro"
-msgstr "Ignacio Casal Quinteiro"
-
-#. (itstool) path: credit/name
-#: C/gedit-shortcut-keys.page:34 C/gedit-tab-groups.page:15
-#: C/gedit-tabs-moving.page:25 C/gedit-tabs.page:26
-msgid "Radina Matic"
-msgstr "Radina Matic"
-
-#. (itstool) path: credit/years
-#: C/gedit-shortcut-keys.page:36 C/gedit-tab-groups.page:17
-#: C/gedit-tabs-moving.page:27 C/gedit-tabs.page:28
-msgid "2013"
-msgstr "2013"
-
-#. (itstool) path: page/title
-#: C/gedit-shortcut-keys.page:47
-msgid "Shortcut keys"
-msgstr "Kortkommandon"
-
-#. (itstool) path: page/p
-#: C/gedit-shortcut-keys.page:49
-msgid ""
-"Use <gui>shortcut keys</gui> to perform common tasks more quickly than with "
-"the mouse and menus. The following tables list all of <app>gedit's</app> "
-"shortcut keys."
-msgstr ""
-"Använd <gui>kortkommandon</gui> för att genomföra vanliga uppgifter på ett "
-"snabbare sätt än med musen och menyerna. Följande tabell listar alla "
-"kortkommandon i <app>gedit</app>."
-
-#. (itstool) path: table/title
-#: C/gedit-shortcut-keys.page:54
-msgid "Tab-related Shortcut keys"
-msgstr "Flikrelaterade kortkommandon"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:57 C/gedit-shortcut-keys.page:113
-#: C/gedit-shortcut-keys.page:158 C/gedit-shortcut-keys.page:244
-#: C/gedit-shortcut-keys.page:264 C/gedit-shortcut-keys.page:316
-#: C/gedit-shortcut-keys.page:349 C/gedit-shortcut-keys.page:378
-msgid "Action"
-msgstr "Åtgärd"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:58 C/gedit-shortcut-keys.page:114
-#: C/gedit-shortcut-keys.page:159 C/gedit-shortcut-keys.page:245
-#: C/gedit-shortcut-keys.page:265 C/gedit-shortcut-keys.page:317
-#: C/gedit-shortcut-keys.page:350 C/gedit-shortcut-keys.page:379
-msgid "Keyboard shortcut"
-msgstr "Tangentbordsgenväg"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:63
-msgid "Switch to the next tab to the left"
-msgstr "Växla till nästa flik åt vänster"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:64
-msgid "<keyseq><key>Ctrl</key><key>Alt</key> <key>PageUp</key></keyseq>"
-msgstr "<keyseq><key>Ctrl</key><key>Alt</key> <key>PageUp</key></keyseq>"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:68
-msgid "Switch to the next tab to the right"
-msgstr "Växla till nästa flik åt höger"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:69
-msgid "<keyseq><key>Ctrl</key><key>Alt</key> <key>PageDown</key></keyseq>"
-msgstr "<keyseq><key>Ctrl</key><key>Alt</key> <key>PageDown</key></keyseq>"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:73
-msgid "Close tab"
-msgstr "Stäng flik"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:74 C/gedit-shortcut-keys.page:145
-msgid "<keyseq><key>Ctrl</key><key>W</key></keyseq>"
-msgstr "<keyseq><key>Ctrl</key><key>W</key></keyseq>"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:77
-msgid "Save all tabs"
-msgstr "Spara alla flikar"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:78
-msgid "<keyseq><key>Ctrl</key><key>Shift</key> <key>L</key></keyseq>"
-msgstr "<keyseq><key>Ctrl</key><key>Skift</key> <key>L</key></keyseq>"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:82
-msgid "Close all tabs"
-msgstr "Stäng alla flikar"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:83
-msgid "<keyseq><key>Ctrl</key><key>Shift</key><key>W</key></keyseq>"
-msgstr "<keyseq><key>Ctrl</key><key>Skift</key><key>W</key></keyseq>"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:86
-msgid "Reopen the most recently closed tab"
-msgstr "Återöppna den senast stängda fliken"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:87
-msgid "<keyseq><key>Ctrl</key><key>Shift</key><key>T</key></keyseq>"
-msgstr "<keyseq><key>Ctrl</key><key>Skift</key><key>T</key></keyseq>"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:90
-msgid "Jump to <var>n</var>th tab"
-msgstr "Hoppa till flik nummer <var>n</var>"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:91
-msgid "<keyseq><key>Alt</key><key> <var>n</var></key></keyseq>"
-msgstr "<keyseq><key>Alt</key><key> <var>n</var></key></keyseq>"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:95
-msgid "New tab group"
-msgstr "Ny flikgrupp"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:96
-msgid "<keyseq><key>Ctrl</key><key>Alt</key><key>N</key></keyseq>"
-msgstr "<keyseq><key>Ctrl</key><key>Alt</key><key>N</key></keyseq>"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:99
-msgid "Previous tab group"
-msgstr "Föregående flikgrupp"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:100
-msgid ""
-"<keyseq><key>Shift</key><key>Ctrl</key><key>Alt</key><key>Page up</key></"
-"keyseq>"
-msgstr ""
-"<keyseq><key>Skift</key><key>Ctrl</key><key>Alt</key><key>Page up</key></"
-"keyseq>"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:103
-msgid "Next tab group"
-msgstr "Nästa flikgrupp"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:104
-msgid ""
-"<keyseq><key>Shift</key><key>Ctrl</key><key>Alt</key><key>Page down</key></"
-"keyseq>"
-msgstr ""
-"<keyseq><key>Skift</key><key>Ctrl</key><key>Alt</key><key>Page down</key></"
-"keyseq>"
-
-#. (itstool) path: table/title
-#: C/gedit-shortcut-keys.page:110
-msgid "Shortcut keys for working with files"
-msgstr "Kortkommandon för arbete med filer"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:119
-msgid "Create a new document in a new window"
-msgstr "Skapa ett nytt dokument i ett nytt fönster"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:120
-msgid "<keyseq><key>Ctrl</key><key>N</key></keyseq>"
-msgstr "<keyseq><key>Ctrl</key><key>N</key></keyseq>"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:123
-msgid "Create a new document in a new tab"
-msgstr "Skapa ett nytt dokument i en ny flik"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:124
-msgid "<keyseq><key>Ctrl</key><key>T</key></keyseq>"
-msgstr "<keyseq><key>Ctrl</key><key>T</key></keyseq>"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:127
-msgid "Open a document"
-msgstr "Öppna ett dokument"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:128
-msgid "<keyseq><key>Ctrl</key><key>O</key></keyseq>"
-msgstr "<keyseq><key>Ctrl</key><key>O</key></keyseq>"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:131
-msgid "Save the current document"
-msgstr "Spara aktuellt dokument"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:132
-msgid "<keyseq><key>Ctrl</key><key>S</key></keyseq>"
-msgstr "<keyseq><key>Ctrl</key><key>S</key></keyseq>"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:135
-msgid "Save the current document with a new filename"
-msgstr "Spara aktuellt dokument med ett nytt filnamn"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:136
-msgid "<keyseq><key>Ctrl</key><key>Shift</key> <key>S</key></keyseq>"
-msgstr "<keyseq><key>Ctrl</key><key>Skift</key> <key>S</key></keyseq>"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:140
-msgid "Print the current document"
-msgstr "Skriv ut aktuellt dokument"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:141
-msgid "<keyseq><key>Ctrl </key><key>P</key></keyseq>"
-msgstr "<keyseq><key>Ctrl </key><key>P</key></keyseq>"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:144
-msgid "Close the current document"
-msgstr "Stäng aktuellt dokument"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:148
-msgid "Quit gedit"
-msgstr "Avsluta gedit"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:149
-msgid "<keyseq><key>Ctrl</key><key>Q</key></keyseq>"
-msgstr "<keyseq><key>Ctrl</key><key>Q</key></keyseq>"
-
-#. (itstool) path: table/title
-#: C/gedit-shortcut-keys.page:155
-msgid "Shortcut keys for editing files"
-msgstr "Kortkommandon för redigering av filer"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:164
-msgid "Move the selected word right one word"
-msgstr "Flytta markerat ord ett ord till höger"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:165
-msgid "<keyseq><key>Alt</key><key>Right Arrow</key></keyseq>"
-msgstr "<keyseq><key>Alt</key><key>Högerpil</key></keyseq>"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:168
-msgid "Move the selected word left one word"
-msgstr "Flytta markerat ord ett ord till vänster"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:169
-msgid "<keyseq><key>Alt</key><key>Left Arrow</key></keyseq>"
-msgstr "<keyseq><key>Alt</key><key>Vänsterpil</key></keyseq>"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:172
-msgid "Undo the last action"
-msgstr "Ångra föregående åtgärd"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:173
-msgid "<keyseq><key>Ctrl</key><key>Z</key></keyseq>"
-msgstr "<keyseq><key>Ctrl</key><key>Z</key></keyseq>"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:176
-msgid "Redo the last undone action"
-msgstr "Gör om senaste ångrade åtgärden"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:177
-msgid "<keyseq><key>Ctrl</key><key>Shift</key> <key>Z</key></keyseq>"
-msgstr "<keyseq><key>Ctrl</key><key>Skift</key> <key>Z</key></keyseq>"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:181
-msgid "Cut the selected text or region and place it on the clipboard"
-msgstr "Klipp ut markerad text eller område och placera den i urklipp"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:183
-msgid "<keyseq><key>Ctrl</key><key>X</key></keyseq>"
-msgstr "<keyseq><key>Ctrl</key><key>X</key></keyseq>"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:186
-msgid "Copy the selected text or region onto the clipboard"
-msgstr "Kopiera markerad text eller område till urklipp"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:187
-msgid "<keyseq><key>Ctrl</key><key>C</key></keyseq>"
-msgstr "<keyseq><key>Ctrl</key><key>C</key></keyseq>"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:190
-msgid "Paste the contents of the clipboard"
-msgstr "Klistra in innehållet i urklipp"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:191
-msgid "<keyseq><key>Ctrl</key><key>V</key></keyseq>"
-msgstr "<keyseq><key>Ctrl</key><key>V</key></keyseq>"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:194
-msgid "Select all text in the file"
-msgstr "Markera all text i filen"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:195
-msgid "<keyseq><key>Ctrl</key><key>A</key></keyseq>"
-msgstr "<keyseq><key>Ctrl</key><key>A</key></keyseq>"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:198
-msgid "Unselect all text"
-msgstr "Avmarkera all text"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:199
-msgid "<keyseq><key>Ctrl</key><key>Backslash</key></keyseq>"
-msgstr "<keyseq><key>Ctrl</key><key>Bakstreck</key></keyseq>"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:202
-msgid "Delete the current line"
-msgstr "Ta bort aktuell rad"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:203
-msgid "<keyseq><key>Ctrl</key><key>D</key></keyseq>"
-msgstr "<keyseq><key>Ctrl</key><key>D</key></keyseq>"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:206
-msgid "Move the selected line up one line"
-msgstr "Flytta markerad rad en rad uppåt"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:207
-msgid "<keyseq><key>Alt</key><key>Up Arrow</key></keyseq>"
-msgstr "<keyseq><key>Alt</key><key>Uppåtpil</key></keyseq>"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:210
-msgid "Move the selected line down one line"
-msgstr "Flytta markerad rad en rad nedåt"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:211
-msgid "<keyseq><key>Alt</key><key>Down Arrow</key></keyseq>"
-msgstr "<keyseq><key>Alt</key><key>Nedåtpil</key></keyseq>"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:214
-msgid "Add a tab stop"
-msgstr "Lägg till ett tabulatorstopp"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:215
-msgid "<keyseq><key>Tab</key></keyseq>"
-msgstr "<keyseq><key>Tabb</key></keyseq>"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:218
-msgid "Remove a tab stop"
-msgstr "Ta bort ett tabulatorstopp"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:219
-msgid "<keyseq><key>Shift</key><key>Tab</key></keyseq>"
-msgstr "<keyseq><key>Skift</key><key>Tabb</key></keyseq>"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:222
-msgid "Convert the selected text to upper case"
-msgstr "Konvertera markerad text till versaler"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:223
-msgid "<keyseq><key>Ctrl</key><key>U</key></keyseq>"
-msgstr "<keyseq><key>Ctrl</key><key>U</key></keyseq>"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:226
-msgid "Convert the selected text to lower case"
-msgstr "Konvertera markerad text till gemener"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:227
-msgid "<keyseq><key>Ctrl</key><key>L</key></keyseq>"
-msgstr "<keyseq><key>Ctrl</key><key>L</key></keyseq>"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:230
-msgid "Toggle case of the selected text"
-msgstr "Växla skiftläge för markerad text"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:231
-msgid "<keyseq><key>Ctrl</key><key>~</key></keyseq>"
-msgstr "<keyseq><key>Ctrl</key><key>~</key></keyseq>"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:234
-msgid "Toggle cursor visibility"
-msgstr "Växla markörsynlighet"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:235
-msgid "<keyseq><key>F7</key></keyseq>"
-msgstr "<keyseq><key>F7</key></keyseq>"
-
-#. (itstool) path: table/title
-#: C/gedit-shortcut-keys.page:241
-msgid "Shortcut keys for showing and hiding panes"
-msgstr "Kortkommandon för att visa och dölja paneler"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:250
-msgid "Show / hide the side panel"
-msgstr "Visa / dölj sidopanelen"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:251
-msgid "<key>F9</key>"
-msgstr "<key>F9</key>"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:254
-msgid "Open the file menu"
-msgstr "Öppna filmenyn"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:255
-msgid "<key>F10</key>"
-msgstr "<key>F10</key>"
-
-#. (itstool) path: table/title
-#: C/gedit-shortcut-keys.page:261
-msgid "Shortcut keys for navigation"
-msgstr "Kortkommandon för navigering"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:270
-msgid "Move to matching bracket"
-msgstr "Gå till matchande parentes"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:271
-msgid "<keyseq><key>Ctrl</key><key>%</key></keyseq>"
-msgstr "<keyseq><key>Ctrl</key><key>%</key></keyseq>"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:274
-msgid "Goto line"
-msgstr "Gå till rad"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:275
-msgid "<keyseq><key>Ctrl</key><key>I</key></keyseq>"
-msgstr "<keyseq><key>Ctrl</key><key>I</key></keyseq>"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:278
-msgid "Move to the beginning of the current line"
-msgstr "Gå till början på aktuell rad"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:279
-msgid "<key>Home</key>"
-msgstr "<key>Home</key>"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:282
-msgid "Move to the end of the current line"
-msgstr "Gå till slutet på aktuell rad"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:283
-msgid "<key>End</key>"
-msgstr "<key>End</key>"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:286
-msgid "Move to the beginning of the document"
-msgstr "Gå till början på dokumentet"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:287
-msgid "<keyseq><key>Ctrl</key><key>Home</key></keyseq>"
-msgstr "<keyseq><key>Ctrl</key><key>Home</key></keyseq>"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:290
-msgid "Move to the end of the document"
-msgstr "Gå till slutet på dokumentet"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:291
-msgid "<keyseq><key>Ctrl</key><key>End</key></keyseq>"
-msgstr "<keyseq><key>Ctrl</key><key>End</key></keyseq>"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:294
-msgid "Move viewport up within the file"
-msgstr "Flytta visningsområde uppåt i filen"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:295
-msgid "<keyseq><key>Shift</key><key>Alt</key><key>Up</key></keyseq>"
-msgstr "<keyseq><key>Skift</key><key>Alt</key><key>Upp</key></keyseq>"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:298
-msgid "Move viewport down within the file"
-msgstr "Flytta visningsområde nedåt i filen"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:299
-msgid "<keyseq><key>Shift</key><key>Alt</key><key>Down</key></keyseq>"
-msgstr "<keyseq><key>Skift</key><key>Alt</key><key>Ned</key></keyseq>"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:302
-msgid "Move viewport to beginning of file"
-msgstr "Flytta visningsområde till början på filen"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:303
-msgid "<keyseq><key>Shift</key><key>Alt</key><key>Home</key></keyseq>"
-msgstr "<keyseq><key>Skift</key><key>Alt</key><key>Home</key></keyseq>"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:306
-msgid "Move viewport to end of file"
-msgstr "Flytta visningsområde till slutet på filen"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:307
-msgid "<keyseq><key>Shift</key><key>Alt</key><key>End</key></keyseq>"
-msgstr "<keyseq><key>Skift</key><key>Alt</key><key>End</key></keyseq>"
-
-#. (itstool) path: table/title
-#: C/gedit-shortcut-keys.page:313
-msgid "Shortcut keys for searching"
-msgstr "Kortkommandon för sökning"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:322
-msgid "Find a string"
-msgstr "Sök efter en sträng"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:323
-msgid "<keyseq><key>Ctrl</key><key>F</key></keyseq>"
-msgstr "<keyseq><key>Ctrl</key><key>F</key></keyseq>"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:326
-msgid "Find the next instance of the string"
-msgstr "Sök nästa förekomst av strängen"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:327
-msgid "<keyseq><key>Ctrl</key><key>G</key></keyseq>"
-msgstr "<keyseq><key>Ctrl</key><key>G</key></keyseq>"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:330
-msgid "Find the previous instance of the string"
-msgstr "Sök föregående förekomst av strängen"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:331
-msgid "<keyseq><key>Ctrl</key><key>Shift</key><key>G</key></keyseq>"
-msgstr "<keyseq><key>Ctrl</key><key>Skift</key><key>G</key></keyseq>"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:334
-msgid "Search and Replace"
-msgstr "Sök och ersätt"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:335
-msgid "<keyseq><key>Ctrl</key><key>H</key></keyseq>"
-msgstr "<keyseq><key>Ctrl</key><key>H</key></keyseq>"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:338
-msgid "Clear highlight"
-msgstr "Ta bort markering"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:339
-msgid "<keyseq><key>Ctrl</key><key>Shift</key> <key>K</key></keyseq>"
-msgstr "<keyseq><key>Ctrl</key><key>Skift</key> <key>K</key></keyseq>"
-
-#. (itstool) path: table/title
-#: C/gedit-shortcut-keys.page:346
-msgid "Shortcut keys for tools"
-msgstr "Kortkommandon för verktyg"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:355
-msgid "Check spelling"
-msgstr "Kontrollera stavning"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:356
-msgid "<keyseq><key>Shift</key><key>F7</key></keyseq>"
-msgstr "<keyseq><key>Skift</key><key>F7</key></keyseq>"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:359
-msgid "Remove trailing spaces (with plugin)"
-msgstr "Ta bort eftersläpande blanksteg (med insticksmodul)"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:360
-msgid "<keyseq><key>Alt</key><key>F12</key></keyseq>"
-msgstr "<keyseq><key>Alt</key><key>F12</key></keyseq>"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:363
-msgid "Run \"make\" in the current directory (with plugin)"
-msgstr "Kör ”make” i aktuell katalog (med insticksmodul)"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:364
-msgid "<key>F8</key>"
-msgstr "<key>F8</key>"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:367
-msgid "Directory listing (with plugin)"
-msgstr "Kataloglistning (med insticksmodul)"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:368
-msgid "<keyseq><key>Ctrl</key><key>Shift</key> <key>D</key></keyseq>"
-msgstr "<keyseq><key>Ctrl</key><key>Skift</key> <key>D</key></keyseq>"
-
-#. (itstool) path: table/title
-#: C/gedit-shortcut-keys.page:375
-msgid "Shortcut keys for user help"
-msgstr "Kortkommandon för användarhjälp"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:384
-msgid "Open the gedit user guide"
-msgstr "Öppna användarguiden för gedit"
-
-#. (itstool) path: td/p
-#: C/gedit-shortcut-keys.page:385
-msgid "<key>F1</key>"
-msgstr "<key>F1</key>"
 
 #. (itstool) path: info/desc
 #: C/gedit-spellcheck.page:7
@@ -3905,23 +3149,33 @@ msgstr ""
 "längst ner i <app>gedit</app>-fönstret."
 
 #. (itstool) path: info/desc
-#: C/gedit-tab-groups.page:11
+#: C/gedit-tab-groups.page:10
 msgid "Group similar tabs together."
 msgstr "Gruppera liknande flikar tillsammans."
 
+#. (itstool) path: credit/name
+#: C/gedit-tab-groups.page:14 C/gedit-tabs-moving.page:25 C/gedit-tabs.page:26
+msgid "Radina Matic"
+msgstr "Radina Matic"
+
+#. (itstool) path: credit/years
+#: C/gedit-tab-groups.page:16 C/gedit-tabs-moving.page:27 C/gedit-tabs.page:28
+msgid "2013"
+msgstr "2013"
+
 #. (itstool) path: page/title
-#: C/gedit-tab-groups.page:23
+#: C/gedit-tab-groups.page:22
 msgid "Organize files in grouped tabs"
 msgstr "Organisera filer i grupperade flikar"
 
 #. (itstool) path: page/p
-#: C/gedit-tab-groups.page:25
+#: C/gedit-tab-groups.page:24
 msgid ""
 "If you are working with multiple tabs in <app>gedit</app> you can group "
 "them, making it easier to keep your opened files organized. Adding a new tab "
 "group will divide the <app>gedit</app> window in two panes, open a new "
-"\"Untitled Document\" in the new pane, and make it active. You can open "
-"files into that tab group and move tabs from one tab group to another."
+"“Untitled Document” in the new pane, and make it active. You can open files "
+"into that tab group and move tabs from one tab group to another."
 msgstr ""
 "Om du arbetar med flera flikar i <app>gedit</app> kan du gruppera dem vilket "
 "gör det lättare att hålla dina öppnade filer organiserade. Att lägga till en "
@@ -3931,26 +3185,22 @@ msgstr ""
 "annan."
 
 #. (itstool) path: section/title
-#: C/gedit-tab-groups.page:32
+#: C/gedit-tab-groups.page:31
 msgid "Open a new tab group in the gedit window"
 msgstr "Öppna en ny flikgrupp i geditfönstret"
 
 #. (itstool) path: section/p
-#: C/gedit-tab-groups.page:34
+#: C/gedit-tab-groups.page:33
 msgid "To open a new tab group you can:"
 msgstr "För att öppna en ny flikgrupp kan du:"
 
 #. (itstool) path: item/p
-#: C/gedit-tab-groups.page:38
-msgid ""
-"Go to <guiseq><gui>Documents</gui><gui>New Tab Group</gui></guiseq> in the "
-"main menu."
-msgstr ""
-"Gå till <guiseq><gui>Dokument</gui><gui>Ny flikgrupp</gui></guiseq> i "
-"huvudmenyn."
+#: C/gedit-tab-groups.page:37
+msgid "Right click on a tab and select <gui>Move to New Tab Group</gui>."
+msgstr "Högerklicka på en flik och välj <gui>Flytta till ny flikgrupp</gui>."
 
 #. (itstool) path: item/p
-#: C/gedit-tab-groups.page:42
+#: C/gedit-tab-groups.page:40
 msgid ""
 "Use the <keyseq><key>Ctrl</key><key>Alt</key><key>N</key></keyseq> shortcut."
 msgstr ""
@@ -3958,11 +3208,11 @@ msgstr ""
 "keyseq>."
 
 #. (itstool) path: section/p
-#: C/gedit-tab-groups.page:47
+#: C/gedit-tab-groups.page:45
 msgid ""
 "This action will divide the <app>gedit</app> window in two panes, and the "
 "pane with the new tab group will be placed on the right of the active tab. "
-"You can move the handle right or left assigning more or less space of "
+"You can move the handle right or left assigning more or less space of the "
 "<app>gedit</app> window between panes according to your needs."
 msgstr ""
 "Denna åtgärd kommer dela <app>gedit</app>-fönstret i två paneler, och "
@@ -3972,112 +3222,53 @@ msgstr ""
 "dina behov."
 
 #. (itstool) path: section/p
-#: C/gedit-tab-groups.page:52
+#: C/gedit-tab-groups.page:50
 msgid ""
-"You can open as much tab groups in <app>gedit</app> window as your screen "
+"You can open as much tab groups in a <app>gedit</app> window as your screen "
 "allows, but you will have to move the handle in order to see them correctly."
 msgstr ""
-"Du kan öppna så många flikgrupper i <app>gedit</app>-fönstret som din skärm "
-"tillåter, men du kommer att behöva flytta handtaget för att se dem korrekt."
+"Du kan öppna så många flikgrupper i ett <app>gedit</app>-fönster som din "
+"skärm tillåter, men du kommer att behöva flytta handtaget för att se dem "
+"korrekt."
 
 #. (itstool) path: section/p
-#: C/gedit-tab-groups.page:56
+#: C/gedit-tab-groups.page:54
 msgid ""
 "To close a tab group pane just close all the tabs that are opened inside it."
 msgstr ""
 "För att stänga en flikgruppspanel, stäng bara alla flikar som är öppna i den."
 
 #. (itstool) path: section/title
-#: C/gedit-tab-groups.page:62
-msgid "Move through tab groups"
-msgstr "Gå mellan flikgrupper"
-
-#. (itstool) path: section/p
-#: C/gedit-tab-groups.page:64
-msgid "To move forward (on the next) tab group:"
-msgstr "För att gå framåt till (nästa) flikgrupp:"
-
-#. (itstool) path: item/p
-#: C/gedit-tab-groups.page:68
-msgid ""
-"Go to <guiseq><gui>Documents</gui><gui>Next Tab Group</gui></guiseq> in the "
-"main menu."
-msgstr ""
-"Gå till <guiseq><gui>Dokument</gui><gui>Nästa flikgrupp</gui></guiseq> i "
-"huvudmenyn."
-
-#. (itstool) path: item/p
-#: C/gedit-tab-groups.page:72
-msgid ""
-"Use the <keyseq><key>Shift</key><key>Ctrl</key><key>Alt</key><key>Page down</"
-"key></keyseq> shortcut."
-msgstr ""
-"Använd kortkommandot <keyseq><key>Skift</key><key>Ctrl</key><key>Alt</"
-"key><key>Page down</key></keyseq>."
-
-#. (itstool) path: section/p
-#: C/gedit-tab-groups.page:77
-msgid "To move backward (on the previous) tab group:"
-msgstr "För att gå bakåt till (föregående) flikgrupp:"
-
-#. (itstool) path: item/p
-#: C/gedit-tab-groups.page:81
-msgid ""
-"Go to <guiseq><gui>Documents</gui><gui>Previous Tab Group</gui></guiseq> in "
-"the main menu."
-msgstr ""
-"Gå till <guiseq><gui>Dokument</gui><gui>Föregående flikgrupp</gui></guiseq> "
-"i huvudmenyn."
-
-#. (itstool) path: item/p
-#: C/gedit-tab-groups.page:85
-msgid ""
-"Use the <keyseq><key>Shift</key><key>Ctrl</key><key>Alt</key><key>Page up</"
-"key></keyseq> shortcut."
-msgstr ""
-"Använd kortkommandot <keyseq><key>Skift</key><key>Ctrl</key><key>Alt</"
-"key><key>Page up</key></keyseq>."
-
-#. (itstool) path: section/title
-#: C/gedit-tab-groups.page:93
+#: C/gedit-tab-groups.page:84
 msgid "Move a tab to another tab group"
 msgstr "Flytta en flik till en annan flikgrupp"
 
 #. (itstool) path: section/p
-#: C/gedit-tab-groups.page:95
+#: C/gedit-tab-groups.page:86
 msgid "If you want to move a tab from one tab group to another:"
 msgstr "Om du vill flytta en flik från en flikgrupp till en annan:"
 
 #. (itstool) path: item/p
-#: C/gedit-tab-groups.page:99 C/gedit-tabs-moving.page:45
-#: C/gedit-tabs-moving.page:66 C/gedit-tabs-moving.page:89
+#: C/gedit-tab-groups.page:90 C/gedit-tabs-moving.page:45
+#: C/gedit-tabs-moving.page:65 C/gedit-tabs-moving.page:88
 msgid "Click and hold the mouse button on the tab."
 msgstr "Klicka och håll ner musknappen på fliken."
 
 #. (itstool) path: item/p
-#: C/gedit-tab-groups.page:102
+#: C/gedit-tab-groups.page:93
 msgid "Drag the tab to another tab group pane."
 msgstr "Dra fliken till en annan flikgruppspanel."
 
 #. (itstool) path: item/p
-#: C/gedit-tab-groups.page:105
+#: C/gedit-tab-groups.page:96
 msgid "Place it beside other tabs in the tab group."
 msgstr "Placera den bredvid andra flikar i flikgruppen."
 
 #. (itstool) path: item/p
-#: C/gedit-tab-groups.page:108 C/gedit-tabs-moving.page:51
-#: C/gedit-tabs-moving.page:72 C/gedit-tabs-moving.page:98
+#: C/gedit-tab-groups.page:99 C/gedit-tabs-moving.page:51
+#: C/gedit-tabs-moving.page:71 C/gedit-tabs-moving.page:97
 msgid "Release the mouse button."
 msgstr "Släpp musknappen."
-
-#. (itstool) path: section/p
-#: C/gedit-tab-groups.page:112
-msgid ""
-"See the <link xref=\"gedit-shortcut-keys\">tab-related shortcut keys</link> "
-"table to make it easier to manage your tab groups."
-msgstr ""
-"Se tabellen <link xref=\"gedit-shortcut-keys\">flikrelaterade kortkommandon</"
-"link> för att göra det lättare att hantera dina flikgrupper."
 
 #. (itstool) path: info/desc
 #: C/gedit-tabs-moving.page:10
@@ -4112,10 +3303,9 @@ msgstr "Ändra ordningen på flikarna i geditfönstret"
 msgid "To change the ordering of tabs in a window:"
 msgstr "För att ändra ordningen på flikar i ett fönster:"
 
-# TODO: the other tabs.
 #. (itstool) path: item/p
 #: C/gedit-tabs-moving.page:48
-msgid "Move the tab to the desired position among the other tab."
+msgid "Move the tab to the desired position among the other tabs."
 msgstr "Dra fliken till den önskade positionen bland de andra flikarna."
 
 #. (itstool) path: section/p
@@ -4128,22 +3318,22 @@ msgstr ""
 "omedelbart intill andra öppna flikar."
 
 #. (itstool) path: section/title
-#: C/gedit-tabs-moving.page:61
+#: C/gedit-tabs-moving.page:60
 msgid "Move a tab, creating a new gedit window"
 msgstr "Flytta en flik, skapa ett nytt geditfönster"
 
 #. (itstool) path: section/p
-#: C/gedit-tabs-moving.page:62
+#: C/gedit-tabs-moving.page:61
 msgid "To create a new window from an existing tab:"
 msgstr "För att skapa ett nytt fönster från en befintlig flik:"
 
 #. (itstool) path: item/p
-#: C/gedit-tabs-moving.page:69
+#: C/gedit-tabs-moving.page:68
 msgid "Drag the tab out of the <app>gedit</app> window."
 msgstr "Dra fliken ut ur <app>gedit</app>-fönstret."
 
 #. (itstool) path: note/p
-#: C/gedit-tabs-moving.page:77
+#: C/gedit-tabs-moving.page:76
 msgid ""
 "To move a tab into a new window when <app>gedit</app> is maximized, drag the "
 "tab onto the top bar at the top of the screen."
@@ -4152,27 +3342,27 @@ msgstr ""
 "maximerat, dra fliken till systemraden högst upp på skärmen."
 
 #. (itstool) path: section/title
-#: C/gedit-tabs-moving.page:83
+#: C/gedit-tabs-moving.page:82
 msgid "Move a tab to another gedit window"
 msgstr "Flytta en flik till ett annat geditfönster"
 
 #. (itstool) path: section/p
-#: C/gedit-tabs-moving.page:85
+#: C/gedit-tabs-moving.page:84
 msgid "If you want to move a tab from one window to another:"
 msgstr "Om du vill flytta en flik från ett fönster till ett annat:"
 
 #. (itstool) path: item/p
-#: C/gedit-tabs-moving.page:92
+#: C/gedit-tabs-moving.page:91
 msgid "Drag the tab to the new window."
 msgstr "Dra fliken till det nya fönstret."
 
 #. (itstool) path: item/p
-#: C/gedit-tabs-moving.page:95
+#: C/gedit-tabs-moving.page:94
 msgid "Place it beside other tabs in the new window."
 msgstr "Placera den bredvid andra flikar i det nya fönstret."
 
 #. (itstool) path: note/p
-#: C/gedit-tabs-moving.page:104
+#: C/gedit-tabs-moving.page:103
 msgid ""
 "You may find it easier to move a tab from one window to another by dragging "
 "the tab to the <gui>Activities</gui> hot-corner of <gui>GNOME Shell</gui>. "
@@ -4183,15 +3373,6 @@ msgstr ""
 "genom att dra fliken till övre vänstra hörnet <gui>Aktiviteter</gui> i "
 "<gui>GNOME Shell</gui>. Detta kommer att visa alla öppna <app>gedit</app>-"
 "fönster. Du kan sedan släppa fliken på det önskade <app>gedit</app>-fönstret."
-
-#. (itstool) path: section/p
-#: C/gedit-tabs-moving.page:111
-msgid ""
-"See the <link xref=\"gedit-shortcut-keys\">tab-related shortcut keys</link> "
-"table to make it easier to manage your tabs."
-msgstr ""
-"Se tabellen <link xref=\"gedit-shortcut-keys\">flikrelaterade kortkommandon</"
-"link> för att göra det lättare att hantera dina flikar."
 
 #. (itstool) path: info/desc
 #: C/gedit-tabs.page:10
@@ -4207,70 +3388,80 @@ msgstr "Lägg till och ta bort flikar"
 #: C/gedit-tabs.page:39
 msgid ""
 "Working with tabs in <app>gedit</app> allows you to keep an eye on several "
-"files in a single window. The tab that is larger than the other tabs "
-"indicates the file that is currently open. The smaller tabs indicate other "
-"files that are available to work on."
+"files in a single window."
 msgstr ""
 "Att arbeta med flikar i <app>gedit</app> låter dig hålla ett öga på flera "
-"filer i ett enda fönster. Fliken som är större än de andra flikarna "
-"indikerar filen som är öppen nu. De mindre flikarna står för andra filer som "
-"finns tillgängliga att arbeta med."
+"filer i ett enda fönster."
 
 #. (itstool) path: section/title
-#: C/gedit-tabs.page:45
+#: C/gedit-tabs.page:43
 msgid "Adding tabs"
 msgstr "Lägga till flikar"
 
 #. (itstool) path: section/p
-#: C/gedit-tabs.page:46
+#: C/gedit-tabs.page:44
 msgid ""
-"To add a new tab, create a new file with <keyseq><key>Ctrl</key> <key>T</"
-"key></keyseq>. The tab will be added to the right side of any other tabs."
+"To add a new tab to create a new file, click the <gui>Create a new document</"
+"gui> button on the left side of the header bar, or press <keyseq><key>Ctrl</"
+"key><key>T</key></keyseq>. The tab will be added to the right side of any "
+"other tabs."
 msgstr ""
-"För att lägga till en ny flik, skapa en ny fil med <keyseq><key>Ctrl</key> "
-"<key>T</key></keyseq>. Fliken kommer läggas till på höger sida om alla andra "
-"flikar."
+"För att lägga till en ny flik för att skapa en ny fil, klicka på knappen "
+"<gui>Skapa nytt dokument</gui> till vänster i rubrikraden, eller tryck "
+"<keyseq><key>Ctrl</key><key>T</key></keyseq>. Fliken kommer läggas till på "
+"höger sida om alla andra flikar."
 
 #. (itstool) path: section/title
-#: C/gedit-tabs.page:52
+#: C/gedit-tabs.page:51
 msgid "Removing tabs"
 msgstr "Ta bort flikar"
 
 #. (itstool) path: section/p
-#: C/gedit-tabs.page:53
+#: C/gedit-tabs.page:52
 msgid ""
 "To remove a tab, click the <gui style=\"button\">×</gui> on the tab's right "
-"side. To remove all open tabs, press <keyseq><key>Ctrl</key> <key>Shift</"
-"key><key>W</key></keyseq>."
+"side, or press <keyseq><key>Ctrl</key><key>W</key></keyseq>. To remove all "
+"open tabs, press <keyseq><key>Ctrl</key> <key>Shift</key><key>W</key></"
+"keyseq>."
 msgstr ""
 "För att ta bort en flik, klicka på <gui style=\"button\">×</gui> på flikens "
-"högra sida. För att ta bort alla öppna flikar, tryck <keyseq><key>Ctrl</key> "
-"<key>Skift</key><key>W</key></keyseq>."
+"högra sida, eller tryck <keyseq><key>Ctrl</key><key>W</key></keyseq>. För "
+"att ta bort alla öppna flikar, tryck <keyseq><key>Ctrl</key> <key>Skift</"
+"key><key>W</key></keyseq>."
 
 #. (itstool) path: info/desc
-#: C/gedit-undo-recent-action.page:8
+#: C/gedit-undo-redo.page:8
 msgid "Revert a recent change to one of your files."
 msgstr "Återställ en nyligen utförd ändring i en av dina filer."
 
 #. (itstool) path: page/title
-#: C/gedit-undo-recent-action.page:31
-msgid "Undo a recent action"
-msgstr "Ångra en nyligen utförd åtgärd"
+#: C/gedit-undo-redo.page:31
+msgid "Undo/redo a recent action"
+msgstr "Ångra/gör om en nyligen utförd åtgärd"
 
 #. (itstool) path: page/p
-#: C/gedit-undo-recent-action.page:33
+#: C/gedit-undo-redo.page:33
 msgid ""
-"If you make a mistake while using <app>gedit</app>, you can undo it by "
-"pressing <keyseq><key>Ctrl</key><key>Z</key></keyseq>."
+"If you make a mistake while editing a document in <app>gedit</app>, you can "
+"undo the change by pressing <keyseq><key>Ctrl</key><key>Z</key></keyseq>."
 msgstr ""
-"Om du gör ett misstag när du använder <app>gedit</app> kan du ångra det "
-"genom att trycka <keyseq><key>Ctrl</key><key>Z</key></keyseq>."
+"Om du gör ett misstag när du redigerar ett dokument i <app>gedit</app> kan "
+"du ångra det genom att trycka <keyseq><key>Ctrl</key><key>Z</key></keyseq>."
 
 #. (itstool) path: note/p
-#: C/gedit-undo-recent-action.page:37
+#: C/gedit-undo-redo.page:37
 msgid "You cannot undo a change after you have closed a <app>gedit</app> file."
 msgstr ""
 "Du kan inte ångra en ändring efter att du stängt en <app>gedit</app>-fil."
+
+#. (itstool) path: page/p
+#: C/gedit-undo-redo.page:40
+msgid ""
+"To redo the change that was undone, press <keyseq><key>Ctrl</key><key>Shift</"
+"key><key>Z</key></keyseq>."
+msgstr ""
+"För att göra om ändringen som ångrades, tryck <keyseq><key>Ctrl</"
+"key><key>Skift</key><key>Z</key></keyseq>"
 
 #. (itstool) path: info/title
 #: C/index.page:8
@@ -4299,19 +3490,15 @@ msgstr "<_:media-1/> gedit textredigerare"
 #: C/index.page:30
 msgid ""
 "Welcome to the <app>gedit</app> help guide. For a quick introduction into "
-"both <app>gedit's</app> most basic features, as well as some advanced "
-"keyboard shortcuts, visit the <link xref=\"gedit-quickstart\">Get started "
-"with gedit</link> and <link xref=\"gedit-shortcut-keys\">Shortcut keys</"
-"link> pages."
+"<app>gedit's</app> most basic features, visit the <link xref=\"gedit-"
+"quickstart\">Get started with gedit</link> page."
 msgstr ""
 "Välkommen till hjälpguiden för <app>gedit</app>. För en snabb introduktion "
-"till både <app>gedit</app>s mest grundläggande funktioner såväl som några "
-"avancerade tangentbordsgenvägar kan du besöka sidorna <link xref=\"gedit-"
-"quickstart\">Kom igång med gedit</link> och <link xref=\"gedit-shortcut-keys"
-"\">Kortkommandon</link>."
+"till både <app>gedit</app>s mest grundläggande funktioner kan du besöka "
+"sidan <link xref=\"gedit-quickstart\">Kom igång med gedit</link>."
 
 #. (itstool) path: page/p
-#: C/index.page:36
+#: C/index.page:34
 msgid ""
 "Other help topics are grouped together into sections below. Enjoy using "
 "<app>gedit</app>!"
@@ -4320,22 +3507,22 @@ msgstr ""
 "app>!"
 
 #. (itstool) path: section/title
-#: C/index.page:40
+#: C/index.page:38
 msgid "Working With Files"
 msgstr "Arbeta med filer"
 
 #. (itstool) path: section/title
-#: C/index.page:45
+#: C/index.page:43
 msgid "Configure gedit"
 msgstr "Konfigurera gedit"
 
 #. (itstool) path: section/title
-#: C/index.page:49
+#: C/index.page:47
 msgid "gedit Plugins"
 msgstr "Insticksmoduler för gedit"
 
 #. (itstool) path: section/title
-#: C/index.page:53
+#: C/index.page:51
 msgid "Printing with gedit"
 msgstr "Skriva ut med gedit"
 
@@ -4348,6 +3535,552 @@ msgstr "Creative Commons Erkännande-DelaLika 3.0 Unported"
 #: C/legal.xml:3
 msgid "This work is licensed under a <_:link-1/>."
 msgstr "Det här programmet är licensierat under licensen <_:link-1/>."
+
+#~ msgid ""
+#~ "To close a file in <app>gedit</app>, select <gui style=\"menuitem"
+#~ "\">Close</gui>. Alternately, you can click the small \"X\" that appears "
+#~ "on the right-side of the file's tab, or press <keyseq><key>Ctrl</key> "
+#~ "<key>W</key></keyseq>."
+#~ msgstr ""
+#~ "För att stänga en fil i <app>gedit</app>, välj <gui style=\"menuitem"
+#~ "\">Stäng</gui>. Alternativt kan du klicka på det lilla ”X” som dyker upp "
+#~ "på högersidan av filens flik, eller trycka <keyseq><key>Ctrl</key> "
+#~ "<key>W</key></keyseq>."
+
+#~ msgid ""
+#~ "Press <keyseq><key>Ctrl</key><key>L</key></keyseq> in the <gui>Open</gui> "
+#~ "dialog."
+#~ msgstr ""
+#~ "Tryck <keyseq><key>Ctrl</key><key>L</key></keyseq> i dialogrutan "
+#~ "<gui>Öppna</gui>."
+
+# TODO: <app>-taggar saknas.
+#~ msgid ""
+#~ "To adjust the number of recently-used files that gedit displays, you will "
+#~ "need to use the <app>dconf-editor</app> application."
+#~ msgstr ""
+#~ "För att justera antalet nyligen använda filer som gedit visar kommer du "
+#~ "att behöva använda programmet <app>dconf-editor</app>."
+
+#~ msgid ""
+#~ "Launch <app>dconf-editor</app> and select <guiseq><gui>org</gui> "
+#~ "<gui>gnome</gui><gui>gedit</gui><gui>preferences</gui><gui>ui</gui> "
+#~ "<gui>max-recents</gui></guiseq>."
+#~ msgstr ""
+#~ "Starta <app>dconf-editor</app> och välj <guiseq><gui>org</gui> "
+#~ "<gui>gnome</gui><gui>gedit</gui><gui>preferences</gui><gui>ui</gui> "
+#~ "<gui>max-recents</gui></guiseq>."
+
+#~ msgid ""
+#~ "Double-click on the number next to <gui>max-recents</gui> and change the "
+#~ "number to your desired value."
+#~ msgstr ""
+#~ "Dubbelklicka på talet intill <gui>max-recents</gui> och ändra talet till "
+#~ "ditt önskade värde."
+
+#~ msgid ""
+#~ "To open files from the side panel, first open the side panel by selecting "
+#~ "<guiseq><gui>View</gui> <gui>Side Panel</gui></guiseq> (or just press "
+#~ "<key>F9</key>), and then choose <gui>File Browser</gui> from the dropdown "
+#~ "at the top of the pane."
+#~ msgstr ""
+#~ "För att öppna filer från sidopanelen, öppna först sidopanelen genom att "
+#~ "välja <guiseq><gui>Visa</gui> <gui>Sidopanel</gui></guiseq> (eller tryck "
+#~ "helt enkelt <key>F9</key>), och välj sedan <gui>Filbläddrare</gui> från "
+#~ "rullgardinsmenyn högst upp i panelen."
+
+#~ msgid ""
+#~ "This will activate the <em>File Browser</em> mode of the side panel. You "
+#~ "can then use the navigation buttons at the top of the pane to locate and "
+#~ "open your desired files."
+#~ msgstr ""
+#~ "Detta kommer aktivera <em>filbläddrar</em>läget för sidopanelen. Du kan "
+#~ "sedan använda navigeringsknapparna högst upp i panelen för att hitta och "
+#~ "öppna dina önskade filer."
+
+#~ msgid ""
+#~ "This plugin currently <link href=\"https://gitlab.gnome.org/GNOME/gedit/"
+#~ "issues/277\">does not work</link>!"
+#~ msgstr ""
+#~ "Denna insticksmodul <link href=\"https://gitlab.gnome.org/GNOME/gedit/"
+#~ "issues/277\">fungerar inte för tillfället</link>!"
+
+#~ msgid "Use keyboard shortcuts to help you work more quickly."
+#~ msgstr "Använd tangentbordsgenvägar för att få hjälp att arbeta snabbare."
+
+#~ msgid "Paolo Borelli"
+#~ msgstr "Paolo Borelli"
+
+#~ msgid "Jesse van den Kieboom"
+#~ msgstr "Jesse van den Kieboom"
+
+#~ msgid "Steve Frécinaux"
+#~ msgstr "Steve Frécinaux"
+
+#~ msgid "Ignacio Casal Quinteiro"
+#~ msgstr "Ignacio Casal Quinteiro"
+
+#~ msgid "Shortcut keys"
+#~ msgstr "Kortkommandon"
+
+#~ msgid ""
+#~ "Use <gui>shortcut keys</gui> to perform common tasks more quickly than "
+#~ "with the mouse and menus. The following tables list all of <app>gedit's</"
+#~ "app> shortcut keys."
+#~ msgstr ""
+#~ "Använd <gui>kortkommandon</gui> för att genomföra vanliga uppgifter på "
+#~ "ett snabbare sätt än med musen och menyerna. Följande tabell listar alla "
+#~ "kortkommandon i <app>gedit</app>."
+
+#~ msgid "Tab-related Shortcut keys"
+#~ msgstr "Flikrelaterade kortkommandon"
+
+#~ msgid "Action"
+#~ msgstr "Åtgärd"
+
+#~ msgid "Keyboard shortcut"
+#~ msgstr "Tangentbordsgenväg"
+
+#~ msgid "Switch to the next tab to the left"
+#~ msgstr "Växla till nästa flik åt vänster"
+
+#~ msgid "<keyseq><key>Ctrl</key><key>Alt</key> <key>PageUp</key></keyseq>"
+#~ msgstr "<keyseq><key>Ctrl</key><key>Alt</key> <key>PageUp</key></keyseq>"
+
+#~ msgid "Switch to the next tab to the right"
+#~ msgstr "Växla till nästa flik åt höger"
+
+#~ msgid "<keyseq><key>Ctrl</key><key>Alt</key> <key>PageDown</key></keyseq>"
+#~ msgstr "<keyseq><key>Ctrl</key><key>Alt</key> <key>PageDown</key></keyseq>"
+
+#~ msgid "Close tab"
+#~ msgstr "Stäng flik"
+
+#~ msgid "<keyseq><key>Ctrl</key><key>W</key></keyseq>"
+#~ msgstr "<keyseq><key>Ctrl</key><key>W</key></keyseq>"
+
+#~ msgid "Save all tabs"
+#~ msgstr "Spara alla flikar"
+
+#~ msgid "<keyseq><key>Ctrl</key><key>Shift</key> <key>L</key></keyseq>"
+#~ msgstr "<keyseq><key>Ctrl</key><key>Skift</key> <key>L</key></keyseq>"
+
+#~ msgid "Close all tabs"
+#~ msgstr "Stäng alla flikar"
+
+#~ msgid "<keyseq><key>Ctrl</key><key>Shift</key><key>W</key></keyseq>"
+#~ msgstr "<keyseq><key>Ctrl</key><key>Skift</key><key>W</key></keyseq>"
+
+#~ msgid "Reopen the most recently closed tab"
+#~ msgstr "Återöppna den senast stängda fliken"
+
+#~ msgid "<keyseq><key>Ctrl</key><key>Shift</key><key>T</key></keyseq>"
+#~ msgstr "<keyseq><key>Ctrl</key><key>Skift</key><key>T</key></keyseq>"
+
+#~ msgid "Jump to <var>n</var>th tab"
+#~ msgstr "Hoppa till flik nummer <var>n</var>"
+
+#~ msgid "<keyseq><key>Alt</key><key> <var>n</var></key></keyseq>"
+#~ msgstr "<keyseq><key>Alt</key><key> <var>n</var></key></keyseq>"
+
+#~ msgid "New tab group"
+#~ msgstr "Ny flikgrupp"
+
+#~ msgid "<keyseq><key>Ctrl</key><key>Alt</key><key>N</key></keyseq>"
+#~ msgstr "<keyseq><key>Ctrl</key><key>Alt</key><key>N</key></keyseq>"
+
+#~ msgid "Previous tab group"
+#~ msgstr "Föregående flikgrupp"
+
+#~ msgid ""
+#~ "<keyseq><key>Shift</key><key>Ctrl</key><key>Alt</key><key>Page up</key></"
+#~ "keyseq>"
+#~ msgstr ""
+#~ "<keyseq><key>Skift</key><key>Ctrl</key><key>Alt</key><key>Page up</key></"
+#~ "keyseq>"
+
+#~ msgid "Next tab group"
+#~ msgstr "Nästa flikgrupp"
+
+#~ msgid ""
+#~ "<keyseq><key>Shift</key><key>Ctrl</key><key>Alt</key><key>Page down</"
+#~ "key></keyseq>"
+#~ msgstr ""
+#~ "<keyseq><key>Skift</key><key>Ctrl</key><key>Alt</key><key>Page down</"
+#~ "key></keyseq>"
+
+#~ msgid "Shortcut keys for working with files"
+#~ msgstr "Kortkommandon för arbete med filer"
+
+#~ msgid "Create a new document in a new window"
+#~ msgstr "Skapa ett nytt dokument i ett nytt fönster"
+
+#~ msgid "<keyseq><key>Ctrl</key><key>N</key></keyseq>"
+#~ msgstr "<keyseq><key>Ctrl</key><key>N</key></keyseq>"
+
+#~ msgid "Create a new document in a new tab"
+#~ msgstr "Skapa ett nytt dokument i en ny flik"
+
+#~ msgid "<keyseq><key>Ctrl</key><key>T</key></keyseq>"
+#~ msgstr "<keyseq><key>Ctrl</key><key>T</key></keyseq>"
+
+#~ msgid "Open a document"
+#~ msgstr "Öppna ett dokument"
+
+#~ msgid "<keyseq><key>Ctrl</key><key>O</key></keyseq>"
+#~ msgstr "<keyseq><key>Ctrl</key><key>O</key></keyseq>"
+
+#~ msgid "Save the current document"
+#~ msgstr "Spara aktuellt dokument"
+
+#~ msgid "<keyseq><key>Ctrl</key><key>S</key></keyseq>"
+#~ msgstr "<keyseq><key>Ctrl</key><key>S</key></keyseq>"
+
+#~ msgid "Save the current document with a new filename"
+#~ msgstr "Spara aktuellt dokument med ett nytt filnamn"
+
+#~ msgid "<keyseq><key>Ctrl</key><key>Shift</key> <key>S</key></keyseq>"
+#~ msgstr "<keyseq><key>Ctrl</key><key>Skift</key> <key>S</key></keyseq>"
+
+#~ msgid "Print the current document"
+#~ msgstr "Skriv ut aktuellt dokument"
+
+#~ msgid "<keyseq><key>Ctrl </key><key>P</key></keyseq>"
+#~ msgstr "<keyseq><key>Ctrl </key><key>P</key></keyseq>"
+
+#~ msgid "Close the current document"
+#~ msgstr "Stäng aktuellt dokument"
+
+#~ msgid "Quit gedit"
+#~ msgstr "Avsluta gedit"
+
+#~ msgid "<keyseq><key>Ctrl</key><key>Q</key></keyseq>"
+#~ msgstr "<keyseq><key>Ctrl</key><key>Q</key></keyseq>"
+
+#~ msgid "Shortcut keys for editing files"
+#~ msgstr "Kortkommandon för redigering av filer"
+
+#~ msgid "Move the selected word right one word"
+#~ msgstr "Flytta markerat ord ett ord till höger"
+
+#~ msgid "<keyseq><key>Alt</key><key>Right Arrow</key></keyseq>"
+#~ msgstr "<keyseq><key>Alt</key><key>Högerpil</key></keyseq>"
+
+#~ msgid "Move the selected word left one word"
+#~ msgstr "Flytta markerat ord ett ord till vänster"
+
+#~ msgid "<keyseq><key>Alt</key><key>Left Arrow</key></keyseq>"
+#~ msgstr "<keyseq><key>Alt</key><key>Vänsterpil</key></keyseq>"
+
+#~ msgid "Undo the last action"
+#~ msgstr "Ångra föregående åtgärd"
+
+#~ msgid "<keyseq><key>Ctrl</key><key>Z</key></keyseq>"
+#~ msgstr "<keyseq><key>Ctrl</key><key>Z</key></keyseq>"
+
+#~ msgid "Redo the last undone action"
+#~ msgstr "Gör om senaste ångrade åtgärden"
+
+#~ msgid "Cut the selected text or region and place it on the clipboard"
+#~ msgstr "Klipp ut markerad text eller område och placera den i urklipp"
+
+#~ msgid "<keyseq><key>Ctrl</key><key>X</key></keyseq>"
+#~ msgstr "<keyseq><key>Ctrl</key><key>X</key></keyseq>"
+
+#~ msgid "Copy the selected text or region onto the clipboard"
+#~ msgstr "Kopiera markerad text eller område till urklipp"
+
+#~ msgid "<keyseq><key>Ctrl</key><key>C</key></keyseq>"
+#~ msgstr "<keyseq><key>Ctrl</key><key>C</key></keyseq>"
+
+#~ msgid "Paste the contents of the clipboard"
+#~ msgstr "Klistra in innehållet i urklipp"
+
+#~ msgid "<keyseq><key>Ctrl</key><key>V</key></keyseq>"
+#~ msgstr "<keyseq><key>Ctrl</key><key>V</key></keyseq>"
+
+#~ msgid "Select all text in the file"
+#~ msgstr "Markera all text i filen"
+
+#~ msgid "<keyseq><key>Ctrl</key><key>A</key></keyseq>"
+#~ msgstr "<keyseq><key>Ctrl</key><key>A</key></keyseq>"
+
+#~ msgid "Unselect all text"
+#~ msgstr "Avmarkera all text"
+
+#~ msgid "<keyseq><key>Ctrl</key><key>Backslash</key></keyseq>"
+#~ msgstr "<keyseq><key>Ctrl</key><key>Bakstreck</key></keyseq>"
+
+#~ msgid "Delete the current line"
+#~ msgstr "Ta bort aktuell rad"
+
+#~ msgid "<keyseq><key>Ctrl</key><key>D</key></keyseq>"
+#~ msgstr "<keyseq><key>Ctrl</key><key>D</key></keyseq>"
+
+#~ msgid "Move the selected line up one line"
+#~ msgstr "Flytta markerad rad en rad uppåt"
+
+#~ msgid "<keyseq><key>Alt</key><key>Up Arrow</key></keyseq>"
+#~ msgstr "<keyseq><key>Alt</key><key>Uppåtpil</key></keyseq>"
+
+#~ msgid "Move the selected line down one line"
+#~ msgstr "Flytta markerad rad en rad nedåt"
+
+#~ msgid "<keyseq><key>Alt</key><key>Down Arrow</key></keyseq>"
+#~ msgstr "<keyseq><key>Alt</key><key>Nedåtpil</key></keyseq>"
+
+#~ msgid "Add a tab stop"
+#~ msgstr "Lägg till ett tabulatorstopp"
+
+#~ msgid "<keyseq><key>Tab</key></keyseq>"
+#~ msgstr "<keyseq><key>Tabb</key></keyseq>"
+
+#~ msgid "Remove a tab stop"
+#~ msgstr "Ta bort ett tabulatorstopp"
+
+#~ msgid "<keyseq><key>Shift</key><key>Tab</key></keyseq>"
+#~ msgstr "<keyseq><key>Skift</key><key>Tabb</key></keyseq>"
+
+#~ msgid "Convert the selected text to upper case"
+#~ msgstr "Konvertera markerad text till versaler"
+
+#~ msgid "<keyseq><key>Ctrl</key><key>U</key></keyseq>"
+#~ msgstr "<keyseq><key>Ctrl</key><key>U</key></keyseq>"
+
+#~ msgid "Convert the selected text to lower case"
+#~ msgstr "Konvertera markerad text till gemener"
+
+#~ msgid "<keyseq><key>Ctrl</key><key>L</key></keyseq>"
+#~ msgstr "<keyseq><key>Ctrl</key><key>L</key></keyseq>"
+
+#~ msgid "Toggle case of the selected text"
+#~ msgstr "Växla skiftläge för markerad text"
+
+#~ msgid "<keyseq><key>Ctrl</key><key>~</key></keyseq>"
+#~ msgstr "<keyseq><key>Ctrl</key><key>~</key></keyseq>"
+
+#~ msgid "Toggle cursor visibility"
+#~ msgstr "Växla markörsynlighet"
+
+#~ msgid "<keyseq><key>F7</key></keyseq>"
+#~ msgstr "<keyseq><key>F7</key></keyseq>"
+
+#~ msgid "Shortcut keys for showing and hiding panes"
+#~ msgstr "Kortkommandon för att visa och dölja paneler"
+
+#~ msgid "Show / hide the side panel"
+#~ msgstr "Visa / dölj sidopanelen"
+
+#~ msgid "<key>F9</key>"
+#~ msgstr "<key>F9</key>"
+
+#~ msgid "Open the file menu"
+#~ msgstr "Öppna filmenyn"
+
+#~ msgid "<key>F10</key>"
+#~ msgstr "<key>F10</key>"
+
+#~ msgid "Shortcut keys for navigation"
+#~ msgstr "Kortkommandon för navigering"
+
+#~ msgid "Move to matching bracket"
+#~ msgstr "Gå till matchande parentes"
+
+#~ msgid "<keyseq><key>Ctrl</key><key>%</key></keyseq>"
+#~ msgstr "<keyseq><key>Ctrl</key><key>%</key></keyseq>"
+
+#~ msgid "Goto line"
+#~ msgstr "Gå till rad"
+
+#~ msgid "<keyseq><key>Ctrl</key><key>I</key></keyseq>"
+#~ msgstr "<keyseq><key>Ctrl</key><key>I</key></keyseq>"
+
+#~ msgid "Move to the beginning of the current line"
+#~ msgstr "Gå till början på aktuell rad"
+
+#~ msgid "<key>Home</key>"
+#~ msgstr "<key>Home</key>"
+
+#~ msgid "Move to the end of the current line"
+#~ msgstr "Gå till slutet på aktuell rad"
+
+#~ msgid "<key>End</key>"
+#~ msgstr "<key>End</key>"
+
+#~ msgid "Move to the beginning of the document"
+#~ msgstr "Gå till början på dokumentet"
+
+#~ msgid "<keyseq><key>Ctrl</key><key>Home</key></keyseq>"
+#~ msgstr "<keyseq><key>Ctrl</key><key>Home</key></keyseq>"
+
+#~ msgid "Move to the end of the document"
+#~ msgstr "Gå till slutet på dokumentet"
+
+#~ msgid "<keyseq><key>Ctrl</key><key>End</key></keyseq>"
+#~ msgstr "<keyseq><key>Ctrl</key><key>End</key></keyseq>"
+
+#~ msgid "Move viewport up within the file"
+#~ msgstr "Flytta visningsområde uppåt i filen"
+
+#~ msgid "<keyseq><key>Shift</key><key>Alt</key><key>Up</key></keyseq>"
+#~ msgstr "<keyseq><key>Skift</key><key>Alt</key><key>Upp</key></keyseq>"
+
+#~ msgid "Move viewport down within the file"
+#~ msgstr "Flytta visningsområde nedåt i filen"
+
+#~ msgid "<keyseq><key>Shift</key><key>Alt</key><key>Down</key></keyseq>"
+#~ msgstr "<keyseq><key>Skift</key><key>Alt</key><key>Ned</key></keyseq>"
+
+#~ msgid "Move viewport to beginning of file"
+#~ msgstr "Flytta visningsområde till början på filen"
+
+#~ msgid "<keyseq><key>Shift</key><key>Alt</key><key>Home</key></keyseq>"
+#~ msgstr "<keyseq><key>Skift</key><key>Alt</key><key>Home</key></keyseq>"
+
+#~ msgid "Move viewport to end of file"
+#~ msgstr "Flytta visningsområde till slutet på filen"
+
+#~ msgid "<keyseq><key>Shift</key><key>Alt</key><key>End</key></keyseq>"
+#~ msgstr "<keyseq><key>Skift</key><key>Alt</key><key>End</key></keyseq>"
+
+#~ msgid "Shortcut keys for searching"
+#~ msgstr "Kortkommandon för sökning"
+
+#~ msgid "Find a string"
+#~ msgstr "Sök efter en sträng"
+
+#~ msgid "<keyseq><key>Ctrl</key><key>F</key></keyseq>"
+#~ msgstr "<keyseq><key>Ctrl</key><key>F</key></keyseq>"
+
+#~ msgid "Find the next instance of the string"
+#~ msgstr "Sök nästa förekomst av strängen"
+
+#~ msgid "<keyseq><key>Ctrl</key><key>G</key></keyseq>"
+#~ msgstr "<keyseq><key>Ctrl</key><key>G</key></keyseq>"
+
+#~ msgid "Find the previous instance of the string"
+#~ msgstr "Sök föregående förekomst av strängen"
+
+#~ msgid "<keyseq><key>Ctrl</key><key>Shift</key><key>G</key></keyseq>"
+#~ msgstr "<keyseq><key>Ctrl</key><key>Skift</key><key>G</key></keyseq>"
+
+#~ msgid "Search and Replace"
+#~ msgstr "Sök och ersätt"
+
+#~ msgid "<keyseq><key>Ctrl</key><key>H</key></keyseq>"
+#~ msgstr "<keyseq><key>Ctrl</key><key>H</key></keyseq>"
+
+#~ msgid "Clear highlight"
+#~ msgstr "Ta bort markering"
+
+#~ msgid "<keyseq><key>Ctrl</key><key>Shift</key> <key>K</key></keyseq>"
+#~ msgstr "<keyseq><key>Ctrl</key><key>Skift</key> <key>K</key></keyseq>"
+
+#~ msgid "Shortcut keys for tools"
+#~ msgstr "Kortkommandon för verktyg"
+
+#~ msgid "Check spelling"
+#~ msgstr "Kontrollera stavning"
+
+#~ msgid "<keyseq><key>Shift</key><key>F7</key></keyseq>"
+#~ msgstr "<keyseq><key>Skift</key><key>F7</key></keyseq>"
+
+#~ msgid "Remove trailing spaces (with plugin)"
+#~ msgstr "Ta bort eftersläpande blanksteg (med insticksmodul)"
+
+#~ msgid "<keyseq><key>Alt</key><key>F12</key></keyseq>"
+#~ msgstr "<keyseq><key>Alt</key><key>F12</key></keyseq>"
+
+#~ msgid "Run \"make\" in the current directory (with plugin)"
+#~ msgstr "Kör ”make” i aktuell katalog (med insticksmodul)"
+
+#~ msgid "<key>F8</key>"
+#~ msgstr "<key>F8</key>"
+
+#~ msgid "Directory listing (with plugin)"
+#~ msgstr "Kataloglistning (med insticksmodul)"
+
+#~ msgid "<keyseq><key>Ctrl</key><key>Shift</key> <key>D</key></keyseq>"
+#~ msgstr "<keyseq><key>Ctrl</key><key>Skift</key> <key>D</key></keyseq>"
+
+#~ msgid "Shortcut keys for user help"
+#~ msgstr "Kortkommandon för användarhjälp"
+
+#~ msgid "Open the gedit user guide"
+#~ msgstr "Öppna användarguiden för gedit"
+
+#~ msgid "<key>F1</key>"
+#~ msgstr "<key>F1</key>"
+
+#~ msgid ""
+#~ "Go to <guiseq><gui>Documents</gui><gui>New Tab Group</gui></guiseq> in "
+#~ "the main menu."
+#~ msgstr ""
+#~ "Gå till <guiseq><gui>Dokument</gui><gui>Ny flikgrupp</gui></guiseq> i "
+#~ "huvudmenyn."
+
+#~ msgid "Move through tab groups"
+#~ msgstr "Gå mellan flikgrupper"
+
+#~ msgid "To move forward (on the next) tab group:"
+#~ msgstr "För att gå framåt till (nästa) flikgrupp:"
+
+#~ msgid ""
+#~ "Go to <guiseq><gui>Documents</gui><gui>Next Tab Group</gui></guiseq> in "
+#~ "the main menu."
+#~ msgstr ""
+#~ "Gå till <guiseq><gui>Dokument</gui><gui>Nästa flikgrupp</gui></guiseq> i "
+#~ "huvudmenyn."
+
+#~ msgid ""
+#~ "Use the <keyseq><key>Shift</key><key>Ctrl</key><key>Alt</key><key>Page "
+#~ "down</key></keyseq> shortcut."
+#~ msgstr ""
+#~ "Använd kortkommandot <keyseq><key>Skift</key><key>Ctrl</key><key>Alt</"
+#~ "key><key>Page down</key></keyseq>."
+
+#~ msgid "To move backward (on the previous) tab group:"
+#~ msgstr "För att gå bakåt till (föregående) flikgrupp:"
+
+#~ msgid ""
+#~ "Go to <guiseq><gui>Documents</gui><gui>Previous Tab Group</gui></guiseq> "
+#~ "in the main menu."
+#~ msgstr ""
+#~ "Gå till <guiseq><gui>Dokument</gui><gui>Föregående flikgrupp</gui></"
+#~ "guiseq> i huvudmenyn."
+
+#~ msgid ""
+#~ "Use the <keyseq><key>Shift</key><key>Ctrl</key><key>Alt</key><key>Page "
+#~ "up</key></keyseq> shortcut."
+#~ msgstr ""
+#~ "Använd kortkommandot <keyseq><key>Skift</key><key>Ctrl</key><key>Alt</"
+#~ "key><key>Page up</key></keyseq>."
+
+#~ msgid ""
+#~ "See the <link xref=\"gedit-shortcut-keys\">tab-related shortcut keys</"
+#~ "link> table to make it easier to manage your tab groups."
+#~ msgstr ""
+#~ "Se tabellen <link xref=\"gedit-shortcut-keys\">flikrelaterade "
+#~ "kortkommandon</link> för att göra det lättare att hantera dina "
+#~ "flikgrupper."
+
+#~ msgid ""
+#~ "See the <link xref=\"gedit-shortcut-keys\">tab-related shortcut keys</"
+#~ "link> table to make it easier to manage your tabs."
+#~ msgstr ""
+#~ "Se tabellen <link xref=\"gedit-shortcut-keys\">flikrelaterade "
+#~ "kortkommandon</link> för att göra det lättare att hantera dina flikar."
+
+#~ msgid ""
+#~ "Working with tabs in <app>gedit</app> allows you to keep an eye on "
+#~ "several files in a single window. The tab that is larger than the other "
+#~ "tabs indicates the file that is currently open. The smaller tabs indicate "
+#~ "other files that are available to work on."
+#~ msgstr ""
+#~ "Att arbeta med flikar i <app>gedit</app> låter dig hålla ett öga på flera "
+#~ "filer i ett enda fönster. Fliken som är större än de andra flikarna "
+#~ "indikerar filen som är öppen nu. De mindre flikarna står för andra filer "
+#~ "som finns tillgängliga att arbeta med."
 
 #~ msgid "Click the <gui>Open</gui> button."
 #~ msgstr "Klicka på knappen <gui>Öppna</gui>."
