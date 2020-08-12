@@ -12,22 +12,22 @@
 # Antón Méixome <meixome@certima.net>, 2010.
 # Fran Diéguez <frandieguez@gnome.org>, 2009, 2010, 2011, 2012.
 # Leandro Regueiro <leandro.regueiro@gmail.com>, 2012.
-# Fran Dieguez <frandieguez@gnome.org>, 2012-2019.
+# Fran Dieguez <frandieguez@gnome.org>, 2012-2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gedit-master-po-gl-116402.merged\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gedit/issues\n"
-"POT-Creation-Date: 2019-12-25 15:02+0000\n"
-"PO-Revision-Date: 2019-12-27 15:37+0100\n"
-"Last-Translator: Fran Diéguez <frandieguez@gnome.org>\n"
+"POT-Creation-Date: 2020-07-08 15:04+0000\n"
+"PO-Revision-Date: 2020-08-12 23:56+0200\n"
+"Last-Translator: Fran Dieguez <frandieguez@gnome.org>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.2.4\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"X-Generator: Gtranslator 3.36.0\n"
 "X-Project-Style: gnome\n"
 
 #: data/org.gnome.gedit.appdata.xml.in:7
@@ -39,32 +39,18 @@ msgid "Edit text files"
 msgstr "Editar ficheiros de texto"
 
 #: data/org.gnome.gedit.appdata.xml.in:10
-msgid ""
-"gedit is the official text editor of the GNOME desktop environment. While "
-"aiming at simplicity and ease of use, gedit is a powerful general purpose "
-"text editor."
-msgstr ""
-"gedit é o editor de texto oficial para o ambiente de escritorio de GNOME. "
-"Aínda que está enfocado na simplicidade e o fácil manexo, gedit é un editor "
-"de texto de propósito xeral moi potente."
+#| msgid "gedit is a small and lightweight text editor for the GNOME Desktop"
+msgid "gedit is the text editor of the GNOME desktop environment."
+msgstr "O gedit é o editor de textos para o ambiente de escritorio GNOME."
 
-#: data/org.gnome.gedit.appdata.xml.in:15
+#: data/org.gnome.gedit.appdata.xml.in:13
 msgid ""
-"Whether you are writing the next bestseller, programming an innovative "
-"application, or simply taking some quick notes, gedit will be a reliable "
-"tool to accomplish your task."
+"The first goal of gedit is to be easy to use, with a simple interface by "
+"default. More advanced features are available by enabling plugins."
 msgstr ""
-"Tanto se está escribindo o seguinte libro famoso, programando unha "
-"aplicación novidosa ou simplemente tomando algunhas notas rápidas, gedit "
-"será a ferramenta perfecta para facer dita tarefa."
-
-#: data/org.gnome.gedit.appdata.xml.in:20
-msgid ""
-"Its flexible plugin system allows you to tailor the application to your "
-"needs and adapt it to your workflow."
-msgstr ""
-"O seu sistema de engadidos flexíbel permítelle adaptar a ás súas necesidades "
-"e ao seu fluxo de traballo."
+"O principal obxectivo de gedit é ser doado de usar, con unha interface "
+"sinxela por omisión. Hai dispoñíbeis máis funcionalidades  mediante a "
+"activación de engadidos."
 
 #: data/org.gnome.gedit.desktop.in:3 gedit/gedit-print-job.c:730
 msgid "Text Editor"
@@ -533,28 +519,24 @@ msgstr ""
 "valor por omisión é unha lista baleira, a cal no caso de gedit escollerá os "
 "valores por omisión axeitados dependendo do país e idioma."
 
-#: data/org.gnome.gedit.gschema.xml.in:301
+#: data/org.gnome.gedit.gschema.xml.in:304
 msgid "Active plugins"
 msgstr "Engadidos activos"
 
-#: data/org.gnome.gedit.gschema.xml.in:302
-msgid ""
-"List of active plugins. It contains the “Location” of the active plugins. "
-"See the .gedit-plugin file for obtaining the “Location” of a given plugin."
-msgstr ""
-"Lista de engadidos activos. Contén a \"Localización\" dos engadidos activos. "
-"Vexa o ficheiro .gedit-plugin para obter a \"Localización\" dun engadido "
-"determinado."
+#: data/org.gnome.gedit.gschema.xml.in:305
+#| msgid "Active plugins"
+msgid "List of active plugins."
+msgstr "Lista de engadidos activos."
 
-#: gedit/gedit-app.c:103
+#: gedit/gedit-app.c:85
 msgid "Show the application’s version"
 msgstr "Mostrar a versión da aplicación"
 
-#: gedit/gedit-app.c:109
+#: gedit/gedit-app.c:91
 msgid "Display list of possible values for the encoding option"
 msgstr "Mostra a lista dos valores posíbeis de opcións de codificación"
 
-#: gedit/gedit-app.c:116
+#: gedit/gedit-app.c:98
 msgid ""
 "Set the character encoding to be used to open the files listed on the "
 "command line"
@@ -562,50 +544,50 @@ msgstr ""
 "Estabelecer a codificación de caracteres que se usará ao abrir os ficheiros "
 "listados na liña de ordes"
 
-#: gedit/gedit-app.c:117
+#: gedit/gedit-app.c:99
 msgid "ENCODING"
 msgstr "CODIFICACIÓN"
 
-#: gedit/gedit-app.c:123
+#: gedit/gedit-app.c:105
 msgid "Create a new top-level window in an existing instance of gedit"
 msgstr ""
 "Crear unha xanela de nivel superior nova nunha instancia existente do gedit"
 
-#: gedit/gedit-app.c:130
+#: gedit/gedit-app.c:112
 msgid "Create a new document in an existing instance of gedit"
 msgstr "Crea un documento novo nunha instancia existente do gedit"
 
-#: gedit/gedit-app.c:137
+#: gedit/gedit-app.c:119
 msgid "Open files and block process until files are closed"
 msgstr ""
 "Abrir os ficheiros e bloquear os procesos até que se pechen os ficheiros"
 
-#: gedit/gedit-app.c:144
+#: gedit/gedit-app.c:126
 msgid "Run gedit in standalone mode"
 msgstr "Executar gedit en modo independente"
 
-#: gedit/gedit-app.c:151
+#: gedit/gedit-app.c:133
 msgid "[FILE…] [+LINE[:COLUMN]]"
 msgstr "[FICHEIRO…] [+LIÑA[:COLUMNA]]"
 
-#: gedit/gedit-app.c:261
+#: gedit/gedit-app.c:223
 msgid "There was an error displaying the help."
 msgstr "Produciuse un erro ao mostrar a axuda."
 
-#: gedit/gedit-app.c:957
+#: gedit/gedit-app.c:838
 #, c-format
 msgid "%s: invalid encoding."
 msgstr "%s: codificación non válida."
 
-#: gedit/gedit-close-confirmation-dialog.c:277
+#: gedit/gedit-close-confirmation-dialog.c:271
 msgid "Close _without Saving"
 msgstr "Pechar _sen gardar"
 
-#: gedit/gedit-close-confirmation-dialog.c:283 gedit/gedit-commands-file.c:457
-#: gedit/gedit-commands-file.c:562 gedit/gedit-commands-file.c:638
-#: gedit/gedit-commands-file.c:849 gedit/gedit-commands-file.c:1563
-#: gedit/gedit-encodings-dialog.c:192 gedit/gedit-preferences-dialog.c:816
-#: gedit/gedit-progress-info-bar.c:49
+#: gedit/gedit-close-confirmation-dialog.c:277 gedit/gedit-commands-file.c:492
+#: gedit/gedit-commands-file.c:568 gedit/gedit-commands-file.c:791
+#: gedit/gedit-commands-file.c:1513 gedit/gedit-encodings-dialog.c:192
+#: gedit/gedit-file-chooser-open-dialog.c:78
+#: gedit/gedit-preferences-dialog.c:721 gedit/gedit-progress-info-bar.c:49
 #: gedit/resources/ui/gedit-encodings-dialog.ui:44
 #: gedit/resources/ui/gedit-highlight-mode-dialog.ui:31
 #: plugins/filebrowser/gedit-file-browser-utils.c:211
@@ -618,20 +600,20 @@ msgstr "Pechar _sen gardar"
 msgid "_Cancel"
 msgstr "_Cancelar"
 
-#: gedit/gedit-close-confirmation-dialog.c:310 gedit/resources/gtk/menus.ui:37
+#: gedit/gedit-close-confirmation-dialog.c:295 gedit/resources/gtk/menus.ui:37
 #: gedit/resources/gtk/menus-traditional.ui:33
 msgid "_Save As…"
 msgstr "_Gardar como…"
 
-#: gedit/gedit-close-confirmation-dialog.c:310 gedit/gedit-commands-file.c:850
+#: gedit/gedit-close-confirmation-dialog.c:295 gedit/gedit-commands-file.c:790
 #: gedit/resources/gtk/menus-common.ui:127
-#: gedit/resources/ui/gedit-window.ui:61
+#: gedit/resources/ui/gedit-window.ui:59
 #: plugins/snippets/snippets/manager.py:875
 #: plugins/snippets/snippets/manager.py:913
 msgid "_Save"
 msgstr "_Gardar"
 
-#: gedit/gedit-close-confirmation-dialog.c:328
+#: gedit/gedit-close-confirmation-dialog.c:312
 #, c-format
 msgid ""
 "If you don’t save, changes from the last %ld second will be permanently lost."
@@ -645,13 +627,13 @@ msgstr[1] ""
 "Se non garda, os cambios desde os últimos %ld segundos perderanse "
 "permanentemente."
 
-#: gedit/gedit-close-confirmation-dialog.c:337
+#: gedit/gedit-close-confirmation-dialog.c:321
 msgid ""
 "If you don’t save, changes from the last minute will be permanently lost."
 msgstr ""
 "Se non garda, os cambios desde o último minuto perderanse permanentemente."
 
-#: gedit/gedit-close-confirmation-dialog.c:343
+#: gedit/gedit-close-confirmation-dialog.c:327
 #, c-format
 msgid ""
 "If you don’t save, changes from the last minute and %ld second will be "
@@ -666,7 +648,7 @@ msgstr[1] ""
 "Se non garda, os cambios desde o último minuto e %ld segundos perderanse "
 "permanentemente."
 
-#: gedit/gedit-close-confirmation-dialog.c:353
+#: gedit/gedit-close-confirmation-dialog.c:337
 #, c-format
 msgid ""
 "If you don’t save, changes from the last %ld minute will be permanently lost."
@@ -680,12 +662,12 @@ msgstr[1] ""
 "Se non garda, os cambios desde os últimos %ld minutos perderanse "
 "permanentemente."
 
-#: gedit/gedit-close-confirmation-dialog.c:368
+#: gedit/gedit-close-confirmation-dialog.c:352
 msgid "If you don’t save, changes from the last hour will be permanently lost."
 msgstr ""
 "Se non garda, os cambios desde a última hora perderanse permanentemente."
 
-#: gedit/gedit-close-confirmation-dialog.c:374
+#: gedit/gedit-close-confirmation-dialog.c:358
 #, c-format
 msgid ""
 "If you don’t save, changes from the last hour and %d minute will be "
@@ -700,7 +682,7 @@ msgstr[1] ""
 "Se non garda, os cambios desde a última hora e %d minutos perderanse "
 "permanentemente."
 
-#: gedit/gedit-close-confirmation-dialog.c:389
+#: gedit/gedit-close-confirmation-dialog.c:373
 #, c-format
 msgid ""
 "If you don’t save, changes from the last %d hour will be permanently lost."
@@ -712,29 +694,12 @@ msgstr[1] ""
 "Se non garda, os cambios desde as últimas %d horas perderanse "
 "permanentemente."
 
-#: gedit/gedit-close-confirmation-dialog.c:418
-#, c-format
-msgid "Changes to document “%s” will be permanently lost."
-msgstr "Os cambios do documento «%s» perderanse permanentemente."
-
-#: gedit/gedit-close-confirmation-dialog.c:423
+#: gedit/gedit-close-confirmation-dialog.c:400
 #, c-format
 msgid "Save changes to document “%s” before closing?"
 msgstr "Quere gardar os cambios do documento «%s» antes de pechar?"
 
-#: gedit/gedit-close-confirmation-dialog.c:438
-#: gedit/gedit-close-confirmation-dialog.c:562
-msgid "Saving has been disabled by the system administrator."
-msgstr "O administrador do sistema desactivou o gardado."
-
-#: gedit/gedit-close-confirmation-dialog.c:504
-#, c-format
-msgid "Changes to %d document will be permanently lost."
-msgid_plural "Changes to %d documents will be permanently lost."
-msgstr[0] "Os cambios realizados a %d documento perderanse permanentemente."
-msgstr[1] "Os cambios realizados a %d documentos perderanse permanentemente."
-
-#: gedit/gedit-close-confirmation-dialog.c:512
+#: gedit/gedit-close-confirmation-dialog.c:470
 #, c-format
 msgid "There is %d document with unsaved changes. Save changes before closing?"
 msgid_plural ""
@@ -746,68 +711,50 @@ msgstr[1] ""
 "Hai %d documentos con cambios sen gardar. Quere gardar os cambios antes de "
 "pechar?"
 
-#: gedit/gedit-close-confirmation-dialog.c:538
-msgid "Docum_ents with unsaved changes:"
-msgstr "Docum_entos con cambios non gardados:"
-
-#: gedit/gedit-close-confirmation-dialog.c:542
+#: gedit/gedit-close-confirmation-dialog.c:493
 msgid "S_elect the documents you want to save:"
 msgstr "S_eleccione os documentos que quere gardar:"
 
-#: gedit/gedit-close-confirmation-dialog.c:566
+#. Secondary label
+#: gedit/gedit-close-confirmation-dialog.c:509
 msgid "If you don’t save, all your changes will be permanently lost."
 msgstr "Se non garda, todos os seus cambios perderanse permanentemente."
 
-#: gedit/gedit-commands-file.c:260
+#: gedit/gedit-commands-file.c:257
 #, c-format
 msgid "Loading file “%s”…"
 msgstr "Cargando o ficheiro «%s»…"
 
-#: gedit/gedit-commands-file.c:269
+#: gedit/gedit-commands-file.c:266
 #, c-format
 msgid "Loading %d file…"
 msgid_plural "Loading %d files…"
 msgstr[0] "Cargando %d ficheiro…"
 msgstr[1] "Cargando %d ficheiros…"
 
-#. Translators: "Open" is the title of the file chooser window.
-#: gedit/gedit-commands-file.c:451
-msgctxt "window title"
-msgid "Open"
-msgstr "Abrir"
-
-#: gedit/gedit-commands-file.c:458 gedit/gedit-window.c:2676
-#: gedit/resources/gtk/menus-common.ui:100
-#: gedit/resources/gtk/menus-common.ui:106
-#: plugins/filebrowser/resources/ui/gedit-file-browser-menus.ui:7
-#: plugins/quickopen/quickopen/popup.py:46
-#: plugins/snippets/snippets/manager.py:790
-msgid "_Open"
-msgstr "_Abrir"
-
-#: gedit/gedit-commands-file.c:553
+#: gedit/gedit-commands-file.c:483
 #, c-format
 msgid "The file “%s” is read-only."
 msgstr "O ficheiro «%s» é só de lectura."
 
-#: gedit/gedit-commands-file.c:558
+#: gedit/gedit-commands-file.c:488
 msgid "Do you want to try to replace it with the one you are saving?"
 msgstr "Quere tentar substituílo co que está gardando agora?"
 
-#: gedit/gedit-commands-file.c:563
+#: gedit/gedit-commands-file.c:493
 #: gedit/resources/ui/gedit-replace-dialog.ui:55
 msgid "_Replace"
 msgstr "_Substituír"
 
-#: gedit/gedit-commands-file.c:603
+#: gedit/gedit-commands-file.c:533
 msgid "Save the file using compression?"
 msgstr "Desexa gardar o ficheiro usando compresión?"
 
-#: gedit/gedit-commands-file.c:607
+#: gedit/gedit-commands-file.c:537
 msgid "Save the file as plain text?"
 msgstr "Desexa gardar o ficheiro como texto plano?"
 
-#: gedit/gedit-commands-file.c:620
+#: gedit/gedit-commands-file.c:550
 #, c-format
 msgid ""
 "The file “%s” was previously saved as plain text and will now be saved using "
@@ -816,11 +763,11 @@ msgstr ""
 "O ficheiro «%s» gardouse anteriormente como texto plano e agora gardarase "
 "usando compresión."
 
-#: gedit/gedit-commands-file.c:624
+#: gedit/gedit-commands-file.c:554
 msgid "_Save Using Compression"
 msgstr "_Gardar usando compresión"
 
-#: gedit/gedit-commands-file.c:629
+#: gedit/gedit-commands-file.c:559
 #, c-format
 msgid ""
 "The file “%s” was previously saved using compression and will now be saved "
@@ -829,32 +776,32 @@ msgstr ""
 "O ficheiro «%s» gardouse anteriormente usando compresión e agora gardarase "
 "como texto plano."
 
-#: gedit/gedit-commands-file.c:632
+#: gedit/gedit-commands-file.c:562
 msgid "_Save As Plain Text"
 msgstr "Gardar como te_xto plano"
 
-#: gedit/gedit-commands-file.c:747 gedit/gedit-commands-file.c:1014
+#: gedit/gedit-commands-file.c:677 gedit/gedit-commands-file.c:964
 #, c-format
 msgid "Saving file “%s”…"
 msgstr "Gardando o ficheiro «%s»…"
 
 #. Translators: "Save As" is the title of the file chooser window.
-#: gedit/gedit-commands-file.c:842
+#: gedit/gedit-commands-file.c:788
 msgctxt "window title"
 msgid "Save As"
 msgstr "Gardar como"
 
-#: gedit/gedit-commands-file.c:1424
+#: gedit/gedit-commands-file.c:1374
 #, c-format
 msgid "Reverting the document “%s”…"
 msgstr "Recuperando o documento «%s»…"
 
-#: gedit/gedit-commands-file.c:1471
+#: gedit/gedit-commands-file.c:1421
 #, c-format
 msgid "Revert unsaved changes to document “%s”?"
 msgstr "Quere recuperar os cambios non gardados no documento «%s»?"
 
-#: gedit/gedit-commands-file.c:1480
+#: gedit/gedit-commands-file.c:1430
 #, c-format
 msgid ""
 "Changes made to the document in the last %ld second will be permanently lost."
@@ -868,14 +815,14 @@ msgstr[1] ""
 "Os cambios realizados no documento nos últimos %ld segundos perderanse "
 "permanentemente."
 
-#: gedit/gedit-commands-file.c:1489
+#: gedit/gedit-commands-file.c:1439
 msgid ""
 "Changes made to the document in the last minute will be permanently lost."
 msgstr ""
 "Os cambios realizados no documento no último minuto perderanse "
 "permanentemente."
 
-#: gedit/gedit-commands-file.c:1495
+#: gedit/gedit-commands-file.c:1445
 #, c-format
 msgid ""
 "Changes made to the document in the last minute and %ld second will be "
@@ -890,7 +837,7 @@ msgstr[1] ""
 "Os cambios realizados no documento no último minuto e %ld segundos "
 "perderanse permanentemente."
 
-#: gedit/gedit-commands-file.c:1505
+#: gedit/gedit-commands-file.c:1455
 #, c-format
 msgid ""
 "Changes made to the document in the last %ld minute will be permanently lost."
@@ -904,12 +851,12 @@ msgstr[1] ""
 "Os cambios realizados no documento nos últimos %ld minutos perderanse "
 "permanentemente."
 
-#: gedit/gedit-commands-file.c:1520
+#: gedit/gedit-commands-file.c:1470
 msgid "Changes made to the document in the last hour will be permanently lost."
 msgstr ""
 "Os cambios realizados no documento na última hora perderanse permanentemente."
 
-#: gedit/gedit-commands-file.c:1526
+#: gedit/gedit-commands-file.c:1476
 #, c-format
 msgid ""
 "Changes made to the document in the last hour and %d minute will be "
@@ -924,7 +871,7 @@ msgstr[1] ""
 "Os cambios realizados no documento na última hora e %d minutos perderanse "
 "permanentemente."
 
-#: gedit/gedit-commands-file.c:1541
+#: gedit/gedit-commands-file.c:1491
 #, c-format
 msgid ""
 "Changes made to the document in the last %d hour will be permanently lost."
@@ -937,15 +884,18 @@ msgstr[1] ""
 "Os cambios realizados no documento nas últimas %d horas perderanse "
 "permanentemente."
 
-#: gedit/gedit-commands-file.c:1564
+#: gedit/gedit-commands-file.c:1514
 msgid "_Revert"
 msgstr "_Recuperar"
 
-#: gedit/gedit-commands-help.c:108
-msgid "gedit is a small and lightweight text editor for the GNOME Desktop"
-msgstr "O gedit é un editor de textos pequeno e lixeiro para o GNOME"
+#: gedit/gedit-commands-help.c:110
+#| msgid "gedit is a small and lightweight text editor for the GNOME Desktop"
+msgid "gedit is a small and lightweight text editor for the GNOME desktop"
+msgstr ""
+"O gedit é un editor de textos pequeno e lixeiro para o ambiente de "
+"escritorio GNOME"
 
-#: gedit/gedit-commands-help.c:130
+#: gedit/gedit-commands-help.c:115
 msgid "translator-credits"
 msgstr ""
 "Fran Diéguez <frandieguez@gnome.org>, 2009-2020.\n"
@@ -976,7 +926,7 @@ msgstr "Atopada e substituída unha aparición"
 msgid "“%s” not found"
 msgstr "Non se atopou «%s»"
 
-#: gedit/gedit-document.c:969 gedit/gedit-document.c:998
+#: gedit/gedit-document.c:993 gedit/gedit-document.c:1022
 #, c-format
 msgid "Untitled Document %d"
 msgstr "Documento sen título %d"
@@ -986,18 +936,16 @@ msgstr "Documento sen título %d"
 msgid "Tab Group %i"
 msgstr "Grupo de lapelas %i"
 
-#: gedit/gedit-documents-panel.c:498 gedit/gedit-window.c:1094
-#: gedit/gedit-window.c:1100 gedit/gedit-window.c:1108
+#: gedit/gedit-documents-panel.c:498 gedit/gedit-window.c:1082
+#: gedit/gedit-window.c:1088 gedit/gedit-window.c:1096
 msgid "Read-Only"
 msgstr "Só de lectura"
 
 #: gedit/gedit-encodings-combo-box.c:297
-#: gedit/gedit-file-chooser-dialog-osx.m:562
 msgid "Automatically Detected"
 msgstr "Autodetectada"
 
 #: gedit/gedit-encodings-combo-box.c:326
-#: gedit/gedit-file-chooser-dialog-osx.m:571
 msgid "Add or Remove…"
 msgstr "Engadir ou eliminar…"
 
@@ -1036,32 +984,41 @@ msgstr "Mover a unha prioridade máis alta"
 msgid "Move to a lower priority"
 msgstr "Mover a unha prioridade máis baixa"
 
-#: gedit/gedit-file-chooser-dialog-gtk.c:39
-#: gedit/gedit-preferences-dialog.c:825
+#: gedit/gedit-file-chooser.c:41 gedit/gedit-preferences-dialog.c:730
 msgid "All Files"
 msgstr "Todos os ficheiros"
 
-#: gedit/gedit-file-chooser-dialog-gtk.c:40
+#: gedit/gedit-file-chooser.c:42
 msgid "All Text Files"
 msgstr "Todos os ficheiros de texto"
 
-#: gedit/gedit-file-chooser-dialog-gtk.c:305
+#: gedit/gedit-file-chooser-dialog-gtk.c:262
+#: gedit/gedit-file-chooser-open-dialog.c:43
 msgid "C_haracter Encoding:"
 msgstr "Codificación de _caracteres:"
 
-#: gedit/gedit-file-chooser-dialog-gtk.c:364
+#: gedit/gedit-file-chooser-dialog-gtk.c:321
 msgid "L_ine Ending:"
 msgstr "Finalización de li_ña:"
 
-#: gedit/gedit-file-chooser-dialog-osx.m:544
-msgid "Character Encoding:"
-msgstr "Codificación de caracteres:"
+#. Translators: "Open Files" is the title of the file chooser window.
+#: gedit/gedit-file-chooser-open-dialog.c:75
+#: gedit/gedit-file-chooser-open-native.c:54
+#| msgid "Open a file"
+msgctxt "window title"
+msgid "Open Files"
+msgstr "Abrir ficheiros"
 
-#: gedit/gedit-file-chooser-dialog-osx.m:617
-msgid "Line Ending:"
-msgstr "Finalización de liña:"
+#: gedit/gedit-file-chooser-open-dialog.c:79 gedit/gedit-window.c:2636
+#: gedit/resources/gtk/menus-common.ui:100
+#: gedit/resources/gtk/menus-common.ui:106
+#: plugins/filebrowser/resources/ui/gedit-file-browser-menus.ui:7
+#: plugins/quickopen/quickopen/popup.py:46
+#: plugins/snippets/snippets/manager.py:790
+msgid "_Open"
+msgstr "_Abrir"
 
-#: gedit/gedit-highlight-mode-selector.c:269 gedit/gedit-window.c:1178
+#: gedit/gedit-highlight-mode-selector.c:269 gedit/gedit-window.c:1166
 #: plugins/externaltools/tools/manager.py:115
 #: plugins/externaltools/tools/manager.py:324
 #: plugins/externaltools/tools/manager.py:440
@@ -1069,46 +1026,46 @@ msgstr "Finalización de liña:"
 msgid "Plain Text"
 msgstr "Texto plano"
 
-#: gedit/gedit-io-error-info-bar.c:143 gedit/gedit-io-error-info-bar.c:492
+#: gedit/gedit-io-error-info-bar.c:135 gedit/gedit-io-error-info-bar.c:415
 msgid "_Retry"
 msgstr "_Tentar de novo"
 
-#: gedit/gedit-io-error-info-bar.c:163
+#: gedit/gedit-io-error-info-bar.c:155
 #, c-format
 msgid "Could not find the file “%s”."
 msgstr "Non foi posíbel localizar o ficheiro «%s»."
 
-#: gedit/gedit-io-error-info-bar.c:165 gedit/gedit-io-error-info-bar.c:205
-#: gedit/gedit-io-error-info-bar.c:212
+#: gedit/gedit-io-error-info-bar.c:157 gedit/gedit-io-error-info-bar.c:197
+#: gedit/gedit-io-error-info-bar.c:204
 msgid "Please check that you typed the location correctly and try again."
 msgstr "Verifique que escribiu a localización correctamente e ténteo de novo."
 
 #. Translators: %s is a URI scheme (like for example http:, ftp:, etc.)
-#: gedit/gedit-io-error-info-bar.c:184
+#: gedit/gedit-io-error-info-bar.c:176
 #, c-format
 msgid "Unable to handle “%s:” locations."
 msgstr "Non é posíbel xestionar localizacións «%s:»."
 
-#: gedit/gedit-io-error-info-bar.c:190
+#: gedit/gedit-io-error-info-bar.c:182
 msgid "Unable to handle this location."
 msgstr "Non é posíbel xestionar esta localización."
 
-#: gedit/gedit-io-error-info-bar.c:199
+#: gedit/gedit-io-error-info-bar.c:191
 msgid "The location of the file cannot be accessed."
 msgstr "Non é posíbel acceder á localización do ficheiro."
 
-#: gedit/gedit-io-error-info-bar.c:203
+#: gedit/gedit-io-error-info-bar.c:195
 #, c-format
 msgid "“%s” is a directory."
 msgstr "%s é un cartafol."
 
-#: gedit/gedit-io-error-info-bar.c:210
+#: gedit/gedit-io-error-info-bar.c:202
 #, c-format
 msgid "“%s” is not a valid location."
 msgstr "%s non é unha localización válida."
 
 #. Translators: %s is a host name
-#: gedit/gedit-io-error-info-bar.c:246
+#: gedit/gedit-io-error-info-bar.c:238
 #, c-format
 msgid ""
 "Host “%s” could not be found. Please check that your proxy settings are "
@@ -1117,7 +1074,7 @@ msgstr ""
 "Non foi posíbel atopar o host «%s». Verifique que a configuración do seu "
 "proxy sexa correcta e ténteo de novo."
 
-#: gedit/gedit-io-error-info-bar.c:261
+#: gedit/gedit-io-error-info-bar.c:253
 #, c-format
 msgid ""
 "Hostname was invalid. Please check that you typed the location correctly and "
@@ -1126,51 +1083,42 @@ msgstr ""
 "O nome do host é incorrecto. Verifique que escribiu ben o enderezo e ténteo "
 "de novo."
 
-#: gedit/gedit-io-error-info-bar.c:269
+#: gedit/gedit-io-error-info-bar.c:261
 #, c-format
 msgid "“%s” is not a regular file."
 msgstr "«%s» non é un ficheiro normal."
 
-#: gedit/gedit-io-error-info-bar.c:274
+#: gedit/gedit-io-error-info-bar.c:266
 msgid "Connection timed out. Please try again."
 msgstr "Excedeuse o tempo de espera da conexión. Ténteo de novo."
 
-#: gedit/gedit-io-error-info-bar.c:307
+#: gedit/gedit-io-error-info-bar.c:299
 #, c-format
 msgid "Unexpected error: %s"
 msgstr "Erro inesperado: %s"
 
-#: gedit/gedit-io-error-info-bar.c:343
+#: gedit/gedit-io-error-info-bar.c:335
 msgid "Cannot find the requested file. Perhaps it has recently been deleted."
 msgstr ""
 "Non é posíbel atopar o ficheiro solicitado. Quizais foi eliminado "
 "recentemente."
 
-#: gedit/gedit-io-error-info-bar.c:353
+#: gedit/gedit-io-error-info-bar.c:345
 #, c-format
 msgid "Could not revert the file “%s”."
 msgstr "Non foi posíbel reverter o ficheiro «%s»."
 
-#: gedit/gedit-io-error-info-bar.c:380
+#: gedit/gedit-io-error-info-bar.c:372
 msgid "Ch_aracter Encoding:"
 msgstr "Codificación de _caracteres:"
 
-#: gedit/gedit-io-error-info-bar.c:441
-#, c-format
-msgid "The location “%s” is not currently reachable."
-msgstr "A localización «%s» non pode alcanzarse actualmente."
-
-#: gedit/gedit-io-error-info-bar.c:456
-msgid "Your system is offline. Check your network."
-msgstr "O seu sistema está desconectado. Comprobe a súa rede."
-
 #. Translators: the access key chosen for this string should be
 #. different from other main menu access keys (Open, Edit, View...)
-#: gedit/gedit-io-error-info-bar.c:500 gedit/gedit-io-error-info-bar.c:765
+#: gedit/gedit-io-error-info-bar.c:423
 msgid "Edit Any_way"
 msgstr "_Editar de todos os modos"
 
-#: gedit/gedit-io-error-info-bar.c:588
+#: gedit/gedit-io-error-info-bar.c:511
 msgid ""
 "The number of followed links is limited and the actual file could not be "
 "found within this limit."
@@ -1178,29 +1126,29 @@ msgstr ""
 "O número de ligazóns seguidas é limitado e o ficheiro actual non se encontra "
 "dentro deste límite."
 
-#: gedit/gedit-io-error-info-bar.c:592
+#: gedit/gedit-io-error-info-bar.c:515
 msgid "You do not have the permissions necessary to open the file."
 msgstr "Non ten os permisos necesarios para abrir o ficheiro."
 
-#: gedit/gedit-io-error-info-bar.c:598
+#: gedit/gedit-io-error-info-bar.c:521
 msgid "Unable to detect the character encoding."
 msgstr "Non foi posíbel detectar a codificación de caracteres."
 
-#: gedit/gedit-io-error-info-bar.c:599 gedit/gedit-io-error-info-bar.c:623
+#: gedit/gedit-io-error-info-bar.c:522 gedit/gedit-io-error-info-bar.c:546
 msgid "Please check that you are not trying to open a binary file."
 msgstr "Verifique que non está tentando abrir un ficheiro binario."
 
-#: gedit/gedit-io-error-info-bar.c:600
+#: gedit/gedit-io-error-info-bar.c:523
 msgid "Select a character encoding from the menu and try again."
 msgstr ""
 "Seleccione unha codificación de caracteres desde o menú e ténteo de novo."
 
-#: gedit/gedit-io-error-info-bar.c:606
+#: gedit/gedit-io-error-info-bar.c:529
 #, c-format
 msgid "There was a problem opening the file “%s”."
 msgstr "Produciuse un erro ao abrir o ficheiro «%s»."
 
-#: gedit/gedit-io-error-info-bar.c:608
+#: gedit/gedit-io-error-info-bar.c:531
 msgid ""
 "The file you opened has some invalid characters. If you continue editing "
 "this file you could corrupt this document."
@@ -1208,38 +1156,38 @@ msgstr ""
 "O ficheiro que abriu ten algúns caracteres incorrectos. Se continúa coa "
 "edición deste ficheiro podería inutilizar este documento."
 
-#: gedit/gedit-io-error-info-bar.c:611
+#: gedit/gedit-io-error-info-bar.c:534
 msgid "You can also choose another character encoding and try again."
 msgstr ""
 "Vostede tamén pode seleccionar outra codificación de caracteres e tentalo de "
 "novo."
 
-#: gedit/gedit-io-error-info-bar.c:620
+#: gedit/gedit-io-error-info-bar.c:543
 #, c-format
 msgid "Could not open the file “%s” using the “%s” character encoding."
 msgstr ""
 "Non foi posíbel abrir o ficheiro «%s» usando a codificación de caracteres "
 "«%s»."
 
-#: gedit/gedit-io-error-info-bar.c:624 gedit/gedit-io-error-info-bar.c:699
+#: gedit/gedit-io-error-info-bar.c:547 gedit/gedit-io-error-info-bar.c:622
 msgid "Select a different character encoding from the menu and try again."
 msgstr ""
 "Seleccione unha codificación de caracteres diferente desde o menú e ténteo "
 "de novo."
 
-#: gedit/gedit-io-error-info-bar.c:636
+#: gedit/gedit-io-error-info-bar.c:559
 #, c-format
 msgid "Could not open the file “%s”."
 msgstr "Non foi posíbel abrir o ficheiro «%s»."
 
-#: gedit/gedit-io-error-info-bar.c:694
+#: gedit/gedit-io-error-info-bar.c:617
 #, c-format
 msgid "Could not save the file “%s” using the “%s” character encoding."
 msgstr ""
 "Non foi posíbel gardar o ficheiro «%s» usando a codificación de caracteres "
 "«%s»."
 
-#: gedit/gedit-io-error-info-bar.c:697
+#: gedit/gedit-io-error-info-bar.c:620
 msgid ""
 "The document contains one or more characters that cannot be encoded using "
 "the specified character encoding."
@@ -1247,28 +1195,11 @@ msgstr ""
 "O documento contén un ou máis caracteres que non é posíbel codificar usando "
 "a codificación de caracteres especificada."
 
-#. Translators: the access key chosen for this string should be
-#. different from other main menu access keys (Open, Edit, View...)
-#: gedit/gedit-io-error-info-bar.c:770
-msgid "D_on’t Edit"
-msgstr "_Non editar"
-
-#: gedit/gedit-io-error-info-bar.c:780
-#, c-format
-msgid "This file “%s” is already open in another window."
-msgstr "Este ficheiro «%s» xa está aberto noutra xanela."
-
-#: gedit/gedit-io-error-info-bar.c:794
-msgid "Do you want to edit it anyway?"
-msgstr "Quere editalo de todas formas?"
-
-#: gedit/gedit-io-error-info-bar.c:850 gedit/gedit-io-error-info-bar.c:940
-#: gedit/gedit-io-error-info-bar.c:1230
+#: gedit/gedit-io-error-info-bar.c:691
 msgid "S_ave Anyway"
 msgstr "G_ardar de todos os modos"
 
-#: gedit/gedit-io-error-info-bar.c:853 gedit/gedit-io-error-info-bar.c:943
-#: gedit/gedit-io-error-info-bar.c:1233
+#: gedit/gedit-io-error-info-bar.c:694
 msgid "D_on’t Save"
 msgstr "N_on gardar"
 
@@ -1276,40 +1207,19 @@ msgstr "N_on gardar"
 #. * could be interpreted as the changes he made in the document. beside "reading" is
 #. * not accurate (since last load/save)
 #.
-#: gedit/gedit-io-error-info-bar.c:867
+#: gedit/gedit-io-error-info-bar.c:708
 #, c-format
 msgid "The file “%s” has been modified since reading it."
 msgstr "O ficheiro «%s» foi modificado desde que se leu."
 
-#: gedit/gedit-io-error-info-bar.c:882
+#: gedit/gedit-io-error-info-bar.c:723
 msgid "If you save it, all the external changes could be lost. Save it anyway?"
 msgstr ""
 "Se o garda, todos os cambios externos poderían perderse. Quere gardalo de "
 "todos os modos?"
 
-#: gedit/gedit-io-error-info-bar.c:962
-#, c-format
-msgid "Could not create a backup file while saving “%s”"
-msgstr "Non foi posíbel crear un ficheiro de seguranza ao gardar «%s»"
-
-#: gedit/gedit-io-error-info-bar.c:967
-#, c-format
-msgid "Could not create a temporary backup file while saving “%s”"
-msgstr "Non foi posíbel crear un ficheiro temporal de seguranza ao gardar «%s»"
-
-#: gedit/gedit-io-error-info-bar.c:984
-msgid ""
-"Could not back up the old copy of the file before saving the new one. You "
-"can ignore this warning and save the file anyway, but if an error occurs "
-"while saving, you could lose the old copy of the file. Save anyway?"
-msgstr ""
-"Non foi posíbel facer unha copia de seguranza do ficheiro antigo antes de "
-"gardar o novo. Vostede pode ignorar este aviso e gardar o ficheiro de todos "
-"os modos, mais se ocorre un erro ao gardar podería perder a copia antiga do "
-"ficheiro. Quere gardalo de todos os modos?"
-
 #. Translators: %s is a URI scheme (like for example http:, ftp:, etc.)
-#: gedit/gedit-io-error-info-bar.c:1044
+#: gedit/gedit-io-error-info-bar.c:781
 #, c-format
 msgid ""
 "Cannot handle “%s:” locations in write mode. Please check that you typed the "
@@ -1318,7 +1228,7 @@ msgstr ""
 "Non foi posíbel xestionar as localizacións «%s:» en modo de edición. "
 "Verifique que escribiu a localización correctamente e ténteo de novo."
 
-#: gedit/gedit-io-error-info-bar.c:1052
+#: gedit/gedit-io-error-info-bar.c:789
 msgid ""
 "Cannot handle this location in write mode. Please check that you typed the "
 "location correctly and try again."
@@ -1326,7 +1236,7 @@ msgstr ""
 "Non foi posíbel xestionar esta localización en modo de edición. Comprobe que "
 "escribiu a localización correctamente e ténteo de novo."
 
-#: gedit/gedit-io-error-info-bar.c:1061
+#: gedit/gedit-io-error-info-bar.c:798
 #, c-format
 msgid ""
 "“%s” is not a valid location. Please check that you typed the location "
@@ -1335,7 +1245,7 @@ msgstr ""
 "«%s» non é unha localización válida. Verifique que escribiu ben o enderezo e "
 "ténteo de novo."
 
-#: gedit/gedit-io-error-info-bar.c:1068
+#: gedit/gedit-io-error-info-bar.c:805
 msgid ""
 "You do not have the permissions necessary to save the file. Please check "
 "that you typed the location correctly and try again."
@@ -1343,7 +1253,7 @@ msgstr ""
 "Non ten os permisos necesarios para gardar o ficheiro. Verifique que "
 "escribiu o enderezo correctamente e ténteo de novo."
 
-#: gedit/gedit-io-error-info-bar.c:1074
+#: gedit/gedit-io-error-info-bar.c:811
 msgid ""
 "There is not enough disk space to save the file. Please free some disk space "
 "and try again."
@@ -1351,7 +1261,7 @@ msgstr ""
 "Non hai suficiente espazo no disco para gardar o ficheiro. Libere un pouco "
 "de espazo no disco e ténteo de novo."
 
-#: gedit/gedit-io-error-info-bar.c:1079
+#: gedit/gedit-io-error-info-bar.c:816
 msgid ""
 "You are trying to save the file on a read-only disk. Please check that you "
 "typed the location correctly and try again."
@@ -1359,11 +1269,11 @@ msgstr ""
 "Está tentando gardar o ficheiro nun disco só de lectura. Verifique que "
 "escribiu o enderezo correctamente e ténteo de novo."
 
-#: gedit/gedit-io-error-info-bar.c:1085
+#: gedit/gedit-io-error-info-bar.c:822
 msgid "A file with the same name already exists. Please use a different name."
 msgstr "Xa existe un ficheiro co mesmo nome. Use un nome diferente."
 
-#: gedit/gedit-io-error-info-bar.c:1090
+#: gedit/gedit-io-error-info-bar.c:827
 msgid ""
 "The disk where you are trying to save the file has a limitation on length of "
 "the file names. Please use a shorter name."
@@ -1371,7 +1281,7 @@ msgstr ""
 "O disco onde está tentando gardar o ficheiro ten unha limitación de "
 "lonxitude dos nomes de ficheiro. Use un nome máis curto."
 
-#: gedit/gedit-io-error-info-bar.c:1101
+#: gedit/gedit-io-error-info-bar.c:838
 msgid ""
 "The disk where you are trying to save the file has a limitation on file "
 "sizes. Please try saving a smaller file or saving it to a disk that does not "
@@ -1381,69 +1291,45 @@ msgstr ""
 "de ficheiro. Tente gardar un ficheiro máis pequeno ou gardalo nun disco que "
 "non posúa esta limitación."
 
-#: gedit/gedit-io-error-info-bar.c:1118
+#: gedit/gedit-io-error-info-bar.c:855
 #, c-format
 msgid "Could not save the file “%s”."
 msgstr "Non foi posíbel gardar o ficheiro «%s»."
 
-#: gedit/gedit-io-error-info-bar.c:1158
-#, c-format
-msgid "The file “%s” changed on disk."
-msgstr "O ficheiro «%s» foi modificado no disco."
-
-#: gedit/gedit-io-error-info-bar.c:1169
-msgid "Drop Changes and _Reload"
-msgstr "Rexeitar cambios e _recargar"
-
-#: gedit/gedit-io-error-info-bar.c:1179 gedit/resources/gtk/menus-common.ui:148
-#: gedit/resources/gtk/menus.ui:9 gedit/resources/gtk/menus-traditional.ui:9
-msgid "_Reload"
-msgstr "_Recargar"
-
-#: gedit/gedit-io-error-info-bar.c:1243
-#, c-format
-msgid "Some invalid chars have been detected while saving “%s”"
-msgstr "Detectáronse algúns caracteres non válidos ao gardar «%s»"
-
-#: gedit/gedit-io-error-info-bar.c:1259
-msgid ""
-"If you continue saving this file you can corrupt the document.  Save anyway?"
-msgstr ""
-"Se continúa gardando este ficheiro pode corromper o documento. Desexa gardar "
-"de todos modos?"
-
-#: gedit/gedit-preferences-dialog.c:446
+#: gedit/gedit-preferences-dialog.c:433
 msgid "Click on this button to select the font to be used by the editor"
 msgstr "Prema este botón para seleccionar o tipo de letra utilizado no editor"
 
-#: gedit/gedit-preferences-dialog.c:452
+#: gedit/gedit-preferences-dialog.c:439
 #, c-format
 msgid "_Use the system fixed width font (%s)"
 msgstr "_Usar o tipo de letra de largura fixa do sistema (%s)"
 
-#: gedit/gedit-preferences-dialog.c:592
+#: gedit/gedit-preferences-dialog.c:685
 #, c-format
-msgid "Directory “%s” could not be created: g_mkdir_with_parents() failed: %s"
-msgstr ""
-"Non foi posíbel crear o cartafol «%s»: fallou g_mkdir_with_parents(): %s"
+#| msgid "The selected color scheme cannot be installed."
+msgid "The selected color scheme cannot be installed: %s"
+msgstr "Non é posíbel instalar o esquema de cores seleccionado: %s"
 
-#: gedit/gedit-preferences-dialog.c:789
+#: gedit/gedit-preferences-dialog.c:691
 msgid "The selected color scheme cannot be installed."
 msgstr "Non é posíbel instalar o esquema de cores seleccionado."
 
-#: gedit/gedit-preferences-dialog.c:812
-msgid "Add Scheme"
-msgstr "Engadir esquema"
+#: gedit/gedit-preferences-dialog.c:717
+#| msgid "Color Scheme"
+msgid "Add Color Scheme"
+msgstr "Engadir esquema de cor"
 
-#: gedit/gedit-preferences-dialog.c:817
-msgid "A_dd Scheme"
+#: gedit/gedit-preferences-dialog.c:720
+#| msgid "Add Scheme"
+msgid "_Add Scheme"
 msgstr "_Engadir esquema"
 
-#: gedit/gedit-preferences-dialog.c:821
+#: gedit/gedit-preferences-dialog.c:725
 msgid "Color Scheme Files"
 msgstr "Ficheiros de esquema de cores"
 
-#: gedit/gedit-preferences-dialog.c:852
+#: gedit/gedit-preferences-dialog.c:763
 #, c-format
 msgid "Could not remove color scheme “%s”."
 msgstr "Non foi posíbel eliminar o esquema de cor «%s»."
@@ -1538,52 +1424,52 @@ msgstr "Gardando %s en %s"
 msgid "Saving %s"
 msgstr "Gardando %s"
 
-#: gedit/gedit-tab.c:1539
+#: gedit/gedit-tab.c:1484
 #, c-format
 msgid "Error opening file %s"
 msgstr "Produciuse un erro ao abrir o ficheiro %s"
 
-#: gedit/gedit-tab.c:1544
+#: gedit/gedit-tab.c:1489
 #, c-format
 msgid "Error reverting file %s"
 msgstr "Produciuse un erro ao recuperar o ficheiro %s"
 
-#: gedit/gedit-tab.c:1549
+#: gedit/gedit-tab.c:1494
 #, c-format
 msgid "Error saving file %s"
 msgstr "Produciuse un erro ao gardar o ficheiro %s"
 
-#: gedit/gedit-tab.c:1580
+#: gedit/gedit-tab.c:1525
 msgid "Name:"
 msgstr "Nome:"
 
-#: gedit/gedit-tab.c:1581
+#: gedit/gedit-tab.c:1526
 msgid "MIME Type:"
 msgstr "Tipo MIME:"
 
-#: gedit/gedit-tab.c:1582
+#: gedit/gedit-tab.c:1527
 msgid "Encoding:"
 msgstr "Codificación:"
 
 #. Translators: '/ on <remote-share>'
-#: gedit/gedit-utils.c:764
+#: gedit/gedit-utils.c:436
 #, c-format
 msgid "/ on %s"
 msgstr "/ en %s"
 
-#: gedit/gedit-utils.c:1068
+#: gedit/gedit-utils.c:610
 msgid "Unix/Linux"
 msgstr "Unix/Linux"
 
-#: gedit/gedit-utils.c:1070
+#: gedit/gedit-utils.c:612
 msgid "Mac OS Classic"
 msgstr "Mac OS Classic"
 
-#: gedit/gedit-utils.c:1072
+#: gedit/gedit-utils.c:614
 msgid "Windows"
 msgstr "Windows"
 
-#: gedit/gedit-view.c:481 gedit/resources/ui/gedit-preferences-dialog.ui:41
+#: gedit/gedit-view.c:438 gedit/resources/ui/gedit-preferences-dialog.ui:41
 msgid "_Display line numbers"
 msgstr "_Mostrar os números de liña"
 
@@ -1624,48 +1510,48 @@ msgstr "A cadea que quere buscar"
 msgid "Line you want to move the cursor to"
 msgstr "A liña á que quere mover o cursor"
 
-#: gedit/gedit-window.c:931
+#: gedit/gedit-window.c:919
 msgid "Bracket match is out of range"
 msgstr "O corchete de coincidencia está fora de rango"
 
-#: gedit/gedit-window.c:936
+#: gedit/gedit-window.c:924
 msgid "Bracket match not found"
 msgstr "Non se encontrou o corchete coincidente"
 
-#: gedit/gedit-window.c:941
+#: gedit/gedit-window.c:929
 #, c-format
 msgid "Bracket match found on line: %d"
 msgstr "Corchete coincidente encontrado na liña: %d"
 
 #. Translators: "Ln" is an abbreviation for "Line", Col is an abbreviation for "Column". Please,
 #. use abbreviations if possible to avoid space problems.
-#: gedit/gedit-window.c:976
+#: gedit/gedit-window.c:964
 #, c-format
 msgid "  Ln %d, Col %d"
 msgstr "  Li %d, Col %d"
 
-#: gedit/gedit-window.c:1160
+#: gedit/gedit-window.c:1148
 #, c-format
 msgid "Tab Width: %u"
 msgstr "Largura da tabulación: %u"
 
-#: gedit/gedit-window.c:1529
+#: gedit/gedit-window.c:1493
 msgid "There are unsaved documents"
 msgstr "Hai documentos sen gardar"
 
-#: gedit/gedit-window.c:2366
+#: gedit/gedit-window.c:2330
 msgid "Change side panel page"
 msgstr "Cambiar páxina do panel lateral"
 
-#: gedit/gedit-window.c:2386 gedit/resources/ui/gedit-window.ui:19
+#: gedit/gedit-window.c:2350 gedit/resources/ui/gedit-window.ui:19
 msgid "Documents"
 msgstr "Documentos"
 
-#: gedit/gedit-window.c:2677
+#: gedit/gedit-window.c:2637
 msgid "Open a file"
 msgstr "Abrir un ficheiro"
 
-#: gedit/gedit-window.c:2681
+#: gedit/gedit-window.c:2641
 msgid "Open a recently used file"
 msgstr "Abrir un ficheiro usado recentemente"
 
@@ -1742,6 +1628,11 @@ msgstr "_Gardar como…"
 #: gedit/resources/gtk/menus-common.ui:140 gedit/resources/gtk/menus.ui:27
 msgid "_New Window"
 msgstr "_Xanela nova"
+
+#: gedit/resources/gtk/menus-common.ui:148 gedit/resources/gtk/menus.ui:9
+#: gedit/resources/gtk/menus-traditional.ui:9
+msgid "_Reload"
+msgstr "_Recargar"
 
 #: gedit/resources/gtk/menus-common.ui:155 gedit/resources/gtk/menus.ui:14
 #: gedit/resources/gtk/menus-traditional.ui:14
@@ -2064,29 +1955,29 @@ msgstr "Seleccionar o tipo de letra do editor"
 msgid "Color Scheme"
 msgstr "Esquema de cor"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:663
-#: gedit/resources/ui/gedit-preferences-dialog.ui:664
+#: gedit/resources/ui/gedit-preferences-dialog.ui:652
+#: gedit/resources/ui/gedit-preferences-dialog.ui:653
 msgid "Install scheme"
 msgstr "Instalar esquema"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:665
+#: gedit/resources/ui/gedit-preferences-dialog.ui:654
 msgid "Install Scheme"
 msgstr "Instalar esquema"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:679
-#: gedit/resources/ui/gedit-preferences-dialog.ui:680
+#: gedit/resources/ui/gedit-preferences-dialog.ui:668
+#: gedit/resources/ui/gedit-preferences-dialog.ui:669
 msgid "Uninstall scheme"
 msgstr "Desinstalar esquema"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:681
+#: gedit/resources/ui/gedit-preferences-dialog.ui:670
 msgid "Uninstall Scheme"
 msgstr "Desinstalar esquema"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:721
+#: gedit/resources/ui/gedit-preferences-dialog.ui:710
 msgid "Font & Colors"
 msgstr "Tipos de letra e cores"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:746
+#: gedit/resources/ui/gedit-preferences-dialog.ui:735
 msgid "Plugins"
 msgstr "Engadidos"
 
@@ -2425,190 +2316,211 @@ msgid "Go to line"
 msgstr "Ir á liña"
 
 #: gedit/resources/ui/gedit-shortcuts.ui:265
+#| msgctxt "shortcut window"
+#| msgid "Move viewport to beginning of file"
+msgctxt "shortcut window"
+msgid "Move to the beginning of the current line"
+msgstr "Mover vista ao inicio da liña actual"
+
+#: gedit/resources/ui/gedit-shortcuts.ui:272
+#| msgid "Checks the spelling of the current document."
+msgctxt "shortcut window"
+msgid "Move to the end of the current line"
+msgstr "Moverse ao final da liña actual"
+
+#: gedit/resources/ui/gedit-shortcuts.ui:279
+#| msgctxt "shortcut window"
+#| msgid "Move viewport to beginning of file"
+msgctxt "shortcut window"
+msgid "Move to the beginning of the document"
+msgstr "Moverse ao inicio do documento"
+
+#: gedit/resources/ui/gedit-shortcuts.ui:286
+#| msgctxt "shortcut window"
+#| msgid "Switch to the next document"
+msgctxt "shortcut window"
+msgid "Move to the end of the document"
+msgstr "Moverse ao final do documento"
+
+#: gedit/resources/ui/gedit-shortcuts.ui:293
 msgctxt "shortcut window"
 msgid "Move viewport up within the file"
 msgstr "Mover a vista arriba no ficheiro"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:272
+#: gedit/resources/ui/gedit-shortcuts.ui:300
 msgctxt "shortcut window"
 msgid "Move viewport down within the file"
 msgstr "Mover a vista abaixo no ficheiro"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:279
+#: gedit/resources/ui/gedit-shortcuts.ui:307
 msgctxt "shortcut window"
 msgid "Move viewport to end of file"
 msgstr "Mover vista ao final do ficheiro"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:286
+#: gedit/resources/ui/gedit-shortcuts.ui:314
 msgctxt "shortcut window"
 msgid "Move viewport to beginning of file"
 msgstr "Mover vista ao inicio do ficheiro"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:293
+#: gedit/resources/ui/gedit-shortcuts.ui:321
 msgctxt "shortcut window"
 msgid "Move to matching bracket"
 msgstr "Ir á chave coincidente"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:301
+#: gedit/resources/ui/gedit-shortcuts.ui:328
+#| msgid "P_revious Tab Group"
+msgctxt "shortcut window"
+msgid "Go to previous tab group"
+msgstr "Ir ao grupo de lapelas anterior"
+
+#: gedit/resources/ui/gedit-shortcuts.ui:335
+#| msgctxt "shortcut window"
+#| msgid "Create a new tab group"
+msgctxt "shortcut window"
+msgid "Go to next tab group"
+msgstr "Ir ao grupo de lapelas seguinte"
+
+#: gedit/resources/ui/gedit-shortcuts.ui:343
 msgctxt "shortcut window"
 msgid "Editing"
 msgstr "Editando"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:306
+#: gedit/resources/ui/gedit-shortcuts.ui:348
 msgctxt "shortcut window"
 msgid "Toggle insert / overwrite"
 msgstr "Trocar inserir / sobrescribir"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:313
+#: gedit/resources/ui/gedit-shortcuts.ui:355
+msgctxt "shortcut window"
+msgid "Toggle cursor visibility"
+msgstr "Trocar a visibilidade do cursor"
+
+#: gedit/resources/ui/gedit-shortcuts.ui:362
 msgctxt "shortcut window"
 msgid "Delete current line"
 msgstr "Eliminar liña actual"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:320
-msgctxt "shortcut window"
-msgid "Join selected lines"
-msgstr "Unir liñas seleccionadas"
-
-#: gedit/resources/ui/gedit-shortcuts.ui:327
+#: gedit/resources/ui/gedit-shortcuts.ui:369
 msgctxt "shortcut window"
 msgid "Move current line up"
 msgstr "Mover a liña actual arriba"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:334
+#: gedit/resources/ui/gedit-shortcuts.ui:376
 msgctxt "shortcut window"
 msgid "Move current line down"
 msgstr "Mover a liña actual abaixo"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:341
+#: gedit/resources/ui/gedit-shortcuts.ui:383
 msgctxt "shortcut window"
 msgid "Move current word left"
 msgstr "Mover a palabra actual á esquerda"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:348
+#: gedit/resources/ui/gedit-shortcuts.ui:390
 msgctxt "shortcut window"
 msgid "Move current word right"
 msgstr "Mover a palabra actual á dereita"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:355
+#: gedit/resources/ui/gedit-shortcuts.ui:397
 msgctxt "shortcut window"
 msgid "Convert to uppercase"
 msgstr "Converter a maiúsculas"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:362
+#: gedit/resources/ui/gedit-shortcuts.ui:404
 msgctxt "shortcut window"
 msgid "Convert to lowercase"
 msgstr "Converter a minúsculas"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:369
+#: gedit/resources/ui/gedit-shortcuts.ui:411
 msgctxt "shortcut window"
 msgid "Invert case"
 msgstr "Inverter as maiúsculas e minúsculas"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:376
+#: gedit/resources/ui/gedit-shortcuts.ui:418
 msgctxt "shortcut window"
 msgid "Increment number at cursor"
 msgstr "Incrementar o número no cursor"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:383
+#: gedit/resources/ui/gedit-shortcuts.ui:425
 msgctxt "shortcut window"
 msgid "Decrement number at cursor"
 msgstr "Decrementar o número no cursor"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:391
+#: gedit/resources/ui/gedit-shortcuts.ui:433
 msgctxt "shortcut window"
 msgid "Tools"
 msgstr "Ferramentas"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:396
+#: gedit/resources/ui/gedit-shortcuts.ui:438
 msgctxt "shortcut window"
 msgid "Check spelling"
 msgstr "Corrección ortográfica"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:403
+#: gedit/resources/ui/gedit-shortcuts.ui:445
 msgctxt "shortcut window"
 msgid "Print the document"
 msgstr "Imprimir o documento"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:410
+#: gedit/resources/ui/gedit-shortcuts.ui:452
 msgctxt "shortcut window"
 msgid "Show completion window"
 msgstr "Mostrar a xanela de completado"
+
+#: gedit/resources/ui/gedit-shortcuts.ui:460
+msgctxt "shortcut window"
+msgid "General"
+msgstr "Xeral"
+
+#: gedit/resources/ui/gedit-shortcuts.ui:465
+msgctxt "shortcut window"
+msgid "Show help"
+msgstr "Mostrar axuda"
+
+#: gedit/resources/ui/gedit-shortcuts.ui:472
+#| msgid "Open history menu"
+msgctxt "shortcut window"
+msgid "Open menu"
+msgstr "Abrir o menú"
+
+#: gedit/resources/ui/gedit-shortcuts.ui:479
+#| msgid "_Keyboard Shortcuts"
+msgctxt "shortcut window"
+msgid "Keyboard shortcuts"
+msgstr "Atallos de teclado"
 
 #: gedit/resources/ui/gedit-tab-label.ui:34
 msgid "Close Document"
 msgstr "Pechar documento"
 
-#: gedit/resources/ui/gedit-window.ui:36 gedit/resources/ui/gedit-window.ui:43
-#: gedit/resources/ui/gedit-window.ui:330
-#: gedit/resources/ui/gedit-window.ui:337
+#: gedit/resources/ui/gedit-window.ui:36 gedit/resources/ui/gedit-window.ui:42
+#: gedit/resources/ui/gedit-window.ui:327
+#: gedit/resources/ui/gedit-window.ui:333
 msgid "Create a new document"
 msgstr "Crear un documento novo"
 
-#: gedit/resources/ui/gedit-window.ui:42 gedit/resources/ui/gedit-window.ui:336
+#: gedit/resources/ui/gedit-window.ui:41 gedit/resources/ui/gedit-window.ui:332
 msgid "New"
 msgstr "Nova"
 
-#: gedit/resources/ui/gedit-window.ui:65 gedit/resources/ui/gedit-window.ui:70
-#: gedit/resources/ui/gedit-window.ui:375
-#: gedit/resources/ui/gedit-window.ui:380
+#: gedit/resources/ui/gedit-window.ui:62 gedit/resources/ui/gedit-window.ui:67
+#: gedit/resources/ui/gedit-window.ui:368
+#: gedit/resources/ui/gedit-window.ui:373
 msgid "Save the current file"
 msgstr "Gardar o ficheiro actual"
 
-#: gedit/resources/ui/gedit-window.ui:69 gedit/resources/ui/gedit-window.ui:372
-#: gedit/resources/ui/gedit-window.ui:379
+#: gedit/resources/ui/gedit-window.ui:66 gedit/resources/ui/gedit-window.ui:366
+#: gedit/resources/ui/gedit-window.ui:372
 msgid "Save"
 msgstr "Gardar"
 
-#: gedit/resources/ui/gedit-window.ui:212
+#: gedit/resources/ui/gedit-window.ui:209
 msgid "Hide panel"
 msgstr "Ocultar o panel"
 
+#: gedit/resources/ui/gedit-window.ui:341
 #: gedit/resources/ui/gedit-window.ui:346
-#: gedit/resources/ui/gedit-window.ui:351
-#: gedit/resources/ui/gedit-window.ui:352
+#: gedit/resources/ui/gedit-window.ui:347
 msgid "Leave Fullscreen"
 msgstr "Saír do modo de pantalla completa"
-
-#: plugins/checkupdate/checkupdate.plugin.desktop.in:5
-msgid "Check update"
-msgstr "Comprobar actualizacións"
-
-#: plugins/checkupdate/checkupdate.plugin.desktop.in:6
-msgid "Check for latest version of gedit"
-msgstr "Comprobar se hai algunha última versión de gedit"
-
-#: plugins/checkupdate/gedit-check-update-plugin.c:243
-msgid "There was an error displaying the URI."
-msgstr "Produciuse un erro ao mostrar a axuda."
-
-#: plugins/checkupdate/gedit-check-update-plugin.c:280
-msgid "_Download"
-msgstr "_Descargar"
-
-#: plugins/checkupdate/gedit-check-update-plugin.c:281
-msgid "_Ignore Version"
-msgstr "_Ignorar versión"
-
-#: plugins/checkupdate/gedit-check-update-plugin.c:286
-msgid "There is a new version of gedit"
-msgstr "Hai unha nova versión de gedit"
-
-#: plugins/checkupdate/gedit-check-update-plugin.c:289
-msgid ""
-"You can download the new version of gedit by clicking on the download button "
-"or ignore that version and wait for a new one"
-msgstr ""
-"Vostede pode descargar unha nova versión do gedit premendo no botón de "
-"descarga ou ignorar esa versión e agardar á seguinte"
-
-#: plugins/checkupdate/org.gnome.gedit.plugins.checkupdate.gschema.xml:5
-msgid "Version to Ignore"
-msgstr "Versión a ignorar"
-
-#. This is releated to the next gedit version to be released
-#: plugins/checkupdate/org.gnome.gedit.plugins.checkupdate.gschema.xml:7
-msgid "Version to ignore until a newer version is released."
-msgstr "Indica a versión a ignorar até que se libere unha nova versión."
 
 #: plugins/docinfo/docinfo.plugin.desktop.in:5
 #: plugins/docinfo/resources/ui/gedit-docinfo-plugin.ui:7
@@ -2916,8 +2828,9 @@ msgid "File Browser Panel"
 msgstr "Panel do navegador de ficheiros"
 
 #: plugins/filebrowser/filebrowser.plugin.desktop.in:7
-msgid "Easy file access from the side panel"
-msgstr "Acceso fácil a ficheiros desde o panel lateral"
+#| msgid "Easy file access from the side panel"
+msgid "Easy file access from the side panel."
+msgstr "Acceso fácil a ficheiros desde o panel lateral."
 
 #: plugins/filebrowser/gedit-file-bookmarks-store.c:200
 msgid "Home"
@@ -3256,8 +3169,9 @@ msgid "Python Console"
 msgstr "Consola de Python"
 
 #: plugins/pythonconsole/pythonconsole.plugin.desktop.in:7
-msgid "Interactive Python console standing in the bottom panel"
-msgstr "Consola interactiva de Python no panel inferior"
+#| msgid "Interactive Python console standing in the bottom panel"
+msgid "Interactive Python console standing in the bottom panel."
+msgstr "Consola interactiva de Python no panel inferior."
 
 #: plugins/quickhighlight/quickhighlight.plugin.desktop.in:5
 msgid "Quick Highlight"
@@ -3277,8 +3191,9 @@ msgid "Quick Open"
 msgstr "Abrir rápido"
 
 #: plugins/quickopen/quickopen.plugin.desktop.in:7
-msgid "Quickly open files"
-msgstr "Abre os ficheiros rápidamente"
+#| msgid "Quickly open files"
+msgid "Quickly open files."
+msgstr "Abre os ficheiros rapidamente."
 
 #: plugins/quickopen/quickopen/popup.py:90
 msgid "Type to search…"
@@ -3474,8 +3389,9 @@ msgid "Execution of the Python command (%s) failed: %s"
 msgstr "Produciuse un erro ao executar a orde Python (%s): %s"
 
 #: plugins/snippets/snippets.plugin.desktop.in:7
-msgid "Insert often-used pieces of text in a fast way"
-msgstr "Inserir fragmentos de texto usados frecuentemente dun modo rápido"
+#| msgid "Insert often-used pieces of text in a fast way"
+msgid "Insert often-used pieces of text in a fast way."
+msgstr "Inserir fragmentos de texto usados frecuentemente dun modo rápido."
 
 #: plugins/snippets/snippets/snippets.ui:40
 #: plugins/snippets/snippets/snippets.ui:47
@@ -3684,3 +3600,152 @@ msgstr "Inserir data e hora"
 #: plugins/time/time.plugin.desktop.in:6
 msgid "Inserts current date and time at the cursor position."
 msgstr "Insire a data e hora actuais na posición do cursor."
+
+#~ msgid ""
+#~ "gedit is the official text editor of the GNOME desktop environment. While "
+#~ "aiming at simplicity and ease of use, gedit is a powerful general purpose "
+#~ "text editor."
+#~ msgstr ""
+#~ "gedit é o editor de texto oficial para o ambiente de escritorio de GNOME. "
+#~ "Aínda que está enfocado na simplicidade e o fácil manexo, gedit é un "
+#~ "editor de texto de propósito xeral moi potente."
+
+#~ msgid ""
+#~ "Whether you are writing the next bestseller, programming an innovative "
+#~ "application, or simply taking some quick notes, gedit will be a reliable "
+#~ "tool to accomplish your task."
+#~ msgstr ""
+#~ "Tanto se está escribindo o seguinte libro famoso, programando unha "
+#~ "aplicación novidosa ou simplemente tomando algunhas notas rápidas, gedit "
+#~ "será a ferramenta perfecta para facer dita tarefa."
+
+#~ msgid ""
+#~ "Its flexible plugin system allows you to tailor the application to your "
+#~ "needs and adapt it to your workflow."
+#~ msgstr ""
+#~ "O seu sistema de engadidos flexíbel permítelle adaptar a ás súas "
+#~ "necesidades e ao seu fluxo de traballo."
+
+#~ msgid ""
+#~ "List of active plugins. It contains the “Location” of the active plugins. "
+#~ "See the .gedit-plugin file for obtaining the “Location” of a given plugin."
+#~ msgstr ""
+#~ "Lista de engadidos activos. Contén a \"Localización\" dos engadidos "
+#~ "activos. Vexa o ficheiro .gedit-plugin para obter a \"Localización\" dun "
+#~ "engadido determinado."
+
+#~ msgid "Changes to document “%s” will be permanently lost."
+#~ msgstr "Os cambios do documento «%s» perderanse permanentemente."
+
+#~ msgid "Saving has been disabled by the system administrator."
+#~ msgstr "O administrador do sistema desactivou o gardado."
+
+#~ msgid "Changes to %d document will be permanently lost."
+#~ msgid_plural "Changes to %d documents will be permanently lost."
+#~ msgstr[0] "Os cambios realizados a %d documento perderanse permanentemente."
+#~ msgstr[1] ""
+#~ "Os cambios realizados a %d documentos perderanse permanentemente."
+
+#~ msgid "Docum_ents with unsaved changes:"
+#~ msgstr "Docum_entos con cambios non gardados:"
+
+#~ msgctxt "window title"
+#~ msgid "Open"
+#~ msgstr "Abrir"
+
+#~ msgid "Character Encoding:"
+#~ msgstr "Codificación de caracteres:"
+
+#~ msgid "Line Ending:"
+#~ msgstr "Finalización de liña:"
+
+#~ msgid "The location “%s” is not currently reachable."
+#~ msgstr "A localización «%s» non pode alcanzarse actualmente."
+
+#~ msgid "Your system is offline. Check your network."
+#~ msgstr "O seu sistema está desconectado. Comprobe a súa rede."
+
+#~ msgid "D_on’t Edit"
+#~ msgstr "_Non editar"
+
+#~ msgid "This file “%s” is already open in another window."
+#~ msgstr "Este ficheiro «%s» xa está aberto noutra xanela."
+
+#~ msgid "Do you want to edit it anyway?"
+#~ msgstr "Quere editalo de todas formas?"
+
+#~ msgid "Could not create a backup file while saving “%s”"
+#~ msgstr "Non foi posíbel crear un ficheiro de seguranza ao gardar «%s»"
+
+#~ msgid "Could not create a temporary backup file while saving “%s”"
+#~ msgstr ""
+#~ "Non foi posíbel crear un ficheiro temporal de seguranza ao gardar «%s»"
+
+#~ msgid ""
+#~ "Could not back up the old copy of the file before saving the new one. You "
+#~ "can ignore this warning and save the file anyway, but if an error occurs "
+#~ "while saving, you could lose the old copy of the file. Save anyway?"
+#~ msgstr ""
+#~ "Non foi posíbel facer unha copia de seguranza do ficheiro antigo antes de "
+#~ "gardar o novo. Vostede pode ignorar este aviso e gardar o ficheiro de "
+#~ "todos os modos, mais se ocorre un erro ao gardar podería perder a copia "
+#~ "antiga do ficheiro. Quere gardalo de todos os modos?"
+
+#~ msgid "The file “%s” changed on disk."
+#~ msgstr "O ficheiro «%s» foi modificado no disco."
+
+#~ msgid "Drop Changes and _Reload"
+#~ msgstr "Rexeitar cambios e _recargar"
+
+#~ msgid "Some invalid chars have been detected while saving “%s”"
+#~ msgstr "Detectáronse algúns caracteres non válidos ao gardar «%s»"
+
+#~ msgid ""
+#~ "If you continue saving this file you can corrupt the document.  Save "
+#~ "anyway?"
+#~ msgstr ""
+#~ "Se continúa gardando este ficheiro pode corromper o documento. Desexa "
+#~ "gardar de todos modos?"
+
+#~ msgid ""
+#~ "Directory “%s” could not be created: g_mkdir_with_parents() failed: %s"
+#~ msgstr ""
+#~ "Non foi posíbel crear o cartafol «%s»: fallou g_mkdir_with_parents(): %s"
+
+#~ msgid "A_dd Scheme"
+#~ msgstr "_Engadir esquema"
+
+#~ msgctxt "shortcut window"
+#~ msgid "Join selected lines"
+#~ msgstr "Unir liñas seleccionadas"
+
+#~ msgid "Check update"
+#~ msgstr "Comprobar actualizacións"
+
+#~ msgid "Check for latest version of gedit"
+#~ msgstr "Comprobar se hai algunha última versión de gedit"
+
+#~ msgid "There was an error displaying the URI."
+#~ msgstr "Produciuse un erro ao mostrar a axuda."
+
+#~ msgid "_Download"
+#~ msgstr "_Descargar"
+
+#~ msgid "_Ignore Version"
+#~ msgstr "_Ignorar versión"
+
+#~ msgid "There is a new version of gedit"
+#~ msgstr "Hai unha nova versión de gedit"
+
+#~ msgid ""
+#~ "You can download the new version of gedit by clicking on the download "
+#~ "button or ignore that version and wait for a new one"
+#~ msgstr ""
+#~ "Vostede pode descargar unha nova versión do gedit premendo no botón de "
+#~ "descarga ou ignorar esa versión e agardar á seguinte"
+
+#~ msgid "Version to Ignore"
+#~ msgstr "Versión a ignorar"
+
+#~ msgid "Version to ignore until a newer version is released."
+#~ msgstr "Indica a versión a ignorar até que se libere unha nova versión."
