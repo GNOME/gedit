@@ -1055,7 +1055,7 @@ panel_on_drag_motion (GtkWidget      *widget,
 
 			if (panel->row_placeholder_index < row_placeholder_index)
 			{
-				/* Ajustment because of existing placeholder row */
+				/* Adjustment because of existing placeholder row */
 				row_placeholder_index -= 1;
 			}
 		}
