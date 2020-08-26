@@ -5,15 +5,15 @@
 # Roozbeh Pournader <roozbeh@farsiweb.info>, 2003, 2005.
 # Meelad Zakaria <meelad@farsiweb.info>, 2005.
 # Elnaz Sarbar <elnaz@farsiweb.info>, 2005.
-# Arash Mousavi <mousavi.arash@gmail.com>, 2011, 2012, 2013, 2014, 2015, 2016.
-# Danial Behzadi <dani.behzi@ubuntu.com>, 2017, 2018, 2019.
+# Arash Mousavi <mousavi.arash@gmail.com>, 2011-2016.
+# Danial Behzadi <dani.behzi@ubuntu.com>, 2017-2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gedit HEAD\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gedit/issues\n"
-"POT-Creation-Date: 2020-04-06 15:48+0000\n"
-"PO-Revision-Date: 2020-04-25 10:47+0000\n"
+"POT-Creation-Date: 2020-08-12 21:57+0000\n"
+"PO-Revision-Date: 2020-08-26 11:24+0000\n"
 "Last-Translator: Danial Behzadi <dani.behzi@ubuntu.com>\n"
 "Language-Team: Persian\n"
 "Language: fa\n"
@@ -22,40 +22,27 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-Generator: Poedit 2.3\n"
+"X-Generator: Poedit 2.4.1\n"
 
 #: data/org.gnome.gedit.appdata.xml.in:7
 msgid "gedit"
-msgstr "ویرایشگر متن"
+msgstr "جی ادیت"
 
 #: data/org.gnome.gedit.appdata.xml.in:8 data/org.gnome.gedit.desktop.in:4
 msgid "Edit text files"
 msgstr "ویرایش پرونده‌های متنی"
 
 #: data/org.gnome.gedit.appdata.xml.in:10
-msgid ""
-"gedit is the official text editor of the GNOME desktop environment. While aiming "
-"at simplicity and ease of use, gedit is a powerful general purpose text editor."
-msgstr ""
-"جی‌ادیت ویرایشگر متن رسمی میزکار گنوم است. درحالی که هدفش را سادگی و راحتی در "
-"استفاده قرار داده است، جی‌ادیت یک ویرایشگر متن عمومی قوی است."
+msgid "gedit is the text editor of the GNOME desktop environment."
+msgstr "جی‌ادیت، ویرایشگر متن محیط میزکار گنوم است."
 
-#: data/org.gnome.gedit.appdata.xml.in:15
+#: data/org.gnome.gedit.appdata.xml.in:13
 msgid ""
-"Whether you are writing the next bestseller, programming an innovative "
-"application, or simply taking some quick notes, gedit will be a reliable tool to "
-"accomplish your task."
+"The first goal of gedit is to be easy to use, with a simple interface by "
+"default. More advanced features are available by enabling plugins."
 msgstr ""
-"اینکه آیا درحال نوشتن کتاب پرفروش بعدی، نوشتن یک برنامهٔ نوآورانه یا نوشتن چند "
-"متن سریع، جی‌ادیت یک ابزار قابل اعتماد برای اهداف شماست."
-
-#: data/org.gnome.gedit.appdata.xml.in:20
-msgid ""
-"Its flexible plugin system allows you to tailor the application to your needs "
-"and adapt it to your workflow."
-msgstr ""
-"سامانه افزونه‌های انعطاف‌پزیر آن به شما اجازه می‌دهد برنامه را براساس نیازهای خود "
-"تغییر دهید و با روش کاری خود منطبق کنید."
+"هدف نخست جی‌ادیت، سادگی استفاده، با واسطی به صورت پیش گزیده ساده، است. ویژگی‌های "
+"پیش‌رفته‌تر با به کار انداختن افزایه‌ها موجودند."
 
 #: data/org.gnome.gedit.desktop.in:3 gedit/gedit-print-job.c:730
 msgid "Text Editor"
@@ -496,17 +483,13 @@ msgstr ""
 "رمزگزاری‌های قابل تشخیص استفاده شده‌اند. مقدار پیش‌گزیده یک فهرست خالی است، که در "
 "این حالت ویرایشگر متن بر اساس کشور و زبان، پیش‌گزیده‌های مناسبی را برخواهد گزید."
 
-#: data/org.gnome.gedit.gschema.xml.in:301
+#: data/org.gnome.gedit.gschema.xml.in:304
 msgid "Active plugins"
 msgstr "به کار گیری افزایه‌ها"
 
-#: data/org.gnome.gedit.gschema.xml.in:302
-msgid ""
-"List of active plugins. It contains the “Location” of the active plugins. See "
-"the .gedit-plugin file for obtaining the “Location” of a given plugin."
-msgstr ""
-"فهرست افزایه‌های فعّال. شامل «موقعیت» افزایه‌های فعّال است. برای به دست آوردن "
-"«موقعیت» یک افزایهٔ به‌خصوص، پروندهٔ ‬‪.ویرایشگر متن-plugin‬ را ببینید."
+#: data/org.gnome.gedit.gschema.xml.in:305
+msgid "List of active plugins."
+msgstr "فهرست افزایه‌های فعّال."
 
 #: gedit/gedit-app.c:85
 msgid "Show the application’s version"
@@ -551,7 +534,7 @@ msgstr "[FILE…] [+LINE[:COLUMN]]"
 msgid "There was an error displaying the help."
 msgstr "در نمایش راهنما خطایی رخ داد."
 
-#: gedit/gedit-app.c:854
+#: gedit/gedit-app.c:838
 #, c-format
 msgid "%s: invalid encoding."
 msgstr "%s: رمزگزاری نامعتبر."
@@ -560,10 +543,10 @@ msgstr "%s: رمزگزاری نامعتبر."
 msgid "Close _without Saving"
 msgstr "بد_ون ذخیره‌سازی بسته شود"
 
-#: gedit/gedit-close-confirmation-dialog.c:277 gedit/gedit-commands-file.c:462
-#: gedit/gedit-commands-file.c:567 gedit/gedit-commands-file.c:643
-#: gedit/gedit-commands-file.c:854 gedit/gedit-commands-file.c:1568
-#: gedit/gedit-encodings-dialog.c:192 gedit/gedit-preferences-dialog.c:814
+#: gedit/gedit-close-confirmation-dialog.c:277 gedit/gedit-commands-file.c:492
+#: gedit/gedit-commands-file.c:568 gedit/gedit-commands-file.c:791
+#: gedit/gedit-commands-file.c:1513 gedit/gedit-encodings-dialog.c:192
+#: gedit/gedit-file-chooser-open-dialog.c:78 gedit/gedit-preferences-dialog.c:721
 #: gedit/gedit-progress-info-bar.c:49
 #: gedit/resources/ui/gedit-encodings-dialog.ui:44
 #: gedit/resources/ui/gedit-highlight-mode-dialog.ui:31
@@ -581,7 +564,7 @@ msgstr "_لغو"
 msgid "_Save As…"
 msgstr "_ذخیره به عنوان…"
 
-#: gedit/gedit-close-confirmation-dialog.c:295 gedit/gedit-commands-file.c:855
+#: gedit/gedit-close-confirmation-dialog.c:295 gedit/gedit-commands-file.c:790
 #: gedit/resources/gtk/menus-common.ui:127 gedit/resources/ui/gedit-window.ui:59
 #: plugins/snippets/snippets/manager.py:875
 #: plugins/snippets/snippets/manager.py:913
@@ -674,53 +657,40 @@ msgstr "_سندی را که قصد ذخیرهٔ آن را دارید انتخا�
 msgid "If you don’t save, all your changes will be permanently lost."
 msgstr "اگر ذخیره نکنید، تمام تغییراتتان برای همیشه از دست خواهند رفت."
 
-#: gedit/gedit-commands-file.c:265
+#: gedit/gedit-commands-file.c:257
 #, c-format
 msgid "Loading file “%s”…"
 msgstr "بار کردن «%s»…"
 
-#: gedit/gedit-commands-file.c:274
+#: gedit/gedit-commands-file.c:266
 #, c-format
 msgid "Loading %d file…"
 msgid_plural "Loading %d files…"
 msgstr[0] "بار کردن %Id پرونده…"
 msgstr[1] "بار کردن %Id پرونده…"
 
-#. Translators: "Open Files" is the title of the file chooser window.
-#: gedit/gedit-commands-file.c:456
-msgctxt "window title"
-msgid "Open Files"
-msgstr "گشودن پرونده‌ها"
-
-#: gedit/gedit-commands-file.c:463 gedit/gedit-window.c:2637
-#: gedit/resources/gtk/menus-common.ui:100 gedit/resources/gtk/menus-common.ui:106
-#: plugins/filebrowser/resources/ui/gedit-file-browser-menus.ui:7
-#: plugins/quickopen/quickopen/popup.py:46 plugins/snippets/snippets/manager.py:790
-msgid "_Open"
-msgstr "گشودن"
-
-#: gedit/gedit-commands-file.c:558
+#: gedit/gedit-commands-file.c:483
 #, c-format
 msgid "The file “%s” is read-only."
 msgstr "پروندهٔ «%s» فقط خواندنی است."
 
-#: gedit/gedit-commands-file.c:563
+#: gedit/gedit-commands-file.c:488
 msgid "Do you want to try to replace it with the one you are saving?"
 msgstr "می‌خواهید پرونده‌ای که در حال ذخیرهٔ آن هستید را جایگزین کنید؟"
 
-#: gedit/gedit-commands-file.c:568 gedit/resources/ui/gedit-replace-dialog.ui:55
+#: gedit/gedit-commands-file.c:493 gedit/resources/ui/gedit-replace-dialog.ui:55
 msgid "_Replace"
 msgstr "_جایگزین شود"
 
-#: gedit/gedit-commands-file.c:608
+#: gedit/gedit-commands-file.c:533
 msgid "Save the file using compression?"
 msgstr "ذخیره پرونده با استفاده از فشرده‌سازی؟"
 
-#: gedit/gedit-commands-file.c:612
+#: gedit/gedit-commands-file.c:537
 msgid "Save the file as plain text?"
 msgstr "پرونده به شکل متن خام ذخیره شود؟"
 
-#: gedit/gedit-commands-file.c:625
+#: gedit/gedit-commands-file.c:550
 #, c-format
 msgid ""
 "The file “%s” was previously saved as plain text and will now be saved using "
@@ -729,11 +699,11 @@ msgstr ""
 "پروندهٔ «%s» پیش‌تر به شکل متن خام ذخیره شده و اکنون با استفاده از فشرده‌سازی ذخیره "
 "خواهد شد."
 
-#: gedit/gedit-commands-file.c:629
+#: gedit/gedit-commands-file.c:554
 msgid "_Save Using Compression"
 msgstr "_ذخیره با استفاده از فشرده‌سازی"
 
-#: gedit/gedit-commands-file.c:634
+#: gedit/gedit-commands-file.c:559
 #, c-format
 msgid ""
 "The file “%s” was previously saved using compression and will now be saved as "
@@ -742,32 +712,32 @@ msgstr ""
 "پروندهٔ «%s» پیش‌تر با استفاده از فشرده‌سازی ذخیره شده و اکنون به شکل متن خام ذخیره "
 "خواهد شد."
 
-#: gedit/gedit-commands-file.c:637
+#: gedit/gedit-commands-file.c:562
 msgid "_Save As Plain Text"
 msgstr "_ذخیره به شکل متن خام"
 
-#: gedit/gedit-commands-file.c:752 gedit/gedit-commands-file.c:1019
+#: gedit/gedit-commands-file.c:677 gedit/gedit-commands-file.c:964
 #, c-format
 msgid "Saving file “%s”…"
 msgstr "ذخیرهٔ «%s»…"
 
 #. Translators: "Save As" is the title of the file chooser window.
-#: gedit/gedit-commands-file.c:847
+#: gedit/gedit-commands-file.c:788
 msgctxt "window title"
 msgid "Save As"
 msgstr "ذخیره به نام"
 
-#: gedit/gedit-commands-file.c:1429
+#: gedit/gedit-commands-file.c:1374
 #, c-format
 msgid "Reverting the document “%s”…"
 msgstr "بازگرداندن سند «%s»…"
 
-#: gedit/gedit-commands-file.c:1476
+#: gedit/gedit-commands-file.c:1421
 #, c-format
 msgid "Revert unsaved changes to document “%s”?"
 msgstr "بازگرداندن تغییرات ذخیره نشدهٔ سند «%s»؟"
 
-#: gedit/gedit-commands-file.c:1485
+#: gedit/gedit-commands-file.c:1430
 #, c-format
 msgid ""
 "Changes made to the document in the last %ld second will be permanently lost."
@@ -778,11 +748,11 @@ msgstr[0] ""
 msgstr[1] ""
 "تغییرات اعمال شده روی سند در %Ild ثانیهٔ گذشته برای همیشه از دست خواهند رفت."
 
-#: gedit/gedit-commands-file.c:1494
+#: gedit/gedit-commands-file.c:1439
 msgid "Changes made to the document in the last minute will be permanently lost."
 msgstr "تغییرات اعمال شده روی سند در یک دقیقهٔ گذشته برای همیشه از دست خواهند رفت."
 
-#: gedit/gedit-commands-file.c:1500
+#: gedit/gedit-commands-file.c:1445
 #, c-format
 msgid ""
 "Changes made to the document in the last minute and %ld second will be "
@@ -797,7 +767,7 @@ msgstr[1] ""
 "تغییرات اعمال شده روی سند در یک دقیقه و %Ild ثانیهٔ گذشته برای همیشه از دست "
 "خواهند رفت."
 
-#: gedit/gedit-commands-file.c:1510
+#: gedit/gedit-commands-file.c:1455
 #, c-format
 msgid ""
 "Changes made to the document in the last %ld minute will be permanently lost."
@@ -808,11 +778,11 @@ msgstr[0] ""
 msgstr[1] ""
 "تغییرات اعمال شده روی سند در %Ild دقیقهٔ گذشته برای همیشه از دست خواهند رفت."
 
-#: gedit/gedit-commands-file.c:1525
+#: gedit/gedit-commands-file.c:1470
 msgid "Changes made to the document in the last hour will be permanently lost."
 msgstr "تغییرات اعمال شده روی سند در ساعت گذشته برای همیشه از دست خواهند رفت."
 
-#: gedit/gedit-commands-file.c:1531
+#: gedit/gedit-commands-file.c:1476
 #, c-format
 msgid ""
 "Changes made to the document in the last hour and %d minute will be permanently "
@@ -827,7 +797,7 @@ msgstr[1] ""
 "تغییرات اعمال شده روی سند در یک ساعت و %Id دقیقهٔ گذشته برای همیشه از دست خواهند "
 "رفت."
 
-#: gedit/gedit-commands-file.c:1546
+#: gedit/gedit-commands-file.c:1491
 #, c-format
 msgid "Changes made to the document in the last %d hour will be permanently lost."
 msgid_plural ""
@@ -837,15 +807,15 @@ msgstr[0] ""
 msgstr[1] ""
 "تغییرات اعمال شده روی سند در %Id ساعت گذشته برای همیشه از دست خواهند رفت."
 
-#: gedit/gedit-commands-file.c:1569
+#: gedit/gedit-commands-file.c:1514
 msgid "_Revert"
 msgstr "بازگشت"
 
-#: gedit/gedit-commands-help.c:108
-msgid "gedit is a small and lightweight text editor for the GNOME Desktop"
-msgstr "‏ویرایشگر متن ویرایشگر متن کوچک و سبک‌وزنی برای محیط رومیزی گنوم است"
+#: gedit/gedit-commands-help.c:110
+msgid "gedit is a small and lightweight text editor for the GNOME desktop"
+msgstr "جی‌ادیت، ویرایشگر متن کوچک و سبک‌وزنی برای میزکار گنوم است"
 
-#: gedit/gedit-commands-help.c:130
+#: gedit/gedit-commands-help.c:115
 msgid "translator-credits"
 msgstr ""
 "آرش موسوی <mousavi.arash@gmail.com>‏\n"
@@ -871,7 +841,7 @@ msgstr "یک مورد یافته و جایگزین شد"
 msgid "“%s” not found"
 msgstr "«%s» پیدا نشد"
 
-#: gedit/gedit-document.c:969 gedit/gedit-document.c:998
+#: gedit/gedit-document.c:993 gedit/gedit-document.c:1022
 #, c-format
 msgid "Untitled Document %d"
 msgstr "سند بی‌نام %Id"
@@ -881,16 +851,16 @@ msgstr "سند بی‌نام %Id"
 msgid "Tab Group %i"
 msgstr "_گروه زبانه %Ii"
 
-#: gedit/gedit-documents-panel.c:498 gedit/gedit-window.c:1083
-#: gedit/gedit-window.c:1089 gedit/gedit-window.c:1097
+#: gedit/gedit-documents-panel.c:498 gedit/gedit-window.c:1082
+#: gedit/gedit-window.c:1088 gedit/gedit-window.c:1096
 msgid "Read-Only"
 msgstr "فقط خواندنی"
 
-#: gedit/gedit-encodings-combo-box.c:297 gedit/gedit-file-chooser-dialog-osx.m:564
+#: gedit/gedit-encodings-combo-box.c:297
 msgid "Automatically Detected"
 msgstr "تشخیص خودکار"
 
-#: gedit/gedit-encodings-combo-box.c:326 gedit/gedit-file-chooser-dialog-osx.m:573
+#: gedit/gedit-encodings-combo-box.c:326
 msgid "Add or Remove…"
 msgstr "افزودن یا حذف…"
 
@@ -929,31 +899,38 @@ msgstr "جابجایی به الویت بالاتر"
 msgid "Move to a lower priority"
 msgstr "جابجایی به الویت پایین‌تر"
 
-#: gedit/gedit-file-chooser-dialog-gtk.c:39 gedit/gedit-preferences-dialog.c:823
+#: gedit/gedit-file-chooser.c:41 gedit/gedit-preferences-dialog.c:730
 msgid "All Files"
 msgstr "همهٔ پرونده‌ها"
 
-#: gedit/gedit-file-chooser-dialog-gtk.c:40
+#: gedit/gedit-file-chooser.c:42
 msgid "All Text Files"
 msgstr "همهٔ پرونده‌های متنی"
 
-#: gedit/gedit-file-chooser-dialog-gtk.c:305
+#: gedit/gedit-file-chooser-dialog-gtk.c:262
+#: gedit/gedit-file-chooser-open-dialog.c:43
 msgid "C_haracter Encoding:"
 msgstr "کدگذاری _نویسه:"
 
-#: gedit/gedit-file-chooser-dialog-gtk.c:364
+#: gedit/gedit-file-chooser-dialog-gtk.c:321
 msgid "L_ine Ending:"
 msgstr "_پایان دادن خط:"
 
-#: gedit/gedit-file-chooser-dialog-osx.m:546
-msgid "Character Encoding:"
-msgstr "رمزگزاری نویسه:"
+#. Translators: "Open Files" is the title of the file chooser window.
+#: gedit/gedit-file-chooser-open-dialog.c:75
+#: gedit/gedit-file-chooser-open-native.c:54
+msgctxt "window title"
+msgid "Open Files"
+msgstr "گشودن پرونده‌ها"
 
-#: gedit/gedit-file-chooser-dialog-osx.m:619
-msgid "Line Ending:"
-msgstr "پایان خط:"
+#: gedit/gedit-file-chooser-open-dialog.c:79 gedit/gedit-window.c:2636
+#: gedit/resources/gtk/menus-common.ui:100 gedit/resources/gtk/menus-common.ui:106
+#: plugins/filebrowser/resources/ui/gedit-file-browser-menus.ui:7
+#: plugins/quickopen/quickopen/popup.py:46 plugins/snippets/snippets/manager.py:790
+msgid "_Open"
+msgstr "گشودن"
 
-#: gedit/gedit-highlight-mode-selector.c:269 gedit/gedit-window.c:1167
+#: gedit/gedit-highlight-mode-selector.c:269 gedit/gedit-window.c:1166
 #: plugins/externaltools/tools/manager.py:115
 #: plugins/externaltools/tools/manager.py:324
 #: plugins/externaltools/tools/manager.py:440
@@ -1218,37 +1195,37 @@ msgstr ""
 msgid "Could not save the file “%s”."
 msgstr "نمی‌توان پروندهٔ «%s» را ذخیره کرد."
 
-#: gedit/gedit-preferences-dialog.c:444
+#: gedit/gedit-preferences-dialog.c:433
 msgid "Click on this button to select the font to be used by the editor"
 msgstr "برای انتخاب قلم مورد استفادهٔ ویرایش‌گر این دکمه را فشار دهید"
 
-#: gedit/gedit-preferences-dialog.c:450
+#: gedit/gedit-preferences-dialog.c:439
 #, c-format
 msgid "_Use the system fixed width font (%s)"
 msgstr "_استفاده از قلم با اندازه ثابت سامانه (%s)"
 
-#: gedit/gedit-preferences-dialog.c:590
+#: gedit/gedit-preferences-dialog.c:685
 #, c-format
-msgid "Directory “%s” could not be created: g_mkdir_with_parents() failed: %s"
-msgstr "شاخهٔ «%s» نتوانست ایجاد شود: g_mkdir_with_parents() شکست خورد: %s"
+msgid "The selected color scheme cannot be installed: %s"
+msgstr "شمای رنگی گزیده قابل نصب نیست: %s"
 
-#: gedit/gedit-preferences-dialog.c:787
+#: gedit/gedit-preferences-dialog.c:691
 msgid "The selected color scheme cannot be installed."
 msgstr "شمای رنگی انتخاب شده قابل نصب نیست."
 
-#: gedit/gedit-preferences-dialog.c:810
-msgid "Add Scheme"
-msgstr "افزودن شِما"
+#: gedit/gedit-preferences-dialog.c:717
+msgid "Add Color Scheme"
+msgstr "افزودن شمای رنگی"
 
-#: gedit/gedit-preferences-dialog.c:815
-msgid "A_dd Scheme"
-msgstr "_افزودن شِما"
+#: gedit/gedit-preferences-dialog.c:720
+msgid "_Add Scheme"
+msgstr "_افزودن شما"
 
-#: gedit/gedit-preferences-dialog.c:819
+#: gedit/gedit-preferences-dialog.c:725
 msgid "Color Scheme Files"
 msgstr "پرونده‌های شمای رنگی"
 
-#: gedit/gedit-preferences-dialog.c:850
+#: gedit/gedit-preferences-dialog.c:763
 #, c-format
 msgid "Could not remove color scheme “%s”."
 msgstr "شمای رنگی «%s» نتوانست حذف شود."
@@ -1340,30 +1317,30 @@ msgstr "درحال ذخیرهٔ %s در %s"
 msgid "Saving %s"
 msgstr "در حال ذخیرهٔ %s"
 
-#: gedit/gedit-tab.c:1485
+#: gedit/gedit-tab.c:1484
 #, c-format
 msgid "Error opening file %s"
 msgstr "خطا در گشودن پرونده %s"
 
-#: gedit/gedit-tab.c:1490
+#: gedit/gedit-tab.c:1489
 #, c-format
 msgid "Error reverting file %s"
 msgstr "خطا در باز گرداندن پرونده %s"
 
-#: gedit/gedit-tab.c:1495
+#: gedit/gedit-tab.c:1494
 #, c-format
 msgid "Error saving file %s"
 msgstr "خطا در ذخیرهٔ پرونده %s"
 
-#: gedit/gedit-tab.c:1526
+#: gedit/gedit-tab.c:1525
 msgid "Name:"
 msgstr "نام:"
 
-#: gedit/gedit-tab.c:1527
+#: gedit/gedit-tab.c:1526
 msgid "MIME Type:"
 msgstr "نوع MIME:"
 
-#: gedit/gedit-tab.c:1528
+#: gedit/gedit-tab.c:1527
 msgid "Encoding:"
 msgstr "رمزگزاری:"
 
@@ -1385,7 +1362,7 @@ msgstr "سامانه عامل کلاسیک مک"
 msgid "Windows"
 msgstr "ویندوز"
 
-#: gedit/gedit-view.c:479 gedit/resources/ui/gedit-preferences-dialog.ui:41
+#: gedit/gedit-view.c:438 gedit/resources/ui/gedit-preferences-dialog.ui:41
 msgid "_Display line numbers"
 msgstr "نمایش _شماره خط‌ها"
 
@@ -1426,48 +1403,48 @@ msgstr "رشته‌ای که می خواهید جستجو کنید"
 msgid "Line you want to move the cursor to"
 msgstr "خطی که می‌خواهید مکان‌نما را به آن منتقل کنید"
 
-#: gedit/gedit-window.c:920
+#: gedit/gedit-window.c:919
 msgid "Bracket match is out of range"
 msgstr "تطابق پرانتز خارج از محدوده است"
 
-#: gedit/gedit-window.c:925
+#: gedit/gedit-window.c:924
 msgid "Bracket match not found"
 msgstr "تطابق پرانتز پیدا نشد"
 
-#: gedit/gedit-window.c:930
+#: gedit/gedit-window.c:929
 #, c-format
 msgid "Bracket match found on line: %d"
 msgstr "تطابق پرانتز در خط مقابل پیدا شد: %Id"
 
 #. Translators: "Ln" is an abbreviation for "Line", Col is an abbreviation for "Column". Please,
 #. use abbreviations if possible to avoid space problems.
-#: gedit/gedit-window.c:965
+#: gedit/gedit-window.c:964
 #, c-format
 msgid "  Ln %d, Col %d"
 msgstr "  خط %Id، ستون %Id"
 
-#: gedit/gedit-window.c:1149
+#: gedit/gedit-window.c:1148
 #, c-format
 msgid "Tab Width: %u"
 msgstr "وسعت جهش: %Iu"
 
-#: gedit/gedit-window.c:1494
+#: gedit/gedit-window.c:1493
 msgid "There are unsaved documents"
 msgstr "سندهای ذخیره نشده‌ای وجود دارند"
 
-#: gedit/gedit-window.c:2331
+#: gedit/gedit-window.c:2330
 msgid "Change side panel page"
 msgstr "تغییر صفحهٔ تابلو کناری"
 
-#: gedit/gedit-window.c:2351 gedit/resources/ui/gedit-window.ui:19
+#: gedit/gedit-window.c:2350 gedit/resources/ui/gedit-window.ui:19
 msgid "Documents"
 msgstr "سندها"
 
-#: gedit/gedit-window.c:2638
+#: gedit/gedit-window.c:2637
 msgid "Open a file"
 msgstr "گشودن یک پرونده"
 
-#: gedit/gedit-window.c:2642
+#: gedit/gedit-window.c:2641
 msgid "Open a recently used file"
 msgstr "باز کردن پرونده‌ای که اخیراً به کار رفته"
 
@@ -1868,29 +1845,29 @@ msgstr "قلم ویرایش‌گر را تعیین کنید"
 msgid "Color Scheme"
 msgstr "آرایش رنگ"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:663
-#: gedit/resources/ui/gedit-preferences-dialog.ui:664
+#: gedit/resources/ui/gedit-preferences-dialog.ui:652
+#: gedit/resources/ui/gedit-preferences-dialog.ui:653
 msgid "Install scheme"
 msgstr "نصب شِما"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:665
+#: gedit/resources/ui/gedit-preferences-dialog.ui:654
 msgid "Install Scheme"
 msgstr "نصب شِما"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:679
-#: gedit/resources/ui/gedit-preferences-dialog.ui:680
+#: gedit/resources/ui/gedit-preferences-dialog.ui:668
+#: gedit/resources/ui/gedit-preferences-dialog.ui:669
 msgid "Uninstall scheme"
 msgstr "حذف نصب شِما"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:681
+#: gedit/resources/ui/gedit-preferences-dialog.ui:670
 msgid "Uninstall Scheme"
 msgstr "حذف نصب شِما"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:721
+#: gedit/resources/ui/gedit-preferences-dialog.ui:710
 msgid "Font & Colors"
 msgstr "قلم و رنگ‌ها"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:746
+#: gedit/resources/ui/gedit-preferences-dialog.ui:735
 msgid "Plugins"
 msgstr "افزایه‌ها"
 
@@ -2273,107 +2250,117 @@ msgctxt "shortcut window"
 msgid "Move to matching bracket"
 msgstr "جابه‌جایی به پرانتز مطابق"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:329
+#: gedit/resources/ui/gedit-shortcuts.ui:328
+msgctxt "shortcut window"
+msgid "Go to previous tab group"
+msgstr "رفتن به گروه زبانهٔ پیشین"
+
+#: gedit/resources/ui/gedit-shortcuts.ui:335
+msgctxt "shortcut window"
+msgid "Go to next tab group"
+msgstr "رفتن به گروه زبانهٔ بعدی"
+
+#: gedit/resources/ui/gedit-shortcuts.ui:343
 msgctxt "shortcut window"
 msgid "Editing"
 msgstr "ویرایش"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:334
+#: gedit/resources/ui/gedit-shortcuts.ui:348
 msgctxt "shortcut window"
 msgid "Toggle insert / overwrite"
 msgstr "تغییر وضعیت ورود/رونویسی"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:341
+#: gedit/resources/ui/gedit-shortcuts.ui:355
 msgctxt "shortcut window"
 msgid "Toggle cursor visibility"
 msgstr "تغییر وضعیت نمایانی نشانگر"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:348
+#: gedit/resources/ui/gedit-shortcuts.ui:362
 msgctxt "shortcut window"
 msgid "Delete current line"
 msgstr "حذف خط فعلی"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:355
+#: gedit/resources/ui/gedit-shortcuts.ui:369
 msgctxt "shortcut window"
 msgid "Move current line up"
 msgstr "انتقال خط فعلی به بالا"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:362
+#: gedit/resources/ui/gedit-shortcuts.ui:376
 msgctxt "shortcut window"
 msgid "Move current line down"
 msgstr "انتقال خط فعلی به پایین"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:369
+#: gedit/resources/ui/gedit-shortcuts.ui:383
 msgctxt "shortcut window"
 msgid "Move current word left"
 msgstr "انتقال کلمه فعلی به پایین"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:376
+#: gedit/resources/ui/gedit-shortcuts.ui:390
 msgctxt "shortcut window"
 msgid "Move current word right"
 msgstr "انتقال کلمه فعلی به راست"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:383
+#: gedit/resources/ui/gedit-shortcuts.ui:397
 msgctxt "shortcut window"
 msgid "Convert to uppercase"
 msgstr "تبدیل به حروف بزرگ"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:390
+#: gedit/resources/ui/gedit-shortcuts.ui:404
 msgctxt "shortcut window"
 msgid "Convert to lowercase"
 msgstr "تبدیل به حروف کوچک"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:397
+#: gedit/resources/ui/gedit-shortcuts.ui:411
 msgctxt "shortcut window"
 msgid "Invert case"
 msgstr "معکوس کردن کوچکی و بزرگی حروف"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:404
+#: gedit/resources/ui/gedit-shortcuts.ui:418
 msgctxt "shortcut window"
 msgid "Increment number at cursor"
 msgstr "افزایش عدد زیر مکان‌نما"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:411
+#: gedit/resources/ui/gedit-shortcuts.ui:425
 msgctxt "shortcut window"
 msgid "Decrement number at cursor"
 msgstr "کاهش عدد زیر مکان‌نما"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:419
+#: gedit/resources/ui/gedit-shortcuts.ui:433
 msgctxt "shortcut window"
 msgid "Tools"
 msgstr "ابزارها"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:424
+#: gedit/resources/ui/gedit-shortcuts.ui:438
 msgctxt "shortcut window"
 msgid "Check spelling"
 msgstr "غلط‌یابی املایی"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:431
+#: gedit/resources/ui/gedit-shortcuts.ui:445
 msgctxt "shortcut window"
 msgid "Print the document"
 msgstr "چاپ سند"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:438
+#: gedit/resources/ui/gedit-shortcuts.ui:452
 msgctxt "shortcut window"
 msgid "Show completion window"
 msgstr "نمایش پنجره تکمیل"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:446
+#: gedit/resources/ui/gedit-shortcuts.ui:460
 msgctxt "shortcut window"
 msgid "General"
 msgstr "عمومی"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:451
+#: gedit/resources/ui/gedit-shortcuts.ui:465
 msgctxt "shortcut window"
 msgid "Show help"
 msgstr "نمایش راهنما"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:458
+#: gedit/resources/ui/gedit-shortcuts.ui:472
 msgctxt "shortcut window"
 msgid "Open menu"
 msgstr "گشودن فهرست"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:465
+#: gedit/resources/ui/gedit-shortcuts.ui:479
 msgctxt "shortcut window"
 msgid "Keyboard shortcuts"
 msgstr "میان‌برهای صفحه‌کلید"
@@ -2409,47 +2396,6 @@ msgstr "نهفتن تابلو"
 #: gedit/resources/ui/gedit-window.ui:347
 msgid "Leave Fullscreen"
 msgstr "ترک حالت تمام صفحه"
-
-#: plugins/checkupdate/checkupdate.plugin.desktop.in:5
-msgid "Check update"
-msgstr "بررسی بروزرسانی"
-
-#: plugins/checkupdate/checkupdate.plugin.desktop.in:6
-msgid "Check for latest version of gedit"
-msgstr "بررسی برای آخرین نسخه ویرایشگر متن"
-
-#: plugins/checkupdate/gedit-check-update-plugin.c:243
-msgid "There was an error displaying the URI."
-msgstr "در نمایش آدرس اینترنتی خطایی رخ داد."
-
-#: plugins/checkupdate/gedit-check-update-plugin.c:280
-msgid "_Download"
-msgstr "_بارگیری"
-
-#: plugins/checkupdate/gedit-check-update-plugin.c:281
-msgid "_Ignore Version"
-msgstr "_نادیده گرفتن نسخه"
-
-#: plugins/checkupdate/gedit-check-update-plugin.c:286
-msgid "There is a new version of gedit"
-msgstr "یک نسخه جدید از ویرایشگر متن موجود است"
-
-#: plugins/checkupdate/gedit-check-update-plugin.c:289
-msgid ""
-"You can download the new version of gedit by clicking on the download button or "
-"ignore that version and wait for a new one"
-msgstr ""
-"شما می‌توانید با کلیک روی دکمه بارگیری آخرین نسخه ویرایشگر متن را دریافت کنید یا "
-"این نسخه را نادیده بگیرید و برای نسخه جدیدتر منتظر بمانید"
-
-#: plugins/checkupdate/org.gnome.gedit.plugins.checkupdate.gschema.xml:5
-msgid "Version to Ignore"
-msgstr "نسخه جهت نادیده گرفتن"
-
-#. This is releated to the next gedit version to be released
-#: plugins/checkupdate/org.gnome.gedit.plugins.checkupdate.gschema.xml:7
-msgid "Version to ignore until a newer version is released."
-msgstr "نسخه جهت نادیده گرفتن تا زمانی که نسخه جدید منتشر شود."
 
 #: plugins/docinfo/docinfo.plugin.desktop.in:5
 #: plugins/docinfo/resources/ui/gedit-docinfo-plugin.ui:7
@@ -2753,8 +2699,8 @@ msgid "File Browser Panel"
 msgstr "تابلو مرورگر پرونده"
 
 #: plugins/filebrowser/filebrowser.plugin.desktop.in:7
-msgid "Easy file access from the side panel"
-msgstr "دسترسی آسان به پرونده‌ها از طریق تابلو جانبی"
+msgid "Easy file access from the side panel."
+msgstr "دسترسی آسان به پرونده‌ها از تابلوی کناری."
 
 #: plugins/filebrowser/gedit-file-bookmarks-store.c:200
 msgid "Home"
@@ -3088,8 +3034,8 @@ msgid "Python Console"
 msgstr "کنسول پایتون"
 
 #: plugins/pythonconsole/pythonconsole.plugin.desktop.in:7
-msgid "Interactive Python console standing in the bottom panel"
-msgstr "کنسول پایتون تعاملی پایتون در تابلو پایینی"
+msgid "Interactive Python console standing in the bottom panel."
+msgstr "کنسول تعاملی پایتون در تابلوی پایینی."
 
 #: plugins/quickhighlight/quickhighlight.plugin.desktop.in:5
 msgid "Quick Highlight"
@@ -3109,8 +3055,8 @@ msgid "Quick Open"
 msgstr "گشودن سریع"
 
 #: plugins/quickopen/quickopen.plugin.desktop.in:7
-msgid "Quickly open files"
-msgstr "گشودن سریع پرونده‌ها"
+msgid "Quickly open files."
+msgstr "گشودن سریع پرونده‌ها."
 
 #: plugins/quickopen/quickopen/popup.py:90
 msgid "Type to search…"
@@ -3301,8 +3247,8 @@ msgid "Execution of the Python command (%s) failed: %s"
 msgstr "اجرای فرمان پایتون (%s) شکست خورد: %s"
 
 #: plugins/snippets/snippets.plugin.desktop.in:7
-msgid "Insert often-used pieces of text in a fast way"
-msgstr "قسمت‌های متداول متن‌های استفاده شده را به شکلی سریع وارد کنید"
+msgid "Insert often-used pieces of text in a fast way."
+msgstr "درج قسمت‌های متداول متن‌های استفاده شده به شکلی سریع."
 
 #: plugins/snippets/snippets/snippets.ui:40
 #: plugins/snippets/snippets/snippets.ui:47
@@ -3511,6 +3457,79 @@ msgstr "درج تاریخ/زمان"
 #: plugins/time/time.plugin.desktop.in:6
 msgid "Inserts current date and time at the cursor position."
 msgstr "تاریخ و زمان جاری را در موقعیت مکان‌نما درج می‌کند."
+
+#~ msgid ""
+#~ "gedit is the official text editor of the GNOME desktop environment. While "
+#~ "aiming at simplicity and ease of use, gedit is a powerful general purpose "
+#~ "text editor."
+#~ msgstr ""
+#~ "جی‌ادیت ویرایشگر متن رسمی میزکار گنوم است. درحالی که هدفش را سادگی و راحتی در "
+#~ "استفاده قرار داده است، جی‌ادیت یک ویرایشگر متن عمومی قوی است."
+
+#~ msgid ""
+#~ "Whether you are writing the next bestseller, programming an innovative "
+#~ "application, or simply taking some quick notes, gedit will be a reliable tool "
+#~ "to accomplish your task."
+#~ msgstr ""
+#~ "اینکه آیا درحال نوشتن کتاب پرفروش بعدی، نوشتن یک برنامهٔ نوآورانه یا نوشتن چند "
+#~ "متن سریع، جی‌ادیت یک ابزار قابل اعتماد برای اهداف شماست."
+
+#~ msgid ""
+#~ "Its flexible plugin system allows you to tailor the application to your needs "
+#~ "and adapt it to your workflow."
+#~ msgstr ""
+#~ "سامانه افزونه‌های انعطاف‌پزیر آن به شما اجازه می‌دهد برنامه را براساس نیازهای "
+#~ "خود تغییر دهید و با روش کاری خود منطبق کنید."
+
+#~ msgid ""
+#~ "List of active plugins. It contains the “Location” of the active plugins. See "
+#~ "the .gedit-plugin file for obtaining the “Location” of a given plugin."
+#~ msgstr ""
+#~ "فهرست افزایه‌های فعّال. شامل «موقعیت» افزایه‌های فعّال است. برای به دست آوردن "
+#~ "«موقعیت» یک افزایهٔ به‌خصوص، پروندهٔ ‬‪.ویرایشگر متن-plugin‬ را ببینید."
+
+#~ msgid "Character Encoding:"
+#~ msgstr "رمزگزاری نویسه:"
+
+#~ msgid "Line Ending:"
+#~ msgstr "پایان خط:"
+
+#~ msgid "Directory “%s” could not be created: g_mkdir_with_parents() failed: %s"
+#~ msgstr "شاخهٔ «%s» نتوانست ایجاد شود: g_mkdir_with_parents() شکست خورد: %s"
+
+#~ msgid "A_dd Scheme"
+#~ msgstr "_افزودن شِما"
+
+#~ msgid "Check update"
+#~ msgstr "بررسی بروزرسانی"
+
+#~ msgid "Check for latest version of gedit"
+#~ msgstr "بررسی برای آخرین نسخه ویرایشگر متن"
+
+#~ msgid "There was an error displaying the URI."
+#~ msgstr "در نمایش آدرس اینترنتی خطایی رخ داد."
+
+#~ msgid "_Download"
+#~ msgstr "_بارگیری"
+
+#~ msgid "_Ignore Version"
+#~ msgstr "_نادیده گرفتن نسخه"
+
+#~ msgid "There is a new version of gedit"
+#~ msgstr "یک نسخه جدید از ویرایشگر متن موجود است"
+
+#~ msgid ""
+#~ "You can download the new version of gedit by clicking on the download button "
+#~ "or ignore that version and wait for a new one"
+#~ msgstr ""
+#~ "شما می‌توانید با کلیک روی دکمه بارگیری آخرین نسخه ویرایشگر متن را دریافت کنید "
+#~ "یا این نسخه را نادیده بگیرید و برای نسخه جدیدتر منتظر بمانید"
+
+#~ msgid "Version to Ignore"
+#~ msgstr "نسخه جهت نادیده گرفتن"
+
+#~ msgid "Version to ignore until a newer version is released."
+#~ msgstr "نسخه جهت نادیده گرفتن تا زمانی که نسخه جدید منتشر شود."
 
 #~ msgid "Display Overview Map"
 #~ msgstr "نمایش نقشه کلی"
@@ -4233,9 +4252,6 @@ msgstr "تاریخ و زمان جاری را در موقعیت مکان‌نما
 
 #~ msgid "Next location"
 #~ msgstr "مکان بعدی"
-
-#~ msgid "Go to next location"
-#~ msgstr "رفتن به محل بعدی"
 
 #~ msgid "External Tools Manager"
 #~ msgstr "مدیریت ابزارهای بیرونی"
