@@ -1,7 +1,7 @@
 gedit - The GNOME text editor
 =============================
 
-This is version 3.37.4 of gedit.
+This is version 3.37.92 of gedit.
 
 gedit is the text editor of the GNOME desktop environment.
 
