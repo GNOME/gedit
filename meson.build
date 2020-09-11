@@ -1,6 +1,6 @@
 project(
   'gedit', 'c',
-  version: '3.37.92',
+  version: '3.38.0',
   meson_version: '>= 0.53'
 )
 
@@ -47,7 +47,6 @@ libpeas_req = '>= 1.14.1'
 libxml_req = '>= 2.5.0'
 gspell_req = '>= 1.0'
 pygobject_req = '>= 3.0.0'
-vala_req = '>= 0.25.1'
 
 gio_dep = dependency('gio-2.0', version: glib_req)
 libxml_dep = dependency('libxml-2.0', version: libxml_req)
