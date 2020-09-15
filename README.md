@@ -1,3 +1,6 @@
+[![Packages](https://repology.org/badge/latest-versions/gedit.svg)](https://repology.org/metapackage/gedit/versions)
+[![Packages](https://repology.org/badge/tiny-repos/gedit.svg)](https://repology.org/metapackage/gedit/versions)
+
 gedit - The GNOME text editor
 =============================
 
