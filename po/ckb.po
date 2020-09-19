@@ -1,0 +1,2884 @@
+# Central Kurdish translation for gedit.
+# Copyright (C) 2020 gedit's COPYRIGHT HOLDER
+# This file is distributed under the same license as the gedit package.
+# Jwtiyar Nariman <jwtiyar@gmail.com>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gedit master\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gedit/issues\n"
+"POT-Creation-Date: 2019-12-04 17:00+0000\n"
+"PO-Revision-Date: 2020-09-19 13:08+0300\n"
+"Language-Team: Central Kurdish <kurdish-ckb@zkurd.org>\n"
+"Language: ckb\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-DamnedLies-Scope: partial\n"
+"Last-Translator: Jwtiyar Nariman <jwtiyar@gmail.com>\n"
+"X-Generator: Poedit 2.4.1\n"
+
+#: data/org.gnome.gedit.appdata.xml.in:7
+msgid "gedit"
+msgstr "‫gedit"
+
+#: data/org.gnome.gedit.appdata.xml.in:8 data/org.gnome.gedit.desktop.in:4
+msgid "Edit text files"
+msgstr "دەق دەستکاریبکە"
+
+#: data/org.gnome.gedit.appdata.xml.in:10
+msgid ""
+"gedit is the official text editor of the GNOME desktop environment. While "
+"aiming at simplicity and ease of use, gedit is a powerful general purpose "
+"text editor."
+msgstr ""
+
+#: data/org.gnome.gedit.appdata.xml.in:15
+msgid ""
+"Whether you are writing the next bestseller, programming an innovative "
+"application, or simply taking some quick notes, gedit will be a reliable "
+"tool to accomplish your task."
+msgstr ""
+
+#: data/org.gnome.gedit.appdata.xml.in:20
+msgid ""
+"Its flexible plugin system allows you to tailor the application to your "
+"needs and adapt it to your workflow."
+msgstr ""
+
+#: data/org.gnome.gedit.desktop.in:3 gedit/gedit-print-job.c:730
+msgid "Text Editor"
+msgstr "دەستکاریکەری دەق"
+
+#. TRANSLATORS: Do NOT translate or localize the semicolons!
+#. The list MUST also end with a semicolon!
+#. Search terms to find this application.
+#: data/org.gnome.gedit.desktop.in:18
+msgid "Text;Editor;Plaintext;Write;gedit;"
+msgstr ""
+
+#: data/org.gnome.gedit.desktop.in:22
+msgid "New Window"
+msgstr "پەنجەریەکی نوێ"
+
+#: data/org.gnome.gedit.desktop.in:26
+msgid "New Document"
+msgstr "بەڵگەنامەی نوێ"
+
+#: gedit/gedit-app.c:103
+msgid "Show the application’s version"
+msgstr "وەشانی داوانامە پیشان بدە"
+
+#: gedit/gedit-app.c:109
+msgid "Display list of possible values for the encoding option"
+msgstr ""
+
+#: gedit/gedit-app.c:116
+msgid ""
+"Set the character encoding to be used to open the files listed on the "
+"command line"
+msgstr ""
+
+#: gedit/gedit-app.c:117
+msgid "ENCODING"
+msgstr ""
+
+#: gedit/gedit-app.c:123
+msgid "Create a new top-level window in an existing instance of gedit"
+msgstr ""
+
+#: gedit/gedit-app.c:130
+msgid "Create a new document in an existing instance of gedit"
+msgstr ""
+
+#: gedit/gedit-app.c:137
+msgid "Open files and block process until files are closed"
+msgstr ""
+
+#: gedit/gedit-app.c:144
+msgid "Run gedit in standalone mode"
+msgstr ""
+
+#: gedit/gedit-app.c:151
+msgid "[FILE…] [+LINE[:COLUMN]]"
+msgstr ""
+
+#: gedit/gedit-app.c:261
+msgid "There was an error displaying the help."
+msgstr ""
+
+#: gedit/gedit-app.c:957
+#, c-format
+msgid "%s: invalid encoding."
+msgstr ""
+
+#: gedit/gedit-close-confirmation-dialog.c:277
+msgid "Close _without Saving"
+msgstr "داخستن _بەبێ پاشەکەوتکردن"
+
+#: gedit/gedit-close-confirmation-dialog.c:283 gedit/gedit-commands-file.c:457
+#: gedit/gedit-commands-file.c:562 gedit/gedit-commands-file.c:638
+#: gedit/gedit-commands-file.c:849 gedit/gedit-commands-file.c:1563
+#: gedit/gedit-encodings-dialog.c:192 gedit/gedit-preferences-dialog.c:816
+#: gedit/gedit-progress-info-bar.c:49
+#: gedit/resources/ui/gedit-encodings-dialog.ui:44
+#: gedit/resources/ui/gedit-highlight-mode-dialog.ui:31
+#: plugins/filebrowser/gedit-file-browser-utils.c:213
+#: plugins/quickopen/quickopen/popup.py:45
+#: plugins/snippets/snippets/manager.py:789
+#: plugins/snippets/snippets/manager.py:874
+#: plugins/snippets/snippets/manager.py:912
+#: plugins/sort/resources/ui/gedit-sort-plugin.ui:143
+#: plugins/time/resources/ui/gedit-time-dialog.ui:150
+msgid "_Cancel"
+msgstr "_پاشگەزبوونەوە"
+
+#: gedit/gedit-close-confirmation-dialog.c:310 gedit/resources/gtk/menus.ui:37
+#: gedit/resources/gtk/menus-traditional.ui:33
+msgid "_Save As…"
+msgstr "_پاشەکەوت وەک…"
+
+#: gedit/gedit-close-confirmation-dialog.c:310 gedit/gedit-commands-file.c:850
+#: gedit/resources/gtk/menus-common.ui:127
+#: gedit/resources/ui/gedit-window.ui:61
+#: plugins/snippets/snippets/manager.py:875
+#: plugins/snippets/snippets/manager.py:913
+msgid "_Save"
+msgstr "_پاشەکەوتکردن"
+
+#: gedit/gedit-close-confirmation-dialog.c:328
+#, c-format
+msgid ""
+"If you don’t save, changes from the last %ld second will be permanently lost."
+msgid_plural ""
+"If you don’t save, changes from the last %ld seconds will be permanently "
+"lost."
+msgstr[0] ""
+msgstr[1] ""
+
+#: gedit/gedit-close-confirmation-dialog.c:337
+msgid ""
+"If you don’t save, changes from the last minute will be permanently lost."
+msgstr ""
+
+#: gedit/gedit-close-confirmation-dialog.c:343
+#, c-format
+msgid ""
+"If you don’t save, changes from the last minute and %ld second will be "
+"permanently lost."
+msgid_plural ""
+"If you don’t save, changes from the last minute and %ld seconds will be "
+"permanently lost."
+msgstr[0] ""
+msgstr[1] ""
+
+#: gedit/gedit-close-confirmation-dialog.c:353
+#, c-format
+msgid ""
+"If you don’t save, changes from the last %ld minute will be permanently lost."
+msgid_plural ""
+"If you don’t save, changes from the last %ld minutes will be permanently "
+"lost."
+msgstr[0] ""
+msgstr[1] ""
+
+#: gedit/gedit-close-confirmation-dialog.c:368
+msgid "If you don’t save, changes from the last hour will be permanently lost."
+msgstr ""
+
+#: gedit/gedit-close-confirmation-dialog.c:374
+#, c-format
+msgid ""
+"If you don’t save, changes from the last hour and %d minute will be "
+"permanently lost."
+msgid_plural ""
+"If you don’t save, changes from the last hour and %d minutes will be "
+"permanently lost."
+msgstr[0] ""
+msgstr[1] ""
+
+#: gedit/gedit-close-confirmation-dialog.c:389
+#, c-format
+msgid ""
+"If you don’t save, changes from the last %d hour will be permanently lost."
+msgid_plural ""
+"If you don’t save, changes from the last %d hours will be permanently lost."
+msgstr[0] ""
+msgstr[1] ""
+
+#: gedit/gedit-close-confirmation-dialog.c:418
+#, c-format
+msgid "Changes to document “%s” will be permanently lost."
+msgstr ""
+
+#: gedit/gedit-close-confirmation-dialog.c:423
+#, c-format
+msgid "Save changes to document “%s” before closing?"
+msgstr ""
+
+#: gedit/gedit-close-confirmation-dialog.c:438
+#: gedit/gedit-close-confirmation-dialog.c:562
+msgid "Saving has been disabled by the system administrator."
+msgstr ""
+
+#: gedit/gedit-close-confirmation-dialog.c:504
+#, c-format
+msgid "Changes to %d document will be permanently lost."
+msgid_plural "Changes to %d documents will be permanently lost."
+msgstr[0] ""
+msgstr[1] ""
+
+#: gedit/gedit-close-confirmation-dialog.c:512
+#, c-format
+msgid "There is %d document with unsaved changes. Save changes before closing?"
+msgid_plural ""
+"There are %d documents with unsaved changes. Save changes before closing?"
+msgstr[0] ""
+msgstr[1] ""
+
+#: gedit/gedit-close-confirmation-dialog.c:538
+msgid "Docum_ents with unsaved changes:"
+msgstr ""
+
+#: gedit/gedit-close-confirmation-dialog.c:542
+msgid "S_elect the documents you want to save:"
+msgstr ""
+
+#: gedit/gedit-close-confirmation-dialog.c:566
+msgid "If you don’t save, all your changes will be permanently lost."
+msgstr ""
+
+#: gedit/gedit-commands-file.c:260
+#, c-format
+msgid "Loading file “%s”…"
+msgstr ""
+
+#: gedit/gedit-commands-file.c:269
+#, c-format
+msgid "Loading %d file…"
+msgid_plural "Loading %d files…"
+msgstr[0] ""
+msgstr[1] ""
+
+#. Translators: "Open" is the title of the file chooser window.
+#: gedit/gedit-commands-file.c:451
+msgctxt "window title"
+msgid "Open"
+msgstr "كردنەوە"
+
+#: gedit/gedit-commands-file.c:458 gedit/gedit-window.c:2676
+#: gedit/resources/gtk/menus-common.ui:100
+#: gedit/resources/gtk/menus-common.ui:106
+#: plugins/filebrowser/resources/ui/gedit-file-browser-menus.ui:7
+#: plugins/quickopen/quickopen/popup.py:46
+#: plugins/snippets/snippets/manager.py:790
+msgid "_Open"
+msgstr "_بیکەرەوە"
+
+#: gedit/gedit-commands-file.c:553
+#, c-format
+msgid "The file “%s” is read-only."
+msgstr ""
+
+#: gedit/gedit-commands-file.c:558
+msgid "Do you want to try to replace it with the one you are saving?"
+msgstr ""
+
+#: gedit/gedit-commands-file.c:563
+#: gedit/resources/ui/gedit-replace-dialog.ui:55
+msgid "_Replace"
+msgstr "‫‫_جێگۆڕکێ"
+
+#: gedit/gedit-commands-file.c:603
+msgid "Save the file using compression?"
+msgstr ""
+
+#: gedit/gedit-commands-file.c:607
+msgid "Save the file as plain text?"
+msgstr ""
+
+#: gedit/gedit-commands-file.c:620
+#, c-format
+msgid ""
+"The file “%s” was previously saved as plain text and will now be saved using "
+"compression."
+msgstr ""
+
+#: gedit/gedit-commands-file.c:624
+msgid "_Save Using Compression"
+msgstr ""
+
+#: gedit/gedit-commands-file.c:629
+#, c-format
+msgid ""
+"The file “%s” was previously saved using compression and will now be saved "
+"as plain text."
+msgstr ""
+
+#: gedit/gedit-commands-file.c:632
+msgid "_Save As Plain Text"
+msgstr ""
+
+#: gedit/gedit-commands-file.c:747 gedit/gedit-commands-file.c:1014
+#, c-format
+msgid "Saving file “%s”…"
+msgstr ""
+
+#. Translators: "Save As" is the title of the file chooser window.
+#: gedit/gedit-commands-file.c:842
+msgctxt "window title"
+msgid "Save As"
+msgstr "پاشەکەوت وەک"
+
+#: gedit/gedit-commands-file.c:1424
+#, c-format
+msgid "Reverting the document “%s”…"
+msgstr ""
+
+#: gedit/gedit-commands-file.c:1471
+#, c-format
+msgid "Revert unsaved changes to document “%s”?"
+msgstr ""
+
+#: gedit/gedit-commands-file.c:1480
+#, c-format
+msgid ""
+"Changes made to the document in the last %ld second will be permanently lost."
+msgid_plural ""
+"Changes made to the document in the last %ld seconds will be permanently "
+"lost."
+msgstr[0] ""
+msgstr[1] ""
+
+#: gedit/gedit-commands-file.c:1489
+msgid ""
+"Changes made to the document in the last minute will be permanently lost."
+msgstr ""
+
+#: gedit/gedit-commands-file.c:1495
+#, c-format
+msgid ""
+"Changes made to the document in the last minute and %ld second will be "
+"permanently lost."
+msgid_plural ""
+"Changes made to the document in the last minute and %ld seconds will be "
+"permanently lost."
+msgstr[0] ""
+msgstr[1] ""
+
+#: gedit/gedit-commands-file.c:1505
+#, c-format
+msgid ""
+"Changes made to the document in the last %ld minute will be permanently lost."
+msgid_plural ""
+"Changes made to the document in the last %ld minutes will be permanently "
+"lost."
+msgstr[0] ""
+msgstr[1] ""
+
+#: gedit/gedit-commands-file.c:1520
+msgid "Changes made to the document in the last hour will be permanently lost."
+msgstr ""
+
+#: gedit/gedit-commands-file.c:1526
+#, c-format
+msgid ""
+"Changes made to the document in the last hour and %d minute will be "
+"permanently lost."
+msgid_plural ""
+"Changes made to the document in the last hour and %d minutes will be "
+"permanently lost."
+msgstr[0] ""
+msgstr[1] ""
+
+#: gedit/gedit-commands-file.c:1541
+#, c-format
+msgid ""
+"Changes made to the document in the last %d hour will be permanently lost."
+msgid_plural ""
+"Changes made to the document in the last %d hours will be permanently lost."
+msgstr[0] ""
+msgstr[1] ""
+
+#: gedit/gedit-commands-file.c:1564
+msgid "_Revert"
+msgstr "_گێڕانەوە"
+
+#: gedit/gedit-commands-help.c:108
+msgid "gedit is a small and lightweight text editor for the GNOME Desktop"
+msgstr ""
+
+#: gedit/gedit-commands-help.c:130
+msgid "translator-credits"
+msgstr ""
+"Launchpad Contributions:\n"
+"  Jwtiyar Nariman https://launchpad.net/~jwtiyar"
+
+#: gedit/gedit-commands-search.c:106
+#, c-format
+msgid "Found and replaced %d occurrence"
+msgid_plural "Found and replaced %d occurrences"
+msgstr[0] ""
+msgstr[1] ""
+
+#: gedit/gedit-commands-search.c:115
+msgid "Found and replaced one occurrence"
+msgstr ""
+
+#. Translators: %s is replaced by the text
+#. entered by the user in the search box
+#: gedit/gedit-commands-search.c:141
+#, c-format
+msgid "“%s” not found"
+msgstr ""
+
+#: gedit/gedit-document.c:969 gedit/gedit-document.c:998
+#, c-format
+msgid "Untitled Document %d"
+msgstr ""
+
+#: gedit/gedit-documents-panel.c:398
+#, c-format
+msgid "Tab Group %i"
+msgstr ""
+
+#: gedit/gedit-documents-panel.c:498 gedit/gedit-window.c:1094
+#: gedit/gedit-window.c:1100 gedit/gedit-window.c:1108
+msgid "Read-Only"
+msgstr "تەنها-خوێندنەوە"
+
+#: gedit/gedit-encodings-combo-box.c:297
+#: gedit/gedit-file-chooser-dialog-osx.m:562
+msgid "Automatically Detected"
+msgstr "خۆکارانە بیدۆزرەوە"
+
+#: gedit/gedit-encodings-combo-box.c:326
+#: gedit/gedit-file-chooser-dialog-osx.m:571
+msgid "Add or Remove…"
+msgstr "زیادکردن و سڕینەوە…"
+
+#: gedit/gedit-encoding-items.c:92
+#, c-format
+msgid "Current Locale (%s)"
+msgstr "زمانی ئێستا (%s)"
+
+#: gedit/gedit-encodings-dialog.c:93
+#, c-format
+msgid "%s (Current Locale)"
+msgstr ""
+
+#: gedit/gedit-encodings-dialog.c:188
+msgid "Do you really want to reset the character encodings’ preferences?"
+msgstr ""
+
+#. Reset button
+#: gedit/gedit-encodings-dialog.c:193 gedit/gedit-encodings-dialog.c:818
+msgid "_Reset"
+msgstr "_نوێکردنەوە"
+
+#: gedit/gedit-encodings-dialog.c:729
+msgid "Add"
+msgstr "زیادکردن"
+
+#: gedit/gedit-encodings-dialog.c:772
+msgid "Remove"
+msgstr "سڕینەوە"
+
+#: gedit/gedit-encodings-dialog.c:783
+msgid "Move to a higher priority"
+msgstr ""
+
+#: gedit/gedit-encodings-dialog.c:794
+msgid "Move to a lower priority"
+msgstr ""
+
+#: gedit/gedit-file-chooser-dialog-gtk.c:39
+#: gedit/gedit-preferences-dialog.c:825
+msgid "All Files"
+msgstr "هه‌موو په‌ڕگه‌كان"
+
+#: gedit/gedit-file-chooser-dialog-gtk.c:40
+msgid "All Text Files"
+msgstr "هه‌موو په‌ڕگه‌ دەقییەکان"
+
+#: gedit/gedit-file-chooser-dialog-gtk.c:305
+msgid "C_haracter Encoding:"
+msgstr ""
+
+#: gedit/gedit-file-chooser-dialog-gtk.c:364
+msgid "L_ine Ending:"
+msgstr ""
+
+#: gedit/gedit-file-chooser-dialog-osx.m:544
+msgid "Character Encoding:"
+msgstr ""
+
+#: gedit/gedit-file-chooser-dialog-osx.m:617
+msgid "Line Ending:"
+msgstr ""
+
+#: gedit/gedit-highlight-mode-selector.c:269 gedit/gedit-window.c:1178
+#: plugins/externaltools/tools/manager.py:115
+#: plugins/externaltools/tools/manager.py:324
+#: plugins/externaltools/tools/manager.py:440
+#: plugins/externaltools/tools/manager.py:776
+msgid "Plain Text"
+msgstr "دەقی تەخت"
+
+#: gedit/gedit-io-error-info-bar.c:143 gedit/gedit-io-error-info-bar.c:492
+msgid "_Retry"
+msgstr "_هەوڵدانەوە"
+
+#: gedit/gedit-io-error-info-bar.c:163
+#, c-format
+msgid "Could not find the file “%s”."
+msgstr ""
+
+#: gedit/gedit-io-error-info-bar.c:165 gedit/gedit-io-error-info-bar.c:205
+#: gedit/gedit-io-error-info-bar.c:212
+msgid "Please check that you typed the location correctly and try again."
+msgstr ""
+
+#. Translators: %s is a URI scheme (like for example http:, ftp:, etc.)
+#: gedit/gedit-io-error-info-bar.c:184
+#, c-format
+msgid "Unable to handle “%s:” locations."
+msgstr ""
+
+#: gedit/gedit-io-error-info-bar.c:190
+msgid "Unable to handle this location."
+msgstr ""
+
+#: gedit/gedit-io-error-info-bar.c:199
+msgid "The location of the file cannot be accessed."
+msgstr ""
+
+#: gedit/gedit-io-error-info-bar.c:203
+#, c-format
+msgid "“%s” is a directory."
+msgstr ""
+
+#: gedit/gedit-io-error-info-bar.c:210
+#, c-format
+msgid "“%s” is not a valid location."
+msgstr ""
+
+#. Translators: %s is a host name
+#: gedit/gedit-io-error-info-bar.c:246
+#, c-format
+msgid ""
+"Host “%s” could not be found. Please check that your proxy settings are "
+"correct and try again."
+msgstr ""
+
+#: gedit/gedit-io-error-info-bar.c:261
+#, c-format
+msgid ""
+"Hostname was invalid. Please check that you typed the location correctly and "
+"try again."
+msgstr ""
+
+#: gedit/gedit-io-error-info-bar.c:269
+#, c-format
+msgid "“%s” is not a regular file."
+msgstr ""
+
+#: gedit/gedit-io-error-info-bar.c:274
+msgid "Connection timed out. Please try again."
+msgstr ""
+
+#: gedit/gedit-io-error-info-bar.c:307
+#, c-format
+msgid "Unexpected error: %s"
+msgstr ""
+
+#: gedit/gedit-io-error-info-bar.c:343
+msgid "Cannot find the requested file. Perhaps it has recently been deleted."
+msgstr ""
+
+#: gedit/gedit-io-error-info-bar.c:353
+#, c-format
+msgid "Could not revert the file “%s”."
+msgstr ""
+
+#: gedit/gedit-io-error-info-bar.c:380
+msgid "Ch_aracter Encoding:"
+msgstr ""
+
+#: gedit/gedit-io-error-info-bar.c:441
+#, c-format
+msgid "The location “%s” is not currently reachable."
+msgstr ""
+
+#: gedit/gedit-io-error-info-bar.c:456
+msgid "Your system is offline. Check your network."
+msgstr ""
+
+#. Translators: the access key chosen for this string should be
+#. different from other main menu access keys (Open, Edit, View...)
+#: gedit/gedit-io-error-info-bar.c:500 gedit/gedit-io-error-info-bar.c:765
+msgid "Edit Any_way"
+msgstr ""
+
+#: gedit/gedit-io-error-info-bar.c:588
+msgid ""
+"The number of followed links is limited and the actual file could not be "
+"found within this limit."
+msgstr ""
+
+#: gedit/gedit-io-error-info-bar.c:592
+msgid "You do not have the permissions necessary to open the file."
+msgstr ""
+
+#: gedit/gedit-io-error-info-bar.c:598
+msgid "Unable to detect the character encoding."
+msgstr ""
+
+#: gedit/gedit-io-error-info-bar.c:599 gedit/gedit-io-error-info-bar.c:623
+msgid "Please check that you are not trying to open a binary file."
+msgstr ""
+
+#: gedit/gedit-io-error-info-bar.c:600
+msgid "Select a character encoding from the menu and try again."
+msgstr ""
+
+#: gedit/gedit-io-error-info-bar.c:606
+#, c-format
+msgid "There was a problem opening the file “%s”."
+msgstr ""
+
+#: gedit/gedit-io-error-info-bar.c:608
+msgid ""
+"The file you opened has some invalid characters. If you continue editing "
+"this file you could corrupt this document."
+msgstr ""
+
+#: gedit/gedit-io-error-info-bar.c:611
+msgid "You can also choose another character encoding and try again."
+msgstr ""
+
+#: gedit/gedit-io-error-info-bar.c:620
+#, c-format
+msgid "Could not open the file “%s” using the “%s” character encoding."
+msgstr ""
+
+#: gedit/gedit-io-error-info-bar.c:624 gedit/gedit-io-error-info-bar.c:699
+msgid "Select a different character encoding from the menu and try again."
+msgstr ""
+
+#: gedit/gedit-io-error-info-bar.c:636
+#, c-format
+msgid "Could not open the file “%s”."
+msgstr ""
+
+#: gedit/gedit-io-error-info-bar.c:694
+#, c-format
+msgid "Could not save the file “%s” using the “%s” character encoding."
+msgstr ""
+
+#: gedit/gedit-io-error-info-bar.c:697
+msgid ""
+"The document contains one or more characters that cannot be encoded using "
+"the specified character encoding."
+msgstr ""
+
+#. Translators: the access key chosen for this string should be
+#. different from other main menu access keys (Open, Edit, View...)
+#: gedit/gedit-io-error-info-bar.c:770
+msgid "D_on’t Edit"
+msgstr ""
+
+#: gedit/gedit-io-error-info-bar.c:780
+#, c-format
+msgid "This file “%s” is already open in another window."
+msgstr ""
+
+#: gedit/gedit-io-error-info-bar.c:794
+msgid "Do you want to edit it anyway?"
+msgstr ""
+
+#: gedit/gedit-io-error-info-bar.c:850 gedit/gedit-io-error-info-bar.c:940
+#: gedit/gedit-io-error-info-bar.c:1230
+msgid "S_ave Anyway"
+msgstr ""
+
+#: gedit/gedit-io-error-info-bar.c:853 gedit/gedit-io-error-info-bar.c:943
+#: gedit/gedit-io-error-info-bar.c:1233
+msgid "D_on’t Save"
+msgstr ""
+
+#. FIXME: review this message, it's not clear since for the user the "modification"
+#. * could be interpreted as the changes he made in the document. beside "reading" is
+#. * not accurate (since last load/save)
+#.
+#: gedit/gedit-io-error-info-bar.c:867
+#, c-format
+msgid "The file “%s” has been modified since reading it."
+msgstr ""
+
+#: gedit/gedit-io-error-info-bar.c:882
+msgid "If you save it, all the external changes could be lost. Save it anyway?"
+msgstr ""
+
+#: gedit/gedit-io-error-info-bar.c:962
+#, c-format
+msgid "Could not create a backup file while saving “%s”"
+msgstr ""
+
+#: gedit/gedit-io-error-info-bar.c:967
+#, c-format
+msgid "Could not create a temporary backup file while saving “%s”"
+msgstr ""
+
+#: gedit/gedit-io-error-info-bar.c:984
+msgid ""
+"Could not back up the old copy of the file before saving the new one. You "
+"can ignore this warning and save the file anyway, but if an error occurs "
+"while saving, you could lose the old copy of the file. Save anyway?"
+msgstr ""
+
+#. Translators: %s is a URI scheme (like for example http:, ftp:, etc.)
+#: gedit/gedit-io-error-info-bar.c:1044
+#, c-format
+msgid ""
+"Cannot handle “%s:” locations in write mode. Please check that you typed the "
+"location correctly and try again."
+msgstr ""
+
+#: gedit/gedit-io-error-info-bar.c:1052
+msgid ""
+"Cannot handle this location in write mode. Please check that you typed the "
+"location correctly and try again."
+msgstr ""
+
+#: gedit/gedit-io-error-info-bar.c:1061
+#, c-format
+msgid ""
+"“%s” is not a valid location. Please check that you typed the location "
+"correctly and try again."
+msgstr ""
+
+#: gedit/gedit-io-error-info-bar.c:1068
+msgid ""
+"You do not have the permissions necessary to save the file. Please check "
+"that you typed the location correctly and try again."
+msgstr ""
+
+#: gedit/gedit-io-error-info-bar.c:1074
+msgid ""
+"There is not enough disk space to save the file. Please free some disk space "
+"and try again."
+msgstr ""
+
+#: gedit/gedit-io-error-info-bar.c:1079
+msgid ""
+"You are trying to save the file on a read-only disk. Please check that you "
+"typed the location correctly and try again."
+msgstr ""
+
+#: gedit/gedit-io-error-info-bar.c:1085
+msgid "A file with the same name already exists. Please use a different name."
+msgstr ""
+
+#: gedit/gedit-io-error-info-bar.c:1090
+msgid ""
+"The disk where you are trying to save the file has a limitation on length of "
+"the file names. Please use a shorter name."
+msgstr ""
+
+#: gedit/gedit-io-error-info-bar.c:1101
+msgid ""
+"The disk where you are trying to save the file has a limitation on file "
+"sizes. Please try saving a smaller file or saving it to a disk that does not "
+"have this limitation."
+msgstr ""
+
+#: gedit/gedit-io-error-info-bar.c:1118
+#, c-format
+msgid "Could not save the file “%s”."
+msgstr ""
+
+#: gedit/gedit-io-error-info-bar.c:1158
+#, c-format
+msgid "The file “%s” changed on disk."
+msgstr ""
+
+#: gedit/gedit-io-error-info-bar.c:1169
+msgid "Drop Changes and _Reload"
+msgstr ""
+
+#: gedit/gedit-io-error-info-bar.c:1179 gedit/resources/gtk/menus-common.ui:148
+#: gedit/resources/gtk/menus.ui:9 gedit/resources/gtk/menus-traditional.ui:9
+msgid "_Reload"
+msgstr "_بارکردنەوە"
+
+#: gedit/gedit-io-error-info-bar.c:1243
+#, c-format
+msgid "Some invalid chars have been detected while saving “%s”"
+msgstr ""
+
+#: gedit/gedit-io-error-info-bar.c:1259
+msgid ""
+"If you continue saving this file you can corrupt the document.  Save anyway?"
+msgstr ""
+
+#: gedit/gedit-preferences-dialog.c:446
+msgid "Click on this button to select the font to be used by the editor"
+msgstr ""
+
+#: gedit/gedit-preferences-dialog.c:452
+#, c-format
+msgid "_Use the system fixed width font (%s)"
+msgstr ""
+
+#: gedit/gedit-preferences-dialog.c:592
+#, c-format
+msgid "Directory “%s” could not be created: g_mkdir_with_parents() failed: %s"
+msgstr ""
+
+#: gedit/gedit-preferences-dialog.c:789
+msgid "The selected color scheme cannot be installed."
+msgstr ""
+
+#: gedit/gedit-preferences-dialog.c:812
+msgid "Add Scheme"
+msgstr ""
+
+#: gedit/gedit-preferences-dialog.c:817
+msgid "A_dd Scheme"
+msgstr ""
+
+#: gedit/gedit-preferences-dialog.c:821
+msgid "Color Scheme Files"
+msgstr ""
+
+#: gedit/gedit-preferences-dialog.c:852
+#, c-format
+msgid "Could not remove color scheme “%s”."
+msgstr ""
+
+#: gedit/gedit-print-job.c:227
+msgid "Preparing…"
+msgstr "ئامادەکاردن..."
+
+#: gedit/gedit-print-job.c:539
+#, c-format
+msgid "File: %s"
+msgstr ""
+
+#. Translators: %N is the current page number, %Q is the total
+#. * number of pages (ex. Page 2 of 10)
+#.
+#: gedit/gedit-print-job.c:548
+msgid "Page %N of %Q"
+msgstr ""
+
+#: gedit/gedit-print-job.c:626
+#, c-format
+msgid "Rendering page %d of %d…"
+msgstr ""
+
+#: gedit/gedit-print-preview.c:651
+#, c-format
+msgid "Page %d of %d"
+msgstr ""
+
+#: gedit/gedit-replace-dialog.c:688 plugins/externaltools/tools/tools.ui:49
+#: plugins/externaltools/tools/tools.ui:83
+#: plugins/externaltools/tools/tools.ui:121
+msgid "Nothing"
+msgstr "هیچ نەکات"
+
+#: gedit/gedit-replace-dialog.c:777
+#: gedit/resources/ui/gedit-replace-dialog.ui:7
+msgid "Find and Replace"
+msgstr ""
+
+#. Use spaces to leave padding proportional to the font size
+#: gedit/gedit-statusbar.c:56 gedit/gedit-statusbar.c:62
+msgid "OVR"
+msgstr ""
+
+#: gedit/gedit-statusbar.c:56 gedit/gedit-statusbar.c:62
+msgid "INS"
+msgstr ""
+
+#: gedit/gedit-statusbar.c:242
+#, c-format
+msgid "There is a tab with errors"
+msgid_plural "There are %d tabs with errors"
+msgstr[0] ""
+msgstr[1] ""
+
+#. Translators: the first %s is a file name (e.g. test.txt) the second one
+#. is a directory (e.g. ssh://master.gnome.org/home/users/paolo)
+#: gedit/gedit-tab.c:824
+#, c-format
+msgid "Reverting %s from %s"
+msgstr ""
+
+#: gedit/gedit-tab.c:831
+#, c-format
+msgid "Reverting %s"
+msgstr ""
+
+#. Translators: the first %s is a file name (e.g. test.txt) the second one
+#. is a directory (e.g. ssh://master.gnome.org/home/users/paolo)
+#: gedit/gedit-tab.c:844
+#, c-format
+msgid "Loading %s from %s"
+msgstr ""
+
+#: gedit/gedit-tab.c:851
+#, c-format
+msgid "Loading %s"
+msgstr ""
+
+#. Translators: the first %s is a file name (e.g. test.txt) the second one
+#. is a directory (e.g. ssh://master.gnome.org/home/users/paolo)
+#: gedit/gedit-tab.c:931
+#, c-format
+msgid "Saving %s to %s"
+msgstr ""
+
+#: gedit/gedit-tab.c:936
+#, c-format
+msgid "Saving %s"
+msgstr ""
+
+#: gedit/gedit-tab.c:1539
+#, c-format
+msgid "Error opening file %s"
+msgstr ""
+
+#: gedit/gedit-tab.c:1544
+#, c-format
+msgid "Error reverting file %s"
+msgstr ""
+
+#: gedit/gedit-tab.c:1549
+#, c-format
+msgid "Error saving file %s"
+msgstr ""
+
+#: gedit/gedit-tab.c:1580
+msgid "Name:"
+msgstr "ناو:"
+
+#: gedit/gedit-tab.c:1581
+msgid "MIME Type:"
+msgstr ""
+
+#: gedit/gedit-tab.c:1582
+msgid "Encoding:"
+msgstr ""
+
+#. Translators: '/ on <remote-share>'
+#: gedit/gedit-utils.c:764
+#, c-format
+msgid "/ on %s"
+msgstr ""
+
+#: gedit/gedit-utils.c:1068
+msgid "Unix/Linux"
+msgstr ""
+
+#: gedit/gedit-utils.c:1070
+msgid "Mac OS Classic"
+msgstr ""
+
+#: gedit/gedit-utils.c:1072
+msgid "Windows"
+msgstr "پەنجەرەکان"
+
+#: gedit/gedit-view.c:481 gedit/resources/ui/gedit-preferences-dialog.ui:41
+msgid "_Display line numbers"
+msgstr ""
+
+#. Translators: the first %d is the position of the current search
+#. * occurrence, and the second %d is the total number of search
+#. * occurrences.
+#.
+#: gedit/gedit-view-frame.c:668
+#, c-format
+msgid "%d of %d"
+msgstr "%d  لە %d"
+
+#. create "Wrap Around" menu item.
+#: gedit/gedit-view-frame.c:760
+msgid "_Wrap Around"
+msgstr ""
+
+#. create "Match as Regular Expression" menu item.
+#: gedit/gedit-view-frame.c:770
+msgid "Match as _Regular Expression"
+msgstr ""
+
+#. create "Match Entire Word Only" menu item.
+#: gedit/gedit-view-frame.c:784
+msgid "Match _Entire Word Only"
+msgstr ""
+
+#. create "Match Case" menu item.
+#: gedit/gedit-view-frame.c:798
+msgid "_Match Case"
+msgstr ""
+
+#: gedit/gedit-view-frame.c:1023
+msgid "String you want to search for"
+msgstr ""
+
+#: gedit/gedit-view-frame.c:1035
+msgid "Line you want to move the cursor to"
+msgstr ""
+
+#: gedit/gedit-window.c:931
+msgid "Bracket match is out of range"
+msgstr ""
+
+#: gedit/gedit-window.c:936
+msgid "Bracket match not found"
+msgstr ""
+
+#: gedit/gedit-window.c:941
+#, c-format
+msgid "Bracket match found on line: %d"
+msgstr ""
+
+#. Translators: "Ln" is an abbreviation for "Line", Col is an abbreviation for "Column". Please,
+#. use abbreviations if possible to avoid space problems.
+#: gedit/gedit-window.c:976
+#, c-format
+msgid "  Ln %d, Col %d"
+msgstr ""
+
+#: gedit/gedit-window.c:1160
+#, c-format
+msgid "Tab Width: %u"
+msgstr ""
+
+#: gedit/gedit-window.c:1529
+msgid "There are unsaved documents"
+msgstr ""
+
+#: gedit/gedit-window.c:2366
+msgid "Change side panel page"
+msgstr ""
+
+#: gedit/gedit-window.c:2386 gedit/resources/ui/gedit-window.ui:19
+msgid "Documents"
+msgstr "بەڵگەنامەکان"
+
+#: gedit/gedit-window.c:2677
+msgid "Open a file"
+msgstr ""
+
+#: gedit/gedit-window.c:2681
+msgid "Open a recently used file"
+msgstr ""
+
+#: gedit/resources/gtk/menus-common.ui:7
+msgid "Move _Left"
+msgstr ""
+
+#: gedit/resources/gtk/menus-common.ui:11
+msgid "Move _Right"
+msgstr ""
+
+#: gedit/resources/gtk/menus-common.ui:17
+msgid "Move to New _Window"
+msgstr ""
+
+#: gedit/resources/gtk/menus-common.ui:21
+msgid "Move to New Tab _Group"
+msgstr ""
+
+#: gedit/resources/gtk/menus-common.ui:27
+#: gedit/resources/gtk/menus-common.ui:163
+#: gedit/resources/gtk/menus-traditional.ui:134
+#: gedit/resources/ui/gedit-replace-dialog.ui:23
+#: plugins/spell/resources/ui/gedit-spell-setup-dialog.ui:25
+#: plugins/time/resources/ui/gedit-time-setup-dialog.ui:21
+msgid "_Close"
+msgstr "_داخستن"
+
+#: gedit/resources/gtk/menus-common.ui:35
+msgid "Automatic Indentation"
+msgstr ""
+
+#: gedit/resources/gtk/menus-common.ui:58
+msgid "Use Spaces"
+msgstr ""
+
+#: gedit/resources/gtk/menus-common.ui:66
+msgid "Display line numbers"
+msgstr ""
+
+#: gedit/resources/gtk/menus-common.ui:70
+msgid "Display right margin"
+msgstr ""
+
+#: gedit/resources/gtk/menus-common.ui:74
+msgid "Highlight current line"
+msgstr ""
+
+#: gedit/resources/gtk/menus-common.ui:78
+msgid "Text wrapping"
+msgstr ""
+
+#: gedit/resources/gtk/menus-common.ui:88
+msgid "_File"
+msgstr "_پەڕگە"
+
+#. _New is the menu item under the File menu on OS X which creates a new empty document.
+#: gedit/resources/gtk/menus-common.ui:92
+msgid "_New"
+msgstr "_نوێ"
+
+#: gedit/resources/gtk/menus-common.ui:111
+msgid "Open _Recent"
+msgstr "دووا بەڵگەنامەکان"
+
+#: gedit/resources/gtk/menus-common.ui:114
+msgid "Reopen Closed _Tab"
+msgstr "کردنەوەی دووا بازدەرە _داخراوەکان"
+
+#: gedit/resources/gtk/menus-common.ui:132
+msgid "Save _As…"
+msgstr "پاشەکەوتکردن _وەک..."
+
+#: gedit/resources/gtk/menus-common.ui:140 gedit/resources/gtk/menus.ui:27
+msgid "_New Window"
+msgstr "_پەنجەریەکی نوێ"
+
+#: gedit/resources/gtk/menus-common.ui:155 gedit/resources/gtk/menus.ui:14
+#: gedit/resources/gtk/menus-traditional.ui:14
+msgid "_Print…"
+msgstr "_چاپکردن..."
+
+#: gedit/resources/gtk/menus-common.ui:168
+#: gedit/resources/gtk/menus-traditional.ui:138
+msgid "_Quit"
+msgstr "_دەرچوون"
+
+#: gedit/resources/gtk/menus-common.ui:176
+msgid "_Edit"
+msgstr "ـدەسکاریکردن"
+
+#: gedit/resources/gtk/menus-common.ui:180
+msgid "_Undo"
+msgstr "_گەڕانەوە"
+
+#: gedit/resources/gtk/menus-common.ui:185
+msgid "_Redo"
+msgstr "نە_کردن"
+
+#: gedit/resources/gtk/menus-common.ui:192
+msgid "C_ut"
+msgstr "بڕ_ین"
+
+#: gedit/resources/gtk/menus-common.ui:197
+msgid "_Copy"
+msgstr "_لەبەرگرتنەوە"
+
+#: gedit/resources/gtk/menus-common.ui:202
+msgid "_Paste"
+msgstr "_لكاندن"
+
+#: gedit/resources/gtk/menus-common.ui:207
+#: plugins/filebrowser/gedit-file-browser-plugin.c:919
+#: plugins/filebrowser/gedit-file-browser-plugin.c:957
+#: plugins/filebrowser/resources/ui/gedit-file-browser-menus.ui:37
+msgid "_Delete"
+msgstr "_سڕینەوە"
+
+#: gedit/resources/gtk/menus-common.ui:215
+msgid "Overwrite _Mode"
+msgstr "دۆخی _خستنەشوێن"
+
+#: gedit/resources/gtk/menus-common.ui:223
+msgid "Select _All"
+msgstr "هەمووی _دیاریبکە"
+
+#: gedit/resources/gtk/menus-common.ui:230 gedit/resources/gtk/menus.ui:112
+#: gedit/resources/gtk/menus-traditional.ui:108
+msgid "_Preferences"
+msgstr "_هەڵبژاردەکان"
+
+#: gedit/resources/gtk/menus-common.ui:237 gedit/resources/gtk/menus.ui:72
+#: gedit/resources/gtk/menus-traditional.ui:68
+msgid "_View"
+msgstr "_بینین"
+
+#: gedit/resources/gtk/menus-common.ui:241 gedit/resources/gtk/menus.ui:76
+#: gedit/resources/gtk/menus-traditional.ui:72
+msgid "Side _Panel"
+msgstr ""
+
+#: gedit/resources/gtk/menus-common.ui:246 gedit/resources/gtk/menus.ui:80
+#: gedit/resources/gtk/menus-traditional.ui:76
+msgid "_Bottom Panel"
+msgstr ""
+
+#: gedit/resources/gtk/menus-common.ui:255 gedit/resources/gtk/menus.ui:19
+#: gedit/resources/gtk/menus-traditional.ui:19
+msgid "_Fullscreen"
+msgstr ""
+
+#: gedit/resources/gtk/menus-common.ui:263 gedit/resources/gtk/menus.ui:91
+#: gedit/resources/gtk/menus-traditional.ui:87
+msgid "_Highlight Mode…"
+msgstr ""
+
+#: gedit/resources/gtk/menus-common.ui:269
+msgid "_Search"
+msgstr "_گەڕان"
+
+#: gedit/resources/gtk/menus-common.ui:273 gedit/resources/gtk/menus.ui:54
+#: gedit/resources/gtk/menus-traditional.ui:50
+msgid "_Find…"
+msgstr "_دۆزینەوە…"
+
+#: gedit/resources/gtk/menus-common.ui:278
+msgid "Find Ne_xt"
+msgstr ""
+
+#: gedit/resources/gtk/menus-common.ui:283
+msgid "Find Pre_vious"
+msgstr ""
+
+#: gedit/resources/gtk/menus-common.ui:291
+msgid "Find and _Replace…"
+msgstr "دۆزینەوە و _جێگۆڕکێ…"
+
+#: gedit/resources/gtk/menus-common.ui:299 gedit/resources/gtk/menus.ui:62
+#: gedit/resources/gtk/menus-traditional.ui:58
+msgid "_Clear Highlight"
+msgstr "_پاککردنەوەی دیاریکراوەکان"
+
+#: gedit/resources/gtk/menus-common.ui:307
+msgid "Go to _Line…"
+msgstr "بڕۆ بۆ _دێڕی…"
+
+#: gedit/resources/gtk/menus-common.ui:314 gedit/resources/gtk/menus.ui:97
+#: gedit/resources/gtk/menus-traditional.ui:93
+msgid "_Tools"
+msgstr "_ئامرازەکان"
+
+#: gedit/resources/gtk/menus-common.ui:329
+msgid "_Documents"
+msgstr "ـبەڵگەنامەکان"
+
+#: gedit/resources/gtk/menus-common.ui:333
+msgid "_Save All"
+msgstr "_هەمووی پاشەکەوت بکە"
+
+#: gedit/resources/gtk/menus-common.ui:338
+#: gedit/resources/gtk/menus-traditional.ui:130
+msgid "_Close All"
+msgstr "_هەموو پەنجەرەکان دابخە"
+
+#: gedit/resources/gtk/menus-common.ui:346
+msgid "_New Tab Group"
+msgstr "_کۆمەڵەی بازدەری نوێ"
+
+#: gedit/resources/gtk/menus-common.ui:351
+msgid "P_revious Tab Group"
+msgstr ""
+
+#: gedit/resources/gtk/menus-common.ui:356
+msgid "Nex_t Tab Group"
+msgstr ""
+
+#: gedit/resources/gtk/menus-common.ui:364
+msgid "_Previous Document"
+msgstr ""
+
+#: gedit/resources/gtk/menus-common.ui:369
+msgid "N_ext Document"
+msgstr ""
+
+#: gedit/resources/gtk/menus-common.ui:377
+msgid "_Move To New Window"
+msgstr ""
+
+#: gedit/resources/gtk/menus-common.ui:383
+#: gedit/resources/gtk/menus-common.ui:387 gedit/resources/gtk/menus.ui:123
+#: gedit/resources/gtk/menus-traditional.ui:119
+#: plugins/spell/gedit-spell-plugin.c:260
+#: plugins/time/resources/ui/gedit-time-dialog.ui:133
+msgid "_Help"
+msgstr "_یارمەتی"
+
+#: gedit/resources/gtk/menus-common.ui:394 gedit/resources/gtk/menus.ui:127
+#: gedit/resources/gtk/menus-traditional.ui:123
+msgid "_About Text Editor"
+msgstr "_دەربارەی دەستکاریکەری دەق"
+
+#: gedit/resources/gtk/menus.ui:41 gedit/resources/gtk/menus-traditional.ui:37
+msgid "Save _All"
+msgstr "_هەمووی پاشەکەوت بکە"
+
+#: gedit/resources/gtk/menus.ui:58 gedit/resources/gtk/menus-traditional.ui:54
+msgid "_Find and Replace…"
+msgstr "دۆزینەوە و _جێگۆڕکێ…"
+
+#: gedit/resources/gtk/menus.ui:66 gedit/resources/gtk/menus-traditional.ui:62
+msgid "_Go to Line…"
+msgstr "بڕۆ بۆ _دێڕی…"
+
+#: gedit/resources/gtk/menus.ui:119
+#: gedit/resources/gtk/menus-traditional.ui:115
+msgid "_Keyboard Shortcuts"
+msgstr "_قەدبڕەکانی تەختەکلیل"
+
+#: gedit/resources/ui/gedit-encodings-dialog.ui:41
+msgid "Character Encodings"
+msgstr ""
+
+#: gedit/resources/ui/gedit-encodings-dialog.ui:51
+msgid "_Apply"
+msgstr "_جێبەجێکردن"
+
+#: gedit/resources/ui/gedit-encodings-dialog.ui:82
+msgid "A_vailable Encodings"
+msgstr ""
+
+#: gedit/resources/ui/gedit-encodings-dialog.ui:100
+msgid "Cho_sen Encodings"
+msgstr ""
+
+#: gedit/resources/ui/gedit-encodings-dialog.ui:139
+#: gedit/resources/ui/gedit-encodings-dialog.ui:217
+msgid "_Description"
+msgstr "_کورتە"
+
+#: gedit/resources/ui/gedit-encodings-dialog.ui:151
+#: gedit/resources/ui/gedit-encodings-dialog.ui:228
+msgid "_Encoding"
+msgstr "_بەکۆدکردن"
+
+#: gedit/resources/ui/gedit-highlight-mode-dialog.ui:11
+msgid "Highlight Mode"
+msgstr "دۆخی دیاریکردن"
+
+#: gedit/resources/ui/gedit-highlight-mode-dialog.ui:47
+msgid "_Select"
+msgstr "_دیاریبکە"
+
+#: gedit/resources/ui/gedit-highlight-mode-selector.ui:31
+msgid "Search highlight mode…"
+msgstr ""
+
+#: gedit/resources/ui/gedit-preferences-dialog.ui:8
+#: gedit/resources/ui/gedit-preferences-dialog.ui:15
+msgid "Preferences"
+msgstr "هەڵبژاردەکان"
+
+#: gedit/resources/ui/gedit-preferences-dialog.ui:56
+msgid "Display right _margin at column:"
+msgstr ""
+
+#: gedit/resources/ui/gedit-preferences-dialog.ui:95
+msgid "Display _statusbar"
+msgstr ""
+
+#: gedit/resources/ui/gedit-preferences-dialog.ui:110
+msgid "Display _grid pattern"
+msgstr ""
+
+#: gedit/resources/ui/gedit-preferences-dialog.ui:139
+#: gedit/resources/ui/gedit-print-preferences.ui:197
+msgid "Text Wrapping"
+msgstr ""
+
+#: gedit/resources/ui/gedit-preferences-dialog.ui:157
+#: gedit/resources/ui/gedit-print-preferences.ui:217
+msgid "Enable text _wrapping"
+msgstr ""
+
+#: gedit/resources/ui/gedit-preferences-dialog.ui:171
+#: gedit/resources/ui/gedit-print-preferences.ui:237
+msgid "Do not _split words over two lines"
+msgstr ""
+
+#: gedit/resources/ui/gedit-preferences-dialog.ui:205
+msgid "Highlighting"
+msgstr "نیشانەکردن"
+
+#: gedit/resources/ui/gedit-preferences-dialog.ui:223
+msgid "Highlight current _line"
+msgstr ""
+
+#: gedit/resources/ui/gedit-preferences-dialog.ui:237
+msgid "Highlight matching _brackets"
+msgstr ""
+
+#: gedit/resources/ui/gedit-preferences-dialog.ui:270
+msgid "View"
+msgstr "پیشاندان"
+
+#: gedit/resources/ui/gedit-preferences-dialog.ui:292
+msgid "Tab Stops"
+msgstr ""
+
+#: gedit/resources/ui/gedit-preferences-dialog.ui:315
+msgid "_Tab width:"
+msgstr ""
+
+#: gedit/resources/ui/gedit-preferences-dialog.ui:344
+msgid "Insert _spaces instead of tabs"
+msgstr ""
+
+#: gedit/resources/ui/gedit-preferences-dialog.ui:359
+msgid "_Enable automatic indentation"
+msgstr ""
+
+#: gedit/resources/ui/gedit-preferences-dialog.ui:394
+msgid "File Saving"
+msgstr ""
+
+#: gedit/resources/ui/gedit-preferences-dialog.ui:413
+msgid "Create a _backup copy of files before saving"
+msgstr ""
+
+#: gedit/resources/ui/gedit-preferences-dialog.ui:428
+msgid "_Autosave files every"
+msgstr ""
+
+#: gedit/resources/ui/gedit-preferences-dialog.ui:444
+msgid "_minutes"
+msgstr ""
+
+#: gedit/resources/ui/gedit-preferences-dialog.ui:491
+msgid "Editor"
+msgstr "دەستکاریکەر"
+
+#: gedit/resources/ui/gedit-preferences-dialog.ui:558
+msgid "Editor _font: "
+msgstr ""
+
+#: gedit/resources/ui/gedit-preferences-dialog.ui:575
+msgid "Pick the editor font"
+msgstr ""
+
+#: gedit/resources/ui/gedit-preferences-dialog.ui:616
+msgid "Color Scheme"
+msgstr ""
+
+#: gedit/resources/ui/gedit-preferences-dialog.ui:663
+#: gedit/resources/ui/gedit-preferences-dialog.ui:664
+msgid "Install scheme"
+msgstr ""
+
+#: gedit/resources/ui/gedit-preferences-dialog.ui:665
+msgid "Install Scheme"
+msgstr ""
+
+#: gedit/resources/ui/gedit-preferences-dialog.ui:679
+#: gedit/resources/ui/gedit-preferences-dialog.ui:680
+msgid "Uninstall scheme"
+msgstr ""
+
+#: gedit/resources/ui/gedit-preferences-dialog.ui:681
+msgid "Uninstall Scheme"
+msgstr ""
+
+#: gedit/resources/ui/gedit-preferences-dialog.ui:721
+msgid "Font & Colors"
+msgstr ""
+
+#: gedit/resources/ui/gedit-preferences-dialog.ui:746
+msgid "Plugins"
+msgstr "پێوەکراوەکان"
+
+#: gedit/resources/ui/gedit-print-preferences.ui:39
+msgid "Syntax Highlighting"
+msgstr ""
+
+#: gedit/resources/ui/gedit-print-preferences.ui:52
+msgid "Print synta_x highlighting"
+msgstr ""
+
+#: gedit/resources/ui/gedit-print-preferences.ui:85
+msgid "Line Numbers"
+msgstr "ژمارەی دێڕەکان"
+
+#: gedit/resources/ui/gedit-print-preferences.ui:105
+msgid "Print line nu_mbers"
+msgstr ""
+
+#. 'Number every' from 'Number every 3 lines' in the 'Text Editor' tab of the print preferences.
+#: gedit/resources/ui/gedit-print-preferences.ui:129
+msgid "_Number every"
+msgstr ""
+
+#. 'lines' from 'Number every 3 lines' in the 'Text Editor' tab of the print preferences.
+#: gedit/resources/ui/gedit-print-preferences.ui:157
+msgid "lines"
+msgstr "هێڵەکان"
+
+#: gedit/resources/ui/gedit-print-preferences.ui:283
+msgid "Page header"
+msgstr ""
+
+#: gedit/resources/ui/gedit-print-preferences.ui:296
+msgid "Print page _headers"
+msgstr ""
+
+#: gedit/resources/ui/gedit-print-preferences.ui:342
+msgid "Fonts"
+msgstr "جۆرەپیت"
+
+#: gedit/resources/ui/gedit-print-preferences.ui:371
+msgid "_Body:"
+msgstr ""
+
+#: gedit/resources/ui/gedit-print-preferences.ui:402
+msgid "_Line numbers:"
+msgstr ""
+
+#: gedit/resources/ui/gedit-print-preferences.ui:433
+msgid "He_aders and footers:"
+msgstr ""
+
+#: gedit/resources/ui/gedit-print-preferences.ui:474
+msgid "_Restore Default Fonts"
+msgstr ""
+
+#: gedit/resources/ui/gedit-print-preview.ui:34
+msgid "Show the previous page"
+msgstr ""
+
+#: gedit/resources/ui/gedit-print-preview.ui:48
+msgid "Show the next page"
+msgstr ""
+
+#: gedit/resources/ui/gedit-print-preview.ui:103
+msgid "Current page (Alt+P)"
+msgstr ""
+
+#. the "of" from "1 of 19" in print preview
+#: gedit/resources/ui/gedit-print-preview.ui:118
+msgid "of"
+msgstr ""
+
+#: gedit/resources/ui/gedit-print-preview.ui:135
+msgid "Page total"
+msgstr ""
+
+#: gedit/resources/ui/gedit-print-preview.ui:136
+msgid "The total number of pages in the document"
+msgstr ""
+
+#: gedit/resources/ui/gedit-print-preview.ui:185
+msgid "Show multiple pages"
+msgstr ""
+
+#: gedit/resources/ui/gedit-print-preview.ui:233
+msgid "Zoom 1:1"
+msgstr ""
+
+#: gedit/resources/ui/gedit-print-preview.ui:247
+msgid "Zoom to fit the whole page"
+msgstr ""
+
+#: gedit/resources/ui/gedit-print-preview.ui:261
+msgid "Zoom the page in"
+msgstr ""
+
+#: gedit/resources/ui/gedit-print-preview.ui:275
+msgid "Zoom the page out"
+msgstr ""
+
+#: gedit/resources/ui/gedit-print-preview.ui:326
+msgid "Close print preview"
+msgstr ""
+
+#: gedit/resources/ui/gedit-print-preview.ui:327
+msgid "_Close Preview"
+msgstr ""
+
+#: gedit/resources/ui/gedit-print-preview.ui:374
+msgid "Page Preview"
+msgstr ""
+
+#: gedit/resources/ui/gedit-print-preview.ui:375
+msgid "The preview of a page in the document to be printed"
+msgstr ""
+
+#: gedit/resources/ui/gedit-replace-dialog.ui:39
+msgid "Replace _All"
+msgstr "جێگۆڕکردنی _هەموو"
+
+#: gedit/resources/ui/gedit-replace-dialog.ui:71
+msgctxt "label of the find button"
+msgid "_Find"
+msgstr "_دۆزینەوە"
+
+#: gedit/resources/ui/gedit-replace-dialog.ui:105
+msgctxt "label on the left of the GtkEntry containing text to search"
+msgid "F_ind "
+msgstr ""
+
+#: gedit/resources/ui/gedit-replace-dialog.ui:120
+msgid "Replace _with "
+msgstr ""
+
+#: gedit/resources/ui/gedit-replace-dialog.ui:138
+msgid "_Match case"
+msgstr ""
+
+#: gedit/resources/ui/gedit-replace-dialog.ui:155
+msgid "Match _entire word only"
+msgstr ""
+
+#: gedit/resources/ui/gedit-replace-dialog.ui:172
+msgid "Re_gular expression"
+msgstr ""
+
+#: gedit/resources/ui/gedit-replace-dialog.ui:189
+msgid "Search _backwards"
+msgstr ""
+
+#: gedit/resources/ui/gedit-replace-dialog.ui:206
+msgid "Wra_p around"
+msgstr ""
+
+#: gedit/resources/ui/gedit-shortcuts.ui:14
+msgctxt "shortcut window"
+msgid "Documents"
+msgstr "بەڵگەنامەکان"
+
+#: gedit/resources/ui/gedit-shortcuts.ui:19
+msgctxt "shortcut window"
+msgid "Create a new document in a tab"
+msgstr ""
+
+#: gedit/resources/ui/gedit-shortcuts.ui:26
+msgctxt "shortcut window"
+msgid "Open a document"
+msgstr ""
+
+#: gedit/resources/ui/gedit-shortcuts.ui:33
+msgctxt "shortcut window"
+msgid "Save the document"
+msgstr ""
+
+#: gedit/resources/ui/gedit-shortcuts.ui:40
+msgctxt "shortcut window"
+msgid "Save the document with a new filename"
+msgstr ""
+
+#: gedit/resources/ui/gedit-shortcuts.ui:47
+msgctxt "shortcut window"
+msgid "Save all the documents"
+msgstr ""
+
+#: gedit/resources/ui/gedit-shortcuts.ui:54
+msgctxt "shortcut window"
+msgid "Close the document"
+msgstr ""
+
+#: gedit/resources/ui/gedit-shortcuts.ui:61
+msgctxt "shortcut window"
+msgid "Close all the documents"
+msgstr ""
+
+#: gedit/resources/ui/gedit-shortcuts.ui:68
+msgctxt "shortcut window"
+msgid "Reopen the most recently closed document"
+msgstr ""
+
+#: gedit/resources/ui/gedit-shortcuts.ui:75
+msgctxt "shortcut window"
+msgid "Switch to the next document"
+msgstr ""
+
+#: gedit/resources/ui/gedit-shortcuts.ui:82
+msgctxt "shortcut window"
+msgid "Switch to the previous document"
+msgstr ""
+
+#: gedit/resources/ui/gedit-shortcuts.ui:89
+msgctxt "shortcut window"
+msgid "Switch to the first — ninth document"
+msgstr ""
+
+#: gedit/resources/ui/gedit-shortcuts.ui:97
+msgctxt "shortcut window"
+msgid "Windows and Panels"
+msgstr ""
+
+#: gedit/resources/ui/gedit-shortcuts.ui:102
+msgctxt "shortcut window"
+msgid "Create a new document in a window"
+msgstr ""
+
+#: gedit/resources/ui/gedit-shortcuts.ui:109
+msgctxt "shortcut window"
+msgid "Create a new tab group"
+msgstr ""
+
+#: gedit/resources/ui/gedit-shortcuts.ui:116
+msgctxt "shortcut window"
+msgid "Show side panel"
+msgstr ""
+
+#: gedit/resources/ui/gedit-shortcuts.ui:123
+msgctxt "shortcut window"
+msgid "Show bottom panel"
+msgstr ""
+
+#: gedit/resources/ui/gedit-shortcuts.ui:130
+msgctxt "shortcut window"
+msgid "Fullscreen on / off"
+msgstr ""
+
+#: gedit/resources/ui/gedit-shortcuts.ui:137
+msgctxt "shortcut window"
+msgid "Quit the application"
+msgstr ""
+
+#: gedit/resources/ui/gedit-shortcuts.ui:145
+#: gedit/resources/ui/gedit-shortcuts.ui:171
+msgctxt "shortcut window"
+msgid "Find and Replace"
+msgstr ""
+
+#: gedit/resources/ui/gedit-shortcuts.ui:150
+msgctxt "shortcut window"
+msgid "Find"
+msgstr "دۆزینەوە"
+
+#: gedit/resources/ui/gedit-shortcuts.ui:157
+msgctxt "shortcut window"
+msgid "Find the next match"
+msgstr ""
+
+#: gedit/resources/ui/gedit-shortcuts.ui:164
+msgctxt "shortcut window"
+msgid "Find the previous match"
+msgstr ""
+
+#: gedit/resources/ui/gedit-shortcuts.ui:178
+msgctxt "shortcut window"
+msgid "Clear highlight"
+msgstr ""
+
+#: gedit/resources/ui/gedit-shortcuts.ui:186
+msgctxt "shortcut window"
+msgid "Undo and Redo"
+msgstr ""
+
+#: gedit/resources/ui/gedit-shortcuts.ui:191
+msgctxt "shortcut window"
+msgid "Undo previous command"
+msgstr ""
+
+#: gedit/resources/ui/gedit-shortcuts.ui:198
+msgctxt "shortcut window"
+msgid "Redo previous command"
+msgstr ""
+
+#: gedit/resources/ui/gedit-shortcuts.ui:206
+msgctxt "shortcut window"
+msgid "Selection"
+msgstr "بۆ دیاریکردن"
+
+#: gedit/resources/ui/gedit-shortcuts.ui:211
+msgctxt "shortcut window"
+msgid "Select all text"
+msgstr ""
+
+#: gedit/resources/ui/gedit-shortcuts.ui:218
+msgctxt "shortcut window"
+msgid "Unselect all text"
+msgstr ""
+
+#: gedit/resources/ui/gedit-shortcuts.ui:226
+msgctxt "shortcut window"
+msgid "Copy and Paste"
+msgstr ""
+
+#: gedit/resources/ui/gedit-shortcuts.ui:231
+msgctxt "shortcut window"
+msgid "Copy selected text to clipboard"
+msgstr ""
+
+#: gedit/resources/ui/gedit-shortcuts.ui:238
+msgctxt "shortcut window"
+msgid "Cut selected text to clipboard"
+msgstr ""
+
+#: gedit/resources/ui/gedit-shortcuts.ui:245
+msgctxt "shortcut window"
+msgid "Paste text from clipboard"
+msgstr ""
+
+#: gedit/resources/ui/gedit-shortcuts.ui:253
+msgctxt "shortcut window"
+msgid "Navigation"
+msgstr "ڕێدۆزی"
+
+#: gedit/resources/ui/gedit-shortcuts.ui:258
+msgctxt "shortcut window"
+msgid "Go to line"
+msgstr ""
+
+#: gedit/resources/ui/gedit-shortcuts.ui:265
+msgctxt "shortcut window"
+msgid "Move viewport up within the file"
+msgstr ""
+
+#: gedit/resources/ui/gedit-shortcuts.ui:272
+msgctxt "shortcut window"
+msgid "Move viewport down within the file"
+msgstr ""
+
+#: gedit/resources/ui/gedit-shortcuts.ui:279
+msgctxt "shortcut window"
+msgid "Move viewport to end of file"
+msgstr ""
+
+#: gedit/resources/ui/gedit-shortcuts.ui:286
+msgctxt "shortcut window"
+msgid "Move viewport to beginning of file"
+msgstr ""
+
+#: gedit/resources/ui/gedit-shortcuts.ui:293
+msgctxt "shortcut window"
+msgid "Move to matching bracket"
+msgstr ""
+
+#: gedit/resources/ui/gedit-shortcuts.ui:301
+msgctxt "shortcut window"
+msgid "Editing"
+msgstr "دەستکاریکردن"
+
+#: gedit/resources/ui/gedit-shortcuts.ui:306
+msgctxt "shortcut window"
+msgid "Toggle insert / overwrite"
+msgstr ""
+
+#: gedit/resources/ui/gedit-shortcuts.ui:313
+msgctxt "shortcut window"
+msgid "Delete current line"
+msgstr ""
+
+#: gedit/resources/ui/gedit-shortcuts.ui:320
+msgctxt "shortcut window"
+msgid "Join selected lines"
+msgstr ""
+
+#: gedit/resources/ui/gedit-shortcuts.ui:327
+msgctxt "shortcut window"
+msgid "Move current line up"
+msgstr ""
+
+#: gedit/resources/ui/gedit-shortcuts.ui:334
+msgctxt "shortcut window"
+msgid "Move current line down"
+msgstr ""
+
+#: gedit/resources/ui/gedit-shortcuts.ui:341
+msgctxt "shortcut window"
+msgid "Move current word left"
+msgstr ""
+
+#: gedit/resources/ui/gedit-shortcuts.ui:348
+msgctxt "shortcut window"
+msgid "Move current word right"
+msgstr ""
+
+#: gedit/resources/ui/gedit-shortcuts.ui:355
+msgctxt "shortcut window"
+msgid "Convert to uppercase"
+msgstr ""
+
+#: gedit/resources/ui/gedit-shortcuts.ui:362
+msgctxt "shortcut window"
+msgid "Convert to lowercase"
+msgstr ""
+
+#: gedit/resources/ui/gedit-shortcuts.ui:369
+msgctxt "shortcut window"
+msgid "Invert case"
+msgstr ""
+
+#: gedit/resources/ui/gedit-shortcuts.ui:376
+msgctxt "shortcut window"
+msgid "Increment number at cursor"
+msgstr ""
+
+#: gedit/resources/ui/gedit-shortcuts.ui:383
+msgctxt "shortcut window"
+msgid "Decrement number at cursor"
+msgstr ""
+
+#: gedit/resources/ui/gedit-shortcuts.ui:391
+msgctxt "shortcut window"
+msgid "Tools"
+msgstr "ئامرازەکان"
+
+#: gedit/resources/ui/gedit-shortcuts.ui:396
+msgctxt "shortcut window"
+msgid "Check spelling"
+msgstr ""
+
+#: gedit/resources/ui/gedit-shortcuts.ui:403
+msgctxt "shortcut window"
+msgid "Print the document"
+msgstr ""
+
+#: gedit/resources/ui/gedit-shortcuts.ui:410
+msgctxt "shortcut window"
+msgid "Show completion window"
+msgstr ""
+
+#: gedit/resources/ui/gedit-tab-label.ui:34
+msgid "Close Document"
+msgstr "بەڵگەنامە دابخە"
+
+#: gedit/resources/ui/gedit-window.ui:36 gedit/resources/ui/gedit-window.ui:43
+#: gedit/resources/ui/gedit-window.ui:330
+#: gedit/resources/ui/gedit-window.ui:337
+msgid "Create a new document"
+msgstr "بەڵگەنامەی نوێ درووست بکە"
+
+#: gedit/resources/ui/gedit-window.ui:42 gedit/resources/ui/gedit-window.ui:336
+msgid "New"
+msgstr "نوێ"
+
+#: gedit/resources/ui/gedit-window.ui:65 gedit/resources/ui/gedit-window.ui:70
+#: gedit/resources/ui/gedit-window.ui:375
+#: gedit/resources/ui/gedit-window.ui:380
+msgid "Save the current file"
+msgstr "پاشەکەوتکردنی پەڕگەی ئێستا"
+
+#: gedit/resources/ui/gedit-window.ui:69 gedit/resources/ui/gedit-window.ui:372
+#: gedit/resources/ui/gedit-window.ui:379
+msgid "Save"
+msgstr "پاشەکەوتکردن"
+
+#: gedit/resources/ui/gedit-window.ui:212
+msgid "Hide panel"
+msgstr "شاردنەوەی نیشاندەرەکان"
+
+#: gedit/resources/ui/gedit-window.ui:346
+#: gedit/resources/ui/gedit-window.ui:351
+#: gedit/resources/ui/gedit-window.ui:352
+msgid "Leave Fullscreen"
+msgstr ""
+
+#: plugins/checkupdate/checkupdate.plugin.desktop.in:5
+msgid "Check update"
+msgstr ""
+
+#: plugins/checkupdate/checkupdate.plugin.desktop.in:6
+msgid "Check for latest version of gedit"
+msgstr ""
+
+#: plugins/checkupdate/gedit-check-update-plugin.c:245
+msgid "There was an error displaying the URI."
+msgstr ""
+
+#: plugins/checkupdate/gedit-check-update-plugin.c:282
+msgid "_Download"
+msgstr ""
+
+#: plugins/checkupdate/gedit-check-update-plugin.c:283
+msgid "_Ignore Version"
+msgstr ""
+
+#: plugins/checkupdate/gedit-check-update-plugin.c:288
+msgid "There is a new version of gedit"
+msgstr ""
+
+#: plugins/checkupdate/gedit-check-update-plugin.c:291
+msgid ""
+"You can download the new version of gedit by clicking on the download button "
+"or ignore that version and wait for a new one"
+msgstr ""
+
+#: plugins/docinfo/docinfo.plugin.desktop.in:5
+#: plugins/docinfo/resources/ui/gedit-docinfo-plugin.ui:7
+#: plugins/docinfo/resources/ui/gedit-docinfo-plugin.ui:13
+msgid "Document Statistics"
+msgstr ""
+
+#: plugins/docinfo/docinfo.plugin.desktop.in:6
+msgid "Report the number of words, lines and characters in a document."
+msgstr ""
+
+#: plugins/docinfo/gedit-docinfo-plugin.c:537
+msgid "_Document Statistics"
+msgstr ""
+
+#: plugins/docinfo/resources/ui/gedit-docinfo-plugin.ui:64
+msgid "Document"
+msgstr "بەڵگەنامە"
+
+#: plugins/docinfo/resources/ui/gedit-docinfo-plugin.ui:82
+msgid "Selection"
+msgstr "بۆ دیاریکردن"
+
+#: plugins/docinfo/resources/ui/gedit-docinfo-plugin.ui:97
+msgid "Lines"
+msgstr "هێڵەکان"
+
+#: plugins/docinfo/resources/ui/gedit-docinfo-plugin.ui:112
+msgid "Words"
+msgstr "پیتەکان"
+
+#: plugins/docinfo/resources/ui/gedit-docinfo-plugin.ui:127
+msgid "Characters (with spaces)"
+msgstr "نووسەکان (لەگەڵ بۆشایی)"
+
+#: plugins/docinfo/resources/ui/gedit-docinfo-plugin.ui:142
+msgid "Characters (no spaces)"
+msgstr "نووسەکان (بێ بۆشایی)"
+
+#: plugins/docinfo/resources/ui/gedit-docinfo-plugin.ui:157
+msgid "Bytes"
+msgstr "بایت"
+
+#: plugins/externaltools/data/build.desktop.in:3
+msgid "Build"
+msgstr ""
+
+#: plugins/externaltools/data/build.desktop.in:4
+msgid "Run “make” in the document directory"
+msgstr ""
+
+#: plugins/externaltools/data/open-terminal-here.desktop.in:3
+#: plugins/externaltools/data/open-terminal-here-osx.desktop.in:3
+msgid "Open terminal here"
+msgstr ""
+
+#: plugins/externaltools/data/open-terminal-here.desktop.in:4
+#: plugins/externaltools/data/open-terminal-here-osx.desktop.in:4
+msgid "Open a terminal in the document location"
+msgstr ""
+
+#: plugins/externaltools/data/remove-trailing-spaces.desktop.in:3
+msgid "Remove trailing spaces"
+msgstr ""
+
+#: plugins/externaltools/data/remove-trailing-spaces.desktop.in:4
+msgid "Remove useless trailing spaces in your file"
+msgstr ""
+
+#: plugins/externaltools/data/run-command.desktop.in:3
+msgid "Run command"
+msgstr ""
+
+#: plugins/externaltools/data/run-command.desktop.in:4
+msgid "Execute a custom command and put its output in a new document"
+msgstr ""
+
+#: plugins/externaltools/data/send-to-fpaste.desktop.in:3
+msgid "Send to fpaste"
+msgstr ""
+
+#: plugins/externaltools/data/send-to-fpaste.desktop.in:4
+msgid "Paste selected text or current document to fpaste"
+msgstr ""
+
+#: plugins/externaltools/externaltools.plugin.desktop.in:6
+msgid "External Tools"
+msgstr ""
+
+#: plugins/externaltools/externaltools.plugin.desktop.in:7
+msgid "Execute external commands and shell scripts."
+msgstr ""
+
+#: plugins/externaltools/tools/appactivatable.py:133
+msgid "Manage _External Tools…"
+msgstr ""
+
+#: plugins/externaltools/tools/appactivatable.py:138
+msgid "External _Tools"
+msgstr ""
+
+#: plugins/externaltools/tools/capture.py:106
+#, python-format
+msgid "Could not execute command: %s"
+msgstr ""
+
+#: plugins/externaltools/tools/functions.py:191
+msgid "You must be inside a word to run this command"
+msgstr ""
+
+#: plugins/externaltools/tools/functions.py:309
+msgid "Running tool:"
+msgstr ""
+
+#: plugins/externaltools/tools/functions.py:340
+msgid "Done."
+msgstr "تەواو."
+
+#: plugins/externaltools/tools/functions.py:342
+msgid "Exited"
+msgstr ""
+
+#: plugins/externaltools/tools/manager.py:113
+msgid "All languages"
+msgstr "هەموو زمانەکان"
+
+#: plugins/externaltools/tools/manager.py:429
+#: plugins/externaltools/tools/manager.py:433
+#: plugins/externaltools/tools/manager.py:774
+#: plugins/externaltools/tools/tools.ui:473
+msgid "All Languages"
+msgstr "هەموو زمانەکان"
+
+#: plugins/externaltools/tools/manager.py:546
+msgid "New tool"
+msgstr ""
+
+#: plugins/externaltools/tools/manager.py:683
+#, python-format
+msgid "This accelerator is already bound to %s"
+msgstr ""
+
+#: plugins/externaltools/tools/manager.py:729
+msgid "Type a new accelerator, or press Backspace to clear"
+msgstr ""
+
+#: plugins/externaltools/tools/manager.py:731
+msgid "Type a new accelerator"
+msgstr ""
+
+#: plugins/externaltools/tools/outputpanel.py:129
+msgid "Stopped."
+msgstr ""
+
+#: plugins/externaltools/tools/outputpanel.ui:37
+msgid "Stop Tool"
+msgstr ""
+
+#: plugins/externaltools/tools/tools.ui:15
+msgid "Always available"
+msgstr ""
+
+#: plugins/externaltools/tools/tools.ui:19
+#: plugins/externaltools/tools/tools.ui:129
+msgid "All documents"
+msgstr ""
+
+#: plugins/externaltools/tools/tools.ui:23
+msgid "All documents except untitled ones"
+msgstr ""
+
+#: plugins/externaltools/tools/tools.ui:27
+msgid "Local files only"
+msgstr ""
+
+#: plugins/externaltools/tools/tools.ui:31
+msgid "Remote files only"
+msgstr ""
+
+#: plugins/externaltools/tools/tools.ui:35
+msgid "Untitled documents only"
+msgstr ""
+
+#: plugins/externaltools/tools/tools.ui:53
+#: plugins/externaltools/tools/tools.ui:125
+msgid "Current document"
+msgstr ""
+
+#: plugins/externaltools/tools/tools.ui:57
+msgid "Current selection"
+msgstr "دیاریکراوی ئێستا"
+
+#: plugins/externaltools/tools/tools.ui:61
+msgid "Current selection (default to document)"
+msgstr ""
+
+#: plugins/externaltools/tools/tools.ui:65
+msgid "Current line"
+msgstr ""
+
+#: plugins/externaltools/tools/tools.ui:69
+msgid "Current word"
+msgstr ""
+
+#: plugins/externaltools/tools/tools.ui:87
+msgid "Display in bottom pane"
+msgstr ""
+
+#: plugins/externaltools/tools/tools.ui:91
+msgid "Create new document"
+msgstr ""
+
+#: plugins/externaltools/tools/tools.ui:95
+msgid "Append to current document"
+msgstr ""
+
+#: plugins/externaltools/tools/tools.ui:99
+msgid "Replace current document"
+msgstr ""
+
+#: plugins/externaltools/tools/tools.ui:103
+msgid "Replace current selection"
+msgstr ""
+
+#: plugins/externaltools/tools/tools.ui:107
+msgid "Insert at cursor position"
+msgstr ""
+
+#: plugins/externaltools/tools/tools.ui:136
+#: plugins/externaltools/tools/tools.ui:146
+msgid "Manage External Tools"
+msgstr ""
+
+#: plugins/externaltools/tools/tools.ui:204
+msgid "Add a new tool"
+msgstr ""
+
+#: plugins/externaltools/tools/tools.ui:205
+msgid "Add Tool"
+msgstr ""
+
+#: plugins/externaltools/tools/tools.ui:219
+msgid "Remove selected tool"
+msgstr ""
+
+#: plugins/externaltools/tools/tools.ui:220
+msgid "Remove Tool"
+msgstr ""
+
+#: plugins/externaltools/tools/tools.ui:234
+msgid "Revert tool"
+msgstr ""
+
+#: plugins/externaltools/tools/tools.ui:235
+msgid "Revert Tool"
+msgstr ""
+
+#: plugins/externaltools/tools/tools.ui:287
+msgid "Shortcut _key:"
+msgstr ""
+
+#: plugins/externaltools/tools/tools.ui:321
+msgid "_Save:"
+msgstr "_پاشەکەوت:"
+
+#: plugins/externaltools/tools/tools.ui:356
+msgid "_Input:"
+msgstr "_تێخستە:"
+
+#: plugins/externaltools/tools/tools.ui:391
+msgid "_Output:"
+msgstr "_دەرخستە:"
+
+#: plugins/externaltools/tools/tools.ui:426
+msgid "_Applicability:"
+msgstr ""
+
+#: plugins/externaltools/tools/windowactivatable.py:126
+msgid "Tool Output"
+msgstr ""
+
+#: plugins/filebrowser/filebrowser.plugin.desktop.in:6
+msgid "File Browser Panel"
+msgstr ""
+
+#: plugins/filebrowser/filebrowser.plugin.desktop.in:7
+msgid "Easy file access from the side panel"
+msgstr ""
+
+#: plugins/filebrowser/gedit-file-bookmarks-store.c:200
+msgid "Home"
+msgstr "ماڵەوە"
+
+#: plugins/filebrowser/gedit-file-bookmarks-store.c:233
+msgid "File System"
+msgstr "پەڕگەی سیستەم"
+
+#: plugins/filebrowser/gedit-file-browser-plugin.c:523
+msgid "File Browser"
+msgstr ""
+
+#: plugins/filebrowser/gedit-file-browser-plugin.c:659
+msgid "An error occurred while creating a new directory"
+msgstr ""
+
+#: plugins/filebrowser/gedit-file-browser-plugin.c:662
+msgid "An error occurred while creating a new file"
+msgstr ""
+
+#: plugins/filebrowser/gedit-file-browser-plugin.c:665
+msgid "An error occurred while renaming a file or directory"
+msgstr ""
+
+#: plugins/filebrowser/gedit-file-browser-plugin.c:668
+msgid "An error occurred while deleting a file or directory"
+msgstr ""
+
+#: plugins/filebrowser/gedit-file-browser-plugin.c:671
+msgid "An error occurred while opening a directory in the file manager"
+msgstr ""
+
+#: plugins/filebrowser/gedit-file-browser-plugin.c:674
+msgid "An error occurred while setting a root directory"
+msgstr ""
+
+#: plugins/filebrowser/gedit-file-browser-plugin.c:677
+msgid "An error occurred while loading a directory"
+msgstr ""
+
+#: plugins/filebrowser/gedit-file-browser-plugin.c:680
+msgid "An error occurred"
+msgstr ""
+
+#: plugins/filebrowser/gedit-file-browser-plugin.c:902
+msgid ""
+"Cannot move file to trash, do you\n"
+"want to delete permanently?"
+msgstr ""
+
+#: plugins/filebrowser/gedit-file-browser-plugin.c:907
+#, c-format
+msgid "The file “%s” cannot be moved to the trash."
+msgstr ""
+
+#: plugins/filebrowser/gedit-file-browser-plugin.c:912
+msgid "The selected files cannot be moved to the trash."
+msgstr ""
+
+#: plugins/filebrowser/gedit-file-browser-plugin.c:943
+#, c-format
+msgid "Are you sure you want to permanently delete “%s”?"
+msgstr ""
+
+#: plugins/filebrowser/gedit-file-browser-plugin.c:948
+msgid "Are you sure you want to permanently delete the selected files?"
+msgstr ""
+
+#: plugins/filebrowser/gedit-file-browser-plugin.c:951
+msgid "If you delete an item, it is permanently lost."
+msgstr ""
+
+#: plugins/filebrowser/gedit-file-browser-store.c:1703
+msgid "(Empty)"
+msgstr "(بەتاڵ)"
+
+#: plugins/filebrowser/gedit-file-browser-store.c:3327
+msgid ""
+"The renamed file is currently filtered out. You need to adjust your filter "
+"settings to make the file visible"
+msgstr ""
+
+#. Translators: This is the default name of new files created by the file browser pane.
+#: plugins/filebrowser/gedit-file-browser-store.c:3578
+msgid "Untitled File"
+msgstr ""
+
+#: plugins/filebrowser/gedit-file-browser-store.c:3606
+msgid ""
+"The new file is currently filtered out. You need to adjust your filter "
+"settings to make the file visible"
+msgstr ""
+
+#. Translators: This is the default name of new directories created by the file browser pane.
+#: plugins/filebrowser/gedit-file-browser-store.c:3635
+msgid "Untitled Folder"
+msgstr "بوخچەی بێناونیشان"
+
+#: plugins/filebrowser/gedit-file-browser-store.c:3658
+msgid ""
+"The new directory is currently filtered out. You need to adjust your filter "
+"settings to make the directory visible"
+msgstr ""
+
+#: plugins/filebrowser/gedit-file-browser-widget.c:757
+msgid "Bookmarks"
+msgstr "دڵخوازەکان"
+
+#: plugins/filebrowser/gedit-file-browser-widget.c:1957
+#, c-format
+msgid "No mount object for mounted volume: %s"
+msgstr ""
+
+#: plugins/filebrowser/gedit-file-browser-widget.c:2026
+#, c-format
+msgid "Could not open media: %s"
+msgstr ""
+
+#: plugins/filebrowser/gedit-file-browser-widget.c:2069
+#, c-format
+msgid "Could not mount volume: %s"
+msgstr ""
+
+#: plugins/filebrowser/gedit-file-browser-widget.c:2581
+#, c-format
+msgid "Error when loading “%s”: No such directory"
+msgstr ""
+
+#: plugins/filebrowser/resources/ui/gedit-file-browser-menus.ui:13
+#: plugins/filebrowser/resources/ui/gedit-file-browser-menus.ui:79
+msgid "_Set Root to Active Document"
+msgstr ""
+
+#: plugins/filebrowser/resources/ui/gedit-file-browser-menus.ui:19
+msgid "_New Folder"
+msgstr "_بوخچەی نوێ"
+
+#: plugins/filebrowser/resources/ui/gedit-file-browser-menus.ui:23
+msgid "New F_ile"
+msgstr "پە_ڕەگی نوێ"
+
+#: plugins/filebrowser/resources/ui/gedit-file-browser-menus.ui:29
+msgid "_Rename…"
+msgstr "ـ ناولێنانەوە..."
+
+#: plugins/filebrowser/resources/ui/gedit-file-browser-menus.ui:33
+msgid "_Move to Trash"
+msgstr "بیگوازەوە _بۆ تەنەکەی خۆڵ"
+
+#: plugins/filebrowser/resources/ui/gedit-file-browser-menus.ui:43
+msgid "Re_fresh View"
+msgstr ""
+
+#: plugins/filebrowser/resources/ui/gedit-file-browser-menus.ui:47
+msgid "_View Folder"
+msgstr "_بوخچە پیشان بدە"
+
+#: plugins/filebrowser/resources/ui/gedit-file-browser-menus.ui:51
+msgid "_Open in Terminal"
+msgstr "کردنەوە _لە تێرمیناڵ"
+
+#: plugins/filebrowser/resources/ui/gedit-file-browser-menus.ui:56
+msgid "_Filter"
+msgstr "_پاڵاوتن"
+
+#: plugins/filebrowser/resources/ui/gedit-file-browser-menus.ui:59
+msgid "Show _Hidden"
+msgstr "شاراوەکان _پیشان بدە"
+
+#: plugins/filebrowser/resources/ui/gedit-file-browser-menus.ui:63
+msgid "Show _Binary"
+msgstr ""
+
+#: plugins/filebrowser/resources/ui/gedit-file-browser-menus.ui:67
+msgid "Match Filename"
+msgstr ""
+
+#: plugins/filebrowser/resources/ui/gedit-file-browser-widget.ui:183
+msgid "History"
+msgstr "مێژوو"
+
+#: plugins/filebrowser/resources/ui/gedit-file-browser-widget.ui:184
+msgid "Open history menu"
+msgstr "پێڕستی مێژوو بکەرەوە"
+
+#: plugins/modelines/modelines.plugin.desktop.in:5
+msgid "Modelines"
+msgstr ""
+
+#: plugins/modelines/modelines.plugin.desktop.in:6
+msgid "Emacs, Kate and Vim-style modelines support for gedit."
+msgstr ""
+
+#: plugins/pythonconsole/pythonconsole/config.ui:18
+msgid "C_ommand color:"
+msgstr ""
+
+#: plugins/pythonconsole/pythonconsole/config.ui:32
+msgid "_Error color:"
+msgstr ""
+
+#: plugins/pythonconsole/pythonconsole/__init__.py:60
+#: plugins/pythonconsole/pythonconsole.plugin.desktop.in:6
+msgid "Python Console"
+msgstr ""
+
+#: plugins/pythonconsole/pythonconsole.plugin.desktop.in:7
+msgid "Interactive Python console standing in the bottom panel"
+msgstr ""
+
+#: plugins/quickhighlight/quickhighlight.plugin.desktop.in:5
+msgid "Quick Highlight"
+msgstr ""
+
+#: plugins/quickhighlight/quickhighlight.plugin.desktop.in:6
+msgid "Highlights every occurrences of selected text."
+msgstr ""
+
+#: plugins/quickopen/quickopen/__init__.py:47
+msgid "Quick Open…"
+msgstr ""
+
+#: plugins/quickopen/quickopen.plugin.desktop.in:6
+#: plugins/quickopen/quickopen/popup.py:40
+msgid "Quick Open"
+msgstr ""
+
+#: plugins/quickopen/quickopen.plugin.desktop.in:7
+msgid "Quickly open files"
+msgstr ""
+
+#: plugins/quickopen/quickopen/popup.py:90
+msgid "Type to search…"
+msgstr ""
+
+#: plugins/snippets/snippets/appactivatable.py:88
+msgid "Manage _Snippets…"
+msgstr ""
+
+#. Do the fancy completion dialog
+#: plugins/snippets/snippets/document.py:64
+#: plugins/snippets/snippets/document.py:153
+#: plugins/snippets/snippets/document.py:667
+#: plugins/snippets/snippets.plugin.desktop.in:6
+msgid "Snippets"
+msgstr ""
+
+#: plugins/snippets/snippets/exporter.py:88
+#, python-format
+msgid "The archive “%s” could not be created"
+msgstr ""
+
+#: plugins/snippets/snippets/exporter.py:105
+#, python-format
+msgid "Target directory “%s” does not exist"
+msgstr ""
+
+#: plugins/snippets/snippets/exporter.py:108
+#, python-format
+msgid "Target directory “%s” is not a valid directory"
+msgstr ""
+
+#: plugins/snippets/snippets/importer.py:55
+#: plugins/snippets/snippets/importer.py:116
+#, python-format
+msgid "File “%s” does not exist"
+msgstr ""
+
+#: plugins/snippets/snippets/importer.py:58
+#, python-format
+msgid "File “%s” is not a valid snippets file"
+msgstr ""
+
+#: plugins/snippets/snippets/importer.py:75
+#, python-format
+msgid "Imported file “%s” is not a valid snippets file"
+msgstr ""
+
+#: plugins/snippets/snippets/importer.py:85
+#, python-format
+msgid "The archive “%s” could not be extracted"
+msgstr ""
+
+#: plugins/snippets/snippets/importer.py:103
+#, python-format
+msgid "The following files could not be imported: %s"
+msgstr ""
+
+#: plugins/snippets/snippets/importer.py:119
+#: plugins/snippets/snippets/importer.py:132
+#, python-format
+msgid "File “%s” is not a valid snippets archive"
+msgstr ""
+
+#: plugins/snippets/snippets/manager.py:50
+msgid "Snippets archive"
+msgstr ""
+
+#: plugins/snippets/snippets/manager.py:74
+msgid "Add a new snippet…"
+msgstr ""
+
+#: plugins/snippets/snippets/manager.py:124
+msgid "Global"
+msgstr "جیهانیی"
+
+#: plugins/snippets/snippets/manager.py:414
+msgid "Revert selected snippet"
+msgstr ""
+
+#: plugins/snippets/snippets/manager.py:417
+#: plugins/snippets/snippets/snippets.ui:120
+#: plugins/snippets/snippets/snippets.ui:121
+msgid "Delete selected snippet"
+msgstr ""
+
+#. self['hbox_tab_trigger'].set_spacing(3)
+#: plugins/snippets/snippets/manager.py:670
+msgid ""
+"This is not a valid Tab trigger. Triggers can either contain alphanumeric "
+"characters (or _, : and .) or a single (non-alphanumeric) character like: {, "
+"[, etc."
+msgstr ""
+
+#. self['hbox_tab_trigger'].set_spacing(0)
+#: plugins/snippets/snippets/manager.py:677
+#: plugins/snippets/snippets/snippets.ui:283
+msgid "Single word the snippet is activated with after pressing Tab"
+msgstr ""
+
+#: plugins/snippets/snippets/manager.py:766
+#, python-format
+msgid "The following error occurred while importing: %s"
+msgstr ""
+
+#: plugins/snippets/snippets/manager.py:773
+msgid "Import successfully completed"
+msgstr ""
+
+#: plugins/snippets/snippets/manager.py:787
+#: plugins/snippets/snippets/snippets.ui:137
+#: plugins/snippets/snippets/snippets.ui:138
+msgid "Import snippets"
+msgstr ""
+
+#: plugins/snippets/snippets/manager.py:792
+#: plugins/snippets/snippets/manager.py:878
+#: plugins/snippets/snippets/manager.py:941
+msgid "All supported archives"
+msgstr ""
+
+#: plugins/snippets/snippets/manager.py:793
+#: plugins/snippets/snippets/manager.py:879
+#: plugins/snippets/snippets/manager.py:942
+msgid "Gzip compressed archive"
+msgstr ""
+
+#: plugins/snippets/snippets/manager.py:794
+#: plugins/snippets/snippets/manager.py:880
+#: plugins/snippets/snippets/manager.py:943
+msgid "Bzip2 compressed archive"
+msgstr ""
+
+#: plugins/snippets/snippets/manager.py:795
+msgid "Single snippets file"
+msgstr ""
+
+#: plugins/snippets/snippets/manager.py:796
+#: plugins/snippets/snippets/manager.py:882
+#: plugins/snippets/snippets/manager.py:945
+msgid "All files"
+msgstr "هه‌موو په‌ڕگه‌كان"
+
+#: plugins/snippets/snippets/manager.py:808
+#, python-format
+msgid "The following error occurred while exporting: %s"
+msgstr ""
+
+#: plugins/snippets/snippets/manager.py:812
+msgid "Export successfully completed"
+msgstr ""
+
+#. Ask if system snippets should also be exported
+#: plugins/snippets/snippets/manager.py:852
+#: plugins/snippets/snippets/manager.py:919
+msgid "Do you want to include selected <b>system</b> snippets in your export?"
+msgstr ""
+
+#: plugins/snippets/snippets/manager.py:867
+#: plugins/snippets/snippets/manager.py:937
+msgid "There are no snippets selected to be exported"
+msgstr ""
+
+#: plugins/snippets/snippets/manager.py:872
+#: plugins/snippets/snippets/manager.py:910
+msgid "Export snippets"
+msgstr ""
+
+#: plugins/snippets/snippets/manager.py:1049
+msgid "Type a new shortcut, or press Backspace to clear"
+msgstr ""
+
+#: plugins/snippets/snippets/manager.py:1051
+msgid "Type a new shortcut"
+msgstr ""
+
+#: plugins/snippets/snippets/placeholder.py:605
+#, python-format
+msgid ""
+"Execution of the Python command (%s) exceeds the maximum time, execution "
+"aborted."
+msgstr ""
+
+#: plugins/snippets/snippets/placeholder.py:613
+#, python-format
+msgid "Execution of the Python command (%s) failed: %s"
+msgstr ""
+
+#: plugins/snippets/snippets.plugin.desktop.in:7
+msgid "Insert often-used pieces of text in a fast way"
+msgstr ""
+
+#: plugins/snippets/snippets/snippets.ui:40
+#: plugins/snippets/snippets/snippets.ui:47
+msgid "Manage Snippets"
+msgstr ""
+
+#: plugins/snippets/snippets/snippets.ui:103
+#: plugins/snippets/snippets/snippets.ui:104
+msgid "Create new snippet"
+msgstr ""
+
+#: plugins/snippets/snippets/snippets.ui:105
+msgid "Add Snippet"
+msgstr ""
+
+#: plugins/snippets/snippets/snippets.ui:122
+msgid "Remove Snippet"
+msgstr ""
+
+#: plugins/snippets/snippets/snippets.ui:139
+msgid "Import Snippets"
+msgstr ""
+
+#: plugins/snippets/snippets/snippets.ui:154
+#: plugins/snippets/snippets/snippets.ui:155
+msgid "Export selected snippets"
+msgstr ""
+
+#: plugins/snippets/snippets/snippets.ui:156
+msgid "Export Snippets"
+msgstr ""
+
+#: plugins/snippets/snippets/snippets.ui:224
+msgid "Activation"
+msgstr "چالاککردن"
+
+#. "tab" here means the tab key, not the notebook tab!
+#: plugins/snippets/snippets/snippets.ui:263
+msgid "_Tab trigger:"
+msgstr ""
+
+#: plugins/snippets/snippets/snippets.ui:317
+msgid "S_hortcut key:"
+msgstr ""
+
+#: plugins/snippets/snippets/snippets.ui:333
+msgid "Shortcut key with which the snippet is activated"
+msgstr ""
+
+#: plugins/snippets/snippets/snippets.ui:351
+msgid "_Drop targets:"
+msgstr ""
+
+#: plugins/sort/gedit-sort-plugin.c:243
+msgid "S_ort…"
+msgstr ""
+
+#: plugins/sort/resources/ui/gedit-sort-plugin.ui:13
+#: plugins/sort/sort.plugin.desktop.in:5
+msgid "Sort"
+msgstr "ڕیزکردن"
+
+#: plugins/sort/resources/ui/gedit-sort-plugin.ui:38
+msgid "_Reverse order"
+msgstr ""
+
+#: plugins/sort/resources/ui/gedit-sort-plugin.ui:54
+msgid "R_emove duplicates"
+msgstr ""
+
+#: plugins/sort/resources/ui/gedit-sort-plugin.ui:70
+msgid "C_ase sensitive"
+msgstr ""
+
+#: plugins/sort/resources/ui/gedit-sort-plugin.ui:93
+msgid "S_tart at column:"
+msgstr ""
+
+#: plugins/sort/resources/ui/gedit-sort-plugin.ui:150
+msgid "_Sort"
+msgstr ""
+
+#: plugins/sort/sort.plugin.desktop.in:6
+msgid "Sorts a document or selected text."
+msgstr ""
+
+#: plugins/spell/gedit-spell-app-activatable.c:143
+msgid "_Check Spelling…"
+msgstr ""
+
+#: plugins/spell/gedit-spell-app-activatable.c:147
+msgid "Set _Language…"
+msgstr ""
+
+#: plugins/spell/gedit-spell-app-activatable.c:151
+msgid "_Highlight Misspelled Words"
+msgstr ""
+
+#: plugins/spell/resources/ui/gedit-spell-setup-dialog.ui:7
+msgid "Configure spell plugin"
+msgstr ""
+
+#: plugins/spell/resources/ui/gedit-spell-setup-dialog.ui:61
+msgid "Defaults for new documents"
+msgstr ""
+
+#: plugins/spell/spell.plugin.desktop.in:5
+msgid "Spell Checker"
+msgstr ""
+
+#: plugins/spell/spell.plugin.desktop.in:6
+msgid "Checks the spelling of the current document."
+msgstr ""
+
+#: plugins/time/gedit-time-plugin.c:265
+msgid "In_sert Date and Time…"
+msgstr ""
+
+#: plugins/time/gedit-time-plugin.c:491
+msgid "Available formats"
+msgstr ""
+
+#: plugins/time/resources/ui/gedit-time-dialog.ui:7
+msgid "Insert Date and Time"
+msgstr ""
+
+#: plugins/time/resources/ui/gedit-time-dialog.ui:23
+#: plugins/time/resources/ui/gedit-time-setup-dialog.ui:94
+msgid "Use the _selected format"
+msgstr ""
+
+#: plugins/time/resources/ui/gedit-time-dialog.ui:65
+#: plugins/time/resources/ui/gedit-time-setup-dialog.ui:141
+msgid "_Use custom format"
+msgstr ""
+
+#. Translators: Use the more common date format in your locale
+#: plugins/time/resources/ui/gedit-time-dialog.ui:89
+#: plugins/time/resources/ui/gedit-time-setup-dialog.ui:165
+msgid "%d/%m/%Y %H:%M:%S"
+msgstr ""
+
+#. Translators: This example should follow the date format defined in the entry above
+#: plugins/time/resources/ui/gedit-time-dialog.ui:106
+#: plugins/time/resources/ui/gedit-time-setup-dialog.ui:181
+msgid "01/11/2009 17:52:00"
+msgstr ""
+
+#: plugins/time/resources/ui/gedit-time-dialog.ui:167
+msgid "_Insert"
+msgstr "_هێنان"
+
+#: plugins/time/resources/ui/gedit-time-setup-dialog.ui:6
+msgid "Configure date/time plugin"
+msgstr ""
+
+#: plugins/time/resources/ui/gedit-time-setup-dialog.ui:57
+msgid "When inserting date/time…"
+msgstr ""
+
+#: plugins/time/resources/ui/gedit-time-setup-dialog.ui:75
+msgid "_Prompt for a format"
+msgstr ""
+
+#: plugins/time/time.plugin.desktop.in:5
+msgid "Insert Date/Time"
+msgstr ""
+
+#: plugins/time/time.plugin.desktop.in:6
+msgid "Inserts current date and time at the cursor position."
+msgstr ""
