@@ -10,7 +10,7 @@ Programming language for a gedit plugin
 The preferred language is the C language, that way the code can be easily
 refactored to be included in a library.
 
-Rust and Vala plugins are possible too since they are equivalent to C.
+Rust, C++ and Vala plugins are possible too since they are equivalent to C.
 
 Python plugins are possible too.
 
