@@ -17,8 +17,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gedit\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gedit/issues\n"
-"POT-Creation-Date: 2020-06-09 22:13+0000\n"
-"PO-Revision-Date: 2020-06-14 09:57+0300\n"
+"POT-Creation-Date: 2020-09-10 07:39+0000\n"
+"PO-Revision-Date: 2020-10-13 16:28+0300\n"
 "Last-Translator: Emin Tufan Çetin <etcetin@gmail.com>\n"
 "Language-Team: Türkçe <gnome-turk@gnome.org>\n"
 "Language: tr\n"
@@ -26,7 +26,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 2.3\n"
+"X-Generator: Poedit 2.4.1\n"
 "X-POOTLE-MTIME: 1433962102.000000\n"
 
 #: data/org.gnome.gedit.appdata.xml.in:7
@@ -156,7 +156,7 @@ msgstr ""
 
 #: data/org.gnome.gedit.gschema.xml.in:77
 msgid "Line Wrapping Mode"
-msgstr "Satır Bölme Kipi"
+msgstr "Satır Kaydırma Kipi"
 
 #: data/org.gnome.gedit.gschema.xml.in:78
 msgid ""
@@ -172,7 +172,7 @@ msgstr ""
 
 #: data/org.gnome.gedit.gschema.xml.in:86
 msgid "Last split mode choice for line wrapping mode"
-msgstr "Satır kaydırma kipi için son bölünmüş kip seçimi"
+msgstr "Satır kaydırma kipi için son bölme kipi seçimi"
 
 #: data/org.gnome.gedit.gschema.xml.in:87
 msgid ""
@@ -181,8 +181,8 @@ msgid ""
 "wrapping at word boundaries, and “char” for wrapping at individual character "
 "boundaries."
 msgstr ""
-"Satır kaydırma kipiyle birlikte kullanılan son bölünmüş kipi belirtir, "
-"böylece kaydırma kipi kapalıyken de bölünmüş kip seçimini anımsayabiliriz. "
+"Satır kaydırma kipiyle birlikte kullanılan son bölme kipini belirtir, "
+"böylece kaydırma kipi kapalıyken de bölme kipi seçimini anımsayabiliriz. "
 "Sözcük düzeyinde kaydırma için “word”, karakter düzeyinde kaydırma için "
 "“char” kullanın."
 
@@ -206,11 +206,12 @@ msgstr "gedit’in sekmelerin yerine boşluk eklemesi."
 
 #: data/org.gnome.gedit.gschema.xml.in:101
 msgid "Automatic indent"
-msgstr "Otomatik girintile"
+msgstr "Kendiliğinden girintile"
 
 #: data/org.gnome.gedit.gschema.xml.in:102
 msgid "Whether gedit should enable automatic indentation."
-msgstr "gedit’in otomatik girintilemeyi etkinleştirip etkinleştirmeyeceği."
+msgstr ""
+"gedit’in kendiliğinden girintilemeyi etkinleştirip etkinleştirmeyeceği."
 
 #: data/org.gnome.gedit.gschema.xml.in:106
 msgid "Display Line Numbers"
@@ -378,7 +379,7 @@ msgstr "gedit’in belgeleri yazdırırken belge başlığı eklemesi."
 
 #: data/org.gnome.gedit.gschema.xml.in:204
 msgid "Printing Line Wrapping Mode"
-msgstr "Yazdırma Satır Bölme Kipi"
+msgstr "Yazdırma Satır Kaydırma Kipi"
 
 #: data/org.gnome.gedit.gschema.xml.in:205
 msgid ""
@@ -387,9 +388,9 @@ msgid ""
 "individual character boundaries. Note that the values are case-sensitive, so "
 "make sure they appear exactly as mentioned here."
 msgstr ""
-"Yazdırma işlemi için uzun satırların nasıl bölüneceğini belirtir. Bölme "
-"olmaması için “none”, sözcük sınırlarında bölme için “word”, bağımsız "
-"karakter sınırlarında bölme için “char” kullanınız. Değerler büyük/küçük "
+"Yazdırma işlemi için uzun satırların nasıl kaydırılacağını belirtir. "
+"Kaydırmamak için “none”, sözcük sınırlarında kaydırma için “word”, bağımsız "
+"karakter sınırlarında kaydırma için “char” kullanınız. Değerler büyük/küçük "
 "harf duyarlıdır, tam olarak burada yer aldığı gibi kullanınız."
 
 #: data/org.gnome.gedit.gschema.xml.in:209
@@ -563,10 +564,10 @@ msgstr "%s: geçersiz kodlama."
 msgid "Close _without Saving"
 msgstr "Kaydetmeden _Kapat"
 
-#: gedit/gedit-close-confirmation-dialog.c:277 gedit/gedit-commands-file.c:496
-#: gedit/gedit-commands-file.c:572 gedit/gedit-commands-file.c:796
-#: gedit/gedit-commands-file.c:1518 gedit/gedit-encodings-dialog.c:192
-#: gedit/gedit-file-chooser-open-adapter.c:113
+#: gedit/gedit-close-confirmation-dialog.c:277 gedit/gedit-commands-file.c:492
+#: gedit/gedit-commands-file.c:568 gedit/gedit-commands-file.c:791
+#: gedit/gedit-commands-file.c:1513 gedit/gedit-encodings-dialog.c:192
+#: gedit/gedit-file-chooser-open-dialog.c:78
 #: gedit/gedit-preferences-dialog.c:721 gedit/gedit-progress-info-bar.c:49
 #: gedit/resources/ui/gedit-encodings-dialog.ui:44
 #: gedit/resources/ui/gedit-highlight-mode-dialog.ui:31
@@ -585,7 +586,7 @@ msgstr "_İptal"
 msgid "_Save As…"
 msgstr "Farklı _Kaydet…"
 
-#: gedit/gedit-close-confirmation-dialog.c:295 gedit/gedit-commands-file.c:795
+#: gedit/gedit-close-confirmation-dialog.c:295 gedit/gedit-commands-file.c:790
 #: gedit/resources/gtk/menus-common.ui:127
 #: gedit/resources/ui/gedit-window.ui:59
 #: plugins/snippets/snippets/manager.py:875
@@ -601,15 +602,14 @@ msgid_plural ""
 "If you don’t save, changes from the last %ld seconds will be permanently "
 "lost."
 msgstr[0] ""
-"Kaydetmezseniz son %ld saniyede yaptığınız değişiklikler kalıcı "
-"olarak kaybolacak."
+"Kaydetmezseniz son %ld saniyede yaptığınız değişiklikler kalıcı olarak "
+"kaybolacak."
 
 #: gedit/gedit-close-confirmation-dialog.c:321
 msgid ""
 "If you don’t save, changes from the last minute will be permanently lost."
 msgstr ""
-"Kaydetmezseniz son bir dakika içerisinde yaptığınız değişiklikler "
-"kaybolacak."
+"Kaydetmezseniz son bir dakika içerisinde yaptığınız değişiklikler kaybolacak."
 
 #: gedit/gedit-close-confirmation-dialog.c:327
 #, c-format
@@ -631,14 +631,12 @@ msgid_plural ""
 "If you don’t save, changes from the last %ld minutes will be permanently "
 "lost."
 msgstr[0] ""
-"Kaydetmezseniz son %ld dakika içerisinde yaptığınız değişiklikler "
-"kaybolacak."
+"Kaydetmezseniz son %ld dakika içerisinde yaptığınız değişiklikler kaybolacak."
 
 #: gedit/gedit-close-confirmation-dialog.c:352
 msgid "If you don’t save, changes from the last hour will be permanently lost."
 msgstr ""
-"Kaydetmezseniz son saatte yaptığınız değişiklikler kalıcı olarak "
-"kaybolacak."
+"Kaydetmezseniz son saatte yaptığınız değişiklikler kalıcı olarak kaybolacak."
 
 #: gedit/gedit-close-confirmation-dialog.c:358
 #, c-format
@@ -649,8 +647,8 @@ msgid_plural ""
 "If you don’t save, changes from the last hour and %d minutes will be "
 "permanently lost."
 msgstr[0] ""
-"Kaydetmezseniz son bir saat ve %d dakika içerisinde yaptığınız "
-"değişiklikler kaybolacak."
+"Kaydetmezseniz son bir saat ve %d dakika içerisinde yaptığınız değişiklikler "
+"kaybolacak."
 
 #: gedit/gedit-close-confirmation-dialog.c:373
 #, c-format
@@ -659,8 +657,8 @@ msgid ""
 msgid_plural ""
 "If you don’t save, changes from the last %d hours will be permanently lost."
 msgstr[0] ""
-"Kaydetmezseniz son %d saatte yaptığınız değişiklikler kalıcı "
-"olarak kaybolacak."
+"Kaydetmezseniz son %d saatte yaptığınız değişiklikler kalıcı olarak "
+"kaybolacak."
 
 #: gedit/gedit-close-confirmation-dialog.c:400
 #, c-format
@@ -685,40 +683,40 @@ msgstr "Kaydetmek istediğiniz _belgeleri seçin:"
 msgid "If you don’t save, all your changes will be permanently lost."
 msgstr "Kaydetmediğiniz takdirde yaptığınız tüm değişiklikler kaybolacak."
 
-#: gedit/gedit-commands-file.c:263
+#: gedit/gedit-commands-file.c:257
 #, c-format
 msgid "Loading file “%s”…"
 msgstr "“%s” dosyası yükleniyor…"
 
-#: gedit/gedit-commands-file.c:272
+#: gedit/gedit-commands-file.c:266
 #, c-format
 msgid "Loading %d file…"
 msgid_plural "Loading %d files…"
 msgstr[0] "%d dosya yükleniyor…"
 
-#: gedit/gedit-commands-file.c:487
+#: gedit/gedit-commands-file.c:483
 #, c-format
 msgid "The file “%s” is read-only."
 msgstr "“%s” dosyası salt-okunur."
 
-#: gedit/gedit-commands-file.c:492
+#: gedit/gedit-commands-file.c:488
 msgid "Do you want to try to replace it with the one you are saving?"
 msgstr "Onu kaydettiğiniz ile değiştirmeyi denemek ister misiniz?"
 
-#: gedit/gedit-commands-file.c:497
+#: gedit/gedit-commands-file.c:493
 #: gedit/resources/ui/gedit-replace-dialog.ui:55
 msgid "_Replace"
 msgstr "_Değiştir"
 
-#: gedit/gedit-commands-file.c:537
+#: gedit/gedit-commands-file.c:533
 msgid "Save the file using compression?"
 msgstr "Dosya sıkıştırılarak kaydedilsin mi ?"
 
-#: gedit/gedit-commands-file.c:541
+#: gedit/gedit-commands-file.c:537
 msgid "Save the file as plain text?"
 msgstr "Düz yazı olarak kaydedilsin mi?"
 
-#: gedit/gedit-commands-file.c:554
+#: gedit/gedit-commands-file.c:550
 #, c-format
 msgid ""
 "The file “%s” was previously saved as plain text and will now be saved using "
@@ -727,11 +725,11 @@ msgstr ""
 "“%s” dosyası daha önce düz metin olarak kaydedildi ve şimdi sıkıştırılarak "
 "kaydedilecek."
 
-#: gedit/gedit-commands-file.c:558
+#: gedit/gedit-commands-file.c:554
 msgid "_Save Using Compression"
 msgstr "_Sıkıştırarak Kaydet"
 
-#: gedit/gedit-commands-file.c:563
+#: gedit/gedit-commands-file.c:559
 #, c-format
 msgid ""
 "The file “%s” was previously saved using compression and will now be saved "
@@ -740,33 +738,33 @@ msgstr ""
 "“%s” dosyası daha önce sıkıştırılarak kaydedilmiş ve şimdi düz metin olarak "
 "kaydedilecek."
 
-#: gedit/gedit-commands-file.c:566
+#: gedit/gedit-commands-file.c:562
 msgid "_Save As Plain Text"
 msgstr "Düz Metin Olarak _Kaydet"
 
-#: gedit/gedit-commands-file.c:681 gedit/gedit-commands-file.c:969
+#: gedit/gedit-commands-file.c:677 gedit/gedit-commands-file.c:964
 #, c-format
 msgid "Saving file “%s”…"
 msgstr "“%s” dosyası kaydediliyor…"
 
 #. Translators: "Save As" is the title of the file chooser window.
-#: gedit/gedit-commands-file.c:792
+#: gedit/gedit-commands-file.c:788
 msgctxt "window title"
 msgid "Save As"
 msgstr "Farklı Kaydet"
 
-#: gedit/gedit-commands-file.c:1379
+#: gedit/gedit-commands-file.c:1374
 #, c-format
 msgid "Reverting the document “%s”…"
 msgstr "“%s” belgesi eski durumuna getiriliyor…"
 
-#: gedit/gedit-commands-file.c:1426
+#: gedit/gedit-commands-file.c:1421
 #, c-format
 msgid "Revert unsaved changes to document “%s”?"
 msgstr ""
 "“%s” belgesi içerisinde yapılan değişiklikler eski durumuna döndürülsün mü?"
 
-#: gedit/gedit-commands-file.c:1435
+#: gedit/gedit-commands-file.c:1430
 #, c-format
 msgid ""
 "Changes made to the document in the last %ld second will be permanently lost."
@@ -776,12 +774,12 @@ msgid_plural ""
 msgstr[0] ""
 "Belge içerisinde son %ld saat içerisinde yapılan değişiklikler kaybolacak."
 
-#: gedit/gedit-commands-file.c:1444
+#: gedit/gedit-commands-file.c:1439
 msgid ""
 "Changes made to the document in the last minute will be permanently lost."
 msgstr "Belge içerisinde son bir dakikada yapılan değişiklikler kaybolacak."
 
-#: gedit/gedit-commands-file.c:1450
+#: gedit/gedit-commands-file.c:1445
 #, c-format
 msgid ""
 "Changes made to the document in the last minute and %ld second will be "
@@ -793,7 +791,7 @@ msgstr[0] ""
 "Belge içerisinde son bir dakikada ve %ld saniyede yapılan değişiklikler "
 "kaybolacak."
 
-#: gedit/gedit-commands-file.c:1460
+#: gedit/gedit-commands-file.c:1455
 #, c-format
 msgid ""
 "Changes made to the document in the last %ld minute will be permanently lost."
@@ -802,12 +800,12 @@ msgid_plural ""
 "lost."
 msgstr[0] "Belge içerisinde son %ld dakikada yapılan değişiklikler kaybolacak."
 
-#: gedit/gedit-commands-file.c:1475
+#: gedit/gedit-commands-file.c:1470
 msgid "Changes made to the document in the last hour will be permanently lost."
 msgstr ""
 "Belge içerisinde son %d saat içerisinde yapılan değişiklikler kaybolacak."
 
-#: gedit/gedit-commands-file.c:1481
+#: gedit/gedit-commands-file.c:1476
 #, c-format
 msgid ""
 "Changes made to the document in the last hour and %d minute will be "
@@ -819,7 +817,7 @@ msgstr[0] ""
 "Belge içerisinde son bir saatte ve son %d dakikada yapılan değişiklikler "
 "kaybolacak."
 
-#: gedit/gedit-commands-file.c:1496
+#: gedit/gedit-commands-file.c:1491
 #, c-format
 msgid ""
 "Changes made to the document in the last %d hour will be permanently lost."
@@ -828,7 +826,7 @@ msgid_plural ""
 msgstr[0] ""
 "Belge içerisinde son %d saat içerisinde yapılan değişiklikler kaybolacak."
 
-#: gedit/gedit-commands-file.c:1519
+#: gedit/gedit-commands-file.c:1514
 msgid "_Revert"
 msgstr "_Eski Durumuna Döndür"
 
@@ -918,31 +916,31 @@ msgstr "Daha yüksek önceliğe taşı"
 msgid "Move to a lower priority"
 msgstr "Daha düşük önceliğe taşı"
 
-#. Common code between the different GeditFileChooser's.
-#: gedit/gedit-file-chooser.c:27 gedit/gedit-preferences-dialog.c:730
+#: gedit/gedit-file-chooser.c:41 gedit/gedit-preferences-dialog.c:730
 msgid "All Files"
 msgstr "Tüm Dosyalar"
 
-#: gedit/gedit-file-chooser.c:28
+#: gedit/gedit-file-chooser.c:42
 msgid "All Text Files"
 msgstr "Tüm Metin Dosyaları"
 
-#: gedit/gedit-file-chooser-dialog-gtk.c:256
+#: gedit/gedit-file-chooser-dialog-gtk.c:262
+#: gedit/gedit-file-chooser-open-dialog.c:43
 msgid "C_haracter Encoding:"
 msgstr "Karakter _Kodlaması:"
 
-#: gedit/gedit-file-chooser-dialog-gtk.c:315
+#: gedit/gedit-file-chooser-dialog-gtk.c:321
 msgid "L_ine Ending:"
 msgstr "Sat_ır Kodlaması:"
 
 #. Translators: "Open Files" is the title of the file chooser window.
-#: gedit/gedit-file-chooser-open-adapter.c:109
-#: gedit/gedit-file-chooser-open.c:87
+#: gedit/gedit-file-chooser-open-dialog.c:75
+#: gedit/gedit-file-chooser-open-native.c:54
 msgctxt "window title"
 msgid "Open Files"
 msgstr "Dosyaları Aç"
 
-#: gedit/gedit-file-chooser-open-adapter.c:112 gedit/gedit-window.c:2636
+#: gedit/gedit-file-chooser-open-dialog.c:79 gedit/gedit-window.c:2636
 #: gedit/resources/gtk/menus-common.ui:100
 #: gedit/resources/gtk/menus-common.ui:106
 #: plugins/filebrowser/resources/ui/gedit-file-browser-menus.ui:7
@@ -1210,8 +1208,7 @@ msgid ""
 "have this limitation."
 msgstr ""
 "Dosyayı kaydetmeye çalıştığınız diskte dosya boyutu sınırı var. Lütfen daha "
-"küçük dosyayı kaydetmeye çalışın ya da sınırlaması olmayan disk "
-"kullanın."
+"küçük dosyayı kaydetmeye çalışın ya da sınırlaması olmayan disk kullanın."
 
 #: gedit/gedit-io-error-info-bar.c:855
 #, c-format
@@ -1404,7 +1401,7 @@ msgstr "%d / %d"
 #. create "Wrap Around" menu item.
 #: gedit/gedit-view-frame.c:760
 msgid "_Wrap Around"
-msgstr "_Satır Bölme"
+msgstr "Başa _Sar"
 
 #. create "Match as Regular Expression" menu item.
 #: gedit/gedit-view-frame.c:770
@@ -1501,7 +1498,7 @@ msgstr "Kapa_t"
 
 #: gedit/resources/gtk/menus-common.ui:35
 msgid "Automatic Indentation"
-msgstr "Otomatik Girinti"
+msgstr "Kendiliğinden Girintile"
 
 #: gedit/resources/gtk/menus-common.ui:58
 msgid "Use Spaces"
@@ -1797,7 +1794,7 @@ msgstr "Metin Kaydırma"
 #: gedit/resources/ui/gedit-preferences-dialog.ui:157
 #: gedit/resources/ui/gedit-print-preferences.ui:217
 msgid "Enable text _wrapping"
-msgstr "Metin _bölmeyi etkinleştir"
+msgstr "Metin _kaydırmayı etkinleştir"
 
 #: gedit/resources/ui/gedit-preferences-dialog.ui:171
 #: gedit/resources/ui/gedit-print-preferences.ui:237
@@ -1834,7 +1831,7 @@ msgstr "Sekme yerine _boşluk ekle"
 
 #: gedit/resources/ui/gedit-preferences-dialog.ui:359
 msgid "_Enable automatic indentation"
-msgstr "Otomatik _girintilemeyi etkinleştir"
+msgstr "Kendiliğinden _girintilemeyi etkinleştir"
 
 #: gedit/resources/ui/gedit-preferences-dialog.ui:394
 msgid "File Saving"
@@ -2051,7 +2048,7 @@ msgstr "_Geriye doğru ara"
 
 #: gedit/resources/ui/gedit-replace-dialog.ui:206
 msgid "Wra_p around"
-msgstr "_Bitince Başa Dön"
+msgstr "Başa _sar"
 
 #: gedit/resources/ui/gedit-shortcuts.ui:14
 msgctxt "shortcut window"
@@ -2590,8 +2587,7 @@ msgstr "Bu hızlandırıcı zaten %s ile bağlı"
 
 #: plugins/externaltools/tools/manager.py:729
 msgid "Type a new accelerator, or press Backspace to clear"
-msgstr ""
-"Yeni hızlandırıcı belirt, ya da temizlemek için Backspace tuşuna bas"
+msgstr "Yeni hızlandırıcı belirt, ya da temizlemek için Backspace tuşuna bas"
 
 #: plugins/externaltools/tools/manager.py:731
 msgid "Type a new accelerator"
@@ -2956,8 +2952,8 @@ msgid ""
 "The filter pattern to filter the file browser with. This filter works on top "
 "of the filter_mode."
 msgstr ""
-"Dosya tarayıcısının kullanacaği süzgeç dokusu. Bu süzgeç filter_mode "
-"üstünde çalışır."
+"Dosya tarayıcısının kullanacaği süzgeç dokusu. Bu süzgeç filter_mode üstünde "
+"çalışır."
 
 #: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml:40
 msgid "File Browser Binary Patterns"
@@ -3429,8 +3425,7 @@ msgid ""
 "If the user should be prompted for a format or if the selected or custom "
 "format should be used."
 msgstr ""
-"Kullanıcıdan biçim mi istensin yoksa seçili ya da özel biçim mi "
-"kullanılsın."
+"Kullanıcıdan biçim mi istensin yoksa seçili ya da özel biçim mi kullanılsın."
 
 #: plugins/time/org.gnome.gedit.plugins.time.gschema.xml:10
 msgid "Selected Format"
