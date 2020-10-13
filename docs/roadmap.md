@@ -9,8 +9,6 @@ See also the
 
 See the [NEWS file](../NEWS) for a detailed history.
 
-If you often contribute to gedit, feel free to add your plans here.
-
 Making the gedit source code more re-usable
 -------------------------------------------
 
@@ -22,9 +20,9 @@ Recently done:
   library.
 
 Next steps:
-- Use more features from the [Tepl](https://wiki.gnome.org/Projects/Tepl)
-  library, and develop Tepl alongside gedit. The goal is to reduce the amount
-  of code in gedit, by having re-usable code in Tepl instead.
+- Use more features from the Tepl library, and develop Tepl alongside gedit.
+  The goal is to reduce the amount of code in gedit, by having re-usable code
+  in Tepl instead.
 
 New version of gedit on Windows
 -------------------------------
@@ -33,14 +31,6 @@ Status: **done**
 
 [gedit on the Microsoft Store](https://www.microsoft.com/store/apps/9PL1J21XF0PT).
 
-Making gedit suitable on a smartphone
--------------------------------------
-
-Status: **[in progress](https://gitlab.gnome.org/GNOME/Initiatives/-/issues/13)**
-
-gedit is installed by default with the [Librem 5](https://puri.sm/products/librem-5/)
-smartphone.
-
 Replace search and replace dialog window by an horizontal bar below the text
 ----------------------------------------------------------------------------
 
@@ -48,17 +38,20 @@ Status: **[todo](https://gitlab.gnome.org/GNOME/gedit/-/issues/288)**
 
 To not hide the text.
 
-Changing character encoding and line ending type of opened files
-----------------------------------------------------------------
+Be able to quit the application with all documents saved, and restored on next start
+------------------------------------------------------------------------------------
 
 Status: **todo**
 
-To fully support GtkFileChooserNative and better sandboxing.
+Even for unsaved and untitled files, be able to quit gedit, restart it later and
+come back to the state before with all tabs restored.
 
-Note that the integrated file browser plugin needs access at least to the whole
-home directory. But the work on this task (with the code in Tepl) would allow
-better sandboxing for other text editors that don't have an integrated file
-browser.
+Improve the workflow for printing to paper
+------------------------------------------
+
+Status: **todo**
+
+Implement it like in Firefox, show first a preview of the file to print.
 
 Handle problem with large files or files containing very long lines
 -------------------------------------------------------------------
@@ -74,6 +67,13 @@ For very big file size (e.g. a 1GB log file or SQL dump), it's more complicated
 because the whole file is loaded in memory. It needs another data structure
 implementation for the GtkTextView API.
 
+Use native file chooser dialog windows (GtkFileChooserNative)
+-------------------------------------------------------------
+
+Status: **in progress**
+
+To have the native file chooser on MS Windows, and use the Flatpak portal.
+
 Do not allow incompatible plugins to be loaded
 ----------------------------------------------
 
@@ -86,32 +86,13 @@ Solution: include the gedit plugin API version in the directory names where
 plugins need to be installed. Better solution: see
 [this libpeas feature request](https://bugzilla.gnome.org/show_bug.cgi?id=642694#c15).
 
-Be able to quit the application with all documents saved, and restored on next start
-------------------------------------------------------------------------------------
+Making gedit suitable on a smartphone
+-------------------------------------
 
-Status: **todo**
+Status: **[in progress](https://gitlab.gnome.org/GNOME/Initiatives/-/issues/13)**
 
-Even for unsaved and untitled files, be able to quit gedit, restart it later and
-come back to the state before with all tabs restored.
-
-Better C language support
--------------------------
-
-Status: **todo**
-
-- Code completion with Clang.
-- Align function parameters on the parenthesis (function definition /
-  function call).
-- Generate and insert GTK-Doc comment header for a function.
-- Split/join lines of a C comment with `*` at beginning of each line, ditto when
-  pressing Enter (insert `*` at the beginning of the new line).
-
-Improve printing UI workflow
-----------------------------
-
-Status: **todo**
-
-Implement it like in Firefox, show first a preview of the file to print.
+gedit is installed by default with the [Librem 5](https://puri.sm/products/librem-5/)
+smartphone.
 
 Avoid the need for gedit forks
 ------------------------------
@@ -125,3 +106,15 @@ of gedit.
 
 The goal is to make gedit suitable for MATE and Linux Mint. This can be
 implemented by adding a “gedit-classic” configuration option.
+
+Better C language support
+-------------------------
+
+Status: **todo**
+
+- Code completion with Clang.
+- Align function parameters on the parenthesis (function definition /
+  function call).
+- Generate and insert GTK-Doc comment header for a function.
+- Split/join lines of a C comment with `*` at beginning of each line, ditto when
+  pressing Enter (insert `*` at the beginning of the new line).
