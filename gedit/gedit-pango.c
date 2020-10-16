@@ -1,12 +1,12 @@
 /* gedit-pango.c
  *
- * This file is a copy of libdazzle dzl-pango.c
+ * This file is a copy of pango_font_description_to_css from gtk gtkfontbutton.c
  *
- * Copyright (C) 2014-2017 Christian Hergert <christian@hergert.me>
+ * Copyright (C) 2016 Matthias Clasen <mclasen@redhat.com>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
+ * the Free Software Foundation, either version 2 of the License, or
  * (at your option) any later version.
  *
  * This program is distributed in the hope that it will be useful,
@@ -22,17 +22,65 @@
 
 #include "config.h"
 
-#include <gdk/gdk.h>
-#include <glib/gstdio.h>
-#include <math.h>
-
 #include "gedit-pango.h"
 
-#define FONT_FAMILY  "font-family"
-#define FONT_VARIANT "font-variant"
-#define FONT_STRETCH "font-stretch"
-#define FONT_WEIGHT  "font-weight"
-#define FONT_SIZE    "font-size"
+#if PANGO_VERSION_CHECK (1, 44, 0)
+static void
+add_css_variations (GString    *s,
+                    const char *variations)
+{
+  const char *p;
+  const char *sep = "";
+
+  if (variations == NULL || variations[0] == '\0')
+    {
+      g_string_append (s, "normal");
+      return;
+    }
+
+  p = variations;
+  while (p && *p)
+    {
+      const char *start;
+      const char *end, *end2;
+      double value;
+      char name[5];
+
+      while (g_ascii_isspace (*p)) p++;
+
+      start = p;
+      end = strchr (p, ',');
+      if (end && (end - p < 6))
+        goto skip;
+
+      name[0] = p[0];
+      name[1] = p[1];
+      name[2] = p[2];
+      name[3] = p[3];
+      name[4] = '\0';
+
+      p += 4;
+      while (g_ascii_isspace (*p)) p++;
+      if (*p == '=') p++;
+
+      if (p - start < 5)
+        goto skip;
+
+      value = g_ascii_strtod (p, (char **) &end2);
+
+      while (end2 && g_ascii_isspace (*end2)) end2++;
+
+      if (end2 && (*end2 != ',' && *end2 != '\0'))
+        goto skip;
+
+      g_string_append_printf (s, "%s\"%s\" %g", sep, name, value);
+      sep = ", ";
+
+skip:
+      p = end ? end + 1 : NULL;
+    }
+}
+#endif
 
 /**
  * gedit_pango_font_description_to_css:
@@ -44,161 +92,139 @@
  *    CSS describing the font description.
  */
 gchar *
-gedit_pango_font_description_to_css (const PangoFontDescription *font_desc)
+gedit_pango_font_description_to_css (const PangoFontDescription *desc)
 {
-  PangoFontMask mask;
-  GString *str;
+  GString *s;
+  PangoFontMask set;
 
-#define ADD_KEYVAL(key,fmt) \
-  g_string_append(str,key":"fmt";")
-#define ADD_KEYVAL_PRINTF(key,fmt,...) \
-  g_string_append_printf(str,key":"fmt";", __VA_ARGS__)
+  s = g_string_new ("");
 
-  g_return_val_if_fail (font_desc, NULL);
-
-  str = g_string_new (NULL);
-
-  mask = pango_font_description_get_set_fields (font_desc);
-
-  if ((mask & PANGO_FONT_MASK_FAMILY) != 0)
+  set = pango_font_description_get_set_fields (desc);
+  if (set & PANGO_FONT_MASK_FAMILY)
     {
-      const gchar *family;
-
-      family = pango_font_description_get_family (font_desc);
-      ADD_KEYVAL_PRINTF (FONT_FAMILY, "\"%s\"", family);
+      g_string_append (s, "font-family: ");
+      g_string_append (s, pango_font_description_get_family (desc));
+      g_string_append (s, "; ");
     }
-
-  if ((mask & PANGO_FONT_MASK_STYLE) != 0)
+  if (set & PANGO_FONT_MASK_STYLE)
     {
-      PangoVariant variant;
-
-      variant = pango_font_description_get_variant (font_desc);
-
-      switch (variant)
+      switch (pango_font_description_get_style (desc))
+        {
+        case PANGO_STYLE_NORMAL:
+          g_string_append (s, "font-style: normal; ");
+          break;
+        case PANGO_STYLE_OBLIQUE:
+          g_string_append (s, "font-style: oblique; ");
+          break;
+        case PANGO_STYLE_ITALIC:
+          g_string_append (s, "font-style: italic; ");
+          break;
+        default:
+          break;
+        }
+    }
+  if (set & PANGO_FONT_MASK_VARIANT)
+    {
+      switch (pango_font_description_get_variant (desc))
         {
         case PANGO_VARIANT_NORMAL:
-          ADD_KEYVAL (FONT_VARIANT, "normal");
+          g_string_append (s, "font-variant: normal; ");
           break;
-
         case PANGO_VARIANT_SMALL_CAPS:
-          ADD_KEYVAL (FONT_VARIANT, "small-caps");
+          g_string_append (s, "font-variant: small-caps; ");
           break;
-
         default:
           break;
         }
     }
-
-  if ((mask & PANGO_FONT_MASK_WEIGHT))
+  if (set & PANGO_FONT_MASK_WEIGHT)
     {
-      gint weight;
-
-      weight = pango_font_description_get_weight (font_desc);
-
-      /*
-       * WORKAROUND:
-       *
-       * font-weight with numbers does not appear to be working as expected
-       * right now. So for the common (bold/normal), let's just use the string
-       * and let gtk warn for the other values, which shouldn't really be
-       * used for this.
-       */
-
-      switch (weight)
+      switch (pango_font_description_get_weight (desc))
         {
-        case PANGO_WEIGHT_SEMILIGHT:
-          /*
-           * 350 is not actually a valid css font-weight, so we will just round
-           * up to 400.
-           */
-        case PANGO_WEIGHT_NORMAL:
-          ADD_KEYVAL (FONT_WEIGHT, "normal");
-          break;
-
-        case PANGO_WEIGHT_BOLD:
-          ADD_KEYVAL (FONT_WEIGHT, "bold");
-          break;
-
         case PANGO_WEIGHT_THIN:
+          g_string_append (s, "font-weight: 100; ");
+          break;
         case PANGO_WEIGHT_ULTRALIGHT:
+          g_string_append (s, "font-weight: 200; ");
+          break;
         case PANGO_WEIGHT_LIGHT:
+        case PANGO_WEIGHT_SEMILIGHT:
+          g_string_append (s, "font-weight: 300; ");
+          break;
         case PANGO_WEIGHT_BOOK:
+        case PANGO_WEIGHT_NORMAL:
+          g_string_append (s, "font-weight: 400; ");
+          break;
         case PANGO_WEIGHT_MEDIUM:
+          g_string_append (s, "font-weight: 500; ");
+          break;
         case PANGO_WEIGHT_SEMIBOLD:
+          g_string_append (s, "font-weight: 600; ");
+          break;
+        case PANGO_WEIGHT_BOLD:
+          g_string_append (s, "font-weight: 700; ");
+          break;
         case PANGO_WEIGHT_ULTRABOLD:
+          g_string_append (s, "font-weight: 800; ");
+          break;
         case PANGO_WEIGHT_HEAVY:
         case PANGO_WEIGHT_ULTRAHEAVY:
+          g_string_append (s, "font-weight: 900; ");
+          break;
         default:
-          /* round to nearest hundred */
-          weight = round (weight / 100.0) * 100;
-          ADD_KEYVAL_PRINTF ("font-weight", "%d", weight);
           break;
         }
     }
-
-#ifndef GDK_WINDOWING_QUARTZ
-  /*
-   * We seem to get "Condensed" for fonts on the Quartz backend,
-   * which is rather annoying as it results in us always hitting
-   * fallback (stretch) paths. So let's cheat and just disable
-   * stretch support for now on Quartz.
-   */
-  if ((mask & PANGO_FONT_MASK_STRETCH))
+  if (set & PANGO_FONT_MASK_STRETCH)
     {
-      switch (pango_font_description_get_stretch (font_desc))
+      switch (pango_font_description_get_stretch (desc))
         {
         case PANGO_STRETCH_ULTRA_CONDENSED:
-          ADD_KEYVAL (FONT_STRETCH, "untra-condensed");
+          g_string_append (s, "font-stretch: ultra-condensed; ");
           break;
-
         case PANGO_STRETCH_EXTRA_CONDENSED:
-          ADD_KEYVAL (FONT_STRETCH, "extra-condensed");
+          g_string_append (s, "font-stretch: extra-condensed; ");
           break;
-
         case PANGO_STRETCH_CONDENSED:
-          ADD_KEYVAL (FONT_STRETCH, "condensed");
+          g_string_append (s, "font-stretch: condensed; ");
           break;
-
         case PANGO_STRETCH_SEMI_CONDENSED:
-          ADD_KEYVAL (FONT_STRETCH, "semi-condensed");
+          g_string_append (s, "font-stretch: semi-condensed; ");
           break;
-
         case PANGO_STRETCH_NORMAL:
-          ADD_KEYVAL (FONT_STRETCH, "normal");
+          g_string_append (s, "font-stretch: normal; ");
           break;
-
         case PANGO_STRETCH_SEMI_EXPANDED:
-          ADD_KEYVAL (FONT_STRETCH, "semi-expanded");
+          g_string_append (s, "font-stretch: semi-expanded; ");
           break;
-
         case PANGO_STRETCH_EXPANDED:
-          ADD_KEYVAL (FONT_STRETCH, "expanded");
+          g_string_append (s, "font-stretch: expanded; ");
           break;
-
         case PANGO_STRETCH_EXTRA_EXPANDED:
-          ADD_KEYVAL (FONT_STRETCH, "extra-expanded");
           break;
-
         case PANGO_STRETCH_ULTRA_EXPANDED:
-          ADD_KEYVAL (FONT_STRETCH, "untra-expanded");
+          g_string_append (s, "font-stretch: ultra-expanded; ");
           break;
-
         default:
           break;
         }
+    }
+  if (set & PANGO_FONT_MASK_SIZE)
+    {
+      g_string_append_printf (s, "font-size: %dpt; ", pango_font_description_get_size (desc) / PANGO_SCALE);
+    }
+
+#if PANGO_VERSION_CHECK (1, 44, 0)
+  if (set & PANGO_FONT_MASK_VARIATIONS)
+    {
+      const char *variations;
+
+      g_string_append (s, "font-variation-settings: ");
+      variations = pango_font_description_get_variations (desc);
+      add_css_variations (s, variations);
+      g_string_append (s, "; ");
     }
 #endif
 
-  if ((mask & PANGO_FONT_MASK_SIZE))
-    {
-      gint font_size;
-
-      font_size = pango_font_description_get_size (font_desc) / PANGO_SCALE;
-      ADD_KEYVAL_PRINTF ("font-size", "%dpt", font_size);
-    }
-
-  return g_string_free (str, FALSE);
-
-#undef ADD_KEYVAL
-#undef ADD_KEYVAL_PRINTF
+  return g_string_free (s, FALSE);
 }
