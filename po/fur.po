@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gedit master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gedit/issues\n"
-"POT-Creation-Date: 2020-09-10 07:39+0000\n"
-"PO-Revision-Date: 2020-09-11 16:54+0200\n"
+"POT-Creation-Date: 2020-10-13 16:31+0000\n"
+"PO-Revision-Date: 2020-10-17 21:43+0200\n"
 "Last-Translator: Fabio Tomat <f.t.public@gmail.com>\n"
 "Language-Team: Friulian <f.t.public@gmail.com>\n"
 "Language: fur\n"
@@ -106,7 +106,7 @@ msgstr "Cree copiis di backup"
 
 #: data/org.gnome.gedit.gschema.xml.in:53
 msgid "Whether gedit should create backup copies for the files it saves."
-msgstr "Indiche se gedit al à di creâ copiis di backup pai file che al salve."
+msgstr "Indiche se gedit al à di creâ copiis di backup pai files che al salve."
 
 #: data/org.gnome.gedit.gschema.xml.in:57
 msgid "Autosave"
@@ -117,7 +117,7 @@ msgid ""
 "Whether gedit should automatically save modified files after a time "
 "interval. You can set the time interval with the “Autosave Interval” option."
 msgstr ""
-"Indiche se gedit al à di salvâ in automatic i file modificâts dopo un ciert "
+"Indiche se gedit al à di salvâ in automatic i files modificâts dopo un ciert "
 "timp. Tu puedis meti l'interval di timp cun la opzion “Interval par salvâ in "
 "automatic”."
 
@@ -130,8 +130,8 @@ msgid ""
 "Number of minutes after which gedit will automatically save modified files. "
 "This will only take effect if the “Autosave” option is turned on."
 msgstr ""
-"Numar di minûts dopo dai cuai gedit al salve in automatic i file modificâts. "
-"Chest al sucêt nome se la opzion “Salve in automatic” e je ative."
+"Numar di minûts dopo dai cuai gedit al salve in automatic i files "
+"modificâts. Chest al sucêt nome se la opzion “Salve in automatic” e je ative."
 
 #: data/org.gnome.gedit.gschema.xml.in:67
 msgid "Maximum Number of Undo Actions"
@@ -529,7 +529,7 @@ msgid ""
 "Set the character encoding to be used to open the files listed on the "
 "command line"
 msgstr ""
-"Met la codifiche dal caratar di doprâ par vierzi i file listâts te rie di "
+"Met la codifiche dal caratar di doprâ par vierzi i files listâts te rie di "
 "comant"
 
 #: gedit/gedit-app.c:99
@@ -546,7 +546,7 @@ msgstr "Cree un gnûf document intune istance esistent di gedit"
 
 #: gedit/gedit-app.c:119
 msgid "Open files and block process until files are closed"
-msgstr "Vierç i file e bloche il procès fintremai la sieradure dai file"
+msgstr "Vierç i files e bloche il procès fintremai la sieradure dai file"
 
 #: gedit/gedit-app.c:126
 msgid "Run gedit in standalone mode"
@@ -964,11 +964,11 @@ msgstr "Sposte intune prioritât plui basse"
 
 #: gedit/gedit-file-chooser.c:41 gedit/gedit-preferences-dialog.c:730
 msgid "All Files"
-msgstr "Ducj i file"
+msgstr "Ducj i files"
 
 #: gedit/gedit-file-chooser.c:42
 msgid "All Text Files"
-msgstr "Ducj i file di test"
+msgstr "Ducj i files di test"
 
 #: gedit/gedit-file-chooser-dialog-gtk.c:262
 #: gedit/gedit-file-chooser-open-dialog.c:43
@@ -984,7 +984,7 @@ msgstr "F_in di rie:"
 #: gedit/gedit-file-chooser-open-native.c:54
 msgctxt "window title"
 msgid "Open Files"
-msgstr "Vierç i file"
+msgstr "Vierç i files"
 
 #: gedit/gedit-file-chooser-open-dialog.c:79 gedit/gedit-window.c:2636
 #: gedit/resources/gtk/menus-common.ui:100
@@ -1246,7 +1246,7 @@ msgid ""
 "the file names. Please use a shorter name."
 msgstr ""
 "Il disc dulà che tu stâs cirint di salvâ il file al à limitazions te "
-"lungjece dai nons dai file. Dopre un non plui curt."
+"lungjece dai nons dai files. Dopre un non plui curt."
 
 #: gedit/gedit-io-error-info-bar.c:838
 msgid ""
@@ -1254,8 +1254,8 @@ msgid ""
 "sizes. Please try saving a smaller file or saving it to a disk that does not "
 "have this limitation."
 msgstr ""
-"Il disc dulà che tu stâs cirint di salvâ il file al à limitazions su le "
-"dimension dai file. Cîr di salvâ un file plui piçul o salvilu suntun disc "
+"Il disc dulà che tu stâs cirint di salvâ il file al à limitazions su la "
+"dimension dai files. Cîr di salvâ un file plui piçul o salvilu suntun disc "
 "che nol à cheste limitazion."
 
 #: gedit/gedit-io-error-info-bar.c:855
@@ -1417,20 +1417,20 @@ msgid "Encoding:"
 msgstr "Codifiche:"
 
 #. Translators: '/ on <remote-share>'
-#: gedit/gedit-utils.c:436
+#: gedit/gedit-utils.c:387
 #, c-format
 msgid "/ on %s"
 msgstr "/ su %s"
 
-#: gedit/gedit-utils.c:610
+#: gedit/gedit-utils.c:532
 msgid "Unix/Linux"
 msgstr "Unix/Linux"
 
-#: gedit/gedit-utils.c:612
+#: gedit/gedit-utils.c:534
 msgid "Mac OS Classic"
 msgstr "Mac OS Classic"
 
-#: gedit/gedit-utils.c:614
+#: gedit/gedit-utils.c:536
 msgid "Windows"
 msgstr "Windows"
 
@@ -1888,11 +1888,11 @@ msgstr "Salvament dal file"
 
 #: gedit/resources/ui/gedit-preferences-dialog.ui:413
 msgid "Create a _backup copy of files before saving"
-msgstr "Cree une copie di _backup prime di salvâ i file"
+msgstr "Cree une copie di _backup prime di salvâ i files"
 
 #: gedit/resources/ui/gedit-preferences-dialog.ui:428
 msgid "_Autosave files every"
-msgstr "Salve in _automatic i file ogni"
+msgstr "Salve in _automatic i files ogni"
 
 #: gedit/resources/ui/gedit-preferences-dialog.ui:444
 msgid "_minutes"
@@ -2776,11 +2776,11 @@ msgstr "Strument di jessude"
 
 #: plugins/filebrowser/filebrowser.plugin.desktop.in:6
 msgid "File Browser Panel"
-msgstr "Panel di esplorazion file"
+msgstr "Panel di esplorazion files"
 
 #: plugins/filebrowser/filebrowser.plugin.desktop.in:7
 msgid "Easy file access from the side panel."
-msgstr "Acès facilitât ai file dal panel laterâl."
+msgstr "Acès facilitât ai files dal panel laterâl."
 
 #: plugins/filebrowser/gedit-file-bookmarks-store.c:200
 msgid "Home"
@@ -2792,7 +2792,7 @@ msgstr "File System"
 
 #: plugins/filebrowser/gedit-file-browser-plugin.c:521
 msgid "File Browser"
-msgstr "Esplorazion file"
+msgstr "Esplorazion files"
 
 #: plugins/filebrowser/gedit-file-browser-plugin.c:657
 msgid "An error occurred while creating a new directory"
@@ -2841,7 +2841,7 @@ msgstr "Il file “%s” nol pues jessi spostât te scovacere."
 
 #: plugins/filebrowser/gedit-file-browser-plugin.c:910
 msgid "The selected files cannot be moved to the trash."
-msgstr "I file selezionâts no puedin jessi spostâts te scovacere."
+msgstr "I files selezionâts no puedin jessi spostâts te scovacere."
 
 #: plugins/filebrowser/gedit-file-browser-plugin.c:941
 #, c-format
@@ -2850,7 +2850,7 @@ msgstr "Sigûrs di eliminâ par simpri “%s”?"
 
 #: plugins/filebrowser/gedit-file-browser-plugin.c:946
 msgid "Are you sure you want to permanently delete the selected files?"
-msgstr "Sigûrs di eliminâ par simpri i file selezionâts?"
+msgstr "Sigûrs di eliminâ par simpri i files selezionâts?"
 
 #: plugins/filebrowser/gedit-file-browser-plugin.c:949
 msgid "If you delete an item, it is permanently lost."
@@ -2927,24 +2927,24 @@ msgid ""
 "Open the tree view when the file browser plugin gets loaded instead of the "
 "bookmarks view"
 msgstr ""
-"Vierzi la viodude a arbul tal inviament dal plugin de esplorazion file "
+"Vierzi la viodude a arbul tal inviament dal plugin de esplorazion files "
 "invezit che la viodude a segnelibris"
 
 #: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml:10
 msgid "File Browser Root Directory"
-msgstr "Cartele lidrîs de esplorazion file"
+msgstr "Cartele lidrîs de esplorazion files"
 
 #: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml:11
 msgid ""
 "The file browser root directory to use when loading the file browser plugin "
 "and onload/tree_view is TRUE."
 msgstr ""
-"La cartele lidrîs de esplorazion file di doprâ cuant che si cjarie il plugin "
-"de esplorazion file se onload/tree_view al è VÊR."
+"La cartele lidrîs, de esplorazion files, di doprâ cuant che si cjarie il "
+"plugin de esplorazion files se onload/tree_view al è VÊR."
 
 #: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml:15
 msgid "File Browser Virtual Root Directory"
-msgstr "Cartele lidrîs virtuâl de esplorazion file"
+msgstr "Cartele lidrîs virtuâl de esplorazion files"
 
 #: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml:16
 msgid ""
@@ -2952,9 +2952,9 @@ msgid ""
 "plugin when onload/tree_view is TRUE. The virtual root must always be below "
 "the actual root."
 msgstr ""
-"La cartele lidrîs virtuâl de esplorazion file di doprâ cuant che si cjarie "
-"il plugin de esplorazion file cuant che onload/tree_view al è VÊR. La lidrîs "
-"virtuâl e scugne jessi simpri sot la lidrîs atuâl."
+"La cartele lidrîs virtuâl, de esplorazion files, di doprâ cuant che si "
+"cjarie il plugin de esplorazion file cuant che onload/tree_view al è VÊR. La "
+"lidrîs virtuâl e scugne jessi simpri sot la lidrîs atuâl."
 
 #: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml:20
 msgid "Enable Restore of Remote Locations"
@@ -2975,13 +2975,13 @@ msgid ""
 "generally applies to opening a document from the command line or opening it "
 "with Nautilus, etc.)"
 msgstr ""
-"Se VÊR il plugin di esplorazion file al mostre la cartele dal prin document "
+"Se VÊR il plugin di esplorazion files al mostre la cartele dal prin document "
 "viert se la esplorazion file no je ancjemò stade doprade. (Chest di solit si "
 "apliche tal vierzi un document di rie di comant o cun Nautilus…)"
 
 #: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml:30
 msgid "File Browser Filter Mode"
-msgstr "Modalitât filtri de esplorazion file"
+msgstr "Modalitât filtri de esplorazion files"
 
 #: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml:31
 msgid ""
@@ -2989,29 +2989,29 @@ msgid ""
 "values are: none (filter nothing), hide-hidden (filter hidden files) and "
 "hide-binary (filter binary files)."
 msgstr ""
-"Chest valôr al determine cuai file che a vegnin filtrâts de esplorazion "
-"file. I valôrs valits a son: none (nol filtre nuie), hide-hidden (al filtre "
+"Chest valôr al determine cuai files che a vegnin filtrâts de esplorazion "
+"files. I valôrs valits a son: none (nol filtre nuie), hide-hidden (al filtre "
 "i file platâts) e hide-binary (al filtre i file binaris)."
 
 #: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml:35
 msgid "File Browser Filter Pattern"
-msgstr "Model di filtri de esplorazion file"
+msgstr "Model di filtri de esplorazion files"
 
 #: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml:36
 msgid ""
 "The filter pattern to filter the file browser with. This filter works on top "
 "of the filter_mode."
 msgstr ""
-"Il model di filtri di doprâ par filtrâ la esplorazion dai file. Chest filtri "
-"al lavore parsore dal filter_mode."
+"Il model di filtri di doprâ par filtrâ la esplorazion dai files. Chest "
+"filtri al lavore parsore dal filter_mode."
 
 #: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml:40
 msgid "File Browser Binary Patterns"
-msgstr "Modei di file binaris de esplorazion file"
+msgstr "Modei di files binaris de esplorazion files"
 
 #: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml:41
 msgid "The supplemental patterns to use when filtering binary files."
-msgstr "Ulteriôrs modei di doprâ cuant che si filtre i file binaris."
+msgstr "Ulteriôrs modei di doprâ cuant che si filtre i files binaris."
 
 #: plugins/filebrowser/resources/ui/gedit-file-browser-menus.ui:13
 #: plugins/filebrowser/resources/ui/gedit-file-browser-menus.ui:79
@@ -3138,7 +3138,7 @@ msgstr "Vierç subite"
 
 #: plugins/quickopen/quickopen.plugin.desktop.in:7
 msgid "Quickly open files."
-msgstr "Vierç subite i file."
+msgstr "Vierç subite i files."
 
 #: plugins/quickopen/quickopen/popup.py:90
 msgid "Type to search…"
@@ -3195,7 +3195,7 @@ msgstr "L'archivi “%s” nol pues jessi estrat"
 #: plugins/snippets/snippets/importer.py:103
 #, python-format
 msgid "The following files could not be imported: %s"
-msgstr "I file chi sot no puedin jessi impuartâts: %s"
+msgstr "I files chi sot no puedin jessi impuartâts: %s"
 
 #: plugins/snippets/snippets/importer.py:119
 #: plugins/snippets/snippets/importer.py:132
