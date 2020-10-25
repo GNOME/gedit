@@ -12,6 +12,14 @@ supported by gedit, there can be performance problems or freezes.
 
 [GitLab issue](https://gitlab.gnome.org/GNOME/gtk/issues/229).
 
+Hyphen/dash inserted for text wrapping
+--------------------------------------
+
+It should be disabled in a text editor like gedit, the hyphen is not part of
+the content.
+
+[GitLab issue](https://gitlab.gnome.org/GNOME/gedit/issues/365).
+
 View does not scroll to the end of the text in some cases (text cut off)
 ------------------------------------------------------------------------
 
