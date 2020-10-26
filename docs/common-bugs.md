@@ -12,6 +12,14 @@ supported by gedit, there can be performance problems or freezes.
 
 [GitLab issue](https://gitlab.gnome.org/GNOME/gtk/issues/229).
 
+Problem with very large files
+-----------------------------
+
+Large files are not well supported, gedit should ask for confirmation when
+opening such files, providing a solution.
+
+[GitLab issue](https://gitlab.gnome.org/GNOME/gedit/issues/197).
+
 Hyphen/dash inserted for text wrapping
 --------------------------------------
 
