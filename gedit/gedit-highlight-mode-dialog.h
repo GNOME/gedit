@@ -22,7 +22,6 @@
 #ifndef GEDIT_HIGHLIGHT_MODE_DIALOG_H
 #define GEDIT_HIGHLIGHT_MODE_DIALOG_H
 
-#include <glib.h>
 #include "gedit-highlight-mode-selector.h"
 
 G_BEGIN_DECLS

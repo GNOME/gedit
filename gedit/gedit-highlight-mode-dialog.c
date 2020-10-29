@@ -20,8 +20,6 @@
 
 #include "gedit-highlight-mode-dialog.h"
 
-#include <gtk/gtk.h>
-
 struct _GeditHighlightModeDialog
 {
 	GtkDialog parent_instance;
