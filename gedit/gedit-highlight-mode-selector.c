@@ -19,10 +19,7 @@
  */
 
 #include "gedit-highlight-mode-selector.h"
-
-#include <gdk/gdkkeysyms.h>
 #include <glib/gi18n.h>
-#include <string.h>
 
 enum
 {

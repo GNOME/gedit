@@ -21,9 +21,7 @@
 #ifndef GEDIT_HIGHLIGHT_MODE_SELECTOR_H
 #define GEDIT_HIGHLIGHT_MODE_SELECTOR_H
 
-#include <glib-object.h>
 #include <gtksourceview/gtksource.h>
-#include "gedit-window.h"
 
 G_BEGIN_DECLS
 
