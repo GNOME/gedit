@@ -126,16 +126,16 @@ _gedit_cmd_view_leave_fullscreen_mode (GSimpleAction *action,
 }
 
 static void
-on_language_selected (GeditHighlightModeSelector *sel,
-                      GtkSourceLanguage          *language,
-                      GeditWindow                *window)
+language_selected_cb (GeditHighlightModeSelector *selector,
+		      GtkSourceLanguage          *language,
+		      GeditWindow                *window)
 {
-	GeditDocument *doc;
+	GeditDocument *active_document;
 
-	doc = gedit_window_get_active_document (window);
-	if (doc)
+	active_document = gedit_window_get_active_document (window);
+	if (active_document != NULL)
 	{
-		gedit_document_set_language (doc, language);
+		gedit_document_set_language (active_document, language);
 	}
 }
 
@@ -144,25 +144,30 @@ _gedit_cmd_view_highlight_mode (GSimpleAction *action,
                                 GVariant      *parameter,
                                 gpointer       user_data)
 {
-	GtkWindow *window = GTK_WINDOW (user_data);
-	GtkWidget *dlg;
-	GeditHighlightModeSelector *sel;
-	GeditDocument *doc;
+	GeditWindow *window = GEDIT_WINDOW (user_data);
+	GeditHighlightModeDialog *dialog;
+	GeditHighlightModeSelector *selector;
+	GeditDocument *active_document;
 
-	dlg = gedit_highlight_mode_dialog_new (window);
-	sel = gedit_highlight_mode_dialog_get_selector (GEDIT_HIGHLIGHT_MODE_DIALOG (dlg));
+	dialog = GEDIT_HIGHLIGHT_MODE_DIALOG (gedit_highlight_mode_dialog_new (GTK_WINDOW (window)));
+	selector = gedit_highlight_mode_dialog_get_selector (dialog);
 
-	doc = gedit_window_get_active_document (GEDIT_WINDOW (window));
-	if (doc)
+	active_document = gedit_window_get_active_document (window);
+	if (active_document != NULL)
 	{
-		gedit_highlight_mode_selector_select_language (sel,
-		                                               gedit_document_get_language (doc));
+		GtkSourceLanguage *language;
+
+		language = gedit_document_get_language (active_document);
+		gedit_highlight_mode_selector_select_language (selector, language);
 	}
 
-	g_signal_connect (sel, "language-selected",
-	                  G_CALLBACK (on_language_selected), window);
+	g_signal_connect_object (selector,
+				 "language-selected",
+				 G_CALLBACK (language_selected_cb),
+				 window,
+				 0);
 
-	gtk_widget_show (GTK_WIDGET (dlg));
+	gtk_widget_show (GTK_WIDGET (dialog));
 }
 
 /* ex:set ts=8 noet: */
