@@ -831,30 +831,32 @@ on_recent_chooser_item_activated (GeditOpenDocumentSelector *open_document_selec
 }
 
 static void
-on_language_selector_shown (GeditHighlightModeSelector *sel,
-                            GeditWindow                *window)
+language_selector_show_cb (GeditHighlightModeSelector *selector,
+			   GeditWindow                *window)
 {
-	GeditDocument *doc;
+	GeditDocument *active_document;
 
-	doc = gedit_window_get_active_document (window);
-	if (doc)
+	active_document = gedit_window_get_active_document (window);
+	if (active_document != NULL)
 	{
-		gedit_highlight_mode_selector_select_language (sel,
-		                                               gedit_document_get_language (doc));
+		GtkSourceLanguage *language;
+
+		language = gedit_document_get_language (active_document);
+		gedit_highlight_mode_selector_select_language (selector, language);
 	}
 }
 
 static void
-on_language_selected (GeditHighlightModeSelector *sel,
-                      GtkSourceLanguage          *language,
-                      GeditWindow                *window)
+language_selected_cb (GeditHighlightModeSelector *selector,
+		      GtkSourceLanguage          *language,
+		      GeditWindow                *window)
 {
-	GeditDocument *doc;
+	GeditDocument *active_document;
 
-	doc = gedit_window_get_active_document (window);
-	if (doc)
+	active_document = gedit_window_get_active_document (window);
+	if (active_document != NULL)
 	{
-		gedit_document_set_language (doc, language);
+		gedit_document_set_language (active_document, language);
 	}
 
 	gtk_widget_hide (GTK_WIDGET (window->priv->language_popover));
@@ -863,7 +865,7 @@ on_language_selected (GeditHighlightModeSelector *sel,
 static void
 setup_statusbar (GeditWindow *window)
 {
-	GeditHighlightModeSelector *sel;
+	GeditHighlightModeSelector *selector;
 
 	gedit_debug (DEBUG_WINDOW);
 
@@ -893,18 +895,20 @@ setup_statusbar (GeditWindow *window)
 	gtk_menu_button_set_popover (GTK_MENU_BUTTON (window->priv->language_button),
 	                             window->priv->language_popover);
 
-	sel = gedit_highlight_mode_selector_new ();
-	g_signal_connect (sel,
+	selector = gedit_highlight_mode_selector_new ();
+
+	g_signal_connect (selector,
 	                  "show",
-	                  G_CALLBACK (on_language_selector_shown),
-	                  window);
-	g_signal_connect (sel,
-	                  "language-selected",
-	                  G_CALLBACK (on_language_selected),
+	                  G_CALLBACK (language_selector_show_cb),
 	                  window);
 
-	gtk_container_add (GTK_CONTAINER (window->priv->language_popover), GTK_WIDGET (sel));
-	gtk_widget_show (GTK_WIDGET (sel));
+	g_signal_connect (selector,
+	                  "language-selected",
+	                  G_CALLBACK (language_selected_cb),
+	                  window);
+
+	gtk_container_add (GTK_CONTAINER (window->priv->language_popover), GTK_WIDGET (selector));
+	gtk_widget_show (GTK_WIDGET (selector));
 }
 
 static GeditWindow *
