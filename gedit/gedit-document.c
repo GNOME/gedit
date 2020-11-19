@@ -1034,14 +1034,9 @@ set_content_type (GeditDocument *doc,
 	}
 }
 
-/**
- * gedit_document_get_uri_for_display:
- * @doc: a #GeditDocument.
- *
- * Note: this never returns %NULL.
- **/
+/* Note: this never returns %NULL. */
 gchar *
-gedit_document_get_uri_for_display (GeditDocument *doc)
+_gedit_document_get_uri_for_display (GeditDocument *doc)
 {
 	GeditDocumentPrivate *priv;
 	GFile *location;

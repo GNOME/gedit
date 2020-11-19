@@ -26,6 +26,7 @@
 #include <gtksourceview/gtksource.h>
 
 #include "gedit-debug.h"
+#include "gedit-document-private.h"
 #include "gedit-print-preview.h"
 #include "gedit-utils.h"
 #include "gedit-dirs.h"

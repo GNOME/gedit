@@ -247,7 +247,7 @@ load_file_list (GeditWindow             *window,
 		g_return_val_if_fail (tab != NULL, loaded_files);
 
 		doc = gedit_tab_get_document (tab);
-		uri_for_display = gedit_document_get_uri_for_display (doc);
+		uri_for_display = _gedit_document_get_uri_for_display (doc);
 
 		gedit_statusbar_flash_message (GEDIT_STATUSBAR (window->priv->statusbar),
 					       window->priv->generic_message_cid,
@@ -956,7 +956,7 @@ gedit_commands_save_document_async (GeditDocument       *document,
 		return;
 	}
 
-	uri_for_display = gedit_document_get_uri_for_display (document);
+	uri_for_display = _gedit_document_get_uri_for_display (document);
 	gedit_statusbar_flash_message (GEDIT_STATUSBAR (window->priv->statusbar),
 				       window->priv->generic_message_cid,
 				       _("Saving file “%s”\342\200\246"),
@@ -1283,7 +1283,7 @@ save_documents_list (GeditWindow *window,
 
 			gchar *uri_for_display;
 
-			uri_for_display = gedit_document_get_uri_for_display (doc);
+			uri_for_display = _gedit_document_get_uri_for_display (doc);
 			gedit_debug_message (DEBUG_COMMANDS,
 					     "File '%s' not saved. State: %d",
 					     uri_for_display,

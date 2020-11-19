@@ -1461,7 +1461,7 @@ _gedit_tab_get_tooltip (GeditTab *tab)
 
 	doc = gedit_tab_get_document (tab);
 
-	uri = gedit_document_get_uri_for_display (doc);
+	uri = _gedit_document_get_uri_for_display (doc);
 	g_return_val_if_fail (uri != NULL, NULL);
 
 	ruri = 	gedit_utils_replace_home_dir_with_tilde (uri);
