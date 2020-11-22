@@ -9,6 +9,9 @@ See also the
 
 See the [NEWS file](../NEWS) for a detailed history.
 
+See also the
+[Tepl roadmap](https://gitlab.gnome.org/GNOME/tepl/blob/master/docs/roadmap.md).
+
 Making the gedit source code more re-usable
 -------------------------------------------
 
@@ -24,16 +27,14 @@ Next steps:
   The goal is to reduce the amount of code in gedit, by having re-usable code
   in Tepl instead.
 
-New version of gedit on Windows
--------------------------------
+Improve gedit on Windows
+------------------------
 
 Status: **in progress**
 
-Done:
-- [gedit on the Microsoft Store](https://www.microsoft.com/store/apps/9PL1J21XF0PT).
-
-Remaining to do:
-- Have a better Windows integration.
+[gedit is now available on the Microsoft Store](https://www.microsoft.com/store/apps/9PL1J21XF0PT).
+The integration with Windows is not perfect, but it works. It is planned to
+improve gedit for Windows over time.
 
 Replace search and replace dialog window by an horizontal bar below the text
 ----------------------------------------------------------------------------
