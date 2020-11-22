@@ -27,9 +27,13 @@ Next steps:
 New version of gedit on Windows
 -------------------------------
 
-Status: **done**
+Status: **in progress**
 
-[gedit on the Microsoft Store](https://www.microsoft.com/store/apps/9PL1J21XF0PT).
+Done:
+- [gedit on the Microsoft Store](https://www.microsoft.com/store/apps/9PL1J21XF0PT).
+
+Remaining to do:
+- Have a better Windows integration.
 
 Replace search and replace dialog window by an horizontal bar below the text
 ----------------------------------------------------------------------------
