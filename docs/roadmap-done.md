@@ -1,8 +1,8 @@
 gedit roadmap - done tasks
 ==========================
 
-Tepl-ification
---------------
+Tepl-ification of the gedit core
+--------------------------------
 
 - gedit 3.36:
 	- Start to use the Tepl library.
@@ -18,8 +18,9 @@ Tepl-ification
 - gedit 40:
 	- Use `tepl_pango_font_description_to_css()`.
 	- Use TeplLanguageChooser's, for choosing a language for the syntax
-	  highlighting.
-	- Use TeplProgressInfoBar.
+	  highlighting. Remove GeditHighlightModeSelector and
+	  GeditHighlightModeDialog.
+	- Use TeplProgressInfoBar. Remove GeditProgressInfoBar.
 	- GeditDocument now inherits from TeplBuffer, start to use the
 	  TeplBuffer and TeplFile APIs.
 
