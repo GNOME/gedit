@@ -27,6 +27,19 @@ Tepl-ification of the gedit core
 Links:
 - https://wiki.gnome.org/Projects/Tepl
 
+Tepl-ification of the gedit plugins
+-----------------------------------
+
+- gedit 40:
+	- Draw Spaces plugin: new implementation based on TeplSpaceDrawerPrefs.
+
+Other done tasks in gedit plugins
+---------------------------------
+
+- gedit 40:
+	- Smart Spaces plugin: new implementation based on a GtkSourceView
+	  feature.
+
 New version of gedit on Windows
 -------------------------------
 
