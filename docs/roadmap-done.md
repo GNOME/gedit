@@ -1,6 +1,14 @@
 gedit roadmap - done tasks
 ==========================
 
+Tepl-ification
+--------------
+
+- gedit 3.36: start to use the Tepl library.
+
+Links:
+- https://wiki.gnome.org/Projects/Tepl
+
 New version of gedit on Windows
 -------------------------------
 

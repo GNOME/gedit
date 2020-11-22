@@ -12,20 +12,19 @@ See the [NEWS file](../NEWS) for a detailed history.
 See also the
 [Tepl roadmap](https://gitlab.gnome.org/GNOME/tepl/blob/master/docs/roadmap.md).
 
-Making the gedit source code more re-usable
--------------------------------------------
+Continue to make the gedit source code more re-usable
+-----------------------------------------------------
 
-Status: **[in progress](https://wiki.gnome.org/Apps/Gedit/ReusableCode)** (this
-is an ongoing effort)
-
-Recently done:
-- gedit 3.36: start to use the [Tepl](https://wiki.gnome.org/Projects/Tepl)
-  library.
+Status: **in progress** (this is an ongoing effort)
 
 Next steps:
 - Use more features from the Tepl library, and develop Tepl alongside gedit.
   The goal is to reduce the amount of code in gedit, by having re-usable code
   in Tepl instead.
+
+Links:
+- https://wiki.gnome.org/Apps/Gedit/ReusableCode
+- https://wiki.gnome.org/Projects/Tepl
 
 Improve gedit on Windows
 ------------------------
@@ -39,7 +38,7 @@ improve gedit for Windows over time.
 Replace search and replace dialog window by an horizontal bar below the text
 ----------------------------------------------------------------------------
 
-Status: **[todo](https://gitlab.gnome.org/GNOME/gedit/-/issues/288)**
+Status: **todo**
 
 To not hide the text.
 
@@ -94,7 +93,7 @@ plugins need to be installed. Better solution: see
 Making gedit suitable on a smartphone
 -------------------------------------
 
-Status: **[in progress](https://gitlab.gnome.org/GNOME/Initiatives/-/issues/13)**
+Status: **in progress**
 
 gedit is installed by default with the [Librem 5](https://puri.sm/products/librem-5/)
 smartphone.
