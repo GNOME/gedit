@@ -58,14 +58,24 @@ enum
 static guint signals[N_SIGNALS];
 
 static void
+update_editable (GeditView *view)
+{
+	GeditDocument *doc;
+	GtkSourceFile *file;
+
+	doc = GEDIT_DOCUMENT (gtk_text_view_get_buffer (GTK_TEXT_VIEW (view)));
+	file = gedit_document_get_file (doc);
+
+	gtk_text_view_set_editable (GTK_TEXT_VIEW (view),
+				    !gtk_source_file_is_readonly (file));
+}
+
+static void
 file_read_only_notify_cb (GtkSourceFile *file,
 			  GParamSpec    *pspec,
 			  GeditView     *view)
 {
-	gedit_debug (DEBUG_VIEW);
-
-	gtk_text_view_set_editable (GTK_TEXT_VIEW (view),
-				    !gtk_source_file_is_readonly (file));
+	update_editable (view);
 }
 
 static void
@@ -111,8 +121,7 @@ on_notify_buffer_cb (GeditView  *view,
 				 view,
 				 0);
 
-	gtk_text_view_set_editable (GTK_TEXT_VIEW (view),
-				    !gtk_source_file_is_readonly (file));
+	update_editable (view);
 }
 
 static void
