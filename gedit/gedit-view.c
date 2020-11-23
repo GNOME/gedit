@@ -51,11 +51,11 @@ G_DEFINE_TYPE_WITH_PRIVATE (GeditView, gedit_view, GTK_SOURCE_TYPE_VIEW)
 
 enum
 {
-	DROP_URIS,
-	LAST_SIGNAL
+	SIGNAL_DROP_URIS,
+	N_SIGNALS
 };
 
-static guint view_signals[LAST_SIGNAL] = { 0 };
+static guint signals[N_SIGNALS];
 
 static void
 file_read_only_notify_handler (GtkSourceFile *file,
@@ -307,7 +307,9 @@ gedit_view_drag_data_received (GtkWidget        *widget,
 			       guint             info,
 			       guint             timestamp)
 {
-	/* If this is an URL emit DROP_URIS, otherwise chain up the signal */
+	/* If this is an URL emit SIGNAL_DROP_URIS, otherwise chain up the
+	 * signal.
+	 */
 	switch (info)
 	{
 		case TARGET_URI_LIST:
@@ -318,7 +320,7 @@ gedit_view_drag_data_received (GtkWidget        *widget,
 
 			if (uri_list != NULL)
 			{
-				g_signal_emit (widget, view_signals[DROP_URIS], 0, uri_list);
+				g_signal_emit (widget, signals[SIGNAL_DROP_URIS], 0, uri_list);
 				g_strfreev (uri_list);
 
 				gtk_drag_finish (context, TRUE, FALSE, timestamp);
@@ -353,7 +355,7 @@ gedit_view_drag_data_received (GtkWidget        *widget,
 				uris = g_new (gchar *, 2);
 				uris[0] = view->priv->direct_save_uri;
 				uris[1] = NULL;
-				g_signal_emit (widget, view_signals[DROP_URIS], 0, uris);
+				g_signal_emit (widget, signals[SIGNAL_DROP_URIS], 0, uris);
 				g_free (uris);
 			}
 
@@ -715,7 +717,7 @@ gedit_view_class_init (GeditViewClass *klass)
 	 * should NOT use this signal because this will not prevent gedit from
 	 * loading the URI.
 	 */
-	view_signals[DROP_URIS] =
+	signals[SIGNAL_DROP_URIS] =
 		g_signal_new ("drop-uris",
 		              G_TYPE_FROM_CLASS (object_class),
 		              G_SIGNAL_RUN_LAST | G_SIGNAL_ACTION,
