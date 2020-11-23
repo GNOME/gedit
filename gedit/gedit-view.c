@@ -97,11 +97,9 @@ current_document_removed (GeditView *view)
 }
 
 static void
-on_notify_buffer_cb (GeditView  *view,
-		     GParamSpec *pspec,
-		     gpointer    userdata)
+buffer_changed (GeditView *view)
 {
-	GtkTextBuffer *buffer;
+	GeditDocument *doc;
 	GtkSourceFile *file;
 
 	current_document_removed (view);
@@ -122,6 +120,14 @@ on_notify_buffer_cb (GeditView  *view,
 				 0);
 
 	update_editable (view);
+}
+
+static void
+buffer_notify_cb (GeditView  *view,
+		  GParamSpec *pspec,
+		  gpointer    user_data)
+{
+	buffer_changed (view);
 }
 
 static void
@@ -147,18 +153,19 @@ gedit_view_init (GeditView *view)
 		gtk_target_list_add_uri_targets (target_list, TARGET_URI_LIST);
 	}
 
+	/* GeditViewActivatable */
 	view->priv->extensions =
 		peas_extension_set_new (PEAS_ENGINE (gedit_plugins_engine_get_default ()),
 		                        GEDIT_TYPE_VIEW_ACTIVATABLE,
 		                        "view", view,
 		                        NULL);
 
-	/* Act on buffer change */
+	/* Act on buffer changes */
+	buffer_changed (view);
 	g_signal_connect (view,
 			  "notify::buffer",
-			  G_CALLBACK (on_notify_buffer_cb),
+			  G_CALLBACK (buffer_notify_cb),
 			  NULL);
-
 
 	view->priv->css_provider = gtk_css_provider_new ();
 	context = gtk_widget_get_style_context (GTK_WIDGET (view));
@@ -184,7 +191,7 @@ gedit_view_dispose (GObject *object)
 	 * There is no problem calling g_signal_handlers_disconnect_by_func()
 	 * several times (if dispose() is called several times).
 	 */
-	g_signal_handlers_disconnect_by_func (view, on_notify_buffer_cb, NULL);
+	g_signal_handlers_disconnect_by_func (view, buffer_notify_cb, NULL);
 
 	g_clear_object (&view->priv->css_provider);
 	g_clear_pointer (&view->priv->font_desc, pango_font_description_free);
