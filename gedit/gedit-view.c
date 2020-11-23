@@ -39,7 +39,7 @@ enum
 
 struct _GeditViewPrivate
 {
-	GtkTextBuffer *current_buffer;
+	GeditDocument *current_document;
 	PeasExtensionSet *extensions;
 	gchar *direct_save_uri;
 
@@ -69,20 +69,20 @@ file_read_only_notify_cb (GtkSourceFile *file,
 }
 
 static void
-current_buffer_removed (GeditView *view)
+current_document_removed (GeditView *view)
 {
-	if (view->priv->current_buffer != NULL)
+	if (view->priv->current_document != NULL)
 	{
 		GtkSourceFile *file;
 
-		file = gedit_document_get_file (GEDIT_DOCUMENT (view->priv->current_buffer));
+		file = gedit_document_get_file (view->priv->current_document);
 
 		g_signal_handlers_disconnect_by_func (file,
 						      file_read_only_notify_cb,
 						      view);
 
-		g_object_unref (view->priv->current_buffer);
-		view->priv->current_buffer = NULL;
+		g_object_unref (view->priv->current_document);
+		view->priv->current_document = NULL;
 	}
 }
 
@@ -94,7 +94,7 @@ on_notify_buffer_cb (GeditView  *view,
 	GtkTextBuffer *buffer;
 	GtkSourceFile *file;
 
-	current_buffer_removed (view);
+	current_document_removed (view);
 	buffer = gtk_text_view_get_buffer (GTK_TEXT_VIEW (view));
 
 	if (!GEDIT_IS_DOCUMENT (buffer))
@@ -102,9 +102,9 @@ on_notify_buffer_cb (GeditView  *view,
 		return;
 	}
 
-	file = gedit_document_get_file (GEDIT_DOCUMENT (buffer));
+	view->priv->current_document = g_object_ref (GEDIT_DOCUMENT (buffer));
 
-	view->priv->current_buffer = g_object_ref (buffer);
+	file = gedit_document_get_file (view->priv->current_document);
 	g_signal_connect_object (file,
 				 "notify::read-only",
 				 G_CALLBACK (file_read_only_notify_cb),
@@ -167,7 +167,7 @@ gedit_view_dispose (GObject *object)
 
 	g_clear_object (&view->priv->extensions);
 
-	current_buffer_removed (view);
+	current_document_removed (view);
 
 	/* Disconnect notify buffer because the destroy of the textview will set
 	 * the buffer to NULL, and we call get_buffer in the notify which would
