@@ -58,9 +58,9 @@ enum
 static guint signals[N_SIGNALS];
 
 static void
-file_read_only_notify_handler (GtkSourceFile *file,
-			       GParamSpec    *pspec,
-			       GeditView     *view)
+file_read_only_notify_cb (GtkSourceFile *file,
+			  GParamSpec    *pspec,
+			  GeditView     *view)
 {
 	gedit_debug (DEBUG_VIEW);
 
@@ -78,7 +78,7 @@ current_buffer_removed (GeditView *view)
 		file = gedit_document_get_file (GEDIT_DOCUMENT (view->priv->current_buffer));
 
 		g_signal_handlers_disconnect_by_func (file,
-						      file_read_only_notify_handler,
+						      file_read_only_notify_cb,
 						      view);
 
 		g_object_unref (view->priv->current_buffer);
@@ -107,7 +107,7 @@ on_notify_buffer_cb (GeditView  *view,
 	view->priv->current_buffer = g_object_ref (buffer);
 	g_signal_connect_object (file,
 				 "notify::read-only",
-				 G_CALLBACK (file_read_only_notify_handler),
+				 G_CALLBACK (file_read_only_notify_cb),
 				 view,
 				 0);
 
