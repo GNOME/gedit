@@ -1,5 +1,4 @@
 /*
- * gedit-view.c
  * This file is part of gedit
  *
  * Copyright (C) 1998, 1999 Alex Roberts, Evan Lawrence
@@ -21,10 +20,8 @@
  */
 
 #include "gedit-view.h"
-
 #include <libpeas/peas-extension-set.h>
 #include <glib/gi18n.h>
-
 #include "gedit-view-activatable.h"
 #include "gedit-plugins-engine.h"
 #include "gedit-debug.h"
