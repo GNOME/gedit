@@ -692,6 +692,15 @@ gedit_view_class_init (GeditViewClass *klass)
 		              NULL, NULL, NULL,
 		              G_TYPE_NONE, 1, G_TYPE_STRV);
 
+	/* FIXME: some of these bindings - especially for the "change-case" -
+	 * could be moved to a plugin that enables more advanced keyboard
+	 * shortcuts. Enabling too many keyboard shortcuts by default makes the
+	 * user experience worse, because when mistyping a key it could trigger
+	 * an unknown/unexpected action, so it's a bit a WTF moment for the
+	 * user. gedit must not become like Emacs or Vim. More advanced stuff
+	 * are put in plugins. Also, the "change-case" is available in the
+	 * right-click menu, so it's already easily accessible.
+	 */
 	binding_set = gtk_binding_set_by_class (klass);
 
 	gtk_binding_entry_add_signal (binding_set,
