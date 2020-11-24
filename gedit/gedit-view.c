@@ -697,26 +697,26 @@ gedit_view_class_init (GeditViewClass *klass)
 	gtk_binding_entry_add_signal (binding_set,
 	                              GDK_KEY_d,
 	                              GDK_CONTROL_MASK,
-	                              "delete_from_cursor", 2,
+	                              "delete-from-cursor", 2,
 	                              G_TYPE_ENUM, GTK_DELETE_PARAGRAPHS,
 	                              G_TYPE_INT, 1);
 
 	gtk_binding_entry_add_signal (binding_set,
 	                              GDK_KEY_u,
 	                              GDK_CONTROL_MASK,
-	                              "change_case", 1,
+	                              "change-case", 1,
 	                              G_TYPE_ENUM, GTK_SOURCE_CHANGE_CASE_UPPER);
 
 	gtk_binding_entry_add_signal (binding_set,
 	                              GDK_KEY_l,
 	                              GDK_CONTROL_MASK,
-	                              "change_case", 1,
+	                              "change-case", 1,
 	                              G_TYPE_ENUM, GTK_SOURCE_CHANGE_CASE_LOWER);
 
 	gtk_binding_entry_add_signal (binding_set,
 	                              GDK_KEY_asciitilde,
 	                              GDK_CONTROL_MASK,
-	                              "change_case", 1,
+	                              "change-case", 1,
 	                              G_TYPE_ENUM, GTK_SOURCE_CHANGE_CASE_TOGGLE);
 }
 
