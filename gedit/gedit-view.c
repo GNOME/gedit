@@ -616,15 +616,15 @@ gedit_view_delete_from_cursor (GtkTextView   *text_view,
 	 * GTK_DELETE_PARAGRAPHS case is not implemented as we like (i.e. it
 	 * does not remove the newline in the previous line).
 	 */
-	switch (type)
+	if (type == GTK_DELETE_PARAGRAPHS)
 	{
-		case GTK_DELETE_PARAGRAPHS:
-			delete_line (text_view, count);
-			break;
+		delete_line (text_view, count);
+		return;
+	}
 
-		default:
-			GTK_TEXT_VIEW_CLASS (gedit_view_parent_class)->delete_from_cursor(text_view, type, count);
-			break;
+	if (GTK_TEXT_VIEW_CLASS (gedit_view_parent_class)->delete_from_cursor != NULL)
+	{
+		GTK_TEXT_VIEW_CLASS (gedit_view_parent_class)->delete_from_cursor (text_view, type, count);
 	}
 }
 
