@@ -612,9 +612,9 @@ gedit_view_delete_from_cursor (GtkTextView   *text_view,
 			       GtkDeleteType  type,
 			       gint           count)
 {
-	/* We override the standard handler for delete_from_cursor since
-	 * the GTK_DELETE_PARAGRAPHS case is not implemented as we like (i.e. it
-	 * does not remove the carriage return in the previous line).
+	/* We override the standard handler for delete_from_cursor since the
+	 * GTK_DELETE_PARAGRAPHS case is not implemented as we like (i.e. it
+	 * does not remove the newline in the previous line).
 	 */
 	switch (type)
 	{
