@@ -445,56 +445,6 @@ gedit_view_drag_drop (GtkWidget      *widget,
 }
 
 static void
-show_line_numbers_menu (GeditView      *view,
-			GdkEventButton *event)
-{
-	GtkWidget *menu;
-	GtkWidget *item;
-	GeditSettings *settings;
-	GSettings *editor_settings;
-
-	menu = gtk_menu_new ();
-
-	item = gtk_check_menu_item_new_with_mnemonic (_("_Display line numbers"));
-	gtk_check_menu_item_set_active (GTK_CHECK_MENU_ITEM (item),
-					gtk_source_view_get_show_line_numbers (GTK_SOURCE_VIEW (view)));
-
-	settings = _gedit_settings_get_singleton ();
-	editor_settings = _gedit_settings_peek_editor_settings (settings);
-
-	g_settings_bind (editor_settings, GEDIT_SETTINGS_DISPLAY_LINE_NUMBERS,
-			 item, "active",
-			 G_SETTINGS_BIND_SET);
-
-	gtk_menu_shell_append (GTK_MENU_SHELL (menu), item);
-
-	g_signal_connect (menu,
-			  "selection-done",
-			  G_CALLBACK (gtk_widget_destroy),
-			  NULL);
-
-	gtk_widget_show_all (menu);
-	gtk_menu_popup_at_pointer (GTK_MENU (menu), (GdkEvent *)event);
-}
-
-static gboolean
-gedit_view_button_press_event (GtkWidget      *widget,
-			       GdkEventButton *event)
-{
-	if ((event->type == GDK_BUTTON_PRESS) &&
-	    (event->button == GDK_BUTTON_SECONDARY) &&
-	    (event->window == gtk_text_view_get_window (GTK_TEXT_VIEW (widget),
-						        GTK_TEXT_WINDOW_LEFT)))
-	{
-		show_line_numbers_menu (GEDIT_VIEW (widget), event);
-
-		return GDK_EVENT_STOP;
-	}
-
-	return GTK_WIDGET_CLASS (gedit_view_parent_class)->button_press_event (widget, event);
-}
-
-static void
 extension_added (PeasExtensionSet *extensions,
 		 PeasPluginInfo   *info,
 		 PeasExtension    *exten,
@@ -711,7 +661,6 @@ gedit_view_class_init (GeditViewClass *klass)
 	widget_class->drag_data_received = gedit_view_drag_data_received;
 	widget_class->drag_drop = gedit_view_drag_drop;
 
-	widget_class->button_press_event = gedit_view_button_press_event;
 	widget_class->realize = gedit_view_realize;
 	widget_class->unrealize = gedit_view_unrealize;
 
