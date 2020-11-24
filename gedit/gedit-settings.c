@@ -71,6 +71,15 @@ gedit_settings_finalize (GObject *object)
 }
 
 static void
+gedit_settings_class_init (GeditSettingsClass *klass)
+{
+	GObjectClass *object_class = G_OBJECT_CLASS (klass);
+
+	object_class->dispose = gedit_settings_dispose;
+	object_class->finalize = gedit_settings_finalize;
+}
+
+static void
 set_font (GeditSettings *self,
 	  const gchar   *font)
 {
@@ -235,15 +244,6 @@ on_syntax_highlighting_changed (GSettings     *settings,
 	}
 
 	g_list_free (windows);
-}
-
-static void
-gedit_settings_class_init (GeditSettingsClass *klass)
-{
-	GObjectClass *object_class = G_OBJECT_CLASS (klass);
-
-	object_class->dispose = gedit_settings_dispose;
-	object_class->finalize = gedit_settings_finalize;
 }
 
 static void
