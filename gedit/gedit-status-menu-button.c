@@ -26,21 +26,13 @@ struct _GeditStatusMenuButton
 	GtkLabel *label;
 };
 
-typedef struct
-{
-	GtkCssProvider *css_provider;
-} GeditStatusMenuButtonClassPrivate;
-
 enum
 {
 	PROP_0,
 	PROP_LABEL
 };
 
-G_DEFINE_TYPE_WITH_CODE (GeditStatusMenuButton,
-			 gedit_status_menu_button,
-			 GTK_TYPE_MENU_BUTTON,
-			 g_type_add_class_private (g_define_type_id, sizeof (GeditStatusMenuButtonClassPrivate)))
+G_DEFINE_TYPE (GeditStatusMenuButton, gedit_status_menu_button, GTK_TYPE_MENU_BUTTON)
 
 static void
 gedit_status_menu_button_get_property (GObject    *object,
@@ -87,14 +79,6 @@ gedit_status_menu_button_class_init (GeditStatusMenuButtonClass *klass)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
 	GtkWidgetClass *widget_class = GTK_WIDGET_CLASS (klass);
-	GeditStatusMenuButtonClassPrivate *class_priv;
-
-	static const gchar style[] =
-		"* {\n"
-		"  padding: 1px 8px 2px 4px;\n"
-		"  border: 0;\n"
-		"  outline-width: 0;\n"
-		"}\n";
 
 	object_class->get_property = gedit_status_menu_button_get_property;
 	object_class->set_property = gedit_status_menu_button_set_property;
@@ -105,31 +89,31 @@ gedit_status_menu_button_class_init (GeditStatusMenuButtonClass *klass)
 	gtk_widget_class_set_template_from_resource (widget_class,
 	                                             "/org/gnome/gedit/ui/gedit-status-menu-button.ui");
 	gtk_widget_class_bind_template_child_internal (widget_class, GeditStatusMenuButton, label);
-
-	/* Store the CSS provider in the class private data so it is shared
-	 * among all instances.
-	 */
-	class_priv = G_TYPE_CLASS_GET_PRIVATE (klass, GEDIT_TYPE_STATUS_MENU_BUTTON, GeditStatusMenuButtonClassPrivate);
-	class_priv->css_provider = gtk_css_provider_new ();
-	gtk_css_provider_load_from_data (class_priv->css_provider, style, -1, NULL);
 }
 
 static void
 gedit_status_menu_button_init (GeditStatusMenuButton *button)
 {
+	GtkCssProvider *css_provider;
 	GtkStyleContext *context;
-	GeditStatusMenuButtonClassPrivate *class_priv;
+	const gchar *css_style =
+		"* {\n"
+		"  padding: 1px 8px 2px 4px;\n"
+		"  border: 0;\n"
+		"  outline-width: 0;\n"
+		"}\n";
 
 	gtk_widget_init_template (GTK_WIDGET (button));
 
 	/* Make it as small as possible. */
+	css_provider = gtk_css_provider_new ();
+	gtk_css_provider_load_from_data (css_provider, css_style, -1, NULL);
+
 	context = gtk_widget_get_style_context (GTK_WIDGET (button));
-	class_priv = G_TYPE_CLASS_GET_PRIVATE (G_TYPE_INSTANCE_GET_CLASS (button, GEDIT_TYPE_STATUS_MENU_BUTTON, GeditStatusMenuButtonClass),
-	                                       GEDIT_TYPE_STATUS_MENU_BUTTON,
-	                                       GeditStatusMenuButtonClassPrivate);
 	gtk_style_context_add_provider (context,
-	                                GTK_STYLE_PROVIDER (class_priv->css_provider),
-	                                GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
+					GTK_STYLE_PROVIDER (css_provider),
+					GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
+	g_object_unref (css_provider);
 }
 
 GtkWidget *
