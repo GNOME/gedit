@@ -1,5 +1,4 @@
 /*
- * gedit-recent.c
  * This file is part of gedit
  *
  * Copyright (C) 2005 - Paolo Maggi
@@ -21,12 +20,6 @@
  */
 
 #include "gedit-recent.h"
-
-#include <gtk/gtk.h>
-#include <gedit/gedit-document.h>
-#include <string.h>
-
-#include "gedit-settings.h"
 
 void
 gedit_recent_add_document (GeditDocument *document)
