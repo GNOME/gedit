@@ -21,11 +21,9 @@
  * Boston, MA  02110-1301  USA
  */
 
-#include "config.h"
 #include "gedit-settings.h"
 #include <gtksourceview/gtksource.h>
 #include "gedit-app.h"
-#include "gedit-view.h"
 
 #define GEDIT_SETTINGS_SYSTEM_FONT "monospace-font-name"
 
