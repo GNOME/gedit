@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gedit manual\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-25 14:07+0000\n"
-"PO-Revision-Date: 2020-09-25 19:08+0300\n"
+"POT-Creation-Date: 2020-11-28 07:44+0000\n"
+"PO-Revision-Date: 2020-11-29 09:02+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -34,7 +34,7 @@ msgid "Change the text and background colors in gedit."
 msgstr "Зміна кольорів тексту та тла у «gedit»."
 
 #. (itstool) path: credit/name
-#: C/gedit-change-color-scheme.page:14 C/gedit-change-default-font.page:10
+#: C/gedit-change-color-scheme.page:14 C/gedit-change-default-font.page:11
 #: C/gedit-close-file.page:11 C/gedit-create-new-file.page:12
 #: C/gedit-edit-as-root.page:10 C/gedit-files-basic.page:10
 #: C/gedit-full-screen.page:13 C/gedit-open-files-from-sidepane.page:11
@@ -88,7 +88,7 @@ msgid "To change the color scheme:"
 msgstr "Щоб змінити схему кольорів:"
 
 #. (itstool) path: item/p
-#: C/gedit-change-color-scheme.page:39
+#: C/gedit-change-color-scheme.page:39 C/gedit-change-default-font.page:29
 msgid ""
 "Press the menu button in the top-right corner of the window and select "
 "<guiseq><gui style=\"menuitem\">Preferences</gui><gui>Font &amp; Colors</"
@@ -140,17 +140,17 @@ msgid "Use a custom font for your text in gedit."
 msgstr "Використання нетипового шрифту для вашого тексту у «gedit»."
 
 #. (itstool) path: credit/years
-#: C/gedit-change-default-font.page:12
+#: C/gedit-change-default-font.page:13
 msgid "2011 2012 2013"
 msgstr "2011 2012 2013"
 
 #. (itstool) path: page/title
-#: C/gedit-change-default-font.page:19
+#: C/gedit-change-default-font.page:20
 msgid "Change the default font"
 msgstr "Зміна типового шрифту"
 
 #. (itstool) path: page/p
-#: C/gedit-change-default-font.page:21
+#: C/gedit-change-default-font.page:22
 msgid ""
 "<app>gedit</app> will use the system fixed-width font by default, but you "
 "can change the default <app>gedit</app> font to suit your preferences."
@@ -160,28 +160,21 @@ msgstr ""
 "уподобанням."
 
 #. (itstool) path: steps/title
-#: C/gedit-change-default-font.page:26
+#: C/gedit-change-default-font.page:27
 msgid "To change the default font in <app>gedit</app>:"
 msgstr "Щоб змінити типовий шрифт в «<app>gedit</app>»:"
 
 #. (itstool) path: item/p
-#: C/gedit-change-default-font.page:27
-msgid ""
-"Select <guiseq><gui style=\"menu\">gedit</gui> <gui style=\"menuitem"
-"\">Preferences</gui> <gui>Font &amp; Colors</gui></guiseq>."
-msgstr ""
-"Виберіть <guiseq><gui style=\"menu\">«gedit»</gui> <gui style=\"menuitem"
-"\">«Параметри»</gui> <gui>«Шрифт &amp; кольори»</gui></guiseq>."
-
-#. (itstool) path: item/p
-#: C/gedit-change-default-font.page:30
-msgid ""
-"Uncheck the box next to the phrase, \"Use the system fixed-width font.\""
-msgstr ""
-"Зніміть прапорець біля фрази, «Використовувати системний моноширинний шрифт»."
-
-#. (itstool) path: item/p
 #: C/gedit-change-default-font.page:32
+#| msgid ""
+#| "Uncheck the box next to the phrase, \"Use the system fixed-width font.\""
+msgid ""
+"Uncheck the box next to the phrase, \"Use the system fixed width font.\""
+msgstr ""
+"Зніміть прапорець біля фрази «Використовувати системний моноширинний шрифт»."
+
+#. (itstool) path: item/p
+#: C/gedit-change-default-font.page:34
 msgid ""
 "Click on the current font name. <app>gedit</app> will open a font-chooser "
 "window, allowing you to see available fonts and choose the one that you "
@@ -192,7 +185,7 @@ msgstr ""
 "який Вам підходить."
 
 #. (itstool) path: item/p
-#: C/gedit-change-default-font.page:35
+#: C/gedit-change-default-font.page:37
 msgid ""
 "After you have chosen a new font, use the <gui>slider</gui> under the list "
 "of fonts to set the default font size."
@@ -201,9 +194,10 @@ msgstr ""
 "списку шрифтів, для встановлення типового розміру шрифту."
 
 #. (itstool) path: item/p
-#: C/gedit-change-default-font.page:37
-msgid "Click <gui>Select</gui>, and then click <gui>Close</gui>."
-msgstr "Клацніть на «<gui>Вибрати</gui>», а потім на «<gui>Закрити</gui>»."
+#: C/gedit-change-default-font.page:39
+#| msgid "Click <gui>Select</gui>, and then click <gui>Close</gui>."
+msgid "Click <gui>Select</gui>, and then close the dialog."
+msgstr "Клацніть на «<gui>Вибрати</gui>», а потім закрийте діалогове вікно."
 
 #. (itstool) path: info/desc
 #: C/gedit-close-file.page:7
@@ -752,9 +746,6 @@ msgstr ""
 
 #. (itstool) path: item/p
 #: C/gedit-open-recent.page:26
-#| msgid ""
-#| "<app>gedit</app> will display a menu with the ten most-recently used "
-#| "files."
 msgid ""
 "<app>gedit</app> will display a menu with the ten most recently-used files."
 msgstr ""
@@ -767,10 +758,6 @@ msgstr "Виберіть потрібний файл. Він відкриєть�
 
 #. (itstool) path: note/p
 #: C/gedit-open-recent.page:31
-#| msgid ""
-#| "When hovering with the mouse a recently-used file from the menu, the full "
-#| "path to the file is displayed in the status bar at the bottom of the "
-#| "<app>gedit</app> window."
 msgid ""
 "When hovering with the mouse over a recently-used file from the menu, the "
 "full path to the file is displayed in the status bar at the bottom of the "
@@ -3174,17 +3161,23 @@ msgstr "Організація файлів в групові вкладки"
 
 #. (itstool) path: page/p
 #: C/gedit-tab-groups.page:24
+#| msgid ""
+#| "If you are working with multiple tabs in <app>gedit</app> you can group "
+#| "them, making it easier to keep your opened files organized. Adding a new "
+#| "tab group will divide the <app>gedit</app> window in two panes, open a "
+#| "new “Untitled Document” in the new pane, and make it active. You can open "
+#| "files into that tab group and move tabs from one tab group to another."
 msgid ""
 "If you are working with multiple tabs in <app>gedit</app> you can group "
 "them, making it easier to keep your opened files organized. Adding a new tab "
 "group will divide the <app>gedit</app> window in two panes, open a new "
-"“Untitled Document” in the new pane, and make it active. You can open files "
-"into that tab group and move tabs from one tab group to another."
+"“Untitled File” in the new pane, and make it active. You can open files into "
+"that tab group and move tabs from one tab group to another."
 msgstr ""
 "Якщо Ви працюєте в «<app>gedit</app>» з декількома вкладками, то можна їх "
 "групувати, щоб полегшити зберігання відкритих файлів організованими. Додання "
 "нової групи вкладок розділяє вікно «<app>gedit</app>» на два підвікна, "
-"відкриває новий «Неназваний документ» в новому підвікні та робить його "
+"відкриває новий «Неназваний файл» в новому підвікні та робить його "
 "активним. Можна відкривати файли в цій групі вкладок і переміщати їх з "
 "однієї групи в іншу."
 
@@ -3539,3 +3532,10 @@ msgstr "Creative Commons Attribution-ShareAlike 3.0 Unported License"
 #: C/legal.xml:3
 msgid "This work is licensed under a <_:link-1/>."
 msgstr "Ця робота розповсюджується за умов дотримання <_:link-1/>."
+
+#~ msgid ""
+#~ "Select <guiseq><gui style=\"menu\">gedit</gui> <gui style=\"menuitem"
+#~ "\">Preferences</gui> <gui>Font &amp; Colors</gui></guiseq>."
+#~ msgstr ""
+#~ "Виберіть <guiseq><gui style=\"menu\">«gedit»</gui> <gui style=\"menuitem"
+#~ "\">«Параметри»</gui> <gui>«Шрифт &amp; кольори»</gui></guiseq>."
