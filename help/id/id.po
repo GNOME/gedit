@@ -6,15 +6,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gedit master\n"
-"POT-Creation-Date: 2020-09-25 14:07+0000\n"
-"PO-Revision-Date: 2020-10-05 18:36+0700\n"
+"POT-Creation-Date: 2020-11-20 05:37+0000\n"
+"PO-Revision-Date: 2020-12-10 12:04+0700\n"
 "Last-Translator: Andika Triwidada <andika@gmail.com>\n"
 "Language-Team: Indonesian <id@li.org>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.4.1\n"
+"X-Generator: Poedit 2.4.2\n"
 "X-Poedit-Bookmarks: -1,118,-1,-1,-1,-1,-1,-1,-1,-1\n"
 "Plural-Forms: nplurals=2; plural=n>1;\n"
 
@@ -31,7 +31,7 @@ msgid "Change the text and background colors in gedit."
 msgstr "Ubah teks dan warna latar belakang di gedit."
 
 #. (itstool) path: credit/name
-#: C/gedit-change-color-scheme.page:14 C/gedit-change-default-font.page:10
+#: C/gedit-change-color-scheme.page:14 C/gedit-change-default-font.page:11
 #: C/gedit-close-file.page:11 C/gedit-create-new-file.page:12
 #: C/gedit-edit-as-root.page:10 C/gedit-files-basic.page:10
 #: C/gedit-full-screen.page:13 C/gedit-open-files-from-sidepane.page:11
@@ -85,7 +85,7 @@ msgid "To change the color scheme:"
 msgstr "Untuk mengubah skema warna:"
 
 #. (itstool) path: item/p
-#: C/gedit-change-color-scheme.page:39
+#: C/gedit-change-color-scheme.page:39 C/gedit-change-default-font.page:29
 msgid ""
 "Press the menu button in the top-right corner of the window and select "
 "<guiseq><gui style=\"menuitem\">Preferences</gui><gui>Font &amp; Colors</"
@@ -136,17 +136,17 @@ msgid "Use a custom font for your text in gedit."
 msgstr "Menggunakan fonta kustom untuk teks Anda di gedit."
 
 #. (itstool) path: credit/years
-#: C/gedit-change-default-font.page:12
+#: C/gedit-change-default-font.page:13
 msgid "2011 2012 2013"
 msgstr "2011 2012 2013"
 
 #. (itstool) path: page/title
-#: C/gedit-change-default-font.page:19
+#: C/gedit-change-default-font.page:20
 msgid "Change the default font"
 msgstr "Ubah fonta baku"
 
 #. (itstool) path: page/p
-#: C/gedit-change-default-font.page:21
+#: C/gedit-change-default-font.page:22
 msgid ""
 "<app>gedit</app> will use the system fixed-width font by default, but you "
 "can change the default <app>gedit</app> font to suit your preferences."
@@ -156,28 +156,19 @@ msgstr ""
 "Anda."
 
 #. (itstool) path: steps/title
-#: C/gedit-change-default-font.page:26
+#: C/gedit-change-default-font.page:27
 msgid "To change the default font in <app>gedit</app>:"
 msgstr "Untuk mengubah fonta baku dalam <app>gedit</app>:"
 
 #. (itstool) path: item/p
-#: C/gedit-change-default-font.page:27
-msgid ""
-"Select <guiseq><gui style=\"menu\">gedit</gui> <gui style=\"menuitem"
-"\">Preferences</gui> <gui>Font &amp; Colors</gui></guiseq>."
-msgstr ""
-"Pilih <guiseq><gui style=\"menu\">gedit</gui> <gui style=\"menuitem"
-"\">Preferensi</gui> <gui>Fonta &amp; Warna</gui></guiseq>."
-
-#. (itstool) path: item/p
-#: C/gedit-change-default-font.page:30
-msgid ""
-"Uncheck the box next to the phrase, \"Use the system fixed-width font.\""
-msgstr ""
-"Jangan contreng kotak di sebelah frasa \"Pakai fonta lebar tetap sistem\"."
-
-#. (itstool) path: item/p
 #: C/gedit-change-default-font.page:32
+msgid ""
+"Uncheck the box next to the phrase, \"Use the system fixed width font.\""
+msgstr ""
+"Hapus centang kotak di sebelah frasa \"Pakai fonta lebar tetap sistem\"."
+
+#. (itstool) path: item/p
+#: C/gedit-change-default-font.page:34
 msgid ""
 "Click on the current font name. <app>gedit</app> will open a font-chooser "
 "window, allowing you to see available fonts and choose the one that you "
@@ -188,7 +179,7 @@ msgstr ""
 "satu yang Anda suka."
 
 #. (itstool) path: item/p
-#: C/gedit-change-default-font.page:35
+#: C/gedit-change-default-font.page:37
 msgid ""
 "After you have chosen a new font, use the <gui>slider</gui> under the list "
 "of fonts to set the default font size."
@@ -197,9 +188,9 @@ msgstr ""
 "fonta untuk menata ukuran fonta baku."
 
 #. (itstool) path: item/p
-#: C/gedit-change-default-font.page:37
-msgid "Click <gui>Select</gui>, and then click <gui>Close</gui>."
-msgstr "Klik <gui>Pilih</gui>, lalu klik <gui>Tutup</gui>."
+#: C/gedit-change-default-font.page:39
+msgid "Click <gui>Select</gui>, and then close the dialog."
+msgstr "Klik <gui>Pilih</gui>, lalu tutup dialog."
 
 #. (itstool) path: info/desc
 #: C/gedit-close-file.page:7
@@ -3180,8 +3171,8 @@ msgid ""
 "If you are working with multiple tabs in <app>gedit</app> you can group "
 "them, making it easier to keep your opened files organized. Adding a new tab "
 "group will divide the <app>gedit</app> window in two panes, open a new "
-"“Untitled Document” in the new pane, and make it active. You can open files "
-"into that tab group and move tabs from one tab group to another."
+"“Untitled File” in the new pane, and make it active. You can open files into "
+"that tab group and move tabs from one tab group to another."
 msgstr ""
 "Bila Anda bekerja dengan multi tab dalam <app>gedit</app> Anda dapat "
 "mengelompokkan mereka, membuat jadi lebih mudah untuk mengorganisasi berkas-"
