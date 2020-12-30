@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gedit\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gedit/issues\n"
-"POT-Creation-Date: 2020-06-03 17:28+0000\n"
-"PO-Revision-Date: 2020-06-03 20:31+0300\n"
+"POT-Creation-Date: 2020-10-13 16:32+0000\n"
+"PO-Revision-Date: 2020-12-30 11:37+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<"
 "=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Lokalize 20.07.70\n"
+"X-Generator: Lokalize 20.11.70\n"
 "X-Project-Style: gnome\n"
 
 #: data/org.gnome.gedit.appdata.xml.in:7
@@ -498,11 +498,11 @@ msgstr ""
 "порожні список, в разі якого програма вибере найкраще кодування відповідно "
 "до країни і локалі."
 
-#: data/org.gnome.gedit.gschema.xml.in:301
+#: data/org.gnome.gedit.gschema.xml.in:304
 msgid "Active plugins"
 msgstr "Активні модулі"
 
-#: data/org.gnome.gedit.gschema.xml.in:302
+#: data/org.gnome.gedit.gschema.xml.in:305
 msgid "List of active plugins."
 msgstr "Список активних модулів."
 
@@ -558,11 +558,11 @@ msgstr "%s: неправильне кодування."
 msgid "Close _without Saving"
 msgstr "_Закрити без збереження"
 
-#: gedit/gedit-close-confirmation-dialog.c:277 gedit/gedit-commands-file.c:460
-#: gedit/gedit-commands-file.c:565 gedit/gedit-commands-file.c:641
-#: gedit/gedit-commands-file.c:852 gedit/gedit-commands-file.c:1566
-#: gedit/gedit-encodings-dialog.c:192 gedit/gedit-preferences-dialog.c:721
-#: gedit/gedit-progress-info-bar.c:49
+#: gedit/gedit-close-confirmation-dialog.c:277 gedit/gedit-commands-file.c:492
+#: gedit/gedit-commands-file.c:568 gedit/gedit-commands-file.c:791
+#: gedit/gedit-commands-file.c:1513 gedit/gedit-encodings-dialog.c:192
+#: gedit/gedit-file-chooser-open-dialog.c:78
+#: gedit/gedit-preferences-dialog.c:721 gedit/gedit-progress-info-bar.c:49
 #: gedit/resources/ui/gedit-encodings-dialog.ui:44
 #: gedit/resources/ui/gedit-highlight-mode-dialog.ui:31
 #: plugins/filebrowser/gedit-file-browser-utils.c:211
@@ -580,7 +580,7 @@ msgstr "_Скасувати"
 msgid "_Save As…"
 msgstr "_Зберегти як…"
 
-#: gedit/gedit-close-confirmation-dialog.c:295 gedit/gedit-commands-file.c:853
+#: gedit/gedit-close-confirmation-dialog.c:295 gedit/gedit-commands-file.c:790
 #: gedit/resources/gtk/menus-common.ui:127
 #: gedit/resources/ui/gedit-window.ui:59
 #: plugins/snippets/snippets/manager.py:875
@@ -702,12 +702,12 @@ msgstr "_Виберіть документи, які необхідно збер
 msgid "If you don’t save, all your changes will be permanently lost."
 msgstr "Якщо ви не збережете, всі зміни будуть остаточно втрачені."
 
-#: gedit/gedit-commands-file.c:263
+#: gedit/gedit-commands-file.c:257
 #, c-format
 msgid "Loading file “%s”…"
 msgstr "Завантажується файл «%s»…"
 
-#: gedit/gedit-commands-file.c:272
+#: gedit/gedit-commands-file.c:266
 #, c-format
 msgid "Loading %d file…"
 msgid_plural "Loading %d files…"
@@ -715,44 +715,29 @@ msgstr[0] "Завантажується %d файл…"
 msgstr[1] "Завантажуються %d файли…"
 msgstr[2] "Завантажуються %d файлів…"
 
-#. Translators: "Open Files" is the title of the file chooser window.
-#: gedit/gedit-commands-file.c:454
-msgctxt "window title"
-msgid "Open Files"
-msgstr "Відкриття файлів"
-
-#: gedit/gedit-commands-file.c:461 gedit/gedit-window.c:2636
-#: gedit/resources/gtk/menus-common.ui:100
-#: gedit/resources/gtk/menus-common.ui:106
-#: plugins/filebrowser/resources/ui/gedit-file-browser-menus.ui:7
-#: plugins/quickopen/quickopen/popup.py:46
-#: plugins/snippets/snippets/manager.py:790
-msgid "_Open"
-msgstr "_Відкрити"
-
-#: gedit/gedit-commands-file.c:556
+#: gedit/gedit-commands-file.c:483
 #, c-format
 msgid "The file “%s” is read-only."
 msgstr "Файл «%s» лише для читання."
 
-#: gedit/gedit-commands-file.c:561
+#: gedit/gedit-commands-file.c:488
 msgid "Do you want to try to replace it with the one you are saving?"
 msgstr "Спробувати замінити його файлом, що ви записуєте?"
 
-#: gedit/gedit-commands-file.c:566
+#: gedit/gedit-commands-file.c:493
 #: gedit/resources/ui/gedit-replace-dialog.ui:55
 msgid "_Replace"
 msgstr "За_мінити"
 
-#: gedit/gedit-commands-file.c:606
+#: gedit/gedit-commands-file.c:533
 msgid "Save the file using compression?"
 msgstr "Зберегти файл зі стисненням?"
 
-#: gedit/gedit-commands-file.c:610
+#: gedit/gedit-commands-file.c:537
 msgid "Save the file as plain text?"
 msgstr "Зберегти файл у форматі простого тесту?"
 
-#: gedit/gedit-commands-file.c:623
+#: gedit/gedit-commands-file.c:550
 #, c-format
 msgid ""
 "The file “%s” was previously saved as plain text and will now be saved using "
@@ -761,11 +746,11 @@ msgstr ""
 "Файл «%s» було раніше збережено у форматі простого тексту і тепер буде "
 "збережено з використанням стиснення."
 
-#: gedit/gedit-commands-file.c:627
+#: gedit/gedit-commands-file.c:554
 msgid "_Save Using Compression"
 msgstr "З_берегти зі стисненням"
 
-#: gedit/gedit-commands-file.c:632
+#: gedit/gedit-commands-file.c:559
 #, c-format
 msgid ""
 "The file “%s” was previously saved using compression and will now be saved "
@@ -774,32 +759,32 @@ msgstr ""
 "Файл «%s» раніше був збережений з використанням стиснення і тепер "
 "зберігається у форматі простого тексту."
 
-#: gedit/gedit-commands-file.c:635
+#: gedit/gedit-commands-file.c:562
 msgid "_Save As Plain Text"
 msgstr "З_берегти як звичайний"
 
-#: gedit/gedit-commands-file.c:750 gedit/gedit-commands-file.c:1017
+#: gedit/gedit-commands-file.c:677 gedit/gedit-commands-file.c:964
 #, c-format
 msgid "Saving file “%s”…"
 msgstr "Зберігається файл «%s»…"
 
 #. Translators: "Save As" is the title of the file chooser window.
-#: gedit/gedit-commands-file.c:845
+#: gedit/gedit-commands-file.c:788
 msgctxt "window title"
 msgid "Save As"
 msgstr "Зберегти як"
 
-#: gedit/gedit-commands-file.c:1427
+#: gedit/gedit-commands-file.c:1374
 #, c-format
 msgid "Reverting the document “%s”…"
 msgstr "Відновлення документу «%s»…"
 
-#: gedit/gedit-commands-file.c:1474
+#: gedit/gedit-commands-file.c:1421
 #, c-format
 msgid "Revert unsaved changes to document “%s”?"
 msgstr "Відновити незбережені зміни в документі «%s»?"
 
-#: gedit/gedit-commands-file.c:1483
+#: gedit/gedit-commands-file.c:1430
 #, c-format
 msgid ""
 "Changes made to the document in the last %ld second will be permanently lost."
@@ -813,13 +798,13 @@ msgstr[1] ""
 msgstr[2] ""
 "Зміни, внесені в документ за останні %ld секунд, будуть остаточно втрачені."
 
-#: gedit/gedit-commands-file.c:1492
+#: gedit/gedit-commands-file.c:1439
 msgid ""
 "Changes made to the document in the last minute will be permanently lost."
 msgstr ""
 "Зміни, внесені в документ за останню хвилину, будуть остаточно втрачені."
 
-#: gedit/gedit-commands-file.c:1498
+#: gedit/gedit-commands-file.c:1445
 #, c-format
 msgid ""
 "Changes made to the document in the last minute and %ld second will be "
@@ -837,7 +822,7 @@ msgstr[2] ""
 "Зміни, внесені в документ за останню хвилину та %ld секунд, будуть остаточно "
 "втрачені."
 
-#: gedit/gedit-commands-file.c:1508
+#: gedit/gedit-commands-file.c:1455
 #, c-format
 msgid ""
 "Changes made to the document in the last %ld minute will be permanently lost."
@@ -851,12 +836,12 @@ msgstr[1] ""
 msgstr[2] ""
 "Зміни, внесені в документ за останні %ld хвилини, будуть остаточно втрачені."
 
-#: gedit/gedit-commands-file.c:1523
+#: gedit/gedit-commands-file.c:1470
 msgid "Changes made to the document in the last hour will be permanently lost."
 msgstr ""
 "Зміни, внесені в документ за останню годину, будуть остаточно втрачені."
 
-#: gedit/gedit-commands-file.c:1529
+#: gedit/gedit-commands-file.c:1476
 #, c-format
 msgid ""
 "Changes made to the document in the last hour and %d minute will be "
@@ -874,7 +859,7 @@ msgstr[2] ""
 "Зміни, внесені в документ за останню годину та %d хвилин, будуть остаточно "
 "втрачені."
 
-#: gedit/gedit-commands-file.c:1544
+#: gedit/gedit-commands-file.c:1491
 #, c-format
 msgid ""
 "Changes made to the document in the last %d hour will be permanently lost."
@@ -887,7 +872,7 @@ msgstr[1] ""
 msgstr[2] ""
 "Зміни, внесені в документ за останні %d годин, будуть остаточно втрачені."
 
-#: gedit/gedit-commands-file.c:1567
+#: gedit/gedit-commands-file.c:1514
 msgid "_Revert"
 msgstr "Від_новити"
 
@@ -939,12 +924,10 @@ msgid "Read-Only"
 msgstr "Лише читання"
 
 #: gedit/gedit-encodings-combo-box.c:297
-#: gedit/gedit-file-chooser-dialog-osx.m:564
 msgid "Automatically Detected"
 msgstr "Автовизначення"
 
 #: gedit/gedit-encodings-combo-box.c:326
-#: gedit/gedit-file-chooser-dialog-osx.m:573
 msgid "Add or Remove…"
 msgstr "Додати або вилучити…"
 
@@ -983,30 +966,38 @@ msgstr "Пересунути на вищий пріоритет"
 msgid "Move to a lower priority"
 msgstr "Пересунути на нижчий пріоритет"
 
-#: gedit/gedit-file-chooser-dialog-gtk.c:39
-#: gedit/gedit-preferences-dialog.c:730
+#: gedit/gedit-file-chooser.c:41 gedit/gedit-preferences-dialog.c:730
 msgid "All Files"
 msgstr "Всі файли"
 
-#: gedit/gedit-file-chooser-dialog-gtk.c:40
+#: gedit/gedit-file-chooser.c:42
 msgid "All Text Files"
 msgstr "Всі текстові файли"
 
-#: gedit/gedit-file-chooser-dialog-gtk.c:305
+#: gedit/gedit-file-chooser-dialog-gtk.c:262
+#: gedit/gedit-file-chooser-open-dialog.c:43
 msgid "C_haracter Encoding:"
 msgstr "_Кодування символів:"
 
-#: gedit/gedit-file-chooser-dialog-gtk.c:364
+#: gedit/gedit-file-chooser-dialog-gtk.c:321
 msgid "L_ine Ending:"
 msgstr "Ко_дування рядка:"
 
-#: gedit/gedit-file-chooser-dialog-osx.m:546
-msgid "Character Encoding:"
-msgstr "Кодування символів:"
+#. Translators: "Open Files" is the title of the file chooser window.
+#: gedit/gedit-file-chooser-open-dialog.c:75
+#: gedit/gedit-file-chooser-open-native.c:54
+msgctxt "window title"
+msgid "Open Files"
+msgstr "Відкриття файлів"
 
-#: gedit/gedit-file-chooser-dialog-osx.m:619
-msgid "Line Ending:"
-msgstr "Кодування рядка:"
+#: gedit/gedit-file-chooser-open-dialog.c:79 gedit/gedit-window.c:2636
+#: gedit/resources/gtk/menus-common.ui:100
+#: gedit/resources/gtk/menus-common.ui:106
+#: plugins/filebrowser/resources/ui/gedit-file-browser-menus.ui:7
+#: plugins/quickopen/quickopen/popup.py:46
+#: plugins/snippets/snippets/manager.py:790
+msgid "_Open"
+msgstr "_Відкрити"
 
 #: gedit/gedit-highlight-mode-selector.c:269 gedit/gedit-window.c:1166
 #: plugins/externaltools/tools/manager.py:115
@@ -1294,12 +1285,10 @@ msgid "The selected color scheme cannot be installed."
 msgstr "Обрана схема кольорів не може бути встановлена."
 
 #: gedit/gedit-preferences-dialog.c:717
-#| msgid "Color Scheme"
 msgid "Add Color Scheme"
 msgstr "Додати схему кольорів"
 
 #: gedit/gedit-preferences-dialog.c:720
-#| msgid "Add Scheme"
 msgid "_Add Scheme"
 msgstr "_Додати схему"
 
@@ -2725,7 +2714,7 @@ msgstr "Додати до поточного документу"
 
 #: plugins/externaltools/tools/tools.ui:99
 msgid "Replace current document"
-msgstr "Замінити поточний документу"
+msgstr "Замінити поточний документ"
 
 #: plugins/externaltools/tools/tools.ui:103
 msgid "Replace current selection"
@@ -3558,6 +3547,12 @@ msgstr "Вставити час або дату"
 #: plugins/time/time.plugin.desktop.in:6
 msgid "Inserts current date and time at the cursor position."
 msgstr "Вставляє поточну дату й час в позицію курсора."
+
+#~ msgid "Character Encoding:"
+#~ msgstr "Кодування символів:"
+
+#~ msgid "Line Ending:"
+#~ msgstr "Кодування рядка:"
 
 #~ msgid "A_dd Scheme"
 #~ msgstr "_Додати схему"
