@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gedit master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gedit/issues\n"
-"POT-Creation-Date: 2020-10-17 19:45+0000\n"
-"PO-Revision-Date: 2020-10-18 15:59+0200\n"
+"POT-Creation-Date: 2021-01-05 07:41+0000\n"
+"PO-Revision-Date: 2021-01-17 16:26+0100\n"
 "Last-Translator: Fabio Tomat <f.t.public@gmail.com>\n"
 "Language-Team: Friulian <f.t.public@gmail.com>\n"
 "Language: fur\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.4.1\n"
+"X-Generator: Poedit 2.4.2\n"
 
 #: data/org.gnome.gedit.appdata.xml.in:7
 msgid "gedit"
@@ -39,7 +39,7 @@ msgstr ""
 "semplice predefinide. Funzionalitâts avanzadis adizionâls a son disponibilis "
 "abilitant i plugin."
 
-#: data/org.gnome.gedit.desktop.in:3 gedit/gedit-print-job.c:730
+#: data/org.gnome.gedit.desktop.in:3 gedit/gedit-print-job.c:731
 msgid "Text Editor"
 msgstr "Editôr di test"
 
@@ -573,9 +573,8 @@ msgstr "Siere _cence salvâ"
 #: gedit/gedit-commands-file.c:568 gedit/gedit-commands-file.c:791
 #: gedit/gedit-commands-file.c:1513 gedit/gedit-encodings-dialog.c:192
 #: gedit/gedit-file-chooser-open-dialog.c:78
-#: gedit/gedit-preferences-dialog.c:721 gedit/gedit-progress-info-bar.c:49
+#: gedit/gedit-preferences-dialog.c:721
 #: gedit/resources/ui/gedit-encodings-dialog.ui:44
-#: gedit/resources/ui/gedit-highlight-mode-dialog.ui:31
 #: plugins/filebrowser/gedit-file-browser-utils.c:211
 #: plugins/quickopen/quickopen/popup.py:45
 #: plugins/snippets/snippets/manager.py:789
@@ -904,18 +903,13 @@ msgstr "Cjate e sostituìs un câs"
 msgid "“%s” not found"
 msgstr "“%s” no cjatât"
 
-#: gedit/gedit-document.c:993 gedit/gedit-document.c:1022
-#, c-format
-msgid "Untitled Document %d"
-msgstr "Document cence titul %d"
-
 #: gedit/gedit-documents-panel.c:398
 #, c-format
 msgid "Tab Group %i"
 msgstr "Grup di schedis %i"
 
-#: gedit/gedit-documents-panel.c:498 gedit/gedit-window.c:1082
-#: gedit/gedit-window.c:1088 gedit/gedit-window.c:1096
+#: gedit/gedit-documents-panel.c:498 gedit/gedit-window.c:1085
+#: gedit/gedit-window.c:1091 gedit/gedit-window.c:1099
 msgid "Read-Only"
 msgstr "Dome leture"
 
@@ -986,7 +980,7 @@ msgctxt "window title"
 msgid "Open Files"
 msgstr "Vierç i files"
 
-#: gedit/gedit-file-chooser-open-dialog.c:79 gedit/gedit-window.c:2636
+#: gedit/gedit-file-chooser-open-dialog.c:79 gedit/gedit-window.c:2639
 #: gedit/resources/gtk/menus-common.ui:100
 #: gedit/resources/gtk/menus-common.ui:106
 #: plugins/filebrowser/resources/ui/gedit-file-browser-menus.ui:7
@@ -994,14 +988,6 @@ msgstr "Vierç i files"
 #: plugins/snippets/snippets/manager.py:790
 msgid "_Open"
 msgstr "_Vierç"
-
-#: gedit/gedit-highlight-mode-selector.c:269 gedit/gedit-window.c:1166
-#: plugins/externaltools/tools/manager.py:115
-#: plugins/externaltools/tools/manager.py:324
-#: plugins/externaltools/tools/manager.py:440
-#: plugins/externaltools/tools/manager.py:776
-msgid "Plain Text"
-msgstr "Test sempliç"
 
 #: gedit/gedit-io-error-info-bar.c:135 gedit/gedit-io-error-info-bar.c:415
 msgid "_Retry"
@@ -1300,11 +1286,11 @@ msgstr "File di scheme di colôr"
 msgid "Could not remove color scheme “%s”."
 msgstr "Impussibil gjavâ il scheme di colôr “%s”."
 
-#: gedit/gedit-print-job.c:227
+#: gedit/gedit-print-job.c:228
 msgid "Preparing…"
 msgstr "Daûr a prontâ…"
 
-#: gedit/gedit-print-job.c:539
+#: gedit/gedit-print-job.c:540
 #, c-format
 msgid "File: %s"
 msgstr "File: %s"
@@ -1312,11 +1298,11 @@ msgstr "File: %s"
 #. Translators: %N is the current page number, %Q is the total
 #. * number of pages (ex. Page 2 of 10)
 #.
-#: gedit/gedit-print-job.c:548
+#: gedit/gedit-print-job.c:549
 msgid "Page %N of %Q"
 msgstr "Pagjine %N di %Q"
 
-#: gedit/gedit-print-job.c:626
+#: gedit/gedit-print-job.c:627
 #, c-format
 msgid "Rendering page %d of %d…"
 msgstr "Daûr a prontâ la visualizazion de pagjine %d di %d…"
@@ -1355,64 +1341,64 @@ msgstr[1] "A son %d schedis cun erôrs"
 
 #. Translators: the first %s is a file name (e.g. test.txt) the second one
 #. is a directory (e.g. ssh://master.gnome.org/home/users/paolo)
-#: gedit/gedit-tab.c:824
+#: gedit/gedit-tab.c:823
 #, c-format
 msgid "Reverting %s from %s"
 msgstr "Ripristinament di %s di %s"
 
-#: gedit/gedit-tab.c:831
+#: gedit/gedit-tab.c:830
 #, c-format
 msgid "Reverting %s"
 msgstr "Ripristinament di %s"
 
 #. Translators: the first %s is a file name (e.g. test.txt) the second one
 #. is a directory (e.g. ssh://master.gnome.org/home/users/paolo)
-#: gedit/gedit-tab.c:844
+#: gedit/gedit-tab.c:843
 #, c-format
 msgid "Loading %s from %s"
 msgstr "Daûr a cjamâ %s di %s"
 
-#: gedit/gedit-tab.c:851
+#: gedit/gedit-tab.c:850
 #, c-format
 msgid "Loading %s"
 msgstr "Daûr a cjamâ %s"
 
 #. Translators: the first %s is a file name (e.g. test.txt) the second one
 #. is a directory (e.g. ssh://master.gnome.org/home/users/paolo)
-#: gedit/gedit-tab.c:931
+#: gedit/gedit-tab.c:930
 #, c-format
 msgid "Saving %s to %s"
 msgstr "Daûr a salvâ %s su %s"
 
-#: gedit/gedit-tab.c:936
+#: gedit/gedit-tab.c:935
 #, c-format
 msgid "Saving %s"
 msgstr "Daûr a salvâ %s"
 
-#: gedit/gedit-tab.c:1484
+#: gedit/gedit-tab.c:1486
 #, c-format
 msgid "Error opening file %s"
 msgstr "Erôr tal vierzi il file %s"
 
-#: gedit/gedit-tab.c:1489
+#: gedit/gedit-tab.c:1491
 #, c-format
 msgid "Error reverting file %s"
 msgstr "Erôr tal ripristinâ il file %s"
 
-#: gedit/gedit-tab.c:1494
+#: gedit/gedit-tab.c:1496
 #, c-format
 msgid "Error saving file %s"
 msgstr "Erôr tal salvâ il file %s"
 
-#: gedit/gedit-tab.c:1525
+#: gedit/gedit-tab.c:1527
 msgid "Name:"
 msgstr "Non:"
 
-#: gedit/gedit-tab.c:1526
+#: gedit/gedit-tab.c:1528
 msgid "MIME Type:"
 msgstr "Gjenar MIME:"
 
-#: gedit/gedit-tab.c:1527
+#: gedit/gedit-tab.c:1529
 msgid "Encoding:"
 msgstr "Codifiche:"
 
@@ -1433,10 +1419,6 @@ msgstr "Mac OS Classic"
 #: gedit/gedit-utils.c:536
 msgid "Windows"
 msgstr "Windows"
-
-#: gedit/gedit-view.c:438 gedit/resources/ui/gedit-preferences-dialog.ui:41
-msgid "_Display line numbers"
-msgstr "_Mostre numars di rie"
 
 #. Translators: the first %d is the position of the current search
 #. * occurrence, and the second %d is the total number of search
@@ -1475,48 +1457,55 @@ msgstr "Stringhe di cirî"
 msgid "Line you want to move the cursor to"
 msgstr "Rie dulà movi il cursôr"
 
-#: gedit/gedit-window.c:919
+#: gedit/gedit-window.c:922
 msgid "Bracket match is out of range"
 msgstr "Corispuindince parentesi fûr limit"
 
-#: gedit/gedit-window.c:924
+#: gedit/gedit-window.c:927
 msgid "Bracket match not found"
 msgstr "Nissune corispuindince parentesi cjatade"
 
-#: gedit/gedit-window.c:929
+#: gedit/gedit-window.c:932
 #, c-format
 msgid "Bracket match found on line: %d"
 msgstr "Corispuindince parentesi cjatade ae rie: %d"
 
 #. Translators: "Ln" is an abbreviation for "Line", Col is an abbreviation for "Column". Please,
 #. use abbreviations if possible to avoid space problems.
-#: gedit/gedit-window.c:964
+#: gedit/gedit-window.c:967
 #, c-format
 msgid "  Ln %d, Col %d"
 msgstr "  Rie %d, Col %d"
 
-#: gedit/gedit-window.c:1148
+#: gedit/gedit-window.c:1151
 #, c-format
 msgid "Tab Width: %u"
 msgstr "Largjece schede: %u"
 
-#: gedit/gedit-window.c:1493
+#: gedit/gedit-window.c:1169 plugins/externaltools/tools/manager.py:115
+#: plugins/externaltools/tools/manager.py:324
+#: plugins/externaltools/tools/manager.py:440
+#: plugins/externaltools/tools/manager.py:776
+msgid "Plain Text"
+msgstr "Test sempliç"
+
+#: gedit/gedit-window.c:1496
 msgid "There are unsaved documents"
 msgstr "A 'ndi son documents no salvâts"
 
-#: gedit/gedit-window.c:2330
+#: gedit/gedit-window.c:2333
 msgid "Change side panel page"
 msgstr "Cambie la pagjine dal panel laterâl"
 
-#: gedit/gedit-window.c:2350 gedit/resources/ui/gedit-window.ui:19
+#: gedit/gedit-window.c:2353 gedit/resources/ui/gedit-window.ui:19
 msgid "Documents"
 msgstr "Documents"
 
-#: gedit/gedit-window.c:2637
+#: gedit/gedit-window.c:2640
 msgid "Open a file"
 msgstr "Vierç un file"
 
-#: gedit/gedit-window.c:2641
+#: gedit/gedit-window.c:2644
 msgid "Open a recently used file"
 msgstr "Vierç un file doprât di resint"
 
@@ -1806,22 +1795,14 @@ msgstr "_Descrizion"
 msgid "_Encoding"
 msgstr "C_odifiche"
 
-#: gedit/resources/ui/gedit-highlight-mode-dialog.ui:11
-msgid "Highlight Mode"
-msgstr "Modalitât evidenziazion"
-
-#: gedit/resources/ui/gedit-highlight-mode-dialog.ui:47
-msgid "_Select"
-msgstr "_Selezione"
-
-#: gedit/resources/ui/gedit-highlight-mode-selector.ui:31
-msgid "Search highlight mode…"
-msgstr "Modalitât di ricercje evidenziade…"
-
 #: gedit/resources/ui/gedit-preferences-dialog.ui:8
 #: gedit/resources/ui/gedit-preferences-dialog.ui:15
 msgid "Preferences"
 msgstr "Preferencis"
+
+#: gedit/resources/ui/gedit-preferences-dialog.ui:41
+msgid "_Display line numbers"
+msgstr "_Mostre numars di rie"
 
 #: gedit/resources/ui/gedit-preferences-dialog.ui:56
 msgid "Display right _margin at column:"
@@ -2670,7 +2651,7 @@ msgstr "Dome file locâi"
 
 #: plugins/externaltools/tools/tools.ui:31
 msgid "Remote files only"
-msgstr "Dome file rimots"
+msgstr "Dome file lontans"
 
 #: plugins/externaltools/tools/tools.ui:35
 msgid "Untitled documents only"
@@ -2958,11 +2939,11 @@ msgstr ""
 
 #: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml:20
 msgid "Enable Restore of Remote Locations"
-msgstr "Abilitâ il ripristinament des posizions rimotis"
+msgstr "Abilitâ il ripristinament des posizions lontanis"
 
 #: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml:21
 msgid "Sets whether to enable restoring of remote locations."
-msgstr "Indiche se abilitâ il ripristinament des posizions rimotis."
+msgstr "Indiche se abilitâ il ripristinament des posizions esternis."
 
 #: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml:25
 msgid "Set Location to First Document"
@@ -3545,6 +3526,18 @@ msgstr "Inserìs date e ore"
 #: plugins/time/time.plugin.desktop.in:6
 msgid "Inserts current date and time at the cursor position."
 msgstr "Al inserìs date e ore atuâl te posizion dal cursôr."
+
+#~ msgid "Untitled Document %d"
+#~ msgstr "Document cence titul %d"
+
+#~ msgid "Highlight Mode"
+#~ msgstr "Modalitât evidenziazion"
+
+#~ msgid "_Select"
+#~ msgstr "_Selezione"
+
+#~ msgid "Search highlight mode…"
+#~ msgstr "Modalitât di ricercje evidenziade…"
 
 #~ msgid ""
 #~ "gedit is the official text editor of the GNOME desktop environment. While "
