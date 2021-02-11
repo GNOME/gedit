@@ -50,7 +50,6 @@
 #define NAUTILUS_BASE_SETTINGS		"org.gnome.nautilus.preferences"
 #define NAUTILUS_FALLBACK_SETTINGS	"org.gnome.gedit.plugins.filebrowser.nautilus"
 #define NAUTILUS_CLICK_POLICY_KEY	"click-policy"
-#define NAUTILUS_CONFIRM_TRASH_KEY	"confirm-trash"
 
 #define TERMINAL_BASE_SETTINGS		"org.gnome.desktop.default-applications.terminal"
 #define TERMINAL_EXEC_KEY		"exec"
@@ -66,10 +65,8 @@ struct _GeditFileBrowserPluginPrivate
 	GeditFileBrowserWidget *tree_widget;
 	gboolean	        auto_root;
 	gulong                  end_loading_handle;
-	gboolean		confirm_trash;
 
 	guint			click_policy_handle;
-	guint			confirm_trash_handle;
 };
 
 enum
@@ -322,14 +319,6 @@ on_click_policy_changed (GSettings              *settings,
 }
 
 static void
-on_confirm_trash_changed (GSettings              *settings,
-		 	  const gchar            *key,
-			  GeditFileBrowserPlugin *plugin)
-{
-	plugin->priv->confirm_trash = g_settings_get_boolean (settings, key);
-}
-
-static void
 install_nautilus_prefs (GeditFileBrowserPlugin *plugin)
 {
 	GeditFileBrowserPluginPrivate *priv = plugin->priv;
@@ -348,18 +337,6 @@ install_nautilus_prefs (GeditFileBrowserPlugin *plugin)
 		g_signal_connect (priv->nautilus_settings,
 				  "changed::" NAUTILUS_CLICK_POLICY_KEY,
 				  G_CALLBACK (on_click_policy_changed),
-				  plugin);
-
-	/* Get confirm_trash */
-	prefb = g_settings_get_boolean (priv->nautilus_settings,
-					NAUTILUS_CONFIRM_TRASH_KEY);
-
-	priv->confirm_trash = prefb;
-
-	priv->confirm_trash_handle =
-		g_signal_connect (priv->nautilus_settings,
-				  "changed::" NAUTILUS_CONFIRM_TRASH_KEY,
-				  G_CALLBACK (on_confirm_trash_changed),
 				  plugin);
 }
 
@@ -586,12 +563,6 @@ gedit_file_browser_plugin_deactivate (GeditWindowActivatable *activatable)
 	{
 		g_signal_handler_disconnect (priv->nautilus_settings,
 					     priv->click_policy_handle);
-	}
-
-	if (priv->confirm_trash_handle)
-	{
-		g_signal_handler_disconnect (priv->nautilus_settings,
-					     priv->confirm_trash_handle);
 	}
 
 	panel = gedit_window_get_side_panel (priv->window);
@@ -931,9 +902,6 @@ on_confirm_delete_cb (GeditFileBrowserWidget *widget,
 	gchar *message;
 	gchar *secondary;
 	gboolean result;
-
-	if (!priv->confirm_trash)
-		return TRUE;
 
 	if (paths->next == NULL)
 	{
