@@ -322,7 +322,6 @@ static void
 install_nautilus_prefs (GeditFileBrowserPlugin *plugin)
 {
 	GeditFileBrowserPluginPrivate *priv = plugin->priv;
-	gboolean prefb;
 	GeditFileBrowserViewClickPolicy policy;
 	GeditFileBrowserView *view;
 
