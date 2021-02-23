@@ -2,6 +2,7 @@
 # Copyright (C) 1999-2001, 2005, 2006, 2007, 2008, 2009, 2010 Free Software Foundation, Inc.
 # Proxecto Trasno - Adaptación do software libre á lingua galega:  Se desexas
 # colaborar connosco, podes atopar máis información en http://www.trasno.net
+#
 # Ruben Lopez Gomez <ryu@mundivia.es>, 1999.
 # Manuel A. Fernández Montecelo <manuel@sindominio.net>, 2001.
 # Ignacio Casal Quinteiro <nacho.resa@gmail.com>, 2005, 2006.
@@ -12,22 +13,21 @@
 # Antón Méixome <meixome@certima.net>, 2010.
 # Fran Diéguez <frandieguez@gnome.org>, 2009, 2010, 2011, 2012.
 # Leandro Regueiro <leandro.regueiro@gmail.com>, 2012.
-# Fran Dieguez <frandieguez@gnome.org>, 2012-2020.
-#
+# Fran Dieguez <frandieguez@gnome.org>, 2012-2020, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: gedit-master-po-gl-116402.merged\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gedit/issues\n"
-"POT-Creation-Date: 2020-07-08 15:04+0000\n"
-"PO-Revision-Date: 2020-08-12 23:56+0200\n"
+"POT-Creation-Date: 2020-11-20 05:35+0000\n"
+"PO-Revision-Date: 2021-02-23 23:49+0100\n"
 "Last-Translator: Fran Dieguez <frandieguez@gnome.org>\n"
-"Language-Team: Galician <proxecto@trasno.gal>\n"
+"Language-Team: Proxecto Trasno <proxecto@trasno.gal>\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
-"X-Generator: Gtranslator 3.36.0\n"
+"X-Generator: Gtranslator 3.38.0\n"
 "X-Project-Style: gnome\n"
 
 #: data/org.gnome.gedit.appdata.xml.in:7
@@ -39,7 +39,6 @@ msgid "Edit text files"
 msgstr "Editar ficheiros de texto"
 
 #: data/org.gnome.gedit.appdata.xml.in:10
-#| msgid "gedit is a small and lightweight text editor for the GNOME Desktop"
 msgid "gedit is the text editor of the GNOME desktop environment."
 msgstr "O gedit é o editor de textos para o ambiente de escritorio GNOME."
 
@@ -52,7 +51,7 @@ msgstr ""
 "sinxela por omisión. Hai dispoñíbeis máis funcionalidades  mediante a "
 "activación de engadidos."
 
-#: data/org.gnome.gedit.desktop.in:3 gedit/gedit-print-job.c:730
+#: data/org.gnome.gedit.desktop.in:3 gedit/gedit-print-job.c:731
 msgid "Text Editor"
 msgstr "Editor de texto"
 
@@ -285,7 +284,7 @@ msgid ""
 msgstr ""
 "Especifica como se move o cursor cando se pulsan as teclas «INICIO» e «FIN». "
 "Use «disabled» para moverse sempre ao inicio/final da liña, «after» para "
-"moverse ao inicio/final da lilña a primeira vez que se premen as teclas e ao "
+"moverse ao inicio/final da liña a primeira vez que se premen as teclas e ao "
 "inicio/final do texto, ignorando os espazos en branco, a segunda vez que se "
 "pulsan, «before» para moverse ao inicio/final do texto antes de moverse ao "
 "inicio/final da liña e «always» para moverse sempre ao inicio/final do texto "
@@ -524,7 +523,6 @@ msgid "Active plugins"
 msgstr "Engadidos activos"
 
 #: data/org.gnome.gedit.gschema.xml.in:305
-#| msgid "Active plugins"
 msgid "List of active plugins."
 msgstr "Lista de engadidos activos."
 
@@ -587,9 +585,8 @@ msgstr "Pechar _sen gardar"
 #: gedit/gedit-commands-file.c:568 gedit/gedit-commands-file.c:791
 #: gedit/gedit-commands-file.c:1513 gedit/gedit-encodings-dialog.c:192
 #: gedit/gedit-file-chooser-open-dialog.c:78
-#: gedit/gedit-preferences-dialog.c:721 gedit/gedit-progress-info-bar.c:49
+#: gedit/gedit-preferences-dialog.c:721
 #: gedit/resources/ui/gedit-encodings-dialog.ui:44
-#: gedit/resources/ui/gedit-highlight-mode-dialog.ui:31
 #: plugins/filebrowser/gedit-file-browser-utils.c:211
 #: plugins/quickopen/quickopen/popup.py:45
 #: plugins/snippets/snippets/manager.py:789
@@ -889,7 +886,6 @@ msgid "_Revert"
 msgstr "_Recuperar"
 
 #: gedit/gedit-commands-help.c:110
-#| msgid "gedit is a small and lightweight text editor for the GNOME Desktop"
 msgid "gedit is a small and lightweight text editor for the GNOME desktop"
 msgstr ""
 "O gedit é un editor de textos pequeno e lixeiro para o ambiente de "
@@ -913,7 +909,7 @@ msgstr ""
 msgid "Found and replaced %d occurrence"
 msgid_plural "Found and replaced %d occurrences"
 msgstr[0] "Atopouse e substituída %d aparición"
-msgstr[1] "Atoparonse e substituídas %d aparicións"
+msgstr[1] "Atopáronse e substituídas %d aparicións"
 
 #: gedit/gedit-commands-search.c:115
 msgid "Found and replaced one occurrence"
@@ -926,18 +922,13 @@ msgstr "Atopada e substituída unha aparición"
 msgid "“%s” not found"
 msgstr "Non se atopou «%s»"
 
-#: gedit/gedit-document.c:993 gedit/gedit-document.c:1022
-#, c-format
-msgid "Untitled Document %d"
-msgstr "Documento sen título %d"
-
 #: gedit/gedit-documents-panel.c:398
 #, c-format
 msgid "Tab Group %i"
 msgstr "Grupo de lapelas %i"
 
-#: gedit/gedit-documents-panel.c:498 gedit/gedit-window.c:1082
-#: gedit/gedit-window.c:1088 gedit/gedit-window.c:1096
+#: gedit/gedit-documents-panel.c:498 gedit/gedit-window.c:1085
+#: gedit/gedit-window.c:1091 gedit/gedit-window.c:1099
 msgid "Read-Only"
 msgstr "Só de lectura"
 
@@ -1004,12 +995,11 @@ msgstr "Finalización de li_ña:"
 #. Translators: "Open Files" is the title of the file chooser window.
 #: gedit/gedit-file-chooser-open-dialog.c:75
 #: gedit/gedit-file-chooser-open-native.c:54
-#| msgid "Open a file"
 msgctxt "window title"
 msgid "Open Files"
 msgstr "Abrir ficheiros"
 
-#: gedit/gedit-file-chooser-open-dialog.c:79 gedit/gedit-window.c:2636
+#: gedit/gedit-file-chooser-open-dialog.c:79 gedit/gedit-window.c:2639
 #: gedit/resources/gtk/menus-common.ui:100
 #: gedit/resources/gtk/menus-common.ui:106
 #: plugins/filebrowser/resources/ui/gedit-file-browser-menus.ui:7
@@ -1017,14 +1007,6 @@ msgstr "Abrir ficheiros"
 #: plugins/snippets/snippets/manager.py:790
 msgid "_Open"
 msgstr "_Abrir"
-
-#: gedit/gedit-highlight-mode-selector.c:269 gedit/gedit-window.c:1166
-#: plugins/externaltools/tools/manager.py:115
-#: plugins/externaltools/tools/manager.py:324
-#: plugins/externaltools/tools/manager.py:440
-#: plugins/externaltools/tools/manager.py:776
-msgid "Plain Text"
-msgstr "Texto plano"
 
 #: gedit/gedit-io-error-info-bar.c:135 gedit/gedit-io-error-info-bar.c:415
 msgid "_Retry"
@@ -1307,7 +1289,6 @@ msgstr "_Usar o tipo de letra de largura fixa do sistema (%s)"
 
 #: gedit/gedit-preferences-dialog.c:685
 #, c-format
-#| msgid "The selected color scheme cannot be installed."
 msgid "The selected color scheme cannot be installed: %s"
 msgstr "Non é posíbel instalar o esquema de cores seleccionado: %s"
 
@@ -1316,12 +1297,10 @@ msgid "The selected color scheme cannot be installed."
 msgstr "Non é posíbel instalar o esquema de cores seleccionado."
 
 #: gedit/gedit-preferences-dialog.c:717
-#| msgid "Color Scheme"
 msgid "Add Color Scheme"
 msgstr "Engadir esquema de cor"
 
 #: gedit/gedit-preferences-dialog.c:720
-#| msgid "Add Scheme"
 msgid "_Add Scheme"
 msgstr "_Engadir esquema"
 
@@ -1334,11 +1313,11 @@ msgstr "Ficheiros de esquema de cores"
 msgid "Could not remove color scheme “%s”."
 msgstr "Non foi posíbel eliminar o esquema de cor «%s»."
 
-#: gedit/gedit-print-job.c:227
+#: gedit/gedit-print-job.c:228
 msgid "Preparing…"
 msgstr "Preparando…"
 
-#: gedit/gedit-print-job.c:539
+#: gedit/gedit-print-job.c:540
 #, c-format
 msgid "File: %s"
 msgstr "Ficheiro: %s"
@@ -1346,11 +1325,11 @@ msgstr "Ficheiro: %s"
 #. Translators: %N is the current page number, %Q is the total
 #. * number of pages (ex. Page 2 of 10)
 #.
-#: gedit/gedit-print-job.c:548
+#: gedit/gedit-print-job.c:549
 msgid "Page %N of %Q"
 msgstr "Páxina %N de %Q"
 
-#: gedit/gedit-print-job.c:626
+#: gedit/gedit-print-job.c:627
 #, c-format
 msgid "Rendering page %d of %d…"
 msgstr "Renderizando páxina %d de %d…"
@@ -1390,86 +1369,86 @@ msgstr[1] "Hai %d lapelas con erros"
 
 #. Translators: the first %s is a file name (e.g. test.txt) the second one
 #. is a directory (e.g. ssh://master.gnome.org/home/users/paolo)
-#: gedit/gedit-tab.c:824
+#: gedit/gedit-tab.c:823
 #, c-format
 msgid "Reverting %s from %s"
 msgstr "Recuperando %s de %s"
 
-#: gedit/gedit-tab.c:831
+#: gedit/gedit-tab.c:830
 #, c-format
 msgid "Reverting %s"
 msgstr "Recuperando %s"
 
 #. Translators: the first %s is a file name (e.g. test.txt) the second one
 #. is a directory (e.g. ssh://master.gnome.org/home/users/paolo)
-#: gedit/gedit-tab.c:844
+#: gedit/gedit-tab.c:843
 #, c-format
 msgid "Loading %s from %s"
 msgstr "Cargando %s de %s"
 
-#: gedit/gedit-tab.c:851
+#: gedit/gedit-tab.c:850
 #, c-format
 msgid "Loading %s"
 msgstr "Cargando %s"
 
 #. Translators: the first %s is a file name (e.g. test.txt) the second one
 #. is a directory (e.g. ssh://master.gnome.org/home/users/paolo)
-#: gedit/gedit-tab.c:931
+#: gedit/gedit-tab.c:930
 #, c-format
 msgid "Saving %s to %s"
 msgstr "Gardando %s en %s"
 
-#: gedit/gedit-tab.c:936
+#: gedit/gedit-tab.c:935
 #, c-format
 msgid "Saving %s"
 msgstr "Gardando %s"
 
-#: gedit/gedit-tab.c:1484
+#: gedit/gedit-tab.c:1486
 #, c-format
 msgid "Error opening file %s"
 msgstr "Produciuse un erro ao abrir o ficheiro %s"
 
-#: gedit/gedit-tab.c:1489
+#: gedit/gedit-tab.c:1491
 #, c-format
 msgid "Error reverting file %s"
 msgstr "Produciuse un erro ao recuperar o ficheiro %s"
 
-#: gedit/gedit-tab.c:1494
+#: gedit/gedit-tab.c:1496
 #, c-format
 msgid "Error saving file %s"
 msgstr "Produciuse un erro ao gardar o ficheiro %s"
 
-#: gedit/gedit-tab.c:1525
+#: gedit/gedit-tab.c:1527
 msgid "Name:"
 msgstr "Nome:"
 
-#: gedit/gedit-tab.c:1526
+#: gedit/gedit-tab.c:1528
 msgid "MIME Type:"
 msgstr "Tipo MIME:"
 
-#: gedit/gedit-tab.c:1527
+#: gedit/gedit-tab.c:1529
 msgid "Encoding:"
 msgstr "Codificación:"
 
 #. Translators: '/ on <remote-share>'
-#: gedit/gedit-utils.c:436
+#: gedit/gedit-utils.c:387
 #, c-format
 msgid "/ on %s"
 msgstr "/ en %s"
 
-#: gedit/gedit-utils.c:610
+#: gedit/gedit-utils.c:532
 msgid "Unix/Linux"
 msgstr "Unix/Linux"
 
-#: gedit/gedit-utils.c:612
+#: gedit/gedit-utils.c:534
 msgid "Mac OS Classic"
 msgstr "Mac OS Classic"
 
-#: gedit/gedit-utils.c:614
+#: gedit/gedit-utils.c:536
 msgid "Windows"
 msgstr "Windows"
 
-#: gedit/gedit-view.c:438 gedit/resources/ui/gedit-preferences-dialog.ui:41
+#: gedit/gedit-view.c:437 gedit/resources/ui/gedit-preferences-dialog.ui:41
 msgid "_Display line numbers"
 msgstr "_Mostrar os números de liña"
 
@@ -1510,48 +1489,55 @@ msgstr "A cadea que quere buscar"
 msgid "Line you want to move the cursor to"
 msgstr "A liña á que quere mover o cursor"
 
-#: gedit/gedit-window.c:919
+#: gedit/gedit-window.c:922
 msgid "Bracket match is out of range"
 msgstr "O corchete de coincidencia está fora de rango"
 
-#: gedit/gedit-window.c:924
+#: gedit/gedit-window.c:927
 msgid "Bracket match not found"
 msgstr "Non se encontrou o corchete coincidente"
 
-#: gedit/gedit-window.c:929
+#: gedit/gedit-window.c:932
 #, c-format
 msgid "Bracket match found on line: %d"
 msgstr "Corchete coincidente encontrado na liña: %d"
 
 #. Translators: "Ln" is an abbreviation for "Line", Col is an abbreviation for "Column". Please,
 #. use abbreviations if possible to avoid space problems.
-#: gedit/gedit-window.c:964
+#: gedit/gedit-window.c:967
 #, c-format
 msgid "  Ln %d, Col %d"
 msgstr "  Li %d, Col %d"
 
-#: gedit/gedit-window.c:1148
+#: gedit/gedit-window.c:1151
 #, c-format
 msgid "Tab Width: %u"
 msgstr "Largura da tabulación: %u"
 
-#: gedit/gedit-window.c:1493
+#: gedit/gedit-window.c:1169 plugins/externaltools/tools/manager.py:115
+#: plugins/externaltools/tools/manager.py:324
+#: plugins/externaltools/tools/manager.py:440
+#: plugins/externaltools/tools/manager.py:776
+msgid "Plain Text"
+msgstr "Texto plano"
+
+#: gedit/gedit-window.c:1496
 msgid "There are unsaved documents"
 msgstr "Hai documentos sen gardar"
 
-#: gedit/gedit-window.c:2330
+#: gedit/gedit-window.c:2333
 msgid "Change side panel page"
 msgstr "Cambiar páxina do panel lateral"
 
-#: gedit/gedit-window.c:2350 gedit/resources/ui/gedit-window.ui:19
+#: gedit/gedit-window.c:2353 gedit/resources/ui/gedit-window.ui:19
 msgid "Documents"
 msgstr "Documentos"
 
-#: gedit/gedit-window.c:2637
+#: gedit/gedit-window.c:2640
 msgid "Open a file"
 msgstr "Abrir un ficheiro"
 
-#: gedit/gedit-window.c:2641
+#: gedit/gedit-window.c:2644
 msgid "Open a recently used file"
 msgstr "Abrir un ficheiro usado recentemente"
 
@@ -1840,18 +1826,6 @@ msgstr "_Descrición"
 #: gedit/resources/ui/gedit-encodings-dialog.ui:228
 msgid "_Encoding"
 msgstr "_Codificación"
-
-#: gedit/resources/ui/gedit-highlight-mode-dialog.ui:11
-msgid "Highlight Mode"
-msgstr "Modo de realce"
-
-#: gedit/resources/ui/gedit-highlight-mode-dialog.ui:47
-msgid "_Select"
-msgstr "_Seleccionar"
-
-#: gedit/resources/ui/gedit-highlight-mode-selector.ui:31
-msgid "Search highlight mode…"
-msgstr "Modo de realce de busca…"
 
 #: gedit/resources/ui/gedit-preferences-dialog.ui:8
 #: gedit/resources/ui/gedit-preferences-dialog.ui:15
@@ -2197,7 +2171,7 @@ msgstr "Cambiar ao primeiro — noveno documento"
 #: gedit/resources/ui/gedit-shortcuts.ui:97
 msgctxt "shortcut window"
 msgid "Windows and Panels"
-msgstr "Xanelas e paneles"
+msgstr "Xanelas e paneis"
 
 #: gedit/resources/ui/gedit-shortcuts.ui:102
 msgctxt "shortcut window"
@@ -2316,28 +2290,21 @@ msgid "Go to line"
 msgstr "Ir á liña"
 
 #: gedit/resources/ui/gedit-shortcuts.ui:265
-#| msgctxt "shortcut window"
-#| msgid "Move viewport to beginning of file"
 msgctxt "shortcut window"
 msgid "Move to the beginning of the current line"
 msgstr "Mover vista ao inicio da liña actual"
 
 #: gedit/resources/ui/gedit-shortcuts.ui:272
-#| msgid "Checks the spelling of the current document."
 msgctxt "shortcut window"
 msgid "Move to the end of the current line"
 msgstr "Moverse ao final da liña actual"
 
 #: gedit/resources/ui/gedit-shortcuts.ui:279
-#| msgctxt "shortcut window"
-#| msgid "Move viewport to beginning of file"
 msgctxt "shortcut window"
 msgid "Move to the beginning of the document"
 msgstr "Moverse ao inicio do documento"
 
 #: gedit/resources/ui/gedit-shortcuts.ui:286
-#| msgctxt "shortcut window"
-#| msgid "Switch to the next document"
 msgctxt "shortcut window"
 msgid "Move to the end of the document"
 msgstr "Moverse ao final do documento"
@@ -2368,14 +2335,11 @@ msgid "Move to matching bracket"
 msgstr "Ir á chave coincidente"
 
 #: gedit/resources/ui/gedit-shortcuts.ui:328
-#| msgid "P_revious Tab Group"
 msgctxt "shortcut window"
 msgid "Go to previous tab group"
 msgstr "Ir ao grupo de lapelas anterior"
 
 #: gedit/resources/ui/gedit-shortcuts.ui:335
-#| msgctxt "shortcut window"
-#| msgid "Create a new tab group"
 msgctxt "shortcut window"
 msgid "Go to next tab group"
 msgstr "Ir ao grupo de lapelas seguinte"
@@ -2476,13 +2440,11 @@ msgid "Show help"
 msgstr "Mostrar axuda"
 
 #: gedit/resources/ui/gedit-shortcuts.ui:472
-#| msgid "Open history menu"
 msgctxt "shortcut window"
 msgid "Open menu"
 msgstr "Abrir o menú"
 
 #: gedit/resources/ui/gedit-shortcuts.ui:479
-#| msgid "_Keyboard Shortcuts"
 msgctxt "shortcut window"
 msgid "Keyboard shortcuts"
 msgstr "Atallos de teclado"
@@ -2828,7 +2790,6 @@ msgid "File Browser Panel"
 msgstr "Panel do navegador de ficheiros"
 
 #: plugins/filebrowser/filebrowser.plugin.desktop.in:7
-#| msgid "Easy file access from the side panel"
 msgid "Easy file access from the side panel."
 msgstr "Acceso fácil a ficheiros desde o panel lateral."
 
@@ -3169,7 +3130,6 @@ msgid "Python Console"
 msgstr "Consola de Python"
 
 #: plugins/pythonconsole/pythonconsole.plugin.desktop.in:7
-#| msgid "Interactive Python console standing in the bottom panel"
 msgid "Interactive Python console standing in the bottom panel."
 msgstr "Consola interactiva de Python no panel inferior."
 
@@ -3191,7 +3151,6 @@ msgid "Quick Open"
 msgstr "Abrir rápido"
 
 #: plugins/quickopen/quickopen.plugin.desktop.in:7
-#| msgid "Quickly open files"
 msgid "Quickly open files."
 msgstr "Abre os ficheiros rapidamente."
 
@@ -3389,7 +3348,6 @@ msgid "Execution of the Python command (%s) failed: %s"
 msgstr "Produciuse un erro ao executar a orde Python (%s): %s"
 
 #: plugins/snippets/snippets.plugin.desktop.in:7
-#| msgid "Insert often-used pieces of text in a fast way"
 msgid "Insert often-used pieces of text in a fast way."
 msgstr "Inserir fragmentos de texto usados frecuentemente dun modo rápido."
 
@@ -3600,6 +3558,18 @@ msgstr "Inserir data e hora"
 #: plugins/time/time.plugin.desktop.in:6
 msgid "Inserts current date and time at the cursor position."
 msgstr "Insire a data e hora actuais na posición do cursor."
+
+#~ msgid "Untitled Document %d"
+#~ msgstr "Documento sen título %d"
+
+#~ msgid "Highlight Mode"
+#~ msgstr "Modo de realce"
+
+#~ msgid "_Select"
+#~ msgstr "_Seleccionar"
+
+#~ msgid "Search highlight mode…"
+#~ msgstr "Modo de realce de busca…"
 
 #~ msgid ""
 #~ "gedit is the official text editor of the GNOME desktop environment. While "
