@@ -1,36 +1,37 @@
 # German gedit translation.
 # Copyright (C) 1999-2005 Free Software Foundation, Inc.
+#
 # Matthias Warkus <mawarkus@gnome.org>, 1999-2001.
 # Manuel Borchers <webmaster@matronix.de>, 2002.
 # Christian Neumair <chris@gnome-de.org>, 2002-2004.
-# Hendrik Richter <hendrikr@gnome.org>, 2004-2010.
 # Frank Arnold <frank@scirocco-5v-turbo.de>, 2005, 2006.
 # Jochen Skulj <jochen@jochenskulj.de>, 2006, 2007, 2009.
 # Andre Klapper <ak-47@gmx.net>, 2008, 2009.
+# Hendrik Richter <hendrikr@gnome.org>, 2004-2010.
 # Paul Seyfert <pseyfert@mathphys.fsk.uni-heidelberg.de>, 2010, 2011.
-# Mario Blättermann <mario.blaettermann@gmail.com>, 2009-2012, 2015-2018.
 # Christian Kirbach <christian.kirbach@gmail.com>, 2008-2012.
 # Viktor Nyberg <greenscandic@googlemail.com>, 2012.
-# Wolfgang Stöggl <c72578@yahoo.de>, 2012, 2014-2015, 2018.
 # Tobias Endrigkeit <tobiasendrigkeit@outlook.com>, 2013.
 # Simon Linden <xhi2018@gmail.com>, 2013, 2015.
 # J.M. Rütter <jm@jublo.net>, 2015.
+# Wolfgang Stöggl <c72578@yahoo.de>, 2012, 2014-2015, 2018.
 # Tim Sabsch <tim@sabsch.com>, 2019-2020.
-#
+# Mario Blättermann <mario.blaettermann@gmail.com>, 2009-2012, 2015-2018, 2021.
+# Philipp Kiemle <philipp.kiemle@gmail.com>, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: gedit master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gedit/issues\n"
-"POT-Creation-Date: 2020-07-08 15:04+0000\n"
-"PO-Revision-Date: 2020-08-26 22:33+0200\n"
-"Last-Translator: Christian Kirbach <christian.kirbach@gmail.com>\n"
-"Language-Team: Deutsch <gnome-de@gnome.org>\n"
+"POT-Creation-Date: 2021-03-01 09:23+0000\n"
+"PO-Revision-Date: 2021-03-03 22:12+0100\n"
+"Last-Translator: Philipp Kiemle <philipp.kiemle@gmail.com>\n"
+"Language-Team: German <gnome-de@gnome.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.3.1\n"
+"X-Generator: Poedit 2.4.1\n"
 
 #: data/org.gnome.gedit.appdata.xml.in:7
 msgid "gedit"
@@ -51,11 +52,11 @@ msgid ""
 "The first goal of gedit is to be easy to use, with a simple interface by "
 "default. More advanced features are available by enabling plugins."
 msgstr ""
-"Das primäre Ziel von gedit ist einfach verwendbar zu sein mit einer "
-"einfachen Benutzerschnittstelle. Kompliziertere Funktionen werden über "
+"Das primäre Ziel von gedit ist es, durch eine simple Benutzeroberfläche "
+"einfach verwendbar zu sein. Kompliziertere Funktionen werden über "
 "Erweiterungen zur Verfügung gestellt."
 
-#: data/org.gnome.gedit.desktop.in:3 gedit/gedit-print-job.c:730
+#: data/org.gnome.gedit.desktop.in:3 gedit/gedit-print-job.c:731
 msgid "Text Editor"
 msgstr "Texteditor"
 
@@ -589,9 +590,8 @@ msgstr "_Nicht speichern"
 #: gedit/gedit-commands-file.c:568 gedit/gedit-commands-file.c:791
 #: gedit/gedit-commands-file.c:1513 gedit/gedit-encodings-dialog.c:192
 #: gedit/gedit-file-chooser-open-dialog.c:78
-#: gedit/gedit-preferences-dialog.c:721 gedit/gedit-progress-info-bar.c:49
+#: gedit/gedit-preferences-dialog.c:721
 #: gedit/resources/ui/gedit-encodings-dialog.ui:44
-#: gedit/resources/ui/gedit-highlight-mode-dialog.ui:31
 #: plugins/filebrowser/gedit-file-browser-utils.c:211
 #: plugins/quickopen/quickopen/popup.py:45
 #: plugins/snippets/snippets/manager.py:789
@@ -739,7 +739,6 @@ msgid_plural "Loading %d files…"
 msgstr[0] "%d Datei wird geladen …"
 msgstr[1] "%d Dateien werden geladen …"
 
-# CHECK
 #: gedit/gedit-commands-file.c:483
 #, c-format
 msgid "The file “%s” is read-only."
@@ -920,7 +919,8 @@ msgstr ""
 "Mario Blättermann <mario.blaettermann@gmail.com>\n"
 "Paul Seyfert <pseyfert@mathphys.fsk.uni-heidelberg.de>\n"
 "Simon Linden <xhi2018@gmail.com>\n"
-"Tim Sabsch <tim@sabsch.com>"
+"Tim Sabsch <tim@sabsch.com>\n"
+"Philipp Kiemle <philipp.kiemle@gmail.com>"
 
 #: gedit/gedit-commands-search.c:106
 #, c-format
@@ -940,18 +940,13 @@ msgstr "Ein Mal gefunden und ersetzt"
 msgid "“%s” not found"
 msgstr "»%s« konnte nicht gefunden werden"
 
-#: gedit/gedit-document.c:993 gedit/gedit-document.c:1022
-#, c-format
-msgid "Untitled Document %d"
-msgstr "Ungespeichertes Dokument %d"
-
 #: gedit/gedit-documents-panel.c:398
 #, c-format
 msgid "Tab Group %i"
 msgstr "Reitergruppe %i"
 
-#: gedit/gedit-documents-panel.c:498 gedit/gedit-window.c:1082
-#: gedit/gedit-window.c:1088 gedit/gedit-window.c:1096
+#: gedit/gedit-documents-panel.c:498 gedit/gedit-window.c:1085
+#: gedit/gedit-window.c:1091 gedit/gedit-window.c:1099
 msgid "Read-Only"
 msgstr "Schreibgeschützt"
 
@@ -1023,7 +1018,7 @@ msgctxt "window title"
 msgid "Open Files"
 msgstr "Dateien öffnen"
 
-#: gedit/gedit-file-chooser-open-dialog.c:79 gedit/gedit-window.c:2636
+#: gedit/gedit-file-chooser-open-dialog.c:79 gedit/gedit-window.c:2639
 #: gedit/resources/gtk/menus-common.ui:100
 #: gedit/resources/gtk/menus-common.ui:106
 #: plugins/filebrowser/resources/ui/gedit-file-browser-menus.ui:7
@@ -1031,14 +1026,6 @@ msgstr "Dateien öffnen"
 #: plugins/snippets/snippets/manager.py:790
 msgid "_Open"
 msgstr "Öffnen"
-
-#: gedit/gedit-highlight-mode-selector.c:269 gedit/gedit-window.c:1166
-#: plugins/externaltools/tools/manager.py:115
-#: plugins/externaltools/tools/manager.py:324
-#: plugins/externaltools/tools/manager.py:440
-#: plugins/externaltools/tools/manager.py:776
-msgid "Plain Text"
-msgstr "Reiner Text"
 
 #: gedit/gedit-io-error-info-bar.c:135 gedit/gedit-io-error-info-bar.c:415
 msgid "_Retry"
@@ -1219,7 +1206,6 @@ msgstr "Trotzdem _speichern"
 msgid "D_on’t Save"
 msgstr "_Nicht speichern"
 
-# CHECK
 #. FIXME: review this message, it's not clear since for the user the "modification"
 #. * could be interpreted as the changes he made in the document. beside "reading" is
 #. * not accurate (since last load/save)
@@ -1357,11 +1343,11 @@ msgstr "Farbschema-Dateien"
 msgid "Could not remove color scheme “%s”."
 msgstr "Farbschema »%s« konnte nicht entfernt werden."
 
-#: gedit/gedit-print-job.c:227
+#: gedit/gedit-print-job.c:228
 msgid "Preparing…"
 msgstr "Vorbereiten …"
 
-#: gedit/gedit-print-job.c:539
+#: gedit/gedit-print-job.c:540
 #, c-format
 msgid "File: %s"
 msgstr "Datei: %s"
@@ -1369,11 +1355,11 @@ msgstr "Datei: %s"
 #. Translators: %N is the current page number, %Q is the total
 #. * number of pages (ex. Page 2 of 10)
 #.
-#: gedit/gedit-print-job.c:548
+#: gedit/gedit-print-job.c:549
 msgid "Page %N of %Q"
 msgstr "Seite %N von %Q"
 
-#: gedit/gedit-print-job.c:626
+#: gedit/gedit-print-job.c:627
 #, c-format
 msgid "Rendering page %d of %d…"
 msgstr "Seite %d von %d wird erstellt …"
@@ -1412,88 +1398,84 @@ msgstr[1] "In %d Reitern sind Fehler aufgetreten"
 
 #. Translators: the first %s is a file name (e.g. test.txt) the second one
 #. is a directory (e.g. ssh://master.gnome.org/home/users/paolo)
-#: gedit/gedit-tab.c:824
+#: gedit/gedit-tab.c:823
 #, c-format
 msgid "Reverting %s from %s"
 msgstr "»%s« in »%s« wird zurückgesetzt"
 
-#: gedit/gedit-tab.c:831
+#: gedit/gedit-tab.c:830
 #, c-format
 msgid "Reverting %s"
 msgstr "»%s« wird zurückgesetzt"
 
 #. Translators: the first %s is a file name (e.g. test.txt) the second one
 #. is a directory (e.g. ssh://master.gnome.org/home/users/paolo)
-#: gedit/gedit-tab.c:844
+#: gedit/gedit-tab.c:843
 #, c-format
 msgid "Loading %s from %s"
 msgstr "»%s« in »%s« wird geladen"
 
-#: gedit/gedit-tab.c:851
+#: gedit/gedit-tab.c:850
 #, c-format
 msgid "Loading %s"
 msgstr "»%s« wird geladen"
 
 #. Translators: the first %s is a file name (e.g. test.txt) the second one
 #. is a directory (e.g. ssh://master.gnome.org/home/users/paolo)
-#: gedit/gedit-tab.c:931
+#: gedit/gedit-tab.c:930
 #, c-format
 msgid "Saving %s to %s"
 msgstr "»%s« wird in »%s« gespeichert"
 
-#: gedit/gedit-tab.c:936
+#: gedit/gedit-tab.c:935
 #, c-format
 msgid "Saving %s"
 msgstr "»%s« wird gespeichert"
 
-#: gedit/gedit-tab.c:1484
+#: gedit/gedit-tab.c:1486
 #, c-format
 msgid "Error opening file %s"
 msgstr "Fehler beim Öffnen der Datei »%s«"
 
-#: gedit/gedit-tab.c:1489
+#: gedit/gedit-tab.c:1491
 #, c-format
 msgid "Error reverting file %s"
 msgstr "Fehler beim Zurücksetzen der Datei »%s«"
 
-#: gedit/gedit-tab.c:1494
+#: gedit/gedit-tab.c:1496
 #, c-format
 msgid "Error saving file %s"
 msgstr "Fehler beim Speichern der Datei »%s«"
 
-#: gedit/gedit-tab.c:1525
+#: gedit/gedit-tab.c:1527
 msgid "Name:"
 msgstr "Name:"
 
-#: gedit/gedit-tab.c:1526
+#: gedit/gedit-tab.c:1528
 msgid "MIME Type:"
 msgstr "MIME-Typ:"
 
-#: gedit/gedit-tab.c:1527
+#: gedit/gedit-tab.c:1529
 msgid "Encoding:"
 msgstr "Zeichenkodierung:"
 
 #. Translators: '/ on <remote-share>'
-#: gedit/gedit-utils.c:436
+#: gedit/gedit-utils.c:387
 #, c-format
 msgid "/ on %s"
 msgstr "/ auf %s"
 
-#: gedit/gedit-utils.c:610
+#: gedit/gedit-utils.c:532
 msgid "Unix/Linux"
 msgstr "Unix/Linux"
 
-#: gedit/gedit-utils.c:612
+#: gedit/gedit-utils.c:534
 msgid "Mac OS Classic"
 msgstr "Mac OS (klassisch)"
 
-#: gedit/gedit-utils.c:614
+#: gedit/gedit-utils.c:536
 msgid "Windows"
 msgstr "Windows"
-
-#: gedit/gedit-view.c:438 gedit/resources/ui/gedit-preferences-dialog.ui:41
-msgid "_Display line numbers"
-msgstr "_Zeilennummern anzeigen"
 
 #. Translators: the first %d is the position of the current search
 #. * occurrence, and the second %d is the total number of search
@@ -1532,48 +1514,55 @@ msgstr "Zeichenkette, nach der gesucht werden soll"
 msgid "Line you want to move the cursor to"
 msgstr "Zeile, zu der der Zeiger bewegt werden soll"
 
-#: gedit/gedit-window.c:919
+#: gedit/gedit-window.c:922
 msgid "Bracket match is out of range"
 msgstr "Zugehörige Klammer außerhalb des zulässigen Bereichs"
 
-#: gedit/gedit-window.c:924
+#: gedit/gedit-window.c:927
 msgid "Bracket match not found"
 msgstr "Zugehörige Klammer nicht gefunden"
 
-#: gedit/gedit-window.c:929
+#: gedit/gedit-window.c:932
 #, c-format
 msgid "Bracket match found on line: %d"
 msgstr "Zugehörige Klammer in Zeile %d gefunden"
 
 #. Translators: "Ln" is an abbreviation for "Line", Col is an abbreviation for "Column". Please,
 #. use abbreviations if possible to avoid space problems.
-#: gedit/gedit-window.c:964
+#: gedit/gedit-window.c:967
 #, c-format
 msgid "  Ln %d, Col %d"
 msgstr "  Z. %d, Sp. %d"
 
-#: gedit/gedit-window.c:1148
+#: gedit/gedit-window.c:1151
 #, c-format
 msgid "Tab Width: %u"
 msgstr "Tabulatorbreite: %u"
 
-#: gedit/gedit-window.c:1493
+#: gedit/gedit-window.c:1169 plugins/externaltools/tools/manager.py:115
+#: plugins/externaltools/tools/manager.py:324
+#: plugins/externaltools/tools/manager.py:440
+#: plugins/externaltools/tools/manager.py:776
+msgid "Plain Text"
+msgstr "Reiner Text"
+
+#: gedit/gedit-window.c:1496
 msgid "There are unsaved documents"
 msgstr "Es gibt ungespeicherte Dokumente"
 
-#: gedit/gedit-window.c:2330
+#: gedit/gedit-window.c:2333
 msgid "Change side panel page"
 msgstr "Seite der Seitenleiste ändern"
 
-#: gedit/gedit-window.c:2350 gedit/resources/ui/gedit-window.ui:19
+#: gedit/gedit-window.c:2353 gedit/resources/ui/gedit-window.ui:19
 msgid "Documents"
 msgstr "Dokumente"
 
-#: gedit/gedit-window.c:2637
+#: gedit/gedit-window.c:2640
 msgid "Open a file"
 msgstr "Eine Datei öffnen"
 
-#: gedit/gedit-window.c:2641
+#: gedit/gedit-window.c:2644
 msgid "Open a recently used file"
 msgstr "Eine zuletzt verwendete Datei öffnen"
 
@@ -1691,8 +1680,8 @@ msgid "_Paste"
 msgstr "E_infügen"
 
 #: gedit/resources/gtk/menus-common.ui:207
-#: plugins/filebrowser/gedit-file-browser-plugin.c:917
-#: plugins/filebrowser/gedit-file-browser-plugin.c:955
+#: plugins/filebrowser/gedit-file-browser-plugin.c:887
+#: plugins/filebrowser/gedit-file-browser-plugin.c:922
 #: plugins/filebrowser/resources/ui/gedit-file-browser-menus.ui:37
 msgid "_Delete"
 msgstr "_Löschen"
@@ -1863,22 +1852,14 @@ msgstr "_Beschreibung"
 msgid "_Encoding"
 msgstr "_Zeichenkodierungen"
 
-#: gedit/resources/ui/gedit-highlight-mode-dialog.ui:11
-msgid "Highlight Mode"
-msgstr "_Hervorhebungsmodus"
-
-#: gedit/resources/ui/gedit-highlight-mode-dialog.ui:47
-msgid "_Select"
-msgstr "A_uswählen"
-
-#: gedit/resources/ui/gedit-highlight-mode-selector.ui:31
-msgid "Search highlight mode…"
-msgstr "Hervorhebungsmodus suchen …"
-
 #: gedit/resources/ui/gedit-preferences-dialog.ui:8
 #: gedit/resources/ui/gedit-preferences-dialog.ui:15
 msgid "Preferences"
 msgstr "Einstellungen"
+
+#: gedit/resources/ui/gedit-preferences-dialog.ui:41
+msgid "_Display line numbers"
+msgstr "_Zeilennummern anzeigen"
 
 #: gedit/resources/ui/gedit-preferences-dialog.ui:56
 msgid "Display right _margin at column:"
@@ -2127,13 +2108,11 @@ msgctxt "label of the find button"
 msgid "_Find"
 msgstr "_Suchen"
 
-# Letztes Leerzeichen ist absichtlich ausgelassen
 #: gedit/resources/ui/gedit-replace-dialog.ui:105
 msgctxt "label on the left of the GtkEntry containing text to search"
 msgid "F_ind "
 msgstr "_Suchen nach "
 
-# Letztes Leerzeichen ist absichtlich ausgelassen
 #: gedit/resources/ui/gedit-replace-dialog.ui:120
 msgid "Replace _with "
 msgstr "Ersetzen _durch "
@@ -2857,46 +2836,46 @@ msgstr "Persönlicher Ordner"
 msgid "File System"
 msgstr "Dateisystem"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:521
+#: plugins/filebrowser/gedit-file-browser-plugin.c:497
 msgid "File Browser"
 msgstr "Dateiverwaltung"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:657
+#: plugins/filebrowser/gedit-file-browser-plugin.c:627
 msgid "An error occurred while creating a new directory"
 msgstr "Beim Anlegen eines neuen Ordners ist ein Fehler aufgetreten."
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:660
+#: plugins/filebrowser/gedit-file-browser-plugin.c:630
 msgid "An error occurred while creating a new file"
 msgstr "Beim Anlegen einer neuen Datei ist ein Fehler aufgetreten."
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:663
+#: plugins/filebrowser/gedit-file-browser-plugin.c:633
 msgid "An error occurred while renaming a file or directory"
 msgstr ""
 "Beim Umbenennen einer Datei oder eines Ordners ist ein Fehler aufgetreten."
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:666
+#: plugins/filebrowser/gedit-file-browser-plugin.c:636
 msgid "An error occurred while deleting a file or directory"
 msgstr ""
 "Beim Löschen einer Datei oder eines Ordners ist ein Fehler aufgetreten."
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:669
+#: plugins/filebrowser/gedit-file-browser-plugin.c:639
 msgid "An error occurred while opening a directory in the file manager"
 msgstr ""
 "Beim Öffnen einer Datei in der Dateiverwaltung ist ein Fehler aufgetreten."
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:672
+#: plugins/filebrowser/gedit-file-browser-plugin.c:642
 msgid "An error occurred while setting a root directory"
 msgstr "Beim Festlegen des Wurzelordners ist ein Fehler aufgetreten."
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:675
+#: plugins/filebrowser/gedit-file-browser-plugin.c:645
 msgid "An error occurred while loading a directory"
 msgstr "Beim Laden eines Ordners ist ein Fehler aufgetreten."
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:678
+#: plugins/filebrowser/gedit-file-browser-plugin.c:648
 msgid "An error occurred"
 msgstr "Ein Fehler ist aufgetreten"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:900
+#: plugins/filebrowser/gedit-file-browser-plugin.c:870
 msgid ""
 "Cannot move file to trash, do you\n"
 "want to delete permanently?"
@@ -2905,31 +2884,29 @@ msgstr ""
 "verschoben werden. Soll die Datei\n"
 "unwiderruflich gelöscht werden?"
 
-# CHECK
-#: plugins/filebrowser/gedit-file-browser-plugin.c:905
+#: plugins/filebrowser/gedit-file-browser-plugin.c:875
 #, c-format
 msgid "The file “%s” cannot be moved to the trash."
 msgstr "Die Datei »%s« kann nicht in den Papierkorb verschoben werden."
 
-# CHECK
-#: plugins/filebrowser/gedit-file-browser-plugin.c:910
+#: plugins/filebrowser/gedit-file-browser-plugin.c:880
 msgid "The selected files cannot be moved to the trash."
 msgstr ""
 "Die ausgewählten Dateien können nicht in den Papierkorb verschoben werden."
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:941
+#: plugins/filebrowser/gedit-file-browser-plugin.c:908
 #, c-format
 msgid "Are you sure you want to permanently delete “%s”?"
 msgstr ""
 "Sind Sie sicher, dass die Datei »%s« unwiderruflich gelöscht werden soll?"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:946
+#: plugins/filebrowser/gedit-file-browser-plugin.c:913
 msgid "Are you sure you want to permanently delete the selected files?"
 msgstr ""
 "Sind Sie sicher, dass die ausgewählten Dateien unwiderruflich gelöscht "
 "werden sollen?"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:949
+#: plugins/filebrowser/gedit-file-browser-plugin.c:916
 msgid "If you delete an item, it is permanently lost."
 msgstr "Wenn Sie ein Element löschen, geht es unwiderruflich verloren."
 
@@ -3537,7 +3514,7 @@ msgstr "Voreinstellung zur Hervorhebung von Rechtschreibfehlern."
 
 #: plugins/spell/resources/ui/gedit-spell-setup-dialog.ui:7
 msgid "Configure spell plugin"
-msgstr "Rechtschreibung-Plugin einrichten"
+msgstr "Rechtschreibung-Erweiterung einrichten"
 
 #: plugins/spell/resources/ui/gedit-spell-setup-dialog.ui:61
 msgid "Defaults for new documents"
@@ -3637,6 +3614,18 @@ msgstr "Datum/Uhrzeit einfügen"
 msgid "Inserts current date and time at the cursor position."
 msgstr ""
 "Das heutige Datum und die aktuelle Uhrzeit an der Zeigerposition einfügen."
+
+#~ msgid "Untitled Document %d"
+#~ msgstr "Ungespeichertes Dokument %d"
+
+#~ msgid "Highlight Mode"
+#~ msgstr "_Hervorhebungsmodus"
+
+#~ msgid "_Select"
+#~ msgstr "A_uswählen"
+
+#~ msgid "Search highlight mode…"
+#~ msgstr "Hervorhebungsmodus suchen …"
 
 #~ msgid ""
 #~ "gedit is the official text editor of the GNOME desktop environment. While "
