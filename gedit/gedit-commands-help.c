@@ -108,7 +108,7 @@ _gedit_cmd_help_about (GeditWindow *window)
 			       "program-name", "gedit",
 			       "authors", authors,
 			       "comments", _("gedit is a small and lightweight text editor for the GNOME desktop"),
-			       "copyright", "Copyright 1998-2020 – the gedit team",
+			       "copyright", "Copyright 1998-2021 – the gedit team",
 			       "license-type", GTK_LICENSE_GPL_2_0,
 			       "logo-icon-name", "org.gnome.gedit",
 			       "documenters", documenters,
