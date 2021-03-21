@@ -3432,6 +3432,11 @@ delete_file_finished (GFile        *file,
 			async_data_free (data);
 			return;
 		}
+		else
+		{
+			/* Process the next file */
+			data->iter = data->iter->next;
+		}
 	}
 
 	/* Continue the job */
