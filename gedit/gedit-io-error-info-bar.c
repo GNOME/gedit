@@ -431,8 +431,7 @@ create_primary_and_secondary_widgets_info_bar(GtkWidget *vbox, const gchar *prim
 
 static GtkWidget *
 create_file_too_big_error_info_bar (const gchar *primary_text,
-				  const gchar *secondary_text,
-				  gboolean     edit_anyway)
+				  const gchar *secondary_text)
 {
 	GtkWidget *info_bar;
 	GtkWidget *hbox_content;
@@ -610,8 +609,7 @@ gedit_io_loading_error_info_bar_new (GFile                   *location,
 	if (file_too_big)
 	{
 		info_bar = create_file_too_big_error_info_bar (error_message,
-							     message_details,
-							     edit_anyway);
+							     message_details);
 	}
 	else if (convert_error)
 	{
