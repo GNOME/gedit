@@ -678,7 +678,6 @@ io_loading_error_info_bar_response (GtkWidget *info_bar,
 			set_info_bar (data->tab, NULL, GTK_RESPONSE_NONE);
 			gedit_tab_set_state (data->tab, GEDIT_TAB_STATE_LOADING);
 
-
 			launch_loader (loading_task, encoding);
 			break;
 
