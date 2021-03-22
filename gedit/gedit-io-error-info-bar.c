@@ -502,7 +502,6 @@ create_conversion_error_info_bar (const gchar *primary_text,
 	return info_bar;
 }
 
-
 GtkWidget *
 gedit_io_loading_error_info_bar_new (GFile                   *location,
 				     const GtkSourceEncoding *encoding,
