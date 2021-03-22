@@ -2039,6 +2039,8 @@ launch_loader (GTask                   *loading_task,
 	LoaderData *data = g_task_get_task_data (loading_task);
 	GSList *candidate_encodings = NULL;
 	GeditDocument *doc;
+	const int MB = 1024*1024;
+	const int FILE_TOO_LARGE = 512*MB;
 
 	if (encoding != NULL)
 	{
@@ -2066,29 +2068,19 @@ launch_loader (GTask                   *loading_task,
 
 
 	GFile * file = gtk_source_file_loader_get_location (data->loader);
-	char * name = g_file_get_path (file);
 	guint64 size = get_file_size (file);
-	printf("Open file %s\n", name);
-	printf("Size: %lu\n", size);
 
-	/*if (g_error_matches (error,
-			     GTK_SOURCE_FILE_LOADER_ERROR,
-			     GTK_SOURCE_FILE_LOADER_ERROR_CONVERSION_FALLBACK))*/
+	if (size > FILE_TOO_LARGE)
 	{
 		GtkWidget *info_bar;
 		GError *error = NULL;
-		const GtkSourceEncoding *encoding;
 		GFile *location = gtk_source_file_loader_get_location (data->loader);
 		set_editable (data->tab, FALSE);
 
-		encoding = gtk_source_file_loader_get_encoding (data->loader);
-
-		error = g_error_new (GTK_SOURCE_FILE_LOADER_ERROR, 0,
-						    "%s: Is not a regular file",
-						    name);
+		error = g_error_new (GTK_SOURCE_FILE_LOADER_ERROR, 0, "");
 		error->code = GTK_SOURCE_FILE_LOADER_ERROR_TOO_BIG;
 
-		info_bar = gedit_io_loading_error_info_bar_new (location, encoding, error);
+		info_bar = gedit_io_loading_error_info_bar_new (location, NULL, error);
 
 		g_signal_connect (info_bar,
 				  "response",
