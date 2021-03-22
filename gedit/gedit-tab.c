@@ -2039,7 +2039,7 @@ launch_loader (GTask                   *loading_task,
 	GSList *candidate_encodings = NULL;
 	GeditDocument *doc;
 	const int MB = 1024*1024;
-	const int FILE_TOO_LARGE = 512*MB;
+	const int FILE_TOO_LARGE = 100*MB;
 
 	if (encoding != NULL)
 	{

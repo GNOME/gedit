@@ -589,7 +589,7 @@ gedit_io_loading_error_info_bar_new (GFile                   *location,
 	{
 		error_message = g_strdup_printf (_("The file “%s” is very big."),
 						 uri_for_display);
-		message_details = g_strconcat (_("Large files can make gedit slow or unresponsive."
+		message_details = g_strconcat (_("Large files can make gedit slow or unresponsive. "
 					       "You can continue loading this file at your own risk"),
 					       NULL);
 		file_too_big = TRUE;
