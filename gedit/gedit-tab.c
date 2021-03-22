@@ -2076,7 +2076,7 @@ launch_loader (GTask                   *loading_task,
 		GFile *location = gtk_source_file_loader_get_location (data->loader);
 		set_editable (data->tab, FALSE);
 
-		error = g_error_new (GTK_SOURCE_FILE_LOADER_ERROR, 0, "");
+		error = g_error_new_literal (GTK_SOURCE_FILE_LOADER_ERROR, 0, "");
 		error->code = GTK_SOURCE_FILE_LOADER_ERROR_TOO_BIG;
 
 		info_bar = gedit_io_loading_error_info_bar_new (location, NULL, error);
