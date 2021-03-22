@@ -415,22 +415,6 @@ create_file_too_big_error_info_bar (const gchar *primary_text,
 				 _("_Continue loading"),
 				 GTK_RESPONSE_ACCEPT);
 
-	if (edit_anyway)
-	{
-		gtk_info_bar_add_button (GTK_INFO_BAR (info_bar),
-		/* Translators: the access key chosen for this string should be
-		 different from other main menu access keys (Open, Edit, View...) */
-					 _("Edit Any_way"),
-					 GTK_RESPONSE_YES);
-		gtk_info_bar_set_message_type (GTK_INFO_BAR (info_bar),
-					       GTK_MESSAGE_WARNING);
-	}
-	else
-	{
-		gtk_info_bar_set_message_type (GTK_INFO_BAR (info_bar),
-					       GTK_MESSAGE_ERROR);
-	}
-
 	hbox_content = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 8);
 
 	vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
@@ -460,7 +444,6 @@ create_file_too_big_error_info_bar (const gchar *primary_text,
 		gtk_widget_set_halign (secondary_label, GTK_ALIGN_START);
 	}
 
-	create_combo_box (info_bar, vbox);
 	gtk_widget_show_all (hbox_content);
 	set_contents (info_bar, hbox_content);
 
@@ -628,10 +611,8 @@ gedit_io_loading_error_info_bar_new (GFile                   *location,
 	{
 		error_message = g_strdup_printf (_("The file “%s” is very big."),
 						 uri_for_display);
-		message_details = g_strconcat (_("The file you opened has some invalid characters. "
-					       "If you continue editing this file you could corrupt this "
-					       "document."), "\n",
-					       _("You can also choose another character encoding and try again."),
+		message_details = g_strconcat (_("Large files can make gedit slow or unresponsive."
+					       "You can continue loading this file at your own risk"),
 					       NULL);
 		file_too_big = TRUE;
 		edit_anyway = TRUE;
