@@ -4,13 +4,13 @@
 #
 # Maxim Dziumanenko <dziumanenko@gmail.com>, 2007.
 # Назарій Ріттер <nazariy.ritter@gmail.com>, 2014.
-# Yuri Chornoivan <yurchor@ukr.net>, 2020.
+# Yuri Chornoivan <yurchor@ukr.net>, 2020, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: gedit manual\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-28 07:44+0000\n"
-"PO-Revision-Date: 2020-11-29 09:02+0200\n"
+"POT-Creation-Date: 2021-03-24 15:24+0000\n"
+"PO-Revision-Date: 2021-03-24 17:55+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -18,8 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Lokalize 20.11.70\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<"
-"=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
@@ -49,7 +48,7 @@ msgstr "Зміна кольорів тексту та тла у «gedit»."
 #: C/gedit-quickstart.page:12 C/gedit-replace.page:14 C/gedit-save-file.page:13
 #: C/gedit-search.page:12 C/gedit-spellcheck.page:12
 #: C/gedit-syntax-highlighting.page:10 C/gedit-tabs-moving.page:13
-#: C/gedit-tabs.page:14 C/gedit-undo-redo.page:12 C/index.page:14
+#: C/gedit-tabs.page:14 C/gedit-undo-redo.page:12 C/index.page:15
 msgid "Jim Campbell"
 msgstr "Jim Campbell"
 
@@ -166,8 +165,6 @@ msgstr "Щоб змінити типовий шрифт в «<app>gedit</app>»:
 
 #. (itstool) path: item/p
 #: C/gedit-change-default-font.page:32
-#| msgid ""
-#| "Uncheck the box next to the phrase, \"Use the system fixed-width font.\""
 msgid ""
 "Uncheck the box next to the phrase, \"Use the system fixed width font.\""
 msgstr ""
@@ -195,7 +192,6 @@ msgstr ""
 
 #. (itstool) path: item/p
 #: C/gedit-change-default-font.page:39
-#| msgid "Click <gui>Select</gui>, and then click <gui>Close</gui>."
 msgid "Click <gui>Select</gui>, and then close the dialog."
 msgstr "Клацніть на «<gui>Вибрати</gui>», а потім закрийте діалогове вікно."
 
@@ -1651,7 +1647,7 @@ msgstr ""
 #: C/gedit-replace.page:22 C/gedit-save-file.page:17 C/gedit-search.page:20
 #: C/gedit-spellcheck.page:20 C/gedit-syntax-highlighting.page:14
 #: C/gedit-tabs-moving.page:21 C/gedit-tabs.page:22 C/gedit-undo-redo.page:20
-#: C/index.page:18
+#: C/index.page:19
 msgid "Sindhu S"
 msgstr "Sindhu S"
 
@@ -1811,16 +1807,14 @@ msgstr ""
 msgid ""
 "\n"
 "      &lt;head&gt;\n"
-"      &lt;meta http-equiv=\"Content-type\" content=\"text/html;"
-" charset=utf-8\" /&gt;\n"
+"      &lt;meta http-equiv=\"Content-type\" content=\"text/html; charset=utf-8\" /&gt;\n"
 "      &lt;title&gt;Page Title&lt;/title&gt;\n"
 "      &lt;/head&gt;\n"
 "    "
 msgstr ""
 "\n"
 "      &lt;head&gt;\n"
-"      &lt;meta http-equiv=\"Content-type\" content=\"text/html;"
-" charset=utf-8\" /&gt;\n"
+"      &lt;meta http-equiv=\"Content-type\" content=\"text/html; charset=utf-8\" /&gt;\n"
 "      &lt;title&gt;Page Title&lt;/title&gt;\n"
 "      &lt;/head&gt;\n"
 "    "
@@ -3161,12 +3155,6 @@ msgstr "Організація файлів в групові вкладки"
 
 #. (itstool) path: page/p
 #: C/gedit-tab-groups.page:24
-#| msgid ""
-#| "If you are working with multiple tabs in <app>gedit</app> you can group "
-#| "them, making it easier to keep your opened files organized. Adding a new "
-#| "tab group will divide the <app>gedit</app> window in two panes, open a "
-#| "new “Untitled Document” in the new pane, and make it active. You can open "
-#| "files into that tab group and move tabs from one tab group to another."
 msgid ""
 "If you are working with multiple tabs in <app>gedit</app> you can group "
 "them, making it easier to keep your opened files organized. Adding a new tab "
@@ -3177,9 +3165,9 @@ msgstr ""
 "Якщо Ви працюєте в «<app>gedit</app>» з декількома вкладками, то можна їх "
 "групувати, щоб полегшити зберігання відкритих файлів організованими. Додання "
 "нової групи вкладок розділяє вікно «<app>gedit</app>» на два підвікна, "
-"відкриває новий «Неназваний файл» в новому підвікні та робить його "
-"активним. Можна відкривати файли в цій групі вкладок і переміщати їх з "
-"однієї групи в іншу."
+"відкриває новий «Неназваний файл» в новому підвікні та робить його активним. "
+"Можна відкривати файли в цій групі вкладок і переміщати їх з однієї групи в "
+"іншу."
 
 #. (itstool) path: section/title
 #: C/gedit-tab-groups.page:31
@@ -3463,28 +3451,36 @@ msgstr ""
 
 #. (itstool) path: info/title
 #: C/index.page:8
-msgctxt "link"
+#| msgctxt "link"
+#| msgid "gedit Text Editor"
+msgctxt "link:trail"
 msgid "gedit Text Editor"
 msgstr "Текстовий редактор «gedit»"
 
 #. (itstool) path: info/title
 #: C/index.page:9
+msgctxt "link"
+msgid "gedit Text Editor"
+msgstr "Текстовий редактор «gedit»"
+
+#. (itstool) path: info/title
+#: C/index.page:10
 msgctxt "text"
 msgid "gedit Text Editor"
 msgstr "Текстовий редактор «gedit»"
 
 #. (itstool) path: info/desc
-#: C/index.page:11
+#: C/index.page:12
 msgid "Home page of the gedit help guide."
 msgstr "Домашня сторінка підручника з «gedit»."
 
 #. (itstool) path: page/title
-#: C/index.page:26
+#: C/index.page:27
 msgid "<_:media-1/> gedit Text Editor"
 msgstr "<_:media-1/> Текстовий редактор «gedit»"
 
 #. (itstool) path: page/p
-#: C/index.page:30
+#: C/index.page:31
 msgid ""
 "Welcome to the <app>gedit</app> help guide. For a quick introduction into "
 "<app>gedit's</app> most basic features, visit the <link xref=\"gedit-"
@@ -3495,7 +3491,7 @@ msgstr ""
 "\"gedit-quickstart\">Початок роботи з «gedit»</link>."
 
 #. (itstool) path: page/p
-#: C/index.page:34
+#: C/index.page:35
 msgid ""
 "Other help topics are grouped together into sections below. Enjoy using "
 "<app>gedit</app>!"
@@ -3504,22 +3500,22 @@ msgstr ""
 "«<app>gedit</app>»!"
 
 #. (itstool) path: section/title
-#: C/index.page:38
+#: C/index.page:39
 msgid "Working With Files"
 msgstr "Робота з файлами"
 
 #. (itstool) path: section/title
-#: C/index.page:43
+#: C/index.page:44
 msgid "Configure gedit"
 msgstr "Налаштування «gedit»"
 
 #. (itstool) path: section/title
-#: C/index.page:47
+#: C/index.page:48
 msgid "gedit Plugins"
 msgstr "Додатки «gedit»"
 
 #. (itstool) path: section/title
-#: C/index.page:51
+#: C/index.page:52
 msgid "Printing with gedit"
 msgstr "Друкування з «gedit»"
 
