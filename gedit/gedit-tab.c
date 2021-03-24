@@ -693,8 +693,6 @@ io_loading_error_info_bar_response (GtkWidget *info_bar,
 
 
 		case GTK_RESPONSE_ACCEPT:
-			encoding = gedit_conversion_error_info_bar_get_encoding (GTK_WIDGET (info_bar));
-
 			set_info_bar (data->tab, NULL, GTK_RESPONSE_NONE);
 			gedit_tab_set_state (data->tab, GEDIT_TAB_STATE_LOADING);
 
@@ -2015,13 +2013,15 @@ guint64 get_file_size (GFile *file)
 	GError *error = NULL;
 	guint64 res = 0;
 
-	if (file == NULL){
+	if (file == NULL)
+	{
 		return 0;
 	}
 
 	info = g_file_query_info (file, G_FILE_ATTRIBUTE_STANDARD_SIZE, G_FILE_QUERY_INFO_NONE, NULL, &error);
 
-	if (error) {
+	if (error)
+	{
 		g_error_free (error);
 		return 0;
 	}
