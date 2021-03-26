@@ -394,6 +394,38 @@ file_chooser_open_done_cb (GeditFileChooserOpen *file_chooser,
 	g_slist_free_full (files, g_object_unref);
 }
 
+const gchar*
+_get_currrent_doc_location (GeditWindow *window)
+{
+	GFile *default_path = NULL;
+	const gchar *default_uri = NULL;
+
+	if (window != NULL)
+	{
+		GeditDocument *doc;
+
+		doc = gedit_window_get_active_document (window);
+
+		if (doc != NULL)
+		{
+			GtkSourceFile *file = gedit_document_get_file (doc);
+			GFile *location = gtk_source_file_get_location (file);
+
+			if (location != NULL)
+			{
+				default_path = g_file_get_parent (location);
+			}
+		}
+
+		if (default_path != NULL)
+		{
+			default_uri = g_file_get_uri(default_path);
+		}
+	}
+
+	return default_uri;
+}
+
 void
 _gedit_cmd_file_open (GSimpleAction *action,
                       GVariant      *parameter,
@@ -409,6 +441,8 @@ _gedit_cmd_file_open (GSimpleAction *action,
 		window = GEDIT_WINDOW (user_data);
 	}
 
+	const gchar* default_uri = _get_currrent_doc_location (window);
+
 	file_chooser = _gedit_file_chooser_open_new ();
 
 	if (window != NULL)
@@ -419,6 +453,12 @@ _gedit_cmd_file_open (GSimpleAction *action,
 						       GTK_WINDOW (window));
 
 		folder_uri = _gedit_window_get_file_chooser_folder_uri (window, GTK_FILE_CHOOSER_ACTION_OPEN);
+
+		if (default_uri != NULL)
+		{
+			folder_uri = default_uri;
+		}
+
 		if (folder_uri != NULL)
 		{
 			_gedit_file_chooser_set_current_folder_uri (GEDIT_FILE_CHOOSER (file_chooser),
