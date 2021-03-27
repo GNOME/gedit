@@ -143,6 +143,9 @@ static void launch_loader (GTask                   *loading_task,
 
 static void launch_saver (GTask *saving_task);
 
+static void continue_loading(GTask     *loading_task);
+
+
 static SaverData *
 saver_data_new (void)
 {
@@ -686,6 +689,14 @@ io_loading_error_info_bar_response (GtkWidget *info_bar,
 
 			g_task_return_boolean (loading_task, TRUE);
 			g_object_unref (loading_task);
+			break;
+
+
+		case GTK_RESPONSE_ACCEPT:
+			set_info_bar (data->tab, NULL, GTK_RESPONSE_NONE);
+			gedit_tab_set_state (data->tab, GEDIT_TAB_STATE_LOADING);
+
+			continue_loading (loading_task);
 			break;
 
 		default:
@@ -1974,12 +1985,56 @@ get_candidate_encodings (GeditTab *tab)
 }
 
 static void
+continue_loading(GTask     *loading_task)
+{
+	LoaderData *data = g_task_get_task_data (loading_task);
+	// Pre loader
+	gtk_source_file_loader_load_async (data->loader,
+					   G_PRIORITY_DEFAULT,
+					   g_task_get_cancellable (loading_task),
+					   (GFileProgressCallback) loader_progress_cb,
+					   loading_task,
+					   NULL,
+					   (GAsyncReadyCallback) load_cb,
+					   loading_task);
+}
+
+
+
+static
+guint64 get_file_size (GFile *file)
+{
+	GFileInfo *info;
+	GError *error = NULL;
+	guint64 res = 0;
+
+	if (file == NULL)
+	{
+		return 0;
+	}
+
+	info = g_file_query_info (file, G_FILE_ATTRIBUTE_STANDARD_SIZE, G_FILE_QUERY_INFO_NONE, NULL, &error);
+
+	if (error)
+	{
+		g_error_free (error);
+		return 0;
+	}
+
+	res = g_file_info_get_size(info);
+	g_object_unref (info);
+	return res;
+}
+
+static void
 launch_loader (GTask                   *loading_task,
 	       const GtkSourceEncoding *encoding)
 {
 	LoaderData *data = g_task_get_task_data (loading_task);
 	GSList *candidate_encodings = NULL;
 	GeditDocument *doc;
+	const int MB = 1024*1024;
+	const int FILE_TOO_LARGE = 100*MB;
 
 	if (encoding != NULL)
 	{
@@ -2005,6 +2060,47 @@ launch_loader (GTask                   *loading_task,
 
 	data->timer = g_timer_new ();
 
+
+	GFile * file = gtk_source_file_loader_get_location (data->loader);
+	guint64 size = get_file_size (file);
+
+	if (size > FILE_TOO_LARGE)
+	{
+		GtkWidget *info_bar;
+		GError *error = NULL;
+		GFile *location = gtk_source_file_loader_get_location (data->loader);
+		set_editable (data->tab, FALSE);
+
+		error = g_error_new_literal (GTK_SOURCE_FILE_LOADER_ERROR, 0, "");
+		error->code = GTK_SOURCE_FILE_LOADER_ERROR_TOO_BIG;
+
+		info_bar = gedit_io_loading_error_info_bar_new (location, NULL, error);
+
+		g_signal_connect (info_bar,
+				  "response",
+				  G_CALLBACK (io_loading_error_info_bar_response),
+				  loading_task);
+
+		set_info_bar (data->tab, info_bar, GTK_RESPONSE_CANCEL);
+
+		if (data->tab->state == GEDIT_TAB_STATE_LOADING)
+		{
+			gtk_widget_show (GTK_WIDGET (data->tab->frame));
+			gedit_tab_set_state (data->tab, GEDIT_TAB_STATE_LOADING_ERROR);
+		}
+		else
+		{
+			gedit_tab_set_state (data->tab, GEDIT_TAB_STATE_REVERTING_ERROR);
+		}
+
+		successful_load (loading_task);
+		gedit_recent_add_document (doc);
+
+		g_error_free (error);
+		return;
+	}
+
+	// Pre loader
 	gtk_source_file_loader_load_async (data->loader,
 					   G_PRIORITY_DEFAULT,
 					   g_task_get_cancellable (loading_task),

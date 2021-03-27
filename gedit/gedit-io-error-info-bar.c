@@ -402,6 +402,67 @@ create_combo_box (GtkWidget *info_bar,
 	gtk_box_pack_start (GTK_BOX (vbox), hbox, TRUE, TRUE, 0);
 }
 
+static void
+create_primary_and_secondary_widgets_info_bar(GtkWidget *vbox, const gchar *primary_text,
+				  const gchar *secondary_text)
+{
+	gchar *primary_markup;
+	gchar *secondary_markup;
+	GtkWidget *primary_label;
+	GtkWidget *secondary_label;
+
+	primary_markup = g_strdup_printf ("<b>%s</b>", primary_text);
+	primary_label = gtk_label_new (primary_markup);
+	g_free (primary_markup);
+	gtk_box_pack_start (GTK_BOX (vbox), primary_label, TRUE, TRUE, 0);
+	gtk_label_set_use_markup (GTK_LABEL (primary_label), TRUE);
+	gtk_label_set_line_wrap (GTK_LABEL (primary_label), TRUE);
+	gtk_widget_set_halign (primary_label, GTK_ALIGN_START);
+	gtk_widget_set_can_focus (primary_label, TRUE);
+	gtk_label_set_selectable (GTK_LABEL (primary_label), TRUE);
+
+	if (secondary_text != NULL)
+	{
+		secondary_markup = g_strdup_printf ("<small>%s</small>",
+						    secondary_text);
+		secondary_label = gtk_label_new (secondary_markup);
+		g_free (secondary_markup);
+		gtk_box_pack_start (GTK_BOX (vbox), secondary_label, TRUE, TRUE, 0);
+		gtk_widget_set_can_focus (secondary_label, TRUE);
+		gtk_label_set_use_markup (GTK_LABEL (secondary_label), TRUE);
+		gtk_label_set_line_wrap (GTK_LABEL (secondary_label), TRUE);
+		gtk_label_set_selectable (GTK_LABEL (secondary_label), TRUE);
+		gtk_widget_set_halign (secondary_label, GTK_ALIGN_START);
+	}
+}
+
+static GtkWidget *
+create_file_too_big_error_info_bar (const gchar *primary_text,
+				  const gchar *secondary_text)
+{
+	GtkWidget *info_bar;
+	GtkWidget *hbox_content;
+	GtkWidget *vbox;
+
+	info_bar = gtk_info_bar_new ();
+	gtk_info_bar_set_show_close_button (GTK_INFO_BAR (info_bar), TRUE);
+
+	gtk_info_bar_add_button (GTK_INFO_BAR (info_bar),
+				 _("_Continue loading"),
+				 GTK_RESPONSE_ACCEPT);
+
+	hbox_content = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 8);
+
+	vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
+	gtk_box_pack_start (GTK_BOX (hbox_content), vbox, TRUE, TRUE, 0);
+
+	create_primary_and_secondary_widgets_info_bar (vbox, primary_text, secondary_text);
+	gtk_widget_show_all (hbox_content);
+	set_contents (info_bar, hbox_content);
+
+	return info_bar;
+}
+
 static GtkWidget *
 create_conversion_error_info_bar (const gchar *primary_text,
 				  const gchar *secondary_text,
@@ -410,10 +471,6 @@ create_conversion_error_info_bar (const gchar *primary_text,
 	GtkWidget *info_bar;
 	GtkWidget *hbox_content;
 	GtkWidget *vbox;
-	gchar *primary_markup;
-	gchar *secondary_markup;
-	GtkWidget *primary_label;
-	GtkWidget *secondary_label;
 
 	info_bar = gtk_info_bar_new ();
 	gtk_info_bar_set_show_close_button (GTK_INFO_BAR (info_bar), TRUE);
@@ -443,30 +500,7 @@ create_conversion_error_info_bar (const gchar *primary_text,
 	vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
 	gtk_box_pack_start (GTK_BOX (hbox_content), vbox, TRUE, TRUE, 0);
 
-	primary_markup = g_strdup_printf ("<b>%s</b>", primary_text);
-	primary_label = gtk_label_new (primary_markup);
-	g_free (primary_markup);
-	gtk_box_pack_start (GTK_BOX (vbox), primary_label, TRUE, TRUE, 0);
-	gtk_label_set_use_markup (GTK_LABEL (primary_label), TRUE);
-	gtk_label_set_line_wrap (GTK_LABEL (primary_label), TRUE);
-	gtk_widget_set_halign (primary_label, GTK_ALIGN_START);
-	gtk_widget_set_can_focus (primary_label, TRUE);
-	gtk_label_set_selectable (GTK_LABEL (primary_label), TRUE);
-
-	if (secondary_text != NULL)
-	{
-		secondary_markup = g_strdup_printf ("<small>%s</small>",
-						    secondary_text);
-		secondary_label = gtk_label_new (secondary_markup);
-		g_free (secondary_markup);
-		gtk_box_pack_start (GTK_BOX (vbox), secondary_label, TRUE, TRUE, 0);
-		gtk_widget_set_can_focus (secondary_label, TRUE);
-		gtk_label_set_use_markup (GTK_LABEL (secondary_label), TRUE);
-		gtk_label_set_line_wrap (GTK_LABEL (secondary_label), TRUE);
-		gtk_label_set_selectable (GTK_LABEL (secondary_label), TRUE);
-		gtk_widget_set_halign (secondary_label, GTK_ALIGN_START);
-	}
-
+	create_primary_and_secondary_widgets_info_bar (vbox, primary_text, secondary_text);
 	create_combo_box (info_bar, vbox);
 	gtk_widget_show_all (hbox_content);
 	set_contents (info_bar, hbox_content);
@@ -487,6 +521,7 @@ gedit_io_loading_error_info_bar_new (GFile                   *location,
 	GtkWidget *info_bar;
 	gboolean edit_anyway = FALSE;
 	gboolean convert_error = FALSE;
+	gboolean file_too_big = FALSE;
 
 	g_return_val_if_fail (error != NULL, NULL);
 	g_return_val_if_fail (error->domain == GTK_SOURCE_FILE_LOADER_ERROR ||
@@ -556,6 +591,16 @@ gedit_io_loading_error_info_bar_new (GFile                   *location,
 
 		g_free (encoding_name);
 	}
+	else if (error->domain == GTK_SOURCE_FILE_LOADER_ERROR &&
+		 error->code == GTK_SOURCE_FILE_LOADER_ERROR_TOO_BIG)
+	{
+		error_message = g_strdup_printf (_("The file “%s” is very big."),
+						 uri_for_display);
+		message_details = g_strconcat (_("Large files can make gedit slow or unresponsive. "
+					       "You can continue loading this file at your own risk"),
+					       NULL);
+		file_too_big = TRUE;
+	}
 	else
 	{
 		parse_error (error, &error_message, &message_details, location, uri_for_display);
@@ -567,7 +612,12 @@ gedit_io_loading_error_info_bar_new (GFile                   *location,
 						 uri_for_display);
 	}
 
-	if (convert_error)
+	if (file_too_big)
+	{
+		info_bar = create_file_too_big_error_info_bar (error_message,
+							     message_details);
+	}
+	else if (convert_error)
 	{
 		info_bar = create_conversion_error_info_bar (error_message,
 							     message_details,
