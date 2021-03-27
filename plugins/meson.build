@@ -18,6 +18,7 @@ msgfmt_plugin_cmd = [
 subdir('docinfo')
 subdir('filebrowser')
 subdir('modelines')
+subdir('openlinks')
 subdir('pythonconsole')
 subdir('quickhighlight')
 subdir('quickopen')
