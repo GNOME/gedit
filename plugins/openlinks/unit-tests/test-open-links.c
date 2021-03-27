@@ -61,7 +61,7 @@ test_uri_detection (void)
 	gtk_text_buffer_set_text (buffer, "www.google.com", -1);
 	gtk_text_buffer_get_start_iter (buffer, &start);
 	is_uri = gedit_open_links_plugin_get_uri (&start, uri_char_regex, &uri);
-	g_assert_false (is_uri);
+	g_assert_true (is_uri);
 }
 
 
