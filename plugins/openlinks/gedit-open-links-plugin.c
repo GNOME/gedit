@@ -129,7 +129,7 @@ gedit_open_links_plugin_get_uri (GtkTextIter *start,
 	/* We must prepend the scheme or the gtk URL opening function fails */
 	if (g_str_has_prefix ((*uri)->str, "www."))
 	{
-		g_string_prepend (*uri, "http://");
+		g_string_prepend (*uri, "https://");
 	}
 	return TRUE;
 }
