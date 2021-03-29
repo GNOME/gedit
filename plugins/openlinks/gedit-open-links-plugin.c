@@ -179,7 +179,7 @@ gedit_open_links_plugin_on_populate_popup_cb (GtkTextView		*view,
 		return;
 	}
 
-	menu_item = gtk_menu_item_new_with_label ("Open Link");
+	menu_item = gtk_menu_item_new_with_label (_("Open Link"));
 	g_signal_connect (menu_item, "activate", G_CALLBACK (gedit_open_links_plugin_open_link_cb), plugin);
 
 	gtk_widget_show (menu_item);
