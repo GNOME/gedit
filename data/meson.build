@@ -45,6 +45,7 @@ active_plugins = [
   'docinfo',
   'filebrowser',
   'modelines',
+  'openlinks',
   'sort',
   'spell',
 ]
