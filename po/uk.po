@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gedit\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gedit/issues\n"
-"POT-Creation-Date: 2021-03-27 18:13+0000\n"
-"PO-Revision-Date: 2021-03-27 20:24+0200\n"
+"POT-Creation-Date: 2021-03-29 16:06+0000\n"
+"PO-Revision-Date: 2021-04-03 22:37+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -1076,7 +1076,6 @@ msgid "Ch_aracter Encoding:"
 msgstr "_Кодування символів:"
 
 #: gedit/gedit-io-error-info-bar.c:444
-#| msgid "L_ine Ending:"
 msgid "_Continue loading"
 msgstr "П_родовжити завантаження"
 
@@ -1138,7 +1137,6 @@ msgstr "Виберіть інше кодування символів з мен�
 
 #: gedit/gedit-io-error-info-bar.c:590
 #, c-format
-#| msgid "The file “%s” is read-only."
 msgid "The file “%s” is very big."
 msgstr "Файл «%s» є надто великим."
 
@@ -1147,7 +1145,9 @@ msgid ""
 "Large files can make gedit slow or unresponsive. You can continue loading "
 "this file at your own risk"
 msgstr ""
-"Редагування великих файлів може уповільнити gedit або призвести до відмови у роботі програми. Завантажуючи цей файл, ви приймаєте відповідальність за результати на себе."
+"Редагування великих файлів може уповільнити gedit або призвести до відмови у "
+"роботі програми. Завантажуючи цей файл, ви приймаєте відповідальність за "
+"результати на себе."
 
 #: gedit/gedit-io-error-info-bar.c:604
 #, c-format
@@ -3076,6 +3076,23 @@ msgstr "Режим рядків"
 #: plugins/modelines/modelines.plugin.desktop.in:6
 msgid "Emacs, Kate and Vim-style modelines support for gedit."
 msgstr "Підтримування режиму рядків в стилі редакторів Emacs, Kate та Vim."
+
+#: plugins/openlinks/gedit-open-links-plugin.c:182
+#| msgctxt "shortcut window"
+#| msgid "Open menu"
+msgid "Open Link"
+msgstr "Відкрити посилання"
+
+#: plugins/openlinks/openlinks.plugin.desktop.in:5
+#| msgctxt "window title"
+#| msgid "Open Files"
+msgid "Open Links"
+msgstr "Відкриття посилань"
+
+#: plugins/openlinks/openlinks.plugin.desktop.in:6
+msgid "Easy open URI links."
+msgstr ""
+"Просте відкриття адрес-посилань."
 
 #: plugins/pythonconsole/org.gnome.gedit.plugins.pythonconsole.gschema.xml:5
 msgid "Command Color Text"
