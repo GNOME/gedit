@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gnome Nepali Translation Project\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gedit/issues\n"
-"POT-Creation-Date: 2019-08-07 01:38+0000\n"
-"PO-Revision-Date: 2019-08-19 09:15+0545\n"
+"POT-Creation-Date: 2021-03-29 15:47+0000\n"
+"PO-Revision-Date: 2021-04-08 21:57+0545\n"
 "Last-Translator: Pawan Chitrakar <chautari@gmail.com>\n"
 "Language-Team: Nepali Translation Team <chautari@gmail.com>\n"
 "Language: ne\n"
@@ -20,55 +20,47 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "First Translator: Pawan Chitrakar <pawan@nplinux.org>\n"
-"X-Generator: Poedit 2.2.3\n"
+"X-Generator: Poedit 2.4.2\n"
 
 #: data/org.gnome.gedit.appdata.xml.in:7
 #, fuzzy
 msgid "gedit"
 msgstr "gedit ले सम्पादित क्षेत्रमा लाइन सङ्ख्याहरू प्रदर्शन गर्नुपर्दछ या पर्दैन ।"
 
-#: data/org.gnome.gedit.appdata.xml.in:8 data/org.gnome.gedit.desktop.in.in:4
+#: data/org.gnome.gedit.appdata.xml.in:8 data/org.gnome.gedit.desktop.in:4
 msgid "Edit text files"
 msgstr "पाठ फाइल सम्पादन गर्नुहोस्"
 
 #: data/org.gnome.gedit.appdata.xml.in:10
+#, fuzzy
+#| msgid "gedit is a small and lightweight text editor for the GNOME Desktop"
+msgid "gedit is the text editor of the GNOME desktop environment."
+msgstr "जीनोम डेस्कटपका लागि gedit सानो र हल्का पाठ सम्पादक हो"
+
+#: data/org.gnome.gedit.appdata.xml.in:13
 msgid ""
-"gedit is the official text editor of the GNOME desktop environment. While aiming at simplicity "
-"and ease of use, gedit is a powerful general purpose text editor."
+"The first goal of gedit is to be easy to use, with a simple interface by default. More advanced "
+"features are available by enabling plugins."
 msgstr ""
 
-#: data/org.gnome.gedit.appdata.xml.in:15
-msgid ""
-"Whether you are writing the next bestseller, programming an innovative application, or simply "
-"taking some quick notes, gedit will be a reliable tool to accomplish your task."
-msgstr ""
-"तपाईं अर्को सर्बाधिक विक्री हुने पुस्तक लेख्दै हुनुहुन्छ, एउटा इनोभेटिव प्रोग्रामिङ अथवा साधारण नोट लिँदै हुनुहुन्छ भने "
-"पनि जिएडिट विश्वसनीय उपकरण हुनेछ ।"
-
-#: data/org.gnome.gedit.appdata.xml.in:20
-msgid ""
-"Its flexible plugin system allows you to tailor the application to your needs and adapt it to "
-"your workflow."
-msgstr ""
-
-#: data/org.gnome.gedit.desktop.in.in:3 gedit/gedit-print-job.c:730
+#: data/org.gnome.gedit.desktop.in:3 gedit/gedit-print-job.c:731
 msgid "Text Editor"
 msgstr "पाठ सम्पादक"
 
 #. TRANSLATORS: Do NOT translate or localize the semicolons!
 #. The list MUST also end with a semicolon!
 #. Search terms to find this application.
-#: data/org.gnome.gedit.desktop.in.in:18
+#: data/org.gnome.gedit.desktop.in:18
 #, fuzzy
 #| msgid "Text;Editor;Plaintext;Write;"
 msgid "Text;Editor;Plaintext;Write;gedit;"
 msgstr "जीनोम डेस्कटपका लागि gedit सानो र हल्का पाठ सम्पादक हो"
 
-#: data/org.gnome.gedit.desktop.in.in:22
+#: data/org.gnome.gedit.desktop.in:22
 msgid "New Window"
 msgstr "नयाँ सञ्झ्याल"
 
-#: data/org.gnome.gedit.desktop.in.in:26
+#: data/org.gnome.gedit.desktop.in:26
 msgid "New Document"
 msgstr "नयाँ कागजात"
 
@@ -231,7 +223,7 @@ msgstr "gedit ले ट्याबहरूको सट्टा खाली
 #, fuzzy
 #| msgid "Auto indent"
 msgid "Automatic indent"
-msgstr "स्वाचालित"
+msgstr "indent"
 
 #: data/org.gnome.gedit.gschema.xml.in:102
 #, fuzzy
@@ -282,29 +274,19 @@ msgid "Specifies the position of the right margin."
 msgstr "दायाँ सीमान्तको स्थिति निर्दिष्ट गर्दछ ।"
 
 #: data/org.gnome.gedit.gschema.xml.in:131
-msgid "Display Overview Map"
-msgstr "अवलोकन मानचित्र देखाउनुहोस्"
-
-#: data/org.gnome.gedit.gschema.xml.in:132
-#, fuzzy
-#| msgid "Whether gedit should display the right margin in the editing area."
-msgid "Whether gedit should display the overview map for the document."
-msgstr "gedit ले सम्पादन क्षेत्रमा दायाँ सिमान्त प्रदर्शन गर्नु पर्दछ या पर्दैन ।"
-
-#: data/org.gnome.gedit.gschema.xml.in:136
 #, fuzzy
 msgid "Document background pattern type"
 msgstr "स्क्यान गरिँदै कागजातको प्रकार"
 
-#: data/org.gnome.gedit.gschema.xml.in:137
+#: data/org.gnome.gedit.gschema.xml.in:132
 msgid "Whether the document will get a background pattern painted."
 msgstr ""
 
-#: data/org.gnome.gedit.gschema.xml.in:147
+#: data/org.gnome.gedit.gschema.xml.in:142
 msgid "Smart Home End"
 msgstr "छरितो गृह समाप्ति"
 
-#: data/org.gnome.gedit.gschema.xml.in:148
+#: data/org.gnome.gedit.gschema.xml.in:143
 #, fuzzy
 #| msgid ""
 #| "Specifies how the cursor moves when the HOME and END keys are pressed. Use \"DISABLED\" to "
@@ -326,55 +308,47 @@ msgstr ""
 "अन्त्यमा सार्न \"AFTER\", लाइनको सुरु/अन्त्यमा सार्नु पहिला पाठको सुरु/अन्त्यमा सार्न \"BEFORE\" र लाइनको सुरु/"
 "अन्त्यको सट्टामा पाठको सुरु/अन्त्यमा सार्न \"ALWAYS\" प्रयोग गर्नुहोस् ।"
 
-#: data/org.gnome.gedit.gschema.xml.in:152
+#: data/org.gnome.gedit.gschema.xml.in:147
 msgid "Restore Previous Cursor Position"
 msgstr "अघिल्लो कर्सर स्थिति पुन: भण्डारण गर्नुहोस्"
 
-#: data/org.gnome.gedit.gschema.xml.in:153
+#: data/org.gnome.gedit.gschema.xml.in:148
 msgid "Whether gedit should restore the previous cursor position when a file is loaded."
 msgstr "फाइल लोड गरिएको बेला gedit ले अघिल्लो कर्सर स्थिति पुन: भण्डारण गर्नु पर्दछ या पर्दैन ।"
 
-#: data/org.gnome.gedit.gschema.xml.in:157
+#: data/org.gnome.gedit.gschema.xml.in:152
 msgid "Enable Syntax Highlighting"
 msgstr "वाक्य संरचना हाइलाइटिङ सक्षम पार्नुहोस्"
 
-#: data/org.gnome.gedit.gschema.xml.in:158
+#: data/org.gnome.gedit.gschema.xml.in:153
 msgid "Whether gedit should enable syntax highlighting."
 msgstr "geditले वाक्य संरचना हाइलाइट गर्ने सक्षम पार्नु पर्दछ या पर्दैन ।"
 
-#: data/org.gnome.gedit.gschema.xml.in:162
+#: data/org.gnome.gedit.gschema.xml.in:157
 msgid "Enable Search Highlighting"
 msgstr "हाइलाइटिङ खोजी सक्षम पार्नुहोस्"
 
-#: data/org.gnome.gedit.gschema.xml.in:163
+#: data/org.gnome.gedit.gschema.xml.in:158
 msgid "Whether gedit should highlight all the occurrences of the searched text."
 msgstr "gedit ले खोजी पाठको सबै घटनाहरू हाइलाइट गर्नु पर्दछ या पर्दैन ।"
 
-#: data/org.gnome.gedit.gschema.xml.in:167
+#: data/org.gnome.gedit.gschema.xml.in:162
 #, fuzzy
 msgid "Ensure Trailing Newline"
 msgstr "नयाँ पङ्ति"
 
-#: data/org.gnome.gedit.gschema.xml.in:168
+#: data/org.gnome.gedit.gschema.xml.in:163
 #, fuzzy
 #| msgid "Whether gedit should include a document header when printing documents."
 msgid "Whether gedit will ensure that documents always end with a trailing newline."
 msgstr "कागजात मुद्रण गर्दा gedit ले कागजात हेडर समाविष्ट गर्नु पर्दछ या पर्दैन ।"
 
-#: data/org.gnome.gedit.gschema.xml.in:174
-msgid "Toolbar is Visible"
-msgstr "उपकरणपट्टी दृश्यात्मक छ"
-
-#: data/org.gnome.gedit.gschema.xml.in:175
-msgid "Whether the toolbar should be visible in editing windows."
-msgstr "सम्पादन सञ्झ्यालमा उपकरणपट्टी दृश्यात्मक हुनुपर्दछ या पर्दैन ।"
-
-#: data/org.gnome.gedit.gschema.xml.in:179
+#: data/org.gnome.gedit.gschema.xml.in:169
 #, fuzzy
 msgid "Notebook Show Tabs Mode"
 msgstr "ट्याबहरु देखाऊ"
 
-#: data/org.gnome.gedit.gschema.xml.in:180
+#: data/org.gnome.gedit.gschema.xml.in:170
 #, fuzzy
 #| msgid ""
 #| "Specifies how to wrap long lines for printing. Use \"GTK_WRAP_NONE\" for no wrapping, "
@@ -390,59 +364,45 @@ msgstr ""
 "बेर्नका लागि \"GTK_WRAP_WORD\", र ब्यक्तिगत क्यारेक्टर सिमामा बेर्नका लागि \"GTK_WRAP_CHAR\" प्रयोग गर्नुहोस् "
 "। याद राख्नुहोस मानहरू केस संवेदनशिल हुन्छन्, त्यसैले तिनीहरू यहाँ उल्लेख गरे जस्तै उस्तै देखिने निश्चित गर्नुहोस् ।"
 
-#: data/org.gnome.gedit.gschema.xml.in:184
+#: data/org.gnome.gedit.gschema.xml.in:174
 msgid "Status Bar is Visible"
 msgstr "वस्तुस्थिति पट्टी दृश्यात्मक छ"
 
-#: data/org.gnome.gedit.gschema.xml.in:185
+#: data/org.gnome.gedit.gschema.xml.in:175
 msgid "Whether the status bar at the bottom of editing windows should be visible."
 msgstr "सम्पादन सञ्झ्यालको तलतिर वस्तुस्थिति पट्टी दृश्यात्मक हुनुपर्दछ या पर्दैन ।"
 
-#: data/org.gnome.gedit.gschema.xml.in:189
+#: data/org.gnome.gedit.gschema.xml.in:179
 msgid "Side panel is Visible"
 msgstr "छेउपट्टी देखाउनुहोस्"
 
-#: data/org.gnome.gedit.gschema.xml.in:190
+#: data/org.gnome.gedit.gschema.xml.in:180
 #, fuzzy
 #| msgid "Whether the side pane at the left of the editing window should be visible."
 msgid "Whether the side panel at the left of editing windows should be visible."
 msgstr "सम्पादन सञ्झ्यालको वायाँमा छेउ फलक दृश्यात्मक हुनुपर्दछ या पर्दैन ।"
 
-#: data/org.gnome.gedit.gschema.xml.in:197
-msgid "Maximum Recent Files"
-msgstr "हालको अधिकतम फाइल"
-
-#: data/org.gnome.gedit.gschema.xml.in:198
-#, fuzzy
-#| msgid ""
-#| "Specifies the maximum number of recently opened files that will be displayed in the \"Recent "
-#| "Files\" submenu."
-msgid ""
-"Specifies the maximum number of recently opened files that will be displayed in the “Recent "
-"Files” submenu."
-msgstr "हालै खोलिएको फाइलहरूको अधिकतम सङ्ख्या निर्दिष्ट गर्दछ जुन \"हालको फाइल\" सहायक मेनुमा प्रदर्शित हुनेछ ।"
-
-#: data/org.gnome.gedit.gschema.xml.in:204
+#: data/org.gnome.gedit.gschema.xml.in:189
 msgid "Print Syntax Highlighting"
 msgstr "वाक्यसंरचना हाइलाइटिङ मुद्रण गर्नुहोस्"
 
-#: data/org.gnome.gedit.gschema.xml.in:205
+#: data/org.gnome.gedit.gschema.xml.in:190
 msgid "Whether gedit should print syntax highlighting when printing documents."
 msgstr "कागजात मुद्रण गर्दा gedit ले वाक्य संरचना हाइलाइट मुद्रण गर्नुपर्दछ या पर्दैन ।"
 
-#: data/org.gnome.gedit.gschema.xml.in:209
+#: data/org.gnome.gedit.gschema.xml.in:194
 msgid "Print Header"
 msgstr "हेडर मुद्रण गर्नुहोस्"
 
-#: data/org.gnome.gedit.gschema.xml.in:210
+#: data/org.gnome.gedit.gschema.xml.in:195
 msgid "Whether gedit should include a document header when printing documents."
 msgstr "कागजात मुद्रण गर्दा gedit ले कागजात हेडर समाविष्ट गर्नु पर्दछ या पर्दैन ।"
 
-#: data/org.gnome.gedit.gschema.xml.in:219
+#: data/org.gnome.gedit.gschema.xml.in:204
 msgid "Printing Line Wrapping Mode"
 msgstr "मुद्रण लाइन बेराइ मोड"
 
-#: data/org.gnome.gedit.gschema.xml.in:220
+#: data/org.gnome.gedit.gschema.xml.in:205
 #, fuzzy
 #| msgid ""
 #| "Specifies how to wrap long lines for printing. Use \"GTK_WRAP_NONE\" for no wrapping, "
@@ -458,11 +418,11 @@ msgstr ""
 "बेर्नका लागि \"GTK_WRAP_WORD\", र ब्यक्तिगत क्यारेक्टर सिमामा बेर्नका लागि \"GTK_WRAP_CHAR\" प्रयोग गर्नुहोस् "
 "। याद राख्नुहोस मानहरू केस संवेदनशिल हुन्छन्, त्यसैले तिनीहरू यहाँ उल्लेख गरे जस्तै उस्तै देखिने निश्चित गर्नुहोस् ।"
 
-#: data/org.gnome.gedit.gschema.xml.in:224
+#: data/org.gnome.gedit.gschema.xml.in:209
 msgid "Print Line Numbers"
 msgstr "लाइन सङ्ख्यामुद्रण गर्नुहोस्"
 
-#: data/org.gnome.gedit.gschema.xml.in:225
+#: data/org.gnome.gedit.gschema.xml.in:210
 msgid ""
 "If this value is 0, then no line numbers will be inserted when printing a document. Otherwise, "
 "gedit will print line numbers every such number of lines."
@@ -471,30 +431,30 @@ msgstr ""
 "गर्नेछ ।"
 
 #. Translators: This is a GSettings default value. Do NOT change or localize the quotation marks!
-#: data/org.gnome.gedit.gschema.xml.in:229
+#: data/org.gnome.gedit.gschema.xml.in:214
 msgid "'Monospace 9'"
 msgstr "'Monospace 9'"
 
-#: data/org.gnome.gedit.gschema.xml.in:230
+#: data/org.gnome.gedit.gschema.xml.in:215
 msgid "Body Font for Printing"
 msgstr "मुद्रणका लागि मुख्य फन्ट"
 
-#: data/org.gnome.gedit.gschema.xml.in:231
+#: data/org.gnome.gedit.gschema.xml.in:216
 #, fuzzy
 #| msgid "Specifies the font to use for a document's body when printing documents."
 msgid "Specifies the font to use for a document’s body when printing documents."
 msgstr "कागजातहरू मुद्रण गर्दा कागजातको मुख्य भागका लागि प्रयोग गर्न फन्ट निर्दिष्ट गर्दछ ।"
 
 #. Translators: This is a GSettings default value. Do NOT change or localize the quotation marks!
-#: data/org.gnome.gedit.gschema.xml.in:235
+#: data/org.gnome.gedit.gschema.xml.in:220
 msgid "'Sans 11'"
 msgstr "'Sans 11'"
 
-#: data/org.gnome.gedit.gschema.xml.in:236
+#: data/org.gnome.gedit.gschema.xml.in:221
 msgid "Header Font for Printing"
 msgstr "मुद्रणका लागि हेडर फन्ट"
 
-#: data/org.gnome.gedit.gschema.xml.in:237
+#: data/org.gnome.gedit.gschema.xml.in:222
 #, fuzzy
 #| msgid ""
 #| "Specifies the font to use for page headers when printing a document. This will only take "
@@ -507,15 +467,15 @@ msgstr ""
 "विकल्प खुला छ भने मात्र यसले प्रभाव पार्नेछ ।"
 
 #. Translators: This is a GSettings default value. Do NOT change or localize the quotation marks!
-#: data/org.gnome.gedit.gschema.xml.in:241
+#: data/org.gnome.gedit.gschema.xml.in:226
 msgid "'Sans 8'"
 msgstr "'Sans 8'"
 
-#: data/org.gnome.gedit.gschema.xml.in:242
+#: data/org.gnome.gedit.gschema.xml.in:227
 msgid "Line Number Font for Printing"
 msgstr "मुद्रणका लागि लाइन नम्बर फन्ट"
 
-#: data/org.gnome.gedit.gschema.xml.in:243
+#: data/org.gnome.gedit.gschema.xml.in:228
 #, fuzzy
 #| msgid ""
 #| "Specifies the font to use for line numbers when printing. This will only take effect if the "
@@ -527,50 +487,50 @@ msgstr ""
 "मुद्रण गर्दा लाइन सङ्ख्याका लागि प्रयोग गर्नुपर्ने फन्ट निर्दिष्ट गर्दछ । यदि \"Print Line Numbers\" विकल्प शून्य "
 "रहित छ भने मात्र यसले प्रभाव पार्नेछ ।"
 
-#: data/org.gnome.gedit.gschema.xml.in:247
+#: data/org.gnome.gedit.gschema.xml.in:232
 msgid "Margin Left"
 msgstr "देब्रे सीमान्त"
 
-#: data/org.gnome.gedit.gschema.xml.in:248
+#: data/org.gnome.gedit.gschema.xml.in:233
 #, fuzzy
 msgid "The left margin, in millimeters."
 msgstr "पिक्सलभित्र देब्रेकिनारको चौडाइ"
 
-#: data/org.gnome.gedit.gschema.xml.in:252
+#: data/org.gnome.gedit.gschema.xml.in:237
 msgid "Margin Top"
 msgstr "माथिल्लो सीमान्त"
 
-#: data/org.gnome.gedit.gschema.xml.in:253
+#: data/org.gnome.gedit.gschema.xml.in:238
 #, fuzzy
 #| msgid "Topmargin in pixels"
 msgid "The top margin, in millimeters."
 msgstr "मिलिमिटर"
 
-#: data/org.gnome.gedit.gschema.xml.in:257
+#: data/org.gnome.gedit.gschema.xml.in:242
 msgid "Margin Right"
 msgstr "दायाँ सीमान्त"
 
-#: data/org.gnome.gedit.gschema.xml.in:258
+#: data/org.gnome.gedit.gschema.xml.in:243
 #, fuzzy
 msgid "The right margin, in millimeters."
-msgstr "पिक्सलभित्र दाहिनेकिनारको चौडाइ"
+msgstr "दायाँ सीमान्त प्रदर्शन गर्नुहोस्"
 
-#: data/org.gnome.gedit.gschema.xml.in:262
+#: data/org.gnome.gedit.gschema.xml.in:247
 msgid "Margin Bottom"
 msgstr "तल्लो सीमान्त"
 
-#: data/org.gnome.gedit.gschema.xml.in:263
+#: data/org.gnome.gedit.gschema.xml.in:248
 #, fuzzy
 msgid "The bottom margin, in millimeters."
 msgstr "तल्लो सीमान्त"
 
-#: data/org.gnome.gedit.gschema.xml.in:269
+#: data/org.gnome.gedit.gschema.xml.in:254
 #, fuzzy
 #| msgid "Character codings"
 msgid "Candidate Encodings"
 msgstr "उमेद्वार"
 
-#: data/org.gnome.gedit.gschema.xml.in:270
+#: data/org.gnome.gedit.gschema.xml.in:255
 msgid ""
 "List of candidate encodings shown in the Character Encoding menu in the open/save file chooser. "
 "“CURRENT” represents the current locale encoding. Only recognized encodings are used. The default "
@@ -578,105 +538,95 @@ msgid ""
 "and language."
 msgstr ""
 
-#: data/org.gnome.gedit.gschema.xml.in:316
+#: data/org.gnome.gedit.gschema.xml.in:304
 msgid "Active plugins"
 msgstr "सक्रिय प्लगइनहरू"
 
-#: data/org.gnome.gedit.gschema.xml.in:317
+#: data/org.gnome.gedit.gschema.xml.in:305
 #, fuzzy
-#| msgid ""
-#| "List of active plugins. It contains the \"Location\" of the active plugins. See the .gedit-"
-#| "plugin file for obtaining the \"Location\" of a given plugin."
-msgid ""
-"List of active plugins. It contains the “Location” of the active plugins. See the .gedit-plugin "
-"file for obtaining the “Location” of a given plugin."
-msgstr ""
-"सक्रिय प्लगइनहरूको सूची । यसले सक्रिय प्लगइनहरूको \"स्थान\" समाविष्ट गर्दछ । दिइएको प्लगइनको \"स्थान\" प्राप्त "
-"गर्नका लागि gedit-प्लगइन फाइल ।"
+#| msgid "Active plugins"
+msgid "List of active plugins."
+msgstr "सक्रिय प्लगइन"
 
-#: gedit/gedit-app.c:114
+#: gedit/gedit-app.c:85
 msgid "Show the application’s version"
 msgstr "एप्लिकेशनको संसकरण देखाउनुहोस्"
 
-#: gedit/gedit-app.c:120
+#: gedit/gedit-app.c:91
 msgid "Display list of possible values for the encoding option"
 msgstr ""
 
-#: gedit/gedit-app.c:127
+#: gedit/gedit-app.c:98
 msgid "Set the character encoding to be used to open the files listed on the command line"
 msgstr "आदेश रेखामा सुचीबद्ध गरिएका फाइलहरू खोल्न प्रयोग गरिने क्यारेक्टर सङ्केतनहरू सेट गर्नुहोस्"
 
-#: gedit/gedit-app.c:128
+#: gedit/gedit-app.c:99
 msgid "ENCODING"
 msgstr "ENCODING"
 
-#: gedit/gedit-app.c:134
+#: gedit/gedit-app.c:105
 #, fuzzy
 #| msgid "Create a new toplevel window in an existing instance of gedit"
 msgid "Create a new top-level window in an existing instance of gedit"
 msgstr "gedit को एउटा अवस्थित दृष्टान्तमा एउटा नयाँ माथिल्लो तहको सञ्झ्याल सिर्जना गर्नुहोस्"
 
-#: gedit/gedit-app.c:141
+#: gedit/gedit-app.c:112
 msgid "Create a new document in an existing instance of gedit"
 msgstr "gedit को एउटा अवस्थित दृष्टान्तमा नयाँ कागजात सिर्जना गर्नुहोस्"
 
-#: gedit/gedit-app.c:148
+#: gedit/gedit-app.c:119
 msgid "Open files and block process until files are closed"
 msgstr ""
 
-#: gedit/gedit-app.c:155
+#: gedit/gedit-app.c:126
 #, fuzzy
 msgid "Run gedit in standalone mode"
 msgstr "पूरा पर्दा मोडमा इभान्स चलाउनुहोस्"
 
-#: gedit/gedit-app.c:162
-#, fuzzy
+#: gedit/gedit-app.c:133
 #| msgid "[FILE...] [+LINE[:COLUMN]]"
 msgid "[FILE…] [+LINE[:COLUMN]]"
-msgstr "प्रक्रिया \"आदेश रेखा\" स्तम्भको चौडाइ"
+msgstr "[FILE…] [+LINE[:COLUMN]]"
 
-#: gedit/gedit-app.c:281
+#: gedit/gedit-app.c:223
 msgid "There was an error displaying the help."
 msgstr "मद्दत प्रदर्शन गर्दा त्यहाँ एउटा त्रुटि"
 
-#: gedit/gedit-app.c:972
-#, fuzzy, c-format
-#| msgid "%s: invalid encoding.\n"
+#: gedit/gedit-app.c:838
+#, c-format
 msgid "%s: invalid encoding."
-msgstr "अवैध सङ्केतन"
+msgstr "%s: अवैध सङ्केतन"
 
-#: gedit/gedit-close-confirmation-dialog.c:279
+#: gedit/gedit-close-confirmation-dialog.c:271
 msgid "Close _without Saving"
 msgstr "बचत नगरी बन्द गर्नुहोस्"
 
-#: gedit/gedit-close-confirmation-dialog.c:285 gedit/gedit-commands-file.c:462
-#: gedit/gedit-commands-file.c:567 gedit/gedit-commands-file.c:643 gedit/gedit-commands-file.c:854
-#: gedit/gedit-commands-file.c:1583 gedit/gedit-encodings-dialog.c:194
-#: gedit/gedit-preferences-dialog.c:825 gedit/gedit-progress-info-bar.c:49
-#: gedit/resources/ui/gedit-encodings-dialog.ui:44
-#: gedit/resources/ui/gedit-highlight-mode-dialog.ui:31
-#: plugins/filebrowser/gedit-file-browser-utils.c:213 plugins/quickopen/quickopen/popup.py:45
+#: gedit/gedit-close-confirmation-dialog.c:277 gedit/gedit-commands-file.c:532
+#: gedit/gedit-commands-file.c:608 gedit/gedit-commands-file.c:831 gedit/gedit-commands-file.c:1553
+#: gedit/gedit-encodings-dialog.c:192 gedit/gedit-file-chooser-open-dialog.c:78
+#: gedit/gedit-preferences-dialog.c:721 gedit/resources/ui/gedit-encodings-dialog.ui:44
+#: plugins/filebrowser/gedit-file-browser-utils.c:211 plugins/quickopen/quickopen/popup.py:45
 #: plugins/snippets/snippets/manager.py:789 plugins/snippets/snippets/manager.py:874
 #: plugins/snippets/snippets/manager.py:912 plugins/sort/resources/ui/gedit-sort-plugin.ui:143
 #: plugins/time/resources/ui/gedit-time-dialog.ui:150
 msgid "_Cancel"
 msgstr "_रद्द गर्नुहोस्"
 
-#: gedit/gedit-close-confirmation-dialog.c:312 gedit/resources/gtk/menus.ui:37
+#: gedit/gedit-close-confirmation-dialog.c:295 gedit/resources/gtk/menus.ui:37
 #: gedit/resources/gtk/menus-traditional.ui:33
 #, fuzzy
 #| msgid "Save As…"
 msgid "_Save As…"
-msgstr "यस रूपमा बचत गर्नुहोस्..."
+msgstr "बचत गर्नुहोस्:"
 
-#: gedit/gedit-close-confirmation-dialog.c:312 gedit/gedit-commands-file.c:855
-#: gedit/resources/gtk/menus-common.ui:127 gedit/resources/ui/gedit-window.ui:105
+#: gedit/gedit-close-confirmation-dialog.c:295 gedit/gedit-commands-file.c:830
+#: gedit/resources/gtk/menus-common.ui:127 gedit/resources/ui/gedit-window.ui:59
 #: plugins/snippets/snippets/manager.py:875 plugins/snippets/snippets/manager.py:913
 msgid "_Save"
 msgstr "सङ्ग्रह गर्नुहोस्"
 
 # "सुरक्षा गरिएन भने  अन्तिम मिनटको लेखपत्र   %ld  पक्कै हराउँछ"
-#: gedit/gedit-close-confirmation-dialog.c:330
+#: gedit/gedit-close-confirmation-dialog.c:312
 #, fuzzy, c-format
 #| msgid "If you don't save, changes from the last %ld second will be permanently lost."
 #| msgid_plural "If you don't save, changes from the last %ld seconds will be permanently lost."
@@ -687,7 +637,7 @@ msgstr[1] "यदि तपाईँले बचत गर्नुभएन �
 
 # "सुरक्षा गरिएन भने  अन्तिम  %ld पक्कै "
 # "हराउँछ"
-#: gedit/gedit-close-confirmation-dialog.c:339
+#: gedit/gedit-close-confirmation-dialog.c:321
 #, fuzzy
 #| msgid "If you don't save, changes from the last minute will be permanently lost."
 msgid "If you don’t save, changes from the last minute will be permanently lost."
@@ -695,7 +645,7 @@ msgstr "यदि तपाईँले बचत गर्नुभएन भ�
 
 # "सुरक्षा गरिएन भने  अन्तिम  %ld पक्कै "
 # "हराउँछ"
-#: gedit/gedit-close-confirmation-dialog.c:345
+#: gedit/gedit-close-confirmation-dialog.c:327
 #, fuzzy, c-format
 #| msgid "If you don't save, changes from the last minute and %ld second will be permanently lost."
 #| msgid_plural ""
@@ -708,7 +658,7 @@ msgstr[1] "यदि तपाईँले बचत गर्नुभएन �
 
 # "सुरक्षा गरिएन भने  अन्तिम  %ld पक्कै "
 # "हराउँछ"
-#: gedit/gedit-close-confirmation-dialog.c:355
+#: gedit/gedit-close-confirmation-dialog.c:337
 #, fuzzy, c-format
 #| msgid "If you don't save, changes from the last %ld minute will be permanently lost."
 #| msgid_plural "If you don't save, changes from the last %ld minutes will be permanently lost."
@@ -718,7 +668,7 @@ msgstr[0] "यदि तपाईँले बचत गर्नुभएन �
 msgstr[1] "यदि तपाईँले बचत गर्नुभएन भने, अन्तिम %ld मिनेटहरूका परिवर्तनहरू स्थायी रूपमा नष्ट हुनेछ ।"
 
 # "सुरक्षा गरिएन भने  अन्तिम मिनटको लेखपत्र   %ld  पक्कै हराउँछ"
-#: gedit/gedit-close-confirmation-dialog.c:370
+#: gedit/gedit-close-confirmation-dialog.c:352
 #, fuzzy
 #| msgid "If you don't save, changes from the last hour will be permanently lost."
 msgid "If you don’t save, changes from the last hour will be permanently lost."
@@ -726,7 +676,7 @@ msgstr "यदि तपाईँले बचत गर्नुभएन भ�
 
 # "सुरक्षा गरिएन भने  अन्तिम  %ld पक्कै "
 # "हराउँछ"
-#: gedit/gedit-close-confirmation-dialog.c:376
+#: gedit/gedit-close-confirmation-dialog.c:358
 #, fuzzy, c-format
 #| msgid "If you don't save, changes from the last hour and %d minute will be permanently lost."
 #| msgid_plural ""
@@ -738,7 +688,7 @@ msgstr[0] "यदि तपाईँले बचत गर्नुभएन �
 msgstr[1] "यदि तपाईँले बचत गर्नुभएन भने, अन्तिम घन्टा र %d मिनेटका परिवर्तनहरू स्थायी रूपमा नष्ट हुनेछ ।"
 
 # "सुरक्षा गरिएन भने  अन्तिम मिनटको लेखपत्र   %ld  पक्कै हराउँछ"
-#: gedit/gedit-close-confirmation-dialog.c:391
+#: gedit/gedit-close-confirmation-dialog.c:373
 #, fuzzy, c-format
 #| msgid "If you don't save, changes from the last %d hour will be permanently lost."
 #| msgid_plural "If you don't save, changes from the last %d hours will be permanently lost."
@@ -747,150 +697,112 @@ msgid_plural "If you don’t save, changes from the last %d hours will be perman
 msgstr[0] "यदि तपाईँले बचत गर्नुभएन भने, अन्तिम %d घण्टाका परिवर्तनहरू स्थायी रूपमा नष्ट हुनेछ ।"
 msgstr[1] "यदि तपाईँले बचत गर्नुभएन भने, अन्तिम %d घण्टाहरूका परिवर्तनहरू स्थायी रूपमा नष्ट हुनेछ ।"
 
-#: gedit/gedit-close-confirmation-dialog.c:420
-#, fuzzy, c-format
-#| msgid "Changes to document \"%s\" will be permanently lost."
-msgid "Changes to document “%s” will be permanently lost."
-msgstr "%d कागजातमा गरिएका परिवर्तनहरू स्थायी रूपमा नष्ट हुनेछन् ।"
-
 # सुरक्षा गरिएन भने  अन्तिम  %d घडीको लेखपत्र  पक्कै हराउँछ
-#: gedit/gedit-close-confirmation-dialog.c:425
+#: gedit/gedit-close-confirmation-dialog.c:400
 #, fuzzy, c-format
 #| msgid "Save the changes to document \"%s\" before closing?"
 msgid "Save changes to document “%s” before closing?"
 msgstr "त्यहाँ बचत नगरिएको परिवर्तनहरू सहित %d कागजात छ । बन्द गर्नु पहिला परिवर्तनहरू बचत गर्नुहुन्छ?"
 
-#: gedit/gedit-close-confirmation-dialog.c:440 gedit/gedit-close-confirmation-dialog.c:564
-msgid "Saving has been disabled by the system administrator."
-msgstr "प्रणाली प्रशासकद्वारा बचत अक्षम पारिएको छ ।"
-
-#: gedit/gedit-close-confirmation-dialog.c:506
-#, c-format
-msgid "Changes to %d document will be permanently lost."
-msgid_plural "Changes to %d documents will be permanently lost."
-msgstr[0] "%d कागजातमा गरिएका परिवर्तनहरू स्थायी रूपमा नष्ट हुनेछन् ।"
-msgstr[1] "%d कागजातमा गरिएका परिवर्तनहरू स्थायी रूपमा नष्ट हुनेछन् ।"
-
-#: gedit/gedit-close-confirmation-dialog.c:514
+#: gedit/gedit-close-confirmation-dialog.c:470
 #, c-format
 msgid "There is %d document with unsaved changes. Save changes before closing?"
 msgid_plural "There are %d documents with unsaved changes. Save changes before closing?"
 msgstr[0] "त्यहाँ बचत नगरिएको परिवर्तनहरू सहित %d कागजात छ । बन्द गर्नु पहिला परिवर्तनहरू बचत गर्नुहुन्छ?"
 msgstr[1] "त्यहाँ बचत नगरिएको परिवर्तनहरू सहित %d कागजातहरू छन् । बन्द गर्नु पहिला परिवर्तनहरू बचत गर्नुहुन्छ?"
 
-#: gedit/gedit-close-confirmation-dialog.c:540
-msgid "Docum_ents with unsaved changes:"
-msgstr "बचत नगरिएको परिवर्तनहरू सहित कागजातहरू:"
-
-#: gedit/gedit-close-confirmation-dialog.c:544
+#: gedit/gedit-close-confirmation-dialog.c:493
 msgid "S_elect the documents you want to save:"
 msgstr "तपाईँले बचत गर्न चाहनुभएको कागजातहरू चयन गर्नुहोस्:"
 
-#: gedit/gedit-close-confirmation-dialog.c:568
+#. Secondary label
+#: gedit/gedit-close-confirmation-dialog.c:509
 #, fuzzy
 #| msgid "If you don't save, all your changes will be permanently lost."
 msgid "If you don’t save, all your changes will be permanently lost."
 msgstr "यदि तपाईंले प्रतिलिपि बचत गर्नुभएन भने, परिवर्तनहरू स्थायी रूपमा हराउनेछन्।"
 
-#: gedit/gedit-commands-file.c:261
+#: gedit/gedit-commands-file.c:257
 #, fuzzy, c-format
 #| msgid "Loading file '%s'…"
 msgid "Loading file “%s”…"
 msgstr "युआई फाइल लोड गर्दा त्रुटि"
 
-#: gedit/gedit-commands-file.c:270
+#: gedit/gedit-commands-file.c:266
 #, c-format
 msgid "Loading %d file…"
 msgid_plural "Loading %d files…"
 msgstr[0] "%d फाइल लोड गर्दैछ..."
 msgstr[1] "%d फाइलहरू लोड गर्दैछ..."
 
-#. Translators: "Open" is the title of the file chooser window.
-#: gedit/gedit-commands-file.c:456
-msgctxt "window title"
-msgid "Open"
-msgstr " खोल्नुहोस्"
-
-#: gedit/gedit-commands-file.c:463 gedit/resources/gtk/menus-common.ui:100
-#: gedit/resources/gtk/menus-common.ui:106 gedit/resources/ui/gedit-window.ui:48
-#: plugins/filebrowser/resources/ui/gedit-file-browser-menus.ui:7
-#: plugins/quickopen/quickopen/popup.py:46 plugins/snippets/snippets/manager.py:790
-msgid "_Open"
-msgstr "_खोल्नुहोस्"
-
-#: gedit/gedit-commands-file.c:558
+#: gedit/gedit-commands-file.c:523
 #, fuzzy, c-format
 #| msgid "The file \"%s\" is read-only."
 msgid "The file “%s” is read-only."
 msgstr "%s पात्रो पढ्ने मात्र हो ।"
 
-#: gedit/gedit-commands-file.c:563
+#: gedit/gedit-commands-file.c:528
 msgid "Do you want to try to replace it with the one you are saving?"
 msgstr "तपाईँले बचत गरिरहनुभएको एउटासँग यसलाई प्रतिस्थापन गर्न प्रयास गर्न चाहनुहुन्छ?"
 
-#: gedit/gedit-commands-file.c:568 gedit/resources/ui/gedit-replace-dialog.ui:55
+#: gedit/gedit-commands-file.c:533 gedit/resources/ui/gedit-replace-dialog.ui:55
 msgid "_Replace"
 msgstr "प्रतिस्थापन गर्नुहोस्"
 
-#: gedit/gedit-commands-file.c:608
+#: gedit/gedit-commands-file.c:573
 #, fuzzy
 msgid "Save the file using compression?"
-msgstr "फाइल बचत गर्न असफल भयो"
+msgstr "फाइल बचत गर्नुहोस्"
 
-#: gedit/gedit-commands-file.c:612
+#: gedit/gedit-commands-file.c:577
 #, fuzzy
 msgid "Save the file as plain text?"
 msgstr "सादा पाठमा बचत गर्नुहोस्"
 
-#: gedit/gedit-commands-file.c:625
+#: gedit/gedit-commands-file.c:590
 #, c-format
 msgid "The file “%s” was previously saved as plain text and will now be saved using compression."
 msgstr ""
 
-#: gedit/gedit-commands-file.c:629
+#: gedit/gedit-commands-file.c:594
 #, fuzzy
 msgid "_Save Using Compression"
 msgstr "सङ्कुचन अनुपात:"
 
-#: gedit/gedit-commands-file.c:634
+#: gedit/gedit-commands-file.c:599
 #, c-format
 msgid "The file “%s” was previously saved using compression and will now be saved as plain text."
 msgstr ""
 
-#: gedit/gedit-commands-file.c:637
+#: gedit/gedit-commands-file.c:602
 msgid "_Save As Plain Text"
 msgstr "सादा पाठमा बचत गर्नुहोस्"
 
-#: gedit/gedit-commands-file.c:752 gedit/gedit-commands-file.c:1019
+#: gedit/gedit-commands-file.c:717 gedit/gedit-commands-file.c:1004
 #, fuzzy, c-format
 #| msgid "Saving file '%s'…"
 msgid "Saving file “%s”…"
 msgstr "%s फाइल बचत गर्दा त्रुटि"
 
 #. Translators: "Save As" is the title of the file chooser window.
-#: gedit/gedit-commands-file.c:847
+#: gedit/gedit-commands-file.c:828
 msgctxt "window title"
 msgid "Save As"
 msgstr "...नाममा बचत गर्नुस"
 
-#: gedit/gedit-commands-file.c:1101
-#, fuzzy
-msgid "No changes need to be saved"
-msgstr "आवश्यक प्रयोगकर्ता अवरोध"
-
-#: gedit/gedit-commands-file.c:1444
+#: gedit/gedit-commands-file.c:1414
 #, fuzzy, c-format
 #| msgid "Reverting the document '%s'…"
 msgid "Reverting the document “%s”…"
 msgstr "%s बाट %s उल्टाउँदै"
 
-#: gedit/gedit-commands-file.c:1491
+#: gedit/gedit-commands-file.c:1461
 #, fuzzy, c-format
 #| msgid "Revert unsaved changes to document '%s'?"
 msgid "Revert unsaved changes to document “%s”?"
 msgstr "%s कागजाता बचत नगरिएको परिवर्तनहरू उल्टाउनुहुन्छ?"
 
-#: gedit/gedit-commands-file.c:1500
+#: gedit/gedit-commands-file.c:1470
 #, c-format
 msgid "Changes made to the document in the last %ld second will be permanently lost."
 msgid_plural "Changes made to the document in the last %ld seconds will be permanently lost."
@@ -898,11 +810,11 @@ msgstr[0] "अन्तिम %ld सेकेण्डमा कागजात
 msgstr[1] "अन्तिम %ld सेकेण्डहरूमा कागजातमा गरिएका परिवर्तनहरू स्थायी रूपमा नष्ट हुनेछन् ।"
 
 #
-#: gedit/gedit-commands-file.c:1509
+#: gedit/gedit-commands-file.c:1479
 msgid "Changes made to the document in the last minute will be permanently lost."
 msgstr "अन्तिम मिनटमा कागजातमा गरिएका परिवर्तनहरू स्थायी रूपमा नष्ट हुनेछ ।"
 
-#: gedit/gedit-commands-file.c:1515
+#: gedit/gedit-commands-file.c:1485
 #, c-format
 msgid "Changes made to the document in the last minute and %ld second will be permanently lost."
 msgid_plural ""
@@ -910,18 +822,18 @@ msgid_plural ""
 msgstr[0] "अन्तिम मिनेट र %ld सेकेन्डमा कागजातमा गरिएका परिवर्तनहरू स्थायी रूपमा नष्ट हुनेछन् ।"
 msgstr[1] "अन्तिम मिनेट र %ld सेकेन्डहरूमा कागजातमा गरिएका परिवर्तनहरू स्थायी रूपमा नष्ट हुनेछन् ।"
 
-#: gedit/gedit-commands-file.c:1525
+#: gedit/gedit-commands-file.c:1495
 #, c-format
 msgid "Changes made to the document in the last %ld minute will be permanently lost."
 msgid_plural "Changes made to the document in the last %ld minutes will be permanently lost."
 msgstr[0] "अन्तिम %ld मिनेटमा कागजातमा गरिएका परिवर्तनहरू स्थायी रूपमा नष्ट हुनेछन् ।"
 msgstr[1] "अन्तिम %ld मिनेटहरूमा कागजातमा गरिएका परिवर्तनहरू स्थायी रूपमा नष्ट हुनेछन् ।"
 
-#: gedit/gedit-commands-file.c:1540
+#: gedit/gedit-commands-file.c:1510
 msgid "Changes made to the document in the last hour will be permanently lost."
 msgstr "अन्तिम घण्टामा कागजातमा गरिएका परिवर्तनहरू स्थायी रूपमा नष्ट हुनेछन् ।"
 
-#: gedit/gedit-commands-file.c:1546
+#: gedit/gedit-commands-file.c:1516
 #, c-format
 msgid "Changes made to the document in the last hour and %d minute will be permanently lost."
 msgid_plural ""
@@ -929,184 +841,181 @@ msgid_plural ""
 msgstr[0] "अन्तिम घण्टा र %d मिनेटमा कागजातमा गरिएका परिवर्तनहरू स्थायी रूपमा नष्ट हुनेछन् ।"
 msgstr[1] "अन्तिम घण्टा र %d मिनेटहरूमा कागजातमा गरिएका परिवर्तनहरू स्थायी रूपमा नष्ट हुनेछन् ।"
 
-#: gedit/gedit-commands-file.c:1561
+#: gedit/gedit-commands-file.c:1531
 #, c-format
 msgid "Changes made to the document in the last %d hour will be permanently lost."
 msgid_plural "Changes made to the document in the last %d hours will be permanently lost."
 msgstr[0] "अन्तिम %d घण्टामा कागजातमा गरिएका परिवर्तनहरू स्थायी रूपमा नष्ट हुनेछन् ।"
 msgstr[1] "अन्तिम %d घण्टाहरूमा कागजातमा गरिएका परिवर्तनहरू स्थायी रूपमा नष्ट हुनेछन् ।"
 
-#: gedit/gedit-commands-file.c:1584
+#: gedit/gedit-commands-file.c:1554
 msgid "_Revert"
 msgstr "उल्टाउनुहोस्"
 
 #: gedit/gedit-commands-help.c:110
-msgid "gedit is a small and lightweight text editor for the GNOME Desktop"
+#, fuzzy
+#| msgid "gedit is a small and lightweight text editor for the GNOME Desktop"
+msgid "gedit is a small and lightweight text editor for the GNOME desktop"
 msgstr "जीनोम डेस्कटपका लागि gedit सानो र हल्का पाठ सम्पादक हो"
 
-#: gedit/gedit-commands-help.c:132
+#: gedit/gedit-commands-help.c:115
 msgid "translator-credits"
 msgstr ""
 "translator-credits Pawan Chitrakar <chautari@gmail.com>, Laxmi Pd Khatiwada <laxmi@mpp.org.np>, "
 "Ganesh Bahadur Ghimire <gghimire@gmail.com>, Narayan Kumar Magar <narayan@mpp.org.np>"
 
-#: gedit/gedit-commands-search.c:107
+#: gedit/gedit-commands-search.c:106
 #, c-format
 msgid "Found and replaced %d occurrence"
 msgid_plural "Found and replaced %d occurrences"
 msgstr[0] "%d घटना फेला पारियो र प्रतिस्थापन गरियो"
 msgstr[1] "%d घटनाहरू फेला पारियो र प्रतिस्थापन गरियो"
 
-#: gedit/gedit-commands-search.c:116
+#: gedit/gedit-commands-search.c:115
 msgid "Found and replaced one occurrence"
 msgstr "एउटा घटना फेला पारियो र प्रतिस्थापन गरियो"
 
 #. Translators: %s is replaced by the text
 #. entered by the user in the search box
-#: gedit/gedit-commands-search.c:142
-#, fuzzy, c-format
-#| msgid "\"%s\" not found"
-msgid "“%s” not found"
-msgstr "%s फेला परेन"
-
-#: gedit/gedit-document.c:1079 gedit/gedit-document.c:1112
+#: gedit/gedit-commands-search.c:141
 #, c-format
-msgid "Untitled Document %d"
-msgstr "शीर्षक नभएको कागजात %d"
+msgid "“%s” not found"
+msgstr "“%s” फेला परेन"
 
-#: gedit/gedit-documents-panel.c:399
+#: gedit/gedit-documents-panel.c:398
 #, fuzzy, c-format
 msgid "Tab Group %i"
 msgstr "समूह"
 
-#: gedit/gedit-documents-panel.c:499 gedit/gedit-window.c:1161 gedit/gedit-window.c:1167
-#: gedit/gedit-window.c:1175
+#: gedit/gedit-documents-panel.c:498 gedit/gedit-window.c:1085 gedit/gedit-window.c:1091
+#: gedit/gedit-window.c:1099
 #, fuzzy
 #| msgid "Read Only"
 msgid "Read-Only"
-msgstr "पढ्न मात्रै मिल्ने "
+msgstr "पढ्न-मात्र"
 
-#: gedit/gedit-encodings-combo-box.c:299 gedit/gedit-file-chooser-dialog-osx.m:565
+#: gedit/gedit-encodings-combo-box.c:297
 msgid "Automatically Detected"
 msgstr "स्वचालित रूपमा पत्ता लगाइयो"
 
-#: gedit/gedit-encodings-combo-box.c:328 gedit/gedit-file-chooser-dialog-osx.m:574
-#, fuzzy
-#| msgid "Add or Remove..."
+#: gedit/gedit-encodings-combo-box.c:326
 msgid "Add or Remove…"
-msgstr "पङ्क्तिहरू थप्ने वा हटाउने"
+msgstr "थप्ने वा हटाउने…"
 
 #: gedit/gedit-encoding-items.c:92
 #, c-format
 msgid "Current Locale (%s)"
 msgstr "हालको लोक्याल (%s)"
 
-#: gedit/gedit-encodings-dialog.c:95
-#, fuzzy, c-format
-#| msgid "Current Locale (%s)"
+#: gedit/gedit-encodings-dialog.c:93
+#, c-format
 msgid "%s (Current Locale)"
 msgstr "हालको लोक्याल (%s)"
 
-#: gedit/gedit-encodings-dialog.c:190
+#: gedit/gedit-encodings-dialog.c:188
 #, fuzzy
 msgid "Do you really want to reset the character encodings’ preferences?"
 msgstr "के तपाईँ सबै प्राथमिकता वास्तवमा पूर्वनिर्धारित मानमा रिसेट गर्न चाहनुहुन्छ?"
 
 #. Reset button
-#: gedit/gedit-encodings-dialog.c:195 gedit/gedit-encodings-dialog.c:820
+#: gedit/gedit-encodings-dialog.c:193 gedit/gedit-encodings-dialog.c:818
 msgid "_Reset"
 msgstr "_पुनः मिलाउ"
 
-#: gedit/gedit-encodings-dialog.c:731
+#: gedit/gedit-encodings-dialog.c:729
 msgid "Add"
 msgstr "थप्नुहोस्"
 
-#: gedit/gedit-encodings-dialog.c:774
+#: gedit/gedit-encodings-dialog.c:772
 msgid "Remove"
 msgstr "हटाउने"
 
-#: gedit/gedit-encodings-dialog.c:785
+#: gedit/gedit-encodings-dialog.c:783
 msgid "Move to a higher priority"
 msgstr "उच्च प्राथमिकतामा सार्नुहोस्"
 
-#: gedit/gedit-encodings-dialog.c:796
+#: gedit/gedit-encodings-dialog.c:794
 msgid "Move to a lower priority"
 msgstr "न्यून प्राथमिकतामा सार्नुहोस्"
 
-#: gedit/gedit-file-chooser-dialog-gtk.c:45 gedit/gedit-preferences-dialog.c:834
+#: gedit/gedit-file-chooser.c:41 gedit/gedit-preferences-dialog.c:730
 msgid "All Files"
 msgstr "सबै फाइलहरू"
 
-#: gedit/gedit-file-chooser-dialog-gtk.c:46
+#: gedit/gedit-file-chooser.c:42
 msgid "All Text Files"
 msgstr "सबै पाठ फाइलहरू"
 
-#: gedit/gedit-file-chooser-dialog-gtk.c:317 gedit/gedit-file-chooser-dialog-osx.m:547
-#, fuzzy
-#| msgid "Ch_aracter coding:"
-msgid "Character Encoding:"
-msgstr "वर्ण सङ्केतन"
+#: gedit/gedit-file-chooser-dialog-gtk.c:262 gedit/gedit-file-chooser-open-dialog.c:43
+msgid "C_haracter Encoding:"
+msgstr "वर्ण सङ्केतन:"
 
-#: gedit/gedit-file-chooser-dialog-gtk.c:350 gedit/gedit-file-chooser-dialog-osx.m:620
+#: gedit/gedit-file-chooser-dialog-gtk.c:321
 #, fuzzy
 #| msgid "Encoding:"
-msgid "Line Ending:"
-msgstr "पङ्ति"
+msgid "L_ine Ending:"
+msgstr "देब्रे Alt"
 
-#: gedit/gedit-highlight-mode-selector.c:269 gedit/gedit-window.c:1245
-#: plugins/externaltools/tools/manager.py:115 plugins/externaltools/tools/manager.py:324
-#: plugins/externaltools/tools/manager.py:440 plugins/externaltools/tools/manager.py:776
-msgid "Plain Text"
-msgstr "सादा पाठ"
+#. Translators: "Open Files" is the title of the file chooser window.
+#: gedit/gedit-file-chooser-open-dialog.c:75 gedit/gedit-file-chooser-open-native.c:54
+msgctxt "window title"
+msgid "Open Files"
+msgstr "खुला फाइल"
 
-#: gedit/gedit-io-error-info-bar.c:142 gedit/gedit-io-error-info-bar.c:491
+#: gedit/gedit-file-chooser-open-dialog.c:79 gedit/gedit-window.c:2639
+#: gedit/resources/gtk/menus-common.ui:100 gedit/resources/gtk/menus-common.ui:106
+#: plugins/filebrowser/resources/ui/gedit-file-browser-menus.ui:7
+#: plugins/quickopen/quickopen/popup.py:46 plugins/snippets/snippets/manager.py:790
+msgid "_Open"
+msgstr "_खोल्नुहोस्"
+
+#: gedit/gedit-io-error-info-bar.c:135 gedit/gedit-io-error-info-bar.c:415
 msgid "_Retry"
 msgstr "पुन: प्रयास गर्नुहोस्"
 
-#: gedit/gedit-io-error-info-bar.c:162
+#: gedit/gedit-io-error-info-bar.c:155
 #, fuzzy, c-format
 #| msgid "Could not find the file %s."
 msgid "Could not find the file “%s”."
 msgstr "नक्कली सामग्री %s फेला पार्न सकेन"
 
-#: gedit/gedit-io-error-info-bar.c:164 gedit/gedit-io-error-info-bar.c:204
-#: gedit/gedit-io-error-info-bar.c:211
+#: gedit/gedit-io-error-info-bar.c:157 gedit/gedit-io-error-info-bar.c:197
+#: gedit/gedit-io-error-info-bar.c:204
 msgid "Please check that you typed the location correctly and try again."
 msgstr "कृपया तपाईले टाइप गर्नुभएको स्थान ठीकसँग जाँच गर्नुहोस् र फेरि प्रयास गर्नुहोस् ।"
 
 #. Translators: %s is a URI scheme (like for example http:, ftp:, etc.)
-#: gedit/gedit-io-error-info-bar.c:183
+#: gedit/gedit-io-error-info-bar.c:176
 #, fuzzy, c-format
 #| msgid "gedit cannot handle %s locations."
 msgid "Unable to handle “%s:” locations."
 msgstr "सहभागी अद्यावधिक गर्न अक्षम । %s"
 
-#: gedit/gedit-io-error-info-bar.c:189
+#: gedit/gedit-io-error-info-bar.c:182
 #, fuzzy
 #| msgid "gedit cannot handle this location."
 msgid "Unable to handle this location."
 msgstr "स्थान पहुँच गर्न असक्षम"
 
-#: gedit/gedit-io-error-info-bar.c:198
+#: gedit/gedit-io-error-info-bar.c:191
 #, fuzzy
 #| msgid "The selected color scheme cannot be installed."
 msgid "The location of the file cannot be accessed."
 msgstr "फाइल पहुँच प्राप्त गरिएको मिति ।"
 
-#: gedit/gedit-io-error-info-bar.c:202
-#, fuzzy, c-format
+#: gedit/gedit-io-error-info-bar.c:195
+#, c-format
 #| msgid "%s is a directory."
 msgid "“%s” is a directory."
-msgstr "%s: %d: निर्देशिका पहिले नै अवस्थित छ"
+msgstr "“%s” निर्देशिका हो."
 
-#: gedit/gedit-io-error-info-bar.c:209
-#, fuzzy, c-format
-#| msgid "%s is not a valid location."
+#: gedit/gedit-io-error-info-bar.c:202
+#, c-format
 msgid "“%s” is not a valid location."
-msgstr "स्थान वैध छैन ।"
+msgstr "“%s” स्थान वैध छैन ।"
 
 #. Translators: %s is a host name
-#: gedit/gedit-io-error-info-bar.c:245
+#: gedit/gedit-io-error-info-bar.c:238
 #, fuzzy, c-format
 #| msgid ""
 #| "Host %s could not be found. Please check that your proxy settings are correct and try again."
@@ -1114,130 +1023,117 @@ msgid ""
 "Host “%s” could not be found. Please check that your proxy settings are correct and try again."
 msgstr "%s होष्ट फेला पार्न सकिएन । कृपया तपाईँको प्रोक्सी सेटिङ्हरू ठीक सँग जाँच गर्नुहोस् र फेरि प्रयास गर्नुहोस् ।"
 
-#: gedit/gedit-io-error-info-bar.c:260
+#: gedit/gedit-io-error-info-bar.c:253
 #, fuzzy, c-format
 #| msgid "Host name was invalid. Please check that you typed the location correctly and try again."
 msgid "Hostname was invalid. Please check that you typed the location correctly and try again."
 msgstr "कृपया तपाईले टाइप गर्नुभएको स्थान ठीकसँग जाँच गर्नुहोस् र फेरि प्रयास गर्नुहोस् ।"
 
-#: gedit/gedit-io-error-info-bar.c:268
-#, fuzzy, c-format
+#: gedit/gedit-io-error-info-bar.c:261
+#, c-format
 #| msgid "%s is not a regular file."
 msgid "“%s” is not a regular file."
-msgstr "लक्ष्य फाइल नियमित फाइल होइन ।"
+msgstr "“%s” नियमित फाईल होईन।"
 
-#: gedit/gedit-io-error-info-bar.c:273
+#: gedit/gedit-io-error-info-bar.c:266
 msgid "Connection timed out. Please try again."
 msgstr "जडान समय समाप्त भयो । कृपया फेरि प्रयास गर्नुहोस् ।"
 
-#: gedit/gedit-io-error-info-bar.c:306
+#: gedit/gedit-io-error-info-bar.c:299
 #, c-format
 msgid "Unexpected error: %s"
 msgstr "अनपेक्षित त्रुटि: %s"
 
-#: gedit/gedit-io-error-info-bar.c:342
+#: gedit/gedit-io-error-info-bar.c:335
 #, fuzzy
 #| msgid "gedit cannot find it. Perhaps it has recently been deleted."
 msgid "Cannot find the requested file. Perhaps it has recently been deleted."
 msgstr "gedit ले यो फेला पार्न सक्दैन । सायद यो हालै मेटिएको छ ।"
 
-#: gedit/gedit-io-error-info-bar.c:352
+#: gedit/gedit-io-error-info-bar.c:345
 #, fuzzy, c-format
 #| msgid "Could not revert the file %s."
 msgid "Could not revert the file “%s”."
 msgstr "फाइल खोल्न सकेन: %s: %s"
 
-#: gedit/gedit-io-error-info-bar.c:379
-#, fuzzy
-#| msgid "Ch_aracter coding:"
+#: gedit/gedit-io-error-info-bar.c:372
 msgid "Ch_aracter Encoding:"
 msgstr "क्यारेक्टर सङ्केतन:"
 
-#: gedit/gedit-io-error-info-bar.c:440
-#, fuzzy, c-format
-msgid "The location “%s” is not currently reachable."
-msgstr "मुद्रणयन्त्र \"%s\" हाल बन्द हो ।"
-
-#: gedit/gedit-io-error-info-bar.c:455
-#, fuzzy
-msgid "Your system is offline. Check your network."
-msgstr "क्रिपया आफ्नो नेटवर्क सेटिङहरू जाँच गर्नुहोस् र पृष्ठ रिफ्रेस गर्न प्रयास गर्नुहोस्।"
-
 #. Translators: the access key chosen for this string should be
 #. different from other main menu access keys (Open, Edit, View...)
-#: gedit/gedit-io-error-info-bar.c:499 gedit/gedit-io-error-info-bar.c:764
+#: gedit/gedit-io-error-info-bar.c:423
 #, fuzzy
 #| msgid "_Edit Anyway"
 msgid "Edit Any_way"
-msgstr "सम्पादन (_E)"
+msgstr "सम्पादन गर्नुहोस्"
 
-#: gedit/gedit-io-error-info-bar.c:587
+#: gedit/gedit-io-error-info-bar.c:511
 msgid ""
 "The number of followed links is limited and the actual file could not be found within this limit."
 msgstr ""
 
-#: gedit/gedit-io-error-info-bar.c:591
+#: gedit/gedit-io-error-info-bar.c:515
 msgid "You do not have the permissions necessary to open the file."
 msgstr "यो फाइल खोल्न तपाईँसँग आवश्यक अनुमतिहरू छैनन् ।"
 
-#: gedit/gedit-io-error-info-bar.c:597
+#: gedit/gedit-io-error-info-bar.c:521
 #, fuzzy
 #| msgid "gedit has not been able to detect the character coding."
 msgid "Unable to detect the character encoding."
-msgstr "क्यारेक्टर सङ्केतन सेट गर्नुहोस्"
+msgstr "वर्ण सङ्केतन"
 
-#: gedit/gedit-io-error-info-bar.c:598 gedit/gedit-io-error-info-bar.c:622
+#: gedit/gedit-io-error-info-bar.c:522 gedit/gedit-io-error-info-bar.c:546
 msgid "Please check that you are not trying to open a binary file."
 msgstr "कृपया तपाईँले खोल्न प्रयास नगर्नु भएको एउटा बाइनरी फाइल जाँच गर्नुहोस् ।"
 
-#: gedit/gedit-io-error-info-bar.c:599
+#: gedit/gedit-io-error-info-bar.c:523
 #, fuzzy
 #| msgid "Select a character coding from the menu and try again."
 msgid "Select a character encoding from the menu and try again."
 msgstr "मेनुबाट क्यारेक्टर कोडिङ चयन गर्नुहोस् र फेरि प्रयास गर्नुहोस् ।"
 
-#: gedit/gedit-io-error-info-bar.c:605
+#: gedit/gedit-io-error-info-bar.c:529
 #, fuzzy, c-format
 msgid "There was a problem opening the file “%s”."
 msgstr "%s: %s: फाइल खोल्दा त्रुटि: %s\n"
 
-#: gedit/gedit-io-error-info-bar.c:607
+#: gedit/gedit-io-error-info-bar.c:531
 msgid ""
 "The file you opened has some invalid characters. If you continue editing this file you could "
 "corrupt this document."
 msgstr ""
 
-#: gedit/gedit-io-error-info-bar.c:610
+#: gedit/gedit-io-error-info-bar.c:534
 #, fuzzy
 #| msgid "Select a character coding from the menu and try again."
 msgid "You can also choose another character encoding and try again."
 msgstr "मेनुबाट क्यारेक्टर कोडिङ चयन गर्नुहोस् र फेरि प्रयास गर्नुहोस् ।"
 
-#: gedit/gedit-io-error-info-bar.c:619
+#: gedit/gedit-io-error-info-bar.c:543
 #, fuzzy, c-format
 #| msgid "Could not open the file %s using the %s character coding."
 msgid "Could not open the file “%s” using the “%s” character encoding."
 msgstr "%s फाइल %s क्यारेक्टर कोडिङ प्रयोग गरेर खोल्न सकेन ।"
 
-#: gedit/gedit-io-error-info-bar.c:623 gedit/gedit-io-error-info-bar.c:698
+#: gedit/gedit-io-error-info-bar.c:547 gedit/gedit-io-error-info-bar.c:622
 #, fuzzy
 #| msgid "Select a different character coding from the menu and try again."
 msgid "Select a different character encoding from the menu and try again."
 msgstr "मेनुबाट एउटा फरक क्यारेक्टर कोडिङ चयन गर्नुहोस् र फेरि प्रयास गर्नुहोस् ।"
 
-#: gedit/gedit-io-error-info-bar.c:635
+#: gedit/gedit-io-error-info-bar.c:559
 #, fuzzy, c-format
 #| msgid "Could not open the file %s."
 msgid "Could not open the file “%s”."
 msgstr "%s पत्र फाइल खोल्न सकेन: %s"
 
-#: gedit/gedit-io-error-info-bar.c:693
-#, fuzzy, c-format
-#| msgid "Could not save the file %s using the %s character coding."
+#: gedit/gedit-io-error-info-bar.c:617
+#, c-format
 msgid "Could not save the file “%s” using the “%s” character encoding."
 msgstr "%s फाइल %s क्यारेक्टर कोडिङ प्रयोग गरेर बचत गर्न सकेन ।"
 
-#: gedit/gedit-io-error-info-bar.c:696
+#: gedit/gedit-io-error-info-bar.c:620
 #, fuzzy
 #| msgid ""
 #| "The document contains one or more characters that cannot be encoded using the specified "
@@ -1249,81 +1145,30 @@ msgstr ""
 "कागजातले एक वा बढि क्यारेक्टरहरू समाविष्ट गर्दछ जुन निर्दिष्ट गरिएको क्यारेक्टर कोडिङ प्रयोग गरेर सङ्केतन गर्न "
 "सकिँदैन ।"
 
-#. Translators: the access key chosen for this string should be
-#. different from other main menu access keys (Open, Edit, View...)
-#: gedit/gedit-io-error-info-bar.c:769
-#, fuzzy
-#| msgid "_Don't Edit"
-msgid "D_on’t Edit"
-msgstr "सम्पादन (_E)"
-
-#: gedit/gedit-io-error-info-bar.c:779
-#, fuzzy, c-format
-#| msgid "This file (%s) is already open in another gedit window."
-msgid "This file “%s” is already open in another window."
-msgstr "\"%s\" मा उही नामको अर्को फाइल पहिले नै अवस्थित छ।"
-
-#: gedit/gedit-io-error-info-bar.c:793
-#, fuzzy
-#| msgid "Do you want to reload the file?"
-msgid "Do you want to edit it anyway?"
-msgstr "के तपाईँ निरन्तर गर्न चाहनुहुन्छ ?"
-
-#: gedit/gedit-io-error-info-bar.c:849 gedit/gedit-io-error-info-bar.c:939
-#: gedit/gedit-io-error-info-bar.c:1229
+#: gedit/gedit-io-error-info-bar.c:691
 msgid "S_ave Anyway"
 msgstr "जसरी पनि बचत गर्नुहोस्"
 
-#: gedit/gedit-io-error-info-bar.c:852 gedit/gedit-io-error-info-bar.c:942
-#: gedit/gedit-io-error-info-bar.c:1232
-#, fuzzy
-#| msgid "D_on't Save"
+#: gedit/gedit-io-error-info-bar.c:694
 msgid "D_on’t Save"
-msgstr "%d मा समूह आइ डी सेट गर्न सकिएन"
+msgstr "बचत नगर्नुहोस्"
 
 #. FIXME: review this message, it's not clear since for the user the "modification"
 #. * could be interpreted as the changes he made in the document. beside "reading" is
 #. * not accurate (since last load/save)
 #.
-#: gedit/gedit-io-error-info-bar.c:866
+#: gedit/gedit-io-error-info-bar.c:708
 #, fuzzy, c-format
 #| msgid "The file %s has been modified since reading it."
 msgid "The file “%s” has been modified since reading it."
 msgstr "फाइल%s पढेर यसलाई परिमार्जन गरिएको छ"
 
-#: gedit/gedit-io-error-info-bar.c:881
+#: gedit/gedit-io-error-info-bar.c:723
 msgid "If you save it, all the external changes could be lost. Save it anyway?"
 msgstr "यदि तपाईँले यसलाई बचत गर्नुभएमा, सबै बाह्य परिवर्तनहरू नष्ट हुन सक्नेछ । जे भए पनि यसलाई बचत गर्नुहुन्छ?"
 
-#: gedit/gedit-io-error-info-bar.c:961
-#, fuzzy, c-format
-#| msgid "Could not create a backup file while saving %s"
-msgid "Could not create a backup file while saving “%s”"
-msgstr "%s बचत गरिरहेको बेला जगेडा फाइल सिर्जना गर्न सकेन"
-
-#: gedit/gedit-io-error-info-bar.c:966
-#, fuzzy, c-format
-#| msgid "Could not create a temporary backup file while saving %s"
-msgid "Could not create a temporary backup file while saving “%s”"
-msgstr "%s बचत गरिरहेको बेला एउटा अस्थायी जगेडा फाइल सिर्जना गर्न सकेन"
-
-#: gedit/gedit-io-error-info-bar.c:983
-#, fuzzy
-#| msgid ""
-#| "gedit could not backup the old copy of the file before saving the new one. You can ignore this "
-#| "warning and save the file anyway, but if an error occurs while saving, you could lose the old "
-#| "copy of the file. Save anyway?"
-msgid ""
-"Could not back up the old copy of the file before saving the new one. You can ignore this warning "
-"and save the file anyway, but if an error occurs while saving, you could lose the old copy of the "
-"file. Save anyway?"
-msgstr ""
-"gedit ले नयाँ फाइल बचत गर्नु पहिला फाइलको पुरानो प्रतिलिपि जगेडा गर्न सकेन । तपाईँ यो चेतावनी उपेक्षा गर्न "
-"सक्नुहुन्छ र फाइल जसरी पनि बचत गर्न सक्नुहुन्छ, तर यदि फाइल बचत गरिरहेको बेला त्रुटि देखा पर्दछ भने, तपाईँले फाइलको "
-"पुरानो प्रतिलिपि नष्ट गर्न सक्नुहुनेछ । जे भए पनि बचत गर्नुहुन्छ?"
-
 #. Translators: %s is a URI scheme (like for example http:, ftp:, etc.)
-#: gedit/gedit-io-error-info-bar.c:1043
+#: gedit/gedit-io-error-info-bar.c:781
 #, fuzzy, c-format
 #| msgid ""
 #| "gedit cannot handle %s locations in write mode. Please check that you typed the location "
@@ -1335,7 +1180,7 @@ msgstr ""
 "gedit ले %s स्थानहरू लेखन मोडमा ह्याण्डल गर्न सक्दैन । कृपया तपाईँले टाइप गर्नुभएको स्थान ठीकसँग जाँच गर्नुहोस् र फेरि "
 "प्रयास गर्नुहोस् ।"
 
-#: gedit/gedit-io-error-info-bar.c:1051
+#: gedit/gedit-io-error-info-bar.c:789
 #, fuzzy
 #| msgid ""
 #| "gedit cannot handle this location in write mode. Please check that you typed the location "
@@ -1347,7 +1192,7 @@ msgstr ""
 "gedit ले यो स्थान लेखन मोडमा ह्याण्डल गर्न सकिँदैन । कृपया तपाईँले टाइप गर्नुभएको स्थान ठीकसँग जाँच गर्नुहोस् र फेरि "
 "प्रयास गर्नुहोस् ।"
 
-#: gedit/gedit-io-error-info-bar.c:1060
+#: gedit/gedit-io-error-info-bar.c:798
 #, fuzzy, c-format
 #| msgid ""
 #| "%s is not a valid location. Please check that you typed the location correctly and try again."
@@ -1355,7 +1200,7 @@ msgid ""
 "“%s” is not a valid location. Please check that you typed the location correctly and try again."
 msgstr "%s वैध स्थान होइन । कृपया तपाईँले टाइप गर्नुभएको स्थान ठीकसँग जाँच गर्नुहोस् र फेरि प्रयास गर्नुहोस् ।"
 
-#: gedit/gedit-io-error-info-bar.c:1067
+#: gedit/gedit-io-error-info-bar.c:805
 msgid ""
 "You do not have the permissions necessary to save the file. Please check that you typed the "
 "location correctly and try again."
@@ -1363,13 +1208,13 @@ msgstr ""
 "यो फाइल बचत गर्न तपाईँसँग आवश्यक अनुमतिहरू छैन । कृपया तपाईँले टाइप गर्नुभएको स्थान ठीकसँग जाँच गर्नुहोस् र फेरि "
 "प्रयास गर्नुहोस् ।"
 
-#: gedit/gedit-io-error-info-bar.c:1073
+#: gedit/gedit-io-error-info-bar.c:811
 msgid "There is not enough disk space to save the file. Please free some disk space and try again."
 msgstr ""
 "त्यहाँ फाइल बचत गर्नका लागि पर्याप्त डिस्क खालीस्थान छैन । कृपया केही डिस्क खालीस्थान स्वतन्त्र गर्नुहोस् र फेरि "
 "प्रयास गर्नुहोस् ।"
 
-#: gedit/gedit-io-error-info-bar.c:1078
+#: gedit/gedit-io-error-info-bar.c:816
 msgid ""
 "You are trying to save the file on a read-only disk. Please check that you typed the location "
 "correctly and try again."
@@ -1377,11 +1222,11 @@ msgstr ""
 "तपाईँले पढ्ने मात्र डिस्कमा फाइल बचत गर्न प्रयास गरिरहनु भएको छ । कृपया तपाईँले स्थान सही तरिकाले टाइप गर्नुभएको "
 "जाँच गर्नुहोस् र फेरि प्रयास गर्नुहोस् ।"
 
-#: gedit/gedit-io-error-info-bar.c:1084
+#: gedit/gedit-io-error-info-bar.c:822
 msgid "A file with the same name already exists. Please use a different name."
 msgstr "एउटै नामको फाइल पहिल्यै अवस्थित छ । कृपया फरक नाम प्रयोग गर्नुहोस् ।"
 
-#: gedit/gedit-io-error-info-bar.c:1089
+#: gedit/gedit-io-error-info-bar.c:827
 msgid ""
 "The disk where you are trying to save the file has a limitation on length of the file names. "
 "Please use a shorter name."
@@ -1389,7 +1234,7 @@ msgstr ""
 "तपाईँले फाइल बचत गर्न प्रयास गरिरहनु भएको डिस्कमा फाइल नामको लम्बाइमा सिमा छ । कृपया छोटो नाम प्रयोग "
 "गर्नुहोस् ।"
 
-#: gedit/gedit-io-error-info-bar.c:1100
+#: gedit/gedit-io-error-info-bar.c:838
 #, fuzzy
 #| msgid ""
 #| "The disk where you are trying to save the file has a limitation on file sizes.  Please try "
@@ -1401,79 +1246,53 @@ msgstr ""
 "तपाईँले फाइल बचत गर्न प्रयास गरिरहनुभएको डिस्कसँग फाइल साइजमा सिमा छ । कृपया सानो फाइल बचत गर्न प्रयास "
 "गर्नुहोस् वा यो सिमा नभएको डिस्कमा बचत गर्न प्रयास गर्नुहोस् ।"
 
-#: gedit/gedit-io-error-info-bar.c:1117
-#, fuzzy, c-format
-#| msgid "Could not save the file %s."
-msgid "Could not save the file “%s”."
-msgstr "%s बचत गर्न सकेन"
-
-#: gedit/gedit-io-error-info-bar.c:1157
-#, fuzzy, c-format
-#| msgid "The file %s changed on disk."
-msgid "The file “%s” changed on disk."
-msgstr "\"%s\" मा डिस्क स्पेस कम छ ।"
-
-#: gedit/gedit-io-error-info-bar.c:1168
-#, fuzzy
-msgid "Drop Changes and _Reload"
-msgstr "झार्नुहोस्"
-
-#: gedit/gedit-io-error-info-bar.c:1178 gedit/resources/gtk/menus-common.ui:148
-#: gedit/resources/gtk/menus.ui:9 gedit/resources/gtk/menus-traditional.ui:9
-msgid "_Reload"
-msgstr "पुन: लोड गर्नुहोस्"
-
-#: gedit/gedit-io-error-info-bar.c:1242
+#: gedit/gedit-io-error-info-bar.c:855
 #, c-format
-msgid "Some invalid chars have been detected while saving “%s”"
-msgstr ""
+msgid "Could not save the file “%s”."
+msgstr "“%s” फाईल बचत गर्न सकेन"
 
-#: gedit/gedit-io-error-info-bar.c:1258
-msgid "If you continue saving this file you can corrupt the document.  Save anyway?"
-msgstr ""
-
-#: gedit/gedit-preferences-dialog.c:455
+#: gedit/gedit-preferences-dialog.c:433
 msgid "Click on this button to select the font to be used by the editor"
 msgstr "सम्पादकद्वारा प्रयोग गरिनका लागि फन्ट चयन गर्नलाई यो बटन थिच्नुहोस्"
 
-#: gedit/gedit-preferences-dialog.c:461
+#: gedit/gedit-preferences-dialog.c:439
 #, c-format
 msgid "_Use the system fixed width font (%s)"
 msgstr "प्रणाली स्थिर चौडाइ (%s) फन्ट प्रयोग गर्नुहोस्"
 
-#: gedit/gedit-preferences-dialog.c:601
+#: gedit/gedit-preferences-dialog.c:685
 #, fuzzy, c-format
-#| msgid "Directory '%s' could not be created: g_mkdir_with_parents() failed: %s"
-msgid "Directory “%s” could not be created: g_mkdir_with_parents() failed: %s"
-msgstr "Directory '%s' डाइरेक्टरी सिर्जना गर्न सकिएन: प्रमूल() सँग जिएमके डाइरेक्टरी असफल भयो: %s"
+#| msgid "The selected color scheme cannot be installed."
+msgid "The selected color scheme cannot be installed: %s"
+msgstr "चयन गरिएको रङ योजना स्थापना गर्न सकिँदैन ।"
 
-#: gedit/gedit-preferences-dialog.c:798
+#: gedit/gedit-preferences-dialog.c:691
 msgid "The selected color scheme cannot be installed."
 msgstr "चयन गरिएको रङ योजना स्थापना गर्न सकिँदैन ।"
 
-#: gedit/gedit-preferences-dialog.c:821
-msgid "Add Scheme"
+#: gedit/gedit-preferences-dialog.c:717
+msgid "Add Color Scheme"
+msgstr "रङ योजना थप्नुहोस्"
+
+#: gedit/gedit-preferences-dialog.c:720
+msgid "_Add Scheme"
 msgstr "योजना थप्नुहोस्"
 
-#: gedit/gedit-preferences-dialog.c:826
-msgid "A_dd Scheme"
-msgstr "योजना थप्नुहोस्"
-
-#: gedit/gedit-preferences-dialog.c:830
+#: gedit/gedit-preferences-dialog.c:725
 msgid "Color Scheme Files"
 msgstr "रङ योजना फाइलहरू"
 
-#: gedit/gedit-preferences-dialog.c:861
+#: gedit/gedit-preferences-dialog.c:763
 #, fuzzy, c-format
 #| msgid "Could not remove color scheme \"%s\"."
 msgid "Could not remove color scheme “%s”."
 msgstr "क्यास प्रविष्टि हटाउन सकन: %s: %s"
 
-#: gedit/gedit-print-job.c:227
+#: gedit/gedit-print-job.c:228
 msgid "Preparing…"
 msgstr "तयारी गर्दैछ..."
 
-#: gedit/gedit-print-job.c:539
+#: gedit/gedit-print-job.c:540
 #, c-format
 msgid "File: %s"
 msgstr "फाइल: %s"
@@ -1481,40 +1300,40 @@ msgstr "फाइल: %s"
 #. Translators: %N is the current page number, %Q is the total
 #. * number of pages (ex. Page 2 of 10)
 #.
-#: gedit/gedit-print-job.c:548
+#: gedit/gedit-print-job.c:549
 msgid "Page %N of %Q"
 msgstr "%Q को पृष्ठ %N"
 
-#: gedit/gedit-print-job.c:626
+#: gedit/gedit-print-job.c:627
 #, fuzzy, c-format
 #| msgid "Rendering page %d of %d..."
 msgid "Rendering page %d of %d…"
-msgstr "%d को %d पृष्ठ"
+msgstr "मुद्रण गर्दै %d / %d…"
 
 #: gedit/gedit-print-preview.c:651
 #, c-format
 msgid "Page %d of %d"
 msgstr "%d को %d पृष्ठ"
 
-#: gedit/gedit-replace-dialog.c:690 plugins/externaltools/tools/tools.ui:49
+#: gedit/gedit-replace-dialog.c:688 plugins/externaltools/tools/tools.ui:49
 #: plugins/externaltools/tools/tools.ui:83 plugins/externaltools/tools/tools.ui:121
 msgid "Nothing"
 msgstr "केही पनि होइन"
 
-#: gedit/gedit-replace-dialog.c:779 gedit/resources/ui/gedit-replace-dialog.ui:7
+#: gedit/gedit-replace-dialog.c:777 gedit/resources/ui/gedit-replace-dialog.ui:7
 msgid "Find and Replace"
 msgstr "फेला पार्नुहोस् र प्रतिस्थापन गर्नुहोस्"
 
 #. Use spaces to leave padding proportional to the font size
-#: gedit/gedit-statusbar.c:58 gedit/gedit-statusbar.c:64
+#: gedit/gedit-statusbar.c:56 gedit/gedit-statusbar.c:62
 msgid "OVR"
 msgstr "OVR"
 
-#: gedit/gedit-statusbar.c:58 gedit/gedit-statusbar.c:64
+#: gedit/gedit-statusbar.c:56 gedit/gedit-statusbar.c:62
 msgid "INS"
 msgstr "INS"
 
-#: gedit/gedit-statusbar.c:244
+#: gedit/gedit-statusbar.c:242
 #, c-format
 msgid "There is a tab with errors"
 msgid_plural "There are %d tabs with errors"
@@ -1557,136 +1376,147 @@ msgstr "%s लाई %s मा बचत गर्दै"
 msgid "Saving %s"
 msgstr "%s बचत गर्दै"
 
-#: gedit/gedit-tab.c:1538
+#: gedit/gedit-tab.c:1486
 #, c-format
 msgid "Error opening file %s"
 msgstr "%s फाइल खोल्दा त्रुटि"
 
-#: gedit/gedit-tab.c:1543
+#: gedit/gedit-tab.c:1491
 #, c-format
 msgid "Error reverting file %s"
 msgstr "%s फाइल उल्टाउँदा त्रुटि"
 
-#: gedit/gedit-tab.c:1548
+#: gedit/gedit-tab.c:1496
 #, c-format
 msgid "Error saving file %s"
 msgstr "%s फाइल बचत गर्दा त्रुटि"
 
-#: gedit/gedit-tab.c:1579
+#: gedit/gedit-tab.c:1527
 msgid "Name:"
 msgstr "नाम:"
 
-#: gedit/gedit-tab.c:1580
+#: gedit/gedit-tab.c:1528
 msgid "MIME Type:"
 msgstr "माइम प्रकार:"
 
-#: gedit/gedit-tab.c:1581
+#: gedit/gedit-tab.c:1529
 msgid "Encoding:"
 msgstr "सङ्केतन:"
 
 #. Translators: '/ on <remote-share>'
-#: gedit/gedit-utils.c:858
+#: gedit/gedit-utils.c:387
 #, c-format
 msgid "/ on %s"
 msgstr "/ को %s"
 
-#: gedit/gedit-utils.c:1162
+#: gedit/gedit-utils.c:532
 msgid "Unix/Linux"
 msgstr "युनिक्स्/लिनक्स्"
 
-#: gedit/gedit-utils.c:1164
+#: gedit/gedit-utils.c:534
 msgid "Mac OS Classic"
 msgstr "म्याक ओएस्  क्लासिक"
 
-#: gedit/gedit-utils.c:1166
+#: gedit/gedit-utils.c:536
 msgid "Windows"
 msgstr "सञ्झ्यालहरू"
-
-#: gedit/gedit-view.c:481 gedit/resources/ui/gedit-preferences-dialog.ui:41
-msgid "_Display line numbers"
-msgstr "लाइन नम्बर प्रदर्शन गर्नुहोस्"
 
 #. Translators: the first %d is the position of the current search
 #. * occurrence, and the second %d is the total number of search
 #. * occurrences.
 #.
-#: gedit/gedit-view-frame.c:674
+#: gedit/gedit-view-frame.c:668
 #, c-format
 msgid "%d of %d"
 msgstr "%d को %d"
 
 #. create "Wrap Around" menu item.
-#: gedit/gedit-view-frame.c:766
+#: gedit/gedit-view-frame.c:760
 msgid "_Wrap Around"
 msgstr "वरिपरि बेर्नुहोस्"
 
 #. create "Match as Regular Expression" menu item.
-#: gedit/gedit-view-frame.c:776
+#: gedit/gedit-view-frame.c:770
 #, fuzzy
 msgid "Match as _Regular Expression"
 msgstr "खराब नियमित अभिव्यक्ति “{0}”."
 
 #. create "Match Entire Word Only" menu item.
-#: gedit/gedit-view-frame.c:790
+#: gedit/gedit-view-frame.c:784
 msgid "Match _Entire Word Only"
 msgstr "सम्पूर्ण शब्द मात्र मिलाउनुहोस्"
 
 #. create "Match Case" menu item.
-#: gedit/gedit-view-frame.c:804
+#: gedit/gedit-view-frame.c:798
 msgid "_Match Case"
 msgstr "केस मिलाउनुहोस्"
 
-#: gedit/gedit-view-frame.c:1029
+#: gedit/gedit-view-frame.c:1023
 msgid "String you want to search for"
 msgstr "तपाईँले खोजी गर्न चाहनुभएको स्ट्रिङ"
 
-#: gedit/gedit-view-frame.c:1041
+#: gedit/gedit-view-frame.c:1035
 msgid "Line you want to move the cursor to"
 msgstr "यसमा कर्सर सार्न तपाईँले चाहनुभएको लाइन"
 
-#: gedit/gedit-window.c:998
+#: gedit/gedit-window.c:922
 #, fuzzy
 msgid "Bracket match is out of range"
 msgstr "UTF-8 का लागि क्यारेक्टर दायरा भन्दा बाहिर छ"
 
-#: gedit/gedit-window.c:1003
+#: gedit/gedit-window.c:927
 #, fuzzy
 #| msgid "Phrase not found"
 msgid "Bracket match not found"
 msgstr "मेल खाएन"
 
-#: gedit/gedit-window.c:1008
+#: gedit/gedit-window.c:932
 #, c-format
 msgid "Bracket match found on line: %d"
 msgstr ""
 
 #. Translators: "Ln" is an abbreviation for "Line", Col is an abbreviation for "Column". Please,
 #. use abbreviations if possible to avoid space problems.
-#: gedit/gedit-window.c:1043
+#: gedit/gedit-window.c:967
 #, c-format
 msgid "  Ln %d, Col %d"
 msgstr "  Ln %d, Col %d"
 
-#: gedit/gedit-window.c:1227
+#: gedit/gedit-window.c:1151
 #, fuzzy, c-format
 #| msgid "_Tab width:"
 msgid "Tab Width: %u"
 msgstr "ट्याब चौडाइ:"
 
-#: gedit/gedit-window.c:1596
+#: gedit/gedit-window.c:1169 plugins/externaltools/tools/manager.py:115
+#: plugins/externaltools/tools/manager.py:324 plugins/externaltools/tools/manager.py:440
+#: plugins/externaltools/tools/manager.py:776
+msgid "Plain Text"
+msgstr "सादा पाठ"
+
+#: gedit/gedit-window.c:1496
 #, fuzzy
 #| msgid "Create new document"
 msgid "There are unsaved documents"
 msgstr "कागजातहरू"
 
-#: gedit/gedit-window.c:2442
+#: gedit/gedit-window.c:2333
 #, fuzzy
 msgid "Change side panel page"
 msgstr "छेउपट्टी देखाउनुहोस्"
 
-#: gedit/gedit-window.c:2462 gedit/resources/ui/gedit-window.ui:19
+#: gedit/gedit-window.c:2353 gedit/resources/ui/gedit-window.ui:19
 msgid "Documents"
 msgstr "कागजातहरू"
+
+#: gedit/gedit-window.c:2640
+msgid "Open a file"
+msgstr "एउटा फाइल खोल्नुहोस्"
+
+#
+#: gedit/gedit-window.c:2644
+msgid "Open a recently used file"
+msgstr "भर्खरै प्रयोग गरिएको फाइल खोल्नुहोस्"
 
 #: gedit/resources/gtk/menus-common.ui:7
 msgid "Move _Left"
@@ -1723,7 +1553,7 @@ msgstr "स्वाचालित इण्डेन्टेसन सक्�
 #, fuzzy
 #| msgid "Insert spaces"
 msgid "Use Spaces"
-msgstr "%d spaces"
+msgstr "खालीस्थान घुसाउनुहोस्"
 
 #: gedit/resources/gtk/menus-common.ui:66
 msgid "Display line numbers"
@@ -1766,6 +1596,11 @@ msgstr "बचत गर्नुहोस्:"
 msgid "_New Window"
 msgstr "नयाँ सञ्झ्याल"
 
+#: gedit/resources/gtk/menus-common.ui:148 gedit/resources/gtk/menus.ui:9
+#: gedit/resources/gtk/menus-traditional.ui:9
+msgid "_Reload"
+msgstr "पुन: लोड गर्नुहोस्"
+
 #: gedit/resources/gtk/menus-common.ui:155 gedit/resources/gtk/menus.ui:14
 #: gedit/resources/gtk/menus-traditional.ui:14
 msgid "_Print…"
@@ -1799,8 +1634,8 @@ msgstr "प्रतिलिपि गर्नुहोस्"
 msgid "_Paste"
 msgstr "_टाँस्नुहोस्"
 
-#: gedit/resources/gtk/menus-common.ui:207 plugins/filebrowser/gedit-file-browser-plugin.c:919
-#: plugins/filebrowser/gedit-file-browser-plugin.c:957
+#: gedit/resources/gtk/menus-common.ui:207 plugins/filebrowser/gedit-file-browser-plugin.c:887
+#: plugins/filebrowser/gedit-file-browser-plugin.c:922
 #: plugins/filebrowser/resources/ui/gedit-file-browser-menus.ui:37
 msgid "_Delete"
 msgstr "मेट्नुहोस्"
@@ -1861,7 +1696,6 @@ msgid "Find Pre_vious"
 msgstr "अघिल्लो फेला पार्नुहोस्"
 
 #: gedit/resources/gtk/menus-common.ui:291
-#, fuzzy
 msgid "Find and _Replace…"
 msgstr "फेला पार्नुहोस् र प्रतिस्थापन गर्नुहोस्..."
 
@@ -1871,8 +1705,6 @@ msgid "_Clear Highlight"
 msgstr "हाइलाइट खाली गर्नुहोस्"
 
 #: gedit/resources/gtk/menus-common.ui:307
-#, fuzzy
-#| msgid "Go to _Line..."
 msgid "Go to _Line…"
 msgstr "लाइनमा जानुहोस्"
 
@@ -1925,7 +1757,7 @@ msgstr "नयाँ सञ्झ्याल सार्नुहोस्"
 
 #: gedit/resources/gtk/menus-common.ui:383 gedit/resources/gtk/menus-common.ui:387
 #: gedit/resources/gtk/menus.ui:123 gedit/resources/gtk/menus-traditional.ui:119
-#: plugins/spell/gedit-spell-plugin.c:265 plugins/time/resources/ui/gedit-time-dialog.ui:133
+#: plugins/spell/gedit-spell-plugin.c:260 plugins/time/resources/ui/gedit-time-dialog.ui:133
 msgid "_Help"
 msgstr "मद्दत गर्नुहोस्"
 
@@ -1934,7 +1766,7 @@ msgstr "मद्दत गर्नुहोस्"
 #, fuzzy
 #| msgid "Text Editor"
 msgid "_About Text Editor"
-msgstr "पाठ सम्पादक"
+msgstr "Dconf सम्पादक बारेमा"
 
 #: gedit/resources/gtk/menus.ui:41 gedit/resources/gtk/menus-traditional.ui:37
 msgid "Save _All"
@@ -1945,8 +1777,6 @@ msgid "_Find and Replace…"
 msgstr "फेला पार्नुहोस् र प्रतिस्थापन गर्नुहोस्..."
 
 #: gedit/resources/gtk/menus.ui:66 gedit/resources/gtk/menus-traditional.ui:62
-#, fuzzy
-#| msgid "Go to _Line..."
 msgid "_Go to Line…"
 msgstr "लाइनमा जानुहोस्"
 
@@ -1978,36 +1808,14 @@ msgstr "वर्णन"
 msgid "_Encoding"
 msgstr "सङ्केतन"
 
-#: gedit/resources/ui/gedit-highlight-mode-dialog.ui:11
-msgid "Highlight Mode"
-msgstr "हाइलाइट मोड"
-
-#: gedit/resources/ui/gedit-highlight-mode-dialog.ui:47
-msgid "_Select"
-msgstr "चयन गर्नुहोस्"
-
-#: gedit/resources/ui/gedit-highlight-mode-selector.ui:31
-#, fuzzy
-#| msgid "Search highlight mode..."
-msgid "Search highlight mode…"
-msgstr "हाइलाइट मोड"
-
-#: gedit/resources/ui/gedit-open-document-selector.ui:53
-msgid "No results"
-msgstr "नतिजा छैन"
-
-#: gedit/resources/ui/gedit-open-document-selector.ui:97
-msgid "Other _Documents…"
-msgstr "अर्को कागजात"
-
-#: gedit/resources/ui/gedit-open-document-selector.ui:101
-msgid "Open another file"
-msgstr "अर्को फाइल खोल्नुहोस्"
-
 #: gedit/resources/ui/gedit-preferences-dialog.ui:8
 #: gedit/resources/ui/gedit-preferences-dialog.ui:15
 msgid "Preferences"
 msgstr "प्राथमिकताहरू"
+
+#: gedit/resources/ui/gedit-preferences-dialog.ui:41
+msgid "_Display line numbers"
+msgstr "लाइन नम्बर प्रदर्शन गर्नुहोस्"
 
 #: gedit/resources/ui/gedit-preferences-dialog.ui:56
 #, fuzzy
@@ -2016,135 +1824,126 @@ msgid "Display right _margin at column:"
 msgstr "स्तम्भमा कुन दायाँ मार्जिन देखाइएको छ"
 
 #: gedit/resources/ui/gedit-preferences-dialog.ui:95
-#, fuzzy
-#| msgid "_Statusbar"
 msgid "Display _statusbar"
-msgstr "स्थितिपट्टी"
+msgstr "स्थितिपट्टी देखाउनुहोस्"
 
 #: gedit/resources/ui/gedit-preferences-dialog.ui:110
 #, fuzzy
-#| msgid "Display right _margin"
-msgid "Display _overview map"
-msgstr "अवलोकन मानचित्र देखाउनुहोस्"
-
-#: gedit/resources/ui/gedit-preferences-dialog.ui:125
-#, fuzzy
-#| msgid "Display right _margin"
 msgid "Display _grid pattern"
-msgstr "ग्रिड"
+msgstr "ग्रिड दृश्य"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:154
+#: gedit/resources/ui/gedit-preferences-dialog.ui:139
 #: gedit/resources/ui/gedit-print-preferences.ui:197
 msgid "Text Wrapping"
 msgstr "पाठ बेराइ"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:172
+#: gedit/resources/ui/gedit-preferences-dialog.ui:157
 #: gedit/resources/ui/gedit-print-preferences.ui:217
 msgid "Enable text _wrapping"
 msgstr "पाठ बेराइ सक्षम पार्नुहोस्"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:186
+#: gedit/resources/ui/gedit-preferences-dialog.ui:171
 #: gedit/resources/ui/gedit-print-preferences.ui:237
 msgid "Do not _split words over two lines"
 msgstr "दुई लाइनहरूमा शब्दहरू विभाजन नगर्नुहोस्"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:220
+#: gedit/resources/ui/gedit-preferences-dialog.ui:205
 msgid "Highlighting"
 msgstr "हाइलाइटिङ"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:238
+#: gedit/resources/ui/gedit-preferences-dialog.ui:223
 msgid "Highlight current _line"
 msgstr "हालको लाइन हाइलाइट गर्नुहोस्"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:252
+#: gedit/resources/ui/gedit-preferences-dialog.ui:237
 #, fuzzy
 #| msgid "Highlight matching _bracket"
 msgid "Highlight matching _brackets"
 msgstr "मिल्ने कोष्ठकलाई हाइलाइट गर्नुहोस्"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:285
+#: gedit/resources/ui/gedit-preferences-dialog.ui:270
 msgid "View"
 msgstr "दृष्य"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:307
+#: gedit/resources/ui/gedit-preferences-dialog.ui:292
 #, fuzzy
 #| msgid "<b>Tab Stops</b>"
 msgid "Tab Stops"
 msgstr "ट्याब"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:330
+#: gedit/resources/ui/gedit-preferences-dialog.ui:315
 msgid "_Tab width:"
 msgstr "ट्याब चौडाइ:"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:359
+#: gedit/resources/ui/gedit-preferences-dialog.ui:344
 msgid "Insert _spaces instead of tabs"
 msgstr "ट्याबहरूको सट्टा खालीस्थान घुसाउनुहोस्"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:374
+#: gedit/resources/ui/gedit-preferences-dialog.ui:359
 msgid "_Enable automatic indentation"
 msgstr "स्वाचालित इण्डेन्टेसन सक्षम पार्नुहोस्"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:409
+#: gedit/resources/ui/gedit-preferences-dialog.ui:394
 msgid "File Saving"
 msgstr "फाइल बचत गर्दै"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:428
+#: gedit/resources/ui/gedit-preferences-dialog.ui:413
 msgid "Create a _backup copy of files before saving"
 msgstr "बचत गर्नु पहिला फाइलहरूको जगेडा प्रतिलिपि सिर्जना गर्नुहोस्"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:443
+#: gedit/resources/ui/gedit-preferences-dialog.ui:428
 msgid "_Autosave files every"
 msgstr "हरेक फाइललाई स्वत बचत गर्नुहोस"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:459
+#: gedit/resources/ui/gedit-preferences-dialog.ui:444
 msgid "_minutes"
 msgstr "मिनेट"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:506
+#: gedit/resources/ui/gedit-preferences-dialog.ui:491
 msgid "Editor"
 msgstr "सम्पादक"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:529
-#: plugins/externaltools/org.gnome.gedit.plugins.externaltools.gschema.xml.in:14
-#: plugins/pythonconsole/org.gnome.gedit.plugins.pythonconsole.gschema.xml.in:24
+#: gedit/resources/ui/gedit-preferences-dialog.ui:514
+#: plugins/externaltools/org.gnome.gedit.plugins.externaltools.gschema.xml:14
+#: plugins/pythonconsole/org.gnome.gedit.plugins.pythonconsole.gschema.xml:24
 msgid "Font"
 msgstr "फन्ट"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:573
+#: gedit/resources/ui/gedit-preferences-dialog.ui:558
 msgid "Editor _font: "
 msgstr "सम्पादक फन्ट: "
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:590
+#: gedit/resources/ui/gedit-preferences-dialog.ui:575
 msgid "Pick the editor font"
 msgstr "सम्पादक फन्ट राख्नुहोस्"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:631
+#: gedit/resources/ui/gedit-preferences-dialog.ui:616
 msgid "Color Scheme"
 msgstr "रङ योजना"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:678
-#: gedit/resources/ui/gedit-preferences-dialog.ui:679
+#: gedit/resources/ui/gedit-preferences-dialog.ui:652
+#: gedit/resources/ui/gedit-preferences-dialog.ui:653
 msgid "Install scheme"
 msgstr "योजना स्थापना गर्नुहोस्"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:680
+#: gedit/resources/ui/gedit-preferences-dialog.ui:654
 msgid "Install Scheme"
 msgstr "योजना स्थापना गर्नुहोस्"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:694
-#: gedit/resources/ui/gedit-preferences-dialog.ui:695
+#: gedit/resources/ui/gedit-preferences-dialog.ui:668
+#: gedit/resources/ui/gedit-preferences-dialog.ui:669
 msgid "Uninstall scheme"
 msgstr "योजना हटाउनुहोस्"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:696
+#: gedit/resources/ui/gedit-preferences-dialog.ui:670
 msgid "Uninstall Scheme"
 msgstr "योजना हटाउनुहोस्"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:736
+#: gedit/resources/ui/gedit-preferences-dialog.ui:710
 msgid "Font & Colors"
 msgstr "फन्ट र रङहरू"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:761
+#: gedit/resources/ui/gedit-preferences-dialog.ui:735
 msgid "Plugins"
 msgstr "प्लगइनहरू"
 
@@ -2161,8 +1960,6 @@ msgid "Line Numbers"
 msgstr "पङ्क्ति सङ्ख्या"
 
 #: gedit/resources/ui/gedit-print-preferences.ui:105
-#, fuzzy
-#| msgid "Print _line numbers"
 msgid "Print line nu_mbers"
 msgstr "लाइन सङ्ख्यामुद्रण गर्नुहोस्"
 
@@ -2369,7 +2166,7 @@ msgstr "पछिल्लो आगत श्रोतमा जानुहो
 #| msgid "Activate previous document"
 msgctxt "shortcut window"
 msgid "Switch to the previous document"
-msgstr "अघिल्लो अनुप्रयोगमा स्विच गर्नुहोस्"
+msgstr "अघिल्लो निर्गत श्रोतमा स्विच गर्नुहोस्"
 
 #: gedit/resources/ui/gedit-shortcuts.ui:89
 #, fuzzy
@@ -2411,10 +2208,9 @@ msgid "Show bottom panel"
 msgstr "तल प्यानल देखाउनुहोस्"
 
 #: gedit/resources/ui/gedit-shortcuts.ui:130
-#, fuzzy
 msgctxt "shortcut window"
 msgid "Fullscreen on / off"
-msgstr "off"
+msgstr "पुरा पर्दा खोल/बन्द"
 
 #: gedit/resources/ui/gedit-shortcuts.ui:137
 msgctxt "shortcut window"
@@ -2455,7 +2251,7 @@ msgstr "हाइलाइट खाली गर्नुहोस्"
 #, fuzzy
 msgctxt "shortcut window"
 msgid "Undo and Redo"
-msgstr "पूर्वस्थितिमा फर्काउनुहोस्"
+msgstr "पूर्वास्थितिमा फर्काउनुहोस्"
 
 #: gedit/resources/ui/gedit-shortcuts.ui:191
 #, fuzzy
@@ -2496,8 +2292,6 @@ msgstr "प्रतिलिपि बनाउनुहोस् र टाँ
 
 #
 #: gedit/resources/ui/gedit-shortcuts.ui:231
-#, fuzzy
-#| msgid "Change selected text to lower case"
 msgctxt "shortcut window"
 msgid "Copy selected text to clipboard"
 msgstr "चयन गरिएको पाठ क्लिपबोर्डमा प्रतिलिपि बनाउनुहोस्"
@@ -2523,88 +2317,121 @@ msgid "Navigation"
 msgstr "नेभिगेशन"
 
 #: gedit/resources/ui/gedit-shortcuts.ui:258
-#, fuzzy
-#| msgid "Go to _Line..."
 msgctxt "shortcut window"
 msgid "Go to line"
 msgstr "लाइनमा जानुहोस्"
 
 #: gedit/resources/ui/gedit-shortcuts.ui:265
+#, fuzzy
+#| msgid "Set the language of the current document"
+msgctxt "shortcut window"
+msgid "Move to the beginning of the current line"
+msgstr "हालको लाइन हाइलाइट गर्नुहोस्"
+
+#: gedit/resources/ui/gedit-shortcuts.ui:272
+#, fuzzy
+#| msgid "Set the language of the current document"
+msgctxt "shortcut window"
+msgid "Move to the end of the current line"
+msgstr " _end चिन्हलाई असक्षम बनाउ ।"
+
+#: gedit/resources/ui/gedit-shortcuts.ui:279
+#, fuzzy
+#| msgid "Set the language of the current document"
+msgctxt "shortcut window"
+msgid "Move to the beginning of the document"
+msgstr "कागजात को शुरुवात जानुहोस्"
+
+#: gedit/resources/ui/gedit-shortcuts.ui:286
+#, fuzzy
+#| msgid "Set the language of the current document"
+msgctxt "shortcut window"
+msgid "Move to the end of the document"
+msgstr "कागजातको अन्त्यमा जानुहोस्"
+
+#: gedit/resources/ui/gedit-shortcuts.ui:293
 msgctxt "shortcut window"
 msgid "Move viewport up within the file"
 msgstr ""
 
-#: gedit/resources/ui/gedit-shortcuts.ui:272
+#: gedit/resources/ui/gedit-shortcuts.ui:300
 msgctxt "shortcut window"
 msgid "Move viewport down within the file"
 msgstr ""
 
-#: gedit/resources/ui/gedit-shortcuts.ui:279
+#: gedit/resources/ui/gedit-shortcuts.ui:307
 #, fuzzy
 msgctxt "shortcut window"
 msgid "Move viewport to end of file"
 msgstr "फाइल रद्दी टोकरीमा सार्न असफल"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:286
+#: gedit/resources/ui/gedit-shortcuts.ui:314
 #, fuzzy
 msgctxt "shortcut window"
 msgid "Move viewport to beginning of file"
 msgstr "फाइल रद्दी टोकरीमा सार्न असफल"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:293
+#: gedit/resources/ui/gedit-shortcuts.ui:321
 #, fuzzy
 #| msgid "Highlight matching _bracket"
 msgctxt "shortcut window"
 msgid "Move to matching bracket"
-msgstr "कुनै मिल्दो मद्दत पृष्ठ फेला परेन।"
+msgstr "देब्रे दोबर कोण"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:301
+#: gedit/resources/ui/gedit-shortcuts.ui:328
+msgctxt "shortcut window"
+msgid "Go to previous tab group"
+msgstr "अघिल्लो ट्याबमा जानुहोस्"
+
+#: gedit/resources/ui/gedit-shortcuts.ui:335
+msgctxt "shortcut window"
+msgid "Go to next tab group"
+msgstr "पछिल्लो ट्याबमा जानुहोस्"
+
+#: gedit/resources/ui/gedit-shortcuts.ui:343
 msgctxt "shortcut window"
 msgid "Editing"
 msgstr "सम्पादन गर्ने"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:306
+#: gedit/resources/ui/gedit-shortcuts.ui:348
 #, fuzzy
 msgctxt "shortcut window"
 msgid "Toggle insert / overwrite"
-msgstr "insert"
+msgstr "उल्टनू"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:313
+#: gedit/resources/ui/gedit-shortcuts.ui:355
 #, fuzzy
-#| msgid "Close the current file"
+msgctxt "shortcut window"
+msgid "Toggle cursor visibility"
+msgstr "मेनुपट्टीको दृश्यातमकतामा टगल गर्ने कुञ्जीपाटी सर्टकट"
+
+#: gedit/resources/ui/gedit-shortcuts.ui:362
 msgctxt "shortcut window"
 msgid "Delete current line"
-msgstr "हालको लाइन"
+msgstr "हालको लाइन मेट्नुहोस्"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:320
-#, fuzzy
-#| msgid "Unindent selected lines"
-msgctxt "shortcut window"
-msgid "Join selected lines"
-msgstr "जोड्नुहोस्"
-
-#: gedit/resources/ui/gedit-shortcuts.ui:327
+#: gedit/resources/ui/gedit-shortcuts.ui:369
 #, fuzzy
 #| msgid "Current line"
 msgctxt "shortcut window"
 msgid "Move current line up"
-msgstr "माथि सार्नुहोस्"
+msgstr "हालको लाइन"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:334
+#: gedit/resources/ui/gedit-shortcuts.ui:376
 #, fuzzy
 #| msgid "Current line"
 msgctxt "shortcut window"
 msgid "Move current line down"
 msgstr "तल सार्नुहोस्"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:341
+#: gedit/resources/ui/gedit-shortcuts.ui:383
 #, fuzzy
 #| msgid "Current word"
 msgctxt "shortcut window"
 msgid "Move current word left"
 msgstr "ट्याब बायाँतिर सार्नुहोस्"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:348
+#: gedit/resources/ui/gedit-shortcuts.ui:390
 #, fuzzy
 #| msgid "Current word"
 msgctxt "shortcut window"
@@ -2612,7 +2439,7 @@ msgid "Move current word right"
 msgstr "ट्याब दायाँतिर सार्नुहोस्"
 
 #
-#: gedit/resources/ui/gedit-shortcuts.ui:355
+#: gedit/resources/ui/gedit-shortcuts.ui:397
 #, fuzzy
 #| msgid "Change selected text to upper case"
 msgctxt "shortcut window"
@@ -2620,151 +2447,104 @@ msgid "Convert to uppercase"
 msgstr "माथिल्लो स्वरूप"
 
 #
-#: gedit/resources/ui/gedit-shortcuts.ui:362
+#: gedit/resources/ui/gedit-shortcuts.ui:404
 #, fuzzy
 #| msgid "Change selected text to lower case"
 msgctxt "shortcut window"
 msgid "Convert to lowercase"
 msgstr "सानोवर्ण"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:369
+#: gedit/resources/ui/gedit-shortcuts.ui:411
 #, fuzzy
 #| msgid "_Invert Case"
 msgctxt "shortcut window"
 msgid "Invert case"
-msgstr "_वर्ण मिलान"
+msgstr "चयन उल्टाउनुहोस्"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:376
+#: gedit/resources/ui/gedit-shortcuts.ui:418
 #, fuzzy
 msgctxt "shortcut window"
 msgid "Increment number at cursor"
 msgstr "बढोत्तरी(∆)"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:383
+#: gedit/resources/ui/gedit-shortcuts.ui:425
 #, fuzzy
 msgctxt "shortcut window"
 msgid "Decrement number at cursor"
-msgstr "कर्सर"
+msgstr "मिनेट घट्डोक्रम"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:391
+#: gedit/resources/ui/gedit-shortcuts.ui:433
 msgctxt "shortcut window"
 msgid "Tools"
 msgstr "उपकरणहरू"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:396
+#: gedit/resources/ui/gedit-shortcuts.ui:438
 msgctxt "shortcut window"
 msgid "Check spelling"
 msgstr "र्हिज्जे जाँच गर्नुहोस्"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:403
+#: gedit/resources/ui/gedit-shortcuts.ui:445
 msgctxt "shortcut window"
 msgid "Print the document"
 msgstr "कागजात मुद्रण गर्नुहोस्"
 
-#: gedit/resources/ui/gedit-shortcuts.ui:410
+#: gedit/resources/ui/gedit-shortcuts.ui:452
 #, fuzzy
 msgctxt "shortcut window"
 msgid "Show completion window"
 msgstr "सञ्झ्यालको विकल्पहरू देखाउनुहोस्"
 
+#: gedit/resources/ui/gedit-shortcuts.ui:460
+msgctxt "shortcut window"
+msgid "General"
+msgstr "साधारण"
+
+#: gedit/resources/ui/gedit-shortcuts.ui:465
+msgctxt "shortcut window"
+msgid "Show help"
+msgstr "मद्दत देखाउनुहोस्"
+
+#: gedit/resources/ui/gedit-shortcuts.ui:472
+msgctxt "shortcut window"
+msgid "Open menu"
+msgstr "मेनु खोल्नुहोस्"
+
+#: gedit/resources/ui/gedit-shortcuts.ui:479
+msgctxt "shortcut window"
+msgid "Keyboard shortcuts"
+msgstr "किबोर्स सर्टकटहरू"
+
 #: gedit/resources/ui/gedit-tab-label.ui:34
 msgid "Close Document"
 msgstr "कागजात बन्द गर्नुहोस्"
 
-#: gedit/resources/ui/gedit-window.ui:33 gedit/resources/ui/gedit-window.ui:66
-#: gedit/resources/ui/gedit-window.ui:401
-msgid "Open a file"
-msgstr "एउटा फाइल खोल्नुहोस्"
-
-#: gedit/resources/ui/gedit-window.ui:65 gedit/resources/ui/gedit-window.ui:386
-#: gedit/resources/ui/gedit-window.ui:400
-msgid "Open"
-msgstr "खोल्नुहोस्"
-
-#: gedit/resources/ui/gedit-window.ui:80 gedit/resources/ui/gedit-window.ui:87
-#: gedit/resources/ui/gedit-window.ui:415 gedit/resources/ui/gedit-window.ui:422
+#: gedit/resources/ui/gedit-window.ui:36 gedit/resources/ui/gedit-window.ui:42
+#: gedit/resources/ui/gedit-window.ui:327 gedit/resources/ui/gedit-window.ui:333
 msgid "Create a new document"
 msgstr "एउटा नयाँ कागजात सिर्जना गर्नुहोस्"
 
-#: gedit/resources/ui/gedit-window.ui:86 gedit/resources/ui/gedit-window.ui:421
+#: gedit/resources/ui/gedit-window.ui:41 gedit/resources/ui/gedit-window.ui:332
 msgid "New"
 msgstr "नयाँ"
 
-#: gedit/resources/ui/gedit-window.ui:109 gedit/resources/ui/gedit-window.ui:114
-#: gedit/resources/ui/gedit-window.ui:460 gedit/resources/ui/gedit-window.ui:465
+#: gedit/resources/ui/gedit-window.ui:62 gedit/resources/ui/gedit-window.ui:67
+#: gedit/resources/ui/gedit-window.ui:368 gedit/resources/ui/gedit-window.ui:373
 msgid "Save the current file"
 msgstr "हालको फाइल बचत गर्नुहोस्"
 
-#: gedit/resources/ui/gedit-window.ui:113 gedit/resources/ui/gedit-window.ui:457
-#: gedit/resources/ui/gedit-window.ui:464
+#: gedit/resources/ui/gedit-window.ui:66 gedit/resources/ui/gedit-window.ui:366
+#: gedit/resources/ui/gedit-window.ui:372
 msgid "Save"
 msgstr "बचत गर्नुहोस्"
 
-#: gedit/resources/ui/gedit-window.ui:256
+#: gedit/resources/ui/gedit-window.ui:209
 msgid "Hide panel"
 msgstr "प्यानल लुकाउनुहोस्"
 
-#: gedit/resources/ui/gedit-window.ui:371
-#, fuzzy
-#| msgid "Open a file"
-msgid "Open a file dialog"
-msgstr "एउटा फाइल खोल्नुहोस्"
-
-#: gedit/resources/ui/gedit-window.ui:431 gedit/resources/ui/gedit-window.ui:436
-#: gedit/resources/ui/gedit-window.ui:437
+#: gedit/resources/ui/gedit-window.ui:341 gedit/resources/ui/gedit-window.ui:346
+#: gedit/resources/ui/gedit-window.ui:347
 msgid "Leave Fullscreen"
 msgstr "पूरा पर्दा छोड्नुहोस्"
-
-#: plugins/checkupdate/checkupdate.plugin.desktop.in:5
-#, fuzzy
-#| msgid "Checked state"
-msgid "Check update"
-msgstr "पछिल्लो अद्यावधिक जाँच टाइमस्ट्याम्प"
-
-#: plugins/checkupdate/checkupdate.plugin.desktop.in:6
-#, fuzzy
-msgid "Check for latest version of gedit"
-msgstr "  %.250s अन्तिमा कन्फिगर गरिएको संस्करण %.250s हो ।\n"
-
-#: plugins/checkupdate/gedit-check-update-plugin.c:245
-#, fuzzy
-#| msgid "There was an error displaying help."
-msgid "There was an error displaying the URI."
-msgstr ""
-"मद्दत प्रदर्शन गर्दा त्यहाँ एउटा त्रुटि थियो: \n"
-"%s"
-
-#: plugins/checkupdate/gedit-check-update-plugin.c:282
-msgid "_Download"
-msgstr "डाउनलोड"
-
-#: plugins/checkupdate/gedit-check-update-plugin.c:283
-#, fuzzy
-#| msgid "_Ignore case"
-msgid "_Ignore Version"
-msgstr "वेवास्ता गर्नुहोस"
-
-#: plugins/checkupdate/gedit-check-update-plugin.c:288
-#, fuzzy
-#| msgid "Revert to a saved version of the file"
-msgid "There is a new version of gedit"
-msgstr "संस्करण"
-
-#: plugins/checkupdate/gedit-check-update-plugin.c:291
-msgid ""
-"You can download the new version of gedit by clicking on the download button or ignore that "
-"version and wait for a new one"
-msgstr ""
-
-#: plugins/checkupdate/org.gnome.gedit.plugins.checkupdate.gschema.xml.in:5
-#, fuzzy
-msgid "Version to Ignore"
-msgstr "वेवास्ता गर्नुहोस"
-
-#. This is releated to the next gedit version to be released
-#: plugins/checkupdate/org.gnome.gedit.plugins.checkupdate.gschema.xml.in:7
-msgid "Version to ignore until a newer version is released."
-msgstr ""
 
 #: plugins/docinfo/docinfo.plugin.desktop.in:5
 #: plugins/docinfo/resources/ui/gedit-docinfo-plugin.ui:7
@@ -2782,7 +2562,7 @@ msgstr ""
 "हालको कागजातको विश्लेषण गर्दछ र यस भित्र शब्दहरूको सङ्ख्या, लाइनहरू, क्यारेक्टरहरू र खालीस्थान नभएका क्यारेक्टरहरू "
 "प्रतिवेदन गर्दछ ।"
 
-#: plugins/docinfo/gedit-docinfo-plugin.c:537
+#: plugins/docinfo/gedit-docinfo-plugin.c:535
 msgid "_Document Statistics"
 msgstr "कागजात तथ्याङ्क"
 
@@ -2870,19 +2650,19 @@ msgstr "बाह्य उपकरणहरू"
 msgid "Execute external commands and shell scripts."
 msgstr "बाह्य आदेशहरू र शेल स्क्रिप्टहरू कार्यान्वयन गर्नुहोस् ।"
 
-#: plugins/externaltools/org.gnome.gedit.plugins.externaltools.gschema.xml.in:5
-#: plugins/pythonconsole/org.gnome.gedit.plugins.pythonconsole.gschema.xml.in:15
+#: plugins/externaltools/org.gnome.gedit.plugins.externaltools.gschema.xml:5
+#: plugins/pythonconsole/org.gnome.gedit.plugins.pythonconsole.gschema.xml:15
 msgid "Whether to use the system font"
 msgstr "प्रणाली फन्ट प्रयोग गर्नुहोस्"
 
-#: plugins/externaltools/org.gnome.gedit.plugins.externaltools.gschema.xml.in:6
+#: plugins/externaltools/org.gnome.gedit.plugins.externaltools.gschema.xml:6
 msgid ""
 "If true, the external tools will use the desktop-global standard font if it’s monospace (and the "
 "most similar font it can come up with otherwise)."
 msgstr ""
 
-#: plugins/externaltools/org.gnome.gedit.plugins.externaltools.gschema.xml.in:15
-#: plugins/pythonconsole/org.gnome.gedit.plugins.pythonconsole.gschema.xml.in:25
+#: plugins/externaltools/org.gnome.gedit.plugins.externaltools.gschema.xml:15
+#: plugins/pythonconsole/org.gnome.gedit.plugins.pythonconsole.gschema.xml:25
 msgid "A Pango font name. Examples are “Sans 12” or “Monospace Bold 14”."
 msgstr ""
 
@@ -2951,12 +2731,11 @@ msgstr "रोकियो ।"
 #: plugins/externaltools/tools/outputpanel.ui:37
 #, fuzzy
 msgid "Stop Tool"
-msgstr "रोक्नुहोस्"
+msgstr "रोक्नुहोस्:"
 
 #: plugins/externaltools/tools/tools.ui:15
-#, fuzzy
 msgid "Always available"
-msgstr "उपलब्ध छैन"
+msgstr "सधैं उपलब्ध"
 
 #: plugins/externaltools/tools/tools.ui:19 plugins/externaltools/tools/tools.ui:129
 msgid "All documents"
@@ -3031,15 +2810,12 @@ msgid "Manage External Tools"
 msgstr "बाह्य उपकरणहरू"
 
 #: plugins/externaltools/tools/tools.ui:204
-#, fuzzy
-#| msgid "Add a new snippet..."
 msgid "Add a new tool"
-msgstr "नयाँ उपकरण"
+msgstr "नयाँ उपकरण थप्नुहोस्"
 
 #: plugins/externaltools/tools/tools.ui:205
-#, fuzzy
 msgid "Add Tool"
-msgstr "उपकरण"
+msgstr "उपकरण थप्नुहोस्"
 
 #: plugins/externaltools/tools/tools.ui:219
 #, fuzzy
@@ -3065,8 +2841,6 @@ msgid "Revert Tool"
 msgstr "उपकरण"
 
 #: plugins/externaltools/tools/tools.ui:287
-#, fuzzy
-#| msgid "S_hortcut key:"
 msgid "Shortcut _key:"
 msgstr "सर्टकट कुञ्जी"
 
@@ -3101,7 +2875,7 @@ msgstr "फाइल ब्राउजर"
 #: plugins/filebrowser/filebrowser.plugin.desktop.in:7
 #, fuzzy
 #| msgid "Easy file access from the side pane"
-msgid "Easy file access from the side panel"
+msgid "Easy file access from the side panel."
 msgstr "छेउ फलकबाट सरल फाइल पहुँच"
 
 #: plugins/filebrowser/gedit-file-bookmarks-store.c:200
@@ -3112,43 +2886,43 @@ msgstr "गृहपृष्ठ"
 msgid "File System"
 msgstr "फाइल प्रणाली"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:523
+#: plugins/filebrowser/gedit-file-browser-plugin.c:497
 msgid "File Browser"
 msgstr "फाइल ब्राउजर"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:659
+#: plugins/filebrowser/gedit-file-browser-plugin.c:627
 msgid "An error occurred while creating a new directory"
 msgstr "नयाँ डाइरेक्टरी सिर्जना गर्दा एउटा त्रुटि देखा पर्यो"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:662
+#: plugins/filebrowser/gedit-file-browser-plugin.c:630
 msgid "An error occurred while creating a new file"
 msgstr "नयाँ डाइरेक्टरी सिर्जना गर्दा एउटा त्रुटि देखा पर्यो"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:665
+#: plugins/filebrowser/gedit-file-browser-plugin.c:633
 msgid "An error occurred while renaming a file or directory"
 msgstr "फाइल वा डाइरेक्टरी पुन: नामाकरण गर्दा एउटा त्रुटि देखा पर्यो"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:668
+#: plugins/filebrowser/gedit-file-browser-plugin.c:636
 msgid "An error occurred while deleting a file or directory"
 msgstr "फाइल वा डाइरेक्टरी मेट्दा एउटा त्रुटि देखा पर्यो"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:671
+#: plugins/filebrowser/gedit-file-browser-plugin.c:639
 msgid "An error occurred while opening a directory in the file manager"
 msgstr "फाइल प्रबन्धकमा डाइरेक्टरी खोल्दा एउटा त्रुटि देखा पर्यो"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:674
+#: plugins/filebrowser/gedit-file-browser-plugin.c:642
 msgid "An error occurred while setting a root directory"
 msgstr "मूल डाइरेक्टरी सेट गर्दा एउटा त्रुटि देखा पर्यो"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:677
+#: plugins/filebrowser/gedit-file-browser-plugin.c:645
 msgid "An error occurred while loading a directory"
 msgstr "डाइरेक्टरी लोड गर्दा एउटा त्रुटि देखा पर्यो"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:680
+#: plugins/filebrowser/gedit-file-browser-plugin.c:648
 msgid "An error occurred"
 msgstr "एउटा त्रुटि देखा पर्यो"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:902
+#: plugins/filebrowser/gedit-file-browser-plugin.c:870
 msgid ""
 "Cannot move file to trash, do you\n"
 "want to delete permanently?"
@@ -3156,36 +2930,36 @@ msgstr ""
 "फाइललाई रद्दिको टोकरीमा सार्न सकिँदैन, तपाईँ\n"
 "स्थायी रूपमा मेट्न चाहनुहुन्छ?"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:907
+#: plugins/filebrowser/gedit-file-browser-plugin.c:875
 #, fuzzy, c-format
 #| msgid "The file \"%s\" cannot be moved to the trash."
 msgid "The file “%s” cannot be moved to the trash."
 msgstr "फाइल रद्दीटोकरीमा राखिएको मिती"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:912
+#: plugins/filebrowser/gedit-file-browser-plugin.c:880
 msgid "The selected files cannot be moved to the trash."
 msgstr "चयन गरिएका फाइलहरू रद्दिको टोकरीमा सार्न सकिँदैन ।"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:943
+#: plugins/filebrowser/gedit-file-browser-plugin.c:908
 #, c-format
 msgid "Are you sure you want to permanently delete “%s”?"
 msgstr "तपाईँ \"%s\" मेट्न निश्चित हुनुहुन्छ?"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:948
+#: plugins/filebrowser/gedit-file-browser-plugin.c:913
 msgid "Are you sure you want to permanently delete the selected files?"
 msgstr "तपाईँ चयन गरिएका फाइलहरू स्थायी रूपमा मेट्न निश्चित हुनुहुन्छ?"
 
 # "सुरक्षा गरिएन भने  अन्तिम  %ld पक्कै "
 # "हराउँछ"
-#: plugins/filebrowser/gedit-file-browser-plugin.c:951
+#: plugins/filebrowser/gedit-file-browser-plugin.c:916
 msgid "If you delete an item, it is permanently lost."
 msgstr "यदि तपाईँले एउटा वस्तु मेट्नु भएमा, यो स्थायी रूपमा नष्ट हुन्छ ।"
 
-#: plugins/filebrowser/gedit-file-browser-store.c:1703
+#: plugins/filebrowser/gedit-file-browser-store.c:1701
 msgid "(Empty)"
 msgstr "(खाली)"
 
-#: plugins/filebrowser/gedit-file-browser-store.c:3327
+#: plugins/filebrowser/gedit-file-browser-store.c:3325
 #, fuzzy
 #| msgid ""
 #| "The new file is currently filtered out. You need to adjust your filter settings to make the "
@@ -3197,12 +2971,12 @@ msgstr ""
 "नयाँ फाइल हालै फिल्टर गरिएको छ । तपाईँले फाइल दृश्यात्मक बनाउन तपाईँको फिल्टर सेटिङहरू समायोजन गर्न आवश्यक छ"
 
 #. Translators: This is the default name of new files created by the file browser pane.
-#: plugins/filebrowser/gedit-file-browser-store.c:3578
+#: plugins/filebrowser/gedit-file-browser-store.c:3581
 #, fuzzy
 msgid "Untitled File"
 msgstr "शीर्षक विहिन"
 
-#: plugins/filebrowser/gedit-file-browser-store.c:3606
+#: plugins/filebrowser/gedit-file-browser-store.c:3609
 msgid ""
 "The new file is currently filtered out. You need to adjust your filter settings to make the file "
 "visible"
@@ -3210,11 +2984,11 @@ msgstr ""
 "नयाँ फाइल हालै फिल्टर गरिएको छ । तपाईँले फाइल दृश्यात्मक बनाउन तपाईँको फिल्टर सेटिङहरू समायोजन गर्न आवश्यक छ"
 
 #. Translators: This is the default name of new directories created by the file browser pane.
-#: plugins/filebrowser/gedit-file-browser-store.c:3635
+#: plugins/filebrowser/gedit-file-browser-store.c:3638
 msgid "Untitled Folder"
 msgstr "शीर्षक नभएको फोल्डर"
 
-#: plugins/filebrowser/gedit-file-browser-store.c:3658
+#: plugins/filebrowser/gedit-file-browser-store.c:3661
 #, fuzzy
 #| msgid ""
 #| "The new file is currently filtered out. You need to adjust your filter settings to make the "
@@ -3225,54 +2999,54 @@ msgid ""
 msgstr ""
 "नयाँ फाइल हालै फिल्टर गरिएको छ । तपाईँले फाइल दृश्यात्मक बनाउन तपाईँको फिल्टर सेटिङहरू समायोजन गर्न आवश्यक छ"
 
-#: plugins/filebrowser/gedit-file-browser-widget.c:757
+#: plugins/filebrowser/gedit-file-browser-widget.c:755
 msgid "Bookmarks"
 msgstr "पुस्तकचिनो"
 
-#: plugins/filebrowser/gedit-file-browser-widget.c:1957
+#: plugins/filebrowser/gedit-file-browser-widget.c:1955
 #, fuzzy, c-format
 msgid "No mount object for mounted volume: %s"
 msgstr "%s माउण्ट गर्न सकेन"
 
-#: plugins/filebrowser/gedit-file-browser-widget.c:2026
+#: plugins/filebrowser/gedit-file-browser-widget.c:2024
 #, c-format
 msgid "Could not open media: %s"
 msgstr "\"%s\" खोल्न सकेन"
 
-#: plugins/filebrowser/gedit-file-browser-widget.c:2069
+#: plugins/filebrowser/gedit-file-browser-widget.c:2067
 #, c-format
 msgid "Could not mount volume: %s"
 msgstr "%s माउण्ट गर्न सकेन"
 
-#: plugins/filebrowser/gedit-file-browser-widget.c:2581
+#: plugins/filebrowser/gedit-file-browser-widget.c:2579
 #, fuzzy, c-format
 #| msgid "An error occurred while loading a directory"
 msgid "Error when loading “%s”: No such directory"
 msgstr "डाइरेक्टरी लोड गर्दा एउटा त्रुटि देखा पर्यो"
 
-#: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml.in:5
+#: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml:5
 msgid "Open With Tree View"
 msgstr "ट्रि दृश्यसँग खोल्नुहोस्"
 
-#: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml.in:6
+#: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml:6
 msgid "Open the tree view when the file browser plugin gets loaded instead of the bookmarks view"
 msgstr "फाइल ब्राउजर प्लगइनले पुस्तकचिनोहरूको दृश्यको सट्टा लोड गरिएको प्राप्त गर्दा ट्रि दृश्य खोल्नुहोस्"
 
-#: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml.in:10
+#: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml:10
 msgid "File Browser Root Directory"
 msgstr "फाइल ब्राउजर मूल डाइरेक्टरी"
 
-#: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml.in:11
+#: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml:11
 msgid ""
 "The file browser root directory to use when loading the file browser plugin and onload/tree_view "
 "is TRUE."
 msgstr "फाइल ब्राउजर प्लगइन लोड गर्दा र अनलोड/ट्रि दृश्य TRUE हुँदा प्रयोग गर्नलाई फाइल ब्राउजर मूल डाइरेक्टरी ।"
 
-#: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml.in:15
+#: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml:15
 msgid "File Browser Virtual Root Directory"
 msgstr "फाइल ब्राउजर अवास्तविक मूल डाइरेक्टरी"
 
-#: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml.in:16
+#: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml:16
 msgid ""
 "The file browser virtual root directory to use when loading the file browser plugin when onload/"
 "tree_view is TRUE. The virtual root must always be below the actual root."
@@ -3280,21 +3054,21 @@ msgstr ""
 "अनलोड/ट्रि दृश्य TRUE हुँदा फाइल ब्राउजर प्लगइन लोड गरिरहेको बेला प्रयोग गर्नलाई फाइल ब्राउजर अवास्तविक मूल "
 "डाइरेक्टरी । अवास्तविक मूल सधैँ वास्तविक मूल भन्दा तल हुनु पर्दछ ।"
 
-#: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml.in:20
+#: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml:20
 msgid "Enable Restore of Remote Locations"
 msgstr "टाढाको स्थानको पुन: भण्डारण सक्षम पार्नुहोस्"
 
-#: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml.in:21
+#: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml:21
 msgid "Sets whether to enable restoring of remote locations."
 msgstr "टाढाको स्थानहरूको पुन: भण्डारण सक्षम पार्ने या नपार्ने सेट गर्दछ ।"
 
-#: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml.in:25
+#: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml:25
 #, fuzzy
 #| msgid "Set Location To First Document"
 msgid "Set Location to First Document"
 msgstr "कागजात स्थानमा टर्मिनल खोल्नुहोस्"
 
-#: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml.in:26
+#: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml:26
 #, fuzzy
 #| msgid ""
 #| "If TRUE the file browser plugin will view the directory of the first opened document given "
@@ -3308,11 +3082,11 @@ msgstr ""
 "यदि TRUE भए फाइल ब्राउजर प्लगइनले पहिला खोजिएको कागजातको डाइरेक्टरी हेर्नेछ जुन फाइल ब्राउजर अझै सम्म प्रयोग "
 "गरिएको छैन । (यसैले यो साधारणतया आदेश रेखाबाट खुला कागजातमा लागु गरिन्छ वा नटिलस आदिसँग यसलाई खोलिन्छ)"
 
-#: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml.in:30
+#: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml:30
 msgid "File Browser Filter Mode"
 msgstr "फाइल ब्राउजर फिल्टर मोड"
 
-#: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml.in:31
+#: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml:31
 #, fuzzy
 #| msgid ""
 #| "This value determines what files get filtered from the file browser. Valid values are: none "
@@ -3326,22 +3100,22 @@ msgstr ""
 "फिलटर गर्दैन), लुकाइएको (लुकाइएको फाइलहरू फिल्टर गर्दछ), बाइनरी (बाइनरी फाइलहरू फिल्टर गर्दछ) र लुकाइएको र "
 "बाइनरी (लुकाइएको र बाइनरी दुवै फाइलहरू फिल्टर गर्दछ)"
 
-#: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml.in:35
+#: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml:35
 msgid "File Browser Filter Pattern"
 msgstr "फाइल ब्राउजर फिल्टर बान्की"
 
-#: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml.in:36
+#: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml:36
 msgid ""
 "The filter pattern to filter the file browser with. This filter works on top of the filter_mode."
 msgstr "यससँग फाइल ब्राउजर फिल्टर गर्न फिल्टर बान्की । यो फिल्टरले फिल्टरमोडको माथि कार्य गर्दछ ।"
 
-#: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml.in:40
+#: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml:40
 #, fuzzy
 #| msgid "File Browser Filter Pattern"
 msgid "File Browser Binary Patterns"
 msgstr "नराखिने फाइल ढाँचाहरूको सूची"
 
-#: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml.in:41
+#: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml:41
 msgid "The supplemental patterns to use when filtering binary files."
 msgstr ""
 
@@ -3361,10 +3135,8 @@ msgid "New F_ile"
 msgstr "नयाँ फाइल"
 
 #: plugins/filebrowser/resources/ui/gedit-file-browser-menus.ui:29
-#, fuzzy
-#| msgid "_Rename..."
 msgid "_Rename…"
-msgstr "_पुन: नामकरण गर्नुहोस्…"
+msgstr "पुन: नामाकरण गर्नुहोस्"
 
 #: plugins/filebrowser/resources/ui/gedit-file-browser-menus.ui:33
 msgid "_Move to Trash"
@@ -3379,8 +3151,6 @@ msgid "_View Folder"
 msgstr "फोल्डर हेर्नुहोस्"
 
 #: plugins/filebrowser/resources/ui/gedit-file-browser-menus.ui:51
-#, fuzzy
-#| msgid "_Open terminal here"
 msgid "_Open in Terminal"
 msgstr "टर्मिनल खोल्नुहोस्"
 
@@ -3420,27 +3190,26 @@ msgstr "मोडलाइनहरू"
 msgid "Emacs, Kate and Vim-style modelines support for gedit."
 msgstr "gedit का लागि एमाकस, केट र भिम-शैली मोडलाइन समर्थन ।"
 
-#: plugins/pythonconsole/org.gnome.gedit.plugins.pythonconsole.gschema.xml.in:5
+#: plugins/pythonconsole/org.gnome.gedit.plugins.pythonconsole.gschema.xml:5
 #, fuzzy
 msgid "Command Color Text"
-msgstr "टर्मिनलमा पाठको पूर्वनिर्धारित रङ"
+msgstr "चयन गरिएको पाठ रङ"
 
-#: plugins/pythonconsole/org.gnome.gedit.plugins.pythonconsole.gschema.xml.in:6
+#: plugins/pythonconsole/org.gnome.gedit.plugins.pythonconsole.gschema.xml:6
 #, fuzzy
 msgid "The command color text"
-msgstr "टर्मिनलमा पाठको पूर्वनिर्धारित रङ"
+msgstr "चयन गरिएको पाठ रङ"
 
-#: plugins/pythonconsole/org.gnome.gedit.plugins.pythonconsole.gschema.xml.in:10
-#, fuzzy
+#: plugins/pythonconsole/org.gnome.gedit.plugins.pythonconsole.gschema.xml:10
 msgid "Error Color Text"
-msgstr "कच रङ्गमा गल्ती"
+msgstr "गलत पाठ रङ"
 
-#: plugins/pythonconsole/org.gnome.gedit.plugins.pythonconsole.gschema.xml.in:11
+#: plugins/pythonconsole/org.gnome.gedit.plugins.pythonconsole.gschema.xml:11
 #, fuzzy
 msgid "The error color text"
 msgstr "कच रङ्गमा गल्ती"
 
-#: plugins/pythonconsole/org.gnome.gedit.plugins.pythonconsole.gschema.xml.in:16
+#: plugins/pythonconsole/org.gnome.gedit.plugins.pythonconsole.gschema.xml:16
 msgid ""
 "If true, the terminal will use the desktop-global standard font if it’s monospace (and the most "
 "similar font it can come up with otherwise)."
@@ -3449,13 +3218,12 @@ msgstr ""
 #: plugins/pythonconsole/pythonconsole/config.ui:18
 #, fuzzy
 msgid "C_ommand color:"
-msgstr "रङ्ग"
+msgstr "रङ:"
 
 #: plugins/pythonconsole/pythonconsole/config.ui:32
-#, fuzzy
 #| msgid "Border color"
 msgid "_Error color:"
-msgstr "कच रङ्गमा गल्ती"
+msgstr "गलत रङ्ग:"
 
 #: plugins/pythonconsole/pythonconsole/__init__.py:60
 #: plugins/pythonconsole/pythonconsole.plugin.desktop.in:6
@@ -3465,7 +3233,7 @@ msgstr "पाइथन कन्सोल"
 #: plugins/pythonconsole/pythonconsole.plugin.desktop.in:7
 #, fuzzy
 #| msgid "Interactive python console standing in the bottom panel"
-msgid "Interactive Python console standing in the bottom panel"
+msgid "Interactive Python console standing in the bottom panel."
 msgstr "बटम प्यानलमा रहेको अन्तरक्रियात्मक पाइथन कन्सोल"
 
 #: plugins/quickhighlight/quickhighlight.plugin.desktop.in:5
@@ -3493,7 +3261,7 @@ msgstr "छिटो"
 #: plugins/quickopen/quickopen.plugin.desktop.in:7
 #, fuzzy
 #| msgid "Save all open files"
-msgid "Quickly open files"
+msgid "Quickly open files."
 msgstr "धेरै खुला फाइलहरू"
 
 #: plugins/quickopen/quickopen/popup.py:90
@@ -3516,7 +3284,7 @@ msgstr "स्निप्पेटस्"
 #, fuzzy, python-format
 #| msgid "The archive `%s` could not be created"
 msgid "The archive “%s” could not be created"
-msgstr "सबै तत्वहरूको सिर्जना गर्न सकिदैन"
+msgstr "सङ्ग्रहमा फाइलहरू थप्न सकेन"
 
 #: plugins/snippets/snippets/exporter.py:105
 #, fuzzy, python-format
@@ -3531,8 +3299,7 @@ msgid "Target directory “%s” is not a valid directory"
 msgstr "लक्ष्य वस्तु निर्देशिका हो"
 
 #: plugins/snippets/snippets/importer.py:55 plugins/snippets/snippets/importer.py:116
-#, fuzzy, python-format
-#| msgid "File `%s` does not exist"
+#, python-format
 msgid "File “%s” does not exist"
 msgstr "फाइल %s अवस्थित छैन"
 
@@ -3697,7 +3464,7 @@ msgstr "अनप्याक आदेश '%s' असफल भयो ।\n"
 #: plugins/snippets/snippets.plugin.desktop.in:7
 #, fuzzy
 #| msgid "Insert often used pieces of text in a fast way"
-msgid "Insert often-used pieces of text in a fast way"
+msgid "Insert often-used pieces of text in a fast way."
 msgstr "जहिल्यै पनि प्रयोग गरिने पाठका टुक्राहरू छिटो तरिकाले घुसाउनुहोस्"
 
 #: plugins/snippets/snippets/snippets.ui:40 plugins/snippets/snippets/snippets.ui:47
@@ -3711,16 +3478,14 @@ msgid "Create new snippet"
 msgstr "नयाँ स्निपेट सिर्जना गर्नुहोस्"
 
 #: plugins/snippets/snippets/snippets.ui:105
-#, fuzzy
-#| msgid "Snippets"
 msgid "Add Snippet"
-msgstr "नयाँ स्निपेट सिर्जना गर्नुहोस्"
+msgstr "स्निपेट थप्नुहोस्"
 
 #: plugins/snippets/snippets/snippets.ui:122
 #, fuzzy
 #| msgid "Snippets"
 msgid "Remove Snippet"
-msgstr "_हटाउनुहोस्"
+msgstr "हटाउने"
 
 #: plugins/snippets/snippets/snippets.ui:139
 #, fuzzy
@@ -3739,14 +3504,8 @@ msgid "Export Snippets"
 msgstr "स्निपेटहरू निर्यात गर्नुहोस्"
 
 #: plugins/snippets/snippets/snippets.ui:224
-#, fuzzy
-#| msgid "<b>Activation</b>"
 msgid "Activation"
-msgstr "प्रमाणपत्रको सक्रियता समय अझै भविष्यमा छ।."
-
-#: plugins/snippets/snippets/snippets.ui:244
-msgid "    "
-msgstr "    "
+msgstr "सक्रिय"
 
 #. "tab" here means the tab key, not the notebook tab!
 #: plugins/snippets/snippets/snippets.ui:263
@@ -3765,7 +3524,7 @@ msgstr "छोटकरी कुञ्जी जुनसँग स्निप
 msgid "_Drop targets:"
 msgstr "लक्ष्यहरू छोड्नुहोस्:"
 
-#: plugins/sort/gedit-sort-plugin.c:243
+#: plugins/sort/gedit-sort-plugin.c:241
 #, fuzzy
 #| msgid "S_ort..."
 msgid "S_ort…"
@@ -3801,14 +3560,10 @@ msgid "Sorts a document or selected text."
 msgstr "कागजात वा चयन गरिएको पाठ क्रमबद्ध गर्दछ ।"
 
 #: plugins/spell/gedit-spell-app-activatable.c:143
-#, fuzzy
-#| msgid "Check Spelling"
 msgid "_Check Spelling…"
-msgstr "र्हिज्जे जाँच गर्नुहोस्"
+msgstr "र्हिज्जे जाँच गर्नुहोस्…"
 
 #: plugins/spell/gedit-spell-app-activatable.c:147
-#, fuzzy
-#| msgid "Set _Language..."
 msgid "Set _Language…"
 msgstr "भाषा सेट गर्नुहोस्"
 
@@ -3818,14 +3573,14 @@ msgstr "भाषा सेट गर्नुहोस्"
 msgid "_Highlight Misspelled Words"
 msgstr "गलत हिज्जे शब्द छैन"
 
-#: plugins/spell/org.gnome.gedit.plugins.spell.gschema.xml.in:5
+#: plugins/spell/org.gnome.gedit.plugins.spell.gschema.xml:5
 #: plugins/spell/resources/ui/gedit-spell-setup-dialog.ui:75
 #, fuzzy
 #| msgid "_Highlight Mode"
 msgid "Highlight misspelled words"
 msgstr "गलत हिज्जे शब्द छैन"
 
-#: plugins/spell/org.gnome.gedit.plugins.spell.gschema.xml.in:6
+#: plugins/spell/org.gnome.gedit.plugins.spell.gschema.xml:6
 #, fuzzy
 #| msgid "_Highlight Mode"
 msgid "Default setting for highlight misspelled words."
@@ -3838,10 +3593,8 @@ msgid "Configure spell plugin"
 msgstr "मिति/समय प्लगइन कन्फिगर गर्नुहोस्"
 
 #: plugins/spell/resources/ui/gedit-spell-setup-dialog.ui:61
-#, fuzzy
-#| msgid "Create a new document"
 msgid "Defaults for new documents"
-msgstr "कागजातहरू"
+msgstr "नयाँ कागजातहरूका लागि पूर्वनिर्धारित"
 
 #: plugins/spell/spell.plugin.desktop.in:5
 msgid "Spell Checker"
@@ -3851,44 +3604,38 @@ msgstr "हिज्जे परीक्षक"
 msgid "Checks the spelling of the current document."
 msgstr "हालको कागजातको हिज्जे जाँच गर्दछ ।"
 
-#: plugins/time/gedit-time-plugin.c:265
-#, fuzzy
-#| msgid "Insert Date and Time"
+#: plugins/time/gedit-time-plugin.c:263
 msgid "In_sert Date and Time…"
-msgstr "मिति र समय सेटिङ्ग"
+msgstr "मिति र समय घुसाउनुहोस्"
 
-#: plugins/time/gedit-time-plugin.c:491
+#: plugins/time/gedit-time-plugin.c:489
 msgid "Available formats"
 msgstr "उपलब्ध ढाँचाहरू"
 
-#: plugins/time/org.gnome.gedit.plugins.time.gschema.xml.in:5
+#: plugins/time/org.gnome.gedit.plugins.time.gschema.xml:5
 #, fuzzy
 #| msgid "Prompt message"
 msgid "Prompt Type"
 msgstr "तत्काल लगआउट"
 
-#: plugins/time/org.gnome.gedit.plugins.time.gschema.xml.in:6
+#: plugins/time/org.gnome.gedit.plugins.time.gschema.xml:6
 msgid ""
 "If the user should be prompted for a format or if the selected or custom format should be used."
 msgstr ""
 
-#: plugins/time/org.gnome.gedit.plugins.time.gschema.xml.in:10
-#, fuzzy
-#| msgid "Selected"
+#: plugins/time/org.gnome.gedit.plugins.time.gschema.xml:10
 msgid "Selected Format"
-msgstr "चयन गरिएको ढाँचा प्रयोग गर्नुहोस्"
+msgstr "चयन गरिएको ढाँचा"
 
-#: plugins/time/org.gnome.gedit.plugins.time.gschema.xml.in:11
+#: plugins/time/org.gnome.gedit.plugins.time.gschema.xml:11
 msgid "The selected format used when inserting the date/time."
 msgstr ""
 
-#: plugins/time/org.gnome.gedit.plugins.time.gschema.xml.in:15
-#, fuzzy
-#| msgid "_Use custom format"
+#: plugins/time/org.gnome.gedit.plugins.time.gschema.xml:15
 msgid "Custom Format"
-msgstr "अनुकुलन ढाँचा प्रयोग गर्नुहोस्"
+msgstr "अनुकुलन ढाँचा"
 
-#: plugins/time/org.gnome.gedit.plugins.time.gschema.xml.in:16
+#: plugins/time/org.gnome.gedit.plugins.time.gschema.xml:16
 msgid "The custom format used when inserting the date/time."
 msgstr ""
 
@@ -3930,7 +3677,7 @@ msgstr "मिति/समय प्लगइन कन्फिगर गर�
 #, fuzzy
 #| msgid "Configure insert date/time plugin..."
 msgid "When inserting date/time…"
-msgstr "मिति र समय सेटिङ्ग"
+msgstr "स्वतः मिति र समय"
 
 #: plugins/time/resources/ui/gedit-time-setup-dialog.ui:75
 msgid "_Prompt for a format"
@@ -3944,16 +3691,229 @@ msgstr "मिति/समय घुसाउनुहोस्"
 msgid "Inserts current date and time at the cursor position."
 msgstr "कर्सर स्थानमा हालको मिति र समय घुसाउँदछ ।"
 
-#~ msgid "gedit Text Editor"
-#~ msgstr "जि-इडिट पाठ सम्पादक"
+#~ msgid ""
+#~ "Whether you are writing the next bestseller, programming an innovative application, or simply "
+#~ "taking some quick notes, gedit will be a reliable tool to accomplish your task."
+#~ msgstr ""
+#~ "तपाईं अर्को सर्बाधिक विक्री हुने पुस्तक लेख्दै हुनुहुन्छ, एउटा इनोभेटिव प्रोग्रामिङ अथवा साधारण नोट लिँदै हुनुहुन्छ भने "
+#~ "पनि जिएडिट विश्वसनीय उपकरण हुनेछ ।"
 
-#~ msgid "C_haracter Encoding:"
-#~ msgstr "वर्ण सङ्केतन:"
+#~ msgid "Display Overview Map"
+#~ msgstr "अवलोकन मानचित्र देखाउनुहोस्"
+
+#, fuzzy
+#~| msgid "Whether gedit should display the right margin in the editing area."
+#~ msgid "Whether gedit should display the overview map for the document."
+#~ msgstr "gedit ले सम्पादन क्षेत्रमा दायाँ सिमान्त प्रदर्शन गर्नु पर्दछ या पर्दैन ।"
+
+#~ msgid "Toolbar is Visible"
+#~ msgstr "उपकरणपट्टी दृश्यात्मक छ"
+
+#~ msgid "Whether the toolbar should be visible in editing windows."
+#~ msgstr "सम्पादन सञ्झ्यालमा उपकरणपट्टी दृश्यात्मक हुनुपर्दछ या पर्दैन ।"
+
+#~ msgid "Maximum Recent Files"
+#~ msgstr "हालको अधिकतम फाइल"
+
+#, fuzzy
+#~| msgid ""
+#~| "Specifies the maximum number of recently opened files that will be displayed in the \"Recent "
+#~| "Files\" submenu."
+#~ msgid ""
+#~ "Specifies the maximum number of recently opened files that will be displayed in the “Recent "
+#~ "Files” submenu."
+#~ msgstr ""
+#~ "हालै खोलिएको फाइलहरूको अधिकतम सङ्ख्या निर्दिष्ट गर्दछ जुन \"हालको फाइल\" सहायक मेनुमा प्रदर्शित हुनेछ ।"
+
+#, fuzzy
+#~| msgid ""
+#~| "List of active plugins. It contains the \"Location\" of the active plugins. See the .gedit-"
+#~| "plugin file for obtaining the \"Location\" of a given plugin."
+#~ msgid ""
+#~ "List of active plugins. It contains the “Location” of the active plugins. See the .gedit-"
+#~ "plugin file for obtaining the “Location” of a given plugin."
+#~ msgstr ""
+#~ "सक्रिय प्लगइनहरूको सूची । यसले सक्रिय प्लगइनहरूको \"स्थान\" समाविष्ट गर्दछ । दिइएको प्लगइनको \"स्थान\" "
+#~ "प्राप्त गर्नका लागि gedit-प्लगइन फाइल ।"
+
+#, fuzzy
+#~| msgid "Changes to document \"%s\" will be permanently lost."
+#~ msgid "Changes to document “%s” will be permanently lost."
+#~ msgstr "%d कागजातमा गरिएका परिवर्तनहरू स्थायी रूपमा नष्ट हुनेछन् ।"
+
+#~ msgid "Saving has been disabled by the system administrator."
+#~ msgstr "प्रणाली प्रशासकद्वारा बचत अक्षम पारिएको छ ।"
+
+#~ msgid "Changes to %d document will be permanently lost."
+#~ msgid_plural "Changes to %d documents will be permanently lost."
+#~ msgstr[0] "%d कागजातमा गरिएका परिवर्तनहरू स्थायी रूपमा नष्ट हुनेछन् ।"
+#~ msgstr[1] "%d कागजातमा गरिएका परिवर्तनहरू स्थायी रूपमा नष्ट हुनेछन् ।"
+
+#~ msgid "Docum_ents with unsaved changes:"
+#~ msgstr "बचत नगरिएको परिवर्तनहरू सहित कागजातहरू:"
+
+#~ msgctxt "window title"
+#~ msgid "Open"
+#~ msgstr " खोल्नुहोस्"
+
+#, fuzzy
+#~ msgid "No changes need to be saved"
+#~ msgstr "आवश्यक प्रयोगकर्ता अवरोध"
+
+#~ msgid "Untitled Document %d"
+#~ msgstr "शीर्षक नभएको कागजात %d"
+
+#, fuzzy
+#~| msgid "Ch_aracter coding:"
+#~ msgid "Character Encoding:"
+#~ msgstr "वर्ण सङ्केतन"
 
 #, fuzzy
 #~| msgid "Encoding:"
-#~ msgid "L_ine Ending:"
-#~ msgstr "लाइन खाली स्थान"
+#~ msgid "Line Ending:"
+#~ msgstr "पङ्ति"
+
+#, fuzzy
+#~ msgid "The location “%s” is not currently reachable."
+#~ msgstr "मुद्रणयन्त्र \"%s\" हाल बन्द हो ।"
+
+#, fuzzy
+#~ msgid "Your system is offline. Check your network."
+#~ msgstr "क्रिपया आफ्नो नेटवर्क सेटिङहरू जाँच गर्नुहोस् र पृष्ठ रिफ्रेस गर्न प्रयास गर्नुहोस्।"
+
+#, fuzzy
+#~| msgid "_Don't Edit"
+#~ msgid "D_on’t Edit"
+#~ msgstr "सम्पादन (_E)"
+
+#, fuzzy
+#~| msgid "This file (%s) is already open in another gedit window."
+#~ msgid "This file “%s” is already open in another window."
+#~ msgstr "\"%s\" मा उही नामको अर्को फाइल पहिले नै अवस्थित छ।"
+
+#, fuzzy
+#~| msgid "Do you want to reload the file?"
+#~ msgid "Do you want to edit it anyway?"
+#~ msgstr "के तपाईँ निरन्तर गर्न चाहनुहुन्छ ?"
+
+#, fuzzy
+#~| msgid "Could not create a backup file while saving %s"
+#~ msgid "Could not create a backup file while saving “%s”"
+#~ msgstr "%s बचत गरिरहेको बेला जगेडा फाइल सिर्जना गर्न सकेन"
+
+#, fuzzy
+#~| msgid "Could not create a temporary backup file while saving %s"
+#~ msgid "Could not create a temporary backup file while saving “%s”"
+#~ msgstr "%s बचत गरिरहेको बेला एउटा अस्थायी जगेडा फाइल सिर्जना गर्न सकेन"
+
+#, fuzzy
+#~| msgid ""
+#~| "gedit could not backup the old copy of the file before saving the new one. You can ignore "
+#~| "this warning and save the file anyway, but if an error occurs while saving, you could lose "
+#~| "the old copy of the file. Save anyway?"
+#~ msgid ""
+#~ "Could not back up the old copy of the file before saving the new one. You can ignore this "
+#~ "warning and save the file anyway, but if an error occurs while saving, you could lose the old "
+#~ "copy of the file. Save anyway?"
+#~ msgstr ""
+#~ "gedit ले नयाँ फाइल बचत गर्नु पहिला फाइलको पुरानो प्रतिलिपि जगेडा गर्न सकेन । तपाईँ यो चेतावनी उपेक्षा गर्न "
+#~ "सक्नुहुन्छ र फाइल जसरी पनि बचत गर्न सक्नुहुन्छ, तर यदि फाइल बचत गरिरहेको बेला त्रुटि देखा पर्दछ भने, तपाईँले "
+#~ "फाइलको पुरानो प्रतिलिपि नष्ट गर्न सक्नुहुनेछ । जे भए पनि बचत गर्नुहुन्छ?"
+
+#, fuzzy
+#~| msgid "The file %s changed on disk."
+#~ msgid "The file “%s” changed on disk."
+#~ msgstr "\"%s\" मा डिस्क स्पेस कम छ ।"
+
+#, fuzzy
+#~ msgid "Drop Changes and _Reload"
+#~ msgstr "झार्नुहोस्"
+
+#, fuzzy
+#~| msgid "Directory '%s' could not be created: g_mkdir_with_parents() failed: %s"
+#~ msgid "Directory “%s” could not be created: g_mkdir_with_parents() failed: %s"
+#~ msgstr "Directory '%s' डाइरेक्टरी सिर्जना गर्न सकिएन: प्रमूल() सँग जिएमके डाइरेक्टरी असफल भयो: %s"
+
+#~ msgid "A_dd Scheme"
+#~ msgstr "योजना थप्नुहोस्"
+
+#~ msgid "Highlight Mode"
+#~ msgstr "हाइलाइट मोड"
+
+#~ msgid "_Select"
+#~ msgstr "चयन गर्नुहोस्"
+
+#, fuzzy
+#~| msgid "Search highlight mode..."
+#~ msgid "Search highlight mode…"
+#~ msgstr "हाइलाइट मोड"
+
+#~ msgid "No results"
+#~ msgstr "नतिजा छैन"
+
+#~ msgid "Other _Documents…"
+#~ msgstr "अर्को कागजात"
+
+#~ msgid "Open another file"
+#~ msgstr "अर्को फाइल खोल्नुहोस्"
+
+#, fuzzy
+#~| msgid "Display right _margin"
+#~ msgid "Display _overview map"
+#~ msgstr "अवलोकन मानचित्र देखाउनुहोस्"
+
+#, fuzzy
+#~| msgid "Unindent selected lines"
+#~ msgctxt "shortcut window"
+#~ msgid "Join selected lines"
+#~ msgstr "जोड्नुहोस्"
+
+#~ msgid "Open"
+#~ msgstr "खोल्नुहोस्"
+
+#, fuzzy
+#~| msgid "Open a file"
+#~ msgid "Open a file dialog"
+#~ msgstr "एउटा फाइल खोल्नुहोस्"
+
+#, fuzzy
+#~| msgid "Checked state"
+#~ msgid "Check update"
+#~ msgstr "पछिल्लो अद्यावधिक जाँच टाइमस्ट्याम्प"
+
+#, fuzzy
+#~ msgid "Check for latest version of gedit"
+#~ msgstr "  %.250s अन्तिमा कन्फिगर गरिएको संस्करण %.250s हो ।\n"
+
+#, fuzzy
+#~| msgid "There was an error displaying help."
+#~ msgid "There was an error displaying the URI."
+#~ msgstr ""
+#~ "मद्दत प्रदर्शन गर्दा त्यहाँ एउटा त्रुटि थियो: \n"
+#~ "%s"
+
+#~ msgid "_Download"
+#~ msgstr "डाउनलोड"
+
+#, fuzzy
+#~| msgid "_Ignore case"
+#~ msgid "_Ignore Version"
+#~ msgstr "वेवास्ता गर्नुहोस"
+
+#, fuzzy
+#~| msgid "Revert to a saved version of the file"
+#~ msgid "There is a new version of gedit"
+#~ msgstr "संस्करण"
+
+#, fuzzy
+#~ msgid "Version to Ignore"
+#~ msgstr "वेवास्ता गर्नुहोस"
+
+#~ msgid "    "
+#~ msgstr "    "
+
+#~ msgid "gedit Text Editor"
+#~ msgstr "जि-इडिट पाठ सम्पादक"
 
 #~ msgid "_Ignore"
 #~ msgstr "उपेक्षा गर्नुहोस्"
@@ -4138,9 +4098,6 @@ msgstr "कर्सर स्थानमा हालको मिति र �
 #~ msgid "<b>Line Numbers</b>"
 #~ msgstr "<b>लाइन सङ्ख्या</b>"
 
-#~ msgid "General"
-#~ msgstr "साधारण"
-
 #~ msgid "gedit Preferences"
 #~ msgstr "gedit प्राथमिकताहरू"
 
@@ -4176,9 +4133,6 @@ msgstr "कर्सर स्थानमा हालको मिति र �
 
 #~ msgid "- Edit text files"
 #~ msgstr "पाठ फाइलहरू सम्पादन गर्नुहोस्"
-
-#~ msgid "Open Files"
-#~ msgstr "फाइलहरू खोल्नुहोस्"
 
 #~ msgid "The entered location is not valid."
 #~ msgstr "प्रविष्टि गरिएको स्थान वैध छैन ।"
@@ -4476,10 +4430,6 @@ msgstr "कर्सर स्थानमा हालको मिति र �
 #~ msgid "Open '%s'"
 #~ msgstr "'%s' खोल्नुहोस्"
 
-#
-#~ msgid "Open a recently used file"
-#~ msgstr "भर्खरै प्रयोग गरिएको फाइल खोल्नुहोस्"
-
 #~ msgid "Activate '%s'"
 #~ msgstr "'%s' सक्रिय बनाउनुहोस्"
 
@@ -4624,9 +4574,6 @@ msgstr "कर्सर स्थानमा हालको मिति र �
 #~ msgid "Next location"
 #~ msgstr "पछिल्लो स्थान"
 
-#~ msgid "Go to next location"
-#~ msgstr "पछिल्लो स्थानमा जानुहोस्"
-
 #~ msgid "_Indent"
 #~ msgstr "इन्डेण्ट गर्नुहोस्"
 
@@ -4707,9 +4654,6 @@ msgstr "कर्सर स्थानमा हालको मिति र �
 
 #~ msgid "Check the current document for incorrect spelling"
 #~ msgstr "गलत हिज्जेका लागि हालको कागजात जाँच गर्नुहोस्"
-
-#~ msgid "Set the language of the current document"
-#~ msgstr "हालको कागजातको भाषा सेट गर्नुहोस्"
 
 #~ msgid "_Autocheck Spelling"
 #~ msgstr "हिज्जे स्वतः जाँच गर्नुहोस्"
