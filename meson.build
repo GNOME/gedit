@@ -40,22 +40,31 @@ libgd_subproject = subproject(
 libgd_dep = libgd_subproject.get_variable('libgd_dep')
 
 # Dependencies
-gio_dep = dependency('gio-2.0', version: '>= 2.64')
+glib_req = '>= 2.64'
+gtk_req = '>= 2.22'
+gtksourceview_req =  '>= 4.0'
+libpeas_req = '>= 1.14.1'
+libxml_req = '>= 2.5.0'
+gspell_req = '>= 1.0'
+pygobject_req = '>= 3.0.0'
+
+gio_dep = dependency('gio-2.0', version: glib_req)
+libxml_dep = dependency('libxml-2.0', version: libxml_req)
+gspell_dep = dependency('gspell-1', version: gspell_req)
+
+python3 = python.find_installation('python3')
 
 libgedit_public_deps = [
   gio_dep,
-  dependency('gtk+-3.0', version: '>= 3.22'),
-  dependency('tepl-6', version: '>= 5.99.0'),
-  dependency('libpeas-gtk-1.0'),
+  dependency('gtk+-3.0', version: gtk_req),
+  dependency('gtksourceview-4', version: gtksourceview_req),
+  dependency('libpeas-gtk-1.0', version: libpeas_req),
 ]
 
 deps_basic_list = [
   libgedit_public_deps,
   dependency('gobject-introspection-1.0'),
 ]
-
-gspell_dep = dependency('gspell-1', version: '>= 1.0')
-python3 = python.find_installation('python3')
 
 # Configurations
 config_h = configuration_data()
@@ -64,6 +73,17 @@ config_h.set_quoted('GETTEXT_PACKAGE', meson.project_name())
 config_h.set_quoted('LIBDIR', join_paths(get_option('prefix'), get_option('libdir')))
 config_h.set_quoted('DATADIR', join_paths(get_option('prefix'), get_option('datadir')))
 config_h.set_quoted('VERSION', meson.project_version())
+
+enable_gvfs_metadata = get_option('enable-gvfs-metadata')
+if enable_gvfs_metadata == 'yes' or (enable_gvfs_metadata == 'auto' and host_machine.system() == 'linux')
+  enable_gvfs_metadata = true
+else
+  enable_gvfs_metadata = false
+endif
+
+if enable_gvfs_metadata
+  config_h.set('ENABLE_GVFS_METADATA', 1)
+endif
 
 configure_file(
   output: 'config.h',

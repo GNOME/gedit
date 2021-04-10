@@ -4,7 +4,8 @@ gedit roadmap
 This page contains the plans for major code changes we hope to get done in the
 future.
 
-See the [roadmap-done.md](roadmap-done.md) file for done tasks.
+See also the
+[GtkSourceView and Tepl roadmap](https://wiki.gnome.org/Projects/GtkSourceView/RoadMap).
 
 See the [NEWS file](../NEWS) for a detailed history.
 

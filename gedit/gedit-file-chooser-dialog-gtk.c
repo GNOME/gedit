@@ -193,6 +193,12 @@ chooser_show (GeditFileChooserDialog *dialog)
 }
 
 static void
+chooser_hide (GeditFileChooserDialog *dialog)
+{
+	gtk_widget_hide (GTK_WIDGET (dialog));
+}
+
+static void
 chooser_destroy (GeditFileChooserDialog *dialog)
 {
 	gtk_widget_destroy (GTK_WIDGET (dialog));
@@ -209,6 +215,26 @@ static GtkWindow *
 chooser_get_window (GeditFileChooserDialog *dialog)
 {
 	return GTK_WINDOW (dialog);
+}
+
+static void
+chooser_add_pattern_filter (GeditFileChooserDialog *dialog,
+                            const gchar            *name,
+                            const gchar            *pattern)
+{
+	GtkFileFilter *filter;
+
+	filter = gtk_file_filter_new ();
+
+	gtk_file_filter_set_name (filter, name);
+	gtk_file_filter_add_pattern (filter, pattern);
+
+	gtk_file_chooser_add_filter (GTK_FILE_CHOOSER (dialog), filter);
+
+	if (gtk_file_chooser_get_filter (GTK_FILE_CHOOSER (dialog)) == NULL)
+	{
+		gtk_file_chooser_set_filter (GTK_FILE_CHOOSER (dialog), filter);
+	}
 }
 
 static void
@@ -229,9 +255,11 @@ gedit_file_chooser_dialog_gtk_chooser_init (gpointer g_iface,
 	iface->get_file = chooser_get_file;
 	iface->set_do_overwrite_confirmation = chooser_set_do_overwrite_confirmation;
 	iface->show = chooser_show;
+	iface->hide = chooser_hide;
 	iface->destroy = chooser_destroy;
 	iface->set_modal = chooser_set_modal;
 	iface->get_window = chooser_get_window;
+	iface->add_pattern_filter = chooser_add_pattern_filter;
 }
 
 static void
@@ -253,7 +281,8 @@ gedit_file_chooser_dialog_gtk_class_init (GeditFileChooserDialogGtkClass *klass)
 }
 
 static void
-create_option_menu (GeditFileChooserDialogGtk *dialog)
+create_option_menu (GeditFileChooserDialogGtk *dialog,
+                    GeditFileChooserFlags      flags)
 {
 	GtkWidget *label;
 	GtkWidget *menu;
@@ -262,7 +291,7 @@ create_option_menu (GeditFileChooserDialogGtk *dialog)
 	label = gtk_label_new_with_mnemonic (_("C_haracter Encoding:"));
 	gtk_widget_set_halign (label, GTK_ALIGN_START);
 
-	save_mode = TRUE;
+	save_mode = (flags & GEDIT_FILE_CHOOSER_FLAG_SAVE) != 0;
 	menu = gedit_encodings_combo_box_new (save_mode);
 
 	gtk_label_set_mnemonic_widget (GTK_LABEL (label), menu);
@@ -374,13 +403,18 @@ create_newline_combo (GeditFileChooserDialogGtk *dialog)
 }
 
 static void
-create_extra_widget (GeditFileChooserDialogGtk *dialog)
+create_extra_widget (GeditFileChooserDialogGtk *dialog,
+                     GeditFileChooserFlags      flags)
 {
 	dialog->extra_widget = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 6);
 	gtk_widget_show (dialog->extra_widget);
 
-	create_option_menu (dialog);
-	create_newline_combo (dialog);
+	create_option_menu (dialog, flags);
+
+	if ((flags & GEDIT_FILE_CHOOSER_FLAG_SAVE) != 0)
+	{
+		create_newline_combo (dialog);
+	}
 
 	gtk_file_chooser_set_extra_widget (GTK_FILE_CHOOSER (dialog), dialog->extra_widget);
 }
@@ -421,21 +455,35 @@ gedit_file_chooser_dialog_gtk_init (GeditFileChooserDialogGtk *dialog)
 }
 
 GeditFileChooserDialog *
-gedit_file_chooser_dialog_gtk_create (const gchar *title,
-				      GtkWindow   *parent,
-				      const gchar *accept_label,
-				      const gchar *cancel_label)
+gedit_file_chooser_dialog_gtk_create (const gchar           *title,
+				      GtkWindow             *parent,
+				      GeditFileChooserFlags  flags,
+				      const gchar           *accept_label,
+				      const gchar           *cancel_label)
 {
 	GeditFileChooserDialogGtk *result;
+	GtkFileChooserAction action;
+	gboolean select_multiple;
+
+	if ((flags & GEDIT_FILE_CHOOSER_FLAG_SAVE) != 0)
+	{
+		action = GTK_FILE_CHOOSER_ACTION_SAVE;
+		select_multiple = FALSE;
+	}
+	else
+	{
+		action = GTK_FILE_CHOOSER_ACTION_OPEN;
+		select_multiple = TRUE;
+	}
 
 	result = g_object_new (GEDIT_TYPE_FILE_CHOOSER_DIALOG_GTK,
 			       "title", title,
 			       "local-only", FALSE,
-			       "action", GTK_FILE_CHOOSER_ACTION_SAVE,
-			       "select-multiple", FALSE,
+			       "action", action,
+			       "select-multiple", select_multiple,
 			       NULL);
 
-	create_extra_widget (result);
+	create_extra_widget (result, flags);
 
 	g_signal_connect (result,
 			  "notify::action",

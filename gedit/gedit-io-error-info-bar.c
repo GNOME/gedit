@@ -23,9 +23,16 @@
  */
 
 #include "gedit-io-error-info-bar.h"
+
+#include <errno.h>
+#include <string.h>
 #include <glib/gi18n.h>
-#include <tepl/tepl.h>
+#include <gio/gio.h>
+
 #include "gedit-encodings-combo-box.h"
+#include "gedit-settings.h"
+#include "gedit-utils.h"
+#include "gedit-document.h"
 
 #define MAX_URI_IN_DIALOG_LENGTH 50
 
@@ -220,7 +227,7 @@ parse_gio_error (gint          code,
 					uri = g_file_get_uri (location);
 				}
 
-				if (uri && tepl_utils_decode_uri (uri, NULL, NULL, &hn, NULL, NULL))
+				if (uri && gedit_utils_decode_uri (uri, NULL, NULL, &hn, NULL, NULL))
 				{
 					if (hn != NULL)
 					{
@@ -323,8 +330,8 @@ gedit_unrecoverable_reverting_error_info_bar_new (GFile        *location,
 	 * though the dialog uses wrapped text, if the URI doesn't contain
 	 * white space then the text-wrapping code is too stupid to wrap it.
 	 */
-	temp_uri_for_display = tepl_utils_str_middle_truncate (full_formatted_uri,
-							       MAX_URI_IN_DIALOG_LENGTH);
+	temp_uri_for_display = gedit_utils_str_middle_truncate (full_formatted_uri,
+								MAX_URI_IN_DIALOG_LENGTH);
 	g_free (full_formatted_uri);
 
 	uri_for_display = g_markup_escape_text (temp_uri_for_display, -1);
@@ -534,8 +541,8 @@ gedit_io_loading_error_info_bar_new (GFile                   *location,
 	 * though the dialog uses wrapped text, if the URI doesn't contain
 	 * white space then the text-wrapping code is too stupid to wrap it.
 	 */
-	temp_uri_for_display = tepl_utils_str_middle_truncate (full_formatted_uri,
-							       MAX_URI_IN_DIALOG_LENGTH);
+	temp_uri_for_display = gedit_utils_str_middle_truncate (full_formatted_uri,
+								MAX_URI_IN_DIALOG_LENGTH);
 	g_free (full_formatted_uri);
 
 	uri_for_display = g_markup_escape_text (temp_uri_for_display, -1);
@@ -655,8 +662,8 @@ gedit_conversion_error_while_saving_info_bar_new (GFile                   *locat
 	 * though the dialog uses wrapped text, if the URI doesn't contain
 	 * white space then the text-wrapping code is too stupid to wrap it.
 	 */
-	temp_uri_for_display = tepl_utils_str_middle_truncate (full_formatted_uri,
-							       MAX_URI_IN_DIALOG_LENGTH);
+	temp_uri_for_display = gedit_utils_str_middle_truncate (full_formatted_uri,
+								MAX_URI_IN_DIALOG_LENGTH);
 	g_free (full_formatted_uri);
 
 	uri_for_display = g_markup_escape_text (temp_uri_for_display, -1);
@@ -701,6 +708,88 @@ gedit_conversion_error_info_bar_get_encoding (GtkWidget *info_bar)
 }
 
 GtkWidget *
+gedit_file_already_open_warning_info_bar_new (GFile *location)
+{
+	GtkWidget *info_bar;
+	GtkWidget *hbox_content;
+	GtkWidget *vbox;
+	gchar *primary_markup;
+	gchar *secondary_markup;
+	GtkWidget *primary_label;
+	GtkWidget *secondary_label;
+	gchar *primary_text;
+	const gchar *secondary_text;
+	gchar *full_formatted_uri;
+	gchar *uri_for_display;
+	gchar *temp_uri_for_display;
+
+	g_return_val_if_fail (G_IS_FILE (location), NULL);
+
+	full_formatted_uri = g_file_get_parse_name (location);
+
+	/* Truncate the URI so it doesn't get insanely wide. Note that even
+	 * though the dialog uses wrapped text, if the URI doesn't contain
+	 * white space then the text-wrapping code is too stupid to wrap it.
+	 */
+	temp_uri_for_display = gedit_utils_str_middle_truncate (full_formatted_uri,
+								MAX_URI_IN_DIALOG_LENGTH);
+	g_free (full_formatted_uri);
+
+	uri_for_display = g_markup_escape_text (temp_uri_for_display, -1);
+	g_free (temp_uri_for_display);
+
+	info_bar = gtk_info_bar_new ();
+	gtk_info_bar_add_button (GTK_INFO_BAR (info_bar),
+	/* Translators: the access key chosen for this string should be
+	 different from other main menu access keys (Open, Edit, View...) */
+				 _("Edit Any_way"),
+				 GTK_RESPONSE_YES);
+	gtk_info_bar_add_button (GTK_INFO_BAR (info_bar),
+	/* Translators: the access key chosen for this string should be
+	 different from other main menu access keys (Open, Edit, View...) */
+				 _("D_on’t Edit"),
+				 GTK_RESPONSE_CANCEL);
+	gtk_info_bar_set_message_type (GTK_INFO_BAR (info_bar),
+				       GTK_MESSAGE_WARNING);
+
+	hbox_content = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 8);
+
+	vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
+	gtk_box_pack_start (GTK_BOX (hbox_content), vbox, TRUE, TRUE, 0);
+
+	primary_text = g_strdup_printf (_("This file “%s” is already open in another window."), uri_for_display);
+	g_free (uri_for_display);
+
+	primary_markup = g_strdup_printf ("<b>%s</b>", primary_text);
+	g_free (primary_text);
+	primary_label = gtk_label_new (primary_markup);
+	g_free (primary_markup);
+	gtk_box_pack_start (GTK_BOX (vbox), primary_label, TRUE, TRUE, 0);
+	gtk_label_set_use_markup (GTK_LABEL (primary_label), TRUE);
+	gtk_label_set_line_wrap (GTK_LABEL (primary_label), TRUE);
+	gtk_widget_set_halign (primary_label, GTK_ALIGN_START);
+	gtk_widget_set_can_focus (primary_label, TRUE);
+	gtk_label_set_selectable (GTK_LABEL (primary_label), TRUE);
+
+	secondary_text = _("Do you want to edit it anyway?");
+	secondary_markup = g_strdup_printf ("<small>%s</small>",
+					    secondary_text);
+	secondary_label = gtk_label_new (secondary_markup);
+	g_free (secondary_markup);
+	gtk_box_pack_start (GTK_BOX (vbox), secondary_label, TRUE, TRUE, 0);
+	gtk_widget_set_can_focus (secondary_label, TRUE);
+	gtk_label_set_use_markup (GTK_LABEL (secondary_label), TRUE);
+	gtk_label_set_line_wrap (GTK_LABEL (secondary_label), TRUE);
+	gtk_label_set_selectable (GTK_LABEL (secondary_label), TRUE);
+	gtk_widget_set_halign (secondary_label, GTK_ALIGN_START);
+
+	gtk_widget_show_all (hbox_content);
+	set_contents (info_bar, hbox_content);
+
+	return info_bar;
+}
+
+GtkWidget *
 gedit_externally_modified_saving_error_info_bar_new (GFile        *location,
 						     const GError *error)
 {
@@ -728,8 +817,8 @@ gedit_externally_modified_saving_error_info_bar_new (GFile        *location,
 	 * though the dialog uses wrapped text, if the URI doesn't contain
 	 * white space then the text-wrapping code is too stupid to wrap it.
 	 */
-	temp_uri_for_display = tepl_utils_str_middle_truncate (full_formatted_uri,
-							       MAX_URI_IN_DIALOG_LENGTH);
+	temp_uri_for_display = gedit_utils_str_middle_truncate (full_formatted_uri,
+								MAX_URI_IN_DIALOG_LENGTH);
 	g_free (full_formatted_uri);
 
 	uri_for_display = g_markup_escape_text (temp_uri_for_display, -1);
@@ -789,6 +878,110 @@ gedit_externally_modified_saving_error_info_bar_new (GFile        *location,
 }
 
 GtkWidget *
+gedit_no_backup_saving_error_info_bar_new (GFile        *location,
+					   const GError *error)
+{
+	GtkWidget *info_bar;
+	GtkWidget *hbox_content;
+	GtkWidget *vbox;
+	gchar *primary_markup;
+	gchar *secondary_markup;
+	GtkWidget *primary_label;
+	GtkWidget *secondary_label;
+	gchar *primary_text;
+	const gchar *secondary_text;
+	gchar *full_formatted_uri;
+	gchar *uri_for_display;
+	gchar *temp_uri_for_display;
+	gboolean create_backup_copy;
+	GSettings *editor_settings;
+
+	g_return_val_if_fail (G_IS_FILE (location), NULL);
+	g_return_val_if_fail (error != NULL, NULL);
+	g_return_val_if_fail (error->domain == G_IO_ERROR &&
+			      error->code == G_IO_ERROR_CANT_CREATE_BACKUP, NULL);
+
+	full_formatted_uri = g_file_get_parse_name (location);
+
+	/* Truncate the URI so it doesn't get insanely wide. Note that even
+	 * though the dialog uses wrapped text, if the URI doesn't contain
+	 * white space then the text-wrapping code is too stupid to wrap it.
+	 */
+	temp_uri_for_display = gedit_utils_str_middle_truncate (full_formatted_uri,
+								MAX_URI_IN_DIALOG_LENGTH);
+	g_free (full_formatted_uri);
+
+	uri_for_display = g_markup_escape_text (temp_uri_for_display, -1);
+	g_free (temp_uri_for_display);
+
+	info_bar = gtk_info_bar_new ();
+
+	gtk_info_bar_add_button (GTK_INFO_BAR (info_bar),
+				 _("S_ave Anyway"),
+				 GTK_RESPONSE_YES);
+	gtk_info_bar_add_button (GTK_INFO_BAR (info_bar),
+				 _("D_on’t Save"),
+				 GTK_RESPONSE_CANCEL);
+	gtk_info_bar_set_message_type (GTK_INFO_BAR (info_bar),
+				       GTK_MESSAGE_WARNING);
+
+	hbox_content = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 8);
+
+	vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
+	gtk_box_pack_start (GTK_BOX (hbox_content), vbox, TRUE, TRUE, 0);
+
+	editor_settings = g_settings_new ("org.gnome.gedit.preferences.editor");
+
+	create_backup_copy = g_settings_get_boolean (editor_settings,
+						     GEDIT_SETTINGS_CREATE_BACKUP_COPY);
+	g_object_unref (editor_settings);
+
+	/* FIXME: review this messages */
+	if (create_backup_copy)
+	{
+		primary_text = g_strdup_printf (_("Could not create a backup file while saving “%s”"),
+						uri_for_display);
+	}
+	else
+	{
+		primary_text = g_strdup_printf (_("Could not create a temporary backup file while saving “%s”"),
+						uri_for_display);
+	}
+
+	g_free (uri_for_display);
+
+	primary_markup = g_strdup_printf ("<b>%s</b>", primary_text);
+	g_free (primary_text);
+	primary_label = gtk_label_new (primary_markup);
+	g_free (primary_markup);
+	gtk_box_pack_start (GTK_BOX (vbox), primary_label, TRUE, TRUE, 0);
+	gtk_label_set_use_markup (GTK_LABEL (primary_label), TRUE);
+	gtk_label_set_line_wrap (GTK_LABEL (primary_label), TRUE);
+	gtk_widget_set_halign (primary_label, GTK_ALIGN_START);
+	gtk_widget_set_can_focus (primary_label, TRUE);
+	gtk_label_set_selectable (GTK_LABEL (primary_label), TRUE);
+
+	secondary_text = _("Could not back up the old copy of the file before saving the new one. "
+			   "You can ignore this warning and save the file anyway, but if an error "
+			   "occurs while saving, you could lose the old copy of the file. Save anyway?");
+	secondary_markup = g_strdup_printf ("<small>%s</small>",
+					    secondary_text);
+	secondary_label = gtk_label_new (secondary_markup);
+	g_free (secondary_markup);
+	gtk_box_pack_start (GTK_BOX (vbox), secondary_label, TRUE, TRUE, 0);
+	gtk_widget_set_can_focus (secondary_label, TRUE);
+	gtk_label_set_use_markup (GTK_LABEL (secondary_label), TRUE);
+	gtk_label_set_line_wrap (GTK_LABEL (secondary_label), TRUE);
+	gtk_label_set_selectable (GTK_LABEL (secondary_label), TRUE);
+	gtk_widget_set_halign (secondary_label, GTK_ALIGN_START);
+
+	gtk_widget_show_all (hbox_content);
+	set_contents (info_bar, hbox_content);
+
+	return info_bar;
+}
+
+GtkWidget *
 gedit_unrecoverable_saving_error_info_bar_new (GFile        *location,
 					       const GError *error)
 {
@@ -812,8 +1005,8 @@ gedit_unrecoverable_saving_error_info_bar_new (GFile        *location,
 	 * though the dialog uses wrapped text, if the URI doesn't contain
 	 * white space then the text-wrapping code is too stupid to wrap it.
 	 */
-	temp_uri_for_display = tepl_utils_str_middle_truncate (full_formatted_uri,
-							       MAX_URI_IN_DIALOG_LENGTH);
+	temp_uri_for_display = gedit_utils_str_middle_truncate (full_formatted_uri,
+								MAX_URI_IN_DIALOG_LENGTH);
 	g_free (full_formatted_uri);
 
 	uri_for_display = g_markup_escape_text (temp_uri_for_display, -1);
@@ -913,6 +1106,151 @@ gedit_unrecoverable_saving_error_info_bar_new (GFile        *location,
 	g_free (uri_for_display);
 	g_free (error_message);
 	g_free (message_details);
+
+	return info_bar;
+}
+
+GtkWidget *
+gedit_externally_modified_info_bar_new (GFile    *location,
+					gboolean  document_modified)
+{
+	gchar *full_formatted_uri;
+	gchar *uri_for_display;
+	gchar *temp_uri_for_display;
+	gchar *primary_text;
+	GtkWidget *info_bar;
+
+	g_return_val_if_fail (G_IS_FILE (location), NULL);
+
+	full_formatted_uri = g_file_get_parse_name (location);
+
+	/* Truncate the URI so it doesn't get insanely wide. Note that even
+	 * though the dialog uses wrapped text, if the URI doesn't contain
+	 * white space then the text-wrapping code is too stupid to wrap it.
+	 */
+	temp_uri_for_display = gedit_utils_str_middle_truncate (full_formatted_uri,
+								MAX_URI_IN_DIALOG_LENGTH);
+	g_free (full_formatted_uri);
+
+	uri_for_display = g_markup_escape_text (temp_uri_for_display, -1);
+	g_free (temp_uri_for_display);
+
+	primary_text = g_strdup_printf (_("The file “%s” changed on disk."),
+					uri_for_display);
+	g_free (uri_for_display);
+
+	info_bar = gtk_info_bar_new ();
+
+	if (document_modified)
+	{
+		GtkWidget *box;
+		GtkWidget *button;
+		button = gtk_info_bar_add_button (GTK_INFO_BAR (info_bar),
+						  _("Drop Changes and _Reload"),
+						  GTK_RESPONSE_OK);
+		box = gtk_info_bar_get_action_area (GTK_INFO_BAR (info_bar));
+		gtk_button_box_set_child_non_homogeneous (GTK_BUTTON_BOX (box),
+							  button,
+							  TRUE);
+	}
+	else
+	{
+		gtk_info_bar_add_button (GTK_INFO_BAR (info_bar),
+					 _("_Reload"),
+					 GTK_RESPONSE_OK);
+	}
+
+	gtk_info_bar_set_show_close_button (GTK_INFO_BAR (info_bar), TRUE);
+	gtk_info_bar_set_message_type (GTK_INFO_BAR (info_bar),
+				       GTK_MESSAGE_WARNING);
+
+	set_info_bar_text (info_bar,
+			   primary_text,
+			   NULL);
+
+	g_free (primary_text);
+
+	return info_bar;
+}
+
+GtkWidget *
+gedit_invalid_character_info_bar_new (GFile *location)
+{
+	GtkWidget *info_bar;
+	GtkWidget *hbox_content;
+	GtkWidget *vbox;
+	GtkWidget *primary_label;
+	GtkWidget *secondary_label;
+	gchar *primary_markup;
+	gchar *secondary_markup;
+	gchar *primary_text;
+	gchar *full_formatted_uri;
+	gchar *uri_for_display;
+	gchar *temp_uri_for_display;
+	const gchar *secondary_text;
+
+	g_return_val_if_fail (G_IS_FILE (location), NULL);
+
+	full_formatted_uri = g_file_get_parse_name (location);
+
+	/* Truncate the URI so it doesn't get insanely wide. Note that even
+	 * though the dialog uses wrapped text, if the URI doesn't contain
+	 * white space then the text-wrapping code is too stupid to wrap it.
+	 */
+	temp_uri_for_display = gedit_utils_str_middle_truncate (full_formatted_uri,
+								MAX_URI_IN_DIALOG_LENGTH);
+	g_free (full_formatted_uri);
+
+	uri_for_display = g_markup_escape_text (temp_uri_for_display, -1);
+	g_free (temp_uri_for_display);
+
+	info_bar = gtk_info_bar_new ();
+
+	gtk_info_bar_add_button (GTK_INFO_BAR (info_bar),
+				 _("S_ave Anyway"),
+				 GTK_RESPONSE_YES);
+	gtk_info_bar_add_button (GTK_INFO_BAR (info_bar),
+				 _("D_on’t Save"),
+				 GTK_RESPONSE_CANCEL);
+	gtk_info_bar_set_message_type (GTK_INFO_BAR (info_bar),
+				       GTK_MESSAGE_WARNING);
+
+	hbox_content = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 8);
+
+	vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
+	gtk_box_pack_start (GTK_BOX (hbox_content), vbox, TRUE, TRUE, 0);
+
+	primary_text = g_strdup_printf (_("Some invalid chars have been detected while saving “%s”"),
+					uri_for_display);
+
+	g_free (uri_for_display);
+
+	primary_markup = g_strdup_printf ("<b>%s</b>", primary_text);
+	g_free (primary_text);
+	primary_label = gtk_label_new (primary_markup);
+	g_free (primary_markup);
+	gtk_box_pack_start (GTK_BOX (vbox), primary_label, TRUE, TRUE, 0);
+	gtk_label_set_use_markup (GTK_LABEL (primary_label), TRUE);
+	gtk_label_set_line_wrap (GTK_LABEL (primary_label), TRUE);
+	gtk_widget_set_halign (primary_label, GTK_ALIGN_START);
+	gtk_widget_set_can_focus (primary_label, TRUE);
+	gtk_label_set_selectable (GTK_LABEL (primary_label), TRUE);
+
+	secondary_text = _("If you continue saving this file you can corrupt the document. "
+	                   " Save anyway?");
+	secondary_markup = g_strdup_printf ("<small>%s</small>",
+					    secondary_text);
+	secondary_label = gtk_label_new (secondary_markup);
+	g_free (secondary_markup);
+	gtk_box_pack_start (GTK_BOX (vbox), secondary_label, TRUE, TRUE, 0);
+	gtk_widget_set_can_focus (secondary_label, TRUE);
+	gtk_label_set_use_markup (GTK_LABEL (secondary_label), TRUE);
+	gtk_label_set_line_wrap (GTK_LABEL (secondary_label), TRUE);
+	gtk_label_set_selectable (GTK_LABEL (secondary_label), TRUE);
+	gtk_widget_set_halign (secondary_label, GTK_ALIGN_START);
+
+	gtk_widget_show_all (hbox_content);
+	set_contents (info_bar, hbox_content);
 
 	return info_bar;
 }

@@ -21,4 +21,11 @@ option(
   description: 'Build user documentation'
 )
 
+option(
+  'enable-gvfs-metadata',
+  type: 'combo',
+  choices: ['yes', 'no', 'auto'], value: 'auto',
+  description: 'Enable using gvfs to store metadata'
+)
+
 option('plugin_externaltools', type: 'boolean', value: true)

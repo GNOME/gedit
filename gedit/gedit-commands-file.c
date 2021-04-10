@@ -27,7 +27,6 @@
 #include "gedit-commands-private.h"
 
 #include <glib/gi18n.h>
-#include <tepl/tepl.h>
 
 #include "gedit-app.h"
 #include "gedit-debug.h"
@@ -43,10 +42,6 @@
 #include "gedit-file-chooser-dialog.h"
 #include "gedit-file-chooser-open.h"
 #include "gedit-close-confirmation-dialog.h"
-
-/* useful macro */
-#define GBOOLEAN_TO_POINTER(i) (GINT_TO_POINTER ((i) ? 2 : 1))
-#define GPOINTER_TO_BOOLEAN(i) ((gboolean) ((GPOINTER_TO_INT(i) == 2) ? TRUE : FALSE))
 
 #define GEDIT_IS_CLOSING_ALL "gedit-is-closing-all"
 #define GEDIT_NOTEBOOK_TO_CLOSE "gedit-notebook-to-close"
@@ -150,24 +145,26 @@ load_file_list (GeditWindow             *window,
 		{
 			if (l == files)
 			{
-				TeplView *view;
+				GeditDocument *doc;
 
 				gedit_window_set_active_tab (window, tab);
 				jump_to = FALSE;
-				view = TEPL_VIEW (gedit_tab_get_view (tab));
+				doc = gedit_tab_get_document (tab);
 
 				if (line_pos > 0)
 				{
 					if (column_pos > 0)
 					{
-						tepl_view_goto_line_offset (view,
-									    line_pos - 1,
-									    column_pos - 1);
+						gedit_document_goto_line_offset (doc,
+						                                 line_pos - 1,
+						                                 column_pos - 1);
 					}
 					else
 					{
-						tepl_view_goto_line (view, line_pos - 1);
+						gedit_document_goto_line (doc, line_pos - 1);
 					}
+
+					gedit_view_scroll_to_cursor (gedit_tab_get_view (tab));
 				}
 			}
 
@@ -194,7 +191,7 @@ load_file_list (GeditWindow             *window,
 
 		doc = gedit_tab_get_document (tab);
 
-		if (tepl_buffer_is_untouched (TEPL_BUFFER (doc)) &&
+		if (gedit_document_is_untouched (doc) &&
 		    gedit_tab_get_state (tab) == GEDIT_TAB_STATE_NORMAL)
 		{
 			_gedit_tab_load (tab,
@@ -513,7 +510,7 @@ replace_read_only_file (GtkWindow *parent,
 	 * though the dialog uses wrapped text, if the name doesn't contain
 	 * white space then the text-wrapping code is too stupid to wrap it.
 	 */
-	name_for_display = tepl_utils_str_middle_truncate (parse_name, 50);
+	name_for_display = gedit_utils_str_middle_truncate (parse_name, 50);
 	g_free (parse_name);
 
 	dialog = gtk_message_dialog_new (parent,
@@ -565,7 +562,7 @@ change_compression (GtkWindow *parent,
 	 * though the dialog uses wrapped text, if the name doesn't contain
 	 * white space then the text-wrapping code is too stupid to wrap it.
 	 */
-	name_for_display = tepl_utils_str_middle_truncate (parse_name, 50);
+	name_for_display = gedit_utils_str_middle_truncate (parse_name, 50);
 	g_free (parse_name);
 
 	if (compressed)
@@ -827,6 +824,7 @@ save_as_tab_async (GeditTab            *tab,
 	/* Translators: "Save As" is the title of the file chooser window. */
 	save_dialog = gedit_file_chooser_dialog_create (C_("window title", "Save As"),
 							GTK_WINDOW (window),
+							GEDIT_FILE_CHOOSER_FLAG_SAVE,
 							_("_Save"),
 							_("_Cancel"));
 

@@ -31,11 +31,9 @@ editor. To learn that widget API, read the excellent
 mostly valid). But GtkTextView is not enough for source code edition. gedit
 actually uses the
 [GtkSourceView](https://wiki.gnome.org/Projects/GtkSourceView) library, which
-contains a subclass of GtkTextView with many features useful for a text editor
-or an IDE. But GtkSourceView is not enough to have a full-blown text editor,
-gedit is actually in the process of using more features from the
-[Tepl](https://wiki.gnome.org/Projects/Tepl) library, and to further develop
-Tepl alongside gedit.
+contains a subclass of GtkTextView with syntax highlighting, a completion
+framework, the search and replace, and many other features useful for a text
+editor or an IDE.
 
 For its plugin system, gedit uses the
 [libpeas](https://wiki.gnome.org/Projects/Libpeas) library.

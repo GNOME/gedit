@@ -21,11 +21,16 @@
  */
 
 #include "config.h"
+
 #include "gedit-commands.h"
 #include "gedit-commands-private.h"
-#include <tepl/tepl.h>
+
+#include <gtk/gtk.h>
+
 #include "gedit-debug.h"
 #include "gedit-window.h"
+#include "gedit-highlight-mode-dialog.h"
+#include "gedit-highlight-mode-selector.h"
 
 void
 _gedit_cmd_view_focus_active (GSimpleAction *action,
@@ -121,9 +126,9 @@ _gedit_cmd_view_leave_fullscreen_mode (GSimpleAction *action,
 }
 
 static void
-language_activated_cb (TeplLanguageChooserDialog *dialog,
-		       GtkSourceLanguage         *language,
-		       GeditWindow               *window)
+language_selected_cb (GeditHighlightModeSelector *selector,
+		      GtkSourceLanguage          *language,
+		      GeditWindow                *window)
 {
 	GeditDocument *active_document;
 
@@ -132,16 +137,6 @@ language_activated_cb (TeplLanguageChooserDialog *dialog,
 	{
 		gedit_document_set_language (active_document, language);
 	}
-
-	gtk_widget_destroy (GTK_WIDGET (dialog));
-}
-
-static void
-language_chooser_dialog_response_after_cb (TeplLanguageChooserDialog *dialog,
-					   gint                       response_id,
-					   gpointer                   user_data)
-{
-	gtk_widget_destroy (GTK_WIDGET (dialog));
 }
 
 void
@@ -150,10 +145,12 @@ _gedit_cmd_view_highlight_mode (GSimpleAction *action,
                                 gpointer       user_data)
 {
 	GeditWindow *window = GEDIT_WINDOW (user_data);
-	TeplLanguageChooserDialog *dialog;
+	GeditHighlightModeDialog *dialog;
+	GeditHighlightModeSelector *selector;
 	GeditDocument *active_document;
 
-	dialog = tepl_language_chooser_dialog_new (GTK_WINDOW (window));
+	dialog = GEDIT_HIGHLIGHT_MODE_DIALOG (gedit_highlight_mode_dialog_new (GTK_WINDOW (window)));
+	selector = gedit_highlight_mode_dialog_get_selector (dialog);
 
 	active_document = gedit_window_get_active_document (window);
 	if (active_document != NULL)
@@ -161,19 +158,14 @@ _gedit_cmd_view_highlight_mode (GSimpleAction *action,
 		GtkSourceLanguage *language;
 
 		language = gedit_document_get_language (active_document);
-		tepl_language_chooser_select_language (TEPL_LANGUAGE_CHOOSER (dialog), language);
+		gedit_highlight_mode_selector_select_language (selector, language);
 	}
 
-	g_signal_connect_object (dialog,
-				 "language-activated",
-				 G_CALLBACK (language_activated_cb),
+	g_signal_connect_object (selector,
+				 "language-selected",
+				 G_CALLBACK (language_selected_cb),
 				 window,
 				 0);
-
-	g_signal_connect_after (dialog,
-				"response",
-				G_CALLBACK (language_chooser_dialog_response_after_cb),
-				NULL);
 
 	gtk_widget_show (GTK_WIDGET (dialog));
 }
