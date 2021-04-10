@@ -31,8 +31,51 @@
       </listitem>
       <listitem>
         <para>
+          The <code>GeditProgressInfoBar</code> class has been removed, you can
+          use <link linkend="TeplProgressInfoBar">TeplProgressInfoBar</link>
+          instead.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          <link linkend="GeditDocument">GeditDocument</link> is now a subclass
+          of <link linkend="TeplBuffer">TeplBuffer</link>.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          The <code>GeditDocument::cursor-moved</code> signal has been removed.
+          You can use the <link linkend="TeplBuffer">TeplBuffer</link> API
+          instead.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
           The <code>gedit_document_get_uri_for_display()</code> function has
           been removed from the public API.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          The <code>GeditDocument:shortname</code> property has been removed.
+          You can use the <link linkend="TeplFile">TeplFile</link> API instead.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          The <code>gedit_document_is_untouched()</code> function has been
+          removed. You can use the <link linkend="TeplBuffer">TeplBuffer</link>
+          API instead.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          The <code>gedit_view_set_font()</code> function has been removed.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          <code>DEBUG_METADATA</code> has been removed.
         </para>
       </listitem>
     </itemizedlist>

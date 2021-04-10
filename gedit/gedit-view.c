@@ -99,8 +99,8 @@ current_document_removed (GeditView *view)
 static void
 buffer_changed (GeditView *view)
 {
-	GeditDocument *doc;
 	GtkSourceFile *file;
+	GtkTextBuffer *buffer;
 
 	current_document_removed (view);
 	buffer = gtk_text_view_get_buffer (GTK_TEXT_VIEW (view));

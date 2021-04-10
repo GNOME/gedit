@@ -133,6 +133,7 @@ libgedit_link_args = []
 libgedit_deps = [
   deps_basic_list,
   libgd_dep,
+  libxml_dep,
 ]
 
 if host_machine.system() == 'darwin'

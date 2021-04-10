@@ -816,10 +816,9 @@ install_scheme_clicked (GtkButton              *button,
 
 	chooser = gedit_file_chooser_dialog_create (_("Add Scheme"),
 						    GTK_WINDOW (dlg),
-						    GEDIT_FILE_CHOOSER_OPEN,
-						    NULL,
-						    _("_Cancel"), GTK_RESPONSE_CANCEL,
-						    _("A_dd Scheme"), GTK_RESPONSE_ACCEPT);
+						    GEDIT_FILE_CHOOSER_FLAG_OPEN,
+						    _("_Cancel"),
+						    _("A_dd Scheme"));
 
 	/* Filters */
 	gedit_file_chooser_dialog_add_pattern_filter (chooser,

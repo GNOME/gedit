@@ -382,8 +382,11 @@ static void
 gedit_document_constructed (GObject *object)
 {
 	GeditDocument *doc = GEDIT_DOCUMENT (object);
+	GeditDocumentPrivate *priv;
 	GeditSettings *settings;
 	GSettings *editor_settings;
+
+	priv = gedit_document_get_instance_private (doc);
 
 	settings = _gedit_settings_get_singleton ();
 	editor_settings = _gedit_settings_peek_editor_settings (settings);
