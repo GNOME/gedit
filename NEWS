@@ -1,3 +1,15 @@
+News in [unreleased]
+----------------------------
+* Deteplification:
+   - The tepl maintainer has "frozen" the project until further notice
+   - Moving things to tepl introduced some breakage, such as translation of the
+     default filename
+   - gedit didn't use much of the API anyway
+   - Used even less of amtk
+   - Revert all usage of amtk and tepl
+   - Unfortunatly a couple bug fixes may have been lost
+   - Plugin API is essentially reverted to 3.36
+
 News in 40, 2021-03-19
 ----------------------------
 * Remove all the deprecated API.

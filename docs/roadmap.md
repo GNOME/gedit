@@ -4,27 +4,9 @@ gedit roadmap
 This page contains the plans for major code changes we hope to get done in the
 future.
 
-See also the
-[GtkSourceView and Tepl roadmap](https://wiki.gnome.org/Projects/GtkSourceView/RoadMap).
+See also the [GtkSourceView](https://wiki.gnome.org/Projects/GtkSourceView/RoadMap).
 
 See the [NEWS file](../NEWS) for a detailed history.
-
-See also the
-[Tepl roadmap](https://gitlab.gnome.org/GNOME/tepl/blob/master/docs/roadmap.md).
-
-Continue to make the gedit source code more re-usable
------------------------------------------------------
-
-Status: **in progress** (this is an ongoing effort)
-
-Next steps:
-- Use more features from the Tepl library, and develop Tepl alongside gedit.
-  The goal is to reduce the amount of code in gedit, by having re-usable code
-  in Tepl instead.
-
-Links:
-- https://wiki.gnome.org/Apps/Gedit/ReusableCode
-- https://wiki.gnome.org/Projects/Tepl
 
 Improve gedit on Windows
 ------------------------
