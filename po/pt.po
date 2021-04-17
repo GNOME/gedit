@@ -12,18 +12,17 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 3.14\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=gedit&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-05-08 10:04+0000\n"
-"PO-Revision-Date: 2016-04-28 23:29+0100\n"
-"Last-Translator: Tiago Santos <tiagofsantos81@sapo.pt>\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gedit/issues\n"
+"POT-Creation-Date: 2019-02-06 20:55+0000\n"
+"PO-Revision-Date: 2021-04-17 17:34+0100\n"
+"Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Português <gnome_pt@yahoogroups.com>\n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 2.4.2\n"
 "X-Project-Style: gnome\n"
 
 #: ../data/org.gnome.gedit.appdata.xml.in.h:1
@@ -561,15 +560,15 @@ msgstr ""
 "Consulte o ficheiro .gedit-plugins para obter a \"Localização\" de uma dada "
 "extensão."
 
-#: ../gedit/gedit-app.c:110
+#: ../gedit/gedit-app.c:111
 msgid "Show the application's version"
 msgstr "Mostrar a versão da aplicação"
 
-#: ../gedit/gedit-app.c:116
+#: ../gedit/gedit-app.c:117
 msgid "Display list of possible values for the encoding option"
 msgstr "Mostrar lista de valores possíveis para a opção de codificação"
 
-#: ../gedit/gedit-app.c:123
+#: ../gedit/gedit-app.c:124
 msgid ""
 "Set the character encoding to be used to open the files listed on the "
 "command line"
@@ -577,37 +576,45 @@ msgstr ""
 "Defina a codificação de caracteres a ser utilizada para abrir os ficheiros "
 "listados na linha de comando"
 
-#: ../gedit/gedit-app.c:124
+#: ../gedit/gedit-app.c:125
 msgid "ENCODING"
 msgstr "CODIFICAÇÃO"
 
-#: ../gedit/gedit-app.c:130
+#: ../gedit/gedit-app.c:131
 msgid "Create a new top-level window in an existing instance of gedit"
 msgstr "Criar uma nova janela de topo numa instância existente do gedit"
 
-#: ../gedit/gedit-app.c:137
+#: ../gedit/gedit-app.c:138
 msgid "Create a new document in an existing instance of gedit"
 msgstr "Criar um novo documento numa instância existente do gedit"
 
-#: ../gedit/gedit-app.c:144
+#: ../gedit/gedit-app.c:145
+msgid "Set the size and position of the window (WIDTHxHEIGHT+X+Y)"
+msgstr "Definir o tamanho e posição da janela (LARGURAxALTURA+X+Y)"
+
+#: ../gedit/gedit-app.c:146
+msgid "GEOMETRY"
+msgstr "GEOMETRIA"
+
+#: ../gedit/gedit-app.c:152
 msgid "Open files and block process until files are closed"
 msgstr ""
 "Abrir os ficheiros e bloquear os processos até que os ficheiros sejam "
 "fechados"
 
-#: ../gedit/gedit-app.c:151
+#: ../gedit/gedit-app.c:159
 msgid "Run gedit in standalone mode"
 msgstr "Executar o gedit em modo independente"
 
-#: ../gedit/gedit-app.c:158
+#: ../gedit/gedit-app.c:166
 msgid "[FILE...] [+LINE[:COLUMN]]"
 msgstr "[FICHEIRO...] [+LINHA[:COLUNA]]"
 
-#: ../gedit/gedit-app.c:273
+#: ../gedit/gedit-app.c:281
 msgid "There was an error displaying the help."
 msgstr "Ocorreu um erro ao mostrar a ajuda."
 
-#: ../gedit/gedit-app.c:967
+#: ../gedit/gedit-app.c:986
 #, c-format
 msgid "%s: invalid encoding."
 msgstr "%s: codificação inválida."
@@ -976,7 +983,8 @@ msgid "translator-credits"
 msgstr ""
 "Duarte Loreto <happyguy_pt@hotmail.com>\n"
 "Tiago S. <almosthumane@portugalmail.pt>\n"
-"Pedro Albuquerque <palbuquerque73@gmail.com>"
+"Pedro Albuquerque <palbuquerque73@gmail.com>\n"
+"Hugo Carvalho <hugokarvalho@hotmail.com>"
 
 #: ../gedit/gedit-commands-search.c:107
 #, c-format
@@ -1504,7 +1512,7 @@ msgstr "Nada"
 #: ../gedit/gedit-replace-dialog.c:779
 #: ../gedit/resources/ui/gedit-replace-dialog.ui.h:1
 msgid "Find and Replace"
-msgstr "Localizar e substituir…"
+msgstr "Localizar e substituir"
 
 #. Use spaces to leave padding proportional to the font size
 #: ../gedit/gedit-statusbar.c:58 ../gedit/gedit-statusbar.c:64
@@ -1985,7 +1993,7 @@ msgstr "_Aplicar"
 
 #: ../gedit/resources/ui/gedit-encodings-dialog.ui.h:4
 msgid "A_vailable Encodings"
-msgstr "Codificações disponí_veis:"
+msgstr "Codificações disponí_veis"
 
 #: ../gedit/resources/ui/gedit-encodings-dialog.ui.h:5
 msgid "Cho_sen Encodings"
@@ -2275,7 +2283,7 @@ msgstr "_Localizar"
 #: ../gedit/resources/ui/gedit-replace-dialog.ui.h:6
 msgctxt "label on the left of the GtkEntry containing text to search"
 msgid "F_ind "
-msgstr "Local_izar"
+msgstr "Local_izar "
 
 #: ../gedit/resources/ui/gedit-replace-dialog.ui.h:7
 msgid "Replace _with "
@@ -2399,7 +2407,7 @@ msgstr "Sair da aplicação"
 #: ../gedit/resources/ui/gedit-shortcuts.ui.h:20
 msgctxt "shortcut window"
 msgid "Find and Replace"
-msgstr "Localizar e Substituir…"
+msgstr "Localizar e Substituir"
 
 #: ../gedit/resources/ui/gedit-shortcuts.ui.h:21
 msgctxt "shortcut window"
@@ -3693,12 +3701,6 @@ msgstr "Inserir data/hora"
 #: ../plugins/time/time.plugin.desktop.in.h:2
 msgid "Inserts current date and time at the cursor position."
 msgstr "Insere a data e hora atuais na posição do cursor."
-
-#~ msgid "Set the size and position of the window (WIDTHxHEIGHT+X+Y)"
-#~ msgstr "Definir o tamanho e posição da janela (LARGURAxALTURA+X+Y)"
-
-#~ msgid "GEOMETRY"
-#~ msgstr "GEOMETRIA"
 
 #~ msgid "gedit"
 #~ msgstr "gedit"
