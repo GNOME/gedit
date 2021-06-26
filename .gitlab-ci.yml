@@ -9,7 +9,7 @@ variables:
 flatpak:
     image: 'registry.gitlab.gnome.org/gnome/gnome-runtime-images/gnome:master'
     variables:
-        MANIFEST_PATH: "build-aux/flatpak/org.gnome.gedit.yml"
+        MANIFEST_PATH: "build-aux/flatpak/org.gnome.gedit.json"
         FLATPAK_MODULE: "gedit"
         RUNTIME_REPO: "https://nightly.gnome.org/gnome-nightly.flatpakrepo"
         APP_ID: "org.gnome.gedit"
