@@ -2687,6 +2687,7 @@ _gedit_tab_save_as_async (GeditTab                 *tab,
 	g_return_if_fail (GEDIT_IS_TAB (tab));
 	g_return_if_fail (tab->state == GEDIT_TAB_STATE_NORMAL ||
 	                  tab->state == GEDIT_TAB_STATE_EXTERNALLY_MODIFIED_NOTIFICATION ||
+	                  tab->state == GEDIT_TAB_STATE_SAVING_ERROR ||
 	                  tab->state == GEDIT_TAB_STATE_SHOWING_PRINT_PREVIEW);
 	g_return_if_fail (G_IS_FILE (location));
 	g_return_if_fail (encoding != NULL);
@@ -2716,6 +2717,11 @@ _gedit_tab_save_as_async (GeditTab                 *tab,
 		 */
 		set_info_bar (tab, NULL, GTK_RESPONSE_NONE);
 		save_flags |= GTK_SOURCE_FILE_SAVER_FLAGS_IGNORE_MODIFICATION_TIME;
+	}
+	else if (tab->state == GEDIT_TAB_STATE_SAVING_ERROR)
+	{
+		set_info_bar (tab, NULL, GTK_RESPONSE_NONE);
+		gedit_tab_set_state (tab, GEDIT_TAB_STATE_NORMAL);
 	}
 
 	file = gedit_document_get_file (doc);
