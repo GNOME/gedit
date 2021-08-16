@@ -1584,6 +1584,8 @@ _gedit_tab_get_icon (GeditTab *tab)
 	{
 		GdkScreen *screen;
 		GtkIconTheme *theme;
+		GtkIconInfo *info;
+		GtkStyleContext *context;
 		gint icon_size;
 
 		screen = gtk_widget_get_screen (GTK_WIDGET (tab));
@@ -1592,7 +1594,10 @@ _gedit_tab_get_icon (GeditTab *tab)
 
 		gtk_icon_size_lookup (GTK_ICON_SIZE_MENU, NULL, &icon_size);
 
-		pixbuf = gtk_icon_theme_load_icon (theme, icon_name, icon_size, 0, NULL);
+		context = gtk_widget_get_style_context (GTK_WIDGET (tab));
+		info = gtk_icon_theme_lookup_icon (theme, icon_name, icon_size, 0);
+
+		pixbuf = gtk_icon_info_load_symbolic_for_context (info, context, NULL, NULL);
 	}
 
 	return pixbuf;
