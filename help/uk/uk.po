@@ -9,15 +9,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gedit manual\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-24 15:24+0000\n"
-"PO-Revision-Date: 2021-03-24 17:55+0200\n"
+"POT-Creation-Date: 2021-08-20 10:10+0000\n"
+"PO-Revision-Date: 2021-08-20 15:33+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 20.11.70\n"
+"X-Generator: Lokalize 20.12.0\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
@@ -44,7 +44,7 @@ msgstr "Зміна кольорів тексту та тла у «gedit»."
 #: C/gedit-plugins-insert-date-time.page:15 C/gedit-plugins-install.page:8
 #: C/gedit-plugins-modelines.page:13 C/gedit-plugins-pyconsole.page:10
 #: C/gedit-plugins-quick-open.page:11 C/gedit-plugins-snippets.page:9
-#: C/gedit-plugins-sort.page:14 C/gedit-printing.page:10
+#: C/gedit-plugins-sort.page:14 C/gedit-printing.page:11
 #: C/gedit-quickstart.page:12 C/gedit-replace.page:14 C/gedit-save-file.page:13
 #: C/gedit-search.page:12 C/gedit-spellcheck.page:12
 #: C/gedit-syntax-highlighting.page:10 C/gedit-tabs-moving.page:13
@@ -1642,8 +1642,8 @@ msgstr ""
 
 #. (itstool) path: credit/name
 #: C/gedit-plugins-snippets.page:13 C/gedit-plugins-sort.page:18
-#: C/gedit-printing-order.page:15 C/gedit-printing.page:14
-#: C/gedit-printing-select.page:14 C/gedit-quickstart.page:16
+#: C/gedit-printing-order.page:16 C/gedit-printing.page:15
+#: C/gedit-printing-select.page:15 C/gedit-quickstart.page:16
 #: C/gedit-replace.page:22 C/gedit-save-file.page:17 C/gedit-search.page:20
 #: C/gedit-spellcheck.page:20 C/gedit-syntax-highlighting.page:14
 #: C/gedit-tabs-moving.page:21 C/gedit-tabs.page:22 C/gedit-undo-redo.page:20
@@ -2092,22 +2092,22 @@ msgid "Set the pages to print in a certain order."
 msgstr "Встановлення певного порядку друку сторінок."
 
 #. (itstool) path: credit/name
-#: C/gedit-printing-order.page:11 C/gedit-printing-select.page:10
+#: C/gedit-printing-order.page:12 C/gedit-printing-select.page:11
 msgid "Phil Bull"
 msgstr "Phil Bull"
 
 #. (itstool) path: page/title
-#: C/gedit-printing-order.page:21
+#: C/gedit-printing-order.page:22
 msgid "Getting Copies To Print In The Correct Order"
 msgstr "Друкування в потрібному порядку"
 
 #. (itstool) path: section/title
-#: C/gedit-printing-order.page:24
+#: C/gedit-printing-order.page:25
 msgid "Reverse"
 msgstr "Зворотній порядок"
 
 #. (itstool) path: section/p
-#: C/gedit-printing-order.page:26
+#: C/gedit-printing-order.page:27
 msgid ""
 "Printers usually print the first page first, and the last page last, so the "
 "pages end up in reverse order when you pick them up. To reverse the order:"
@@ -2117,16 +2117,21 @@ msgstr ""
 "змінити порядок:"
 
 #. (itstool) path: item/p
-#: C/gedit-printing-order.page:32
+#: C/gedit-printing-order.page:33 C/gedit-printing-order.page:57
+#: C/gedit-printing.page:39 C/gedit-printing.page:62 C/gedit-printing.page:99
+#: C/gedit-printing-select.page:29
+#| msgid ""
+#| "Press the menu button in the top-right corner of the window and select "
+#| "<guiseq><gui style=\"menuitem\">Preferences</gui> <gui style=\"tab"
+#| "\">Plugins</gui></guiseq>."
 msgid ""
-"Select <guiseq><gui style=\"menu\">File</gui> <gui style=\"menuitem\">Print</"
-"gui></guiseq>."
+"Press the menu button in the top-right corner of the window and select the "
+"Print button."
 msgstr ""
-"Виберіть <guiseq><gui style=\"menu\">«Файл»</gui> <gui style=\"menuitem"
-"\">«Друкувати»</gui></guiseq>."
+"Натисніть кнопку меню у верхньому правому куті вікна і натисніть кнопку друку."
 
 #. (itstool) path: item/p
-#: C/gedit-printing-order.page:36
+#: C/gedit-printing-order.page:37
 msgid ""
 "In the <gui style=\"tab\">General</gui> tab of the Print dialog under <gui "
 "style=\"group\">Copies</gui>, check <gui style=\"checkbox\">Reverse</gui>."
@@ -2136,17 +2141,17 @@ msgstr ""
 "\">У зворотньому порядку</gui>»."
 
 #. (itstool) path: section/p
-#: C/gedit-printing-order.page:42
+#: C/gedit-printing-order.page:43
 msgid "The last page will be printed first, and so on."
 msgstr "Останню сторінку буде надруковано першою і так далі."
 
 #. (itstool) path: section/title
-#: C/gedit-printing-order.page:46
+#: C/gedit-printing-order.page:47
 msgid "Collate"
 msgstr "Впорядкування"
 
 #. (itstool) path: section/p
-#: C/gedit-printing-order.page:48
+#: C/gedit-printing-order.page:49
 msgid ""
 "If you are printing more than one copy of the document, the print outs will "
 "be grouped by page number by default. (e.g. The copies of page one come out, "
@@ -2159,21 +2164,12 @@ msgstr ""
 "сторінки одного екземпляру."
 
 #. (itstool) path: section/p
-#: C/gedit-printing-order.page:53
+#: C/gedit-printing-order.page:54
 msgid "To Collate:"
 msgstr "Для впорядкування:"
 
 #. (itstool) path: item/p
-#: C/gedit-printing-order.page:56
-msgid ""
-"Click <guiseq><gui style=\"menu\">File</gui> <gui style=\"menuitem\">Print</"
-"gui></guiseq>."
-msgstr ""
-"Клацніть на <guiseq><gui style=\"menu\">«Файл»</gui> <gui style=\"menuitem"
-"\">«Друкувати»</gui></guiseq>."
-
-#. (itstool) path: item/p
-#: C/gedit-printing-order.page:60
+#: C/gedit-printing-order.page:61
 msgid ""
 "In the <gui style=\"tab\">General</gui> tab of the Print dialog under <gui "
 "style=\"group\">Copies</gui> check <gui style=\"checkbox\">Collate</gui>."
@@ -2188,12 +2184,12 @@ msgid "Print the files that you create with gedit."
 msgstr "Друк створених у «gedit» файлів."
 
 #. (itstool) path: page/title
-#: C/gedit-printing.page:20
+#: C/gedit-printing.page:21
 msgid "Printing documents"
 msgstr "Друкування документів"
 
 #. (itstool) path: note/p
-#: C/gedit-printing.page:23
+#: C/gedit-printing.page:24
 msgid ""
 "Printing with <app>gedit</app> requires that you have connected and "
 "configured your printer. If you have not done this, please consult the <link "
@@ -2204,17 +2200,17 @@ msgstr ""
 "help/printing\">довідки з друкування для GNOME</link>."
 
 #. (itstool) path: page/p
-#: C/gedit-printing.page:28
+#: C/gedit-printing.page:29
 msgid "<app>gedit</app> allows you to print both to a file and to paper."
 msgstr "В «<app>gedit</app>» можна друкувати і у файл і на папір."
 
 #. (itstool) path: section/title
-#: C/gedit-printing.page:31
+#: C/gedit-printing.page:32
 msgid "Print Preview"
 msgstr "Попередній перегляд"
 
 #. (itstool) path: section/p
-#: C/gedit-printing.page:33
+#: C/gedit-printing.page:34
 msgid ""
 "Prior to printing your document, you can preview how the printed document "
 "will look by using <gui>Print Preview</gui>. To preview the document:"
@@ -2224,18 +2220,15 @@ msgstr ""
 "Щоб попередньо переглянути документ:"
 
 #. (itstool) path: item/p
-#: C/gedit-printing.page:38
-msgid ""
-"Select <guiseq><gui style=\"menu\">File</gui> <gui style=\"menuitem\">Print "
-"Preview</gui></guiseq>. Alternatively, you can press <keyseq><key>Shift</"
-"key><key>Ctrl</key> <key>P</key></keyseq>."
+#: C/gedit-printing.page:43
+#| msgid ""
+#| "To print the document to file, click <gui style=\"button\">Print</gui>."
+msgid "Press <gui style=\"button\">Preview</gui>."
 msgstr ""
-"Виберіть <guiseq><gui style=\"menu\">«Файл»</gui> <gui style=\"menuitem"
-"\">«Попередній перегляд»</gui></guiseq>. Також, можна натиснути "
-"<keyseq><key>Shift</key><key>Ctrl</key> <key>P</key></keyseq>."
+"Натисніть кнопку «<gui style=\"button\">Попередній перегляд</gui>»."
 
 #. (itstool) path: section/p
-#: C/gedit-printing.page:45
+#: C/gedit-printing.page:47
 msgid ""
 "A preview of your document will open in the same tab as the file. You can "
 "browse this preview with help of navigation buttons and tools in the toolbar "
@@ -2249,12 +2242,12 @@ msgstr ""
 "клацніть на «<gui style=\"button\">Закрити попередній перегляд</gui>»."
 
 #. (itstool) path: section/title
-#: C/gedit-printing.page:53
+#: C/gedit-printing.page:55
 msgid "Printing To Paper"
 msgstr "Друкування на папір"
 
 #. (itstool) path: section/p
-#: C/gedit-printing.page:55
+#: C/gedit-printing.page:57
 msgid ""
 "You can print your documents to paper using a local or remote printer. To "
 "print a file:"
@@ -2263,30 +2256,20 @@ msgstr ""
 "віддалений принтер. Щоб роздрукувати файл:"
 
 #. (itstool) path: item/p
-#: C/gedit-printing.page:60
+#: C/gedit-printing.page:66
+#| msgid "Select the desired printer from the list of printers available."
 msgid ""
-"Select <guiseq><gui style=\"menu\">File</gui> <gui style=\"menuitem\">Print</"
-"gui> <gui style=\"tab\">General</gui></guiseq>."
-msgstr ""
-"Виберіть <guiseq><gui style=\"menu\">«Файл»</gui> <gui style=\"menuitem"
-"\">«Друкувати»</gui> <gui style=\"tab\">«Загальні»</gui></guiseq>."
+"In the <gui style=\"tab\">General</gui> tab, select the desired printer from "
+"the list of printers available."
+msgstr "На вкладці <gui style=\"tab\">Загальні</gui> виберіть потрібний принтер зі списку доступних принтерів."
 
 #. (itstool) path: item/p
-#: C/gedit-printing.page:65
-msgid "Select the desired printer from the list of printers available."
-msgstr "Виберіть потрібний принтер зі списку доступних принтерів."
-
-#. (itstool) path: item/p
-#: C/gedit-printing.page:68
-msgid ""
-"You can preview the file using <gui style=\"button\">Print Preview</gui> and "
-"once you are satisfied with the settings, click <gui style=\"button\">Print</"
-"gui> to send the file to printer."
+#: C/gedit-printing.page:70 C/gedit-printing.page:121
+#| msgid ""
+#| "To print the document to file, click <gui style=\"button\">Print</gui>."
+msgid "Press <gui style=\"button\">Print</gui>."
 msgstr ""
-"Можна попередньо переглянути файл, використовуючи «<gui style=\"button"
-"\">Попередній перегляд</gui>» і, як тільки налаштування Вас задовольняють, "
-"клацніть на «<gui style=\"button\">Друкувати</gui>», щоб відправити файл до "
-"принтеру."
+"Натисніть кнопку «<gui style=\"button\">Друкувати</gui>»."
 
 #. (itstool) path: section/p
 #: C/gedit-printing.page:74
@@ -2324,50 +2307,48 @@ msgstr "Друкування до файла"
 
 #. (itstool) path: section/p
 #: C/gedit-printing.page:94
+#| msgid ""
+#| "You can also use <app>gedit</app> to print to a file. To print your "
+#| "document to file of a different format:"
 msgid ""
 "You can also use <app>gedit</app> to print to a file. To print your document "
-"to file of a different format:"
+"to a file of a different format:"
 msgstr ""
 "Можна також використовувати «<app>gedit</app>» для друкування до файла. Щоб "
 "друкувати документ до файла іншого формату:"
 
 #. (itstool) path: item/p
-#: C/gedit-printing.page:99
+#: C/gedit-printing.page:103
+#| msgid ""
+#| "In the <gui style=\"tab\">General</gui> tab in the Print dialog choose "
+#| "<gui style=\"radiobutton\">Pages</gui> from the <gui style=\"group"
+#| "\">Range</gui> section."
 msgid ""
-"Select <guiseq><gui style=\"menu\">File</gui> <gui style=\"menuitem\">Print</"
-"gui> <gui style=\"menuitem\">Print to File</gui></guiseq>."
+"In the <gui style=\"tab\">General</gui> tab, select <gui>Print to File</gui> "
+"from the list of printers available."
 msgstr ""
-"Виберіть <guiseq><gui style=\"menu\">«Файл»</gui> <gui style=\"menuitem"
-"\">«Друкувати»</gui> <gui style=\"menuitem\">«Друкувати до файла»</gui></"
-"guiseq>."
+"На вкладці «<gui style=\"tab\">Загальні</gui>» виберіть «<gui>Друкувати до файла</gui>» зі списку доступних принтерів."
 
 #. (itstool) path: item/p
-#: C/gedit-printing.page:104
-msgid ""
-"Printing is enabled for the following file formats, you may select from:"
-msgstr "Друкування доступне для наступних форматів файлів на вибір:"
+#: C/gedit-printing.page:107
+msgid "Select an output format:"
+msgstr ""
+"Виберіть формат виведення:"
 
 #. (itstool) path: item/p
-#: C/gedit-printing.page:108
+#: C/gedit-printing.page:110
 msgid "Portable Document Format (.pdf)"
 msgstr "Portable Document Format (.pdf)"
 
 #. (itstool) path: item/p
-#: C/gedit-printing.page:111
+#: C/gedit-printing.page:113
 msgid "PostScript (.ps)"
 msgstr "PostScript (.ps)"
 
 #. (itstool) path: item/p
-#: C/gedit-printing.page:114
+#: C/gedit-printing.page:116
 msgid "Scalable Vector Graphic (.svg)"
 msgstr "Scalable Vector Graphic (.svg)"
-
-#. (itstool) path: item/p
-#: C/gedit-printing.page:119
-msgid "To print the document to file, click <gui style=\"button\">Print</gui>."
-msgstr ""
-"Щоб надрукувати документ до файла, клацніть на «<gui style=\"button"
-"\">Друкувати</gui>»."
 
 #. (itstool) path: info/desc
 #: C/gedit-printing-select.page:7
@@ -2375,12 +2356,12 @@ msgid "Choose the pages that you want to print."
 msgstr "Виберіть сторінки, які ви хочете надрукувати."
 
 #. (itstool) path: page/title
-#: C/gedit-printing-select.page:20
+#: C/gedit-printing-select.page:21
 msgid "Only print certain pages"
 msgstr "Друк лише частини сторінок"
 
 #. (itstool) path: page/p
-#: C/gedit-printing-select.page:22
+#: C/gedit-printing-select.page:23
 msgid ""
 "You can selectively print only certain pages from the document. For example, "
 "if you enter the page numbers \"1,3,5-7,9\", then only pages 1, 3, 5, 6, 7 "
@@ -2391,16 +2372,7 @@ msgstr ""
 "Щоб роздрукувати вибрані сторінки:"
 
 #. (itstool) path: item/p
-#: C/gedit-printing-select.page:28
-msgid ""
-"Select <guiseq><gui style=\"menu\">File</gui> <gui style=\"menuitem\">Print…"
-"</gui></guiseq>."
-msgstr ""
-"Виберіть <guiseq><gui style=\"menu\">«Файл»</gui> <gui style=\"menuitem"
-"\">«Друкувати…»</gui></guiseq>."
-
-#. (itstool) path: item/p
-#: C/gedit-printing-select.page:32
+#: C/gedit-printing-select.page:33
 msgid ""
 "In the <gui style=\"tab\">General</gui> tab in the Print dialog choose <gui "
 "style=\"radiobutton\">Pages</gui> from the <gui style=\"group\">Range</gui> "
@@ -2411,7 +2383,7 @@ msgstr ""
 "\"group\">Діапазон</gui>»."
 
 #. (itstool) path: item/p
-#: C/gedit-printing-select.page:36
+#: C/gedit-printing-select.page:37
 msgid ""
 "Type the numbers of the pages you want to print from the document, separated "
 "by commas. Use a dash to specify a range of pages."
@@ -3451,8 +3423,6 @@ msgstr ""
 
 #. (itstool) path: info/title
 #: C/index.page:8
-#| msgctxt "link"
-#| msgid "gedit Text Editor"
 msgctxt "link:trail"
 msgid "gedit Text Editor"
 msgstr "Текстовий редактор «gedit»"
@@ -3528,6 +3498,65 @@ msgstr "Creative Commons Attribution-ShareAlike 3.0 Unported License"
 #: C/legal.xml:3
 msgid "This work is licensed under a <_:link-1/>."
 msgstr "Ця робота розповсюджується за умов дотримання <_:link-1/>."
+
+#~ msgid ""
+#~ "Select <guiseq><gui style=\"menu\">File</gui> <gui style=\"menuitem"
+#~ "\">Print</gui></guiseq>."
+#~ msgstr ""
+#~ "Виберіть <guiseq><gui style=\"menu\">«Файл»</gui> <gui style=\"menuitem"
+#~ "\">«Друкувати»</gui></guiseq>."
+
+#~ msgid ""
+#~ "Click <guiseq><gui style=\"menu\">File</gui> <gui style=\"menuitem"
+#~ "\">Print</gui></guiseq>."
+#~ msgstr ""
+#~ "Клацніть на <guiseq><gui style=\"menu\">«Файл»</gui> <gui style=\"menuitem"
+#~ "\">«Друкувати»</gui></guiseq>."
+
+#~ msgid ""
+#~ "Select <guiseq><gui style=\"menu\">File</gui> <gui style=\"menuitem"
+#~ "\">Print Preview</gui></guiseq>. Alternatively, you can press "
+#~ "<keyseq><key>Shift</key><key>Ctrl</key> <key>P</key></keyseq>."
+#~ msgstr ""
+#~ "Виберіть <guiseq><gui style=\"menu\">«Файл»</gui> <gui style=\"menuitem"
+#~ "\">«Попередній перегляд»</gui></guiseq>. Також, можна натиснути "
+#~ "<keyseq><key>Shift</key><key>Ctrl</key> <key>P</key></keyseq>."
+
+#~ msgid ""
+#~ "Select <guiseq><gui style=\"menu\">File</gui> <gui style=\"menuitem"
+#~ "\">Print</gui> <gui style=\"tab\">General</gui></guiseq>."
+#~ msgstr ""
+#~ "Виберіть <guiseq><gui style=\"menu\">«Файл»</gui> <gui style=\"menuitem"
+#~ "\">«Друкувати»</gui> <gui style=\"tab\">«Загальні»</gui></guiseq>."
+
+#~ msgid ""
+#~ "You can preview the file using <gui style=\"button\">Print Preview</gui> "
+#~ "and once you are satisfied with the settings, click <gui style=\"button"
+#~ "\">Print</gui> to send the file to printer."
+#~ msgstr ""
+#~ "Можна попередньо переглянути файл, використовуючи «<gui style=\"button"
+#~ "\">Попередній перегляд</gui>» і, як тільки налаштування Вас "
+#~ "задовольняють, клацніть на «<gui style=\"button\">Друкувати</gui>», щоб "
+#~ "відправити файл до принтеру."
+
+#~ msgid ""
+#~ "Select <guiseq><gui style=\"menu\">File</gui> <gui style=\"menuitem"
+#~ "\">Print</gui> <gui style=\"menuitem\">Print to File</gui></guiseq>."
+#~ msgstr ""
+#~ "Виберіть <guiseq><gui style=\"menu\">«Файл»</gui> <gui style=\"menuitem"
+#~ "\">«Друкувати»</gui> <gui style=\"menuitem\">«Друкувати до файла»</gui></"
+#~ "guiseq>."
+
+#~ msgid ""
+#~ "Printing is enabled for the following file formats, you may select from:"
+#~ msgstr "Друкування доступне для наступних форматів файлів на вибір:"
+
+#~ msgid ""
+#~ "Select <guiseq><gui style=\"menu\">File</gui> <gui style=\"menuitem"
+#~ "\">Print…</gui></guiseq>."
+#~ msgstr ""
+#~ "Виберіть <guiseq><gui style=\"menu\">«Файл»</gui> <gui style=\"menuitem"
+#~ "\">«Друкувати…»</gui></guiseq>."
 
 #~ msgid ""
 #~ "Select <guiseq><gui style=\"menu\">gedit</gui> <gui style=\"menuitem"
