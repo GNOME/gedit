@@ -6,6 +6,7 @@
     <link type="guide" xref="index#gedit-printing-guide"/>
     <desc>Print the files that you create with gedit.</desc>
     <revision pkgversion="3.8" date="2013-02-24" status="review"/>
+    <revision pkgversion="40.1" date="2021-08-20" status="review"/>
     <credit type="author">
       <name>Jim Campbell</name>
       <email>jcampbell@gnome.org</email>
@@ -35,10 +36,11 @@
 
   <steps>
     <item>
-      <p>Select <guiseq><gui style="menu">File</gui>
-      <gui style="menuitem">Print Preview</gui></guiseq>. Alternatively, you
-      can press <keyseq><key>Shift</key><key>Ctrl</key>
-      <key>P</key></keyseq>.</p>
+        <p>Press the menu button in the top-right corner of the window and select
+        the Print button.</p>
+    </item>
+    <item>
+        <p>Press <gui style="button">Preview</gui>.</p>
     </item>
   </steps>
 
@@ -57,17 +59,15 @@
 
   <steps>
     <item>
-      <p>Select <guiseq><gui style="menu">File</gui>
-      <gui style="menuitem">Print</gui>
-      <gui style="tab">General</gui></guiseq>.</p>
+        <p>Press the menu button in the top-right corner of the window and select
+        the Print button.</p>
     </item>
     <item>
-      <p>Select the desired printer from the list of printers available.</p>
+      <p>In the <gui style="tab">General</gui> tab, select the desired printer
+      from the list of printers available.</p>
     </item>
     <item>
-      <p>You can preview the file using <gui style="button">Print Preview</gui>
-      and once you are satisfied with the settings, click
-      <gui style="button">Print</gui> to send the file to printer.</p>
+      <p>Press <gui style="button">Print</gui>.</p>
     </item>
   </steps>
 
@@ -92,17 +92,19 @@
     <title>Printing To File</title>
 
   <p>You can also use <app>gedit</app> to print to a file. To print your
-  document to file of a different format:</p>
+  document to a file of a different format:</p>
 
   <steps>
     <item>
-      <p>Select <guiseq><gui style="menu">File</gui>
-      <gui style="menuitem">Print</gui>
-      <gui style="menuitem">Print to File</gui></guiseq>.</p>
+        <p>Press the menu button in the top-right corner of the window and select
+        the Print button.</p>
     </item>
     <item>
-      <p>Printing is enabled for the following file formats, you may select
-      from:</p>
+      <p>In the <gui style="tab">General</gui> tab, select <gui>Print to File</gui>
+      from the list of printers available.</p>
+    </item>
+    <item>
+      <p>Select an output format:</p>
       <list>
         <item>
           <p>Portable Document Format (.pdf)</p>
@@ -116,8 +118,7 @@
         </list>
     </item>
     <item>
-      <p>To print the document to file, click
-      <gui style="button">Print</gui>.</p>
+      <p>Press <gui style="button">Print</gui>.</p>
     </item>
   </steps>
 
