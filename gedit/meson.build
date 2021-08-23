@@ -5,6 +5,7 @@ libgedit_public_headers = [
   'gedit-debug.h',
   'gedit-document.h',
   'gedit-encodings-combo-box.h',
+  'gedit-macros.h',
   'gedit-menu-extension.h',
   'gedit-message-bus.h',
   'gedit-message.h',
