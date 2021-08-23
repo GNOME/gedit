@@ -22,11 +22,13 @@
 #define GEDIT_WINDOW_ACTIVATABLE_H
 
 #include <glib-object.h>
+#include <gedit/gedit-macros.h>
 
 G_BEGIN_DECLS
 
 #define GEDIT_TYPE_WINDOW_ACTIVATABLE (gedit_window_activatable_get_type ())
 
+GEDIT_API
 G_DECLARE_INTERFACE (GeditWindowActivatable, gedit_window_activatable, GEDIT, WINDOW_ACTIVATABLE, GObject)
 
 struct _GeditWindowActivatableInterface
@@ -39,8 +41,11 @@ struct _GeditWindowActivatableInterface
 	void	(*update_state)		(GeditWindowActivatable *activatable);
 };
 
+GEDIT_API
 void	 gedit_window_activatable_activate	(GeditWindowActivatable *activatable);
+GEDIT_API
 void	 gedit_window_activatable_deactivate	(GeditWindowActivatable *activatable);
+GEDIT_API
 void	 gedit_window_activatable_update_state	(GeditWindowActivatable *activatable);
 
 G_END_DECLS

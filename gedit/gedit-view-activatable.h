@@ -22,11 +22,13 @@
 #define GEDIT_VIEW_ACTIVATABLE_H
 
 #include <glib-object.h>
+#include <gedit/gedit-macros.h>
 
 G_BEGIN_DECLS
 
 #define GEDIT_TYPE_VIEW_ACTIVATABLE (gedit_view_activatable_get_type ())
 
+GEDIT_API
 G_DECLARE_INTERFACE (GeditViewActivatable, gedit_view_activatable, GEDIT, VIEW_ACTIVATABLE, GObject)
 
 struct _GeditViewActivatableInterface
@@ -38,7 +40,9 @@ struct _GeditViewActivatableInterface
 	void	(*deactivate)		(GeditViewActivatable *activatable);
 };
 
+GEDIT_API
 void	 gedit_view_activatable_activate	(GeditViewActivatable *activatable);
+GEDIT_API
 void	 gedit_view_activatable_deactivate	(GeditViewActivatable *activatable);
 
 G_END_DECLS

@@ -69,35 +69,45 @@ typedef void (* GeditMessageBusForeach) (gchar const      *object_path,
                                          gchar const      *method,
                                          gpointer          user_data);
 
+GEDIT_API
 GType             gedit_message_bus_get_type           (void) G_GNUC_CONST;
 
+GEDIT_API
 GeditMessageBus  *gedit_message_bus_get_default        (void);
+GEDIT_API
 GeditMessageBus  *gedit_message_bus_new                (void);
 
+GEDIT_API
 GType             gedit_message_bus_lookup             (GeditMessageBus        *bus,
                                                         const gchar            *object_path,
                                                         const gchar            *method);
 
+GEDIT_API
 void              gedit_message_bus_register           (GeditMessageBus        *bus,
                                                         GType                   message_type,
                                                         const gchar            *object_path,
                                                         const gchar            *method);
 
+GEDIT_API
 void              gedit_message_bus_unregister         (GeditMessageBus        *bus,
                                                         const gchar            *object_path,
                                                         const gchar            *method);
 
+GEDIT_API
 void              gedit_message_bus_unregister_all     (GeditMessageBus        *bus,
                                                         const gchar            *object_path);
 
+GEDIT_API
 gboolean          gedit_message_bus_is_registered      (GeditMessageBus        *bus,
                                                         const gchar            *object_path,
                                                         const gchar            *method);
 
+GEDIT_API
 void              gedit_message_bus_foreach            (GeditMessageBus        *bus,
                                                         GeditMessageBusForeach  func,
                                                         gpointer                user_data);
 
+GEDIT_API
 guint             gedit_message_bus_connect            (GeditMessageBus        *bus,
                                                         const gchar            *object_path,
                                                         const gchar            *method,
@@ -105,42 +115,52 @@ guint             gedit_message_bus_connect            (GeditMessageBus        *
                                                         gpointer                user_data,
                                                         GDestroyNotify          destroy_data);
 
+GEDIT_API
 void              gedit_message_bus_disconnect         (GeditMessageBus        *bus,
                                                         guint                   id);
 
+GEDIT_API
 void              gedit_message_bus_disconnect_by_func (GeditMessageBus        *bus,
                                                         const gchar            *object_path,
                                                         const gchar            *method,
                                                         GeditMessageCallback    callback,
                                                         gpointer                user_data);
 
+GEDIT_API
 void              gedit_message_bus_block              (GeditMessageBus        *bus,
                                                         guint                   id);
+GEDIT_API
 void              gedit_message_bus_block_by_func      (GeditMessageBus        *bus,
                                                         const gchar            *object_path,
                                                         const gchar            *method,
                                                         GeditMessageCallback    callback,
                                                         gpointer                user_data);
 
+GEDIT_API
 void              gedit_message_bus_unblock            (GeditMessageBus        *bus,
                                                         guint                   id);
+GEDIT_API
 void              gedit_message_bus_unblock_by_func    (GeditMessageBus        *bus,
                                                         const gchar            *object_path,
                                                         const gchar            *method,
                                                         GeditMessageCallback    callback,
                                                         gpointer                user_data);
 
+GEDIT_API
 void              gedit_message_bus_send_message       (GeditMessageBus        *bus,
                                                         GeditMessage           *message);
+GEDIT_API
 void              gedit_message_bus_send_message_sync  (GeditMessageBus        *bus,
                                                         GeditMessage           *message);
 
+GEDIT_API
 void              gedit_message_bus_send               (GeditMessageBus        *bus,
                                                         const gchar            *object_path,
                                                         const gchar            *method,
                                                         const gchar            *first_property,
                                                         ...) G_GNUC_NULL_TERMINATED;
 
+GEDIT_API
 GeditMessage     *gedit_message_bus_send_sync          (GeditMessageBus        *bus,
                                                         const gchar            *object_path,
                                                         const gchar            *method,

@@ -26,24 +26,31 @@
 G_BEGIN_DECLS
 
 #define GEDIT_TYPE_PROGRESS_INFO_BAR (gedit_progress_info_bar_get_type ())
+GEDIT_API
 G_DECLARE_FINAL_TYPE (GeditProgressInfoBar, gedit_progress_info_bar, GEDIT, PROGRESS_INFO_BAR, GtkInfoBar)
 
+GEDIT_API
 GtkWidget	*gedit_progress_info_bar_new			(const gchar          *icon_name,
 								 const gchar          *markup,
 								 gboolean              has_cancel);
 
+GEDIT_API
 void		 gedit_progress_info_bar_set_icon_name		(GeditProgressInfoBar *bar,
 								 const gchar          *icon_name);
 
+GEDIT_API
 void		 gedit_progress_info_bar_set_markup		(GeditProgressInfoBar *bar,
 								 const gchar          *markup);
 
+GEDIT_API
 void		 gedit_progress_info_bar_set_text		(GeditProgressInfoBar *bar,
 								 const gchar          *text);
 
+GEDIT_API
 void		 gedit_progress_info_bar_set_fraction		(GeditProgressInfoBar *bar,
 								 gdouble               fraction);
 
+GEDIT_API
 void		 gedit_progress_info_bar_pulse			(GeditProgressInfoBar *bar);
 
 G_END_DECLS

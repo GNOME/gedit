@@ -25,11 +25,13 @@
 #define GEDIT_DOCUMENT_H
 
 #include <gtksourceview/gtksource.h>
+#include <gedit/gedit-macros.h>
 
 G_BEGIN_DECLS
 
 #define GEDIT_TYPE_DOCUMENT (gedit_document_get_type())
 
+GEDIT_API
 G_DECLARE_DERIVABLE_TYPE (GeditDocument, gedit_document, GEDIT, DOCUMENT, GtkSourceBuffer)
 
 struct _GeditDocumentClass
@@ -48,42 +50,57 @@ struct _GeditDocumentClass
 	void (* saved)  		(GeditDocument *document);
 };
 
+GEDIT_API
 GeditDocument   *gedit_document_new				(void);
 
+GEDIT_API
 GtkSourceFile	*gedit_document_get_file			(GeditDocument       *doc);
 
+GEDIT_API
 gchar		*gedit_document_get_short_name_for_display	(GeditDocument       *doc);
 
+GEDIT_API
 gchar		*gedit_document_get_content_type		(GeditDocument       *doc);
 
+GEDIT_API
 gchar		*gedit_document_get_mime_type			(GeditDocument       *doc);
 
+GEDIT_API
 gboolean	 gedit_document_is_untouched			(GeditDocument       *doc);
 
+GEDIT_API
 gboolean	 gedit_document_is_untitled			(GeditDocument       *doc);
 
+GEDIT_API
 gboolean	 gedit_document_goto_line			(GeditDocument       *doc,
 								gint                 line);
 
+GEDIT_API
 gboolean	 gedit_document_goto_line_offset		(GeditDocument       *doc,
 								 gint                 line,
 								 gint                 line_offset);
 
+GEDIT_API
 void 		 gedit_document_set_language			(GeditDocument       *doc,
 								 GtkSourceLanguage   *lang);
+GEDIT_API
 GtkSourceLanguage
 		*gedit_document_get_language			(GeditDocument       *doc);
 
+GEDIT_API
 gchar		*gedit_document_get_metadata			(GeditDocument       *doc,
 								 const gchar         *key);
 
+GEDIT_API
 void		 gedit_document_set_metadata			(GeditDocument       *doc,
 								 const gchar         *first_key,
 								 ...);
 
+GEDIT_API
 void		 gedit_document_set_search_context		(GeditDocument          *doc,
 								 GtkSourceSearchContext *search_context);
 
+GEDIT_API
 GtkSourceSearchContext *
 		 gedit_document_get_search_context		(GeditDocument       *doc);
 

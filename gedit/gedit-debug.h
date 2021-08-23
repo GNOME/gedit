@@ -24,6 +24,7 @@
 #define GEDIT_DEBUG_H
 
 #include <glib.h>
+#include <gedit/gedit-macros.h>
 
 /**
  * GeditDebugSection:
@@ -63,19 +64,23 @@ typedef enum {
 #define	DEBUG_UTILS	GEDIT_DEBUG_UTILS,   __FILE__, __LINE__, G_STRFUNC
 #define	DEBUG_METADATA	GEDIT_DEBUG_METADATA,__FILE__, __LINE__, G_STRFUNC
 
+GEDIT_API
 void gedit_debug_init (void);
 
+GEDIT_API
 void gedit_debug (GeditDebugSection  section,
 		  const gchar       *file,
 		  gint               line,
 		  const gchar       *function);
 
+GEDIT_API
 void gedit_debug_message (GeditDebugSection  section,
 			  const gchar       *file,
 			  gint               line,
 			  const gchar       *function,
 			  const gchar       *format, ...) G_GNUC_PRINTF(5, 6);
 
+GEDIT_API
 void gedit_debug_plugin_message (const gchar       *file,
 				 gint               line,
 				 const gchar       *function,

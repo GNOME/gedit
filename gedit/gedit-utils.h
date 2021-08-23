@@ -24,6 +24,7 @@
 #define GEDIT_UTILS_H
 
 #include <gtksourceview/gtksource.h>
+#include <gedit/gedit-macros.h>
 
 G_BEGIN_DECLS
 
@@ -31,13 +32,18 @@ G_BEGIN_DECLS
 #define GBOOLEAN_TO_POINTER(i) (GINT_TO_POINTER ((i) ? 2 : 1))
 #define GPOINTER_TO_BOOLEAN(i) ((gboolean) ((GPOINTER_TO_INT(i) == 2) ? TRUE : FALSE))
 
+GEDIT_API
 gboolean                   gedit_utils_menu_position_under_tree_view          (GtkTreeView     *tree_view,
                                                                                GdkRectangle    *rect);
 
+GEDIT_API
 gchar                     *gedit_utils_str_middle_truncate                    (const gchar     *string,
                                                                                guint            truncate_length);
+GEDIT_API
 gchar                     *gedit_utils_str_end_truncate                       (const gchar     *string,
                                                                                guint            truncate_length);
+
+GEDIT_API
 void                       gedit_utils_set_atk_name_description               (GtkWidget       *widget,
                                                                                const gchar     *name,
                                                                                const gchar     *description);
@@ -45,11 +51,15 @@ void                       gedit_warning                                      (G
                                                                                const gchar    *format,
                                                                                ...) G_GNUC_PRINTF(2, 3);
 
+GEDIT_API
 gchar                     *gedit_utils_location_get_dirname_for_display       (GFile          *location);
+GEDIT_API
 gchar                     *gedit_utils_replace_home_dir_with_tilde            (const gchar    *uri);
 
+GEDIT_API
 gboolean                   gedit_utils_is_valid_location                      (GFile *location);
 
+GEDIT_API
 gchar                     *gedit_utils_basename_for_display                   (GFile *location);
 
 gboolean                   gedit_utils_decode_uri                             (const gchar  *uri,
@@ -60,12 +70,16 @@ gboolean                   gedit_utils_decode_uri                             (c
                                                                                gchar       **path);
 
 /* Turns data from a drop into a list of well formatted uris */
+GEDIT_API
 gchar                    **gedit_utils_drop_get_uris                          (GtkSelectionData     *selection_data);
 
+GEDIT_API
 gchar                     *gedit_utils_set_direct_save_filename               (GdkDragContext       *context);
 
+GEDIT_API
 GtkSourceCompressionType   gedit_utils_get_compression_type_from_content_type (const gchar          *content_type);
 
+GEDIT_API
 const gchar               *gedit_utils_newline_type_to_string                 (GtkSourceNewlineType  newline_type);
 
 G_END_DECLS

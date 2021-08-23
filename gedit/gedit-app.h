@@ -28,6 +28,7 @@ G_BEGIN_DECLS
 
 #define GEDIT_TYPE_APP (gedit_app_get_type())
 
+GEDIT_API
 G_DECLARE_DERIVABLE_TYPE (GeditApp, gedit_app, GEDIT, APP, GtkApplication)
 
 struct _GeditAppClass
@@ -54,23 +55,30 @@ struct _GeditAppClass
 	                                         GdkEvent    *event);
 };
 
+GEDIT_API
 GeditWindow	*gedit_app_create_window		(GeditApp    *app,
 							 GdkScreen   *screen);
 
+GEDIT_API
 GList		*gedit_app_get_main_windows		(GeditApp    *app);
 
+GEDIT_API
 GList		*gedit_app_get_documents		(GeditApp    *app);
 
+GEDIT_API
 GList		*gedit_app_get_views			(GeditApp    *app);
 
+GEDIT_API
 gboolean	 gedit_app_show_help			(GeditApp    *app,
                                                          GtkWindow   *parent,
                                                          const gchar *name,
                                                          const gchar *link_id);
 
+GEDIT_API
 void		 gedit_app_set_window_title		(GeditApp    *app,
                                                          GeditWindow *window,
                                                          const gchar *title);
+GEDIT_API
 gboolean	gedit_app_process_window_event		(GeditApp    *app,
 							 GeditWindow *window,
 							 GdkEvent    *event);

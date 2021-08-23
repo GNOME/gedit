@@ -58,8 +58,10 @@ struct _GeditViewClass
 	gpointer padding;
 };
 
+GEDIT_API
 GType		gedit_view_get_type     	(void);
 
+GEDIT_API
 GtkWidget *	gedit_view_new			(GeditDocument *doc);
 
 void		gedit_view_cut_clipboard 	(GeditView *view);

@@ -28,19 +28,25 @@ G_BEGIN_DECLS
 
 #define GEDIT_TYPE_STATUSBAR (gedit_statusbar_get_type ())
 
+GEDIT_API
 G_DECLARE_FINAL_TYPE (GeditStatusbar, gedit_statusbar, GEDIT, STATUSBAR, GtkStatusbar)
 
+GEDIT_API
 GtkWidget	*gedit_statusbar_new			(void);
 
+GEDIT_API
 void		 gedit_statusbar_set_window_state	(GeditStatusbar   *statusbar,
 							 GeditWindowState  state,
 							 gint              num_of_errors);
 
+GEDIT_API
 void		 gedit_statusbar_set_overwrite		(GeditStatusbar   *statusbar,
 							 gboolean          overwrite);
 
+GEDIT_API
 void		 gedit_statusbar_clear_overwrite 	(GeditStatusbar   *statusbar);
 
+GEDIT_API
 void		 gedit_statusbar_flash_message		(GeditStatusbar   *statusbar,
 							 guint             context_id,
 							 const gchar      *format,

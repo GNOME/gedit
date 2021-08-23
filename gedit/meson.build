@@ -166,6 +166,8 @@ install_headers(
 libgedit_public_enum_types = gnome.mkenums_simple(
   'gedit-enum-types',
   sources: libgedit_public_headers,
+  header_prefix: '#include <gedit/gedit-macros.h>',
+  decorator: 'GEDIT_API',
   install_header: true,
   install_dir: headers_install_dir,
 )

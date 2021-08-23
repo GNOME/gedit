@@ -22,17 +22,22 @@
 #define GEDIT_ENCODINGS_COMBO_BOX_H
 
 #include <gtksourceview/gtksource.h>
+#include <gedit/gedit-macros.h>
 
 G_BEGIN_DECLS
 
 #define GEDIT_TYPE_ENCODINGS_COMBO_BOX (gedit_encodings_combo_box_get_type ())
 
+GEDIT_API
 G_DECLARE_FINAL_TYPE (GeditEncodingsComboBox, gedit_encodings_combo_box, GEDIT, ENCODINGS_COMBO_BOX, GtkComboBox)
 
+GEDIT_API
 GtkWidget		*gedit_encodings_combo_box_new 				(gboolean save_mode);
 
+GEDIT_API
 const GtkSourceEncoding	*gedit_encodings_combo_box_get_selected_encoding	(GeditEncodingsComboBox *menu);
 
+GEDIT_API
 void			 gedit_encodings_combo_box_set_selected_encoding	(GeditEncodingsComboBox  *menu,
 										 const GtkSourceEncoding *encoding);
 

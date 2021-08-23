@@ -75,11 +75,14 @@ struct _GeditWindowClass
 };
 
 /* Public methods */
+GEDIT_API
 GType 		 gedit_window_get_type 			(void) G_GNUC_CONST;
 
+GEDIT_API
 GeditTab	*gedit_window_create_tab		(GeditWindow         *window,
 							 gboolean             jump_to);
 
+GEDIT_API
 GeditTab	*gedit_window_create_tab_from_location	(GeditWindow             *window,
 							 GFile                   *location,
 							 const GtkSourceEncoding *encoding,
@@ -88,6 +91,7 @@ GeditTab	*gedit_window_create_tab_from_location	(GeditWindow             *window
 							 gboolean                 create,
 							 gboolean                 jump_to);
 
+GEDIT_API
 GeditTab	*gedit_window_create_tab_from_stream	(GeditWindow             *window,
 							 GInputStream            *stream,
 							 const GtkSourceEncoding *encoding,
@@ -95,47 +99,64 @@ GeditTab	*gedit_window_create_tab_from_stream	(GeditWindow             *window,
 							 gint                     column_pos,
 							 gboolean                 jump_to);
 
+GEDIT_API
 void		 gedit_window_close_tab			(GeditWindow         *window,
 							 GeditTab            *tab);
 
+GEDIT_API
 void		 gedit_window_close_all_tabs		(GeditWindow         *window);
 
+GEDIT_API
 void		 gedit_window_close_tabs		(GeditWindow         *window,
 							 const GList         *tabs);
 
+GEDIT_API
 GeditTab	*gedit_window_get_active_tab		(GeditWindow         *window);
 
+GEDIT_API
 void		 gedit_window_set_active_tab		(GeditWindow         *window,
 							 GeditTab            *tab);
 
 /* Helper functions */
+GEDIT_API
 GeditView	*gedit_window_get_active_view		(GeditWindow         *window);
+GEDIT_API
 GeditDocument	*gedit_window_get_active_document	(GeditWindow         *window);
 
 /* Returns a newly allocated list with all the documents in the window */
+GEDIT_API
 GList		*gedit_window_get_documents		(GeditWindow         *window);
 
 /* Returns a newly allocated list with all the documents that need to be
    saved before closing the window */
+GEDIT_API
 GList		*gedit_window_get_unsaved_documents 	(GeditWindow         *window);
 
 /* Returns a newly allocated list with all the views in the window */
+GEDIT_API
 GList		*gedit_window_get_views			(GeditWindow         *window);
 
+GEDIT_API
 GtkWindowGroup  *gedit_window_get_group			(GeditWindow         *window);
 
+GEDIT_API
 GtkWidget	*gedit_window_get_side_panel		(GeditWindow         *window);
 
+GEDIT_API
 GtkWidget	*gedit_window_get_bottom_panel		(GeditWindow         *window);
 
+GEDIT_API
 GtkWidget	*gedit_window_get_statusbar		(GeditWindow         *window);
 
+GEDIT_API
 GeditWindowState gedit_window_get_state 		(GeditWindow         *window);
 
+GEDIT_API
 GeditTab        *gedit_window_get_tab_from_location	(GeditWindow         *window,
 							 GFile               *location);
 
 /* Message bus */
+GEDIT_API
 GeditMessageBus	*gedit_window_get_message_bus		(GeditWindow         *window);
 
 /*

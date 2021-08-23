@@ -46,27 +46,37 @@ typedef enum
 
 #define GEDIT_TYPE_TAB (gedit_tab_get_type())
 
+GEDIT_API
 G_DECLARE_FINAL_TYPE (GeditTab, gedit_tab, GEDIT, TAB, GtkBox)
 
+GEDIT_API
 GeditView	*gedit_tab_get_view			(GeditTab            *tab);
 
 /* This is only an helper function */
+GEDIT_API
 GeditDocument	*gedit_tab_get_document			(GeditTab            *tab);
 
+GEDIT_API
 GeditTab	*gedit_tab_get_from_document		(GeditDocument       *doc);
 
+GEDIT_API
 GeditTabState	 gedit_tab_get_state			(GeditTab            *tab);
 
+GEDIT_API
 gboolean	 gedit_tab_get_auto_save_enabled	(GeditTab            *tab);
 
+GEDIT_API
 void		 gedit_tab_set_auto_save_enabled	(GeditTab            *tab,
 							 gboolean            enable);
 
+GEDIT_API
 gint		 gedit_tab_get_auto_save_interval	(GeditTab            *tab);
 
+GEDIT_API
 void		 gedit_tab_set_auto_save_interval	(GeditTab            *tab,
 							 gint                interval);
 
+GEDIT_API
 void		 gedit_tab_set_info_bar			(GeditTab            *tab,
 							 GtkWidget           *info_bar);
 

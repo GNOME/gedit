@@ -29,6 +29,7 @@ G_BEGIN_DECLS
 
 #define GEDIT_TYPE_APP_ACTIVATABLE (gedit_app_activatable_get_type ())
 
+GEDIT_API
 G_DECLARE_INTERFACE (GeditAppActivatable, gedit_app_activatable, GEDIT, APP_ACTIVATABLE, GObject)
 
 struct _GeditAppActivatableInterface
@@ -40,7 +41,9 @@ struct _GeditAppActivatableInterface
 	void	(*deactivate)		(GeditAppActivatable *activatable);
 };
 
+GEDIT_API
 void	 gedit_app_activatable_activate			(GeditAppActivatable *activatable);
+GEDIT_API
 void	 gedit_app_activatable_deactivate		(GeditAppActivatable *activatable);
 
 /**
@@ -55,6 +58,7 @@ void	 gedit_app_activatable_deactivate		(GeditAppActivatable *activatable);
  * Returns: (transfer full): a #GeditMenuExtension for the specific section
  * or %NULL if not found.
  */
+GEDIT_API
 GeditMenuExtension	*gedit_app_activatable_extend_menu	(GeditAppActivatable *activatable,
 								 const gchar *extension_point);
 

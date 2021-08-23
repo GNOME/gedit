@@ -24,6 +24,7 @@
 #define GEDIT_MESSAGE_H
 
 #include <glib-object.h>
+#include <gedit/gedit-macros.h>
 
 G_BEGIN_DECLS
 
@@ -51,22 +52,30 @@ struct _GeditMessageClass
 	GObjectClass parent_class;
 };
 
+GEDIT_API
 GType        gedit_message_get_type             (void) G_GNUC_CONST;
 
+GEDIT_API
 const gchar *gedit_message_get_object_path      (GeditMessage *message);
+GEDIT_API
 const gchar *gedit_message_get_method           (GeditMessage *message);
 
+GEDIT_API
 gboolean     gedit_message_type_has             (GType         gtype,
                                                  const gchar  *propname);
 
+GEDIT_API
 gboolean     gedit_message_type_check           (GType         gtype,
                                                  const gchar  *propname,
                                                  GType         value_type);
 
+GEDIT_API
 gboolean     gedit_message_has                  (GeditMessage *message,
                                                  const gchar  *propname);
 
+GEDIT_API
 gboolean     gedit_message_is_valid_object_path (const gchar  *object_path);
+GEDIT_API
 gchar       *gedit_message_type_identifier      (const gchar  *object_path,
                                                  const gchar  *method);
 
