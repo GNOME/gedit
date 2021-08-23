@@ -24,7 +24,11 @@
 #include "gedit-app-private.h"
 
 #include <string.h>
+
+#ifndef G_OS_WIN32
 #include <unistd.h>
+#endif
+
 #include <stdlib.h>
 
 #include <glib/gi18n.h>
