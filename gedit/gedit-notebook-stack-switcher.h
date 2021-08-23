@@ -55,13 +55,17 @@ struct _GeditNotebookStackSwitcherClass
 	void (*_gedit_reserved4) (void);
 };
 
+G_MODULE_EXPORT
 GType		 gedit_notebook_stack_switcher_get_type   (void) G_GNUC_CONST;
 
+G_MODULE_EXPORT
 GtkWidget	*gedit_notebook_stack_switcher_new        (void);
 
+G_MODULE_EXPORT
 void		 gedit_notebook_stack_switcher_set_stack  (GeditNotebookStackSwitcher *switcher,
 		                                           GtkStack                   *stack);
 
+G_MODULE_EXPORT
 GtkStack	*gedit_notebook_stack_switcher_get_stack  (GeditNotebookStackSwitcher *switcher);
 
 G_END_DECLS

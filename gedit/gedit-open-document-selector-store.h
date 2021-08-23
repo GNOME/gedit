@@ -31,6 +31,7 @@ G_BEGIN_DECLS
 
 #define GEDIT_TYPE_OPEN_DOCUMENT_SELECTOR_STORE (gedit_open_document_selector_store_get_type ())
 
+GEDIT_API
 G_DECLARE_FINAL_TYPE (GeditOpenDocumentSelectorStore, gedit_open_document_selector_store, GEDIT, OPEN_DOCUMENT_SELECTOR_STORE, GObject)
 
 #define GEDIT_OPEN_DOCUMENT_SELECTOR_STORE_ERROR gedit_open_document_selector_store_error_quark ()
@@ -40,19 +41,26 @@ typedef enum
 	TYPE_OUT_OF_RANGE
 } GeditOpenDocumentSelectorStoreError;
 
+GEDIT_API
 GQuark				 gedit_open_document_selector_store_error_quark				(void);
 
+GEDIT_API
 gint				 gedit_open_document_selector_store_get_recent_limit			(GeditOpenDocumentSelectorStore *store);
 
+GEDIT_API
 void				 gedit_open_document_selector_store_set_filter				(GeditOpenDocumentSelectorStore *store,
-                                                                                                         const gchar                    *filter);
+                                                                                          
+const gchar                    *filter);
 
+GEDIT_API
 gchar				*gedit_open_document_selector_store_get_filter				(GeditOpenDocumentSelectorStore *store);
 
+GEDIT_API
 GList				*gedit_open_document_selector_store_update_list_finish			(GeditOpenDocumentSelectorStore  *open_document_selector_store,
                                                                                                          GAsyncResult                    *res,
                                                                                                          GError                         **error);
 
+GEDIT_API
 void				gedit_open_document_selector_store_update_list_async			(GeditOpenDocumentSelectorStore *open_document_selector_store,
                                                                                                          GeditOpenDocumentSelector      *open_document_selector,
                                                                                                          GCancellable                   *cancellable,
@@ -60,6 +68,7 @@ void				gedit_open_document_selector_store_update_list_async			(GeditOpenDocumen
                                                                                                          ListType                        type,
                                                                                                          gpointer                        user_data);
 
+GEDIT_API
 GeditOpenDocumentSelectorStore	*gedit_open_document_selector_store_get_default				(void);
 
 G_END_DECLS

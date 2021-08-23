@@ -83,17 +83,23 @@ typedef struct
 	ListType type;
 } PushMessage;
 
+GEDIT_API
 void		 gedit_open_document_selector_debug_print_list		(const gchar *title,
                                                                          GList       *fileitem_list);
 
+GEDIT_API
 GList		*gedit_open_document_selector_copy_file_items_list	(const GList *file_items_list);
 
+GEDIT_API
 void		 gedit_open_document_selector_free_file_items_list	(GList *file_items_list);
 
+GEDIT_API
 FileItem	*gedit_open_document_selector_create_fileitem_item	(void);
 
+GEDIT_API
 void		 gedit_open_document_selector_free_fileitem_item	(FileItem *item);
 
+GEDIT_API
 FileItem	*gedit_open_document_selector_copy_fileitem_item	(FileItem *item);
 
 G_END_DECLS

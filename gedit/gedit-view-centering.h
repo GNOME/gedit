@@ -51,13 +51,17 @@ struct _GeditViewCenteringClass
 	GtkBinClass parent_class;
 };
 
+GEDIT_API
 GType			gedit_view_centering_get_type			(void) G_GNUC_CONST;
 
+GEDIT_API
 GeditViewCentering *	gedit_view_centering_new			(void);
 
+GEDIT_API
 void			gedit_view_centering_set_centered		(GeditViewCentering *container,
 									 gboolean            centered);
 
+GEDIT_API
 gboolean		gedit_view_centering_get_centered		(GeditViewCentering *container);
 
 G_END_DECLS

@@ -27,27 +27,38 @@
 G_BEGIN_DECLS
 
 /* This function must be called before starting gedit */
+GEDIT_API
 void		 gedit_dirs_init			(void);
 /* This function must be called before exiting gedit */
+GEDIT_API
 void		 gedit_dirs_shutdown 			(void);
 
 
+GEDIT_API
 const gchar	*gedit_dirs_get_user_cache_dir		(void);
 
+GEDIT_API
 const gchar	*gedit_dirs_get_user_config_dir		(void);
 
+GEDIT_API
 const gchar	*gedit_dirs_get_user_data_dir		(void);
 
+GEDIT_API
 const gchar	*gedit_dirs_get_user_styles_dir		(void);
 
+GEDIT_API
 const gchar	*gedit_dirs_get_user_plugins_dir	(void);
 
+GEDIT_API
 const gchar	*gedit_dirs_get_gedit_locale_dir	(void);
 
+GEDIT_API
 const gchar	*gedit_dirs_get_gedit_lib_dir		(void);
 
+GEDIT_API
 const gchar	*gedit_dirs_get_gedit_plugins_dir	(void);
 
+GEDIT_API
 const gchar	*gedit_dirs_get_gedit_plugins_data_dir	(void);
 
 G_END_DECLS

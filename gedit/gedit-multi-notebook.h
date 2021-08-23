@@ -84,60 +84,83 @@ struct _GeditMultiNotebookClass
 						 GeditTab           *tab);
 };
 
+G_MODULE_EXPORT
 GType			 gedit_multi_notebook_get_type			(void) G_GNUC_CONST;
 
+G_MODULE_EXPORT
 GeditMultiNotebook	*gedit_multi_notebook_new			(void);
 
+G_MODULE_EXPORT
 GeditNotebook		*gedit_multi_notebook_get_active_notebook	(GeditMultiNotebook *mnb);
 
+G_MODULE_EXPORT
 gint			 gedit_multi_notebook_get_n_notebooks		(GeditMultiNotebook *mnb);
 
+G_MODULE_EXPORT
 GeditNotebook		*gedit_multi_notebook_get_nth_notebook		(GeditMultiNotebook *mnb,
 									 gint                notebook_num);
 
+G_MODULE_EXPORT
 GeditNotebook		*gedit_multi_notebook_get_notebook_for_tab	(GeditMultiNotebook *mnb,
 									 GeditTab           *tab);
 
+G_MODULE_EXPORT
 gint			 gedit_multi_notebook_get_notebook_num		(GeditMultiNotebook *mnb,
 									 GeditNotebook      *notebook);
 
+G_MODULE_EXPORT
 gint			 gedit_multi_notebook_get_n_tabs		(GeditMultiNotebook *mnb);
 
+G_MODULE_EXPORT
 gint			 gedit_multi_notebook_get_page_num		(GeditMultiNotebook *mnb,
 									 GeditTab           *tab);
 
+G_MODULE_EXPORT
 GeditTab		*gedit_multi_notebook_get_active_tab		(GeditMultiNotebook *mnb);
+G_MODULE_EXPORT
 void			 gedit_multi_notebook_set_active_tab		(GeditMultiNotebook *mnb,
 									 GeditTab           *tab);
 
+G_MODULE_EXPORT
 void			 gedit_multi_notebook_set_current_page		(GeditMultiNotebook *mnb,
 									 gint                page_num);
 
+G_MODULE_EXPORT
 GList			*gedit_multi_notebook_get_all_tabs		(GeditMultiNotebook *mnb);
 
+G_MODULE_EXPORT
 void			 gedit_multi_notebook_close_tabs		(GeditMultiNotebook *mnb,
 									 const GList        *tabs);
 
+G_MODULE_EXPORT
 void			 gedit_multi_notebook_close_all_tabs		(GeditMultiNotebook *mnb);
 
+G_MODULE_EXPORT
 void			 gedit_multi_notebook_add_new_notebook		(GeditMultiNotebook *mnb);
 
+G_MODULE_EXPORT
 void			 gedit_multi_notebook_add_new_notebook_with_tab (GeditMultiNotebook *mnb,
 									 GeditTab           *tab);
 
+G_MODULE_EXPORT
 void			 gedit_multi_notebook_remove_active_notebook	(GeditMultiNotebook *mnb);
 
+G_MODULE_EXPORT
 void			 gedit_multi_notebook_previous_notebook		(GeditMultiNotebook *mnb);
+G_MODULE_EXPORT
 void			 gedit_multi_notebook_next_notebook		(GeditMultiNotebook *mnb);
 
+G_MODULE_EXPORT
 void			 gedit_multi_notebook_foreach_notebook		(GeditMultiNotebook *mnb,
 									 GtkCallback         callback,
 									 gpointer            callback_data);
 
+G_MODULE_EXPORT
 void			 gedit_multi_notebook_foreach_tab		(GeditMultiNotebook *mnb,
 									 GtkCallback         callback,
 									 gpointer            callback_data);
 
+G_MODULE_EXPORT
 void			_gedit_multi_notebook_set_show_tabs		(GeditMultiNotebook *mnb,
 									 gboolean            show);
 

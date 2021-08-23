@@ -25,16 +25,19 @@
 #define GEDIT_SETTINGS_H
 
 #include <gio/gio.h>
+#include <gedit/gedit-macros.h>
 
 G_BEGIN_DECLS
 
 #define GEDIT_TYPE_SETTINGS (gedit_settings_get_type ())
 
+G_MODULE_EXPORT
 G_DECLARE_FINAL_TYPE (GeditSettings, gedit_settings, GEDIT, SETTINGS, GObject)
 
 G_GNUC_INTERNAL
 GeditSettings *	_gedit_settings_get_singleton				(void);
 
+GEDIT_API
 void		gedit_settings_unref_singleton				(void);
 
 G_GNUC_INTERNAL
@@ -45,6 +48,7 @@ GSettings *	_gedit_settings_peek_file_chooser_state_settings	(GeditSettings *sel
 
 gchar *		gedit_settings_get_system_font				(GeditSettings *self);
 
+G_MODULE_EXPORT
 GSList *	gedit_settings_get_candidate_encodings			(gboolean *default_candidates);
 
 /* key constants */

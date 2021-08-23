@@ -26,15 +26,19 @@ G_BEGIN_DECLS
 
 #define GEDIT_TYPE_STATUS_MENU_BUTTON (gedit_status_menu_button_get_type ())
 
+G_MODULE_EXPORT
 G_DECLARE_FINAL_TYPE (GeditStatusMenuButton, gedit_status_menu_button,
 		      GEDIT, STATUS_MENU_BUTTON,
 		      GtkMenuButton)
 
+G_MODULE_EXPORT
 GtkWidget *	gedit_status_menu_button_new		(void);
 
+G_MODULE_EXPORT
 void		gedit_status_menu_button_set_label	(GeditStatusMenuButton *button,
 							 const gchar           *label);
 
+G_MODULE_EXPORT
 const gchar *	gedit_status_menu_button_get_label	(GeditStatusMenuButton *button);
 
 G_END_DECLS

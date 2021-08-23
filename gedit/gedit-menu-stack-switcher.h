@@ -27,13 +27,17 @@ G_BEGIN_DECLS
 
 #define GEDIT_TYPE_MENU_STACK_SWITCHER (gedit_menu_stack_switcher_get_type())
 
+G_MODULE_EXPORT
 G_DECLARE_FINAL_TYPE (GeditMenuStackSwitcher, gedit_menu_stack_switcher, GEDIT, MENU_STACK_SWITCHER, GtkMenuButton)
 
+G_MODULE_EXPORT
 GtkWidget *  gedit_menu_stack_switcher_new 	      (void);
 
+G_MODULE_EXPORT
 void         gedit_menu_stack_switcher_set_stack  (GeditMenuStackSwitcher *switcher,
                                                    GtkStack               *stack);
 
+G_MODULE_EXPORT
 GtkStack *   gedit_menu_stack_switcher_get_stack  (GeditMenuStackSwitcher *switcher);
 
 G_END_DECLS

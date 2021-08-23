@@ -30,12 +30,16 @@ G_BEGIN_DECLS
 
 #define GEDIT_TYPE_OPEN_DOCUMENT_SELECTOR (gedit_open_document_selector_get_type ())
 
+GEDIT_API
 G_DECLARE_FINAL_TYPE (GeditOpenDocumentSelector, gedit_open_document_selector, GEDIT, OPEN_DOCUMENT_SELECTOR, GtkBox)
 
+GEDIT_API
 GeditOpenDocumentSelector	*gedit_open_document_selector_new		(GeditWindow               *window);
 
+GEDIT_API
 GeditWindow			*gedit_open_document_selector_get_window	(GeditOpenDocumentSelector *selector);
 
+GEDIT_API
 GtkWidget			*gedit_open_document_selector_get_search_entry	(GeditOpenDocumentSelector *selector);
 
 G_END_DECLS

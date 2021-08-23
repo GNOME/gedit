@@ -29,6 +29,7 @@ G_BEGIN_DECLS
 
 #define GEDIT_TYPE_APP_WIN32 (gedit_app_win32_get_type ())
 
+G_MODULE_EXPORT
 G_DECLARE_FINAL_TYPE (GeditAppWin32, gedit_app_win32, GEDIT, APP_WIN32, GeditApp)
 
 G_END_DECLS
