@@ -4,6 +4,8 @@ project(
   meson_version: '>= 0.53'
 )
 
+cc = meson.get_compiler('c')
+
 if host_machine.system() == 'darwin'
   add_languages('objc')
 endif
@@ -14,6 +16,20 @@ pkg_config = import('pkgconfig')
 python = import('python')
 
 api_version = '41'
+
+extra_gedit_gui_ldflags = []
+win32_delay_load_libs = []
+if cc.get_argument_syntax() == 'msvc'
+  msvc_c_cflags = [
+    '/utf-8',
+    '/FImsvc_recommended_pragmas.h',
+    '/DGEDIT_API=__declspec(dllexport)extern',
+  ]
+  add_project_arguments(cc.get_supported_arguments(msvc_c_cflags), language: 'c')
+  extra_gedit_gui_ldflags += '/entry:mainCRTStartup'
+  extra_gedit_gui_ldflags += '/delayload:gedit-@0@.dll'.format(api_version)
+  win32_delay_load_libs += cc.find_library('delayimp')
+endif
 
 # Paths
 root_include_dir = include_directories('.')

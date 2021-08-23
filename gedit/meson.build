@@ -277,8 +277,9 @@ endif
 executable(
   'gedit',
   'gedit.c',
-  dependencies: libgedit_dep,
+  dependencies: [libgedit_dep, win32_delay_load_libs],
   c_args: gedit_c_args,
+  link_args: extra_gedit_gui_ldflags,
   install: true,
   install_rpath: get_option('prefix') / get_option('libdir') / 'gedit',
   gui_app: true,
