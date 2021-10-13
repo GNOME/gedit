@@ -104,7 +104,7 @@ gedit_quick_highlight_plugin_highlight_worker (gpointer user_data)
 	GeditQuickHighlightPlugin *plugin = GEDIT_QUICK_HIGHLIGHT_PLUGIN (user_data);
 	GtkSourceSearchSettings *search_settings;
 	GtkTextIter start, end;
-	g_autofree gchar *text = NULL;
+	gchar *text = NULL;
 
 	g_assert (GEDIT_IS_QUICK_HIGHLIGHT_PLUGIN (plugin));
 
@@ -152,6 +152,7 @@ gedit_quick_highlight_plugin_highlight_worker (gpointer user_data)
 	gtk_source_search_settings_set_search_text (search_settings, text);
 
 	gtk_source_search_context_set_highlight (plugin->priv->search_context, TRUE);
+	g_free (text);
 
 	return G_SOURCE_REMOVE;
 }
