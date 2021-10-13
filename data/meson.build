@@ -2,22 +2,24 @@ subdir('icons')
 
 install_man('gedit.1')
 
-appdata = 'org.gnome.gedit.appdata.xml'
-appdata_file = i18n.merge_file(
-  input: appdata + '.in',
-  output: appdata,
-  po_dir: '../po/',
-  install: true,
-  install_dir: get_option('datadir') / 'metainfo'
-)
-
-appstream_util = find_program('appstream-util', required: get_option('require_all_tests'))
-if appstream_util.found()
-  test(
-    'validate-appdata',
-    appstream_util,
-    args: ['validate-relax', '--nonet', appdata_file]
+if host_machine.system() != 'windows'
+  appdata = 'org.gnome.gedit.appdata.xml'
+  appdata_file = i18n.merge_file(
+    input: appdata + '.in',
+    output: appdata,
+    po_dir: '../po/',
+    install: true,
+    install_dir: get_option('datadir') / 'metainfo'
   )
+
+  appstream_util = find_program('appstream-util', required: get_option('require_all_tests'))
+  if appstream_util.found()
+    test(
+      'validate-appdata',
+      appstream_util,
+      args: ['validate-relax', '--nonet', appdata_file]
+    )
+  endif
 endif
 
 desktop_file = 'org.gnome.gedit.desktop'
