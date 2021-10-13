@@ -18,8 +18,11 @@ if 'DESTDIR' not in os.environ:
                      os.path.join(datadir, 'icons', 'hicolor')])
 
     print('Updating desktop database...')
-    subprocess.call(['update-desktop-database', '-q',
-                     os.path.join(datadir, 'applications')])
+    try:
+        subprocess.call(['update-desktop-database', '-q',
+                         os.path.join(datadir, 'applications')])
+    except FileNotFoundError:
+        pass
 
     print('Compiling python modules...')
     subprocess.call([sys.executable, '-m', 'compileall', '-f', '-q',
