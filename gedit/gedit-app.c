@@ -676,7 +676,7 @@ gedit_app_startup (GApplication *application)
 	setup_theme_extensions (GEDIT_APP (application));
 
 #ifndef ENABLE_GVFS_METADATA
-	cache_dir = gedit_dirs_get_user_cache_dir ();
+	cache_dir = gedit_dirs_get_user_data_dir ();
 	metadata_filename = g_build_filename (cache_dir, "gedit-metadata.xml", NULL);
 	priv->metadata_manager = gedit_metadata_manager_new (metadata_filename);
 	g_free (metadata_filename);
