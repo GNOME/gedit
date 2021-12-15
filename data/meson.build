@@ -4,7 +4,6 @@ install_man('gedit.1')
 
 appdata = 'org.gnome.gedit.appdata.xml'
 appdata_file = i18n.merge_file(
-  appdata,
   input: appdata + '.in',
   output: appdata,
   po_dir: '../po/',
@@ -23,7 +22,6 @@ endif
 
 desktop_file = 'org.gnome.gedit.desktop'
 desktop_output_file = i18n.merge_file(
-  desktop_file,
   type: 'desktop',
   input: desktop_file + '.in',
   output: desktop_file,
