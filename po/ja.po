@@ -1,5 +1,5 @@
 # gedit ja.po.
-# Copyright (C) 1999-2016, 2018-2020 Free Software Foundation, Inc.
+# Copyright (C) 1999-2016, 2018-2020, 2022 Free Software Foundation, Inc.
 # Akira Higuchi <a-higuti@math.sci.hokudai.ac.jp>, 1999
 # Yuusuke Tahara <tahara@gnome.gr.jp>
 # Yukihiro Nakai <nakai@gnome.gr.jp>
@@ -15,14 +15,14 @@
 # Jiro Matsuzawa <jmatsuzawa@gnome.org>, 2011, 2013-2016.
 # Kenichi Ito <ken.i54k@gmail.com>, 2016.
 # sujiniku <sujinikusityuu@gmail.com>, 2018.
-# sicklylife <translation@sicklylife.jp>, 2019-2020.
+# sicklylife <translation@sicklylife.jp>, 2019-2020, 2022.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gedit master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gedit/issues\n"
 "POT-Creation-Date: 2021-08-02 18:32+0000\n"
-"PO-Revision-Date: 2020-06-11 19:55+0900\n"
+"PO-Revision-Date: 2022-01-30 21:00+0900\n"
 "Last-Translator: sicklylife <translation@sicklylife.jp>\n"
 "Language-Team: Japanese <gnome-translation@gnome.gr.jp>\n"
 "Language: ja\n"
@@ -1037,10 +1037,8 @@ msgid "Ch_aracter Encoding:"
 msgstr "文字エンコーディング(_A):"
 
 #: gedit/gedit-io-error-info-bar.c:451
-#, fuzzy
-#| msgid "L_ine Ending:"
 msgid "_Continue loading"
-msgstr "改行文字(_I):"
+msgstr "読み込みを続行(_C)"
 
 #. Translators: the access key chosen for this string should be
 #. different from other main menu access keys (Open, Edit, View...)
@@ -1098,16 +1096,17 @@ msgid "Select a different character encoding from the menu and try again."
 msgstr "メニューから別の文字エンコーディングを選択して再試行してください。"
 
 #: gedit/gedit-io-error-info-bar.c:597
-#, fuzzy, c-format
-#| msgid "The file “%s” is read-only."
+#, c-format
 msgid "The file “%s” is very big."
-msgstr "ファイル“%s”は読み取り専用です。"
+msgstr "ファイル“%s”は大きすぎます。"
 
 #: gedit/gedit-io-error-info-bar.c:599
 msgid ""
 "Large files can make gedit slow or unresponsive. You can continue loading "
 "this file at your own risk"
 msgstr ""
+"サイズの大きいファイルは gedit の速度が遅くなったり反応しなくなったりする"
+"可能性があるため読み込みを続ける場合は自己責任で行ってください"
 
 #: gedit/gedit-io-error-info-bar.c:611
 #, c-format
@@ -1315,10 +1314,8 @@ msgid "The selected color scheme cannot be installed."
 msgstr "指定したカラースキームをインストールできません。"
 
 #: gedit/gedit-preferences-dialog.c:817
-#, fuzzy
-#| msgid "_Add Scheme"
 msgid "Add Scheme"
-msgstr "スキームを追加(_A)"
+msgstr "スキームを追加"
 
 #: gedit/gedit-preferences-dialog.c:821
 msgid "A_dd Scheme"
@@ -1840,16 +1837,12 @@ msgid "No results"
 msgstr "一致なし"
 
 #: gedit/resources/ui/gedit-open-document-selector.ui:97
-#, fuzzy
-#| msgid "_Documents"
 msgid "Other _Documents…"
-msgstr "ドキュメント(_D)"
+msgstr "その他のドキュメント(_D)…"
 
 #: gedit/resources/ui/gedit-open-document-selector.ui:101
-#, fuzzy
-#| msgid "Open a file"
 msgid "Open another file"
-msgstr "ファイルを開きます"
+msgstr "別のファイルを開きます"
 
 #: gedit/resources/ui/gedit-preferences-dialog.ui:8
 #: gedit/resources/ui/gedit-preferences-dialog.ui:15
@@ -2492,9 +2485,6 @@ msgstr "ファイルを開きます"
 
 #: gedit/resources/ui/gedit-window.ui:65 gedit/resources/ui/gedit-window.ui:383
 #: gedit/resources/ui/gedit-window.ui:397
-#, fuzzy
-#| msgctxt "window title"
-#| msgid "Open"
 msgid "Open"
 msgstr "開く"
 
@@ -2526,10 +2516,8 @@ msgid "Hide panel"
 msgstr "このペインを隠します"
 
 #: gedit/resources/ui/gedit-window.ui:368
-#, fuzzy
-#| msgid "Open a file"
 msgid "Open a file dialog"
-msgstr "ファイルを開きます"
+msgstr "ファイルダイアログを開きます"
 
 #: gedit/resources/ui/gedit-window.ui:426
 #: gedit/resources/ui/gedit-window.ui:431
@@ -3142,22 +3130,16 @@ msgid "Emacs, Kate and Vim-style modelines support for gedit."
 msgstr "Emacs や Kate、Vim スタイルなモードラインの機能を gedit に提供します。"
 
 #: plugins/openlinks/gedit-open-links-plugin.c:182
-#, fuzzy
-#| msgctxt "shortcut window"
-#| msgid "Open menu"
 msgid "Open Link"
-msgstr "メニューを開く"
+msgstr "リンクを開く"
 
 #: plugins/openlinks/openlinks.plugin.desktop.in:5
-#, fuzzy
-#| msgctxt "window title"
-#| msgid "Open Files"
 msgid "Open Links"
-msgstr "ファイルを開く"
+msgstr "リンクを開く"
 
 #: plugins/openlinks/openlinks.plugin.desktop.in:6
 msgid "Easy open URI links."
-msgstr ""
+msgstr "URI リンクを手軽に開きます。"
 
 #: plugins/pythonconsole/org.gnome.gedit.plugins.pythonconsole.gschema.xml:5
 msgid "Command Color Text"
