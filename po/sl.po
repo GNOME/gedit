@@ -4,14 +4,14 @@
 #
 # Andraž Tori <andraz.tori1@guest.arnes.si>, 2000–2005.
 # Matic Žgur <mr.zgur@gmail.com>, 2006–2007.
-# Matej Urbančič <mateju@src.gnome.org>, 2007–2018.
+# Matej Urbančič <mateju@src.gnome.org>, 2007–2022.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gedit master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gedit/issues\n"
-"POT-Creation-Date: 2021-07-14 21:47+0000\n"
-"PO-Revision-Date: 2021-07-15 22:25+0200\n"
+"POT-Creation-Date: 2022-02-14 20:44+0000\n"
+"PO-Revision-Date: 2022-02-14 22:31+0100\n"
 "Last-Translator: Matej Urbančič <mateju@src.gnome.org>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "Language: sl_SI\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-Generator: Poedit 2.4.2\n"
+"X-Generator: Poedit 3.0\n"
 
 #: data/org.gnome.gedit.appdata.xml.in:7
 msgid "gedit"
@@ -51,8 +51,8 @@ msgstr "Gedit – urejevalnik besedil"
 #. The list MUST also end with a semicolon!
 #. Search terms to find this application.
 #: data/org.gnome.gedit.desktop.in:18
-msgid "Text;Editor;Plaintext;Write;gedit;"
-msgstr "Besedilo;Urejevalnik;tekst;Write;gedit;Pisanje;"
+msgid "Text;Editor;Plaintext;Write;gedit;notepad;"
+msgstr "Besedilo;Urejevalnik;tekst;Write;gedit;Pisanje;Zapis:Urejanje:"
 
 #: data/org.gnome.gedit.desktop.in:22
 msgid "New Window"
@@ -176,9 +176,10 @@ msgid ""
 "wrapping at word boundaries, and “char” for wrapping at individual character "
 "boundaries."
 msgstr ""
-"Določa zadnji način izbora preloma vrstic. Ko je prelom onemogočen, si "
-"program zapomni izbor načina razdelitve. Uporabite »besedo« za prelom na "
-"mejah besede in »znak« za prelom pri posameznih znakovnih mejah."
+"Določa nazadnje uporabljen način prelamljanja vrstic. Ko je možnost "
+"prelamljanja onemogočena, si program zapomni nazadnje izbran način. "
+"Uporabite »besedo« za prelom na mejah besede in »znak« za prelom pri "
+"posameznih znakovnih mejah."
 
 #: data/org.gnome.gedit.gschema.xml.in:91
 msgid "Tab Size"
@@ -563,7 +564,7 @@ msgstr "Zapri _brez shranjevanja"
 #: gedit/gedit-commands-file.c:605 gedit/gedit-commands-file.c:829
 #: gedit/gedit-commands-file.c:1551 gedit/gedit-encodings-dialog.c:192
 #: gedit/gedit-file-chooser-open-dialog.c:78
-#: gedit/gedit-preferences-dialog.c:820 gedit/gedit-progress-info-bar.c:49
+#: gedit/gedit-preferences-dialog.c:821 gedit/gedit-progress-info-bar.c:49
 #: gedit/resources/ui/gedit-encodings-dialog.ui:44
 #: gedit/resources/ui/gedit-highlight-mode-dialog.ui:31
 #: plugins/filebrowser/gedit-file-browser-utils.c:211
@@ -1400,7 +1401,7 @@ msgstr "Izbrane barvne sheme ni mogoče namestiti."
 msgid "Add Scheme"
 msgstr "Dodaj shemo"
 
-#: gedit/gedit-preferences-dialog.c:821
+#: gedit/gedit-preferences-dialog.c:820
 msgid "A_dd Scheme"
 msgstr "_Dodaj shemo"
 
@@ -1966,7 +1967,7 @@ msgstr "Omogoči _prelamljanje besedila"
 #: gedit/resources/ui/gedit-preferences-dialog.ui:186
 #: gedit/resources/ui/gedit-print-preferences.ui:237
 msgid "Do not _split words over two lines"
-msgstr "Ne _razdeli besed"
+msgstr "Ne _deli besed v dve vrstici"
 
 #: gedit/resources/ui/gedit-preferences-dialog.ui:220
 msgid "Highlighting"
@@ -2990,11 +2991,11 @@ msgstr "Ali ste prepričani, da želite trajno izbrisati izbrane datoteke?"
 msgid "If you delete an item, it is permanently lost."
 msgstr "V kolikor izbrišete predmet, bo trajno izgubljen."
 
-#: plugins/filebrowser/gedit-file-browser-store.c:1701
+#: plugins/filebrowser/gedit-file-browser-store.c:1693
 msgid "(Empty)"
 msgstr "(Prazno)"
 
-#: plugins/filebrowser/gedit-file-browser-store.c:3325
+#: plugins/filebrowser/gedit-file-browser-store.c:3317
 msgid ""
 "The renamed file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
@@ -3003,11 +3004,11 @@ msgstr ""
 "filtriranja je treba prilagoditi, da bo datoteka vidna"
 
 #. Translators: This is the default name of new files created by the file browser pane.
-#: plugins/filebrowser/gedit-file-browser-store.c:3581
+#: plugins/filebrowser/gedit-file-browser-store.c:3573
 msgid "Untitled File"
 msgstr "Neimenovana datoteka"
 
-#: plugins/filebrowser/gedit-file-browser-store.c:3609
+#: plugins/filebrowser/gedit-file-browser-store.c:3601
 msgid ""
 "The new file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
@@ -3016,11 +3017,11 @@ msgstr ""
 "je treba prilagoditi, da bo datoteka vidna"
 
 #. Translators: This is the default name of new directories created by the file browser pane.
-#: plugins/filebrowser/gedit-file-browser-store.c:3638
+#: plugins/filebrowser/gedit-file-browser-store.c:3630
 msgid "Untitled Folder"
 msgstr "Neimenovana mapa"
 
-#: plugins/filebrowser/gedit-file-browser-store.c:3661
+#: plugins/filebrowser/gedit-file-browser-store.c:3653
 msgid ""
 "The new directory is currently filtered out. You need to adjust your filter "
 "settings to make the directory visible"
