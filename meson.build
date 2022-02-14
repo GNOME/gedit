@@ -1,6 +1,6 @@
 project(
   'gedit', 'c',
-  version: '41.alpha',
+  version: '41',
   meson_version: '>= 0.53'
 )
 
@@ -13,7 +13,7 @@ i18n = import('i18n')
 pkg_config = import('pkgconfig')
 python = import('python')
 
-api_version = '41.alpha'
+api_version = '41'
 
 # Paths
 root_include_dir = include_directories('.')
