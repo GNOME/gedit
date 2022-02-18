@@ -22,17 +22,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gedit/issues\n"
-"POT-Creation-Date: 2021-04-26 16:58+0000\n"
-"PO-Revision-Date: 2021-06-23 16:35+0300\n"
-"Last-Translator: Ivan Komaritsyn <vantu5z@mail.ru>\n"
-"Language-Team:  <gnome-cyr@gnome.org>\n"
+"POT-Creation-Date: 2022-02-14 13:34+0000\n"
+"PO-Revision-Date: 2022-02-15 11:20+0300\n"
+"Last-Translator: Aleksandr Melman <Alexmelman88@gmail.com>\n"
+"Language-Team: <gnome-cyr@gnome.org>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Gtranslator 40.0\n"
+"X-Generator: Poedit 3.0.1\n"
 
 #: data/org.gnome.gedit.appdata.xml.in:7
 msgid "gedit"
@@ -62,8 +62,10 @@ msgstr "Текстовый редактор"
 #. The list MUST also end with a semicolon!
 #. Search terms to find this application.
 #: data/org.gnome.gedit.desktop.in:18
-msgid "Text;Editor;Plaintext;Write;gedit;"
-msgstr "Текст;Редактор;Запись;Текстовый;gedit;"
+msgid "Text;Editor;Plaintext;Write;gedit;notepad;"
+msgstr ""
+"Text;Editor;Plaintext;Write;gedit;notepad;Текст;Редактор;Запись;Текстовый;"
+"gedit;"
 
 #: data/org.gnome.gedit.desktop.in:22
 msgid "New Window"
@@ -575,7 +577,7 @@ msgstr "Закрыть _без сохранения"
 #: gedit/gedit-commands-file.c:605 gedit/gedit-commands-file.c:829
 #: gedit/gedit-commands-file.c:1551 gedit/gedit-encodings-dialog.c:192
 #: gedit/gedit-file-chooser-open-dialog.c:78
-#: gedit/gedit-preferences-dialog.c:820 gedit/gedit-progress-info-bar.c:49
+#: gedit/gedit-preferences-dialog.c:821 gedit/gedit-progress-info-bar.c:49
 #: gedit/resources/ui/gedit-encodings-dialog.ui:44
 #: gedit/resources/ui/gedit-highlight-mode-dialog.ui:31
 #: plugins/filebrowser/gedit-file-browser-utils.c:211
@@ -1123,7 +1125,6 @@ msgid "Ch_aracter Encoding:"
 msgstr "К_одировка символов:"
 
 #: gedit/gedit-io-error-info-bar.c:451
-#| msgid "L_ine Ending:"
 msgid "_Continue loading"
 msgstr "_Продолжить загрузку"
 
@@ -1185,7 +1186,6 @@ msgstr "Выберите другую кодировку в меню и попр
 
 #: gedit/gedit-io-error-info-bar.c:597
 #, c-format
-#| msgid "The file “%s” is read-only."
 msgid "The file “%s” is very big."
 msgstr "Файл «%s» очень большой."
 
@@ -1195,7 +1195,7 @@ msgid ""
 "this file at your own risk"
 msgstr ""
 "Большие файлы могут замедлить работу gedit или привести к зависанию. Можете "
-"продолжить загрузку этого файла на свой страх и риск."
+"продолжить загрузку этого файла на свой страх и риск"
 
 #: gedit/gedit-io-error-info-bar.c:611
 #, c-format
@@ -1399,11 +1399,10 @@ msgid "The selected color scheme cannot be installed."
 msgstr "Не удалось установить выбранную цветовую схему."
 
 #: gedit/gedit-preferences-dialog.c:817
-#| msgid "_Add Scheme"
 msgid "Add Scheme"
 msgstr "Добавить схему"
 
-#: gedit/gedit-preferences-dialog.c:821
+#: gedit/gedit-preferences-dialog.c:820
 msgid "A_dd Scheme"
 msgstr "До_бавить схему"
 
@@ -1927,7 +1926,6 @@ msgid "Other _Documents…"
 msgstr "_Другие документы…"
 
 #: gedit/resources/ui/gedit-open-document-selector.ui:101
-#| msgid "Open a file"
 msgid "Open another file"
 msgstr "Открыть другой файл"
 
@@ -2994,11 +2992,11 @@ msgstr "Действительно безвозвратно удалить вы�
 msgid "If you delete an item, it is permanently lost."
 msgstr "Если удалить элемент, он будет безвозвратно утерян."
 
-#: plugins/filebrowser/gedit-file-browser-store.c:1701
+#: plugins/filebrowser/gedit-file-browser-store.c:1693
 msgid "(Empty)"
 msgstr "(Пусто)"
 
-#: plugins/filebrowser/gedit-file-browser-store.c:3325
+#: plugins/filebrowser/gedit-file-browser-store.c:3317
 msgid ""
 "The renamed file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
@@ -3007,11 +3005,11 @@ msgstr ""
 "сделать файл видимым"
 
 #. Translators: This is the default name of new files created by the file browser pane.
-#: plugins/filebrowser/gedit-file-browser-store.c:3581
+#: plugins/filebrowser/gedit-file-browser-store.c:3573
 msgid "Untitled File"
 msgstr "Безымянный файл"
 
-#: plugins/filebrowser/gedit-file-browser-store.c:3609
+#: plugins/filebrowser/gedit-file-browser-store.c:3601
 msgid ""
 "The new file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
@@ -3020,11 +3018,11 @@ msgstr ""
 "видимым"
 
 #. Translators: This is the default name of new directories created by the file browser pane.
-#: plugins/filebrowser/gedit-file-browser-store.c:3638
+#: plugins/filebrowser/gedit-file-browser-store.c:3630
 msgid "Untitled Folder"
 msgstr "Безымянная папка"
 
-#: plugins/filebrowser/gedit-file-browser-store.c:3661
+#: plugins/filebrowser/gedit-file-browser-store.c:3653
 msgid ""
 "The new directory is currently filtered out. You need to adjust your filter "
 "settings to make the directory visible"
@@ -3219,14 +3217,10 @@ msgid "Emacs, Kate and Vim-style modelines support for gedit."
 msgstr "Поддержка режима строк Emacs, Kate и Vim для gedit."
 
 #: plugins/openlinks/gedit-open-links-plugin.c:182
-#| msgctxt "shortcut window"
-#| msgid "Open menu"
 msgid "Open Link"
 msgstr "Открыть ссылку"
 
 #: plugins/openlinks/openlinks.plugin.desktop.in:5
-#| msgctxt "window title"
-#| msgid "Open Files"
 msgid "Open Links"
 msgstr "Открыть ссылки"
 
@@ -3705,282 +3699,3 @@ msgstr "Вставка даты и времени"
 msgid "Inserts current date and time at the cursor position."
 msgstr "Вставляет текущую дату и время в позиции курсора."
 
-#~ msgid "The selected color scheme cannot be installed: %s"
-#~ msgstr "Не удалось установить выбранную цветовую схему: %s"
-
-#~ msgid "Add Color Scheme"
-#~ msgstr "Добавить цветовую схему"
-
-#~ msgid "Open a recently used file"
-#~ msgstr "Открыть недавно использовавшийся файл"
-
-#~ msgid ""
-#~ "gedit is the official text editor of the GNOME desktop environment. While "
-#~ "aiming at simplicity and ease of use, gedit is a powerful general purpose "
-#~ "text editor."
-#~ msgstr ""
-#~ "gedit — официальный текстовый редактор для среды GNOME. Несмотря на свою "
-#~ "простоту, gedit является мощным текстовым редактором."
-
-#~ msgid ""
-#~ "Whether you are writing the next bestseller, programming an innovative "
-#~ "application, or simply taking some quick notes, gedit will be a reliable "
-#~ "tool to accomplish your task."
-#~ msgstr ""
-#~ "Что бы вы ни писали, новый бестселлер, инновационное программное "
-#~ "обеспечение или просто какие-то заметки на скорую руку, gedit будет "
-#~ "надёжным инструментом в выполнении ваших задач."
-
-#~ msgid ""
-#~ "Its flexible plugin system allows you to tailor the application to your "
-#~ "needs and adapt it to your workflow."
-#~ msgstr ""
-#~ "Гибкая система модулей позволяет подстраивать приложение под ваши нужды и "
-#~ "рабочий процесс."
-
-#~ msgid "Toolbar is Visible"
-#~ msgstr "Панель инструментов"
-
-#~ msgid "Whether the toolbar should be visible in editing windows."
-#~ msgstr "Определяет отображение панели инструментов в окне редактирования."
-
-#~ msgid "Maximum Recent Files"
-#~ msgstr "Максимальное количество недавно используемых файлов"
-
-#~ msgid ""
-#~ "Specifies the maximum number of recently opened files that will be "
-#~ "displayed in the “Recent Files” submenu."
-#~ msgstr ""
-#~ "Определяет количество недавно используемых файлов, которые будут доступны "
-#~ "в подменю «Недавние файлы»."
-
-#~ msgid ""
-#~ "List of active plugins. It contains the “Location” of the active plugins. "
-#~ "See the .gedit-plugin file for obtaining the “Location” of a given plugin."
-#~ msgstr ""
-#~ "Список включённых модулей, в котором содержатся местоположения включённых "
-#~ "модулей. См. файл .gedit-plugin для получения местоположения выбранного "
-#~ "модуля."
-
-#~ msgid "Changes to document “%s” will be permanently lost."
-#~ msgstr "Изменения документа «%s» будут безвозвратно утеряны."
-
-#~ msgid "Saving has been disabled by the system administrator."
-#~ msgstr "Сохранение было запрещено системным администратором."
-
-#~ msgid "Changes to %d document will be permanently lost."
-#~ msgid_plural "Changes to %d documents will be permanently lost."
-#~ msgstr[0] "Изменения в %d документе будут безвозвратно утеряны."
-#~ msgstr[1] "Изменения в %d документах будут безвозвратно утеряны."
-#~ msgstr[2] "Изменения в %d документах будут безвозвратно утеряны."
-
-#~ msgid "Docum_ents with unsaved changes:"
-#~ msgstr "Докум_енты с несохранёнными изменениями:"
-
-#~ msgctxt "window title"
-#~ msgid "Open"
-#~ msgstr "Открыть"
-
-#~ msgid "No changes need to be saved"
-#~ msgstr "Нет изменений для сохранения"
-
-#~ msgid "Character Encoding:"
-#~ msgstr "Кодировка символов:"
-
-#~ msgid "Line Ending:"
-#~ msgstr "Конец строки:"
-
-#~ msgid "The location “%s” is not currently reachable."
-#~ msgstr "Ресурс «%s» в настоящий момент недоступен."
-
-#~ msgid "Your system is offline. Check your network."
-#~ msgstr "Система работает в автономном режиме. Проверьте сетевое соединение."
-
-#~ msgctxt "shortcut window"
-#~ msgid "Join selected lines"
-#~ msgstr "Соединить выделенные строки"
-
-#~ msgid "Check update"
-#~ msgstr "Проверить наличие обновлений"
-
-#~ msgid "Check for latest version of gedit"
-#~ msgstr "Проверить наличие новых версий gedit"
-
-#~ msgid "There was an error displaying the URI."
-#~ msgstr "Возникла ошибка при отображении URI."
-
-#~ msgid "_Download"
-#~ msgstr "_Загрузить"
-
-#~ msgid "_Ignore Version"
-#~ msgstr "_Игнорировать версию"
-
-#~ msgid "There is a new version of gedit"
-#~ msgstr "Доступна новая версия редактора gedit"
-
-#~ msgid ""
-#~ "You can download the new version of gedit by clicking on the download "
-#~ "button or ignore that version and wait for a new one"
-#~ msgstr ""
-#~ "Можно загрузить новую версию gedit, нажав соответствующую кнопку, или "
-#~ "оставить текущую версию и подождать более новую"
-
-#~ msgid "Version to Ignore"
-#~ msgstr "Игнорировать версию"
-
-#~ msgid "Version to ignore until a newer version is released."
-#~ msgstr "Игнорировать версию, пока не выйдет более новая."
-
-#~ msgid "org.gnome.gedit"
-#~ msgstr "org.gnome.gedit"
-
-#~ msgid "Please check your installation."
-#~ msgstr "Пожалуйста, проверьте вашу установку."
-
-#~ msgid "Unable to open UI file %s. Error: %s"
-#~ msgstr "Не удалось открыть файл интерфейса %s. Ошибка: %s"
-
-#~ msgid "Unable to find the object “%s” inside file %s."
-#~ msgstr "Не удалось найти объект «%s» внутри файла «%s»."
-
-#~ msgid "system-file-manager"
-#~ msgstr "system-file-manager"
-
-#~ msgid "text-x-script"
-#~ msgstr "text-x-script"
-
-#~ msgid "document-open"
-#~ msgstr "document-open"
-
-#~ msgid "    "
-#~ msgstr "    "
-
-#~ msgid "view-sort-ascending"
-#~ msgstr "view-sort-ascending"
-
-#~ msgid "tools-check-spelling"
-#~ msgstr "tools-check-spelling"
-
-#~ msgid "gedit Text Editor"
-#~ msgstr "Текстовый редактор gedit"
-
-#~ msgid "_About"
-#~ msgstr "_О приложении"
-
-#~ msgid "Tools"
-#~ msgstr "Инструменты"
-
-#~ msgid "_Ignore"
-#~ msgstr "_Игнорировать"
-
-#~ msgid "Manage _External Tools..."
-#~ msgstr "Управление _внешними инструментами…"
-
-#~ msgid "Quick Open..."
-#~ msgstr "Быстрое открытие…"
-
-#~ msgid "Manage _Snippets..."
-#~ msgstr "Управление _фрагментами…"
-
-#~ msgid "Set _Language..."
-#~ msgstr "Установить _язык…"
-
-#~ msgid "In_sert Date and Time..."
-#~ msgstr "Вставить дат_у и время…"
-
-#~ msgid "Open a New Window"
-#~ msgstr "Открыть новое окно"
-
-#~ msgid "Open a New Document"
-#~ msgstr "Открыть новый документ"
-
-#~ msgid "Set the size and position of the window (WIDTHxHEIGHT+X+Y)"
-#~ msgstr "Установить размеры и положение окна (ШИРИНАxВЫСОТА+X+Y)"
-
-#~ msgid "GEOMETRY"
-#~ msgstr "ГЕОМЕТРИЯ"
-
-#~ msgid "Help"
-#~ msgstr "Справка"
-
-#~ msgid "Question"
-#~ msgstr "Вопрос"
-
-#~ msgid "(no suggested words)"
-#~ msgstr "(нет вариантов)"
-
-#~ msgid "_More..."
-#~ msgstr "Показать бол_ьше…"
-
-#~ msgid "_Ignore All"
-#~ msgstr "_Игнорировать всё"
-
-#~ msgid "_Add"
-#~ msgstr "Доб_авить"
-
-#~ msgid "_Spelling Suggestions..."
-#~ msgstr "Возмо_жные варианты…"
-
-#~ msgid "Error when checking the spelling of word “%s”: %s"
-#~ msgstr "Ошибка при проверке орфографии слова «%s»: %s"
-
-#~| msgid "_Error color:"
-#~ msgid "Error:"
-#~ msgstr "Ошибка:"
-
-#~ msgid "Completed spell checking"
-#~ msgstr "Проверка завершена"
-
-#~ msgid "No misspelled words"
-#~ msgstr "Нет слов с ошибками"
-
-#~ msgid "(correct spelling)"
-#~ msgstr "(правильное написание)"
-
-#~ msgid "Suggestions"
-#~ msgstr "Варианты"
-
-#~ msgctxt "language"
-#~ msgid "%s (%s)"
-#~ msgstr "%s (%s)"
-
-#~ msgctxt "language"
-#~ msgid "Unknown (%s)"
-#~ msgstr "Неизвестный (%s)"
-
-#~ msgctxt "language"
-#~ msgid "Default"
-#~ msgstr "По умолчанию"
-
-#~ msgid "Select the _language of the current document."
-#~ msgstr "Выбрать _язык текущего документа."
-
-#~ msgid "Misspelled word:"
-#~ msgstr "Слово с ошибкой:"
-
-#~ msgid "word"
-#~ msgstr "слово"
-
-#~ msgid "Change _to:"
-#~ msgstr "З_аменить на:"
-
-#~ msgid "Check _Word"
-#~ msgstr "Проверить сл_ово"
-
-#~ msgid "_Suggestions:"
-#~ msgstr "_Варианты:"
-
-#~ msgid "Ignore _All"
-#~ msgstr "Игнорировать в_се"
-
-#~ msgid "Cha_nge"
-#~ msgstr "_Изменить"
-
-#~ msgid "Change A_ll"
-#~ msgstr "Изменить вс_е"
-
-#~ msgid "User dictionary:"
-#~ msgstr "Пользовательский словарь:"
-
-#~ msgid "Add w_ord"
-#~ msgstr "Добавить с_лово"
