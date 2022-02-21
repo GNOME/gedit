@@ -6,14 +6,14 @@
 # Meelad Zakaria <meelad@farsiweb.info>, 2005.
 # Elnaz Sarbar <elnaz@farsiweb.info>, 2005.
 # Arash Mousavi <mousavi.arash@gmail.com>, 2011-2016.
-# Danial Behzadi <dani.behzi@ubuntu.com>, 2017-2021.
+# Danial Behzadi <dani.behzi@ubuntu.com>, 2017-2022.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gedit HEAD\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gedit/issues\n"
-"POT-Creation-Date: 2021-07-25 11:03+0000\n"
-"PO-Revision-Date: 2021-08-02 11:43+0430\n"
+"POT-Creation-Date: 2022-02-14 13:34+0000\n"
+"PO-Revision-Date: 2022-02-21 19:22+0330\n"
 "Last-Translator: Danial Behzadi <dani.behzi@ubuntu.com>\n"
 "Language-Team: Persian\n"
 "Language: fa\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-Generator: Poedit 2.4.2\n"
+"X-Generator: Poedit 3.0.1\n"
 
 #: data/org.gnome.gedit.appdata.xml.in:7
 msgid "gedit"
@@ -52,8 +52,9 @@ msgstr "ویرایشگر متن"
 #. The list MUST also end with a semicolon!
 #. Search terms to find this application.
 #: data/org.gnome.gedit.desktop.in:18
-msgid "Text;Editor;Plaintext;Write;gedit;"
-msgstr "Text;Editor;Plaintext;Write;ویرایشگر متن;متن;ویرایشگر;نوشتار;"
+msgid "Text;Editor;Plaintext;Write;gedit;notepad;"
+msgstr ""
+"Text;Editor;Plaintext;Write;gedit;notepad;ویرایشگر متن;متن;ویرایشگر;نوشتار;"
 
 #: data/org.gnome.gedit.desktop.in:22
 msgid "New Window"
@@ -160,8 +161,8 @@ msgid ""
 "individual character boundaries. Note that the values are case-sensitive, so "
 "make sure they appear exactly as mentioned here."
 msgstr ""
-"چگونگی شکاندن خط‌های طولانی را در محودهٔ ویرایش مشخّص می‌کند. برای نشکاندن از"
-" ‏«none»، برای شکاندن بین واژگان از «word»، و برای شکاندن تک‌نویسه‌ها از «char» "
+"چگونگی شکاندن خط‌های طولانی را در محودهٔ ویرایش مشخّص می‌کند. برای نشکاندن از "
+"‏«none»، برای شکاندن بین واژگان از «word»، و برای شکاندن تک‌نویسه‌ها از «char» "
 "استفاده کنید. به یاد داشته باشید که مقدارها به کوچک و بزرگی حروف حساسند، پس "
 "مطمئن شوید که دقیقاً به شکلی که اینجا آمده‌اند وارد شوند."
 
@@ -423,8 +424,8 @@ msgid ""
 "Specifies the font to use for page headers when printing a document. This will "
 "only take effect if the “Print Header” option is turned on."
 msgstr ""
-"قلم مورد استفاده برای سرصفحه‌ها هنگام چاپ سند را مشخّص می‌کند. تنها در صورتی کار ‌"
-"می‌کند که گزینهٔ «چاپ سرصفحه» روشن باشد."
+"قلم مورد استفاده برای سرصفحه‌ها هنگام چاپ سند را مشخّص می‌کند. تنها در صورتی کار "
+"‌می‌کند که گزینهٔ «چاپ سرصفحه» روشن باشد."
 
 #. Translators: This is a GSettings default value. Do NOT change or localize the quotation marks!
 #: data/org.gnome.gedit.gschema.xml.in:231
@@ -554,7 +555,7 @@ msgstr "بد_ون ذخیره‌سازی بسته شود"
 #: gedit/gedit-close-confirmation-dialog.c:277 gedit/gedit-commands-file.c:529
 #: gedit/gedit-commands-file.c:605 gedit/gedit-commands-file.c:829
 #: gedit/gedit-commands-file.c:1551 gedit/gedit-encodings-dialog.c:192
-#: gedit/gedit-file-chooser-open-dialog.c:78 gedit/gedit-preferences-dialog.c:820
+#: gedit/gedit-file-chooser-open-dialog.c:78 gedit/gedit-preferences-dialog.c:821
 #: gedit/gedit-progress-info-bar.c:49
 #: gedit/resources/ui/gedit-encodings-dialog.ui:44
 #: gedit/resources/ui/gedit-highlight-mode-dialog.ui:31
@@ -1306,7 +1307,7 @@ msgstr "شمای رنگی انتخاب شده قابل نصب نیست."
 msgid "Add Scheme"
 msgstr "افزودن شِما"
 
-#: gedit/gedit-preferences-dialog.c:821
+#: gedit/gedit-preferences-dialog.c:820
 msgid "A_dd Scheme"
 msgstr "_افزودن شِما"
 
@@ -2882,11 +2883,11 @@ msgstr "آیا مطئمنید که می‌خواهید پرونده‌های ا�
 msgid "If you delete an item, it is permanently lost."
 msgstr "اگر موردی را ذخیره نکنید، برای همیشه از بین رفته."
 
-#: plugins/filebrowser/gedit-file-browser-store.c:1701
+#: plugins/filebrowser/gedit-file-browser-store.c:1693
 msgid "(Empty)"
 msgstr "(خالی)"
 
-#: plugins/filebrowser/gedit-file-browser-store.c:3325
+#: plugins/filebrowser/gedit-file-browser-store.c:3317
 msgid ""
 "The renamed file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
@@ -2895,11 +2896,11 @@ msgstr ""
 "برای نمایان کردنش ویرایش کنید"
 
 #. Translators: This is the default name of new files created by the file browser pane.
-#: plugins/filebrowser/gedit-file-browser-store.c:3581
+#: plugins/filebrowser/gedit-file-browser-store.c:3573
 msgid "Untitled File"
 msgstr "پروندهٔ بی‌نام"
 
-#: plugins/filebrowser/gedit-file-browser-store.c:3609
+#: plugins/filebrowser/gedit-file-browser-store.c:3601
 msgid ""
 "The new file is currently filtered out. You need to adjust your filter settings "
 "to make the file visible"
@@ -2908,11 +2909,11 @@ msgstr ""
 "برای نمایان کردنش ویرایش کنید"
 
 #. Translators: This is the default name of new directories created by the file browser pane.
-#: plugins/filebrowser/gedit-file-browser-store.c:3638
+#: plugins/filebrowser/gedit-file-browser-store.c:3630
 msgid "Untitled Folder"
 msgstr "شاخهٔ بی‌نام"
 
-#: plugins/filebrowser/gedit-file-browser-store.c:3661
+#: plugins/filebrowser/gedit-file-browser-store.c:3653
 msgid ""
 "The new directory is currently filtered out. You need to adjust your filter "
 "settings to make the directory visible"
@@ -4418,11 +4419,11 @@ msgstr "تاریخ و زمان جاری را در موقعیت مکان‌نما
 #~ "mentioned here."
 #~ msgstr ""
 #~ "سبک دکمه‌های نوار ابزار. مقادیر ممکن عبارتند از «GEDIT_TOOLBAR_SYSTEM» برای "
-#~ "استفاده از سبک پیش‌فرض سیستم، «GEDIT_TOOLBAR_ICONS» برای نمایش فقط شمایل‌ها،"
-#~ " ‏«GEDIT_TOOLBAR_ICONS_AND_TEXT» برای نمایش شمایل‌ها و متن، و"
-#~ " ‏«GEDIT_TOOLBAR_ICONS_BOTH_HORIZ» برای نمایش متن دارای اولویت در کنار "
-#~ "شمایل‌ها. به یاد داشته باشید که مقادیر به کوچک و بزرگی حروف حساس هستند، پس "
-#~ "مراقب باشید که دقیقاً به شکلی که اینجا آمده‌اند وارد شوند."
+#~ "استفاده از سبک پیش‌فرض سیستم، «GEDIT_TOOLBAR_ICONS» برای نمایش فقط شمایل‌ها، "
+#~ "‏«GEDIT_TOOLBAR_ICONS_AND_TEXT» برای نمایش شمایل‌ها و متن، و "
+#~ "‏«GEDIT_TOOLBAR_ICONS_BOTH_HORIZ» برای نمایش متن دارای اولویت در کنار شمایل‌ها. "
+#~ "به یاد داشته باشید که مقادیر به کوچک و بزرگی حروف حساس هستند، پس مراقب باشید "
+#~ "که دقیقاً به شکلی که اینجا آمده‌اند وارد شوند."
 
 #~ msgid "Text Color"
 #~ msgstr "رنگ متن"
@@ -4436,8 +4437,8 @@ msgstr "تاریخ و زمان جاری را در موقعیت مکان‌نما
 #~ msgid ""
 #~ "Whether to use the system's default colors for the editing area. If this "
 #~ "option is turned off, then the colors of the editing area will be those "
-#~ "specified in the \"Background Color\", \"Text Color\", \"Selected Text Color"
-#~ "\", and \"Selection Color\" options."
+#~ "specified in the \"Background Color\", \"Text Color\", \"Selected Text "
+#~ "Color\", and \"Selection Color\" options."
 #~ msgstr ""
 #~ "این که آیا در محوطه‌ی ویرایش از رنگ‌های پیش‌فرض سیستم استفاده بشود یا نه. اگر "
 #~ "این گزینه خاموش باشد، رنگ‌های محوطه‌ی ویرایش رنگ‌هایی خواهد بود که در گزینه‌های "
