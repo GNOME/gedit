@@ -17,16 +17,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gedit\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gedit/issues\n"
-"POT-Creation-Date: 2021-05-10 19:27+0000\n"
-"PO-Revision-Date: 2021-06-08 23:29+0300\n"
-"Last-Translator: Muhammet Kara <muhammetk@gmail.com>\n"
+"POT-Creation-Date: 2022-02-14 13:34+0000\n"
+"PO-Revision-Date: 2022-02-23 13:00+0300\n"
+"Last-Translator: Emin Tufan Çetin <etcetin@gmail.com>\n"
 "Language-Team: Turkish <gnometurk@gnome.org>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0\n"
-"X-Generator: Gtranslator 40.0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 2.4.3\n"
 "X-POOTLE-MTIME: 1433962102.000000\n"
 
 #: data/org.gnome.gedit.appdata.xml.in:7
@@ -57,8 +57,8 @@ msgstr "Metin Düzenleyici"
 #. The list MUST also end with a semicolon!
 #. Search terms to find this application.
 #: data/org.gnome.gedit.desktop.in:18
-msgid "Text;Editor;Plaintext;Write;gedit;"
-msgstr "Metin;Düzenleyici;Düzyazı;Yaz;gedit;"
+msgid "Text;Editor;Plaintext;Write;gedit;notepad;"
+msgstr "Metin;Düzenleyici;Düzyazı;Yaz;gedit;not defteri;not kağıdı;"
 
 #: data/org.gnome.gedit.desktop.in:22
 msgid "New Window"
@@ -304,11 +304,11 @@ msgstr ""
 
 #: data/org.gnome.gedit.gschema.xml.in:157
 msgid "Enable Syntax Highlighting"
-msgstr "Sözdizimi Vurgulamayı Etkinleştir"
+msgstr "Söz Dizimi Vurgulamayı Etkinleştir"
 
 #: data/org.gnome.gedit.gschema.xml.in:158
 msgid "Whether gedit should enable syntax highlighting."
-msgstr "gedit’in sözdizimi renklendirmeyi etkinleştirmesi."
+msgstr "gedit’in söz dizimi renklendirmeyi etkinleştirmesi."
 
 #: data/org.gnome.gedit.gschema.xml.in:162
 msgid "Enable Search Highlighting"
@@ -369,12 +369,12 @@ msgstr ""
 
 #: data/org.gnome.gedit.gschema.xml.in:194
 msgid "Print Syntax Highlighting"
-msgstr "Sözdizimi Vurgulamasını Yazdır"
+msgstr "Söz Dizimi Vurgulamasını Yazdır"
 
 #: data/org.gnome.gedit.gschema.xml.in:195
 msgid "Whether gedit should print syntax highlighting when printing documents."
 msgstr ""
-"gedit’in belgeleri yazdırırken sözdizimi vurgulamasını yazdırıp "
+"gedit’in belgeleri yazdırırken söz dizimi vurgulamasını yazdırıp "
 "yazdırmayacağı."
 
 #: data/org.gnome.gedit.gschema.xml.in:199
@@ -576,7 +576,7 @@ msgstr "Kaydetmeden _Kapat"
 #: gedit/gedit-commands-file.c:605 gedit/gedit-commands-file.c:829
 #: gedit/gedit-commands-file.c:1551 gedit/gedit-encodings-dialog.c:192
 #: gedit/gedit-file-chooser-open-dialog.c:78
-#: gedit/gedit-preferences-dialog.c:820 gedit/gedit-progress-info-bar.c:49
+#: gedit/gedit-preferences-dialog.c:821 gedit/gedit-progress-info-bar.c:49
 #: gedit/resources/ui/gedit-encodings-dialog.ui:44
 #: gedit/resources/ui/gedit-highlight-mode-dialog.ui:31
 #: plugins/filebrowser/gedit-file-browser-utils.c:211
@@ -611,13 +611,14 @@ msgid_plural ""
 "lost."
 msgstr[0] ""
 "Kaydetmezseniz son %ld saniyede yaptığınız değişiklikler kalıcı olarak "
-"kaybolacak."
+"yitirilecek."
 
 #: gedit/gedit-close-confirmation-dialog.c:321
 msgid ""
 "If you don’t save, changes from the last minute will be permanently lost."
 msgstr ""
-"Kaydetmezseniz son bir dakika içerisinde yaptığınız değişiklikler kaybolacak."
+"Kaydetmezseniz son bir dakika içerisinde yaptığınız değişiklikler "
+"yitirilecek."
 
 #: gedit/gedit-close-confirmation-dialog.c:327
 #, c-format
@@ -629,7 +630,7 @@ msgid_plural ""
 "permanently lost."
 msgstr[0] ""
 "Kaydetmezseniz son bir dakika ve %ld saniye içerisinde yaptığınız "
-"değişiklikler kaybolacak."
+"değişiklikler yitirilecek."
 
 #: gedit/gedit-close-confirmation-dialog.c:337
 #, c-format
@@ -639,12 +640,13 @@ msgid_plural ""
 "If you don’t save, changes from the last %ld minutes will be permanently "
 "lost."
 msgstr[0] ""
-"Kaydetmezseniz son %ld dakika içerisinde yaptığınız değişiklikler kaybolacak."
+"Kaydetmezseniz son %ld dakika içerisinde yaptığınız değişiklikler "
+"yitirilecek."
 
 #: gedit/gedit-close-confirmation-dialog.c:352
 msgid "If you don’t save, changes from the last hour will be permanently lost."
 msgstr ""
-"Kaydetmezseniz son saatte yaptığınız değişiklikler kalıcı olarak kaybolacak."
+"Kaydetmezseniz son saatte yaptığınız değişiklikler kalıcı olarak yitirilecek."
 
 #: gedit/gedit-close-confirmation-dialog.c:358
 #, c-format
@@ -656,7 +658,7 @@ msgid_plural ""
 "permanently lost."
 msgstr[0] ""
 "Kaydetmezseniz son bir saat ve %d dakika içerisinde yaptığınız değişiklikler "
-"kaybolacak."
+"yitirilecek."
 
 #: gedit/gedit-close-confirmation-dialog.c:373
 #, c-format
@@ -666,7 +668,7 @@ msgid_plural ""
 "If you don’t save, changes from the last %d hours will be permanently lost."
 msgstr[0] ""
 "Kaydetmezseniz son %d saatte yaptığınız değişiklikler kalıcı olarak "
-"kaybolacak."
+"yitirilecek."
 
 #: gedit/gedit-close-confirmation-dialog.c:400
 #, c-format
@@ -689,7 +691,7 @@ msgstr "Kaydetmek istediğiniz _belgeleri seçin:"
 #. Secondary label
 #: gedit/gedit-close-confirmation-dialog.c:509
 msgid "If you don’t save, all your changes will be permanently lost."
-msgstr "Kaydetmezseniz yaptığınız tüm değişiklikler kaybolacak."
+msgstr "Kaydetmezseniz yaptığınız tüm değişiklikler yitirilecek."
 
 #: gedit/gedit-commands-file.c:254
 #, c-format
@@ -779,13 +781,12 @@ msgid ""
 msgid_plural ""
 "Changes made to the document in the last %ld seconds will be permanently "
 "lost."
-msgstr[0] ""
-"Belge içerisinde son %ld saat içerisinde yapılan değişiklikler kaybolacak."
+msgstr[0] "Belgede son %ld saatte yapılan değişiklikler yitirilecek."
 
 #: gedit/gedit-commands-file.c:1477
 msgid ""
 "Changes made to the document in the last minute will be permanently lost."
-msgstr "Belge içerisinde son bir dakikada yapılan değişiklikler kaybolacak."
+msgstr "Belgede son bir dakikada yapılan değişiklikler yitirilecek."
 
 #: gedit/gedit-commands-file.c:1483
 #, c-format
@@ -796,8 +797,7 @@ msgid_plural ""
 "Changes made to the document in the last minute and %ld seconds will be "
 "permanently lost."
 msgstr[0] ""
-"Belge içerisinde son bir dakikada ve %ld saniyede yapılan değişiklikler "
-"kaybolacak."
+"Belgede son bir dakika ve %ld saniyede yapılan değişiklikler yitirilecek."
 
 #: gedit/gedit-commands-file.c:1493
 #, c-format
@@ -806,12 +806,11 @@ msgid ""
 msgid_plural ""
 "Changes made to the document in the last %ld minutes will be permanently "
 "lost."
-msgstr[0] "Belge içerisinde son %ld dakikada yapılan değişiklikler kaybolacak."
+msgstr[0] "Belgede son %ld dakikada yapılan değişiklikler yitirilecek."
 
 #: gedit/gedit-commands-file.c:1508
 msgid "Changes made to the document in the last hour will be permanently lost."
-msgstr ""
-"Belge içerisinde son %d saat içerisinde yapılan değişiklikler kaybolacak."
+msgstr "Belgede son %d saatte yapılan değişiklikler yitirilecek."
 
 #: gedit/gedit-commands-file.c:1514
 #, c-format
@@ -822,8 +821,7 @@ msgid_plural ""
 "Changes made to the document in the last hour and %d minutes will be "
 "permanently lost."
 msgstr[0] ""
-"Belge içerisinde son bir saatte ve son %d dakikada yapılan değişiklikler "
-"kaybolacak."
+"Belgede son bir saat ve son %d dakikada yapılan değişiklikler yitirilecek."
 
 #: gedit/gedit-commands-file.c:1529
 #, c-format
@@ -831,8 +829,7 @@ msgid ""
 "Changes made to the document in the last %d hour will be permanently lost."
 msgid_plural ""
 "Changes made to the document in the last %d hours will be permanently lost."
-msgstr[0] ""
-"Belge içerisinde son %d saat içerisinde yapılan değişiklikler kaybolacak."
+msgstr[0] "Belgede son %d saatte yapılan değişiklikler yitirilecek."
 
 #: gedit/gedit-commands-file.c:1552
 msgid "_Revert"
@@ -845,9 +842,9 @@ msgstr "gedit, GNOME masaüstü için küçük ve yalın metin düzenleyicidir"
 #: gedit/gedit-commands-help.c:115
 msgid "translator-credits"
 msgstr ""
-"Barış Çiçek <baris@teamforce.name.tr>\n"
 "Muhammet Kara <muhammetk@gmail.com>\n"
-"Emin Tufan Çetin <etcetin@gmail.com>"
+"Emin Tufan Çetin <etcetin@gmail.com>\n"
+"Barış Çiçek <baris@teamforce.name.tr>"
 
 #: gedit/gedit-commands-search.c:105
 #, c-format
@@ -1052,7 +1049,7 @@ msgstr "Karakter _Kodlaması:"
 
 #: gedit/gedit-io-error-info-bar.c:451
 msgid "_Continue loading"
-msgstr "_Yüklemeye devam et"
+msgstr "_Yüklemeyi sürdür"
 
 #. Translators: the access key chosen for this string should be
 #. different from other main menu access keys (Open, Edit, View...)
@@ -1070,11 +1067,11 @@ msgstr ""
 
 #: gedit/gedit-io-error-info-bar.c:557
 msgid "You do not have the permissions necessary to open the file."
-msgstr "Dosyayı açmak için gerekli izinlere sahip değilsiniz."
+msgstr "Dosyayı açmak için gerekli izniniz yok."
 
 #: gedit/gedit-io-error-info-bar.c:563
 msgid "Unable to detect the character encoding."
-msgstr "Karakter kodlaması tespit edilemiyor."
+msgstr "Karakter kodlaması saptanamıyor."
 
 #: gedit/gedit-io-error-info-bar.c:564 gedit/gedit-io-error-info-bar.c:588
 msgid "Please check that you are not trying to open a binary file."
@@ -1094,8 +1091,8 @@ msgid ""
 "The file you opened has some invalid characters. If you continue editing "
 "this file you could corrupt this document."
 msgstr ""
-"Açtığınız dosya geçersiz karakterler içeriyor. Bu dosyayı düzenlemeye devam "
-"ederseniz, bu belgeye zarar verebilirsiniz."
+"Açtığınız dosya geçersiz karakterler içeriyor. Bu dosyayı düzenlemeyi "
+"sürdürürseniz, bu belgeye zarar verebilirsiniz."
 
 #: gedit/gedit-io-error-info-bar.c:576
 msgid "You can also choose another character encoding and try again."
@@ -1121,7 +1118,7 @@ msgid ""
 "this file at your own risk"
 msgstr ""
 "Büyük dosyalar gedit'i yavaşlatabilir ya da donmasına neden olabilir. Yine "
-"de sorumluluğu üstlenerek bu dosyayı yüklemeye devam edebilirsiniz"
+"de sorumluluğu üstlenerek bu dosyayı yüklemeyi sürdürebilirsiniz"
 
 #: gedit/gedit-io-error-info-bar.c:611
 #, c-format
@@ -1173,12 +1170,12 @@ msgstr "_Kaydetme"
 #: gedit/gedit-io-error-info-bar.c:847
 #, c-format
 msgid "The file “%s” has been modified since reading it."
-msgstr "“%s” dosyası diskten okunduktan sonra değişikliğe uğradı."
+msgstr "“%s” dosyası diskten okunduktan sonra değiştirildi."
 
 #: gedit/gedit-io-error-info-bar.c:862
 msgid "If you save it, all the external changes could be lost. Save it anyway?"
 msgstr ""
-"Eğer kaydederseniz, yapılan tüm dış değişiklikler kaybolacak. Gene de "
+"Eğer kaydederseniz yapılan tüm dış değişiklikler yitirilecek. Yine de "
 "kaydedilsin mi?"
 
 #: gedit/gedit-io-error-info-bar.c:942
@@ -1199,7 +1196,7 @@ msgid ""
 msgstr ""
 "Dosyanın yeni kopyası kaydedilmeden önce eskisinin yedeği alınamadı. Yine de "
 "bu uyarıyı yok sayıp dosyayı kaydedebilirsiniz, ancak eğer kayıt esnasında "
-"bir hata oluşursa, dosyanın eski kopyasını kaybedebilirsiniz. Yine de "
+"bir hata oluşursa, dosyanın eski kopyasını yitirebilirsiniz. Yine de "
 "kaydedilsin mi?"
 
 #. Translators: %s is a URI scheme (like for example http:, ftp:, etc.)
@@ -1302,14 +1299,12 @@ msgstr "“%s” kaydedilirken bazı geçersiz karakterler algılandı"
 msgid ""
 "If you continue saving this file you can corrupt the document.  Save anyway?"
 msgstr ""
-"Bu dosyayı kaydetmeye devam ederseniz, belgeye zarar verebilirsiniz. Buna "
-"rağmen kayıt edilsinmi ?"
+"Bu dosyayı kaydetmeyi sürdürürseniz belgeye zarar verebilirsiniz.  Yine de "
+"kaydedilsin mi?"
 
 #: gedit/gedit-preferences-dialog.c:451
 msgid "Click on this button to select the font to be used by the editor"
-msgstr ""
-"Düzenleyici tarafından kullanılacak yazı tipini seçmek için bu düğmeye "
-"tıklayın"
+msgstr "Düzenleyicice kullanılacak yazı tipini seçmek için bu düğmeye tıkla"
 
 #: gedit/gedit-preferences-dialog.c:457
 #, c-format
@@ -1326,11 +1321,10 @@ msgid "The selected color scheme cannot be installed."
 msgstr "Seçilen renk şeması yüklenemedi."
 
 #: gedit/gedit-preferences-dialog.c:817
-#| msgid "_Add Scheme"
 msgid "Add Scheme"
 msgstr "Şema Ekle"
 
-#: gedit/gedit-preferences-dialog.c:821
+#: gedit/gedit-preferences-dialog.c:820
 msgid "A_dd Scheme"
 msgstr "Şema _Ekle"
 
@@ -1362,7 +1356,7 @@ msgstr "Sayfa %N / %Q"
 #: gedit/gedit-print-job.c:627
 #, c-format
 msgid "Rendering page %d of %d…"
-msgstr "Sayfa %d / %d işleniyor…"
+msgstr "Sayfa %d / %d canlandırılıyor…"
 
 #: gedit/gedit-print-preview.c:651
 #, c-format
@@ -1373,7 +1367,7 @@ msgstr "Sayfa %d / %d"
 #: plugins/externaltools/tools/tools.ui:83
 #: plugins/externaltools/tools/tools.ui:121
 msgid "Nothing"
-msgstr "Hiçbir şey"
+msgstr "Hiçbir Şey"
 
 #: gedit/gedit-replace-dialog.c:777
 #: gedit/resources/ui/gedit-replace-dialog.ui:7
@@ -1852,7 +1846,6 @@ msgid "Other _Documents…"
 msgstr "_Diğer Belgeler…"
 
 #: gedit/resources/ui/gedit-open-document-selector.ui:101
-#| msgid "Open a file"
 msgid "Open another file"
 msgstr "Başka dosya aç"
 
@@ -1994,11 +1987,11 @@ msgstr "Eklentiler"
 
 #: gedit/resources/ui/gedit-print-preferences.ui:39
 msgid "Syntax Highlighting"
-msgstr "Sözdizimi Vurgulaması"
+msgstr "Söz Dizimi Vurgulaması"
 
 #: gedit/resources/ui/gedit-print-preferences.ui:52
 msgid "Print synta_x highlighting"
-msgstr "Vurgulanan sözdizimini _yazdır"
+msgstr "Vurgulanan söz dizimini _yazdır"
 
 #: gedit/resources/ui/gedit-print-preferences.ui:85
 msgid "Line Numbers"
@@ -2915,13 +2908,13 @@ msgstr "Seçili dosyaları kalıcı olarak silmek istediğinizden emin misiniz?"
 
 #: plugins/filebrowser/gedit-file-browser-plugin.c:916
 msgid "If you delete an item, it is permanently lost."
-msgstr "Eğer ögeyi silerseniz kalıcı biçimde kaybolur."
+msgstr "Eğer ögeyi silerseniz kalıcı biçimde yitecektir."
 
-#: plugins/filebrowser/gedit-file-browser-store.c:1701
+#: plugins/filebrowser/gedit-file-browser-store.c:1693
 msgid "(Empty)"
 msgstr "(Boş)"
 
-#: plugins/filebrowser/gedit-file-browser-store.c:3325
+#: plugins/filebrowser/gedit-file-browser-store.c:3317
 msgid ""
 "The renamed file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
@@ -2930,11 +2923,11 @@ msgstr ""
 "süzgecinizi ayarlamanız gerekiyor"
 
 #. Translators: This is the default name of new files created by the file browser pane.
-#: plugins/filebrowser/gedit-file-browser-store.c:3581
+#: plugins/filebrowser/gedit-file-browser-store.c:3573
 msgid "Untitled File"
 msgstr "Adsız Dosya"
 
-#: plugins/filebrowser/gedit-file-browser-store.c:3609
+#: plugins/filebrowser/gedit-file-browser-store.c:3601
 msgid ""
 "The new file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
@@ -2943,11 +2936,11 @@ msgstr ""
 "ayarlamanız gerekiyor"
 
 #. Translators: This is the default name of new directories created by the file browser pane.
-#: plugins/filebrowser/gedit-file-browser-store.c:3638
+#: plugins/filebrowser/gedit-file-browser-store.c:3630
 msgid "Untitled Folder"
 msgstr "Adsız Klasör"
 
-#: plugins/filebrowser/gedit-file-browser-store.c:3661
+#: plugins/filebrowser/gedit-file-browser-store.c:3653
 msgid ""
 "The new directory is currently filtered out. You need to adjust your filter "
 "settings to make the directory visible"
@@ -3140,14 +3133,10 @@ msgid "Emacs, Kate and Vim-style modelines support for gedit."
 msgstr "gedit için Emacs, Kate ve Vim-style kip satırları desteği."
 
 #: plugins/openlinks/gedit-open-links-plugin.c:182
-#| msgctxt "shortcut window"
-#| msgid "Open menu"
 msgid "Open Link"
 msgstr "Bağlantıyı Aç"
 
 #: plugins/openlinks/openlinks.plugin.desktop.in:5
-#| msgctxt "window title"
-#| msgid "Open Files"
 msgid "Open Links"
 msgstr "Bağlantıları Aç"
 
