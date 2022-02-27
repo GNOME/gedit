@@ -139,7 +139,6 @@ libgedit_deps = [
 if host_machine.system() == 'darwin'
   libgedit_private_sources += [
     'gedit-app-osx.m',
-    'gedit-recent-osx.c',
   ]
   libgedit_c_args += [
     '-DOS_OSX=1',
