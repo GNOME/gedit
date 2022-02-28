@@ -13,7 +13,7 @@
 # Kenneth Nielsen <k.nielsen81@gmail.com>, 2006-2007, 2009, 2011-2012, 2014.
 # Ask Hjorth Larsen <asklarsen@gmail.com>, 2007, 09, 10, 11, 13, 15, 16, 18.
 # scootergrisen, 2016, 2019.
-# Alan Mortensen <alanmortensen.am@gmail.com>, 2021.
+# Alan Mortensen <alanmortensen.am@gmail.com>, 2021-22.
 #
 # Konventioner:
 #   plugin -> udvidelsesmodul
@@ -22,8 +22,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gedit\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gedit/issues\n"
-"POT-Creation-Date: 2021-08-02 18:32+0000\n"
-"PO-Revision-Date: 2021-09-11 11:06+0200\n"
+"POT-Creation-Date: 2022-02-14 13:34+0000\n"
+"PO-Revision-Date: 2022-02-27 12:26+0100\n"
 "Last-Translator: Alan Mortensen <alanmortensen.am@gmail.com>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "Language: da\n"
@@ -62,8 +62,9 @@ msgstr "Tekstredigering"
 #. The list MUST also end with a semicolon!
 #. Search terms to find this application.
 #: data/org.gnome.gedit.desktop.in:18
-msgid "Text;Editor;Plaintext;Write;gedit;"
-msgstr "Tekst;Editor;Redigering;Tekstredigering;Skrive;Skriv;gedit;"
+msgid "Text;Editor;Plaintext;Write;gedit;notepad;"
+msgstr ""
+"Tekst;Editor;Redigering;Tekstredigering;Skrive;Skriv;gedit;notepad;notesblok;"
 
 #: data/org.gnome.gedit.desktop.in:22
 msgid "New Window"
@@ -575,7 +576,7 @@ msgstr "Luk _uden at gemme"
 #: gedit/gedit-commands-file.c:605 gedit/gedit-commands-file.c:829
 #: gedit/gedit-commands-file.c:1551 gedit/gedit-encodings-dialog.c:192
 #: gedit/gedit-file-chooser-open-dialog.c:78
-#: gedit/gedit-preferences-dialog.c:820 gedit/gedit-progress-info-bar.c:49
+#: gedit/gedit-preferences-dialog.c:821 gedit/gedit-progress-info-bar.c:49
 #: gedit/resources/ui/gedit-encodings-dialog.ui:44
 #: gedit/resources/ui/gedit-highlight-mode-dialog.ui:31
 #: plugins/filebrowser/gedit-file-browser-utils.c:211
@@ -1364,7 +1365,7 @@ msgstr "Det valgte farveskema kan ikke installeres."
 msgid "Add Scheme"
 msgstr "Tilføj skema"
 
-#: gedit/gedit-preferences-dialog.c:821
+#: gedit/gedit-preferences-dialog.c:820
 msgid "A_dd Scheme"
 msgstr "_Tilføj skema"
 
@@ -2954,11 +2955,11 @@ msgstr "Er du sikker på, at du vil slette de valgte filer permanent?"
 msgid "If you delete an item, it is permanently lost."
 msgstr "Hvis du sletter et objekt, vil det gå tabt."
 
-#: plugins/filebrowser/gedit-file-browser-store.c:1701
+#: plugins/filebrowser/gedit-file-browser-store.c:1693
 msgid "(Empty)"
 msgstr "(tom)"
 
-#: plugins/filebrowser/gedit-file-browser-store.c:3325
+#: plugins/filebrowser/gedit-file-browser-store.c:3317
 msgid ""
 "The renamed file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
@@ -2967,11 +2968,11 @@ msgstr ""
 "filterindstillinger for at gøre filen synlig"
 
 #. Translators: This is the default name of new files created by the file browser pane.
-#: plugins/filebrowser/gedit-file-browser-store.c:3581
+#: plugins/filebrowser/gedit-file-browser-store.c:3573
 msgid "Untitled File"
 msgstr "Unavngivet fil"
 
-#: plugins/filebrowser/gedit-file-browser-store.c:3609
+#: plugins/filebrowser/gedit-file-browser-store.c:3601
 msgid ""
 "The new file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
@@ -2980,11 +2981,11 @@ msgstr ""
 "filterindstillinger for at gøre filen synlig"
 
 #. Translators: This is the default name of new directories created by the file browser pane.
-#: plugins/filebrowser/gedit-file-browser-store.c:3638
+#: plugins/filebrowser/gedit-file-browser-store.c:3630
 msgid "Untitled Folder"
 msgstr "Unavngivet mappe"
 
-#: plugins/filebrowser/gedit-file-browser-store.c:3661
+#: plugins/filebrowser/gedit-file-browser-store.c:3653
 msgid ""
 "The new directory is currently filtered out. You need to adjust your filter "
 "settings to make the directory visible"
