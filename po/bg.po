@@ -2,13 +2,14 @@
 # Copyright (C) 2002, 2003, 2004, 2005, 2006 Free Software Foundation, Inc.
 # Copyright (C) 2007, 2008, 2009, 2010, 2011 Free Software Foundation, Inc.
 # Copyright (C) 2012, 2013, 2014, 2015, 2016 Free Software Foundation, Inc.
-# Copyright (C) 2021 Alexander Shopov <ash@kambanaria.org>.
+# Copyright (C) 2021, 2022 Alexander Shopov <ash@kambanaria.org>.
 # This file is distributed under the same license as the gedit package.
 # Evgeni Boevski <linkej@yahoo.com>, 2003.
 # Rostislav "zbrox" Raykov <zbrox@i-space.org>, 2004, 2005, 2006.
 # Vladimir Petkov <kaladan@gmail.com> 2004, 2005, 2007.
 # Alexander Shopov <ash@kambanaria.org>, 2006, 2007, 2009, 2011, 2012.
-# Alexander Shopov <ash@kambanaria.org>, 2013, 2014, 2015, 2016, 2021.
+# Alexander Shopov <ash@kambanaria.org>, 2013, 2014, 2015, 2016, 2021
+# Alexander Shopov <ash@kambanaria.org>, 2022.
 # Yavor Doganov <yavor@gnu.org>, 2008.
 # Krasimir Chonov <mk2616@abv.bg>, 2010, 2011.
 # Valentin Laskov <laskov@festa.bg>, 2013.
@@ -16,8 +17,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gedit master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gedit/issues\n"
-"POT-Creation-Date: 2021-10-04 10:21+0000\n"
-"PO-Revision-Date: 2021-10-13 22:07+0200\n"
+"POT-Creation-Date: 2022-02-28 17:49+0000\n"
+"PO-Revision-Date: 2022-03-01 12:02+0100\n"
 "Last-Translator: Alexander Shopov <ash@kambanaria.org>\n"
 "Language-Team: Bulgarian <dict@fsa-bg.org>\n"
 "Language: bg\n"
@@ -54,8 +55,8 @@ msgstr "Текстов редактор"
 #. The list MUST also end with a semicolon!
 #. Search terms to find this application.
 #: data/org.gnome.gedit.desktop.in:18
-msgid "Text;Editor;Plaintext;Write;gedit;"
-msgstr "text;editor;plaintext;write;gedit;текст;редактор;"
+msgid "Text;Editor;Plaintext;Write;gedit;notepad;"
+msgstr "text;editor;plaintext;write;gedit;notepad;текст;редактор;"
 
 #: data/org.gnome.gedit.desktop.in:22
 msgid "New Window"
@@ -573,7 +574,7 @@ msgstr "_Без запазване"
 #: gedit/gedit-commands-file.c:605 gedit/gedit-commands-file.c:829
 #: gedit/gedit-commands-file.c:1551 gedit/gedit-encodings-dialog.c:192
 #: gedit/gedit-file-chooser-open-dialog.c:78
-#: gedit/gedit-preferences-dialog.c:820 gedit/gedit-progress-info-bar.c:49
+#: gedit/gedit-preferences-dialog.c:821 gedit/gedit-progress-info-bar.c:49
 #: gedit/resources/ui/gedit-encodings-dialog.ui:44
 #: gedit/resources/ui/gedit-highlight-mode-dialog.ui:31
 #: plugins/filebrowser/gedit-file-browser-utils.c:211
@@ -1386,7 +1387,7 @@ msgstr "Избраната цветова схема не може да бъде
 msgid "Add Scheme"
 msgstr "Добавяне на схема"
 
-#: gedit/gedit-preferences-dialog.c:821
+#: gedit/gedit-preferences-dialog.c:820
 msgid "A_dd Scheme"
 msgstr "_Добавяне на схема"
 
@@ -2977,11 +2978,11 @@ msgstr "Сигурни ли сте, че искате окончателно д�
 msgid "If you delete an item, it is permanently lost."
 msgstr "Изтритите неща биват окончателно унищожени."
 
-#: plugins/filebrowser/gedit-file-browser-store.c:1701
+#: plugins/filebrowser/gedit-file-browser-store.c:1693
 msgid "(Empty)"
 msgstr "(Празен)"
 
-#: plugins/filebrowser/gedit-file-browser-store.c:3325
+#: plugins/filebrowser/gedit-file-browser-store.c:3317
 msgid ""
 "The renamed file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
@@ -2990,11 +2991,11 @@ msgstr ""
 "видим, трябва да промените филтъра си"
 
 #. Translators: This is the default name of new files created by the file browser pane.
-#: plugins/filebrowser/gedit-file-browser-store.c:3581
+#: plugins/filebrowser/gedit-file-browser-store.c:3573
 msgid "Untitled File"
 msgstr "Файл без име"
 
-#: plugins/filebrowser/gedit-file-browser-store.c:3609
+#: plugins/filebrowser/gedit-file-browser-store.c:3601
 msgid ""
 "The new file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
@@ -3003,11 +3004,11 @@ msgstr ""
 "трябва да промените филтъра си"
 
 #. Translators: This is the default name of new directories created by the file browser pane.
-#: plugins/filebrowser/gedit-file-browser-store.c:3638
+#: plugins/filebrowser/gedit-file-browser-store.c:3630
 msgid "Untitled Folder"
 msgstr "Папка без име"
 
-#: plugins/filebrowser/gedit-file-browser-store.c:3661
+#: plugins/filebrowser/gedit-file-browser-store.c:3653
 msgid ""
 "The new directory is currently filtered out. You need to adjust your filter "
 "settings to make the directory visible"
