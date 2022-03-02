@@ -4,7 +4,7 @@
 # Sung-Hyun Nam <namsh@lgic.co.kr>, 1998
 # Chideok Hwang <hwang@mizi.co.kr>, 2000, 2001
 # Young-Ho, Cha <ganadist@chollian.net>, 2000, 2002, 2007
-# Changwoo Ryu <cwryu@debian.org>, 2004, 2007-2016, 2018-2021.
+# Changwoo Ryu <cwryu@debian.org>, 2004, 2007-2016, 2018-2022.
 #
 # 새로 번역하시는 분은 아래 translator-credits에 추가하세요.
 #
@@ -19,8 +19,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gedit\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gedit/issues\n"
-"POT-Creation-Date: 2021-08-02 18:32+0000\n"
-"PO-Revision-Date: 2021-09-04 20:42+0900\n"
+"POT-Creation-Date: 2022-02-14 13:34+0000\n"
+"PO-Revision-Date: 2022-03-01 19:41+0900\n"
 "Last-Translator: Changwoo Ryu <cwryu@debian.org>\n"
 "Language-Team: GNOME Korea <gnome-kr@googlegroups.com>\n"
 "Language: ko\n"
@@ -57,10 +57,8 @@ msgstr "텍스트 편집기"
 #. The list MUST also end with a semicolon!
 #. Search terms to find this application.
 #: data/org.gnome.gedit.desktop.in:18
-msgid "Text;Editor;Plaintext;Write;gedit;"
-msgstr ""
-"Text;텍스트;Editor;편집기;Plaintext;일반텍스트;Write;글쓰기;작성;gedit;지에디"
-"트;"
+msgid "Text;Editor;Plaintext;Write;gedit;notepad;"
+msgstr "Text;텍스트;Editor;편집기;Plaintext;일반텍스트;Write;글쓰기;작성;gedit;지에디트;notepad;노트패드;메모장;"
 
 #: data/org.gnome.gedit.desktop.in:22
 msgid "New Window"
@@ -562,7 +560,7 @@ msgstr "저장하지 않고 닫기(_W)"
 #: gedit/gedit-commands-file.c:605 gedit/gedit-commands-file.c:829
 #: gedit/gedit-commands-file.c:1551 gedit/gedit-encodings-dialog.c:192
 #: gedit/gedit-file-chooser-open-dialog.c:78
-#: gedit/gedit-preferences-dialog.c:820 gedit/gedit-progress-info-bar.c:49
+#: gedit/gedit-preferences-dialog.c:821 gedit/gedit-progress-info-bar.c:49
 #: gedit/resources/ui/gedit-encodings-dialog.ui:44
 #: gedit/resources/ui/gedit-highlight-mode-dialog.ui:31
 #: plugins/filebrowser/gedit-file-browser-utils.c:211
@@ -1085,7 +1083,9 @@ msgstr "“%s” 파일이 매우 큽니다."
 msgid ""
 "Large files can make gedit slow or unresponsive. You can continue loading "
 "this file at your own risk"
-msgstr "크기가 큰 파일을 열면 지에디트가 느려지거나 반응하지 못할 수 있습니다. 감수하고 이 파일을 계속 읽어들일 수도 있습니다."
+msgstr ""
+"크기가 큰 파일을 열면 지에디트가 느려지거나 반응하지 못할 수 있습니다. 감수하"
+"고 이 파일을 계속 읽어들일 수도 있습니다."
 
 #: gedit/gedit-io-error-info-bar.c:611
 #, c-format
@@ -1285,7 +1285,7 @@ msgstr "선택한 색상 모음을 설치할 수 없습니다."
 msgid "Add Scheme"
 msgstr "색상 모음 추가"
 
-#: gedit/gedit-preferences-dialog.c:821
+#: gedit/gedit-preferences-dialog.c:820
 msgid "A_dd Scheme"
 msgstr "색상 모음 추가(_D)"
 
@@ -2879,11 +2879,11 @@ msgstr "선택한 파일을 완전히 지우시겠습니까?."
 msgid "If you delete an item, it is permanently lost."
 msgstr "항목을 지우면, 완전히 없어집니다."
 
-#: plugins/filebrowser/gedit-file-browser-store.c:1701
+#: plugins/filebrowser/gedit-file-browser-store.c:1693
 msgid "(Empty)"
 msgstr "(비어있음)"
 
-#: plugins/filebrowser/gedit-file-browser-store.c:3325
+#: plugins/filebrowser/gedit-file-browser-store.c:3317
 msgid ""
 "The renamed file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
@@ -2892,11 +2892,11 @@ msgstr ""
 "합니다."
 
 #. Translators: This is the default name of new files created by the file browser pane.
-#: plugins/filebrowser/gedit-file-browser-store.c:3581
+#: plugins/filebrowser/gedit-file-browser-store.c:3573
 msgid "Untitled File"
 msgstr "이름 없는 파일"
 
-#: plugins/filebrowser/gedit-file-browser-store.c:3609
+#: plugins/filebrowser/gedit-file-browser-store.c:3601
 msgid ""
 "The new file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
@@ -2904,11 +2904,11 @@ msgstr ""
 "새 파일이 필터로 제외되었습니다. 이 파일을 보려면 필터 설정을 바꿔야합니다."
 
 #. Translators: This is the default name of new directories created by the file browser pane.
-#: plugins/filebrowser/gedit-file-browser-store.c:3638
+#: plugins/filebrowser/gedit-file-browser-store.c:3630
 msgid "Untitled Folder"
 msgstr "이름 없는 폴더"
 
-#: plugins/filebrowser/gedit-file-browser-store.c:3661
+#: plugins/filebrowser/gedit-file-browser-store.c:3653
 msgid ""
 "The new directory is currently filtered out. You need to adjust your filter "
 "settings to make the directory visible"
