@@ -26,14 +26,14 @@
 # Julien Hardelin <jhardlin@orange.fr>, 2013.
 # naybnet <naybnet@gmail.com>, 2014.
 # Thibault Martin <mail@thibaultmart.in>, 2020.
-# Charles Monzat <charles.monzat@free.fr>, 2018-2021.
+# Charles Monzat <charles.monzat@free.fr>, 2018-2022.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gedit HEAD\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gedit/issues\n"
-"POT-Creation-Date: 2021-09-03 09:55+0000\n"
-"PO-Revision-Date: 2021-09-04 15:24+0200\n"
+"POT-Creation-Date: 2022-02-14 13:34+0000\n"
+"PO-Revision-Date: 2022-03-03 20:57+0100\n"
 "Last-Translator: Charles Monzat <charles.monzat@free.fr>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
 "Language: fr\n"
@@ -73,8 +73,9 @@ msgstr "Éditeur de texte"
 #. The list MUST also end with a semicolon!
 #. Search terms to find this application.
 #: data/org.gnome.gedit.desktop.in:18
-msgid "Text;Editor;Plaintext;Write;gedit;"
-msgstr "texte brut;éditeur;écrire;gedit;"
+#| msgid "Text;Editor;Plaintext;Write;gedit;"
+msgid "Text;Editor;Plaintext;Write;gedit;notepad;"
+msgstr "texte brut;éditeur;écrire;gedit;bloc-notes;"
 
 #: data/org.gnome.gedit.desktop.in:22
 msgid "New Window"
@@ -618,7 +619,7 @@ msgstr "_Fermer sans enregistrer"
 #: gedit/gedit-commands-file.c:605 gedit/gedit-commands-file.c:829
 #: gedit/gedit-commands-file.c:1551 gedit/gedit-encodings-dialog.c:192
 #: gedit/gedit-file-chooser-open-dialog.c:78
-#: gedit/gedit-preferences-dialog.c:820 gedit/gedit-progress-info-bar.c:49
+#: gedit/gedit-preferences-dialog.c:821 gedit/gedit-progress-info-bar.c:49
 #: gedit/resources/ui/gedit-encodings-dialog.ui:44
 #: gedit/resources/ui/gedit-highlight-mode-dialog.ui:31
 #: plugins/filebrowser/gedit-file-browser-utils.c:211
@@ -1160,7 +1161,6 @@ msgid "Ch_aracter Encoding:"
 msgstr "_Codage de caractères :"
 
 #: gedit/gedit-io-error-info-bar.c:451
-#| msgid "L_ine Ending:"
 msgid "_Continue loading"
 msgstr "C_ontinuer le chargement"
 
@@ -1225,7 +1225,6 @@ msgstr ""
 
 #: gedit/gedit-io-error-info-bar.c:597
 #, c-format
-#| msgid "The file “%s” is read-only."
 msgid "The file “%s” is very big."
 msgstr "Le fichier « %s » est très volumineux."
 
@@ -1451,11 +1450,10 @@ msgid "The selected color scheme cannot be installed."
 msgstr "Le jeu de couleurs sélectionné ne peut pas être installé."
 
 #: gedit/gedit-preferences-dialog.c:817
-#| msgid "_Add Scheme"
 msgid "Add Scheme"
 msgstr "Ajouter un jeu"
 
-#: gedit/gedit-preferences-dialog.c:821
+#: gedit/gedit-preferences-dialog.c:820
 msgid "A_dd Scheme"
 msgstr "A_jouter un jeu"
 
@@ -1978,7 +1976,6 @@ msgid "Other _Documents…"
 msgstr "Autres _documents…"
 
 #: gedit/resources/ui/gedit-open-document-selector.ui:101
-#| msgid "Open a file"
 msgid "Open another file"
 msgstr "Ouvrir un autre fichier"
 
@@ -3056,11 +3053,11 @@ msgstr ""
 msgid "If you delete an item, it is permanently lost."
 msgstr "Si vous supprimez un élément, il sera définitivement perdu."
 
-#: plugins/filebrowser/gedit-file-browser-store.c:1701
+#: plugins/filebrowser/gedit-file-browser-store.c:1693
 msgid "(Empty)"
 msgstr "(vide)"
 
-#: plugins/filebrowser/gedit-file-browser-store.c:3325
+#: plugins/filebrowser/gedit-file-browser-store.c:3317
 msgid ""
 "The renamed file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
@@ -3069,11 +3066,11 @@ msgstr ""
 "filtre pour rendre le fichier visible"
 
 #. Translators: This is the default name of new files created by the file browser pane.
-#: plugins/filebrowser/gedit-file-browser-store.c:3581
+#: plugins/filebrowser/gedit-file-browser-store.c:3573
 msgid "Untitled File"
 msgstr "Document sans nom"
 
-#: plugins/filebrowser/gedit-file-browser-store.c:3609
+#: plugins/filebrowser/gedit-file-browser-store.c:3601
 msgid ""
 "The new file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
@@ -3082,11 +3079,11 @@ msgstr ""
 "filtre pour rendre le fichier visible"
 
 #. Translators: This is the default name of new directories created by the file browser pane.
-#: plugins/filebrowser/gedit-file-browser-store.c:3638
+#: plugins/filebrowser/gedit-file-browser-store.c:3630
 msgid "Untitled Folder"
 msgstr "Nouveau dossier"
 
-#: plugins/filebrowser/gedit-file-browser-store.c:3661
+#: plugins/filebrowser/gedit-file-browser-store.c:3653
 msgid ""
 "The new directory is currently filtered out. You need to adjust your filter "
 "settings to make the directory visible"
@@ -3283,14 +3280,10 @@ msgid "Emacs, Kate and Vim-style modelines support for gedit."
 msgstr "Prise en charge des modificateurs Emacs, Kate et Vim dans gedit."
 
 #: plugins/openlinks/gedit-open-links-plugin.c:182
-#| msgctxt "shortcut window"
-#| msgid "Open menu"
 msgid "Open Link"
 msgstr "Ouvrir le lien"
 
 #: plugins/openlinks/openlinks.plugin.desktop.in:5
-#| msgctxt "window title"
-#| msgid "Open Files"
 msgid "Open Links"
 msgstr "Ouvrir des liens"
 
