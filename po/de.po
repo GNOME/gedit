@@ -16,7 +16,7 @@
 # Simon Linden <xhi2018@gmail.com>, 2013, 2015.
 # J.M. Rütter <jm@jublo.net>, 2015.
 # Wolfgang Stöggl <c72578@yahoo.de>, 2012, 2014-2015, 2018.
-# Tim Sabsch <tim@sabsch.com>, 2019-2020.
+# Tim Sabsch <tim@sabsch.com>, 2019-2020, 2022.
 # Mario Blättermann <mario.blaettermann@gmail.com>, 2009-2012, 2015-2018, 2021.
 # Philipp Kiemle <philipp.kiemle@gmail.com>, 2021.
 #
@@ -24,8 +24,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gedit master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gedit/issues\n"
-"POT-Creation-Date: 2021-07-25 11:03+0000\n"
-"PO-Revision-Date: 2021-08-22 22:16+0200\n"
+"POT-Creation-Date: 2022-02-14 13:34+0000\n"
+"PO-Revision-Date: 2022-03-04 20:49+0100\n"
 "Last-Translator: Tim Sabsch <tim@sabsch.com>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
 "Language: de\n"
@@ -33,7 +33,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.0\n"
+"X-Generator: Poedit 3.0.1\n"
 
 #: data/org.gnome.gedit.appdata.xml.in:7
 msgid "gedit"
@@ -66,8 +66,8 @@ msgstr "Texteditor"
 #. The list MUST also end with a semicolon!
 #. Search terms to find this application.
 #: data/org.gnome.gedit.desktop.in:18
-msgid "Text;Editor;Plaintext;Write;gedit;"
-msgstr "Text;Editor;Klartext;Schreiben;Gedit;"
+msgid "Text;Editor;Plaintext;Write;gedit;notepad;"
+msgstr "Text;Editor;Klartext;Schreiben;Gedit;Notepad;Notizbuch;"
 
 #: data/org.gnome.gedit.desktop.in:22
 msgid "New Window"
@@ -602,7 +602,7 @@ msgstr "_Nicht speichern"
 #: gedit/gedit-commands-file.c:605 gedit/gedit-commands-file.c:829
 #: gedit/gedit-commands-file.c:1551 gedit/gedit-encodings-dialog.c:192
 #: gedit/gedit-file-chooser-open-dialog.c:78
-#: gedit/gedit-preferences-dialog.c:820 gedit/gedit-progress-info-bar.c:49
+#: gedit/gedit-preferences-dialog.c:821 gedit/gedit-progress-info-bar.c:49
 #: gedit/resources/ui/gedit-encodings-dialog.ui:44
 #: gedit/resources/ui/gedit-highlight-mode-dialog.ui:31
 #: plugins/filebrowser/gedit-file-browser-utils.c:211
@@ -1443,7 +1443,7 @@ msgstr "Das gewählte Farbschema ist nicht installiert."
 msgid "Add Scheme"
 msgstr "Schema hinzufügen"
 
-#: gedit/gedit-preferences-dialog.c:821
+#: gedit/gedit-preferences-dialog.c:820
 msgid "A_dd Scheme"
 msgstr "Schema hin_zufügen"
 
@@ -3046,11 +3046,11 @@ msgstr ""
 msgid "If you delete an item, it is permanently lost."
 msgstr "Wenn Sie ein Element löschen, geht es unwiderruflich verloren."
 
-#: plugins/filebrowser/gedit-file-browser-store.c:1701
+#: plugins/filebrowser/gedit-file-browser-store.c:1693
 msgid "(Empty)"
 msgstr "(Leer)"
 
-#: plugins/filebrowser/gedit-file-browser-store.c:3325
+#: plugins/filebrowser/gedit-file-browser-store.c:3317
 msgid ""
 "The renamed file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
@@ -3059,11 +3059,11 @@ msgstr ""
 "Der Filter muss angepasst werden, damit die Datei angezeigt wird"
 
 #. Translators: This is the default name of new files created by the file browser pane.
-#: plugins/filebrowser/gedit-file-browser-store.c:3581
+#: plugins/filebrowser/gedit-file-browser-store.c:3573
 msgid "Untitled File"
 msgstr "Neue Datei"
 
-#: plugins/filebrowser/gedit-file-browser-store.c:3609
+#: plugins/filebrowser/gedit-file-browser-store.c:3601
 msgid ""
 "The new file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
@@ -3072,11 +3072,11 @@ msgstr ""
 "dargestellt. Der Filter muss angepasst werden, damit die Datei angezeigt wird"
 
 #. Translators: This is the default name of new directories created by the file browser pane.
-#: plugins/filebrowser/gedit-file-browser-store.c:3638
+#: plugins/filebrowser/gedit-file-browser-store.c:3630
 msgid "Untitled Folder"
 msgstr "Neuer Ordner"
 
-#: plugins/filebrowser/gedit-file-browser-store.c:3661
+#: plugins/filebrowser/gedit-file-browser-store.c:3653
 msgid ""
 "The new directory is currently filtered out. You need to adjust your filter "
 "settings to make the directory visible"
