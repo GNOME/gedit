@@ -9,14 +9,14 @@
 # Vytautas Povilaitis <punktyras@nkm.lt>, 2007.
 # Gintautas Miliauskas <gintas@akl.lt>, 2007, 2008, 2010.
 # Algimantas Margevičius <margevicius.algimantas@gmail.com>, 2011, 2012.
-# Aurimas Černius <aurisc4@gmail.com>, 2010-2021.
+# Aurimas Černius <aurisc4@gmail.com>, 2010-2022.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: lt\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gedit/issues\n"
-"POT-Creation-Date: 2021-08-02 18:32+0000\n"
-"PO-Revision-Date: 2021-09-01 22:27+0300\n"
+"POT-Creation-Date: 2022-02-14 13:34+0000\n"
+"PO-Revision-Date: 2022-03-07 18:15+0200\n"
 "Last-Translator: Aurimas Černius <aurisc4@gmail.com>\n"
 "Language-Team: Lietuvių <gnome-lt@lists.akl.lt>\n"
 "Language: lt\n"
@@ -55,8 +55,9 @@ msgstr "Tekstų redaktorius"
 #. The list MUST also end with a semicolon!
 #. Search terms to find this application.
 #: data/org.gnome.gedit.desktop.in:18
-msgid "Text;Editor;Plaintext;Write;gedit;"
-msgstr "Tekstas;Redaktorius;Grynasis tekstas;Rašymas;gedit;"
+#| msgid "Text;Editor;Plaintext;Write;gedit;"
+msgid "Text;Editor;Plaintext;Write;gedit;notepad;"
+msgstr "Tekstas;Redaktorius;Grynasis;tekstas;Rašymas;gedit;notepad;"
 
 #: data/org.gnome.gedit.desktop.in:22
 msgid "New Window"
@@ -565,7 +566,7 @@ msgstr "Uždaryti _neišsaugant"
 #: gedit/gedit-commands-file.c:605 gedit/gedit-commands-file.c:829
 #: gedit/gedit-commands-file.c:1551 gedit/gedit-encodings-dialog.c:192
 #: gedit/gedit-file-chooser-open-dialog.c:78
-#: gedit/gedit-preferences-dialog.c:820 gedit/gedit-progress-info-bar.c:49
+#: gedit/gedit-preferences-dialog.c:821 gedit/gedit-progress-info-bar.c:49
 #: gedit/resources/ui/gedit-encodings-dialog.ui:44
 #: gedit/resources/ui/gedit-highlight-mode-dialog.ui:31
 #: plugins/filebrowser/gedit-file-browser-utils.c:211
@@ -1092,7 +1093,6 @@ msgid "Ch_aracter Encoding:"
 msgstr "Simb_olių koduotė:"
 
 #: gedit/gedit-io-error-info-bar.c:451
-#| msgid "L_ine Ending:"
 msgid "_Continue loading"
 msgstr "_Tęsti įkėlimą"
 
@@ -1154,7 +1154,6 @@ msgstr ""
 
 #: gedit/gedit-io-error-info-bar.c:597
 #, c-format
-#| msgid "The file “%s” is read-only."
 msgid "The file “%s” is very big."
 msgstr "Failas „%s“ yra labai didelis."
 
@@ -1366,11 +1365,10 @@ msgid "The selected color scheme cannot be installed."
 msgstr "Nurodyta spalvų schema negali būti įdiegta."
 
 #: gedit/gedit-preferences-dialog.c:817
-#| msgid "_Add Scheme"
 msgid "Add Scheme"
 msgstr "Pridėti schemą"
 
-#: gedit/gedit-preferences-dialog.c:821
+#: gedit/gedit-preferences-dialog.c:820
 msgid "A_dd Scheme"
 msgstr "P_ridėti schemą"
 
@@ -1894,7 +1892,6 @@ msgid "Other _Documents…"
 msgstr "Kiti _dokumentai…"
 
 #: gedit/resources/ui/gedit-open-document-selector.ui:101
-#| msgid "Open a file"
 msgid "Open another file"
 msgstr "Atverti kitą failą"
 
@@ -2960,11 +2957,11 @@ msgstr "Ar tikrai norite negrįžtamai ištrinti pasirinktus failus?"
 msgid "If you delete an item, it is permanently lost."
 msgstr "Jeigu ištrinsite elementą, jis bus nesugrąžinamai prarastas."
 
-#: plugins/filebrowser/gedit-file-browser-store.c:1701
+#: plugins/filebrowser/gedit-file-browser-store.c:1693
 msgid "(Empty)"
 msgstr "(Tuščia)"
 
-#: plugins/filebrowser/gedit-file-browser-store.c:3325
+#: plugins/filebrowser/gedit-file-browser-store.c:3317
 msgid ""
 "The renamed file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
@@ -2973,11 +2970,11 @@ msgstr ""
 "filtravimo nustatymus, kad failas taptų matomas"
 
 #. Translators: This is the default name of new files created by the file browser pane.
-#: plugins/filebrowser/gedit-file-browser-store.c:3581
+#: plugins/filebrowser/gedit-file-browser-store.c:3573
 msgid "Untitled File"
 msgstr "Nepavadintas failas"
 
-#: plugins/filebrowser/gedit-file-browser-store.c:3609
+#: plugins/filebrowser/gedit-file-browser-store.c:3601
 msgid ""
 "The new file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
@@ -2986,11 +2983,11 @@ msgstr ""
 "nustatymus, kad failas taptų matomas"
 
 #. Translators: This is the default name of new directories created by the file browser pane.
-#: plugins/filebrowser/gedit-file-browser-store.c:3638
+#: plugins/filebrowser/gedit-file-browser-store.c:3630
 msgid "Untitled Folder"
 msgstr "Nepavadintas aplankas"
 
-#: plugins/filebrowser/gedit-file-browser-store.c:3661
+#: plugins/filebrowser/gedit-file-browser-store.c:3653
 msgid ""
 "The new directory is currently filtered out. You need to adjust your filter "
 "settings to make the directory visible"
@@ -3184,14 +3181,10 @@ msgid "Emacs, Kate and Vim-style modelines support for gedit."
 msgstr "Emacs, Kate ir Vim stiliaus veiksenų eilučių palaikymas."
 
 #: plugins/openlinks/gedit-open-links-plugin.c:182
-#| msgctxt "shortcut window"
-#| msgid "Open menu"
 msgid "Open Link"
 msgstr "Atverti saitą"
 
 #: plugins/openlinks/openlinks.plugin.desktop.in:5
-#| msgctxt "window title"
-#| msgid "Open Files"
 msgid "Open Links"
 msgstr "Atverti saitus"
 
