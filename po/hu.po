@@ -1,5 +1,5 @@
 # Hungarian translation for gedit.
-# Copyright (C) 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2018, 2019, 2020, 2021 Free Software Foundation, Inc.
+# Copyright (C) 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2018, 2019, 2020, 2021, 2022 Free Software Foundation, Inc.
 # This file is distributed under the same license as the gedit package.
 #
 # Szabolcs Ban <shooby at gnome dot hu>, 2000.
@@ -10,14 +10,14 @@
 # Laszlo Dvornik <dvornik at gnome dot hu>, 2004.
 # Gabor Kelemen <kelemeng at gnome dot hu>, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2016, 2018.
 # Mate Ory <orymate at gmail dot com>, 2006, 2007, 2008.
-# Balázs Úr <ur.balazs at fsf dot hu>, 2013, 2014, 2015, 2016, 2019, 2020, 2021.
+# Balázs Úr <ur.balazs at fsf dot hu>, 2013, 2014, 2015, 2016, 2019, 2020, 2021, 2022.
 # Balázs Meskó <mesko.balazs at fsf dot hu>, 2020, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: gedit master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gedit/issues\n"
-"POT-Creation-Date: 2021-08-02 18:32+0000\n"
-"PO-Revision-Date: 2021-09-10 21:28+0200\n"
+"POT-Creation-Date: 2022-02-14 13:34+0000\n"
+"PO-Revision-Date: 2022-03-07 20:49+0100\n"
 "Last-Translator: Balázs Úr <ur.balazs at fsf dot hu>\n"
 "Language-Team: Hungarian <gnome-hu-list at gnome dot org>\n"
 "Language: hu\n"
@@ -56,8 +56,9 @@ msgstr "Szövegszerkesztő"
 #. The list MUST also end with a semicolon!
 #. Search terms to find this application.
 #: data/org.gnome.gedit.desktop.in:18
-msgid "Text;Editor;Plaintext;Write;gedit;"
-msgstr "Szöveg;Szerkesztő;Egyszerű szöveg;Írás;gedit;"
+#| msgid "Text;Editor;Plaintext;Write;gedit;"
+msgid "Text;Editor;Plaintext;Write;gedit;notepad;"
+msgstr "Szöveg;Szerkesztő;Egyszerű szöveg;Írás;gedit;jegyzettömb;"
 
 #: data/org.gnome.gedit.desktop.in:22
 msgid "New Window"
@@ -254,12 +255,10 @@ msgid "Specifies the position of the right margin."
 msgstr "Jobb oldali margó pozíciójának megadása."
 
 #: data/org.gnome.gedit.gschema.xml.in:131
-#| msgid "Display Right Margin"
 msgid "Display Overview Map"
 msgstr "Áttekintő térkép megjelenítése"
 
 #: data/org.gnome.gedit.gschema.xml.in:132
-#| msgid "Whether gedit should display the right margin in the editing area."
 msgid "Whether gedit should display the overview map for the document."
 msgstr "Jelenítse-e meg a gedit a dokumentum áttekintő térképét."
 
@@ -575,7 +574,7 @@ msgstr "Bezárás mentés _nélkül"
 #: gedit/gedit-commands-file.c:605 gedit/gedit-commands-file.c:829
 #: gedit/gedit-commands-file.c:1551 gedit/gedit-encodings-dialog.c:192
 #: gedit/gedit-file-chooser-open-dialog.c:78
-#: gedit/gedit-preferences-dialog.c:820 gedit/gedit-progress-info-bar.c:49
+#: gedit/gedit-preferences-dialog.c:821 gedit/gedit-progress-info-bar.c:49
 #: gedit/resources/ui/gedit-encodings-dialog.ui:44
 #: gedit/resources/ui/gedit-highlight-mode-dialog.ui:31
 #: plugins/filebrowser/gedit-file-browser-utils.c:211
@@ -1086,7 +1085,6 @@ msgid "Ch_aracter Encoding:"
 msgstr "_Karakterkódolás:"
 
 #: gedit/gedit-io-error-info-bar.c:451
-#| msgid "L_ine Ending:"
 msgid "_Continue loading"
 msgstr "Betöltés _folytatása"
 
@@ -1148,7 +1146,6 @@ msgstr "Válasszon másik karakterkódolást a menüből, és próbálja újra."
 
 #: gedit/gedit-io-error-info-bar.c:597
 #, c-format
-#| msgid "The file “%s” is read-only."
 msgid "The file “%s” is very big."
 msgstr "A(z) „%s” fájl nagyon nagy."
 
@@ -1365,11 +1362,10 @@ msgid "The selected color scheme cannot be installed."
 msgstr "A kijelölt színséma nem telepíthető."
 
 #: gedit/gedit-preferences-dialog.c:817
-#| msgid "_Add Scheme"
 msgid "Add Scheme"
 msgstr "Séma hozzáadása"
 
-#: gedit/gedit-preferences-dialog.c:821
+#: gedit/gedit-preferences-dialog.c:820
 msgid "A_dd Scheme"
 msgstr "Séma h_ozzáadása"
 
@@ -1888,12 +1884,10 @@ msgid "No results"
 msgstr "Nincs találat"
 
 #: gedit/resources/ui/gedit-open-document-selector.ui:97
-#| msgid "_Documents"
 msgid "Other _Documents…"
 msgstr "Egyéb _dokumentumok…"
 
 #: gedit/resources/ui/gedit-open-document-selector.ui:101
-#| msgid "Open a file"
 msgid "Open another file"
 msgstr "Másik fájl megnyitása"
 
@@ -1915,7 +1909,6 @@ msgid "Display _statusbar"
 msgstr "Á_llapotsor megjelenítése"
 
 #: gedit/resources/ui/gedit-preferences-dialog.ui:110
-#| msgid "Display right margin"
 msgid "Display _overview map"
 msgstr "Átte_kintő térkép megjelenítése"
 
@@ -2539,8 +2532,6 @@ msgstr "Fájl megnyitása"
 
 #: gedit/resources/ui/gedit-window.ui:65 gedit/resources/ui/gedit-window.ui:383
 #: gedit/resources/ui/gedit-window.ui:397
-#| msgctxt "window title"
-#| msgid "Open"
 msgid "Open"
 msgstr "Megnyitás"
 
@@ -2572,7 +2563,6 @@ msgid "Hide panel"
 msgstr "Panel elrejtése"
 
 #: gedit/resources/ui/gedit-window.ui:368
-#| msgid "Open a file"
 msgid "Open a file dialog"
 msgstr "Fájl párbeszédablak megnyitása"
 
@@ -2966,11 +2956,11 @@ msgstr "Biztosan véglegesen törölni kívánja a kijelölt fájlokat?"
 msgid "If you delete an item, it is permanently lost."
 msgstr "Ha töröl egy elemet, az véglegesen elvész."
 
-#: plugins/filebrowser/gedit-file-browser-store.c:1701
+#: plugins/filebrowser/gedit-file-browser-store.c:1693
 msgid "(Empty)"
 msgstr "(Üres)"
 
-#: plugins/filebrowser/gedit-file-browser-store.c:3325
+#: plugins/filebrowser/gedit-file-browser-store.c:3317
 msgid ""
 "The renamed file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
@@ -2979,11 +2969,11 @@ msgstr ""
 "a szűrőbeállításokat"
 
 #. Translators: This is the default name of new files created by the file browser pane.
-#: plugins/filebrowser/gedit-file-browser-store.c:3581
+#: plugins/filebrowser/gedit-file-browser-store.c:3573
 msgid "Untitled File"
 msgstr "Névtelen fájl"
 
-#: plugins/filebrowser/gedit-file-browser-store.c:3609
+#: plugins/filebrowser/gedit-file-browser-store.c:3601
 msgid ""
 "The new file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
@@ -2992,11 +2982,11 @@ msgstr ""
 "a szűrőbeállításokat"
 
 #. Translators: This is the default name of new directories created by the file browser pane.
-#: plugins/filebrowser/gedit-file-browser-store.c:3638
+#: plugins/filebrowser/gedit-file-browser-store.c:3630
 msgid "Untitled Folder"
 msgstr "Névtelen mappa"
 
-#: plugins/filebrowser/gedit-file-browser-store.c:3661
+#: plugins/filebrowser/gedit-file-browser-store.c:3653
 msgid ""
 "The new directory is currently filtered out. You need to adjust your filter "
 "settings to make the directory visible"
@@ -3189,14 +3179,10 @@ msgid "Emacs, Kate and Vim-style modelines support for gedit."
 msgstr "Emacs, Kate és Vim-stílusú módsorok támogatása a geditben."
 
 #: plugins/openlinks/gedit-open-links-plugin.c:182
-#| msgctxt "shortcut window"
-#| msgid "Open menu"
 msgid "Open Link"
 msgstr "Hivatkozás megnyitása"
 
 #: plugins/openlinks/openlinks.plugin.desktop.in:5
-#| msgctxt "window title"
-#| msgid "Open Files"
 msgid "Open Links"
 msgstr "Hivatkozások megnyitása"
 
