@@ -3,7 +3,7 @@
 #
 # Quico Llach <quico@softcatala.org>, 2000, 2001, 2002.
 # Jordi Mallach <jordi@sindominio.net>, 2002, 2003, 2004.
-# Jordi Mas i Hernàndez <jmas@softcatala.org>, 2003, 2015-2018
+# Jordi Mas i Hernàndez <jmas@softcatala.org>, 2003, 2015-2022
 # Aleix Badia i Bosch <abadia@ica.es>, 2004.
 # Josep Puigdemont <josep.puigdemont@gmail.com>, 2005, 2006, 2007.
 # Gil Forcada <gilforcada@guifi.net>, 2008-2014.
@@ -14,8 +14,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gedit\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gedit/issues\n"
-"POT-Creation-Date: 2022-02-14 13:34+0000\n"
-"PO-Revision-Date: 2019-06-17 20:59+0200\n"
+"POT-Creation-Date: 2022-03-15 18:36+0000\n"
+"PO-Revision-Date: 2022-03-15 18:36+0000\n"
 "Last-Translator: Jordi Mas <jmas@softcatala.org>\n"
 "Language-Team: Catalan <Catalan <info@softcatala.org>>\n"
 "Language: ca\n"
@@ -25,11 +25,11 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Poedit 2.2.1\n"
 
-#: data/org.gnome.gedit.appdata.xml.in:7
+#: data/org.gnome.gedit.appdata.xml.in:7 data/org.gnome.gedit.desktop.in:3
 msgid "gedit"
 msgstr "gedit"
 
-#: data/org.gnome.gedit.appdata.xml.in:8 data/org.gnome.gedit.desktop.in:4
+#: data/org.gnome.gedit.appdata.xml.in:8 data/org.gnome.gedit.desktop.in:5
 msgid "Edit text files"
 msgstr "Editeu fitxers de text"
 
@@ -46,22 +46,22 @@ msgstr ""
 "simple per defecte. Hi ha disponibles funcionalitats més avançades activant "
 "connectors."
 
-#: data/org.gnome.gedit.desktop.in:3 gedit/gedit-print-job.c:731
+#: data/org.gnome.gedit.desktop.in:4 gedit/gedit-print-job.c:731
 msgid "Text Editor"
 msgstr "Editor de text"
 
 #. TRANSLATORS: Do NOT translate or localize the semicolons!
 #. The list MUST also end with a semicolon!
 #. Search terms to find this application.
-#: data/org.gnome.gedit.desktop.in:18
+#: data/org.gnome.gedit.desktop.in:19
 msgid "Text;Editor;Plaintext;Write;gedit;notepad;"
 msgstr "Text;Editor;text simple;escriure;gedit;notepad;"
 
-#: data/org.gnome.gedit.desktop.in:22
+#: data/org.gnome.gedit.desktop.in:23
 msgid "New Window"
 msgstr "Finestra nova"
 
-#: data/org.gnome.gedit.desktop.in:26
+#: data/org.gnome.gedit.desktop.in:27
 msgid "New Document"
 msgstr "Crea un document nou"
 
@@ -883,11 +883,11 @@ msgstr[1] ""
 msgid "_Revert"
 msgstr "_Recupera"
 
-#: gedit/gedit-commands-help.c:110
+#: gedit/gedit-commands-help.c:120
 msgid "gedit is a small and lightweight text editor for the GNOME desktop"
 msgstr "El gedit és un editor de text petit i lleuger per l'escriptori GNOME"
 
-#: gedit/gedit-commands-help.c:115
+#: gedit/gedit-commands-help.c:125
 msgid "translator-credits"
 msgstr ""
 "Quico Llach <quico@softcatala.org>\n"
@@ -1844,8 +1844,8 @@ msgstr "A_juda"
 
 #: gedit/resources/gtk/menus-common.ui:394 gedit/resources/gtk/menus.ui:127
 #: gedit/resources/gtk/menus-traditional.ui:123
-msgid "_About Text Editor"
-msgstr "_Quant a l'Editor de text"
+msgid "_About gedit"
+msgstr "_Quant al gedit"
 
 #: gedit/resources/gtk/menus.ui:41 gedit/resources/gtk/menus-traditional.ui:37
 msgid "Save _All"
@@ -3689,11 +3689,3 @@ msgstr "Insereix la data/hora"
 msgid "Inserts current date and time at the cursor position."
 msgstr "Insereix la data i hora actual a la posició del cursor."
 
-#~ msgid "The selected color scheme cannot be installed: %s"
-#~ msgstr "No s'ha pogut instal·lar l'esquema de colors seleccionat: %s"
-
-#~ msgid "Add Color Scheme"
-#~ msgstr "Afegeix un esquema de colors"
-
-#~ msgid "Open a recently used file"
-#~ msgstr "Obre un fitxer usat recentment"
