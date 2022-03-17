@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gedit master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gedit/issues\n"
-"POT-Creation-Date: 2022-02-14 20:44+0000\n"
-"PO-Revision-Date: 2022-02-14 22:31+0100\n"
+"POT-Creation-Date: 2022-03-17 18:09+0000\n"
+"PO-Revision-Date: 2022-03-17 20:35+0100\n"
 "Last-Translator: Matej Urbančič <mateju@src.gnome.org>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "Language: sl_SI\n"
@@ -23,11 +23,11 @@ msgstr ""
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Generator: Poedit 3.0\n"
 
-#: data/org.gnome.gedit.appdata.xml.in:7
+#: data/org.gnome.gedit.appdata.xml.in:7 data/org.gnome.gedit.desktop.in:3
 msgid "gedit"
 msgstr "gedit"
 
-#: data/org.gnome.gedit.appdata.xml.in:8 data/org.gnome.gedit.desktop.in:4
+#: data/org.gnome.gedit.appdata.xml.in:8 data/org.gnome.gedit.desktop.in:5
 msgid "Edit text files"
 msgstr "Enostavni urejevalnik besedilnih datotek"
 
@@ -43,22 +43,22 @@ msgstr ""
 "Program gedit je enostaven za uporabo, z enostavnim privzetim vmesnikom. "
 "Naprednejše možnosti so na voljo prek sistema vstavkov."
 
-#: data/org.gnome.gedit.desktop.in:3 gedit/gedit-print-job.c:731
+#: data/org.gnome.gedit.desktop.in:4 gedit/gedit-print-job.c:731
 msgid "Text Editor"
 msgstr "Gedit – urejevalnik besedil"
 
 #. TRANSLATORS: Do NOT translate or localize the semicolons!
 #. The list MUST also end with a semicolon!
 #. Search terms to find this application.
-#: data/org.gnome.gedit.desktop.in:18
+#: data/org.gnome.gedit.desktop.in:19
 msgid "Text;Editor;Plaintext;Write;gedit;notepad;"
-msgstr "Besedilo;Urejevalnik;tekst;Write;gedit;Pisanje;Zapis:Urejanje:"
+msgstr "Besedilo;Urejevalnik;tekst;Write;gedit;Pisanje;Zapis:Urejanje;"
 
-#: data/org.gnome.gedit.desktop.in:22
+#: data/org.gnome.gedit.desktop.in:23
 msgid "New Window"
 msgstr "Novo okno"
 
-#: data/org.gnome.gedit.desktop.in:26
+#: data/org.gnome.gedit.desktop.in:27
 msgid "New Document"
 msgstr "Nov dokument"
 
@@ -905,11 +905,11 @@ msgstr[3] ""
 msgid "_Revert"
 msgstr "_Obnovi"
 
-#: gedit/gedit-commands-help.c:110
+#: gedit/gedit-commands-help.c:120
 msgid "gedit is a small and lightweight text editor for the GNOME desktop"
 msgstr "Program gedit je urejevalnik besedil za namizje GNOME"
 
-#: gedit/gedit-commands-help.c:115
+#: gedit/gedit-commands-help.c:125
 msgid "translator-credits"
 msgstr ""
 "Matej Urbančič <mateju@src.gnome.org>\n"
@@ -1859,7 +1859,7 @@ msgstr "Pomo_č"
 
 #: gedit/resources/gtk/menus-common.ui:394 gedit/resources/gtk/menus.ui:127
 #: gedit/resources/gtk/menus-traditional.ui:123
-msgid "_About Text Editor"
+msgid "_About gedit"
 msgstr "_O programu"
 
 #: gedit/resources/gtk/menus.ui:41 gedit/resources/gtk/menus-traditional.ui:37
@@ -3693,6 +3693,9 @@ msgstr "Vstavi datum/čas"
 msgid "Inserts current date and time at the cursor position."
 msgstr "Vstavi trenutni datum in čas na položaju kazalke."
 
+#~ msgid "_About Text Editor"
+#~ msgstr "_O programu"
+
 #, c-format
 #~ msgid "The selected color scheme cannot be installed: %s"
 #~ msgstr "Izbrane barvne sheme ni mogoče namestiti: %s"
@@ -4078,9 +4081,6 @@ msgstr "Vstavi trenutni datum in čas na položaju kazalke."
 #~ "Ali naj gedit ustvari varnostne kopije datotek, ki jih shrani. Pripono "
 #~ "varnostnih datotek lahko nastavite z možnostjo \"Pripona varnostnih kopij "
 #~ "datotek\"."
-
-#~ msgid "About gedit"
-#~ msgstr "O programu"
 
 #~ msgid "Unicode"
 #~ msgstr "Unicode"
