@@ -10,9 +10,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gedit HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-02 18:34+0000\n"
-"PO-Revision-Date: 2021-08-04 10:55+0300\n"
-"Last-Translator: Alexey Rubtsov <rushills@gmail.com>\n"
+"POT-Creation-Date: 2022-02-14 14:05+0000\n"
+"PO-Revision-Date: 2022-03-17 22:03+1000\n"
+"Last-Translator: Ser82-png <sw@atrus.ru>\n"
 "Language-Team: Русский <gnome-cyr@gnome.org>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Poedit 3.0\n"
+"X-Generator: Poedit 2.3\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
@@ -47,7 +47,7 @@ msgstr "Изменение цвета текста и фона в gedit."
 #: C/gedit-plugins-insert-date-time.page:15 C/gedit-plugins-install.page:8
 #: C/gedit-plugins-modelines.page:13 C/gedit-plugins-pyconsole.page:10
 #: C/gedit-plugins-quick-open.page:11 C/gedit-plugins-snippets.page:9
-#: C/gedit-plugins-sort.page:14 C/gedit-printing.page:10
+#: C/gedit-plugins-sort.page:14 C/gedit-printing.page:11
 #: C/gedit-quickstart.page:12 C/gedit-replace.page:14 C/gedit-save-file.page:13
 #: C/gedit-search.page:12 C/gedit-spellcheck.page:12
 #: C/gedit-syntax-highlighting.page:10 C/gedit-tabs-moving.page:13
@@ -373,23 +373,18 @@ msgstr "Шон Маккэнс (Shaun McCance)"
 msgid "2009"
 msgstr "2009"
 
-#. (itstool) path: license/p
-#: C/gedit-character-encodings.page:22
-msgid "Creative Commons Share Alike 3.0"
-msgstr "Creative Commons Share Alike 3.0"
-
 #. (itstool) path: page/title
-#: C/gedit-character-encodings.page:26
+#: C/gedit-character-encodings.page:24
 msgid "Dealing with character encoding problems"
 msgstr "Решение проблем с кодировкой символов"
 
 #. (itstool) path: section/title
-#: C/gedit-character-encodings.page:29
+#: C/gedit-character-encodings.page:27
 msgid "Character encodings"
 msgstr "Кодировки символов"
 
 #. (itstool) path: section/p
-#: C/gedit-character-encodings.page:30
+#: C/gedit-character-encodings.page:28
 msgid ""
 "A character encoding is a specific way of recording characters internally in "
 "a computer. There are many character encodings."
@@ -398,7 +393,7 @@ msgstr ""
 "компьютере. Существует множество кодировок символов."
 
 #. (itstool) path: section/p
-#: C/gedit-character-encodings.page:32
+#: C/gedit-character-encodings.page:30
 msgid ""
 "By default, <app>gedit</app> uses UTF-8, a modern character encoding that "
 "can handle text from most of the world's languages. Another common encoding "
@@ -410,12 +405,12 @@ msgstr ""
 "языков является ISO-8859-1."
 
 #. (itstool) path: section/title
-#: C/gedit-character-encodings.page:38
+#: C/gedit-character-encodings.page:36
 msgid "Problems"
 msgstr "Проблемы"
 
 #. (itstool) path: section/p
-#: C/gedit-character-encodings.page:39
+#: C/gedit-character-encodings.page:37
 msgid ""
 "If you open a file in a different character encoding than the encoding in "
 "which the file was written, then some or all characters might be displayed "
@@ -425,7 +420,7 @@ msgstr ""
 "записан файл, то некоторые или все символы могут отображаться неправильно."
 
 #. (itstool) path: section/p
-#: C/gedit-character-encodings.page:43
+#: C/gedit-character-encodings.page:41
 msgid ""
 "This can happen if the file was created on another operating system or if "
 "the file uses a different script."
@@ -434,12 +429,12 @@ msgstr ""
 "если в файле используется другой метод письма."
 
 #. (itstool) path: section/title
-#: C/gedit-character-encodings.page:48
+#: C/gedit-character-encodings.page:46
 msgid "Solutions"
 msgstr "Решения"
 
 #. (itstool) path: section/p
-#: C/gedit-character-encodings.page:50
+#: C/gedit-character-encodings.page:48
 msgid ""
 "If the content of a text file does not look as expected, <link xref=\"gedit-"
 "open-files\">open the file</link> again by choosing a different "
@@ -450,7 +445,7 @@ msgstr ""
 "<gui>кодировку символов</gui> в нижней части диалога выбора файлов."
 
 #. (itstool) path: section/p
-#: C/gedit-character-encodings.page:54
+#: C/gedit-character-encodings.page:52
 msgid ""
 "If you have an idea which language is used in the document or in the area of "
 "the original author of the document:"
@@ -459,7 +454,7 @@ msgstr ""
 "в местности, где проживает автор документа:"
 
 #. (itstool) path: item/p
-#: C/gedit-character-encodings.page:58
+#: C/gedit-character-encodings.page:56
 msgid ""
 "Select <gui style=\"menuitem\">Add or remove…</gui> from the <gui>Character "
 "Encoding</gui> dropdown at the bottom of the file chooser dialog."
@@ -469,7 +464,7 @@ msgstr ""
 "окна выбора файла."
 
 #. (itstool) path: item/p
-#: C/gedit-character-encodings.page:61
+#: C/gedit-character-encodings.page:59
 msgid ""
 "Select one or more languages and their encodings under <gui>Available "
 "Encodings</gui> on the left."
@@ -478,7 +473,7 @@ msgstr ""
 "кодировки</gui> слева."
 
 #. (itstool) path: item/p
-#: C/gedit-character-encodings.page:64
+#: C/gedit-character-encodings.page:62
 msgid ""
 "Press <gui style=\"button\">+</gui> to add the selected encodings to the "
 "<gui>Character Encoding</gui> dropdown."
@@ -487,13 +482,13 @@ msgstr ""
 "выпадающий список <gui>Доступные кодировки</gui>."
 
 #. (itstool) path: item/p
-#: C/gedit-character-encodings.page:67
+#: C/gedit-character-encodings.page:65
 msgid "Close the dialog by pressing <gui style=\"button\">Apply</gui>."
 msgstr ""
 "Закройте диалоговое окно, нажав кнопку <gui style=\"button\">Применить</gui>."
 
 #. (itstool) path: note/p
-#: C/gedit-character-encodings.page:71
+#: C/gedit-character-encodings.page:69
 msgid ""
 "If none of these solutions solve the problem, then you could try to edit the "
 "file anyway. It is recommended to first create a backup copy of your file."
@@ -846,7 +841,7 @@ msgstr ""
 #. (itstool) path: item/p
 #: C/gedit-open-on-server.page:39 C/gedit-plugins-quick-open.page:44
 msgid "Click <gui>Open</gui>."
-msgstr "Нажмите кнопку <gui>Открыть</gui>."
+msgstr "Щёлкните <gui>Открыть</gui>."
 
 #. (itstool) path: page/p
 #: C/gedit-open-on-server.page:42
@@ -1244,7 +1239,7 @@ msgstr ""
 #. (itstool) path: steps/title
 #: C/gedit-plugins-insert-date-time.page:28
 msgid "To enable the plugin:"
-msgstr "Чтобы включить плагин:"
+msgstr "Чтобы включить модуль:"
 
 #. (itstool) path: item/p
 #: C/gedit-plugins-insert-date-time.page:30
@@ -1253,9 +1248,8 @@ msgid ""
 "<guiseq><gui style=\"menuitem\">Preferences</gui> <gui style=\"tab"
 "\">Plugins</gui></guiseq>."
 msgstr ""
-"Нажмите кнопку меню в правом верхнем углу окна и выберите пункт <guiseq><gui "
-"style=\"menuitem\">Предпочтения</gui> <gui style=\"tab\">Плагины</gui></"
-"guiseq>."
+"Нажмите кнопку меню в правом верхнем углу окна и выберите <guiseq><gui style="
+"\"menuitem\">Параметры</gui> <gui style=\"tab\">Расширения</gui></guiseq>."
 
 #. (itstool) path: item/p
 #: C/gedit-plugins-insert-date-time.page:35
@@ -1806,8 +1800,8 @@ msgstr ""
 
 #. (itstool) path: credit/name
 #: C/gedit-plugins-snippets.page:13 C/gedit-plugins-sort.page:18
-#: C/gedit-printing-order.page:15 C/gedit-printing.page:14
-#: C/gedit-printing-select.page:14 C/gedit-quickstart.page:16
+#: C/gedit-printing-order.page:16 C/gedit-printing.page:15
+#: C/gedit-printing-select.page:15 C/gedit-quickstart.page:16
 #: C/gedit-replace.page:22 C/gedit-save-file.page:17 C/gedit-search.page:20
 #: C/gedit-spellcheck.page:20 C/gedit-syntax-highlighting.page:14
 #: C/gedit-tabs-moving.page:21 C/gedit-tabs.page:22 C/gedit-undo-redo.page:20
@@ -2260,22 +2254,22 @@ msgid "Set the pages to print in a certain order."
 msgstr "Установка печати страниц в определённом порядке."
 
 #. (itstool) path: credit/name
-#: C/gedit-printing-order.page:11 C/gedit-printing-select.page:10
+#: C/gedit-printing-order.page:12 C/gedit-printing-select.page:11
 msgid "Phil Bull"
 msgstr "Фил Булл (Phil Bull)"
 
 #. (itstool) path: page/title
-#: C/gedit-printing-order.page:21
+#: C/gedit-printing-order.page:22
 msgid "Getting Copies To Print In The Correct Order"
 msgstr "Получение копий для печати в нужном порядке"
 
 #. (itstool) path: section/title
-#: C/gedit-printing-order.page:24
+#: C/gedit-printing-order.page:25
 msgid "Reverse"
 msgstr "Наоборот"
 
 #. (itstool) path: section/p
-#: C/gedit-printing-order.page:26
+#: C/gedit-printing-order.page:27
 msgid ""
 "Printers usually print the first page first, and the last page last, so the "
 "pages end up in reverse order when you pick them up. To reverse the order:"
@@ -2285,16 +2279,17 @@ msgstr ""
 "Чтобы изменить порядок:"
 
 #. (itstool) path: item/p
-#: C/gedit-printing-order.page:32
+#: C/gedit-printing-order.page:33 C/gedit-printing-order.page:57
+#: C/gedit-printing.page:39 C/gedit-printing.page:62 C/gedit-printing.page:99
+#: C/gedit-printing-select.page:29
 msgid ""
-"Select <guiseq><gui style=\"menu\">File</gui> <gui style=\"menuitem\">Print</"
-"gui></guiseq>."
+"Press the menu button in the top-right corner of the window and select the "
+"Print button."
 msgstr ""
-"Выберите <guiseq><gui style=\"menu\">Файл</gui> <gui style=\"menuitem"
-"\">Печать</gui></guiseq>."
+"Нажмите кнопку меню в правом верхнем углу окна и выберите кнопку Печать."
 
 #. (itstool) path: item/p
-#: C/gedit-printing-order.page:36
+#: C/gedit-printing-order.page:37
 msgid ""
 "In the <gui style=\"tab\">General</gui> tab of the Print dialog under <gui "
 "style=\"group\">Copies</gui>, check <gui style=\"checkbox\">Reverse</gui>."
@@ -2304,17 +2299,17 @@ msgstr ""
 "gui>."
 
 #. (itstool) path: section/p
-#: C/gedit-printing-order.page:42
+#: C/gedit-printing-order.page:43
 msgid "The last page will be printed first, and so on."
 msgstr "Теперь печать будет идти с последней страницы и далее."
 
 #. (itstool) path: section/title
-#: C/gedit-printing-order.page:46
+#: C/gedit-printing-order.page:47
 msgid "Collate"
 msgstr "Упорядочить"
 
 #. (itstool) path: section/p
-#: C/gedit-printing-order.page:48
+#: C/gedit-printing-order.page:49
 msgid ""
 "If you are printing more than one copy of the document, the print outs will "
 "be grouped by page number by default. (e.g. The copies of page one come out, "
@@ -2327,21 +2322,12 @@ msgstr ""
 "вместо этого сгруппировать страницы каждой копии документа по порядку."
 
 #. (itstool) path: section/p
-#: C/gedit-printing-order.page:53
+#: C/gedit-printing-order.page:54
 msgid "To Collate:"
 msgstr "Чтобы упорядочить копии:"
 
 #. (itstool) path: item/p
-#: C/gedit-printing-order.page:56
-msgid ""
-"Click <guiseq><gui style=\"menu\">File</gui> <gui style=\"menuitem\">Print</"
-"gui></guiseq>."
-msgstr ""
-"Нажмите <guiseq><gui style=\"menu\">Файл</gui> <gui style=\"menuitem"
-"\">Печать</gui></guiseq>."
-
-#. (itstool) path: item/p
-#: C/gedit-printing-order.page:60
+#: C/gedit-printing-order.page:61
 msgid ""
 "In the <gui style=\"tab\">General</gui> tab of the Print dialog under <gui "
 "style=\"group\">Copies</gui> check <gui style=\"checkbox\">Collate</gui>."
@@ -2355,12 +2341,12 @@ msgid "Print the files that you create with gedit."
 msgstr "Печать файлов созданных в gedit."
 
 #. (itstool) path: page/title
-#: C/gedit-printing.page:20
+#: C/gedit-printing.page:21
 msgid "Printing documents"
 msgstr "Печать документов"
 
 #. (itstool) path: note/p
-#: C/gedit-printing.page:23
+#: C/gedit-printing.page:24
 msgid ""
 "Printing with <app>gedit</app> requires that you have connected and "
 "configured your printer. If you have not done this, please consult the <link "
@@ -2371,19 +2357,19 @@ msgstr ""
 "gnome-help/printing\">Печать в среде GNOME</link>."
 
 #. (itstool) path: page/p
-#: C/gedit-printing.page:28
+#: C/gedit-printing.page:29
 msgid "<app>gedit</app> allows you to print both to a file and to paper."
 msgstr ""
 "<app>gedit</app> позволяет выводить документ на печать на бумаге, а также "
 "печатать в файл."
 
 #. (itstool) path: section/title
-#: C/gedit-printing.page:31
+#: C/gedit-printing.page:32
 msgid "Print Preview"
 msgstr "Предварительный просмотр печати"
 
 #. (itstool) path: section/p
-#: C/gedit-printing.page:33
+#: C/gedit-printing.page:34
 msgid ""
 "Prior to printing your document, you can preview how the printed document "
 "will look by using <gui>Print Preview</gui>. To preview the document:"
@@ -2393,18 +2379,13 @@ msgstr ""
 "просмотра документа:"
 
 #. (itstool) path: item/p
-#: C/gedit-printing.page:38
-msgid ""
-"Select <guiseq><gui style=\"menu\">File</gui> <gui style=\"menuitem\">Print "
-"Preview</gui></guiseq>. Alternatively, you can press <keyseq><key>Shift</"
-"key><key>Ctrl</key> <key>P</key></keyseq>."
-msgstr ""
-"Выберите <guiseq><gui style=\"menu\">Файл</gui> <gui style=\"menuitem"
-"\">Просмотр печати</gui></guiseq>, или нажмите <keyseq><key>Shift</"
-"key><key>Ctrl</key> <key>P</key></keyseq>."
+#: C/gedit-printing.page:43
+#| msgid "Close the dialog by pressing <gui style=\"button\">Apply</gui>."
+msgid "Press <gui style=\"button\">Preview</gui>."
+msgstr "Нажмите <gui style=\"button\">Образец</gui>."
 
 #. (itstool) path: section/p
-#: C/gedit-printing.page:45
+#: C/gedit-printing.page:47
 msgid ""
 "A preview of your document will open in the same tab as the file. You can "
 "browse this preview with help of navigation buttons and tools in the toolbar "
@@ -2418,12 +2399,12 @@ msgstr ""
 "нажмите кнопку <gui style=\"button\">Закрыть просмотр печати</gui>."
 
 #. (itstool) path: section/title
-#: C/gedit-printing.page:53
+#: C/gedit-printing.page:55
 msgid "Printing To Paper"
 msgstr "Печать на бумаге"
 
 #. (itstool) path: section/p
-#: C/gedit-printing.page:55
+#: C/gedit-printing.page:57
 msgid ""
 "You can print your documents to paper using a local or remote printer. To "
 "print a file:"
@@ -2432,29 +2413,18 @@ msgstr ""
 "Чтобы распечатать файл:"
 
 #. (itstool) path: item/p
-#: C/gedit-printing.page:60
+#: C/gedit-printing.page:66
 msgid ""
-"Select <guiseq><gui style=\"menu\">File</gui> <gui style=\"menuitem\">Print</"
-"gui> <gui style=\"tab\">General</gui></guiseq>."
+"In the <gui style=\"tab\">General</gui> tab, select the desired printer from "
+"the list of printers available."
 msgstr ""
-"Выберите <guiseq><gui style=\"menu\">Файл</gui> <gui style=\"menuitem"
-"\">Печать</gui> <gui style=\"tab\">Общие</gui></guiseq>."
+"На вкладке <gui style=\"tab\">Общие</gui> выберите нужный принтер из списка "
+"доступных."
 
 #. (itstool) path: item/p
-#: C/gedit-printing.page:65
-msgid "Select the desired printer from the list of printers available."
-msgstr "Выберите нужный принтер из списка доступных принтеров."
-
-#. (itstool) path: item/p
-#: C/gedit-printing.page:68
-msgid ""
-"You can preview the file using <gui style=\"button\">Print Preview</gui> and "
-"once you are satisfied with the settings, click <gui style=\"button\">Print</"
-"gui> to send the file to printer."
-msgstr ""
-"Можно просмотреть файл, нажав кнопку <gui style=\"button\">Просмотр печати</"
-"gui>. Если параметры печати соответствуют вашим ожиданиям, нажмите кнопку "
-"<gui style=\"button\">Печать</gui>, чтобы отправить файл на принтер."
+#: C/gedit-printing.page:70 C/gedit-printing.page:121
+msgid "Press <gui style=\"button\">Print</gui>."
+msgstr "Нажмите <gui style=\"button\">Печать</gui>."
 
 #. (itstool) path: section/p
 #: C/gedit-printing.page:74
@@ -2494,46 +2464,39 @@ msgstr "Печать в файл"
 #: C/gedit-printing.page:94
 msgid ""
 "You can also use <app>gedit</app> to print to a file. To print your document "
-"to file of a different format:"
+"to a file of a different format:"
 msgstr ""
 "Также можно использовать <app>gedit</app> для печати документа в файл. Чтобы "
 "распечатать документ в файл:"
 
 #. (itstool) path: item/p
-#: C/gedit-printing.page:99
+#: C/gedit-printing.page:103
 msgid ""
-"Select <guiseq><gui style=\"menu\">File</gui> <gui style=\"menuitem\">Print</"
-"gui> <gui style=\"menuitem\">Print to File</gui></guiseq>."
+"In the <gui style=\"tab\">General</gui> tab, select <gui>Print to File</gui> "
+"from the list of printers available."
 msgstr ""
-"Выберите <guiseq><gui style=\"menu\">Файл</gui> <gui style=\"menuitem"
-"\">Печать</gui> <gui style=\"menuitem\">Печатать в файл</gui></guiseq>."
+"На вкладке <gui style=\"tab\">Общие</gui>, выберите <gui>Печатать в файл</"
+"gui> в списке доступных принтеров."
 
 #. (itstool) path: item/p
-#: C/gedit-printing.page:104
-msgid ""
-"Printing is enabled for the following file formats, you may select from:"
-msgstr "Печать возможна в файлы следующих форматов, на выбор:"
+#: C/gedit-printing.page:107
+msgid "Select an output format:"
+msgstr "Выберите формат вывода:"
 
 #. (itstool) path: item/p
-#: C/gedit-printing.page:108
+#: C/gedit-printing.page:110
 msgid "Portable Document Format (.pdf)"
 msgstr "Portable Document Format (.pdf)"
 
 #. (itstool) path: item/p
-#: C/gedit-printing.page:111
+#: C/gedit-printing.page:113
 msgid "PostScript (.ps)"
 msgstr "PostScript (.ps)"
 
 #. (itstool) path: item/p
-#: C/gedit-printing.page:114
+#: C/gedit-printing.page:116
 msgid "Scalable Vector Graphic (.svg)"
 msgstr "Scalable Vector Graphic (.svg)"
-
-#. (itstool) path: item/p
-#: C/gedit-printing.page:119
-msgid "To print the document to file, click <gui style=\"button\">Print</gui>."
-msgstr ""
-"Для печати документа в файл, нажмите <gui style=\"button\">Печать</gui>."
 
 #. (itstool) path: info/desc
 #: C/gedit-printing-select.page:7
@@ -2541,12 +2504,12 @@ msgid "Choose the pages that you want to print."
 msgstr "Выбор страниц, которые необходимо напечатать."
 
 #. (itstool) path: page/title
-#: C/gedit-printing-select.page:20
+#: C/gedit-printing-select.page:21
 msgid "Only print certain pages"
 msgstr "Печать только указанных страниц"
 
 #. (itstool) path: page/p
-#: C/gedit-printing-select.page:22
+#: C/gedit-printing-select.page:23
 msgid ""
 "You can selectively print only certain pages from the document. For example, "
 "if you enter the page numbers \"1,3,5-7,9\", then only pages 1, 3, 5, 6, 7 "
@@ -2557,16 +2520,7 @@ msgstr ""
 "3, 5, 6, 7 и 9. Чтобы выборочно напечатать страницы:"
 
 #. (itstool) path: item/p
-#: C/gedit-printing-select.page:28
-msgid ""
-"Select <guiseq><gui style=\"menu\">File</gui> <gui style=\"menuitem\">Print…"
-"</gui></guiseq>."
-msgstr ""
-"Выберите <guiseq><gui style=\"menu\">Файл</gui> <gui style=\"menuitem"
-"\">Печать…</gui></guiseq>."
-
-#. (itstool) path: item/p
-#: C/gedit-printing-select.page:32
+#: C/gedit-printing-select.page:33
 msgid ""
 "In the <gui style=\"tab\">General</gui> tab in the Print dialog choose <gui "
 "style=\"radiobutton\">Pages</gui> from the <gui style=\"group\">Range</gui> "
@@ -2577,7 +2531,7 @@ msgstr ""
 "\">Страницы</gui>."
 
 #. (itstool) path: item/p
-#: C/gedit-printing-select.page:36
+#: C/gedit-printing-select.page:37
 msgid ""
 "Type the numbers of the pages you want to print from the document, separated "
 "by commas. Use a dash to specify a range of pages."
@@ -3695,6 +3649,67 @@ msgstr "Creative Commons Attribution-ShareAlike 3.0 Unported License"
 #: C/legal.xml:3
 msgid "This work is licensed under a <_:link-1/>."
 msgstr "Эта работа распространяется под лицензией <_:link-1/>."
+
+#~ msgid "Creative Commons Share Alike 3.0"
+#~ msgstr "Creative Commons Share Alike 3.0"
+
+#~ msgid ""
+#~ "Select <guiseq><gui style=\"menu\">File</gui> <gui style=\"menuitem"
+#~ "\">Print</gui></guiseq>."
+#~ msgstr ""
+#~ "Выберите <guiseq><gui style=\"menu\">Файл</gui> <gui style=\"menuitem"
+#~ "\">Печать</gui></guiseq>."
+
+#~ msgid ""
+#~ "Click <guiseq><gui style=\"menu\">File</gui> <gui style=\"menuitem"
+#~ "\">Print</gui></guiseq>."
+#~ msgstr ""
+#~ "Нажмите <guiseq><gui style=\"menu\">Файл</gui> <gui style=\"menuitem"
+#~ "\">Печать</gui></guiseq>."
+
+#~ msgid ""
+#~ "Select <guiseq><gui style=\"menu\">File</gui> <gui style=\"menuitem"
+#~ "\">Print Preview</gui></guiseq>. Alternatively, you can press "
+#~ "<keyseq><key>Shift</key><key>Ctrl</key> <key>P</key></keyseq>."
+#~ msgstr ""
+#~ "Выберите <guiseq><gui style=\"menu\">Файл</gui> <gui style=\"menuitem"
+#~ "\">Просмотр печати</gui></guiseq>, или нажмите <keyseq><key>Shift</"
+#~ "key><key>Ctrl</key> <key>P</key></keyseq>."
+
+#~ msgid ""
+#~ "Select <guiseq><gui style=\"menu\">File</gui> <gui style=\"menuitem"
+#~ "\">Print</gui> <gui style=\"tab\">General</gui></guiseq>."
+#~ msgstr ""
+#~ "Выберите <guiseq><gui style=\"menu\">Файл</gui> <gui style=\"menuitem"
+#~ "\">Печать</gui> <gui style=\"tab\">Общие</gui></guiseq>."
+
+#~ msgid ""
+#~ "You can preview the file using <gui style=\"button\">Print Preview</gui> "
+#~ "and once you are satisfied with the settings, click <gui style=\"button"
+#~ "\">Print</gui> to send the file to printer."
+#~ msgstr ""
+#~ "Можно просмотреть файл, нажав кнопку <gui style=\"button\">Просмотр "
+#~ "печати</gui>. Если параметры печати соответствуют вашим ожиданиям, "
+#~ "нажмите кнопку <gui style=\"button\">Печать</gui>, чтобы отправить файл "
+#~ "на принтер."
+
+#~ msgid ""
+#~ "Select <guiseq><gui style=\"menu\">File</gui> <gui style=\"menuitem"
+#~ "\">Print</gui> <gui style=\"menuitem\">Print to File</gui></guiseq>."
+#~ msgstr ""
+#~ "Выберите <guiseq><gui style=\"menu\">Файл</gui> <gui style=\"menuitem"
+#~ "\">Печать</gui> <gui style=\"menuitem\">Печатать в файл</gui></guiseq>."
+
+#~ msgid ""
+#~ "Printing is enabled for the following file formats, you may select from:"
+#~ msgstr "Печать возможна в файлы следующих форматов, на выбор:"
+
+#~ msgid ""
+#~ "Select <guiseq><gui style=\"menu\">File</gui> <gui style=\"menuitem"
+#~ "\">Print…</gui></guiseq>."
+#~ msgstr ""
+#~ "Выберите <guiseq><gui style=\"menu\">Файл</gui> <gui style=\"menuitem"
+#~ "\">Печать…</gui></guiseq>."
 
 #~ msgid ""
 #~ "Select <guiseq><gui style=\"menu\">gedit</gui> <gui style=\"menuitem"
