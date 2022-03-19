@@ -16,8 +16,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gedit master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gedit/issues\n"
-"POT-Creation-Date: 2022-02-14 13:34+0000\n"
-"PO-Revision-Date: 2022-03-07 20:49+0100\n"
+"POT-Creation-Date: 2022-03-15 18:36+0000\n"
+"PO-Revision-Date: 2022-03-19 22:37+0100\n"
 "Last-Translator: Balázs Úr <ur.balazs at fsf dot hu>\n"
 "Language-Team: Hungarian <gnome-hu-list at gnome dot org>\n"
 "Language: hu\n"
@@ -27,11 +27,11 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 19.12.3\n"
 
-#: data/org.gnome.gedit.appdata.xml.in:7
+#: data/org.gnome.gedit.appdata.xml.in:7 data/org.gnome.gedit.desktop.in:3
 msgid "gedit"
 msgstr "gedit"
 
-#: data/org.gnome.gedit.appdata.xml.in:8 data/org.gnome.gedit.desktop.in:4
+#: data/org.gnome.gedit.appdata.xml.in:8 data/org.gnome.gedit.desktop.in:5
 msgid "Edit text files"
 msgstr "Szövegfájlok szerkesztése"
 
@@ -48,23 +48,22 @@ msgstr ""
 "alapértelmezetten egyszerű a felhasználói felülete. A speciálisabb funkciók "
 "bővítmények engedélyezésével érhetők el."
 
-#: data/org.gnome.gedit.desktop.in:3 gedit/gedit-print-job.c:731
+#: data/org.gnome.gedit.desktop.in:4 gedit/gedit-print-job.c:731
 msgid "Text Editor"
 msgstr "Szövegszerkesztő"
 
 #. TRANSLATORS: Do NOT translate or localize the semicolons!
 #. The list MUST also end with a semicolon!
 #. Search terms to find this application.
-#: data/org.gnome.gedit.desktop.in:18
-#| msgid "Text;Editor;Plaintext;Write;gedit;"
+#: data/org.gnome.gedit.desktop.in:19
 msgid "Text;Editor;Plaintext;Write;gedit;notepad;"
 msgstr "Szöveg;Szerkesztő;Egyszerű szöveg;Írás;gedit;jegyzettömb;"
 
-#: data/org.gnome.gedit.desktop.in:22
+#: data/org.gnome.gedit.desktop.in:23
 msgid "New Window"
 msgstr "Új ablak"
 
-#: data/org.gnome.gedit.desktop.in:26
+#: data/org.gnome.gedit.desktop.in:27
 msgid "New Document"
 msgstr "Új dokumentum"
 
@@ -864,12 +863,12 @@ msgstr[1] ""
 msgid "_Revert"
 msgstr "_Visszaállítás"
 
-#: gedit/gedit-commands-help.c:110
+#: gedit/gedit-commands-help.c:120
 msgid "gedit is a small and lightweight text editor for the GNOME desktop"
 msgstr ""
 "A gedit egy kicsi és könnyű szövegszerkesztő a GNOME asztali környezethez"
 
-#: gedit/gedit-commands-help.c:115
+#: gedit/gedit-commands-help.c:125
 msgid "translator-credits"
 msgstr ""
 "Bán Szabolcs <shooby at gnome dot hu>\n"
@@ -1821,8 +1820,9 @@ msgstr "_Súgó"
 
 #: gedit/resources/gtk/menus-common.ui:394 gedit/resources/gtk/menus.ui:127
 #: gedit/resources/gtk/menus-traditional.ui:123
-msgid "_About Text Editor"
-msgstr "A Szövegszerkesztő né_vjegye"
+#| msgid "_About Text Editor"
+msgid "_About gedit"
+msgstr "A gedit _névjegye"
 
 #: gedit/resources/gtk/menus.ui:41 gedit/resources/gtk/menus-traditional.ui:37
 msgid "Save _All"
