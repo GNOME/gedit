@@ -15,15 +15,15 @@
 # Kenneth Venken <kenneth.venken@gmail.com>, 2010.
 # Hannie Dumoleyn <hannie@ubuntu.org>, 2010-2012, 2013, 2015, 2016, 2018, 2020.
 # Erwin Poeze <donnut@outlook.com>, 2014.
-# Nathan Follens <nfollens@gnome.org>, 2015, 2018-2019, 2021.
+# Nathan Follens <nfollens@gnome.org>, 2015, 2018-2019, 2021-2022.
 # Justin van Steijn <jvs@fsfe.org>, 2016, 2018.
 # Reinout van Schouwen <reinouts@gnome.org>, 2016.
 msgid ""
 msgstr ""
 "Project-Id-Version: gedit\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gedit/issues\n"
-"POT-Creation-Date: 2021-08-02 18:32+0000\n"
-"PO-Revision-Date: 2021-09-02 17:24+0200\n"
+"POT-Creation-Date: 2022-03-15 18:36+0000\n"
+"PO-Revision-Date: 2022-03-25 20:57+0100\n"
 "Last-Translator: Nathan Follens <nfollens@gnome.org>\n"
 "Language-Team: Dutch <gnome-nl-list@gnome.org>\n"
 "Language: nl\n"
@@ -31,13 +31,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.0\n"
+"X-Generator: Poedit 3.0.1\n"
 
-#: data/org.gnome.gedit.appdata.xml.in:7
+#: data/org.gnome.gedit.appdata.xml.in:7 data/org.gnome.gedit.desktop.in:3
 msgid "gedit"
 msgstr "gedit"
 
-#: data/org.gnome.gedit.appdata.xml.in:8 data/org.gnome.gedit.desktop.in:4
+#: data/org.gnome.gedit.appdata.xml.in:8 data/org.gnome.gedit.desktop.in:5
 msgid "Edit text files"
 msgstr "Tekstbestanden bewerken"
 
@@ -54,24 +54,24 @@ msgstr ""
 "interface. Meer geavanceerde functies zijn beschikbaar door plug-ins in te "
 "schakelen."
 
-#: data/org.gnome.gedit.desktop.in:3 gedit/gedit-print-job.c:731
+#: data/org.gnome.gedit.desktop.in:4 gedit/gedit-print-job.c:731
 msgid "Text Editor"
 msgstr "Teksteditor"
 
 #. TRANSLATORS: Do NOT translate or localize the semicolons!
 #. The list MUST also end with a semicolon!
 #. Search terms to find this application.
-#: data/org.gnome.gedit.desktop.in:18
-msgid "Text;Editor;Plaintext;Write;gedit;"
+#: data/org.gnome.gedit.desktop.in:19
+msgid "Text;Editor;Plaintext;Write;gedit;notepad;"
 msgstr ""
 "Text;tekst;Editor;teksteditor;tekstverwerker;Plaintext;platte tekst;Write;"
-"schrijven;gedit;"
+"schrijven;gedit;notepad;notities;notitieblok;kladblok;notas;nota's;notablok;"
 
-#: data/org.gnome.gedit.desktop.in:22
+#: data/org.gnome.gedit.desktop.in:23
 msgid "New Window"
 msgstr "Nieuw venster"
 
-#: data/org.gnome.gedit.desktop.in:26
+#: data/org.gnome.gedit.desktop.in:27
 msgid "New Document"
 msgstr "Nieuw document"
 
@@ -589,7 +589,7 @@ msgstr "Sluiten _zonder opslaan"
 #: gedit/gedit-commands-file.c:605 gedit/gedit-commands-file.c:829
 #: gedit/gedit-commands-file.c:1551 gedit/gedit-encodings-dialog.c:192
 #: gedit/gedit-file-chooser-open-dialog.c:78
-#: gedit/gedit-preferences-dialog.c:820 gedit/gedit-progress-info-bar.c:49
+#: gedit/gedit-preferences-dialog.c:821 gedit/gedit-progress-info-bar.c:49
 #: gedit/resources/ui/gedit-encodings-dialog.ui:44
 #: gedit/resources/ui/gedit-highlight-mode-dialog.ui:31
 #: plugins/filebrowser/gedit-file-browser-utils.c:211
@@ -894,11 +894,11 @@ msgstr[1] ""
 msgid "_Revert"
 msgstr "_Terugdraaien"
 
-#: gedit/gedit-commands-help.c:110
+#: gedit/gedit-commands-help.c:120
 msgid "gedit is a small and lightweight text editor for the GNOME desktop"
 msgstr "gedit is een kleine en lichte teksteditor voor de Gnome-werkomgeving"
 
-#: gedit/gedit-commands-help.c:115
+#: gedit/gedit-commands-help.c:125
 msgid "translator-credits"
 msgstr ""
 "Reinout van Schouwen \n"
@@ -1404,7 +1404,7 @@ msgstr "Het geselecteerde kleurenschema kan niet worden geïnstalleerd."
 msgid "Add Scheme"
 msgstr "Schema toevoegen"
 
-#: gedit/gedit-preferences-dialog.c:821
+#: gedit/gedit-preferences-dialog.c:820
 msgid "A_dd Scheme"
 msgstr "Schema _toevoegen"
 
@@ -1860,8 +1860,8 @@ msgstr "_Hulp"
 
 #: gedit/resources/gtk/menus-common.ui:394 gedit/resources/gtk/menus.ui:127
 #: gedit/resources/gtk/menus-traditional.ui:123
-msgid "_About Text Editor"
-msgstr "_Over Teksteditor"
+msgid "_About gedit"
+msgstr "_Over gedit"
 
 #: gedit/resources/gtk/menus.ui:41 gedit/resources/gtk/menus-traditional.ui:37
 msgid "Save _All"
@@ -3002,11 +3002,11 @@ msgstr ""
 msgid "If you delete an item, it is permanently lost."
 msgstr "Wanneer u een item verwijdert is het definitief weg."
 
-#: plugins/filebrowser/gedit-file-browser-store.c:1701
+#: plugins/filebrowser/gedit-file-browser-store.c:1693
 msgid "(Empty)"
 msgstr "(Leeg)"
 
-#: plugins/filebrowser/gedit-file-browser-store.c:3325
+#: plugins/filebrowser/gedit-file-browser-store.c:3317
 msgid ""
 "The renamed file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
@@ -3015,11 +3015,11 @@ msgstr ""
 "filter aanpassen om het bestand zichtbaar te maken"
 
 #. Translators: This is the default name of new files created by the file browser pane.
-#: plugins/filebrowser/gedit-file-browser-store.c:3581
+#: plugins/filebrowser/gedit-file-browser-store.c:3573
 msgid "Untitled File"
 msgstr "Naamloos bestand"
 
-#: plugins/filebrowser/gedit-file-browser-store.c:3609
+#: plugins/filebrowser/gedit-file-browser-store.c:3601
 msgid ""
 "The new file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
@@ -3028,11 +3028,11 @@ msgstr ""
 "filter aanpassen om het bestand zichtbaar te maken"
 
 #. Translators: This is the default name of new directories created by the file browser pane.
-#: plugins/filebrowser/gedit-file-browser-store.c:3638
+#: plugins/filebrowser/gedit-file-browser-store.c:3630
 msgid "Untitled Folder"
 msgstr "Naamloze map"
 
-#: plugins/filebrowser/gedit-file-browser-store.c:3661
+#: plugins/filebrowser/gedit-file-browser-store.c:3653
 msgid ""
 "The new directory is currently filtered out. You need to adjust your filter "
 "settings to make the directory visible"
@@ -3716,6 +3716,9 @@ msgstr "Datum/tijd invoegen"
 msgid "Inserts current date and time at the cursor position."
 msgstr "Voegt de huidige datum en tijd in op de cursor positie."
 
+#~ msgid "_About Text Editor"
+#~ msgstr "_Over Teksteditor"
+
 #~| msgid "The selected color scheme cannot be installed."
 #~ msgid "The selected color scheme cannot be installed: %s"
 #~ msgstr "Het geselecteerde kleurenschema kan niet worden geïnstalleerd: %s"
@@ -4084,9 +4087,6 @@ msgstr "Voegt de huidige datum en tijd in op de cursor positie."
 #~ "%s\n"
 #~ "Gebruik ‘%s --help’ voor een volledige lijst van beschikbare opties voor "
 #~ "de opdrachtregel.\n"
-
-#~ msgid "About gedit"
-#~ msgstr "Over gedit"
 
 #~ msgid "Unicode"
 #~ msgstr "Unicode"
