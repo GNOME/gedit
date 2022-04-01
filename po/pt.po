@@ -15,8 +15,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 3.14\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gedit/issues\n"
-"POT-Creation-Date: 2022-02-14 13:34+0000\n"
-"PO-Revision-Date: 2022-02-14 13:55+0000\n"
+"POT-Creation-Date: 2022-03-19 21:38+0000\n"
+"PO-Revision-Date: 2022-04-01 10:53+0100\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Português <https://l10n.gnome.org/teams/pt/>\n"
 "Language: pt\n"
@@ -27,11 +27,11 @@ msgstr ""
 "X-Generator: Poedit 3.0.1\n"
 "X-Project-Style: gnome\n"
 
-#: data/org.gnome.gedit.appdata.xml.in:7
+#: data/org.gnome.gedit.appdata.xml.in:7 data/org.gnome.gedit.desktop.in:3
 msgid "gedit"
 msgstr "gedit"
 
-#: data/org.gnome.gedit.appdata.xml.in:8 data/org.gnome.gedit.desktop.in:4
+#: data/org.gnome.gedit.appdata.xml.in:8 data/org.gnome.gedit.desktop.in:5
 msgid "Edit text files"
 msgstr "Editar ficheiros de texto"
 
@@ -48,22 +48,22 @@ msgstr ""
 "interface simples. Podem ser adicionadas funcionalidades mais avançadas "
 "através de extensões (plugins)."
 
-#: data/org.gnome.gedit.desktop.in:3 gedit/gedit-print-job.c:731
+#: data/org.gnome.gedit.desktop.in:4 gedit/gedit-print-job.c:731
 msgid "Text Editor"
 msgstr "Editor de texto"
 
 #. TRANSLATORS: Do NOT translate or localize the semicolons!
 #. The list MUST also end with a semicolon!
 #. Search terms to find this application.
-#: data/org.gnome.gedit.desktop.in:18
+#: data/org.gnome.gedit.desktop.in:19
 msgid "Text;Editor;Plaintext;Write;gedit;notepad;"
 msgstr "Texto;Editor;Texto simples;Escrever;gedit;notepad;"
 
-#: data/org.gnome.gedit.desktop.in:22
+#: data/org.gnome.gedit.desktop.in:23
 msgid "New Window"
 msgstr "Nova janela"
 
-#: data/org.gnome.gedit.desktop.in:26
+#: data/org.gnome.gedit.desktop.in:27
 msgid "New Document"
 msgstr "Novo documento"
 
@@ -890,13 +890,13 @@ msgstr[1] ""
 msgid "_Revert"
 msgstr "_Reverter"
 
-#: gedit/gedit-commands-help.c:110
+#: gedit/gedit-commands-help.c:120
 msgid "gedit is a small and lightweight text editor for the GNOME desktop"
 msgstr ""
 "O gedit é um editor de texto pequeno e ligeiro para o ambiente de trabalho "
 "GNOME"
 
-#: gedit/gedit-commands-help.c:115
+#: gedit/gedit-commands-help.c:125
 msgid "translator-credits"
 msgstr ""
 "Duarte Loreto <happyguy_pt@hotmail.com>\n"
@@ -1845,8 +1845,8 @@ msgstr "A_juda"
 
 #: gedit/resources/gtk/menus-common.ui:394 gedit/resources/gtk/menus.ui:127
 #: gedit/resources/gtk/menus-traditional.ui:123
-msgid "_About Text Editor"
-msgstr "_Sobre o Editor de texto"
+msgid "_About gedit"
+msgstr "_Acerca do gedit"
 
 #: gedit/resources/gtk/menus.ui:41 gedit/resources/gtk/menus-traditional.ui:37
 msgid "Save _All"
@@ -3683,6 +3683,9 @@ msgstr "Inserir data/hora"
 msgid "Inserts current date and time at the cursor position."
 msgstr "Insere a data e hora atuais na posição do cursor."
 
+#~ msgid "_About Text Editor"
+#~ msgstr "_Sobre o Editor de texto"
+
 #~ msgid "The selected color scheme cannot be installed: %s"
 #~ msgstr "O esquema de cores selecionado não pode ser instalado: %s"
 
@@ -4037,9 +4040,6 @@ msgstr "Insere a data e hora atuais na posição do cursor."
 #~ "Se o gedit deverá criar cópias de segurança dos ficheiros que gravar. "
 #~ "Pode definir a extensão do ficheiro de segurança com a opção \"Backup "
 #~ "Copy Extension\"."
-
-#~ msgid "About gedit"
-#~ msgstr "_Sobre o gedit"
 
 #~ msgid "Unicode"
 #~ msgstr "Unicode"
