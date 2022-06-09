@@ -19,14 +19,15 @@
 # Tim Sabsch <tim@sabsch.com>, 2019-2020, 2022.
 # Mario Blättermann <mario.blaettermann@gmail.com>, 2009-2012, 2015-2018, 2021.
 # Philipp Kiemle <philipp.kiemle@gmail.com>, 2021.
+# Jürgen Benvenuti <gastornis@posteo.org>, 2022.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gedit master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gedit/issues\n"
-"POT-Creation-Date: 2022-02-14 13:34+0000\n"
-"PO-Revision-Date: 2022-03-04 20:49+0100\n"
-"Last-Translator: Tim Sabsch <tim@sabsch.com>\n"
+"POT-Creation-Date: 2022-05-31 11:53+0000\n"
+"PO-Revision-Date: 2022-06-08 21:49+0200\n"
+"Last-Translator: Christian Kirbach <christian.kirbach@gmail.com>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -35,11 +36,11 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.0.1\n"
 
-#: data/org.gnome.gedit.appdata.xml.in:7
+#: data/org.gnome.gedit.appdata.xml.in:7 data/org.gnome.gedit.desktop.in:3
 msgid "gedit"
 msgstr "gedit"
 
-#: data/org.gnome.gedit.appdata.xml.in:8 data/org.gnome.gedit.desktop.in:4
+#: data/org.gnome.gedit.appdata.xml.in:8 data/org.gnome.gedit.desktop.in:5
 msgid "Edit text files"
 msgstr "Textdateien bearbeiten"
 
@@ -58,29 +59,32 @@ msgstr ""
 "einfach verwendbar zu sein. Kompliziertere Funktionen werden über "
 "Erweiterungen zur Verfügung gestellt."
 
-#: data/org.gnome.gedit.desktop.in:3 gedit/gedit-print-job.c:731
+#: data/org.gnome.gedit.desktop.in:4 gedit/gedit-print-job.c:731
 msgid "Text Editor"
 msgstr "Texteditor"
 
 #. TRANSLATORS: Do NOT translate or localize the semicolons!
 #. The list MUST also end with a semicolon!
 #. Search terms to find this application.
-#: data/org.gnome.gedit.desktop.in:18
+#: data/org.gnome.gedit.desktop.in:19
 msgid "Text;Editor;Plaintext;Write;gedit;notepad;"
 msgstr "Text;Editor;Klartext;Schreiben;Gedit;Notepad;Notizbuch;"
 
-#: data/org.gnome.gedit.desktop.in:22
+#: data/org.gnome.gedit.desktop.in:23
 msgid "New Window"
 msgstr "Neues Fenster"
 
-#: data/org.gnome.gedit.desktop.in:26
+#: data/org.gnome.gedit.desktop.in:27
 msgid "New Document"
 msgstr "Neues Dokument"
 
+# "Default font" wird manchmal mit "standardmäßige Schrift" übersetzt, manchmal mit "Vorgabe-Schrift", und machmal mit "voreingestellte Schrift". Ich finde, eine einheitliche Übersetzung wäre besser. - jb
+# Ich bin Freund von "voreingestellt" - ck
 #: data/org.gnome.gedit.gschema.xml.in:36
 msgid "Use Default Font"
-msgstr "Vorgabe-Schrift verwenden"
+msgstr "Voreingestellte Schriftart verwenden"
 
+# default font hier: standardmäßige Schrift
 #: data/org.gnome.gedit.gschema.xml.in:37
 msgid ""
 "Whether to use the system’s default fixed width font for editing text "
@@ -88,7 +92,7 @@ msgid ""
 "font named in the “Editor Font” option will be used instead of the system "
 "font."
 msgstr ""
-"Soll die standardmäßige dicktengleiche Schrift des Systems zum Bearbeiten "
+"Soll die voreingestellte dicktengleiche Schrift des Systems zum Bearbeiten "
 "von Text anstelle der in gedit angegeben Schrift verwendet werden? Falls "
 "diese Option deaktiviert ist, wird die unter »Editor-Schrift« angegeben "
 "Schrift anstelle der System-Schrift verwendet."
@@ -102,14 +106,15 @@ msgstr "'Monospace 12'"
 msgid "Editor Font"
 msgstr "Editor-Schrift"
 
+# default font hier: voreinsgestellte Schrift
 #: data/org.gnome.gedit.gschema.xml.in:43
 msgid ""
 "A custom font that will be used for the editing area. This will only take "
 "effect if the “Use Default Font” option is turned off."
 msgstr ""
 "Die für den Editorbereich zu verwendende benutzerdefinierte Schrift. Diese "
-"wird ausschließlich verwendet, falls die »Voreingestellte Schrift verwenden«-"
-"Option deaktiviert ist."
+"wird ausschließlich verwendet, falls die Option »Voreingestellte Schrift "
+"verwenden« deaktiviert ist."
 
 #: data/org.gnome.gedit.gschema.xml.in:47
 msgid "Style Scheme"
@@ -458,7 +463,7 @@ msgstr "'Sans 11'"
 
 #: data/org.gnome.gedit.gschema.xml.in:226
 msgid "Header Font for Printing"
-msgstr "Druck-Schrift für die Kopfzeilen"
+msgstr "Druckschrift für die Kopfzeilen"
 
 #: data/org.gnome.gedit.gschema.xml.in:227
 msgid ""
@@ -476,7 +481,7 @@ msgstr "'Sans 8'"
 
 #: data/org.gnome.gedit.gschema.xml.in:232
 msgid "Line Number Font for Printing"
-msgstr "Druck-Schrift für Zeilennummern"
+msgstr "Druckschrift für Zeilennummern"
 
 #: data/org.gnome.gedit.gschema.xml.in:233
 msgid ""
@@ -533,7 +538,7 @@ msgstr ""
 "Liste möglicher Kodierungen, die im Zeichenkodierungsmenü der Öffnen/"
 "Speichern-Dateiauswahl angezeigt wird. »CURRENT« bezeichnet die aktuelle "
 "Ländereinstellung. Nur erkannte Zeichenkodierungen werden verwendet. Der "
-"Vorgabewert ist eine leere Liste, in welchem Fall Gedit Vorgaben basierend "
+"Vorgabewert ist eine leere Liste, in welchem Fall gedit Vorgaben basierend "
 "auf Ländereinstellung und Spracheinstellung auswählt."
 
 #: data/org.gnome.gedit.gschema.xml.in:309
@@ -577,9 +582,10 @@ msgstr "Ein neues Dokument in einer existierenden Instanz von gedit erstellen"
 msgid "Open files and block process until files are closed"
 msgstr "Dateien öffnen und Prozess blockieren, bis Dateien geschlossen werden"
 
+# Weiter unten wird "gedit" auch am Satzanfang klein geschrieben. - jb
 #: gedit/gedit-app.c:135
 msgid "Run gedit in standalone mode"
-msgstr "Gedit im eigenständigen Modus ausführen"
+msgstr "gedit im eigenständigen Modus ausführen"
 
 #: gedit/gedit-app.c:142
 msgid "[FILE…] [+LINE[:COLUMN]]"
@@ -913,12 +919,12 @@ msgstr[1] ""
 msgid "_Revert"
 msgstr "_Zurücksetzen"
 
-#: gedit/gedit-commands-help.c:110
+#: gedit/gedit-commands-help.c:120
 msgid "gedit is a small and lightweight text editor for the GNOME desktop"
 msgstr ""
 "gedit ist ein kleiner und handlicher Texteditor für die GNOME-Arbeitsumgebung"
 
-#: gedit/gedit-commands-help.c:115
+#: gedit/gedit-commands-help.c:125
 msgid "translator-credits"
 msgstr ""
 "Manuel Borchers <webmaster@matronix.de>\n"
@@ -933,7 +939,8 @@ msgstr ""
 "Paul Seyfert <pseyfert@mathphys.fsk.uni-heidelberg.de>\n"
 "Simon Linden <xhi2018@gmail.com>\n"
 "Tim Sabsch <tim@sabsch.com>\n"
-"Philipp Kiemle <philipp.kiemle@gmail.com>"
+"Philipp Kiemle <philipp.kiemle@gmail.com>\n"
+"Jürgen Benvenuti <gastornis@posteo.org>"
 
 #: gedit/gedit-commands-search.c:105
 #, c-format
@@ -956,7 +963,7 @@ msgstr "»%s« konnte nicht gefunden werden"
 #: gedit/gedit-document.c:1055 gedit/gedit-document.c:1084
 #, c-format
 msgid "Untitled Document %d"
-msgstr "Ungespeichertes Dokument %d"
+msgstr "Unbenanntes Dokument %d"
 
 #: gedit/gedit-documents-panel.c:397
 #, c-format
@@ -1285,13 +1292,14 @@ msgstr ""
 #: gedit/gedit-io-error-info-bar.c:942
 #, c-format
 msgid "Could not create a backup file while saving “%s”"
-msgstr "Sicherheitskopie konnte nicht beim Speichern von »%s« erstellt werden."
+msgstr ""
+"Es konnte keine Sicherheitskopie beim Speichern von »%s« erstellt werden."
 
 #: gedit/gedit-io-error-info-bar.c:947
 #, c-format
 msgid "Could not create a temporary backup file while saving “%s”"
 msgstr ""
-"Temporäre Sicherheitskopie konnte nicht beim Speichern von »%s« erstellt "
+"Es konnte keine temporäre Sicherheitskopie beim Speichern von »%s« erstellt "
 "werden."
 
 #: gedit/gedit-io-error-info-bar.c:964
@@ -1370,10 +1378,10 @@ msgid ""
 "The disk where you are trying to save the file has a limitation on length of "
 "the file names. Please use a shorter name."
 msgstr ""
-"Für das Laufwerk, auf dem Sie versuchen, zu speichern, gilt eine "
+"Für das Laufwerk, auf dem Sie versuchen zu speichern, gilt eine "
 "Einschränkung für Dateinamen. Bitte verwenden Sie einen kürzeren Dateinamen "
-"oder versuchen auf einem Laufwerk zu speichern, für das diese Einschränkung "
-"nicht gilt."
+"oder versuchen Sie, auf einem Laufwerk zu speichern, für das diese "
+"Einschränkung nicht gilt."
 
 #: gedit/gedit-io-error-info-bar.c:1081
 msgid ""
@@ -1899,8 +1907,8 @@ msgstr "_Hilfe"
 
 #: gedit/resources/gtk/menus-common.ui:394 gedit/resources/gtk/menus.ui:127
 #: gedit/resources/gtk/menus-traditional.ui:123
-msgid "_About Text Editor"
-msgstr "_Info zu Texteditor"
+msgid "_About gedit"
+msgstr "_Info zu gedit"
 
 #: gedit/resources/gtk/menus.ui:41 gedit/resources/gtk/menus-traditional.ui:37
 msgid "Save _All"
@@ -2069,7 +2077,7 @@ msgstr "Schrift"
 
 #: gedit/resources/ui/gedit-preferences-dialog.ui:573
 msgid "Editor _font: "
-msgstr "Editor-_Schrift: "
+msgstr "Editor_schrift: "
 
 #: gedit/resources/ui/gedit-preferences-dialog.ui:590
 msgid "Pick the editor font"
@@ -2155,9 +2163,10 @@ msgstr "_Zeilennummern:"
 msgid "He_aders and footers:"
 msgstr "_Kopf- und Fußzeilen:"
 
+# default font hier: Vorgabeschrift
 #: gedit/resources/ui/gedit-print-preferences.ui:474
 msgid "_Restore Default Fonts"
-msgstr "Auf Vorgabeschriften _zurücksetzen"
+msgstr "Auf voreingestellte Schriften _zurücksetzen"
 
 #: gedit/resources/ui/gedit-print-preview.ui:34
 msgid "Show the previous page"
@@ -2687,6 +2696,7 @@ msgstr "Wörter"
 msgid "Characters (with spaces)"
 msgstr "Zeichen (mit Leerzeichen)"
 
+# Würde ich, gleich wie bei Text Editor und LibreOffice Writer, übersetzen mit "ohne Leerzeichen". - jb
 #: plugins/docinfo/resources/ui/gedit-docinfo-plugin.ui:142
 msgid "Characters (no spaces)"
 msgstr "Zeichen (keine Leerzeichen)"
@@ -2870,7 +2880,7 @@ msgstr "Momentan ausgewählter Text"
 
 #: plugins/externaltools/tools/tools.ui:61
 msgid "Current selection (default to document)"
-msgstr "Momentane Auswahl (Vorgabe für Dokument))"
+msgstr "Momentane Auswahl (Vorgabe für Dokument)"
 
 #: plugins/externaltools/tools/tools.ui:65
 msgid "Current line"
@@ -2963,7 +2973,7 @@ msgstr "Dateiverwaltungsleiste"
 
 #: plugins/filebrowser/filebrowser.plugin.desktop.in:7
 msgid "Easy file access from the side panel."
-msgstr "Leichter Dateizugriff über die Seitenleiste."
+msgstr "Einfacher Dateizugriff über die Seitenleiste."
 
 #: plugins/filebrowser/gedit-file-bookmarks-store.c:200
 msgid "Home"
@@ -3109,7 +3119,7 @@ msgstr "Der Datenträger konnte nicht eingebunden werden: »%s«"
 #, c-format
 msgid "Error when loading “%s”: No such directory"
 msgstr ""
-"Beim Laden von »%s« ist ein Fehler aufgetreten. Es gibt diesen Ordner nicht"
+"Beim Laden von »%s« ist ein Fehler aufgetreten. Diesen Ordner gibt es nicht"
 
 #: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml:5
 msgid "Open With Tree View"
@@ -3445,7 +3455,7 @@ msgid ""
 "[, etc."
 msgstr ""
 "Dies ist kein gültiger Tabulator-Auslöser. Auslöser können entweder "
-"alphanumerische Zeichen (oder _, : und . )enthalten oder einzelne, nicht "
+"alphanumerische Zeichen (oder _, : und . ) enthalten oder einzelne, nicht "
 "alphanumerische Zeichen wie {, [, usw. sein."
 
 #. self['hbox_tab_trigger'].set_spacing(0)
@@ -3661,7 +3671,7 @@ msgstr "Voreinstellung zur Hervorhebung von Rechtschreibfehlern."
 
 #: plugins/spell/resources/ui/gedit-spell-setup-dialog.ui:7
 msgid "Configure spell plugin"
-msgstr "Rechtschreibung-Erweiterung einrichten"
+msgstr "Rechtschreibungs-Erweiterung einrichten"
 
 #: plugins/spell/resources/ui/gedit-spell-setup-dialog.ui:61
 msgid "Defaults for new documents"
