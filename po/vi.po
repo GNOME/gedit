@@ -4,36 +4,37 @@
 # This file is distributed under the same license as the gedit package.
 # Nguyễn Thái Ngọc Duy <pclouds@gmail.com>, 2002-2004,2007,2010-2012.
 # Clytie Siddall <clytie@riverland.net.au>, 2005-2009.
-# Trần Ngọc Quân <vnwildman@gmail.com>, 2013-2016, 2018-2021.
+# Trần Ngọc Quân  <vnwildman@gmail.com>, 2013-2022.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gedit master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gedit/issues\n"
-"POT-Creation-Date: 2021-09-20 18:45+0000\n"
-"PO-Revision-Date: 2021-09-29 09:28+0700\n"
-"Last-Translator: Trần Ngọc Quân <vnwildman@gmail.com>\n"
+"POT-Creation-Date: 2022-05-11 21:57+0000\n"
+"PO-Revision-Date: 2022-06-12 16:04+0700\n"
+"Last-Translator: Trần Ngọc Quân  <vnwildman@gmail.com>\n"
 "Language-Team: Vietnamese <gnome-vi-list@gnome.org>\n"
 "Language: vi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Plural-Forms: nplurals=1; plural=0\n"
 "X-Generator: Gtranslator 3.38.0\n"
 
-#: data/org.gnome.gedit.appdata.xml.in:7
+#: data/org.gnome.gedit.appdata.xml.in:7 data/org.gnome.gedit.desktop.in:3
 msgid "gedit"
 msgstr "gedit"
 
-#: data/org.gnome.gedit.appdata.xml.in:8 data/org.gnome.gedit.desktop.in:4
+#: data/org.gnome.gedit.appdata.xml.in:8 data/org.gnome.gedit.desktop.in:5
 msgid "Edit text files"
 msgstr "Soạn thảo tập tin văn bản"
 
 #: data/org.gnome.gedit.appdata.xml.in:10
-msgid "gedit is the text editor of the GNOME desktop environment."
+#| msgid "gedit is the text editor of the GNOME desktop environment."
+msgid "gedit is a popular text editor for the GNOME desktop environment."
 msgstr ""
-"gedit là phần mềm soạn thảo văn bản dành cho môi trường máy tính để bàn "
-"GNOME."
+"gedit là phần mềm soạn thảo văn bản phổ biến dành cho môi trường máy tính để "
+"bàn GNOME."
 
 #: data/org.gnome.gedit.appdata.xml.in:13
 msgid ""
@@ -43,24 +44,25 @@ msgstr ""
 "Mục tiêu đầu tiên của gedit là dễ sử dụng, với giao diện đơn giản theo mặc "
 "định. Các tính năng nâng cao hơn có sẵn bằng cách bật các trình cắm."
 
-#: data/org.gnome.gedit.desktop.in:3 gedit/gedit-print-job.c:731
+#: data/org.gnome.gedit.desktop.in:4 gedit/gedit-print-job.c:731
 msgid "Text Editor"
 msgstr "Soạn thảo văn bản"
 
 #. TRANSLATORS: Do NOT translate or localize the semicolons!
 #. The list MUST also end with a semicolon!
 #. Search terms to find this application.
-#: data/org.gnome.gedit.desktop.in:18
-msgid "Text;Editor;Plaintext;Write;gedit;"
+#: data/org.gnome.gedit.desktop.in:19
+#| msgid "Text;Editor;Plaintext;Write;gedit;"
+msgid "Text;Editor;Plaintext;Write;gedit;notepad;"
 msgstr ""
 "Text;văn;bản;van;ban;Editor;sửa;sua;soạn;thảo;soan;thao;chữ;chu;Plaintext;"
-"Chữ thường;Chu thuong;Write;Ghi;Lưu;Luu;gedit;"
+"Chữ thường;Chu thuong;Write;Ghi;Lưu;Luu;gedit;notepad;"
 
-#: data/org.gnome.gedit.desktop.in:22
+#: data/org.gnome.gedit.desktop.in:23
 msgid "New Window"
 msgstr "Cửa sổ mới"
 
-#: data/org.gnome.gedit.desktop.in:26
+#: data/org.gnome.gedit.desktop.in:27
 msgid "New Document"
 msgstr "Tài liệu mới"
 
@@ -566,7 +568,7 @@ msgstr "Đóng _không lưu"
 #: gedit/gedit-commands-file.c:605 gedit/gedit-commands-file.c:829
 #: gedit/gedit-commands-file.c:1551 gedit/gedit-encodings-dialog.c:192
 #: gedit/gedit-file-chooser-open-dialog.c:78
-#: gedit/gedit-preferences-dialog.c:820 gedit/gedit-progress-info-bar.c:49
+#: gedit/gedit-preferences-dialog.c:821 gedit/gedit-progress-info-bar.c:49
 #: gedit/resources/ui/gedit-encodings-dialog.ui:44
 #: gedit/resources/ui/gedit-highlight-mode-dialog.ui:31
 #: plugins/filebrowser/gedit-file-browser-utils.c:211
@@ -821,13 +823,13 @@ msgstr[0] "Các thay đổi trong tài liệu ở %d giờ cuối sẽ hoàn to�
 msgid "_Revert"
 msgstr "_Hoàn nguyên"
 
-#: gedit/gedit-commands-help.c:110
+#: gedit/gedit-commands-help.c:120
 msgid "gedit is a small and lightweight text editor for the GNOME desktop"
 msgstr ""
 "gedit là phần mềm soạn thảo văn bản nhỏ và nhẹ dành cho môi trường máy tính "
 "để bàn GNOME"
 
-#: gedit/gedit-commands-help.c:115
+#: gedit/gedit-commands-help.c:125
 msgid "translator-credits"
 msgstr "Nhóm Việt hóa GNOME <gnome-vi-list@gnome.org>"
 
@@ -1304,7 +1306,7 @@ msgstr "Không thể cài đặt lược đồ màu đã chọn."
 msgid "Add Scheme"
 msgstr "Thêm lược đồ"
 
-#: gedit/gedit-preferences-dialog.c:821
+#: gedit/gedit-preferences-dialog.c:820
 msgid "A_dd Scheme"
 msgstr "Thê_m lược đồ"
 
@@ -1759,8 +1761,9 @@ msgstr "Trợ g_iúp"
 
 #: gedit/resources/gtk/menus-common.ui:394 gedit/resources/gtk/menus.ui:127
 #: gedit/resources/gtk/menus-traditional.ui:123
-msgid "_About Text Editor"
-msgstr "_Giới thiệu về Soạn thảo văn bản"
+#| msgid "About gedit"
+msgid "_About gedit"
+msgstr "_Giới thiệu về gedit"
 
 #: gedit/resources/gtk/menus.ui:41 gedit/resources/gtk/menus-traditional.ui:37
 msgid "Save _All"
@@ -2890,11 +2893,11 @@ msgstr "Bạn có chắc muốn xóa hẳn các tập tin đã chọn không?"
 msgid "If you delete an item, it is permanently lost."
 msgstr "Nếu bạn xóa mục nào, nó sẽ bị mất hoàn toàn."
 
-#: plugins/filebrowser/gedit-file-browser-store.c:1701
+#: plugins/filebrowser/gedit-file-browser-store.c:1693
 msgid "(Empty)"
 msgstr "(Rỗng)"
 
-#: plugins/filebrowser/gedit-file-browser-store.c:3325
+#: plugins/filebrowser/gedit-file-browser-store.c:3317
 msgid ""
 "The renamed file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
@@ -2903,11 +2906,11 @@ msgstr ""
 "để hiển thị lại tập tin này"
 
 #. Translators: This is the default name of new files created by the file browser pane.
-#: plugins/filebrowser/gedit-file-browser-store.c:3581
+#: plugins/filebrowser/gedit-file-browser-store.c:3573
 msgid "Untitled File"
 msgstr "Tập tin chưa đặt tên"
 
-#: plugins/filebrowser/gedit-file-browser-store.c:3609
+#: plugins/filebrowser/gedit-file-browser-store.c:3601
 msgid ""
 "The new file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
@@ -2916,11 +2919,11 @@ msgstr ""
 "thị nó"
 
 #. Translators: This is the default name of new directories created by the file browser pane.
-#: plugins/filebrowser/gedit-file-browser-store.c:3638
+#: plugins/filebrowser/gedit-file-browser-store.c:3630
 msgid "Untitled Folder"
 msgstr "Thư mục chưa đặt tên"
 
-#: plugins/filebrowser/gedit-file-browser-store.c:3661
+#: plugins/filebrowser/gedit-file-browser-store.c:3653
 msgid ""
 "The new directory is currently filtered out. You need to adjust your filter "
 "settings to make the directory visible"
@@ -3588,6 +3591,9 @@ msgstr "Chèn ngày/giờ"
 msgid "Inserts current date and time at the cursor position."
 msgstr "Chèn ngày, giờ hiện tại vào vị trí con trỏ hiện tại."
 
+#~ msgid "_About Text Editor"
+#~ msgstr "_Giới thiệu về Soạn thảo văn bản"
+
 #, c-format
 #~ msgid "The selected color scheme cannot be installed: %s"
 #~ msgstr "Không thể cài đặt lược đồ màu đã chọn: %s"
@@ -3971,9 +3977,6 @@ msgstr "Chèn ngày, giờ hiện tại vào vị trí con trỏ hiện tại."
 #~ msgstr ""
 #~ "%s\n"
 #~ "Chạy “%s --help” để xem danh sách tùy chọn dòng lệnh đầy đủ.\n"
-
-#~ msgid "About gedit"
-#~ msgstr "Giới thiệu về gedit"
 
 #~ msgid "Unicode"
 #~ msgstr "Unicode"
