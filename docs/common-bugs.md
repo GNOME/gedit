@@ -10,7 +10,7 @@ Problem with very long lines
 Very long lines (e.g. a wrapped line that takes the whole screen) are not well
 supported by gedit, there can be performance problems or freezes.
 
-[GitLab issue](https://gitlab.gnome.org/GNOME/gtk/issues/229).
+[GitLab issue](https://gitlab.gnome.org/GNOME/gedit/-/issues/513).
 
 Problem with very large files
 -----------------------------
