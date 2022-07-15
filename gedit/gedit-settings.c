@@ -37,13 +37,7 @@ struct _GeditSettings
 	GSettings *settings_file_chooser_state;
 };
 
-enum
-{
-	SIGNAL_FONTS_CHANGED,
-	N_SIGNALS
-};
-
-static guint signals[N_SIGNALS];
+/* GeditSettings is a singleton. */
 static GeditSettings *singleton = NULL;
 
 G_DEFINE_TYPE (GeditSettings, gedit_settings, G_TYPE_OBJECT)
@@ -81,46 +75,92 @@ gedit_settings_class_init (GeditSettingsClass *klass)
 
 	object_class->dispose = gedit_settings_dispose;
 	object_class->finalize = gedit_settings_finalize;
-
-	/* This signal is emitted when the return value of
-	 * _gedit_settings_get_selected_font() has potentially changed.
-	 */
-	signals[SIGNAL_FONTS_CHANGED] =
-		g_signal_new ("fonts-changed",
-			      G_TYPE_FROM_CLASS (klass),
-			      G_SIGNAL_RUN_FIRST,
-			      0,
-			      NULL, NULL, NULL,
-			      G_TYPE_NONE, 0);
 }
 
 static void
-system_font_changed_cb (GSettings     *settings,
+set_font (GeditSettings *self,
+	  const gchar   *font)
+{
+	guint tabs_size;
+	GList *views;
+	GList *l;
+
+	tabs_size = g_settings_get_uint (self->settings_editor, GEDIT_SETTINGS_TABS_SIZE);
+
+	views = gedit_app_get_views (GEDIT_APP (g_application_get_default ()));
+
+	for (l = views; l != NULL; l = l->next)
+	{
+		/* Note: we use def=FALSE to avoid GeditView to query dconf. */
+		gedit_view_set_font (GEDIT_VIEW (l->data), FALSE, font);
+
+		/* FIXME: setting the tab width seems unrelated to set_font(). */
+		gtk_source_view_set_tab_width (GTK_SOURCE_VIEW (l->data), tabs_size);
+	}
+
+	g_list_free (views);
+}
+
+static void
+on_system_font_changed (GSettings     *settings,
 			const gchar   *key,
 			GeditSettings *self)
 {
-	if (g_settings_get_boolean (self->settings_editor, GEDIT_SETTINGS_USE_DEFAULT_FONT))
+
+	gboolean use_default_font;
+
+	use_default_font = g_settings_get_boolean (self->settings_editor, GEDIT_SETTINGS_USE_DEFAULT_FONT);
+
+	if (use_default_font)
 	{
-		g_signal_emit (self, signals[SIGNAL_FONTS_CHANGED], 0);
+		gchar *font;
+
+		font = g_settings_get_string (settings, key);
+		set_font (self, font);
+		g_free (font);
 	}
 }
 
 static void
-use_default_font_changed_cb (GSettings     *settings,
+on_use_default_font_changed (GSettings     *settings,
 			     const gchar   *key,
 			     GeditSettings *self)
 {
-	g_signal_emit (self, signals[SIGNAL_FONTS_CHANGED], 0);
+	gboolean use_default_font;
+	gchar *font;
+
+	use_default_font = g_settings_get_boolean (settings, key);
+
+	if (use_default_font)
+	{
+		font = g_settings_get_string (self->settings_interface, GEDIT_SETTINGS_SYSTEM_FONT);
+	}
+	else
+	{
+		font = g_settings_get_string (self->settings_editor, GEDIT_SETTINGS_EDITOR_FONT);
+	}
+
+	set_font (self, font);
+
+	g_free (font);
 }
 
 static void
-editor_font_changed_cb (GSettings     *settings,
+on_editor_font_changed (GSettings     *settings,
 			const gchar   *key,
 			GeditSettings *self)
 {
-	if (!g_settings_get_boolean (self->settings_editor, GEDIT_SETTINGS_USE_DEFAULT_FONT))
+	gboolean use_default_font;
+
+	use_default_font = g_settings_get_boolean (self->settings_editor, GEDIT_SETTINGS_USE_DEFAULT_FONT);
+
+	if (!use_default_font)
 	{
-		g_signal_emit (self, signals[SIGNAL_FONTS_CHANGED], 0);
+		gchar *font;
+
+		font = g_settings_get_string (settings, key);
+		set_font (self, font);
+		g_free (font);
 	}
 }
 
@@ -207,47 +247,43 @@ on_syntax_highlighting_changed (GSettings     *settings,
 static void
 gedit_settings_init (GeditSettings *self)
 {
-	self->settings_interface = g_settings_new ("org.gnome.desktop.interface");
-
 	self->settings_editor = g_settings_new ("org.gnome.gedit.preferences.editor");
 	self->settings_ui = g_settings_new ("org.gnome.gedit.preferences.ui");
 	self->settings_file_chooser_state = g_settings_new ("org.gnome.gedit.state.file-chooser");
 
-	g_signal_connect_object (self->settings_interface,
-				 "changed::" GEDIT_SETTINGS_SYSTEM_FONT,
-				 G_CALLBACK (system_font_changed_cb),
-				 self,
-				 0);
+	self->settings_interface = g_settings_new ("org.gnome.desktop.interface");
 
-	g_signal_connect_object (self->settings_editor,
-				 "changed::" GEDIT_SETTINGS_USE_DEFAULT_FONT,
-				 G_CALLBACK (use_default_font_changed_cb),
-				 self,
-				 0);
+	g_signal_connect (self->settings_interface,
+			  "changed::monospace-font-name",
+			  G_CALLBACK (on_system_font_changed),
+			  self);
 
-	g_signal_connect_object (self->settings_editor,
-				 "changed::" GEDIT_SETTINGS_EDITOR_FONT,
-				 G_CALLBACK (editor_font_changed_cb),
-				 self,
-				 0);
+	/* editor changes */
 
-	g_signal_connect_object (self->settings_editor,
-				 "changed::auto-save",
-				 G_CALLBACK (on_auto_save_changed),
-				 self,
-				 0);
+	g_signal_connect (self->settings_editor,
+			  "changed::use-default-font",
+			  G_CALLBACK (on_use_default_font_changed),
+			  self);
 
-	g_signal_connect_object (self->settings_editor,
-				 "changed::auto-save-interval",
-				 G_CALLBACK (on_auto_save_interval_changed),
-				 self,
-				 0);
+	g_signal_connect (self->settings_editor,
+			  "changed::editor-font",
+			  G_CALLBACK (on_editor_font_changed),
+			  self);
 
-	g_signal_connect_object (self->settings_editor,
-				 "changed::syntax-highlighting",
-				 G_CALLBACK (on_syntax_highlighting_changed),
-				 self,
-				 0);
+	g_signal_connect (self->settings_editor,
+			  "changed::auto-save",
+			  G_CALLBACK (on_auto_save_changed),
+			  self);
+
+	g_signal_connect (self->settings_editor,
+			  "changed::auto-save-interval",
+			  G_CALLBACK (on_auto_save_interval_changed),
+			  self);
+
+	g_signal_connect (self->settings_editor,
+			  "changed::syntax-highlighting",
+			  G_CALLBACK (on_syntax_highlighting_changed),
+			  self);
 }
 
 GeditSettings *
@@ -292,24 +328,11 @@ _gedit_settings_peek_file_chooser_state_settings (GeditSettings *self)
 }
 
 gchar *
-_gedit_settings_get_system_font (GeditSettings *self)
+gedit_settings_get_system_font (GeditSettings *self)
 {
 	g_return_val_if_fail (GEDIT_IS_SETTINGS (self), NULL);
 
-	return g_settings_get_string (self->settings_interface, GEDIT_SETTINGS_SYSTEM_FONT);
-}
-
-gchar *
-_gedit_settings_get_selected_font (GeditSettings *self)
-{
-	g_return_val_if_fail (GEDIT_IS_SETTINGS (self), NULL);
-
-	if (g_settings_get_boolean (self->settings_editor, GEDIT_SETTINGS_USE_DEFAULT_FONT))
-	{
-		return _gedit_settings_get_system_font (self);
-	}
-
-	return g_settings_get_string (self->settings_editor, GEDIT_SETTINGS_EDITOR_FONT);
+	return g_settings_get_string (self->settings_interface, "monospace-font-name");
 }
 
 static gboolean

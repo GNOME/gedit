@@ -162,13 +162,13 @@ class Document(GObject.Object, Gedit.ViewActivatable, Signals):
         buf = self.view.get_buffer()
 
         self.connect_signal(buf, 'changed', self.on_buffer_changed)
-        self.connect_signal(buf, 'tepl-cursor-moved', self.on_buffer_cursor_moved)
+        self.connect_signal(buf, 'cursor-moved', self.on_buffer_cursor_moved)
         self.connect_signal_after(buf, 'insert-text', self.on_buffer_insert_text)
 
     def last_snippet_removed(self):
         buf = self.view.get_buffer()
         self.disconnect_signal(buf, 'changed')
-        self.disconnect_signal(buf, 'tepl-cursor-moved')
+        self.disconnect_signal(buf, 'cursor-moved')
         self.disconnect_signal(buf, 'insert-text')
 
     def current_placeholder(self):
@@ -559,7 +559,7 @@ class Document(GObject.Object, Gedit.ViewActivatable, Signals):
             self.goto_placeholder(current, None)
 
         if len(self.active_snippets) > 0:
-            self.block_signal(buf, 'tepl-cursor-moved')
+            self.block_signal(buf, 'cursor-moved')
 
         buf.begin_user_action()
 
@@ -569,7 +569,7 @@ class Document(GObject.Object, Gedit.ViewActivatable, Signals):
         # Insert the snippet
         if len(self.active_snippets) == 0:
             self.first_snippet_inserted()
-            self.block_signal(buf, 'tepl-cursor-moved')
+            self.block_signal(buf, 'cursor-moved')
 
         sn = s.insert_into(self, start)
         self.active_snippets.append(sn)
@@ -585,7 +585,7 @@ class Document(GObject.Object, Gedit.ViewActivatable, Signals):
         else:
             self.goto_placeholder(self.active_placeholder, sn.placeholders[keys[0]])
 
-        self.unblock_signal(buf, 'tepl-cursor-moved')
+        self.unblock_signal(buf, 'cursor-moved')
 
         if sn in self.active_snippets:
             # Check if we can get end_iter in view without moving the

@@ -23,14 +23,22 @@
 
 #include "gedit-preferences-dialog.h"
 
+#include <stdio.h>
+#include <string.h>
+#include <errno.h>
+
 #include <glib/gi18n.h>
 #include <glib/gstdio.h>
-#include <tepl/tepl.h>
+#include <gtksourceview/gtksource.h>
 #include <libpeas-gtk/peas-gtk.h>
 
+#include "gedit-utils.h"
 #include "gedit-debug.h"
+#include "gedit-document.h"
 #include "gedit-dirs.h"
 #include "gedit-settings.h"
+#include "gedit-utils.h"
+#include "gedit-file-chooser-dialog.h"
 
 /*
  * gedit-preferences dialog is a singleton since we don't
@@ -83,9 +91,11 @@ struct _GeditPreferencesDialog
 	GtkWidget	*schemes_list;
 	GtkWidget	*install_scheme_button;
 	GtkWidget	*uninstall_scheme_button;
+	GtkWidget	*schemes_scrolled_window;
 	GtkWidget	*schemes_toolbar;
-	GtkFileChooserNative *
-			 install_scheme_file_chooser;
+
+	GeditFileChooserDialog *
+			 install_scheme_file_schooser;
 
 	/* Tabs */
 	GtkWidget	*tabs_width_spinbutton;
@@ -105,6 +115,7 @@ struct _GeditPreferencesDialog
 
 	GtkWidget	*display_line_numbers_checkbutton;
 	GtkWidget	*display_statusbar_checkbutton;
+	GtkWidget	*display_overview_map_checkbutton;
 	GtkWidget	*display_grid_checkbutton;
 
 	/* Right margin */
@@ -170,6 +181,7 @@ gedit_preferences_dialog_class_init (GeditPreferencesDialogClass *klass)
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, display_line_numbers_checkbutton);
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, display_statusbar_checkbutton);
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, display_grid_checkbutton);
+	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, display_overview_map_checkbutton);
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, right_margin_checkbutton);
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, right_margin_position_grid);
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, right_margin_position_spinbutton);
@@ -187,6 +199,7 @@ gedit_preferences_dialog_class_init (GeditPreferencesDialogClass *klass)
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, font_button);
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, font_grid);
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, schemes_list);
+	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, schemes_scrolled_window);
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, install_scheme_button);
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, uninstall_scheme_button);
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, schemes_toolbar);
@@ -387,6 +400,11 @@ setup_view_page (GeditPreferencesDialog *dlg)
 	                 "active",
 	                 G_SETTINGS_BIND_GET | G_SETTINGS_BIND_SET);
 	g_settings_bind (dlg->editor,
+			 GEDIT_SETTINGS_DISPLAY_OVERVIEW_MAP,
+			 dlg->display_overview_map_checkbutton,
+			 "active",
+			 G_SETTINGS_BIND_GET | G_SETTINGS_BIND_SET);
+	g_settings_bind (dlg->editor,
 	                 GEDIT_SETTINGS_DISPLAY_RIGHT_MARGIN,
 	                 dlg->right_margin_checkbutton,
 	                 "active",
@@ -434,7 +452,7 @@ setup_font_colors_page_font_section (GeditPreferencesDialog *dlg)
 
 	/* Get values */
 	settings = _gedit_settings_get_singleton ();
-	system_font = _gedit_settings_get_system_font (settings);
+	system_font = gedit_settings_get_system_font (settings);
 
 	label = g_strdup_printf(_("_Use the system fixed width font (%s)"),
 				system_font);
@@ -462,172 +480,255 @@ setup_font_colors_page_font_section (GeditPreferencesDialog *dlg)
 }
 
 static void
-update_style_scheme_buttons_sensisitivity (GeditPreferencesDialog *dlg)
+set_buttons_sensisitivity_according_to_scheme (GeditPreferencesDialog *dlg,
+                                               GtkSourceStyleScheme   *scheme)
 {
-	GtkSourceStyleScheme *selected_style_scheme;
 	gboolean editable = FALSE;
 
-	selected_style_scheme = gtk_source_style_scheme_chooser_get_style_scheme (GTK_SOURCE_STYLE_SCHEME_CHOOSER (dlg->schemes_list));
-
-	if (selected_style_scheme != NULL)
+	if (scheme != NULL)
 	{
 		const gchar *filename;
 
-		filename = gtk_source_style_scheme_get_filename (selected_style_scheme);
+		filename = gtk_source_style_scheme_get_filename (scheme);
 		if (filename != NULL)
 		{
 			editable = g_str_has_prefix (filename, gedit_dirs_get_user_styles_dir ());
 		}
 	}
 
-	gtk_widget_set_sensitive (dlg->uninstall_scheme_button, editable);
+	gtk_widget_set_sensitive (dlg->uninstall_scheme_button,
+	                          editable);
 }
 
 static void
-style_scheme_notify_cb (GtkSourceStyleSchemeChooser *chooser,
-			GParamSpec                  *pspec,
-			GeditPreferencesDialog      *dlg)
+style_scheme_changed (GtkSourceStyleSchemeChooser *chooser,
+                      GParamSpec                  *pspec,
+                      GeditPreferencesDialog      *dlg)
 {
-	update_style_scheme_buttons_sensisitivity (dlg);
+	GtkSourceStyleScheme *scheme;
+	const gchar *id;
+
+	scheme = gtk_source_style_scheme_chooser_get_style_scheme (chooser);
+	id = gtk_source_style_scheme_get_id (scheme);
+
+	g_settings_set_string (dlg->editor, GEDIT_SETTINGS_SCHEME, id);
+	set_buttons_sensisitivity_according_to_scheme (dlg, scheme);
 }
 
-static GFile *
-get_user_style_scheme_destination_file (GFile *src_file)
-{
-	gchar *basename;
-	const gchar *styles_dir;
-	GFile *dest_file;
-
-	basename = g_file_get_basename (src_file);
-	g_return_val_if_fail (basename != NULL, NULL);
-
-	styles_dir = gedit_dirs_get_user_styles_dir ();
-	dest_file = g_file_new_build_filename (styles_dir, basename, NULL);
-
-	g_free (basename);
-	return dest_file;
-}
-
-/* Returns: whether @src_file has been correctly copied to @dest_file. */
-static gboolean
-copy_file (GFile   *src_file,
-	   GFile   *dest_file,
-	   GError **error)
-{
-	if (g_file_equal (src_file, dest_file))
-	{
-		return FALSE;
-	}
-
-	if (!tepl_utils_create_parent_directories (dest_file, NULL, error))
-	{
-		return FALSE;
-	}
-
-	return g_file_copy (src_file,
-			    dest_file,
-			    G_FILE_COPY_OVERWRITE | G_FILE_COPY_TARGET_DEFAULT_PERMS,
-			    NULL, /* cancellable */
-			    NULL, NULL, /* progress callback */
-			    error);
-}
-
-/* Get the style scheme ID of @user_style_scheme_file if it has been correctly
- * installed and @user_style_scheme_file is a valid style scheme file.
- */
-static const gchar *
-get_style_scheme_id_after_installing_user_style_scheme (GFile *user_style_scheme_file)
+static GtkSourceStyleScheme *
+get_default_color_scheme (GeditPreferencesDialog *dlg)
 {
 	GtkSourceStyleSchemeManager *manager;
-	const gchar * const *scheme_ids;
-	gint i;
+	GtkSourceStyleScheme *scheme = NULL;
+	gchar *pref_id;
 
 	manager = gtk_source_style_scheme_manager_get_default ();
+
+	pref_id = g_settings_get_string (dlg->editor,
+	                                 GEDIT_SETTINGS_SCHEME);
+
+	scheme = gtk_source_style_scheme_manager_get_scheme (manager,
+	                                                     pref_id);
+	g_free (pref_id);
+
+	if (scheme == NULL)
+	{
+		/* Fall-back to classic style scheme */
+		scheme = gtk_source_style_scheme_manager_get_scheme (manager,
+		                                                     "classic");
+	}
+
+	return scheme;
+}
+
+/*
+ * file_copy:
+ * @name: a pointer to a %NULL-terminated string, that names
+ * the file to be copied, in the GLib file name encoding
+ * @dest_name: a pointer to a %NULL-terminated string, that is the
+ * name for the destination file, in the GLib file name encoding
+ * @error: return location for a #GError, or %NULL
+ *
+ * Copies file @name to @dest_name.
+ *
+ * If the call was successful, it returns %TRUE. If the call was not
+ * successful, it returns %FALSE and sets @error. The error domain
+ * is #G_FILE_ERROR. Possible error
+ * codes are those in the #GFileError enumeration.
+ *
+ * Return value: %TRUE on success, %FALSE otherwise.
+ */
+static gboolean
+file_copy (const gchar  *name,
+	   const gchar  *dest_name,
+	   GError      **error)
+{
+	gchar *contents;
+	gsize length;
+	gchar *dest_dir;
+
+	/* FIXME - Paolo (Aug. 13, 2007):
+	 * Since the style scheme files are relatively small, we can implement
+	 * file copy getting all the content of the source file in a buffer and
+	 * then write the content to the destination file. In this way we
+	 * can use the g_file_get_contents and g_file_set_contents and avoid to
+	 * write custom code to copy the file (with sane error management).
+	 * If needed we can improve this code later. */
+
+	g_return_val_if_fail (name != NULL, FALSE);
+	g_return_val_if_fail (dest_name != NULL, FALSE);
+	g_return_val_if_fail (error == NULL || *error == NULL, FALSE);
+
+	/* Note: we allow to copy a file to itself since this is not a problem
+	 * in our use case */
+
+	/* Ensure the destination directory exists */
+	dest_dir = g_path_get_dirname (dest_name);
+
+	errno = 0;
+	if (g_mkdir_with_parents (dest_dir, 0755) != 0)
+	{
+		gint save_errno = errno;
+		gchar *display_filename = g_filename_display_name (dest_dir);
+
+		g_set_error (error,
+			     G_FILE_ERROR,
+			     g_file_error_from_errno (save_errno),
+			     _("Directory “%s” could not be created: g_mkdir_with_parents() failed: %s"),
+			     display_filename,
+			     g_strerror (save_errno));
+
+		g_free (dest_dir);
+		g_free (display_filename);
+
+		return FALSE;
+	}
+
+	g_free (dest_dir);
+
+	if (!g_file_get_contents (name, &contents, &length, error))
+		return FALSE;
+
+	if (!g_file_set_contents (dest_name, contents, length, error))
+	{
+		g_free (contents);
+		return FALSE;
+	}
+
+	g_free (contents);
+
+	return TRUE;
+}
+
+/*
+ * install_style_scheme:
+ * @manager: a #GtkSourceStyleSchemeManager
+ * @fname: the file name of the style scheme to be installed
+ *
+ * Install a new user scheme.
+ * This function copies @fname in #GEDIT_STYLES_DIR and ask the style manager to
+ * recompute the list of available style schemes. It then checks if a style
+ * scheme with the right file name exists.
+ *
+ * If the call was succesful, it returns the id of the installed scheme
+ * otherwise %NULL.
+ *
+ * Return value: the id of the installed scheme, %NULL otherwise.
+ */
+static GtkSourceStyleScheme *
+install_style_scheme (const gchar *fname)
+{
+	GtkSourceStyleSchemeManager *manager;
+	gchar *new_file_name = NULL;
+	gchar *dirname;
+	const gchar *styles_dir;
+	GError *error = NULL;
+	gboolean copied = FALSE;
+	const gchar * const *ids;
+
+	g_return_val_if_fail (fname != NULL, NULL);
+
+	manager = gtk_source_style_scheme_manager_get_default ();
+
+	dirname = g_path_get_dirname (fname);
+	styles_dir = gedit_dirs_get_user_styles_dir ();
+
+	if (strcmp (dirname, styles_dir) != 0)
+	{
+		gchar *basename;
+
+		basename = g_path_get_basename (fname);
+		new_file_name = g_build_filename (styles_dir, basename, NULL);
+		g_free (basename);
+
+		/* Copy the style scheme file into GEDIT_STYLES_DIR */
+		if (!file_copy (fname, new_file_name, &error))
+		{
+			g_free (new_file_name);
+			g_free (dirname);
+
+			g_message ("Cannot install style scheme:\n%s",
+				   error->message);
+
+			g_error_free (error);
+
+			return NULL;
+		}
+
+		copied = TRUE;
+	}
+	else
+	{
+		new_file_name = g_strdup (fname);
+	}
+
+	g_free (dirname);
+
+	/* Reload the available style schemes */
 	gtk_source_style_scheme_manager_force_rescan (manager);
 
-	scheme_ids = gtk_source_style_scheme_manager_get_scheme_ids (manager);
+	/* Check the new style scheme has been actually installed */
+	ids = gtk_source_style_scheme_manager_get_scheme_ids (manager);
 
-	for (i = 0; scheme_ids != NULL && scheme_ids[i] != NULL; i++)
+	while (*ids != NULL)
 	{
-		const gchar *cur_scheme_id = scheme_ids[i];
 		GtkSourceStyleScheme *scheme;
 		const gchar *filename;
-		GFile *scheme_file;
 
-		scheme = gtk_source_style_scheme_manager_get_scheme (manager, cur_scheme_id);
+		scheme = gtk_source_style_scheme_manager_get_scheme (manager, *ids);
+
 		filename = gtk_source_style_scheme_get_filename (scheme);
-		if (filename == NULL)
-		{
-			continue;
-		}
 
-		scheme_file = g_file_new_for_path (filename);
-		if (g_file_equal (scheme_file, user_style_scheme_file))
+		if (filename && (strcmp (filename, new_file_name) == 0))
 		{
-			g_object_unref (scheme_file);
-			return cur_scheme_id;
-		}
+			/* The style scheme has been correctly installed */
+			g_free (new_file_name);
 
-		g_object_unref (scheme_file);
+			return scheme;
+		}
+		++ids;
 	}
+
+	/* The style scheme has not been correctly installed */
+	if (copied)
+		g_unlink (new_file_name);
+
+	g_free (new_file_name);
 
 	return NULL;
 }
 
-/* Returns: (nullable): the installed style scheme ID, or %NULL on failure. */
-static const gchar *
-install_style_scheme (GFile   *src_file,
-		      GError **error)
-{
-	GFile *dest_file;
-	gboolean copied;
-	const gchar *installed_style_scheme_id = NULL;
-	GError *my_error = NULL;
-
-	g_return_val_if_fail (G_IS_FILE (src_file), NULL);
-	g_return_val_if_fail (error == NULL || *error == NULL, NULL);
-
-	dest_file = get_user_style_scheme_destination_file (src_file);
-	g_return_val_if_fail (dest_file != NULL, NULL);
-
-	copied = copy_file (src_file, dest_file, &my_error);
-	if (my_error != NULL)
-	{
-		g_propagate_error (error, my_error);
-		g_object_unref (dest_file);
-		return NULL;
-	}
-
-	installed_style_scheme_id = get_style_scheme_id_after_installing_user_style_scheme (dest_file);
-
-	if (installed_style_scheme_id == NULL && copied)
-	{
-		/* The style scheme has not been correctly installed. */
-		g_file_delete (dest_file, NULL, &my_error);
-		if (my_error != NULL)
-		{
-			gchar *dest_file_parse_name = g_file_get_parse_name (dest_file);
-
-			g_warning ("Failed to delete the file “%s”: %s",
-				   dest_file_parse_name,
-				   my_error->message);
-
-			g_free (dest_file_parse_name);
-			g_clear_error (&my_error);
-		}
-	}
-
-	g_object_unref (dest_file);
-	return installed_style_scheme_id;
-}
-
-/*
+/**
  * uninstall_style_scheme:
+ * @manager: a #GtkSourceStyleSchemeManager
  * @scheme: a #GtkSourceStyleScheme
  *
  * Uninstall a user scheme.
  *
- * Returns: %TRUE on success, %FALSE otherwise.
+ * If the call was succesful, it returns %TRUE
+ * otherwise %FALSE.
+ *
+ * Return value: %TRUE on success, %FALSE otherwise.
  */
 static gboolean
 uninstall_style_scheme (GtkSourceStyleScheme *scheme)
@@ -653,94 +754,92 @@ uninstall_style_scheme (GtkSourceStyleScheme *scheme)
 }
 
 static void
-add_scheme_chooser_response_cb (GtkFileChooserNative   *chooser,
-				gint                    response_id,
-				GeditPreferencesDialog *dialog)
+add_scheme_chooser_response_cb (GeditFileChooserDialog *chooser,
+				gint                    res_id,
+				GeditPreferencesDialog *dlg)
 {
 	GFile *file;
-	const gchar *scheme_id;
-	GeditSettings *settings;
-	GSettings *editor_settings;
-	GError *error = NULL;
+	gchar *filename;
+	GtkSourceStyleScheme *scheme;
 
-	if (response_id != GTK_RESPONSE_ACCEPT)
+	if (res_id != GTK_RESPONSE_ACCEPT)
 	{
+		gedit_file_chooser_dialog_hide (chooser);
 		return;
 	}
 
-	file = gtk_file_chooser_get_file (GTK_FILE_CHOOSER (chooser));
+	file = gedit_file_chooser_dialog_get_file (chooser);
+
 	if (file == NULL)
 	{
 		return;
 	}
 
-	scheme_id = install_style_scheme (file, &error);
+	filename = g_file_get_path (file);
 	g_object_unref (file);
 
-	if (scheme_id == NULL)
+	if (filename == NULL)
 	{
-		if (error != NULL)
-		{
-			tepl_utils_show_warning_dialog (GTK_WINDOW (dialog),
-							_("The selected color scheme cannot be installed: %s"),
-							error->message);
-		}
-		else
-		{
-			tepl_utils_show_warning_dialog (GTK_WINDOW (dialog),
-							_("The selected color scheme cannot be installed."));
-		}
-
-		g_clear_error (&error);
 		return;
 	}
 
-	settings = _gedit_settings_get_singleton ();
-	editor_settings = _gedit_settings_peek_editor_settings (settings);
-	g_settings_set_string (editor_settings, GEDIT_SETTINGS_SCHEME, scheme_id);
+	gedit_file_chooser_dialog_hide (chooser);
+
+	scheme = install_style_scheme (filename);
+	g_free (filename);
+
+	if (scheme == NULL)
+	{
+		gedit_warning (GTK_WINDOW (dlg),
+		               _("The selected color scheme cannot be installed."));
+
+		return;
+	}
+
+	g_settings_set_string (dlg->editor, GEDIT_SETTINGS_SCHEME,
+	                       gtk_source_style_scheme_get_id (scheme));
+
+	set_buttons_sensisitivity_according_to_scheme (dlg, scheme);
 }
 
 static void
 install_scheme_clicked (GtkButton              *button,
-			GeditPreferencesDialog *dialog)
+			GeditPreferencesDialog *dlg)
 {
-	GtkFileChooserNative *chooser;
-	GtkFileFilter *scheme_filter;
-	GtkFileFilter *all_filter;
+	GeditFileChooserDialog *chooser;
 
-	if (dialog->install_scheme_file_chooser != NULL)
+	if (dlg->install_scheme_file_schooser != NULL)
 	{
-		gtk_native_dialog_show (GTK_NATIVE_DIALOG (dialog->install_scheme_file_chooser));
+		gedit_file_chooser_dialog_show (dlg->install_scheme_file_schooser);
 		return;
 	}
 
-	chooser = gtk_file_chooser_native_new (_("Add Color Scheme"),
-					       GTK_WINDOW (dialog),
-					       GTK_FILE_CHOOSER_ACTION_OPEN,
-					       _("_Add Scheme"),
-					       _("_Cancel"));
+	chooser = gedit_file_chooser_dialog_create (_("Add Scheme"),
+						    GTK_WINDOW (dlg),
+						    GEDIT_FILE_CHOOSER_FLAG_OPEN,
+						    _("A_dd Scheme"),
+						    _("_Cancel"));
 
 	/* Filters */
-	scheme_filter = gtk_file_filter_new ();
-	gtk_file_filter_set_name (scheme_filter, _("Color Scheme Files"));
-	gtk_file_filter_add_pattern (scheme_filter, "*.xml");
-	gtk_file_chooser_add_filter (GTK_FILE_CHOOSER (chooser), scheme_filter);
+	gedit_file_chooser_dialog_add_pattern_filter (chooser,
+	                                              _("Color Scheme Files"),
+	                                              "*.xml");
 
-	all_filter = gtk_file_filter_new ();
-	gtk_file_filter_set_name (all_filter, _("All Files"));
-	gtk_file_filter_add_pattern (all_filter, "*");
-	gtk_file_chooser_add_filter (GTK_FILE_CHOOSER (chooser), all_filter);
-
-	gtk_file_chooser_set_filter (GTK_FILE_CHOOSER (chooser), scheme_filter);
+	gedit_file_chooser_dialog_add_pattern_filter (chooser,
+	                                              _("All Files"),
+	                                              "*");
 
 	g_signal_connect (chooser,
 			  "response",
 			  G_CALLBACK (add_scheme_chooser_response_cb),
-			  dialog);
+			  dlg);
 
-	g_set_weak_pointer (&dialog->install_scheme_file_chooser, chooser);
+	dlg->install_scheme_file_schooser = chooser;
 
-	gtk_native_dialog_show (GTK_NATIVE_DIALOG (chooser));
+	g_object_add_weak_pointer (G_OBJECT (chooser),
+				   (gpointer) &dlg->install_scheme_file_schooser);
+
+	gedit_file_chooser_dialog_show (chooser);
 }
 
 static void
@@ -748,33 +847,14 @@ uninstall_scheme_clicked (GtkButton              *button,
 			  GeditPreferencesDialog *dlg)
 {
 	GtkSourceStyleScheme *scheme;
-	GtkSourceStyleScheme *new_selected_scheme;
 
 	scheme = gtk_source_style_scheme_chooser_get_style_scheme (GTK_SOURCE_STYLE_SCHEME_CHOOSER (dlg->schemes_list));
 
-	if (scheme == NULL)
-	{
-		return;
-	}
-
 	if (!uninstall_style_scheme (scheme))
 	{
-		tepl_utils_show_warning_dialog (GTK_WINDOW (dlg),
-						_("Could not remove color scheme “%s”."),
-						gtk_source_style_scheme_get_name (scheme));
-		return;
-	}
-
-	new_selected_scheme = gtk_source_style_scheme_chooser_get_style_scheme (GTK_SOURCE_STYLE_SCHEME_CHOOSER (dlg->schemes_list));
-	if (new_selected_scheme == NULL)
-	{
-		GeditSettings *settings;
-		GSettings *editor_settings;
-
-		settings = _gedit_settings_get_singleton ();
-		editor_settings = _gedit_settings_peek_editor_settings (settings);
-
-		g_settings_reset (editor_settings, GEDIT_SETTINGS_SCHEME);
+		gedit_warning (GTK_WINDOW (dlg),
+		               _("Could not remove color scheme “%s”."),
+		               gtk_source_style_scheme_get_name (scheme));
 	}
 }
 
@@ -782,13 +862,14 @@ static void
 setup_font_colors_page_style_scheme_section (GeditPreferencesDialog *dlg)
 {
 	GtkStyleContext *context;
-	GeditSettings *settings;
-	GSettings *editor_settings;
+	GtkSourceStyleScheme *scheme;
 
 	gedit_debug (DEBUG_PREFS);
 
-	/* junction between the schemes list and the toolbar */
-	context = gtk_widget_get_style_context (dlg->schemes_list);
+	scheme = get_default_color_scheme (dlg);
+
+	/* junction between the scrolled window and the toolbar */
+	context = gtk_widget_get_style_context (dlg->schemes_scrolled_window);
 	gtk_style_context_set_junction_sides (context, GTK_JUNCTION_BOTTOM);
 	context = gtk_widget_get_style_context (dlg->schemes_toolbar);
 	gtk_style_context_set_junction_sides (context, GTK_JUNCTION_TOP);
@@ -796,7 +877,7 @@ setup_font_colors_page_style_scheme_section (GeditPreferencesDialog *dlg)
 	/* Connect signals */
 	g_signal_connect (dlg->schemes_list,
 	                  "notify::style-scheme",
-	                  G_CALLBACK (style_scheme_notify_cb),
+	                  G_CALLBACK (style_scheme_changed),
 	                  dlg);
 	g_signal_connect (dlg->install_scheme_button,
 			  "clicked",
@@ -807,13 +888,11 @@ setup_font_colors_page_style_scheme_section (GeditPreferencesDialog *dlg)
 			  G_CALLBACK (uninstall_scheme_clicked),
 			  dlg);
 
-	settings = _gedit_settings_get_singleton ();
-	editor_settings = _gedit_settings_peek_editor_settings (settings);
-	g_settings_bind (editor_settings, GEDIT_SETTINGS_SCHEME,
-			 dlg->schemes_list, "tepl-style-scheme-id",
-			 G_SETTINGS_BIND_DEFAULT);
+	gtk_source_style_scheme_chooser_set_style_scheme (GTK_SOURCE_STYLE_SCHEME_CHOOSER (dlg->schemes_list),
+	                                                  scheme);
 
-	update_style_scheme_buttons_sensisitivity (dlg);
+	/* Set initial widget sensitivity */
+	set_buttons_sensisitivity_according_to_scheme (dlg, scheme);
 }
 
 static void

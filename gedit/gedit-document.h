@@ -5,7 +5,7 @@
  * Copyright (C) 1998, 1999 Alex Roberts, Evan Lawrence
  * Copyright (C) 2000, 2001 Chema Celorio, Paolo Maggi
  * Copyright (C) 2002-2005 Paolo Maggi
- * Copyright (C) 2014-2020 Sébastien Wilmet
+ * Copyright (C) 2014 Sébastien Wilmet
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -24,19 +24,20 @@
 #ifndef GEDIT_DOCUMENT_H
 #define GEDIT_DOCUMENT_H
 
-#include <tepl/tepl.h>
+#include <gtksourceview/gtksource.h>
 
 G_BEGIN_DECLS
 
 #define GEDIT_TYPE_DOCUMENT (gedit_document_get_type())
 
-G_DECLARE_DERIVABLE_TYPE (GeditDocument, gedit_document, GEDIT, DOCUMENT, TeplBuffer)
+G_DECLARE_DERIVABLE_TYPE (GeditDocument, gedit_document, GEDIT, DOCUMENT, GtkSourceBuffer)
 
 struct _GeditDocumentClass
 {
-	TeplBufferClass parent_class;
+	GtkSourceBufferClass parent_class;
 
 	/* Signals */
+	void (* cursor_moved)		(GeditDocument *document);
 
 	void (* load)			(GeditDocument *document);
 
@@ -57,7 +58,16 @@ gchar		*gedit_document_get_content_type		(GeditDocument       *doc);
 
 gchar		*gedit_document_get_mime_type			(GeditDocument       *doc);
 
+gboolean	 gedit_document_is_untouched			(GeditDocument       *doc);
+
 gboolean	 gedit_document_is_untitled			(GeditDocument       *doc);
+
+gboolean	 gedit_document_goto_line			(GeditDocument       *doc,
+								gint                 line);
+
+gboolean	 gedit_document_goto_line_offset		(GeditDocument       *doc,
+								 gint                 line,
+								 gint                 line_offset);
 
 void 		 gedit_document_set_language			(GeditDocument       *doc,
 								 GtkSourceLanguage   *lang);

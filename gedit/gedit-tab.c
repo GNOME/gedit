@@ -24,7 +24,6 @@
 
 #include <stdlib.h>
 #include <glib/gi18n.h>
-#include <tepl/tepl.h>
 
 #include "gedit-app.h"
 #include "gedit-app-private.h"
@@ -33,6 +32,7 @@
 #include "gedit-io-error-info-bar.h"
 #include "gedit-print-job.h"
 #include "gedit-print-preview.h"
+#include "gedit-progress-info-bar.h"
 #include "gedit-debug.h"
 #include "gedit-document.h"
 #include "gedit-document-private.h"
@@ -142,6 +142,9 @@ static void launch_loader (GTask                   *loading_task,
 			   const GtkSourceEncoding *encoding);
 
 static void launch_saver (GTask *saving_task);
+
+static void continue_loading(GTask     *loading_task);
+
 
 static SaverData *
 saver_data_new (void)
@@ -574,9 +577,9 @@ document_location_notify_handler (GtkSourceFile *file,
 }
 
 static void
-document_shortname_notify_handler (TeplFile   *file,
-				   GParamSpec *pspec,
-				   GeditTab   *tab)
+document_shortname_notify_handler (GeditDocument *document,
+				   GParamSpec    *pspec,
+				   GeditTab      *tab)
 {
 	gedit_debug (DEBUG_TAB);
 
@@ -688,6 +691,14 @@ io_loading_error_info_bar_response (GtkWidget *info_bar,
 			g_object_unref (loading_task);
 			break;
 
+
+		case GTK_RESPONSE_ACCEPT:
+			set_info_bar (data->tab, NULL, GTK_RESPONSE_NONE);
+			gedit_tab_set_state (data->tab, GEDIT_TAB_STATE_LOADING);
+
+			continue_loading (loading_task);
+			break;
+
 		default:
 			if (location != NULL)
 			{
@@ -726,7 +737,7 @@ load_cancelled (GtkWidget *bar,
 {
 	LoaderData *data = g_task_get_task_data (loading_task);
 
-	g_return_if_fail (TEPL_IS_PROGRESS_INFO_BAR (data->tab->info_bar));
+	g_return_if_fail (GEDIT_IS_PROGRESS_INFO_BAR (data->tab->info_bar));
 
 	g_cancellable_cancel (g_task_get_cancellable (loading_task));
 	remove_tab (data->tab);
@@ -757,7 +768,7 @@ static void
 show_loading_info_bar (GTask *loading_task)
 {
 	LoaderData *data = g_task_get_task_data (loading_task);
-	TeplProgressInfoBar *bar;
+	GtkWidget *bar;
 	GeditDocument *doc;
 	gchar *name;
 	gchar *dirname = NULL;
@@ -785,7 +796,7 @@ show_loading_info_bar (GTask *loading_task)
 	{
 		gchar *str;
 
-		str = tepl_utils_str_middle_truncate (name, MAX_MSG_LENGTH);
+		str = gedit_utils_str_middle_truncate (name, MAX_MSG_LENGTH);
 		g_free (name);
 		name = str;
 	}
@@ -804,8 +815,8 @@ show_loading_info_bar (GTask *loading_task)
 			 * we have a title long 99 + 20, but I think it's a rare enough
 			 * case to be acceptable. It's justa darn title afterall :)
 			 */
-			dirname = tepl_utils_str_middle_truncate (str,
-								  MAX (20, MAX_MSG_LENGTH - len));
+			dirname = gedit_utils_str_middle_truncate (str,
+								   MAX (20, MAX_MSG_LENGTH - len));
 			g_free (str);
 		}
 	}
@@ -830,7 +841,7 @@ show_loading_info_bar (GTask *loading_task)
 			msg = g_strdup_printf (_("Reverting %s"), name_markup);
 		}
 
-		bar = tepl_progress_info_bar_new ("document-revert", msg, TRUE);
+		bar = gedit_progress_info_bar_new ("document-revert", msg, TRUE);
 	}
 	else
 	{
@@ -850,7 +861,7 @@ show_loading_info_bar (GTask *loading_task)
 			msg = g_strdup_printf (_("Loading %s"), name_markup);
 		}
 
-		bar = tepl_progress_info_bar_new ("document-open", msg, TRUE);
+		bar = gedit_progress_info_bar_new ("document-open", msg, TRUE);
 	}
 
 	g_signal_connect_object (bar,
@@ -859,7 +870,7 @@ show_loading_info_bar (GTask *loading_task)
 				 loading_task,
 				 0);
 
-	set_info_bar (data->tab, GTK_WIDGET (bar), GTK_RESPONSE_NONE);
+	set_info_bar (data->tab, bar, GTK_RESPONSE_NONE);
 
 	g_free (msg);
 	g_free (name);
@@ -871,7 +882,7 @@ static void
 show_saving_info_bar (GTask *saving_task)
 {
 	GeditTab *tab = g_task_get_source_object (saving_task);
-	TeplProgressInfoBar *bar;
+	GtkWidget *bar;
 	GeditDocument *doc;
 	gchar *short_name;
 	gchar *from;
@@ -899,7 +910,7 @@ show_saving_info_bar (GTask *saving_task)
 	 */
 	if (len > MAX_MSG_LENGTH)
 	{
-		from = tepl_utils_str_middle_truncate (short_name, MAX_MSG_LENGTH);
+		from = gedit_utils_str_middle_truncate (short_name, MAX_MSG_LENGTH);
 		g_free (short_name);
 	}
 	else
@@ -913,7 +924,7 @@ show_saving_info_bar (GTask *saving_task)
 
 		from = short_name;
 		to = g_file_get_parse_name (location);
-		str = tepl_utils_str_middle_truncate (to, MAX (20, MAX_MSG_LENGTH - len));
+		str = gedit_utils_str_middle_truncate (to, MAX (20, MAX_MSG_LENGTH - len));
 		g_free (to);
 
 		to = str;
@@ -935,9 +946,9 @@ show_saving_info_bar (GTask *saving_task)
 		msg = g_strdup_printf (_("Saving %s"), from_markup);
 	}
 
-	bar = tepl_progress_info_bar_new ("document-save", msg, FALSE);
+	bar = gedit_progress_info_bar_new ("document-save", msg, FALSE);
 
-	set_info_bar (tab, GTK_WIDGET (bar), GTK_RESPONSE_NONE);
+	set_info_bar (tab, bar, GTK_RESPONSE_NONE);
 
 	g_free (msg);
 	g_free (to);
@@ -950,7 +961,7 @@ info_bar_set_progress (GeditTab *tab,
 		       goffset   size,
 		       goffset   total_size)
 {
-	TeplProgressInfoBar *progress_info_bar;
+	GeditProgressInfoBar *progress_info_bar;
 
 	if (tab->info_bar == NULL)
 	{
@@ -959,23 +970,23 @@ info_bar_set_progress (GeditTab *tab,
 
 	gedit_debug_message (DEBUG_TAB, "%" G_GOFFSET_FORMAT "/%" G_GOFFSET_FORMAT, size, total_size);
 
-	g_return_if_fail (TEPL_IS_PROGRESS_INFO_BAR (tab->info_bar));
+	g_return_if_fail (GEDIT_IS_PROGRESS_INFO_BAR (tab->info_bar));
 
-	progress_info_bar = TEPL_PROGRESS_INFO_BAR (tab->info_bar);
+	progress_info_bar = GEDIT_PROGRESS_INFO_BAR (tab->info_bar);
 
 	if (total_size != 0)
 	{
 		gdouble frac = (gdouble)size / (gdouble)total_size;
 
-		tepl_progress_info_bar_set_fraction (progress_info_bar, frac);
+		gedit_progress_info_bar_set_fraction (progress_info_bar, frac);
 	}
 	else if (size != 0)
 	{
-		tepl_progress_info_bar_pulse (progress_info_bar);
+		gedit_progress_info_bar_pulse (progress_info_bar);
 	}
 	else
 	{
-		tepl_progress_info_bar_set_fraction (progress_info_bar, 0);
+		gedit_progress_info_bar_set_fraction (progress_info_bar, 0);
 	}
 }
 
@@ -1034,7 +1045,7 @@ scroll_to_cursor (GeditTab *tab)
 	GeditView *view;
 
 	view = gedit_tab_get_view (tab);
-	tepl_view_scroll_to_cursor (TEPL_VIEW (view));
+	gedit_view_scroll_to_cursor (view);
 
 	tab->idle_scroll = 0;
 	return G_SOURCE_REMOVE;
@@ -1118,9 +1129,9 @@ invalid_character_info_bar_response (GtkWidget *info_bar,
 }
 
 static void
-cant_create_backup_error_info_bar_response (GtkWidget *info_bar,
-					    gint       response_id,
-					    GTask     *saving_task)
+no_backup_error_info_bar_response (GtkWidget *info_bar,
+				   gint       response_id,
+				   GTask     *saving_task)
 {
 	if (response_id == GTK_RESPONSE_YES)
 	{
@@ -1226,7 +1237,7 @@ externally_modified_notification_info_bar_response (GtkWidget *info_bar,
 static void
 display_externally_modified_notification (GeditTab *tab)
 {
-	TeplInfoBar *info_bar;
+	GtkWidget *info_bar;
 	GeditDocument *doc;
 	GtkSourceFile *file;
 	GFile *location;
@@ -1240,9 +1251,9 @@ display_externally_modified_notification (GeditTab *tab)
 	g_return_if_fail (location != NULL);
 
 	document_modified = gtk_text_buffer_get_modified (GTK_TEXT_BUFFER (doc));
-	info_bar = tepl_io_error_info_bar_externally_modified (location, document_modified);
+	info_bar = gedit_externally_modified_info_bar_new (location, document_modified);
 
-	set_info_bar (tab, GTK_WIDGET (info_bar), GTK_RESPONSE_OK);
+	set_info_bar (tab, info_bar, GTK_RESPONSE_OK);
 
 	g_signal_connect (info_bar,
 			  "response",
@@ -1307,7 +1318,6 @@ gedit_tab_init (GeditTab *tab)
 	GeditDocument *doc;
 	GeditView *view;
 	GtkSourceFile *file;
-	TeplFile *tepl_file;
 
 	tab->state = GEDIT_TAB_STATE_NORMAL;
 
@@ -1338,7 +1348,6 @@ gedit_tab_init (GeditTab *tab)
 	g_object_set_data (G_OBJECT (doc), GEDIT_TAB_KEY, tab);
 
 	file = gedit_document_get_file (doc);
-	tepl_file = tepl_buffer_get_file (TEPL_BUFFER (doc));
 
 	g_signal_connect_object (file,
 				 "notify::location",
@@ -1346,11 +1355,10 @@ gedit_tab_init (GeditTab *tab)
 				 tab,
 				 0);
 
-	g_signal_connect_object (tepl_file,
-				 "notify::short-name",
-				 G_CALLBACK (document_shortname_notify_handler),
-				 tab,
-				 0);
+	g_signal_connect (doc,
+			  "notify::shortname",
+			  G_CALLBACK (document_shortname_notify_handler),
+			  tab);
 
 	g_signal_connect (doc,
 			  "modified_changed",
@@ -1434,7 +1442,7 @@ _gedit_tab_get_name (GeditTab *tab)
 	name = gedit_document_get_short_name_for_display (doc);
 
 	/* Truncate the name so it doesn't get insanely wide. */
-	docname = tepl_utils_str_middle_truncate (name, MAX_DOC_NAME_LENGTH);
+	docname = gedit_utils_str_middle_truncate (name, MAX_DOC_NAME_LENGTH);
 
 	if (gtk_text_buffer_get_modified (GTK_TEXT_BUFFER (doc)))
 	{
@@ -1467,7 +1475,7 @@ _gedit_tab_get_tooltip (GeditTab *tab)
 	uri = _gedit_document_get_uri_for_display (doc);
 	g_return_val_if_fail (uri != NULL, NULL);
 
-	ruri = 	tepl_utils_replace_home_dir_with_tilde (uri);
+	ruri = 	gedit_utils_replace_home_dir_with_tilde (uri);
 	g_free (uri);
 
 	ruri_markup = g_markup_printf_escaped ("<i>%s</i>", ruri);
@@ -1576,6 +1584,8 @@ _gedit_tab_get_icon (GeditTab *tab)
 	{
 		GdkScreen *screen;
 		GtkIconTheme *theme;
+		GtkIconInfo *info;
+		GtkStyleContext *context;
 		gint icon_size;
 
 		screen = gtk_widget_get_screen (GTK_WIDGET (tab));
@@ -1584,7 +1594,10 @@ _gedit_tab_get_icon (GeditTab *tab)
 
 		gtk_icon_size_lookup (GTK_ICON_SIZE_MENU, NULL, &icon_size);
 
-		pixbuf = gtk_icon_theme_load_icon (theme, icon_name, icon_size, 0, NULL);
+		context = gtk_widget_get_style_context (GTK_WIDGET (tab));
+		info = gtk_icon_theme_lookup_icon (theme, icon_name, icon_size, 0);
+
+		pixbuf = gtk_icon_info_load_symbolic_for_context (info, context, NULL, NULL);
 	}
 
 	return pixbuf;
@@ -1633,11 +1646,9 @@ goto_line (GTask *loading_task)
 	/* Move the cursor at the requested line if any. */
 	if (data->line_pos > 0)
 	{
-		TeplView *view = TEPL_VIEW (gedit_tab_get_view (data->tab));
-
-		tepl_view_goto_line_offset (view,
-					    data->line_pos - 1,
-					    MAX (0, data->column_pos - 1));
+		gedit_document_goto_line_offset (doc,
+						 data->line_pos - 1,
+						 MAX (0, data->column_pos - 1));
 		return;
 	}
 
@@ -1753,18 +1764,18 @@ successful_load (GTask *loading_task)
 	if (!gtk_source_file_is_readonly (file) &&
 	    file_already_opened (doc, location))
 	{
-		TeplInfoBar *info_bar;
+		GtkWidget *info_bar;
 
 		set_editable (data->tab, FALSE);
 
-		info_bar = tepl_io_error_info_bar_file_already_open (location);
+		info_bar = gedit_file_already_open_warning_info_bar_new (location);
 
 		g_signal_connect (info_bar,
 				  "response",
 				  G_CALLBACK (file_already_open_warning_info_bar_response),
 				  data->tab);
 
-		set_info_bar (data->tab, GTK_WIDGET (info_bar), GTK_RESPONSE_CANCEL);
+		set_info_bar (data->tab, info_bar, GTK_RESPONSE_CANCEL);
 	}
 
 	/* When loading from stdin, the contents may not be saved, so set the
@@ -1979,12 +1990,56 @@ get_candidate_encodings (GeditTab *tab)
 }
 
 static void
+continue_loading(GTask     *loading_task)
+{
+	LoaderData *data = g_task_get_task_data (loading_task);
+	// Pre loader
+	gtk_source_file_loader_load_async (data->loader,
+					   G_PRIORITY_DEFAULT,
+					   g_task_get_cancellable (loading_task),
+					   (GFileProgressCallback) loader_progress_cb,
+					   loading_task,
+					   NULL,
+					   (GAsyncReadyCallback) load_cb,
+					   loading_task);
+}
+
+
+
+static
+guint64 get_file_size (GFile *file)
+{
+	GFileInfo *info;
+	GError *error = NULL;
+	guint64 res = 0;
+
+	if (file == NULL)
+	{
+		return 0;
+	}
+
+	info = g_file_query_info (file, G_FILE_ATTRIBUTE_STANDARD_SIZE, G_FILE_QUERY_INFO_NONE, NULL, &error);
+
+	if (error)
+	{
+		g_error_free (error);
+		return 0;
+	}
+
+	res = g_file_info_get_size(info);
+	g_object_unref (info);
+	return res;
+}
+
+static void
 launch_loader (GTask                   *loading_task,
 	       const GtkSourceEncoding *encoding)
 {
 	LoaderData *data = g_task_get_task_data (loading_task);
 	GSList *candidate_encodings = NULL;
 	GeditDocument *doc;
+	const int MB = 1024*1024;
+	const int FILE_TOO_LARGE = 100*MB;
 
 	if (encoding != NULL)
 	{
@@ -2010,6 +2065,47 @@ launch_loader (GTask                   *loading_task,
 
 	data->timer = g_timer_new ();
 
+
+	GFile * file = gtk_source_file_loader_get_location (data->loader);
+	guint64 size = get_file_size (file);
+
+	if (size > FILE_TOO_LARGE)
+	{
+		GtkWidget *info_bar;
+		GError *error = NULL;
+		GFile *location = gtk_source_file_loader_get_location (data->loader);
+		set_editable (data->tab, FALSE);
+
+		error = g_error_new_literal (GTK_SOURCE_FILE_LOADER_ERROR, 0, "");
+		error->code = GTK_SOURCE_FILE_LOADER_ERROR_TOO_BIG;
+
+		info_bar = gedit_io_loading_error_info_bar_new (location, NULL, error);
+
+		g_signal_connect (info_bar,
+				  "response",
+				  G_CALLBACK (io_loading_error_info_bar_response),
+				  loading_task);
+
+		set_info_bar (data->tab, info_bar, GTK_RESPONSE_CANCEL);
+
+		if (data->tab->state == GEDIT_TAB_STATE_LOADING)
+		{
+			gtk_widget_show (GTK_WIDGET (data->tab->frame));
+			gedit_tab_set_state (data->tab, GEDIT_TAB_STATE_LOADING_ERROR);
+		}
+		else
+		{
+			gedit_tab_set_state (data->tab, GEDIT_TAB_STATE_REVERTING_ERROR);
+		}
+
+		successful_load (loading_task);
+		gedit_recent_add_document (doc);
+
+		g_error_free (error);
+		return;
+	}
+
+	// Pre loader
 	gtk_source_file_loader_load_async (data->loader,
 					   G_PRIORITY_DEFAULT,
 					   g_task_get_cancellable (loading_task),
@@ -2310,12 +2406,12 @@ save_cb (GtkSourceFileSaver *saver,
 			 error->code == G_IO_ERROR_CANT_CREATE_BACKUP)
 		{
 			/* This error is recoverable */
-			info_bar = GTK_WIDGET (tepl_io_error_info_bar_cant_create_backup (location, error));
+			info_bar = gedit_no_backup_saving_error_info_bar_new (location, error);
 			g_return_if_fail (info_bar != NULL);
 
 			g_signal_connect (info_bar,
 					  "response",
-					  G_CALLBACK (cant_create_backup_error_info_bar_response),
+					  G_CALLBACK (no_backup_error_info_bar_response),
 					  saving_task);
 		}
 		else if (error->domain == GTK_SOURCE_FILE_SAVER_ERROR &&
@@ -2324,7 +2420,7 @@ save_cb (GtkSourceFileSaver *saver,
 			/* If we have any invalid char in the document we must warn the user
 			 * as it can make the document useless if it is saved.
 			 */
-			info_bar = GTK_WIDGET (tepl_io_error_info_bar_invalid_characters (location));
+			info_bar = gedit_invalid_character_info_bar_new (location);
 			g_return_if_fail (info_bar != NULL);
 
 			g_signal_connect (info_bar,
@@ -2596,6 +2692,7 @@ _gedit_tab_save_as_async (GeditTab                 *tab,
 	g_return_if_fail (GEDIT_IS_TAB (tab));
 	g_return_if_fail (tab->state == GEDIT_TAB_STATE_NORMAL ||
 	                  tab->state == GEDIT_TAB_STATE_EXTERNALLY_MODIFIED_NOTIFICATION ||
+	                  tab->state == GEDIT_TAB_STATE_SAVING_ERROR ||
 	                  tab->state == GEDIT_TAB_STATE_SHOWING_PRINT_PREVIEW);
 	g_return_if_fail (G_IS_FILE (location));
 	g_return_if_fail (encoding != NULL);
@@ -2625,6 +2722,11 @@ _gedit_tab_save_as_async (GeditTab                 *tab,
 		 */
 		set_info_bar (tab, NULL, GTK_RESPONSE_NONE);
 		save_flags |= GTK_SOURCE_FILE_SAVER_FLAGS_IGNORE_MODIFICATION_TIME;
+	}
+	else if (tab->state == GEDIT_TAB_STATE_SAVING_ERROR)
+	{
+		set_info_bar (tab, NULL, GTK_RESPONSE_NONE);
+		gedit_tab_set_state (tab, GEDIT_TAB_STATE_NORMAL);
 	}
 
 	file = gedit_document_get_file (doc);
@@ -2706,15 +2808,15 @@ printing_cb (GeditPrintJob       *job,
 	     GeditPrintJobStatus  status,
 	     GeditTab            *tab)
 {
-	g_return_if_fail (TEPL_IS_PROGRESS_INFO_BAR (tab->info_bar));
+	g_return_if_fail (GEDIT_IS_PROGRESS_INFO_BAR (tab->info_bar));
 
 	gtk_widget_show (tab->info_bar);
 
-	tepl_progress_info_bar_set_text (TEPL_PROGRESS_INFO_BAR (tab->info_bar),
-					 gedit_print_job_get_status_string (job));
+	gedit_progress_info_bar_set_text (GEDIT_PROGRESS_INFO_BAR (tab->info_bar),
+					  gedit_print_job_get_status_string (job));
 
-	tepl_progress_info_bar_set_fraction (TEPL_PROGRESS_INFO_BAR (tab->info_bar),
-					     gedit_print_job_get_progress (job));
+	gedit_progress_info_bar_set_fraction (GEDIT_PROGRESS_INFO_BAR (tab->info_bar),
+					      gedit_print_job_get_progress (job));
 }
 
 static void
@@ -2824,19 +2926,21 @@ print_cancelled (GtkWidget *bar,
 static void
 add_printing_info_bar (GeditTab *tab)
 {
-	TeplProgressInfoBar *bar;
+	GtkWidget *bar;
 
-	bar = tepl_progress_info_bar_new ("document-print", NULL, TRUE);
+	bar = gedit_progress_info_bar_new ("document-print",
+					   "",
+					   TRUE);
 
 	g_signal_connect (bar,
 			  "response",
 			  G_CALLBACK (print_cancelled),
 			  tab);
 
-	set_info_bar (tab, GTK_WIDGET (bar), GTK_RESPONSE_NONE);
+	set_info_bar (tab, bar, GTK_RESPONSE_NONE);
 
 	/* hide until we start printing */
-	gtk_widget_hide (GTK_WIDGET (bar));
+	gtk_widget_hide (bar);
 }
 
 void

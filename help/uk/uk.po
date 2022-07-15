@@ -4,22 +4,21 @@
 #
 # Maxim Dziumanenko <dziumanenko@gmail.com>, 2007.
 # Назарій Ріттер <nazariy.ritter@gmail.com>, 2014.
-# Yuri Chornoivan <yurchor@ukr.net>, 2020.
+# Yuri Chornoivan <yurchor@ukr.net>, 2020, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: gedit manual\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-28 07:44+0000\n"
-"PO-Revision-Date: 2020-11-29 09:02+0200\n"
+"POT-Creation-Date: 2021-08-20 10:09+0000\n"
+"PO-Revision-Date: 2021-08-20 15:35+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 20.11.70\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<"
-"=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Lokalize 20.12.0\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
@@ -45,11 +44,11 @@ msgstr "Зміна кольорів тексту та тла у «gedit»."
 #: C/gedit-plugins-insert-date-time.page:15 C/gedit-plugins-install.page:8
 #: C/gedit-plugins-modelines.page:13 C/gedit-plugins-pyconsole.page:10
 #: C/gedit-plugins-quick-open.page:11 C/gedit-plugins-snippets.page:9
-#: C/gedit-plugins-sort.page:14 C/gedit-printing.page:10
+#: C/gedit-plugins-sort.page:14 C/gedit-printing.page:11
 #: C/gedit-quickstart.page:12 C/gedit-replace.page:14 C/gedit-save-file.page:13
 #: C/gedit-search.page:12 C/gedit-spellcheck.page:12
 #: C/gedit-syntax-highlighting.page:10 C/gedit-tabs-moving.page:13
-#: C/gedit-tabs.page:14 C/gedit-undo-redo.page:12 C/index.page:14
+#: C/gedit-tabs.page:14 C/gedit-undo-redo.page:12 C/index.page:15
 msgid "Jim Campbell"
 msgstr "Jim Campbell"
 
@@ -166,8 +165,6 @@ msgstr "Щоб змінити типовий шрифт в «<app>gedit</app>»:
 
 #. (itstool) path: item/p
 #: C/gedit-change-default-font.page:32
-#| msgid ""
-#| "Uncheck the box next to the phrase, \"Use the system fixed-width font.\""
 msgid ""
 "Uncheck the box next to the phrase, \"Use the system fixed width font.\""
 msgstr ""
@@ -195,7 +192,6 @@ msgstr ""
 
 #. (itstool) path: item/p
 #: C/gedit-change-default-font.page:39
-#| msgid "Click <gui>Select</gui>, and then click <gui>Close</gui>."
 msgid "Click <gui>Select</gui>, and then close the dialog."
 msgstr "Клацніть на «<gui>Вибрати</gui>», а потім закрийте діалогове вікно."
 
@@ -346,6 +342,155 @@ msgid ""
 msgstr ""
 "Після відкриття «<app>gedit</app>» з правами адміністратора, ці права будуть "
 "доступні до закриття програми <app>gedit</app>."
+
+#. (itstool) path: info/desc
+#: C/gedit-character-encodings.page:9
+msgid "When text and characters do not look as expected."
+msgstr "Якщо текст та символи виглядають те так, як ви сподівалися."
+
+#. (itstool) path: credit/name
+#: C/gedit-character-encodings.page:12
+msgid "Andre Klapper"
+msgstr "Andre Klapper"
+
+#. (itstool) path: credit/year
+#: C/gedit-character-encodings.page:14
+msgid "2020"
+msgstr "2020"
+
+#. (itstool) path: credit/name
+#: C/gedit-character-encodings.page:17
+msgid "Shaun McCance"
+msgstr "Shaun McCance"
+
+#. (itstool) path: credit/year
+#: C/gedit-character-encodings.page:19
+msgid "2009"
+msgstr "2009"
+
+#. (itstool) path: page/title
+#: C/gedit-character-encodings.page:24
+msgid "Dealing with character encoding problems"
+msgstr "Вирішення проблем із кодуванням символів"
+
+#. (itstool) path: section/title
+#: C/gedit-character-encodings.page:27
+msgid "Character encodings"
+msgstr "Кодування символів"
+
+#. (itstool) path: section/p
+#: C/gedit-character-encodings.page:28
+msgid ""
+"A character encoding is a specific way of recording characters internally in "
+"a computer. There are many character encodings."
+msgstr ""
+"Кодування символів — певний спосіб запису символів на внутрішньому рівні "
+"комп'ютера. Існує багато кодувань символів."
+
+#. (itstool) path: section/p
+#: C/gedit-character-encodings.page:30
+msgid ""
+"By default, <app>gedit</app> uses UTF-8, a modern character encoding that "
+"can handle text from most of the world's languages. Another common encoding "
+"for English and some other Western languages is ISO-8859-1."
+msgstr ""
+"Типово, у <app>gedit</app> використано UTF-8, сучасне кодування символів, у "
+"якому передбачено можливості роботи з текстами більшістю мов світу. Ще одним "
+"типовим кодуванням символів для англійської мови та деяких інших "
+"західноєвропейських мов є ISO-8859-1."
+
+#. (itstool) path: section/title
+#: C/gedit-character-encodings.page:36
+msgid "Problems"
+msgstr "Проблеми"
+
+#. (itstool) path: section/p
+#: C/gedit-character-encodings.page:37
+msgid ""
+"If you open a file in a different character encoding than the encoding in "
+"which the file was written, then some or all characters might be displayed "
+"incorrectly."
+msgstr ""
+"Якщо ви відкриєте файл, використавши кодування символів, яке відрізняється "
+"від кодування, у якому файл було записано, деякі із символів може бути "
+"показано неправильно."
+
+#. (itstool) path: section/p
+#: C/gedit-character-encodings.page:41
+msgid ""
+"This can happen if the file was created on another operating system or if "
+"the file uses a different script."
+msgstr ""
+"Таке може трапитися, якщо файл було створено у іншій операційній система або "
+"якщо у файлі використано іншу писемність."
+
+#. (itstool) path: section/title
+#: C/gedit-character-encodings.page:46
+msgid "Solutions"
+msgstr "Вирішення"
+
+#. (itstool) path: section/p
+#: C/gedit-character-encodings.page:48
+msgid ""
+"If the content of a text file does not look as expected, <link xref=\"gedit-"
+"open-files\">open the file</link> again by choosing a different "
+"<gui>Character Encoding</gui> at the bottom of the file chooser dialog."
+msgstr ""
+"Якщо вміст файла виглядає не так, як мав би виглядати, <link xref=\"gedit-"
+"open-files\">відкрийте файл</link> повторно, вибравши інше <gui>Кодування "
+"символів</gui> у нижній частині вікна вибору файла."
+
+#. (itstool) path: section/p
+#: C/gedit-character-encodings.page:52
+msgid ""
+"If you have an idea which language is used in the document or in the area of "
+"the original author of the document:"
+msgstr ""
+"Якщо ви не знаєте, якою мовою було написано початковий документ або яку мову "
+"використовують там, де живе автор початкової версії документа, зробіть так:"
+
+#. (itstool) path: item/p
+#: C/gedit-character-encodings.page:56
+msgid ""
+"Select <gui style=\"menuitem\">Add or remove…</gui> from the <gui>Character "
+"Encoding</gui> dropdown at the bottom of the file chooser dialog."
+msgstr ""
+"Виберіть пункт <gui style=\"menuitem\">Додати або вилучти…</gui> у спадному "
+"списку <gui>Кодування символів</gui> у нижній частині вікна вибору файла."
+
+#. (itstool) path: item/p
+#: C/gedit-character-encodings.page:59
+msgid ""
+"Select one or more languages and their encodings under <gui>Available "
+"Encodings</gui> on the left."
+msgstr ""
+"Виберіть одну або декілька мов та відповідні кодування у списку "
+"<gui>Доступні кодування</gui> ліворуч."
+
+#. (itstool) path: item/p
+#: C/gedit-character-encodings.page:62
+msgid ""
+"Press <gui style=\"button\">+</gui> to add the selected encodings to the "
+"<gui>Character Encoding</gui> dropdown."
+msgstr ""
+"Натисніть кнопку <gui style=\"button\">+</gui>, щоб додати вибрані кодування "
+"до спадного списку <gui>Кодування символів</gui>."
+
+#. (itstool) path: item/p
+#: C/gedit-character-encodings.page:65
+msgid "Close the dialog by pressing <gui style=\"button\">Apply</gui>."
+msgstr ""
+"Закрийте вікно натисканням кнопки <gui style=\"button\">Застосувати</gui>."
+
+#. (itstool) path: note/p
+#: C/gedit-character-encodings.page:69
+msgid ""
+"If none of these solutions solve the problem, then you could try to edit the "
+"file anyway. It is recommended to first create a backup copy of your file."
+msgstr ""
+"Якщо проблему не вдалося вирішити за допомогою цих способів, ви можете "
+"спробувати продовжити редагування файла попри це. Втім, рекомендуємо спершу "
+"створити резервну копію вашого файла."
 
 #. (itstool) path: info/desc
 #: C/gedit-files-basic.page:7
@@ -1646,12 +1791,12 @@ msgstr ""
 
 #. (itstool) path: credit/name
 #: C/gedit-plugins-snippets.page:13 C/gedit-plugins-sort.page:18
-#: C/gedit-printing-order.page:15 C/gedit-printing.page:14
-#: C/gedit-printing-select.page:14 C/gedit-quickstart.page:16
+#: C/gedit-printing-order.page:16 C/gedit-printing.page:15
+#: C/gedit-printing-select.page:15 C/gedit-quickstart.page:16
 #: C/gedit-replace.page:22 C/gedit-save-file.page:17 C/gedit-search.page:20
 #: C/gedit-spellcheck.page:20 C/gedit-syntax-highlighting.page:14
 #: C/gedit-tabs-moving.page:21 C/gedit-tabs.page:22 C/gedit-undo-redo.page:20
-#: C/index.page:18
+#: C/index.page:19
 msgid "Sindhu S"
 msgstr "Sindhu S"
 
@@ -1811,16 +1956,14 @@ msgstr ""
 msgid ""
 "\n"
 "      &lt;head&gt;\n"
-"      &lt;meta http-equiv=\"Content-type\" content=\"text/html;"
-" charset=utf-8\" /&gt;\n"
+"      &lt;meta http-equiv=\"Content-type\" content=\"text/html; charset=utf-8\" /&gt;\n"
 "      &lt;title&gt;Page Title&lt;/title&gt;\n"
 "      &lt;/head&gt;\n"
 "    "
 msgstr ""
 "\n"
 "      &lt;head&gt;\n"
-"      &lt;meta http-equiv=\"Content-type\" content=\"text/html;"
-" charset=utf-8\" /&gt;\n"
+"      &lt;meta http-equiv=\"Content-type\" content=\"text/html; charset=utf-8\" /&gt;\n"
 "      &lt;title&gt;Page Title&lt;/title&gt;\n"
 "      &lt;/head&gt;\n"
 "    "
@@ -2098,22 +2241,22 @@ msgid "Set the pages to print in a certain order."
 msgstr "Встановлення певного порядку друку сторінок."
 
 #. (itstool) path: credit/name
-#: C/gedit-printing-order.page:11 C/gedit-printing-select.page:10
+#: C/gedit-printing-order.page:12 C/gedit-printing-select.page:11
 msgid "Phil Bull"
 msgstr "Phil Bull"
 
 #. (itstool) path: page/title
-#: C/gedit-printing-order.page:21
+#: C/gedit-printing-order.page:22
 msgid "Getting Copies To Print In The Correct Order"
 msgstr "Друкування в потрібному порядку"
 
 #. (itstool) path: section/title
-#: C/gedit-printing-order.page:24
+#: C/gedit-printing-order.page:25
 msgid "Reverse"
 msgstr "Зворотній порядок"
 
 #. (itstool) path: section/p
-#: C/gedit-printing-order.page:26
+#: C/gedit-printing-order.page:27
 msgid ""
 "Printers usually print the first page first, and the last page last, so the "
 "pages end up in reverse order when you pick them up. To reverse the order:"
@@ -2123,16 +2266,21 @@ msgstr ""
 "змінити порядок:"
 
 #. (itstool) path: item/p
-#: C/gedit-printing-order.page:32
+#: C/gedit-printing-order.page:33 C/gedit-printing-order.page:57
+#: C/gedit-printing.page:39 C/gedit-printing.page:62 C/gedit-printing.page:99
+#: C/gedit-printing-select.page:29
+#| msgid ""
+#| "Press the menu button in the top-right corner of the window and select "
+#| "<guiseq><gui style=\"menuitem\">Preferences</gui> <gui style=\"tab"
+#| "\">Plugins</gui></guiseq>."
 msgid ""
-"Select <guiseq><gui style=\"menu\">File</gui> <gui style=\"menuitem\">Print</"
-"gui></guiseq>."
+"Press the menu button in the top-right corner of the window and select the "
+"Print button."
 msgstr ""
-"Виберіть <guiseq><gui style=\"menu\">«Файл»</gui> <gui style=\"menuitem"
-"\">«Друкувати»</gui></guiseq>."
+"Натисніть кнопку меню у верхньому правому куті вікна і натисніть кнопку друку."
 
 #. (itstool) path: item/p
-#: C/gedit-printing-order.page:36
+#: C/gedit-printing-order.page:37
 msgid ""
 "In the <gui style=\"tab\">General</gui> tab of the Print dialog under <gui "
 "style=\"group\">Copies</gui>, check <gui style=\"checkbox\">Reverse</gui>."
@@ -2142,17 +2290,17 @@ msgstr ""
 "\">У зворотньому порядку</gui>»."
 
 #. (itstool) path: section/p
-#: C/gedit-printing-order.page:42
+#: C/gedit-printing-order.page:43
 msgid "The last page will be printed first, and so on."
 msgstr "Останню сторінку буде надруковано першою і так далі."
 
 #. (itstool) path: section/title
-#: C/gedit-printing-order.page:46
+#: C/gedit-printing-order.page:47
 msgid "Collate"
 msgstr "Впорядкування"
 
 #. (itstool) path: section/p
-#: C/gedit-printing-order.page:48
+#: C/gedit-printing-order.page:49
 msgid ""
 "If you are printing more than one copy of the document, the print outs will "
 "be grouped by page number by default. (e.g. The copies of page one come out, "
@@ -2165,21 +2313,12 @@ msgstr ""
 "сторінки одного екземпляру."
 
 #. (itstool) path: section/p
-#: C/gedit-printing-order.page:53
+#: C/gedit-printing-order.page:54
 msgid "To Collate:"
 msgstr "Для впорядкування:"
 
 #. (itstool) path: item/p
-#: C/gedit-printing-order.page:56
-msgid ""
-"Click <guiseq><gui style=\"menu\">File</gui> <gui style=\"menuitem\">Print</"
-"gui></guiseq>."
-msgstr ""
-"Клацніть на <guiseq><gui style=\"menu\">«Файл»</gui> <gui style=\"menuitem"
-"\">«Друкувати»</gui></guiseq>."
-
-#. (itstool) path: item/p
-#: C/gedit-printing-order.page:60
+#: C/gedit-printing-order.page:61
 msgid ""
 "In the <gui style=\"tab\">General</gui> tab of the Print dialog under <gui "
 "style=\"group\">Copies</gui> check <gui style=\"checkbox\">Collate</gui>."
@@ -2194,12 +2333,12 @@ msgid "Print the files that you create with gedit."
 msgstr "Друк створених у «gedit» файлів."
 
 #. (itstool) path: page/title
-#: C/gedit-printing.page:20
+#: C/gedit-printing.page:21
 msgid "Printing documents"
 msgstr "Друкування документів"
 
 #. (itstool) path: note/p
-#: C/gedit-printing.page:23
+#: C/gedit-printing.page:24
 msgid ""
 "Printing with <app>gedit</app> requires that you have connected and "
 "configured your printer. If you have not done this, please consult the <link "
@@ -2210,17 +2349,17 @@ msgstr ""
 "help/printing\">довідки з друкування для GNOME</link>."
 
 #. (itstool) path: page/p
-#: C/gedit-printing.page:28
+#: C/gedit-printing.page:29
 msgid "<app>gedit</app> allows you to print both to a file and to paper."
 msgstr "В «<app>gedit</app>» можна друкувати і у файл і на папір."
 
 #. (itstool) path: section/title
-#: C/gedit-printing.page:31
+#: C/gedit-printing.page:32
 msgid "Print Preview"
 msgstr "Попередній перегляд"
 
 #. (itstool) path: section/p
-#: C/gedit-printing.page:33
+#: C/gedit-printing.page:34
 msgid ""
 "Prior to printing your document, you can preview how the printed document "
 "will look by using <gui>Print Preview</gui>. To preview the document:"
@@ -2230,18 +2369,14 @@ msgstr ""
 "Щоб попередньо переглянути документ:"
 
 #. (itstool) path: item/p
-#: C/gedit-printing.page:38
-msgid ""
-"Select <guiseq><gui style=\"menu\">File</gui> <gui style=\"menuitem\">Print "
-"Preview</gui></guiseq>. Alternatively, you can press <keyseq><key>Shift</"
-"key><key>Ctrl</key> <key>P</key></keyseq>."
+#: C/gedit-printing.page:43
+#| msgid "Close the dialog by pressing <gui style=\"button\">Apply</gui>."
+msgid "Press <gui style=\"button\">Preview</gui>."
 msgstr ""
-"Виберіть <guiseq><gui style=\"menu\">«Файл»</gui> <gui style=\"menuitem"
-"\">«Попередній перегляд»</gui></guiseq>. Також, можна натиснути "
-"<keyseq><key>Shift</key><key>Ctrl</key> <key>P</key></keyseq>."
+"Натисніть кнопку «<gui style=\"button\">Попередній перегляд</gui>»."
 
 #. (itstool) path: section/p
-#: C/gedit-printing.page:45
+#: C/gedit-printing.page:47
 msgid ""
 "A preview of your document will open in the same tab as the file. You can "
 "browse this preview with help of navigation buttons and tools in the toolbar "
@@ -2255,12 +2390,12 @@ msgstr ""
 "клацніть на «<gui style=\"button\">Закрити попередній перегляд</gui>»."
 
 #. (itstool) path: section/title
-#: C/gedit-printing.page:53
+#: C/gedit-printing.page:55
 msgid "Printing To Paper"
 msgstr "Друкування на папір"
 
 #. (itstool) path: section/p
-#: C/gedit-printing.page:55
+#: C/gedit-printing.page:57
 msgid ""
 "You can print your documents to paper using a local or remote printer. To "
 "print a file:"
@@ -2269,30 +2404,20 @@ msgstr ""
 "віддалений принтер. Щоб роздрукувати файл:"
 
 #. (itstool) path: item/p
-#: C/gedit-printing.page:60
+#: C/gedit-printing.page:66
+#| msgid "Select the desired printer from the list of printers available."
 msgid ""
-"Select <guiseq><gui style=\"menu\">File</gui> <gui style=\"menuitem\">Print</"
-"gui> <gui style=\"tab\">General</gui></guiseq>."
-msgstr ""
-"Виберіть <guiseq><gui style=\"menu\">«Файл»</gui> <gui style=\"menuitem"
-"\">«Друкувати»</gui> <gui style=\"tab\">«Загальні»</gui></guiseq>."
+"In the <gui style=\"tab\">General</gui> tab, select the desired printer from "
+"the list of printers available."
+msgstr "На вкладці <gui style=\"tab\">Загальні</gui> виберіть потрібний принтер зі списку доступних принтерів."
 
 #. (itstool) path: item/p
-#: C/gedit-printing.page:65
-msgid "Select the desired printer from the list of printers available."
-msgstr "Виберіть потрібний принтер зі списку доступних принтерів."
-
-#. (itstool) path: item/p
-#: C/gedit-printing.page:68
-msgid ""
-"You can preview the file using <gui style=\"button\">Print Preview</gui> and "
-"once you are satisfied with the settings, click <gui style=\"button\">Print</"
-"gui> to send the file to printer."
+#: C/gedit-printing.page:70 C/gedit-printing.page:121
+#| msgid ""
+#| "To print the document to file, click <gui style=\"button\">Print</gui>."
+msgid "Press <gui style=\"button\">Print</gui>."
 msgstr ""
-"Можна попередньо переглянути файл, використовуючи «<gui style=\"button"
-"\">Попередній перегляд</gui>» і, як тільки налаштування Вас задовольняють, "
-"клацніть на «<gui style=\"button\">Друкувати</gui>», щоб відправити файл до "
-"принтеру."
+"Натисніть кнопку «<gui style=\"button\">Друкувати</gui>»."
 
 #. (itstool) path: section/p
 #: C/gedit-printing.page:74
@@ -2330,50 +2455,48 @@ msgstr "Друкування до файла"
 
 #. (itstool) path: section/p
 #: C/gedit-printing.page:94
+#| msgid ""
+#| "You can also use <app>gedit</app> to print to a file. To print your "
+#| "document to file of a different format:"
 msgid ""
 "You can also use <app>gedit</app> to print to a file. To print your document "
-"to file of a different format:"
+"to a file of a different format:"
 msgstr ""
 "Можна також використовувати «<app>gedit</app>» для друкування до файла. Щоб "
 "друкувати документ до файла іншого формату:"
 
 #. (itstool) path: item/p
-#: C/gedit-printing.page:99
+#: C/gedit-printing.page:103
+#| msgid ""
+#| "In the <gui style=\"tab\">General</gui> tab in the Print dialog choose "
+#| "<gui style=\"radiobutton\">Pages</gui> from the <gui style=\"group"
+#| "\">Range</gui> section."
 msgid ""
-"Select <guiseq><gui style=\"menu\">File</gui> <gui style=\"menuitem\">Print</"
-"gui> <gui style=\"menuitem\">Print to File</gui></guiseq>."
+"In the <gui style=\"tab\">General</gui> tab, select <gui>Print to File</gui> "
+"from the list of printers available."
 msgstr ""
-"Виберіть <guiseq><gui style=\"menu\">«Файл»</gui> <gui style=\"menuitem"
-"\">«Друкувати»</gui> <gui style=\"menuitem\">«Друкувати до файла»</gui></"
-"guiseq>."
+"На вкладці «<gui style=\"tab\">Загальні</gui>» виберіть «<gui>Друкувати до файла</gui>» зі списку доступних принтерів."
 
 #. (itstool) path: item/p
-#: C/gedit-printing.page:104
-msgid ""
-"Printing is enabled for the following file formats, you may select from:"
-msgstr "Друкування доступне для наступних форматів файлів на вибір:"
+#: C/gedit-printing.page:107
+msgid "Select an output format:"
+msgstr ""
+"Виберіть формат виведення:"
 
 #. (itstool) path: item/p
-#: C/gedit-printing.page:108
+#: C/gedit-printing.page:110
 msgid "Portable Document Format (.pdf)"
 msgstr "Portable Document Format (.pdf)"
 
 #. (itstool) path: item/p
-#: C/gedit-printing.page:111
+#: C/gedit-printing.page:113
 msgid "PostScript (.ps)"
 msgstr "PostScript (.ps)"
 
 #. (itstool) path: item/p
-#: C/gedit-printing.page:114
+#: C/gedit-printing.page:116
 msgid "Scalable Vector Graphic (.svg)"
 msgstr "Scalable Vector Graphic (.svg)"
-
-#. (itstool) path: item/p
-#: C/gedit-printing.page:119
-msgid "To print the document to file, click <gui style=\"button\">Print</gui>."
-msgstr ""
-"Щоб надрукувати документ до файла, клацніть на «<gui style=\"button"
-"\">Друкувати</gui>»."
 
 #. (itstool) path: info/desc
 #: C/gedit-printing-select.page:7
@@ -2381,12 +2504,12 @@ msgid "Choose the pages that you want to print."
 msgstr "Виберіть сторінки, які ви хочете надрукувати."
 
 #. (itstool) path: page/title
-#: C/gedit-printing-select.page:20
+#: C/gedit-printing-select.page:21
 msgid "Only print certain pages"
 msgstr "Друк лише частини сторінок"
 
 #. (itstool) path: page/p
-#: C/gedit-printing-select.page:22
+#: C/gedit-printing-select.page:23
 msgid ""
 "You can selectively print only certain pages from the document. For example, "
 "if you enter the page numbers \"1,3,5-7,9\", then only pages 1, 3, 5, 6, 7 "
@@ -2397,16 +2520,7 @@ msgstr ""
 "Щоб роздрукувати вибрані сторінки:"
 
 #. (itstool) path: item/p
-#: C/gedit-printing-select.page:28
-msgid ""
-"Select <guiseq><gui style=\"menu\">File</gui> <gui style=\"menuitem\">Print…"
-"</gui></guiseq>."
-msgstr ""
-"Виберіть <guiseq><gui style=\"menu\">«Файл»</gui> <gui style=\"menuitem"
-"\">«Друкувати…»</gui></guiseq>."
-
-#. (itstool) path: item/p
-#: C/gedit-printing-select.page:32
+#: C/gedit-printing-select.page:33
 msgid ""
 "In the <gui style=\"tab\">General</gui> tab in the Print dialog choose <gui "
 "style=\"radiobutton\">Pages</gui> from the <gui style=\"group\">Range</gui> "
@@ -2417,7 +2531,7 @@ msgstr ""
 "\"group\">Діапазон</gui>»."
 
 #. (itstool) path: item/p
-#: C/gedit-printing-select.page:36
+#: C/gedit-printing-select.page:37
 msgid ""
 "Type the numbers of the pages you want to print from the document, separated "
 "by commas. Use a dash to specify a range of pages."
@@ -3161,23 +3275,17 @@ msgstr "Організація файлів в групові вкладки"
 
 #. (itstool) path: page/p
 #: C/gedit-tab-groups.page:24
-#| msgid ""
-#| "If you are working with multiple tabs in <app>gedit</app> you can group "
-#| "them, making it easier to keep your opened files organized. Adding a new "
-#| "tab group will divide the <app>gedit</app> window in two panes, open a "
-#| "new “Untitled Document” in the new pane, and make it active. You can open "
-#| "files into that tab group and move tabs from one tab group to another."
 msgid ""
 "If you are working with multiple tabs in <app>gedit</app> you can group "
 "them, making it easier to keep your opened files organized. Adding a new tab "
 "group will divide the <app>gedit</app> window in two panes, open a new "
-"“Untitled File” in the new pane, and make it active. You can open files into "
-"that tab group and move tabs from one tab group to another."
+"“Untitled Document” in the new pane, and make it active. You can open files "
+"into that tab group and move tabs from one tab group to another."
 msgstr ""
 "Якщо Ви працюєте в «<app>gedit</app>» з декількома вкладками, то можна їх "
 "групувати, щоб полегшити зберігання відкритих файлів організованими. Додання "
 "нової групи вкладок розділяє вікно «<app>gedit</app>» на два підвікна, "
-"відкриває новий «Неназваний файл» в новому підвікні та робить його "
+"відкриває новий «Неназваний документ» в новому підвікні та робить його "
 "активним. Можна відкривати файли в цій групі вкладок і переміщати їх з "
 "однієї групи в іншу."
 
@@ -3463,28 +3571,34 @@ msgstr ""
 
 #. (itstool) path: info/title
 #: C/index.page:8
-msgctxt "link"
+msgctxt "link:trail"
 msgid "gedit Text Editor"
 msgstr "Текстовий редактор «gedit»"
 
 #. (itstool) path: info/title
 #: C/index.page:9
+msgctxt "link"
+msgid "gedit Text Editor"
+msgstr "Текстовий редактор «gedit»"
+
+#. (itstool) path: info/title
+#: C/index.page:10
 msgctxt "text"
 msgid "gedit Text Editor"
 msgstr "Текстовий редактор «gedit»"
 
 #. (itstool) path: info/desc
-#: C/index.page:11
+#: C/index.page:12
 msgid "Home page of the gedit help guide."
 msgstr "Домашня сторінка підручника з «gedit»."
 
 #. (itstool) path: page/title
-#: C/index.page:26
+#: C/index.page:27
 msgid "<_:media-1/> gedit Text Editor"
 msgstr "<_:media-1/> Текстовий редактор «gedit»"
 
 #. (itstool) path: page/p
-#: C/index.page:30
+#: C/index.page:31
 msgid ""
 "Welcome to the <app>gedit</app> help guide. For a quick introduction into "
 "<app>gedit's</app> most basic features, visit the <link xref=\"gedit-"
@@ -3495,7 +3609,7 @@ msgstr ""
 "\"gedit-quickstart\">Початок роботи з «gedit»</link>."
 
 #. (itstool) path: page/p
-#: C/index.page:34
+#: C/index.page:35
 msgid ""
 "Other help topics are grouped together into sections below. Enjoy using "
 "<app>gedit</app>!"
@@ -3504,22 +3618,22 @@ msgstr ""
 "«<app>gedit</app>»!"
 
 #. (itstool) path: section/title
-#: C/index.page:38
+#: C/index.page:39
 msgid "Working With Files"
 msgstr "Робота з файлами"
 
 #. (itstool) path: section/title
-#: C/index.page:43
+#: C/index.page:44
 msgid "Configure gedit"
 msgstr "Налаштування «gedit»"
 
 #. (itstool) path: section/title
-#: C/index.page:47
+#: C/index.page:48
 msgid "gedit Plugins"
 msgstr "Додатки «gedit»"
 
 #. (itstool) path: section/title
-#: C/index.page:51
+#: C/index.page:52
 msgid "Printing with gedit"
 msgstr "Друкування з «gedit»"
 
@@ -3532,6 +3646,69 @@ msgstr "Creative Commons Attribution-ShareAlike 3.0 Unported License"
 #: C/legal.xml:3
 msgid "This work is licensed under a <_:link-1/>."
 msgstr "Ця робота розповсюджується за умов дотримання <_:link-1/>."
+
+#~| msgid "Creative Commons Attribution-ShareAlike 3.0 Unported License"
+#~ msgid "Creative Commons Share Alike 3.0"
+#~ msgstr "Creative Commons Share Alike 3.0"
+
+#~ msgid ""
+#~ "Select <guiseq><gui style=\"menu\">File</gui> <gui style=\"menuitem"
+#~ "\">Print</gui></guiseq>."
+#~ msgstr ""
+#~ "Виберіть <guiseq><gui style=\"menu\">«Файл»</gui> <gui style=\"menuitem"
+#~ "\">«Друкувати»</gui></guiseq>."
+
+#~ msgid ""
+#~ "Click <guiseq><gui style=\"menu\">File</gui> <gui style=\"menuitem"
+#~ "\">Print</gui></guiseq>."
+#~ msgstr ""
+#~ "Клацніть на <guiseq><gui style=\"menu\">«Файл»</gui> <gui style=\"menuitem"
+#~ "\">«Друкувати»</gui></guiseq>."
+
+#~ msgid ""
+#~ "Select <guiseq><gui style=\"menu\">File</gui> <gui style=\"menuitem"
+#~ "\">Print Preview</gui></guiseq>. Alternatively, you can press "
+#~ "<keyseq><key>Shift</key><key>Ctrl</key> <key>P</key></keyseq>."
+#~ msgstr ""
+#~ "Виберіть <guiseq><gui style=\"menu\">«Файл»</gui> <gui style=\"menuitem"
+#~ "\">«Попередній перегляд»</gui></guiseq>. Також, можна натиснути "
+#~ "<keyseq><key>Shift</key><key>Ctrl</key> <key>P</key></keyseq>."
+
+#~ msgid ""
+#~ "Select <guiseq><gui style=\"menu\">File</gui> <gui style=\"menuitem"
+#~ "\">Print</gui> <gui style=\"tab\">General</gui></guiseq>."
+#~ msgstr ""
+#~ "Виберіть <guiseq><gui style=\"menu\">«Файл»</gui> <gui style=\"menuitem"
+#~ "\">«Друкувати»</gui> <gui style=\"tab\">«Загальні»</gui></guiseq>."
+
+#~ msgid ""
+#~ "You can preview the file using <gui style=\"button\">Print Preview</gui> "
+#~ "and once you are satisfied with the settings, click <gui style=\"button"
+#~ "\">Print</gui> to send the file to printer."
+#~ msgstr ""
+#~ "Можна попередньо переглянути файл, використовуючи «<gui style=\"button"
+#~ "\">Попередній перегляд</gui>» і, як тільки налаштування Вас "
+#~ "задовольняють, клацніть на «<gui style=\"button\">Друкувати</gui>», щоб "
+#~ "відправити файл до принтеру."
+
+#~ msgid ""
+#~ "Select <guiseq><gui style=\"menu\">File</gui> <gui style=\"menuitem"
+#~ "\">Print</gui> <gui style=\"menuitem\">Print to File</gui></guiseq>."
+#~ msgstr ""
+#~ "Виберіть <guiseq><gui style=\"menu\">«Файл»</gui> <gui style=\"menuitem"
+#~ "\">«Друкувати»</gui> <gui style=\"menuitem\">«Друкувати до файла»</gui></"
+#~ "guiseq>."
+
+#~ msgid ""
+#~ "Printing is enabled for the following file formats, you may select from:"
+#~ msgstr "Друкування доступне для наступних форматів файлів на вибір:"
+
+#~ msgid ""
+#~ "Select <guiseq><gui style=\"menu\">File</gui> <gui style=\"menuitem"
+#~ "\">Print…</gui></guiseq>."
+#~ msgstr ""
+#~ "Виберіть <guiseq><gui style=\"menu\">«Файл»</gui> <gui style=\"menuitem"
+#~ "\">«Друкувати…»</gui></guiseq>."
 
 #~ msgid ""
 #~ "Select <guiseq><gui style=\"menu\">gedit</gui> <gui style=\"menuitem"

@@ -5,7 +5,7 @@
  * Copyright (C) 1998, 1999 Alex Roberts, Evan Lawrence
  * Copyright (C) 2000, 2001 Chema Celorio, Paolo Maggi
  * Copyright (C) 2002-2005 Paolo Maggi
- * Copyright (C) 2014-2020 Sébastien Wilmet
+ * Copyright (C) 2014-2015 Sébastien Wilmet
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -22,13 +22,21 @@
  */
 
 #include "config.h"
+
 #include "gedit-document.h"
 #include "gedit-document-private.h"
+
 #include <string.h>
 #include <glib/gi18n.h>
+
+#include "gedit-app.h"
+#include "gedit-app-private.h"
 #include "gedit-settings.h"
 #include "gedit-debug.h"
 #include "gedit-utils.h"
+#include "gedit-metadata-manager.h"
+
+#define METADATA_QUERY "metadata::*"
 
 #define NO_LANGUAGE_NAME "_NORMAL_"
 
@@ -43,7 +51,11 @@ typedef struct
 {
 	GtkSourceFile *file;
 
-	TeplMetadata *metadata;
+	GSettings   *editor_settings;
+
+	gint 	     untitled_number;
+
+	GFileInfo   *metadata_info;
 
 	gchar	    *content_type;
 
@@ -54,7 +66,12 @@ typedef struct
 	 */
 	GtkSourceSearchContext *search_context;
 
+	GeditMetadataManager *metadata_manager;
+
+	guint user_action;
+
 	guint language_set_by_user : 1;
+	guint use_gvfs_metadata : 1;
 
 	/* The search is empty if there is no search context, or if the
 	 * search text is empty. It is used for the sensitivity of some menu
@@ -71,9 +88,11 @@ typedef struct
 enum
 {
 	PROP_0,
+	PROP_SHORTNAME,
 	PROP_CONTENT_TYPE,
 	PROP_MIME_TYPE,
 	PROP_EMPTY_SEARCH,
+	PROP_USE_GVFS_METADATA,
 	LAST_PROP
 };
 
@@ -81,6 +100,7 @@ static GParamSpec *properties[LAST_PROP];
 
 enum
 {
+	CURSOR_MOVED,
 	LOAD,
 	LOADED,
 	SAVE,
@@ -90,40 +110,41 @@ enum
 
 static guint document_signals[LAST_SIGNAL];
 
-G_DEFINE_TYPE_WITH_PRIVATE (GeditDocument, gedit_document, TEPL_TYPE_BUFFER)
+static GHashTable *allocated_untitled_numbers = NULL;
 
-static void
-load_metadata_from_metadata_manager (GeditDocument *doc)
+G_DEFINE_TYPE_WITH_PRIVATE (GeditDocument, gedit_document, GTK_SOURCE_TYPE_BUFFER)
+
+static gint
+get_untitled_number (void)
 {
-	GeditDocumentPrivate *priv = gedit_document_get_instance_private (doc);
-	GFile *location;
+	gint i = 1;
 
-	location = gtk_source_file_get_location (priv->file);
+	if (allocated_untitled_numbers == NULL)
+		allocated_untitled_numbers = g_hash_table_new (NULL, NULL);
 
-	if (location != NULL)
+	g_return_val_if_fail (allocated_untitled_numbers != NULL, -1);
+
+	while (TRUE)
 	{
-		TeplMetadataManager *manager;
+		if (g_hash_table_lookup (allocated_untitled_numbers, GINT_TO_POINTER (i)) == NULL)
+		{
+			g_hash_table_insert (allocated_untitled_numbers,
+					     GINT_TO_POINTER (i),
+					     GINT_TO_POINTER (i));
 
-		manager = tepl_metadata_manager_get_singleton ();
-		tepl_metadata_manager_copy_from (manager, location, priv->metadata);
+			return i;
+		}
+
+		++i;
 	}
 }
 
 static void
-save_metadata_into_metadata_manager (GeditDocument *doc)
+release_untitled_number (gint n)
 {
-	GeditDocumentPrivate *priv = gedit_document_get_instance_private (doc);
-	GFile *location;
+	g_return_if_fail (allocated_untitled_numbers != NULL);
 
-	location = gtk_source_file_get_location (priv->file);
-
-	if (location != NULL)
-	{
-		TeplMetadataManager *manager;
-
-		manager = tepl_metadata_manager_get_singleton ();
-		tepl_metadata_manager_merge_into (manager, location, priv->metadata);
-	}
+	g_hash_table_remove (allocated_untitled_numbers, GINT_TO_POINTER (n));
 }
 
 static void
@@ -195,16 +216,17 @@ gedit_document_dispose (GObject *object)
 	/* Metadata must be saved here and not in finalize because the language
 	 * is gone by the time finalize runs.
 	 */
-	if (priv->metadata != NULL)
+	if (priv->file != NULL)
 	{
 		save_metadata (doc);
 
-		g_object_unref (priv->metadata);
-		priv->metadata = NULL;
+		g_object_unref (priv->file);
+		priv->file = NULL;
 	}
 
-	g_clear_object (&priv->file);
+	g_clear_object (&priv->metadata_info);
 	g_clear_object (&priv->search_context);
+	g_clear_object (&priv->metadata_manager);
 
 	G_OBJECT_CLASS (gedit_document_parent_class)->dispose (object);
 }
@@ -212,9 +234,16 @@ gedit_document_dispose (GObject *object)
 static void
 gedit_document_finalize (GObject *object)
 {
-	GeditDocumentPrivate *priv = gedit_document_get_instance_private (GEDIT_DOCUMENT (object));
+	GeditDocumentPrivate *priv;
 
 	gedit_debug (DEBUG_DOCUMENT);
+
+	priv = gedit_document_get_instance_private (GEDIT_DOCUMENT (object));
+
+	if (priv->untitled_number > 0)
+	{
+		release_untitled_number (priv->untitled_number);
+	}
 
 	g_free (priv->content_type);
 
@@ -239,6 +268,10 @@ gedit_document_get_property (GObject    *object,
 
 	switch (prop_id)
 	{
+		case PROP_SHORTNAME:
+			g_value_take_string (value, gedit_document_get_short_name_for_display (doc));
+			break;
+
 		case PROP_CONTENT_TYPE:
 			g_value_take_string (value, gedit_document_get_content_type (doc));
 			break;
@@ -249,6 +282,10 @@ gedit_document_get_property (GObject    *object,
 
 		case PROP_EMPTY_SEARCH:
 			g_value_set_boolean (value, priv->empty_search);
+			break;
+
+		case PROP_USE_GVFS_METADATA:
+			g_value_set_boolean (value, priv->use_gvfs_metadata);
 			break;
 
 		default:
@@ -264,11 +301,16 @@ gedit_document_set_property (GObject      *object,
 			     GParamSpec   *pspec)
 {
 	GeditDocument *doc = GEDIT_DOCUMENT (object);
+	GeditDocumentPrivate *priv = gedit_document_get_instance_private (doc);
 
 	switch (prop_id)
 	{
 		case PROP_CONTENT_TYPE:
 			set_content_type (doc, g_value_get_string (value));
+			break;
+
+		case PROP_USE_GVFS_METADATA:
+			priv->use_gvfs_metadata = g_value_get_boolean (value);
 			break;
 
 		default:
@@ -278,14 +320,85 @@ gedit_document_set_property (GObject      *object,
 }
 
 static void
+gedit_document_begin_user_action (GtkTextBuffer *buffer)
+{
+	GeditDocumentPrivate *priv;
+
+	priv = gedit_document_get_instance_private (GEDIT_DOCUMENT (buffer));
+
+	++priv->user_action;
+
+	if (GTK_TEXT_BUFFER_CLASS (gedit_document_parent_class)->begin_user_action != NULL)
+	{
+		GTK_TEXT_BUFFER_CLASS (gedit_document_parent_class)->begin_user_action (buffer);
+	}
+}
+
+static void
+gedit_document_end_user_action (GtkTextBuffer *buffer)
+{
+	GeditDocumentPrivate *priv;
+
+	priv = gedit_document_get_instance_private (GEDIT_DOCUMENT (buffer));
+
+	--priv->user_action;
+
+	if (GTK_TEXT_BUFFER_CLASS (gedit_document_parent_class)->end_user_action != NULL)
+	{
+		GTK_TEXT_BUFFER_CLASS (gedit_document_parent_class)->end_user_action (buffer);
+	}
+}
+
+static void
+gedit_document_mark_set (GtkTextBuffer     *buffer,
+                         const GtkTextIter *iter,
+                         GtkTextMark       *mark)
+{
+	GeditDocument *doc = GEDIT_DOCUMENT (buffer);
+	GeditDocumentPrivate *priv;
+
+	priv = gedit_document_get_instance_private (doc);
+
+	if (GTK_TEXT_BUFFER_CLASS (gedit_document_parent_class)->mark_set != NULL)
+	{
+		GTK_TEXT_BUFFER_CLASS (gedit_document_parent_class)->mark_set (buffer, iter, mark);
+	}
+
+	if (mark == gtk_text_buffer_get_insert (buffer) && (priv->user_action == 0))
+	{
+		g_signal_emit (doc, document_signals[CURSOR_MOVED], 0);
+	}
+}
+
+static void
+gedit_document_changed (GtkTextBuffer *buffer)
+{
+	g_signal_emit (GEDIT_DOCUMENT (buffer), document_signals[CURSOR_MOVED], 0);
+
+	GTK_TEXT_BUFFER_CLASS (gedit_document_parent_class)->changed (buffer);
+}
+
+static void
 gedit_document_constructed (GObject *object)
 {
 	GeditDocument *doc = GEDIT_DOCUMENT (object);
+	GeditDocumentPrivate *priv;
 	GeditSettings *settings;
 	GSettings *editor_settings;
 
+	priv = gedit_document_get_instance_private (doc);
+
 	settings = _gedit_settings_get_singleton ();
 	editor_settings = _gedit_settings_peek_editor_settings (settings);
+
+	if (!priv->use_gvfs_metadata)
+	{
+		GeditMetadataManager *metadata_manager;
+
+		metadata_manager = _gedit_app_get_metadata_manager (GEDIT_APP (g_application_get_default ()));
+		g_assert (GEDIT_IS_METADATA_MANAGER (metadata_manager));
+		priv->metadata_manager = g_object_ref (metadata_manager);
+	}
 
 	/* Bind construct properties. */
 	g_settings_bind (editor_settings, GEDIT_SETTINGS_ENSURE_TRAILING_NEWLINE,
@@ -299,6 +412,7 @@ static void
 gedit_document_class_init (GeditDocumentClass *klass)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
+	GtkTextBufferClass *buf_class = GTK_TEXT_BUFFER_CLASS (klass);
 
 	object_class->dispose = gedit_document_dispose;
 	object_class->finalize = gedit_document_finalize;
@@ -306,8 +420,25 @@ gedit_document_class_init (GeditDocumentClass *klass)
 	object_class->set_property = gedit_document_set_property;
 	object_class->constructed = gedit_document_constructed;
 
+	buf_class->begin_user_action = gedit_document_begin_user_action;
+	buf_class->end_user_action = gedit_document_end_user_action;
+	buf_class->mark_set = gedit_document_mark_set;
+	buf_class->changed = gedit_document_changed;
+
 	klass->loaded = gedit_document_loaded_real;
 	klass->saved = gedit_document_saved_real;
+
+	/**
+	 * GeditDocument:shortname:
+	 *
+	 * The document's short name.
+	 */
+	properties[PROP_SHORTNAME] =
+		g_param_spec_string ("shortname",
+		                     "Short Name",
+		                     "The document's short name",
+		                     NULL,
+		                     G_PARAM_READABLE | G_PARAM_STATIC_STRINGS);
 
 	/**
 	 * GeditDocument:content-type:
@@ -348,7 +479,43 @@ gedit_document_class_init (GeditDocumentClass *klass)
 		                      TRUE,
 		                      G_PARAM_READABLE | G_PARAM_STATIC_STRINGS);
 
+	/**
+	 * GeditDocument:use-gvfs-metadata:
+	 *
+	 * Whether to use GVFS metadata. If %FALSE, use the gedit metadata
+	 * manager that stores the metadata in an XML file in the user cache
+	 * directory.
+	 *
+	 * <warning>
+	 * The property is used internally by gedit. It must not be used in a
+	 * gedit plugin. The property can be modified or removed at any time.
+	 * </warning>
+	 */
+	properties[PROP_USE_GVFS_METADATA] =
+		g_param_spec_boolean ("use-gvfs-metadata",
+		                      "Use GVFS metadata",
+		                      "",
+		                      TRUE,
+		                      G_PARAM_READWRITE | G_PARAM_CONSTRUCT_ONLY | G_PARAM_STATIC_STRINGS);
+
 	g_object_class_install_properties (object_class, LAST_PROP, properties);
+
+	/* This signal is used to update the cursor position in the statusbar,
+	 * it's emitted either when the insert mark is moved explicitely or
+	 * when the buffer changes (insert/delete).
+	 * FIXME When the replace_all was implemented in gedit, this signal was
+	 * not emitted during the replace_all to improve performance. Now the
+	 * replace_all is implemented in GtkSourceView, so the signal is
+	 * emitted.
+	 */
+	document_signals[CURSOR_MOVED] =
+		g_signal_new ("cursor-moved",
+			      G_OBJECT_CLASS_TYPE (object_class),
+			      G_SIGNAL_RUN_LAST,
+			      G_STRUCT_OFFSET (GeditDocumentClass, cursor_moved),
+			      NULL, NULL, NULL,
+			      G_TYPE_NONE,
+			      0);
 
 	/**
 	 * GeditDocument::load:
@@ -632,20 +799,79 @@ on_location_changed (GtkSourceFile *file,
 		     GParamSpec    *pspec,
 		     GeditDocument *doc)
 {
+	GeditDocumentPrivate *priv;
+	GFile *location;
+
 	gedit_debug (DEBUG_DOCUMENT);
-	load_metadata_from_metadata_manager (doc);
+
+	priv = gedit_document_get_instance_private (doc);
+
+	location = gtk_source_file_get_location (file);
+
+	if (location != NULL && priv->untitled_number > 0)
+	{
+		release_untitled_number (priv->untitled_number);
+		priv->untitled_number = 0;
+	}
+
+	g_object_notify_by_pspec (G_OBJECT (doc), properties[PROP_SHORTNAME]);
+
+	/* Load metadata for this location: we load sync since metadata is
+	 * always local so it should be fast and we need the information
+	 * right after the location was set.
+	 * TODO: do async I/O for the metadata.
+	 */
+	if (priv->use_gvfs_metadata && location != NULL)
+	{
+		GError *error = NULL;
+
+		if (priv->metadata_info != NULL)
+		{
+			g_object_unref (priv->metadata_info);
+		}
+
+		priv->metadata_info = g_file_query_info (location,
+		                                         METADATA_QUERY,
+		                                         G_FILE_QUERY_INFO_NONE,
+		                                         NULL,
+		                                         &error);
+
+		if (error != NULL)
+		{
+			/* Do not complain about metadata if we are opening a
+			 * non existing file.
+			 */
+			if (!g_error_matches (error, G_FILE_ERROR, G_FILE_ERROR_ISDIR) &&
+			    !g_error_matches (error, G_FILE_ERROR, G_FILE_ERROR_NOTDIR) &&
+			    !g_error_matches (error, G_FILE_ERROR, G_FILE_ERROR_NOENT) &&
+			    !g_error_matches (error, G_IO_ERROR, G_IO_ERROR_NOT_FOUND))
+			{
+				g_warning ("%s", error->message);
+			}
+
+			g_error_free (error);
+		}
+
+		if (priv->metadata_info == NULL)
+		{
+			priv->metadata_info = g_file_info_new ();
+		}
+	}
 }
 
 static void
 gedit_document_init (GeditDocument *doc)
 {
 	GeditDocumentPrivate *priv = gedit_document_get_instance_private (doc);
-	TeplFile *tepl_file;
 	GeditSettings *settings;
 	GSettings *editor_settings;
 
 	gedit_debug (DEBUG_DOCUMENT);
 
+	settings = _gedit_settings_get_singleton ();
+	editor_settings = _gedit_settings_peek_editor_settings (settings);
+
+	priv->untitled_number = get_untitled_number ();
 	priv->content_type = get_default_content_type ();
 	priv->language_set_by_user = FALSE;
 	priv->empty_search = TRUE;
@@ -653,22 +879,13 @@ gedit_document_init (GeditDocument *doc)
 	update_time_of_last_save_or_load (doc);
 
 	priv->file = gtk_source_file_new ();
-	tepl_file = tepl_buffer_get_file (TEPL_BUFFER (doc));
-
-	g_object_bind_property (priv->file, "location",
-				tepl_file, "location",
-				G_BINDING_DEFAULT | G_BINDING_SYNC_CREATE);
-
-	priv->metadata = tepl_metadata_new ();
+	priv->metadata_info = g_file_info_new ();
 
 	g_signal_connect_object (priv->file,
 				 "notify::location",
 				 G_CALLBACK (on_location_changed),
 				 doc,
 				 0);
-
-	settings = _gedit_settings_get_singleton ();
-	editor_settings = _gedit_settings_peek_editor_settings (settings);
 
 	g_settings_bind (editor_settings, GEDIT_SETTINGS_MAX_UNDO_ACTIONS,
 	                 doc, "max-undo-levels",
@@ -699,7 +916,17 @@ gedit_document_init (GeditDocument *doc)
 GeditDocument *
 gedit_document_new (void)
 {
-	return g_object_new (GEDIT_TYPE_DOCUMENT, NULL);
+	gboolean use_gvfs_metadata;
+
+#ifdef ENABLE_GVFS_METADATA
+	use_gvfs_metadata = TRUE;
+#else
+	use_gvfs_metadata = FALSE;
+#endif
+
+	return g_object_new (GEDIT_TYPE_DOCUMENT,
+			     "use-gvfs-metadata", use_gvfs_metadata,
+			     NULL);
 }
 
 static gchar *
@@ -814,17 +1041,19 @@ set_content_type (GeditDocument *doc,
 gchar *
 _gedit_document_get_uri_for_display (GeditDocument *doc)
 {
-	TeplFile *file;
+	GeditDocumentPrivate *priv;
 	GFile *location;
 
 	g_return_val_if_fail (GEDIT_IS_DOCUMENT (doc), g_strdup (""));
 
-	file = tepl_buffer_get_file (TEPL_BUFFER (doc));
-	location = tepl_file_get_location (file);
+	priv = gedit_document_get_instance_private (doc);
+
+	location = gtk_source_file_get_location (priv->file);
 
 	if (location == NULL)
 	{
-		return tepl_file_get_short_name (file);
+		return g_strdup_printf (_("Untitled Document %d"),
+					priv->untitled_number);
 	}
 	else
 	{
@@ -841,12 +1070,24 @@ _gedit_document_get_uri_for_display (GeditDocument *doc)
 gchar *
 gedit_document_get_short_name_for_display (GeditDocument *doc)
 {
-	TeplFile *file;
+	GeditDocumentPrivate *priv;
+	GFile *location;
 
 	g_return_val_if_fail (GEDIT_IS_DOCUMENT (doc), g_strdup (""));
 
-	file = tepl_buffer_get_file (TEPL_BUFFER (doc));
-	return tepl_file_get_short_name (file);
+	priv = gedit_document_get_instance_private (doc);
+
+	location = gtk_source_file_get_location (priv->file);
+
+	if (location == NULL)
+	{
+		return g_strdup_printf (_("Untitled Document %d"),
+					priv->untitled_number);
+	}
+	else
+	{
+		return gedit_utils_basename_for_display (location);
+	}
 }
 
 gchar *
@@ -1033,14 +1274,30 @@ gedit_document_saved_real (GeditDocument *doc)
 }
 
 gboolean
-gedit_document_is_untitled (GeditDocument *doc)
+gedit_document_is_untouched (GeditDocument *doc)
 {
-	TeplFile *file;
+	GeditDocumentPrivate *priv;
+	GFile *location;
 
 	g_return_val_if_fail (GEDIT_IS_DOCUMENT (doc), TRUE);
 
-	file = tepl_buffer_get_file (TEPL_BUFFER (doc));
-	return tepl_file_get_location (file) == NULL;
+	priv = gedit_document_get_instance_private (doc);
+
+	location = gtk_source_file_get_location (priv->file);
+
+	return location == NULL && !gtk_text_buffer_get_modified (GTK_TEXT_BUFFER (doc));
+}
+
+gboolean
+gedit_document_is_untitled (GeditDocument *doc)
+{
+	GeditDocumentPrivate *priv;
+
+	g_return_val_if_fail (GEDIT_IS_DOCUMENT (doc), TRUE);
+
+	priv = gedit_document_get_instance_private (doc);
+
+	return gtk_source_file_get_location (priv->file) == NULL;
 }
 
 /*
@@ -1070,6 +1327,51 @@ _gedit_document_needs_saving (GeditDocument *doc)
 	}
 
 	return (externally_modified || deleted) && !priv->create;
+}
+
+/* If @line is bigger than the lines of the document, the cursor is moved
+ * to the last line and FALSE is returned.
+ */
+gboolean
+gedit_document_goto_line (GeditDocument *doc,
+			  gint           line)
+{
+	GtkTextIter iter;
+
+	gedit_debug (DEBUG_DOCUMENT);
+
+	g_return_val_if_fail (GEDIT_IS_DOCUMENT (doc), FALSE);
+	g_return_val_if_fail (line >= -1, FALSE);
+
+	gtk_text_buffer_get_iter_at_line (GTK_TEXT_BUFFER (doc),
+					  &iter,
+					  line);
+
+	gtk_text_buffer_place_cursor (GTK_TEXT_BUFFER (doc), &iter);
+
+	return gtk_text_iter_get_line (&iter) == line;
+}
+
+gboolean
+gedit_document_goto_line_offset (GeditDocument *doc,
+				 gint           line,
+				 gint           line_offset)
+{
+	GtkTextIter iter;
+
+	g_return_val_if_fail (GEDIT_IS_DOCUMENT (doc), FALSE);
+	g_return_val_if_fail (line >= -1, FALSE);
+	g_return_val_if_fail (line_offset >= -1, FALSE);
+
+	gtk_text_buffer_get_iter_at_line_offset (GTK_TEXT_BUFFER (doc),
+						 &iter,
+						 line,
+						 line_offset);
+
+	gtk_text_buffer_place_cursor (GTK_TEXT_BUFFER (doc), &iter);
+
+	return (gtk_text_iter_get_line (&iter) == line &&
+		gtk_text_iter_get_line_offset (&iter) == line_offset);
 }
 
 /**
@@ -1130,6 +1432,64 @@ _gedit_document_get_seconds_since_last_save_or_load (GeditDocument *doc)
 	return n_microseconds / (1000 * 1000);
 }
 
+static gchar *
+get_metadata_from_metadata_manager (GeditDocument *doc,
+				    const gchar   *key)
+{
+	GeditDocumentPrivate *priv;
+	GFile *location;
+
+	priv = gedit_document_get_instance_private (doc);
+
+	location = gtk_source_file_get_location (priv->file);
+
+	if (location != NULL)
+	{
+		return gedit_metadata_manager_get (priv->metadata_manager, location, key);
+	}
+
+	return NULL;
+}
+
+static gchar *
+get_metadata_from_gvfs (GeditDocument *doc,
+			const gchar   *key)
+{
+	GeditDocumentPrivate *priv;
+
+	priv = gedit_document_get_instance_private (doc);
+
+	if (priv->metadata_info != NULL &&
+	    g_file_info_has_attribute (priv->metadata_info, key) &&
+	    g_file_info_get_attribute_type (priv->metadata_info, key) == G_FILE_ATTRIBUTE_TYPE_STRING)
+	{
+		return g_strdup (g_file_info_get_attribute_string (priv->metadata_info, key));
+	}
+
+	return NULL;
+}
+
+static void
+set_gvfs_metadata (GFileInfo   *info,
+		   const gchar *key,
+		   const gchar *value)
+{
+	g_return_if_fail (G_IS_FILE_INFO (info));
+
+	if (value != NULL)
+	{
+		g_file_info_set_attribute_string (info, key, value);
+	}
+	else
+	{
+		/* Unset the key */
+		g_file_info_set_attribute (info,
+					   key,
+					   G_FILE_ATTRIBUTE_TYPE_INVALID,
+					   NULL);
+	}
+}
+
 /**
  * gedit_document_get_metadata:
  * @doc: a #GeditDocument
@@ -1150,12 +1510,12 @@ gedit_document_get_metadata (GeditDocument *doc,
 
 	priv = gedit_document_get_instance_private (doc);
 
-	if (priv->metadata == NULL)
+	if (priv->use_gvfs_metadata)
 	{
-		return NULL;
+		return get_metadata_from_gvfs (doc, key);
 	}
 
-	return tepl_metadata_get (priv->metadata, key);
+	return get_metadata_from_metadata_manager (doc, key);
 }
 
 /**
@@ -1173,30 +1533,84 @@ gedit_document_set_metadata (GeditDocument *doc,
 			     ...)
 {
 	GeditDocumentPrivate *priv;
-	va_list var_args;
+	GFile *location;
 	const gchar *key;
+	va_list var_args;
+	GFileInfo *info = NULL;
 
 	g_return_if_fail (GEDIT_IS_DOCUMENT (doc));
 	g_return_if_fail (first_key != NULL);
 
 	priv = gedit_document_get_instance_private (doc);
 
-	if (priv->metadata == NULL)
+	location = gtk_source_file_get_location (priv->file);
+
+	/* With the metadata manager, can't set metadata for untitled documents.
+	 * With GVFS metadata, if the location is NULL the metadata is stored in
+	 * priv->metadata_info, so that it can be saved later if the document is
+	 * saved.
+	 */
+	if (!priv->use_gvfs_metadata && location == NULL)
 	{
 		return;
 	}
 
+	if (priv->use_gvfs_metadata)
+	{
+		info = g_file_info_new ();
+	}
+
 	va_start (var_args, first_key);
 
-	for (key = first_key; key != NULL; key = va_arg (var_args, const gchar *))
+	for (key = first_key; key; key = va_arg (var_args, const gchar *))
 	{
 		const gchar *value = va_arg (var_args, const gchar *);
-		tepl_metadata_set (priv->metadata, key, value);
+
+		if (priv->use_gvfs_metadata)
+		{
+			set_gvfs_metadata (info, key, value);
+			set_gvfs_metadata (priv->metadata_info, key, value);
+		}
+		else
+		{
+			gedit_metadata_manager_set (priv->metadata_manager, location, key, value);
+		}
 	}
 
 	va_end (var_args);
 
-	save_metadata_into_metadata_manager (doc);
+	if (priv->use_gvfs_metadata && location != NULL)
+	{
+		GError *error = NULL;
+
+		/* We save synchronously since metadata is always local so it
+		 * should be fast. Moreover this function can be called on
+		 * application shutdown, when the main loop has already exited,
+		 * so an async operation would not terminate.
+		 * https://bugzilla.gnome.org/show_bug.cgi?id=736591
+		 */
+		g_file_set_attributes_from_info (location,
+						 info,
+						 G_FILE_QUERY_INFO_NONE,
+						 NULL,
+						 &error);
+
+		if (error != NULL)
+		{
+			/* Do not complain about metadata if we are closing a
+			 * document for a non existing file.
+			 */
+			if (!g_error_matches (error, G_FILE_ERROR, G_FILE_ERROR_NOENT) &&
+			    !g_error_matches (error, G_IO_ERROR, G_IO_ERROR_NOT_FOUND))
+			{
+				g_warning ("Set document metadata failed: %s", error->message);
+			}
+
+			g_error_free (error);
+		}
+	}
+
+	g_clear_object (&info);
 }
 
 static void

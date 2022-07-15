@@ -39,11 +39,21 @@ GtkWidget	*gedit_conversion_error_while_saving_info_bar_new	(GFile              
 const GtkSourceEncoding
 		*gedit_conversion_error_info_bar_get_encoding		(GtkWidget           *info_bar);
 
+GtkWidget	*gedit_file_already_open_warning_info_bar_new		(GFile               *location);
+
 GtkWidget	*gedit_externally_modified_saving_error_info_bar_new	(GFile               *location,
 									 const GError        *error);
 
+GtkWidget	*gedit_no_backup_saving_error_info_bar_new		 (GFile               *location,
+									  const GError        *error);
+
 GtkWidget	*gedit_unrecoverable_saving_error_info_bar_new		(GFile               *location,
 									 const GError        *error);
+
+GtkWidget	*gedit_externally_modified_info_bar_new		 	(GFile               *location,
+									 gboolean             document_modified);
+
+GtkWidget	*gedit_invalid_character_info_bar_new			(GFile               *location);
 
 G_END_DECLS
 

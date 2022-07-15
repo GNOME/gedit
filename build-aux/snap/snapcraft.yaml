@@ -41,33 +41,10 @@ apps:
       GTK_USE_PORTAL: 1
 
 parts:
-  amtk:
-    source: https://gitlab.gnome.org/GNOME/amtk.git
-    source-type: git
-    plugin: autotools
-    configflags:
-      - --prefix=/usr
-      - --enable-introspection=no
-    organize:
-      snap/gedit/current/usr: usr
-
-  tepl:
-    after: [amtk, gtksourceview]
-    source: https://gitlab.gnome.org/GNOME/tepl.git
-    source-type: git
-    plugin: meson
-    meson-parameters:
-      - --prefix=/usr
-    organize:
-      snap/gedit/current/usr: usr
-    build-packages:
-      - libuchardet-dev
-    stage-packages:
-      - libuchardet0
-
   gtksourceview:
     source: https://gitlab.gnome.org/GNOME/gtksourceview.git
     source-type: git
+    source-branch: gtksourceview-4-8
     plugin: meson
     meson-parameters:
       - --prefix=/usr
@@ -94,7 +71,7 @@ parts:
        cp $SNAPCRAFT_PART_INSTALL/usr/share/vala/vapi/gtksource* /usr/share/vala/vapi
 
   gedit:
-    after: [gtksourceview, tepl]
+    after: [gtksourceview]
     source: .
     source-type: git
     parse-info: [usr/share/metainfo/org.gnome.gedit.appdata.xml]
@@ -102,6 +79,7 @@ parts:
     meson-parameters:
       - --prefix=/usr
       - -Dvala_args="--vapidir=$SNAPCRAFT_STAGE/usr/share/vala/vapi"
+
     build-environment:
       - C_INCLUDE_PATH: $SNAPCRAFT_STAGE/usr/include/gtksourceview-4
     override-build: |

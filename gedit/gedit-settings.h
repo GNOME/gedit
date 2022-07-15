@@ -43,11 +43,7 @@ GSettings *	_gedit_settings_peek_editor_settings			(GeditSettings *self);
 G_GNUC_INTERNAL
 GSettings *	_gedit_settings_peek_file_chooser_state_settings	(GeditSettings *self);
 
-G_GNUC_INTERNAL
-gchar *		_gedit_settings_get_system_font				(GeditSettings *self);
-
-G_GNUC_INTERNAL
-gchar *		_gedit_settings_get_selected_font			(GeditSettings *self);
+gchar *		gedit_settings_get_system_font				(GeditSettings *self);
 
 GSList *	gedit_settings_get_candidate_encodings			(gboolean *default_candidates);
 
@@ -73,6 +69,7 @@ GSList *	gedit_settings_get_candidate_encodings			(gboolean *default_candidates)
 #define GEDIT_SETTINGS_RESTORE_CURSOR_POSITION		"restore-cursor-position"
 #define GEDIT_SETTINGS_SYNTAX_HIGHLIGHTING		"syntax-highlighting"
 #define GEDIT_SETTINGS_SEARCH_HIGHLIGHTING		"search-highlighting"
+#define GEDIT_SETTINGS_DISPLAY_OVERVIEW_MAP		"display-overview-map"
 #define GEDIT_SETTINGS_BACKGROUND_PATTERN		"background-pattern"
 #define GEDIT_SETTINGS_STATUSBAR_VISIBLE		"statusbar-visible"
 #define GEDIT_SETTINGS_SIDE_PANEL_VISIBLE		"side-panel-visible"

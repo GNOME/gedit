@@ -30,8 +30,13 @@
 
 #include "gedit-spell-app-activatable.h"
 
-#define GEDIT_METADATA_ATTRIBUTE_SPELL_LANGUAGE "gedit-spell-language"
-#define GEDIT_METADATA_ATTRIBUTE_SPELL_ENABLED  "gedit-spell-enabled"
+#ifdef G_OS_WIN32
+#define GEDIT_METADATA_ATTRIBUTE_SPELL_LANGUAGE "spell-language"
+#define GEDIT_METADATA_ATTRIBUTE_SPELL_ENABLED  "spell-enabled"
+#else
+#define GEDIT_METADATA_ATTRIBUTE_SPELL_LANGUAGE "metadata::gedit-spell-language"
+#define GEDIT_METADATA_ATTRIBUTE_SPELL_ENABLED  "metadata::gedit-spell-enabled"
+#endif
 
 #define SPELL_ENABLED_STR "1"
 #define SPELL_BASE_SETTINGS	"org.gnome.gedit.plugins.spell"

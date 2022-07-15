@@ -32,6 +32,8 @@ void		 gedit_dirs_init			(void);
 void		 gedit_dirs_shutdown 			(void);
 
 
+const gchar	*gedit_dirs_get_user_cache_dir		(void);
+
 const gchar	*gedit_dirs_get_user_config_dir		(void);
 
 const gchar	*gedit_dirs_get_user_data_dir		(void);

@@ -102,21 +102,33 @@ _gedit_cmd_help_about (GeditWindow *window)
 		NULL
 	};
 
+	GdkPixbuf *logo;
+	GError *error = NULL;
+
 	gedit_debug (DEBUG_COMMANDS);
+
+	logo = gdk_pixbuf_new_from_resource ("/org/gnome/gedit/pixmaps/gedit-logo.png", &error);
+	if (error != NULL)
+	{
+		g_warning ("Error when loading the gedit logo: %s", error->message);
+		g_clear_error (&error);
+	}
 
 	gtk_show_about_dialog (GTK_WINDOW (window),
 			       "program-name", "gedit",
 			       "authors", authors,
 			       "comments", _("gedit is a small and lightweight text editor for the GNOME desktop"),
-			       "copyright", "Copyright 1998-2020 – the gedit team",
+			       "copyright", "Copyright 1998-2021 – the gedit team",
 			       "license-type", GTK_LICENSE_GPL_2_0,
-			       "logo-icon-name", "org.gnome.gedit",
+			       "logo", logo,
 			       "documenters", documenters,
 			       "translator-credits", _("translator-credits"),
 			       "version", VERSION,
 			       "website", "http://www.gedit.org",
 			       "website-label", "www.gedit.org",
 			       NULL);
+
+	g_clear_object (&logo);
 }
 
 /* ex:set ts=8 noet: */

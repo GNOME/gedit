@@ -18,14 +18,20 @@ msgfmt_plugin_cmd = [
 subdir('docinfo')
 subdir('filebrowser')
 subdir('modelines')
-subdir('pythonconsole')
+subdir('openlinks')
 subdir('quickhighlight')
-subdir('quickopen')
-subdir('snippets')
 subdir('sort')
-subdir('spell')
+if gspell_dep.found()
+  subdir('spell')
+endif
 subdir('time')
 
-if get_option('plugin_externaltools')
-  subdir('externaltools')
+if get_option('python')
+  if get_option('plugin_externaltools')
+    subdir('externaltools')
+  endif
+
+  subdir('pythonconsole')
+  subdir('quickopen')
+  subdir('snippets')
 endif

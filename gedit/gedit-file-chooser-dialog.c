@@ -62,13 +62,15 @@ gedit_file_chooser_dialog_default_init (GeditFileChooserDialogInterface *iface)
 }
 
 GeditFileChooserDialog *
-gedit_file_chooser_dialog_create (const gchar *title,
-				  GtkWindow   *parent,
-				  const gchar *accept_label,
-				  const gchar *cancel_label)
+gedit_file_chooser_dialog_create (const gchar           *title,
+				  GtkWindow             *parent,
+				  GeditFileChooserFlags  flags,
+				  const gchar           *accept_label,
+				  const gchar           *cancel_label)
 {
 	return gedit_file_chooser_dialog_gtk_create (title,
 	                                             parent,
+	                                             flags,
 	                                             accept_label,
 	                                             cancel_label);
 }
@@ -212,6 +214,19 @@ gedit_file_chooser_dialog_show (GeditFileChooserDialog *dialog)
 }
 
 void
+gedit_file_chooser_dialog_hide (GeditFileChooserDialog *dialog)
+{
+	GeditFileChooserDialogInterface *iface;
+
+	g_return_if_fail (GEDIT_IS_FILE_CHOOSER_DIALOG (dialog));
+
+	iface = GEDIT_FILE_CHOOSER_DIALOG_GET_IFACE (dialog);
+	g_return_if_fail (iface->hide != NULL);
+
+	iface->hide (dialog);
+}
+
+void
 gedit_file_chooser_dialog_destroy (GeditFileChooserDialog *dialog)
 {
 	GeditFileChooserDialogInterface *iface;
@@ -253,6 +268,23 @@ gedit_file_chooser_dialog_get_window (GeditFileChooserDialog *dialog)
 	}
 
 	return NULL;
+}
+
+void
+gedit_file_chooser_dialog_add_pattern_filter (GeditFileChooserDialog   *dialog,
+                                              const gchar              *name,
+                                              const gchar              *pattern)
+{
+	GeditFileChooserDialogInterface *iface;
+
+	g_return_if_fail (GEDIT_IS_FILE_CHOOSER_DIALOG (dialog));
+
+	iface = GEDIT_FILE_CHOOSER_DIALOG_GET_IFACE (dialog);
+
+	if (iface->add_pattern_filter)
+	{
+		iface->add_pattern_filter (dialog, name, pattern);
+	}
 }
 
 /* ex:set ts=8 noet: */

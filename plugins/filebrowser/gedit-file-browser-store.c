@@ -1449,6 +1449,7 @@ model_remove_node_children (GeditFileBrowserStore *model,
 {
 	FileBrowserNodeDir *dir;
 	GtkTreePath *path_child;
+	FileBrowserNode *child;
 	GSList *list;
 
 	if (node == NULL || !NODE_IS_DIR (node))
@@ -1477,10 +1478,19 @@ model_remove_node_children (GeditFileBrowserStore *model,
 
 	list = g_slist_copy (dir->children);
 
-	for (GSList *item = list; item; item = item->next)
-		model_remove_node (model, (FileBrowserNode *)(item->data), path_child, free_nodes);
+	for (GSList *item = g_slist_next (list); item; item = item->next)
+	{
+		child = item->data;
+		g_assert (!NODE_IS_DUMMY (child));
+		model_remove_node (model, child, path_child, free_nodes);
+	}
 
 	g_slist_free (list);
+
+	child = dir->children->data;
+	g_assert (NODE_IS_DUMMY (child));
+	model_remove_node (model, child, path_child, free_nodes);
+
 	gtk_tree_path_free (path_child);
 }
 
@@ -1555,24 +1565,6 @@ model_clear (GeditFileBrowserStore *model,
 
 	model_remove_node_children (model, model->priv->virtual_root, path, free_nodes);
 	gtk_tree_path_free (path);
-
-	/* Remove the dummy if there is one */
-	if (model->priv->virtual_root)
-	{
-		FileBrowserNodeDir *dir = FILE_BROWSER_NODE_DIR (model->priv->virtual_root);
-
-		if (dir->children != NULL)
-		{
-			FileBrowserNode *dummy = (FileBrowserNode *)(dir->children->data);
-
-			if (NODE_IS_DUMMY (dummy) && model_node_visibility (model, dummy))
-			{
-				path = gtk_tree_path_new_first ();
-				row_deleted (model, dummy, path);
-				gtk_tree_path_free (path);
-			}
-		}
-	}
 }
 
 static void
@@ -3431,6 +3423,11 @@ delete_file_finished (GFile        *file,
 			/* Job has been cancelled, end the job */
 			async_data_free (data);
 			return;
+		}
+		else
+		{
+			/* Process the next file */
+			data->iter = data->iter->next;
 		}
 	}
 

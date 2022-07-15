@@ -22,6 +22,56 @@
   </para>
 
   <refsect1>
+    <title>40 -> 41</title>
+    <itemizedlist>
+      <listitem>
+        <para>
+          The <code>GeditProgressInfoBar</code> class has been restored
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          <link linkend="GeditDocument">GeditDocument</link> is no longer a subclass
+          of <link linkend="TeplBuffer">TeplBuffer</link>.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          The <code>GeditDocument::cursor-moved</code> signal has been restored.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          The <code>GeditDocument:shortname</code> property has been restored.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          The <code>gedit_document_is_untouched()</code> function has been
+          restored.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          The <code>gedit_view_set_font()</code> function has been restored.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          <code>DEBUG_METADATA</code> has been restored.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          The <code>GBOOLEAN_TO_POINTER()</code> and
+          <code>GPOINTER_TO_BOOLEAN()</code> macros have been restored to
+          <code>gedit-utils.h</code>.
+        </para>
+      </listitem>
+    </itemizedlist>
+  </refsect1>
+
+  <refsect1>
     <title>3.38 -> 40</title>
     <itemizedlist>
       <listitem>

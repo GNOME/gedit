@@ -28,11 +28,11 @@
 
 #include <glib/gi18n.h>
 #include <libpeas/peas-extension-set.h>
-#include <tepl/tepl.h>
 
 #include "gedit-window-private.h"
 #include "gedit-app.h"
 #include "gedit-app-private.h"
+#include "gedit-recent.h"
 #include "gedit-notebook.h"
 #include "gedit-notebook-popup-menu.h"
 #include "gedit-multi-notebook.h"
@@ -40,6 +40,7 @@
 #include "gedit-tab.h"
 #include "gedit-tab-private.h"
 #include "gedit-view-frame.h"
+#include "gedit-view-centering.h"
 #include "gedit-utils.h"
 #include "gedit-commands.h"
 #include "gedit-commands-private.h"
@@ -54,6 +55,11 @@
 #include "gedit-status-menu-button.h"
 #include "gedit-settings.h"
 #include "gedit-menu-stack-switcher.h"
+#include "gedit-highlight-mode-selector.h"
+#include "gedit-open-document-selector.h"
+
+#define TAB_WIDTH_DATA "GeditWindowTabWidthData"
+#define FULLSCREEN_ANIMATION_SPEED 500
 
 enum
 {
@@ -158,9 +164,9 @@ save_window_state (GtkWidget *widget)
 	GeditWindow *window = GEDIT_WINDOW (widget);
 
 	if ((window->priv->window_state &
-	     (GDK_WINDOW_STATE_MAXIMIZED | GDK_WINDOW_STATE_FULLSCREEN)) == 0)
+	    (GDK_WINDOW_STATE_MAXIMIZED | GDK_WINDOW_STATE_FULLSCREEN)) == 0)
 	{
-		gtk_window_get_size (GTK_WINDOW (widget), &window->priv->width, &window->priv->height);
+                gtk_window_get_size (GTK_WINDOW (widget), &window->priv->width, &window->priv->height);
 
 		g_settings_set (window->priv->window_settings, GEDIT_SETTINGS_WINDOW_SIZE,
 				"(ii)", window->priv->width, window->priv->height);
@@ -231,8 +237,6 @@ gedit_window_dispose (GObject *object)
 	 */
 	remove_actions (window);
 
-	window->priv->fullscreen_open_recent_button = NULL;
-
 	G_OBJECT_CLASS (gedit_window_parent_class)->dispose (object);
 }
 
@@ -245,6 +249,22 @@ gedit_window_finalize (GObject *object)
 	g_slist_free_full (window->priv->closed_docs_stack, (GDestroyNotify)g_object_unref);
 
 	G_OBJECT_CLASS (gedit_window_parent_class)->finalize (object);
+}
+
+/* Center the view when the window is in fullscreen mode. */
+static void
+update_view_centering (GeditTab *tab,
+		       gpointer  user_data)
+{
+	GeditViewFrame *view_frame;
+	GeditViewCentering *view_centering;
+	gboolean is_fullscreen;
+
+	view_frame = _gedit_tab_get_view_frame (tab);
+	view_centering = gedit_view_frame_get_view_centering (view_frame);
+
+	is_fullscreen = GPOINTER_TO_BOOLEAN (user_data);
+	gedit_view_centering_set_centered (view_centering, is_fullscreen);
 }
 
 static void
@@ -266,6 +286,10 @@ update_fullscreen (GeditWindow *window,
 			gtk_widget_show (window->priv->statusbar);
 		}
 	}
+
+	gedit_multi_notebook_foreach_tab (window->priv->multi_notebook,
+					  (GtkCallback)update_view_centering,
+					  GBOOLEAN_TO_POINTER (is_fullscreen));
 
 #ifndef OS_OSX
 	if (is_fullscreen)
@@ -312,7 +336,7 @@ gedit_window_configure_event (GtkWidget         *widget,
 
 	if (gtk_widget_get_realized (widget) &&
 	    (window->priv->window_state &
-	     (GDK_WINDOW_STATE_MAXIMIZED | GDK_WINDOW_STATE_FULLSCREEN)) == 0)
+	    (GDK_WINDOW_STATE_MAXIMIZED | GDK_WINDOW_STATE_FULLSCREEN)) == 0)
 	{
 		save_window_state (widget);
 	}
@@ -454,6 +478,7 @@ gedit_window_class_init (GeditWindowClass *klass)
 	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, side_headerbar);
 	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, headerbar);
 	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, new_button);
+	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, open_button);
 	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, gear_button);
 	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, hpaned);
 	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, side_panel);
@@ -466,10 +491,11 @@ gedit_window_class_init (GeditWindowClass *klass)
 	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, language_button);
 	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, tab_width_button);
 	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, line_col_button);
+	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, fullscreen_controls);
 	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, fullscreen_eventbox);
-	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, fullscreen_revealer);
 	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, fullscreen_headerbar);
 	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, fullscreen_new_button);
+	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, fullscreen_open_button);
 	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, fullscreen_gear_button);
 }
 
@@ -765,8 +791,48 @@ update_actions_sensitivity (GeditWindow *window)
 }
 
 static void
-language_chooser_show_cb (TeplLanguageChooser *language_chooser,
-			  GeditWindow         *window)
+on_recent_chooser_item_activated (GeditOpenDocumentSelector *open_document_selector,
+                                  gchar                     *uri,
+                                  GeditWindow               *window)
+{
+	GFile *location;
+	GeditView *active_view;
+
+	g_return_if_fail (GEDIT_WINDOW (window));
+	g_return_if_fail (GEDIT_OPEN_DOCUMENT_SELECTOR (open_document_selector));
+
+	/* TODO: get_current_file when exists */
+	location = g_file_new_for_uri (uri);
+
+	if (location)
+	{
+		GSList *locations = NULL;
+		GSList *loaded = NULL;
+
+		locations = g_slist_prepend (locations, (gpointer) location);
+		loaded = gedit_commands_load_locations (window, locations, NULL, 0, 0);
+
+		/* if it doesn't contain just 1 element */
+		if (!loaded || loaded->next)
+		{
+			gedit_recent_remove_if_local (location);
+		}
+
+		g_slist_free (locations);
+		g_slist_free (loaded);
+
+		g_object_unref (location);
+	}
+
+	/* Needed to close the popover when activating the same
+	 * document as the current one */
+	active_view = gedit_window_get_active_view (window);
+	gtk_widget_grab_focus (GTK_WIDGET (active_view));
+}
+
+static void
+language_selector_show_cb (GeditHighlightModeSelector *selector,
+			   GeditWindow                *window)
 {
 	GeditDocument *active_document;
 
@@ -776,14 +842,14 @@ language_chooser_show_cb (TeplLanguageChooser *language_chooser,
 		GtkSourceLanguage *language;
 
 		language = gedit_document_get_language (active_document);
-		tepl_language_chooser_select_language (language_chooser, language);
+		gedit_highlight_mode_selector_select_language (selector, language);
 	}
 }
 
 static void
-language_activated_cb (TeplLanguageChooser *language_chooser,
-		       GtkSourceLanguage   *language,
-		       GeditWindow         *window)
+language_selected_cb (GeditHighlightModeSelector *selector,
+		      GtkSourceLanguage          *language,
+		      GeditWindow                *window)
 {
 	GeditDocument *active_document;
 
@@ -793,13 +859,13 @@ language_activated_cb (TeplLanguageChooser *language_chooser,
 		gedit_document_set_language (active_document, language);
 	}
 
-	gtk_widget_hide (window->priv->language_popover);
+	gtk_widget_hide (GTK_WIDGET (window->priv->language_popover));
 }
 
 static void
 setup_statusbar (GeditWindow *window)
 {
-	TeplLanguageChooserWidget *language_chooser;
+	GeditHighlightModeSelector *selector;
 
 	gedit_debug (DEBUG_WINDOW);
 
@@ -829,20 +895,20 @@ setup_statusbar (GeditWindow *window)
 	gtk_menu_button_set_popover (GTK_MENU_BUTTON (window->priv->language_button),
 	                             window->priv->language_popover);
 
-	language_chooser = tepl_language_chooser_widget_new ();
+	selector = gedit_highlight_mode_selector_new ();
 
-	g_signal_connect (language_chooser,
+	g_signal_connect (selector,
 	                  "show",
-	                  G_CALLBACK (language_chooser_show_cb),
+	                  G_CALLBACK (language_selector_show_cb),
 	                  window);
 
-	g_signal_connect (language_chooser,
-	                  "language-activated",
-	                  G_CALLBACK (language_activated_cb),
+	g_signal_connect (selector,
+	                  "language-selected",
+	                  G_CALLBACK (language_selected_cb),
 	                  window);
 
-	gtk_container_add (GTK_CONTAINER (window->priv->language_popover), GTK_WIDGET (language_chooser));
-	gtk_widget_show (GTK_WIDGET (language_chooser));
+	gtk_container_add (GTK_CONTAINER (window->priv->language_popover), GTK_WIDGET (selector));
+	gtk_widget_show (GTK_WIDGET (selector));
 }
 
 static GeditWindow *
@@ -1044,8 +1110,8 @@ set_title (GeditWindow *window)
 	{
 		gchar *tmp;
 
-		tmp = tepl_utils_str_middle_truncate (name,
-						      MAX_TITLE_LENGTH);
+		tmp = gedit_utils_str_middle_truncate (name,
+						       MAX_TITLE_LENGTH);
 		g_free (name);
 		name = tmp;
 	}
@@ -1063,8 +1129,8 @@ set_title (GeditWindow *window)
 			 * we have a title long 99 + 20, but I think it's a rare enough
 			 * case to be acceptable. It's justa darn title afterall :)
 			 */
-			dirname = tepl_utils_str_middle_truncate (str,
-								  MAX (20, MAX_TITLE_LENGTH - len));
+			dirname = gedit_utils_str_middle_truncate (str,
+								   MAX (20, MAX_TITLE_LENGTH - len));
 			g_free (str);
 		}
 	}
@@ -1690,88 +1756,84 @@ drop_uris_cb (GtkWidget    *widget,
 	load_uris_from_drop (window, uri_list);
 }
 
-static void
-update_fullscreen_revealer_state (GeditWindow *window)
-{
-	gboolean open_recent_menu_is_active;
-	gboolean hamburger_menu_is_active;
-
-	open_recent_menu_is_active = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (window->priv->fullscreen_open_recent_button));
-	hamburger_menu_is_active = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (window->priv->fullscreen_gear_button));
-
-	gtk_revealer_set_reveal_child (window->priv->fullscreen_revealer,
-				       (window->priv->in_fullscreen_eventbox ||
-					open_recent_menu_is_active ||
-					hamburger_menu_is_active));
-}
-
 static gboolean
-on_fullscreen_eventbox_enter_notify_event (GtkWidget        *fullscreen_eventbox,
-					   GdkEventCrossing *event,
-					   GeditWindow      *window)
+on_fullscreen_controls_enter_notify_event (GtkWidget        *widget,
+                                           GdkEventCrossing *event,
+                                           GeditWindow      *window)
 {
 	window->priv->in_fullscreen_eventbox = TRUE;
-	update_fullscreen_revealer_state (window);
 
-	return GDK_EVENT_PROPAGATE;
+	gtk_revealer_set_reveal_child (GTK_REVEALER (window->priv->fullscreen_controls), TRUE);
+
+	return FALSE;
 }
 
 static gboolean
-on_fullscreen_eventbox_leave_notify_event (GtkWidget        *fullscreen_eventbox,
-					   GdkEventCrossing *event,
-					   GeditWindow      *window)
+real_fullscreen_controls_leave_notify_event (gpointer data)
 {
-	if (-1.0 <= event->y && event->y <= 0.0)
-	{
-		/* Ignore the event.
-		 *
-		 * Leave notify events are received with -1 <= y <= 0
-		 * coordinates, although the GeditWindow is in fullscreen mode
-		 * and when there are no screens above (it's maybe a bug in an
-		 * underlying library).
-		 * If we hide the headerbar when those events happen, then it
-		 * makes the headerbar to be shown/hidden a lot of time in a
-		 * short period of time, i.e. a "stuttering". In other words
-		 * lots of leave/enter events are received when moving the mouse
-		 * upwards on the screen when the mouse is already at the top.
-		 * The expected leave event has a positive event->y value being
-		 * >= to the height of the headerbar (approximately
-		 * 40 <= y <= 50). So clearly when we receive a leave event with
-		 * event->y <= 0, it means that the mouse has left the eventbox
-		 * on the wrong side.
-		 * The -1.0 <= event->y is there (instead of just <= 0.0) in the
-		 * case that there is another screen *above*, even if this
-		 * heuristic/workaround is not perfect in that case. But that
-		 * case is quite rare, so it's probably a good enough solution.
-		 *
-		 * Note that apparently the "stuttering" occurs only on an Xorg
-		 * session, not on Wayland (tested with GNOME).
-		 *
-		 * If you see a better solution...
-		 */
-		return GDK_EVENT_PROPAGATE;
-	}
+	GeditWindow *window = GEDIT_WINDOW (data);
+	gboolean hamburger_menu_state;
+	gboolean fullscreen_open_button_state;
+
+	hamburger_menu_state = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (window->priv->fullscreen_gear_button));
+	fullscreen_open_button_state =
+	                  gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (window->priv->fullscreen_open_button));
 
 	window->priv->in_fullscreen_eventbox = FALSE;
-	update_fullscreen_revealer_state (window);
+
+	if (!hamburger_menu_state && !fullscreen_open_button_state)
+	{
+		gtk_revealer_set_reveal_child (GTK_REVEALER (window->priv->fullscreen_controls), FALSE);
+	}
+
+	return G_SOURCE_REMOVE;
+}
+
+/* this idle is needed because the toggled signal from gear button is received
+ * after the leave event from the event box ( which is automatically triggered when user
+ * bring up the gear menu */
+static gboolean
+on_fullscreen_controls_leave_notify_event (GtkWidget        *widget,
+                                           GdkEventCrossing *event,
+                                           GeditWindow      *window)
+{
+	g_idle_add (real_fullscreen_controls_leave_notify_event, window);
 
 	return GDK_EVENT_PROPAGATE;
 }
 
 static void
-setup_fullscreen_eventbox (GeditWindow *window)
+fullscreen_controls_setup (GeditWindow *window)
 {
-	gtk_widget_set_size_request (window->priv->fullscreen_eventbox, -1, 1);
-	gtk_widget_hide (window->priv->fullscreen_eventbox);
+	GeditWindowPrivate *priv = window->priv;
 
-	g_signal_connect (window->priv->fullscreen_eventbox,
+	g_signal_connect (priv->fullscreen_eventbox,
 	                  "enter-notify-event",
-	                  G_CALLBACK (on_fullscreen_eventbox_enter_notify_event),
+	                  G_CALLBACK (on_fullscreen_controls_enter_notify_event),
 	                  window);
 
-	g_signal_connect (window->priv->fullscreen_eventbox,
+	g_signal_connect (priv->fullscreen_eventbox,
 	                  "leave-notify-event",
-	                  G_CALLBACK (on_fullscreen_eventbox_leave_notify_event),
+	                  G_CALLBACK (on_fullscreen_controls_leave_notify_event),
+	                  window);
+
+	gtk_widget_set_size_request (GTK_WIDGET (window->priv->fullscreen_eventbox), -1, 1);
+	gtk_widget_hide (window->priv->fullscreen_eventbox);
+
+	priv->fullscreen_open_document_popover = gtk_popover_new (priv->fullscreen_open_button);
+	gtk_menu_button_set_popover (GTK_MENU_BUTTON (priv->fullscreen_open_button),
+	                             priv->fullscreen_open_document_popover);
+
+	window->priv->fullscreen_open_document_selector = gedit_open_document_selector_new (window);
+
+	gtk_container_add (GTK_CONTAINER (priv->fullscreen_open_document_popover),
+	                   GTK_WIDGET (priv->fullscreen_open_document_selector));
+
+	gtk_widget_show_all (GTK_WIDGET (priv->fullscreen_open_document_selector));
+
+	g_signal_connect (window->priv->fullscreen_open_document_selector,
+	                  "file-activated",
+	                  G_CALLBACK (on_recent_chooser_item_activated),
 	                  window);
 }
 
@@ -1885,7 +1947,7 @@ on_tab_added (GeditMultiNotebook *multi,
 			  G_CALLBACK (bracket_matched_cb),
 			  window);
 	g_signal_connect (doc,
-			  "tepl-cursor-moved",
+			  "cursor-moved",
 			  G_CALLBACK (update_cursor_position_statusbar),
 			  window);
 	g_signal_connect (doc,
@@ -2144,10 +2206,23 @@ on_notebook_removed (GeditMultiNotebook *mnb,
 }
 
 static void
-on_fullscreen_toggle_button_toggled (GtkToggleButton *fullscreen_toggle_button,
-				     GeditWindow     *window)
+on_fullscreen_gear_button_toggled (GtkToggleButton *fullscreen_gear_button,
+                                   GeditWindow     *window)
 {
-	update_fullscreen_revealer_state (window);
+	gboolean button_active = gtk_toggle_button_get_active (fullscreen_gear_button);
+
+	gtk_revealer_set_reveal_child (GTK_REVEALER (window->priv->fullscreen_controls),
+				       button_active || window->priv->in_fullscreen_eventbox);
+}
+
+static void
+on_fullscreen_file_menu_button_toggled (GtkMenuButton *fullscreen_open_button,
+                                        GeditWindow   *window)
+{
+	gboolean button_active = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (fullscreen_open_button));
+
+	gtk_revealer_set_reveal_child (GTK_REVEALER (window->priv->fullscreen_controls),
+				       button_active || window->priv->in_fullscreen_eventbox);
 }
 
 static void
@@ -2538,6 +2613,18 @@ window_unrealized (GtkWidget *window,
 }
 
 static void
+check_window_is_active (GeditWindow *window,
+			GParamSpec *property,
+			gpointer useless)
+{
+	if (window->priv->window_state & GDK_WINDOW_STATE_FULLSCREEN)
+	{
+		gtk_widget_set_visible (window->priv->fullscreen_eventbox,
+					gtk_window_is_active (GTK_WINDOW (window)));
+	}
+}
+
+static void
 extension_added (PeasExtensionSet *extensions,
 		 PeasPluginInfo   *info,
 		 PeasExtension    *exten,
@@ -2609,76 +2696,6 @@ sync_fullscreen_actions (GeditWindow *window,
 }
 
 static void
-init_amtk_application_window (GeditWindow *gedit_window)
-{
-	AmtkApplicationWindow *amtk_window;
-
-	amtk_window = amtk_application_window_get_from_gtk_application_window (GTK_APPLICATION_WINDOW (gedit_window));
-	amtk_application_window_set_statusbar (amtk_window, GTK_STATUSBAR (gedit_window->priv->statusbar));
-}
-
-static GtkWidget *
-create_open_buttons (GeditWindow    *window,
-		     GtkMenuButton **open_recent_button)
-{
-	GtkWidget *hbox;
-	GtkStyleContext *style_context;
-	GtkWidget *open_dialog_button;
-	GtkWidget *my_open_recent_button;
-	AmtkApplicationWindow *amtk_window;
-	GtkWidget *recent_menu;
-
-	/* It currently needs to be a GtkBox, not a GtkGrid, because GtkGrid and
-	 * GTK_STYLE_CLASS_LINKED doesn't work as expected in a RTL locale.
-	 * Probably a GtkGrid bug.
-	 */
-	hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
-	style_context = gtk_widget_get_style_context (hbox);
-	gtk_style_context_add_class (style_context, GTK_STYLE_CLASS_LINKED);
-
-	open_dialog_button = gtk_button_new_with_mnemonic (_("_Open"));
-	gtk_widget_set_tooltip_text (open_dialog_button, _("Open a file"));
-	gtk_actionable_set_action_name (GTK_ACTIONABLE (open_dialog_button), "win.open");
-
-	my_open_recent_button = gtk_menu_button_new ();
-	gtk_widget_set_tooltip_text (my_open_recent_button, _("Open a recently used file"));
-
-	amtk_window = amtk_application_window_get_from_gtk_application_window (GTK_APPLICATION_WINDOW (window));
-	recent_menu = amtk_application_window_create_open_recent_menu (amtk_window);
-	gtk_menu_button_set_popup (GTK_MENU_BUTTON (my_open_recent_button), recent_menu);
-
-	gtk_container_add (GTK_CONTAINER (hbox), open_dialog_button);
-	gtk_container_add (GTK_CONTAINER (hbox), my_open_recent_button);
-	gtk_widget_show_all (hbox);
-
-	if (open_recent_button != NULL)
-	{
-		*open_recent_button = GTK_MENU_BUTTON (my_open_recent_button);
-	}
-
-	return hbox;
-}
-
-static void
-init_open_buttons (GeditWindow *window)
-{
-	gtk_container_add_with_properties (GTK_CONTAINER (window->priv->headerbar),
-					   create_open_buttons (window, NULL),
-					   "position", 0, /* The first on the left. */
-					   NULL);
-
-	gtk_container_add_with_properties (GTK_CONTAINER (window->priv->fullscreen_headerbar),
-					   create_open_buttons (window, &(window->priv->fullscreen_open_recent_button)),
-					   "position", 0, /* The first on the left. */
-					   NULL);
-
-	g_signal_connect (GTK_TOGGLE_BUTTON (window->priv->fullscreen_open_recent_button),
-	                  "toggled",
-	                  G_CALLBACK (on_fullscreen_toggle_button_toggled),
-	                  window);
-}
-
-static void
 gedit_window_init (GeditWindow *window)
 {
 	GtkTargetList *tl;
@@ -2692,6 +2709,7 @@ gedit_window_init (GeditWindow *window)
 	window->priv->state = GEDIT_WINDOW_STATE_NORMAL;
 	window->priv->inhibition_cookie = 0;
 	window->priv->dispose_has_run = FALSE;
+	window->priv->fullscreen_controls = NULL;
 	window->priv->direct_save_uri = NULL;
 	window->priv->closed_docs_stack = NULL;
 	window->priv->editor_settings = g_settings_new ("org.gnome.gedit.preferences.editor");
@@ -2705,8 +2723,6 @@ gedit_window_init (GeditWindow *window)
 	window->priv->message_bus = gedit_message_bus_new ();
 
 	gtk_widget_init_template (GTK_WIDGET (window));
-	init_amtk_application_window (window);
-	init_open_buttons (window);
 
 	g_action_map_add_action_entries (G_ACTION_MAP (window),
 	                                 win_entries,
@@ -2716,8 +2732,31 @@ gedit_window_init (GeditWindow *window)
 	window->priv->window_group = gtk_window_group_new ();
 	gtk_window_group_add_window (window->priv->window_group, GTK_WINDOW (window));
 
-	setup_fullscreen_eventbox (window);
+	/* Setup file popover and file dialog */
+	window->priv->open_document_popover = gtk_popover_new (window->priv->open_button);
+	gtk_menu_button_set_popover (GTK_MENU_BUTTON (window->priv->open_button),
+	                             window->priv->open_document_popover);
+
+	window->priv->open_document_selector = gedit_open_document_selector_new (window);
+
+	gtk_container_add (GTK_CONTAINER (window->priv->open_document_popover),
+	                   GTK_WIDGET (window->priv->open_document_selector));
+
+	gtk_widget_show_all (GTK_WIDGET (window->priv->open_document_selector));
+
+	g_signal_connect (window->priv->open_document_selector,
+	                  "file-activated",
+	                  G_CALLBACK (on_recent_chooser_item_activated),
+	                  window);
+
+	fullscreen_controls_setup (window);
 	sync_fullscreen_actions (window, FALSE);
+
+	g_object_bind_property (gedit_open_document_selector_get_search_entry (window->priv->open_document_selector),
+	                        "text",
+	                        gedit_open_document_selector_get_search_entry (window->priv->fullscreen_open_document_selector),
+	                        "text",
+	                        G_BINDING_BIDIRECTIONAL | G_BINDING_SYNC_CREATE);
 
 	hamburger_menu = _gedit_app_get_hamburger_menu (GEDIT_APP (g_application_get_default ()));
 	if (hamburger_menu)
@@ -2733,9 +2772,14 @@ gedit_window_init (GeditWindow *window)
 		gtk_widget_set_no_show_all (GTK_WIDGET (window->priv->fullscreen_gear_button), TRUE);
 	}
 
+	g_signal_connect (GTK_TOGGLE_BUTTON (window->priv->fullscreen_open_button),
+	                  "toggled",
+	                  G_CALLBACK (on_fullscreen_file_menu_button_toggled),
+	                  window);
+
 	g_signal_connect (GTK_TOGGLE_BUTTON (window->priv->fullscreen_gear_button),
 	                  "toggled",
-	                  G_CALLBACK (on_fullscreen_toggle_button_toggled),
+	                  G_CALLBACK (on_fullscreen_gear_button_toggled),
 	                  window);
 
 	/* Setup status bar */
@@ -2847,6 +2891,12 @@ gedit_window_init (GeditWindow *window)
 	g_signal_connect (window,
 			  "unrealize",
 			  G_CALLBACK (window_unrealized),
+			  NULL);
+
+	/* Check if the window is active for fullscreen */
+	g_signal_connect (window,
+			  "notify::is-active",
+			  G_CALLBACK (check_window_is_active),
 			  NULL);
 
 	gedit_debug_message (DEBUG_WINDOW, "Update plugins ui");
