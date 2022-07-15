@@ -27,7 +27,6 @@
 #include "gedit-message-bus.h"
 #include "gedit-settings.h"
 #include "gedit-multi-notebook.h"
-#include "gedit-open-document-selector.h"
 
 G_BEGIN_DECLS
 
@@ -54,15 +53,12 @@ struct _GeditWindowPrivate
 	PeasExtensionSet *extensions;
 
 	/* Widgets for fullscreen mode */
-	GtkWidget      *fullscreen_controls;
 	GtkWidget      *fullscreen_eventbox;
+	GtkRevealer    *fullscreen_revealer;
 	GtkWidget      *fullscreen_headerbar;
+	GtkWidget      *fullscreen_new_button;
 	GtkMenuButton  *fullscreen_gear_button;
-
-	GtkWidget       *fullscreen_new_button;
-	GtkWidget       *fullscreen_open_button;
-	GtkWidget       *fullscreen_open_document_popover;
-	GeditOpenDocumentSelector *fullscreen_open_document_selector;
+	GtkMenuButton  *fullscreen_open_recent_button;
 
 	/* statusbar and context ids for statusbar messages */
 	GtkWidget      *statusbar;
@@ -83,10 +79,7 @@ struct _GeditWindowPrivate
 	GtkWidget      *side_headerbar;
 	GtkWidget      *headerbar;
 
-	GtkWidget       *open_document_popover;
-	GtkWidget       *new_button;
-	GtkWidget       *open_button;
-	GeditOpenDocumentSelector *open_document_selector;
+	GtkWidget      *new_button;
 
 	GtkMenuButton  *gear_button;
 

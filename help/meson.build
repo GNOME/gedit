@@ -4,7 +4,6 @@ gedit_help_sources = [
   'gedit-close-file.page',
   'gedit-create-new-file.page',
   'gedit-edit-as-root.page',
-  'gedit-character-encodings.page',
   'gedit-files-basic.page',
   'gedit-full-screen.page',
   'gedit-open-files-from-sidepane.page',
@@ -42,8 +41,8 @@ gedit_help_sources = [
 
 gedit_help_media = [
   'figures/gedit-html-snippet.png',
+  'figures/gedit-icon.png',
   'figures/gedit3-screenshot.png',
-  'figures/org.gnome.gedit.svg',
 ]
 
 gnome.yelp(

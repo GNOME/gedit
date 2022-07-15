@@ -1,16 +1,16 @@
 # Norwegian bokmål translation of gedit.
 # Copyright (C) 1998-2004, 2005 Free Software Foundation, Inc.
 #
-# Kjartan Maraas <kmaraas@gnome.org>, 1998-2022.
+# Kjartan Maraas <kmaraas@gnome.org>, 1998-2020.
 # Terance Edward Sola <terance@lyse.net>, 2005.
 # Sigurd Gartmann <sigurd-translate@brogar.org>, 2005.
 # Torstein Adolf Winterseth <kvikende@fsfe.org>, 2010.
 msgid ""
 msgstr ""
-"Project-Id-Version: gedit 4.2\n"
+"Project-Id-Version: gedit 3.38.x\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gedit/issues\n"
-"POT-Creation-Date: 2022-02-14 13:34+0000\n"
-"PO-Revision-Date: 2022-03-15 12:46+0100\n"
+"POT-Creation-Date: 2020-10-09 06:05+0000\n"
+"PO-Revision-Date: 2020-11-30 15:30+0100\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian bokmål <i18n-nb@lister.ping.uio.no>\n"
 "Language: nb\n"
@@ -35,12 +35,9 @@ msgstr "gedit er tekstredigeringsprogrammet for skrivebordsmiljøet GNOME"
 msgid ""
 "The first goal of gedit is to be easy to use, with a simple interface by "
 "default. More advanced features are available by enabling plugins."
-msgstr ""
-"Det første målet for gedit er å være enkel å bruke, med et enkelt "
-"grensesnitt som standard. Mer avanserte funksjoner kan gjøres tilgjengelig "
-"ved å slå på tillegg."
+msgstr "Det første målet for gedit er å være enkel å bruke, med et enkelt grensesnitt som standard. Mer avanserte funksjoner kan gjøres tilgjengelig ved å slå på tillegg."
 
-#: data/org.gnome.gedit.desktop.in:3 gedit/gedit-print-job.c:731
+#: data/org.gnome.gedit.desktop.in:3 gedit/gedit-print-job.c:730
 msgid "Text Editor"
 msgstr "Tekstredigering"
 
@@ -48,8 +45,8 @@ msgstr "Tekstredigering"
 #. The list MUST also end with a semicolon!
 #. Search terms to find this application.
 #: data/org.gnome.gedit.desktop.in:18
-msgid "Text;Editor;Plaintext;Write;gedit;notepad;"
-msgstr "Tekst;Redigering;Vanlig tekst;Skriv;gedit;notatblokk;"
+msgid "Text;Editor;Plaintext;Write;gedit;"
+msgstr "Tekst;Redigering;Vanlig tekst;Skriv;gedit;"
 
 #: data/org.gnome.gedit.desktop.in:22
 msgid "New Window"
@@ -243,26 +240,18 @@ msgid "Specifies the position of the right margin."
 msgstr "Bestemmer posisjon for høyre marg."
 
 #: data/org.gnome.gedit.gschema.xml.in:131
-msgid "Display Overview Map"
-msgstr "Vis oversiktskart"
-
-#: data/org.gnome.gedit.gschema.xml.in:132
-msgid "Whether gedit should display the overview map for the document."
-msgstr "Om gedit skal vise oversiktskart for dokumentet."
-
-#: data/org.gnome.gedit.gschema.xml.in:136
 msgid "Document background pattern type"
 msgstr "Mønstertype for dokumentbakgrunn"
 
-#: data/org.gnome.gedit.gschema.xml.in:137
+#: data/org.gnome.gedit.gschema.xml.in:132
 msgid "Whether the document will get a background pattern painted."
 msgstr "Hvorvidt dokumentet skal ha et bakgrunnsmønster."
 
-#: data/org.gnome.gedit.gschema.xml.in:147
+#: data/org.gnome.gedit.gschema.xml.in:142
 msgid "Smart Home End"
 msgstr "Smart home/end"
 
-#: data/org.gnome.gedit.gschema.xml.in:148
+#: data/org.gnome.gedit.gschema.xml.in:143
 msgid ""
 "Specifies how the cursor moves when the HOME and END keys are pressed. Use "
 "“disabled” to always move at the start/end of the line, “after” to move to "
@@ -279,11 +268,11 @@ msgstr ""
 "slutt av teksten før start/slutt av linjen, og «always» for alltid å gå til "
 "start/slutt av teksten i stedet for start/slutt av linjen."
 
-#: data/org.gnome.gedit.gschema.xml.in:152
+#: data/org.gnome.gedit.gschema.xml.in:147
 msgid "Restore Previous Cursor Position"
 msgstr "Gjenopprett forrige markørposisjon"
 
-#: data/org.gnome.gedit.gschema.xml.in:153
+#: data/org.gnome.gedit.gschema.xml.in:148
 msgid ""
 "Whether gedit should restore the previous cursor position when a file is "
 "loaded."
@@ -291,37 +280,37 @@ msgstr ""
 "Om gedit skal gjenopprette tidligere markørposisjon når et dokument lastes "
 "inn."
 
-#: data/org.gnome.gedit.gschema.xml.in:157
+#: data/org.gnome.gedit.gschema.xml.in:152
 msgid "Enable Syntax Highlighting"
 msgstr "Slå på syntaksutheving"
 
-#: data/org.gnome.gedit.gschema.xml.in:158
+#: data/org.gnome.gedit.gschema.xml.in:153
 msgid "Whether gedit should enable syntax highlighting."
 msgstr "Om gedit skal bruke automatisk syntaksutheving."
 
-#: data/org.gnome.gedit.gschema.xml.in:162
+#: data/org.gnome.gedit.gschema.xml.in:157
 msgid "Enable Search Highlighting"
 msgstr "Slå på utheving ved søk"
 
-#: data/org.gnome.gedit.gschema.xml.in:163
+#: data/org.gnome.gedit.gschema.xml.in:158
 msgid ""
 "Whether gedit should highlight all the occurrences of the searched text."
 msgstr "Om gedit skal utheve tekst i søket."
 
-#: data/org.gnome.gedit.gschema.xml.in:167
+#: data/org.gnome.gedit.gschema.xml.in:162
 msgid "Ensure Trailing Newline"
 msgstr "Sikre slutt med linjeskift"
 
-#: data/org.gnome.gedit.gschema.xml.in:168
+#: data/org.gnome.gedit.gschema.xml.in:163
 msgid ""
 "Whether gedit will ensure that documents always end with a trailing newline."
 msgstr "Hvorvidt gedit skal sikre at dokumenter alltid slutter med linjeskift."
 
-#: data/org.gnome.gedit.gschema.xml.in:174
+#: data/org.gnome.gedit.gschema.xml.in:169
 msgid "Notebook Show Tabs Mode"
 msgstr "Vis faner i notisblokk"
 
-#: data/org.gnome.gedit.gschema.xml.in:175
+#: data/org.gnome.gedit.gschema.xml.in:170
 msgid ""
 "Specifies when to show the notebook tabs. Use “never” to never show the "
 "tabs, “always” to always show the tabs, and “auto” to show the tabs only "
@@ -333,45 +322,45 @@ msgstr ""
 "faner hvis det finnes flere enn én fane. Merk at det skilles mellom store og "
 "små bokstaver. Sørg for at du oppgir verdier nøyaktig slik de beskrives her."
 
-#: data/org.gnome.gedit.gschema.xml.in:179
+#: data/org.gnome.gedit.gschema.xml.in:174
 msgid "Status Bar is Visible"
 msgstr "Statuslinjen er synlig"
 
-#: data/org.gnome.gedit.gschema.xml.in:180
+#: data/org.gnome.gedit.gschema.xml.in:175
 msgid ""
 "Whether the status bar at the bottom of editing windows should be visible."
 msgstr "Om statuslinjen nederst i redigeringsvinduet skal være synlig."
 
-#: data/org.gnome.gedit.gschema.xml.in:184
+#: data/org.gnome.gedit.gschema.xml.in:179
 msgid "Side panel is Visible"
 msgstr "Sidelinjen er synlig"
 
-#: data/org.gnome.gedit.gschema.xml.in:185
+#: data/org.gnome.gedit.gschema.xml.in:180
 msgid ""
 "Whether the side panel at the left of editing windows should be visible."
 msgstr "Om sidelinjen til venstre i redigeringsvinduet skal være synlig."
 
-#: data/org.gnome.gedit.gschema.xml.in:194
+#: data/org.gnome.gedit.gschema.xml.in:189
 msgid "Print Syntax Highlighting"
 msgstr "Skriv ut syntaksutheving"
 
-#: data/org.gnome.gedit.gschema.xml.in:195
+#: data/org.gnome.gedit.gschema.xml.in:190
 msgid "Whether gedit should print syntax highlighting when printing documents."
 msgstr "Om gedit skal ta med en syntaksutheving ved utskrift av dokumenter."
 
-#: data/org.gnome.gedit.gschema.xml.in:199
+#: data/org.gnome.gedit.gschema.xml.in:194
 msgid "Print Header"
 msgstr "Skriv ut topptekst"
 
-#: data/org.gnome.gedit.gschema.xml.in:200
+#: data/org.gnome.gedit.gschema.xml.in:195
 msgid "Whether gedit should include a document header when printing documents."
 msgstr "Om gedig skal ta med en topptekst ved utskrift av dokumenter."
 
-#: data/org.gnome.gedit.gschema.xml.in:209
+#: data/org.gnome.gedit.gschema.xml.in:204
 msgid "Printing Line Wrapping Mode"
 msgstr "Linjebrytingsmodus ved utskrift"
 
-#: data/org.gnome.gedit.gschema.xml.in:210
+#: data/org.gnome.gedit.gschema.xml.in:205
 msgid ""
 "Specifies how to wrap long lines for printing. Use “none” for no wrapping, "
 "“word” for wrapping at word boundaries, and “char” for wrapping at "
@@ -383,11 +372,11 @@ msgstr ""
 "du ønsker bryting på tegnnivå. Merk at det skilles mellom store og små "
 "bokstaver. Sørg for at du oppgir verdier nøyaktig slik de beskrives her."
 
-#: data/org.gnome.gedit.gschema.xml.in:214
+#: data/org.gnome.gedit.gschema.xml.in:209
 msgid "Print Line Numbers"
 msgstr "Skriv ut linjenummer"
 
-#: data/org.gnome.gedit.gschema.xml.in:215
+#: data/org.gnome.gedit.gschema.xml.in:210
 msgid ""
 "If this value is 0, then no line numbers will be inserted when printing a "
 "document. Otherwise, gedit will print line numbers every such number of "
@@ -397,30 +386,30 @@ msgstr ""
 "Ellers skriver gedit ut linjenummer ved verdiens antall linjer."
 
 #. Translators: This is a GSettings default value. Do NOT change or localize the quotation marks!
-#: data/org.gnome.gedit.gschema.xml.in:219
+#: data/org.gnome.gedit.gschema.xml.in:214
 msgid "'Monospace 9'"
 msgstr "'Monospace 9'"
 
-#: data/org.gnome.gedit.gschema.xml.in:220
+#: data/org.gnome.gedit.gschema.xml.in:215
 msgid "Body Font for Printing"
 msgstr "Skrift for dokumentinnhold ved utskrift"
 
-#: data/org.gnome.gedit.gschema.xml.in:221
+#: data/org.gnome.gedit.gschema.xml.in:216
 msgid ""
 "Specifies the font to use for a document’s body when printing documents."
 msgstr ""
 "Bestemmer hvilken skrift som skal brukes for dokumentinnhold ved utskrift."
 
 #. Translators: This is a GSettings default value. Do NOT change or localize the quotation marks!
-#: data/org.gnome.gedit.gschema.xml.in:225
+#: data/org.gnome.gedit.gschema.xml.in:220
 msgid "'Sans 11'"
 msgstr "'Sans 11'"
 
-#: data/org.gnome.gedit.gschema.xml.in:226
+#: data/org.gnome.gedit.gschema.xml.in:221
 msgid "Header Font for Printing"
 msgstr "Skrift for topptekst ved utskrift"
 
-#: data/org.gnome.gedit.gschema.xml.in:227
+#: data/org.gnome.gedit.gschema.xml.in:222
 msgid ""
 "Specifies the font to use for page headers when printing a document. This "
 "will only take effect if the “Print Header” option is turned on."
@@ -429,15 +418,15 @@ msgstr ""
 "dokument. Denne blir bare brukt hvis «Skriv ut topptekst» er slått på."
 
 #. Translators: This is a GSettings default value. Do NOT change or localize the quotation marks!
-#: data/org.gnome.gedit.gschema.xml.in:231
+#: data/org.gnome.gedit.gschema.xml.in:226
 msgid "'Sans 8'"
 msgstr "'Sans 8'"
 
-#: data/org.gnome.gedit.gschema.xml.in:232
+#: data/org.gnome.gedit.gschema.xml.in:227
 msgid "Line Number Font for Printing"
 msgstr "Skrift for linjenummer ved utskrift"
 
-#: data/org.gnome.gedit.gschema.xml.in:233
+#: data/org.gnome.gedit.gschema.xml.in:228
 msgid ""
 "Specifies the font to use for line numbers when printing. This will only "
 "take effect if the “Print Line Numbers” option is non-zero."
@@ -445,43 +434,43 @@ msgstr ""
 "Bestemmer hvilken skrift som skal brukes for linjenummer ved utskrift. Denne "
 "blir bare brukt hvis «Skriv ut linjenummer» ikke er null."
 
-#: data/org.gnome.gedit.gschema.xml.in:237
+#: data/org.gnome.gedit.gschema.xml.in:232
 msgid "Margin Left"
 msgstr "Venstre marg"
 
-#: data/org.gnome.gedit.gschema.xml.in:238
+#: data/org.gnome.gedit.gschema.xml.in:233
 msgid "The left margin, in millimeters."
 msgstr "Venstre marg i millimeter"
 
-#: data/org.gnome.gedit.gschema.xml.in:242
+#: data/org.gnome.gedit.gschema.xml.in:237
 msgid "Margin Top"
 msgstr "Toppmarg"
 
-#: data/org.gnome.gedit.gschema.xml.in:243
+#: data/org.gnome.gedit.gschema.xml.in:238
 msgid "The top margin, in millimeters."
 msgstr "Toppmarg i millimeter"
 
-#: data/org.gnome.gedit.gschema.xml.in:247
+#: data/org.gnome.gedit.gschema.xml.in:242
 msgid "Margin Right"
 msgstr "Høyre marg"
 
-#: data/org.gnome.gedit.gschema.xml.in:248
+#: data/org.gnome.gedit.gschema.xml.in:243
 msgid "The right margin, in millimeters."
 msgstr "Høyre marg i millimeter"
 
-#: data/org.gnome.gedit.gschema.xml.in:252
+#: data/org.gnome.gedit.gschema.xml.in:247
 msgid "Margin Bottom"
 msgstr "Bunnmarg"
 
-#: data/org.gnome.gedit.gschema.xml.in:253
+#: data/org.gnome.gedit.gschema.xml.in:248
 msgid "The bottom margin, in millimeters."
 msgstr "Bunnmarg i millimeter"
 
-#: data/org.gnome.gedit.gschema.xml.in:259
+#: data/org.gnome.gedit.gschema.xml.in:254
 msgid "Candidate Encodings"
 msgstr "Kandidater for tegnkoding"
 
-#: data/org.gnome.gedit.gschema.xml.in:260
+#: data/org.gnome.gedit.gschema.xml.in:255
 msgid ""
 "List of candidate encodings shown in the Character Encoding menu in the open/"
 "save file chooser. “CURRENT” represents the current locale encoding. Only "
@@ -493,58 +482,58 @@ msgstr ""
 "gjenkjente kodinger vil bli brukt. Forvalgt verdi er en tom liste, og gedit "
 "vil velge gode forvalg avhengig av land og språk."
 
-#: data/org.gnome.gedit.gschema.xml.in:309
+#: data/org.gnome.gedit.gschema.xml.in:304
 msgid "Active plugins"
 msgstr "Aktive programtillegg"
 
-#: data/org.gnome.gedit.gschema.xml.in:310
+#: data/org.gnome.gedit.gschema.xml.in:305
 msgid "List of active plugins."
 msgstr "Liste med aktive tillegg."
 
-#: gedit/gedit-app.c:94
+#: gedit/gedit-app.c:85
 msgid "Show the application’s version"
 msgstr "Vis programmets versjon"
 
-#: gedit/gedit-app.c:100
+#: gedit/gedit-app.c:91
 msgid "Display list of possible values for the encoding option"
 msgstr "Vis liste med mulige verdier for kodingsalternativet"
 
-#: gedit/gedit-app.c:107
+#: gedit/gedit-app.c:98
 msgid ""
 "Set the character encoding to be used to open the files listed on the "
 "command line"
 msgstr ""
 "Velg tegnkoding som skal brukes for å åpne filer gitt via kommandolinjen"
 
-#: gedit/gedit-app.c:108
+#: gedit/gedit-app.c:99
 msgid "ENCODING"
 msgstr "KODING"
 
-#: gedit/gedit-app.c:114
+#: gedit/gedit-app.c:105
 msgid "Create a new top-level window in an existing instance of gedit"
 msgstr "Lag et nytt toppvindu i en eksisterende instans av gedit"
 
-#: gedit/gedit-app.c:121
+#: gedit/gedit-app.c:112
 msgid "Create a new document in an existing instance of gedit"
 msgstr "Lag et nytt dokument i en eksisterende instans av gedit"
 
-#: gedit/gedit-app.c:128
+#: gedit/gedit-app.c:119
 msgid "Open files and block process until files are closed"
 msgstr "Åpne filer og blokker prosessen til filene er lukket"
 
-#: gedit/gedit-app.c:135
+#: gedit/gedit-app.c:126
 msgid "Run gedit in standalone mode"
 msgstr "Kjør gedit i frittstående modus"
 
-#: gedit/gedit-app.c:142
+#: gedit/gedit-app.c:133
 msgid "[FILE…] [+LINE[:COLUMN]]"
 msgstr "[FIL …] [+LINJE[:KOLONNE]]"
 
-#: gedit/gedit-app.c:236
+#: gedit/gedit-app.c:223
 msgid "There was an error displaying the help."
 msgstr "Det oppsto en feil under visning av hjelp."
 
-#: gedit/gedit-app.c:862
+#: gedit/gedit-app.c:838
 #, c-format
 msgid "%s: invalid encoding."
 msgstr "%s: ugyldig koding."
@@ -553,11 +542,11 @@ msgstr "%s: ugyldig koding."
 msgid "Close _without Saving"
 msgstr "Lukk _uten å lagre"
 
-#: gedit/gedit-close-confirmation-dialog.c:277 gedit/gedit-commands-file.c:529
-#: gedit/gedit-commands-file.c:605 gedit/gedit-commands-file.c:829
-#: gedit/gedit-commands-file.c:1551 gedit/gedit-encodings-dialog.c:192
+#: gedit/gedit-close-confirmation-dialog.c:277 gedit/gedit-commands-file.c:492
+#: gedit/gedit-commands-file.c:568 gedit/gedit-commands-file.c:791
+#: gedit/gedit-commands-file.c:1513 gedit/gedit-encodings-dialog.c:192
 #: gedit/gedit-file-chooser-open-dialog.c:78
-#: gedit/gedit-preferences-dialog.c:821 gedit/gedit-progress-info-bar.c:49
+#: gedit/gedit-preferences-dialog.c:721 gedit/gedit-progress-info-bar.c:49
 #: gedit/resources/ui/gedit-encodings-dialog.ui:44
 #: gedit/resources/ui/gedit-highlight-mode-dialog.ui:31
 #: plugins/filebrowser/gedit-file-browser-utils.c:211
@@ -575,9 +564,9 @@ msgstr "A_vbryt"
 msgid "_Save As…"
 msgstr "Lagre _som …"
 
-#: gedit/gedit-close-confirmation-dialog.c:295 gedit/gedit-commands-file.c:828
+#: gedit/gedit-close-confirmation-dialog.c:295 gedit/gedit-commands-file.c:790
 #: gedit/resources/gtk/menus-common.ui:127
-#: gedit/resources/ui/gedit-window.ui:103
+#: gedit/resources/ui/gedit-window.ui:59
 #: plugins/snippets/snippets/manager.py:875
 #: plugins/snippets/snippets/manager.py:913
 msgid "_Save"
@@ -684,41 +673,41 @@ msgstr "V_elg hvilke dokumenter du vil lagre:"
 msgid "If you don’t save, all your changes will be permanently lost."
 msgstr "Hvis du ikke lagrer, går alle endringer tapt."
 
-#: gedit/gedit-commands-file.c:254
+#: gedit/gedit-commands-file.c:257
 #, c-format
 msgid "Loading file “%s”…"
 msgstr "Laster fil «%s» …"
 
-#: gedit/gedit-commands-file.c:263
+#: gedit/gedit-commands-file.c:266
 #, c-format
 msgid "Loading %d file…"
 msgid_plural "Loading %d files…"
 msgstr[0] "Åpner %d fil …"
 msgstr[1] "Åpner %d filer …"
 
-#: gedit/gedit-commands-file.c:520
+#: gedit/gedit-commands-file.c:483
 #, c-format
 msgid "The file “%s” is read-only."
 msgstr "Filen «%s» er skrivebeskyttet."
 
-#: gedit/gedit-commands-file.c:525
+#: gedit/gedit-commands-file.c:488
 msgid "Do you want to try to replace it with the one you are saving?"
 msgstr "Vil du prøve å erstatte den med filen du lagrer?"
 
-#: gedit/gedit-commands-file.c:530
+#: gedit/gedit-commands-file.c:493
 #: gedit/resources/ui/gedit-replace-dialog.ui:55
 msgid "_Replace"
 msgstr "E_rstatt"
 
-#: gedit/gedit-commands-file.c:570
+#: gedit/gedit-commands-file.c:533
 msgid "Save the file using compression?"
 msgstr "Lagre filen med komprimering?"
 
-#: gedit/gedit-commands-file.c:574
+#: gedit/gedit-commands-file.c:537
 msgid "Save the file as plain text?"
 msgstr "Lagre filen som ren tekst?"
 
-#: gedit/gedit-commands-file.c:587
+#: gedit/gedit-commands-file.c:550
 #, c-format
 msgid ""
 "The file “%s” was previously saved as plain text and will now be saved using "
@@ -726,11 +715,11 @@ msgid ""
 msgstr ""
 "Filen «%s» var lagret som ren tekst, og blir nå lagret i komprimert format."
 
-#: gedit/gedit-commands-file.c:591
+#: gedit/gedit-commands-file.c:554
 msgid "_Save Using Compression"
 msgstr "_Lagre med komprimering"
 
-#: gedit/gedit-commands-file.c:596
+#: gedit/gedit-commands-file.c:559
 #, c-format
 msgid ""
 "The file “%s” was previously saved using compression and will now be saved "
@@ -738,32 +727,32 @@ msgid ""
 msgstr ""
 "Filen «%s» var lagret i komprimert format, og blir nå lagret som ren tekst."
 
-#: gedit/gedit-commands-file.c:599
+#: gedit/gedit-commands-file.c:562
 msgid "_Save As Plain Text"
 msgstr "_Lagre som vanlig tekst"
 
-#: gedit/gedit-commands-file.c:714 gedit/gedit-commands-file.c:1002
+#: gedit/gedit-commands-file.c:677 gedit/gedit-commands-file.c:964
 #, c-format
 msgid "Saving file “%s”…"
 msgstr "Lagrer fil «%s» …"
 
 #. Translators: "Save As" is the title of the file chooser window.
-#: gedit/gedit-commands-file.c:825
+#: gedit/gedit-commands-file.c:788
 msgctxt "window title"
 msgid "Save As"
 msgstr "Lagre som"
 
-#: gedit/gedit-commands-file.c:1412
+#: gedit/gedit-commands-file.c:1374
 #, c-format
 msgid "Reverting the document “%s”…"
 msgstr "Forkaster endringer i «%s» …"
 
-#: gedit/gedit-commands-file.c:1459
+#: gedit/gedit-commands-file.c:1421
 #, c-format
 msgid "Revert unsaved changes to document “%s”?"
 msgstr "Vil du forkaste ikke-lagrede endringer i «%s»?"
 
-#: gedit/gedit-commands-file.c:1468
+#: gedit/gedit-commands-file.c:1430
 #, c-format
 msgid ""
 "Changes made to the document in the last %ld second will be permanently lost."
@@ -775,12 +764,12 @@ msgstr[0] ""
 msgstr[1] ""
 "Endringer som er utført i dokumentet de siste %ld sekundene går tapt."
 
-#: gedit/gedit-commands-file.c:1477
+#: gedit/gedit-commands-file.c:1439
 msgid ""
 "Changes made to the document in the last minute will be permanently lost."
 msgstr "Endringer som er utført i dokumentet det siste minuttet går tapt."
 
-#: gedit/gedit-commands-file.c:1483
+#: gedit/gedit-commands-file.c:1445
 #, c-format
 msgid ""
 "Changes made to the document in the last minute and %ld second will be "
@@ -795,7 +784,7 @@ msgstr[1] ""
 "Endringer som er utført i dokumentet det siste minuttet og %ld sekundene går "
 "tapt."
 
-#: gedit/gedit-commands-file.c:1493
+#: gedit/gedit-commands-file.c:1455
 #, c-format
 msgid ""
 "Changes made to the document in the last %ld minute will be permanently lost."
@@ -807,11 +796,11 @@ msgstr[0] ""
 msgstr[1] ""
 "Endringer som er utført i dokumentet de siste %ld minuttene går tapt."
 
-#: gedit/gedit-commands-file.c:1508
+#: gedit/gedit-commands-file.c:1470
 msgid "Changes made to the document in the last hour will be permanently lost."
 msgstr "Endringer som er utført i dokumentet den siste timen går tapt."
 
-#: gedit/gedit-commands-file.c:1514
+#: gedit/gedit-commands-file.c:1476
 #, c-format
 msgid ""
 "Changes made to the document in the last hour and %d minute will be "
@@ -825,7 +814,7 @@ msgstr[1] ""
 "Endringer som er utført i dokumentet den siste timen og %d minuttene går "
 "tapt."
 
-#: gedit/gedit-commands-file.c:1529
+#: gedit/gedit-commands-file.c:1491
 #, c-format
 msgid ""
 "Changes made to the document in the last %d hour will be permanently lost."
@@ -834,7 +823,7 @@ msgid_plural ""
 msgstr[0] "Endringer som er utført i dokumentet den siste %d timen går tapt."
 msgstr[1] "Endringer som er utført i dokumentet de siste %d timene går tapt."
 
-#: gedit/gedit-commands-file.c:1552
+#: gedit/gedit-commands-file.c:1514
 msgid "_Revert"
 msgstr "Fo_rkast"
 
@@ -849,36 +838,36 @@ msgstr ""
 "Torstein Adolf Winterseth <kvikende@fsfe.org>\n"
 "Åka Sikrom <a4NOSPAMPLEASETHANKYOU@hush.com>"
 
-#: gedit/gedit-commands-search.c:105
+#: gedit/gedit-commands-search.c:106
 #, c-format
 msgid "Found and replaced %d occurrence"
 msgid_plural "Found and replaced %d occurrences"
 msgstr[0] "Fant og erstattet %d oppføring"
 msgstr[1] "Fant og erstattet %d oppføringer"
 
-#: gedit/gedit-commands-search.c:114
+#: gedit/gedit-commands-search.c:115
 msgid "Found and replaced one occurrence"
 msgstr "Fant og erstattet én oppføring"
 
 #. Translators: %s is replaced by the text
 #. entered by the user in the search box
-#: gedit/gedit-commands-search.c:140
+#: gedit/gedit-commands-search.c:141
 #, c-format
 msgid "“%s” not found"
 msgstr "Fant ikke «%s»"
 
-#: gedit/gedit-document.c:1055 gedit/gedit-document.c:1084
+#: gedit/gedit-document.c:993 gedit/gedit-document.c:1022
 #, c-format
 msgid "Untitled Document %d"
 msgstr "Dokument uten tittel %d"
 
-#: gedit/gedit-documents-panel.c:397
+#: gedit/gedit-documents-panel.c:398
 #, c-format
 msgid "Tab Group %i"
 msgstr "Fanegruppe %i"
 
-#: gedit/gedit-documents-panel.c:497 gedit/gedit-window.c:1151
-#: gedit/gedit-window.c:1157 gedit/gedit-window.c:1165
+#: gedit/gedit-documents-panel.c:498 gedit/gedit-window.c:1082
+#: gedit/gedit-window.c:1088 gedit/gedit-window.c:1096
 msgid "Read-Only"
 msgstr "Skrivebeskyttet"
 
@@ -925,7 +914,7 @@ msgstr "Flytt til en høyere prioritet"
 msgid "Move to a lower priority"
 msgstr "Flytt til en lavere prioritet"
 
-#: gedit/gedit-file-chooser.c:41 gedit/gedit-preferences-dialog.c:829
+#: gedit/gedit-file-chooser.c:41 gedit/gedit-preferences-dialog.c:730
 msgid "All Files"
 msgstr "Alle filer"
 
@@ -933,12 +922,12 @@ msgstr "Alle filer"
 msgid "All Text Files"
 msgstr "Alle tekstfiler"
 
-#: gedit/gedit-file-chooser-dialog-gtk.c:291
+#: gedit/gedit-file-chooser-dialog-gtk.c:262
 #: gedit/gedit-file-chooser-open-dialog.c:43
 msgid "C_haracter Encoding:"
 msgstr "Tegn_koding:"
 
-#: gedit/gedit-file-chooser-dialog-gtk.c:350
+#: gedit/gedit-file-chooser-dialog-gtk.c:321
 msgid "L_ine Ending:"
 msgstr "Slutt på l_inje:"
 
@@ -949,17 +938,16 @@ msgctxt "window title"
 msgid "Open Files"
 msgstr "Åpne filer"
 
-#: gedit/gedit-file-chooser-open-dialog.c:79
+#: gedit/gedit-file-chooser-open-dialog.c:79 gedit/gedit-window.c:2636
 #: gedit/resources/gtk/menus-common.ui:100
 #: gedit/resources/gtk/menus-common.ui:106
-#: gedit/resources/ui/gedit-window.ui:48
 #: plugins/filebrowser/resources/ui/gedit-file-browser-menus.ui:7
 #: plugins/quickopen/quickopen/popup.py:46
 #: plugins/snippets/snippets/manager.py:790
 msgid "_Open"
 msgstr "_Åpne"
 
-#: gedit/gedit-highlight-mode-selector.c:266 gedit/gedit-window.c:1235
+#: gedit/gedit-highlight-mode-selector.c:269 gedit/gedit-window.c:1166
 #: plugins/externaltools/tools/manager.py:115
 #: plugins/externaltools/tools/manager.py:324
 #: plugins/externaltools/tools/manager.py:440
@@ -967,46 +955,46 @@ msgstr "_Åpne"
 msgid "Plain Text"
 msgstr "Vanlig tekst"
 
-#: gedit/gedit-io-error-info-bar.c:142 gedit/gedit-io-error-info-bar.c:479
+#: gedit/gedit-io-error-info-bar.c:135 gedit/gedit-io-error-info-bar.c:415
 msgid "_Retry"
 msgstr "P_røv igjen"
 
-#: gedit/gedit-io-error-info-bar.c:162
+#: gedit/gedit-io-error-info-bar.c:155
 #, c-format
 msgid "Could not find the file “%s”."
 msgstr "Fant ikke filen «%s»."
 
-#: gedit/gedit-io-error-info-bar.c:164 gedit/gedit-io-error-info-bar.c:204
-#: gedit/gedit-io-error-info-bar.c:211
+#: gedit/gedit-io-error-info-bar.c:157 gedit/gedit-io-error-info-bar.c:197
+#: gedit/gedit-io-error-info-bar.c:204
 msgid "Please check that you typed the location correctly and try again."
 msgstr "Kontroller at du skrev inn adressen korrekt, og prøv igjen."
 
 #. Translators: %s is a URI scheme (like for example http:, ftp:, etc.)
-#: gedit/gedit-io-error-info-bar.c:183
+#: gedit/gedit-io-error-info-bar.c:176
 #, c-format
 msgid "Unable to handle “%s:” locations."
 msgstr "«%s»-adresser kan ikke håndteres."
 
-#: gedit/gedit-io-error-info-bar.c:189
+#: gedit/gedit-io-error-info-bar.c:182
 msgid "Unable to handle this location."
 msgstr "Denne adressen kan ikke håndteres."
 
-#: gedit/gedit-io-error-info-bar.c:198
+#: gedit/gedit-io-error-info-bar.c:191
 msgid "The location of the file cannot be accessed."
 msgstr "Du har ikke tilgang til filen."
 
-#: gedit/gedit-io-error-info-bar.c:202
+#: gedit/gedit-io-error-info-bar.c:195
 #, c-format
 msgid "“%s” is a directory."
 msgstr "«%s» er en mappe."
 
-#: gedit/gedit-io-error-info-bar.c:209
+#: gedit/gedit-io-error-info-bar.c:202
 #, c-format
 msgid "“%s” is not a valid location."
 msgstr "«%s» er en ugyldig adresse."
 
 #. Translators: %s is a host name
-#: gedit/gedit-io-error-info-bar.c:245
+#: gedit/gedit-io-error-info-bar.c:238
 #, c-format
 msgid ""
 "Host “%s” could not be found. Please check that your proxy settings are "
@@ -1015,7 +1003,7 @@ msgstr ""
 "Fant ikke vert «%s». Kontroller at du har satt opp mellomtjener korrekt, og "
 "prøv igjen."
 
-#: gedit/gedit-io-error-info-bar.c:260
+#: gedit/gedit-io-error-info-bar.c:253
 #, c-format
 msgid ""
 "Hostname was invalid. Please check that you typed the location correctly and "
@@ -1024,44 +1012,40 @@ msgstr ""
 "Vertsnavnet er ugyldig. Kontroller at du skrev inn adressen korrekt, og prøv "
 "igjen."
 
-#: gedit/gedit-io-error-info-bar.c:268
+#: gedit/gedit-io-error-info-bar.c:261
 #, c-format
 msgid "“%s” is not a regular file."
 msgstr "«%s» er ikke en vanlig fil."
 
-#: gedit/gedit-io-error-info-bar.c:273
+#: gedit/gedit-io-error-info-bar.c:266
 msgid "Connection timed out. Please try again."
 msgstr "Tidsavbrudd for tilkobling. Prøv igjen."
 
-#: gedit/gedit-io-error-info-bar.c:306
+#: gedit/gedit-io-error-info-bar.c:299
 #, c-format
 msgid "Unexpected error: %s"
 msgstr "Uventet feil: %s"
 
-#: gedit/gedit-io-error-info-bar.c:342
+#: gedit/gedit-io-error-info-bar.c:335
 msgid "Cannot find the requested file. Perhaps it has recently been deleted."
 msgstr "Fant ikke forespurt fil. Den kan ha blitt slettet nylig."
 
-#: gedit/gedit-io-error-info-bar.c:352
+#: gedit/gedit-io-error-info-bar.c:345
 #, c-format
 msgid "Could not revert the file “%s”."
 msgstr "Klarte ikke å forkaste endringer i «%s»."
 
-#: gedit/gedit-io-error-info-bar.c:379
+#: gedit/gedit-io-error-info-bar.c:372
 msgid "Ch_aracter Encoding:"
 msgstr "Te_gnkoding:"
 
-#: gedit/gedit-io-error-info-bar.c:451
-msgid "_Continue loading"
-msgstr "_Fortsett lasting"
-
 #. Translators: the access key chosen for this string should be
 #. different from other main menu access keys (Open, Edit, View...)
-#: gedit/gedit-io-error-info-bar.c:487 gedit/gedit-io-error-info-bar.c:745
+#: gedit/gedit-io-error-info-bar.c:423
 msgid "Edit Any_way"
 msgstr "Redi_ger likevel"
 
-#: gedit/gedit-io-error-info-bar.c:553
+#: gedit/gedit-io-error-info-bar.c:511
 msgid ""
 "The number of followed links is limited and the actual file could not be "
 "found within this limit."
@@ -1069,28 +1053,28 @@ msgstr ""
 "Antall lenker som kan følges er begrenset, og filen ble ikke funnet innenfor "
 "denne grensen."
 
-#: gedit/gedit-io-error-info-bar.c:557
+#: gedit/gedit-io-error-info-bar.c:515
 msgid "You do not have the permissions necessary to open the file."
 msgstr "Du har ikke tilstrekkelige rettigheter til å åpne filen."
 
-#: gedit/gedit-io-error-info-bar.c:563
+#: gedit/gedit-io-error-info-bar.c:521
 msgid "Unable to detect the character encoding."
 msgstr "Klarte ikke å gjenkjenne tegnkoding."
 
-#: gedit/gedit-io-error-info-bar.c:564 gedit/gedit-io-error-info-bar.c:588
+#: gedit/gedit-io-error-info-bar.c:522 gedit/gedit-io-error-info-bar.c:546
 msgid "Please check that you are not trying to open a binary file."
 msgstr "Kontroller at du ikke prøver å åpne en binær fil."
 
-#: gedit/gedit-io-error-info-bar.c:565
+#: gedit/gedit-io-error-info-bar.c:523
 msgid "Select a character encoding from the menu and try again."
 msgstr "Velg tegnkoding fra menyen, og prøv igjen."
 
-#: gedit/gedit-io-error-info-bar.c:571
+#: gedit/gedit-io-error-info-bar.c:529
 #, c-format
 msgid "There was a problem opening the file “%s”."
 msgstr "Det oppsto et problem under åpning av filen «%s»."
 
-#: gedit/gedit-io-error-info-bar.c:573
+#: gedit/gedit-io-error-info-bar.c:531
 msgid ""
 "The file you opened has some invalid characters. If you continue editing "
 "this file you could corrupt this document."
@@ -1098,41 +1082,30 @@ msgstr ""
 "Filen du åpnet inneholder ugyldige tegn. Hvis du fortsetter å redigere denne "
 "filen, kan den bli ødelagt."
 
-#: gedit/gedit-io-error-info-bar.c:576
+#: gedit/gedit-io-error-info-bar.c:534
 msgid "You can also choose another character encoding and try again."
 msgstr "Du kan også velge en annen tegnkoding og prøve igjen."
 
-#: gedit/gedit-io-error-info-bar.c:585
+#: gedit/gedit-io-error-info-bar.c:543
 #, c-format
 msgid "Could not open the file “%s” using the “%s” character encoding."
 msgstr "Klarte ikke å åpne «%s», som bruker tegnkoding «%s»."
 
-#: gedit/gedit-io-error-info-bar.c:589 gedit/gedit-io-error-info-bar.c:679
+#: gedit/gedit-io-error-info-bar.c:547 gedit/gedit-io-error-info-bar.c:622
 msgid "Select a different character encoding from the menu and try again."
 msgstr "Velg en annen tegnkoding fra menyen, og prøv igjen."
 
-#: gedit/gedit-io-error-info-bar.c:597
-#, c-format
-msgid "The file “%s” is very big."
-msgstr "Fil «%s» er veldig stor."
-
-#: gedit/gedit-io-error-info-bar.c:599
-msgid ""
-"Large files can make gedit slow or unresponsive. You can continue loading "
-"this file at your own risk"
-msgstr "Store filer kan medføre at gedit blir treg eller ikke svarer. Du kan fortsette å laste denne filen på egen risiko"
-
-#: gedit/gedit-io-error-info-bar.c:611
+#: gedit/gedit-io-error-info-bar.c:559
 #, c-format
 msgid "Could not open the file “%s”."
 msgstr "Klarte ikke å åpne «%s»."
 
-#: gedit/gedit-io-error-info-bar.c:674
+#: gedit/gedit-io-error-info-bar.c:617
 #, c-format
 msgid "Could not save the file “%s” using the “%s” character encoding."
 msgstr "Klarte ikke å lagre «%s» med tegnkoding «%s»."
 
-#: gedit/gedit-io-error-info-bar.c:677
+#: gedit/gedit-io-error-info-bar.c:620
 msgid ""
 "The document contains one or more characters that cannot be encoded using "
 "the specified character encoding."
@@ -1140,28 +1113,11 @@ msgstr ""
 "Dokumentet inneholder et eller flere tegn som ikke kan kodes med oppgitt "
 "tegnkoding."
 
-#. Translators: the access key chosen for this string should be
-#. different from other main menu access keys (Open, Edit, View...)
-#: gedit/gedit-io-error-info-bar.c:750
-msgid "D_on’t Edit"
-msgstr "_Ikke rediger"
-
-#: gedit/gedit-io-error-info-bar.c:760
-#, c-format
-msgid "This file “%s” is already open in another window."
-msgstr "Filen «%s» er allerede åpen i et annet vindu."
-
-#: gedit/gedit-io-error-info-bar.c:774
-msgid "Do you want to edit it anyway?"
-msgstr "Vil du redigere den likevel?"
-
-#: gedit/gedit-io-error-info-bar.c:830 gedit/gedit-io-error-info-bar.c:920
-#: gedit/gedit-io-error-info-bar.c:1210
+#: gedit/gedit-io-error-info-bar.c:691
 msgid "S_ave Anyway"
 msgstr "L_agre likevel"
 
-#: gedit/gedit-io-error-info-bar.c:833 gedit/gedit-io-error-info-bar.c:923
-#: gedit/gedit-io-error-info-bar.c:1213
+#: gedit/gedit-io-error-info-bar.c:694
 msgid "D_on’t Save"
 msgstr "_Ikke lagre"
 
@@ -1169,36 +1125,19 @@ msgstr "_Ikke lagre"
 #. * could be interpreted as the changes he made in the document. beside "reading" is
 #. * not accurate (since last load/save)
 #.
-#: gedit/gedit-io-error-info-bar.c:847
+#: gedit/gedit-io-error-info-bar.c:708
 #, c-format
 msgid "The file “%s” has been modified since reading it."
 msgstr "Filen «%s» er endret siden den ble lest."
 
-#: gedit/gedit-io-error-info-bar.c:862
+#: gedit/gedit-io-error-info-bar.c:723
 msgid "If you save it, all the external changes could be lost. Save it anyway?"
 msgstr ""
 "Hvis du lagrer den, kan alle eksterne endringer gå tapt. Vil du lagre den "
 "likevel?"
 
-#: gedit/gedit-io-error-info-bar.c:942
-#, c-format
-msgid "Could not create a backup file while saving “%s”"
-msgstr "Kunne ikke lage en sikkerhetskopi under lagring av «%s»"
-
-#: gedit/gedit-io-error-info-bar.c:947
-#, c-format
-msgid "Could not create a temporary backup file while saving “%s”"
-msgstr "Kunne ikke lage en midlertidig sikkerhetskopi under lagring av «%s»"
-
-#: gedit/gedit-io-error-info-bar.c:964
-msgid ""
-"Could not back up the old copy of the file before saving the new one. You "
-"can ignore this warning and save the file anyway, but if an error occurs "
-"while saving, you could lose the old copy of the file. Save anyway?"
-msgstr "Kunne ikke lage en sikkerhetskopi av filen før lagring av den nye. Du kan overse denne advarselen og lagre filen likevel, men hvis en feil oppstår under lagring kan den gamle kopien gå tapt. Lagre likevel?"
-
 #. Translators: %s is a URI scheme (like for example http:, ftp:, etc.)
-#: gedit/gedit-io-error-info-bar.c:1024
+#: gedit/gedit-io-error-info-bar.c:781
 #, c-format
 msgid ""
 "Cannot handle “%s:” locations in write mode. Please check that you typed the "
@@ -1207,7 +1146,7 @@ msgstr ""
 "«%s»:-adresser kan ikke håndteres i skrivemodus. Kontroller at du skrev inn "
 "adressen korrekt, og prøv igjen."
 
-#: gedit/gedit-io-error-info-bar.c:1032
+#: gedit/gedit-io-error-info-bar.c:789
 msgid ""
 "Cannot handle this location in write mode. Please check that you typed the "
 "location correctly and try again."
@@ -1215,7 +1154,7 @@ msgstr ""
 "Denne adressen kan ikke håndteres i skrivemodus. Kontroller at du skrev inn "
 "adressen korrekt, og prøv igjen."
 
-#: gedit/gedit-io-error-info-bar.c:1041
+#: gedit/gedit-io-error-info-bar.c:798
 #, c-format
 msgid ""
 "“%s” is not a valid location. Please check that you typed the location "
@@ -1224,7 +1163,7 @@ msgstr ""
 "«%s» er en ugyldig adresse. Kontroller at du skrev inn adressen korrekt, og "
 "prøv igjen."
 
-#: gedit/gedit-io-error-info-bar.c:1048
+#: gedit/gedit-io-error-info-bar.c:805
 msgid ""
 "You do not have the permissions necessary to save the file. Please check "
 "that you typed the location correctly and try again."
@@ -1232,7 +1171,7 @@ msgstr ""
 "Du har ikke tilgang til å lagre filen. Kontroller at du skrev inn adressen "
 "korrekt, og prøv igjen."
 
-#: gedit/gedit-io-error-info-bar.c:1054
+#: gedit/gedit-io-error-info-bar.c:811
 msgid ""
 "There is not enough disk space to save the file. Please free some disk space "
 "and try again."
@@ -1240,7 +1179,7 @@ msgstr ""
 "Det er ikke nok lagringsplass til å lagre filen her. Frigjør lagringsplass, "
 "og prøv igjen."
 
-#: gedit/gedit-io-error-info-bar.c:1059
+#: gedit/gedit-io-error-info-bar.c:816
 msgid ""
 "You are trying to save the file on a read-only disk. Please check that you "
 "typed the location correctly and try again."
@@ -1248,11 +1187,11 @@ msgstr ""
 "Du prøver å lagre filen på en skrivebeskyttet disk. Kontroller at du skrev "
 "inn adressen korrekt, og prøv igjen."
 
-#: gedit/gedit-io-error-info-bar.c:1065
+#: gedit/gedit-io-error-info-bar.c:822
 msgid "A file with the same name already exists. Please use a different name."
 msgstr "Det finnes allerede en fil med samme navn. Bruk et annet navn."
 
-#: gedit/gedit-io-error-info-bar.c:1070
+#: gedit/gedit-io-error-info-bar.c:827
 msgid ""
 "The disk where you are trying to save the file has a limitation on length of "
 "the file names. Please use a shorter name."
@@ -1260,7 +1199,7 @@ msgstr ""
 "Enheten du prøver å lagre filen på har en begrensning på lengde på filnavn. "
 "Bruk et kortere navn."
 
-#: gedit/gedit-io-error-info-bar.c:1081
+#: gedit/gedit-io-error-info-bar.c:838
 msgid ""
 "The disk where you are trying to save the file has a limitation on file "
 "sizes. Please try saving a smaller file or saving it to a disk that does not "
@@ -1270,77 +1209,53 @@ msgstr ""
 "å lagre en mindre fil eller lagre den på en disk som ikke har denne "
 "begrensningen."
 
-#: gedit/gedit-io-error-info-bar.c:1098
+#: gedit/gedit-io-error-info-bar.c:855
 #, c-format
 msgid "Could not save the file “%s”."
 msgstr "Klarte ikke å lagre «%s»."
 
-#: gedit/gedit-io-error-info-bar.c:1138
-#, c-format
-msgid "The file “%s” changed on disk."
-msgstr "Filen «%s» er endret på disk."
-
-#: gedit/gedit-io-error-info-bar.c:1149
-msgid "Drop Changes and _Reload"
-msgstr "Forkast endringer og _last på nytt"
-
-#: gedit/gedit-io-error-info-bar.c:1159 gedit/resources/gtk/menus-common.ui:148
-#: gedit/resources/gtk/menus.ui:9 gedit/resources/gtk/menus-traditional.ui:9
-msgid "_Reload"
-msgstr "_Åpne på nytt"
-
-#: gedit/gedit-io-error-info-bar.c:1223
-#, c-format
-msgid "Some invalid chars have been detected while saving “%s”"
-msgstr "Noen ugyldige tegn ble oppdaget under lagring av «%s»"
-
-#: gedit/gedit-io-error-info-bar.c:1239
-msgid ""
-"If you continue saving this file you can corrupt the document.  Save anyway?"
-msgstr "Hvis du fortsetter å lagre dette dokumentet kan det bli korrupt. Lagre likevel?"
-
-#: gedit/gedit-preferences-dialog.c:451
+#: gedit/gedit-preferences-dialog.c:433
 msgid "Click on this button to select the font to be used by the editor"
 msgstr ""
 "Trykk på denne knappen for å velge skriften som skal brukes av "
 "redigeringsprogrammet"
 
-#: gedit/gedit-preferences-dialog.c:457
+#: gedit/gedit-preferences-dialog.c:439
 #, c-format
 msgid "_Use the system fixed width font (%s)"
 msgstr "Br_uk systemets skrift for fast bredde (%s)"
 
-#: gedit/gedit-preferences-dialog.c:597
+#: gedit/gedit-preferences-dialog.c:685
 #, c-format
-msgid "Directory “%s” could not be created: g_mkdir_with_parents() failed: %s"
-msgstr "Katalog «%s» kunne ikke opprettes: g_mkdir_with_parents() feilet: %s"
+msgid "The selected color scheme cannot be installed: %s"
+msgstr "Valgt fargeutvalg kan ikke installeres: %s"
 
-#: gedit/gedit-preferences-dialog.c:794
+#: gedit/gedit-preferences-dialog.c:691
 msgid "The selected color scheme cannot be installed."
 msgstr "Valgt fargeutvalg kan ikke installeres."
 
-#: gedit/gedit-preferences-dialog.c:817
-msgid "Add Scheme"
-msgstr "Legg til oppsett"
+#: gedit/gedit-preferences-dialog.c:717
+msgid "Add Color Scheme"
+msgstr "Legg til fargeutvalg"
 
-#: gedit/gedit-preferences-dialog.c:820
-msgid "A_dd Scheme"
-msgstr "Le_gg til oppsett"
+#: gedit/gedit-preferences-dialog.c:720
+msgid "_Add Scheme"
+msgstr "_Legg til utvalg"
 
-#: gedit/gedit-preferences-dialog.c:825
+#: gedit/gedit-preferences-dialog.c:725
 msgid "Color Scheme Files"
 msgstr "Fargeutvalg-filer"
 
-#: gedit/gedit-preferences-dialog.c:856
+#: gedit/gedit-preferences-dialog.c:763
 #, c-format
 msgid "Could not remove color scheme “%s”."
 msgstr "Klarte ikke å fjerne fargeutvalg «%s»."
 
-#: gedit/gedit-print-job.c:228
+#: gedit/gedit-print-job.c:227
 msgid "Preparing…"
 msgstr "Forbereder …"
 
-#: gedit/gedit-print-job.c:540
+#: gedit/gedit-print-job.c:539
 #, c-format
 msgid "File: %s"
 msgstr "Fil: %s"
@@ -1348,11 +1263,11 @@ msgstr "Fil: %s"
 #. Translators: %N is the current page number, %Q is the total
 #. * number of pages (ex. Page 2 of 10)
 #.
-#: gedit/gedit-print-job.c:549
+#: gedit/gedit-print-job.c:548
 msgid "Page %N of %Q"
 msgstr "Side %N av %Q"
 
-#: gedit/gedit-print-job.c:627
+#: gedit/gedit-print-job.c:626
 #, c-format
 msgid "Rendering page %d of %d…"
 msgstr "Tegner opp side %d av %d …"
@@ -1391,158 +1306,170 @@ msgstr[1] "Det finnes %d faner med feil"
 
 #. Translators: the first %s is a file name (e.g. test.txt) the second one
 #. is a directory (e.g. ssh://master.gnome.org/home/users/paolo)
-#: gedit/gedit-tab.c:834
+#: gedit/gedit-tab.c:824
 #, c-format
 msgid "Reverting %s from %s"
 msgstr "Tilbakestiller endringer i %s til %s"
 
-#: gedit/gedit-tab.c:841
+#: gedit/gedit-tab.c:831
 #, c-format
 msgid "Reverting %s"
 msgstr "Tilbakestiller %s"
 
 #. Translators: the first %s is a file name (e.g. test.txt) the second one
 #. is a directory (e.g. ssh://master.gnome.org/home/users/paolo)
-#: gedit/gedit-tab.c:854
+#: gedit/gedit-tab.c:844
 #, c-format
 msgid "Loading %s from %s"
 msgstr "Åpner %s fra %s"
 
-#: gedit/gedit-tab.c:861
+#: gedit/gedit-tab.c:851
 #, c-format
 msgid "Loading %s"
 msgstr "Åpner %s"
 
 #. Translators: the first %s is a file name (e.g. test.txt) the second one
 #. is a directory (e.g. ssh://master.gnome.org/home/users/paolo)
-#: gedit/gedit-tab.c:941
+#: gedit/gedit-tab.c:931
 #, c-format
 msgid "Saving %s to %s"
 msgstr "Lagrer %s til %s"
 
-#: gedit/gedit-tab.c:946
+#: gedit/gedit-tab.c:936
 #, c-format
 msgid "Saving %s"
 msgstr "Lagrer %s"
 
-#: gedit/gedit-tab.c:1494
+#: gedit/gedit-tab.c:1484
 #, c-format
 msgid "Error opening file %s"
 msgstr "Feil ved åpning av fil %s"
 
-#: gedit/gedit-tab.c:1499
+#: gedit/gedit-tab.c:1489
 #, c-format
 msgid "Error reverting file %s"
 msgstr "Feil under forkasting av endringer i %s"
 
-#: gedit/gedit-tab.c:1504
+#: gedit/gedit-tab.c:1494
 #, c-format
 msgid "Error saving file %s"
 msgstr "Feil ved lagring av fil %s"
 
-#: gedit/gedit-tab.c:1535
+#: gedit/gedit-tab.c:1525
 msgid "Name:"
 msgstr "Navn:"
 
-#: gedit/gedit-tab.c:1536
+#: gedit/gedit-tab.c:1526
 msgid "MIME Type:"
 msgstr "MIME-type:"
 
-#: gedit/gedit-tab.c:1537
+#: gedit/gedit-tab.c:1527
 msgid "Encoding:"
 msgstr "Koding:"
 
 #. Translators: '/ on <remote-share>'
-#: gedit/gedit-utils.c:547
+#: gedit/gedit-utils.c:436
 #, c-format
 msgid "/ on %s"
 msgstr "/ på %s"
 
-#: gedit/gedit-utils.c:851
+#: gedit/gedit-utils.c:610
 msgid "Unix/Linux"
 msgstr "Unix/Linux"
 
-#: gedit/gedit-utils.c:853
+#: gedit/gedit-utils.c:612
 msgid "Mac OS Classic"
 msgstr "Mac OS Classic"
 
-#: gedit/gedit-utils.c:855
+#: gedit/gedit-utils.c:614
 msgid "Windows"
 msgstr "Windows"
+
+#: gedit/gedit-view.c:438 gedit/resources/ui/gedit-preferences-dialog.ui:41
+msgid "_Display line numbers"
+msgstr "Vis _linjenummer"
 
 #. Translators: the first %d is the position of the current search
 #. * occurrence, and the second %d is the total number of search
 #. * occurrences.
 #.
-#: gedit/gedit-view-frame.c:674
+#: gedit/gedit-view-frame.c:668
 #, c-format
 msgid "%d of %d"
 msgstr "%d av %d"
 
 #. create "Wrap Around" menu item.
-#: gedit/gedit-view-frame.c:766
+#: gedit/gedit-view-frame.c:760
 msgid "_Wrap Around"
 msgstr "_Bryting"
 
 #. create "Match as Regular Expression" menu item.
-#: gedit/gedit-view-frame.c:776
+#: gedit/gedit-view-frame.c:770
 msgid "Match as _Regular Expression"
 msgstr "Søk som _regulært uttrykk"
 
 #. create "Match Entire Word Only" menu item.
-#: gedit/gedit-view-frame.c:790
+#: gedit/gedit-view-frame.c:784
 msgid "Match _Entire Word Only"
 msgstr "Kun treff på _hele ord"
 
 #. create "Match Case" menu item.
-#: gedit/gedit-view-frame.c:804
+#: gedit/gedit-view-frame.c:798
 msgid "_Match Case"
 msgstr "_Skill mellom små/store bokstaver"
 
-#: gedit/gedit-view-frame.c:1029
+#: gedit/gedit-view-frame.c:1023
 msgid "String you want to search for"
 msgstr "Streng du vil søke etter"
 
-#: gedit/gedit-view-frame.c:1041
+#: gedit/gedit-view-frame.c:1035
 msgid "Line you want to move the cursor to"
 msgstr "Linje du vil flytte markøren til"
 
-#: gedit/gedit-window.c:988
+#: gedit/gedit-window.c:919
 msgid "Bracket match is out of range"
 msgstr "Søk etter sammenhørende hakeparantes utenfor gyldig område"
 
-#: gedit/gedit-window.c:993
+#: gedit/gedit-window.c:924
 msgid "Bracket match not found"
 msgstr "Fant ingen sammenhørende hakeparanteser"
 
-#: gedit/gedit-window.c:998
+#: gedit/gedit-window.c:929
 #, c-format
 msgid "Bracket match found on line: %d"
 msgstr "Sammenhørende hakeparantes funnet på linje: %d"
 
 #. Translators: "Ln" is an abbreviation for "Line", Col is an abbreviation for "Column". Please,
 #. use abbreviations if possible to avoid space problems.
-#: gedit/gedit-window.c:1033
+#: gedit/gedit-window.c:964
 #, c-format
 msgid "  Ln %d, Col %d"
 msgstr "  Ln. %d, Kol. %d"
 
-#: gedit/gedit-window.c:1217
+#: gedit/gedit-window.c:1148
 #, c-format
 msgid "Tab Width: %u"
 msgstr "Tabulatorbredde: %u"
 
-#: gedit/gedit-window.c:1562
+#: gedit/gedit-window.c:1493
 msgid "There are unsaved documents"
 msgstr "Det finnes dokumenter som ikke er lagret"
 
-#: gedit/gedit-window.c:2408
+#: gedit/gedit-window.c:2330
 msgid "Change side panel page"
 msgstr "Bytt side på sidepanel"
 
-#: gedit/gedit-window.c:2428 gedit/resources/ui/gedit-window.ui:19
+#: gedit/gedit-window.c:2350 gedit/resources/ui/gedit-window.ui:19
 msgid "Documents"
 msgstr "Dokumenter"
+
+#: gedit/gedit-window.c:2637
+msgid "Open a file"
+msgstr "Åpne en fil"
+
+#: gedit/gedit-window.c:2641
+msgid "Open a recently used file"
+msgstr "Åpne en nylig brukt fil"
 
 #: gedit/resources/gtk/menus-common.ui:7
 msgid "Move _Left"
@@ -1618,6 +1545,11 @@ msgstr "Lagre _som …"
 msgid "_New Window"
 msgstr "_Nytt vindu"
 
+#: gedit/resources/gtk/menus-common.ui:148 gedit/resources/gtk/menus.ui:9
+#: gedit/resources/gtk/menus-traditional.ui:9
+msgid "_Reload"
+msgstr "_Åpne på nytt"
+
 #: gedit/resources/gtk/menus-common.ui:155 gedit/resources/gtk/menus.ui:14
 #: gedit/resources/gtk/menus-traditional.ui:14
 msgid "_Print…"
@@ -1653,8 +1585,8 @@ msgid "_Paste"
 msgstr "_Lim inn"
 
 #: gedit/resources/gtk/menus-common.ui:207
-#: plugins/filebrowser/gedit-file-browser-plugin.c:887
-#: plugins/filebrowser/gedit-file-browser-plugin.c:922
+#: plugins/filebrowser/gedit-file-browser-plugin.c:917
+#: plugins/filebrowser/gedit-file-browser-plugin.c:955
 #: plugins/filebrowser/resources/ui/gedit-file-browser-menus.ui:37
 msgid "_Delete"
 msgstr "_Slett"
@@ -1772,7 +1704,7 @@ msgstr "Flytt til _nytt vindu"
 #: gedit/resources/gtk/menus-common.ui:383
 #: gedit/resources/gtk/menus-common.ui:387 gedit/resources/gtk/menus.ui:123
 #: gedit/resources/gtk/menus-traditional.ui:119
-#: plugins/spell/gedit-spell-plugin.c:265
+#: plugins/spell/gedit-spell-plugin.c:260
 #: plugins/time/resources/ui/gedit-time-dialog.ui:133
 msgid "_Help"
 msgstr "_Hjelp"
@@ -1837,26 +1769,10 @@ msgstr "_Velg"
 msgid "Search highlight mode…"
 msgstr "Uthevingsmodus for søk …"
 
-#: gedit/resources/ui/gedit-open-document-selector.ui:53
-msgid "No results"
-msgstr "Ingen resultater"
-
-#: gedit/resources/ui/gedit-open-document-selector.ui:97
-msgid "Other _Documents…"
-msgstr "Andre _dokumenter"
-
-#: gedit/resources/ui/gedit-open-document-selector.ui:101
-msgid "Open another file"
-msgstr "Åpne en annen fil"
-
 #: gedit/resources/ui/gedit-preferences-dialog.ui:8
 #: gedit/resources/ui/gedit-preferences-dialog.ui:15
 msgid "Preferences"
 msgstr "Brukervalg"
-
-#: gedit/resources/ui/gedit-preferences-dialog.ui:41
-msgid "_Display line numbers"
-msgstr "Vis _linjenummer"
 
 #: gedit/resources/ui/gedit-preferences-dialog.ui:56
 msgid "Display right _margin at column:"
@@ -1867,121 +1783,117 @@ msgid "Display _statusbar"
 msgstr "Vis _statuslinje"
 
 #: gedit/resources/ui/gedit-preferences-dialog.ui:110
-msgid "Display _overview map"
-msgstr "Vis _oversiktskart"
-
-#: gedit/resources/ui/gedit-preferences-dialog.ui:125
 msgid "Display _grid pattern"
 msgstr "Vis _rutenettmønster"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:154
+#: gedit/resources/ui/gedit-preferences-dialog.ui:139
 #: gedit/resources/ui/gedit-print-preferences.ui:197
 msgid "Text Wrapping"
 msgstr "Tekstbryting"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:172
+#: gedit/resources/ui/gedit-preferences-dialog.ui:157
 #: gedit/resources/ui/gedit-print-preferences.ui:217
 msgid "Enable text _wrapping"
 msgstr "Slå på tekst_bryting"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:186
+#: gedit/resources/ui/gedit-preferences-dialog.ui:171
 #: gedit/resources/ui/gedit-print-preferences.ui:237
 msgid "Do not _split words over two lines"
 msgstr "Ikke _del ord over to linjer"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:220
+#: gedit/resources/ui/gedit-preferences-dialog.ui:205
 msgid "Highlighting"
 msgstr "Syntaksutheving"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:238
+#: gedit/resources/ui/gedit-preferences-dialog.ui:223
 msgid "Highlight current _line"
 msgstr "Uthev gjeldende _linje"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:252
+#: gedit/resources/ui/gedit-preferences-dialog.ui:237
 msgid "Highlight matching _brackets"
 msgstr "Uthev tilhørende _hakeparantes"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:285
+#: gedit/resources/ui/gedit-preferences-dialog.ui:270
 msgid "View"
 msgstr "Vis"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:307
+#: gedit/resources/ui/gedit-preferences-dialog.ui:292
 msgid "Tab Stops"
 msgstr "Tabulatorer"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:330
+#: gedit/resources/ui/gedit-preferences-dialog.ui:315
 msgid "_Tab width:"
 msgstr "_Tabulatorbredde:"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:359
+#: gedit/resources/ui/gedit-preferences-dialog.ui:344
 msgid "Insert _spaces instead of tabs"
 msgstr "Sett inn _mellomrom i stedet for tabulatorer"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:374
+#: gedit/resources/ui/gedit-preferences-dialog.ui:359
 msgid "_Enable automatic indentation"
 msgstr "Slå _på automatisk innrykk"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:409
+#: gedit/resources/ui/gedit-preferences-dialog.ui:394
 msgid "File Saving"
 msgstr "Lagring av fil"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:428
+#: gedit/resources/ui/gedit-preferences-dialog.ui:413
 msgid "Create a _backup copy of files before saving"
 msgstr "Lag en _sikkerhetskopi av filene før lagring"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:443
+#: gedit/resources/ui/gedit-preferences-dialog.ui:428
 msgid "_Autosave files every"
 msgstr "_Autolagre filer hver(t)"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:459
+#: gedit/resources/ui/gedit-preferences-dialog.ui:444
 msgid "_minutes"
 msgstr "_minutter"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:506
+#: gedit/resources/ui/gedit-preferences-dialog.ui:491
 msgid "Editor"
 msgstr "Behandler"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:529
+#: gedit/resources/ui/gedit-preferences-dialog.ui:514
 #: plugins/externaltools/org.gnome.gedit.plugins.externaltools.gschema.xml:14
 #: plugins/pythonconsole/org.gnome.gedit.plugins.pythonconsole.gschema.xml:24
 msgid "Font"
 msgstr "Skrift"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:573
+#: gedit/resources/ui/gedit-preferences-dialog.ui:558
 msgid "Editor _font: "
 msgstr "Skri_ft for redigering: "
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:590
+#: gedit/resources/ui/gedit-preferences-dialog.ui:575
 msgid "Pick the editor font"
 msgstr "Velg skrift for redigering"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:631
+#: gedit/resources/ui/gedit-preferences-dialog.ui:616
 msgid "Color Scheme"
 msgstr "Fargeutvalg"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:678
-#: gedit/resources/ui/gedit-preferences-dialog.ui:679
+#: gedit/resources/ui/gedit-preferences-dialog.ui:652
+#: gedit/resources/ui/gedit-preferences-dialog.ui:653
 msgid "Install scheme"
 msgstr "Installer utvalg"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:680
+#: gedit/resources/ui/gedit-preferences-dialog.ui:654
 msgid "Install Scheme"
 msgstr "Installer utvalg"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:694
-#: gedit/resources/ui/gedit-preferences-dialog.ui:695
+#: gedit/resources/ui/gedit-preferences-dialog.ui:668
+#: gedit/resources/ui/gedit-preferences-dialog.ui:669
 msgid "Uninstall scheme"
 msgstr "Avinstaller utvalg"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:696
+#: gedit/resources/ui/gedit-preferences-dialog.ui:670
 msgid "Uninstall Scheme"
 msgstr "Avinstaller utvalg"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:736
+#: gedit/resources/ui/gedit-preferences-dialog.ui:710
 msgid "Font & Colors"
 msgstr "Skrifter og farger"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:761
+#: gedit/resources/ui/gedit-preferences-dialog.ui:735
 msgid "Plugins"
 msgstr "Tillegg"
 
@@ -2483,50 +2395,34 @@ msgstr "Tastatursnarveier"
 msgid "Close Document"
 msgstr "Lukk dokument"
 
-#: gedit/resources/ui/gedit-window.ui:33 gedit/resources/ui/gedit-window.ui:66
-#: gedit/resources/ui/gedit-window.ui:398
-msgid "Open a file"
-msgstr "Åpne en fil"
-
-#: gedit/resources/ui/gedit-window.ui:65 gedit/resources/ui/gedit-window.ui:383
-#: gedit/resources/ui/gedit-window.ui:397
-msgid "Open"
-msgstr "Åpne"
-
-#: gedit/resources/ui/gedit-window.ui:80 gedit/resources/ui/gedit-window.ui:86
-#: gedit/resources/ui/gedit-window.ui:412
-#: gedit/resources/ui/gedit-window.ui:418
+#: gedit/resources/ui/gedit-window.ui:36 gedit/resources/ui/gedit-window.ui:42
+#: gedit/resources/ui/gedit-window.ui:327
+#: gedit/resources/ui/gedit-window.ui:333
 msgid "Create a new document"
 msgstr "Lag et nytt dokument"
 
-#: gedit/resources/ui/gedit-window.ui:85 gedit/resources/ui/gedit-window.ui:417
+#: gedit/resources/ui/gedit-window.ui:41 gedit/resources/ui/gedit-window.ui:332
 msgid "New"
 msgstr "Nytt"
 
-#: gedit/resources/ui/gedit-window.ui:106
-#: gedit/resources/ui/gedit-window.ui:111
-#: gedit/resources/ui/gedit-window.ui:453
-#: gedit/resources/ui/gedit-window.ui:458
+#: gedit/resources/ui/gedit-window.ui:62 gedit/resources/ui/gedit-window.ui:67
+#: gedit/resources/ui/gedit-window.ui:368
+#: gedit/resources/ui/gedit-window.ui:373
 msgid "Save the current file"
 msgstr "Lagre gjeldende fil"
 
-#: gedit/resources/ui/gedit-window.ui:110
-#: gedit/resources/ui/gedit-window.ui:451
-#: gedit/resources/ui/gedit-window.ui:457
+#: gedit/resources/ui/gedit-window.ui:66 gedit/resources/ui/gedit-window.ui:366
+#: gedit/resources/ui/gedit-window.ui:372
 msgid "Save"
 msgstr "Lagre"
 
-#: gedit/resources/ui/gedit-window.ui:253
+#: gedit/resources/ui/gedit-window.ui:209
 msgid "Hide panel"
 msgstr "Skjul panel"
 
-#: gedit/resources/ui/gedit-window.ui:368
-msgid "Open a file dialog"
-msgstr "Åpne en fildialog"
-
-#: gedit/resources/ui/gedit-window.ui:426
-#: gedit/resources/ui/gedit-window.ui:431
-#: gedit/resources/ui/gedit-window.ui:432
+#: gedit/resources/ui/gedit-window.ui:341
+#: gedit/resources/ui/gedit-window.ui:346
+#: gedit/resources/ui/gedit-window.ui:347
 msgid "Leave Fullscreen"
 msgstr "Forlat fullskjerm"
 
@@ -2845,43 +2741,43 @@ msgstr "Hjem"
 msgid "File System"
 msgstr "Filsystem"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:497
+#: plugins/filebrowser/gedit-file-browser-plugin.c:521
 msgid "File Browser"
 msgstr "Filutforsker"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:627
+#: plugins/filebrowser/gedit-file-browser-plugin.c:657
 msgid "An error occurred while creating a new directory"
 msgstr "Det oppstod en feil ved oppretting av ny mappe"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:630
+#: plugins/filebrowser/gedit-file-browser-plugin.c:660
 msgid "An error occurred while creating a new file"
 msgstr "Det oppstod en feil ved oppretting av en ny fil"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:633
+#: plugins/filebrowser/gedit-file-browser-plugin.c:663
 msgid "An error occurred while renaming a file or directory"
 msgstr "Det oppstod en feil ved endring av navn på fil eller mappe"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:636
+#: plugins/filebrowser/gedit-file-browser-plugin.c:666
 msgid "An error occurred while deleting a file or directory"
 msgstr "Det oppstod en feil ved sletting av en fil eller mappe"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:639
+#: plugins/filebrowser/gedit-file-browser-plugin.c:669
 msgid "An error occurred while opening a directory in the file manager"
 msgstr "Det oppstod en feil ved åpning av en mappe i filutforsker"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:642
+#: plugins/filebrowser/gedit-file-browser-plugin.c:672
 msgid "An error occurred while setting a root directory"
 msgstr "Det oppstod en feil ved forsøk på å velge rotmappe"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:645
+#: plugins/filebrowser/gedit-file-browser-plugin.c:675
 msgid "An error occurred while loading a directory"
 msgstr "Det oppstod en feil ved innlasting av en mappe"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:648
+#: plugins/filebrowser/gedit-file-browser-plugin.c:678
 msgid "An error occurred"
 msgstr "Det oppstod en feil"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:870
+#: plugins/filebrowser/gedit-file-browser-plugin.c:900
 msgid ""
 "Cannot move file to trash, do you\n"
 "want to delete permanently?"
@@ -2889,33 +2785,33 @@ msgstr ""
 "Klarte ikke å flytte fil til papirkurv.\n"
 "Vil du slette den permanent?"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:875
+#: plugins/filebrowser/gedit-file-browser-plugin.c:905
 #, c-format
 msgid "The file “%s” cannot be moved to the trash."
 msgstr "Filen «%s» kan ikke flyttes til papirkurven."
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:880
+#: plugins/filebrowser/gedit-file-browser-plugin.c:910
 msgid "The selected files cannot be moved to the trash."
 msgstr "Valgte filer kan ikke flyttes til papirkurven."
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:908
+#: plugins/filebrowser/gedit-file-browser-plugin.c:941
 #, c-format
 msgid "Are you sure you want to permanently delete “%s”?"
 msgstr "Er du sikker på at du vil slette «%s» permanent?"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:913
+#: plugins/filebrowser/gedit-file-browser-plugin.c:946
 msgid "Are you sure you want to permanently delete the selected files?"
 msgstr "Er du sikker på at du vil slette valgte filer permanent?"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:916
+#: plugins/filebrowser/gedit-file-browser-plugin.c:949
 msgid "If you delete an item, it is permanently lost."
 msgstr "Hvis du sletter en oppføring, går den tapt."
 
-#: plugins/filebrowser/gedit-file-browser-store.c:1693
+#: plugins/filebrowser/gedit-file-browser-store.c:1701
 msgid "(Empty)"
 msgstr "(Tom)"
 
-#: plugins/filebrowser/gedit-file-browser-store.c:3317
+#: plugins/filebrowser/gedit-file-browser-store.c:3325
 msgid ""
 "The renamed file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
@@ -2924,11 +2820,11 @@ msgstr ""
 "synlig"
 
 #. Translators: This is the default name of new files created by the file browser pane.
-#: plugins/filebrowser/gedit-file-browser-store.c:3573
+#: plugins/filebrowser/gedit-file-browser-store.c:3576
 msgid "Untitled File"
 msgstr "Fil uten navn"
 
-#: plugins/filebrowser/gedit-file-browser-store.c:3601
+#: plugins/filebrowser/gedit-file-browser-store.c:3604
 msgid ""
 "The new file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
@@ -2936,11 +2832,11 @@ msgstr ""
 "Den nye filen er filtrert ut. Du må justere filtre for å gjøre den synlig"
 
 #. Translators: This is the default name of new directories created by the file browser pane.
-#: plugins/filebrowser/gedit-file-browser-store.c:3630
+#: plugins/filebrowser/gedit-file-browser-store.c:3633
 msgid "Untitled Folder"
 msgstr "Mappe uten navn"
 
-#: plugins/filebrowser/gedit-file-browser-store.c:3653
+#: plugins/filebrowser/gedit-file-browser-store.c:3656
 msgid ""
 "The new directory is currently filtered out. You need to adjust your filter "
 "settings to make the directory visible"
@@ -3131,18 +3027,6 @@ msgstr "Moduslinjer"
 #: plugins/modelines/modelines.plugin.desktop.in:6
 msgid "Emacs, Kate and Vim-style modelines support for gedit."
 msgstr "Støtte for moduslinjer i gedit på samme måte som i Emacs, Kate og Vim."
-
-#: plugins/openlinks/gedit-open-links-plugin.c:182
-msgid "Open Link"
-msgstr "Åpne lenke"
-
-#: plugins/openlinks/openlinks.plugin.desktop.in:5
-msgid "Open Links"
-msgstr "Åpne lenker"
-
-#: plugins/openlinks/openlinks.plugin.desktop.in:6
-msgid "Easy open URI links."
-msgstr "Enkel åpning av URI-lenker."
 
 #: plugins/pythonconsole/org.gnome.gedit.plugins.pythonconsole.gschema.xml:5
 msgid "Command Color Text"

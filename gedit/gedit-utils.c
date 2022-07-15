@@ -23,6 +23,7 @@
 #include "gedit-utils.h"
 #include <string.h>
 #include <glib/gi18n.h>
+#include <tepl/tepl.h>
 #include "gedit-debug.h"
 
 gboolean
@@ -86,122 +87,6 @@ gedit_utils_set_atk_name_description (GtkWidget   *widget,
 		atk_object_set_description (aobj, description);
 }
 
-void
-gedit_warning (GtkWindow *parent, const gchar *format, ...)
-{
-	va_list         args;
-	gchar          *str;
-	GtkWidget      *dialog;
-	GtkWindowGroup *wg = NULL;
-
-	g_return_if_fail (format != NULL);
-
-	if (parent != NULL)
-		wg = gtk_window_get_group (parent);
-
-	va_start (args, format);
-	str = g_strdup_vprintf (format, args);
-	va_end (args);
-
-	dialog = gtk_message_dialog_new_with_markup (
-			parent,
-			GTK_DIALOG_MODAL | GTK_DIALOG_DESTROY_WITH_PARENT,
-			GTK_MESSAGE_ERROR,
-			GTK_BUTTONS_OK,
-			"%s", str);
-
-	g_free (str);
-
-	if (wg != NULL)
-		gtk_window_group_add_window (wg, GTK_WINDOW (dialog));
-
-	gtk_dialog_set_default_response (GTK_DIALOG (dialog), GTK_RESPONSE_OK);
-
-	gtk_window_set_resizable (GTK_WINDOW (dialog), FALSE);
-
-	g_signal_connect (G_OBJECT (dialog),
-			  "response",
-			  G_CALLBACK (gtk_widget_destroy),
-			  NULL);
-
-	gtk_widget_show (dialog);
-}
-
-/* the following functions are taken from eel */
-
-static gchar *
-gedit_utils_str_truncate (const gchar *string,
-			  guint        truncate_length,
-			  gboolean     middle)
-{
-	GString     *truncated;
-	guint        length;
-	guint        n_chars;
-	guint        num_left_chars;
-	guint        right_offset;
-	guint        delimiter_length;
-	const gchar *delimiter = "\342\200\246";
-
-	g_return_val_if_fail (string != NULL, NULL);
-
-	length = strlen (string);
-
-	g_return_val_if_fail (g_utf8_validate (string, length, NULL), NULL);
-
-	/* It doesnt make sense to truncate strings to less than
-	 * the size of the delimiter plus 2 characters (one on each
-	 * side)
-	 */
-	delimiter_length = g_utf8_strlen (delimiter, -1);
-	if (truncate_length < (delimiter_length + 2))
-	{
-		return g_strdup (string);
-	}
-
-	n_chars = g_utf8_strlen (string, length);
-
-	/* Make sure the string is not already small enough. */
-	if (n_chars <= truncate_length)
-	{
-		return g_strdup (string);
-	}
-
-	/* Find the 'middle' where the truncation will occur. */
-	if (middle)
-	{
-		num_left_chars = (truncate_length - delimiter_length) / 2;
-		right_offset = n_chars - truncate_length + num_left_chars + delimiter_length;
-
-		truncated = g_string_new_len (string,
-					      g_utf8_offset_to_pointer (string, num_left_chars) - string);
-		g_string_append (truncated, delimiter);
-		g_string_append (truncated, g_utf8_offset_to_pointer (string, right_offset));
-	}
-	else
-	{
-		num_left_chars = truncate_length - delimiter_length;
-		truncated = g_string_new_len (string,
-					      g_utf8_offset_to_pointer (string, num_left_chars) - string);
-		g_string_append (truncated, delimiter);
-	}
-
-	return g_string_free (truncated, FALSE);
-}
-
-gchar *
-gedit_utils_str_middle_truncate (const gchar *string,
-				 guint        truncate_length)
-{
-	return gedit_utils_str_truncate (string, truncate_length, TRUE);
-}
-
-gchar *
-gedit_utils_str_end_truncate (const gchar *string,
-			      guint        truncate_length)
-{
-	return gedit_utils_str_truncate (string, truncate_length, FALSE);
-}
-
 static gchar *
 uri_get_dirname (const gchar *uri)
 {
@@ -221,7 +106,7 @@ uri_get_dirname (const gchar *uri)
 		return NULL;
 	}
 
-	res = gedit_utils_replace_home_dir_with_tilde (str);
+	res = tepl_utils_replace_home_dir_with_tilde (str);
 
 	g_free (str);
 
@@ -264,10 +149,10 @@ gedit_utils_location_get_dirname_for_display (GFile *location)
 		g_object_unref (mount);
 
 		/* obtain the "path" part of the uri */
-		gedit_utils_decode_uri (uri,
-					NULL, NULL,
-					NULL, NULL,
-					&path);
+		tepl_utils_decode_uri (uri,
+				       NULL, NULL,
+				       NULL, NULL,
+				       &path);
 
 		if (path == NULL)
 		{
@@ -300,51 +185,6 @@ gedit_utils_location_get_dirname_for_display (GFile *location)
 	g_free (uri);
 
 	return res;
-}
-
-gchar *
-gedit_utils_replace_home_dir_with_tilde (const gchar *uri)
-{
-	gchar *tmp;
-	gchar *home;
-
-	g_return_val_if_fail (uri != NULL, NULL);
-
-	/* Note that g_get_home_dir returns a const string */
-	tmp = (gchar *)g_get_home_dir ();
-
-	if (tmp == NULL)
-		return g_strdup (uri);
-
-	home = g_filename_to_utf8 (tmp, -1, NULL, NULL, NULL);
-	if (home == NULL)
-		return g_strdup (uri);
-
-	if (strcmp (uri, home) == 0)
-	{
-		g_free (home);
-
-		return g_strdup ("~/");
-	}
-
-	tmp = home;
-	home = g_strdup_printf ("%s/", tmp);
-	g_free (tmp);
-
-	if (g_str_has_prefix (uri, home))
-	{
-		gchar *res;
-
-		res = g_strdup_printf ("~/%s", uri + strlen (home));
-
-		g_free (home);
-
-		return res;
-	}
-
-	g_free (home);
-
-	return g_strdup (uri);
 }
 
 static gboolean
@@ -513,7 +353,7 @@ gedit_utils_basename_for_display (GFile *location)
 		}
 	}
 	else if (g_file_has_parent (location, NULL) ||
-	          !gedit_utils_decode_uri (uri, NULL, NULL, &hn, NULL, NULL))
+		 !tepl_utils_decode_uri (uri, NULL, NULL, &hn, NULL, NULL))
 	{
 		/* For remote files with a parent (so not just http://foo.com)
 		   or remote file for which the decoding of the host name fails,
@@ -596,165 +436,6 @@ gedit_utils_drop_get_uris (GtkSelectionData *selection_data)
 
 	g_strfreev (uris);
 	return uri_list;
-}
-
-static void
-null_ptr (gchar **ptr)
-{
-	if (ptr)
-		*ptr = NULL;
-}
-
-/**
- * gedit_utils_decode_uri:
- * @uri: the uri to decode
- * @scheme: (out) (allow-none): return value pointer for the uri's
- * scheme (e.g. http, sftp, ...), or %NULL
- * @user: (out) (allow-none): return value pointer for the uri user info, or %NULL
- * @port: (out) (allow-none): return value pointer for the uri port, or %NULL
- * @host: (out) (allow-none): return value pointer for the uri host, or %NULL
- * @path: (out) (allow-none): return value pointer for the uri path, or %NULL
- *
- * Parse and break an uri apart in its individual components like the uri
- * scheme, user info, port, host and path. The return value pointer can be
- * %NULL to ignore certain parts of the uri. If the function returns %TRUE, then
- * all return value pointers should be freed using g_free
- *
- * Return value: %TRUE if the uri could be properly decoded, %FALSE otherwise.
- */
-gboolean
-gedit_utils_decode_uri (const gchar  *uri,
-			gchar       **scheme,
-			gchar       **user,
-			gchar       **host,
-			gchar       **port,
-			gchar       **path)
-{
-	/* Largely copied from glib/gio/gdummyfile.c:_g_decode_uri. This
-	 * functionality should be in glib/gio, but for now we implement it
-	 * ourselves (see bug #546182) */
-
-	const char *p, *in, *hier_part_start, *hier_part_end;
-	char *out;
-	char c;
-
-	/* From RFC 3986 Decodes:
-	 * URI = scheme ":" hier-part [ "?" query ] [ "#" fragment ]
-	 */
-
-	p = uri;
-
-	null_ptr (scheme);
-	null_ptr (user);
-	null_ptr (port);
-	null_ptr (host);
-	null_ptr (path);
-
-	/* Decode scheme:
-	 * scheme = ALPHA *( ALPHA / DIGIT / "+" / "-" / "." )
-	 */
-
-	if (!g_ascii_isalpha (*p))
-		return FALSE;
-
-	while (1)
-	{
-		c = *p++;
-
-		if (c == ':')
-			break;
-
-		if (!(g_ascii_isalnum(c) ||
-		      c == '+' ||
-		      c == '-' ||
-		      c == '.'))
-		{
-			return FALSE;
-		}
-	}
-
-	if (scheme)
-	{
-		*scheme = g_malloc (p - uri);
-		out = *scheme;
-
-		for (in = uri; in < p - 1; in++)
-		{
-			*out++ = g_ascii_tolower (*in);
-		}
-
-		*out = '\0';
-	}
-
-	hier_part_start = p;
-	hier_part_end = p + strlen (p);
-
-	if (hier_part_start[0] == '/' && hier_part_start[1] == '/')
-	{
-		const char *authority_start, *authority_end;
-		const char *userinfo_start, *userinfo_end;
-		const char *host_start, *host_end;
-		const char *port_start;
-
-		authority_start = hier_part_start + 2;
-		/* authority is always followed by / or nothing */
-		authority_end = memchr (authority_start, '/', hier_part_end - authority_start);
-
-		if (authority_end == NULL)
-			authority_end = hier_part_end;
-
-		/* 3.2:
-		 * authority = [ userinfo "@" ] host [ ":" port ]
-		 */
-
-		userinfo_end = memchr (authority_start, '@', authority_end - authority_start);
-
-		if (userinfo_end)
-		{
-			userinfo_start = authority_start;
-
-			if (user)
-				*user = g_uri_unescape_segment (userinfo_start, userinfo_end, NULL);
-
-			if (user && *user == NULL)
-			{
-				if (scheme)
-					g_free (*scheme);
-
-				return FALSE;
-			}
-
-			host_start = userinfo_end + 1;
-		}
-		else
-		{
-			host_start = authority_start;
-		}
-
-		port_start = memchr (host_start, ':', authority_end - host_start);
-
-		if (port_start)
-		{
-			host_end = port_start++;
-
-			if (port)
-				*port = g_strndup (port_start, authority_end - port_start);
-		}
-		else
-		{
-			host_end = authority_end;
-		}
-
-		if (host)
-			*host = g_strndup (host_start, host_end - host_start);
-
-		hier_part_start = authority_end;
-	}
-
-	if (path)
-		*path = g_uri_unescape_segment (hier_part_start, hier_part_end, "/");
-
-	return TRUE;
 }
 
 GtkSourceCompressionType

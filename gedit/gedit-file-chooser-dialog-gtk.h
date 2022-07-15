@@ -33,11 +33,10 @@ G_DECLARE_FINAL_TYPE (GeditFileChooserDialogGtk, gedit_file_chooser_dialog_gtk,
 		      GEDIT, FILE_CHOOSER_DIALOG_GTK,
 		      GtkFileChooserDialog)
 
-GeditFileChooserDialog *	gedit_file_chooser_dialog_gtk_create	(const gchar           *title,
-									 GtkWindow             *parent,
-									 GeditFileChooserFlags  flags,
-									 const gchar           *accept_label,
-									 const gchar           *cancel_label);
+GeditFileChooserDialog *	gedit_file_chooser_dialog_gtk_create	(const gchar *title,
+									 GtkWindow   *parent,
+									 const gchar *accept_label,
+									 const gchar *cancel_label);
 
 G_END_DECLS
 

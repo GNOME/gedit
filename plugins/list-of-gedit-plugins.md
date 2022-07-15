@@ -11,7 +11,6 @@ Plugins that are distributed with gedit itself.
 - **File Browser Panel** - *Easy file access from the side panel.*
 - **Insert Date/Time** - *Inserts current date and time at the cursor position.*
 - **Modelines** - *Emacs, Kate and Vim-style modelines support for gedit.*
-- **Open Links** - *Easy open URI links.*
 - **Python Console** - *Interactive Python console standing in the bottom panel.*
 - **Quick Highlight** - *Highlights every occurrences of selected text.*
 - **Quick Open** - *Quickly open files.*

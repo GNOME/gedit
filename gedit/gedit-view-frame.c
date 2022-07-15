@@ -3,7 +3,7 @@
  * This file is part of gedit
  *
  * Copyright (C) 2010 - Ignacio Casal Quinteiro
- * Copyright (C) 2013 - Sébastien Wilmet
+ * Copyright (C) 2013, 2019 - Sébastien Wilmet
  *
  * gedit is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -28,7 +28,6 @@
 #include <glib/gi18n.h>
 #include <stdlib.h>
 
-#include "gedit-view-centering.h"
 #include "gedit-debug.h"
 #include "gedit-utils.h"
 #include "gedit-settings.h"
@@ -54,11 +53,7 @@ struct _GeditViewFrame
 {
 	GtkOverlay parent_instance;
 
-	GSettings *editor_settings;
-
 	GeditView *view;
-	GeditViewCentering *view_centering;
-	GtkFrame *map_frame;
 
 	SearchMode search_mode;
 
@@ -164,7 +159,6 @@ gedit_view_frame_dispose (GObject *object)
 		gtk_source_file_set_mount_operation_factory (file, NULL, NULL, NULL);
 	}
 
-	g_clear_object (&frame->editor_settings);
 	g_clear_object (&frame->entry_tag);
 	g_clear_object (&frame->search_settings);
 	g_clear_object (&frame->old_search_settings);
@@ -219,7 +213,7 @@ hide_search_widget (GeditViewFrame *frame,
 		                                  frame->start_mark);
 		gtk_text_buffer_place_cursor (buffer, &iter);
 
-		gedit_view_scroll_to_cursor (frame->view);
+		tepl_view_scroll_to_cursor (TEPL_VIEW (frame->view));
 	}
 
 	if (frame->start_mark != NULL)
@@ -303,7 +297,7 @@ finish_search (GeditViewFrame    *frame,
 
 	if (found || (entry_text[0] == '\0'))
 	{
-		gedit_view_scroll_to_cursor (frame->view);
+		tepl_view_scroll_to_cursor (TEPL_VIEW (frame->view));
 
 		set_search_state (frame, SEARCH_STATE_NORMAL);
 	}
@@ -1067,7 +1061,6 @@ update_goto_line (GeditViewFrame *frame)
 	gchar **split_text = NULL;
 	const gchar *text;
 	GtkTextIter iter;
-	GeditDocument *doc;
 
 	entry_text = gtk_entry_get_text (GTK_ENTRY (frame->search_entry));
 
@@ -1123,11 +1116,8 @@ update_goto_line (GeditViewFrame *frame)
 
 	g_strfreev (split_text);
 
-	doc = get_document (frame);
-	moved = gedit_document_goto_line (doc, line);
-	moved_offset = gedit_document_goto_line_offset (doc, line, line_offset);
-
-	gedit_view_scroll_to_cursor (frame->view);
+	moved = tepl_view_goto_line (TEPL_VIEW (frame->view), line);
+	moved_offset = tepl_view_goto_line_offset (TEPL_VIEW (frame->view), line, line_offset);
 
 	if (!moved || !moved_offset)
 	{
@@ -1438,8 +1428,6 @@ gedit_view_frame_class_init (GeditViewFrameClass *klass)
 	gtk_widget_class_set_template_from_resource (widget_class,
 	                                             "/org/gnome/gedit/ui/gedit-view-frame.ui");
 	gtk_widget_class_bind_template_child (widget_class, GeditViewFrame, view);
-	gtk_widget_class_bind_template_child (widget_class, GeditViewFrame, view_centering);
-	gtk_widget_class_bind_template_child (widget_class, GeditViewFrame, map_frame);
 	gtk_widget_class_bind_template_child (widget_class, GeditViewFrame, revealer);
 	gtk_widget_class_bind_template_child (widget_class, GeditViewFrame, search_entry);
 	gtk_widget_class_bind_template_child (widget_class, GeditViewFrame, go_up_button);
@@ -1465,13 +1453,6 @@ gedit_view_frame_init (GeditViewFrame *frame)
 	gedit_debug (DEBUG_WINDOW);
 
 	gtk_widget_init_template (GTK_WIDGET (frame));
-
-	frame->editor_settings = g_settings_new ("org.gnome.gedit.preferences.editor");
-	g_settings_bind (frame->editor_settings,
-	                 GEDIT_SETTINGS_DISPLAY_OVERVIEW_MAP,
-	                 frame->map_frame,
-	                 "visible",
-	                 G_SETTINGS_BIND_GET | G_SETTINGS_BIND_NO_SENSITIVITY);
 
 	doc = get_document (frame);
 	file = gedit_document_get_file (doc);
@@ -1568,14 +1549,6 @@ GeditViewFrame *
 gedit_view_frame_new (void)
 {
 	return g_object_new (GEDIT_TYPE_VIEW_FRAME, NULL);
-}
-
-GeditViewCentering *
-gedit_view_frame_get_view_centering (GeditViewFrame *frame)
-{
-	g_return_val_if_fail (GEDIT_IS_VIEW_FRAME (frame), NULL);
-
-	return frame->view_centering;
 }
 
 GeditView *

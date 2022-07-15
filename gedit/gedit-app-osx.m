@@ -31,7 +31,7 @@
 #include "gedit-debug.h"
 #include "gedit-commands.h"
 #include "gedit-commands-private.h"
-#include "gedit-recent.h"
+#include "gedit-recent-osx.h"
 #import <AppKit/AppKit.h>
 
 NSWindow *gdk_quartz_window_get_nswindow(GdkWindow *window);
@@ -286,7 +286,7 @@ gedit_app_osx_set_window_title_impl (GeditApp    *app,
 			g_free (uri);
 		}
 
-		ismodified = !gedit_document_is_untouched (document);
+		ismodified = !tepl_buffer_is_untouched (TEPL_BUFFER (document));
 		[native setDocumentEdited:ismodified];
 	}
 	else

@@ -54,10 +54,7 @@ gedit_document_new
 gedit_document_get_file
 gedit_document_get_short_name_for_display
 gedit_document_get_mime_type
-gedit_document_is_untouched
 gedit_document_is_untitled
-gedit_document_goto_line
-gedit_document_goto_line_offset
 gedit_document_set_language
 gedit_document_get_content_type
 gedit_document_get_metadata
@@ -152,26 +149,6 @@ GeditMessagePrivate
 </SECTION>
 
 <SECTION>
-<FILE>gedit-progress-info-bar</FILE>
-<TITLE>GeditProgressInfoBar</TITLE>
-GeditProgressInfoBar
-gedit_progress_info_bar_new
-gedit_progress_info_bar_set_icon_name
-gedit_progress_info_bar_set_markup
-gedit_progress_info_bar_set_text
-gedit_progress_info_bar_set_fraction
-gedit_progress_info_bar_pulse
-<SUBSECTION Standard>
-GEDIT_PROGRESS_INFO_BAR
-GEDIT_IS_PROGRESS_INFO_BAR
-GEDIT_TYPE_PROGRESS_INFO_BAR
-gedit_progress_info_bar_get_type
-GEDIT_PROGRESS_INFO_BAR_CLASS
-GEDIT_IS_PROGRESS_INFO_BAR_CLASS
-GEDIT_PROGRESS_INFO_BAR_GET_CLASS
-</SECTION>
-
-<SECTION>
 <FILE>gedit-statusbar</FILE>
 <TITLE>GeditStatusbar</TITLE>
 GeditStatusbar
@@ -222,13 +199,6 @@ GeditViewPrivate
 <TITLE>GeditView</TITLE>
 GeditView
 gedit_view_new
-gedit_view_cut_clipboard
-gedit_view_copy_clipboard
-gedit_view_paste_clipboard
-gedit_view_delete_selection
-gedit_view_select_all
-gedit_view_scroll_to_cursor
-gedit_view_set_font
 <SUBSECTION Standard>
 GEDIT_VIEW
 GEDIT_IS_VIEW
@@ -321,7 +291,6 @@ DEBUG_DOCUMENT
 DEBUG_COMMANDS
 DEBUG_APP
 DEBUG_UTILS
-DEBUG_METADATA
 gedit_debug_init
 gedit_debug
 gedit_debug_message
@@ -352,14 +321,9 @@ gedit_menu_extension_get_type
 
 <SECTION>
 <FILE>gedit-utils</FILE>
-GBOOLEAN_TO_POINTER
-GPOINTER_TO_BOOLEAN
 gedit_utils_menu_position_under_tree_view
 gedit_utils_set_atk_name_description
-gedit_warning
-gedit_utils_replace_home_dir_with_tilde
 gedit_utils_basename_for_display
-gedit_utils_decode_uri
 gedit_utils_drop_get_uris
 gedit_utils_get_compression_type_from_content_type
 gedit_utils_is_valid_location

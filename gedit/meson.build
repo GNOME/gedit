@@ -8,7 +8,6 @@ libgedit_public_headers = [
   'gedit-menu-extension.h',
   'gedit-message-bus.h',
   'gedit-message.h',
-  'gedit-progress-info-bar.h',
   'gedit-statusbar.h',
   'gedit-tab.h',
   'gedit-utils.h',
@@ -28,13 +27,11 @@ libgedit_public_sources = [
   'gedit-menu-extension.c',
   'gedit-message-bus.c',
   'gedit-message.c',
-  'gedit-progress-info-bar.c',
   'gedit-statusbar.c',
   'gedit-tab.c',
   'gedit-utils.c',
   'gedit-view-activatable.c',
   'gedit-view.c',
-  'gedit-view-centering.c',
   'gedit-window-activatable.c',
   'gedit-window.c',
 ]
@@ -48,37 +45,30 @@ libgedit_private_headers = [
   'gedit-documents-panel.h',
   'gedit-encoding-items.h',
   'gedit-encodings-dialog.h',
+  'gedit-factory.h',
   'gedit-file-chooser-dialog-gtk.h',
   'gedit-file-chooser-dialog.h',
   'gedit-file-chooser.h',
   'gedit-file-chooser-open-dialog.h',
   'gedit-file-chooser-open.h',
   'gedit-file-chooser-open-native.h',
-  'gedit-highlight-mode-dialog.h',
-  'gedit-highlight-mode-selector.h',
   'gedit-history-entry.h',
   'gedit-io-error-info-bar.h',
   'gedit-menu-stack-switcher.h',
-  'gedit-metadata-manager.h',
   'gedit-multi-notebook.h',
   'gedit-notebook.h',
   'gedit-notebook-popup-menu.h',
   'gedit-notebook-stack-switcher.h',
-  'gedit-open-document-selector.h',
-  'gedit-open-document-selector-helper.h',
-  'gedit-open-document-selector-store.h',
-  'gedit-pango.h',
   'gedit-plugins-engine.h',
   'gedit-preferences-dialog.h',
   'gedit-print-job.h',
   'gedit-print-preview.h',
   'gedit-recent.h',
+  'gedit-recent-osx.h',
   'gedit-replace-dialog.h',
   'gedit-settings.h',
   'gedit-status-menu-button.h',
   'gedit-tab-label.h',
-  'gedit-tab-private.h',
-  'gedit-view-centering.h',
   'gedit-view-frame.h',
   'gedit-window-private.h',
 ]
@@ -95,26 +85,20 @@ libgedit_private_sources = [
   'gedit-documents-panel.c',
   'gedit-encoding-items.c',
   'gedit-encodings-dialog.c',
+  'gedit-factory.c',
   'gedit-file-chooser.c',
   'gedit-file-chooser-dialog.c',
   'gedit-file-chooser-dialog-gtk.c',
   'gedit-file-chooser-open.c',
   'gedit-file-chooser-open-dialog.c',
   'gedit-file-chooser-open-native.c',
-  'gedit-highlight-mode-dialog.c',
-  'gedit-highlight-mode-selector.c',
   'gedit-history-entry.c',
   'gedit-io-error-info-bar.c',
   'gedit-menu-stack-switcher.c',
-  'gedit-metadata-manager.c',
   'gedit-multi-notebook.c',
   'gedit-notebook.c',
   'gedit-notebook-popup-menu.c',
   'gedit-notebook-stack-switcher.c',
-  'gedit-open-document-selector.c',
-  'gedit-open-document-selector-helper.c',
-  'gedit-open-document-selector-store.c',
-  'gedit-pango.c',
   'gedit-plugins-engine.c',
   'gedit-preferences-dialog.c',
   'gedit-print-job.c',
@@ -133,12 +117,12 @@ libgedit_link_args = []
 libgedit_deps = [
   deps_basic_list,
   libgd_dep,
-  libxml_dep,
 ]
 
 if host_machine.system() == 'darwin'
   libgedit_private_sources += [
     'gedit-app-osx.m',
+    'gedit-recent-osx.c',
   ]
   libgedit_c_args += [
     '-DOS_OSX=1',
@@ -213,12 +197,10 @@ libgedit_gir = gnome.generate_gir(
   install_dir_typelib: get_option('libdir') / 'gedit/girepository-1.0',
 )
 
-if get_option('python')
-  python3.install_sources(
-    'Gedit.py',
-    subdir: 'gi/overrides',
-  )
-endif
+python3.install_sources(
+  'Gedit.py',
+  subdir: 'gi/overrides',
+)
 
 # Vala API
 libgedit_vapi = gnome.generate_vapi(

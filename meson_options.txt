@@ -14,26 +14,11 @@ option(
   description: 'Require that all tests can be run, even those that depend on third party programs'
 )
 
-option('python',
-       type: 'boolean', value: true,
-       description: 'Install GIR python overrides and python plugins')
-
-option('spell',
-       type: 'feature', value: 'enabled',
-       description: 'Build spell checking plugin')
-
 # This option exists for the developers, to speed up the install.
 option(
   'user_documentation',
   type: 'boolean', value: true,
   description: 'Build user documentation'
-)
-
-option(
-  'enable-gvfs-metadata',
-  type: 'combo',
-  choices: ['yes', 'no', 'auto'], value: 'auto',
-  description: 'Enable using gvfs to store metadata'
 )
 
 option('plugin_externaltools', type: 'boolean', value: true)

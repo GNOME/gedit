@@ -27,6 +27,7 @@
 #include "gedit-commands-private.h"
 
 #include <glib/gi18n.h>
+#include <tepl/tepl.h>
 
 #include "gedit-app.h"
 #include "gedit-debug.h"
@@ -42,6 +43,10 @@
 #include "gedit-file-chooser-dialog.h"
 #include "gedit-file-chooser-open.h"
 #include "gedit-close-confirmation-dialog.h"
+
+/* useful macro */
+#define GBOOLEAN_TO_POINTER(i) (GINT_TO_POINTER ((i) ? 2 : 1))
+#define GPOINTER_TO_BOOLEAN(i) ((gboolean) ((GPOINTER_TO_INT(i) == 2) ? TRUE : FALSE))
 
 #define GEDIT_IS_CLOSING_ALL "gedit-is-closing-all"
 #define GEDIT_NOTEBOOK_TO_CLOSE "gedit-notebook-to-close"
@@ -145,26 +150,24 @@ load_file_list (GeditWindow             *window,
 		{
 			if (l == files)
 			{
-				GeditDocument *doc;
+				TeplView *view;
 
 				gedit_window_set_active_tab (window, tab);
 				jump_to = FALSE;
-				doc = gedit_tab_get_document (tab);
+				view = TEPL_VIEW (gedit_tab_get_view (tab));
 
 				if (line_pos > 0)
 				{
 					if (column_pos > 0)
 					{
-						gedit_document_goto_line_offset (doc,
-						                                 line_pos - 1,
-						                                 column_pos - 1);
+						tepl_view_goto_line_offset (view,
+									    line_pos - 1,
+									    column_pos - 1);
 					}
 					else
 					{
-						gedit_document_goto_line (doc, line_pos - 1);
+						tepl_view_goto_line (view, line_pos - 1);
 					}
-
-					gedit_view_scroll_to_cursor (gedit_tab_get_view (tab));
 				}
 			}
 
@@ -191,7 +194,7 @@ load_file_list (GeditWindow             *window,
 
 		doc = gedit_tab_get_document (tab);
 
-		if (gedit_document_is_untouched (doc) &&
+		if (tepl_buffer_is_untouched (TEPL_BUFFER (doc)) &&
 		    gedit_tab_get_state (tab) == GEDIT_TAB_STATE_NORMAL)
 		{
 			_gedit_tab_load (tab,
@@ -394,38 +397,6 @@ file_chooser_open_done_cb (GeditFileChooserOpen *file_chooser,
 	g_slist_free_full (files, g_object_unref);
 }
 
-const gchar*
-_get_currrent_doc_location (GeditWindow *window)
-{
-	GFile *default_path = NULL;
-	const gchar *default_uri = NULL;
-
-	if (window != NULL)
-	{
-		GeditDocument *doc;
-
-		doc = gedit_window_get_active_document (window);
-
-		if (doc != NULL)
-		{
-			GtkSourceFile *file = gedit_document_get_file (doc);
-			GFile *location = gtk_source_file_get_location (file);
-
-			if (location != NULL)
-			{
-				default_path = g_file_get_parent (location);
-			}
-		}
-
-		if (default_path != NULL)
-		{
-			default_uri = g_file_get_uri(default_path);
-		}
-	}
-
-	return default_uri;
-}
-
 void
 _gedit_cmd_file_open (GSimpleAction *action,
                       GVariant      *parameter,
@@ -441,8 +412,6 @@ _gedit_cmd_file_open (GSimpleAction *action,
 		window = GEDIT_WINDOW (user_data);
 	}
 
-	const gchar* default_uri = _get_currrent_doc_location (window);
-
 	file_chooser = _gedit_file_chooser_open_new ();
 
 	if (window != NULL)
@@ -453,12 +422,6 @@ _gedit_cmd_file_open (GSimpleAction *action,
 						       GTK_WINDOW (window));
 
 		folder_uri = _gedit_window_get_file_chooser_folder_uri (window, GTK_FILE_CHOOSER_ACTION_OPEN);
-
-		if (default_uri != NULL)
-		{
-			folder_uri = default_uri;
-		}
-
 		if (folder_uri != NULL)
 		{
 			_gedit_file_chooser_set_current_folder_uri (GEDIT_FILE_CHOOSER (file_chooser),
@@ -510,7 +473,7 @@ replace_read_only_file (GtkWindow *parent,
 	 * though the dialog uses wrapped text, if the name doesn't contain
 	 * white space then the text-wrapping code is too stupid to wrap it.
 	 */
-	name_for_display = gedit_utils_str_middle_truncate (parse_name, 50);
+	name_for_display = tepl_utils_str_middle_truncate (parse_name, 50);
 	g_free (parse_name);
 
 	dialog = gtk_message_dialog_new (parent,
@@ -562,7 +525,7 @@ change_compression (GtkWindow *parent,
 	 * though the dialog uses wrapped text, if the name doesn't contain
 	 * white space then the text-wrapping code is too stupid to wrap it.
 	 */
-	name_for_display = gedit_utils_str_middle_truncate (parse_name, 50);
+	name_for_display = tepl_utils_str_middle_truncate (parse_name, 50);
 	g_free (parse_name);
 
 	if (compressed)
@@ -824,7 +787,6 @@ save_as_tab_async (GeditTab            *tab,
 	/* Translators: "Save As" is the title of the file chooser window. */
 	save_dialog = gedit_file_chooser_dialog_create (C_("window title", "Save As"),
 							GTK_WINDOW (window),
-							GEDIT_FILE_CHOOSER_FLAG_SAVE,
 							_("_Save"),
 							_("_Cancel"));
 

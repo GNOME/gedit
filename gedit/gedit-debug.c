@@ -100,10 +100,6 @@ gedit_debug_init (void)
 	{
 		enabled_sections |= GEDIT_DEBUG_UTILS;
 	}
-	if (g_getenv ("GEDIT_DEBUG_METADATA") != NULL)
-	{
-		enabled_sections |= GEDIT_DEBUG_METADATA;
-	}
 
 out:
 

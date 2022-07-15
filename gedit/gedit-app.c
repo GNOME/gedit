@@ -28,9 +28,8 @@
 #include <stdlib.h>
 
 #include <glib/gi18n.h>
-#include <gio/gio.h>
 #include <libpeas/peas-extension-set.h>
-#include <gtksourceview/gtksource.h>
+#include <tepl/tepl.h>
 
 #include "gedit-commands-private.h"
 #include "gedit-notebook.h"
@@ -45,20 +44,12 @@
 #include "gedit-preferences-dialog.h"
 #include "gedit-tab.h"
 
-#ifndef ENABLE_GVFS_METADATA
-#include "gedit-metadata-manager.h"
-#endif
-
 #define GEDIT_PAGE_SETUP_FILE		"gedit-page-setup"
 #define GEDIT_PRINT_SETTINGS_FILE	"gedit-print-settings"
 
 typedef struct
 {
 	GeditPluginsEngine *engine;
-
-#ifndef ENABLE_GVFS_METADATA
-	GeditMetadataManager *metadata_manager;
-#endif
 
 	GtkCssProvider     *theme_provider;
 
@@ -153,10 +144,6 @@ gedit_app_dispose (GObject *object)
 	GeditAppPrivate *priv;
 
 	priv = gedit_app_get_instance_private (GEDIT_APP (object));
-
-#ifndef ENABLE_GVFS_METADATA
-	g_clear_object (&priv->metadata_manager);
-#endif
 
 	g_clear_object (&priv->ui_settings);
 	g_clear_object (&priv->window_settings);
@@ -656,10 +643,6 @@ gedit_app_startup (GApplication *application)
 	GeditAppPrivate *priv;
 	GtkCssProvider *css_provider;
 	GtkSourceStyleSchemeManager *manager;
-#ifndef ENABLE_GVFS_METADATA
-	const gchar *cache_dir;
-	gchar *metadata_filename;
-#endif
 
 	priv = gedit_app_get_instance_private (GEDIT_APP (application));
 
@@ -670,13 +653,6 @@ gedit_app_startup (GApplication *application)
 	gedit_debug_message (DEBUG_APP, "Startup");
 
 	setup_theme_extensions (GEDIT_APP (application));
-
-#ifndef ENABLE_GVFS_METADATA
-	cache_dir = gedit_dirs_get_user_cache_dir ();
-	metadata_filename = g_build_filename (cache_dir, "gedit-metadata.xml", NULL);
-	priv->metadata_manager = gedit_metadata_manager_new (metadata_filename);
-	g_free (metadata_filename);
-#endif
 
 	/* Load/init settings */
 	_gedit_settings_get_singleton ();
@@ -1138,10 +1114,6 @@ gedit_app_shutdown (GApplication *app)
 	save_page_setup (GEDIT_APP (app));
 	save_print_settings (GEDIT_APP (app));
 
-	/* GTK+ can still hold references to some gedit objects, for example
-	 * GeditDocument for the clipboard. So the metadata-manager should be
-	 * shutdown after.
-	 */
 	G_APPLICATION_CLASS (gedit_app_parent_class)->shutdown (app);
 }
 
@@ -1281,10 +1253,15 @@ load_print_settings (GeditApp *app)
 static void
 gedit_app_init (GeditApp *app)
 {
+	TeplApplication *tepl_app;
+
 	g_set_application_name ("gedit");
 	gtk_window_set_default_icon_name ("org.gnome.gedit");
 
 	g_application_add_main_option_entries (G_APPLICATION (app), options);
+
+	tepl_app = tepl_application_get_from_gtk_application (GTK_APPLICATION (app));
+	tepl_application_handle_metadata (tepl_app);
 }
 
 /**
@@ -1593,25 +1570,6 @@ _gedit_app_set_default_print_settings (GeditApp         *app,
 
 	priv->print_settings = g_object_ref (settings);
 }
-
-
-GeditMetadataManager *
-_gedit_app_get_metadata_manager (GeditApp *app)
-{
-#ifndef ENABLE_GVFS_METADATA
-	GeditAppPrivate *priv;
-
-	g_return_val_if_fail (GEDIT_IS_APP (app), NULL);
-
-	priv = gedit_app_get_instance_private (app);
-
-	return priv->metadata_manager;
-#else
-	g_assert_not_reached ();
-	return NULL;
-#endif
-}
-
 
 GMenuModel *
 _gedit_app_get_hamburger_menu (GeditApp *app)

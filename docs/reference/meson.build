@@ -6,12 +6,14 @@ gio_docpath = dependency('gio-2.0').get_pkgconfig_variable('prefix') / 'share/gt
 gdk_docpath = dependency('gdk-3.0').get_pkgconfig_variable('prefix') / 'share/gtk-doc/html/gdk3'
 gtk_docpath = dependency('gtk+-3.0').get_pkgconfig_variable('prefix') / 'share/gtk-doc/html/gtk3'
 gsv_docpath = dependency('gtksourceview-4').get_pkgconfig_variable('prefix') / 'share/gtk-doc/html/gtksourceview-4.0'
+amtk_docpath = dependency('amtk-5').get_pkgconfig_variable('prefix') / 'share/gtk-doc/html/amtk-5'
+tepl_docpath = dependency('tepl-6').get_pkgconfig_variable('prefix') / 'share/gtk-doc/html/tepl-6'
 libpeas_docpath = dependency('libpeas-1.0').get_pkgconfig_variable('prefix') / 'share/gtk-doc/html/libpeas'
 
 gedit_doc_dep = declare_dependency(
   link_with: libgedit_shared_lib,
   include_directories: root_include_dir,
-  dependencies: deps_basic_list + [libxml_dep],
+  dependencies: deps_basic_list,
 )
 
 gnome.gtkdoc(
@@ -28,6 +30,8 @@ gnome.gtkdoc(
     '--extra-dir=@0@'.format(gdk_docpath),
     '--extra-dir=@0@'.format(gtk_docpath),
     '--extra-dir=@0@'.format(gsv_docpath),
+    '--extra-dir=@0@'.format(amtk_docpath),
+    '--extra-dir=@0@'.format(tepl_docpath),
     '--extra-dir=@0@'.format(libpeas_docpath),
   ],
   content_files: [

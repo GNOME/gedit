@@ -106,21 +106,6 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkCheckButton" id="display_overview_map_checkbutton">
-                    <property name="label" translatable="yes">Display _overview map</property>
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="receives_default">False</property>
-                    <property name="use_underline">True</property>
-                    <property name="draw_indicator">True</property>
-                  </object>
-                  <packing>
-                    <property name="left_attach">0</property>
-                    <property name="top_attach">3</property>
-                    <property name="width">2</property>
-                  </packing>
-                </child>
-                <child>
                   <object class="GtkCheckButton" id="display_grid_checkbutton">
                     <property name="label" translatable="yes">Display _grid pattern</property>
                     <property name="visible">True</property>
@@ -131,7 +116,7 @@
                   </object>
                   <packing>
                     <property name="left_attach">0</property>
-                    <property name="top_attach">4</property>
+                    <property name="top_attach">3</property>
                     <property name="width">2</property>
                   </packing>
                 </child>
@@ -645,19 +630,8 @@
                     <property name="hexpand">True</property>
                     <property name="vexpand">True</property>
                     <child>
-                      <object class="GtkScrolledWindow" id="schemes_scrolled_window">
+                      <object class="TeplStyleSchemeChooserWidget" id="schemes_list">
                         <property name="visible">True</property>
-                        <property name="can_focus">True</property>
-                        <property name="hexpand">True</property>
-                        <property name="vexpand">True</property>
-                        <property name="shadow_type">etched-in</property>
-                        <property name="min_content_height">200</property>
-                        <child>
-                          <object class="GtkSourceStyleSchemeChooserWidget" id="schemes_list">
-                            <property name="visible">True</property>
-                            <property name="can_focus">True</property>
-                          </object>
-                        </child>
                       </object>
                       <packing>
                         <property name="left_attach">0</property>

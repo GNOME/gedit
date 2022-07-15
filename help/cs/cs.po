@@ -3,13 +3,13 @@
 # This file is distributed under the same license as the gedit help.
 #
 # Lucas Lommer <llommer@svn.gnome.org>, 2009.
-# Marek Černocký <marek@manet.cz>, 2009, 2010, 2014, 2015, 2017, 2019, 2020, 2021.
+# Marek Černocký <marek@manet.cz>, 2009, 2010, 2014, 2015, 2017, 2019, 2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gedit\n"
-"POT-Creation-Date: 2021-08-20 10:09+0000\n"
-"PO-Revision-Date: 2021-08-27 18:15+0200\n"
+"POT-Creation-Date: 2020-11-13 22:19+0000\n"
+"PO-Revision-Date: 2020-11-16 20:38+0100\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: čeština <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -46,11 +46,11 @@ msgstr "Jak změnit v editoru gedit barvy textu a pozadí."
 #: C/gedit-plugins-insert-date-time.page:15 C/gedit-plugins-install.page:8
 #: C/gedit-plugins-modelines.page:13 C/gedit-plugins-pyconsole.page:10
 #: C/gedit-plugins-quick-open.page:11 C/gedit-plugins-snippets.page:9
-#: C/gedit-plugins-sort.page:14 C/gedit-printing.page:11
+#: C/gedit-plugins-sort.page:14 C/gedit-printing.page:10
 #: C/gedit-quickstart.page:12 C/gedit-replace.page:14 C/gedit-save-file.page:13
 #: C/gedit-search.page:12 C/gedit-spellcheck.page:12
 #: C/gedit-syntax-highlighting.page:10 C/gedit-tabs-moving.page:13
-#: C/gedit-tabs.page:14 C/gedit-undo-redo.page:12 C/index.page:15
+#: C/gedit-tabs.page:14 C/gedit-undo-redo.page:12 C/index.page:14
 msgid "Jim Campbell"
 msgstr "Jim Campbell"
 
@@ -341,155 +341,6 @@ msgid ""
 msgstr ""
 "Po otevření se správcovskými oprávněními si je <app>gedit</app> uchová, "
 "dokud jej nezavřete."
-
-#. (itstool) path: info/desc
-#: C/gedit-character-encodings.page:9
-msgid "When text and characters do not look as expected."
-msgstr "Jak řešit, když text a znaky nevypadají, jak očekáváte."
-
-#. (itstool) path: credit/name
-#: C/gedit-character-encodings.page:12
-msgid "Andre Klapper"
-msgstr "Andre Klapper"
-
-#. (itstool) path: credit/year
-#: C/gedit-character-encodings.page:14
-msgid "2020"
-msgstr "2020"
-
-#. (itstool) path: credit/name
-#: C/gedit-character-encodings.page:17
-msgid "Shaun McCance"
-msgstr "Shaun McCance"
-
-#. (itstool) path: credit/year
-#: C/gedit-character-encodings.page:19
-msgid "2009"
-msgstr "2009"
-
-#. (itstool) path: page/title
-#: C/gedit-character-encodings.page:24
-msgid "Dealing with character encoding problems"
-msgstr "Zacházení s kódováním znaků"
-
-#. (itstool) path: section/title
-#: C/gedit-character-encodings.page:27
-msgid "Character encodings"
-msgstr "Kódování znaků"
-
-#. (itstool) path: section/p
-#: C/gedit-character-encodings.page:28
-msgid ""
-"A character encoding is a specific way of recording characters internally in "
-"a computer. There are many character encodings."
-msgstr ""
-"Kódování znaků je způsob, jakým se zaznamenávají znaky interně v počítači. "
-"Existuje celá řada různých kódování."
-
-#. (itstool) path: section/p
-#: C/gedit-character-encodings.page:30
-msgid ""
-"By default, <app>gedit</app> uses UTF-8, a modern character encoding that "
-"can handle text from most of the world's languages. Another common encoding "
-"for English and some other Western languages is ISO-8859-1."
-msgstr ""
-"<app>gedit</app> používá jako výchozí kódování znaků moderní UTF-8, které umí "
-"pracovat s textech ve většině světových abeced. Jinými kódovánimi, se kterými "
-"se můžete setkat, jsou například ISO-8859-1 pro angličtinu a západoevropské "
-"jazyky a ISO-8859-2 pro středoevropské a východoevropské jazyky, včetně "
-"češtiny."
-
-#. (itstool) path: section/title
-#: C/gedit-character-encodings.page:36
-msgid "Problems"
-msgstr "Problémy"
-
-#. (itstool) path: section/p
-#: C/gedit-character-encodings.page:37
-msgid ""
-"If you open a file in a different character encoding than the encoding in "
-"which the file was written, then some or all characters might be displayed "
-"incorrectly."
-msgstr ""
-"Když otevřete soubor s jiným kódováním, než ve kterém byl zapsán, mohou být "
-"některé, nebo i všechny, znaky zobrazeny nesprávně."
-
-#. (itstool) path: section/p
-#: C/gedit-character-encodings.page:41
-msgid ""
-"This can happen if the file was created on another operating system or if "
-"the file uses a different script."
-msgstr ""
-"Obvykle se to může stát, když byl soubor vytvořen pod jiným operačním "
-"systémem nebo když soubor používá jiné písmo."
-
-#. (itstool) path: section/title
-#: C/gedit-character-encodings.page:46
-msgid "Solutions"
-msgstr "Řešení"
-
-#. (itstool) path: section/p
-#: C/gedit-character-encodings.page:48
-msgid ""
-"If the content of a text file does not look as expected, <link xref=\"gedit-"
-"open-files\">open the file</link> again by choosing a different "
-"<gui>Character Encoding</gui> at the bottom of the file chooser dialog."
-msgstr ""
-"Pokud obsah textového souboru nevypadá, jak byste očekávali, <link xref="
-"\"gedit-open-files\">otevřete soubor</link> znovu, ale zvolte při tom jiné "
-"<gui>Kódování znaků</gui> v dolní části dialogového okna pro výběr souboru."
-
-#. (itstool) path: section/p
-#: C/gedit-character-encodings.page:52
-msgid ""
-"If you have an idea which language is used in the document or in the area of "
-"the original author of the document:"
-msgstr ""
-"Pokud tušíte, který jazyk je použit v dokumentu nebo se používá v místě, "
-"odkud pochází autor dokumentu:"
-
-#. (itstool) path: item/p
-#: C/gedit-character-encodings.page:56
-msgid ""
-"Select <gui style=\"menuitem\">Add or remove…</gui> from the <gui>Character "
-"Encoding</gui> dropdown at the bottom of the file chooser dialog."
-msgstr ""
-"Vyberte v rozbalovacím seznamu <gui>Kódování znaků</gui> v dolní části "
-"dialogového okna pro výběr souboru položku <gui style=\"menuitem\">Přidat "
-"nebo odebrat…</gui>"
-
-#. (itstool) path: item/p
-#: C/gedit-character-encodings.page:59
-msgid ""
-"Select one or more languages and their encodings under <gui>Available "
-"Encodings</gui> on the left."
-msgstr ""
-"Vyberte jeden nebo více jazyků a jejich kódování v seznamu <gui>Dostupná "
-"kódování</gui> na levé straně."
-
-#. (itstool) path: item/p
-#: C/gedit-character-encodings.page:62
-msgid ""
-"Press <gui style=\"button\">+</gui> to add the selected encodings to the "
-"<gui>Character Encoding</gui> dropdown."
-msgstr ""
-"Zmáčknutím <gui style=\"button\">+</gui> přidejte vybraná kódování do seznamu "
-"<gui>Zvolená kódování</gui>."
-
-#. (itstool) path: item/p
-#: C/gedit-character-encodings.page:65
-msgid "Close the dialog by pressing <gui style=\"button\">Apply</gui>."
-msgstr ""
-"Zmáčknutím tlačítka <gui style=\"button\">Použit</gui> dialogové okno zavřete."
-
-#. (itstool) path: note/p
-#: C/gedit-character-encodings.page:69
-msgid ""
-"If none of these solutions solve the problem, then you could try to edit the "
-"file anyway. It is recommended to first create a backup copy of your file."
-msgstr ""
-"Pokud žádné z těchto řešení nepomůže, můžete i tak zkusit soubor upravovat. "
-"Doporučujeme vám ale, vytvořit si před tím záložní kopii souboru."
 
 #. (itstool) path: info/desc
 #: C/gedit-files-basic.page:7
@@ -1795,12 +1646,12 @@ msgstr ""
 
 #. (itstool) path: credit/name
 #: C/gedit-plugins-snippets.page:13 C/gedit-plugins-sort.page:18
-#: C/gedit-printing-order.page:16 C/gedit-printing.page:15
-#: C/gedit-printing-select.page:15 C/gedit-quickstart.page:16
+#: C/gedit-printing-order.page:15 C/gedit-printing.page:14
+#: C/gedit-printing-select.page:14 C/gedit-quickstart.page:16
 #: C/gedit-replace.page:22 C/gedit-save-file.page:17 C/gedit-search.page:20
 #: C/gedit-spellcheck.page:20 C/gedit-syntax-highlighting.page:14
 #: C/gedit-tabs-moving.page:21 C/gedit-tabs.page:22 C/gedit-undo-redo.page:20
-#: C/index.page:19
+#: C/index.page:18
 msgid "Sindhu S"
 msgstr "Sindhu S"
 
@@ -2243,22 +2094,22 @@ msgid "Set the pages to print in a certain order."
 msgstr "Jak nastavit stránky, aby se tisky v zadaném pořadí."
 
 #. (itstool) path: credit/name
-#: C/gedit-printing-order.page:12 C/gedit-printing-select.page:11
+#: C/gedit-printing-order.page:11 C/gedit-printing-select.page:10
 msgid "Phil Bull"
 msgstr "Phil Bull"
 
 #. (itstool) path: page/title
-#: C/gedit-printing-order.page:22
+#: C/gedit-printing-order.page:21
 msgid "Getting Copies To Print In The Correct Order"
 msgstr "Získání kopií vytisknutých ve správném pořadí"
 
 #. (itstool) path: section/title
-#: C/gedit-printing-order.page:25
+#: C/gedit-printing-order.page:24
 msgid "Reverse"
 msgstr "Obrátit"
 
 #. (itstool) path: section/p
-#: C/gedit-printing-order.page:27
+#: C/gedit-printing-order.page:26
 msgid ""
 "Printers usually print the first page first, and the last page last, so the "
 "pages end up in reverse order when you pick them up. To reverse the order:"
@@ -2268,18 +2119,16 @@ msgstr ""
 "chtěli. Tohle pořadí ale můžete změnit:"
 
 #. (itstool) path: item/p
-#: C/gedit-printing-order.page:33 C/gedit-printing-order.page:57
-#: C/gedit-printing.page:39 C/gedit-printing.page:62 C/gedit-printing.page:99
-#: C/gedit-printing-select.page:29
+#: C/gedit-printing-order.page:32
 msgid ""
-"Press the menu button in the top-right corner of the window and select the "
-"Print button."
+"Select <guiseq><gui style=\"menu\">File</gui> <gui style=\"menuitem\">Print</"
+"gui></guiseq>."
 msgstr ""
-"Zmáčkněte tlačítko nabídky v pravém horním rohu okna a zvolte <gui style="
-"\"menuitem\">Tisk</gui>."
+"Vyberte <guiseq><gui style=\"menu\">Soubor</gui> <gui style=\"menuitem"
+"\">Tisk</gui></guiseq>."
 
 #. (itstool) path: item/p
-#: C/gedit-printing-order.page:37
+#: C/gedit-printing-order.page:36
 msgid ""
 "In the <gui style=\"tab\">General</gui> tab of the Print dialog under <gui "
 "style=\"group\">Copies</gui>, check <gui style=\"checkbox\">Reverse</gui>."
@@ -2288,17 +2137,17 @@ msgstr ""
 "style=\"group\">Kopie</gui> zaškrtněte <gui style=\"checkbox\">Obrátit</gui>."
 
 #. (itstool) path: section/p
-#: C/gedit-printing-order.page:43
+#: C/gedit-printing-order.page:42
 msgid "The last page will be printed first, and so on."
 msgstr "Poslední stránka se vytiskne jako první atd."
 
 #. (itstool) path: section/title
-#: C/gedit-printing-order.page:47
+#: C/gedit-printing-order.page:46
 msgid "Collate"
 msgstr "Setřídit"
 
 #. (itstool) path: section/p
-#: C/gedit-printing-order.page:49
+#: C/gedit-printing-order.page:48
 msgid ""
 "If you are printing more than one copy of the document, the print outs will "
 "be grouped by page number by default. (e.g. The copies of page one come out, "
@@ -2311,12 +2160,21 @@ msgstr ""
 "dokumentu."
 
 #. (itstool) path: section/p
-#: C/gedit-printing-order.page:54
+#: C/gedit-printing-order.page:53
 msgid "To Collate:"
 msgstr "Setřídění se provede následovně:"
 
 #. (itstool) path: item/p
-#: C/gedit-printing-order.page:61
+#: C/gedit-printing-order.page:56
+msgid ""
+"Click <guiseq><gui style=\"menu\">File</gui> <gui style=\"menuitem\">Print</"
+"gui></guiseq>."
+msgstr ""
+"Klikněte na <guiseq><gui style=\"menu\">Soubor</gui> <gui style=\"menuitem"
+"\">Tisk</gui></guiseq>."
+
+#. (itstool) path: item/p
+#: C/gedit-printing-order.page:60
 msgid ""
 "In the <gui style=\"tab\">General</gui> tab of the Print dialog under <gui "
 "style=\"group\">Copies</gui> check <gui style=\"checkbox\">Collate</gui>."
@@ -2331,12 +2189,12 @@ msgid "Print the files that you create with gedit."
 msgstr "Jak vytisknout soubory, které jste v editoru gedit vytvořili."
 
 #. (itstool) path: page/title
-#: C/gedit-printing.page:21
+#: C/gedit-printing.page:20
 msgid "Printing documents"
 msgstr "Tisk dokumentů"
 
 #. (itstool) path: note/p
-#: C/gedit-printing.page:24
+#: C/gedit-printing.page:23
 msgid ""
 "Printing with <app>gedit</app> requires that you have connected and "
 "configured your printer. If you have not done this, please consult the <link "
@@ -2348,17 +2206,17 @@ msgstr ""
 "link>."
 
 #. (itstool) path: page/p
-#: C/gedit-printing.page:29
+#: C/gedit-printing.page:28
 msgid "<app>gedit</app> allows you to print both to a file and to paper."
 msgstr "<app>gedit</app> umožňuje tisknout jak do souboru, tak na papír."
 
 #. (itstool) path: section/title
-#: C/gedit-printing.page:32
+#: C/gedit-printing.page:31
 msgid "Print Preview"
 msgstr "Náhled tisku"
 
 #. (itstool) path: section/p
-#: C/gedit-printing.page:34
+#: C/gedit-printing.page:33
 msgid ""
 "Prior to printing your document, you can preview how the printed document "
 "will look by using <gui>Print Preview</gui>. To preview the document:"
@@ -2367,12 +2225,18 @@ msgstr ""
 "prohlédnout, jak bude vytisklý dokument vypadat. Pro zobrazení náhledu:"
 
 #. (itstool) path: item/p
-#: C/gedit-printing.page:43
-msgid "Press <gui style=\"button\">Preview</gui>."
-msgstr "Zmáčkněte tlačítko <gui style=\"button\">Náhled</gui>."
+#: C/gedit-printing.page:38
+msgid ""
+"Select <guiseq><gui style=\"menu\">File</gui> <gui style=\"menuitem\">Print "
+"Preview</gui></guiseq>. Alternatively, you can press <keyseq><key>Shift</"
+"key><key>Ctrl</key> <key>P</key></keyseq>."
+msgstr ""
+"Vyberte <guiseq><gui style=\"menu\">Soubor</gui> <gui style=\"menuitem"
+"\">Náhled tisku</gui></guiseq>. Případně můžete zmáčknout <keyseq><key>Ctrl</"
+"key> <key>Shift</key> <key>P</key></keyseq>."
 
 #. (itstool) path: section/p
-#: C/gedit-printing.page:47
+#: C/gedit-printing.page:45
 msgid ""
 "A preview of your document will open in the same tab as the file. You can "
 "browse this preview with help of navigation buttons and tools in the toolbar "
@@ -2385,12 +2249,12 @@ msgstr ""
 "na <gui style=\"button\">Zavřít náhled</gui>."
 
 #. (itstool) path: section/title
-#: C/gedit-printing.page:55
+#: C/gedit-printing.page:53
 msgid "Printing To Paper"
 msgstr "Tisk na papír"
 
 #. (itstool) path: section/p
-#: C/gedit-printing.page:57
+#: C/gedit-printing.page:55
 msgid ""
 "You can print your documents to paper using a local or remote printer. To "
 "print a file:"
@@ -2399,18 +2263,29 @@ msgstr ""
 "Postupujte následovně:"
 
 #. (itstool) path: item/p
-#: C/gedit-printing.page:66
+#: C/gedit-printing.page:60
 msgid ""
-"In the <gui style=\"tab\">General</gui> tab, select the desired printer from "
-"the list of printers available."
+"Select <guiseq><gui style=\"menu\">File</gui> <gui style=\"menuitem\">Print</"
+"gui> <gui style=\"tab\">General</gui></guiseq>."
 msgstr ""
-"Na kartě <gui style=\"tab\">Obecné</gui> vyberte požadovanou tiskárnu ze "
-"seznamu dostupných tiskáren."
+"Vyberte <guiseq><gui style=\"menu\">Soubor</gui> <gui style=\"menuitem"
+"\">Tisk</gui> <gui style=\"tab\">Obecné</gui></guiseq>."
 
 #. (itstool) path: item/p
-#: C/gedit-printing.page:70 C/gedit-printing.page:121
-msgid "Press <gui style=\"button\">Print</gui>."
-msgstr "Zmáčkněte tlačítko <gui style=\"button\">Tisk</gui>."
+#: C/gedit-printing.page:65
+msgid "Select the desired printer from the list of printers available."
+msgstr "Ze seznamu dostupných tiskáren vyberte požadovanou tiskárnu."
+
+#. (itstool) path: item/p
+#: C/gedit-printing.page:68
+msgid ""
+"You can preview the file using <gui style=\"button\">Print Preview</gui> and "
+"once you are satisfied with the settings, click <gui style=\"button\">Print</"
+"gui> to send the file to printer."
+msgstr ""
+"Můžete si nechat zobrazit náhled souboru pomocí <gui style=\"button\">Náhled "
+"tisku</gui> a teprve, až jej shledáte uspokojivým, klikněte na <gui style="
+"\"button\">Tisk</gui>, aby se odeslal do tiskárny."
 
 #. (itstool) path: section/p
 #: C/gedit-printing.page:74
@@ -2450,39 +2325,46 @@ msgstr "Tisk do souboru"
 #: C/gedit-printing.page:94
 msgid ""
 "You can also use <app>gedit</app> to print to a file. To print your document "
-"to a file of a different format:"
+"to file of a different format:"
 msgstr ""
-"<app>gedit</app> můžete použít také k tisku do souboru. Když chcete "
-"vytisknout svůj dokument do souboru v některém z formátů:"
+"<app>gedit</app> můžete použít také k tisku do souboru. Abyste vytiskli svůj "
+"dokument do souboru v některém z formátů:"
 
 #. (itstool) path: item/p
-#: C/gedit-printing.page:103
+#: C/gedit-printing.page:99
 msgid ""
-"In the <gui style=\"tab\">General</gui> tab, select <gui>Print to File</gui> "
-"from the list of printers available."
+"Select <guiseq><gui style=\"menu\">File</gui> <gui style=\"menuitem\">Print</"
+"gui> <gui style=\"menuitem\">Print to File</gui></guiseq>."
 msgstr ""
-"Na kartě <gui style=\"tab\">Obecné</gui> vyberte v seznamu dostupných "
-"tiskáren položku <gui>Tisknout do souboru</gui>."
+"Vyberte <guiseq><gui style=\"menu\">Soubor</gui> <gui style=\"menuitem"
+"\">Tisk</gui> <gui style=\"menuitem\">Tisk do souboru</gui></guiseq>."
 
 #. (itstool) path: item/p
-#: C/gedit-printing.page:107
-msgid "Select an output format:"
-msgstr "Vyberte výstupní formát:"
+#: C/gedit-printing.page:104
+msgid ""
+"Printing is enabled for the following file formats, you may select from:"
+msgstr "Při tisku do souboru máte na výběr z následujících formátů:"
 
 #. (itstool) path: item/p
-#: C/gedit-printing.page:110
+#: C/gedit-printing.page:108
 msgid "Portable Document Format (.pdf)"
 msgstr "Portable Document Format (.pdf)"
 
 #. (itstool) path: item/p
-#: C/gedit-printing.page:113
+#: C/gedit-printing.page:111
 msgid "PostScript (.ps)"
 msgstr "PostScript (.ps)"
 
 #. (itstool) path: item/p
-#: C/gedit-printing.page:116
+#: C/gedit-printing.page:114
 msgid "Scalable Vector Graphic (.svg)"
 msgstr "Scalable Vector Graphic (.svg)"
+
+#. (itstool) path: item/p
+#: C/gedit-printing.page:119
+msgid "To print the document to file, click <gui style=\"button\">Print</gui>."
+msgstr ""
+"Kliknutím na <gui style=\"button\">Tisk</gui> dokument vytisknete do souboru."
 
 #. (itstool) path: info/desc
 #: C/gedit-printing-select.page:7
@@ -2490,12 +2372,12 @@ msgid "Choose the pages that you want to print."
 msgstr "Jak vybrat stránky, které chcete tisknout."
 
 #. (itstool) path: page/title
-#: C/gedit-printing-select.page:21
+#: C/gedit-printing-select.page:20
 msgid "Only print certain pages"
 msgstr "Tisk jen konkrétních stránek"
 
 #. (itstool) path: page/p
-#: C/gedit-printing-select.page:23
+#: C/gedit-printing-select.page:22
 msgid ""
 "You can selectively print only certain pages from the document. For example, "
 "if you enter the page numbers \"1,3,5-7,9\", then only pages 1, 3, 5, 6, 7 "
@@ -2506,7 +2388,16 @@ msgstr ""
 "9. Aby se vytiskly jen zvolené stránky:"
 
 #. (itstool) path: item/p
-#: C/gedit-printing-select.page:33
+#: C/gedit-printing-select.page:28
+msgid ""
+"Select <guiseq><gui style=\"menu\">File</gui> <gui style=\"menuitem\">Print…"
+"</gui></guiseq>."
+msgstr ""
+"Vyberte <guiseq><gui style=\"menu\">Soubor</gui> <gui style=\"menuitem"
+"\">Tisk…</gui></guiseq>"
+
+#. (itstool) path: item/p
+#: C/gedit-printing-select.page:32
 msgid ""
 "In the <gui style=\"tab\">General</gui> tab in the Print dialog choose <gui "
 "style=\"radiobutton\">Pages</gui> from the <gui style=\"group\">Range</gui> "
@@ -2517,7 +2408,7 @@ msgstr ""
 "\">Stránky</gui>."
 
 #. (itstool) path: item/p
-#: C/gedit-printing-select.page:37
+#: C/gedit-printing-select.page:36
 msgid ""
 "Type the numbers of the pages you want to print from the document, separated "
 "by commas. Use a dash to specify a range of pages."
@@ -3557,34 +3448,28 @@ msgstr ""
 
 #. (itstool) path: info/title
 #: C/index.page:8
-msgctxt "link:trail"
-msgid "gedit Text Editor"
-msgstr "Textový editor gedit"
-
-#. (itstool) path: info/title
-#: C/index.page:9
 msgctxt "link"
 msgid "gedit Text Editor"
 msgstr "Textový editor gedit"
 
 #. (itstool) path: info/title
-#: C/index.page:10
+#: C/index.page:9
 msgctxt "text"
 msgid "gedit Text Editor"
 msgstr "Textový editor gedit"
 
 #. (itstool) path: info/desc
-#: C/index.page:12
+#: C/index.page:11
 msgid "Home page of the gedit help guide."
 msgstr "Domovská stránka uživatelské příručky k aplikaci gedit."
 
 #. (itstool) path: page/title
-#: C/index.page:27
+#: C/index.page:26
 msgid "<_:media-1/> gedit Text Editor"
 msgstr "<_:media-1/> Textový editor gedit"
 
 #. (itstool) path: page/p
-#: C/index.page:31
+#: C/index.page:30
 msgid ""
 "Welcome to the <app>gedit</app> help guide. For a quick introduction into "
 "<app>gedit's</app> most basic features, visit the <link xref=\"gedit-"
@@ -3596,7 +3481,7 @@ msgstr ""
 "gedit</link>."
 
 #. (itstool) path: page/p
-#: C/index.page:35
+#: C/index.page:34
 msgid ""
 "Other help topics are grouped together into sections below. Enjoy using "
 "<app>gedit</app>!"
@@ -3605,22 +3490,22 @@ msgstr ""
 "<app>gedit</app>!"
 
 #. (itstool) path: section/title
-#: C/index.page:39
+#: C/index.page:38
 msgid "Working With Files"
 msgstr "Práce se soubory"
 
 #. (itstool) path: section/title
-#: C/index.page:44
+#: C/index.page:43
 msgid "Configure gedit"
 msgstr "Nastavení editoru gedit"
 
 #. (itstool) path: section/title
-#: C/index.page:48
+#: C/index.page:47
 msgid "gedit Plugins"
 msgstr "Zásuvné moduly editoru gedit"
 
 #. (itstool) path: section/title
-#: C/index.page:52
+#: C/index.page:51
 msgid "Printing with gedit"
 msgstr "Tisk v editoru gedit"
 
@@ -3633,4 +3518,3 @@ msgstr "Creative Commons Attribution-ShareAlike 3.0 Unported License"
 #: C/legal.xml:3
 msgid "This work is licensed under a <_:link-1/>."
 msgstr "Tento dokument je licencován pod <_:link-1/>"
-

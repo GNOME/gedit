@@ -48,7 +48,6 @@ typedef enum {
 	GEDIT_DEBUG_COMMANDS = 1 << 7,
 	GEDIT_DEBUG_APP      = 1 << 8,
 	GEDIT_DEBUG_UTILS    = 1 << 9,
-	GEDIT_DEBUG_METADATA = 1 << 10,
 } GeditDebugSection;
 
 #define	DEBUG_VIEW	GEDIT_DEBUG_VIEW,    __FILE__, __LINE__, G_STRFUNC
@@ -61,7 +60,6 @@ typedef enum {
 #define	DEBUG_COMMANDS	GEDIT_DEBUG_COMMANDS,__FILE__, __LINE__, G_STRFUNC
 #define	DEBUG_APP	GEDIT_DEBUG_APP,     __FILE__, __LINE__, G_STRFUNC
 #define	DEBUG_UTILS	GEDIT_DEBUG_UTILS,   __FILE__, __LINE__, G_STRFUNC
-#define	DEBUG_METADATA	GEDIT_DEBUG_METADATA,__FILE__, __LINE__, G_STRFUNC
 
 void gedit_debug_init (void);
 

@@ -19,20 +19,36 @@
  * along with this program; if not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef GEDIT_RECENT_H
-#define GEDIT_RECENT_H
+#ifndef GEDIT_RECENT_OSX_H
+#define GEDIT_RECENT_OSX_H
 
 #include <gtk/gtk.h>
-#include <gedit/gedit-document.h>
 
 G_BEGIN_DECLS
 
-void	gedit_recent_add_document	(GeditDocument *document);
+/* TODO: this code can be simplified, the struct can be made private, the dead
+ * code can be removed, etc.
+ */
 
-void	gedit_recent_remove_if_local	(GFile *location);
+typedef struct
+{
+	GtkRecentManager *manager;
+	GtkRecentFilter *filter;
+
+	gint limit;
+	gchar *substring_filter;
+
+	guint show_private : 1;
+	guint show_not_found : 1;
+	guint local_only : 1;
+} GeditRecentConfiguration;
+
+void		 gedit_recent_configuration_init_default (GeditRecentConfiguration *config);
+void		 gedit_recent_configuration_destroy	 (GeditRecentConfiguration *config);
+GList		*gedit_recent_get_items			 (GeditRecentConfiguration *config);
 
 G_END_DECLS
 
-#endif /* GEDIT_RECENT_H */
+#endif /* GEDIT_RECENT_OSX_H */
 
 /* ex:set ts=8 noet: */

@@ -27,37 +27,18 @@
 
 G_BEGIN_DECLS
 
-/* useful macro */
-#define GBOOLEAN_TO_POINTER(i) (GINT_TO_POINTER ((i) ? 2 : 1))
-#define GPOINTER_TO_BOOLEAN(i) ((gboolean) ((GPOINTER_TO_INT(i) == 2) ? TRUE : FALSE))
-
 gboolean                   gedit_utils_menu_position_under_tree_view          (GtkTreeView     *tree_view,
                                                                                GdkRectangle    *rect);
 
-gchar                     *gedit_utils_str_middle_truncate                    (const gchar     *string,
-                                                                               guint            truncate_length);
-gchar                     *gedit_utils_str_end_truncate                       (const gchar     *string,
-                                                                               guint            truncate_length);
 void                       gedit_utils_set_atk_name_description               (GtkWidget       *widget,
                                                                                const gchar     *name,
                                                                                const gchar     *description);
-void                       gedit_warning                                      (GtkWindow      *parent,
-                                                                               const gchar    *format,
-                                                                               ...) G_GNUC_PRINTF(2, 3);
 
-gchar                     *gedit_utils_location_get_dirname_for_display       (GFile          *location);
-gchar                     *gedit_utils_replace_home_dir_with_tilde            (const gchar    *uri);
+gchar                     *gedit_utils_location_get_dirname_for_display       (GFile *location);
 
 gboolean                   gedit_utils_is_valid_location                      (GFile *location);
 
 gchar                     *gedit_utils_basename_for_display                   (GFile *location);
-
-gboolean                   gedit_utils_decode_uri                             (const gchar  *uri,
-                                                                               gchar       **scheme,
-                                                                               gchar       **user,
-                                                                               gchar       **host,
-                                                                               gchar       **port,
-                                                                               gchar       **path);
 
 /* Turns data from a drop into a list of well formatted uris */
 gchar                    **gedit_utils_drop_get_uris                          (GtkSelectionData     *selection_data);
