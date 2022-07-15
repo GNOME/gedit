@@ -60,6 +60,9 @@ JHBuild tips:
   build (see the difference with "jhbuild list gedit"). Another solution is to
   put some modules in the skip variable in jhbuildrc.
 
+There is also [Imovo](https://gitlab.gnome.org/swilmet/imovo), a more minimal
+tool.
+
 Building the gedit module manually
 ----------------------------------
 
