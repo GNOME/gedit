@@ -1,7 +1,7 @@
-gedit - The GNOME text editor
-=============================
+gedit
+=====
 
-gedit is the text editor of the GNOME desktop environment.
+gedit is a general-purpose text editor.
 
 The first goal of gedit is to be easy to use, with a simple interface by
 default. More advanced features are available by enabling plugins.
