@@ -107,7 +107,7 @@ _gedit_cmd_help_about (GeditWindow *window)
 	gtk_show_about_dialog (GTK_WINDOW (window),
 			       "program-name", "gedit",
 			       "authors", authors,
-			       "comments", _("gedit is a small and lightweight text editor for the GNOME desktop"),
+			       "comments", _("gedit is an easy-to-use and general-purpose text editor"),
 			       "copyright", "Copyright 1998-2022 – the gedit team",
 			       "license-type", GTK_LICENSE_GPL_2_0,
 			       "logo-icon-name", "org.gnome.gedit",
