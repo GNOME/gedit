@@ -120,24 +120,26 @@ G_DEFINE_DYNAMIC_TYPE_EXTENDED (GeditFileBrowserPlugin,
 				_gedit_file_browser_widget_register_type	(type_module);		\
 )
 
-static GSettings *
-settings_try_new (const gchar *schema_id)
+static gboolean
+can_use_nautilus_gsettings (void)
 {
-	GSettings *settings = NULL;
 	GSettingsSchemaSource *source;
 	GSettingsSchema *schema;
+	gboolean can_use;
 
 	source = g_settings_schema_source_get_default ();
+	g_assert (source != NULL);
+	schema = g_settings_schema_source_lookup (source, NAUTILUS_BASE_SETTINGS, TRUE);
 
-	schema = g_settings_schema_source_lookup (source, schema_id, TRUE);
-
-	if (schema != NULL)
+	if (schema == NULL)
 	{
-		settings = g_settings_new_full (schema, NULL, NULL);
-		g_settings_schema_unref (schema);
+		return FALSE;
 	}
 
-	return settings;
+	can_use = g_settings_schema_has_key (schema, NAUTILUS_CLICK_POLICY_KEY);
+
+	g_settings_schema_unref (schema);
+	return can_use;
 }
 
 static void
@@ -147,9 +149,12 @@ gedit_file_browser_plugin_init (GeditFileBrowserPlugin *plugin)
 
 	plugin->priv->settings = g_settings_new (FILEBROWSER_BASE_SETTINGS);
 	plugin->priv->terminal_settings = g_settings_new (TERMINAL_BASE_SETTINGS);
-	plugin->priv->nautilus_settings = settings_try_new (NAUTILUS_BASE_SETTINGS);
 
-	if (plugin->priv->nautilus_settings == NULL)
+	if (can_use_nautilus_gsettings ())
+	{
+		plugin->priv->nautilus_settings = g_settings_new (NAUTILUS_BASE_SETTINGS);
+	}
+	else
 	{
 		plugin->priv->nautilus_settings = g_settings_new (NAUTILUS_FALLBACK_SETTINGS);
 	}
