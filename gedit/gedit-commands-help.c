@@ -77,20 +77,16 @@ _gedit_cmd_help_contents (GeditWindow *window)
 void
 _gedit_cmd_help_about (GeditWindow *window)
 {
+	/* Top 5 authors (to not have a too long list), by relative contribution
+	 * (number of commits at the time of writing).
+	 */
 	static const gchar * const authors[] = {
-		"Alex Roberts",
-		"Chema Celorio",
-		"Evan Lawrence",
-		"Federico Mena Quintero <federico@novell.com>",
-		"Garrett Regier <garrettregier@gmail.com>",
-		"Ignacio Casal Quinteiro <icq@gnome.org>",
-		"James Willcox <jwillcox@gnome.org>",
-		"Jesse van den Kieboom <jessevdk@gnome.org>",
-		"Paolo Borelli <pborelli@gnome.org>",
-		"Paolo Maggi <paolo@gnome.org>",
-		"Sébastien Lafargue <slafargue@gnome.org>",
-		"Sébastien Wilmet <swilmet@gnome.org>",
-		"Steve Frécinaux <steve@istique.net>",
+		"Paolo Borelli",
+		"Sébastien Wilmet",
+		"Ignacio Casal Quinteiro",
+		"Jesse van den Kieboom",
+		"Paolo Maggi",
+		"and many others.",
 		NULL
 	};
 
