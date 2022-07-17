@@ -18,9 +18,27 @@
  */
 
 #include "gedit-factory.h"
+#include <glib/gi18n.h>
 #include "gedit-dirs.h"
 
 G_DEFINE_TYPE (GeditFactory, gedit_factory, TEPL_TYPE_ABSTRACT_FACTORY)
+
+static gchar *
+untitled_file_cb (gint untitled_file_number)
+{
+	return g_strdup_printf (_("Untitled Document %d"), untitled_file_number);
+}
+
+static TeplFile *
+gedit_factory_create_file (TeplAbstractFactory *factory)
+{
+	TeplFile *file;
+
+	file = tepl_file_new ();
+	tepl_file_set_untitled_file_callback (file, untitled_file_cb);
+
+	return file;
+}
 
 static GFile *
 gedit_factory_create_metadata_manager_file (TeplAbstractFactory *factory)
@@ -35,6 +53,7 @@ gedit_factory_class_init (GeditFactoryClass *klass)
 {
 	TeplAbstractFactoryClass *factory_class = TEPL_ABSTRACT_FACTORY_CLASS (klass);
 
+	factory_class->create_file = gedit_factory_create_file;
 	factory_class->create_metadata_manager_file = gedit_factory_create_metadata_manager_file;
 }
 
