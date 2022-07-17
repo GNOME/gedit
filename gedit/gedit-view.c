@@ -171,7 +171,7 @@ update_font (GeditView *view)
 
 	settings = _gedit_settings_get_singleton ();
 	selected_font = _gedit_settings_get_selected_font (settings);
-	tepl_utils_override_font (GTK_WIDGET (view), selected_font);
+	tepl_utils_override_font_string (GTK_WIDGET (view), selected_font);
 	g_free (selected_font);
 }
 
