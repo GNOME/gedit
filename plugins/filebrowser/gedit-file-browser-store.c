@@ -1032,7 +1032,7 @@ model_node_update_visibility (GeditFileBrowserStore *model,
 			{
 				GPatternSpec *spec = g_ptr_array_index (model->priv->binary_pattern_specs, i);
 
-				if (g_pattern_match (spec, name_length, node->name, name_reversed))
+				if (g_pattern_spec_match (spec, name_length, node->name, name_reversed))
 				{
 					node->flags |= GEDIT_FILE_BROWSER_STORE_FLAG_IS_FILTERED;
 					g_free (name_reversed);

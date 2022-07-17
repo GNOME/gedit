@@ -40,7 +40,7 @@ libgd_subproject = subproject(
 libgd_dep = libgd_subproject.get_variable('libgd_dep')
 
 # Dependencies
-gio_dep = dependency('gio-2.0', version: '>= 2.64')
+gio_dep = dependency('gio-2.0', version: '>= 2.70')
 
 libgedit_public_deps = [
   gio_dep,
