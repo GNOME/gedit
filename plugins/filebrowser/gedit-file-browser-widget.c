@@ -1258,7 +1258,7 @@ filter_glob (GeditFileBrowserWidget *obj,
 	if (FILE_IS_DIR (flags) || FILE_IS_DUMMY (flags))
 		result = TRUE;
 	else
-		result = g_pattern_match_string (obj->priv->filter_pattern, name);
+		result = g_pattern_spec_match_string (obj->priv->filter_pattern, name);
 
 	g_free (name);
 	return result;
