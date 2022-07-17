@@ -42,7 +42,6 @@ class PythonConsole(Gtk.ScrolledWindow):
 
     CONSOLE_KEY_BASE = 'org.gnome.gedit.plugins.pythonconsole'
     SETTINGS_INTERFACE_DIR = "org.gnome.desktop.interface"
-    SETTINGS_PROFILE_DIR = "org.gnome.GnomeTerminal.profiles.Default"
 
     CONSOLE_KEY_COMMAND_COLOR = 'command-color'
     CONSOLE_KEY_ERROR_COLOR = 'error-color'
