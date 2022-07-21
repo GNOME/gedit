@@ -1756,7 +1756,7 @@ successful_load (GTask *loading_task)
 					     NULL);
 	}
 
-	goto_line (loading_task);
+	//goto_line (loading_task);
 
 	location = gtk_source_file_loader_get_location (data->loader);
 
