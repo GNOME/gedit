@@ -1628,50 +1628,67 @@ goto_line (GTask *loading_task)
 {
 	LoaderData *data = g_task_get_task_data (loading_task);
 	GeditDocument *doc = gedit_tab_get_document (data->tab);
+	gboolean check_is_cursor_position = FALSE;
 	GtkTextIter iter;
 
-	/* Move the cursor at the requested line if any. */
+	/* To the top by default. */
+	gtk_text_buffer_get_start_iter (GTK_TEXT_BUFFER (doc), &iter);
+
+	/* At the requested line/column if set. */
 	if (data->line_pos > 0)
 	{
-		TeplView *view = TEPL_VIEW (gedit_tab_get_view (data->tab));
-
-		tepl_view_goto_line_offset (view,
-					    data->line_pos - 1,
-					    MAX (0, data->column_pos - 1));
-		return;
+		gtk_text_buffer_get_iter_at_line_offset (GTK_TEXT_BUFFER (doc),
+							 &iter,
+							 data->line_pos - 1,
+							 MAX (0, data->column_pos - 1));
+		check_is_cursor_position = TRUE;
 	}
 
-	/* If enabled, move to the position stored in the metadata. */
-	if (g_settings_get_boolean (data->tab->editor_settings, GEDIT_SETTINGS_RESTORE_CURSOR_POSITION))
+	/* From metadata. */
+	else if (g_settings_get_boolean (data->tab->editor_settings,
+					 GEDIT_SETTINGS_RESTORE_CURSOR_POSITION))
 	{
-		gchar *pos;
-		gint offset;
+		gchar *position_str;
+		guint64 offset = 0;
 
-		pos = gedit_document_get_metadata (doc, GEDIT_METADATA_ATTRIBUTE_POSITION);
+		position_str = gedit_document_get_metadata (doc, GEDIT_METADATA_ATTRIBUTE_POSITION);
 
-		offset = pos != NULL ? atoi (pos) : 0;
-		g_free (pos);
-
-		gtk_text_buffer_get_iter_at_offset (GTK_TEXT_BUFFER (doc),
-						    &iter,
-						    MAX (0, offset));
-
-		/* make sure it's a valid position, if the file
-		 * changed we may have ended up in the middle of
-		 * a utf8 character cluster */
-		if (!gtk_text_iter_is_cursor_position (&iter))
+		if (position_str != NULL &&
+		    g_ascii_string_to_unsigned (position_str,
+						10,
+						0,
+						G_MAXINT,
+						&offset,
+						NULL))
 		{
-			gtk_text_iter_set_line_offset (&iter, 0);
+			gtk_text_buffer_get_iter_at_offset (GTK_TEXT_BUFFER (doc),
+							    &iter,
+							    (gint) offset);
+			check_is_cursor_position = TRUE;
 		}
+
+		g_free (position_str);
 	}
 
-	/* Otherwise to the top. */
-	else
+	/* Make sure it's a valid position, to not end up in the middle of a
+	 * utf8 character cluster.
+	 */
+	if (check_is_cursor_position &&
+	    !gtk_text_iter_is_cursor_position (&iter))
 	{
-		gtk_text_buffer_get_start_iter (GTK_TEXT_BUFFER (doc), &iter);
+		gtk_text_iter_set_line_offset (&iter, 0);
 	}
 
 	gtk_text_buffer_place_cursor (GTK_TEXT_BUFFER (doc), &iter);
+
+	/* Scroll to the cursor when the document is loaded, we need to do it in
+	 * an idle as after the document is loaded the textview is still
+	 * redrawing and relocating its internals.
+	 */
+	if (data->tab->idle_scroll == 0)
+	{
+		data->tab->idle_scroll = g_idle_add ((GSourceFunc)scroll_to_cursor, data->tab);
+	}
 }
 
 static gboolean
@@ -1735,15 +1752,6 @@ successful_load (GTask *loading_task)
 	}
 
 	goto_line (loading_task);
-
-	/* Scroll to the cursor when the document is loaded, we need to do it in
-	 * an idle as after the document is loaded the textview is still
-	 * redrawing and relocating its internals.
-	 */
-	if (data->tab->idle_scroll == 0)
-	{
-		data->tab->idle_scroll = g_idle_add ((GSourceFunc)scroll_to_cursor, data->tab);
-	}
 
 	location = gtk_source_file_loader_get_location (data->loader);
 
