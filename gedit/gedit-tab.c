@@ -1033,6 +1033,7 @@ scroll_to_cursor (GeditTab *tab)
 {
 	GeditView *view;
 
+	g_print ("scroll to cursor\n");
 	view = gedit_tab_get_view (tab);
 	tepl_view_scroll_to_cursor (TEPL_VIEW (view));
 
@@ -1637,6 +1638,7 @@ goto_line (GTask *loading_task)
 	/* At the requested line/column if set. */
 	if (data->line_pos > 0)
 	{
+		g_print ("requested pos\n");
 		gtk_text_buffer_get_iter_at_line_offset (GTK_TEXT_BUFFER (doc),
 							 &iter,
 							 data->line_pos - 1,
@@ -1651,6 +1653,7 @@ goto_line (GTask *loading_task)
 		gchar *position_str;
 		guint64 offset = 0;
 
+		g_print ("from metadata\n");
 		position_str = gedit_document_get_metadata (doc, GEDIT_METADATA_ATTRIBUTE_POSITION);
 
 		if (position_str != NULL &&
@@ -1661,6 +1664,7 @@ goto_line (GTask *loading_task)
 						&offset,
 						NULL))
 		{
+			g_print ("from metadata (successful)\n");
 			gtk_text_buffer_get_iter_at_offset (GTK_TEXT_BUFFER (doc),
 							    &iter,
 							    (gint) offset);
@@ -1687,6 +1691,7 @@ goto_line (GTask *loading_task)
 	 */
 	if (data->tab->idle_scroll == 0)
 	{
+		g_print ("install idle scroll\n");
 		data->tab->idle_scroll = g_idle_add ((GSourceFunc)scroll_to_cursor, data->tab);
 	}
 }
