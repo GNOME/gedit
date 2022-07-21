@@ -1629,6 +1629,14 @@ goto_line (GTask *loading_task)
 {
 	LoaderData *data = g_task_get_task_data (loading_task);
 	GeditDocument *doc = gedit_tab_get_document (data->tab);
+	GtkTextIter iter;
+
+	gtk_text_buffer_get_start_iter (GTK_TEXT_BUFFER (doc), &iter);
+	gtk_text_buffer_place_cursor (GTK_TEXT_BUFFER (doc), &iter);
+
+#if 0
+	LoaderData *data = g_task_get_task_data (loading_task);
+	GeditDocument *doc = gedit_tab_get_document (data->tab);
 	gboolean check_is_cursor_position = FALSE;
 	GtkTextIter iter;
 
@@ -1694,6 +1702,7 @@ goto_line (GTask *loading_task)
 		g_print ("install idle scroll\n");
 		data->tab->idle_scroll = g_idle_add ((GSourceFunc)scroll_to_cursor, data->tab);
 	}
+#endif
 }
 
 static gboolean
@@ -1756,7 +1765,7 @@ successful_load (GTask *loading_task)
 					     NULL);
 	}
 
-	//goto_line (loading_task);
+	goto_line (loading_task);
 
 	location = gtk_source_file_loader_get_location (data->loader);
 
