@@ -1640,15 +1640,14 @@ goto_line (GTask *loading_task)
 	gtk_text_buffer_get_start_iter (GTK_TEXT_BUFFER (doc), &iter);
 	gtk_text_buffer_place_cursor (GTK_TEXT_BUFFER (doc), &iter);
 
-	do_scroll_to_cursor (data->tab);
-
-#if 0
 	if (data->tab->idle_scroll == 0)
 	{
-		g_print ("install idle scroll\n");
-		data->tab->idle_scroll = g_idle_add ((GSourceFunc)scroll_to_cursor, data->tab);
+		g_print ("install low priority scroll\n");
+		data->tab->idle_scroll = g_idle_add_full (G_PRIORITY_LOW,
+							  (GSourceFunc)scroll_to_cursor,
+							  data->tab,
+							  NULL);
 	}
-#endif
 
 #if 0
 	LoaderData *data = g_task_get_task_data (loading_task);
