@@ -1036,6 +1036,8 @@ scroll_to_cursor (GeditTab *tab)
 	view = gedit_tab_get_view (tab);
 	tepl_view_scroll_to_cursor (TEPL_VIEW (view));
 
+	gtk_widget_queue_draw (GTK_WIDGET (view));
+
 	tab->idle_scroll = 0;
 	return G_SOURCE_REMOVE;
 }
