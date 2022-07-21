@@ -2617,6 +2617,23 @@ init_amtk_application_window (GeditWindow *gedit_window)
 	amtk_application_window_set_statusbar (amtk_window, GTK_STATUSBAR (gedit_window->priv->statusbar));
 }
 
+static void
+open_recent_menu_item_activated_cb (GtkRecentChooser *recent_chooser,
+				    gpointer          user_data)
+{
+	GeditWindow *window = GEDIT_WINDOW (user_data);
+	gchar *uri;
+	GFile *location;
+
+	uri = gtk_recent_chooser_get_current_uri (recent_chooser);
+	location = g_file_new_for_uri (uri);
+
+	gedit_commands_load_location (window, location, NULL, 0, 0);
+
+	g_free (uri);
+	g_object_unref (location);
+}
+
 static GtkWidget *
 create_open_buttons (GeditWindow    *window,
 		     GtkMenuButton **open_recent_button)
@@ -2626,7 +2643,7 @@ create_open_buttons (GeditWindow    *window,
 	GtkWidget *open_dialog_button;
 	GtkWidget *my_open_recent_button;
 	AmtkApplicationWindow *amtk_window;
-	GtkWidget *recent_menu;
+	GtkRecentChooserMenu *recent_menu;
 
 	/* It currently needs to be a GtkBox, not a GtkGrid, because GtkGrid and
 	 * GTK_STYLE_CLASS_LINKED doesn't work as expected in a RTL locale.
@@ -2643,9 +2660,19 @@ create_open_buttons (GeditWindow    *window,
 	my_open_recent_button = gtk_menu_button_new ();
 	gtk_widget_set_tooltip_text (my_open_recent_button, _("Open a recently used file"));
 
+	recent_menu = amtk_application_window_create_open_recent_menu_base ();
+
 	amtk_window = amtk_application_window_get_from_gtk_application_window (GTK_APPLICATION_WINDOW (window));
-	recent_menu = amtk_application_window_create_open_recent_menu (amtk_window);
-	gtk_menu_button_set_popup (GTK_MENU_BUTTON (my_open_recent_button), recent_menu);
+	amtk_application_window_connect_recent_chooser_menu_to_statusbar (amtk_window, recent_menu);
+
+	g_signal_connect_object (recent_menu,
+				 "item-activated",
+				 G_CALLBACK (open_recent_menu_item_activated_cb),
+				 window,
+				 0);
+
+	gtk_menu_button_set_popup (GTK_MENU_BUTTON (my_open_recent_button),
+				   GTK_WIDGET (recent_menu));
 
 	gtk_container_add (GTK_CONTAINER (hbox), open_dialog_button);
 	gtk_container_add (GTK_CONTAINER (hbox), my_open_recent_button);
