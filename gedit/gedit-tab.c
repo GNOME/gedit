@@ -1031,10 +1031,12 @@ should_show_progress_info (GTimer  **timer,
 static gboolean
 scroll_to_cursor (GeditTab *tab)
 {
+#if 0
 	GeditView *view;
 
 	view = gedit_tab_get_view (tab);
 	tepl_view_scroll_to_cursor (TEPL_VIEW (view));
+#endif
 
 	tab->idle_scroll = 0;
 	return G_SOURCE_REMOVE;
