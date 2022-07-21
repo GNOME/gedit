@@ -648,6 +648,10 @@ gedit_app_startup (GApplication *application)
 
 	G_APPLICATION_CLASS (gedit_app_parent_class)->startup (application);
 
+	g_object_set (gtk_settings_get_default (),
+		      "gtk-enable-animations", FALSE,
+		      NULL);
+
 	/* Setup debugging */
 	gedit_debug_init ();
 	gedit_debug_message (DEBUG_APP, "Startup");
