@@ -140,15 +140,17 @@ create_io_loading_error_info_bar (const gchar *primary_text,
 }
 
 static gboolean
-parse_gio_error (gint          code,
-	         gchar       **error_message,
-	         gchar       **message_details,
-	         GFile        *location,
-	         const gchar  *uri_for_display)
+parse_gio_error (const GError  *error,
+		 gchar        **error_message,
+		 gchar        **message_details,
+		 GFile         *location,
+		 const gchar   *uri_for_display)
 {
 	gboolean ret = TRUE;
 
-	switch (code)
+	g_assert (error->domain == G_IO_ERROR);
+
+	switch (error->code)
 	{
 		case G_IO_ERROR_NOT_FOUND:
 		case G_IO_ERROR_NOT_DIRECTORY:
@@ -285,7 +287,7 @@ parse_error (const GError *error,
 
 	if (error->domain == G_IO_ERROR)
 	{
-		ret = parse_gio_error (error->code,
+		ret = parse_gio_error (error,
 				       error_message,
 				       message_details,
 				       location,
