@@ -156,8 +156,7 @@ parse_gio_error (const GError  *error,
 		case G_IO_ERROR_NOT_DIRECTORY:
 			*error_message = g_strdup_printf (_("Could not find the file “%s”."),
 							  uri_for_display);
-			*message_details = g_strdup (_("Please check that you typed the "
-					      	       "location correctly and try again."));
+			*message_details = g_strdup (error->message);
 			break;
 
 		case G_IO_ERROR_NOT_SUPPORTED:
