@@ -1032,10 +1032,23 @@ static gboolean
 scroll_to_cursor (GeditTab *tab)
 {
 	GeditView *view;
+	GtkTextBuffer *buffer;
+	GtkTextIter iter;
 
 	g_print ("scroll to cursor\n");
+
 	view = gedit_tab_get_view (tab);
-	tepl_view_scroll_to_cursor (TEPL_VIEW (view));
+	buffer = gtk_text_view_get_buffer (GTK_TEXT_VIEW (view));
+	gtk_text_buffer_get_iter_at_mark (buffer,
+					  &iter,
+					  gtk_text_buffer_get_insert (buffer));
+
+	gtk_text_view_scroll_to_iter (GTK_TEXT_VIEW (view),
+				      &iter,
+				      0.25,
+				      FALSE,
+				      0.0,
+				      0.0);
 
 	tab->idle_scroll = 0;
 	return G_SOURCE_REMOVE;
