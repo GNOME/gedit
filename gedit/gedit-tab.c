@@ -1033,6 +1033,7 @@ scroll_to_cursor (GeditTab *tab)
 {
 	GeditView *view;
 
+	g_print ("%s()\n", G_STRFUNC);
 	view = gedit_tab_get_view (tab);
 	tepl_view_scroll_to_cursor (TEPL_VIEW (view));
 
