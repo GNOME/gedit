@@ -60,7 +60,8 @@ struct _GeditTab
 
 	GtkSourceFileSaverFlags save_flags;
 
-	guint idle_scroll;
+	guint scroll_timeout;
+	guint scroll_idle;
 
 	gint auto_save_interval;
 	guint auto_save_timeout;
@@ -330,10 +331,16 @@ gedit_tab_dispose (GObject *object)
 
 	remove_auto_save_timeout (tab);
 
-	if (tab->idle_scroll != 0)
+	if (tab->scroll_timeout != 0)
 	{
-		g_source_remove (tab->idle_scroll);
-		tab->idle_scroll = 0;
+		g_source_remove (tab->scroll_timeout);
+		tab->scroll_timeout = 0;
+	}
+
+	if (tab->scroll_idle != 0)
+	{
+		g_source_remove (tab->scroll_idle);
+		tab->scroll_idle = 0;
 	}
 
 	if (tab->cancellable != NULL)
@@ -1029,14 +1036,32 @@ should_show_progress_info (GTimer  **timer,
 }
 
 static gboolean
-scroll_to_cursor (GeditTab *tab)
+scroll_timeout_cb (GeditTab *tab)
 {
 	GeditView *view;
 
 	view = gedit_tab_get_view (tab);
 	tepl_view_scroll_to_cursor (TEPL_VIEW (view));
 
-	tab->idle_scroll = 0;
+	tab->scroll_timeout = 0;
+	return G_SOURCE_REMOVE;
+}
+
+static gboolean
+scroll_idle_cb (GeditTab *tab)
+{
+	/* The idle is not enough, for a detailed analysis of this, see:
+	 * https://wiki.gnome.org/Apps/Gedit/FixingTextCutOffBug
+	 * or the commit message that changed this.
+	 * (here it's a hack, a proper solution in GTK/GtkTextView should be
+	 * found).
+	 */
+	if (tab->scroll_timeout == 0)
+	{
+		tab->scroll_timeout = g_timeout_add (250, (GSourceFunc)scroll_timeout_cb, tab);
+	}
+
+	tab->scroll_idle = 0;
 	return G_SOURCE_REMOVE;
 }
 
@@ -1685,9 +1710,9 @@ goto_line (GTask *loading_task)
 	 * an idle as after the document is loaded the textview is still
 	 * redrawing and relocating its internals.
 	 */
-	if (data->tab->idle_scroll == 0)
+	if (data->tab->scroll_idle == 0)
 	{
-		data->tab->idle_scroll = g_idle_add ((GSourceFunc)scroll_to_cursor, data->tab);
+		data->tab->scroll_idle = g_idle_add ((GSourceFunc)scroll_idle_cb, data->tab);
 	}
 }
 
