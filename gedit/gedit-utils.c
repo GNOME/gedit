@@ -539,4 +539,71 @@ gedit_utils_newline_type_to_string (GtkSourceNewlineType newline_type)
 	return NULL;
 }
 
+gboolean
+gedit_utils_check_adjustment_invariants (GtkAdjustment *adjustment)
+{
+	gdouble value;
+	gdouble lower;
+	gdouble upper;
+	gdouble page_size;
+	gdouble page_increment;
+	gdouble step_increment;
+
+	g_return_val_if_fail (GTK_IS_ADJUSTMENT (adjustment), FALSE);
+
+	value = gtk_adjustment_get_value (adjustment);
+	lower = gtk_adjustment_get_lower (adjustment);
+	upper = gtk_adjustment_get_upper (adjustment);
+	page_size = gtk_adjustment_get_page_size (adjustment);
+	page_increment = gtk_adjustment_get_page_increment (adjustment);
+	step_increment = gtk_adjustment_get_step_increment (adjustment);
+
+	if (lower > upper)
+	{
+		return FALSE;
+	}
+
+	if (value < lower)
+	{
+		return FALSE;
+	}
+
+	if (value > upper)
+	{
+		return FALSE;
+	}
+
+	if (page_size < 0.0)
+	{
+		return FALSE;
+	}
+
+	if (page_increment < 0.0)
+	{
+		return FALSE;
+	}
+
+	if (step_increment < 0.0)
+	{
+		return FALSE;
+	}
+
+	if (page_size != 0.0)
+	{
+		gdouble real_upper = upper - page_size;
+
+		if (lower > real_upper)
+		{
+			return FALSE;
+		}
+
+		if (value > real_upper)
+		{
+			return FALSE;
+		}
+	}
+
+	return TRUE;
+}
+
 /* ex:set ts=8 noet: */

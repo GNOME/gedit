@@ -49,6 +49,8 @@ GtkSourceCompressionType   gedit_utils_get_compression_type_from_content_type (c
 
 const gchar               *gedit_utils_newline_type_to_string                 (GtkSourceNewlineType  newline_type);
 
+gboolean		   gedit_utils_check_adjustment_invariants	      (GtkAdjustment *adjustment);
+
 G_END_DECLS
 
 #endif /* GEDIT_UTILS_H */
