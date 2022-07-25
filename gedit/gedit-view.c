@@ -240,6 +240,15 @@ gedit_view_constructed (GObject *object)
 	g_settings_bind (editor_settings, GEDIT_SETTINGS_SMART_HOME_END,
 	                 view, "smart-home-end",
 	                 G_SETTINGS_BIND_GET);
+
+	{
+		GtkScrollable *scrollable = GTK_SCROLLABLE (view);
+		GtkAdjustment *hadjustment = gtk_scrollable_get_hadjustment (scrollable);
+		GtkAdjustment *vadjustment = gtk_scrollable_get_vadjustment (scrollable);
+
+		gedit_utils_check_adjustment_changes (hadjustment);
+		gedit_utils_check_adjustment_changes (vadjustment);
+	}
 }
 
 static GdkAtom
