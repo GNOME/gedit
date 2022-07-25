@@ -187,6 +187,7 @@ scrollable_notify_hadjustment_cb (GtkScrollable *scrollable,
 				  GParamSpec    *pspec,
 				  gpointer       user_data)
 {
+#if 0
 	GtkAdjustment *hadjustment;
 
 	g_print ("%s()\n", G_STRFUNC);
@@ -195,6 +196,7 @@ scrollable_notify_hadjustment_cb (GtkScrollable *scrollable,
 	g_print ("GeditView hadjustment=%p\n", hadjustment);
 
 	gedit_utils_check_adjustment_changes (hadjustment);
+#endif
 }
 
 static void
@@ -276,10 +278,10 @@ gedit_view_constructed (GObject *object)
 		GtkAdjustment *hadjustment = gtk_scrollable_get_hadjustment (scrollable);
 		GtkAdjustment *vadjustment = gtk_scrollable_get_vadjustment (scrollable);
 
-		g_print ("GeditView hadjustment=%p\n", hadjustment);
+		//g_print ("GeditView hadjustment=%p\n", hadjustment);
 		g_print ("GeditView vadjustment=%p\n", vadjustment);
 
-		gedit_utils_check_adjustment_changes (hadjustment);
+		//gedit_utils_check_adjustment_changes (hadjustment);
 		gedit_utils_check_adjustment_changes (vadjustment);
 
 		g_signal_connect (scrollable,
