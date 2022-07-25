@@ -1038,12 +1038,12 @@ should_show_progress_info (GTimer  **timer,
 static gboolean
 scroll_timeout_cb (GeditTab *tab)
 {
-	//GeditView *view;
+	GeditView *view;
 
-	g_message ("%s()", G_STRFUNC);
+	g_message ("%s() do scroll", G_STRFUNC);
 
-	//view = gedit_tab_get_view (tab);
-	//tepl_view_scroll_to_cursor (TEPL_VIEW (view));
+	view = gedit_tab_get_view (tab);
+	tepl_view_scroll_to_cursor (TEPL_VIEW (view));
 
 	tab->scroll_timeout = 0;
 	return G_SOURCE_REMOVE;
