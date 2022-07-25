@@ -614,8 +614,10 @@ adjustment_notify_cb (GtkAdjustment *adjustment,
 		      GParamSpec    *pspec,
 		      gpointer       user_data)
 {
+#if 0
 	g_print ("%s() ", G_STRFUNC);
 	g_warn_if_fail (gedit_utils_check_adjustment_invariants (adjustment));
+#endif
 }
 
 static void
