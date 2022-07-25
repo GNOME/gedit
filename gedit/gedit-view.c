@@ -183,6 +183,22 @@ fonts_changed_cb (GeditSettings *settings,
 }
 
 static void
+scrollable_notify_hadjustment_cb (GtkScrollable *scrollable,
+				  GParamSpec    *pspec,
+				  gpointer       user_data)
+{
+	g_print ("%s()\n", G_STRFUNC);
+}
+
+static void
+scrollable_notify_vadjustment_cb (GtkScrollable *scrollable,
+				  GParamSpec    *pspec,
+				  gpointer       user_data)
+{
+	g_print ("%s()\n", G_STRFUNC);
+}
+
+static void
 gedit_view_constructed (GObject *object)
 {
 	GeditView *view = GEDIT_VIEW (object);
@@ -248,6 +264,16 @@ gedit_view_constructed (GObject *object)
 
 		gedit_utils_check_adjustment_changes (hadjustment);
 		gedit_utils_check_adjustment_changes (vadjustment);
+
+		g_signal_connect (scrollable,
+				  "notify::hadjustment",
+				  G_CALLBACK (scrollable_notify_hadjustment_cb),
+				  NULL);
+
+		g_signal_connect (scrollable,
+				  "notify::vadjustment",
+				  G_CALLBACK (scrollable_notify_vadjustment_cb),
+				  NULL);
 	}
 }
 
