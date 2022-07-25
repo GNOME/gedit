@@ -51,6 +51,8 @@ const gchar               *gedit_utils_newline_type_to_string                 (G
 
 gboolean		   gedit_utils_check_adjustment_invariants	      (GtkAdjustment *adjustment);
 
+void			   gedit_utils_check_adjustment_changes		      (GtkAdjustment *adjustment);
+
 G_END_DECLS
 
 #endif /* GEDIT_UTILS_H */

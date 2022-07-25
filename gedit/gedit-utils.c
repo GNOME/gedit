@@ -606,4 +606,49 @@ gedit_utils_check_adjustment_invariants (GtkAdjustment *adjustment)
 	return TRUE;
 }
 
+static void
+adjustment_notify_cb (GtkAdjustment *adjustment,
+		      GParamSpec    *pspec,
+		      gpointer       user_data)
+{
+	g_assert (gedit_utils_check_adjustment_invariants (adjustment));
+}
+
+static void
+adjustment_changed_cb (GtkAdjustment *adjustment,
+		       gpointer       user_data)
+{
+	g_assert (gedit_utils_check_adjustment_invariants (adjustment));
+}
+
+static void
+adjustment_value_changed_cb (GtkAdjustment *adjustment,
+			     gpointer       user_data)
+{
+	g_assert (gedit_utils_check_adjustment_invariants (adjustment));
+}
+
+void
+gedit_utils_check_adjustment_changes (GtkAdjustment *adjustment)
+{
+	g_return_if_fail (GTK_IS_ADJUSTMENT (adjustment));
+
+	g_assert (gedit_utils_check_adjustment_invariants (adjustment));
+
+	g_signal_connect (adjustment,
+			  "notify",
+			  G_CALLBACK (adjustment_notify_cb),
+			  NULL);
+
+	g_signal_connect (adjustment,
+			  "changed",
+			  G_CALLBACK (adjustment_changed_cb),
+			  NULL);
+
+	g_signal_connect (adjustment,
+			  "value-changed",
+			  G_CALLBACK (adjustment_value_changed_cb),
+			  NULL);
+}
+
 /* ex:set ts=8 noet: */
