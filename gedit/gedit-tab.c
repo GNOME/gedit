@@ -60,7 +60,7 @@ struct _GeditTab
 
 	GtkSourceFileSaverFlags save_flags;
 
-	guint idle_scroll;
+	guint scroll_timeout;
 
 	gint auto_save_interval;
 	guint auto_save_timeout;
@@ -330,10 +330,10 @@ gedit_tab_dispose (GObject *object)
 
 	remove_auto_save_timeout (tab);
 
-	if (tab->idle_scroll != 0)
+	if (tab->scroll_timeout != 0)
 	{
-		g_source_remove (tab->idle_scroll);
-		tab->idle_scroll = 0;
+		g_source_remove (tab->scroll_timeout);
+		tab->scroll_timeout = 0;
 	}
 
 	if (tab->cancellable != NULL)
@@ -1036,7 +1036,7 @@ scroll_to_cursor (GeditTab *tab)
 	view = gedit_tab_get_view (tab);
 	tepl_view_scroll_to_cursor (TEPL_VIEW (view));
 
-	tab->idle_scroll = 0;
+	tab->scroll_timeout = 0;
 	return G_SOURCE_REMOVE;
 }
 
@@ -1685,9 +1685,9 @@ goto_line (GTask *loading_task)
 	 * an idle as after the document is loaded the textview is still
 	 * redrawing and relocating its internals.
 	 */
-	if (data->tab->idle_scroll == 0)
+	if (data->tab->scroll_timeout == 0)
 	{
-		data->tab->idle_scroll = g_idle_add ((GSourceFunc)scroll_to_cursor, data->tab);
+		data->tab->scroll_timeout = g_timeout_add (250, (GSourceFunc)scroll_to_cursor, data->tab);
 	}
 }
 
