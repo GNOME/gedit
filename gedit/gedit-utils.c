@@ -558,8 +558,8 @@ gedit_utils_check_adjustment_invariants (GtkAdjustment *adjustment)
 	page_increment = gtk_adjustment_get_page_increment (adjustment);
 	step_increment = gtk_adjustment_get_step_increment (adjustment);
 
-	g_print ("value=%f lower=%f upper=%f page_sz=%f page_inc=%f step_inc=%f\n",
-		 value, lower, upper, page_size, page_increment, step_increment);
+	g_print ("adj=%p value=%f lower=%f upper=%f page_sz=%f page_inc=%f step_inc=%f\n",
+		 adjustment, value, lower, upper, page_size, page_increment, step_increment);
 
 	if (lower > upper)
 	{
