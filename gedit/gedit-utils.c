@@ -615,7 +615,7 @@ adjustment_notify_cb (GtkAdjustment *adjustment,
 		      gpointer       user_data)
 {
 	g_print ("%s() ", G_STRFUNC);
-	g_assert (gedit_utils_check_adjustment_invariants (adjustment));
+	g_warn_if_fail (gedit_utils_check_adjustment_invariants (adjustment));
 }
 
 static void
@@ -623,7 +623,7 @@ adjustment_changed_cb (GtkAdjustment *adjustment,
 		       gpointer       user_data)
 {
 	g_print ("%s() ", G_STRFUNC);
-	g_assert (gedit_utils_check_adjustment_invariants (adjustment));
+	g_warn_if_fail (gedit_utils_check_adjustment_invariants (adjustment));
 }
 
 static void
@@ -631,7 +631,7 @@ adjustment_value_changed_cb (GtkAdjustment *adjustment,
 			     gpointer       user_data)
 {
 	g_print ("%s() ", G_STRFUNC);
-	g_assert (gedit_utils_check_adjustment_invariants (adjustment));
+	g_warn_if_fail (gedit_utils_check_adjustment_invariants (adjustment));
 }
 
 void
@@ -640,7 +640,7 @@ gedit_utils_check_adjustment_changes (GtkAdjustment *adjustment)
 	g_return_if_fail (GTK_IS_ADJUSTMENT (adjustment));
 
 	g_print ("%s() ", G_STRFUNC);
-	g_assert (gedit_utils_check_adjustment_invariants (adjustment));
+	g_warn_if_fail (gedit_utils_check_adjustment_invariants (adjustment));
 
 	g_signal_connect (adjustment,
 			  "notify",
