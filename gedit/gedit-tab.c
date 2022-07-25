@@ -61,6 +61,7 @@ struct _GeditTab
 	GtkSourceFileSaverFlags save_flags;
 
 	guint scroll_timeout;
+	guint scroll_idle;
 
 	gint auto_save_interval;
 	guint auto_save_timeout;
@@ -334,6 +335,12 @@ gedit_tab_dispose (GObject *object)
 	{
 		g_source_remove (tab->scroll_timeout);
 		tab->scroll_timeout = 0;
+	}
+
+	if (tab->scroll_idle != 0)
+	{
+		g_source_remove (tab->scroll_idle);
+		tab->scroll_idle = 0;
 	}
 
 	if (tab->cancellable != NULL)
@@ -1031,12 +1038,23 @@ should_show_progress_info (GTimer  **timer,
 static gboolean
 scroll_to_cursor (GeditTab *tab)
 {
-	GeditView *view;
+	//GeditView *view;
 
-	view = gedit_tab_get_view (tab);
-	tepl_view_scroll_to_cursor (TEPL_VIEW (view));
+	g_message ("%s()", G_STRFUNC);
+
+	//view = gedit_tab_get_view (tab);
+	//tepl_view_scroll_to_cursor (TEPL_VIEW (view));
 
 	tab->scroll_timeout = 0;
+	return G_SOURCE_REMOVE;
+}
+
+static gboolean
+scroll_idle_cb (GeditTab *tab)
+{
+	g_message ("%s()", G_STRFUNC);
+
+	tab->scroll_idle = 0;
 	return G_SOURCE_REMOVE;
 }
 
@@ -1688,6 +1706,10 @@ goto_line (GTask *loading_task)
 	if (data->tab->scroll_timeout == 0)
 	{
 		data->tab->scroll_timeout = g_timeout_add (250, (GSourceFunc)scroll_to_cursor, data->tab);
+	}
+	if (data->tab->scroll_idle == 0)
+	{
+		data->tab->scroll_idle = g_idle_add ((GSourceFunc)scroll_idle_cb, data->tab);
 	}
 }
 
