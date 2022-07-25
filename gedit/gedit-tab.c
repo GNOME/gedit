@@ -1036,7 +1036,7 @@ should_show_progress_info (GTimer  **timer,
 }
 
 static gboolean
-scroll_to_cursor (GeditTab *tab)
+scroll_timeout_cb (GeditTab *tab)
 {
 	//GeditView *view;
 
@@ -1053,6 +1053,11 @@ static gboolean
 scroll_idle_cb (GeditTab *tab)
 {
 	g_message ("%s()", G_STRFUNC);
+
+	if (tab->scroll_timeout == 0)
+	{
+		tab->scroll_timeout = g_timeout_add (250, (GSourceFunc)scroll_timeout_cb, tab);
+	}
 
 	tab->scroll_idle = 0;
 	return G_SOURCE_REMOVE;
@@ -1703,10 +1708,6 @@ goto_line (GTask *loading_task)
 	 * an idle as after the document is loaded the textview is still
 	 * redrawing and relocating its internals.
 	 */
-	if (data->tab->scroll_timeout == 0)
-	{
-		data->tab->scroll_timeout = g_timeout_add (250, (GSourceFunc)scroll_to_cursor, data->tab);
-	}
 	if (data->tab->scroll_idle == 0)
 	{
 		data->tab->scroll_idle = g_idle_add ((GSourceFunc)scroll_idle_cb, data->tab);
