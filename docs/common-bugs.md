@@ -28,8 +28,10 @@ the content.
 
 [GitLab issue](https://gitlab.gnome.org/GNOME/gedit/issues/365).
 
-View does not scroll to the end of the text in some cases (text cut off)
-------------------------------------------------------------------------
+Recently fixed
+--------------
+
+### View does not scroll to the end of the text in some cases (text cut off)
 
 Fixed in git master, will normally be rolled out soon.
 
