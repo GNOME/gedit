@@ -1710,7 +1710,8 @@ goto_line (GTask *loading_task)
 	 * an idle as after the document is loaded the textview is still
 	 * redrawing and relocating its internals.
 	 */
-	if (data->tab->scroll_idle == 0)
+	if (data->tab->scroll_idle == 0 &&
+	    !gtk_text_iter_is_start (&iter))
 	{
 		data->tab->scroll_idle = g_idle_add ((GSourceFunc)scroll_idle_cb, data->tab);
 	}
