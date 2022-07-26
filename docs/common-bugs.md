@@ -31,7 +31,6 @@ the content.
 View does not scroll to the end of the text in some cases (text cut off)
 ------------------------------------------------------------------------
 
-[GitLab issue](https://gitlab.gnome.org/GNOME/gedit/issues/42).
+Fixed in git master, will normally be rolled out soon.
 
-See [this comment](https://gitlab.gnome.org/GNOME/gedit/-/issues/42#note_774722)
-and the following, disabling GTK animations fixes the bug.
+[GitLab issue](https://gitlab.gnome.org/GNOME/gedit/issues/42).
