@@ -77,24 +77,38 @@ _gedit_cmd_help_contents (GeditWindow *window)
 void
 _gedit_cmd_help_about (GeditWindow *window)
 {
-	/* Top 5 authors (to not have a too long list), by relative contribution
-	 * (number of commits at the time of writing).
-	 */
 	static const gchar * const authors[] = {
-		"Paolo Borelli",
-		"Sébastien Wilmet",
-		"Ignacio Casal Quinteiro",
-		"Jesse van den Kieboom",
-		"Paolo Maggi",
-		"and many others.",
+		/* Main authors: the top 5 (to not have a too long list), by
+		 * relative contribution (number of commits at the time of
+		 * writing).
+		 */
+		"Main authors:",
+		"   Paolo Borelli",
+		"   Sébastien Wilmet",
+		"   Ignacio Casal Quinteiro",
+		"   Jesse van den Kieboom",
+		"   Paolo Maggi",
+		"",
+		"Many thanks also to:",
+		"   Alex Roberts",
+		"   Chema Celorio",
+		"   Evan Lawrence",
+		"   Federico Mena Quintero",
+		"   Garrett Regier",
+		"   James Willcox",
+		"   Sébastien Lafargue",
+		"   Steve Frécinaux",
+		"",
+		"   and many other contributors.",
+		"",
 		NULL
 	};
 
 	static const gchar * const documenters[] = {
-		"Jim Campbell <jwcampbell@gmail.com>",
-		"Daniel Neel <dneelyep@gmail.com>",
-		"Sun GNOME Documentation Team <gdocteam@sun.com>",
-		"Eric Baudais <baudais@okstate.edu>",
+		"Daniel Neel",
+		"Eric Baudais",
+		"Jim Campbell",
+		"Sun GNOME Documentation Team",
 		NULL
 	};
 
