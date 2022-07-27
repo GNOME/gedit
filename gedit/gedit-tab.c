@@ -1058,7 +1058,11 @@ scroll_idle_cb (GeditTab *tab)
 	 */
 	if (tab->scroll_timeout == 0)
 	{
-		tab->scroll_timeout = g_timeout_add (250, (GSourceFunc)scroll_timeout_cb, tab);
+		/* Same number of ms as GtkSearchEntry::search-changed delay.
+		 * Small enough to not be noticeable, but needs to be at least a
+		 * few frames from the GdkFrameClock (during app startup).
+		 */
+		tab->scroll_timeout = g_timeout_add (150, (GSourceFunc)scroll_timeout_cb, tab);
 	}
 
 	tab->scroll_idle = 0;
