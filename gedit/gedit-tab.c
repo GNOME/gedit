@@ -60,7 +60,8 @@ struct _GeditTab
 
 	GtkSourceFileSaverFlags save_flags;
 
-	guint idle_scroll;
+	guint scroll_timeout;
+	guint scroll_idle;
 
 	gint auto_save_interval;
 	guint auto_save_timeout;
@@ -333,10 +334,16 @@ gedit_tab_dispose (GObject *object)
 
 	remove_auto_save_timeout (tab);
 
-	if (tab->idle_scroll != 0)
+	if (tab->scroll_timeout != 0)
 	{
-		g_source_remove (tab->idle_scroll);
-		tab->idle_scroll = 0;
+		g_source_remove (tab->scroll_timeout);
+		tab->scroll_timeout = 0;
+	}
+
+	if (tab->scroll_idle != 0)
+	{
+		g_source_remove (tab->scroll_idle);
+		tab->scroll_idle = 0;
 	}
 
 	if (tab->cancellable != NULL)
@@ -1040,14 +1047,36 @@ should_show_progress_info (GTimer  **timer,
 }
 
 static gboolean
-scroll_to_cursor (GeditTab *tab)
+scroll_timeout_cb (GeditTab *tab)
 {
 	GeditView *view;
 
 	view = gedit_tab_get_view (tab);
 	gedit_view_scroll_to_cursor (view);
 
-	tab->idle_scroll = 0;
+	tab->scroll_timeout = 0;
+	return G_SOURCE_REMOVE;
+}
+
+static gboolean
+scroll_idle_cb (GeditTab *tab)
+{
+	/* The idle is not enough, for a detailed analysis of this, see:
+	 * https://wiki.gnome.org/Apps/Gedit/FixingTextCutOffBug
+	 * or the commit message that changed this.
+	 * (here it's a hack, a proper solution in GTK/GtkTextView should be
+	 * found).
+	 */
+	if (tab->scroll_timeout == 0)
+	{
+		/* Same number of ms as GtkSearchEntry::search-changed delay.
+		 * Small enough to not be noticeable, but needs to be at least a
+		 * few frames from the GdkFrameClock (during app startup).
+		 */
+		tab->scroll_timeout = g_timeout_add (150, (GSourceFunc)scroll_timeout_cb, tab);
+	}
+
+	tab->scroll_idle = 0;
 	return G_SOURCE_REMOVE;
 }
 
@@ -1641,48 +1670,68 @@ goto_line (GTask *loading_task)
 {
 	LoaderData *data = g_task_get_task_data (loading_task);
 	GeditDocument *doc = gedit_tab_get_document (data->tab);
+	gboolean check_is_cursor_position = FALSE;
 	GtkTextIter iter;
 
-	/* Move the cursor at the requested line if any. */
+	/* To the top by default. */
+	gtk_text_buffer_get_start_iter (GTK_TEXT_BUFFER (doc), &iter);
+
+	/* At the requested line/column if set. */
 	if (data->line_pos > 0)
 	{
-		gedit_document_goto_line_offset (doc,
-						 data->line_pos - 1,
-						 MAX (0, data->column_pos - 1));
-		return;
+		gtk_text_buffer_get_iter_at_line_offset (GTK_TEXT_BUFFER (doc),
+							 &iter,
+							 data->line_pos - 1,
+							 MAX (0, data->column_pos - 1));
+		check_is_cursor_position = TRUE;
 	}
 
-	/* If enabled, move to the position stored in the metadata. */
-	if (g_settings_get_boolean (data->tab->editor_settings, GEDIT_SETTINGS_RESTORE_CURSOR_POSITION))
+	/* From metadata. */
+	else if (g_settings_get_boolean (data->tab->editor_settings,
+					 GEDIT_SETTINGS_RESTORE_CURSOR_POSITION))
 	{
-		gchar *pos;
-		gint offset;
+		gchar *position_str;
+		guint64 offset = 0;
 
-		pos = gedit_document_get_metadata (doc, GEDIT_METADATA_ATTRIBUTE_POSITION);
+		position_str = gedit_document_get_metadata (doc, GEDIT_METADATA_ATTRIBUTE_POSITION);
 
-		offset = pos != NULL ? atoi (pos) : 0;
-		g_free (pos);
-
-		gtk_text_buffer_get_iter_at_offset (GTK_TEXT_BUFFER (doc),
-						    &iter,
-						    MAX (0, offset));
-
-		/* make sure it's a valid position, if the file
-		 * changed we may have ended up in the middle of
-		 * a utf8 character cluster */
-		if (!gtk_text_iter_is_cursor_position (&iter))
+		if (position_str != NULL &&
+		    g_ascii_string_to_unsigned (position_str,
+						10,
+						0,
+						G_MAXINT,
+						&offset,
+						NULL))
 		{
-			gtk_text_iter_set_line_offset (&iter, 0);
+			gtk_text_buffer_get_iter_at_offset (GTK_TEXT_BUFFER (doc),
+							    &iter,
+							    (gint) offset);
+			check_is_cursor_position = TRUE;
 		}
+
+		g_free (position_str);
 	}
 
-	/* Otherwise to the top. */
-	else
+	/* Make sure it's a valid position, to not end up in the middle of a
+	 * utf8 character cluster.
+	 */
+	if (check_is_cursor_position &&
+	    !gtk_text_iter_is_cursor_position (&iter))
 	{
-		gtk_text_buffer_get_start_iter (GTK_TEXT_BUFFER (doc), &iter);
+		gtk_text_iter_set_line_offset (&iter, 0);
 	}
 
 	gtk_text_buffer_place_cursor (GTK_TEXT_BUFFER (doc), &iter);
+
+	/* Scroll to the cursor when the document is loaded, we need to do it in
+	 * an idle as after the document is loaded the textview is still
+	 * redrawing and relocating its internals.
+	 */
+	if (data->tab->scroll_idle == 0 &&
+	    !gtk_text_iter_is_start (&iter))
+	{
+		data->tab->scroll_idle = g_idle_add ((GSourceFunc)scroll_idle_cb, data->tab);
+	}
 }
 
 static gboolean
@@ -1746,15 +1795,6 @@ successful_load (GTask *loading_task)
 	}
 
 	goto_line (loading_task);
-
-	/* Scroll to the cursor when the document is loaded, we need to do it in
-	 * an idle as after the document is loaded the textview is still
-	 * redrawing and relocating its internals.
-	 */
-	if (data->tab->idle_scroll == 0)
-	{
-		data->tab->idle_scroll = g_idle_add ((GSourceFunc)scroll_to_cursor, data->tab);
-	}
 
 	location = gtk_source_file_loader_get_location (data->loader);
 
