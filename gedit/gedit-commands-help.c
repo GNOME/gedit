@@ -77,7 +77,7 @@ _gedit_cmd_help_contents (GeditWindow *window)
 void
 _gedit_cmd_help_about (GeditWindow *window)
 {
-	static const gchar * const authors[] = {
+	const gchar * const authors[] = {
 		/* Main authors: the top 5 (to not have a too long list), by
 		 * relative contribution (number of commits at the time of
 		 * writing).
