@@ -82,14 +82,14 @@ _gedit_cmd_help_about (GeditWindow *window)
 		 * relative contribution (number of commits at the time of
 		 * writing).
 		 */
-		"Main authors:",
+		_("Main authors:"),
 		"   Paolo Borelli",
 		"   Sébastien Wilmet",
 		"   Ignacio Casal Quinteiro",
 		"   Jesse van den Kieboom",
 		"   Paolo Maggi",
 		"",
-		"Many thanks also to:",
+		_("Many thanks also to:"),
 		"   Alex Roberts",
 		"   Chema Celorio",
 		"   Evan Lawrence",
@@ -99,7 +99,7 @@ _gedit_cmd_help_about (GeditWindow *window)
 		"   Sébastien Lafargue",
 		"   Steve Frécinaux",
 		"",
-		"   and many other contributors.",
+		_("and many other contributors."),
 		"",
 		NULL
 	};
