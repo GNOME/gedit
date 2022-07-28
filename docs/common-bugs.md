@@ -33,6 +33,6 @@ Recently fixed
 
 ### View does not scroll to the end of the text in some cases (text cut off)
 
-Fixed in git master, will normally be rolled out soon.
+Fixed in git master and 42.2, will normally be rolled out soon.
 
 [GitLab issue](https://gitlab.gnome.org/GNOME/gedit/issues/42).
