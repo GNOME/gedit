@@ -5,24 +5,24 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gedit 0\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gedit/issues\n"
-"POT-Creation-Date: 2022-02-14 13:34+0000\n"
-"PO-Revision-Date: 2022-02-15 12:26+0100\n"
+"POT-Creation-Date: 2022-08-06 15:27+0000\n"
+"PO-Revision-Date: 2022-08-22 13:27+0200\n"
 "Last-Translator: gogo <trebelnik2@gmail.com>\n"
 "Language-Team: Croatian <lokalizacija@linux.hr>\n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Launchpad-Export-Date: 2016-09-22 10:43+0000\n"
-"X-Generator: Poedit 2.3\n"
+"X-Generator: Poedit 3.1.1\n"
 
-#: data/org.gnome.gedit.appdata.xml.in:7
+#: data/org.gnome.gedit.appdata.xml.in:7 data/org.gnome.gedit.desktop.in:3
 msgid "gedit"
 msgstr "gedit"
 
-#: data/org.gnome.gedit.appdata.xml.in:8 data/org.gnome.gedit.desktop.in:4
+#: data/org.gnome.gedit.appdata.xml.in:8 data/org.gnome.gedit.desktop.in:5
 msgid "Edit text files"
 msgstr "Uređivanje tekstovnih datoteka"
 
@@ -38,22 +38,22 @@ msgstr ""
 "Glavni cilj gedita je jednostavnost korištenja, sa zadanim jednostavnim "
 "sučeljem. Naprednije značajke su dostupne omogućavanjem priključaka."
 
-#: data/org.gnome.gedit.desktop.in:3 gedit/gedit-print-job.c:731
+#: data/org.gnome.gedit.desktop.in:4 gedit/gedit-print-job.c:731
 msgid "Text Editor"
 msgstr "Uređivač teksta"
 
 #. TRANSLATORS: Do NOT translate or localize the semicolons!
 #. The list MUST also end with a semicolon!
 #. Search terms to find this application.
-#: data/org.gnome.gedit.desktop.in:18
+#: data/org.gnome.gedit.desktop.in:19
 msgid "Text;Editor;Plaintext;Write;gedit;notepad;"
 msgstr "Tekst;Uređivač;Običan tekst;Piši;gedit;notes;"
 
-#: data/org.gnome.gedit.desktop.in:22
+#: data/org.gnome.gedit.desktop.in:23
 msgid "New Window"
 msgstr "Novi prozor"
 
-#: data/org.gnome.gedit.desktop.in:26
+#: data/org.gnome.gedit.desktop.in:27
 msgid "New Document"
 msgstr "Novi dokument"
 
@@ -156,9 +156,9 @@ msgid ""
 "make sure they appear exactly as mentioned here."
 msgstr ""
 "Određuje kako će se prelomiti dugi redci u području uređivanja. Koristite "
-"\"none\" - bez prijeloma, \"word\" za prijelom na granicama riječi i \"char"
-"\" za prijelom na granicama znakova. Vrijednosti su osjetljive na velika i "
-"mala slova, stoga pazite da se pojavljuju na isti način kao i ovdje."
+"\"none\" - bez prijeloma, \"word\" za prijelom na granicama riječi i "
+"\"char\" za prijelom na granicama znakova. Vrijednosti su osjetljive na "
+"velika i mala slova, stoga pazite da se pojavljuju na isti način kao i ovdje."
 
 #: data/org.gnome.gedit.gschema.xml.in:86
 msgid "Last split mode choice for line wrapping mode"
@@ -332,9 +332,9 @@ msgid ""
 "when there is more than one tab. Note that the values are case-sensitive, so "
 "make sure they appear exactly as mentioned here."
 msgstr ""
-"Određuje kako će se prikazivati kartice na prijenosnicima. Koristite \"nikad"
-"\" - nikad se ne prikazuju, \"uvijek\" uvijek se prikazuju i \"auto\" kako "
-"bi se kartice prikazivale samo ako ih je više od jedne. Vrijednosti su "
+"Određuje kako će se prikazivati kartice na prijenosnicima. Koristite "
+"\"nikad\" - nikad se ne prikazuju, \"uvijek\" uvijek se prikazuju i \"auto\" "
+"kako bi se kartice prikazivale samo ako ih je više od jedne. Vrijednosti su "
 "osjetljive na velika i mala slova, stoga pazite da se pojavljuju na isti "
 "način kao i ovdje."
 
@@ -889,11 +889,11 @@ msgstr[2] ""
 msgid "_Revert"
 msgstr "_Vrati u izvorno stanje"
 
-#: gedit/gedit-commands-help.c:110
+#: gedit/gedit-commands-help.c:120
 msgid "gedit is a small and lightweight text editor for the GNOME desktop"
 msgstr "gedit je mali i jednostavni uređivač teksta za GNOME radno okruženje"
 
-#: gedit/gedit-commands-help.c:115
+#: gedit/gedit-commands-help.c:125
 msgid "translator-credits"
 msgstr ""
 "lokalizacija@linux.hr\n"
@@ -1466,64 +1466,64 @@ msgstr[2] "Postoji %d Tab razmaka s greškama"
 
 #. Translators: the first %s is a file name (e.g. test.txt) the second one
 #. is a directory (e.g. ssh://master.gnome.org/home/users/paolo)
-#: gedit/gedit-tab.c:834
+#: gedit/gedit-tab.c:841
 #, c-format
 msgid "Reverting %s from %s"
 msgstr "Vraćanje u izvorno stanje %s iz %s"
 
-#: gedit/gedit-tab.c:841
+#: gedit/gedit-tab.c:848
 #, c-format
 msgid "Reverting %s"
 msgstr "Vraćanje u izvorno stanje %s"
 
 #. Translators: the first %s is a file name (e.g. test.txt) the second one
 #. is a directory (e.g. ssh://master.gnome.org/home/users/paolo)
-#: gedit/gedit-tab.c:854
+#: gedit/gedit-tab.c:861
 #, c-format
 msgid "Loading %s from %s"
 msgstr "Učitavanje %s iz %s"
 
-#: gedit/gedit-tab.c:861
+#: gedit/gedit-tab.c:868
 #, c-format
 msgid "Loading %s"
 msgstr "Učitavanje %s"
 
 #. Translators: the first %s is a file name (e.g. test.txt) the second one
 #. is a directory (e.g. ssh://master.gnome.org/home/users/paolo)
-#: gedit/gedit-tab.c:941
+#: gedit/gedit-tab.c:948
 #, c-format
 msgid "Saving %s to %s"
 msgstr "Spremanje %s u %s"
 
-#: gedit/gedit-tab.c:946
+#: gedit/gedit-tab.c:953
 #, c-format
 msgid "Saving %s"
 msgstr "Spremanje %s"
 
-#: gedit/gedit-tab.c:1494
+#: gedit/gedit-tab.c:1523
 #, c-format
 msgid "Error opening file %s"
 msgstr "Greška pri otvaranju datoteke %s"
 
-#: gedit/gedit-tab.c:1499
+#: gedit/gedit-tab.c:1528
 #, c-format
 msgid "Error reverting file %s"
 msgstr "Greška pri vraćanju datoteke %s u izvorno stanje"
 
-#: gedit/gedit-tab.c:1504
+#: gedit/gedit-tab.c:1533
 #, c-format
 msgid "Error saving file %s"
 msgstr "Greška pri spremanju datoteke %s"
 
-#: gedit/gedit-tab.c:1535
+#: gedit/gedit-tab.c:1564
 msgid "Name:"
 msgstr "Naziv:"
 
-#: gedit/gedit-tab.c:1536
+#: gedit/gedit-tab.c:1565
 msgid "MIME Type:"
 msgstr "MIME vrsta:"
 
-#: gedit/gedit-tab.c:1537
+#: gedit/gedit-tab.c:1566
 msgid "Encoding:"
 msgstr "Kôdna stranica:"
 
@@ -1854,8 +1854,8 @@ msgstr "_Priručnik"
 
 #: gedit/resources/gtk/menus-common.ui:394 gedit/resources/gtk/menus.ui:127
 #: gedit/resources/gtk/menus-traditional.ui:123
-msgid "_About Text Editor"
-msgstr "_O Uređivaču teksta"
+msgid "_About gedit"
+msgstr "_O geditu"
 
 #: gedit/resources/gtk/menus.ui:41 gedit/resources/gtk/menus-traditional.ui:37
 msgid "Save _All"
