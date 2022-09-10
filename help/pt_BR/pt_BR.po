@@ -9,27 +9,26 @@
 # Krix Apolinário <krixapolinario@gmail.com>, 2009.
 # Rodrigo L. M. Flores <mail@rodrigoflores.org>, 2009.
 # Jose Carlos Menezes <jcmenezes.91@gmail.com>, 2013.
-# Enrico Nicoletto <liverig@gmail.com>, 2013.
 # Felipe Braga <fbobraga@gmail.com>, 2015.
 # Fábio Nogueira <fnogueira@gnome.org>, 2020.
 # Rafael Fontenelle <rafaelff@gnome.org>, 2013-2020.
 # Bruno Lopes <brunolopesdsilv@gmail.com>, 2021.
+# Enrico Nicoletto <hiko@duck.com>, 2013, 2022.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gedit-help\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=gedit&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2020-11-20 05:37+0000\n"
-"PO-Revision-Date: 2021-02-12 11:18-0300\n"
-"Last-Translator: Bruno Lopes <brunolopesdsilv@gmail.com>\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gedit/issues\n"
+"POT-Creation-Date: 2022-08-22 11:34+0000\n"
+"PO-Revision-Date: 2022-09-10 09:52-0300\n"
+"Last-Translator: Enrico Nicoletto <hiko@duck.com>\n"
 "Language-Team: Brazilian Portuguese <gnome-pt_br-list@gnome.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1)\n"
-"X-Generator: Gtranslator 3.36.0\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.0.1\n"
 "X-Project-Style: gnome\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
@@ -43,7 +42,7 @@ msgstr ""
 "Fabricio Godoy <skarllot@gmail.com>, 2008\n"
 "Krix Apolinário <krixapolinario@gmail.com>, 2009\n"
 "José Carlos Menezes <jcmenezes.91@gmail.com>, 2013\n"
-"Enrico Nicoletto <liverig@gmail.com>, 2013, 2014\n"
+"Enrico Nicoletto <hiko@duck.com>, 2013, 2014, 2022\n"
 "Rafael Fontenelle <rafaelff@gnome.org>, 2013-2020\n"
 "Bruno Lopes <brunolopesdsilv@gmail.com>, 2021."
 
@@ -187,8 +186,6 @@ msgstr "Para alterar a fonte padrão no <app>gedit</app>:"
 # Mensagens de etapas de procedimento geralmente têm ponto ".", motivo pelo qual acrescentei intencionalmente o ponto
 #. (itstool) path: item/p
 #: C/gedit-change-default-font.page:32
-#| msgid ""
-#| "Uncheck the box next to the phrase, \"Use the system fixed-width font.\""
 msgid ""
 "Uncheck the box next to the phrase, \"Use the system fixed width font.\""
 msgstr ""
@@ -217,7 +214,6 @@ msgstr ""
 
 #. (itstool) path: item/p
 #: C/gedit-change-default-font.page:39
-#| msgid "Click <gui>Select</gui>, and then click <gui>Close</gui>."
 msgid "Click <gui>Select</gui>, and then close the dialog."
 msgstr "Clique <gui>Selecionar</gui> e então feche a janela."
 
@@ -234,10 +230,6 @@ msgstr "Fechando um arquivo"
 # Pelo "Ctrl + S" entendi que não trata-se de um kill do programa mas simplesmente o fechamento (salvamento) do arquivo.
 #. (itstool) path: page/p
 #: C/gedit-close-file.page:20
-#| msgid ""
-#| "To save a file in <app>gedit</app>, click on the <gui style=\"button"
-#| "\">Save</gui> button on the right side of the toolbar or just press "
-#| "<keyseq><key>Ctrl</key><key>S</key></keyseq>."
 msgid ""
 "To close a file in <app>gedit</app>, click the <gui style=\"button\">×</gui> "
 "that appears on the right-side of the file's tab, or press "
@@ -278,10 +270,6 @@ msgstr "Criando um novo arquivo"
 
 #. (itstool) path: page/p
 #: C/gedit-create-new-file.page:24
-#| msgid ""
-#| "The easiest way to create a new file in <app>gedit</app>, is to click the "
-#| "<gui>Create a new document</gui> button on the left side of the toolbar, "
-#| "or press <keyseq><key>Ctrl</key><key>T</key></keyseq>."
 msgid ""
 "The easiest way to create a new file in <app>gedit</app>, is to click the "
 "<gui>Create a new document</gui> button on the left side of the header bar, "
@@ -392,9 +380,6 @@ msgstr "Operações básicas: abrir, fechar e salvar arquivos"
 
 #. (itstool) path: page/p
 #: C/gedit-files-basic.page:18
-#| msgid ""
-#| "If you are new to <app>gedit</app>, these topics will help you with "
-#| "creating, saving, and opening and closing files."
 msgid ""
 "If you are new to <app>gedit</app>, these topics will help you with "
 "creating, saving, opening and closing files."
@@ -706,7 +691,6 @@ msgstr "Na barra de título, clique em <gui>Abrir</gui>."
 
 #. (itstool) path: item/p
 #: C/gedit-open-on-server.page:33
-#| msgid "Click <gui>Other Documents…</gui>."
 msgid "Click <gui>Other Locations</gui>."
 msgstr "Clique em <gui>Outros locais…</gui>."
 
@@ -736,9 +720,6 @@ msgstr "Clique em <gui>Abrir</gui>."
 
 #. (itstool) path: page/p
 #: C/gedit-open-on-server.page:42
-#| msgid ""
-#| "Valid types of URI include http:, ftp:, file:, and all of the methods "
-#| "supported by <app>gvfs</app>."
 msgid ""
 "Valid types of URI include http:, ftp:, file:, and all of the methods "
 "supported by <app>GVfs</app>."
@@ -762,7 +743,6 @@ msgstr ""
 
 #. (itstool) path: info/desc
 #: C/gedit-open-recent.page:7
-#| msgid "Access files that you have updated recently."
 msgid "Access files that you have previously opened in <app>gedit</app>."
 msgstr "Acesse arquivos que você abriu recentemente no <app>gedit</app>."
 
@@ -774,9 +754,6 @@ msgstr "Abrindo novamente um arquivo recentemente usado"
 # A parte "that have been previously..." é pleonástica. Omiti-a.
 #. (itstool) path: page/p
 #: C/gedit-open-recent.page:20
-#| msgid ""
-#| "By default, <app>gedit</app> provides easy access to five of your most "
-#| "recently-used files. Here is how you can open a recently-used file:"
 msgid ""
 "<app>gedit</app> provides easy access to your ten most recently-used files, "
 "that have been previously opened in <app>gedit</app>. Here is how you can "
@@ -787,7 +764,6 @@ msgstr ""
 
 #. (itstool) path: item/p
 #: C/gedit-open-recent.page:24
-#| msgid "Click the arrow button next to the <gui>Open</gui> button."
 msgid ""
 "Click the arrow button next to the <gui>Open</gui> button in the header bar."
 msgstr ""
@@ -795,8 +771,6 @@ msgstr ""
 
 #. (itstool) path: item/p
 #: C/gedit-open-recent.page:26
-#| msgid ""
-#| "<app>gedit</app> will display a list of the five most-recently used files."
 msgid ""
 "<app>gedit</app> will display a menu with the ten most recently-used files."
 msgstr ""
@@ -1098,11 +1072,6 @@ msgstr "Painel de navegação de arquivos"
 
 #. (itstool) path: page/p
 #: C/gedit-plugins-file-browser.page:23
-#| msgid ""
-#| "Depending on how you use <app>gedit</app>, you may find it helpful to use "
-#| "the <app>File Browser pane</app> plugin. This plugin embeds a <app>file "
-#| "browser</app> in the side panel, giving you easy access to your "
-#| "frequently-used files."
 msgid ""
 "Depending on how you use <app>gedit</app>, you may find it helpful to use "
 "the <app>File Browser panel</app> plugin. This plugin embeds a <app>file "
@@ -1181,14 +1150,6 @@ msgstr ""
 
 #. (itstool) path: page/p
 #: C/gedit-plugins-insert-date-time.page:43
-#| msgid ""
-#| "By default, the <gui>Insert Date/Time</gui> plugin will prompt you to "
-#| "choose your preferred date/time format each time that you use the plugin. "
-#| "However, you can choose your own default date and time format by pressing "
-#| "the menu button in the top-right corner of the window and selecting "
-#| "<guiseq> <gui style=\"menuitem\">Preferences</gui><gui style=\"tab"
-#| "\">Plugins</gui><gui> Insert Date/Time</gui><gui style=\"button"
-#| "\">Configure</gui></guiseq>."
 msgid ""
 "By default, the <gui>Insert Date/Time</gui> plugin will prompt you to choose "
 "your preferred date/time format each time that you use the plugin. However, "
@@ -1692,9 +1653,6 @@ msgstr "O diretório do documento atualmente aberto"
 
 #. (itstool) path: item/p
 #: C/gedit-plugins-quick-open.page:51
-#| msgid ""
-#| "The root directory of the <app xref=\"gedit-plugins-file-browser\">File "
-#| "Browser Pane</app> plugin"
 msgid ""
 "The root directory of the <app xref=\"gedit-plugins-file-browser\">File "
 "Browser Panel</app> plugin"
@@ -2129,7 +2087,6 @@ msgstr "Para usar o plug-in <gui>Ordenar</gui>:"
 
 #. (itstool) path: item/p
 #: C/gedit-plugins-sort.page:55
-#| msgid "Drag and highlight the desired lines of text."
 msgid "Select the desired lines of text."
 msgstr "Destaque as linhas desejadas no texto."
 
@@ -2563,10 +2520,6 @@ msgstr ""
 
 #. (itstool) path: page/p
 #: C/gedit-quickstart.page:30
-#| msgid ""
-#| "Once <app>gedit</app> launches, you can start writing right away. To save "
-#| "your text, just click the <gui>Save</gui> icon in the <app>gedit</app> "
-#| "toolbar."
 msgid ""
 "Once <app>gedit</app> launches, you can start writing right away. To save "
 "your text, just click the <gui>Save</gui> button in the <app>gedit</app> "
@@ -2833,10 +2786,6 @@ msgstr "Salvando um arquivo"
 
 #. (itstool) path: page/p
 #: C/gedit-save-file.page:30
-#| msgid ""
-#| "To save a file in <app>gedit</app>, click on the <gui style=\"button"
-#| "\">Save</gui> button on the right side of the toolbar or just press "
-#| "<keyseq><key>Ctrl</key><key>S</key></keyseq>."
 msgid ""
 "To save a file in <app>gedit</app>, click on the <gui style=\"button\">Save</"
 "gui> button on the right side of the header bar or just press "
@@ -3291,19 +3240,12 @@ msgstr "Organizando arquivos em abas agrupadas"
 
 #. (itstool) path: page/p
 #: C/gedit-tab-groups.page:24
-#| msgid ""
-#| "If you are working with multiple tabs in <app>gedit</app> you can group "
-#| "them, making it easier to keep your opened files organized. Adding a new "
-#| "tab group will divide the <app>gedit</app> window in two panes, open a "
-#| "new \"Untitled Document\" in the new pane, and make it active. You can "
-#| "open files into that tab group and move tabs from one tab group to "
-#| "another."
 msgid ""
 "If you are working with multiple tabs in <app>gedit</app> you can group "
 "them, making it easier to keep your opened files organized. Adding a new tab "
 "group will divide the <app>gedit</app> window in two panes, open a new "
-"“Untitled File” in the new pane, and make it active. You can open files into "
-"that tab group and move tabs from one tab group to another."
+"“Untitled Document” in the new pane, and make it active. You can open files "
+"into that tab group and move tabs from one tab group to another."
 msgstr ""
 "Se você está trabalhando em múltiplas abas no <app>gedit</app>, você pode "
 "agrupá-las, deixando mais fácil manter organizados os seus arquivos abertos. "
@@ -3338,11 +3280,6 @@ msgstr ""
 
 #. (itstool) path: section/p
 #: C/gedit-tab-groups.page:45
-#| msgid ""
-#| "This action will divide the <app>gedit</app> window in two panes, and the "
-#| "pane with the new tab group will be placed on the right of the active "
-#| "tab. You can move the handle right or left assigning more or less space "
-#| "of <app>gedit</app> window between panes according to your needs."
 msgid ""
 "This action will divide the <app>gedit</app> window in two panes, and the "
 "pane with the new tab group will be placed on the right of the active tab. "
@@ -3357,10 +3294,6 @@ msgstr ""
 
 #. (itstool) path: section/p
 #: C/gedit-tab-groups.page:50
-#| msgid ""
-#| "You can open as much tab groups in <app>gedit</app> window as your screen "
-#| "allows, but you will have to move the handle in order to see them "
-#| "correctly."
 msgid ""
 "You can open as much tab groups in a <app>gedit</app> window as your screen "
 "allows, but you will have to move the handle in order to see them correctly."
@@ -3444,7 +3377,6 @@ msgstr "Para mudar a ordenação das abas em uma janela:"
 
 #. (itstool) path: item/p
 #: C/gedit-tabs-moving.page:48
-#| msgid "Move the tab to the desired position among the other tab."
 msgid "Move the tab to the desired position among the other tabs."
 msgstr "Mova a aba para a posição desejada entre as outras abas."
 
@@ -3540,9 +3472,6 @@ msgstr "Adicionando abas"
 
 #. (itstool) path: section/p
 #: C/gedit-tabs.page:44
-#| msgid ""
-#| "To add a new tab, create a new file with <keyseq><key>Ctrl</key> <key>T</"
-#| "key></keyseq>. The tab will be added to the right side of any other tabs."
 msgid ""
 "To add a new tab to create a new file, click the <gui>Create a new document</"
 "gui> button on the left side of the header bar, or press <keyseq><key>Ctrl</"
@@ -3561,10 +3490,6 @@ msgstr "Removendo abas"
 
 #. (itstool) path: section/p
 #: C/gedit-tabs.page:52
-#| msgid ""
-#| "To remove a tab, click the <gui style=\"button\">×</gui> on the tab's "
-#| "right side. To remove all open tabs, press <keyseq><key>Ctrl</key> "
-#| "<key>Shift</key><key>W</key></keyseq>."
 msgid ""
 "To remove a tab, click the <gui style=\"button\">×</gui> on the tab's right "
 "side, or press <keyseq><key>Ctrl</key><key>W</key></keyseq>. To remove all "
@@ -3583,15 +3508,11 @@ msgstr "Reverta uma alteração recente para um de seus arquivos."
 
 #. (itstool) path: page/title
 #: C/gedit-undo-redo.page:31
-#| msgid "Undo a recent action"
 msgid "Undo/redo a recent action"
 msgstr "Desfazendo/refazendo uma ação recente"
 
 #. (itstool) path: page/p
 #: C/gedit-undo-redo.page:33
-#| msgid ""
-#| "If you make a mistake while using <app>gedit</app>, you can undo it by "
-#| "pressing <keyseq><key>Ctrl</key><key>Z</key></keyseq>."
 msgid ""
 "If you make a mistake while editing a document in <app>gedit</app>, you can "
 "undo the change by pressing <keyseq><key>Ctrl</key><key>Z</key></keyseq>."
@@ -3609,7 +3530,6 @@ msgstr ""
 
 #. (itstool) path: page/p
 #: C/gedit-undo-redo.page:40
-#| msgid "<keyseq><key>Ctrl</key><key>Shift</key> <key>Z</key></keyseq>"
 msgid ""
 "To redo the change that was undone, press <keyseq><key>Ctrl</key><key>Shift</"
 "key><key>Z</key></keyseq>."
@@ -3641,12 +3561,6 @@ msgstr "<_:media-1/> Editor de texto gedit"
 
 #. (itstool) path: page/p
 #: C/index.page:30
-#| msgid ""
-#| "Welcome to the <app>gedit</app> help guide. For a quick introduction into "
-#| "both <app>gedit's</app> most basic features, as well as some advanced "
-#| "keyboard shortcuts, visit the <link xref=\"gedit-quickstart\">Get started "
-#| "with gedit</link> and <link xref=\"gedit-shortcut-keys\">Shortcut keys</"
-#| "link> pages."
 msgid ""
 "Welcome to the <app>gedit</app> help guide. For a quick introduction into "
 "<app>gedit's</app> most basic features, visit the <link xref=\"gedit-"
