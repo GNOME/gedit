@@ -1,7 +1,7 @@
 project(
   'gedit', 'c',
   version: '45.alpha',
-  meson_version: '>= 0.53'
+  meson_version: '>= 0.59'
 )
 
 if host_machine.system() == 'darwin'
@@ -88,7 +88,12 @@ endif
 meson.add_install_script(
   'build-aux/meson/post_install.py',
   get_option('prefix') / get_option('libdir'),
-  get_option('prefix') / get_option('datadir')
+)
+
+gnome.post_install(
+  glib_compile_schemas: true,
+  gtk_update_icon_cache: true,
+  update_desktop_database: true,
 )
 
 summary('API version', api_version)
