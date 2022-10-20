@@ -95,6 +95,7 @@ gedit_recent_configuration_init_default (GeditRecentConfiguration *config)
 	config->filter = gtk_recent_filter_new ();
 	gtk_recent_filter_add_application (config->filter, g_get_application_name ());
 	gtk_recent_filter_add_mime_type (config->filter, "text/plain");
+	gtk_recent_filter_add_mime_type (config->filter, "application/x-zerosize");
 	g_object_ref_sink (config->filter);
 
 	config->limit = 5;

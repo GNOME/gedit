@@ -161,7 +161,8 @@ class Popup(Gtk.Dialog):
             return True
 
         if platform.system() != 'Windows':
-            if Gio.content_type_is_a(content_type, 'text/plain'):
+            if (Gio.content_type_is_a(content_type, 'text/plain') or
+                Gio.content_type_equals(content_type, 'application/x-zerosize')):
                 return True
         else:
             if Gio.content_type_is_a(content_type, 'text'):

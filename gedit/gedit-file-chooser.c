@@ -67,8 +67,9 @@ mime_types_are_supported (void)
 }
 
 /* Returns: (transfer none) (element-type utf8): a list containing "text/plain"
- * first and then the list of mime-types unrelated to "text/plain" that
- * GtkSourceView supports for the syntax highlighting.
+ * and "application/x-zerosize" first and then the list of mime-types unrelated
+ * to "text/plain" and not equal to "application/x-zerosize" that GtkSourceView
+ * supports for the syntax highlighting.
  */
 static GSList *
 get_supported_mime_types (void)
@@ -106,7 +107,8 @@ get_supported_mime_types (void)
 		{
 			const gchar *cur_mime_type = mime_types[mime_type_num];
 
-			if (!g_content_type_is_a (cur_mime_type, "text/plain"))
+			if (!g_content_type_is_a (cur_mime_type, "text/plain") &&
+				!g_content_type_equals (cur_mime_type, "application/x-zerosize"))
 			{
 				//g_message ("Mime-type '%s' is not related to 'text/plain'", cur_mime_type);
 				supported_mime_types = g_slist_prepend (supported_mime_types,
@@ -116,6 +118,8 @@ get_supported_mime_types (void)
 
 		g_strfreev (mime_types);
 	}
+
+	supported_mime_types = g_slist_prepend (supported_mime_types, g_strdup ("application/x-zerosize"));
 
 	// Note that all "text/*" mime-types are subclasses of "text/plain", see:
 	// https://specifications.freedesktop.org/shared-mime-info-spec/shared-mime-info-spec-latest.html#subclassing
