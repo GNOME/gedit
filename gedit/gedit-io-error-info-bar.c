@@ -277,9 +277,6 @@ create_conversion_error_info_bar (const gchar *primary_msg,
 	msg_type = edit_anyway ? GTK_MESSAGE_WARNING : GTK_MESSAGE_ERROR;
 
 	info_bar = tepl_info_bar_new_simple (msg_type, primary_msg, secondary_msg);
-	tepl_info_bar_set_icon_from_message_type (info_bar, FALSE);
-
-	gtk_info_bar_set_show_close_button (GTK_INFO_BAR (info_bar), TRUE);
 
 	gtk_info_bar_add_button (GTK_INFO_BAR (info_bar),
 				 _("_Retry"),
@@ -288,9 +285,13 @@ create_conversion_error_info_bar (const gchar *primary_msg,
 	if (edit_anyway)
 	{
 		gtk_info_bar_add_button (GTK_INFO_BAR (info_bar),
-					 _("Edit Any_way"),
+					 _("_Edit Anyway"),
 					 GTK_RESPONSE_YES);
 	}
+
+	gtk_info_bar_add_button (GTK_INFO_BAR (info_bar),
+				 _("_Cancel"),
+				 GTK_RESPONSE_CLOSE);
 
 	add_encodings_combo_box (info_bar);
 
