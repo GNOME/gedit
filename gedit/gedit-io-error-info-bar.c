@@ -246,7 +246,7 @@ gedit_unrecoverable_reverting_error_info_bar_new (GFile        *location,
 
 	if (g_error_matches (error, G_IO_ERROR, G_IO_ERROR_NOT_FOUND))
 	{
-		secondary_msg = g_strdup (_("Cannot find the requested file. "
+		secondary_msg = g_strdup (_("File not found. "
 					    "Perhaps it has recently been deleted."));
 	}
 	else
