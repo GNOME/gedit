@@ -97,12 +97,12 @@ create_io_loading_error_info_bar (const gchar *primary_msg,
 
 static gboolean
 parse_gio_error (const GError  *error,
-		 gchar        **error_message,
-		 gchar        **message_details,
+		 gchar        **primary_msg,
+		 gchar        **secondary_msg,
 		 GFile         *location,
-		 const gchar   *uri_for_display)
+		 const gchar   *uri)
 {
-	gboolean ret = TRUE;
+	gboolean done = TRUE;
 
 	g_assert (error->domain == G_IO_ERROR);
 
@@ -114,35 +114,35 @@ parse_gio_error (const GError  *error,
 			 * the caller depending on the context (load, save,
 			 * etc).
 			 */
-			*message_details = g_strdup (error->message);
+			*secondary_msg = g_strdup (error->message);
 			break;
 
 		case G_IO_ERROR_NOT_FOUND:
-			*message_details = g_strdup (_("File not found."));
+			*secondary_msg = g_strdup (_("File not found."));
 			break;
 
 		case G_IO_ERROR_NOT_SUPPORTED:
 			{
 				gchar *scheme_string = NULL;
-				gchar *scheme_markup;
 
-				if (location)
+				if (location != NULL)
 				{
 					scheme_string = g_file_get_uri_scheme (location);
 				}
 
-				if ((scheme_string != NULL) && g_utf8_validate (scheme_string, -1, NULL))
+				if (scheme_string != NULL &&
+				    g_utf8_validate (scheme_string, -1, NULL))
 				{
-					scheme_markup = g_markup_escape_text (scheme_string, -1);
+					gchar *scheme_markup = g_markup_escape_text (scheme_string, -1);
 
 					/* Translators: %s is a URI scheme (like for example http:, ftp:, etc.) */
-					*message_details = g_strdup_printf (_("Unable to handle “%s:” locations."),
-									   scheme_markup);
+					*secondary_msg = g_strdup_printf (_("Unable to handle “%s:” locations."),
+									  scheme_markup);
 					g_free (scheme_markup);
 				}
 				else
 				{
-					*message_details = g_strdup (_("Unable to handle this location."));
+					*secondary_msg = g_strdup (_("Unable to handle this location."));
 				}
 
 				g_free (scheme_string);
@@ -151,21 +151,19 @@ parse_gio_error (const GError  *error,
 
 		case G_IO_ERROR_NOT_MOUNTABLE_FILE:
 		case G_IO_ERROR_NOT_MOUNTED:
-			*message_details = g_strdup (_("The location of the file cannot be accessed."));
+			*secondary_msg = g_strdup (_("The location of the file cannot be accessed."));
 			break;
 
 		case G_IO_ERROR_IS_DIRECTORY:
-			*error_message = g_strdup_printf (_("“%s” is a directory."),
-							 uri_for_display);
-			*message_details = g_strdup (_("Please check that you typed the "
-						      "location correctly and try again."));
+			*primary_msg = g_strdup_printf (_("“%s” is a directory."), uri);
+			*secondary_msg = g_strdup (_("Please check that you typed the "
+						     "location correctly and try again."));
 			break;
 
 		case G_IO_ERROR_INVALID_FILENAME:
-			*error_message = g_strdup_printf (_("“%s” is not a valid location."),
-							 uri_for_display);
-			*message_details = g_strdup (_("Please check that you typed the "
-						      "location correctly and try again."));
+			*primary_msg = g_strdup_printf (_("“%s” is not a valid location."), uri);
+			*secondary_msg = g_strdup (_("Please check that you typed the "
+						     "location correctly and try again."));
 			break;
 
 		case G_IO_ERROR_HOST_NOT_FOUND:
@@ -175,44 +173,44 @@ parse_gio_error (const GError  *error,
 			 * the proxy is set up wrong.
 			 */
 			{
+				gchar *file_uri = NULL;
 				gchar *hn = NULL;
-				gchar *uri = NULL;
 
-				if (location)
+				if (location != NULL)
 				{
-					uri = g_file_get_uri (location);
+					file_uri = g_file_get_uri (location);
 				}
 
-				if (uri && tepl_utils_decode_uri (uri, NULL, NULL, &hn, NULL, NULL))
+				if (file_uri != NULL &&
+				    tepl_utils_decode_uri (file_uri, NULL, NULL, &hn, NULL, NULL))
 				{
 					if (hn != NULL)
 					{
-						gchar *host_markup;
 						gchar *host_name;
+						gchar *host_markup;
 
 						host_name = g_utf8_make_valid (hn, -1);
-						g_free (hn);
-
 						host_markup = g_markup_escape_text (host_name, -1);
 						g_free (host_name);
 
-						*message_details = g_strdup_printf (
+						*secondary_msg = g_strdup_printf (
 							/* Translators: %s is a host name */
 							_("Host “%s” could not be found. "
-							"Please check that your proxy settings "
-							"are correct and try again."),
+							  "Please check that your proxy settings "
+							  "are correct and try again."),
 							host_markup);
 
 						g_free (host_markup);
 					}
 				}
 
-				g_free (uri);
+				g_free (file_uri);
+				g_free (hn);
 
-				if (!*message_details)
+				if (*secondary_msg == NULL)
 				{
-					/* use the same string as INVALID_HOST */
-					*message_details = g_strdup_printf (
+					/* Use the same string as INVALID_HOST. */
+					*secondary_msg = g_strdup_printf (
 						_("Hostname was invalid. "
 						  "Please check that you typed the location "
 						  "correctly and try again."));
@@ -221,41 +219,42 @@ parse_gio_error (const GError  *error,
 			break;
 
 		case G_IO_ERROR_TIMED_OUT:
-			*message_details = g_strdup (_("Connection timed out. Please try again."));
+			*secondary_msg = g_strdup (_("Connection timed out. Please try again."));
 			break;
 
 		default:
-			ret = FALSE;
+			done = FALSE;
 			break;
 	}
 
-	return ret;
+	return done;
 }
 
 static void
-parse_error (const GError *error,
-	     gchar       **error_message,
-	     gchar       **message_details,
-	     GFile        *location,
-	     const gchar  *uri_for_display)
+parse_error (const GError  *error,
+	     gchar        **primary_msg,
+	     gchar        **secondary_msg,
+	     GFile         *location,
+	     const gchar   *uri)
 {
-	gboolean ret = FALSE;
+	gboolean done = FALSE;
 
 	if (error->domain == G_IO_ERROR)
 	{
-		ret = parse_gio_error (error,
-				       error_message,
-				       message_details,
-				       location,
-				       uri_for_display);
+		done = parse_gio_error (error,
+					primary_msg,
+					secondary_msg,
+					location,
+					uri);
 	}
 
-	if (!ret)
+	if (!done)
 	{
 		g_warning ("Hit unhandled case %d (%s) in %s.",
 			   error->code, error->message, G_STRFUNC);
-		*message_details = g_strdup_printf (_("Unexpected error: %s"),
-						    error->message);
+
+		*secondary_msg = g_strdup_printf (_("Unexpected error: %s"),
+						  error->message);
 	}
 }
 
