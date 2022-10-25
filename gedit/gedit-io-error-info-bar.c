@@ -18,14 +18,27 @@
  * along with this program; if not, see <http://www.gnu.org/licenses/>.
  */
 
-/*
- * Verbose error reporting for file I/O operations (load, save, revert, create)
- */
-
 #include "gedit-io-error-info-bar.h"
 #include <glib/gi18n.h>
 #include <tepl/tepl.h>
 #include "gedit-encodings-combo-box.h"
+
+/* Verbose error reporting for file I/O operations (load, save, revert).
+ *
+ * For testing, not all I/O errors are easy to reproduce. Here is some
+ * documentation:
+ *
+ * G_IO_ERROR_NOT_REGULAR_FILE:
+ * Open for example /dev/null from the command line.
+ *
+ * G_IO_ERROR_IS_DIRECTORY:
+ * The easiest is from the command line.
+ *
+ * G_IO_ERROR_TIMED_OUT:
+ * For example configure your router to add an http(s) domain on the block list
+ * in the firewall. Then pass on the command line such an https:// address
+ * (normally GIO/GVfs is able to open https:// files) and wait 2 min.
+ */
 
 #define MAX_URI_IN_DIALOG_LENGTH 50
 
@@ -94,21 +107,6 @@ get_detailed_gio_error_messages (GFile         *location,
 
 	switch (error->code)
 	{
-		/* How to reproduce: try to open for example /dev/null from the
-		 * command line.
-		 */
-		case G_IO_ERROR_NOT_REGULAR_FILE:
-		/* How to reproduce: the easiest is from the command line. */
-		case G_IO_ERROR_IS_DIRECTORY:
-		/* How to reproduce: for example configure your router to add an
-		 * http(s) domain on the block list in the firewall. Then pass
-		 * on the command line such an https:// address (normally
-		 * GIO/GVfs is able to open https:// files) and wait 2 min.
-		 */
-		case G_IO_ERROR_TIMED_OUT:
-			/* The original error->message is good enough. */
-			break;
-
 		case G_IO_ERROR_NOT_FOUND:
 			*secondary_msg = g_strdup (_("File not found."));
 			break;
