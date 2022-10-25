@@ -295,12 +295,13 @@ gedit_unrecoverable_reverting_error_info_bar_new (GFile        *location,
 static void
 add_encodings_combo_box (TeplInfoBar *info_bar)
 {
-	GtkWidget *hbox;
+	GtkWidget *hgrid;
 	gchar *label_markup;
 	GtkWidget *label;
 	GtkWidget *combo_box;
 
-	hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 6);
+	hgrid = gtk_grid_new ();
+	gtk_grid_set_column_spacing (GTK_GRID (hgrid), 6);
 
 	label_markup = g_strdup_printf ("<small>%s</small>",
 					_("Ch_aracter Encoding:"));
@@ -314,20 +315,12 @@ add_encodings_combo_box (TeplInfoBar *info_bar)
 			   combo_box);
 
 	gtk_label_set_mnemonic_widget (GTK_LABEL (label), combo_box);
-	gtk_box_pack_start (GTK_BOX (hbox),
-			    label,
-			    FALSE,
-			    FALSE,
-			    0);
 
-	gtk_box_pack_start (GTK_BOX (hbox),
-			    combo_box,
-			    FALSE,
-			    FALSE,
-			    0);
+	gtk_container_add (GTK_CONTAINER (hgrid), label);
+	gtk_container_add (GTK_CONTAINER (hgrid), combo_box);
+	gtk_widget_show_all (hgrid);
 
-	gtk_widget_show_all (hbox);
-	tepl_info_bar_add_content_widget (info_bar, hbox, TEPL_INFO_BAR_LOCATION_ALONGSIDE_ICON);
+	tepl_info_bar_add_content_widget (info_bar, hgrid, TEPL_INFO_BAR_LOCATION_ALONGSIDE_ICON);
 }
 
 static GtkWidget *
