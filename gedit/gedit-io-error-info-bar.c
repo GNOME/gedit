@@ -474,7 +474,7 @@ gedit_unrecoverable_saving_error_info_bar_new (GFile        *location,
 	gchar *uri;
 	gchar *primary_msg = NULL;
 	gchar *secondary_msg = NULL;
-	GtkWidget *info_bar;
+	TeplInfoBar *info_bar;
 
 	g_return_val_if_fail (G_IS_FILE (location), NULL);
 	g_return_val_if_fail (error != NULL, NULL);
@@ -552,14 +552,13 @@ gedit_unrecoverable_saving_error_info_bar_new (GFile        *location,
 		primary_msg = g_strdup_printf (_("Could not save the file “%s”."), uri);
 	}
 
-	info_bar = create_io_loading_error_info_bar (primary_msg,
-						     secondary_msg,
-						     FALSE);
+	info_bar = tepl_info_bar_new_simple (GTK_MESSAGE_ERROR, primary_msg, secondary_msg);
+	gtk_info_bar_set_show_close_button (GTK_INFO_BAR (info_bar), TRUE);
 
 	g_free (uri);
 	g_free (primary_msg);
 	g_free (secondary_msg);
-	return info_bar;
+	return GTK_WIDGET (info_bar);
 }
 
 /* ex:set ts=8 noet: */
