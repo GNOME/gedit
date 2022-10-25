@@ -1,5 +1,4 @@
 /*
- * gedit-io-error-info-bar.c
  * This file is part of gedit
  *
  * Copyright (C) 2005 - Paolo Maggi
@@ -19,8 +18,8 @@
  */
 
 #include "gedit-io-error-info-bar.h"
-#include <glib/gi18n.h>
 #include <tepl/tepl.h>
+#include <glib/gi18n.h>
 #include "gedit-encodings-combo-box.h"
 
 /* Verbose error reporting for file I/O operations (load, save, revert).
