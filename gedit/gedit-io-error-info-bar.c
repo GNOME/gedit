@@ -61,12 +61,12 @@ is_gio_error (const GError *error,
 }
 
 static void
-set_contents (GtkWidget *area,
-	      GtkWidget *contents)
+set_contents (GtkInfoBar *info_bar,
+	      GtkWidget  *contents)
 {
 	GtkWidget *content_area;
 
-	content_area = gtk_info_bar_get_content_area (GTK_INFO_BAR (area));
+	content_area = gtk_info_bar_get_content_area (info_bar);
 	gtk_container_add (GTK_CONTAINER (content_area), contents);
 }
 
@@ -407,7 +407,7 @@ create_conversion_error_info_bar (const gchar *primary_text,
 
 	create_combo_box (info_bar, vbox);
 	gtk_widget_show_all (hbox_content);
-	set_contents (info_bar, hbox_content);
+	set_contents (GTK_INFO_BAR (info_bar), hbox_content);
 
 	return info_bar;
 }
