@@ -600,9 +600,8 @@ document_modified_changed (GtkTextBuffer *document,
 }
 
 static void
-set_info_bar (GeditTab        *tab,
-              GtkWidget       *info_bar,
-              GtkResponseType  default_response)
+set_info_bar (GeditTab  *tab,
+	      GtkWidget *info_bar)
 {
 	gedit_debug (DEBUG_TAB);
 
@@ -643,13 +642,6 @@ set_info_bar (GeditTab        *tab,
 		tab->info_bar = info_bar;
 		gtk_box_pack_start (GTK_BOX (tab), info_bar, FALSE, FALSE, 0);
 
-		/* Note this must be done after the info bar is added to the window */
-		if (default_response != GTK_RESPONSE_NONE)
-		{
-			gtk_info_bar_set_default_response (GTK_INFO_BAR (info_bar),
-			                                   default_response);
-		}
-
 		gtk_widget_show (info_bar);
 	}
 }
@@ -679,7 +671,7 @@ io_loading_error_info_bar_response (GtkWidget *info_bar,
 		case GTK_RESPONSE_OK:
 			encoding = gedit_conversion_error_info_bar_get_encoding (GTK_WIDGET (info_bar));
 
-			set_info_bar (data->tab, NULL, GTK_RESPONSE_NONE);
+			set_info_bar (data->tab, NULL);
 			gedit_tab_set_state (data->tab, GEDIT_TAB_STATE_LOADING);
 
 			launch_loader (loading_task, encoding);
@@ -688,7 +680,7 @@ io_loading_error_info_bar_response (GtkWidget *info_bar,
 		case GTK_RESPONSE_YES:
 			/* This means that we want to edit the document anyway */
 			set_editable (data->tab, TRUE);
-			set_info_bar (data->tab, NULL, GTK_RESPONSE_NONE);
+			set_info_bar (data->tab, NULL);
 			gedit_tab_set_state (data->tab, GEDIT_TAB_STATE_NORMAL);
 
 			g_task_return_boolean (loading_task, TRUE);
@@ -721,7 +713,7 @@ file_already_open_warning_info_bar_response (GtkWidget *info_bar,
 		set_editable (tab, TRUE);
 	}
 
-	set_info_bar (tab, NULL, GTK_RESPONSE_NONE);
+	set_info_bar (tab, NULL);
 
 	gtk_widget_grab_focus (GTK_WIDGET (view));
 }
@@ -749,7 +741,7 @@ unrecoverable_reverting_error_info_bar_response (GtkWidget *info_bar,
 
 	gedit_tab_set_state (data->tab, GEDIT_TAB_STATE_NORMAL);
 
-	set_info_bar (data->tab, NULL, GTK_RESPONSE_NONE);
+	set_info_bar (data->tab, NULL);
 
 	view = gedit_tab_get_view (data->tab);
 	gtk_widget_grab_focus (GTK_WIDGET (view));
@@ -866,7 +858,7 @@ show_loading_info_bar (GTask *loading_task)
 				 loading_task,
 				 0);
 
-	set_info_bar (data->tab, GTK_WIDGET (bar), GTK_RESPONSE_NONE);
+	set_info_bar (data->tab, GTK_WIDGET (bar));
 
 	g_free (msg);
 	g_free (name);
@@ -944,7 +936,7 @@ show_saving_info_bar (GTask *saving_task)
 
 	bar = tepl_progress_info_bar_new ("document-save", msg, FALSE);
 
-	set_info_bar (tab, GTK_WIDGET (bar), GTK_RESPONSE_NONE);
+	set_info_bar (tab, GTK_WIDGET (bar));
 
 	g_free (msg);
 	g_free (to);
@@ -1079,7 +1071,7 @@ unrecoverable_saving_error_info_bar_response (GtkWidget *info_bar,
 
 	gedit_tab_set_state (tab, GEDIT_TAB_STATE_NORMAL);
 
-	set_info_bar (tab, NULL, GTK_RESPONSE_NONE);
+	set_info_bar (tab, NULL);
 
 	view = gedit_tab_get_view (tab);
 	gtk_widget_grab_focus (GTK_WIDGET (view));
@@ -1128,7 +1120,7 @@ invalid_character_info_bar_response (GtkWidget *info_bar,
 		SaverData *data = g_task_get_task_data (saving_task);
 		GtkSourceFileSaverFlags save_flags;
 
-		set_info_bar (tab, NULL, GTK_RESPONSE_NONE);
+		set_info_bar (tab, NULL);
 
 		/* Don't bug the user again with this... */
 		tab->save_flags |= GTK_SOURCE_FILE_SAVER_FLAGS_IGNORE_INVALID_CHARS;
@@ -1157,7 +1149,7 @@ cant_create_backup_error_info_bar_response (GtkWidget *info_bar,
 		SaverData *data = g_task_get_task_data (saving_task);
 		GtkSourceFileSaverFlags save_flags;
 
-		set_info_bar (tab, NULL, GTK_RESPONSE_NONE);
+		set_info_bar (tab, NULL);
 
 		data->force_no_backup = TRUE;
 		save_flags = gtk_source_file_saver_get_flags (data->saver);
@@ -1183,7 +1175,7 @@ externally_modified_error_info_bar_response (GtkWidget *info_bar,
 		SaverData *data = g_task_get_task_data (saving_task);
 		GtkSourceFileSaverFlags save_flags;
 
-		set_info_bar (tab, NULL, GTK_RESPONSE_NONE);
+		set_info_bar (tab, NULL);
 
 		/* ignore_modification_time should not be persisted in save
 		 * flags across saves (i.e. tab->save_flags is not modified).
@@ -1212,7 +1204,7 @@ recoverable_saving_error_info_bar_response (GtkWidget *info_bar,
 		SaverData *data = g_task_get_task_data (saving_task);
 		const GtkSourceEncoding *encoding;
 
-		set_info_bar (tab, NULL, GTK_RESPONSE_NONE);
+		set_info_bar (tab, NULL);
 
 		encoding = gedit_conversion_error_info_bar_get_encoding (GTK_WIDGET (info_bar));
 		g_return_if_fail (encoding != NULL);
@@ -1233,7 +1225,7 @@ externally_modified_notification_info_bar_response (GtkWidget *info_bar,
 {
 	GeditView *view;
 
-	set_info_bar (tab, NULL, GTK_RESPONSE_NONE);
+	set_info_bar (tab, NULL);
 
 	view = gedit_tab_get_view (tab);
 
@@ -1271,7 +1263,7 @@ display_externally_modified_notification (GeditTab *tab)
 	document_modified = gtk_text_buffer_get_modified (GTK_TEXT_BUFFER (doc));
 	info_bar = tepl_io_error_info_bar_externally_modified (location, document_modified);
 
-	set_info_bar (tab, GTK_WIDGET (info_bar), GTK_RESPONSE_OK);
+	set_info_bar (tab, GTK_WIDGET (info_bar));
 
 	g_signal_connect (info_bar,
 			  "response",
@@ -1802,7 +1794,7 @@ successful_load (GTask *loading_task)
 				  G_CALLBACK (file_already_open_warning_info_bar_response),
 				  data->tab);
 
-		set_info_bar (data->tab, GTK_WIDGET (info_bar), GTK_RESPONSE_CANCEL);
+		set_info_bar (data->tab, GTK_WIDGET (info_bar));
 	}
 
 	/* When loading from stdin, the contents may not be saved, so set the
@@ -1852,7 +1844,7 @@ load_cb (GtkSourceFileLoader *loader,
 	g_return_if_fail (data->tab->state == GEDIT_TAB_STATE_LOADING ||
 			  data->tab->state == GEDIT_TAB_STATE_REVERTING);
 
-	set_info_bar (data->tab, NULL, GTK_RESPONSE_NONE);
+	set_info_bar (data->tab, NULL);
 
 	/* Special case creating a named new doc. */
 	create_named_new_doc = (_gedit_document_get_create (doc) &&
@@ -1886,7 +1878,7 @@ load_cb (GtkSourceFileLoader *loader,
 				  G_CALLBACK (io_loading_error_info_bar_response),
 				  loading_task);
 
-		set_info_bar (data->tab, info_bar, GTK_RESPONSE_CANCEL);
+		set_info_bar (data->tab, info_bar);
 
 		if (data->tab->state == GEDIT_TAB_STATE_LOADING)
 		{
@@ -1950,7 +1942,7 @@ load_cb (GtkSourceFileLoader *loader,
 					  loading_task);
 		}
 
-		set_info_bar (data->tab, info_bar, GTK_RESPONSE_CANCEL);
+		set_info_bar (data->tab, info_bar);
 
 		g_error_free (error);
 		return;
@@ -2224,7 +2216,7 @@ revert_async (GeditTab            *tab,
 
 	if (tab->state == GEDIT_TAB_STATE_EXTERNALLY_MODIFIED_NOTIFICATION)
 	{
-		set_info_bar (tab, NULL, GTK_RESPONSE_NONE);
+		set_info_bar (tab, NULL);
 	}
 
 	doc = gedit_tab_get_document (tab);
@@ -2276,7 +2268,7 @@ close_printing (GeditTab *tab)
 	g_clear_object (&tab->print_preview);
 
 	/* destroy the info bar */
-	set_info_bar (tab, NULL, GTK_RESPONSE_NONE);
+	set_info_bar (tab, NULL);
 
 	gedit_tab_set_state (tab, GEDIT_TAB_STATE_NORMAL);
 }
@@ -2324,7 +2316,7 @@ save_cb (GtkSourceFileSaver *saver,
 		data->timer = NULL;
 	}
 
-	set_info_bar (tab, NULL, GTK_RESPONSE_NONE);
+	set_info_bar (tab, NULL);
 
 	if (error != NULL)
 	{
@@ -2405,7 +2397,7 @@ save_cb (GtkSourceFileSaver *saver,
 					  saving_task);
 		}
 
-		set_info_bar (tab, info_bar, GTK_RESPONSE_CANCEL);
+		set_info_bar (tab, info_bar);
 	}
 	else
 	{
@@ -2525,7 +2517,7 @@ _gedit_tab_save_async (GeditTab            *tab,
 		/* We already told the user about the external modification:
 		 * hide the message bar and set the save flag.
 		 */
-		set_info_bar (tab, NULL, GTK_RESPONSE_NONE);
+		set_info_bar (tab, NULL);
 		save_flags |= GTK_SOURCE_FILE_SAVER_FLAGS_IGNORE_MODIFICATION_TIME;
 	}
 
@@ -2661,7 +2653,7 @@ _gedit_tab_save_as_async (GeditTab                 *tab,
 		/* We already told the user about the external modification:
 		 * hide the message bar and set the save flag.
 		 */
-		set_info_bar (tab, NULL, GTK_RESPONSE_NONE);
+		set_info_bar (tab, NULL);
 		save_flags |= GTK_SOURCE_FILE_SAVER_FLAGS_IGNORE_MODIFICATION_TIME;
 	}
 
@@ -2833,7 +2825,7 @@ show_preview_cb (GeditPrintJob     *job,
 	g_return_if_fail (tab->print_preview == NULL);
 
 	/* destroy the info bar */
-	set_info_bar (tab, NULL, GTK_RESPONSE_NONE);
+	set_info_bar (tab, NULL);
 
 	tab->print_preview = GTK_WIDGET (preview);
 	g_object_ref_sink (tab->print_preview);
@@ -2871,7 +2863,7 @@ add_printing_info_bar (GeditTab *tab)
 			  G_CALLBACK (print_cancelled),
 			  tab);
 
-	set_info_bar (tab, GTK_WIDGET (bar), GTK_RESPONSE_NONE);
+	set_info_bar (tab, GTK_WIDGET (bar));
 
 	/* hide until we start printing */
 	gtk_widget_hide (GTK_WIDGET (bar));
@@ -3085,7 +3077,7 @@ gedit_tab_set_info_bar (GeditTab  *tab,
 	g_return_if_fail (info_bar == NULL || GTK_IS_WIDGET (info_bar));
 
 	/* FIXME: this can cause problems with the tab state machine */
-	set_info_bar (tab, info_bar, GTK_RESPONSE_NONE);
+	set_info_bar (tab, info_bar);
 }
 
 GeditViewFrame *
