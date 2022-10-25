@@ -109,6 +109,7 @@ parse_gio_error (const GError  *error,
 	switch (error->code)
 	{
 		case G_IO_ERROR_NOT_REGULAR_FILE:
+		case G_IO_ERROR_IS_DIRECTORY:
 			/* The initial error message is good enough as a
 			 * secondary message. The primary message will be set by
 			 * the caller depending on the context (load, save,
@@ -152,12 +153,6 @@ parse_gio_error (const GError  *error,
 		case G_IO_ERROR_NOT_MOUNTABLE_FILE:
 		case G_IO_ERROR_NOT_MOUNTED:
 			*secondary_msg = g_strdup (_("The location of the file cannot be accessed."));
-			break;
-
-		case G_IO_ERROR_IS_DIRECTORY:
-			*primary_msg = g_strdup_printf (_("“%s” is a directory."), uri);
-			*secondary_msg = g_strdup (_("Please check that you typed the "
-						     "location correctly and try again."));
 			break;
 
 		case G_IO_ERROR_INVALID_FILENAME:
