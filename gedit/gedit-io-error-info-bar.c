@@ -117,7 +117,7 @@ parse_gio_error (const GError  *error,
 		/* How to reproduce: for example configure your router to add an
 		 * http(s) domain on the block list in the firewall. Then pass
 		 * on the command line such an https:// address (normally
-		 * GIO/GVfs is able to open https:// files).
+		 * GIO/GVfs is able to open https:// files) and wait 2 min.
 		 */
 		case G_IO_ERROR_TIMED_OUT:
 			/* The initial error message is good enough as a
