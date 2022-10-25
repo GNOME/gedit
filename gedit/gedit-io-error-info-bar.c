@@ -478,8 +478,6 @@ gedit_unrecoverable_saving_error_info_bar_new (GFile        *location,
 
 	g_return_val_if_fail (G_IS_FILE (location), NULL);
 	g_return_val_if_fail (error != NULL, NULL);
-	g_return_val_if_fail (error->domain == GTK_SOURCE_FILE_SAVER_ERROR ||
-			      error->domain == G_IO_ERROR, NULL);
 
 	uri = g_file_get_parse_name (location);
 
