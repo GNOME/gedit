@@ -118,9 +118,7 @@ parse_gio_error (const GError  *error,
 			break;
 
 		case G_IO_ERROR_NOT_FOUND:
-			*error_message = g_strdup_printf (_("Could not find the file “%s”."),
-							  uri_for_display);
-			*message_details = g_strdup (error->message);
+			*message_details = g_strdup (_("File not found."));
 			break;
 
 		case G_IO_ERROR_NOT_SUPPORTED:
