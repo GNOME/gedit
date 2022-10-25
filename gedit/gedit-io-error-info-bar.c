@@ -60,16 +60,6 @@ is_gio_error (const GError *error,
 	return error->domain == G_IO_ERROR && error->code == code;
 }
 
-static void
-set_contents (GtkInfoBar *info_bar,
-	      GtkWidget  *contents)
-{
-	GtkWidget *content_area;
-
-	content_area = gtk_info_bar_get_content_area (info_bar);
-	gtk_container_add (GTK_CONTAINER (content_area), contents);
-}
-
 static GtkWidget *
 create_io_loading_error_info_bar (const gchar *primary_msg,
 				  const gchar *secondary_msg,
@@ -303,13 +293,12 @@ gedit_unrecoverable_reverting_error_info_bar_new (GFile        *location,
 }
 
 static void
-create_combo_box (GtkWidget *info_bar,
-		  GtkWidget *vbox)
+add_encodings_combo_box (TeplInfoBar *info_bar)
 {
 	GtkWidget *hbox;
-	GtkWidget *label;
-	GtkWidget *menu;
 	gchar *label_markup;
+	GtkWidget *label;
+	GtkWidget *combo_box;
 
 	hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 6);
 
@@ -318,12 +307,13 @@ create_combo_box (GtkWidget *info_bar,
 	label = gtk_label_new_with_mnemonic (label_markup);
 	g_free (label_markup);
 	gtk_label_set_use_markup (GTK_LABEL (label), TRUE);
-	menu = gedit_encodings_combo_box_new (TRUE);
+
+	combo_box = gedit_encodings_combo_box_new (TRUE);
 	g_object_set_data (G_OBJECT (info_bar),
 			   "gedit-info-bar-encoding-menu",
-			   menu);
+			   combo_box);
 
-	gtk_label_set_mnemonic_widget (GTK_LABEL (label), menu);
+	gtk_label_set_mnemonic_widget (GTK_LABEL (label), combo_box);
 	gtk_box_pack_start (GTK_BOX (hbox),
 			    label,
 			    FALSE,
@@ -331,29 +321,28 @@ create_combo_box (GtkWidget *info_bar,
 			    0);
 
 	gtk_box_pack_start (GTK_BOX (hbox),
-			    menu,
+			    combo_box,
 			    FALSE,
 			    FALSE,
 			    0);
 
 	gtk_widget_show_all (hbox);
-	gtk_box_pack_start (GTK_BOX (vbox), hbox, TRUE, TRUE, 0);
+	tepl_info_bar_add_content_widget (info_bar, hbox, TEPL_INFO_BAR_LOCATION_ALONGSIDE_ICON);
 }
 
 static GtkWidget *
-create_conversion_error_info_bar (const gchar *primary_text,
-				  const gchar *secondary_text,
+create_conversion_error_info_bar (const gchar *primary_msg,
+				  const gchar *secondary_msg,
 				  gboolean     edit_anyway)
 {
-	GtkWidget *info_bar;
-	GtkWidget *hbox_content;
-	GtkWidget *vbox;
-	gchar *primary_markup;
-	gchar *secondary_markup;
-	GtkWidget *primary_label;
-	GtkWidget *secondary_label;
+	GtkMessageType msg_type;
+	TeplInfoBar *info_bar;
 
-	info_bar = gtk_info_bar_new ();
+	msg_type = edit_anyway ? GTK_MESSAGE_WARNING : GTK_MESSAGE_ERROR;
+
+	info_bar = tepl_info_bar_new_simple (msg_type, primary_msg, secondary_msg);
+	tepl_info_bar_set_icon_from_message_type (info_bar, FALSE);
+
 	gtk_info_bar_set_show_close_button (GTK_INFO_BAR (info_bar), TRUE);
 
 	gtk_info_bar_add_button (GTK_INFO_BAR (info_bar),
@@ -363,53 +352,13 @@ create_conversion_error_info_bar (const gchar *primary_text,
 	if (edit_anyway)
 	{
 		gtk_info_bar_add_button (GTK_INFO_BAR (info_bar),
-		/* Translators: the access key chosen for this string should be
-		 different from other main menu access keys (Open, Edit, View...) */
 					 _("Edit Any_way"),
 					 GTK_RESPONSE_YES);
-		gtk_info_bar_set_message_type (GTK_INFO_BAR (info_bar),
-					       GTK_MESSAGE_WARNING);
-	}
-	else
-	{
-		gtk_info_bar_set_message_type (GTK_INFO_BAR (info_bar),
-					       GTK_MESSAGE_ERROR);
 	}
 
-	hbox_content = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 8);
+	add_encodings_combo_box (info_bar);
 
-	vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
-	gtk_box_pack_start (GTK_BOX (hbox_content), vbox, TRUE, TRUE, 0);
-
-	primary_markup = g_strdup_printf ("<b>%s</b>", primary_text);
-	primary_label = gtk_label_new (primary_markup);
-	g_free (primary_markup);
-	gtk_box_pack_start (GTK_BOX (vbox), primary_label, TRUE, TRUE, 0);
-	gtk_label_set_use_markup (GTK_LABEL (primary_label), TRUE);
-	gtk_label_set_line_wrap (GTK_LABEL (primary_label), TRUE);
-	gtk_widget_set_halign (primary_label, GTK_ALIGN_START);
-	gtk_widget_set_can_focus (primary_label, TRUE);
-	gtk_label_set_selectable (GTK_LABEL (primary_label), TRUE);
-
-	if (secondary_text != NULL)
-	{
-		secondary_markup = g_strdup_printf ("<small>%s</small>",
-						    secondary_text);
-		secondary_label = gtk_label_new (secondary_markup);
-		g_free (secondary_markup);
-		gtk_box_pack_start (GTK_BOX (vbox), secondary_label, TRUE, TRUE, 0);
-		gtk_widget_set_can_focus (secondary_label, TRUE);
-		gtk_label_set_use_markup (GTK_LABEL (secondary_label), TRUE);
-		gtk_label_set_line_wrap (GTK_LABEL (secondary_label), TRUE);
-		gtk_label_set_selectable (GTK_LABEL (secondary_label), TRUE);
-		gtk_widget_set_halign (secondary_label, GTK_ALIGN_START);
-	}
-
-	create_combo_box (info_bar, vbox);
-	gtk_widget_show_all (hbox_content);
-	set_contents (GTK_INFO_BAR (info_bar), hbox_content);
-
-	return info_bar;
+	return GTK_WIDGET (info_bar);
 }
 
 GtkWidget *
