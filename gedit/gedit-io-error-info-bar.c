@@ -96,11 +96,11 @@ create_io_loading_error_info_bar (const gchar *primary_msg,
 }
 
 static gboolean
-parse_gio_error (const GError  *error,
-		 gchar        **primary_msg,
-		 gchar        **secondary_msg,
-		 GFile         *location,
-		 const gchar   *uri)
+get_detailed_gio_error_messages (GFile         *location,
+				 const gchar   *uri,
+				 const GError  *error,
+				 gchar        **primary_msg,
+				 gchar        **secondary_msg)
 {
 	gboolean done = TRUE;
 
@@ -232,21 +232,21 @@ parse_gio_error (const GError  *error,
 }
 
 static void
-parse_error (const GError  *error,
-	     gchar        **primary_msg,
-	     gchar        **secondary_msg,
-	     GFile         *location,
-	     const gchar   *uri)
+get_detailed_error_messages (GFile         *location,
+			     const gchar   *uri,
+			     const GError  *error,
+			     gchar        **primary_msg,
+			     gchar        **secondary_msg)
 {
 	gboolean done = FALSE;
 
 	if (error->domain == G_IO_ERROR)
 	{
-		done = parse_gio_error (error,
-					primary_msg,
-					secondary_msg,
-					location,
-					uri);
+		done = get_detailed_gio_error_messages (location,
+							uri,
+							error,
+							primary_msg,
+							secondary_msg);
 	}
 
 	if (!done)
@@ -282,7 +282,7 @@ gedit_unrecoverable_reverting_error_info_bar_new (GFile        *location,
 	}
 	else
 	{
-		parse_error (error, &primary_msg, &secondary_msg, location, uri);
+		get_detailed_error_messages (location, uri, error, &primary_msg, &secondary_msg);
 	}
 
 	if (primary_msg == NULL)
@@ -494,7 +494,7 @@ gedit_io_loading_error_info_bar_new (GFile                   *location,
 	}
 	else
 	{
-		parse_error (error, &error_message, &message_details, location, uri_for_display);
+		get_detailed_error_messages (location, uri_for_display, error, &error_message, &message_details);
 	}
 
 	if (error_message == NULL)
@@ -706,11 +706,11 @@ gedit_unrecoverable_saving_error_info_bar_new (GFile        *location,
 	}
 	else
 	{
-		parse_error (error,
-			     &primary_msg,
-			     &secondary_msg,
-			     location,
-			     uri);
+		get_detailed_error_messages (location,
+					     uri,
+					     error,
+					     &primary_msg,
+					     &secondary_msg);
 	}
 
 	if (primary_msg == NULL)
