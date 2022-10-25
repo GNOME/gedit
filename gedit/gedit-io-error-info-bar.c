@@ -434,9 +434,9 @@ gedit_conversion_error_info_bar_get_encoding (GtkWidget *info_bar)
 	return NULL;
 }
 
+/* For GTK_SOURCE_FILE_SAVER_ERROR_EXTERNALLY_MODIFIED. */
 GtkWidget *
-gedit_externally_modified_saving_error_info_bar_new (GFile        *location,
-						     const GError *error)
+gedit_externally_modified_saving_error_info_bar_new (GFile *location)
 {
 	TeplInfoBar *info_bar;
 	gchar *uri;
@@ -444,15 +444,10 @@ gedit_externally_modified_saving_error_info_bar_new (GFile        *location,
 	const gchar *secondary_msg;
 
 	g_return_val_if_fail (G_IS_FILE (location), NULL);
-	g_return_val_if_fail (g_error_matches (error,
-					       GTK_SOURCE_FILE_SAVER_ERROR,
-					       GTK_SOURCE_FILE_SAVER_ERROR_EXTERNALLY_MODIFIED), NULL);
 
 	uri = g_file_get_parse_name (location);
 
-	primary_msg = g_strdup_printf (_("The file “%s” has been externally modified."),
-				       uri);
-
+	primary_msg = g_strdup_printf (_("The file “%s” has been externally modified."), uri);
 	secondary_msg = _("If you save it, all the external changes could be lost. Save it anyway?");
 
 	info_bar = tepl_info_bar_new_simple (GTK_MESSAGE_WARNING,

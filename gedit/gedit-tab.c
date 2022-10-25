@@ -2336,7 +2336,7 @@ save_cb (GtkSourceFileSaver *saver,
 		    error->code == GTK_SOURCE_FILE_SAVER_ERROR_EXTERNALLY_MODIFIED)
 		{
 			/* This error is recoverable */
-			info_bar = gedit_externally_modified_saving_error_info_bar_new (location, error);
+			info_bar = gedit_externally_modified_saving_error_info_bar_new (location);
 			g_return_if_fail (info_bar != NULL);
 
 			g_signal_connect (info_bar,
