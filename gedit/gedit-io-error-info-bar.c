@@ -125,16 +125,13 @@ get_detailed_gio_error_messages (GFile         *location,
 				if (uri_scheme != NULL &&
 				    g_utf8_validate (uri_scheme, -1, NULL))
 				{
-					gchar *uri_scheme_markup = g_markup_escape_text (uri_scheme, -1);
-
 					/* How to reproduce this case: from the command line,
 					 * try to open a URI such as: foo://example.net/file
 					 */
 
 					/* Translators: %s is a URI scheme (like for example http:, ftp:, etc.) */
 					*secondary_msg = g_strdup_printf (_("“%s:” locations are not supported."),
-									  uri_scheme_markup);
-					g_free (uri_scheme_markup);
+									  uri_scheme);
 				}
 
 				g_free (uri_scheme);
