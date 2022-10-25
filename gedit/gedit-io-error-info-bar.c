@@ -262,11 +262,9 @@ GtkWidget *
 gedit_unrecoverable_reverting_error_info_bar_new (GFile        *location,
 						  const GError *error)
 {
-	gchar *error_message = NULL;
-	gchar *message_details = NULL;
-	gchar *full_formatted_uri;
-	gchar *uri_for_display;
-	gchar *temp_uri_for_display;
+	gchar *uri;
+	gchar *primary_msg = NULL;
+	gchar *secondary_msg = NULL;
 	GtkWidget *info_bar;
 
 	g_return_val_if_fail (G_IS_FILE (location), NULL);
@@ -274,43 +272,30 @@ gedit_unrecoverable_reverting_error_info_bar_new (GFile        *location,
 	g_return_val_if_fail (error->domain == GTK_SOURCE_FILE_LOADER_ERROR ||
 			      error->domain == G_IO_ERROR, NULL);
 
-	full_formatted_uri = g_file_get_parse_name (location);
+	uri = g_file_get_parse_name (location);
 
-	/* Truncate the URI so it doesn't get insanely wide. Note that even
-	 * though the dialog uses wrapped text, if the URI doesn't contain
-	 * white space then the text-wrapping code is too stupid to wrap it.
-	 */
-	temp_uri_for_display = tepl_utils_str_middle_truncate (full_formatted_uri,
-							       MAX_URI_IN_DIALOG_LENGTH);
-	g_free (full_formatted_uri);
-
-	uri_for_display = g_markup_escape_text (temp_uri_for_display, -1);
-	g_free (temp_uri_for_display);
-
-	if (is_gio_error (error, G_IO_ERROR_NOT_FOUND))
+	if (g_error_matches (error, G_IO_ERROR, G_IO_ERROR_NOT_FOUND))
 	{
-		message_details = g_strdup (_("Cannot find the requested file. "
-					      "Perhaps it has recently been deleted."));
+		secondary_msg = g_strdup (_("Cannot find the requested file. "
+					    "Perhaps it has recently been deleted."));
 	}
 	else
 	{
-		parse_error (error, &error_message, &message_details, location, uri_for_display);
+		parse_error (error, &primary_msg, &secondary_msg, location, uri);
 	}
 
-	if (error_message == NULL)
+	if (primary_msg == NULL)
 	{
-		error_message = g_strdup_printf (_("Could not revert the file “%s”."),
-						 uri_for_display);
+		primary_msg = g_strdup_printf (_("Could not revert the file “%s”."), uri);
 	}
 
-	info_bar = create_io_loading_error_info_bar (error_message,
-						     message_details,
+	info_bar = create_io_loading_error_info_bar (primary_msg,
+						     secondary_msg,
 						     FALSE);
 
-	g_free (uri_for_display);
-	g_free (error_message);
-	g_free (message_details);
-
+	g_free (uri);
+	g_free (primary_msg);
+	g_free (secondary_msg);
 	return info_bar;
 }
 
