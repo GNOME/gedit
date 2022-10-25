@@ -53,7 +53,6 @@ struct _GeditTab
 	GeditViewFrame *frame;
 
 	GtkWidget *info_bar;
-	GtkWidget *info_bar_hidden;
 
 	GeditPrintJob *print_job;
 	GtkWidget *print_preview;
@@ -603,45 +602,22 @@ static void
 set_info_bar (GeditTab  *tab,
 	      GtkWidget *info_bar)
 {
-	gedit_debug (DEBUG_TAB);
-
 	if (tab->info_bar == info_bar)
 	{
 		return;
 	}
 
-	if (info_bar == NULL)
+	if (tab->info_bar != NULL)
 	{
-		/* Don't destroy the old info_bar right away,
-		   we want the hide animation. */
-		if (tab->info_bar_hidden != NULL)
-		{
-			gtk_widget_destroy (tab->info_bar_hidden);
-		}
-
-		tab->info_bar_hidden = tab->info_bar;
-		gtk_widget_hide (tab->info_bar_hidden);
-
+		gtk_widget_destroy (tab->info_bar);
 		tab->info_bar = NULL;
 	}
-	else
+
+	tab->info_bar = info_bar;
+
+	if (info_bar != NULL)
 	{
-		if (tab->info_bar != NULL)
-		{
-			gedit_debug_message (DEBUG_TAB, "Replacing existing notification");
-			gtk_widget_destroy (tab->info_bar);
-		}
-
-		/* Make sure to stop a possibly still ongoing hiding animation. */
-		if (tab->info_bar_hidden != NULL)
-		{
-			gtk_widget_destroy (tab->info_bar_hidden);
-			tab->info_bar_hidden = NULL;
-		}
-
-		tab->info_bar = info_bar;
 		gtk_box_pack_start (GTK_BOX (tab), info_bar, FALSE, FALSE, 0);
-
 		gtk_widget_show (info_bar);
 	}
 }
