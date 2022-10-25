@@ -346,9 +346,6 @@ gedit_io_loading_error_info_bar_new (GFile                   *location,
 	gboolean convert_error = FALSE;
 
 	g_return_val_if_fail (error != NULL, NULL);
-	g_return_val_if_fail (error->domain == GTK_SOURCE_FILE_LOADER_ERROR ||
-			      error->domain == G_IO_ERROR ||
-			      error->domain == G_CONVERT_ERROR, NULL);
 
 	if (location != NULL)
 	{
