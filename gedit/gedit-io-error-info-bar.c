@@ -134,29 +134,33 @@ get_detailed_gio_error_messages (GFile         *location,
 
 		case G_IO_ERROR_NOT_SUPPORTED:
 			{
-				gchar *scheme_string = NULL;
+				gchar *uri_scheme = NULL;
 
 				if (location != NULL)
 				{
-					scheme_string = g_file_get_uri_scheme (location);
+					uri_scheme = g_file_get_uri_scheme (location);
 				}
 
-				if (scheme_string != NULL &&
-				    g_utf8_validate (scheme_string, -1, NULL))
+				if (uri_scheme != NULL &&
+				    g_utf8_validate (uri_scheme, -1, NULL))
 				{
-					gchar *scheme_markup = g_markup_escape_text (scheme_string, -1);
+					gchar *uri_scheme_markup = g_markup_escape_text (uri_scheme, -1);
+
+					/* How to reproduce this case: from the command line,
+					 * try to open a URI such as: foo://example.net/file
+					 */
 
 					/* Translators: %s is a URI scheme (like for example http:, ftp:, etc.) */
-					*secondary_msg = g_strdup_printf (_("Unable to handle “%s:” locations."),
-									  scheme_markup);
-					g_free (scheme_markup);
+					*secondary_msg = g_strdup_printf (_("“%s:” locations are not supported."),
+									  uri_scheme_markup);
+					g_free (uri_scheme_markup);
 				}
 				else
 				{
-					*secondary_msg = g_strdup (_("Unable to handle this location."));
+					*secondary_msg = g_strdup (error->message);
 				}
 
-				g_free (scheme_string);
+				g_free (uri_scheme);
 			}
 			break;
 
