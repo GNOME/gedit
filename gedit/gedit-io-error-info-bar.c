@@ -32,8 +32,6 @@
 static gboolean
 is_recoverable_error (const GError *error)
 {
-	gboolean is_recoverable = FALSE;
-
 	if (error->domain == G_IO_ERROR)
 	{
 		switch (error->code)
@@ -45,14 +43,14 @@ is_recoverable_error (const GError *error)
 			case G_IO_ERROR_NOT_MOUNTABLE_FILE:
 			case G_IO_ERROR_NOT_MOUNTED:
 			case G_IO_ERROR_BUSY:
-				is_recoverable = TRUE;
-				break;
+				return TRUE;
+
 			default:
 				break;
 		}
 	}
 
-	return is_recoverable;
+	return FALSE;
 }
 
 static gboolean
