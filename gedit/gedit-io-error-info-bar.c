@@ -634,13 +634,9 @@ GtkWidget *
 gedit_unrecoverable_saving_error_info_bar_new (GFile        *location,
 					       const GError *error)
 {
-	gchar *error_message = NULL;
-	gchar *message_details = NULL;
-	gchar *full_formatted_uri;
-	gchar *scheme_string;
-	gchar *scheme_markup;
-	gchar *uri_for_display;
-	gchar *temp_uri_for_display;
+	gchar *uri;
+	gchar *primary_msg = NULL;
+	gchar *secondary_msg = NULL;
 	GtkWidget *info_bar;
 
 	g_return_val_if_fail (G_IS_FILE (location), NULL);
@@ -648,114 +644,86 @@ gedit_unrecoverable_saving_error_info_bar_new (GFile        *location,
 	g_return_val_if_fail (error->domain == GTK_SOURCE_FILE_SAVER_ERROR ||
 			      error->domain == G_IO_ERROR, NULL);
 
-	full_formatted_uri = g_file_get_parse_name (location);
+	uri = g_file_get_parse_name (location);
 
-	/* Truncate the URI so it doesn't get insanely wide. Note that even
-	 * though the dialog uses wrapped text, if the URI doesn't contain
-	 * white space then the text-wrapping code is too stupid to wrap it.
-	 */
-	temp_uri_for_display = tepl_utils_str_middle_truncate (full_formatted_uri,
-							       MAX_URI_IN_DIALOG_LENGTH);
-	g_free (full_formatted_uri);
-
-	uri_for_display = g_markup_escape_text (temp_uri_for_display, -1);
-	g_free (temp_uri_for_display);
-
-	if (is_gio_error (error, G_IO_ERROR_NOT_SUPPORTED))
+	if (g_error_matches (error, G_IO_ERROR, G_IO_ERROR_NOT_SUPPORTED))
 	{
-		scheme_string = g_file_get_uri_scheme (location);
+		gchar *uri_scheme = g_file_get_uri_scheme (location);
 
-		if ((scheme_string != NULL) && g_utf8_validate (scheme_string, -1, NULL))
+		if (uri_scheme != NULL &&
+		    g_utf8_validate (uri_scheme, -1, NULL))
 		{
-			scheme_markup = g_markup_escape_text (scheme_string, -1);
-
 			/* Translators: %s is a URI scheme (like for example http:, ftp:, etc.) */
-			message_details = g_strdup_printf (_("Cannot handle “%s:” locations in write mode. "
-							     "Please check that you typed the "
-							     "location correctly and try again."),
-							   scheme_markup);
-			g_free (scheme_markup);
+			secondary_msg = g_strdup_printf (_("Cannot handle “%s:” locations in write mode. "
+							   "Please check that you typed the "
+							   "location correctly and try again."),
+							 uri_scheme);
 		}
 		else
 		{
-			message_details = g_strdup (_("Cannot handle this location in write mode. "
-						      "Please check that you typed the "
-						      "location correctly and try again."));
+			secondary_msg = g_strdup (_("Cannot handle this location in write mode. "
+						    "Please check that you typed the "
+						    "location correctly and try again."));
 		}
 
-		g_free (scheme_string);
+		g_free (uri_scheme);
 	}
-	else if (is_gio_error (error, G_IO_ERROR_INVALID_FILENAME))
+	else if (g_error_matches (error, G_IO_ERROR, G_IO_ERROR_INVALID_FILENAME))
 	{
-		message_details = g_strdup_printf (_("“%s” is not a valid location. "
-						     "Please check that you typed the "
-						     "location correctly and try again."),
-						   uri_for_display);
+		secondary_msg = g_strdup_printf (_("“%s” is not a valid location. "
+						   "Please check that you typed the "
+						   "location correctly and try again."),
+						 uri);
 	}
-	else if (is_gio_error (error, G_IO_ERROR_PERMISSION_DENIED))
+	else if (g_error_matches (error, G_IO_ERROR, G_IO_ERROR_PERMISSION_DENIED))
 	{
-		message_details = g_strdup (_("You do not have the permissions necessary to save the file. "
-					      "Please check that you typed the "
-					      "location correctly and try again."));
+		secondary_msg = g_strdup (_("You do not have the permissions necessary to save the file. "
+					    "Please check that you typed the "
+					    "location correctly and try again."));
 	}
-	else if (is_gio_error (error, G_IO_ERROR_NO_SPACE))
+	else if (g_error_matches (error, G_IO_ERROR, G_IO_ERROR_NO_SPACE))
 	{
-		message_details = g_strdup (_("There is not enough disk space to save the file. "
-					      "Please free some disk space and try again."));
+		secondary_msg = g_strdup (_("There is not enough disk space to save the file. "
+					    "Please free some disk space and try again."));
 	}
-	else if (is_gio_error (error, G_IO_ERROR_READ_ONLY))
+	else if (g_error_matches (error, G_IO_ERROR, G_IO_ERROR_READ_ONLY))
 	{
-		message_details = g_strdup (_("You are trying to save the file on a read-only disk. "
-					      "Please check that you typed the location "
-					      "correctly and try again."));
+		secondary_msg = g_strdup (_("You are trying to save the file on a read-only disk. "
+					    "Please check that you typed the location "
+					    "correctly and try again."));
 	}
-	else if (is_gio_error (error, G_IO_ERROR_EXISTS))
+	else if (g_error_matches (error, G_IO_ERROR, G_IO_ERROR_EXISTS))
 	{
-		message_details = g_strdup (_("A file with the same name already exists. "
-					      "Please use a different name."));
+		secondary_msg = g_strdup (_("A file with the same name already exists. "
+					    "Please use a different name."));
 	}
-	else if (is_gio_error (error, G_IO_ERROR_FILENAME_TOO_LONG))
+	else if (g_error_matches (error, G_IO_ERROR, G_IO_ERROR_FILENAME_TOO_LONG))
 	{
-		message_details = g_strdup (_("The disk where you are trying to save the file has "
-					      "a limitation on length of the file names. "
-					      "Please use a shorter name."));
+		secondary_msg = g_strdup (_("The disk where you are trying to save the file has "
+					    "a limitation on length of the file names. "
+					    "Please use a shorter name."));
 	}
-#if 0
-	/* FIXME this error can not occur for a file saving. Either remove the
-	 * code here, or improve the GtkSourceFileSaver so this error can occur.
-	 */
-	else if (error->domain == GEDIT_DOCUMENT_ERROR &&
-		 error->code == GEDIT_DOCUMENT_ERROR_TOO_BIG)
-	{
-		message_details = g_strdup (_("The disk where you are trying to save the file has "
-					      "a limitation on file sizes. Please try saving "
-					      "a smaller file or saving it to a disk that does not "
-					      "have this limitation."));
-	}
-#endif
 	else
 	{
 		parse_error (error,
-			     &error_message,
-			     &message_details,
+			     &primary_msg,
+			     &secondary_msg,
 			     location,
-			     uri_for_display);
+			     uri);
 	}
 
-	if (error_message == NULL)
+	if (primary_msg == NULL)
 	{
-		error_message = g_strdup_printf (_("Could not save the file “%s”."),
-						 uri_for_display);
+		primary_msg = g_strdup_printf (_("Could not save the file “%s”."), uri);
 	}
 
-	info_bar = create_io_loading_error_info_bar (error_message,
-						     message_details,
+	info_bar = create_io_loading_error_info_bar (primary_msg,
+						     secondary_msg,
 						     FALSE);
 
-	g_free (uri_for_display);
-	g_free (error_message);
-	g_free (message_details);
-
+	g_free (uri);
+	g_free (primary_msg);
+	g_free (secondary_msg);
 	return info_bar;
 }
 
