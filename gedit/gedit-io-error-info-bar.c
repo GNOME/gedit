@@ -83,15 +83,13 @@ create_io_loading_error_info_bar (const gchar *primary_msg,
 	return GTK_WIDGET (info_bar);
 }
 
-static gboolean
+static void
 get_detailed_gio_error_messages (GFile         *location,
 				 const gchar   *uri,
 				 const GError  *error,
 				 gchar        **primary_msg,
 				 gchar        **secondary_msg)
 {
-	gboolean done = TRUE;
-
 	g_assert (error->domain == G_IO_ERROR);
 
 	switch (error->code)
@@ -108,12 +106,7 @@ get_detailed_gio_error_messages (GFile         *location,
 		 * GIO/GVfs is able to open https:// files) and wait 2 min.
 		 */
 		case G_IO_ERROR_TIMED_OUT:
-			/* The initial error message is good enough as a
-			 * secondary message. The primary message will be set by
-			 * the caller depending on the context (load, save,
-			 * etc).
-			 */
-			*secondary_msg = g_strdup (error->message);
+			/* The original error->message is good enough. */
 			break;
 
 		case G_IO_ERROR_NOT_FOUND:
@@ -142,10 +135,6 @@ get_detailed_gio_error_messages (GFile         *location,
 					*secondary_msg = g_strdup_printf (_("“%s:” locations are not supported."),
 									  uri_scheme_markup);
 					g_free (uri_scheme_markup);
-				}
-				else
-				{
-					*secondary_msg = g_strdup (error->message);
 				}
 
 				g_free (uri_scheme);
@@ -214,13 +203,7 @@ get_detailed_gio_error_messages (GFile         *location,
 				}
 			}
 			break;
-
-		default:
-			done = FALSE;
-			break;
 	}
-
-	return done;
 }
 
 static void
@@ -230,24 +213,18 @@ get_detailed_error_messages (GFile         *location,
 			     gchar        **primary_msg,
 			     gchar        **secondary_msg)
 {
-	gboolean done = FALSE;
-
 	if (error->domain == G_IO_ERROR)
 	{
-		done = get_detailed_gio_error_messages (location,
-							uri,
-							error,
-							primary_msg,
-							secondary_msg);
+		get_detailed_gio_error_messages (location,
+						 uri,
+						 error,
+						 primary_msg,
+						 secondary_msg);
 	}
 
-	if (!done)
+	if (*primary_msg == NULL && *secondary_msg == NULL)
 	{
-		g_warning ("Hit unhandled case %d (%s) in %s.",
-			   error->code, error->message, G_STRFUNC);
-
-		*secondary_msg = g_strdup_printf (_("Unexpected error: %s"),
-						  error->message);
+		*secondary_msg = g_strdup (error->message);
 	}
 }
 
