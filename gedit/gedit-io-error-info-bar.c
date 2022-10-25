@@ -97,124 +97,99 @@ create_io_loading_error_info_bar (const gchar *primary_msg,
 }
 
 static void
-get_detailed_gio_error_messages (GFile         *location,
-				 const gchar   *uri,
-				 const GError  *error,
-				 gchar        **primary_msg,
-				 gchar        **secondary_msg)
-{
-	g_assert (error->domain == G_IO_ERROR);
-
-	switch (error->code)
-	{
-		case G_IO_ERROR_NOT_FOUND:
-			*secondary_msg = g_strdup (_("File not found."));
-			break;
-
-		case G_IO_ERROR_NOT_SUPPORTED:
-			{
-				gchar *uri_scheme = NULL;
-
-				if (location != NULL)
-				{
-					uri_scheme = g_file_get_uri_scheme (location);
-				}
-
-				if (uri_scheme != NULL &&
-				    g_utf8_validate (uri_scheme, -1, NULL))
-				{
-					/* How to reproduce this case: from the command line,
-					 * try to open a URI such as: foo://example.net/file
-					 */
-
-					/* Translators: %s is a URI scheme (like for example http:, ftp:, etc.) */
-					*secondary_msg = g_strdup_printf (_("“%s:” locations are not supported."),
-									  uri_scheme);
-				}
-
-				g_free (uri_scheme);
-			}
-			break;
-
-		case G_IO_ERROR_NOT_MOUNTABLE_FILE:
-		case G_IO_ERROR_NOT_MOUNTED:
-			*secondary_msg = g_strdup (_("The location of the file cannot be accessed."));
-			break;
-
-		case G_IO_ERROR_INVALID_FILENAME:
-			*primary_msg = g_strdup_printf (_("“%s” is not a valid location."), uri);
-			*secondary_msg = g_strdup (_("Please check that you typed the "
-						     "location correctly and try again."));
-			break;
-
-		case G_IO_ERROR_HOST_NOT_FOUND:
-			/* This case can be hit for user-typed strings like "foo" due to
-			 * the code that guesses web addresses when there's no initial "/".
-			 * But this case is also hit for legitimate web addresses when
-			 * the proxy is set up wrong.
-			 */
-			{
-				gchar *file_uri = NULL;
-				gchar *hn = NULL;
-
-				if (location != NULL)
-				{
-					file_uri = g_file_get_uri (location);
-				}
-
-				if (file_uri != NULL &&
-				    tepl_utils_decode_uri (file_uri, NULL, NULL, &hn, NULL, NULL))
-				{
-					if (hn != NULL)
-					{
-						gchar *host_name;
-						gchar *host_markup;
-
-						host_name = g_utf8_make_valid (hn, -1);
-						host_markup = g_markup_escape_text (host_name, -1);
-						g_free (host_name);
-
-						*secondary_msg = g_strdup_printf (
-							/* Translators: %s is a host name */
-							_("Host “%s” could not be found. "
-							  "Please check that your proxy settings "
-							  "are correct and try again."),
-							host_markup);
-
-						g_free (host_markup);
-					}
-				}
-
-				g_free (file_uri);
-				g_free (hn);
-
-				if (*secondary_msg == NULL)
-				{
-					/* Use the same string as INVALID_HOST. */
-					*secondary_msg = g_strdup_printf (
-						_("Hostname was invalid. "
-						  "Please check that you typed the location "
-						  "correctly and try again."));
-				}
-			}
-			break;
-	}
-}
-
-static void
 get_detailed_error_messages (GFile         *location,
 			     const gchar   *uri,
 			     const GError  *error,
 			     gchar        **primary_msg,
 			     gchar        **secondary_msg)
 {
-	if (error->domain == G_IO_ERROR)
+	if (g_error_matches (error, G_IO_ERROR, G_IO_ERROR_NOT_FOUND))
 	{
-		get_detailed_gio_error_messages (location,
-						 uri,
-						 error,
-						 primary_msg,
-						 secondary_msg);
+		*secondary_msg = g_strdup (_("File not found."));
+	}
+	else if (g_error_matches (error, G_IO_ERROR, G_IO_ERROR_NOT_SUPPORTED))
+	{
+		gchar *uri_scheme = NULL;
+
+		if (location != NULL)
+		{
+			uri_scheme = g_file_get_uri_scheme (location);
+		}
+
+		if (uri_scheme != NULL &&
+		    g_utf8_validate (uri_scheme, -1, NULL))
+		{
+			/* How to reproduce this case: from the command line,
+			 * try to open a URI such as: foo://example.net/file
+			 */
+
+			/* Translators: %s is a URI scheme (like for example http:, ftp:, etc.) */
+			*secondary_msg = g_strdup_printf (_("“%s:” locations are not supported."),
+							  uri_scheme);
+		}
+
+		g_free (uri_scheme);
+	}
+	else if (g_error_matches (error, G_IO_ERROR, G_IO_ERROR_NOT_MOUNTABLE_FILE) ||
+		 g_error_matches (error, G_IO_ERROR, G_IO_ERROR_NOT_MOUNTED))
+	{
+		*secondary_msg = g_strdup (_("The location of the file cannot be accessed."));
+	}
+	else if (g_error_matches (error, G_IO_ERROR, G_IO_ERROR_INVALID_FILENAME))
+	{
+		*primary_msg = g_strdup_printf (_("“%s” is not a valid location."), uri);
+		*secondary_msg = g_strdup (_("Please check that you typed the "
+					     "location correctly and try again."));
+	}
+	else if (g_error_matches (error, G_IO_ERROR, G_IO_ERROR_HOST_NOT_FOUND))
+	{
+		/* This case can be hit for user-typed strings like "foo" due to
+		 * the code that guesses web addresses when there's no initial "/".
+		 * But this case is also hit for legitimate web addresses when
+		 * the proxy is set up wrong.
+		 */
+		gchar *file_uri = NULL;
+		gchar *hn = NULL;
+		gboolean uri_decoded = FALSE;
+
+		if (location != NULL)
+		{
+			file_uri = g_file_get_uri (location);
+		}
+
+		if (file_uri != NULL)
+		{
+			uri_decoded = tepl_utils_decode_uri (file_uri, NULL, NULL, &hn, NULL, NULL);
+		}
+
+		if (uri_decoded && hn != NULL)
+		{
+			gchar *host_name;
+			gchar *host_markup;
+
+			host_name = g_utf8_make_valid (hn, -1);
+			host_markup = g_markup_escape_text (host_name, -1);
+			g_free (host_name);
+
+			*secondary_msg = g_strdup_printf (/* Translators: %s is a host name */
+							  _("Host “%s” could not be found. "
+							    "Please check that your proxy settings "
+							    "are correct and try again."),
+							  host_markup);
+
+			g_free (host_markup);
+		}
+
+		g_free (file_uri);
+		g_free (hn);
+
+		if (*secondary_msg == NULL)
+		{
+			/* Use the same string as INVALID_HOST. */
+			*secondary_msg = g_strdup_printf (_("Hostname was invalid. "
+							    "Please check that you typed the location "
+							    "correctly and try again."));
+		}
 	}
 
 	if (*primary_msg == NULL && *secondary_msg == NULL)
