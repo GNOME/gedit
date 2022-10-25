@@ -245,7 +245,7 @@ add_encodings_combo_box (TeplInfoBar *info_bar)
 
 	combo_box = gedit_encodings_combo_box_new (TRUE);
 	g_object_set_data (G_OBJECT (info_bar),
-			   "gedit-info-bar-encoding-menu",
+			   "gedit-info-bar-encoding-combo-box",
 			   combo_box);
 
 	gtk_label_set_mnemonic_widget (GTK_LABEL (label), combo_box);
@@ -420,15 +420,15 @@ gedit_conversion_error_while_saving_info_bar_new (GFile                   *locat
 const GtkSourceEncoding *
 gedit_conversion_error_info_bar_get_encoding (GtkWidget *info_bar)
 {
-	gpointer menu;
+	gpointer combo_box;
 
 	g_return_val_if_fail (GTK_IS_INFO_BAR (info_bar), NULL);
 
-	menu = g_object_get_data (G_OBJECT (info_bar),
-				  "gedit-info-bar-encoding-menu");
-	if (menu != NULL)
+	combo_box = g_object_get_data (G_OBJECT (info_bar),
+				       "gedit-info-bar-encoding-combo-box");
+	if (combo_box != NULL)
 	{
-		return gedit_encodings_combo_box_get_selected_encoding (GEDIT_ENCODINGS_COMBO_BOX (menu));
+		return gedit_encodings_combo_box_get_selected_encoding (GEDIT_ENCODINGS_COMBO_BOX (combo_box));
 	}
 
 	return NULL;
