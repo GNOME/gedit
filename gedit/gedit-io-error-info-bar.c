@@ -385,8 +385,7 @@ gedit_io_loading_error_info_bar_new (GFile                   *location,
 
 GtkWidget *
 gedit_conversion_error_while_saving_info_bar_new (GFile                   *location,
-						  const GtkSourceEncoding *encoding,
-						  const GError            *error)
+						  const GtkSourceEncoding *encoding)
 {
 	gchar *uri;
 	gchar *encoding_name;
@@ -396,7 +395,6 @@ gedit_conversion_error_while_saving_info_bar_new (GFile                   *locat
 
 	g_return_val_if_fail (G_IS_FILE (location), NULL);
 	g_return_val_if_fail (encoding != NULL, NULL);
-	g_return_val_if_fail (error != NULL, NULL);
 
 	uri = g_file_get_parse_name (location);
 	encoding_name = gtk_source_encoding_to_string (encoding);

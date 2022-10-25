@@ -32,8 +32,7 @@ GtkWidget *	gedit_unrecoverable_reverting_error_info_bar_new	(GFile        *loca
 									 const GError *error);
 
 GtkWidget *	gedit_conversion_error_while_saving_info_bar_new	(GFile                   *location,
-									 const GtkSourceEncoding *encoding,
-									 const GError            *error);
+									 const GtkSourceEncoding *encoding);
 
 const GtkSourceEncoding *
 		gedit_conversion_error_info_bar_get_encoding		(GtkWidget *info_bar);

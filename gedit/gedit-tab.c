@@ -2396,7 +2396,7 @@ save_cb (GtkSourceFileSaver *saver,
 
 			encoding = gtk_source_file_saver_get_encoding (saver);
 
-			info_bar = gedit_conversion_error_while_saving_info_bar_new (location, encoding, error);
+			info_bar = gedit_conversion_error_while_saving_info_bar_new (location, encoding);
 			g_return_if_fail (info_bar != NULL);
 
 			g_signal_connect (info_bar,
