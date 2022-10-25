@@ -143,10 +143,11 @@ get_detailed_error_messages (GFile         *location,
 	}
 	else if (g_error_matches (error, G_IO_ERROR, G_IO_ERROR_HOST_NOT_FOUND))
 	{
-		/* This case can be hit for user-typed strings like "foo" due to
-		 * the code that guesses web addresses when there's no initial "/".
-		 * But this case is also hit for legitimate web addresses when
-		 * the proxy is set up wrong.
+		/* How to reproduce this case: from the command line, try to
+		 * open a URI such as: ssh://something-that-does-not-exist/file
+		 *
+		 * But this case is also hit for legitimate network addresses
+		 * when the proxy is set up wrong.
 		 */
 		gchar *file_uri = NULL;
 		gchar *hn = NULL;
@@ -165,31 +166,22 @@ get_detailed_error_messages (GFile         *location,
 		if (uri_decoded && hn != NULL)
 		{
 			gchar *host_name;
-			gchar *host_markup;
+			gchar *msg1;
+			const gchar *msg2;
 
 			host_name = g_utf8_make_valid (hn, -1);
-			host_markup = g_markup_escape_text (host_name, -1);
+
+			msg1 = g_strdup_printf (_("Hostname “%s” not known."), host_name);
+			msg2 = _("The problem could come from the proxy settings.");
+
+			*secondary_msg = g_strconcat (msg1, "\n", msg2, NULL);
+
 			g_free (host_name);
-
-			*secondary_msg = g_strdup_printf (/* Translators: %s is a host name */
-							  _("Host “%s” could not be found. "
-							    "Please check that your proxy settings "
-							    "are correct and try again."),
-							  host_markup);
-
-			g_free (host_markup);
+			g_free (msg1);
 		}
 
 		g_free (file_uri);
 		g_free (hn);
-
-		if (*secondary_msg == NULL)
-		{
-			/* Use the same string as INVALID_HOST. */
-			*secondary_msg = g_strdup_printf (_("Hostname was invalid. "
-							    "Please check that you typed the location "
-							    "correctly and try again."));
-		}
 	}
 
 	if (*primary_msg == NULL && *secondary_msg == NULL)
