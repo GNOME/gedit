@@ -114,6 +114,12 @@ parse_gio_error (const GError  *error,
 		case G_IO_ERROR_NOT_REGULAR_FILE:
 		/* How to reproduce: the easiest is from the command line. */
 		case G_IO_ERROR_IS_DIRECTORY:
+		/* How to reproduce: for example configure your router to add an
+		 * http(s) domain on the block list in the firewall. Then pass
+		 * on the command line such an https:// address (normally
+		 * GIO/GVfs is able to open https:// files).
+		 */
+		case G_IO_ERROR_TIMED_OUT:
 			/* The initial error message is good enough as a
 			 * secondary message. The primary message will be set by
 			 * the caller depending on the context (load, save,
@@ -215,15 +221,6 @@ parse_gio_error (const GError  *error,
 						  "correctly and try again."));
 				}
 			}
-			break;
-
-		/* How to reproduce: for example configure your router to add an
-		 * http(s) domain on the block list in the firewall. Then pass
-		 * on the command line such an https:// address (normally
-		 * GIO/GVfs is able to open https:// files).
-		 */
-		case G_IO_ERROR_TIMED_OUT:
-			*secondary_msg = g_strdup (_("Connection timed out. Please try again."));
 			break;
 
 		default:
