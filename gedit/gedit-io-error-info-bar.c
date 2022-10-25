@@ -109,6 +109,11 @@ parse_gio_error (const GError  *error,
 	switch (error->code)
 	{
 		case G_IO_ERROR_NOT_REGULAR_FILE:
+			/* The initial error message is good enough as a
+			 * secondary message. The primary message will be set by
+			 * the caller depending on the context (load, save,
+			 * etc).
+			 */
 			*message_details = g_strdup (error->message);
 			break;
 
