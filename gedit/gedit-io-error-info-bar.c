@@ -72,62 +72,18 @@ set_contents (GtkWidget *area,
 	gtk_container_add (GTK_CONTAINER (content_area), contents);
 }
 
-static void
-set_info_bar_text (GtkWidget   *info_bar,
-		   const gchar *primary_text,
-		   const gchar *secondary_text)
-{
-	GtkWidget *vbox;
-	gchar *primary_markup;
-	gchar *secondary_markup;
-	GtkWidget *primary_label;
-	GtkWidget *secondary_label;
-
-	vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
-
-	primary_markup = g_strdup_printf ("<b>%s</b>", primary_text);
-	primary_label = gtk_label_new (primary_markup);
-	g_free (primary_markup);
-	gtk_box_pack_start (GTK_BOX (vbox), primary_label, TRUE, TRUE, 0);
-	gtk_label_set_use_markup (GTK_LABEL (primary_label), TRUE);
-	gtk_label_set_line_wrap (GTK_LABEL (primary_label), TRUE);
-	gtk_widget_set_halign (primary_label, GTK_ALIGN_START);
-	gtk_widget_set_can_focus (primary_label, TRUE);
-	gtk_label_set_selectable (GTK_LABEL (primary_label), TRUE);
-
-	if (secondary_text != NULL)
-	{
-		secondary_markup = g_strdup_printf ("<small>%s</small>",
-						    secondary_text);
-		secondary_label = gtk_label_new (secondary_markup);
-		g_free (secondary_markup);
-		gtk_box_pack_start (GTK_BOX (vbox), secondary_label, TRUE, TRUE, 0);
-		gtk_widget_set_can_focus (secondary_label, TRUE);
-		gtk_label_set_use_markup (GTK_LABEL (secondary_label), TRUE);
-		gtk_label_set_line_wrap (GTK_LABEL (secondary_label), TRUE);
-		gtk_label_set_selectable (GTK_LABEL (secondary_label), TRUE);
-		gtk_widget_set_halign (secondary_label, GTK_ALIGN_START);
-	}
-
-	gtk_widget_show_all (vbox);
-	set_contents (info_bar, vbox);
-}
-
 static GtkWidget *
-create_io_loading_error_info_bar (const gchar *primary_text,
-				  const gchar *secondary_text,
+create_io_loading_error_info_bar (const gchar *primary_msg,
+				  const gchar *secondary_msg,
 				  gboolean     recoverable_error)
 {
-	GtkWidget *info_bar;
+	TeplInfoBar *info_bar;
 
-	info_bar = gtk_info_bar_new ();
-	gtk_info_bar_set_message_type (GTK_INFO_BAR (info_bar),
-				       GTK_MESSAGE_ERROR);
+	info_bar = tepl_info_bar_new_simple (GTK_MESSAGE_ERROR,
+					     primary_msg,
+					     secondary_msg);
+
 	gtk_info_bar_set_show_close_button (GTK_INFO_BAR (info_bar), TRUE);
-
-	set_info_bar_text (info_bar,
-			   primary_text,
-			   secondary_text);
 
 	if (recoverable_error)
 	{
@@ -136,7 +92,7 @@ create_io_loading_error_info_bar (const gchar *primary_text,
 					 GTK_RESPONSE_OK);
 	}
 
-	return info_bar;
+	return GTK_WIDGET (info_bar);
 }
 
 static gboolean
