@@ -598,6 +598,13 @@ document_modified_changed (GtkTextBuffer *document,
 	g_object_notify_by_pspec (G_OBJECT (tab), properties[PROP_CAN_CLOSE]);
 }
 
+/* This function must be used carefully, and should be replaced by
+ * tepl_tab_add_info_bar() (note the *add*, not *set*).
+ * When certain infobars are set, it also configures GeditTab to be in a certain
+ * state (e.g. non-editable) and it waits a response from the infobar to restore
+ * the GeditTab state. If another infobar is set in the meantime, there will be
+ * a bug.
+ */
 static void
 set_info_bar (GeditTab  *tab,
 	      GtkWidget *info_bar)
