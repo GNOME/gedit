@@ -296,64 +296,51 @@ gedit_io_loading_error_info_bar_new (GFile                   *location,
 				     const GtkSourceEncoding *encoding,
 				     const GError            *error)
 {
-	gchar *error_message = NULL;
-	gchar *message_details = NULL;
-	gchar *full_formatted_uri;
-	gchar *uri_for_display;
-	gchar *temp_uri_for_display;
-	GtkWidget *info_bar;
+	gchar *uri;
+	gchar *primary_msg = NULL;
+	gchar *secondary_msg = NULL;
 	gboolean edit_anyway = FALSE;
 	gboolean convert_error = FALSE;
+	GtkWidget *info_bar;
 
 	g_return_val_if_fail (error != NULL, NULL);
 
 	if (location != NULL)
 	{
-		full_formatted_uri = g_file_get_parse_name (location);
+		uri = g_file_get_parse_name (location);
 	}
 	else
 	{
-		full_formatted_uri = g_strdup ("stdin");
+		uri = g_strdup ("stdin");
 	}
-
-	/* Truncate the URI so it doesn't get insanely wide. Note that even
-	 * though the dialog uses wrapped text, if the URI doesn't contain
-	 * white space then the text-wrapping code is too stupid to wrap it.
-	 */
-	temp_uri_for_display = tepl_utils_str_middle_truncate (full_formatted_uri,
-							       MAX_URI_IN_DIALOG_LENGTH);
-	g_free (full_formatted_uri);
-
-	uri_for_display = g_markup_escape_text (temp_uri_for_display, -1);
-	g_free (temp_uri_for_display);
 
 	if (is_gio_error (error, G_IO_ERROR_TOO_MANY_LINKS))
 	{
-		message_details = g_strdup (_("The number of followed links is limited and the actual file could not be found within this limit."));
+		secondary_msg = g_strdup (_("The number of followed links is limited and the actual "
+					    "file could not be found within this limit."));
 	}
 	else if (is_gio_error (error, G_IO_ERROR_PERMISSION_DENIED))
 	{
-		message_details = g_strdup (_("You do not have the permissions necessary to open the file."));
+		secondary_msg = g_strdup (_("You do not have the permissions necessary to open the file."));
 	}
 	else if ((is_gio_error (error, G_IO_ERROR_INVALID_DATA) && encoding == NULL) ||
 		 (error->domain == GTK_SOURCE_FILE_LOADER_ERROR &&
 		  error->code == GTK_SOURCE_FILE_LOADER_ERROR_ENCODING_AUTO_DETECTION_FAILED))
 	{
-		message_details = g_strconcat (_("Unable to detect the character encoding."), "\n",
-					       _("Please check that you are not trying to open a binary file."), "\n",
-					       _("Select a character encoding from the menu and try again."), NULL);
+		secondary_msg = g_strconcat (_("Unable to detect the character encoding."), "\n",
+					     _("Please check that you are not trying to open a binary file."), "\n",
+					     _("Select a character encoding from the menu and try again."), NULL);
 		convert_error = TRUE;
 	}
 	else if (error->domain == GTK_SOURCE_FILE_LOADER_ERROR &&
 		 error->code == GTK_SOURCE_FILE_LOADER_ERROR_CONVERSION_FALLBACK)
 	{
-		error_message = g_strdup_printf (_("There was a problem opening the file “%s”."),
-						 uri_for_display);
-		message_details = g_strconcat (_("The file you opened has some invalid characters. "
+		primary_msg = g_strdup_printf (_("There was a problem opening the file “%s”."), uri);
+		secondary_msg = g_strconcat (_("The file you opened has some invalid characters. "
 					       "If you continue editing this file you could corrupt this "
 					       "document."), "\n",
-					       _("You can also choose another character encoding and try again."),
-					       NULL);
+					     _("You can also choose another character encoding and try again."),
+					     NULL);
 		edit_anyway = TRUE;
 		convert_error = TRUE;
 	}
@@ -361,43 +348,41 @@ gedit_io_loading_error_info_bar_new (GFile                   *location,
 	{
 		gchar *encoding_name = gtk_source_encoding_to_string (encoding);
 
-		error_message = g_strdup_printf (_("Could not open the file “%s” using the “%s” character encoding."),
-						 uri_for_display,
-						 encoding_name);
-		message_details = g_strconcat (_("Please check that you are not trying to open a binary file."), "\n",
-					       _("Select a different character encoding from the menu and try again."), NULL);
+		primary_msg = g_strdup_printf (_("Could not open the file “%s” using the “%s” character encoding."),
+					       uri,
+					       encoding_name);
+		secondary_msg = g_strconcat (_("Please check that you are not trying to open a binary file."), "\n",
+					     _("Select a different character encoding from the menu and try again."), NULL);
 		convert_error = TRUE;
 
 		g_free (encoding_name);
 	}
 	else
 	{
-		get_detailed_error_messages (location, uri_for_display, error, &error_message, &message_details);
+		get_detailed_error_messages (location, uri, error, &primary_msg, &secondary_msg);
 	}
 
-	if (error_message == NULL)
+	if (primary_msg == NULL)
 	{
-		error_message = g_strdup_printf (_("Could not open the file “%s”."),
-						 uri_for_display);
+		primary_msg = g_strdup_printf (_("Could not open the file “%s”."), uri);
 	}
 
 	if (convert_error)
 	{
-		info_bar = create_conversion_error_info_bar (error_message,
-							     message_details,
+		info_bar = create_conversion_error_info_bar (primary_msg,
+							     secondary_msg,
 							     edit_anyway);
 	}
 	else
 	{
-		info_bar = create_io_loading_error_info_bar (error_message,
-							     message_details,
+		info_bar = create_io_loading_error_info_bar (primary_msg,
+							     secondary_msg,
 							     is_recoverable_error (error));
 	}
 
-	g_free (uri_for_display);
-	g_free (error_message);
-	g_free (message_details);
-
+	g_free (uri);
+	g_free (primary_msg);
+	g_free (secondary_msg);
 	return info_bar;
 }
 
