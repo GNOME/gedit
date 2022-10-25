@@ -40,8 +40,6 @@
  * (normally GIO/GVfs is able to open https:// files) and wait 2 min.
  */
 
-#define MAX_URI_IN_DIALOG_LENGTH 50
-
 static gboolean
 is_recoverable_error (const GError *error)
 {
@@ -391,51 +389,34 @@ gedit_conversion_error_while_saving_info_bar_new (GFile                   *locat
 						  const GtkSourceEncoding *encoding,
 						  const GError            *error)
 {
-	gchar *error_message = NULL;
-	gchar *message_details = NULL;
-	gchar *full_formatted_uri;
+	gchar *uri;
 	gchar *encoding_name;
-	gchar *uri_for_display;
-	gchar *temp_uri_for_display;
+	gchar *primary_msg = NULL;
+	gchar *secondary_msg = NULL;
 	GtkWidget *info_bar;
 
 	g_return_val_if_fail (G_IS_FILE (location), NULL);
-	g_return_val_if_fail (error != NULL, NULL);
-	g_return_val_if_fail (error->domain == G_CONVERT_ERROR ||
-	                      error->domain == G_IO_ERROR, NULL);
 	g_return_val_if_fail (encoding != NULL, NULL);
+	g_return_val_if_fail (error != NULL, NULL);
 
-	full_formatted_uri = g_file_get_parse_name (location);
-
-	/* Truncate the URI so it doesn't get insanely wide. Note that even
-	 * though the dialog uses wrapped text, if the URI doesn't contain
-	 * white space then the text-wrapping code is too stupid to wrap it.
-	 */
-	temp_uri_for_display = tepl_utils_str_middle_truncate (full_formatted_uri,
-							       MAX_URI_IN_DIALOG_LENGTH);
-	g_free (full_formatted_uri);
-
-	uri_for_display = g_markup_escape_text (temp_uri_for_display, -1);
-	g_free (temp_uri_for_display);
-
+	uri = g_file_get_parse_name (location);
 	encoding_name = gtk_source_encoding_to_string (encoding);
 
-	error_message = g_strdup_printf (_("Could not save the file “%s” using the “%s” character encoding."),
-					 uri_for_display,
-					 encoding_name);
-	message_details = g_strconcat (_("The document contains one or more characters that cannot be encoded "
-					 "using the specified character encoding."), "\n",
-				       _("Select a different character encoding from the menu and try again."), NULL);
+	primary_msg = g_strdup_printf (_("Could not save the file “%s” using the “%s” character encoding."),
+				       uri,
+				       encoding_name);
+	secondary_msg = g_strconcat (_("The document contains one or more characters that cannot be encoded "
+				       "using the specified character encoding."), "\n",
+				     _("Select a different character encoding from the menu and try again."), NULL);
 
-	info_bar = create_conversion_error_info_bar (error_message,
-						     message_details,
+	info_bar = create_conversion_error_info_bar (primary_msg,
+						     secondary_msg,
 						     FALSE);
 
-	g_free (uri_for_display);
+	g_free (uri);
 	g_free (encoding_name);
-	g_free (error_message);
-	g_free (message_details);
-
+	g_free (primary_msg);
+	g_free (secondary_msg);
 	return info_bar;
 }
 
