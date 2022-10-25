@@ -108,6 +108,10 @@ parse_gio_error (const GError  *error,
 
 	switch (error->code)
 	{
+		case G_IO_ERROR_NOT_REGULAR_FILE:
+			*message_details = g_strdup (error->message);
+			break;
+
 		case G_IO_ERROR_NOT_FOUND:
 		case G_IO_ERROR_NOT_DIRECTORY:
 			*error_message = g_strdup_printf (_("Could not find the file “%s”."),
@@ -212,11 +216,6 @@ parse_gio_error (const GError  *error,
 						  "correctly and try again."));
 				}
 			}
-			break;
-
-		case G_IO_ERROR_NOT_REGULAR_FILE:
-			*message_details = g_strdup_printf (_("“%s” is not a regular file."),
-							   uri_for_display);
 			break;
 
 		case G_IO_ERROR_TIMED_OUT:
