@@ -81,13 +81,22 @@ create_io_loading_error_info_bar (const gchar *primary_msg,
 					     primary_msg,
 					     secondary_msg);
 
-	gtk_info_bar_set_show_close_button (GTK_INFO_BAR (info_bar), TRUE);
-
 	if (recoverable_error)
 	{
+		/* Since there are several buttons, don't use
+		 * gtk_info_bar_set_show_close_button().
+		 */
 		gtk_info_bar_add_button (GTK_INFO_BAR (info_bar),
 					 _("_Retry"),
 					 GTK_RESPONSE_OK);
+
+		gtk_info_bar_add_button (GTK_INFO_BAR (info_bar),
+					 _("_Cancel"),
+					 GTK_RESPONSE_CLOSE);
+	}
+	else
+	{
+		gtk_info_bar_set_show_close_button (GTK_INFO_BAR (info_bar), TRUE);
 	}
 
 	return GTK_WIDGET (info_bar);
