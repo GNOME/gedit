@@ -655,88 +655,38 @@ GtkWidget *
 gedit_externally_modified_saving_error_info_bar_new (GFile        *location,
 						     const GError *error)
 {
-	GtkWidget *info_bar;
-	GtkWidget *hbox_content;
-	GtkWidget *vbox;
-	gchar *primary_markup;
-	gchar *secondary_markup;
-	GtkWidget *primary_label;
-	GtkWidget *secondary_label;
-	gchar *primary_text;
-	const gchar *secondary_text;
-	gchar *full_formatted_uri;
-	gchar *uri_for_display;
-	gchar *temp_uri_for_display;
+	TeplInfoBar *info_bar;
+	gchar *uri;
+	gchar *primary_msg;
+	const gchar *secondary_msg;
 
 	g_return_val_if_fail (G_IS_FILE (location), NULL);
-	g_return_val_if_fail (error != NULL, NULL);
-	g_return_val_if_fail (error->domain == GTK_SOURCE_FILE_SAVER_ERROR, NULL);
-	g_return_val_if_fail (error->code == GTK_SOURCE_FILE_SAVER_ERROR_EXTERNALLY_MODIFIED, NULL);
+	g_return_val_if_fail (g_error_matches (error,
+					       GTK_SOURCE_FILE_SAVER_ERROR,
+					       GTK_SOURCE_FILE_SAVER_ERROR_EXTERNALLY_MODIFIED), NULL);
 
-	full_formatted_uri = g_file_get_parse_name (location);
+	uri = g_file_get_parse_name (location);
 
-	/* Truncate the URI so it doesn't get insanely wide. Note that even
-	 * though the dialog uses wrapped text, if the URI doesn't contain
-	 * white space then the text-wrapping code is too stupid to wrap it.
-	 */
-	temp_uri_for_display = tepl_utils_str_middle_truncate (full_formatted_uri,
-							       MAX_URI_IN_DIALOG_LENGTH);
-	g_free (full_formatted_uri);
+	primary_msg = g_strdup_printf (_("The file “%s” has been externally modified."),
+				       uri);
 
-	uri_for_display = g_markup_escape_text (temp_uri_for_display, -1);
-	g_free (temp_uri_for_display);
+	secondary_msg = _("If you save it, all the external changes could be lost. Save it anyway?");
 
-	info_bar = gtk_info_bar_new ();
+	info_bar = tepl_info_bar_new_simple (GTK_MESSAGE_WARNING,
+					     primary_msg,
+					     secondary_msg);
 
 	gtk_info_bar_add_button (GTK_INFO_BAR (info_bar),
 				 _("S_ave Anyway"),
 				 GTK_RESPONSE_YES);
+
 	gtk_info_bar_add_button (GTK_INFO_BAR (info_bar),
 				 _("D_on’t Save"),
 				 GTK_RESPONSE_CANCEL);
-	gtk_info_bar_set_message_type (GTK_INFO_BAR (info_bar),
-				       GTK_MESSAGE_WARNING);
 
-	hbox_content = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 8);
-
-	vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
-	gtk_box_pack_start (GTK_BOX (hbox_content), vbox, TRUE, TRUE, 0);
-
-	/* FIXME: review this message, it's not clear since for the user the "modification"
-	 * could be interpreted as the changes he made in the document. beside "reading" is
-	 * not accurate (since last load/save)
-	 */
-	primary_text = g_strdup_printf (_("The file “%s” has been modified since reading it."),
-					uri_for_display);
-	g_free (uri_for_display);
-
-	primary_markup = g_strdup_printf ("<b>%s</b>", primary_text);
-	g_free (primary_text);
-	primary_label = gtk_label_new (primary_markup);
-	g_free (primary_markup);
-	gtk_box_pack_start (GTK_BOX (vbox), primary_label, TRUE, TRUE, 0);
-	gtk_label_set_use_markup (GTK_LABEL (primary_label), TRUE);
-	gtk_label_set_line_wrap (GTK_LABEL (primary_label), TRUE);
-	gtk_widget_set_halign (primary_label, GTK_ALIGN_START);
-	gtk_widget_set_can_focus (primary_label, TRUE);
-	gtk_label_set_selectable (GTK_LABEL (primary_label), TRUE);
-
-	secondary_text = _("If you save it, all the external changes could be lost. Save it anyway?");
-	secondary_markup = g_strdup_printf ("<small>%s</small>",
-					    secondary_text);
-	secondary_label = gtk_label_new (secondary_markup);
-	g_free (secondary_markup);
-	gtk_box_pack_start (GTK_BOX (vbox), secondary_label, TRUE, TRUE, 0);
-	gtk_widget_set_can_focus (secondary_label, TRUE);
-	gtk_label_set_use_markup (GTK_LABEL (secondary_label), TRUE);
-	gtk_label_set_line_wrap (GTK_LABEL (secondary_label), TRUE);
-	gtk_label_set_selectable (GTK_LABEL (secondary_label), TRUE);
-	gtk_widget_set_halign (secondary_label, GTK_ALIGN_START);
-
-	gtk_widget_show_all (hbox_content);
-	set_contents (info_bar, hbox_content);
-
-	return info_bar;
+	g_free (uri);
+	g_free (primary_msg);
+	return GTK_WIDGET (info_bar);
 }
 
 GtkWidget *
