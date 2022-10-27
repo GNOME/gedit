@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gedit/issues\n"
-"POT-Creation-Date: 2022-10-26 18:20+0000\n"
-"PO-Revision-Date: 2022-10-26 21:13+0200\n"
+"POT-Creation-Date: 2022-10-26 23:12+0000\n"
+"PO-Revision-Date: 2022-10-27 05:30+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: \n"
 "Language: ka\n"
@@ -873,227 +873,214 @@ msgstr "ფაილების გახსნა"
 msgid "_Open"
 msgstr "_გახსნა"
 
-#: gedit/gedit-io-error-info-bar.c:135 gedit/gedit-io-error-info-bar.c:416
+#: gedit/gedit-io-error-info-bar.c:91 gedit/gedit-io-error-info-bar.c:358
 msgid "_Retry"
 msgstr "_თავიდან ცდა"
 
-#: gedit/gedit-io-error-info-bar.c:157
-#, c-format
-msgid "Could not find the file “%s”."
-msgstr "ფაილის (\"%s\") პოვნა შეუძლებელია."
+#: gedit/gedit-io-error-info-bar.c:121
+msgid "File not found."
+msgstr "ფაილი ნაპოვნი არაა."
 
 #. Translators: %s is a URI scheme (like for example http:, ftp:, etc.)
-#: gedit/gedit-io-error-info-bar.c:177
+#: gedit/gedit-io-error-info-bar.c:139
 #, c-format
 msgid "Unable to handle “%s:” locations."
 msgstr "\"%s\" ტიპის მდებარეობების დამუშავება შეუძლებელია."
 
-#: gedit/gedit-io-error-info-bar.c:183
+#: gedit/gedit-io-error-info-bar.c:145
 msgid "Unable to handle this location."
 msgstr "ამ მდებარეობის დამუშავება შეუძლებელია."
 
-#: gedit/gedit-io-error-info-bar.c:192
+#: gedit/gedit-io-error-info-bar.c:154
 msgid "The location of the file cannot be accessed."
 msgstr ""
 
-#: gedit/gedit-io-error-info-bar.c:196
+#: gedit/gedit-io-error-info-bar.c:158
 #, c-format
 msgid "“%s” is a directory."
 msgstr "\"%s\" საქაღალდეა."
 
-#: gedit/gedit-io-error-info-bar.c:198 gedit/gedit-io-error-info-bar.c:205
+#: gedit/gedit-io-error-info-bar.c:160 gedit/gedit-io-error-info-bar.c:167
 msgid "Please check that you typed the location correctly and try again."
 msgstr ""
 
-#: gedit/gedit-io-error-info-bar.c:203
+#: gedit/gedit-io-error-info-bar.c:165
 #, c-format
 msgid "“%s” is not a valid location."
 msgstr "\"%s\" სწორ მდებარეობას არ წარმოადგენს."
 
 #. Translators: %s is a host name
-#: gedit/gedit-io-error-info-bar.c:239
+#: gedit/gedit-io-error-info-bar.c:201
 #, c-format
 msgid ""
 "Host “%s” could not be found. Please check that your proxy settings are "
 "correct and try again."
 msgstr ""
 
-#: gedit/gedit-io-error-info-bar.c:254
+#: gedit/gedit-io-error-info-bar.c:216
 #, c-format
 msgid ""
 "Hostname was invalid. Please check that you typed the location correctly and "
 "try again."
 msgstr ""
 
-#: gedit/gedit-io-error-info-bar.c:262
-#, c-format
-msgid "“%s” is not a regular file."
-msgstr "\"%s\" ჩვეულებრივი ფაილი არაა."
-
-#: gedit/gedit-io-error-info-bar.c:267
+#: gedit/gedit-io-error-info-bar.c:224
 msgid "Connection timed out. Please try again."
 msgstr ""
 
-#: gedit/gedit-io-error-info-bar.c:300
+#: gedit/gedit-io-error-info-bar.c:257
 #, c-format
 msgid "Unexpected error: %s"
 msgstr "მოულოდნელი შეცდომა: %s"
 
-#: gedit/gedit-io-error-info-bar.c:336
+#: gedit/gedit-io-error-info-bar.c:280
 msgid "Cannot find the requested file. Perhaps it has recently been deleted."
 msgstr ""
 
-#: gedit/gedit-io-error-info-bar.c:346
+#: gedit/gedit-io-error-info-bar.c:290
 #, c-format
 msgid "Could not revert the file “%s”."
 msgstr ""
 
-#: gedit/gedit-io-error-info-bar.c:373
+#: gedit/gedit-io-error-info-bar.c:315
 msgid "Ch_aracter Encoding:"
 msgstr ""
 
 #. Translators: the access key chosen for this string should be
 #. different from other main menu access keys (Open, Edit, View...)
-#: gedit/gedit-io-error-info-bar.c:424
+#: gedit/gedit-io-error-info-bar.c:366
 msgid "Edit Any_way"
 msgstr ""
 
-#: gedit/gedit-io-error-info-bar.c:512
+#: gedit/gedit-io-error-info-bar.c:454
 msgid ""
 "The number of followed links is limited and the actual file could not be "
 "found within this limit."
 msgstr ""
 
-#: gedit/gedit-io-error-info-bar.c:516
+#: gedit/gedit-io-error-info-bar.c:458
 msgid "You do not have the permissions necessary to open the file."
 msgstr ""
 
-#: gedit/gedit-io-error-info-bar.c:522
+#: gedit/gedit-io-error-info-bar.c:464
 msgid "Unable to detect the character encoding."
 msgstr ""
 
-#: gedit/gedit-io-error-info-bar.c:523 gedit/gedit-io-error-info-bar.c:547
+#: gedit/gedit-io-error-info-bar.c:465 gedit/gedit-io-error-info-bar.c:489
 msgid "Please check that you are not trying to open a binary file."
 msgstr ""
 
-#: gedit/gedit-io-error-info-bar.c:524
+#: gedit/gedit-io-error-info-bar.c:466
 msgid "Select a character encoding from the menu and try again."
 msgstr ""
 
-#: gedit/gedit-io-error-info-bar.c:530
+#: gedit/gedit-io-error-info-bar.c:472
 #, c-format
 msgid "There was a problem opening the file “%s”."
 msgstr ""
 
-#: gedit/gedit-io-error-info-bar.c:532
+#: gedit/gedit-io-error-info-bar.c:474
 msgid ""
 "The file you opened has some invalid characters. If you continue editing "
 "this file you could corrupt this document."
 msgstr ""
 
-#: gedit/gedit-io-error-info-bar.c:535
+#: gedit/gedit-io-error-info-bar.c:477
 msgid "You can also choose another character encoding and try again."
 msgstr ""
 
-#: gedit/gedit-io-error-info-bar.c:544
+#: gedit/gedit-io-error-info-bar.c:486
 #, c-format
 msgid "Could not open the file “%s” using the “%s” character encoding."
 msgstr ""
 
-#: gedit/gedit-io-error-info-bar.c:548 gedit/gedit-io-error-info-bar.c:623
+#: gedit/gedit-io-error-info-bar.c:490 gedit/gedit-io-error-info-bar.c:565
 msgid "Select a different character encoding from the menu and try again."
 msgstr ""
 
-#: gedit/gedit-io-error-info-bar.c:560
+#: gedit/gedit-io-error-info-bar.c:502
 #, c-format
 msgid "Could not open the file “%s”."
 msgstr "ფაილის (\"%s\") გახსნის შეცდომა."
 
-#: gedit/gedit-io-error-info-bar.c:618
+#: gedit/gedit-io-error-info-bar.c:560
 #, c-format
 msgid "Could not save the file “%s” using the “%s” character encoding."
 msgstr ""
 
-#: gedit/gedit-io-error-info-bar.c:621
+#: gedit/gedit-io-error-info-bar.c:563
 msgid ""
 "The document contains one or more characters that cannot be encoded using "
 "the specified character encoding."
 msgstr ""
 
-#: gedit/gedit-io-error-info-bar.c:670
+#: gedit/gedit-io-error-info-bar.c:612
 #, c-format
 msgid "The file “%s” has been externally modified."
 msgstr "ფაილი \"%s\" გარე პროგრამის მიერ შეიცვალა."
 
-#: gedit/gedit-io-error-info-bar.c:673
+#: gedit/gedit-io-error-info-bar.c:615
 msgid "If you save it, all the external changes could be lost. Save it anyway?"
 msgstr ""
 
-#: gedit/gedit-io-error-info-bar.c:680
+#: gedit/gedit-io-error-info-bar.c:622
 msgid "S_ave Anyway"
 msgstr "_მაინც შენახვა"
 
-#: gedit/gedit-io-error-info-bar.c:684
+#: gedit/gedit-io-error-info-bar.c:626
 msgid "D_on’t Save"
 msgstr "_არ შეინახო"
 
 #. Translators: %s is a URI scheme (like for example http:, ftp:, etc.)
-#: gedit/gedit-io-error-info-bar.c:732
+#: gedit/gedit-io-error-info-bar.c:658
 #, c-format
 msgid ""
 "Cannot handle “%s:” locations in write mode. Please check that you typed the "
 "location correctly and try again."
 msgstr ""
 
-#: gedit/gedit-io-error-info-bar.c:740
+#: gedit/gedit-io-error-info-bar.c:665
 msgid ""
 "Cannot handle this location in write mode. Please check that you typed the "
 "location correctly and try again."
 msgstr ""
 
-#: gedit/gedit-io-error-info-bar.c:749
+#: gedit/gedit-io-error-info-bar.c:674
 #, c-format
 msgid ""
 "“%s” is not a valid location. Please check that you typed the location "
 "correctly and try again."
 msgstr ""
 
-#: gedit/gedit-io-error-info-bar.c:756
+#: gedit/gedit-io-error-info-bar.c:681
 msgid ""
 "You do not have the permissions necessary to save the file. Please check "
 "that you typed the location correctly and try again."
 msgstr ""
 
-#: gedit/gedit-io-error-info-bar.c:762
+#: gedit/gedit-io-error-info-bar.c:687
 msgid ""
 "There is not enough disk space to save the file. Please free some disk space "
 "and try again."
 msgstr ""
 
-#: gedit/gedit-io-error-info-bar.c:767
+#: gedit/gedit-io-error-info-bar.c:692
 msgid ""
 "You are trying to save the file on a read-only disk. Please check that you "
 "typed the location correctly and try again."
 msgstr ""
 
-#: gedit/gedit-io-error-info-bar.c:773
+#: gedit/gedit-io-error-info-bar.c:698
 msgid "A file with the same name already exists. Please use a different name."
 msgstr ""
 
-#: gedit/gedit-io-error-info-bar.c:778
+#: gedit/gedit-io-error-info-bar.c:703
 msgid ""
 "The disk where you are trying to save the file has a limitation on length of "
 "the file names. Please use a shorter name."
 msgstr ""
 
-#: gedit/gedit-io-error-info-bar.c:789
-msgid ""
-"The disk where you are trying to save the file has a limitation on file "
-"sizes. Please try saving a smaller file or saving it to a disk that does not "
-"have this limitation."
-msgstr ""
-
-#: gedit/gedit-io-error-info-bar.c:806
+#: gedit/gedit-io-error-info-bar.c:718
 #, c-format
 msgid "Could not save the file “%s”."
 msgstr ""
@@ -3341,6 +3328,14 @@ msgstr ""
 #: plugins/time/time.plugin.desktop.in:6
 msgid "Inserts current date and time at the cursor position."
 msgstr ""
+
+#, c-format
+#~ msgid "Could not find the file “%s”."
+#~ msgstr "ფაილის (\"%s\") პოვნა შეუძლებელია."
+
+#, c-format
+#~ msgid "“%s” is not a regular file."
+#~ msgstr "\"%s\" ჩვეულებრივი ფაილი არაა."
 
 #~ msgid "gedit is the text editor of the GNOME desktop environment."
 #~ msgstr "gedit-ი GNOME-ის ტექსტური რედაქტორია."
