@@ -22,17 +22,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gedit/issues\n"
-"POT-Creation-Date: 2022-07-31 13:09+0000\n"
-"PO-Revision-Date: 2022-08-09 15:34+1000\n"
+"POT-Creation-Date: 2022-10-27 21:14+0000\n"
+"PO-Revision-Date: 2022-10-28 07:40+1000\n"
 "Last-Translator: Ser82-png <asvmail.as@gmail.com>\n"
 "Language-Team: Русский <gnome-cyr@gnome.org>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Poedit 2.3\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Poedit 3.0.1\n"
 
 #: data/org.gnome.gedit.appdata.xml.in:7 data/org.gnome.gedit.desktop.in:3
 msgid "gedit"
@@ -915,7 +915,7 @@ msgstr "и многие другие участники."
 
 #: gedit/gedit-commands-help.c:120
 msgid "gedit is an easy-to-use and general-purpose text editor"
-msgstr "gedit — простой в использовании текстовый редактор общего назначения."
+msgstr "gedit — простой в использовании текстовый редактор общего назначения"
 
 #: gedit/gedit-commands-help.c:125
 msgid "translator-credits"
@@ -1000,7 +1000,7 @@ msgstr "Переместить в более низкий приоритет"
 #: gedit/gedit-factory.c:29
 #, c-format
 msgid "Untitled Document %d"
-msgstr "Без имени %d"
+msgstr "Без названия %d"
 
 #: gedit/gedit-file-chooser.c:41 gedit/gedit-preferences-dialog.c:730
 msgid "All Files"
@@ -1035,96 +1035,64 @@ msgstr "Открыть файлы"
 msgid "_Open"
 msgstr "_Открыть"
 
-#: gedit/gedit-io-error-info-bar.c:135 gedit/gedit-io-error-info-bar.c:416
+#: gedit/gedit-io-error-info-bar.c:92 gedit/gedit-io-error-info-bar.c:281
 msgid "_Retry"
 msgstr "Пов_торить"
 
-#: gedit/gedit-io-error-info-bar.c:157
-#, c-format
-msgid "Could not find the file “%s”."
-msgstr "Не удалось найти файл «%s»."
+#: gedit/gedit-io-error-info-bar.c:108
+msgid "File not found."
+msgstr "Файл не найден."
 
+#. How to reproduce this case: from the command line,
+#. * try to open a URI such as: foo://example.net/file
+#.
 #. Translators: %s is a URI scheme (like for example http:, ftp:, etc.)
-#: gedit/gedit-io-error-info-bar.c:177
+#: gedit/gedit-io-error-info-bar.c:127
 #, c-format
-msgid "Unable to handle “%s:” locations."
-msgstr "Не удалось обработать адреса «%s:»."
+msgid "“%s:” locations are not supported."
+msgstr "«%s:» адреса не поддерживаются."
 
-#: gedit/gedit-io-error-info-bar.c:183
-msgid "Unable to handle this location."
-msgstr "Не удалось обработать этот адрес."
-
-#: gedit/gedit-io-error-info-bar.c:192
+#: gedit/gedit-io-error-info-bar.c:136
 msgid "The location of the file cannot be accessed."
 msgstr "Адрес файла недоступен."
 
-#: gedit/gedit-io-error-info-bar.c:196
-#, c-format
-msgid "“%s” is a directory."
-msgstr "«%s» является каталогом."
-
-#: gedit/gedit-io-error-info-bar.c:198 gedit/gedit-io-error-info-bar.c:205
-msgid "Please check that you typed the location correctly and try again."
-msgstr "Убедитесь, что адрес указан правильно, и попробуйте ещё раз."
-
-#: gedit/gedit-io-error-info-bar.c:203
+#: gedit/gedit-io-error-info-bar.c:140
 #, c-format
 msgid "“%s” is not a valid location."
 msgstr "«%s» имеет неверный адрес."
 
-#. Translators: %s is a host name
-#: gedit/gedit-io-error-info-bar.c:239
+#: gedit/gedit-io-error-info-bar.c:141
+msgid "Please check that you typed the location correctly and try again."
+msgstr "Убедитесь, что адрес указан правильно, и попробуйте ещё раз."
+
+#: gedit/gedit-io-error-info-bar.c:174
 #, c-format
-msgid ""
-"Host “%s” could not be found. Please check that your proxy settings are "
-"correct and try again."
-msgstr ""
-"Не удалось найти узел «%s». Убедитесь в правильности параметров прокси и "
-"попробуйте ещё раз."
+#| msgid "“%s” not found"
+msgid "Hostname “%s” not known."
+msgstr "Hostname «%s» неизвестно."
 
-#: gedit/gedit-io-error-info-bar.c:254
-#, c-format
-msgid ""
-"Hostname was invalid. Please check that you typed the location correctly and "
-"try again."
-msgstr ""
-"Неверное имя узла. Убедитесь в правильности введённого имени и попробуйте "
-"ещё раз."
+#: gedit/gedit-io-error-info-bar.c:175
+msgid "The problem could come from the proxy settings."
+msgstr "Проблема может быть связана с настройками прокси."
 
-#: gedit/gedit-io-error-info-bar.c:262
-#, c-format
-msgid "“%s” is not a regular file."
-msgstr "«%s» не является обычным файлом."
+#: gedit/gedit-io-error-info-bar.c:211
+msgid "File not found. Perhaps it has recently been deleted."
+msgstr "Файл не найден. Возможно, он был недавно удалён."
 
-#: gedit/gedit-io-error-info-bar.c:267
-msgid "Connection timed out. Please try again."
-msgstr "Время ожидания соединения истекло. Попробуйте ещё раз."
-
-#: gedit/gedit-io-error-info-bar.c:300
-#, c-format
-msgid "Unexpected error: %s"
-msgstr "Неожиданная ошибка: %s"
-
-#: gedit/gedit-io-error-info-bar.c:336
-msgid "Cannot find the requested file. Perhaps it has recently been deleted."
-msgstr "Не удалось найти файл. Возможно, он был недавно удалён."
-
-#: gedit/gedit-io-error-info-bar.c:346
+#: gedit/gedit-io-error-info-bar.c:221
 #, c-format
 msgid "Could not revert the file “%s”."
 msgstr "Не удалось восстановить файл «%s»."
 
-#: gedit/gedit-io-error-info-bar.c:373
+#: gedit/gedit-io-error-info-bar.c:246
 msgid "Ch_aracter Encoding:"
 msgstr "К_одировка символов:"
 
-#. Translators: the access key chosen for this string should be
-#. different from other main menu access keys (Open, Edit, View...)
-#: gedit/gedit-io-error-info-bar.c:424
+#: gedit/gedit-io-error-info-bar.c:287
 msgid "Edit Any_way"
 msgstr "Редактировать в _любом случае"
 
-#: gedit/gedit-io-error-info-bar.c:512
+#: gedit/gedit-io-error-info-bar.c:334
 msgid ""
 "The number of followed links is limited and the actual file could not be "
 "found within this limit."
@@ -1132,28 +1100,28 @@ msgstr ""
 "Исчерпано допустимое количество переходов по ссылкам. Не удалось найти файл "
 "в заданных пределах."
 
-#: gedit/gedit-io-error-info-bar.c:516
+#: gedit/gedit-io-error-info-bar.c:338
 msgid "You do not have the permissions necessary to open the file."
 msgstr "Недостаточно прав для открытия файла."
 
-#: gedit/gedit-io-error-info-bar.c:522
+#: gedit/gedit-io-error-info-bar.c:344
 msgid "Unable to detect the character encoding."
 msgstr "Не удалось определить кодировку символов."
 
-#: gedit/gedit-io-error-info-bar.c:523 gedit/gedit-io-error-info-bar.c:547
+#: gedit/gedit-io-error-info-bar.c:345 gedit/gedit-io-error-info-bar.c:369
 msgid "Please check that you are not trying to open a binary file."
 msgstr "Возможно, вы пытаетесь открыть двоичный файл."
 
-#: gedit/gedit-io-error-info-bar.c:524
+#: gedit/gedit-io-error-info-bar.c:346
 msgid "Select a character encoding from the menu and try again."
 msgstr "Выберите кодировку в меню и попробуйте ещё раз."
 
-#: gedit/gedit-io-error-info-bar.c:530
+#: gedit/gedit-io-error-info-bar.c:352
 #, c-format
 msgid "There was a problem opening the file “%s”."
 msgstr "Ошибка открытия файла «%s»."
 
-#: gedit/gedit-io-error-info-bar.c:532
+#: gedit/gedit-io-error-info-bar.c:354
 msgid ""
 "The file you opened has some invalid characters. If you continue editing "
 "this file you could corrupt this document."
@@ -1161,30 +1129,30 @@ msgstr ""
 "Открытый файл содержит недопустимые символы. Дальнейшее редактирование может "
 "повредить документ."
 
-#: gedit/gedit-io-error-info-bar.c:535
+#: gedit/gedit-io-error-info-bar.c:357
 msgid "You can also choose another character encoding and try again."
 msgstr "Можете выбрать другую кодировку и попытаться снова."
 
-#: gedit/gedit-io-error-info-bar.c:544
+#: gedit/gedit-io-error-info-bar.c:366
 #, c-format
 msgid "Could not open the file “%s” using the “%s” character encoding."
 msgstr "Не удалось открыть файл «%s», используя кодировку «%s»."
 
-#: gedit/gedit-io-error-info-bar.c:548 gedit/gedit-io-error-info-bar.c:623
+#: gedit/gedit-io-error-info-bar.c:370 gedit/gedit-io-error-info-bar.c:445
 msgid "Select a different character encoding from the menu and try again."
 msgstr "Выберите другую кодировку в меню и попробуйте ещё раз."
 
-#: gedit/gedit-io-error-info-bar.c:560
+#: gedit/gedit-io-error-info-bar.c:382
 #, c-format
 msgid "Could not open the file “%s”."
 msgstr "Не удалось открыть файл «%s»."
 
-#: gedit/gedit-io-error-info-bar.c:618
+#: gedit/gedit-io-error-info-bar.c:440
 #, c-format
 msgid "Could not save the file “%s” using the “%s” character encoding."
 msgstr "Не удалось сохранить файл «%s», используя кодировку «%s»."
 
-#: gedit/gedit-io-error-info-bar.c:621
+#: gedit/gedit-io-error-info-bar.c:443
 msgid ""
 "The document contains one or more characters that cannot be encoded using "
 "the specified character encoding."
@@ -1192,31 +1160,27 @@ msgstr ""
 "Документ содержит символы, которые не могут быть отображены с использованием "
 "указанной кодировки."
 
-#: gedit/gedit-io-error-info-bar.c:692
-msgid "S_ave Anyway"
-msgstr "Всё равно со_хранить"
-
-#: gedit/gedit-io-error-info-bar.c:695
-msgid "D_on’t Save"
-msgstr "_Не сохранять"
-
-#. FIXME: review this message, it's not clear since for the user the "modification"
-#. * could be interpreted as the changes he made in the document. beside "reading" is
-#. * not accurate (since last load/save)
-#.
-#: gedit/gedit-io-error-info-bar.c:709
+#: gedit/gedit-io-error-info-bar.c:492
 #, c-format
-msgid "The file “%s” has been modified since reading it."
-msgstr "Файл «%s» был изменён с момента открытия."
+msgid "The file “%s” has been externally modified."
+msgstr "Файл «%s» был изменён извне."
 
-#: gedit/gedit-io-error-info-bar.c:724
+#: gedit/gedit-io-error-info-bar.c:495
 msgid "If you save it, all the external changes could be lost. Save it anyway?"
 msgstr ""
 "Если сохранить файл, все внешние изменения будут утеряны. Всё равно "
 "сохранить?"
 
+#: gedit/gedit-io-error-info-bar.c:502
+msgid "S_ave Anyway"
+msgstr "Всё равно со_хранить"
+
+#: gedit/gedit-io-error-info-bar.c:506
+msgid "D_on’t Save"
+msgstr "_Не сохранять"
+
 #. Translators: %s is a URI scheme (like for example http:, ftp:, etc.)
-#: gedit/gedit-io-error-info-bar.c:782
+#: gedit/gedit-io-error-info-bar.c:538
 #, c-format
 msgid ""
 "Cannot handle “%s:” locations in write mode. Please check that you typed the "
@@ -1225,7 +1189,7 @@ msgstr ""
 "Невозможно открыть адрес «%s» в режиме записи. Убедитесь в правильности "
 "указанного адреса и попробуйте ещё раз."
 
-#: gedit/gedit-io-error-info-bar.c:790
+#: gedit/gedit-io-error-info-bar.c:545
 msgid ""
 "Cannot handle this location in write mode. Please check that you typed the "
 "location correctly and try again."
@@ -1233,7 +1197,7 @@ msgstr ""
 "Невозможно открыть этот адрес в режиме записи. Убедитесь в правильности "
 "указанного адреса и попробуйте ещё раз."
 
-#: gedit/gedit-io-error-info-bar.c:799
+#: gedit/gedit-io-error-info-bar.c:554
 #, c-format
 msgid ""
 "“%s” is not a valid location. Please check that you typed the location "
@@ -1242,7 +1206,7 @@ msgstr ""
 "«%s» не является верным адресом. Убедитесь в правильности указанного адреса "
 "и попробуйте ещё раз."
 
-#: gedit/gedit-io-error-info-bar.c:806
+#: gedit/gedit-io-error-info-bar.c:561
 msgid ""
 "You do not have the permissions necessary to save the file. Please check "
 "that you typed the location correctly and try again."
@@ -1250,7 +1214,7 @@ msgstr ""
 "Недостаточно прав для сохранения файла. Убедитесь в правильности указанного "
 "адреса и попробуйте ещё раз."
 
-#: gedit/gedit-io-error-info-bar.c:812
+#: gedit/gedit-io-error-info-bar.c:567
 msgid ""
 "There is not enough disk space to save the file. Please free some disk space "
 "and try again."
@@ -1258,7 +1222,7 @@ msgstr ""
 "Недостаточно места на диске для сохранения файла. Освободите немного места "
 "на диске и попробуйте ещё раз."
 
-#: gedit/gedit-io-error-info-bar.c:817
+#: gedit/gedit-io-error-info-bar.c:572
 msgid ""
 "You are trying to save the file on a read-only disk. Please check that you "
 "typed the location correctly and try again."
@@ -1266,11 +1230,11 @@ msgstr ""
 "Невозможно сохранить файл на устройство в режиме «только чтение». Убедитесь "
 "в правильности указанного адреса и попробуйте ещё раз."
 
-#: gedit/gedit-io-error-info-bar.c:823
+#: gedit/gedit-io-error-info-bar.c:578
 msgid "A file with the same name already exists. Please use a different name."
-msgstr "Файл с таким именем уже существует. Укажите другое имя."
+msgstr "Файл с таким названием уже существует. Укажите другое название."
 
-#: gedit/gedit-io-error-info-bar.c:828
+#: gedit/gedit-io-error-info-bar.c:583
 msgid ""
 "The disk where you are trying to save the file has a limitation on length of "
 "the file names. Please use a shorter name."
@@ -1279,16 +1243,7 @@ msgstr ""
 "Попробуйте сохранить файл меньшего размера или воспользуйтесь диском без "
 "подобных ограничений."
 
-#: gedit/gedit-io-error-info-bar.c:839
-msgid ""
-"The disk where you are trying to save the file has a limitation on file "
-"sizes. Please try saving a smaller file or saving it to a disk that does not "
-"have this limitation."
-msgstr ""
-"Диск, выбранный для сохранения файла, имеет ограничение на длину имени "
-"файла. Используйте более короткое имя."
-
-#: gedit/gedit-io-error-info-bar.c:856
+#: gedit/gedit-io-error-info-bar.c:598
 #, c-format
 msgid "Could not save the file “%s”."
 msgstr "Не удалось сохранить файл «%s»."
@@ -1439,7 +1394,7 @@ msgstr "Ошибка сохранения файла «%s»"
 
 #: gedit/gedit-tab.c:1556
 msgid "Name:"
-msgstr "Имя:"
+msgstr "Название:"
 
 #: gedit/gedit-tab.c:1557
 msgid "MIME Type:"
@@ -2152,7 +2107,7 @@ msgstr "Сохранить документ"
 #: gedit/resources/ui/gedit-shortcuts.ui:40
 msgctxt "shortcut window"
 msgid "Save the document with a new filename"
-msgstr "Сохранить документ под другим именем"
+msgstr "Сохранить документ под другим названием"
 
 #: gedit/resources/ui/gedit-shortcuts.ui:47
 msgctxt "shortcut window"
@@ -2572,7 +2527,7 @@ msgstr "Удалить пробелы"
 
 #: plugins/externaltools/data/remove-trailing-spaces.desktop.in:4
 msgid "Remove useless trailing spaces in your file"
-msgstr "Удалить лишние пробелы в имени файла"
+msgstr "Удалить лишние пробелы в названии файла"
 
 #: plugins/externaltools/data/run-command.desktop.in:3
 msgid "Run command"
@@ -3093,7 +3048,7 @@ msgstr "Отображать _двоичные"
 
 #: plugins/filebrowser/resources/ui/gedit-file-browser-menus.ui:67
 msgid "Match Filename"
-msgstr "Совпадение имени файла"
+msgstr "Совпадение названия файла"
 
 #: plugins/filebrowser/resources/ui/gedit-file-browser-widget.ui:183
 msgid "History"
@@ -3581,6 +3536,56 @@ msgstr "Вставка даты и времени"
 #: plugins/time/time.plugin.desktop.in:6
 msgid "Inserts current date and time at the cursor position."
 msgstr "Вставляет текущую дату и время в позиции курсора."
+
+#, c-format
+#~ msgid ""
+#~ "Host “%s” could not be found. Please check that your proxy settings are "
+#~ "correct and try again."
+#~ msgstr ""
+#~ "Не удалось найти узел «%s». Убедитесь в правильности параметров прокси и "
+#~ "попробуйте ещё раз."
+
+#, c-format
+#~ msgid ""
+#~ "Hostname was invalid. Please check that you typed the location correctly "
+#~ "and try again."
+#~ msgstr ""
+#~ "Неверное название узла. Убедитесь в правильности введённого названия и "
+#~ "попробуйте ещё раз."
+
+#, c-format
+#~ msgid "Unexpected error: %s"
+#~ msgstr "Неожиданная ошибка: %s"
+
+#, c-format
+#~ msgid "Unable to handle “%s:” locations."
+#~ msgstr "Не удалось обработать адреса «%s:»."
+
+#~ msgid "Unable to handle this location."
+#~ msgstr "Не удалось обработать этот адрес."
+
+#, c-format
+#~ msgid "Could not find the file “%s”."
+#~ msgstr "Не удалось найти файл «%s»."
+
+#, c-format
+#~ msgid "“%s” is a directory."
+#~ msgstr "«%s» является каталогом."
+
+#, c-format
+#~ msgid "“%s” is not a regular file."
+#~ msgstr "«%s» не является обычным файлом."
+
+#~ msgid "Connection timed out. Please try again."
+#~ msgstr "Время ожидания соединения истекло. Попробуйте ещё раз."
+
+#~ msgid ""
+#~ "The disk where you are trying to save the file has a limitation on file "
+#~ "sizes. Please try saving a smaller file or saving it to a disk that does "
+#~ "not have this limitation."
+#~ msgstr ""
+#~ "Диск, выбранный для сохранения файла, имеет ограничение на длину имени "
+#~ "файла. Используйте более короткое имя."
 
 #~ msgid "gedit is the text editor of the GNOME desktop environment."
 #~ msgstr "gedit — стандартный редактор текстов среды рабочего стола GNOME."
