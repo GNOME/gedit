@@ -108,7 +108,7 @@ get_supported_mime_types (void)
 			const gchar *cur_mime_type = mime_types[mime_type_num];
 
 			if (!g_content_type_is_a (cur_mime_type, "text/plain") &&
-				!g_content_type_equals (cur_mime_type, "application/x-zerosize"))
+			    !g_content_type_equals (cur_mime_type, "application/x-zerosize"))
 			{
 				//g_message ("Mime-type '%s' is not related to 'text/plain'", cur_mime_type);
 				supported_mime_types = g_slist_prepend (supported_mime_types,

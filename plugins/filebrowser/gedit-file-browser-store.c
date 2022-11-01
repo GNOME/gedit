@@ -1942,8 +1942,8 @@ content_type_is_text (gchar const *content_type)
 		return TRUE;
 
 #ifndef G_OS_WIN32
-	return g_content_type_is_a (content_type, "text/plain") ||
-		   g_content_type_equals (content_type, "application/x-zerosize");
+	return (g_content_type_is_a (content_type, "text/plain") ||
+		g_content_type_equals (content_type, "application/x-zerosize"));
 #else
 	if (g_content_type_is_a (content_type, "text"))
 		return TRUE;
