@@ -42,48 +42,6 @@ static GParamSpec *properties[N_PROPERTIES];
 G_DEFINE_TYPE_WITH_PRIVATE (TeplMenuStackSwitcher, tepl_menu_stack_switcher, GTK_TYPE_MENU_BUTTON)
 
 static void
-tepl_menu_stack_switcher_init (TeplMenuStackSwitcher *switcher)
-{
-	GtkWidget *box;
-	GtkWidget *arrow;
-	GtkStyleContext *context;
-
-	switcher->priv = tepl_menu_stack_switcher_get_instance_private (switcher);
-
-	box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 6);
-
-	arrow = gtk_image_new_from_icon_name ("pan-down-symbolic", GTK_ICON_SIZE_BUTTON);
-	gtk_box_pack_end (GTK_BOX (box), arrow, FALSE, TRUE, 0);
-	gtk_widget_set_valign (arrow, GTK_ALIGN_BASELINE);
-
-	switcher->priv->label = GTK_LABEL (gtk_label_new (NULL));
-	gtk_widget_set_valign (GTK_WIDGET (switcher->priv->label), GTK_ALIGN_BASELINE);
-	gtk_box_pack_start (GTK_BOX (box), GTK_WIDGET (switcher->priv->label), TRUE, TRUE, 6);
-
-	// FIXME: this is not correct if this widget becomes more generic
-	// and used also outside the header bar, but for now we just want
-	// the same style as title labels
-	context = gtk_widget_get_style_context (GTK_WIDGET (switcher->priv->label));
-	gtk_style_context_add_class (context, "title");
-
-	gtk_widget_show_all (box);
-	gtk_container_add (GTK_CONTAINER (switcher), box);
-
-	switcher->priv->popover = gtk_popover_new (GTK_WIDGET (switcher));
-	gtk_popover_set_position (GTK_POPOVER (switcher->priv->popover), GTK_POS_BOTTOM);
-	context = gtk_widget_get_style_context (switcher->priv->popover);
-	gtk_style_context_add_class (context, "tepl-menu-stack-switcher");
-
-	switcher->priv->button_box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
-	gtk_widget_show (switcher->priv->button_box);
-	gtk_container_add (GTK_CONTAINER (switcher->priv->popover), switcher->priv->button_box);
-
-	gtk_menu_button_set_popover (GTK_MENU_BUTTON (switcher), switcher->priv->popover);
-
-	switcher->priv->buttons = g_hash_table_new (g_direct_hash, g_direct_equal);
-}
-
-static void
 clear_popover (TeplMenuStackSwitcher *switcher)
 {
 	gtk_container_foreach (GTK_CONTAINER (switcher->priv->button_box),
@@ -302,45 +260,6 @@ connect_stack_signals (TeplMenuStackSwitcher *switcher)
 				  switcher);
 }
 
-void
-tepl_menu_stack_switcher_set_stack (TeplMenuStackSwitcher *switcher,
-				    GtkStack              *stack)
-{
-	g_return_if_fail (TEPL_IS_MENU_STACK_SWITCHER (switcher));
-	g_return_if_fail (stack == NULL || GTK_IS_STACK (stack));
-
-	if (switcher->priv->stack == stack)
-	{
-		return;
-	}
-
-	if (switcher->priv->stack != NULL)
-	{
-		disconnect_stack_signals (switcher);
-		clear_popover (switcher);
-		g_clear_object (&switcher->priv->stack);
-	}
-
-	if (stack != NULL)
-	{
-		switcher->priv->stack = g_object_ref (stack);
-		populate_popover (switcher);
-		connect_stack_signals (switcher);
-	}
-
-	gtk_widget_queue_resize (GTK_WIDGET (switcher));
-
-	g_object_notify_by_pspec (G_OBJECT (switcher), properties[PROP_STACK]);
-}
-
-GtkStack *
-tepl_menu_stack_switcher_get_stack (TeplMenuStackSwitcher *switcher)
-{
-	g_return_val_if_fail (TEPL_IS_MENU_STACK_SWITCHER (switcher), NULL);
-
-	return switcher->priv->stack;
-}
-
 static void
 tepl_menu_stack_switcher_get_property (GObject    *object,
 				       guint       prop_id,
@@ -423,8 +342,89 @@ tepl_menu_stack_switcher_class_init (TeplMenuStackSwitcherClass *klass)
 	g_object_class_install_properties (object_class, N_PROPERTIES, properties);
 }
 
+static void
+tepl_menu_stack_switcher_init (TeplMenuStackSwitcher *switcher)
+{
+	GtkWidget *box;
+	GtkWidget *arrow;
+	GtkStyleContext *context;
+
+	switcher->priv = tepl_menu_stack_switcher_get_instance_private (switcher);
+
+	box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 6);
+
+	arrow = gtk_image_new_from_icon_name ("pan-down-symbolic", GTK_ICON_SIZE_BUTTON);
+	gtk_box_pack_end (GTK_BOX (box), arrow, FALSE, TRUE, 0);
+	gtk_widget_set_valign (arrow, GTK_ALIGN_BASELINE);
+
+	switcher->priv->label = GTK_LABEL (gtk_label_new (NULL));
+	gtk_widget_set_valign (GTK_WIDGET (switcher->priv->label), GTK_ALIGN_BASELINE);
+	gtk_box_pack_start (GTK_BOX (box), GTK_WIDGET (switcher->priv->label), TRUE, TRUE, 6);
+
+	// FIXME: this is not correct if this widget becomes more generic
+	// and used also outside the header bar, but for now we just want
+	// the same style as title labels
+	context = gtk_widget_get_style_context (GTK_WIDGET (switcher->priv->label));
+	gtk_style_context_add_class (context, "title");
+
+	gtk_widget_show_all (box);
+	gtk_container_add (GTK_CONTAINER (switcher), box);
+
+	switcher->priv->popover = gtk_popover_new (GTK_WIDGET (switcher));
+	gtk_popover_set_position (GTK_POPOVER (switcher->priv->popover), GTK_POS_BOTTOM);
+	context = gtk_widget_get_style_context (switcher->priv->popover);
+	gtk_style_context_add_class (context, "tepl-menu-stack-switcher");
+
+	switcher->priv->button_box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
+	gtk_widget_show (switcher->priv->button_box);
+	gtk_container_add (GTK_CONTAINER (switcher->priv->popover), switcher->priv->button_box);
+
+	gtk_menu_button_set_popover (GTK_MENU_BUTTON (switcher), switcher->priv->popover);
+
+	switcher->priv->buttons = g_hash_table_new (g_direct_hash, g_direct_equal);
+}
+
 GtkWidget *
 tepl_menu_stack_switcher_new (void)
 {
 	return g_object_new (TEPL_TYPE_MENU_STACK_SWITCHER, NULL);
+}
+
+void
+tepl_menu_stack_switcher_set_stack (TeplMenuStackSwitcher *switcher,
+				    GtkStack              *stack)
+{
+	g_return_if_fail (TEPL_IS_MENU_STACK_SWITCHER (switcher));
+	g_return_if_fail (stack == NULL || GTK_IS_STACK (stack));
+
+	if (switcher->priv->stack == stack)
+	{
+		return;
+	}
+
+	if (switcher->priv->stack != NULL)
+	{
+		disconnect_stack_signals (switcher);
+		clear_popover (switcher);
+		g_clear_object (&switcher->priv->stack);
+	}
+
+	if (stack != NULL)
+	{
+		switcher->priv->stack = g_object_ref (stack);
+		populate_popover (switcher);
+		connect_stack_signals (switcher);
+	}
+
+	gtk_widget_queue_resize (GTK_WIDGET (switcher));
+
+	g_object_notify_by_pspec (G_OBJECT (switcher), properties[PROP_STACK]);
+}
+
+GtkStack *
+tepl_menu_stack_switcher_get_stack (TeplMenuStackSwitcher *switcher)
+{
+	g_return_val_if_fail (TEPL_IS_MENU_STACK_SWITCHER (switcher), NULL);
+
+	return switcher->priv->stack;
 }
