@@ -2,6 +2,7 @@
  * This file is part of gedit
  *
  * Copyright (C) 2014 - Steve Frécinaux
+ * Copyright (C) 2022 - Sébastien Wilmet
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
