@@ -18,7 +18,7 @@ Problem with very large files
 Large files are not well supported, gedit should ask for confirmation when
 opening such files, providing a solution.
 
-[GitLab issue](https://gitlab.gnome.org/GNOME/gedit/issues/197).
+[GitLab issue](https://gitlab.gnome.org/GNOME/gedit/-/issues/11).
 
 Hyphen/dash inserted for text wrapping
 --------------------------------------
@@ -33,6 +33,6 @@ Recently fixed
 
 ### View does not scroll to the end of the text in some cases (text cut off)
 
-Fixed in git master and 42.2, will normally be rolled out soon.
+Fixed in 42.2 and >= 43, will normally be rolled out soon.
 
 [GitLab issue](https://gitlab.gnome.org/GNOME/gedit/issues/42).
