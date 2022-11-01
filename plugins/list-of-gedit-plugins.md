@@ -30,10 +30,8 @@ of the time) too specific to be distributed with gedit itself.
 - **Code Comment** - *Comment out or uncomment a selected block of code.*
 - **Color Picker** - *Pick a color from a dialog and insert its hexadecimal representation.*
 - **Color Scheme Editor** - *Source code color scheme editor*
-- **Commander** - *Command line interface for advanced editing*
 - **Draw Spaces** - *Draw spaces and tabs*
 - **Embedded Terminal** - *Embed a terminal in the bottom pane.*
-- **Find in Files** - *Find text in all files of a folder.*
 - **Git** - *Highlight lines that have been changed since the last commit*
 - **Join/Split Lines** - *Join several lines or split long ones*
 - **Multi Edit** - *Edit document in multiple places at once*
@@ -41,5 +39,4 @@ of the time) too specific to be distributed with gedit itself.
 - **Smart Spaces** - *Forget you’re not using tabulations.*
 - **SyncTeX** - *Synchronize between LaTeX and PDF with gedit and evince.*
 - **Text Size** - *Easily increase and decrease the text size*
-- **Translate** - *Translates text into different languages*
 - **Word Completion** - *Word completion using the completion framework*
