@@ -2324,7 +2324,7 @@ setup_side_panel (GeditWindow *window)
 #ifdef OS_OSX
 	priv->side_stack_switcher = priv->side_panel_inline_stack_switcher;
 #else
-	priv->side_stack_switcher = gedit_menu_stack_switcher_new ();
+	priv->side_stack_switcher = tepl_menu_stack_switcher_new ();
 #endif
 
 	gtk_button_set_relief (GTK_BUTTON (priv->side_stack_switcher), GTK_RELIEF_NONE);
@@ -2332,8 +2332,8 @@ setup_side_panel (GeditWindow *window)
 
 	gedit_utils_set_atk_name_description (priv->side_stack_switcher, _("Change side panel page"),  NULL);
 
-	gedit_menu_stack_switcher_set_stack (GEDIT_MENU_STACK_SWITCHER (priv->side_stack_switcher),
-	                                     GTK_STACK (priv->side_panel));
+	tepl_menu_stack_switcher_set_stack (TEPL_MENU_STACK_SWITCHER (priv->side_stack_switcher),
+					    GTK_STACK (priv->side_panel));
 
 	g_signal_connect (priv->side_panel,
 	                  "add",

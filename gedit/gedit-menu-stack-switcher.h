@@ -1,5 +1,4 @@
 /*
- * gedit-menu-stack-switcher.h
  * This file is part of gedit
  *
  * Copyright (C) 2014 - Steve Frécinaux
@@ -18,26 +17,47 @@
  * along with this program; if not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef GEDIT_MENU_STACK_SWITCHER_H
-#define GEDIT_MENU_STACK_SWITCHER_H
+#ifndef TEPL_MENU_STACK_SWITCHER_H
+#define TEPL_MENU_STACK_SWITCHER_H
 
 #include <gtk/gtk.h>
 
 G_BEGIN_DECLS
 
-#define GEDIT_TYPE_MENU_STACK_SWITCHER (gedit_menu_stack_switcher_get_type())
+#define TEPL_TYPE_MENU_STACK_SWITCHER             (tepl_menu_stack_switcher_get_type ())
+#define TEPL_MENU_STACK_SWITCHER(obj)             (G_TYPE_CHECK_INSTANCE_CAST ((obj), TEPL_TYPE_MENU_STACK_SWITCHER, TeplMenuStackSwitcher))
+#define TEPL_MENU_STACK_SWITCHER_CLASS(klass)     (G_TYPE_CHECK_CLASS_CAST ((klass), TEPL_TYPE_MENU_STACK_SWITCHER, TeplMenuStackSwitcherClass))
+#define TEPL_IS_MENU_STACK_SWITCHER(obj)          (G_TYPE_CHECK_INSTANCE_TYPE ((obj), TEPL_TYPE_MENU_STACK_SWITCHER))
+#define TEPL_IS_MENU_STACK_SWITCHER_CLASS(klass)  (G_TYPE_CHECK_CLASS_TYPE ((klass), TEPL_TYPE_MENU_STACK_SWITCHER))
+#define TEPL_MENU_STACK_SWITCHER_GET_CLASS(obj)   (G_TYPE_INSTANCE_GET_CLASS ((obj), TEPL_TYPE_MENU_STACK_SWITCHER, TeplMenuStackSwitcherClass))
 
-G_DECLARE_FINAL_TYPE (GeditMenuStackSwitcher, gedit_menu_stack_switcher, GEDIT, MENU_STACK_SWITCHER, GtkMenuButton)
+typedef struct _TeplMenuStackSwitcher         TeplMenuStackSwitcher;
+typedef struct _TeplMenuStackSwitcherClass    TeplMenuStackSwitcherClass;
+typedef struct _TeplMenuStackSwitcherPrivate  TeplMenuStackSwitcherPrivate;
 
-GtkWidget *  gedit_menu_stack_switcher_new 	      (void);
+struct _TeplMenuStackSwitcher
+{
+	GtkMenuButton parent;
 
-void         gedit_menu_stack_switcher_set_stack  (GeditMenuStackSwitcher *switcher,
-                                                   GtkStack               *stack);
+	TeplMenuStackSwitcherPrivate *priv;
+};
 
-GtkStack *   gedit_menu_stack_switcher_get_stack  (GeditMenuStackSwitcher *switcher);
+struct _TeplMenuStackSwitcherClass
+{
+	GtkMenuButtonClass parent_class;
+
+	gpointer padding[12];
+};
+
+GType		tepl_menu_stack_switcher_get_type	(void);
+
+GtkWidget *	tepl_menu_stack_switcher_new		(void);
+
+void		tepl_menu_stack_switcher_set_stack	(TeplMenuStackSwitcher *switcher,
+							 GtkStack              *stack);
+
+GtkStack *	tepl_menu_stack_switcher_get_stack	(TeplMenuStackSwitcher *switcher);
 
 G_END_DECLS
 
-#endif  /* GEDIT_MENU_STACK_SWITCHER_H  */
-
-/* ex:set ts=2 sw=2 et: */
+#endif /* TEPL_MENU_STACK_SWITCHER_H */
