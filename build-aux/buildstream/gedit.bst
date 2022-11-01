@@ -10,6 +10,7 @@ sources:
       url: gnome:libgd.git
 
 build-depends:
+- sdk/appstream-glib.bst
 - sdk/gtk-doc.bst
 - sdk/gobject-introspection.bst
 - sdk/vala.bst
