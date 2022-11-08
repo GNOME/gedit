@@ -54,6 +54,7 @@ libgedit_private_headers = [
   'gedit-file-chooser-open-native.h',
   'gedit-history-entry.h',
   'gedit-io-error-info-bar.h',
+  'gedit-menu-stack-switcher.h',
   'gedit-multi-notebook.h',
   'gedit-notebook.h',
   'gedit-notebook-popup-menu.h',
@@ -70,7 +71,6 @@ libgedit_private_headers = [
   'gedit-tab-label.h',
   'gedit-view-frame.h',
   'gedit-window-private.h',
-  'tepl-menu-stack-switcher.h',
 ]
 
 libgedit_private_sources = [
@@ -94,6 +94,7 @@ libgedit_private_sources = [
   'gedit-file-chooser-open-native.c',
   'gedit-history-entry.c',
   'gedit-io-error-info-bar.c',
+  'gedit-menu-stack-switcher.c',
   'gedit-multi-notebook.c',
   'gedit-notebook.c',
   'gedit-notebook-popup-menu.c',
@@ -108,7 +109,6 @@ libgedit_private_sources = [
   'gedit-status-menu-button.c',
   'gedit-tab-label.c',
   'gedit-view-frame.c',
-  'tepl-menu-stack-switcher.c',
 ]
 
 libgedit_c_args = []
