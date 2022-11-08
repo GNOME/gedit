@@ -479,127 +479,6 @@ gedit_view_unrealize (GtkWidget *widget)
 	GTK_WIDGET_CLASS (gedit_view_parent_class)->unrealize (widget);
 }
 
-static void
-delete_line (GtkTextView *text_view,
-	     gint         count)
-{
-	GtkTextIter start;
-	GtkTextIter end;
-	GtkTextBuffer *buffer;
-
-	buffer = gtk_text_view_get_buffer (text_view);
-
-	gtk_text_view_reset_im_context (text_view);
-
-	/* If there is a selection delete the selected lines and ignore count. */
-	if (gtk_text_buffer_get_selection_bounds (buffer, &start, &end))
-	{
-		gtk_text_iter_order (&start, &end);
-
-		if (gtk_text_iter_starts_line (&end))
-		{
-			/* Do not delete the line with the cursor if the cursor
-			 * is at the beginning of the line.
-			 */
-			count = 0;
-		}
-		else
-		{
-			count = 1;
-		}
-	}
-
-	gtk_text_iter_set_line_offset (&start, 0);
-
-	if (count > 0)
-	{
-		gtk_text_iter_forward_lines (&end, count);
-
-		if (gtk_text_iter_is_end (&end))
-		{
-			if (gtk_text_iter_backward_line (&start) &&
-			    !gtk_text_iter_ends_line (&start))
-			{
-				gtk_text_iter_forward_to_line_end (&start);
-			}
-		}
-	}
-	else if (count < 0)
-	{
-		if (!gtk_text_iter_ends_line (&end))
-		{
-			gtk_text_iter_forward_to_line_end (&end);
-		}
-
-		while (count < 0)
-		{
-			if (!gtk_text_iter_backward_line (&start))
-			{
-				break;
-			}
-
-			count++;
-		}
-
-		if (count == 0)
-		{
-			if (!gtk_text_iter_ends_line (&start))
-			{
-				gtk_text_iter_forward_to_line_end (&start);
-			}
-		}
-		else
-		{
-			gtk_text_iter_forward_line (&end);
-		}
-	}
-
-	if (!gtk_text_iter_equal (&start, &end))
-	{
-		GtkTextIter cur = start;
-		gtk_text_iter_set_line_offset (&cur, 0);
-
-		gtk_text_buffer_begin_user_action (buffer);
-
-		gtk_text_buffer_place_cursor (buffer, &cur);
-
-		gtk_text_buffer_delete_interactive (buffer,
-						    &start,
-						    &end,
-						    gtk_text_view_get_editable (text_view));
-
-		gtk_text_buffer_end_user_action (buffer);
-
-		gtk_text_view_scroll_mark_onscreen (text_view,
-						    gtk_text_buffer_get_insert (buffer));
-	}
-	else
-	{
-		gtk_widget_error_bell (GTK_WIDGET (text_view));
-	}
-}
-
-static void
-gedit_view_delete_from_cursor (GtkTextView   *text_view,
-			       GtkDeleteType  type,
-			       gint           count)
-{
-	/* We override the standard handler for delete_from_cursor since the
-	 * GTK_DELETE_PARAGRAPHS case is not implemented as we like (i.e. it
-	 * does not remove the newline in the previous line).
-	 */
-	if (type == GTK_DELETE_PARAGRAPHS)
-	{
-		delete_line (text_view, count);
-		return;
-	}
-
-	if (GTK_TEXT_VIEW_CLASS (gedit_view_parent_class)->delete_from_cursor != NULL)
-	{
-		GTK_TEXT_VIEW_CLASS (gedit_view_parent_class)->delete_from_cursor (text_view, type, count);
-	}
-}
-
 static GtkTextBuffer *
 gedit_view_create_buffer (GtkTextView *text_view)
 {
@@ -636,7 +515,6 @@ gedit_view_class_init (GeditViewClass *klass)
 	widget_class->realize = gedit_view_realize;
 	widget_class->unrealize = gedit_view_unrealize;
 
-	text_view_class->delete_from_cursor = gedit_view_delete_from_cursor;
 	text_view_class->create_buffer = gedit_view_create_buffer;
 
 	/**
