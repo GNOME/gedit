@@ -18,16 +18,10 @@
  * along with this program; if not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "config.h"
-
 #include "gedit-encodings-combo-box.h"
-
 #include <glib/gi18n.h>
-
-#include "gedit-encodings-dialog.h"
-#include "gedit-settings.h"
-#include "gedit-utils.h"
 #include "gedit-encoding-items.h"
+#include "gedit-encodings-dialog.h"
 
 struct _GeditEncodingsComboBox
 {
