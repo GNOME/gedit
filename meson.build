@@ -13,7 +13,7 @@ i18n = import('i18n')
 pkg_config = import('pkgconfig')
 python = import('python')
 
-api_version = '3.38'
+api_version = '44'
 
 # Paths
 root_include_dir = include_directories('.')
