@@ -202,44 +202,44 @@ gedit_view_constructed (GObject *object)
 				 0);
 
 	g_settings_bind (editor_settings, GEDIT_SETTINGS_DISPLAY_LINE_NUMBERS,
-	                 view, "show-line-numbers",
-	                 G_SETTINGS_BIND_GET);
+			 view, "show-line-numbers",
+			 G_SETTINGS_BIND_GET | G_SETTINGS_BIND_NO_SENSITIVITY);
 
 	g_settings_bind (editor_settings, GEDIT_SETTINGS_AUTO_INDENT,
-	                 view, "auto-indent",
-	                 G_SETTINGS_BIND_GET);
+			 view, "auto-indent",
+			 G_SETTINGS_BIND_GET | G_SETTINGS_BIND_NO_SENSITIVITY);
 
 	g_settings_bind (editor_settings, GEDIT_SETTINGS_TABS_SIZE,
-	                 view, "tab-width",
-	                 G_SETTINGS_BIND_GET);
+			 view, "tab-width",
+			 G_SETTINGS_BIND_GET | G_SETTINGS_BIND_NO_SENSITIVITY);
 
 	g_settings_bind (editor_settings, GEDIT_SETTINGS_INSERT_SPACES,
-	                 view, "insert-spaces-instead-of-tabs",
-	                 G_SETTINGS_BIND_GET);
+			 view, "insert-spaces-instead-of-tabs",
+			 G_SETTINGS_BIND_GET | G_SETTINGS_BIND_NO_SENSITIVITY);
 
 	g_settings_bind (editor_settings, GEDIT_SETTINGS_DISPLAY_RIGHT_MARGIN,
-	                 view, "show-right-margin",
-	                 G_SETTINGS_BIND_GET);
+			 view, "show-right-margin",
+			 G_SETTINGS_BIND_GET | G_SETTINGS_BIND_NO_SENSITIVITY);
 
 	g_settings_bind (editor_settings, GEDIT_SETTINGS_BACKGROUND_PATTERN,
-	                 view, "background-pattern",
-	                 G_SETTINGS_BIND_GET);
+			 view, "background-pattern",
+			 G_SETTINGS_BIND_GET | G_SETTINGS_BIND_NO_SENSITIVITY);
 
 	g_settings_bind (editor_settings, GEDIT_SETTINGS_RIGHT_MARGIN_POSITION,
-	                 view, "right-margin-position",
-	                 G_SETTINGS_BIND_GET);
+			 view, "right-margin-position",
+			 G_SETTINGS_BIND_GET | G_SETTINGS_BIND_NO_SENSITIVITY);
 
 	g_settings_bind (editor_settings, GEDIT_SETTINGS_HIGHLIGHT_CURRENT_LINE,
-	                 view, "highlight-current-line",
-	                 G_SETTINGS_BIND_GET);
+			 view, "highlight-current-line",
+			 G_SETTINGS_BIND_GET | G_SETTINGS_BIND_NO_SENSITIVITY);
 
 	g_settings_bind (editor_settings, GEDIT_SETTINGS_WRAP_MODE,
-	                 view, "wrap-mode",
-	                 G_SETTINGS_BIND_GET);
+			 view, "wrap-mode",
+			 G_SETTINGS_BIND_GET | G_SETTINGS_BIND_NO_SENSITIVITY);
 
 	g_settings_bind (editor_settings, GEDIT_SETTINGS_SMART_HOME_END,
-	                 view, "smart-home-end",
-	                 G_SETTINGS_BIND_GET);
+			 view, "smart-home-end",
+			 G_SETTINGS_BIND_GET | G_SETTINGS_BIND_NO_SENSITIVITY);
 }
 
 static GdkAtom
