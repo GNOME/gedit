@@ -29,6 +29,7 @@
 #include <gedit/gedit-window.h>
 #include <gedit/gedit-window-activatable.h>
 #include <gedit/gedit-utils.h>
+#include <tepl/tepl.h>
 
 #include "gedit-file-browser-enum-types.h"
 #include "gedit-file-browser-plugin.h"
@@ -120,26 +121,23 @@ G_DEFINE_DYNAMIC_TYPE_EXTENDED (GeditFileBrowserPlugin,
 				_gedit_file_browser_widget_register_type	(type_module);		\
 )
 
-static gboolean
-can_use_nautilus_gsettings (void)
+static GSettings *
+create_nautilus_gsettings (void)
 {
-	GSettingsSchemaSource *source;
-	GSettingsSchema *schema;
-	gboolean can_use;
+	GSettings *nautilus_settings = NULL;
 
-	source = g_settings_schema_source_get_default ();
-	g_assert (source != NULL);
-	schema = g_settings_schema_source_lookup (source, NAUTILUS_BASE_SETTINGS, TRUE);
-
-	if (schema == NULL)
+	if (tepl_utils_can_use_gsettings_schema (NAUTILUS_BASE_SETTINGS))
 	{
-		return FALSE;
+		nautilus_settings = g_settings_new (NAUTILUS_BASE_SETTINGS);
+
+		if (tepl_utils_can_use_gsettings_key (nautilus_settings, NAUTILUS_CLICK_POLICY_KEY))
+		{
+			return nautilus_settings;
+		}
 	}
 
-	can_use = g_settings_schema_has_key (schema, NAUTILUS_CLICK_POLICY_KEY);
-
-	g_settings_schema_unref (schema);
-	return can_use;
+	g_clear_object (&nautilus_settings);
+	return g_settings_new (NAUTILUS_FALLBACK_SETTINGS);
 }
 
 static void
@@ -149,15 +147,7 @@ gedit_file_browser_plugin_init (GeditFileBrowserPlugin *plugin)
 
 	plugin->priv->settings = g_settings_new (FILEBROWSER_BASE_SETTINGS);
 	plugin->priv->terminal_settings = g_settings_new (TERMINAL_BASE_SETTINGS);
-
-	if (can_use_nautilus_gsettings ())
-	{
-		plugin->priv->nautilus_settings = g_settings_new (NAUTILUS_BASE_SETTINGS);
-	}
-	else
-	{
-		plugin->priv->nautilus_settings = g_settings_new (NAUTILUS_FALLBACK_SETTINGS);
-	}
+	plugin->priv->nautilus_settings = create_nautilus_gsettings ();
 }
 
 static void
