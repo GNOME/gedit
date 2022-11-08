@@ -41,14 +41,14 @@
         <property name="title" translatable="yes">Character Encodings</property>
         <child>
           <object class="GtkButton" id="cancel_button">
-            <property name="label" translatable="yes">_Cancel</property>
+            <property name="label" translatable="yes">_Cancel Changes</property>
             <property name="visible">True</property>
             <property name="use_underline">True</property>
           </object>
         </child>
         <child>
           <object class="GtkButton" id="apply_button">
-            <property name="label" translatable="yes">_Apply</property>
+            <property name="label" translatable="yes">_Save Settings</property>
             <property name="visible">True</property>
             <property name="use_underline">True</property>
             <property name="can_default">True</property>
@@ -79,7 +79,7 @@
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="valign">start</property>
-                <property name="label" translatable="yes">A_vailable Encodings</property>
+                <property name="label" translatable="yes">_Other Available Encodings</property>
                 <property name="use_underline">True</property>
                 <property name="mnemonic_widget">treeview_available</property>
                 <property name="xalign">0</property>
@@ -97,7 +97,7 @@
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="valign">start</property>
-                <property name="label" translatable="yes">Cho_sen Encodings</property>
+                <property name="label" translatable="yes">_Favorites</property>
                 <property name="use_underline">True</property>
                 <property name="mnemonic_widget">treeview_chosen</property>
                 <property name="xalign">0</property>
@@ -136,7 +136,7 @@
                         </child>
                         <child>
                           <object class="GtkTreeViewColumn" id="treeviewcolumn1">
-                            <property name="title" translatable="yes">_Description</property>
+                            <property name="title" translatable="yes">Ca_tegory</property>
                             <property name="sort_column_id">0</property>
                             <child>
                               <object class="GtkCellRendererText" id="cellrenderertext1"/>
@@ -214,7 +214,7 @@
                         </child>
                         <child>
                           <object class="GtkTreeViewColumn" id="treeviewcolumn3">
-                            <property name="title" translatable="yes">_Description</property>
+                            <property name="title" translatable="yes">Ca_tegory</property>
                             <child>
                               <object class="GtkCellRendererText" id="cellrenderertext3"/>
                               <attributes>
