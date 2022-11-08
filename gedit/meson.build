@@ -70,7 +70,6 @@ libgedit_private_headers = [
   'gedit-tab-label.h',
   'gedit-view-frame.h',
   'gedit-window-private.h',
-  'tepl-menu-stack-switcher.h',
 ]
 
 libgedit_private_sources = [
@@ -108,7 +107,6 @@ libgedit_private_sources = [
   'gedit-status-menu-button.c',
   'gedit-tab-label.c',
   'gedit-view-frame.c',
-  'tepl-menu-stack-switcher.c',
 ]
 
 libgedit_c_args = []

@@ -53,7 +53,6 @@
 #include "gedit-dirs.h"
 #include "gedit-status-menu-button.h"
 #include "gedit-settings.h"
-#include "tepl-menu-stack-switcher.h"
 
 enum
 {
@@ -2285,10 +2284,11 @@ on_side_panel_stack_children_number_changed (GtkStack    *stack,
 
 	if (children != NULL && children->next != NULL)
 	{
-		gtk_widget_show (priv->side_stack_switcher);
+		gtk_widget_show (GTK_WIDGET (priv->side_stack_switcher));
 
 #ifndef OS_OSX
-		gtk_header_bar_set_custom_title (GTK_HEADER_BAR (priv->side_headerbar), priv->side_stack_switcher);
+		gtk_header_bar_set_custom_title (GTK_HEADER_BAR (priv->side_headerbar),
+						 GTK_WIDGET (priv->side_stack_switcher));
 #endif
 	}
 	else
@@ -2297,7 +2297,7 @@ on_side_panel_stack_children_number_changed (GtkStack    *stack,
 		   are being removed */
 		if (priv->side_stack_switcher != NULL)
 		{
-			gtk_widget_hide (priv->side_stack_switcher);
+			gtk_widget_hide (GTK_WIDGET (priv->side_stack_switcher));
 		}
 
 #ifndef OS_OSX
@@ -2330,9 +2330,11 @@ setup_side_panel (GeditWindow *window)
 	gtk_button_set_relief (GTK_BUTTON (priv->side_stack_switcher), GTK_RELIEF_NONE);
 	g_object_ref_sink (priv->side_stack_switcher);
 
-	gedit_utils_set_atk_name_description (priv->side_stack_switcher, _("Change side panel page"),  NULL);
+	gedit_utils_set_atk_name_description (GTK_WIDGET (priv->side_stack_switcher),
+					      _("Change side panel page"),
+					      NULL);
 
-	tepl_menu_stack_switcher_set_stack (TEPL_MENU_STACK_SWITCHER (priv->side_stack_switcher),
+	tepl_menu_stack_switcher_set_stack (priv->side_stack_switcher,
 					    GTK_STACK (priv->side_panel));
 
 	g_signal_connect (priv->side_panel,

@@ -22,6 +22,7 @@
 #define GEDIT_WINDOW_PRIVATE_H
 
 #include <libpeas/peas-extension-set.h>
+#include <tepl/tepl.h>
 
 #include "gedit/gedit-window.h"
 #include "gedit-message-bus.h"
@@ -40,9 +41,9 @@ struct _GeditWindowPrivate
 
 	GeditMultiNotebook *multi_notebook;
 
+	TeplMenuStackSwitcher *side_stack_switcher;
+	TeplMenuStackSwitcher *side_panel_inline_stack_switcher;
 	GtkWidget      *side_panel;
-	GtkWidget      *side_stack_switcher;
-	GtkWidget      *side_panel_inline_stack_switcher;
 	GtkWidget      *bottom_panel_box;
 	GtkWidget      *bottom_panel;
 
