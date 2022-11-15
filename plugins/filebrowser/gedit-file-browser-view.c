@@ -407,27 +407,34 @@ activate_selected_items (GeditFileBrowserView *view)
 }
 
 static void
-expand_or_collapse_selected_item (GeditFileBrowserView *view, gboolean collapse)
+expand_or_collapse_selected_item (GeditFileBrowserView *view,
+				  gboolean              collapse)
 {
 	GtkTreeView *tree_view = GTK_TREE_VIEW (view);
-	g_autoptr (GtkTreePath) path = NULL;
+	GtkTreePath *path = NULL;
 
 	gtk_tree_view_get_cursor (tree_view, &path, NULL);
 
-	if (!path)
+	if (path == NULL)
+	{
 		return;
+	}
 
 	if (collapse)
 	{
 		if (!gtk_tree_view_collapse_row (tree_view, path) &&
 		    gtk_tree_path_get_depth (path) > 1 &&
 		    gtk_tree_path_up (path))
+		{
 			gtk_tree_view_set_cursor (tree_view, path, NULL, FALSE);
+		}
 	}
 	else
 	{
 		gtk_tree_view_expand_row (tree_view, path, FALSE);
 	}
+
+	gtk_tree_path_free (path);
 }
 
 static void
