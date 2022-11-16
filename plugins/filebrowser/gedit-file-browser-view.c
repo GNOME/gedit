@@ -407,6 +407,30 @@ activate_selected_items (GeditFileBrowserView *view)
 }
 
 static void
+expand_or_collapse_selected_item (GeditFileBrowserView *view, gboolean collapse)
+{
+	GtkTreeView *tree_view = GTK_TREE_VIEW (view);
+	g_autoptr (GtkTreePath) path = NULL;
+
+	gtk_tree_view_get_cursor (tree_view, &path, NULL);
+
+	if (!path)
+		return;
+
+	if (collapse)
+	{
+		if (!gtk_tree_view_collapse_row (tree_view, path) &&
+		    gtk_tree_path_get_depth (path) > 1 &&
+		    gtk_tree_path_up (path))
+			gtk_tree_view_set_cursor (tree_view, path, NULL, FALSE);
+	}
+	else
+	{
+		gtk_tree_view_expand_row (tree_view, path, FALSE);
+	}
+}
+
+static void
 row_activated (GtkTreeView       *tree_view,
                GtkTreePath       *path,
                GtkTreeViewColumn *column)
@@ -687,8 +711,18 @@ key_press_event (GtkWidget   *widget,
 			{
 				toggle_hidden_filter (view);
 				handled = TRUE;
-				break;
 			}
+			break;
+
+		case GDK_KEY_Left:
+			expand_or_collapse_selected_item (view, TRUE);
+			handled = TRUE;
+			break;
+
+		case GDK_KEY_Right:
+			expand_or_collapse_selected_item (view, FALSE);
+			handled = TRUE;
+			break;
 
 		default:
 			handled = FALSE;
