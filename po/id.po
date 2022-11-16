@@ -12,17 +12,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gedit master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gedit/issues\n"
-"POT-Creation-Date: 2022-09-10 13:00+0000\n"
-"PO-Revision-Date: 2022-09-14 15:46+0700\n"
+"POT-Creation-Date: 2022-11-14 14:01+0000\n"
+"PO-Revision-Date: 2022-11-16 10:57+0700\n"
 "Last-Translator: Kukuh Syafaat <kukuhsyafaat@gnome.org>\n"
 "Language-Team: Indonesian <gnome-l10n-id@googlegroups.com>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural= n!=1;\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.2.1\n"
 
 #: data/org.gnome.gedit.appdata.xml.in:7 data/org.gnome.gedit.desktop.in:3
 msgid "gedit"
@@ -571,9 +571,8 @@ msgstr "Tutup dan Jangan Di_simpan"
 #: gedit/gedit-close-confirmation-dialog.c:277 gedit/gedit-commands-file.c:492
 #: gedit/gedit-commands-file.c:568 gedit/gedit-commands-file.c:791
 #: gedit/gedit-commands-file.c:1513 gedit/gedit-encodings-dialog.c:192
-#: gedit/gedit-file-chooser-open-dialog.c:78
-#: gedit/gedit-preferences-dialog.c:721
-#: gedit/resources/ui/gedit-encodings-dialog.ui:44
+#: gedit/gedit-file-chooser-open-dialog.c:78 gedit/gedit-io-error-info-bar.c:94
+#: gedit/gedit-io-error-info-bar.c:293 gedit/gedit-preferences-dialog.c:721
 #: plugins/filebrowser/gedit-file-browser-utils.c:211
 #: plugins/quickopen/quickopen/popup.py:45
 #: plugins/snippets/snippets/manager.py:789
@@ -606,8 +605,6 @@ msgid_plural ""
 "lost."
 msgstr[0] ""
 "Jika tidak disimpan, perubahan dari %ld detik terakhir akan hilang selamanya."
-msgstr[1] ""
-"Jika tidak disimpan, perubahan dari %ld detik terakhir akan hilang selamanya."
 
 #: gedit/gedit-close-confirmation-dialog.c:321
 msgid ""
@@ -626,9 +623,6 @@ msgid_plural ""
 msgstr[0] ""
 "Jika tidak disimpan, perubahan dari satu menit %ld detik terakhir akan "
 "hilang selamanya."
-msgstr[1] ""
-"Jika tidak disimpan, perubahan dari satu menit %ld detik terakhir akan "
-"hilang selamanya."
 
 #: gedit/gedit-close-confirmation-dialog.c:337
 #, c-format
@@ -638,8 +632,6 @@ msgid_plural ""
 "If you don’t save, changes from the last %ld minutes will be permanently "
 "lost."
 msgstr[0] ""
-"Jika tidak disimpan, perubahan dari %ld menit terakhir akan hilang selamanya."
-msgstr[1] ""
 "Jika tidak disimpan, perubahan dari %ld menit terakhir akan hilang selamanya."
 
 #: gedit/gedit-close-confirmation-dialog.c:352
@@ -658,9 +650,6 @@ msgid_plural ""
 msgstr[0] ""
 "Jika tidak disimpan, perubahan dari satu jam %d menit terakhir akan hilang "
 "selamanya."
-msgstr[1] ""
-"Jika tidak disimpan, perubahan dari satu jam %d menit terakhir akan hilang "
-"selamanya."
 
 #: gedit/gedit-close-confirmation-dialog.c:373
 #, c-format
@@ -669,8 +658,6 @@ msgid ""
 msgid_plural ""
 "If you don’t save, changes from the last %d hours will be permanently lost."
 msgstr[0] ""
-"Jika tidak disimpan, perubahan dari %d jam terakhir akan hilang selamanya."
-msgstr[1] ""
 "Jika tidak disimpan, perubahan dari %d jam terakhir akan hilang selamanya."
 
 #: gedit/gedit-close-confirmation-dialog.c:400
@@ -684,9 +671,6 @@ msgid "There is %d document with unsaved changes. Save changes before closing?"
 msgid_plural ""
 "There are %d documents with unsaved changes. Save changes before closing?"
 msgstr[0] ""
-"Ada %d dokumen dengan perubahan yang belum disimpan. Simpan perubahan "
-"sebelum ditutup?"
-msgstr[1] ""
 "Ada %d dokumen dengan perubahan yang belum disimpan. Simpan perubahan "
 "sebelum ditutup?"
 
@@ -710,7 +694,6 @@ msgstr "Memuat berkas \"%s\"…"
 msgid "Loading %d file…"
 msgid_plural "Loading %d files…"
 msgstr[0] "Memuat %d berkas…"
-msgstr[1] "Memuat %d berkas…"
 
 #: gedit/gedit-commands-file.c:483
 #, c-format
@@ -790,8 +773,6 @@ msgid_plural ""
 "lost."
 msgstr[0] ""
 "Perubahan di dokumen dalam %ld detik terakhir akan hilang secara permanen."
-msgstr[1] ""
-"Perubahan di dokumen dalam %ld detik terakhir akan hilang secara permanen."
 
 #: gedit/gedit-commands-file.c:1439
 msgid ""
@@ -809,9 +790,6 @@ msgid_plural ""
 msgstr[0] ""
 "Perubahan di dokumen dalam menit dan %ld detik terakhir akan hilang secara "
 "permanen."
-msgstr[1] ""
-"Perubahan di dokumen dalam menit dan %ld detik terakhir akan hilang secara "
-"permanen."
 
 #: gedit/gedit-commands-file.c:1455
 #, c-format
@@ -821,8 +799,6 @@ msgid_plural ""
 "Changes made to the document in the last %ld minutes will be permanently "
 "lost."
 msgstr[0] ""
-"Perubahan di dokumen dalam %ld menit terakhir akan hilang secara permanen."
-msgstr[1] ""
 "Perubahan di dokumen dalam %ld menit terakhir akan hilang secara permanen."
 
 #: gedit/gedit-commands-file.c:1470
@@ -840,9 +816,6 @@ msgid_plural ""
 msgstr[0] ""
 "Perubahan di dokumen dalam jam dan %d menit terakhir akan hilang secara "
 "permanen."
-msgstr[1] ""
-"Perubahan di dokumen dalam jam dan %d menit terakhir akan hilang secara "
-"permanen."
 
 #: gedit/gedit-commands-file.c:1491
 #, c-format
@@ -851,8 +824,6 @@ msgid ""
 msgid_plural ""
 "Changes made to the document in the last %d hours will be permanently lost."
 msgstr[0] ""
-"Perubahan di dokumen dalam %d jam terakhir akan hilang secara permanen."
-msgstr[1] ""
 "Perubahan di dokumen dalam %d jam terakhir akan hilang secara permanen."
 
 #: gedit/gedit-commands-file.c:1514
@@ -895,7 +866,6 @@ msgstr ""
 msgid "Found and replaced %d occurrence"
 msgid_plural "Found and replaced %d occurrences"
 msgstr[0] "Menemukan dan mengganti %d kejadian"
-msgstr[1] "Menemukan dan mengganti %d kejadian"
 
 #: gedit/gedit-commands-search.c:115
 msgid "Found and replaced one occurrence"
@@ -923,11 +893,11 @@ msgstr "Hanya-Baca"
 msgid "Current Locale (%s)"
 msgstr "Locale Aktif (%s)"
 
-#: gedit/gedit-encodings-combo-box.c:297
+#: gedit/gedit-encodings-combo-box.c:291
 msgid "Automatically Detected"
 msgstr "Terdeteksi Secara Otomatis"
 
-#: gedit/gedit-encodings-combo-box.c:326
+#: gedit/gedit-encodings-combo-box.c:320
 msgid "Add or Remove…"
 msgstr "Tambah atau Buang…"
 
@@ -999,95 +969,63 @@ msgstr "Buka Berkas"
 msgid "_Open"
 msgstr "_Buka"
 
-#: gedit/gedit-io-error-info-bar.c:135 gedit/gedit-io-error-info-bar.c:416
+#: gedit/gedit-io-error-info-bar.c:90 gedit/gedit-io-error-info-bar.c:282
 msgid "_Retry"
 msgstr "_Coba"
 
-#: gedit/gedit-io-error-info-bar.c:157
-#, c-format
-msgid "Could not find the file “%s”."
-msgstr "Tak bisa temukan berkas \"%s\"."
+#: gedit/gedit-io-error-info-bar.c:114
+msgid "File not found."
+msgstr "Berkas tidak ditemukan."
 
+#. How to reproduce this case: from the command line,
+#. * try to open a URI such as: foo://example.net/file
+#.
 #. Translators: %s is a URI scheme (like for example http:, ftp:, etc.)
-#: gedit/gedit-io-error-info-bar.c:177
+#: gedit/gedit-io-error-info-bar.c:133
 #, c-format
-msgid "Unable to handle “%s:” locations."
-msgstr "Tak bisa menangani lokasi \"%s:\"."
+msgid "“%s:” locations are not supported."
+msgstr "Lokasi \"%s:\" tidak didukung."
 
-#: gedit/gedit-io-error-info-bar.c:183
-msgid "Unable to handle this location."
-msgstr "Tak bisa menangani lokasi ini."
-
-#: gedit/gedit-io-error-info-bar.c:192
+#: gedit/gedit-io-error-info-bar.c:142
 msgid "The location of the file cannot be accessed."
 msgstr "Lokasi berkas tak dapat diakses."
 
-#: gedit/gedit-io-error-info-bar.c:196
-#, c-format
-msgid "“%s” is a directory."
-msgstr "\"%s\" adalah direktori."
-
-#: gedit/gedit-io-error-info-bar.c:198 gedit/gedit-io-error-info-bar.c:205
-msgid "Please check that you typed the location correctly and try again."
-msgstr "Silakan periksa apakah lokasi yang Anda ketikkan benar dan coba lagi."
-
-#: gedit/gedit-io-error-info-bar.c:203
+#: gedit/gedit-io-error-info-bar.c:146
 #, c-format
 msgid "“%s” is not a valid location."
 msgstr "\"%s\" bukan lokasi yang sah."
 
-#. Translators: %s is a host name
-#: gedit/gedit-io-error-info-bar.c:239
+#: gedit/gedit-io-error-info-bar.c:147
+msgid "Please check that you typed the location correctly and try again."
+msgstr "Silakan periksa apakah lokasi yang Anda ketikkan benar dan coba lagi."
+
+#: gedit/gedit-io-error-info-bar.c:180
 #, c-format
-msgid ""
-"Host “%s” could not be found. Please check that your proxy settings are "
-"correct and try again."
-msgstr ""
-"Host \"%s\" tidak dapat ditemukan. Silakan periksa apakah tatanan proksi "
-"Anda sudah benar dan coba lagi."
+msgid "Hostname “%s” not known."
+msgstr "Nama host \"%s\" tidak diketahui."
 
-#: gedit/gedit-io-error-info-bar.c:254
-#, c-format
-msgid ""
-"Hostname was invalid. Please check that you typed the location correctly and "
-"try again."
-msgstr ""
-"Nama host tidak valid. Silakan periksa lokasi yg Anda tik dan coba lagi."
+#: gedit/gedit-io-error-info-bar.c:181
+msgid "The problem could come from the proxy settings."
+msgstr "Masalahnya bisa berasal dari pengaturan proksi."
 
-#: gedit/gedit-io-error-info-bar.c:262
-#, c-format
-msgid "“%s” is not a regular file."
-msgstr "\"%s\" bukan berkas reguler."
+#: gedit/gedit-io-error-info-bar.c:215
+msgid "File not found. Perhaps it has recently been deleted."
+msgstr "Berkas tidak ditemukan. Mungkin baru-baru ini telah dihapus."
 
-#: gedit/gedit-io-error-info-bar.c:267
-msgid "Connection timed out. Please try again."
-msgstr "Koneksi melewati waktu tunggu. Silakan coba lagi."
-
-#: gedit/gedit-io-error-info-bar.c:300
-#, c-format
-msgid "Unexpected error: %s"
-msgstr "Kesalahan yang tidak diduga: %s"
-
-#: gedit/gedit-io-error-info-bar.c:336
-msgid "Cannot find the requested file. Perhaps it has recently been deleted."
-msgstr "Tak menemukan berkas yang diminta. Mungkin baru saja dihapus."
-
-#: gedit/gedit-io-error-info-bar.c:346
+#: gedit/gedit-io-error-info-bar.c:225
 #, c-format
 msgid "Could not revert the file “%s”."
 msgstr "Tak dapat mengembalikan berkas \"%s\"."
 
-#: gedit/gedit-io-error-info-bar.c:373
+#: gedit/gedit-io-error-info-bar.c:250
 msgid "Ch_aracter Encoding:"
 msgstr "Pengkodean K_arakter:"
 
-#. Translators: the access key chosen for this string should be
-#. different from other main menu access keys (Open, Edit, View...)
-#: gedit/gedit-io-error-info-bar.c:424
-msgid "Edit Any_way"
+#: gedit/gedit-io-error-info-bar.c:288
+msgid "_Edit Anyway"
 msgstr "Sunt_ing Saja"
 
-#: gedit/gedit-io-error-info-bar.c:512
+#: gedit/gedit-io-error-info-bar.c:326
 msgid ""
 "The number of followed links is limited and the actual file could not be "
 "found within this limit."
@@ -1095,28 +1033,28 @@ msgstr ""
 "Cacah taut yang diikuti terbatas dan berkas sesungguhnya tak ditemukan dalam "
 "batas ini."
 
-#: gedit/gedit-io-error-info-bar.c:516
+#: gedit/gedit-io-error-info-bar.c:331
 msgid "You do not have the permissions necessary to open the file."
 msgstr "Anda tidak memiliki izin yang diperlukan untuk membuka berkas."
 
-#: gedit/gedit-io-error-info-bar.c:522
+#: gedit/gedit-io-error-info-bar.c:337
 msgid "Unable to detect the character encoding."
 msgstr "Tak bisa mengenali pengkodean karakter."
 
-#: gedit/gedit-io-error-info-bar.c:523 gedit/gedit-io-error-info-bar.c:547
+#: gedit/gedit-io-error-info-bar.c:338 gedit/gedit-io-error-info-bar.c:361
 msgid "Please check that you are not trying to open a binary file."
 msgstr "Coba periksa apakah Anda tidak sedang membuka suatu berkas biner."
 
-#: gedit/gedit-io-error-info-bar.c:524
+#: gedit/gedit-io-error-info-bar.c:339
 msgid "Select a character encoding from the menu and try again."
 msgstr "Pilih sebuah pengkodean karakter dari menu dan coba lagi."
 
-#: gedit/gedit-io-error-info-bar.c:530
+#: gedit/gedit-io-error-info-bar.c:345
 #, c-format
 msgid "There was a problem opening the file “%s”."
 msgstr "Ada masalah ketika membuka berkas \"%s\"."
 
-#: gedit/gedit-io-error-info-bar.c:532
+#: gedit/gedit-io-error-info-bar.c:346
 msgid ""
 "The file you opened has some invalid characters. If you continue editing "
 "this file you could corrupt this document."
@@ -1124,32 +1062,32 @@ msgstr ""
 "Berkas yang Anda buka memiliki karakter yang tidak sah. Berkas ini bisa saja "
 "cacat jika Anda melanjutkan untuk menyuntingnya."
 
-#: gedit/gedit-io-error-info-bar.c:535
+#: gedit/gedit-io-error-info-bar.c:349
 msgid "You can also choose another character encoding and try again."
 msgstr "Anda juga dapat memilih pengkodean karakter lain dan coba lagi."
 
-#: gedit/gedit-io-error-info-bar.c:544
+#: gedit/gedit-io-error-info-bar.c:358
 #, c-format
 msgid "Could not open the file “%s” using the “%s” character encoding."
 msgstr ""
 "Tak dapat membuka berkas \"%s\" menggunakan pengkodean karakter \"%s\"."
 
-#: gedit/gedit-io-error-info-bar.c:548 gedit/gedit-io-error-info-bar.c:623
+#: gedit/gedit-io-error-info-bar.c:362 gedit/gedit-io-error-info-bar.c:417
 msgid "Select a different character encoding from the menu and try again."
 msgstr "Pilih pengkodean karakter lain dari menu dan coba lagi."
 
-#: gedit/gedit-io-error-info-bar.c:560
+#: gedit/gedit-io-error-info-bar.c:374
 #, c-format
 msgid "Could not open the file “%s”."
 msgstr "Berkas \"%s\" tidak dapat dibuka."
 
-#: gedit/gedit-io-error-info-bar.c:618
+#: gedit/gedit-io-error-info-bar.c:412
 #, c-format
 msgid "Could not save the file “%s” using the “%s” character encoding."
 msgstr ""
 "Tak dapat menyimpan berkas \"%s\" menggunakan pengkodean karakter \"%s\"."
 
-#: gedit/gedit-io-error-info-bar.c:621
+#: gedit/gedit-io-error-info-bar.c:415
 msgid ""
 "The document contains one or more characters that cannot be encoded using "
 "the specified character encoding."
@@ -1157,30 +1095,26 @@ msgstr ""
 "Dokumen ini mengandung satu atau lebih karakter yang tidak dapat diuraikan "
 "memakai pengkodean karakter yang telah ditentukan."
 
-#: gedit/gedit-io-error-info-bar.c:692
-msgid "S_ave Anyway"
-msgstr "_Simpan Saja"
-
-#: gedit/gedit-io-error-info-bar.c:695
-msgid "D_on’t Save"
-msgstr "_Jangan Simpan"
-
-#. FIXME: review this message, it's not clear since for the user the "modification"
-#. * could be interpreted as the changes he made in the document. beside "reading" is
-#. * not accurate (since last load/save)
-#.
-#: gedit/gedit-io-error-info-bar.c:709
+#: gedit/gedit-io-error-info-bar.c:460
 #, c-format
-msgid "The file “%s” has been modified since reading it."
-msgstr "Berkas \"%s\" telah berubah semenjak ketika membacanya."
+msgid "The file “%s” has been externally modified."
+msgstr "Berkas \"%s\" telah diubah secara eksternal."
 
-#: gedit/gedit-io-error-info-bar.c:724
+#: gedit/gedit-io-error-info-bar.c:461
 msgid "If you save it, all the external changes could be lost. Save it anyway?"
 msgstr ""
 "Jika Anda menyimpannya, seluruh perubahan di luar akan hilang. Simpan saja?"
 
+#: gedit/gedit-io-error-info-bar.c:468
+msgid "S_ave Anyway"
+msgstr "_Simpan Saja"
+
+#: gedit/gedit-io-error-info-bar.c:472
+msgid "D_on’t Save"
+msgstr "_Jangan Simpan"
+
 #. Translators: %s is a URI scheme (like for example http:, ftp:, etc.)
-#: gedit/gedit-io-error-info-bar.c:782
+#: gedit/gedit-io-error-info-bar.c:502
 #, c-format
 msgid ""
 "Cannot handle “%s:” locations in write mode. Please check that you typed the "
@@ -1189,7 +1123,7 @@ msgstr ""
 "Tak dapat menangani lokasi \"%s:\" dalam mode menulis. Tolong periksa apakah "
 "Anda telah mengetik lokasinya dengan benar, kemudian silakan coba kembali."
 
-#: gedit/gedit-io-error-info-bar.c:790
+#: gedit/gedit-io-error-info-bar.c:509
 msgid ""
 "Cannot handle this location in write mode. Please check that you typed the "
 "location correctly and try again."
@@ -1197,7 +1131,7 @@ msgstr ""
 "Tak dapat menangani lokasi ini dalam mode menulis. Tolong periksa apakah "
 "Anda telah mengetik lokasinya dengan benar, kemudian silakan coba kembali."
 
-#: gedit/gedit-io-error-info-bar.c:799
+#: gedit/gedit-io-error-info-bar.c:518
 #, c-format
 msgid ""
 "“%s” is not a valid location. Please check that you typed the location "
@@ -1206,7 +1140,7 @@ msgstr ""
 "\"%s\" bukanlah lokasi yang valid. Silakan periksa apakah Anda mengetikkan "
 "lokasi dengan benar dan coba lagi."
 
-#: gedit/gedit-io-error-info-bar.c:806
+#: gedit/gedit-io-error-info-bar.c:525
 msgid ""
 "You do not have the permissions necessary to save the file. Please check "
 "that you typed the location correctly and try again."
@@ -1214,7 +1148,7 @@ msgstr ""
 "Anda tidak memiliki hak yang diperlukan untuk menyimpan berkas. Silakan "
 "periksa apakah Anda telah mengetikkan lokasi dengan benar dan coba lagi."
 
-#: gedit/gedit-io-error-info-bar.c:812
+#: gedit/gedit-io-error-info-bar.c:531
 msgid ""
 "There is not enough disk space to save the file. Please free some disk space "
 "and try again."
@@ -1222,7 +1156,7 @@ msgstr ""
 "Tak cukup ruang untuk menyimpan berkas. Silakan kosongkan sebagian ruang dan "
 "coba lagi."
 
-#: gedit/gedit-io-error-info-bar.c:817
+#: gedit/gedit-io-error-info-bar.c:536
 msgid ""
 "You are trying to save the file on a read-only disk. Please check that you "
 "typed the location correctly and try again."
@@ -1230,12 +1164,12 @@ msgstr ""
 "Anda mencoba untuk menyimpan berkas pada cakram yang hanya dapat dibaca. "
 "Silakan periksa apakah lokasi yang Anda ketikkan benar dan coba lagi."
 
-#: gedit/gedit-io-error-info-bar.c:823
+#: gedit/gedit-io-error-info-bar.c:542
 msgid "A file with the same name already exists. Please use a different name."
 msgstr ""
 "Sebuah berkas dengan nama yang sama sudah ada. Coba gunakan nama yang lain."
 
-#: gedit/gedit-io-error-info-bar.c:828
+#: gedit/gedit-io-error-info-bar.c:547
 msgid ""
 "The disk where you are trying to save the file has a limitation on length of "
 "the file names. Please use a shorter name."
@@ -1243,17 +1177,7 @@ msgstr ""
 "Diska yang dipakai untuk menyimpan memiliki batas untuk panjang nama berkas. "
 "Cobalah nama lain yang lebih pendek."
 
-#: gedit/gedit-io-error-info-bar.c:839
-msgid ""
-"The disk where you are trying to save the file has a limitation on file "
-"sizes. Please try saving a smaller file or saving it to a disk that does not "
-"have this limitation."
-msgstr ""
-"Diska yang dipakai untuk menyimpan memiliki batas untuk ukuran berkas. "
-"Cobalah menyimpan dengan ukuran yang lebih kecil atau simpan pada diska yang "
-"tidak memiliki batasan."
-
-#: gedit/gedit-io-error-info-bar.c:856
+#: gedit/gedit-io-error-info-bar.c:562
 #, c-format
 msgid "Could not save the file “%s”."
 msgstr "Tak bisa menyimpan berkas \"%s\"."
@@ -1349,68 +1273,67 @@ msgstr "SSP"
 msgid "There is a tab with errors"
 msgid_plural "There are %d tabs with errors"
 msgstr[0] "Ada %d tab dengan galat"
-msgstr[1] "Ada %d tab dengan galat"
 
 #. Translators: the first %s is a file name (e.g. test.txt) the second one
 #. is a directory (e.g. ssh://master.gnome.org/home/users/paolo)
-#: gedit/gedit-tab.c:830
+#: gedit/gedit-tab.c:805
 #, c-format
 msgid "Reverting %s from %s"
 msgstr "Mengembalikan %s dari %s"
 
-#: gedit/gedit-tab.c:837
+#: gedit/gedit-tab.c:812
 #, c-format
 msgid "Reverting %s"
 msgstr "Mengembalikan %s"
 
 #. Translators: the first %s is a file name (e.g. test.txt) the second one
 #. is a directory (e.g. ssh://master.gnome.org/home/users/paolo)
-#: gedit/gedit-tab.c:850
+#: gedit/gedit-tab.c:825
 #, c-format
 msgid "Loading %s from %s"
 msgstr "Memuat %s dari %s"
 
-#: gedit/gedit-tab.c:857
+#: gedit/gedit-tab.c:832
 #, c-format
 msgid "Loading %s"
 msgstr "Memuat %s"
 
 #. Translators: the first %s is a file name (e.g. test.txt) the second one
 #. is a directory (e.g. ssh://master.gnome.org/home/users/paolo)
-#: gedit/gedit-tab.c:937
+#: gedit/gedit-tab.c:912
 #, c-format
 msgid "Saving %s to %s"
 msgstr "Menyimpan %s ke %s"
 
-#: gedit/gedit-tab.c:942
+#: gedit/gedit-tab.c:917
 #, c-format
 msgid "Saving %s"
 msgstr "Menyimpan %s"
 
-#: gedit/gedit-tab.c:1515
+#: gedit/gedit-tab.c:1490
 #, c-format
 msgid "Error opening file %s"
 msgstr "Gagal saat membuka berkas %s"
 
-#: gedit/gedit-tab.c:1520
+#: gedit/gedit-tab.c:1495
 #, c-format
 msgid "Error reverting file %s"
 msgstr "Gagal saat mengulang berkas %s"
 
-#: gedit/gedit-tab.c:1525
+#: gedit/gedit-tab.c:1500
 #, c-format
 msgid "Error saving file %s"
 msgstr "Gagal saat menyimpan berkas %s"
 
-#: gedit/gedit-tab.c:1556
+#: gedit/gedit-tab.c:1531
 msgid "Name:"
 msgstr "Nama:"
 
-#: gedit/gedit-tab.c:1557
+#: gedit/gedit-tab.c:1532
 msgid "MIME Type:"
 msgstr "Jenis MIME:"
 
-#: gedit/gedit-tab.c:1558
+#: gedit/gedit-tab.c:1533
 msgid "Encoding:"
 msgstr "Enkoding:"
 
@@ -1787,22 +1710,26 @@ msgstr "Pintasan Papan Ti_k"
 msgid "Character Encodings"
 msgstr "Pengkodean Karakter"
 
+#: gedit/resources/ui/gedit-encodings-dialog.ui:44
+msgid "_Cancel Changes"
+msgstr "_Batalkan Perubahan"
+
 #: gedit/resources/ui/gedit-encodings-dialog.ui:51
-msgid "_Apply"
-msgstr "Ter_apkan"
+msgid "_Save Settings"
+msgstr "_Simpan Pengaturan"
 
 #: gedit/resources/ui/gedit-encodings-dialog.ui:82
-msgid "A_vailable Encodings"
-msgstr "Enkoding _Yang Tersedia"
+msgid "_Other Available Encodings"
+msgstr "Enkoding Lain _yang Tersedia"
 
 #: gedit/resources/ui/gedit-encodings-dialog.ui:100
-msgid "Cho_sen Encodings"
-msgstr "Pengkodean Yang Di_pilih"
+msgid "_Favorites"
+msgstr "_Favorit"
 
 #: gedit/resources/ui/gedit-encodings-dialog.ui:139
 #: gedit/resources/ui/gedit-encodings-dialog.ui:217
-msgid "_Description"
-msgstr "_Deskripsi"
+msgid "Ca_tegory"
+msgstr "Ka_tegori"
 
 #: gedit/resources/ui/gedit-encodings-dialog.ui:151
 #: gedit/resources/ui/gedit-encodings-dialog.ui:228
@@ -2856,7 +2783,7 @@ msgstr "Jika Anda menghapus objek, ia akan hilang selamanya."
 msgid "(Empty)"
 msgstr "(Kosong)"
 
-#: plugins/filebrowser/gedit-file-browser-store.c:3325
+#: plugins/filebrowser/gedit-file-browser-store.c:3326
 msgid ""
 "The renamed file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
@@ -2865,11 +2792,11 @@ msgstr ""
 "Anda supaya berkasnya nampak"
 
 #. Translators: This is the default name of new files created by the file browser pane.
-#: plugins/filebrowser/gedit-file-browser-store.c:3576
+#: plugins/filebrowser/gedit-file-browser-store.c:3577
 msgid "Untitled File"
 msgstr "Berkas Tanpa Nama"
 
-#: plugins/filebrowser/gedit-file-browser-store.c:3604
+#: plugins/filebrowser/gedit-file-browser-store.c:3605
 msgid ""
 "The new file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
@@ -2878,11 +2805,11 @@ msgstr ""
 "supaya berkasnya kelihatan"
 
 #. Translators: This is the default name of new directories created by the file browser pane.
-#: plugins/filebrowser/gedit-file-browser-store.c:3633
+#: plugins/filebrowser/gedit-file-browser-store.c:3634
 msgid "Untitled Folder"
 msgstr "Folder Tanpa Nama"
 
-#: plugins/filebrowser/gedit-file-browser-store.c:3656
+#: plugins/filebrowser/gedit-file-browser-store.c:3657
 msgid ""
 "The new directory is currently filtered out. You need to adjust your filter "
 "settings to make the directory visible"
@@ -3540,6 +3467,58 @@ msgstr "Masukkan Tanggal/Jam"
 #: plugins/time/time.plugin.desktop.in:6
 msgid "Inserts current date and time at the cursor position."
 msgstr "Masukkan tanggal dan jam pada posisi kursor."
+
+#~ msgid "Could not find the file “%s”."
+#~ msgstr "Tak bisa temukan berkas \"%s\"."
+
+#~ msgid "Unable to handle “%s:” locations."
+#~ msgstr "Tak bisa menangani lokasi \"%s:\"."
+
+#~ msgid "Unable to handle this location."
+#~ msgstr "Tak bisa menangani lokasi ini."
+
+#~ msgid "“%s” is a directory."
+#~ msgstr "\"%s\" adalah direktori."
+
+#~ msgid ""
+#~ "Host “%s” could not be found. Please check that your proxy settings are "
+#~ "correct and try again."
+#~ msgstr ""
+#~ "Host \"%s\" tidak dapat ditemukan. Silakan periksa apakah tatanan proksi "
+#~ "Anda sudah benar dan coba lagi."
+
+#~ msgid ""
+#~ "Hostname was invalid. Please check that you typed the location correctly "
+#~ "and try again."
+#~ msgstr ""
+#~ "Nama host tidak valid. Silakan periksa lokasi yg Anda tik dan coba lagi."
+
+#~ msgid "“%s” is not a regular file."
+#~ msgstr "\"%s\" bukan berkas reguler."
+
+#~ msgid "Connection timed out. Please try again."
+#~ msgstr "Koneksi melewati waktu tunggu. Silakan coba lagi."
+
+#~ msgid "Unexpected error: %s"
+#~ msgstr "Kesalahan yang tidak diduga: %s"
+
+#~ msgid ""
+#~ "The disk where you are trying to save the file has a limitation on file "
+#~ "sizes. Please try saving a smaller file or saving it to a disk that does "
+#~ "not have this limitation."
+#~ msgstr ""
+#~ "Diska yang dipakai untuk menyimpan memiliki batas untuk ukuran berkas. "
+#~ "Cobalah menyimpan dengan ukuran yang lebih kecil atau simpan pada diska "
+#~ "yang tidak memiliki batasan."
+
+#~ msgid "_Apply"
+#~ msgstr "Ter_apkan"
+
+#~ msgid "Cho_sen Encodings"
+#~ msgstr "Pengkodean Yang Di_pilih"
+
+#~ msgid "_Description"
+#~ msgstr "_Deskripsi"
 
 #~ msgid "gedit is the text editor of the GNOME desktop environment."
 #~ msgstr "gedit adalah penyunting teks dari lingkungan destop GNOME."
