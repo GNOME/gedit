@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gedit\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gedit/issues\n"
-"POT-Creation-Date: 2022-10-31 17:31+0000\n"
-"PO-Revision-Date: 2022-11-01 22:49+0200\n"
+"POT-Creation-Date: 2022-11-14 14:01+0000\n"
+"PO-Revision-Date: 2022-11-17 04:07+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -562,7 +562,6 @@ msgstr "_Закрити без збереження"
 #: gedit/gedit-commands-file.c:1513 gedit/gedit-encodings-dialog.c:192
 #: gedit/gedit-file-chooser-open-dialog.c:78 gedit/gedit-io-error-info-bar.c:94
 #: gedit/gedit-io-error-info-bar.c:293 gedit/gedit-preferences-dialog.c:721
-#: gedit/resources/ui/gedit-encodings-dialog.ui:44
 #: plugins/filebrowser/gedit-file-browser-utils.c:211
 #: plugins/quickopen/quickopen/popup.py:45
 #: plugins/snippets/snippets/manager.py:789
@@ -938,11 +937,11 @@ msgstr "Лише читання"
 msgid "Current Locale (%s)"
 msgstr "Поточна локалізація (%s)"
 
-#: gedit/gedit-encodings-combo-box.c:297
+#: gedit/gedit-encodings-combo-box.c:291
 msgid "Automatically Detected"
 msgstr "Автовизначення"
 
-#: gedit/gedit-encodings-combo-box.c:326
+#: gedit/gedit-encodings-combo-box.c:320
 msgid "Add or Remove…"
 msgstr "Додати або вилучити…"
 
@@ -1067,7 +1066,6 @@ msgid "Ch_aracter Encoding:"
 msgstr "_Кодування символів:"
 
 #: gedit/gedit-io-error-info-bar.c:288
-#| msgid "Edit Any_way"
 msgid "_Edit Anyway"
 msgstr "_Редагувати попри це"
 
@@ -1321,64 +1319,64 @@ msgstr[2] "%d вкладок з помилками"
 
 #. Translators: the first %s is a file name (e.g. test.txt) the second one
 #. is a directory (e.g. ssh://master.gnome.org/home/users/paolo)
-#: gedit/gedit-tab.c:830
+#: gedit/gedit-tab.c:805
 #, c-format
 msgid "Reverting %s from %s"
 msgstr "Відновлюється «%s» з «%s»"
 
-#: gedit/gedit-tab.c:837
+#: gedit/gedit-tab.c:812
 #, c-format
 msgid "Reverting %s"
 msgstr "Відновлюється «%s»"
 
 #. Translators: the first %s is a file name (e.g. test.txt) the second one
 #. is a directory (e.g. ssh://master.gnome.org/home/users/paolo)
-#: gedit/gedit-tab.c:850
+#: gedit/gedit-tab.c:825
 #, c-format
 msgid "Loading %s from %s"
 msgstr "Завантажується «%s» з «%s»"
 
-#: gedit/gedit-tab.c:857
+#: gedit/gedit-tab.c:832
 #, c-format
 msgid "Loading %s"
 msgstr "Завантажується «%s»"
 
 #. Translators: the first %s is a file name (e.g. test.txt) the second one
 #. is a directory (e.g. ssh://master.gnome.org/home/users/paolo)
-#: gedit/gedit-tab.c:937
+#: gedit/gedit-tab.c:912
 #, c-format
 msgid "Saving %s to %s"
 msgstr "Зберігається «%s» у «%s»"
 
-#: gedit/gedit-tab.c:942
+#: gedit/gedit-tab.c:917
 #, c-format
 msgid "Saving %s"
 msgstr "Зберігається «%s»"
 
-#: gedit/gedit-tab.c:1515
+#: gedit/gedit-tab.c:1490
 #, c-format
 msgid "Error opening file %s"
 msgstr "Помилка відкривання файлу «%s»"
 
-#: gedit/gedit-tab.c:1520
+#: gedit/gedit-tab.c:1495
 #, c-format
 msgid "Error reverting file %s"
 msgstr "Помилка відновлення файлу «%s»"
 
-#: gedit/gedit-tab.c:1525
+#: gedit/gedit-tab.c:1500
 #, c-format
 msgid "Error saving file %s"
 msgstr "Помилка збереження файлу «%s»"
 
-#: gedit/gedit-tab.c:1556
+#: gedit/gedit-tab.c:1531
 msgid "Name:"
 msgstr "Назва:"
 
-#: gedit/gedit-tab.c:1557
+#: gedit/gedit-tab.c:1532
 msgid "MIME Type:"
 msgstr "MIME тип:"
 
-#: gedit/gedit-tab.c:1558
+#: gedit/gedit-tab.c:1533
 msgid "Encoding:"
 msgstr "Кодування:"
 
@@ -1755,22 +1753,28 @@ msgstr "_Клавіатурні скорочення"
 msgid "Character Encodings"
 msgstr "Кодування символів"
 
+#: gedit/resources/ui/gedit-encodings-dialog.ui:44
+#| msgid "_Cancel"
+msgid "_Cancel Changes"
+msgstr "_Скасувати зміни"
+
 #: gedit/resources/ui/gedit-encodings-dialog.ui:51
-msgid "_Apply"
-msgstr "_Застосувати"
+msgid "_Save Settings"
+msgstr "_Зберегти параметри"
 
 #: gedit/resources/ui/gedit-encodings-dialog.ui:82
-msgid "A_vailable Encodings"
-msgstr "_Доступні кодування"
+#| msgid "A_vailable Encodings"
+msgid "_Other Available Encodings"
+msgstr "_Інші доступні кодування"
 
 #: gedit/resources/ui/gedit-encodings-dialog.ui:100
-msgid "Cho_sen Encodings"
-msgstr "Ви_брані кодування"
+msgid "_Favorites"
+msgstr "_Улюблене"
 
 #: gedit/resources/ui/gedit-encodings-dialog.ui:139
 #: gedit/resources/ui/gedit-encodings-dialog.ui:217
-msgid "_Description"
-msgstr "_Опис"
+msgid "Ca_tegory"
+msgstr "_Категорія"
 
 #: gedit/resources/ui/gedit-encodings-dialog.ui:151
 #: gedit/resources/ui/gedit-encodings-dialog.ui:228
@@ -2824,7 +2828,7 @@ msgstr "Якщо ви вилучите файл, його буде остато�
 msgid "(Empty)"
 msgstr "(Порожньо)"
 
-#: plugins/filebrowser/gedit-file-browser-store.c:3325
+#: plugins/filebrowser/gedit-file-browser-store.c:3326
 msgid ""
 "The renamed file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
@@ -2833,11 +2837,11 @@ msgstr ""
 "параметри фільтра"
 
 #. Translators: This is the default name of new files created by the file browser pane.
-#: plugins/filebrowser/gedit-file-browser-store.c:3576
+#: plugins/filebrowser/gedit-file-browser-store.c:3577
 msgid "Untitled File"
 msgstr "Неназваний файл"
 
-#: plugins/filebrowser/gedit-file-browser-store.c:3604
+#: plugins/filebrowser/gedit-file-browser-store.c:3605
 msgid ""
 "The new file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
@@ -2846,11 +2850,11 @@ msgstr ""
 "параметри фільтра"
 
 #. Translators: This is the default name of new directories created by the file browser pane.
-#: plugins/filebrowser/gedit-file-browser-store.c:3633
+#: plugins/filebrowser/gedit-file-browser-store.c:3634
 msgid "Untitled Folder"
 msgstr "Неназвана тека"
 
-#: plugins/filebrowser/gedit-file-browser-store.c:3656
+#: plugins/filebrowser/gedit-file-browser-store.c:3657
 msgid ""
 "The new directory is currently filtered out. You need to adjust your filter "
 "settings to make the directory visible"
@@ -3508,6 +3512,15 @@ msgstr "Вставити час або дату"
 #: plugins/time/time.plugin.desktop.in:6
 msgid "Inserts current date and time at the cursor position."
 msgstr "Вставляє поточну дату й час в позицію курсора."
+
+#~ msgid "_Apply"
+#~ msgstr "_Застосувати"
+
+#~ msgid "Cho_sen Encodings"
+#~ msgstr "Ви_брані кодування"
+
+#~ msgid "_Description"
+#~ msgstr "_Опис"
 
 #, c-format
 #~ msgid "Could not find the file “%s”."
