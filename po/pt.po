@@ -15,8 +15,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 3.14\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gedit/issues\n"
-"POT-Creation-Date: 2022-11-20 13:57+0000\n"
-"PO-Revision-Date: 2022-11-20 18:12+0000\n"
+"POT-Creation-Date: 2022-11-20 13:59+0000\n"
+"PO-Revision-Date: 2022-11-20 18:15+0000\n"
 "Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Português <@>\n"
 "Language: pt\n"
@@ -579,7 +579,6 @@ msgstr "Fechar _sem gravar"
 #: gedit/gedit-commands-file.c:1513 gedit/gedit-encodings-dialog.c:192
 #: gedit/gedit-file-chooser-open-dialog.c:78 gedit/gedit-io-error-info-bar.c:94
 #: gedit/gedit-io-error-info-bar.c:293 gedit/gedit-preferences-dialog.c:721
-#: gedit/resources/ui/gedit-encodings-dialog.ui:44
 #: plugins/filebrowser/gedit-file-browser-utils.c:211
 #: plugins/quickopen/quickopen/popup.py:45
 #: plugins/snippets/snippets/manager.py:789
@@ -941,11 +940,11 @@ msgstr "Só de leitura"
 msgid "Current Locale (%s)"
 msgstr "Configuração regional atual (%s)"
 
-#: gedit/gedit-encodings-combo-box.c:297
+#: gedit/gedit-encodings-combo-box.c:291
 msgid "Automatically Detected"
 msgstr "Detetado automaticamente"
 
-#: gedit/gedit-encodings-combo-box.c:326
+#: gedit/gedit-encodings-combo-box.c:320
 msgid "Add or Remove…"
 msgstr "Adicionar ou remover…"
 
@@ -1608,8 +1607,8 @@ msgid "_Paste"
 msgstr "Co_lar"
 
 #: gedit/resources/gtk/menus-common.ui:207
-#: plugins/filebrowser/gedit-file-browser-plugin.c:892
-#: plugins/filebrowser/gedit-file-browser-plugin.c:927
+#: plugins/filebrowser/gedit-file-browser-plugin.c:882
+#: plugins/filebrowser/gedit-file-browser-plugin.c:917
 #: plugins/filebrowser/resources/ui/gedit-file-browser-menus.ui:37
 msgid "_Delete"
 msgstr "_Eliminar"
@@ -1760,22 +1759,26 @@ msgstr "_Atalhos de teclado"
 msgid "Character Encodings"
 msgstr "Codificações de caracteres"
 
+#: gedit/resources/ui/gedit-encodings-dialog.ui:44
+msgid "_Cancel Changes"
+msgstr "_Cancelar alterações"
+
 #: gedit/resources/ui/gedit-encodings-dialog.ui:51
-msgid "_Apply"
-msgstr "_Aplicar"
+msgid "_Save Settings"
+msgstr "_Guardar definições"
 
 #: gedit/resources/ui/gedit-encodings-dialog.ui:82
-msgid "A_vailable Encodings"
-msgstr "Codificações disponí_veis"
+msgid "_Other Available Encodings"
+msgstr "_Outras codificações disponíveis"
 
 #: gedit/resources/ui/gedit-encodings-dialog.ui:100
-msgid "Cho_sen Encodings"
-msgstr "Codificações _escolhidas"
+msgid "_Favorites"
+msgstr "_Favoritos"
 
 #: gedit/resources/ui/gedit-encodings-dialog.ui:139
 #: gedit/resources/ui/gedit-encodings-dialog.ui:217
-msgid "_Description"
-msgstr "_Descrição"
+msgid "Ca_tegory"
+msgstr "Ca_tegoria"
 
 #: gedit/resources/ui/gedit-encodings-dialog.ui:151
 #: gedit/resources/ui/gedit-encodings-dialog.ui:228
@@ -2760,43 +2763,43 @@ msgstr "Página inicial"
 msgid "File System"
 msgstr "Sistema de ficheiros"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:502
+#: plugins/filebrowser/gedit-file-browser-plugin.c:492
 msgid "File Browser"
 msgstr "Navegador de ficheiros"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:632
+#: plugins/filebrowser/gedit-file-browser-plugin.c:622
 msgid "An error occurred while creating a new directory"
 msgstr "Ocorreu um erro ao criar uma nova pasta"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:635
+#: plugins/filebrowser/gedit-file-browser-plugin.c:625
 msgid "An error occurred while creating a new file"
 msgstr "Ocorreu um erro ao criar um novo ficheiro"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:638
+#: plugins/filebrowser/gedit-file-browser-plugin.c:628
 msgid "An error occurred while renaming a file or directory"
 msgstr "Ocorreu um erro ao renomear um ficheiro ou pasta"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:641
+#: plugins/filebrowser/gedit-file-browser-plugin.c:631
 msgid "An error occurred while deleting a file or directory"
 msgstr "Ocorreu um erro ao apagar um ficheiro ou pasta"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:644
+#: plugins/filebrowser/gedit-file-browser-plugin.c:634
 msgid "An error occurred while opening a directory in the file manager"
 msgstr "Ocorreu um erro ao abrir uma pasta no gestor de ficheiros"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:647
+#: plugins/filebrowser/gedit-file-browser-plugin.c:637
 msgid "An error occurred while setting a root directory"
 msgstr "Ocorreu um erro ao definir um diretório raíz"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:650
+#: plugins/filebrowser/gedit-file-browser-plugin.c:640
 msgid "An error occurred while loading a directory"
 msgstr "Ocorreu um erro ao carregar um diretório"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:653
+#: plugins/filebrowser/gedit-file-browser-plugin.c:643
 msgid "An error occurred"
 msgstr "Ocorreu um erro"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:875
+#: plugins/filebrowser/gedit-file-browser-plugin.c:865
 msgid ""
 "Cannot move file to trash, do you\n"
 "want to delete permanently?"
@@ -2804,26 +2807,26 @@ msgstr ""
 "Impossível mover o ficheiro para o lixo,\n"
 "deseja apagá-lo definitivamente?"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:880
+#: plugins/filebrowser/gedit-file-browser-plugin.c:870
 #, c-format
 msgid "The file “%s” cannot be moved to the trash."
 msgstr "O ficheiro “%s” não pode ser movido para o lixo."
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:885
+#: plugins/filebrowser/gedit-file-browser-plugin.c:875
 msgid "The selected files cannot be moved to the trash."
 msgstr "Impossível mover os ficheiros selecionados para o lixo."
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:913
+#: plugins/filebrowser/gedit-file-browser-plugin.c:903
 #, c-format
 msgid "Are you sure you want to permanently delete “%s”?"
 msgstr "Tem a certeza de que deseja apagar “%s” definitivamente?"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:918
+#: plugins/filebrowser/gedit-file-browser-plugin.c:908
 msgid "Are you sure you want to permanently delete the selected files?"
 msgstr ""
 "Tem a certeza de que deseja apagar definitivamente os ficheiros selecionados?"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:921
+#: plugins/filebrowser/gedit-file-browser-plugin.c:911
 msgid "If you delete an item, it is permanently lost."
 msgstr "Se apagar um item, este será permanentemente perdido."
 
@@ -3568,6 +3571,15 @@ msgstr "Insere a data e hora atuais na posição do cursor."
 #~ "O disco onde está a tentar gravar o ficheiro tem uma limitação ao tamanho "
 #~ "dos ficheiros. Tente gravar um ficheiro mais pequeno ou num disco que não "
 #~ "tenha essa limitação."
+
+#~ msgid "_Apply"
+#~ msgstr "_Aplicar"
+
+#~ msgid "Cho_sen Encodings"
+#~ msgstr "Codificações _escolhidas"
+
+#~ msgid "_Description"
+#~ msgstr "_Descrição"
 
 #~ msgid "gedit is the text editor of the GNOME desktop environment."
 #~ msgstr "O gedit é o editor de texto do ambiente de trabalho GNOME."
