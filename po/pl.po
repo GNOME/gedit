@@ -16,8 +16,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gedit\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gedit/issues\n"
-"POT-Creation-Date: 2022-10-31 17:31+0000\n"
-"PO-Revision-Date: 2022-11-06 15:25+0100\n"
+"POT-Creation-Date: 2022-11-14 14:01+0000\n"
+"PO-Revision-Date: 2022-11-20 14:59+0100\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <community-poland@mozilla.org>\n"
 "Language: pl\n"
@@ -591,7 +591,6 @@ msgstr "Zamknij _bez zapisywania"
 #: gedit/gedit-commands-file.c:1513 gedit/gedit-encodings-dialog.c:192
 #: gedit/gedit-file-chooser-open-dialog.c:78 gedit/gedit-io-error-info-bar.c:94
 #: gedit/gedit-io-error-info-bar.c:293 gedit/gedit-preferences-dialog.c:721
-#: gedit/resources/ui/gedit-encodings-dialog.ui:44
 #: plugins/filebrowser/gedit-file-browser-utils.c:211
 #: plugins/quickopen/quickopen/popup.py:45
 #: plugins/snippets/snippets/manager.py:789
@@ -986,11 +985,11 @@ msgstr "Tylko do odczytu"
 msgid "Current Locale (%s)"
 msgstr "Bieżące ustawienia regionalne (%s)"
 
-#: gedit/gedit-encodings-combo-box.c:297
+#: gedit/gedit-encodings-combo-box.c:291
 msgid "Automatically Detected"
 msgstr "Automatycznie wykryte"
 
-#: gedit/gedit-encodings-combo-box.c:326
+#: gedit/gedit-encodings-combo-box.c:320
 msgid "Add or Remove…"
 msgstr "Dodaj lub usuń…"
 
@@ -1370,64 +1369,64 @@ msgstr[2] "%d otwartych kart zawiera błędy"
 
 #. Translators: the first %s is a file name (e.g. test.txt) the second one
 #. is a directory (e.g. ssh://master.gnome.org/home/users/paolo)
-#: gedit/gedit-tab.c:830
+#: gedit/gedit-tab.c:805
 #, c-format
 msgid "Reverting %s from %s"
 msgstr "Przywracanie dokumentu %s z katalogu %s"
 
-#: gedit/gedit-tab.c:837
+#: gedit/gedit-tab.c:812
 #, c-format
 msgid "Reverting %s"
 msgstr "Przywracanie %s"
 
 #. Translators: the first %s is a file name (e.g. test.txt) the second one
 #. is a directory (e.g. ssh://master.gnome.org/home/users/paolo)
-#: gedit/gedit-tab.c:850
+#: gedit/gedit-tab.c:825
 #, c-format
 msgid "Loading %s from %s"
 msgstr "Wczytywanie pliku %s z katalogu %s"
 
-#: gedit/gedit-tab.c:857
+#: gedit/gedit-tab.c:832
 #, c-format
 msgid "Loading %s"
 msgstr "Wczytywanie %s"
 
 #. Translators: the first %s is a file name (e.g. test.txt) the second one
 #. is a directory (e.g. ssh://master.gnome.org/home/users/paolo)
-#: gedit/gedit-tab.c:937
+#: gedit/gedit-tab.c:912
 #, c-format
 msgid "Saving %s to %s"
 msgstr "Zapisywanie pliku %s do katalogu %s"
 
-#: gedit/gedit-tab.c:942
+#: gedit/gedit-tab.c:917
 #, c-format
 msgid "Saving %s"
 msgstr "Zapisywanie %s"
 
-#: gedit/gedit-tab.c:1515
+#: gedit/gedit-tab.c:1490
 #, c-format
 msgid "Error opening file %s"
 msgstr "Podczas otwierania pliku %s wystąpił błąd"
 
-#: gedit/gedit-tab.c:1520
+#: gedit/gedit-tab.c:1495
 #, c-format
 msgid "Error reverting file %s"
 msgstr "Podczas przywracania pliku %s wystąpił błąd"
 
-#: gedit/gedit-tab.c:1525
+#: gedit/gedit-tab.c:1500
 #, c-format
 msgid "Error saving file %s"
 msgstr "Podczas zapisywania pliku %s wystąpił błąd"
 
-#: gedit/gedit-tab.c:1556
+#: gedit/gedit-tab.c:1531
 msgid "Name:"
 msgstr "Nazwa:"
 
-#: gedit/gedit-tab.c:1557
+#: gedit/gedit-tab.c:1532
 msgid "MIME Type:"
 msgstr "Typ MIME:"
 
-#: gedit/gedit-tab.c:1558
+#: gedit/gedit-tab.c:1533
 msgid "Encoding:"
 msgstr "Kodowanie:"
 
@@ -1804,22 +1803,26 @@ msgstr "_Skróty klawiszowe"
 msgid "Character Encodings"
 msgstr "Kodowania znaków"
 
+#: gedit/resources/ui/gedit-encodings-dialog.ui:44
+msgid "_Cancel Changes"
+msgstr "_Anuluj zmiany"
+
 #: gedit/resources/ui/gedit-encodings-dialog.ui:51
-msgid "_Apply"
-msgstr "_Zastosuj"
+msgid "_Save Settings"
+msgstr "_Zapisz ustawienia"
 
 #: gedit/resources/ui/gedit-encodings-dialog.ui:82
-msgid "A_vailable Encodings"
-msgstr "_Dostępne kodowania"
+msgid "_Other Available Encodings"
+msgstr "_Inne dostępne kodowania"
 
 #: gedit/resources/ui/gedit-encodings-dialog.ui:100
-msgid "Cho_sen Encodings"
-msgstr "_Wybrane kodowania"
+msgid "_Favorites"
+msgstr "_Ulubione"
 
 #: gedit/resources/ui/gedit-encodings-dialog.ui:139
 #: gedit/resources/ui/gedit-encodings-dialog.ui:217
-msgid "_Description"
-msgstr "_Opis"
+msgid "Ca_tegory"
+msgstr "Kat_egoria"
 
 #: gedit/resources/ui/gedit-encodings-dialog.ui:151
 #: gedit/resources/ui/gedit-encodings-dialog.ui:228
@@ -2878,7 +2881,7 @@ msgstr "Usunięcie elementu spowoduje jego trwałą utratę."
 msgid "(Empty)"
 msgstr "(Pusty)"
 
-#: plugins/filebrowser/gedit-file-browser-store.c:3325
+#: plugins/filebrowser/gedit-file-browser-store.c:3326
 msgid ""
 "The renamed file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
@@ -2887,11 +2890,11 @@ msgstr ""
 "widoczny, należy zmienić ustawienia filtra"
 
 #. Translators: This is the default name of new files created by the file browser pane.
-#: plugins/filebrowser/gedit-file-browser-store.c:3576
+#: plugins/filebrowser/gedit-file-browser-store.c:3577
 msgid "Untitled File"
 msgstr "Plik bez tytułu"
 
-#: plugins/filebrowser/gedit-file-browser-store.c:3604
+#: plugins/filebrowser/gedit-file-browser-store.c:3605
 msgid ""
 "The new file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
@@ -2900,11 +2903,11 @@ msgstr ""
 "należy zmienić ustawienia filtra"
 
 #. Translators: This is the default name of new directories created by the file browser pane.
-#: plugins/filebrowser/gedit-file-browser-store.c:3633
+#: plugins/filebrowser/gedit-file-browser-store.c:3634
 msgid "Untitled Folder"
 msgstr "Katalog bez tytułu"
 
-#: plugins/filebrowser/gedit-file-browser-store.c:3656
+#: plugins/filebrowser/gedit-file-browser-store.c:3657
 msgid ""
 "The new directory is currently filtered out. You need to adjust your filter "
 "settings to make the directory visible"
