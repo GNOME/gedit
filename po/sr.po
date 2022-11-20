@@ -1,5 +1,5 @@
 # Serbian translation of gedit
-# Courtesy of Prevod.org team (http://prevod.org/) -- 2003—2016.
+# Courtesy of Prevod.org team (http://prevod.org/) -- 2003—2022.
 # This file is distributed under the same license as the gedit package.
 # Горан Ракић <grakic@devbase.net>
 # Данило Шеган <danilo@prevod.org>, 2005.
@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gedit\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gedit/issues\n"
-"POT-Creation-Date: 2022-09-10 13:00+0000\n"
-"PO-Revision-Date: 2022-10-12 11:41+0200\n"
+"POT-Creation-Date: 2022-11-20 13:57+0000\n"
+"PO-Revision-Date: 2022-11-20 14:44+0100\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <српски <gnome-sr@googlegroups.org>>\n"
 "Language: sr\n"
@@ -23,14 +23,12 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=n==1? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2\n"
 "X-Project-Style: gnome\n"
-"X-Generator: Gtranslator 3.36.0\n"
 
 #: data/org.gnome.gedit.appdata.xml.in:7 data/org.gnome.gedit.desktop.in:3
 msgid "gedit"
 msgstr "Вилењакова бележница"
 
 #: data/org.gnome.gedit.appdata.xml.in:8
-#| msgid "Text Editor"
 msgid "Text editor"
 msgstr "Уређивач текста"
 
@@ -571,8 +569,8 @@ msgstr "Затвори _без чувања"
 #: gedit/gedit-close-confirmation-dialog.c:277 gedit/gedit-commands-file.c:492
 #: gedit/gedit-commands-file.c:568 gedit/gedit-commands-file.c:791
 #: gedit/gedit-commands-file.c:1513 gedit/gedit-encodings-dialog.c:192
-#: gedit/gedit-file-chooser-open-dialog.c:78
-#: gedit/gedit-preferences-dialog.c:721
+#: gedit/gedit-file-chooser-open-dialog.c:78 gedit/gedit-io-error-info-bar.c:94
+#: gedit/gedit-io-error-info-bar.c:293 gedit/gedit-preferences-dialog.c:721
 #: gedit/resources/ui/gedit-encodings-dialog.ui:44
 #: plugins/filebrowser/gedit-file-browser-utils.c:211
 #: plugins/quickopen/quickopen/popup.py:45
@@ -1053,124 +1051,96 @@ msgstr "Отворене датотеке"
 msgid "_Open"
 msgstr "_Отвори"
 
-#: gedit/gedit-io-error-info-bar.c:135 gedit/gedit-io-error-info-bar.c:416
+#: gedit/gedit-io-error-info-bar.c:90 gedit/gedit-io-error-info-bar.c:282
 msgid "_Retry"
 msgstr "_Пробај поново"
 
-#: gedit/gedit-io-error-info-bar.c:157
-#, c-format
-msgid "Could not find the file “%s”."
-msgstr "Не могу да нађем датотеку „%s“."
+#: gedit/gedit-io-error-info-bar.c:114
+#| msgid "“%s” not found"
+msgid "File not found."
+msgstr "Нисам нашао датотеку."
 
+#. How to reproduce this case: from the command line,
+#. * try to open a URI such as: foo://example.net/file
+#.
 #. Translators: %s is a URI scheme (like for example http:, ftp:, etc.)
-#: gedit/gedit-io-error-info-bar.c:177
+#: gedit/gedit-io-error-info-bar.c:133
 #, c-format
-msgid "Unable to handle “%s:” locations."
-msgstr "Не могу да рукујем путањама „%s:“."
+msgid "“%s:” locations are not supported."
+msgstr "Места „%s:“ нису подржана."
 
-#: gedit/gedit-io-error-info-bar.c:183
-msgid "Unable to handle this location."
-msgstr "Не могу да рукујем овом путањом."
-
-#: gedit/gedit-io-error-info-bar.c:192
+#: gedit/gedit-io-error-info-bar.c:142
 msgid "The location of the file cannot be accessed."
 msgstr "Не могу да приступим путањи датотеке."
 
-#: gedit/gedit-io-error-info-bar.c:196
-#, c-format
-msgid "“%s” is a directory."
-msgstr "„%s“ је фасцикла."
-
-#: gedit/gedit-io-error-info-bar.c:198 gedit/gedit-io-error-info-bar.c:205
-msgid "Please check that you typed the location correctly and try again."
-msgstr "Проверите да ли сте тачно навели путању (место) и покушајте поново."
-
-#: gedit/gedit-io-error-info-bar.c:203
+#: gedit/gedit-io-error-info-bar.c:146
 #, c-format
 msgid "“%s” is not a valid location."
 msgstr "„%s“ није исправна путања."
 
-#. Translators: %s is a host name
-#: gedit/gedit-io-error-info-bar.c:239
+#: gedit/gedit-io-error-info-bar.c:147
+msgid "Please check that you typed the location correctly and try again."
+msgstr "Проверите да ли сте тачно навели путању (место) и покушајте поново."
+
+#: gedit/gedit-io-error-info-bar.c:180
 #, c-format
-msgid ""
-"Host “%s” could not be found. Please check that your proxy settings are "
-"correct and try again."
-msgstr ""
-"Рачунар „%s“ није пронађен. Проверите да ли су исправна подешавања мрежног "
-"посредника и покушајте поново."
+#| msgid "“%s” not found"
+msgid "Hostname “%s” not known."
+msgstr "Назив домаћина „%s“ није познат."
 
-#: gedit/gedit-io-error-info-bar.c:254
-#, c-format
-msgid ""
-"Hostname was invalid. Please check that you typed the location correctly and "
-"try again."
-msgstr ""
-"Назив рачунара није исправан. Проверите да ли сте унели исправну адресу и "
-"покушајте поново."
+#: gedit/gedit-io-error-info-bar.c:181
+msgid "The problem could come from the proxy settings."
+msgstr "Проблем може бити у поставкама посредника."
 
-#: gedit/gedit-io-error-info-bar.c:262
-#, c-format
-msgid "“%s” is not a regular file."
-msgstr "„%s“ није обична датотека."
+#: gedit/gedit-io-error-info-bar.c:215
+#| msgid ""
+#| "Cannot find the requested file. Perhaps it has recently been deleted."
+msgid "File not found. Perhaps it has recently been deleted."
+msgstr "Нисам нашао датотеку. Можда је недавно обрисана."
 
-#: gedit/gedit-io-error-info-bar.c:267
-msgid "Connection timed out. Please try again."
-msgstr "Време за успостављање везе је истекло. Покушајте поново."
-
-#: gedit/gedit-io-error-info-bar.c:300
-#, c-format
-msgid "Unexpected error: %s"
-msgstr "Неочекивана грешка: %s"
-
-#: gedit/gedit-io-error-info-bar.c:336
-msgid "Cannot find the requested file. Perhaps it has recently been deleted."
-msgstr "Не могу да пронађем датотеку. Можда је недавно обрисана."
-
-#: gedit/gedit-io-error-info-bar.c:346
+#: gedit/gedit-io-error-info-bar.c:225
 #, c-format
 msgid "Could not revert the file “%s”."
 msgstr "Не могу да повратим датотеку „%s“."
 
-#: gedit/gedit-io-error-info-bar.c:373
+#: gedit/gedit-io-error-info-bar.c:250
 msgid "Ch_aracter Encoding:"
 msgstr "Кодирање _знака:"
 
-#. Translators: the access key chosen for this string should be
-#. different from other main menu access keys (Open, Edit, View...)
-#: gedit/gedit-io-error-info-bar.c:424
-msgid "Edit Any_way"
-msgstr "_Ипак промени"
+#: gedit/gedit-io-error-info-bar.c:288
+#| msgid "Edit Any_way"
+msgid "_Edit Anyway"
+msgstr "_Ипак уреди"
 
-#: gedit/gedit-io-error-info-bar.c:512
+#: gedit/gedit-io-error-info-bar.c:326
 msgid ""
 "The number of followed links is limited and the actual file could not be "
 "found within this limit."
 msgstr ""
 "Не могу да нађем тражену датотеку јер је број веза за праћење ограничен."
 
-#: gedit/gedit-io-error-info-bar.c:516
+#: gedit/gedit-io-error-info-bar.c:331
 msgid "You do not have the permissions necessary to open the file."
 msgstr "Немате потребне дозволе да отворите датотеку."
 
-#: gedit/gedit-io-error-info-bar.c:522
+#: gedit/gedit-io-error-info-bar.c:337
 msgid "Unable to detect the character encoding."
 msgstr "Не могу да препознам кодирање знакова."
 
-#: gedit/gedit-io-error-info-bar.c:523 gedit/gedit-io-error-info-bar.c:547
+#: gedit/gedit-io-error-info-bar.c:338 gedit/gedit-io-error-info-bar.c:361
 msgid "Please check that you are not trying to open a binary file."
 msgstr "Проверите да не покушавате да отворите извршну датотеку."
 
-#: gedit/gedit-io-error-info-bar.c:524
+#: gedit/gedit-io-error-info-bar.c:339
 msgid "Select a character encoding from the menu and try again."
 msgstr "Изаберите кодирање знакова из изборника и покушајте поново."
 
-#: gedit/gedit-io-error-info-bar.c:530
+#: gedit/gedit-io-error-info-bar.c:345
 #, c-format
 msgid "There was a problem opening the file “%s”."
 msgstr "Дошло је до грешке при отварању датотеке „%s“."
 
-#: gedit/gedit-io-error-info-bar.c:532
+#: gedit/gedit-io-error-info-bar.c:346
 msgid ""
 "The file you opened has some invalid characters. If you continue editing "
 "this file you could corrupt this document."
@@ -1178,30 +1148,30 @@ msgstr ""
 "Датотека коју сте отворили има неке неисправне знакове. Ако наставите да "
 "уређујете ову датотеку, можете да је оштетите."
 
-#: gedit/gedit-io-error-info-bar.c:535
+#: gedit/gedit-io-error-info-bar.c:349
 msgid "You can also choose another character encoding and try again."
 msgstr "Изаберите кодирање знакова из изборника и покушајте поново."
 
-#: gedit/gedit-io-error-info-bar.c:544
+#: gedit/gedit-io-error-info-bar.c:358
 #, c-format
 msgid "Could not open the file “%s” using the “%s” character encoding."
 msgstr "Не могу да отворим датотеку „%s“ помоћу кодирања знакова „%s“."
 
-#: gedit/gedit-io-error-info-bar.c:548 gedit/gedit-io-error-info-bar.c:623
+#: gedit/gedit-io-error-info-bar.c:362 gedit/gedit-io-error-info-bar.c:417
 msgid "Select a different character encoding from the menu and try again."
 msgstr "Изаберите неко друго кодирање знакова из изборника и покушајте поново."
 
-#: gedit/gedit-io-error-info-bar.c:560
+#: gedit/gedit-io-error-info-bar.c:374
 #, c-format
 msgid "Could not open the file “%s”."
 msgstr "Не могу да отворим датотеку „%s“."
 
-#: gedit/gedit-io-error-info-bar.c:618
+#: gedit/gedit-io-error-info-bar.c:412
 #, c-format
 msgid "Could not save the file “%s” using the “%s” character encoding."
 msgstr "Не могу да сачувам датотеку „%s“ користећи „%s“ кодирање знакова."
 
-#: gedit/gedit-io-error-info-bar.c:621
+#: gedit/gedit-io-error-info-bar.c:415
 msgid ""
 "The document contains one or more characters that cannot be encoded using "
 "the specified character encoding."
@@ -1209,31 +1179,28 @@ msgstr ""
 "Документ садржи један или више знакова који не могу бити претворени "
 "коришћењем задатог кодног записа знакова."
 
-#: gedit/gedit-io-error-info-bar.c:692
-msgid "S_ave Anyway"
-msgstr "С_ачувај и поред тога"
-
-#: gedit/gedit-io-error-info-bar.c:695
-msgid "D_on’t Save"
-msgstr "_Немој сачувати"
-
-#. FIXME: review this message, it's not clear since for the user the "modification"
-#. * could be interpreted as the changes he made in the document. beside "reading" is
-#. * not accurate (since last load/save)
-#.
-#: gedit/gedit-io-error-info-bar.c:709
+#: gedit/gedit-io-error-info-bar.c:460
 #, c-format
-msgid "The file “%s” has been modified since reading it."
-msgstr "Датотека „%s“ је измењена након што сте је учитали."
+#| msgid "The file “%s” has been modified since reading it."
+msgid "The file “%s” has been externally modified."
+msgstr "Датотека „%s“ је измењена споља."
 
-#: gedit/gedit-io-error-info-bar.c:724
+#: gedit/gedit-io-error-info-bar.c:461
 msgid "If you save it, all the external changes could be lost. Save it anyway?"
 msgstr ""
 "Ако је сачувате, све спољне измене могу бити изгубљене. Сачуваћете је и "
 "поред тога?"
 
+#: gedit/gedit-io-error-info-bar.c:468
+msgid "S_ave Anyway"
+msgstr "С_ачувај и поред тога"
+
+#: gedit/gedit-io-error-info-bar.c:472
+msgid "D_on’t Save"
+msgstr "_Немој сачувати"
+
 #. Translators: %s is a URI scheme (like for example http:, ftp:, etc.)
-#: gedit/gedit-io-error-info-bar.c:782
+#: gedit/gedit-io-error-info-bar.c:502
 #, c-format
 msgid ""
 "Cannot handle “%s:” locations in write mode. Please check that you typed the "
@@ -1242,7 +1209,7 @@ msgstr ""
 "Не могу да рукујем „%s:“ путањама у режиму уписа. Проверите да ли сте унели "
 "исправну путању и покушајте поново."
 
-#: gedit/gedit-io-error-info-bar.c:790
+#: gedit/gedit-io-error-info-bar.c:509
 msgid ""
 "Cannot handle this location in write mode. Please check that you typed the "
 "location correctly and try again."
@@ -1250,7 +1217,7 @@ msgstr ""
 "Не могу да радим са овим путањама у режиму уписа. Проверите да ли сте унели "
 "исправну путању и покушајте поново."
 
-#: gedit/gedit-io-error-info-bar.c:799
+#: gedit/gedit-io-error-info-bar.c:518
 #, c-format
 msgid ""
 "“%s” is not a valid location. Please check that you typed the location "
@@ -1259,7 +1226,7 @@ msgstr ""
 "„%s“ није исправна путања. Проверите да ли сте унели исправну путању и "
 "покушајте поново."
 
-#: gedit/gedit-io-error-info-bar.c:806
+#: gedit/gedit-io-error-info-bar.c:525
 msgid ""
 "You do not have the permissions necessary to save the file. Please check "
 "that you typed the location correctly and try again."
@@ -1267,7 +1234,7 @@ msgstr ""
 "Немате неопходне дозволе да сачувате датотеку. Проверите да ли сте унели "
 "исправну путању и покушајте поново."
 
-#: gedit/gedit-io-error-info-bar.c:812
+#: gedit/gedit-io-error-info-bar.c:531
 msgid ""
 "There is not enough disk space to save the file. Please free some disk space "
 "and try again."
@@ -1275,7 +1242,7 @@ msgstr ""
 "Нема довољно простора на диску да сачувате датотеку. Ослободите простор на "
 "диску и покушајте поново."
 
-#: gedit/gedit-io-error-info-bar.c:817
+#: gedit/gedit-io-error-info-bar.c:536
 msgid ""
 "You are trying to save the file on a read-only disk. Please check that you "
 "typed the location correctly and try again."
@@ -1283,12 +1250,12 @@ msgstr ""
 "Покушавате да сачувате датотеку на диску на којем упис није дозвољен. "
 "Проверите да ли сте путању укуцали исправно и покушајте поново."
 
-#: gedit/gedit-io-error-info-bar.c:823
+#: gedit/gedit-io-error-info-bar.c:542
 msgid "A file with the same name already exists. Please use a different name."
 msgstr ""
 "Постоји још једна датотека са истим називом. Користите неки други назив."
 
-#: gedit/gedit-io-error-info-bar.c:828
+#: gedit/gedit-io-error-info-bar.c:547
 msgid ""
 "The disk where you are trying to save the file has a limitation on length of "
 "the file names. Please use a shorter name."
@@ -1296,17 +1263,7 @@ msgstr ""
 "Диск на који покушавате да сачувате датотеку има ограничење на дужину назива "
 "датотека. Употребите краћи назив."
 
-#: gedit/gedit-io-error-info-bar.c:839
-msgid ""
-"The disk where you are trying to save the file has a limitation on file "
-"sizes. Please try saving a smaller file or saving it to a disk that does not "
-"have this limitation."
-msgstr ""
-"Диск на који покушавате да сачувате датотеку ограничава одређену величину "
-"датотеке. Сачувајте мању датотеку или је сачувате на неки други диск који "
-"нема ово ограничење."
-
-#: gedit/gedit-io-error-info-bar.c:856
+#: gedit/gedit-io-error-info-bar.c:562
 #, c-format
 msgid "Could not save the file “%s”."
 msgstr "Не могу да сачувам датотеку „%s“."
@@ -1408,64 +1365,64 @@ msgstr[3] "Постоје грешке у једном листу"
 
 #. Translators: the first %s is a file name (e.g. test.txt) the second one
 #. is a directory (e.g. ssh://master.gnome.org/home/users/paolo)
-#: gedit/gedit-tab.c:830
+#: gedit/gedit-tab.c:805
 #, c-format
 msgid "Reverting %s from %s"
 msgstr "Враћам документ „%s“ из фасцикле „%s“"
 
-#: gedit/gedit-tab.c:837
+#: gedit/gedit-tab.c:812
 #, c-format
 msgid "Reverting %s"
 msgstr "Враћам документ „%s“"
 
 #. Translators: the first %s is a file name (e.g. test.txt) the second one
 #. is a directory (e.g. ssh://master.gnome.org/home/users/paolo)
-#: gedit/gedit-tab.c:850
+#: gedit/gedit-tab.c:825
 #, c-format
 msgid "Loading %s from %s"
 msgstr "Учитавам документ „%s“ из фасцикле „%s“"
 
-#: gedit/gedit-tab.c:857
+#: gedit/gedit-tab.c:832
 #, c-format
 msgid "Loading %s"
 msgstr "Учитавам „%s“"
 
 #. Translators: the first %s is a file name (e.g. test.txt) the second one
 #. is a directory (e.g. ssh://master.gnome.org/home/users/paolo)
-#: gedit/gedit-tab.c:937
+#: gedit/gedit-tab.c:912
 #, c-format
 msgid "Saving %s to %s"
 msgstr "Чувам документ „%s“ у фацикли „%s“"
 
-#: gedit/gedit-tab.c:942
+#: gedit/gedit-tab.c:917
 #, c-format
 msgid "Saving %s"
 msgstr "Чувам „%s“"
 
-#: gedit/gedit-tab.c:1515
+#: gedit/gedit-tab.c:1490
 #, c-format
 msgid "Error opening file %s"
 msgstr "Грешка при отварању датотеке „%s“"
 
-#: gedit/gedit-tab.c:1520
+#: gedit/gedit-tab.c:1495
 #, c-format
 msgid "Error reverting file %s"
 msgstr "Не могу да повратим документ „%s“"
 
-#: gedit/gedit-tab.c:1525
+#: gedit/gedit-tab.c:1500
 #, c-format
 msgid "Error saving file %s"
 msgstr "Грешка приликом чувања датотеке „%s“"
 
-#: gedit/gedit-tab.c:1556
+#: gedit/gedit-tab.c:1531
 msgid "Name:"
 msgstr "Назив:"
 
-#: gedit/gedit-tab.c:1557
+#: gedit/gedit-tab.c:1532
 msgid "MIME Type:"
 msgstr "МИМЕ врста:"
 
-#: gedit/gedit-tab.c:1558
+#: gedit/gedit-tab.c:1533
 msgid "Encoding:"
 msgstr "Кодирање:"
 
@@ -1818,7 +1775,6 @@ msgstr "По_моћ"
 #: gedit/resources/gtk/menus-common.ui:394
 #: gedit/resources/gtk/menus-traditional.ui:123
 #: gedit/resources/gtk/menus.ui:127
-#| msgid "_About Text Editor"
 msgid "_About gedit"
 msgstr "_О Вилењаковој бележници"
 
@@ -2915,7 +2871,7 @@ msgstr "Уколико обришете неку ставку, биће заув
 msgid "(Empty)"
 msgstr "(Празно)"
 
-#: plugins/filebrowser/gedit-file-browser-store.c:3325
+#: plugins/filebrowser/gedit-file-browser-store.c:3326
 msgid ""
 "The renamed file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
@@ -2924,11 +2880,11 @@ msgstr ""
 "пропуштања како бисте је учинили видљивом"
 
 #. Translators: This is the default name of new files created by the file browser pane.
-#: plugins/filebrowser/gedit-file-browser-store.c:3576
+#: plugins/filebrowser/gedit-file-browser-store.c:3577
 msgid "Untitled File"
 msgstr "Неименована датотека"
 
-#: plugins/filebrowser/gedit-file-browser-store.c:3604
+#: plugins/filebrowser/gedit-file-browser-store.c:3605
 msgid ""
 "The new file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
@@ -2937,11 +2893,11 @@ msgstr ""
 "пропуштања како бисте је учинили видљивом"
 
 #. Translators: This is the default name of new directories created by the file browser pane.
-#: plugins/filebrowser/gedit-file-browser-store.c:3633
+#: plugins/filebrowser/gedit-file-browser-store.c:3634
 msgid "Untitled Folder"
 msgstr "Неименована фасцикла"
 
-#: plugins/filebrowser/gedit-file-browser-store.c:3656
+#: plugins/filebrowser/gedit-file-browser-store.c:3657
 msgid ""
 "The new directory is currently filtered out. You need to adjust your filter "
 "settings to make the directory visible"
@@ -3600,6 +3556,50 @@ msgstr "Уметни датум/време"
 #: plugins/time/time.plugin.desktop.in:6
 msgid "Inserts current date and time at the cursor position."
 msgstr "Умеће тренутни датум и време на позицију курсора."
+
+#~ msgid "Could not find the file “%s”."
+#~ msgstr "Не могу да нађем датотеку „%s“."
+
+#~ msgid "Unable to handle “%s:” locations."
+#~ msgstr "Не могу да рукујем путањама „%s:“."
+
+#~ msgid "Unable to handle this location."
+#~ msgstr "Не могу да рукујем овом путањом."
+
+#~ msgid "“%s” is a directory."
+#~ msgstr "„%s“ је фасцикла."
+
+#~ msgid ""
+#~ "Host “%s” could not be found. Please check that your proxy settings are "
+#~ "correct and try again."
+#~ msgstr ""
+#~ "Рачунар „%s“ није пронађен. Проверите да ли су исправна подешавања "
+#~ "мрежног посредника и покушајте поново."
+
+#~ msgid ""
+#~ "Hostname was invalid. Please check that you typed the location correctly "
+#~ "and try again."
+#~ msgstr ""
+#~ "Назив рачунара није исправан. Проверите да ли сте унели исправну адресу и "
+#~ "покушајте поново."
+
+#~ msgid "“%s” is not a regular file."
+#~ msgstr "„%s“ није обична датотека."
+
+#~ msgid "Connection timed out. Please try again."
+#~ msgstr "Време за успостављање везе је истекло. Покушајте поново."
+
+#~ msgid "Unexpected error: %s"
+#~ msgstr "Неочекивана грешка: %s"
+
+#~ msgid ""
+#~ "The disk where you are trying to save the file has a limitation on file "
+#~ "sizes. Please try saving a smaller file or saving it to a disk that does "
+#~ "not have this limitation."
+#~ msgstr ""
+#~ "Диск на који покушавате да сачувате датотеку ограничава одређену величину "
+#~ "датотеке. Сачувајте мању датотеку или је сачувате на неки други диск који "
+#~ "нема ово ограничење."
 
 #~ msgid "gedit is the text editor of the GNOME desktop environment."
 #~ msgstr "гедит је мали и лагани уређивач текста за Гном окружење."
