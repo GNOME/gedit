@@ -27,7 +27,7 @@ gedit_recent_add_document (GeditDocument *document)
 	TeplFile *file;
 	GFile *location;
 	GtkRecentManager *recent_manager;
-	GtkRecentData recent_data;
+	GtkRecentData *recent_data;
 	gchar *uri;
 	static gchar *groups[2];
 
@@ -63,24 +63,27 @@ gedit_recent_add_document (GeditDocument *document)
 	groups[0] = (gchar *) g_get_application_name ();
 	groups[1] = NULL;
 
-	recent_data.display_name = NULL;
-	recent_data.description = NULL;
-	recent_data.mime_type = gedit_document_get_mime_type (document);
-	recent_data.app_name = (gchar *) g_get_application_name ();
-	recent_data.app_exec = g_strjoin (" ", g_get_prgname (), "%u", NULL);
-	recent_data.groups = groups;
-	recent_data.is_private = FALSE;
+	/* Ensures to initialize the whole struct to 0's. Useful if the struct
+	 * is extended.
+	 */
+	recent_data = g_new0 (GtkRecentData, 1);
+
+	recent_data->mime_type = gedit_document_get_mime_type (document);
+	recent_data->app_name = (gchar *) g_get_application_name ();
+	recent_data->app_exec = g_strjoin (" ", g_get_prgname (), "%u", NULL);
+	recent_data->groups = groups;
 
 	uri = g_file_get_uri (location);
 
-	if (!gtk_recent_manager_add_full (recent_manager, uri, &recent_data))
+	if (!gtk_recent_manager_add_full (recent_manager, uri, recent_data))
 	{
 		g_warning ("Failed to add uri '%s' to the recent manager.", uri);
 	}
 
 	g_free (uri);
-	g_free (recent_data.app_exec);
-	g_free (recent_data.mime_type);
+	g_free (recent_data->mime_type);
+	g_free (recent_data->app_exec);
+	g_free (recent_data);
 }
 
 /* If a file is local, chances are that if load/save fails the file has been
