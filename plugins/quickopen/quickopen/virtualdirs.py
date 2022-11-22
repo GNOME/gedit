@@ -15,7 +15,7 @@
 #  You should have received a copy of the GNU General Public License
 #  along with this program; if not, see <http://www.gnu.org/licenses/>.
 
-from gi.repository import Gio, Gtk
+from gi.repository import GLib, Gio, Gtk
 
 
 class VirtualDirectory(object):
@@ -63,7 +63,7 @@ class RecentDocumentsDirectory(VirtualDirectory):
         added = 0
 
         for item in items:
-            if item.has_group('gedit'):
+            if item.has_application(GLib.get_application_name()):
                 self.append(Gio.file_new_for_uri(item.get_uri()))
                 added += 1
 
