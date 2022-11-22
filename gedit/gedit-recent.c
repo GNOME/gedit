@@ -4,6 +4,7 @@
  * Copyright (C) 2005 - Paolo Maggi
  * Copyright (C) 2014 - Paolo Borelli
  * Copyright (C) 2014 - Jesse van den Kieboom
+ * Copyright (C) 2022 - Sébastien Wilmet
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -25,65 +26,11 @@ void
 gedit_recent_add_document (GeditDocument *document)
 {
 	TeplFile *file;
-	GFile *location;
-	GtkRecentManager *recent_manager;
-	GtkRecentData *recent_data;
-	gchar *uri;
-	static gchar *groups[2];
 
 	g_return_if_fail (GEDIT_IS_DOCUMENT (document));
 
 	file = tepl_buffer_get_file (TEPL_BUFFER (document));
-	location = tepl_file_get_location (file);
-
-	if (location == NULL)
-	{
-		return;
-	}
-
-	recent_manager = gtk_recent_manager_get_default ();
-
-	/* FIXME: redundant with app_name. Settings 'groups' to NULL would
-	 * permit to use the much easier gtk_recent_manager_add_item() as the
-	 * other fields would be the same (except possibly for the mime_type but
-	 * it's not really important for the recent list).
-	 *
-	 * See commit 3b874fbb2466b62d828f9e7629ba8d8f28ba6fd6 (2002) with as
-	 * message:
-	 * Add the "gedit" group to recent items. filter by group instead of
-	 * mime.
-	 *
-	 * So before, the filtering was based on mime types (with the "text/"
-	 * prefix), nowadays we can filter with the app_name (and/or mime types
-	 * too if wanted).
-	 *
-	 * Some plugins may rely on the 'groups' field with "gedit" in it, so it
-	 * needs some adaptation.
-	 */
-	groups[0] = (gchar *) g_get_application_name ();
-	groups[1] = NULL;
-
-	/* Ensures to initialize the whole struct to 0's. Useful if the struct
-	 * is extended.
-	 */
-	recent_data = g_new0 (GtkRecentData, 1);
-
-	recent_data->mime_type = gedit_document_get_mime_type (document);
-	recent_data->app_name = (gchar *) g_get_application_name ();
-	recent_data->app_exec = g_strjoin (" ", g_get_prgname (), "%u", NULL);
-	recent_data->groups = groups;
-
-	uri = g_file_get_uri (location);
-
-	if (!gtk_recent_manager_add_full (recent_manager, uri, recent_data))
-	{
-		g_warning ("Failed to add uri '%s' to the recent manager.", uri);
-	}
-
-	g_free (uri);
-	g_free (recent_data->mime_type);
-	g_free (recent_data->app_exec);
-	g_free (recent_data);
+	tepl_file_add_uri_to_recent_manager (file);
 }
 
 /* If a file is local, chances are that if load/save fails the file has been
