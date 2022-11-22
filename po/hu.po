@@ -16,8 +16,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gedit master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gedit/issues\n"
-"POT-Creation-Date: 2022-10-31 17:31+0000\n"
-"PO-Revision-Date: 2022-11-05 17:58+0100\n"
+"POT-Creation-Date: 2022-11-20 13:59+0000\n"
+"PO-Revision-Date: 2022-11-23 00:52+0100\n"
 "Last-Translator: Balázs Úr <ur.balazs at fsf dot hu>\n"
 "Language-Team: Hungarian <gnome-hu-list at gnome dot org>\n"
 "Language: hu\n"
@@ -565,7 +565,6 @@ msgstr "Bezárás mentés _nélkül"
 #: gedit/gedit-commands-file.c:1513 gedit/gedit-encodings-dialog.c:192
 #: gedit/gedit-file-chooser-open-dialog.c:78 gedit/gedit-io-error-info-bar.c:94
 #: gedit/gedit-io-error-info-bar.c:293 gedit/gedit-preferences-dialog.c:721
-#: gedit/resources/ui/gedit-encodings-dialog.ui:44
 #: plugins/filebrowser/gedit-file-browser-utils.c:211
 #: plugins/quickopen/quickopen/popup.py:45
 #: plugins/snippets/snippets/manager.py:789
@@ -919,11 +918,11 @@ msgstr "Csak olvasható"
 msgid "Current Locale (%s)"
 msgstr "A jelenlegi területi beállítás (%s)"
 
-#: gedit/gedit-encodings-combo-box.c:297
+#: gedit/gedit-encodings-combo-box.c:291
 msgid "Automatically Detected"
 msgstr "Automatikusan felismert"
 
-#: gedit/gedit-encodings-combo-box.c:326
+#: gedit/gedit-encodings-combo-box.c:320
 msgid "Add or Remove…"
 msgstr "Hozzáadás vagy eltávolítás…"
 
@@ -1000,7 +999,6 @@ msgid "_Retry"
 msgstr "Új_ra"
 
 #: gedit/gedit-io-error-info-bar.c:114
-#| msgid "“%s” not found"
 msgid "File not found."
 msgstr "A fájl nem található."
 
@@ -1028,7 +1026,6 @@ msgstr "Ellenőrizze, hogy pontosan írta-e be a helyet, és próbálja újra."
 
 #: gedit/gedit-io-error-info-bar.c:180
 #, c-format
-#| msgid "“%s” not found"
 msgid "Hostname “%s” not known."
 msgstr "A(z) „%s” gépnév nem ismert."
 
@@ -1037,8 +1034,6 @@ msgid "The problem could come from the proxy settings."
 msgstr "A probléma a proxybeállításokból jöhet."
 
 #: gedit/gedit-io-error-info-bar.c:215
-#| msgid ""
-#| "Cannot find the requested file. Perhaps it has recently been deleted."
 msgid "File not found. Perhaps it has recently been deleted."
 msgstr "A fájl nem található. Lehet, hogy nemrég le lett törölve."
 
@@ -1052,7 +1047,6 @@ msgid "Ch_aracter Encoding:"
 msgstr "_Karakterkódolás:"
 
 #: gedit/gedit-io-error-info-bar.c:288
-#| msgid "Edit Any_way"
 msgid "_Edit Anyway"
 msgstr "_Szerkesztés mindenképp"
 
@@ -1126,7 +1120,6 @@ msgstr ""
 
 #: gedit/gedit-io-error-info-bar.c:460
 #, c-format
-#| msgid "The file “%s” has been modified since reading it."
 msgid "The file “%s” has been externally modified."
 msgstr "A(z) „%s” fájlt külsőleg módosították."
 
@@ -1307,64 +1300,64 @@ msgstr[1] "%d lapon vannak hibák"
 
 #. Translators: the first %s is a file name (e.g. test.txt) the second one
 #. is a directory (e.g. ssh://master.gnome.org/home/users/paolo)
-#: gedit/gedit-tab.c:830
+#: gedit/gedit-tab.c:805
 #, c-format
 msgid "Reverting %s from %s"
 msgstr "%s visszaállítása innen: %s"
 
-#: gedit/gedit-tab.c:837
+#: gedit/gedit-tab.c:812
 #, c-format
 msgid "Reverting %s"
 msgstr "%s visszaállítása"
 
 #. Translators: the first %s is a file name (e.g. test.txt) the second one
 #. is a directory (e.g. ssh://master.gnome.org/home/users/paolo)
-#: gedit/gedit-tab.c:850
+#: gedit/gedit-tab.c:825
 #, c-format
 msgid "Loading %s from %s"
 msgstr "%s fájl betöltése innen: %s"
 
-#: gedit/gedit-tab.c:857
+#: gedit/gedit-tab.c:832
 #, c-format
 msgid "Loading %s"
 msgstr "%s fájl betöltése"
 
 #. Translators: the first %s is a file name (e.g. test.txt) the second one
 #. is a directory (e.g. ssh://master.gnome.org/home/users/paolo)
-#: gedit/gedit-tab.c:937
+#: gedit/gedit-tab.c:912
 #, c-format
 msgid "Saving %s to %s"
 msgstr "%s mentése ide: %s"
 
-#: gedit/gedit-tab.c:942
+#: gedit/gedit-tab.c:917
 #, c-format
 msgid "Saving %s"
 msgstr "%s mentése"
 
-#: gedit/gedit-tab.c:1515
+#: gedit/gedit-tab.c:1490
 #, c-format
 msgid "Error opening file %s"
 msgstr "Hiba a(z) „%s” fájl megnyitása közben"
 
-#: gedit/gedit-tab.c:1520
+#: gedit/gedit-tab.c:1495
 #, c-format
 msgid "Error reverting file %s"
 msgstr "Hiba a(z) „%s” fájl visszaállítása közben"
 
-#: gedit/gedit-tab.c:1525
+#: gedit/gedit-tab.c:1500
 #, c-format
 msgid "Error saving file %s"
 msgstr "Hiba a(z) „%s” fájl mentése közben"
 
-#: gedit/gedit-tab.c:1556
+#: gedit/gedit-tab.c:1531
 msgid "Name:"
 msgstr "Név:"
 
-#: gedit/gedit-tab.c:1557
+#: gedit/gedit-tab.c:1532
 msgid "MIME Type:"
 msgstr "MIME-típus:"
 
-#: gedit/gedit-tab.c:1558
+#: gedit/gedit-tab.c:1533
 msgid "Encoding:"
 msgstr "Kódolás:"
 
@@ -1589,8 +1582,8 @@ msgid "_Paste"
 msgstr "_Beillesztés"
 
 #: gedit/resources/gtk/menus-common.ui:207
-#: plugins/filebrowser/gedit-file-browser-plugin.c:892
-#: plugins/filebrowser/gedit-file-browser-plugin.c:927
+#: plugins/filebrowser/gedit-file-browser-plugin.c:882
+#: plugins/filebrowser/gedit-file-browser-plugin.c:917
 #: plugins/filebrowser/resources/ui/gedit-file-browser-menus.ui:37
 msgid "_Delete"
 msgstr "_Törlés"
@@ -1741,22 +1734,28 @@ msgstr "_Gyorsbillentyűk"
 msgid "Character Encodings"
 msgstr "Karakterkódolások"
 
+#: gedit/resources/ui/gedit-encodings-dialog.ui:44
+#| msgid "_Cancel"
+msgid "_Cancel Changes"
+msgstr "Változtatások _elvetése"
+
 #: gedit/resources/ui/gedit-encodings-dialog.ui:51
-msgid "_Apply"
-msgstr "_Alkalmaz"
+msgid "_Save Settings"
+msgstr "Beállítások _mentése"
 
 #: gedit/resources/ui/gedit-encodings-dialog.ui:82
-msgid "A_vailable Encodings"
-msgstr "_Elérhető kódolások"
+#| msgid "A_vailable Encodings"
+msgid "_Other Available Encodings"
+msgstr "_Egyéb elérhető kódolások"
 
 #: gedit/resources/ui/gedit-encodings-dialog.ui:100
-msgid "Cho_sen Encodings"
-msgstr "_Választott kódolások"
+msgid "_Favorites"
+msgstr "_Kedvencek"
 
 #: gedit/resources/ui/gedit-encodings-dialog.ui:139
 #: gedit/resources/ui/gedit-encodings-dialog.ui:217
-msgid "_Description"
-msgstr "_Leírás"
+msgid "Ca_tegory"
+msgstr "Ka_tegória"
 
 #: gedit/resources/ui/gedit-encodings-dialog.ui:151
 #: gedit/resources/ui/gedit-encodings-dialog.ui:228
@@ -2742,43 +2741,43 @@ msgstr "Saját mappa"
 msgid "File System"
 msgstr "Fájlrendszer"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:502
+#: plugins/filebrowser/gedit-file-browser-plugin.c:492
 msgid "File Browser"
 msgstr "Fájlböngésző"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:632
+#: plugins/filebrowser/gedit-file-browser-plugin.c:622
 msgid "An error occurred while creating a new directory"
 msgstr "Hiba történt az új könyvtár létrehozásakor"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:635
+#: plugins/filebrowser/gedit-file-browser-plugin.c:625
 msgid "An error occurred while creating a new file"
 msgstr "Hiba történt az új fájl létrehozásakor"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:638
+#: plugins/filebrowser/gedit-file-browser-plugin.c:628
 msgid "An error occurred while renaming a file or directory"
 msgstr "Hiba történt egy fájl vagy könyvtár átnevezésekor"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:641
+#: plugins/filebrowser/gedit-file-browser-plugin.c:631
 msgid "An error occurred while deleting a file or directory"
 msgstr "Hiba történt egy fájl vagy könyvtár törlésekor"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:644
+#: plugins/filebrowser/gedit-file-browser-plugin.c:634
 msgid "An error occurred while opening a directory in the file manager"
 msgstr "Hiba történt egy könyvtár megnyitásakor a fájlkezelőben"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:647
+#: plugins/filebrowser/gedit-file-browser-plugin.c:637
 msgid "An error occurred while setting a root directory"
 msgstr "Hiba történt a gyökérkönyvtár beállításakor"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:650
+#: plugins/filebrowser/gedit-file-browser-plugin.c:640
 msgid "An error occurred while loading a directory"
 msgstr "Hiba történt könyvtár betöltésekor"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:653
+#: plugins/filebrowser/gedit-file-browser-plugin.c:643
 msgid "An error occurred"
 msgstr "Hiba történt"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:875
+#: plugins/filebrowser/gedit-file-browser-plugin.c:865
 msgid ""
 "Cannot move file to trash, do you\n"
 "want to delete permanently?"
@@ -2786,25 +2785,25 @@ msgstr ""
 "A fájl nem helyezhető át a Kukába,\n"
 "kívánja azonnal törölni?"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:880
+#: plugins/filebrowser/gedit-file-browser-plugin.c:870
 #, c-format
 msgid "The file “%s” cannot be moved to the trash."
 msgstr "A(z) „%s” fájl nem helyezhető át a Kukába."
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:885
+#: plugins/filebrowser/gedit-file-browser-plugin.c:875
 msgid "The selected files cannot be moved to the trash."
 msgstr "A kijelölt fájlok nem helyezhetők át a Kukába."
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:913
+#: plugins/filebrowser/gedit-file-browser-plugin.c:903
 #, c-format
 msgid "Are you sure you want to permanently delete “%s”?"
 msgstr "Biztosan véglegesen törölni akarja a következőt: „%s”?"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:918
+#: plugins/filebrowser/gedit-file-browser-plugin.c:908
 msgid "Are you sure you want to permanently delete the selected files?"
 msgstr "Biztosan véglegesen törölni kívánja a kijelölt fájlokat?"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:921
+#: plugins/filebrowser/gedit-file-browser-plugin.c:911
 msgid "If you delete an item, it is permanently lost."
 msgstr "Ha töröl egy elemet, az véglegesen elvész."
 
@@ -2812,7 +2811,7 @@ msgstr "Ha töröl egy elemet, az véglegesen elvész."
 msgid "(Empty)"
 msgstr "(Üres)"
 
-#: plugins/filebrowser/gedit-file-browser-store.c:3325
+#: plugins/filebrowser/gedit-file-browser-store.c:3326
 msgid ""
 "The renamed file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
@@ -2821,11 +2820,11 @@ msgstr ""
 "a szűrőbeállításokat"
 
 #. Translators: This is the default name of new files created by the file browser pane.
-#: plugins/filebrowser/gedit-file-browser-store.c:3576
+#: plugins/filebrowser/gedit-file-browser-store.c:3577
 msgid "Untitled File"
 msgstr "Névtelen fájl"
 
-#: plugins/filebrowser/gedit-file-browser-store.c:3604
+#: plugins/filebrowser/gedit-file-browser-store.c:3605
 msgid ""
 "The new file is currently filtered out. You need to adjust your filter "
 "settings to make the file visible"
@@ -2834,11 +2833,11 @@ msgstr ""
 "a szűrőbeállításokat"
 
 #. Translators: This is the default name of new directories created by the file browser pane.
-#: plugins/filebrowser/gedit-file-browser-store.c:3633
+#: plugins/filebrowser/gedit-file-browser-store.c:3634
 msgid "Untitled Folder"
 msgstr "Névtelen mappa"
 
-#: plugins/filebrowser/gedit-file-browser-store.c:3656
+#: plugins/filebrowser/gedit-file-browser-store.c:3657
 msgid ""
 "The new directory is currently filtered out. You need to adjust your filter "
 "settings to make the directory visible"
