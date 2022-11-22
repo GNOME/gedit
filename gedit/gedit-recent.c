@@ -26,11 +26,47 @@ void
 gedit_recent_add_document (GeditDocument *document)
 {
 	TeplFile *file;
+	GFile *location;
+	GtkRecentManager *recent_manager;
+	GtkRecentData *recent_data;
+	gchar *uri;
 
 	g_return_if_fail (GEDIT_IS_DOCUMENT (document));
 
 	file = tepl_buffer_get_file (TEPL_BUFFER (document));
-	tepl_file_add_uri_to_recent_manager (file);
+	location = tepl_file_get_location (file);
+
+	if (location == NULL)
+	{
+		return;
+	}
+
+	recent_manager = gtk_recent_manager_get_default ();
+
+	/* Ensures to initialize the whole struct to 0's. Useful if the struct
+	 * is extended.
+	 */
+	recent_data = g_new0 (GtkRecentData, 1);
+
+	/* We use gtk_recent_manager_add_full() because GeditDocument's mime
+	 * type is more accurate. The other fields are normally set to the same
+	 * values as what gtk_recent_manager_add_item() does.
+	 */
+	recent_data->mime_type = gedit_document_get_mime_type (document);
+	recent_data->app_name = (gchar *) g_get_application_name ();
+	recent_data->app_exec = g_strjoin (" ", g_get_prgname (), "%u", NULL);
+
+	uri = g_file_get_uri (location);
+
+	if (!gtk_recent_manager_add_full (recent_manager, uri, recent_data))
+	{
+		g_warning ("Failed to add uri '%s' to the recent manager.", uri);
+	}
+
+	g_free (recent_data->mime_type);
+	g_free (recent_data->app_exec);
+	g_free (recent_data);
+	g_free (uri);
 }
 
 /* If a file is local, chances are that if load/save fails the file has been
