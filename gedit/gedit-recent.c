@@ -43,6 +43,23 @@ gedit_recent_add_document (GeditDocument *document)
 
 	recent_manager = gtk_recent_manager_get_default ();
 
+	/* FIXME: redundant with app_name. Settings 'groups' to NULL would
+	 * permit to use the much easier gtk_recent_manager_add_item() as the
+	 * other fields would be the same (except possibly for the mime_type but
+	 * it's not really important for the recent list).
+	 *
+	 * See commit 3b874fbb2466b62d828f9e7629ba8d8f28ba6fd6 (2002) with as
+	 * message:
+	 * Add the "gedit" group to recent items. filter by group instead of
+	 * mime.
+	 *
+	 * So before, the filtering was based on mime types (with the "text/"
+	 * prefix), nowadays we can filter with the app_name (and/or mime types
+	 * too if wanted).
+	 *
+	 * Some plugins may rely on the 'groups' field with "gedit" in it, so it
+	 * needs some adaptation.
+	 */
 	groups[0] = (gchar *) g_get_application_name ();
 	groups[1] = NULL;
 
