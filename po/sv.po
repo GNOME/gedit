@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gedit\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gedit/issues\n"
-"POT-Creation-Date: 2022-07-27 01:28+0000\n"
-"PO-Revision-Date: 2022-07-27 11:58+0200\n"
+"POT-Creation-Date: 2022-11-20 13:57+0000\n"
+"PO-Revision-Date: 2022-11-20 18:02+0100\n"
 "Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.2\n"
 
 #: data/org.gnome.gedit.appdata.xml.in:7 data/org.gnome.gedit.desktop.in:3
 msgid "gedit"
@@ -36,13 +36,8 @@ msgid "gedit is a general-purpose text editor."
 msgstr "gedit är en universaltextredigerare."
 
 #: data/org.gnome.gedit.appdata.xml.in:13
-msgid ""
-"The first goal of gedit is to be easy to use, with a simple interface by "
-"default. More advanced features are available by enabling plugins."
-msgstr ""
-"Det främsta målet för gedit är att vara lättanvänt, med ett enkelt "
-"standardgränssnitt. Mer avancerade funktioner finns tillgängliga genom att "
-"aktivera insticksmoduler."
+msgid "The first goal of gedit is to be easy to use, with a simple interface by default. More advanced features are available by enabling plugins."
+msgstr "Det främsta målet för gedit är att vara lättanvänt, med ett enkelt standardgränssnitt. Mer avancerade funktioner finns tillgängliga genom att aktivera insticksmoduler."
 
 #: data/org.gnome.gedit.desktop.in:4
 msgid "Edit text files"
@@ -67,16 +62,8 @@ msgid "Use Default Font"
 msgstr "Använd standardtypsnitt"
 
 #: data/org.gnome.gedit.gschema.xml.in:37
-msgid ""
-"Whether to use the system’s default fixed width font for editing text "
-"instead of a font specific to gedit. If this option is turned off, then the "
-"font named in the “Editor Font” option will be used instead of the system "
-"font."
-msgstr ""
-"Huruvida systemets standardtypsnitt med fast breddsteg ska användas för "
-"redigering av text istället för ett typsnitt som är specifikt för gedit. Om "
-"detta alternativ är inaktiverat, kommer typsnittet som är angivet i "
-"alternativet ”Redigerartypsnitt” att användas istället för systemtypsnittet."
+msgid "Whether to use the system’s default fixed width font for editing text instead of a font specific to gedit. If this option is turned off, then the font named in the “Editor Font” option will be used instead of the system font."
+msgstr "Huruvida systemets standardtypsnitt med fast breddsteg ska användas för redigering av text istället för ett typsnitt som är specifikt för gedit. Om detta alternativ är inaktiverat, kommer typsnittet som är angivet i alternativet ”Redigerartypsnitt” att användas istället för systemtypsnittet."
 
 #. Translators: This is a GSettings default value. Do NOT change or localize the quotation marks!
 #: data/org.gnome.gedit.gschema.xml.in:41
@@ -88,12 +75,8 @@ msgid "Editor Font"
 msgstr "Redigerartypsnitt"
 
 #: data/org.gnome.gedit.gschema.xml.in:43
-msgid ""
-"A custom font that will be used for the editing area. This will only take "
-"effect if the “Use Default Font” option is turned off."
-msgstr ""
-"Ett anpassat typsnitt som används för redigeringsytan. Detta kommer endast "
-"att ha effekt om alternativet ”Använd standardtypsnitt” är frånslaget."
+msgid "A custom font that will be used for the editing area. This will only take effect if the “Use Default Font” option is turned off."
+msgstr "Ett anpassat typsnitt som används för redigeringsytan. Detta kommer endast att ha effekt om alternativet ”Använd standardtypsnitt” är frånslaget."
 
 #: data/org.gnome.gedit.gschema.xml.in:47
 msgid "Style Scheme"
@@ -116,79 +99,47 @@ msgid "Autosave"
 msgstr "Spara automatiskt"
 
 #: data/org.gnome.gedit.gschema.xml.in:58
-msgid ""
-"Whether gedit should automatically save modified files after a time "
-"interval. You can set the time interval with the “Autosave Interval” option."
-msgstr ""
-"Huruvida gedit automatiskt ska spara ändrade filer efter ett tidsintervall. "
-"Du kan ange tidsintervallet med alternativet ”Intervall för automatiskt "
-"sparande”."
+msgid "Whether gedit should automatically save modified files after a time interval. You can set the time interval with the “Autosave Interval” option."
+msgstr "Huruvida gedit automatiskt ska spara ändrade filer efter ett tidsintervall. Du kan ange tidsintervallet med alternativet ”Intervall för automatiskt sparande”."
 
 #: data/org.gnome.gedit.gschema.xml.in:62
 msgid "Autosave Interval"
 msgstr "Intervall för automatiskt sparande"
 
 #: data/org.gnome.gedit.gschema.xml.in:63
-msgid ""
-"Number of minutes after which gedit will automatically save modified files. "
-"This will only take effect if the “Autosave” option is turned on."
-msgstr ""
-"Antal minuter efter vilket gedit automatiskt kommer att spara ändrade filer. "
-"Detta har endast effekt då alternativet ”Spara automatiskt” är påslaget."
+msgid "Number of minutes after which gedit will automatically save modified files. This will only take effect if the “Autosave” option is turned on."
+msgstr "Antal minuter efter vilket gedit automatiskt kommer att spara ändrade filer. Detta har endast effekt då alternativet ”Spara automatiskt” är påslaget."
 
 #: data/org.gnome.gedit.gschema.xml.in:67
 msgid "Maximum Number of Undo Actions"
 msgstr "Maximalt antal ångringsåtgärder"
 
 #: data/org.gnome.gedit.gschema.xml.in:68
-msgid ""
-"Maximum number of actions that gedit will be able to undo or redo. Use “-1” "
-"for unlimited number of actions."
-msgstr ""
-"Maximalt antal åtgärder som gedit kan ångra eller göra om. Använd ”-1” för "
-"obegränsat antal åtgärder."
+msgid "Maximum number of actions that gedit will be able to undo or redo. Use “-1” for unlimited number of actions."
+msgstr "Maximalt antal åtgärder som gedit kan ångra eller göra om. Använd ”-1” för obegränsat antal åtgärder."
 
 #: data/org.gnome.gedit.gschema.xml.in:77
 msgid "Line Wrapping Mode"
 msgstr "Radbrytningsläge"
 
 #: data/org.gnome.gedit.gschema.xml.in:78
-msgid ""
-"Specifies how to wrap long lines in the editing area. Use “none” for no "
-"wrapping, “word” for wrapping at word boundaries, and “char” for wrapping at "
-"individual character boundaries. Note that the values are case-sensitive, so "
-"make sure they appear exactly as mentioned here."
-msgstr ""
-"Anger hur långa rader ska radbrytas i redigeringsytan. Använd ”none” för "
-"ingen radbrytning, ”word” för radbrytning vid ordgränser och ”char” för "
-"radbrytning vid enskilda teckengränser. Observera att det görs skillnad på "
-"versaler och gemener i värdena, så försäkra dig om att de visas exakt som de "
-"visas här."
+msgid "Specifies how to wrap long lines in the editing area. Use “none” for no wrapping, “word” for wrapping at word boundaries, and “char” for wrapping at individual character boundaries. Note that the values are case-sensitive, so make sure they appear exactly as mentioned here."
+msgstr "Anger hur långa rader ska radbrytas i redigeringsytan. Använd ”none” för ingen radbrytning, ”word” för radbrytning vid ordgränser och ”char” för radbrytning vid enskilda teckengränser. Observera att det görs skillnad på versaler och gemener i värdena, så försäkra dig om att de visas exakt som de visas här."
 
 #: data/org.gnome.gedit.gschema.xml.in:86
 msgid "Last split mode choice for line wrapping mode"
 msgstr "Senast valda uppdelningsläge för radbrytningsläge"
 
 #: data/org.gnome.gedit.gschema.xml.in:87
-msgid ""
-"Specifies the last split mode used with line wrapping mode, so that when "
-"wrapping mode is off we still remember the split mode choice. Use “word” for "
-"wrapping at word boundaries, and “char” for wrapping at individual character "
-"boundaries."
-msgstr ""
-"Anger det senast valda uppdelningsläget för radbrytningsläge, så att vi "
-"fortfarande kommer ihåg inställt uppdelningsläge även då radbrytningsläget "
-"är inaktiverat. Använd ”word” för radbrytning vid ordgränser, och ”char” för "
-"radbrytning vid enskilda teckengränser."
+msgid "Specifies the last split mode used with line wrapping mode, so that when wrapping mode is off we still remember the split mode choice. Use “word” for wrapping at word boundaries, and “char” for wrapping at individual character boundaries."
+msgstr "Anger det senast valda uppdelningsläget för radbrytningsläge, så att vi fortfarande kommer ihåg inställt uppdelningsläge även då radbrytningsläget är inaktiverat. Använd ”word” för radbrytning vid ordgränser, och ”char” för radbrytning vid enskilda teckengränser."
 
 #: data/org.gnome.gedit.gschema.xml.in:91
 msgid "Tab Size"
 msgstr "Tabulatorbredd"
 
 #: data/org.gnome.gedit.gschema.xml.in:92
-msgid ""
-"Specifies the number of spaces that should be displayed instead of Tab "
-"characters."
+msgid "Specifies the number of spaces that should be displayed instead of Tab characters."
 msgstr "Anger antalet blanksteg som ska visas istället för tabulatortecken."
 
 #: data/org.gnome.gedit.gschema.xml.in:96
@@ -260,34 +211,16 @@ msgid "Smart Home End"
 msgstr "Smarta Home och End"
 
 #: data/org.gnome.gedit.gschema.xml.in:143
-msgid ""
-"Specifies how the cursor moves when the HOME and END keys are pressed. Use "
-"“disabled” to always move at the start/end of the line, “after” to move to "
-"the start/end of the line the first time the keys are pressed and to the "
-"start/end of the text ignoring whitespaces the second time the keys are "
-"pressed, “before” to move to the start/end of the text before moving to the "
-"start/end of the line and “always” to always move to the start/end of the "
-"text instead of the start/end of the line."
-msgstr ""
-"Anger hur markören flyttas när tangenterna HOME och END används. Använd "
-"”disabled” för att alltid flytta till början/slutet av raden, ”after” för "
-"att flytta till början/slutet av raden första gången tangenterna används och "
-"till början/slutet av texten samt ignorera tomrum andra gången som "
-"tangenterna används, ”before” för att flytta till början/slutet av texten "
-"innan flytt till början/slutet av raden och ”always” för att alltid flytta "
-"till början/slutet av texten istället för början/slutet av raden."
+msgid "Specifies how the cursor moves when the HOME and END keys are pressed. Use “disabled” to always move at the start/end of the line, “after” to move to the start/end of the line the first time the keys are pressed and to the start/end of the text ignoring whitespaces the second time the keys are pressed, “before” to move to the start/end of the text before moving to the start/end of the line and “always” to always move to the start/end of the text instead of the start/end of the line."
+msgstr "Anger hur markören flyttas när tangenterna HOME och END används. Använd ”disabled” för att alltid flytta till början/slutet av raden, ”after” för att flytta till början/slutet av raden första gången tangenterna används och till början/slutet av texten samt ignorera tomrum andra gången som tangenterna används, ”before” för att flytta till början/slutet av texten innan flytt till början/slutet av raden och ”always” för att alltid flytta till början/slutet av texten istället för början/slutet av raden."
 
 #: data/org.gnome.gedit.gschema.xml.in:147
 msgid "Restore Previous Cursor Position"
 msgstr "Återställ tidigare markörposition"
 
 #: data/org.gnome.gedit.gschema.xml.in:148
-msgid ""
-"Whether gedit should restore the previous cursor position when a file is "
-"loaded."
-msgstr ""
-"Huruvida gedit ska återställa den tidigare markörpositionen när en fil läses "
-"in."
+msgid "Whether gedit should restore the previous cursor position when a file is loaded."
+msgstr "Huruvida gedit ska återställa den tidigare markörpositionen när en fil läses in."
 
 #: data/org.gnome.gedit.gschema.xml.in:152
 msgid "Enable Syntax Highlighting"
@@ -302,8 +235,7 @@ msgid "Enable Search Highlighting"
 msgstr "Aktivera färgmarkering vid sökning"
 
 #: data/org.gnome.gedit.gschema.xml.in:158
-msgid ""
-"Whether gedit should highlight all the occurrences of the searched text."
+msgid "Whether gedit should highlight all the occurrences of the searched text."
 msgstr "Huruvida gedit ska färgmarkera alla förekomster av söktexten."
 
 #: data/org.gnome.gedit.gschema.xml.in:162
@@ -311,48 +243,32 @@ msgid "Ensure Trailing Newline"
 msgstr "Försäkra efterliggande nyrad"
 
 #: data/org.gnome.gedit.gschema.xml.in:163
-msgid ""
-"Whether gedit will ensure that documents always end with a trailing newline."
-msgstr ""
-"Huruvida gedit ska försäkra att dokument alltid avslutas med en "
-"efterliggande nyrad."
+msgid "Whether gedit will ensure that documents always end with a trailing newline."
+msgstr "Huruvida gedit ska försäkra att dokument alltid avslutas med en efterliggande nyrad."
 
 #: data/org.gnome.gedit.gschema.xml.in:169
 msgid "Notebook Show Tabs Mode"
 msgstr "Visningsläge för anteckningsblocksflikar"
 
 #: data/org.gnome.gedit.gschema.xml.in:170
-msgid ""
-"Specifies when to show the notebook tabs. Use “never” to never show the "
-"tabs, “always” to always show the tabs, and “auto” to show the tabs only "
-"when there is more than one tab. Note that the values are case-sensitive, so "
-"make sure they appear exactly as mentioned here."
-msgstr ""
-"Anger när anteckningsblocksflikar ska visas. Använd ”never” för att aldrig "
-"visa flikarna, ”always” för att alltid visa flikarna och ”auto” för att visa "
-"flikarna endast när det finns fler än en flik. Observera att det görs "
-"skillnad på versaler och gemener i värdena, så försäkra dig om att de visas "
-"exakt som de visas här."
+msgid "Specifies when to show the notebook tabs. Use “never” to never show the tabs, “always” to always show the tabs, and “auto” to show the tabs only when there is more than one tab. Note that the values are case-sensitive, so make sure they appear exactly as mentioned here."
+msgstr "Anger när anteckningsblocksflikar ska visas. Använd ”never” för att aldrig visa flikarna, ”always” för att alltid visa flikarna och ”auto” för att visa flikarna endast när det finns fler än en flik. Observera att det görs skillnad på versaler och gemener i värdena, så försäkra dig om att de visas exakt som de visas här."
 
 #: data/org.gnome.gedit.gschema.xml.in:174
 msgid "Status Bar is Visible"
 msgstr "Statusrad är synlig"
 
 #: data/org.gnome.gedit.gschema.xml.in:175
-msgid ""
-"Whether the status bar at the bottom of editing windows should be visible."
-msgstr ""
-"Huruvida statusraden i nederkanten på redigeringsfönster ska vara synlig."
+msgid "Whether the status bar at the bottom of editing windows should be visible."
+msgstr "Huruvida statusraden i nederkanten på redigeringsfönster ska vara synlig."
 
 #: data/org.gnome.gedit.gschema.xml.in:179
 msgid "Side panel is Visible"
 msgstr "Sidopanelen är synlig"
 
 #: data/org.gnome.gedit.gschema.xml.in:180
-msgid ""
-"Whether the side panel at the left of editing windows should be visible."
-msgstr ""
-"Huruvida sidopanelen till vänster i redigeringsfönstret ska vara synlig."
+msgid "Whether the side panel at the left of editing windows should be visible."
+msgstr "Huruvida sidopanelen till vänster i redigeringsfönstret ska vara synlig."
 
 #: data/org.gnome.gedit.gschema.xml.in:189
 msgid "Print Syntax Highlighting"
@@ -368,38 +284,23 @@ msgstr "Skriv ut huvud"
 
 #: data/org.gnome.gedit.gschema.xml.in:195
 msgid "Whether gedit should include a document header when printing documents."
-msgstr ""
-"Huruvida gedit ska inkludera ett dokumenthuvud vid utskrift av dokument."
+msgstr "Huruvida gedit ska inkludera ett dokumenthuvud vid utskrift av dokument."
 
 #: data/org.gnome.gedit.gschema.xml.in:204
 msgid "Printing Line Wrapping Mode"
 msgstr "Radbrytningsläge för utskrift"
 
 #: data/org.gnome.gedit.gschema.xml.in:205
-msgid ""
-"Specifies how to wrap long lines for printing. Use “none” for no wrapping, "
-"“word” for wrapping at word boundaries, and “char” for wrapping at "
-"individual character boundaries. Note that the values are case-sensitive, so "
-"make sure they appear exactly as mentioned here."
-msgstr ""
-"Anger hur långa rader ska radbrytas vid utskrift. Använd ”none” för ingen "
-"radbrytning, ”word” för radbrytning vid ordgränser och ”char” för "
-"radbrytning vid enskilda teckengränser. Observera att det görs skillnad på "
-"versaler och gemener i värdena, så försäkra dig om att de visas exakt som de "
-"visas här."
+msgid "Specifies how to wrap long lines for printing. Use “none” for no wrapping, “word” for wrapping at word boundaries, and “char” for wrapping at individual character boundaries. Note that the values are case-sensitive, so make sure they appear exactly as mentioned here."
+msgstr "Anger hur långa rader ska radbrytas vid utskrift. Använd ”none” för ingen radbrytning, ”word” för radbrytning vid ordgränser och ”char” för radbrytning vid enskilda teckengränser. Observera att det görs skillnad på versaler och gemener i värdena, så försäkra dig om att de visas exakt som de visas här."
 
 #: data/org.gnome.gedit.gschema.xml.in:209
 msgid "Print Line Numbers"
 msgstr "Skriv ut radnummer"
 
 #: data/org.gnome.gedit.gschema.xml.in:210
-msgid ""
-"If this value is 0, then no line numbers will be inserted when printing a "
-"document. Otherwise, gedit will print line numbers every such number of "
-"lines."
-msgstr ""
-"Om detta värde är 0 kommer inga radnummer att infogas vid utskrift av ett "
-"dokument. Annars kommer gedit att skriva ut radnummer med detta radintervall."
+msgid "If this value is 0, then no line numbers will be inserted when printing a document. Otherwise, gedit will print line numbers every such number of lines."
+msgstr "Om detta värde är 0 kommer inga radnummer att infogas vid utskrift av ett dokument. Annars kommer gedit att skriva ut radnummer med detta radintervall."
 
 #. Translators: This is a GSettings default value. Do NOT change or localize the quotation marks!
 #: data/org.gnome.gedit.gschema.xml.in:214
@@ -411,11 +312,8 @@ msgid "Body Font for Printing"
 msgstr "Texttypsnitt för utskrift"
 
 #: data/org.gnome.gedit.gschema.xml.in:216
-msgid ""
-"Specifies the font to use for a document’s body when printing documents."
-msgstr ""
-"Anger det typsnitt som ska användas för dokumentets text vid utskrift av "
-"dokument."
+msgid "Specifies the font to use for a document’s body when printing documents."
+msgstr "Anger det typsnitt som ska användas för dokumentets text vid utskrift av dokument."
 
 #. Translators: This is a GSettings default value. Do NOT change or localize the quotation marks!
 #: data/org.gnome.gedit.gschema.xml.in:220
@@ -427,13 +325,8 @@ msgid "Header Font for Printing"
 msgstr "Sidhuvudstypsnitt för utskrift"
 
 #: data/org.gnome.gedit.gschema.xml.in:222
-msgid ""
-"Specifies the font to use for page headers when printing a document. This "
-"will only take effect if the “Print Header” option is turned on."
-msgstr ""
-"Anger det typsnitt som ska användas för sidhuvud vid utskrift av ett "
-"dokument. Detta kommer endast att ha effekt om alternativet ”Skriv ut huvud” "
-"är påslaget."
+msgid "Specifies the font to use for page headers when printing a document. This will only take effect if the “Print Header” option is turned on."
+msgstr "Anger det typsnitt som ska användas för sidhuvud vid utskrift av ett dokument. Detta kommer endast att ha effekt om alternativet ”Skriv ut huvud” är påslaget."
 
 #. Translators: This is a GSettings default value. Do NOT change or localize the quotation marks!
 #: data/org.gnome.gedit.gschema.xml.in:226
@@ -445,12 +338,8 @@ msgid "Line Number Font for Printing"
 msgstr "Radnummerstypsnitt för utskrift"
 
 #: data/org.gnome.gedit.gschema.xml.in:228
-msgid ""
-"Specifies the font to use for line numbers when printing. This will only "
-"take effect if the “Print Line Numbers” option is non-zero."
-msgstr ""
-"Anger det typsnitt som ska användas för radnummer vid utskrift. Detta kommer "
-"endast att ha effekt om alternativet ”Skriv ut radnummer” inte är noll."
+msgid "Specifies the font to use for line numbers when printing. This will only take effect if the “Print Line Numbers” option is non-zero."
+msgstr "Anger det typsnitt som ska användas för radnummer vid utskrift. Detta kommer endast att ha effekt om alternativet ”Skriv ut radnummer” inte är noll."
 
 #: data/org.gnome.gedit.gschema.xml.in:232
 msgid "Margin Left"
@@ -489,16 +378,8 @@ msgid "Candidate Encodings"
 msgstr "Kandidatkodningar"
 
 #: data/org.gnome.gedit.gschema.xml.in:255
-msgid ""
-"List of candidate encodings shown in the Character Encoding menu in the open/"
-"save file chooser. “CURRENT” represents the current locale encoding. Only "
-"recognized encodings are used. The default value is the empty list, in which "
-"case gedit will choose good defaults depending on the country and language."
-msgstr ""
-"Lista över kandidatkodningar som visas i menyn Teckenkodning i väljaren "
-"öppna/spara fil. ”CURRENT” representerar kodningen för aktuell lokal. Enbart "
-"kodningar som känns igen används. Standardvärdet är en tom lista, i vilket "
-"fall gedit kommer att välja bra standardvärden beroende på land och språk."
+msgid "List of candidate encodings shown in the Character Encoding menu in the open/save file chooser. “CURRENT” represents the current locale encoding. Only recognized encodings are used. The default value is the empty list, in which case gedit will choose good defaults depending on the country and language."
+msgstr "Lista över kandidatkodningar som visas i menyn Teckenkodning i väljaren öppna/spara fil. ”CURRENT” representerar kodningen för aktuell lokal. Enbart kodningar som känns igen används. Standardvärdet är en tom lista, i vilket fall gedit kommer att välja bra standardvärden beroende på land och språk."
 
 #: data/org.gnome.gedit.gschema.xml.in:304
 msgid "Active plugins"
@@ -517,12 +398,8 @@ msgid "Display list of possible values for the encoding option"
 msgstr "Visa en lista över möjliga värden för kodningsalternativet"
 
 #: gedit/gedit-app.c:98
-msgid ""
-"Set the character encoding to be used to open the files listed on the "
-"command line"
-msgstr ""
-"Ställ in den teckenkodning som ska användas för att öppna filerna som anges "
-"på kommandoraden"
+msgid "Set the character encoding to be used to open the files listed on the command line"
+msgstr "Ställ in den teckenkodning som ska användas för att öppna filerna som anges på kommandoraden"
 
 #: gedit/gedit-app.c:99
 msgid "ENCODING"
@@ -564,8 +441,8 @@ msgstr "Stäng _utan att spara"
 #: gedit/gedit-close-confirmation-dialog.c:277 gedit/gedit-commands-file.c:492
 #: gedit/gedit-commands-file.c:568 gedit/gedit-commands-file.c:791
 #: gedit/gedit-commands-file.c:1513 gedit/gedit-encodings-dialog.c:192
-#: gedit/gedit-file-chooser-open-dialog.c:78
-#: gedit/gedit-preferences-dialog.c:721
+#: gedit/gedit-file-chooser-open-dialog.c:78 gedit/gedit-io-error-info-bar.c:94
+#: gedit/gedit-io-error-info-bar.c:293 gedit/gedit-preferences-dialog.c:721
 #: gedit/resources/ui/gedit-encodings-dialog.ui:44
 #: plugins/filebrowser/gedit-file-browser-utils.c:211
 #: plugins/quickopen/quickopen/popup.py:45
@@ -592,87 +469,46 @@ msgstr "_Spara"
 
 #: gedit/gedit-close-confirmation-dialog.c:312
 #, c-format
-msgid ""
-"If you don’t save, changes from the last %ld second will be permanently lost."
-msgid_plural ""
-"If you don’t save, changes from the last %ld seconds will be permanently "
-"lost."
-msgstr[0] ""
-"Om du inte sparar kommer ändringar gjorda under den senaste sekunden att "
-"vara borta för alltid."
-msgstr[1] ""
-"Om du inte sparar kommer ändringar gjorda under de senaste %ld sekunderna "
-"att vara borta för alltid."
+msgid "If you don’t save, changes from the last %ld second will be permanently lost."
+msgid_plural "If you don’t save, changes from the last %ld seconds will be permanently lost."
+msgstr[0] "Om du inte sparar kommer ändringar gjorda under den senaste sekunden att vara borta för alltid."
+msgstr[1] "Om du inte sparar kommer ändringar gjorda under de senaste %ld sekunderna att vara borta för alltid."
 
 #: gedit/gedit-close-confirmation-dialog.c:321
-msgid ""
-"If you don’t save, changes from the last minute will be permanently lost."
-msgstr ""
-"Om du inte sparar kommer ändringar gjorda under den senaste minuten att vara "
-"borta för alltid."
+msgid "If you don’t save, changes from the last minute will be permanently lost."
+msgstr "Om du inte sparar kommer ändringar gjorda under den senaste minuten att vara borta för alltid."
 
 #: gedit/gedit-close-confirmation-dialog.c:327
 #, c-format
-msgid ""
-"If you don’t save, changes from the last minute and %ld second will be "
-"permanently lost."
-msgid_plural ""
-"If you don’t save, changes from the last minute and %ld seconds will be "
-"permanently lost."
-msgstr[0] ""
-"Om du inte sparar kommer ändringar gjorda under den senaste minuten och "
-"sekunden att vara borta för alltid."
-msgstr[1] ""
-"Om du inte sparar kommer ändringar gjorda under den senaste minuten och %ld "
-"sekunderna att vara borta för alltid."
+msgid "If you don’t save, changes from the last minute and %ld second will be permanently lost."
+msgid_plural "If you don’t save, changes from the last minute and %ld seconds will be permanently lost."
+msgstr[0] "Om du inte sparar kommer ändringar gjorda under den senaste minuten och sekunden att vara borta för alltid."
+msgstr[1] "Om du inte sparar kommer ändringar gjorda under den senaste minuten och %ld sekunderna att vara borta för alltid."
 
 #: gedit/gedit-close-confirmation-dialog.c:337
 #, c-format
-msgid ""
-"If you don’t save, changes from the last %ld minute will be permanently lost."
-msgid_plural ""
-"If you don’t save, changes from the last %ld minutes will be permanently "
-"lost."
-msgstr[0] ""
-"Om du inte sparar kommer ändringar gjorda under den senaste minuten att vara "
-"borta för alltid."
-msgstr[1] ""
-"Om du inte sparar kommer ändringar gjorda under de senaste %ld minuterna att "
-"vara borta för alltid."
+msgid "If you don’t save, changes from the last %ld minute will be permanently lost."
+msgid_plural "If you don’t save, changes from the last %ld minutes will be permanently lost."
+msgstr[0] "Om du inte sparar kommer ändringar gjorda under den senaste minuten att vara borta för alltid."
+msgstr[1] "Om du inte sparar kommer ändringar gjorda under de senaste %ld minuterna att vara borta för alltid."
 
 #: gedit/gedit-close-confirmation-dialog.c:352
 msgid "If you don’t save, changes from the last hour will be permanently lost."
-msgstr ""
-"Om du inte sparar kommer ändringar gjorda under den senaste timmen att vara "
-"borta för alltid."
+msgstr "Om du inte sparar kommer ändringar gjorda under den senaste timmen att vara borta för alltid."
 
 #: gedit/gedit-close-confirmation-dialog.c:358
 #, c-format
-msgid ""
-"If you don’t save, changes from the last hour and %d minute will be "
-"permanently lost."
-msgid_plural ""
-"If you don’t save, changes from the last hour and %d minutes will be "
-"permanently lost."
-msgstr[0] ""
-"Om du inte sparar kommer ändringar gjorda under den senaste timmen och "
-"minuten att vara borta för alltid."
-msgstr[1] ""
-"Om du inte sparar kommer ändringar gjorda under den senaste timmen och %d "
-"minuterna att vara borta för alltid."
+msgid "If you don’t save, changes from the last hour and %d minute will be permanently lost."
+msgid_plural "If you don’t save, changes from the last hour and %d minutes will be permanently lost."
+msgstr[0] "Om du inte sparar kommer ändringar gjorda under den senaste timmen och minuten att vara borta för alltid."
+msgstr[1] "Om du inte sparar kommer ändringar gjorda under den senaste timmen och %d minuterna att vara borta för alltid."
 
 #: gedit/gedit-close-confirmation-dialog.c:373
 #, c-format
-msgid ""
-"If you don’t save, changes from the last %d hour will be permanently lost."
-msgid_plural ""
-"If you don’t save, changes from the last %d hours will be permanently lost."
-msgstr[0] ""
-"Om du inte sparar kommer ändringar gjorda under den senaste timmen att vara "
-"borta för alltid."
-msgstr[1] ""
-"Om du inte sparar kommer ändringar gjorda under de senaste %d timmarna att "
-"vara borta för alltid."
+msgid "If you don’t save, changes from the last %d hour will be permanently lost."
+msgid_plural "If you don’t save, changes from the last %d hours will be permanently lost."
+msgstr[0] "Om du inte sparar kommer ändringar gjorda under den senaste timmen att vara borta för alltid."
+msgstr[1] "Om du inte sparar kommer ändringar gjorda under de senaste %d timmarna att vara borta för alltid."
 
 #: gedit/gedit-close-confirmation-dialog.c:400
 #, c-format
@@ -682,14 +518,9 @@ msgstr "Spara ändringarna i dokumentet ”%s” innan stängning?"
 #: gedit/gedit-close-confirmation-dialog.c:470
 #, c-format
 msgid "There is %d document with unsaved changes. Save changes before closing?"
-msgid_plural ""
-"There are %d documents with unsaved changes. Save changes before closing?"
-msgstr[0] ""
-"Det finns ett dokument med osparade ändringar. Spara ändringar innan "
-"avslutande?"
-msgstr[1] ""
-"Det finns %d dokument med osparade ändringar. Spara ändringar innan "
-"avslutande?"
+msgid_plural "There are %d documents with unsaved changes. Save changes before closing?"
+msgstr[0] "Det finns ett dokument med osparade ändringar. Spara ändringar innan avslutande?"
+msgstr[1] "Det finns %d dokument med osparade ändringar. Spara ändringar innan avslutande?"
 
 #: gedit/gedit-close-confirmation-dialog.c:493
 msgid "S_elect the documents you want to save:"
@@ -698,8 +529,7 @@ msgstr "_Välj de dokument som du vill spara:"
 #. Secondary label
 #: gedit/gedit-close-confirmation-dialog.c:509
 msgid "If you don’t save, all your changes will be permanently lost."
-msgstr ""
-"Om du inte sparar kommer alla dina ändringar att vara borta för alltid."
+msgstr "Om du inte sparar kommer alla dina ändringar att vara borta för alltid."
 
 #: gedit/gedit-commands-file.c:257
 #, c-format
@@ -737,12 +567,8 @@ msgstr "Spara filen som vanlig text?"
 
 #: gedit/gedit-commands-file.c:550
 #, c-format
-msgid ""
-"The file “%s” was previously saved as plain text and will now be saved using "
-"compression."
-msgstr ""
-"Filen ”%s” sparades tidigare som vanlig text och kommer nu att sparas med "
-"komprimering."
+msgid "The file “%s” was previously saved as plain text and will now be saved using compression."
+msgstr "Filen ”%s” sparades tidigare som vanlig text och kommer nu att sparas med komprimering."
 
 #: gedit/gedit-commands-file.c:554
 msgid "_Save Using Compression"
@@ -750,12 +576,8 @@ msgstr "_Spara med komprimering"
 
 #: gedit/gedit-commands-file.c:559
 #, c-format
-msgid ""
-"The file “%s” was previously saved using compression and will now be saved "
-"as plain text."
-msgstr ""
-"Filen ”%s” sparades tidigare med komprimering och kommer nu att sparas som "
-"vanlig text."
+msgid "The file “%s” was previously saved using compression and will now be saved as plain text."
+msgstr "Filen ”%s” sparades tidigare med komprimering och kommer nu att sparas som vanlig text."
 
 #: gedit/gedit-commands-file.c:562
 msgid "_Save As Plain Text"
@@ -784,87 +606,46 @@ msgstr "Återställ osparade ändringar i dokumentet ”%s”?"
 
 #: gedit/gedit-commands-file.c:1430
 #, c-format
-msgid ""
-"Changes made to the document in the last %ld second will be permanently lost."
-msgid_plural ""
-"Changes made to the document in the last %ld seconds will be permanently "
-"lost."
-msgstr[0] ""
-"Ändringar i dokumentet gjorda under den senaste sekunden kommer att vara "
-"borta för alltid."
-msgstr[1] ""
-"Ändringar i dokumentet gjorda under de senaste %ld sekunderna kommer att "
-"vara borta för alltid."
+msgid "Changes made to the document in the last %ld second will be permanently lost."
+msgid_plural "Changes made to the document in the last %ld seconds will be permanently lost."
+msgstr[0] "Ändringar i dokumentet gjorda under den senaste sekunden kommer att vara borta för alltid."
+msgstr[1] "Ändringar i dokumentet gjorda under de senaste %ld sekunderna kommer att vara borta för alltid."
 
 #: gedit/gedit-commands-file.c:1439
-msgid ""
-"Changes made to the document in the last minute will be permanently lost."
-msgstr ""
-"Ändringar i dokumentet gjorda under den senaste minuten kommer att vara "
-"borta för alltid."
+msgid "Changes made to the document in the last minute will be permanently lost."
+msgstr "Ändringar i dokumentet gjorda under den senaste minuten kommer att vara borta för alltid."
 
 #: gedit/gedit-commands-file.c:1445
 #, c-format
-msgid ""
-"Changes made to the document in the last minute and %ld second will be "
-"permanently lost."
-msgid_plural ""
-"Changes made to the document in the last minute and %ld seconds will be "
-"permanently lost."
-msgstr[0] ""
-"Ändringar i dokumentet gjorda under den senaste minuten och sekunden kommer "
-"att vara borta för alltid."
-msgstr[1] ""
-"Ändringar i dokumentet gjorda under den senaste minuten och %ld sekunderna "
-"kommer att vara borta för alltid."
+msgid "Changes made to the document in the last minute and %ld second will be permanently lost."
+msgid_plural "Changes made to the document in the last minute and %ld seconds will be permanently lost."
+msgstr[0] "Ändringar i dokumentet gjorda under den senaste minuten och sekunden kommer att vara borta för alltid."
+msgstr[1] "Ändringar i dokumentet gjorda under den senaste minuten och %ld sekunderna kommer att vara borta för alltid."
 
 #: gedit/gedit-commands-file.c:1455
 #, c-format
-msgid ""
-"Changes made to the document in the last %ld minute will be permanently lost."
-msgid_plural ""
-"Changes made to the document in the last %ld minutes will be permanently "
-"lost."
-msgstr[0] ""
-"Ändringar i dokumentet gjorda under den senaste minuten kommer att vara "
-"borta för alltid."
-msgstr[1] ""
-"Ändringar i dokumentet gjorda under de senaste %ld minuterna kommer att vara "
-"borta för alltid."
+msgid "Changes made to the document in the last %ld minute will be permanently lost."
+msgid_plural "Changes made to the document in the last %ld minutes will be permanently lost."
+msgstr[0] "Ändringar i dokumentet gjorda under den senaste minuten kommer att vara borta för alltid."
+msgstr[1] "Ändringar i dokumentet gjorda under de senaste %ld minuterna kommer att vara borta för alltid."
 
 #: gedit/gedit-commands-file.c:1470
 msgid "Changes made to the document in the last hour will be permanently lost."
-msgstr ""
-"Ändringar i dokumentet gjorda under den senaste timmen kommer att vara borta "
-"för alltid."
+msgstr "Ändringar i dokumentet gjorda under den senaste timmen kommer att vara borta för alltid."
 
 #: gedit/gedit-commands-file.c:1476
 #, c-format
-msgid ""
-"Changes made to the document in the last hour and %d minute will be "
-"permanently lost."
-msgid_plural ""
-"Changes made to the document in the last hour and %d minutes will be "
-"permanently lost."
-msgstr[0] ""
-"Ändringar i dokumentet gjorda under den senaste timmen och minuten kommer "
-"att vara borta för alltid."
-msgstr[1] ""
-"Ändringar i dokumentet gjorda under den senaste timmen och %d minuterna "
-"kommer att vara borta för alltid."
+msgid "Changes made to the document in the last hour and %d minute will be permanently lost."
+msgid_plural "Changes made to the document in the last hour and %d minutes will be permanently lost."
+msgstr[0] "Ändringar i dokumentet gjorda under den senaste timmen och minuten kommer att vara borta för alltid."
+msgstr[1] "Ändringar i dokumentet gjorda under den senaste timmen och %d minuterna kommer att vara borta för alltid."
 
 #: gedit/gedit-commands-file.c:1491
 #, c-format
-msgid ""
-"Changes made to the document in the last %d hour will be permanently lost."
-msgid_plural ""
-"Changes made to the document in the last %d hours will be permanently lost."
-msgstr[0] ""
-"Ändringar i dokumentet gjorda under den senaste timmen kommer att vara borta "
-"för alltid."
-msgstr[1] ""
-"Ändringar i dokumentet gjorda under de senaste %d timmarna kommer att vara "
-"borta för alltid."
+msgid "Changes made to the document in the last %d hour will be permanently lost."
+msgid_plural "Changes made to the document in the last %d hours will be permanently lost."
+msgstr[0] "Ändringar i dokumentet gjorda under den senaste timmen kommer att vara borta för alltid."
+msgstr[1] "Ändringar i dokumentet gjorda under de senaste %d timmarna kommer att vara borta för alltid."
 
 #: gedit/gedit-commands-file.c:1514
 msgid "_Revert"
@@ -892,8 +673,7 @@ msgstr "gedit är en lättanvänd universaltextredigerare"
 
 #: gedit/gedit-commands-help.c:125
 msgid "translator-credits"
-msgstr ""
-"Daniel Nylander <po@danielnylander.se>\n"
+msgstr "Daniel Nylander <po@danielnylander.se>\n"
 "Christian Rose\n"
 "Andreas Hydén\n"
 "Martin Norbäck\n"
@@ -951,8 +731,7 @@ msgstr "%s (Aktuell lokal)"
 
 #: gedit/gedit-encodings-dialog.c:188
 msgid "Do you really want to reset the character encodings’ preferences?"
-msgstr ""
-"Är du säker på att du vill återställa teckenkodningarnas inställningar?"
+msgstr "Är du säker på att du vill återställa teckenkodningarnas inställningar?"
 
 #. Reset button
 #: gedit/gedit-encodings-dialog.c:193 gedit/gedit-encodings-dialog.c:818
@@ -1013,269 +792,178 @@ msgstr "Öppna filer"
 msgid "_Open"
 msgstr "Ö_ppna"
 
-#: gedit/gedit-io-error-info-bar.c:135 gedit/gedit-io-error-info-bar.c:416
+#: gedit/gedit-io-error-info-bar.c:90 gedit/gedit-io-error-info-bar.c:282
 msgid "_Retry"
 msgstr "_Försök igen"
 
-#: gedit/gedit-io-error-info-bar.c:157
-#, c-format
-msgid "Could not find the file “%s”."
-msgstr "Kunde inte hitta filen ”%s”."
+#: gedit/gedit-io-error-info-bar.c:114
+msgid "File not found."
+msgstr "Filen hittades inte."
 
+#. How to reproduce this case: from the command line,
+#. * try to open a URI such as: foo://example.net/file
+#.
 #. Translators: %s is a URI scheme (like for example http:, ftp:, etc.)
-#: gedit/gedit-io-error-info-bar.c:177
+#: gedit/gedit-io-error-info-bar.c:133
 #, c-format
-msgid "Unable to handle “%s:” locations."
-msgstr "Kan inte hantera ”%s:”-platser."
+msgid "“%s:” locations are not supported."
+msgstr "”%s”-platser stöds ej."
 
-#: gedit/gedit-io-error-info-bar.c:183
-msgid "Unable to handle this location."
-msgstr "Kan inte hantera denna plats."
-
-#: gedit/gedit-io-error-info-bar.c:192
+#: gedit/gedit-io-error-info-bar.c:142
 msgid "The location of the file cannot be accessed."
 msgstr "Platsen för filen kan inte kommas åt."
 
-#: gedit/gedit-io-error-info-bar.c:196
-#, c-format
-msgid "“%s” is a directory."
-msgstr "”%s” är en katalog."
-
-#: gedit/gedit-io-error-info-bar.c:198 gedit/gedit-io-error-info-bar.c:205
-msgid "Please check that you typed the location correctly and try again."
-msgstr "Kontrollera att du angav platsen korrekt och försök igen."
-
-#: gedit/gedit-io-error-info-bar.c:203
+#: gedit/gedit-io-error-info-bar.c:146
 #, c-format
 msgid "“%s” is not a valid location."
 msgstr "”%s” är inte en giltig plats."
 
-#. Translators: %s is a host name
-#: gedit/gedit-io-error-info-bar.c:239
+#: gedit/gedit-io-error-info-bar.c:147
+msgid "Please check that you typed the location correctly and try again."
+msgstr "Kontrollera att du angav platsen korrekt och försök igen."
+
+#: gedit/gedit-io-error-info-bar.c:180
 #, c-format
-msgid ""
-"Host “%s” could not be found. Please check that your proxy settings are "
-"correct and try again."
-msgstr ""
-"Värden ”%s” kunde inte hittas. Kontrollera att dina proxyinställningar är "
-"korrekta och försök igen."
+msgid "Hostname “%s” not known."
+msgstr "Värdnamnet ”%s” är inte känt."
 
-#: gedit/gedit-io-error-info-bar.c:254
-#, c-format
-msgid ""
-"Hostname was invalid. Please check that you typed the location correctly and "
-"try again."
-msgstr ""
-"Värdnamnet var ogiltigt. Kontrollera att du angav platsen korrekt och försök "
-"igen."
+#: gedit/gedit-io-error-info-bar.c:181
+msgid "The problem could come from the proxy settings."
+msgstr "Problemet kan komma från proxyinställningarna."
 
-#: gedit/gedit-io-error-info-bar.c:262
-#, c-format
-msgid "“%s” is not a regular file."
-msgstr "”%s” är inte en vanlig fil."
+#: gedit/gedit-io-error-info-bar.c:215
+msgid "File not found. Perhaps it has recently been deleted."
+msgstr "Filen hittades inte. Den har kanske tagits bort nyligen."
 
-#: gedit/gedit-io-error-info-bar.c:267
-msgid "Connection timed out. Please try again."
-msgstr "Anslutningens tidsgräns överstegs. Försök igen."
-
-#: gedit/gedit-io-error-info-bar.c:300
-#, c-format
-msgid "Unexpected error: %s"
-msgstr "Oväntat fel: %s"
-
-#: gedit/gedit-io-error-info-bar.c:336
-msgid "Cannot find the requested file. Perhaps it has recently been deleted."
-msgstr ""
-"Kan inte hitta den efterfrågade filen. Den har kanske tagits bort nyligen."
-
-#: gedit/gedit-io-error-info-bar.c:346
+#: gedit/gedit-io-error-info-bar.c:225
 #, c-format
 msgid "Could not revert the file “%s”."
 msgstr "Kunde inte återställa filen ”%s”."
 
-#: gedit/gedit-io-error-info-bar.c:373
+#: gedit/gedit-io-error-info-bar.c:250
 msgid "Ch_aracter Encoding:"
 msgstr "Te_ckenkodning:"
 
-#. Translators: the access key chosen for this string should be
-#. different from other main menu access keys (Open, Edit, View...)
-#: gedit/gedit-io-error-info-bar.c:424
-msgid "Edit Any_way"
-msgstr "Redigera än_då"
+#: gedit/gedit-io-error-info-bar.c:288
+msgid "_Edit Anyway"
+msgstr "R_edigera ändå"
 
-#: gedit/gedit-io-error-info-bar.c:512
-msgid ""
-"The number of followed links is limited and the actual file could not be "
-"found within this limit."
-msgstr ""
-"Antalet följda länkar är begränsat och den faktiska filen kunde inte hittas "
-"inom denna gräns."
+#: gedit/gedit-io-error-info-bar.c:326
+msgid "The number of followed links is limited and the actual file could not be found within this limit."
+msgstr "Antalet följda länkar är begränsat och den faktiska filen kunde inte hittas inom denna gräns."
 
-#: gedit/gedit-io-error-info-bar.c:516
+#: gedit/gedit-io-error-info-bar.c:331
 msgid "You do not have the permissions necessary to open the file."
 msgstr "Du har inte tillräckliga rättigheter för att öppna filen."
 
-#: gedit/gedit-io-error-info-bar.c:522
+#: gedit/gedit-io-error-info-bar.c:337
 msgid "Unable to detect the character encoding."
 msgstr "Kan inte identifiera teckenkodningen."
 
-#: gedit/gedit-io-error-info-bar.c:523 gedit/gedit-io-error-info-bar.c:547
+#: gedit/gedit-io-error-info-bar.c:338 gedit/gedit-io-error-info-bar.c:361
 msgid "Please check that you are not trying to open a binary file."
 msgstr "Kontrollera att du inte försöker öppna en binär fil."
 
-#: gedit/gedit-io-error-info-bar.c:524
+#: gedit/gedit-io-error-info-bar.c:339
 msgid "Select a character encoding from the menu and try again."
 msgstr "Välj en teckenkodning från menyn och försök igen."
 
-#: gedit/gedit-io-error-info-bar.c:530
+#: gedit/gedit-io-error-info-bar.c:345
 #, c-format
 msgid "There was a problem opening the file “%s”."
 msgstr "Ett fel inträffade vid öppnandet av filen ”%s”."
 
-#: gedit/gedit-io-error-info-bar.c:532
-msgid ""
-"The file you opened has some invalid characters. If you continue editing "
-"this file you could corrupt this document."
-msgstr ""
-"Filen som du öppnat innehåller ogiltiga tecken. Om du fortsätter att "
-"redigera denna fil så kanske du skadar dokumentet."
+#: gedit/gedit-io-error-info-bar.c:346
+msgid "The file you opened has some invalid characters. If you continue editing this file you could corrupt this document."
+msgstr "Filen som du öppnat innehåller ogiltiga tecken. Om du fortsätter att redigera denna fil så kanske du skadar dokumentet."
 
-#: gedit/gedit-io-error-info-bar.c:535
+#: gedit/gedit-io-error-info-bar.c:349
 msgid "You can also choose another character encoding and try again."
 msgstr "Du kan även välja en annan teckenkodning och försöka igen."
 
-#: gedit/gedit-io-error-info-bar.c:544
+#: gedit/gedit-io-error-info-bar.c:358
 #, c-format
 msgid "Could not open the file “%s” using the “%s” character encoding."
 msgstr "Kunde inte öppna filen ”%s” med teckenkodningen ”%s”."
 
-#: gedit/gedit-io-error-info-bar.c:548 gedit/gedit-io-error-info-bar.c:623
+#: gedit/gedit-io-error-info-bar.c:362 gedit/gedit-io-error-info-bar.c:417
 msgid "Select a different character encoding from the menu and try again."
 msgstr "Välj en annan teckenkodning från menyn och försök igen."
 
-#: gedit/gedit-io-error-info-bar.c:560
+#: gedit/gedit-io-error-info-bar.c:374
 #, c-format
 msgid "Could not open the file “%s”."
 msgstr "Kunde inte öppna filen ”%s”."
 
-#: gedit/gedit-io-error-info-bar.c:618
+#: gedit/gedit-io-error-info-bar.c:412
 #, c-format
 msgid "Could not save the file “%s” using the “%s” character encoding."
 msgstr "Kunde inte spara filen ”%s” med teckenkodningen ”%s”."
 
-#: gedit/gedit-io-error-info-bar.c:621
-msgid ""
-"The document contains one or more characters that cannot be encoded using "
-"the specified character encoding."
-msgstr ""
-"Detta dokument innehåller ett eller flera tecken som inte kan kodas med den "
-"angivna teckenkodningen."
+#: gedit/gedit-io-error-info-bar.c:415
+msgid "The document contains one or more characters that cannot be encoded using the specified character encoding."
+msgstr "Detta dokument innehåller ett eller flera tecken som inte kan kodas med den angivna teckenkodningen."
 
-#: gedit/gedit-io-error-info-bar.c:692
+#: gedit/gedit-io-error-info-bar.c:460
+#, c-format
+msgid "The file “%s” has been externally modified."
+msgstr "Filen ”%s” har ändrats externt."
+
+#: gedit/gedit-io-error-info-bar.c:461
+msgid "If you save it, all the external changes could be lost. Save it anyway?"
+msgstr "Om du sparar den så kan alla externa ändringar gå förlorade. Spara den ändå?"
+
+#: gedit/gedit-io-error-info-bar.c:468
 msgid "S_ave Anyway"
 msgstr "Spara än_då"
 
-#: gedit/gedit-io-error-info-bar.c:695
+#: gedit/gedit-io-error-info-bar.c:472
 msgid "D_on’t Save"
 msgstr "Spara i_nte"
 
-#. FIXME: review this message, it's not clear since for the user the "modification"
-#. * could be interpreted as the changes he made in the document. beside "reading" is
-#. * not accurate (since last load/save)
-#.
-#: gedit/gedit-io-error-info-bar.c:709
-#, c-format
-msgid "The file “%s” has been modified since reading it."
-msgstr "Filen ”%s” har ändrats sedan den lästes in."
-
-#: gedit/gedit-io-error-info-bar.c:724
-msgid "If you save it, all the external changes could be lost. Save it anyway?"
-msgstr ""
-"Om du sparar den så kan alla externa ändringar gå förlorade. Spara den ändå?"
-
 #. Translators: %s is a URI scheme (like for example http:, ftp:, etc.)
-#: gedit/gedit-io-error-info-bar.c:782
+#: gedit/gedit-io-error-info-bar.c:502
 #, c-format
-msgid ""
-"Cannot handle “%s:” locations in write mode. Please check that you typed the "
-"location correctly and try again."
-msgstr ""
-"Kan inte hantera ”%s:”-platser i skrivläget. Kontrollera att du angav "
-"platsen korrekt och försök igen."
+msgid "Cannot handle “%s:” locations in write mode. Please check that you typed the location correctly and try again."
+msgstr "Kan inte hantera ”%s:”-platser i skrivläget. Kontrollera att du angav platsen korrekt och försök igen."
 
-#: gedit/gedit-io-error-info-bar.c:790
-msgid ""
-"Cannot handle this location in write mode. Please check that you typed the "
-"location correctly and try again."
-msgstr ""
-"Kan inte hantera denna plats i skrivläget. Kontrollera att du har angivit "
-"platsen korrekt och försök igen."
+#: gedit/gedit-io-error-info-bar.c:509
+msgid "Cannot handle this location in write mode. Please check that you typed the location correctly and try again."
+msgstr "Kan inte hantera denna plats i skrivläget. Kontrollera att du har angivit platsen korrekt och försök igen."
 
-#: gedit/gedit-io-error-info-bar.c:799
+#: gedit/gedit-io-error-info-bar.c:518
 #, c-format
-msgid ""
-"“%s” is not a valid location. Please check that you typed the location "
-"correctly and try again."
-msgstr ""
-"”%s” är inte en giltig plats. Kontrollera att du angav platsen korrekt och "
-"försök igen."
+msgid "“%s” is not a valid location. Please check that you typed the location correctly and try again."
+msgstr "”%s” är inte en giltig plats. Kontrollera att du angav platsen korrekt och försök igen."
 
-#: gedit/gedit-io-error-info-bar.c:806
-msgid ""
-"You do not have the permissions necessary to save the file. Please check "
-"that you typed the location correctly and try again."
-msgstr ""
-"Du har inte de nödvändiga rättigheterna för att spara filen. Kontrollera att "
-"du angav platsen korrekt och försök igen."
+#: gedit/gedit-io-error-info-bar.c:525
+msgid "You do not have the permissions necessary to save the file. Please check that you typed the location correctly and try again."
+msgstr "Du har inte de nödvändiga rättigheterna för att spara filen. Kontrollera att du angav platsen korrekt och försök igen."
 
-#: gedit/gedit-io-error-info-bar.c:812
-msgid ""
-"There is not enough disk space to save the file. Please free some disk space "
-"and try again."
-msgstr ""
-"Det finns inte tillräckligt med diskutrymme för att spara filen. Frigör en "
-"del utrymme på disken och försök igen."
+#: gedit/gedit-io-error-info-bar.c:531
+msgid "There is not enough disk space to save the file. Please free some disk space and try again."
+msgstr "Det finns inte tillräckligt med diskutrymme för att spara filen. Frigör en del utrymme på disken och försök igen."
 
-#: gedit/gedit-io-error-info-bar.c:817
-msgid ""
-"You are trying to save the file on a read-only disk. Please check that you "
-"typed the location correctly and try again."
-msgstr ""
-"Du försöker att spara filen på en skrivskyddad disk. Kontrollera att du "
-"angav platsen korrekt och försök igen."
+#: gedit/gedit-io-error-info-bar.c:536
+msgid "You are trying to save the file on a read-only disk. Please check that you typed the location correctly and try again."
+msgstr "Du försöker att spara filen på en skrivskyddad disk. Kontrollera att du angav platsen korrekt och försök igen."
 
-#: gedit/gedit-io-error-info-bar.c:823
+#: gedit/gedit-io-error-info-bar.c:542
 msgid "A file with the same name already exists. Please use a different name."
 msgstr "En fil med samma namn finns redan. Använd ett annat namn."
 
-#: gedit/gedit-io-error-info-bar.c:828
-msgid ""
-"The disk where you are trying to save the file has a limitation on length of "
-"the file names. Please use a shorter name."
-msgstr ""
-"Disken där du försöker att spara filen har en begränsning för längden på "
-"filnamn. Använd ett kortare namn."
+#: gedit/gedit-io-error-info-bar.c:547
+msgid "The disk where you are trying to save the file has a limitation on length of the file names. Please use a shorter name."
+msgstr "Disken där du försöker att spara filen har en begränsning för längden på filnamn. Använd ett kortare namn."
 
-#: gedit/gedit-io-error-info-bar.c:839
-msgid ""
-"The disk where you are trying to save the file has a limitation on file "
-"sizes. Please try saving a smaller file or saving it to a disk that does not "
-"have this limitation."
-msgstr ""
-"Disken där du försöker spara filen har en begränsning på filstorlekar. "
-"Försök att spara en mindre fil eller spara den på en disk som inte har denna "
-"begränsning."
-
-#: gedit/gedit-io-error-info-bar.c:856
+#: gedit/gedit-io-error-info-bar.c:562
 #, c-format
 msgid "Could not save the file “%s”."
 msgstr "Kunde inte spara filen ”%s”."
 
 #: gedit/gedit-preferences-dialog.c:433
 msgid "Click on this button to select the font to be used by the editor"
-msgstr ""
-"Tryck på denna knapp för att välja det typsnitt som ska användas av "
-"redigeraren"
+msgstr "Tryck på denna knapp för att välja det typsnitt som ska användas av redigeraren"
 
 #: gedit/gedit-preferences-dialog.c:439
 #, c-format
@@ -1367,64 +1055,64 @@ msgstr[1] "Det finns %d flikar med fel"
 
 #. Translators: the first %s is a file name (e.g. test.txt) the second one
 #. is a directory (e.g. ssh://master.gnome.org/home/users/paolo)
-#: gedit/gedit-tab.c:830
+#: gedit/gedit-tab.c:805
 #, c-format
 msgid "Reverting %s from %s"
 msgstr "Återställer %s från %s"
 
-#: gedit/gedit-tab.c:837
+#: gedit/gedit-tab.c:812
 #, c-format
 msgid "Reverting %s"
 msgstr "Återställer %s"
 
 #. Translators: the first %s is a file name (e.g. test.txt) the second one
 #. is a directory (e.g. ssh://master.gnome.org/home/users/paolo)
-#: gedit/gedit-tab.c:850
+#: gedit/gedit-tab.c:825
 #, c-format
 msgid "Loading %s from %s"
 msgstr "Läser in %s från %s"
 
-#: gedit/gedit-tab.c:857
+#: gedit/gedit-tab.c:832
 #, c-format
 msgid "Loading %s"
 msgstr "Läser in %s"
 
 #. Translators: the first %s is a file name (e.g. test.txt) the second one
 #. is a directory (e.g. ssh://master.gnome.org/home/users/paolo)
-#: gedit/gedit-tab.c:937
+#: gedit/gedit-tab.c:912
 #, c-format
 msgid "Saving %s to %s"
 msgstr "Sparar %s till %s"
 
-#: gedit/gedit-tab.c:942
+#: gedit/gedit-tab.c:917
 #, c-format
 msgid "Saving %s"
 msgstr "Sparar %s"
 
-#: gedit/gedit-tab.c:1511
+#: gedit/gedit-tab.c:1490
 #, c-format
 msgid "Error opening file %s"
 msgstr "Fel vid öppning av filen %s"
 
-#: gedit/gedit-tab.c:1516
+#: gedit/gedit-tab.c:1495
 #, c-format
 msgid "Error reverting file %s"
 msgstr "Fel vid återställning av filen %s"
 
-#: gedit/gedit-tab.c:1521
+#: gedit/gedit-tab.c:1500
 #, c-format
 msgid "Error saving file %s"
 msgstr "Fel vid sparande av filen %s"
 
-#: gedit/gedit-tab.c:1552
+#: gedit/gedit-tab.c:1531
 msgid "Name:"
 msgstr "Namn:"
 
-#: gedit/gedit-tab.c:1553
+#: gedit/gedit-tab.c:1532
 msgid "MIME Type:"
 msgstr "MIME-typ:"
 
-#: gedit/gedit-tab.c:1554
+#: gedit/gedit-tab.c:1533
 msgid "Encoding:"
 msgstr "Kodning:"
 
@@ -2583,19 +2271,13 @@ msgid "Whether to use the system font"
 msgstr "Huruvida systemtypsnittet ska användas"
 
 #: plugins/externaltools/org.gnome.gedit.plugins.externaltools.gschema.xml:6
-msgid ""
-"If true, the external tools will use the desktop-global standard font if "
-"it’s monospace (and the most similar font it can come up with otherwise)."
-msgstr ""
-"Om true (sant) kommer externa verktyg att använda standardtypsnittet desktop-"
-"global om det är monospace (annars det mest liknande typsnittet som kan "
-"hittas)."
+msgid "If true, the external tools will use the desktop-global standard font if it’s monospace (and the most similar font it can come up with otherwise)."
+msgstr "Om true (sant) kommer externa verktyg att använda standardtypsnittet desktop-global om det är monospace (annars det mest liknande typsnittet som kan hittas)."
 
 #: plugins/externaltools/org.gnome.gedit.plugins.externaltools.gschema.xml:15
 #: plugins/pythonconsole/org.gnome.gedit.plugins.pythonconsole.gschema.xml:25
 msgid "A Pango font name. Examples are “Sans 12” or “Monospace Bold 14”."
-msgstr ""
-"Ett Pango-typsnittsnamn. Exempel är ”Sans 12” eller ”Monospace Bold 14”."
+msgstr "Ett Pango-typsnittsnamn. Exempel är ”Sans 12” eller ”Monospace Bold 14”."
 
 #: plugins/externaltools/tools/appactivatable.py:133
 msgid "Manage _External Tools…"
@@ -2838,11 +2520,9 @@ msgid "An error occurred"
 msgstr "Ett fel inträffade"
 
 #: plugins/filebrowser/gedit-file-browser-plugin.c:875
-msgid ""
-"Cannot move file to trash, do you\n"
+msgid "Cannot move file to trash, do you\n"
 "want to delete permanently?"
-msgstr ""
-"Kan inte flytta filen till papperskorgen.\n"
+msgstr "Kan inte flytta filen till papperskorgen.\n"
 "Vill du ta bort den permanent?"
 
 #: plugins/filebrowser/gedit-file-browser-plugin.c:880
@@ -2871,39 +2551,27 @@ msgstr "Om du tar bort ett objekt är det borta för alltid."
 msgid "(Empty)"
 msgstr "(Tom)"
 
-#: plugins/filebrowser/gedit-file-browser-store.c:3325
-msgid ""
-"The renamed file is currently filtered out. You need to adjust your filter "
-"settings to make the file visible"
-msgstr ""
-"Filen med det nya namnet är för närvarande bortfiltrerad. Du behöver justera "
-"dina filterinställningar för att göra filen synlig"
+#: plugins/filebrowser/gedit-file-browser-store.c:3326
+msgid "The renamed file is currently filtered out. You need to adjust your filter settings to make the file visible"
+msgstr "Filen med det nya namnet är för närvarande bortfiltrerad. Du behöver justera dina filterinställningar för att göra filen synlig"
 
 #. Translators: This is the default name of new files created by the file browser pane.
-#: plugins/filebrowser/gedit-file-browser-store.c:3576
+#: plugins/filebrowser/gedit-file-browser-store.c:3577
 msgid "Untitled File"
 msgstr "Namnlös fil"
 
-#: plugins/filebrowser/gedit-file-browser-store.c:3604
-msgid ""
-"The new file is currently filtered out. You need to adjust your filter "
-"settings to make the file visible"
-msgstr ""
-"Den nya filen är för närvarande bortfiltrerad. Du behöver justera dina "
-"filterinställningar för att göra filen synlig"
+#: plugins/filebrowser/gedit-file-browser-store.c:3605
+msgid "The new file is currently filtered out. You need to adjust your filter settings to make the file visible"
+msgstr "Den nya filen är för närvarande bortfiltrerad. Du behöver justera dina filterinställningar för att göra filen synlig"
 
 #. Translators: This is the default name of new directories created by the file browser pane.
-#: plugins/filebrowser/gedit-file-browser-store.c:3633
+#: plugins/filebrowser/gedit-file-browser-store.c:3634
 msgid "Untitled Folder"
 msgstr "Namnlös mapp"
 
-#: plugins/filebrowser/gedit-file-browser-store.c:3656
-msgid ""
-"The new directory is currently filtered out. You need to adjust your filter "
-"settings to make the directory visible"
-msgstr ""
-"Den nya katalogen är för närvarande bortfiltrerad. Du behöver justera dina "
-"filterinställningar för att göra katalogen synlig"
+#: plugins/filebrowser/gedit-file-browser-store.c:3657
+msgid "The new directory is currently filtered out. You need to adjust your filter settings to make the directory visible"
+msgstr "Den nya katalogen är för närvarande bortfiltrerad. Du behöver justera dina filterinställningar för att göra katalogen synlig"
 
 #: plugins/filebrowser/gedit-file-browser-widget.c:755
 msgid "Bookmarks"
@@ -2934,38 +2602,24 @@ msgid "Open With Tree View"
 msgstr "Öppna med trädvy"
 
 #: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml:6
-msgid ""
-"Open the tree view when the file browser plugin gets loaded instead of the "
-"bookmarks view"
-msgstr ""
-"Öppna trädvyn när filbläddrarens insticksmodul blir inläst istället för "
-"bokmärkesvyn"
+msgid "Open the tree view when the file browser plugin gets loaded instead of the bookmarks view"
+msgstr "Öppna trädvyn när filbläddrarens insticksmodul blir inläst istället för bokmärkesvyn"
 
 #: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml:10
 msgid "File Browser Root Directory"
 msgstr "Filbläddrarens rotkatalog"
 
 #: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml:11
-msgid ""
-"The file browser root directory to use when loading the file browser plugin "
-"and onload/tree_view is TRUE."
-msgstr ""
-"Filbläddrarens rotkatalog att använda när filbläddrarens insticksmodul läses "
-"in och onload/tree_view är TRUE (sant)."
+msgid "The file browser root directory to use when loading the file browser plugin and onload/tree_view is TRUE."
+msgstr "Filbläddrarens rotkatalog att använda när filbläddrarens insticksmodul läses in och onload/tree_view är TRUE (sant)."
 
 #: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml:15
 msgid "File Browser Virtual Root Directory"
 msgstr "Filbläddrarens virtuella rotkatalog"
 
 #: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml:16
-msgid ""
-"The file browser virtual root directory to use when loading the file browser "
-"plugin when onload/tree_view is TRUE. The virtual root must always be below "
-"the actual root."
-msgstr ""
-"Filbläddrarens virtuella rotkatalog att använda när filbläddrarens "
-"insticksmodul läses in när onload/tree_view är TRUE (sant). Den virtuella "
-"roten måste alltid vara under den aktuella roten."
+msgid "The file browser virtual root directory to use when loading the file browser plugin when onload/tree_view is TRUE. The virtual root must always be below the actual root."
+msgstr "Filbläddrarens virtuella rotkatalog att använda när filbläddrarens insticksmodul läses in när onload/tree_view är TRUE (sant). Den virtuella roten måste alltid vara under den aktuella roten."
 
 #: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml:20
 msgid "Enable Restore of Remote Locations"
@@ -2980,42 +2634,24 @@ msgid "Set Location to First Document"
 msgstr "Ställ in plats till första dokumentet"
 
 #: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml:26
-msgid ""
-"If TRUE the file browser plugin will view the directory of the first opened "
-"document given that the file browser hasn’t been used yet. (Thus this "
-"generally applies to opening a document from the command line or opening it "
-"with Nautilus, etc.)"
-msgstr ""
-"Om TRUE (sant) kommer filbläddraren att visa katalogen för det först öppnade "
-"dokumentet om filbläddraren ännu inte har använts. (Även om detta normalt "
-"sett gäller för dokument som öppnas från kommandoraden eller öppnas med "
-"Nautilus, etc.)"
+msgid "If TRUE the file browser plugin will view the directory of the first opened document given that the file browser hasn’t been used yet. (Thus this generally applies to opening a document from the command line or opening it with Nautilus, etc.)"
+msgstr "Om TRUE (sant) kommer filbläddraren att visa katalogen för det först öppnade dokumentet om filbläddraren ännu inte har använts. (Även om detta normalt sett gäller för dokument som öppnas från kommandoraden eller öppnas med Nautilus, etc.)"
 
 #: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml:30
 msgid "File Browser Filter Mode"
 msgstr "Filbläddrarens filterläge"
 
 #: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml:31
-msgid ""
-"This value determines what files get filtered from the file browser. Valid "
-"values are: none (filter nothing), hide-hidden (filter hidden files) and "
-"hide-binary (filter binary files)."
-msgstr ""
-"Detta värde bestämmer vilka filer som blir filtrerade från filbläddraren. "
-"Giltiga värden är: none (filtrera ingenting), hidden (filtrera dolda filer) "
-"och hide- binary (filtrera binära filer)."
+msgid "This value determines what files get filtered from the file browser. Valid values are: none (filter nothing), hide-hidden (filter hidden files) and hide-binary (filter binary files)."
+msgstr "Detta värde bestämmer vilka filer som blir filtrerade från filbläddraren. Giltiga värden är: none (filtrera ingenting), hidden (filtrera dolda filer) och hide- binary (filtrera binära filer)."
 
 #: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml:35
 msgid "File Browser Filter Pattern"
 msgstr "Filbläddrarens filtermönster"
 
 #: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml:36
-msgid ""
-"The filter pattern to filter the file browser with. This filter works on top "
-"of the filter_mode."
-msgstr ""
-"Filtermönstret att filtrera med i filbläddraren. Detta filter fungerar på "
-"toppen av filter_mode."
+msgid "The filter pattern to filter the file browser with. This filter works on top of the filter_mode."
+msgstr "Filtermönstret att filtrera med i filbläddraren. Detta filter fungerar på toppen av filter_mode."
 
 #: plugins/filebrowser/org.gnome.gedit.plugins.filebrowser.gschema.xml:40
 msgid "File Browser Binary Patterns"
@@ -3107,13 +2743,8 @@ msgid "The error color text"
 msgstr "Textfärgen för fel"
 
 #: plugins/pythonconsole/org.gnome.gedit.plugins.pythonconsole.gschema.xml:16
-msgid ""
-"If true, the terminal will use the desktop-global standard font if it’s "
-"monospace (and the most similar font it can come up with otherwise)."
-msgstr ""
-"Om true (sant) kommer terminalen att använda standardtypsnittet desktop-"
-"global om det är monospace (annars det mest liknande typsnittet som kan "
-"hittas)."
+msgid "If true, the terminal will use the desktop-global standard font if it’s monospace (and the most similar font it can come up with otherwise)."
+msgstr "Om true (sant) kommer terminalen att använda standardtypsnittet desktop-global om det är monospace (annars det mest liknande typsnittet som kan hittas)."
 
 #: plugins/pythonconsole/pythonconsole/config.ui:18
 msgid "C_ommand color:"
@@ -3240,21 +2871,14 @@ msgstr "Ta bort markerad textsnutt"
 
 #. self['hbox_tab_trigger'].set_spacing(3)
 #: plugins/snippets/snippets/manager.py:670
-msgid ""
-"This is not a valid Tab trigger. Triggers can either contain alphanumeric "
-"characters (or _, : and .) or a single (non-alphanumeric) character like: {, "
-"[, etc."
-msgstr ""
-"Detta är inte en giltig tabulatorutlösare. Utlösare kan antingen innehålla "
-"alfanumeriska tecken (eller _, : och .) eller ett enda (icke-alfanumeriskt) "
-"tecken som: {, [, etc."
+msgid "This is not a valid Tab trigger. Triggers can either contain alphanumeric characters (or _, : and .) or a single (non-alphanumeric) character like: {, [, etc."
+msgstr "Detta är inte en giltig tabulatorutlösare. Utlösare kan antingen innehålla alfanumeriska tecken (eller _, : och .) eller ett enda (icke-alfanumeriskt) tecken som: {, [, etc."
 
 #. self['hbox_tab_trigger'].set_spacing(0)
 #: plugins/snippets/snippets/manager.py:677
 #: plugins/snippets/snippets/snippets.ui:283
 msgid "Single word the snippet is activated with after pressing Tab"
-msgstr ""
-"Ett ord med vilket textsnutten aktiveras efter att tabulatortangenten tryckts"
+msgstr "Ett ord med vilket textsnutten aktiveras efter att tabulatortangenten tryckts"
 
 #: plugins/snippets/snippets/manager.py:766
 #, python-format
@@ -3334,12 +2958,8 @@ msgstr "Ange ett nytt kortkommando"
 
 #: plugins/snippets/snippets/placeholder.py:605
 #, python-format
-msgid ""
-"Execution of the Python command (%s) exceeds the maximum time, execution "
-"aborted."
-msgstr ""
-"Körning av Python-kommandot (%s) översteg den maximala tiden, körning "
-"avbruten."
+msgid "Execution of the Python command (%s) exceeds the maximum time, execution aborted."
+msgstr "Körning av Python-kommandot (%s) översteg den maximala tiden, körning avbruten."
 
 #: plugins/snippets/snippets/placeholder.py:613
 #, python-format
@@ -3485,12 +3105,8 @@ msgid "Prompt Type"
 msgstr "Frågetyp"
 
 #: plugins/time/org.gnome.gedit.plugins.time.gschema.xml:6
-msgid ""
-"If the user should be prompted for a format or if the selected or custom "
-"format should be used."
-msgstr ""
-"Om användaren ska tillfrågas efter ett format eller om det valda eller "
-"anpassade formatet ska användas."
+msgid "If the user should be prompted for a format or if the selected or custom format should be used."
+msgstr "Om användaren ska tillfrågas efter ett format eller om det valda eller anpassade formatet ska användas."
 
 #: plugins/time/org.gnome.gedit.plugins.time.gschema.xml:10
 msgid "Selected Format"
@@ -3557,6 +3173,57 @@ msgstr "Infoga datum/tid"
 #: plugins/time/time.plugin.desktop.in:6
 msgid "Inserts current date and time at the cursor position."
 msgstr "Infogar aktuellt datum och tid vid markörpositionen."
+
+#, c-format
+#~ msgid "Could not find the file “%s”."
+#~ msgstr "Kunde inte hitta filen ”%s”."
+
+#, c-format
+#~ msgid "Unable to handle “%s:” locations."
+#~ msgstr "Kan inte hantera ”%s:”-platser."
+
+#~ msgid "Unable to handle this location."
+#~ msgstr "Kan inte hantera denna plats."
+
+#, c-format
+#~ msgid "“%s” is a directory."
+#~ msgstr "”%s” är en katalog."
+
+#, c-format
+#~ msgid ""
+#~ "Host “%s” could not be found. Please check that your proxy settings are "
+#~ "correct and try again."
+#~ msgstr ""
+#~ "Värden ”%s” kunde inte hittas. Kontrollera att dina proxyinställningar är "
+#~ "korrekta och försök igen."
+
+#, c-format
+#~ msgid ""
+#~ "Hostname was invalid. Please check that you typed the location correctly "
+#~ "and try again."
+#~ msgstr ""
+#~ "Värdnamnet var ogiltigt. Kontrollera att du angav platsen korrekt och "
+#~ "försök igen."
+
+#, c-format
+#~ msgid "“%s” is not a regular file."
+#~ msgstr "”%s” är inte en vanlig fil."
+
+#~ msgid "Connection timed out. Please try again."
+#~ msgstr "Anslutningens tidsgräns överstegs. Försök igen."
+
+#, c-format
+#~ msgid "Unexpected error: %s"
+#~ msgstr "Oväntat fel: %s"
+
+#~ msgid ""
+#~ "The disk where you are trying to save the file has a limitation on file "
+#~ "sizes. Please try saving a smaller file or saving it to a disk that does "
+#~ "not have this limitation."
+#~ msgstr ""
+#~ "Disken där du försöker spara filen har en begränsning på filstorlekar. "
+#~ "Försök att spara en mindre fil eller spara den på en disk som inte har "
+#~ "denna begränsning."
 
 #~ msgid "gedit is the text editor of the GNOME desktop environment."
 #~ msgstr "gedit är textredigeraren för skrivbordsmiljön GNOME."
@@ -3675,14 +3342,15 @@ msgstr "Infogar aktuellt datum och tid vid markörpositionen."
 #~ msgstr "Sparning har inaktiverats av systemadministratören."
 
 #~ msgid "Changes to %d document will be permanently lost."
+
 #~ msgid_plural "Changes to %d documents will be permanently lost."
 #~ msgstr[0] "Ändringar i %d dokument kommer att vara borta för alltid."
 #~ msgstr[1] "Ändringar i %d dokument kommer att vara borta för alltid."
 
 #~ msgid "Docum_ents with unsaved changes:"
 #~ msgstr "Dokum_ent med osparade ändringar:"
-
 #~ msgctxt "window title"
+
 #~ msgid "Open"
 #~ msgstr "Öppna"
 
@@ -3732,8 +3400,8 @@ msgstr "Infogar aktuellt datum och tid vid markörpositionen."
 #~ msgstr ""
 #~ "Om du fortsätter med att spara denna fil kan du skada dokumentet. Spara "
 #~ "ändå?"
-
 #~ msgctxt "shortcut window"
+
 #~ msgid "Join selected lines"
 #~ msgstr "Sammanfoga markerade rader"
 
@@ -3754,8 +3422,8 @@ msgstr "Infogar aktuellt datum och tid vid markörpositionen."
 
 #~ msgid "Display _overview map"
 #~ msgstr "Visa ö_versiktskarta"
-
 #~ msgctxt "shortcut window"
+
 #~ msgid "Insert timestamp"
 #~ msgstr "Infoga tidsstämpel"
 
@@ -3788,16 +3456,16 @@ msgstr "Infogar aktuellt datum och tid vid markörpositionen."
 
 #~ msgid "text-x-script"
 #~ msgstr "text-x-script"
-
 #~| msgid "Document"
+
 #~ msgid "document-open"
 #~ msgstr "document-open"
 
 #~ msgid "view-sort-ascending"
 #~ msgstr "view-sort-ascending"
-
 #~| msgctxt "shortcut window"
 #~| msgid "Check spelling"
+
 #~ msgid "tools-check-spelling"
 #~ msgstr "tools-check-spelling"
 
@@ -3875,16 +3543,16 @@ msgstr "Infogar aktuellt datum och tid vid markörpositionen."
 
 #~ msgid "Suggestions"
 #~ msgstr "Förslag"
-
 #~ msgctxt "language"
+
 #~ msgid "%s (%s)"
 #~ msgstr "%s (%s)"
-
 #~ msgctxt "language"
+
 #~ msgid "Unknown (%s)"
 #~ msgstr "Okänd (%s)"
-
 #~ msgctxt "language"
+
 #~ msgid "Default"
 #~ msgstr "Standard"
 
