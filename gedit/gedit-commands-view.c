@@ -160,7 +160,7 @@ _gedit_cmd_view_highlight_mode (GSimpleAction *action,
 	{
 		GtkSourceLanguage *language;
 
-		language = gedit_document_get_language (active_document);
+		language = gtk_source_buffer_get_language (GTK_SOURCE_BUFFER (active_document));
 		tepl_language_chooser_select_language (TEPL_LANGUAGE_CHOOSER (dialog), language);
 	}
 

@@ -775,7 +775,7 @@ language_chooser_show_cb (TeplLanguageChooser *language_chooser,
 	{
 		GtkSourceLanguage *language;
 
-		language = gedit_document_get_language (active_document);
+		language = gtk_source_buffer_get_language (GTK_SOURCE_BUFFER (active_document));
 		tepl_language_chooser_select_language (language_chooser, language);
 	}
 }

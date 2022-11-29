@@ -141,7 +141,7 @@ update_time_of_last_save_or_load (GeditDocument *doc)
 static const gchar *
 get_language_string (GeditDocument *doc)
 {
-	GtkSourceLanguage *lang = gedit_document_get_language (doc);
+	GtkSourceLanguage *lang = gtk_source_buffer_get_language (GTK_SOURCE_BUFFER (doc));
 
 	return lang != NULL ? gtk_source_language_get_id (lang) : NO_LANGUAGE_NAME;
 }
@@ -1008,20 +1008,6 @@ gedit_document_set_language (GeditDocument     *doc,
 	g_return_if_fail (GEDIT_IS_DOCUMENT (doc));
 
 	set_language (doc, lang, TRUE);
-}
-
-/**
- * gedit_document_get_language:
- * @doc:
- *
- * Return value: (transfer none):
- */
-GtkSourceLanguage *
-gedit_document_get_language (GeditDocument *doc)
-{
-	g_return_val_if_fail (GEDIT_IS_DOCUMENT (doc), NULL);
-
-	return gtk_source_buffer_get_language (GTK_SOURCE_BUFFER (doc));
 }
 
 glong

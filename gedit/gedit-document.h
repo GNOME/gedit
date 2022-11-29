@@ -61,8 +61,6 @@ gboolean	 gedit_document_is_untitled			(GeditDocument       *doc);
 
 void 		 gedit_document_set_language			(GeditDocument       *doc,
 								 GtkSourceLanguage   *lang);
-GtkSourceLanguage
-		*gedit_document_get_language			(GeditDocument       *doc);
 
 gchar		*gedit_document_get_metadata			(GeditDocument       *doc,
 								 const gchar         *key);
