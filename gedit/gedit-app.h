@@ -39,7 +39,7 @@ struct _GeditAppClass
 	                                         const gchar *name_of_user_manual,
 	                                         const gchar *link_id_within_user_manual);
 
-	gchar *(*help_link_id)                  (GeditApp    *app,
+	gchar *(*get_help_uri)                  (GeditApp    *app,
 	                                         const gchar *name_of_user_manual,
 	                                         const gchar *link_id_within_user_manual);
 

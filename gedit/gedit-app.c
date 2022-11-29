@@ -174,7 +174,7 @@ gedit_app_dispose (GObject *object)
 }
 
 static gchar *
-gedit_app_help_link_id_impl (GeditApp    *app,
+gedit_app_get_help_uri_impl (GeditApp    *app,
                              const gchar *name_of_user_manual,
                              const gchar *link_id_within_user_manual)
 {
@@ -205,7 +205,7 @@ gedit_app_show_help_impl (GeditApp    *app,
 		name_of_user_manual = "gedit";
 	}
 
-	uri = GEDIT_APP_GET_CLASS (app)->help_link_id (app,
+	uri = GEDIT_APP_GET_CLASS (app)->get_help_uri (app,
 						       name_of_user_manual,
 						       link_id_within_user_manual);
 
@@ -1175,7 +1175,7 @@ gedit_app_class_init (GeditAppClass *klass)
 	app_class->shutdown = gedit_app_shutdown;
 
 	klass->show_help = gedit_app_show_help_impl;
-	klass->help_link_id = gedit_app_help_link_id_impl;
+	klass->get_help_uri = gedit_app_get_help_uri_impl;
 	klass->set_window_title = gedit_app_set_window_title_impl;
 	klass->create_window = gedit_app_create_window_impl;
 }

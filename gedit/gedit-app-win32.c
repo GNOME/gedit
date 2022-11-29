@@ -44,7 +44,7 @@ struct _GeditAppWin32
 G_DEFINE_TYPE (GeditAppWin32, gedit_app_win32, GEDIT_TYPE_APP)
 
 static gchar *
-gedit_app_win32_help_link_id_impl (GeditApp    *app,
+gedit_app_win32_get_help_uri_impl (GeditApp    *app,
                                    const gchar *name_of_user_manual,
                                    const gchar *link_id_within_user_manual)
 {
@@ -127,7 +127,7 @@ gedit_app_win32_class_init (GeditAppWin32Class *klass)
 
 	gapp_class->startup = gedit_app_win32_startup;
 
-	app_class->help_link_id = gedit_app_win32_help_link_id_impl;
+	app_class->get_help_uri = gedit_app_win32_get_help_uri_impl;
 }
 
 static void
