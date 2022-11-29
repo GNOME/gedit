@@ -248,19 +248,19 @@ load_file_list (GeditWindow             *window,
 	if (num_loaded_files == 1)
 	{
 		GeditDocument *doc;
-		gchar *uri_for_display;
+		gchar *full_name;
 
 		g_return_val_if_fail (tab != NULL, loaded_files);
 
 		doc = gedit_tab_get_document (tab);
-		uri_for_display = _gedit_document_get_uri_for_display (doc);
+		full_name = tepl_file_get_full_name (tepl_buffer_get_file (TEPL_BUFFER (doc)));
 
 		gedit_statusbar_flash_message (statusbar,
 					       window->priv->generic_message_cid,
 					       _("Loading file “%s”\342\200\246"),
-					       uri_for_display);
+					       full_name);
 
-		g_free (uri_for_display);
+		g_free (full_name);
 	}
 	else
 	{
@@ -937,7 +937,7 @@ gedit_commands_save_document_async (GeditDocument       *document,
 	GTask *task;
 	GeditTab *tab;
 	GtkSourceFile *file;
-	gchar *uri_for_display;
+	gchar *full_name;
 	GeditStatusbar *statusbar;
 
 	gedit_debug (DEBUG_COMMANDS);
@@ -964,15 +964,15 @@ gedit_commands_save_document_async (GeditDocument       *document,
 		return;
 	}
 
-	uri_for_display = _gedit_document_get_uri_for_display (document);
+	full_name = tepl_file_get_full_name (tepl_buffer_get_file (TEPL_BUFFER (document)));
 
 	statusbar = GEDIT_STATUSBAR (gedit_window_get_statusbar (window));
 	gedit_statusbar_flash_message (statusbar,
 				       window->priv->generic_message_cid,
 				       _("Saving file “%s”\342\200\246"),
-				       uri_for_display);
+				       full_name);
 
-	g_free (uri_for_display);
+	g_free (full_name);
 
 	_gedit_tab_save_async (tab,
 			       cancellable,
@@ -1291,14 +1291,14 @@ save_documents_list (GeditWindow *window,
 			   - GEDIT_TAB_STATE_CLOSING: this state is invalid in this case
 			*/
 
-			gchar *uri_for_display;
+			gchar *full_name;
 
-			uri_for_display = _gedit_document_get_uri_for_display (doc);
+			full_name = tepl_file_get_full_name (tepl_buffer_get_file (TEPL_BUFFER (doc)));
 			gedit_debug_message (DEBUG_COMMANDS,
 					     "File '%s' not saved. State: %d",
-					     uri_for_display,
+					     full_name,
 					     state);
-			g_free (uri_for_display);
+			g_free (full_name);
 		}
 	}
 

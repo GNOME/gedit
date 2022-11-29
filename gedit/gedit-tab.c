@@ -1459,22 +1459,15 @@ gchar *
 _gedit_tab_get_tooltip (GeditTab *tab)
 {
 	GeditDocument *doc;
+	gchar *full_name;
+	gchar *full_name_markup;
 	gchar *tip;
-	gchar *uri;
-	gchar *ruri;
-	gchar *ruri_markup;
 
 	g_return_val_if_fail (GEDIT_IS_TAB (tab), NULL);
 
 	doc = gedit_tab_get_document (tab);
-
-	uri = _gedit_document_get_uri_for_display (doc);
-	g_return_val_if_fail (uri != NULL, NULL);
-
-	ruri = 	tepl_utils_replace_home_dir_with_tilde (uri);
-	g_free (uri);
-
-	ruri_markup = g_markup_printf_escaped ("<i>%s</i>", ruri);
+	full_name = tepl_file_get_full_name (tepl_buffer_get_file (TEPL_BUFFER (doc)));
+	full_name_markup = g_markup_printf_escaped ("<i>%s</i>", full_name);
 
 	switch (tab->state)
 	{
@@ -1487,19 +1480,17 @@ _gedit_tab_get_tooltip (GeditTab *tab)
 		const GtkSourceEncoding *enc;
 
 		case GEDIT_TAB_STATE_LOADING_ERROR:
-			tip = g_strdup_printf (_("Error opening file %s"),
-					       ruri_markup);
+			tip = g_strdup_printf (_("Error opening file %s"), full_name_markup);
 			break;
 
 		case GEDIT_TAB_STATE_REVERTING_ERROR:
-			tip = g_strdup_printf (_("Error reverting file %s"),
-					       ruri_markup);
+			tip = g_strdup_printf (_("Error reverting file %s"), full_name_markup);
 			break;
 
 		case GEDIT_TAB_STATE_SAVING_ERROR:
-			tip =  g_strdup_printf (_("Error saving file %s"),
-						ruri_markup);
+			tip =  g_strdup_printf (_("Error saving file %s"), full_name_markup);
 			break;
+
 		default:
 			content_type = gedit_document_get_content_type (doc);
 			mime_type = gedit_document_get_mime_type (doc);
@@ -1528,7 +1519,7 @@ _gedit_tab_get_tooltip (GeditTab *tab)
 			tip =  g_markup_printf_escaped ("<b>%s</b> %s\n\n"
 						        "<b>%s</b> %s\n"
 						        "<b>%s</b> %s",
-						        _("Name:"), ruri,
+						        _("Name:"), full_name,
 						        _("MIME Type:"), content_full_description,
 						        _("Encoding:"), encoding);
 
@@ -1537,9 +1528,8 @@ _gedit_tab_get_tooltip (GeditTab *tab)
 			break;
 	}
 
-	g_free (ruri);
-	g_free (ruri_markup);
-
+	g_free (full_name);
+	g_free (full_name_markup);
 	return tip;
 }
 

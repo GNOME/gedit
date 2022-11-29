@@ -534,7 +534,7 @@ create_compositor (GeditPrintJob *job)
 		gchar *name_to_display;
 		gchar *left;
 
-		doc_name = _gedit_document_get_uri_for_display (GEDIT_DOCUMENT (buf));
+		doc_name = tepl_file_get_full_name (tepl_buffer_get_file (TEPL_BUFFER (buf)));
 		name_to_display = tepl_utils_str_middle_truncate (doc_name, 60);
 
 		left = g_strdup_printf (_("File: %s"), name_to_display);

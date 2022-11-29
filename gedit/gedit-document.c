@@ -734,28 +734,6 @@ set_content_type (GeditDocument *doc,
 	}
 }
 
-/* Note: this never returns %NULL. */
-gchar *
-_gedit_document_get_uri_for_display (GeditDocument *doc)
-{
-	TeplFile *file;
-	GFile *location;
-
-	g_return_val_if_fail (GEDIT_IS_DOCUMENT (doc), g_strdup (""));
-
-	file = tepl_buffer_get_file (TEPL_BUFFER (doc));
-	location = tepl_file_get_location (file);
-
-	if (location == NULL)
-	{
-		return tepl_file_get_short_name (file);
-	}
-	else
-	{
-		return g_file_get_parse_name (location);
-	}
-}
-
 /**
  * gedit_document_get_short_name_for_display:
  * @doc: a #GeditDocument.
