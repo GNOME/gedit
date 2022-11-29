@@ -1,7 +1,8 @@
 gedit
 =====
 
-gedit is a general-purpose text editor.
+gedit is a general-purpose text editor. It has been created in 1998, at the
+beginnings of GNOME.
 
 The first goal of gedit is to be easy to use, with a simple interface by
 default. More advanced features are available by enabling plugins.
