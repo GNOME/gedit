@@ -805,8 +805,6 @@ setup_statusbar (GeditWindow *window)
 
 	window->priv->generic_message_cid = gtk_statusbar_get_context_id
 		(GTK_STATUSBAR (window->priv->statusbar), "generic_message");
-	window->priv->tip_message_cid = gtk_statusbar_get_context_id
-		(GTK_STATUSBAR (window->priv->statusbar), "tip_message");
 	window->priv->bracket_match_message_cid = gtk_statusbar_get_context_id
 		(GTK_STATUSBAR (window->priv->statusbar), "bracket_match_message");
 
