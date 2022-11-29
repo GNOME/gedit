@@ -3389,7 +3389,7 @@ gedit_window_get_bottom_panel (GeditWindow *window)
 GtkWidget *
 gedit_window_get_statusbar (GeditWindow *window)
 {
-	g_return_val_if_fail (GEDIT_IS_WINDOW (window), 0);
+	g_return_val_if_fail (GEDIT_IS_WINDOW (window), NULL);
 
 	return window->priv->statusbar;
 }
