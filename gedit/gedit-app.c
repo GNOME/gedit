@@ -175,48 +175,52 @@ gedit_app_dispose (GObject *object)
 
 static gchar *
 gedit_app_help_link_id_impl (GeditApp    *app,
-                             const gchar *name,
-                             const gchar *link_id)
+                             const gchar *name_of_user_manual,
+                             const gchar *link_id_within_user_manual)
 {
-	if (link_id)
+	if (link_id_within_user_manual != NULL)
 	{
-		return g_strdup_printf ("help:%s/%s", name, link_id);
+		return g_strdup_printf ("help:%s/%s",
+					name_of_user_manual,
+					link_id_within_user_manual);
 	}
 	else
 	{
-		return g_strdup_printf ("help:%s", name);
+		return g_strdup_printf ("help:%s", name_of_user_manual);
 	}
 }
 
 static gboolean
 gedit_app_show_help_impl (GeditApp    *app,
-                          GtkWindow   *parent,
-                          const gchar *name,
-                          const gchar *link_id)
+                          GtkWindow   *parent_window,
+                          const gchar *name_of_user_manual,
+                          const gchar *link_id_within_user_manual)
 {
-	GError *error = NULL;
+	gchar *uri;
 	gboolean ret;
-	gchar *link;
+	GError *error = NULL;
 
-	if (name == NULL)
+	if (name_of_user_manual == NULL)
 	{
-		name = "gedit";
+		name_of_user_manual = "gedit";
 	}
 
-	link = GEDIT_APP_GET_CLASS (app)->help_link_id (app, name, link_id);
+	uri = GEDIT_APP_GET_CLASS (app)->help_link_id (app,
+						       name_of_user_manual,
+						       link_id_within_user_manual);
 
-	ret = gtk_show_uri_on_window (GTK_WINDOW (parent),
-	                    link,
-	                    GDK_CURRENT_TIME,
-	                    &error);
+	ret = gtk_show_uri_on_window (parent_window,
+				      uri,
+				      GDK_CURRENT_TIME,
+				      &error);
 
-	g_free (link);
+	g_free (uri);
 
 	if (error != NULL)
 	{
 		GtkWidget *dialog;
 
-		dialog = gtk_message_dialog_new (parent,
+		dialog = gtk_message_dialog_new (parent_window,
 						 GTK_DIALOG_DESTROY_WITH_PARENT,
 						 GTK_MESSAGE_ERROR,
 						 GTK_BUTTONS_CLOSE,
@@ -1414,16 +1418,50 @@ gedit_app_get_views (GeditApp *app)
 	return res;
 }
 
+/**
+ * gedit_app_show_help:
+ * @app: a #GeditApp.
+ * @parent_window: (nullable): the #GtkWindow where the request originates from.
+ * @name_of_user_manual: (nullable): %NULL for gedit's user manual, otherwise
+ *   the name of another user manual (e.g., one from another application).
+ * @link_id_within_user_manual: (nullable): a link ID within the user manual, or
+ *   %NULL to show the start page.
+ *
+ * To show the user manual.
+ *
+ * As a useful information to know, the gedit user documentation is currently
+ * written in Mallard. As such, this functionality can easily be tested with
+ * Yelp on Linux:
+ *
+ * With @name_of_user_manual and @link_id_within_user_manual both %NULL, it is
+ * equivalent to:
+ *
+ * `$ yelp 'help:gedit'`
+ *
+ * With @link_id_within_user_manual set to `"gedit-replace"` (a Mallard page
+ * id):
+ *
+ * `$ yelp 'help:gedit/gedit-replace'`
+ *
+ * It is also possible to refer to a section id within a page id, for example:
+ *
+ * `$ yelp 'help:gedit/gedit-spellcheck#dict'`
+ *
+ * Returns: whether the operation was successful.
+ */
 gboolean
 gedit_app_show_help (GeditApp    *app,
-                     GtkWindow   *parent,
-                     const gchar *name,
-                     const gchar *link_id)
+                     GtkWindow   *parent_window,
+                     const gchar *name_of_user_manual,
+                     const gchar *link_id_within_user_manual)
 {
 	g_return_val_if_fail (GEDIT_IS_APP (app), FALSE);
-	g_return_val_if_fail (parent == NULL || GTK_IS_WINDOW (parent), FALSE);
+	g_return_val_if_fail (parent_window == NULL || GTK_IS_WINDOW (parent_window), FALSE);
 
-	return GEDIT_APP_GET_CLASS (app)->show_help (app, parent, name, link_id);
+	return GEDIT_APP_GET_CLASS (app)->show_help (app,
+						     parent_window,
+						     name_of_user_manual,
+						     link_id_within_user_manual);
 }
 
 void

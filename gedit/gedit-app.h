@@ -35,13 +35,13 @@ struct _GeditAppClass
 	GtkApplicationClass parent_class;
 
 	gboolean (*show_help)                   (GeditApp    *app,
-	                                         GtkWindow   *parent,
-	                                         const gchar *name,
-	                                         const gchar *link_id);
+	                                         GtkWindow   *parent_window,
+	                                         const gchar *name_of_user_manual,
+	                                         const gchar *link_id_within_user_manual);
 
 	gchar *(*help_link_id)                  (GeditApp    *app,
-	                                         const gchar *name,
-	                                         const gchar *link_id);
+	                                         const gchar *name_of_user_manual,
+	                                         const gchar *link_id_within_user_manual);
 
 	void (*set_window_title)                (GeditApp    *app,
 	                                         GeditWindow *window,
@@ -64,9 +64,9 @@ GList		*gedit_app_get_documents		(GeditApp    *app);
 GList		*gedit_app_get_views			(GeditApp    *app);
 
 gboolean	 gedit_app_show_help			(GeditApp    *app,
-                                                         GtkWindow   *parent,
-                                                         const gchar *name,
-                                                         const gchar *link_id);
+                                                         GtkWindow   *parent_window,
+                                                         const gchar *name_of_user_manual,
+                                                         const gchar *link_id_within_user_manual);
 
 void		 gedit_app_set_window_title		(GeditApp    *app,
                                                          GeditWindow *window,
