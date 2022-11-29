@@ -50,12 +50,12 @@ gedit_app_win32_help_link_id_impl (GeditApp    *app,
 {
 	if (link_id)
 	{
-		return g_strdup_printf ("http://library.gnome.org/users/gedit/stable/%s",
+		return g_strdup_printf ("https://gedit-technology.net/user-manuals/gedit/%s",
 		                        link_id);
 	}
 	else
 	{
-		return g_strdup ("http://library.gnome.org/users/gedit/stable/");
+		return g_strdup ("https://gedit-technology.net/user-manuals/gedit/");
 	}
 }
 

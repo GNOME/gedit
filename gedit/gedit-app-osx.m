@@ -225,12 +225,12 @@ gedit_app_osx_show_help_impl (GeditApp    *app,
 
 		if (link_id)
 		{
-			link = g_strdup_printf ("http://library.gnome.org/users/gedit/stable/%s",
+			link = g_strdup_printf ("https://gedit-technology.net/user-manuals/gedit/%s",
 						link_id);
 		}
 		else
 		{
-			link = g_strdup ("http://library.gnome.org/users/gedit/stable/");
+			link = g_strdup ("https://gedit-technology.net/user-manuals/gedit/");
 		}
 
 		ret = gedit_app_osx_show_url (GEDIT_APP_OSX (app), link);
