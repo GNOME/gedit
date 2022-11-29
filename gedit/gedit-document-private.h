@@ -48,6 +48,9 @@ void		_gedit_document_set_create				(GeditDocument *doc,
 G_GNUC_INTERNAL
 gboolean	_gedit_document_get_create				(GeditDocument *doc);
 
+G_GNUC_INTERNAL
+gboolean	_gedit_document_is_untitled				(GeditDocument       *doc);
+
 G_END_DECLS
 
 #endif /* GEDIT_DOCUMENT_PRIVATE_H */

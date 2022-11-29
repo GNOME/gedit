@@ -55,8 +55,6 @@ gchar		*gedit_document_get_content_type		(GeditDocument       *doc);
 
 gchar		*gedit_document_get_mime_type			(GeditDocument       *doc);
 
-gboolean	 gedit_document_is_untitled			(GeditDocument       *doc);
-
 void 		 gedit_document_set_language			(GeditDocument       *doc,
 								 GtkSourceLanguage   *lang);
 

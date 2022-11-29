@@ -248,7 +248,7 @@ update_auto_save_timeout (GeditTab *tab)
 
 	if (tab->state == GEDIT_TAB_STATE_NORMAL &&
 	    tab->auto_save &&
-	    !gedit_document_is_untitled (doc) &&
+	    !_gedit_document_is_untitled (doc) &&
 	    !gtk_source_file_is_readonly (file))
 	{
 		install_auto_save_timeout (tab);
@@ -2472,7 +2472,7 @@ _gedit_tab_save_async (GeditTab            *tab,
 	}
 
 	doc = gedit_tab_get_document (tab);
-	g_return_if_fail (!gedit_document_is_untitled (doc));
+	g_return_if_fail (!_gedit_document_is_untitled (doc));
 
 	saving_task = g_task_new (tab, cancellable, callback, user_data);
 
@@ -2530,7 +2530,7 @@ gedit_tab_auto_save (GeditTab *tab)
 	doc = gedit_tab_get_document (tab);
 	file = gedit_document_get_file (doc);
 
-	g_return_val_if_fail (!gedit_document_is_untitled (doc), G_SOURCE_REMOVE);
+	g_return_val_if_fail (!_gedit_document_is_untitled (doc), G_SOURCE_REMOVE);
 	g_return_val_if_fail (!gtk_source_file_is_readonly (file), G_SOURCE_REMOVE);
 
 	if (!gtk_text_buffer_get_modified (GTK_TEXT_BUFFER (doc)))

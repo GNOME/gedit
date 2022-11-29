@@ -607,7 +607,7 @@ update_actions_sensitivity (GeditWindow *window)
 	g_simple_action_set_enabled (G_SIMPLE_ACTION (action),
 	                             ((state == GEDIT_TAB_STATE_NORMAL) ||
 	                              (state == GEDIT_TAB_STATE_EXTERNALLY_MODIFIED_NOTIFICATION)) &&
-	                             (doc != NULL) && !gedit_document_is_untitled (doc));
+	                             (doc != NULL) && !_gedit_document_is_untitled (doc));
 
 	action = g_action_map_lookup_action (G_ACTION_MAP (window), "reopen-closed-tab");
 	g_simple_action_set_enabled (G_SIMPLE_ACTION (action), (window->priv->closed_docs_stack != NULL));

@@ -917,8 +917,9 @@ gedit_document_saved_real (GeditDocument *doc)
 				 doc);
 }
 
+/* TODO: remove this function. */
 gboolean
-gedit_document_is_untitled (GeditDocument *doc)
+_gedit_document_is_untitled (GeditDocument *doc)
 {
 	TeplFile *file;
 

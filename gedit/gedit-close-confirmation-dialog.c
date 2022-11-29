@@ -285,7 +285,7 @@ add_buttons (GeditCloseConfirmationDialog *dlg)
 		file = gedit_document_get_file (doc);
 
 		if (gtk_source_file_is_readonly (file) ||
-		    gedit_document_is_untitled (doc))
+		    _gedit_document_is_untitled (doc))
 		{
 			save_as = TRUE;
 		}

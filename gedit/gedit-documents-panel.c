@@ -27,6 +27,7 @@
 
 #include "gedit-debug.h"
 #include "gedit-document.h"
+#include "gedit-document-private.h"
 #include "gedit-multi-notebook.h"
 #include "gedit-notebook.h"
 #include "gedit-notebook-popup-menu.h"
@@ -1146,7 +1147,7 @@ panel_on_drag_data_get (GtkWidget        *widget,
 		tab = GEDIT_TAB (GEDIT_DOCUMENTS_DOCUMENT_ROW (panel->drag_document_row)->ref);
 		doc = gedit_tab_get_document (tab);
 
-		if (!gedit_document_is_untitled (doc))
+		if (!_gedit_document_is_untitled (doc))
 		{
 			GtkSourceFile *file = gedit_document_get_file (doc);
 			GFile *location = gtk_source_file_get_location (file);

@@ -951,7 +951,7 @@ gedit_commands_save_document_async (GeditDocument       *document,
 	tab = gedit_tab_get_from_document (document);
 	file = gedit_document_get_file (document);
 
-	if (gedit_document_is_untitled (document) ||
+	if (_gedit_document_is_untitled (document) ||
 	    gtk_source_file_is_readonly (file))
 	{
 		gedit_debug_message (DEBUG_COMMANDS, "Untitled or Readonly");
@@ -1248,7 +1248,7 @@ save_documents_list (GeditWindow *window,
 
 				/* FIXME: manage the case of local readonly files owned by the
 				   user is running gedit - Paolo (Dec. 8, 2005) */
-				if (gedit_document_is_untitled (doc) ||
+				if (_gedit_document_is_untitled (doc) ||
 				    gtk_source_file_is_readonly (file))
 				{
 					if (data == NULL)
@@ -1559,7 +1559,7 @@ _gedit_cmd_file_revert (GSimpleAction *action,
 
 	doc = gedit_tab_get_document (tab);
 	g_return_if_fail (doc != NULL);
-	g_return_if_fail (!gedit_document_is_untitled (doc));
+	g_return_if_fail (!_gedit_document_is_untitled (doc));
 
 	dialog = revert_dialog (window, doc);
 
@@ -1694,7 +1694,7 @@ save_and_close_documents (GList         *docs,
 
 				/* FIXME: manage the case of local readonly files owned by the
 				 * user is running gedit - Paolo (Dec. 8, 2005) */
-				if (gedit_document_is_untitled (doc) ||
+				if (_gedit_document_is_untitled (doc) ||
 				    gtk_source_file_is_readonly (file))
 				{
 					if (data == NULL)
