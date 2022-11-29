@@ -31,11 +31,6 @@ G_BEGIN_DECLS
 
 G_DECLARE_FINAL_TYPE (GeditAppOSX, gedit_app_osx, GEDIT, APP_OSX, GeditApp)
 
-void		 gedit_app_osx_set_window_title		(GeditAppOSX   *app,
-							 GeditWindow   *window,
-							 const gchar   *title,
-							 GeditDocument *document);
-
 gboolean	 gedit_app_osx_show_url			(GeditAppOSX *app,
 							 const gchar *url);
 
