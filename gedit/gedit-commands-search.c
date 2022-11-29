@@ -99,9 +99,11 @@ static void
 text_found (GeditWindow *window,
 	    gint         occurrences)
 {
+	GeditStatusbar *statusbar = GEDIT_STATUSBAR (gedit_window_get_statusbar (window));
+
 	if (occurrences > 1)
 	{
-		gedit_statusbar_flash_message (GEDIT_STATUSBAR (window->priv->statusbar),
+		gedit_statusbar_flash_message (statusbar,
 					       window->priv->generic_message_cid,
 					       ngettext("Found and replaced %d occurrence",
 					     	        "Found and replaced %d occurrences",
@@ -110,13 +112,13 @@ text_found (GeditWindow *window,
 	}
 	else if (occurrences == 1)
 	{
-		gedit_statusbar_flash_message (GEDIT_STATUSBAR (window->priv->statusbar),
+		gedit_statusbar_flash_message (statusbar,
 					       window->priv->generic_message_cid,
 					       _("Found and replaced one occurrence"));
 	}
 	else
 	{
-		gedit_statusbar_flash_message (GEDIT_STATUSBAR (window->priv->statusbar),
+		gedit_statusbar_flash_message (statusbar,
 					       window->priv->generic_message_cid,
 					       " ");
 	}
@@ -130,11 +132,14 @@ text_not_found (GeditWindow        *window,
 {
 	const gchar *search_text;
 	gchar *truncated_text;
+	GeditStatusbar *statusbar;
 
 	search_text = gedit_replace_dialog_get_search_text (replace_dialog);
 	truncated_text = tepl_utils_str_end_truncate (search_text, MAX_MSG_LENGTH);
 
-	gedit_statusbar_flash_message (GEDIT_STATUSBAR (window->priv->statusbar),
+	statusbar = GEDIT_STATUSBAR (gedit_window_get_statusbar (window));
+
+	gedit_statusbar_flash_message (statusbar,
 				       window->priv->generic_message_cid,
 				       /* Translators: %s is replaced by the text
 				          entered by the user in the search box */
