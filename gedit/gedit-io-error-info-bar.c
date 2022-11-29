@@ -37,6 +37,7 @@
  * For example configure your router to add an http(s) domain on the block list
  * in the firewall. Then pass on the command line such an https:// address
  * (normally GIO/GVfs is able to open https:// files) and wait 2 min.
+ * There are also probably online services that mock that behavior.
  */
 
 static gboolean
