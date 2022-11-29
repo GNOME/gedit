@@ -444,7 +444,7 @@ doc_get_name (GeditDocument *doc)
 	gchar *name;
 	gchar *docname;
 
-	name = gedit_document_get_short_name_for_display (doc);
+	name = tepl_file_get_short_name (tepl_buffer_get_file (TEPL_BUFFER (doc)));
 
 	/* Truncate the name so it doesn't get insanely wide. */
 	docname = tepl_utils_str_middle_truncate (name, MAX_DOC_NAME_LENGTH);

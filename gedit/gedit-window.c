@@ -1033,8 +1033,7 @@ set_title (GeditWindow *window)
 
 	file = gedit_document_get_file (doc);
 
-	name = gedit_document_get_short_name_for_display (doc);
-
+	name = tepl_file_get_short_name (tepl_buffer_get_file (TEPL_BUFFER (doc)));
 	len = g_utf8_strlen (name, -1);
 
 	/* if the name is awfully long, truncate it and be done with it,

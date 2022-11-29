@@ -757,7 +757,7 @@ show_loading_info_bar (GTask *loading_task)
 
 	doc = gedit_tab_get_document (data->tab);
 
-	name = gedit_document_get_short_name_for_display (doc);
+	name = tepl_file_get_short_name (tepl_buffer_get_file (TEPL_BUFFER (doc)));
 	len = g_utf8_strlen (name, -1);
 
 	/* if the name is awfully long, truncate it and be done with it,
@@ -871,9 +871,7 @@ show_saving_info_bar (GTask *saving_task)
 	gedit_debug (DEBUG_TAB);
 
 	doc = gedit_tab_get_document (tab);
-
-	short_name = gedit_document_get_short_name_for_display (doc);
-
+	short_name = tepl_file_get_short_name (tepl_buffer_get_file (TEPL_BUFFER (doc)));
 	len = g_utf8_strlen (short_name, -1);
 
 	/* if the name is awfully long, truncate it and be done with it,
@@ -1434,8 +1432,7 @@ _gedit_tab_get_name (GeditTab *tab)
 	g_return_val_if_fail (GEDIT_IS_TAB (tab), NULL);
 
 	doc = gedit_tab_get_document (tab);
-
-	name = gedit_document_get_short_name_for_display (doc);
+	name = tepl_file_get_short_name (tepl_buffer_get_file (TEPL_BUFFER (doc)));
 
 	/* Truncate the name so it doesn't get insanely wide. */
 	docname = tepl_utils_str_middle_truncate (name, MAX_DOC_NAME_LENGTH);
@@ -2695,9 +2692,8 @@ get_print_settings (GeditTab *tab)
 	 */
 	gtk_print_settings_set (settings, GTK_PRINT_SETTINGS_OUTPUT_URI, NULL);
 
-	name = gedit_document_get_short_name_for_display (doc);
+	name = tepl_file_get_short_name (tepl_buffer_get_file (TEPL_BUFFER (doc)));
 	gtk_print_settings_set (settings, GTK_PRINT_SETTINGS_OUTPUT_BASENAME, name);
-
 	g_free (name);
 
 	return settings;

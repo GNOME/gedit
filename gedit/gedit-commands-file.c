@@ -849,7 +849,7 @@ save_as_tab_async (GeditTab            *tab,
 		gedit_file_chooser_dialog_set_current_folder (save_dialog, default_folder);
 		g_object_unref (default_folder);
 
-		docname = gedit_document_get_short_name_for_display (doc);
+		docname = tepl_file_get_short_name (tepl_buffer_get_file (TEPL_BUFFER (doc)));
 		gedit_file_chooser_dialog_set_current_name (save_dialog, docname);
 		g_free (docname);
 	}
@@ -1376,7 +1376,7 @@ do_revert (GeditWindow *window,
 	gedit_debug (DEBUG_COMMANDS);
 
 	doc = gedit_tab_get_document (tab);
-	docname = gedit_document_get_short_name_for_display (doc);
+	docname = tepl_file_get_short_name (tepl_buffer_get_file (TEPL_BUFFER (doc)));
 
 	statusbar = GEDIT_STATUSBAR (gedit_window_get_statusbar (window));
 	gedit_statusbar_flash_message (statusbar,
@@ -1427,7 +1427,7 @@ revert_dialog (GeditWindow   *window,
 
 	gedit_debug (DEBUG_COMMANDS);
 
-	docname = gedit_document_get_short_name_for_display (doc);
+	docname = tepl_file_get_short_name (tepl_buffer_get_file (TEPL_BUFFER (doc)));
 	primary_msg = g_strdup_printf (_("Revert unsaved changes to document “%s”?"),
 	                               docname);
 	g_free (docname);

@@ -734,23 +734,6 @@ set_content_type (GeditDocument *doc,
 	}
 }
 
-/**
- * gedit_document_get_short_name_for_display:
- * @doc: a #GeditDocument.
- *
- * Note: this never returns %NULL.
- **/
-gchar *
-gedit_document_get_short_name_for_display (GeditDocument *doc)
-{
-	TeplFile *file;
-
-	g_return_val_if_fail (GEDIT_IS_DOCUMENT (doc), g_strdup (""));
-
-	file = tepl_buffer_get_file (TEPL_BUFFER (doc));
-	return tepl_file_get_short_name (file);
-}
-
 gchar *
 gedit_document_get_content_type (GeditDocument *doc)
 {

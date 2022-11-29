@@ -26,7 +26,6 @@
 #include <tepl/tepl.h>
 
 #include "gedit-debug.h"
-#include "gedit-document-private.h"
 #include "gedit-print-preview.h"
 #include "gedit-utils.h"
 #include "gedit-dirs.h"
@@ -699,7 +698,7 @@ gedit_print_job_print (GeditPrintJob            *job,
 		       GtkWindow                *parent,
 		       GError                  **error)
 {
-	GeditDocument *doc;
+	TeplBuffer *buffer;
 	gchar *job_name;
 
 	g_return_val_if_fail (job->operation == NULL, GTK_PRINT_OPERATION_RESULT_ERROR);
@@ -721,8 +720,8 @@ gedit_print_job_print (GeditPrintJob            *job,
 							    page_setup);
 	}
 
-	doc = GEDIT_DOCUMENT (gtk_text_view_get_buffer (GTK_TEXT_VIEW (job->view)));
-	job_name = gedit_document_get_short_name_for_display (doc);
+	buffer = TEPL_BUFFER (gtk_text_view_get_buffer (GTK_TEXT_VIEW (job->view)));
+	job_name = tepl_file_get_short_name (tepl_buffer_get_file (buffer));
 	gtk_print_operation_set_job_name (job->operation, job_name);
 	g_free (job_name);
 

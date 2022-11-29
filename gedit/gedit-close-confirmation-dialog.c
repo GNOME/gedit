@@ -395,11 +395,8 @@ build_single_doc_dialog (GeditCloseConfirmationDialog *dlg)
 	add_buttons (dlg);
 
 	/* Primary message */
-	doc_name = gedit_document_get_short_name_for_display (doc);
-
-	str = g_markup_printf_escaped (_("Save changes to document “%s” before closing?"),
-				       doc_name);
-
+	doc_name = tepl_file_get_short_name (tepl_buffer_get_file (TEPL_BUFFER (doc)));
+	str = g_markup_printf_escaped (_("Save changes to document “%s” before closing?"), doc_name);
 	g_free (doc_name);
 
 	markup_str = g_strconcat ("<span weight=\"bold\" size=\"larger\">", str, "</span>", NULL);
@@ -429,7 +426,7 @@ create_list_box (GeditCloseConfirmationDialog *dlg)
 		GtkWidget *check_button;
 		GtkWidget *row;
 
-		name = gedit_document_get_short_name_for_display (doc);
+		name = tepl_file_get_short_name (tepl_buffer_get_file (TEPL_BUFFER (doc)));
 		check_button = gtk_check_button_new_with_label (name);
 		gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (check_button), TRUE);
 		gtk_widget_set_halign (check_button, GTK_ALIGN_START);
