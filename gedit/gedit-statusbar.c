@@ -19,32 +19,27 @@
  */
 
 #include "config.h"
-
 #include "gedit-statusbar.h"
-
-#include <string.h>
 #include <glib/gi18n.h>
-#include <gtk/gtk.h>
-
 #include "gedit-app.h"
 #include "gedit-status-menu-button.h"
 
 struct _GeditStatusbar
 {
-	GtkStatusbar  parent_instance;
+	GtkStatusbar parent_instance;
 
-	GtkWidget     *error_frame;
-	GtkWidget     *error_image;
-	GtkWidget     *state_frame;
-	GtkWidget     *load_image;
-	GtkWidget     *save_image;
-	GtkWidget     *print_image;
-	GtkWidget     *overwrite_mode_label;
+	GtkWidget *error_frame;
+	GtkWidget *error_image;
+	GtkWidget *state_frame;
+	GtkWidget *load_image;
+	GtkWidget *save_image;
+	GtkWidget *print_image;
+	GtkWidget *overwrite_mode_label;
 
 	/* tmp flash timeout data */
-	guint          flash_timeout;
-	guint          flash_context_id;
-	guint          flash_message_id;
+	guint flash_timeout;
+	guint flash_context_id;
+	guint flash_message_id;
 };
 
 G_DEFINE_TYPE (GeditStatusbar, gedit_statusbar, GTK_TYPE_STATUSBAR)
