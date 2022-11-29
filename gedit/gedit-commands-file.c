@@ -123,6 +123,7 @@ load_file_list (GeditWindow             *window,
 	gboolean jump_to = TRUE; /* Whether to jump to the new tab */
 	const GSList *l;
 	gint num_loaded_files = 0;
+	GeditStatusbar *statusbar;
 
 	gedit_debug (DEBUG_COMMANDS);
 
@@ -242,6 +243,8 @@ load_file_list (GeditWindow             *window,
 
 	loaded_files = g_slist_reverse (loaded_files);
 
+	statusbar = GEDIT_STATUSBAR (gedit_window_get_statusbar (window));
+
 	if (num_loaded_files == 1)
 	{
 		GeditDocument *doc;
@@ -252,7 +255,7 @@ load_file_list (GeditWindow             *window,
 		doc = gedit_tab_get_document (tab);
 		uri_for_display = _gedit_document_get_uri_for_display (doc);
 
-		gedit_statusbar_flash_message (GEDIT_STATUSBAR (window->priv->statusbar),
+		gedit_statusbar_flash_message (statusbar,
 					       window->priv->generic_message_cid,
 					       _("Loading file “%s”\342\200\246"),
 					       uri_for_display);
@@ -261,7 +264,7 @@ load_file_list (GeditWindow             *window,
 	}
 	else
 	{
-		gedit_statusbar_flash_message (GEDIT_STATUSBAR (window->priv->statusbar),
+		gedit_statusbar_flash_message (statusbar,
 					       window->priv->generic_message_cid,
 					       ngettext ("Loading %d file\342\200\246",
 							 "Loading %d files\342\200\246",
@@ -624,6 +627,7 @@ save_dialog_response_cb (GeditFileChooserDialog *dialog,
 	GtkSourceCompressionType compression_type;
 	GtkSourceCompressionType current_compression_type;
 	const GtkSourceEncoding *encoding;
+	GeditStatusbar *statusbar;
 
 	gedit_debug (DEBUG_COMMANDS);
 
@@ -672,7 +676,8 @@ save_dialog_response_cb (GeditFileChooserDialog *dialog,
 
 	parse_name = g_file_get_parse_name (location);
 
-	gedit_statusbar_flash_message (GEDIT_STATUSBAR (window->priv->statusbar),
+	statusbar = GEDIT_STATUSBAR (gedit_window_get_statusbar (window));
+	gedit_statusbar_flash_message (statusbar,
 				       window->priv->generic_message_cid,
 				       _("Saving file “%s”\342\200\246"),
 				       parse_name);
@@ -933,6 +938,7 @@ gedit_commands_save_document_async (GeditDocument       *document,
 	GeditTab *tab;
 	GtkSourceFile *file;
 	gchar *uri_for_display;
+	GeditStatusbar *statusbar;
 
 	gedit_debug (DEBUG_COMMANDS);
 
@@ -959,7 +965,9 @@ gedit_commands_save_document_async (GeditDocument       *document,
 	}
 
 	uri_for_display = _gedit_document_get_uri_for_display (document);
-	gedit_statusbar_flash_message (GEDIT_STATUSBAR (window->priv->statusbar),
+
+	statusbar = GEDIT_STATUSBAR (gedit_window_get_statusbar (window));
+	gedit_statusbar_flash_message (statusbar,
 				       window->priv->generic_message_cid,
 				       _("Saving file “%s”\342\200\246"),
 				       uri_for_display);
@@ -1363,13 +1371,15 @@ do_revert (GeditWindow *window,
 {
 	GeditDocument *doc;
 	gchar *docname;
+	GeditStatusbar *statusbar;
 
 	gedit_debug (DEBUG_COMMANDS);
 
 	doc = gedit_tab_get_document (tab);
 	docname = gedit_document_get_short_name_for_display (doc);
 
-	gedit_statusbar_flash_message (GEDIT_STATUSBAR (window->priv->statusbar),
+	statusbar = GEDIT_STATUSBAR (gedit_window_get_statusbar (window));
+	gedit_statusbar_flash_message (statusbar,
 				       window->priv->generic_message_cid,
 				       _("Reverting the document “%s”\342\200\246"),
 				       docname);
