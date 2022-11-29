@@ -180,7 +180,7 @@ update_document_info (GeditDocinfoPlugin *plugin,
 	gedit_debug_message (DEBUG_PLUGINS, "Chars non-space: %d", chars - white_chars);
 	gedit_debug_message (DEBUG_PLUGINS, "Bytes: %d", bytes);
 
-	doc_name = gedit_document_get_short_name_for_display (doc);
+	doc_name = tepl_file_get_short_name (tepl_buffer_get_file (TEPL_BUFFER (doc)));
 	gtk_header_bar_set_subtitle (GTK_HEADER_BAR (priv->header_bar), doc_name);
 	g_free (doc_name);
 
