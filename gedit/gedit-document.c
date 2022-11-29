@@ -232,9 +232,7 @@ gedit_document_get_property (GObject    *object,
 			     GParamSpec *pspec)
 {
 	GeditDocument *doc = GEDIT_DOCUMENT (object);
-	GeditDocumentPrivate *priv;
-
-	priv = gedit_document_get_instance_private (doc);
+	GeditDocumentPrivate *priv = gedit_document_get_instance_private (doc);
 
 	switch (prop_id)
 	{
@@ -315,8 +313,8 @@ gedit_document_class_init (GeditDocumentClass *klass)
 	 */
 	properties[PROP_CONTENT_TYPE] =
 		g_param_spec_string ("content-type",
-		                     "Content Type",
-		                     "The document's Content Type",
+		                     "content-type",
+		                     "",
 		                     NULL,
 		                     G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS);
 
@@ -327,8 +325,8 @@ gedit_document_class_init (GeditDocumentClass *klass)
 	 */
 	properties[PROP_MIME_TYPE] =
 		g_param_spec_string ("mime-type",
-		                     "MIME Type",
-		                     "The document's MIME Type",
+		                     "mime-type",
+		                     "",
 		                     "text/plain",
 		                     G_PARAM_READABLE | G_PARAM_STATIC_STRINGS);
 
@@ -339,11 +337,13 @@ gedit_document_class_init (GeditDocumentClass *klass)
 	 * The property is used internally by gedit. It must not be used in a
 	 * gedit plugin. The property can be modified or removed at any time.
 	 * </warning>
+	 *
+	 * Whether the search is empty.
 	 */
 	properties[PROP_EMPTY_SEARCH] =
 		g_param_spec_boolean ("empty-search",
-		                      "Empty search",
-		                      "Whether the search is empty",
+		                      "empty-search",
+		                      "",
 		                      TRUE,
 		                      G_PARAM_READABLE | G_PARAM_STATIC_STRINGS);
 
