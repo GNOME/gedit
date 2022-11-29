@@ -21,14 +21,9 @@
  */
 
 #include "gedit-print-job.h"
-
 #include <glib/gi18n.h>
 #include <tepl/tepl.h>
-
-#include "gedit-debug.h"
 #include "gedit-print-preview.h"
-#include "gedit-utils.h"
-#include "gedit-dirs.h"
 #include "gedit-settings.h"
 
 struct _GeditPrintJob
