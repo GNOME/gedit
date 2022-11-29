@@ -20,6 +20,7 @@
 
 #include "config.h"
 #include "gedit-statusbar.h"
+#include <tepl/tepl.h>
 #include <glib/gi18n.h>
 #include "gedit-app.h"
 #include "gedit-status-menu-button.h"
@@ -34,7 +35,8 @@ struct _GeditStatusbar
 	GtkWidget *load_image;
 	GtkWidget *save_image;
 	GtkWidget *print_image;
-	GtkLabel *overwrite_mode_label;
+
+	TeplOverwriteIndicator *overwrite_indicator;
 
 	/* tmp flash timeout data */
 	guint flash_timeout;
@@ -43,53 +45,6 @@ struct _GeditStatusbar
 };
 
 G_DEFINE_TYPE (GeditStatusbar, gedit_statusbar, GTK_TYPE_STATUSBAR)
-
-static const gchar *
-get_insert_mode_string (void)
-{
-	/* Translators: "INS" is the abbreviation for "Insert", for the text
-	 * cursor mode. The translation should be short too.
-	 */
-	return _("INS");
-}
-
-static const gchar *
-get_overwrite_mode_string (void)
-{
-	/* Translators: "OVR" is the abbreviation for "Overwrite", for the text
-	 * cursor mode. The translation should be short too.
-	 */
-	return _("OVR");
-}
-
-static gchar *
-get_cursor_mode_string_with_padding (gboolean overwrite)
-{
-	const gchar *mode_str;
-
-	mode_str = overwrite ? get_overwrite_mode_string () : get_insert_mode_string ();
-
-	/* Use spaces to leave padding proportional to the font size. */
-	return g_strdup_printf ("  %s  ", mode_str);
-}
-
-static gint
-get_cursor_mode_length_with_padding (void)
-{
-	gchar *for_insert;
-	gchar *for_overwrite;
-	gint length;
-
-	for_insert = get_cursor_mode_string_with_padding (FALSE);
-	for_overwrite = get_cursor_mode_string_with_padding (TRUE);
-
-	length = MAX (g_utf8_strlen (for_insert, -1), g_utf8_strlen (for_overwrite, -1));
-
-	g_free (for_insert);
-	g_free (for_overwrite);
-
-	return length;
-}
 
 static void
 gedit_statusbar_dispose (GObject *object)
@@ -122,7 +77,6 @@ gedit_statusbar_class_init (GeditStatusbarClass *klass)
 	gtk_widget_class_bind_template_child (widget_class, GeditStatusbar, load_image);
 	gtk_widget_class_bind_template_child (widget_class, GeditStatusbar, save_image);
 	gtk_widget_class_bind_template_child (widget_class, GeditStatusbar, print_image);
-	gtk_widget_class_bind_template_child (widget_class, GeditStatusbar, overwrite_mode_label);
 }
 
 static void
@@ -130,8 +84,12 @@ gedit_statusbar_init (GeditStatusbar *statusbar)
 {
 	gtk_widget_init_template (GTK_WIDGET (statusbar));
 
-	gtk_label_set_width_chars (statusbar->overwrite_mode_label,
-	                           get_cursor_mode_length_with_padding ());
+	statusbar->overwrite_indicator = tepl_overwrite_indicator_new ();
+	gtk_widget_show (GTK_WIDGET (statusbar->overwrite_indicator));
+
+	gtk_box_pack_end (GTK_BOX (statusbar),
+			  GTK_WIDGET (statusbar->overwrite_indicator),
+			  FALSE, FALSE, 0);
 }
 
 /**
@@ -158,13 +116,10 @@ void
 gedit_statusbar_set_overwrite (GeditStatusbar *statusbar,
                                gboolean        overwrite)
 {
-	gchar *str;
-
 	g_return_if_fail (GEDIT_IS_STATUSBAR (statusbar));
 
-	str = get_cursor_mode_string_with_padding (overwrite);
-	gtk_label_set_text (statusbar->overwrite_mode_label, str);
-	g_free (str);
+	tepl_overwrite_indicator_set_overwrite (statusbar->overwrite_indicator, overwrite);
+	gtk_widget_show (GTK_WIDGET (statusbar->overwrite_indicator));
 }
 
 void
@@ -172,7 +127,7 @@ gedit_statusbar_clear_overwrite (GeditStatusbar *statusbar)
 {
 	g_return_if_fail (GEDIT_IS_STATUSBAR (statusbar));
 
-	gtk_label_set_text (statusbar->overwrite_mode_label, NULL);
+	gtk_widget_hide (GTK_WIDGET (statusbar->overwrite_indicator));
 }
 
 static gboolean
