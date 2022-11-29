@@ -1,5 +1,4 @@
 /*
- * gedit-app-win32.c
  * This file is part of gedit
  *
  * Copyright (C) 2010 - Jesse van den Kieboom
@@ -24,12 +23,16 @@
 
 #define SAVE_DATADIR DATADIR
 #undef DATADIR
+
 #include <io.h>
 #include <conio.h>
+
 #ifndef _WIN32_WINNT
-#define _WIN32_WINNT 0x0501
+#  define _WIN32_WINNT 0x0501
 #endif
+
 #include <windows.h>
+
 #define DATADIR SAVE_DATADIR
 #undef SAVE_DATADIR
 
@@ -39,12 +42,6 @@ struct _GeditAppWin32
 };
 
 G_DEFINE_TYPE (GeditAppWin32, gedit_app_win32, GEDIT_TYPE_APP)
-
-static void
-gedit_app_win32_finalize (GObject *object)
-{
-	G_OBJECT_CLASS (gedit_app_win32_parent_class)->finalize (object);
-}
 
 static gchar *
 gedit_app_win32_help_link_id_impl (GeditApp    *app,
@@ -125,11 +122,8 @@ gedit_app_win32_startup (GApplication *application)
 static void
 gedit_app_win32_class_init (GeditAppWin32Class *klass)
 {
-	GObjectClass *object_class = G_OBJECT_CLASS (klass);
 	GApplicationClass *gapp_class = G_APPLICATION_CLASS (klass);
 	GeditAppClass *app_class = GEDIT_APP_CLASS (klass);
-
-	object_class->finalize = gedit_app_win32_finalize;
 
 	gapp_class->startup = gedit_app_win32_startup;
 

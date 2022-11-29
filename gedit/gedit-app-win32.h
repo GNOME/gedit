@@ -1,5 +1,4 @@
 /*
- * gedit-app-win32.h
  * This file is part of gedit
  *
  * Copyright (C) 2010 - Jesse van den Kieboom
@@ -29,7 +28,9 @@ G_BEGIN_DECLS
 
 #define GEDIT_TYPE_APP_WIN32 (gedit_app_win32_get_type ())
 
-G_DECLARE_FINAL_TYPE (GeditAppWin32, gedit_app_win32, GEDIT, APP_WIN32, GeditApp)
+G_DECLARE_FINAL_TYPE (GeditAppWin32, gedit_app_win32,
+		      GEDIT, APP_WIN32,
+		      GeditApp)
 
 G_END_DECLS
 
