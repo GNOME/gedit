@@ -22,7 +22,6 @@
 
 #include "gedit-print-job.h"
 #include <glib/gi18n.h>
-#include <tepl/tepl.h>
 #include "gedit-print-preview.h"
 #include "gedit-settings.h"
 
@@ -32,7 +31,7 @@ struct _GeditPrintJob
 
 	GSettings *gsettings;
 
-	GeditView *view;
+	TeplView *view;
 
 	GtkPrintOperation *operation;
 	GtkSourcePrintCompositor *compositor;
@@ -175,10 +174,12 @@ gedit_print_job_class_init (GeditPrintJobClass *klass)
 
 	properties[PROP_VIEW] =
 		g_param_spec_object ("view",
-		                     "Gedit View",
-		                     "Gedit View to print",
-		                     GEDIT_TYPE_VIEW,
-		                     G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS | G_PARAM_CONSTRUCT_ONLY);
+		                     "view",
+		                     "",
+		                     TEPL_TYPE_VIEW,
+		                     G_PARAM_READWRITE |
+				     G_PARAM_STATIC_STRINGS |
+				     G_PARAM_CONSTRUCT_ONLY);
 
 	g_object_class_install_properties (object_class, LAST_PROP, properties);
 
@@ -673,9 +674,9 @@ done_cb (GtkPrintOperation       *operation,
 }
 
 GeditPrintJob *
-gedit_print_job_new (GeditView *view)
+gedit_print_job_new (TeplView *view)
 {
-	g_return_val_if_fail (GEDIT_IS_VIEW (view), NULL);
+	g_return_val_if_fail (TEPL_IS_VIEW (view), NULL);
 
 	return g_object_new (GEDIT_TYPE_PRINT_JOB,
 			     "view", view,

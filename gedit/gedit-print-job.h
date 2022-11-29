@@ -22,14 +22,15 @@
 #ifndef GEDIT_PRINT_JOB_H
 #define GEDIT_PRINT_JOB_H
 
-#include <gtk/gtk.h>
-#include <gedit/gedit-view.h>
+#include <tepl/tepl.h>
 
 G_BEGIN_DECLS
 
 #define GEDIT_TYPE_PRINT_JOB (gedit_print_job_get_type())
 
-G_DECLARE_FINAL_TYPE (GeditPrintJob, gedit_print_job, GEDIT, PRINT_JOB, GObject)
+G_DECLARE_FINAL_TYPE (GeditPrintJob, gedit_print_job,
+		      GEDIT, PRINT_JOB,
+		      GObject)
 
 typedef enum
 {
@@ -44,7 +45,7 @@ typedef enum
 	GEDIT_PRINT_JOB_RESULT_ERROR
 } GeditPrintJobResult;
 
-GeditPrintJob		*gedit_print_job_new			(GeditView                *view);
+GeditPrintJob		*gedit_print_job_new			(TeplView *view);
 
 GtkPrintOperationResult	 gedit_print_job_print			(GeditPrintJob            *job,
 								 GtkPrintOperationAction   action,
@@ -53,15 +54,15 @@ GtkPrintOperationResult	 gedit_print_job_print			(GeditPrintJob            *job,
 								 GtkWindow                *parent,
 								 GError                  **error);
 
-void			 gedit_print_job_cancel			(GeditPrintJob            *job);
+void			 gedit_print_job_cancel			(GeditPrintJob *job);
 
-const gchar		*gedit_print_job_get_status_string	(GeditPrintJob            *job);
+const gchar		*gedit_print_job_get_status_string	(GeditPrintJob *job);
 
-gdouble			 gedit_print_job_get_progress		(GeditPrintJob            *job);
+gdouble			 gedit_print_job_get_progress		(GeditPrintJob *job);
 
-GtkPrintSettings	*gedit_print_job_get_print_settings	(GeditPrintJob            *job);
+GtkPrintSettings	*gedit_print_job_get_print_settings	(GeditPrintJob *job);
 
-GtkPageSetup		*gedit_print_job_get_page_setup		(GeditPrintJob            *job);
+GtkPageSetup		*gedit_print_job_get_page_setup		(GeditPrintJob *job);
 
 G_END_DECLS
 

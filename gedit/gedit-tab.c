@@ -2863,7 +2863,7 @@ _gedit_tab_print (GeditTab *tab)
 
 	view = gedit_tab_get_view (tab);
 
-	tab->print_job = gedit_print_job_new (view);
+	tab->print_job = gedit_print_job_new (TEPL_VIEW (view));
 
 	add_printing_info_bar (tab);
 
