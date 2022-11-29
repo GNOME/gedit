@@ -45,9 +45,9 @@ typedef struct
 
 	TeplMetadata *metadata;
 
-	gchar	    *content_type;
+	gchar *content_type;
 
-	GDateTime   *time_of_last_save_or_load;
+	GDateTime *time_of_last_save_or_load;
 
 	/* The search context for the incremental search, or the search and
 	 * replace. They are mutually exclusive.
@@ -74,21 +74,20 @@ enum
 	PROP_CONTENT_TYPE,
 	PROP_MIME_TYPE,
 	PROP_EMPTY_SEARCH,
-	LAST_PROP
+	N_PROPERTIES
 };
-
-static GParamSpec *properties[LAST_PROP];
 
 enum
 {
-	LOAD,
-	LOADED,
-	SAVE,
-	SAVED,
-	LAST_SIGNAL
+	SIGNAL_LOAD,
+	SIGNAL_LOADED,
+	SIGNAL_SAVE,
+	SIGNAL_SAVED,
+	N_SIGNALS
 };
 
-static guint document_signals[LAST_SIGNAL];
+static GParamSpec *properties[N_PROPERTIES];
+static guint document_signals[N_SIGNALS];
 
 G_DEFINE_TYPE_WITH_PRIVATE (GeditDocument, gedit_document, TEPL_TYPE_BUFFER)
 
@@ -348,7 +347,7 @@ gedit_document_class_init (GeditDocumentClass *klass)
 		                      TRUE,
 		                      G_PARAM_READABLE | G_PARAM_STATIC_STRINGS);
 
-	g_object_class_install_properties (object_class, LAST_PROP, properties);
+	g_object_class_install_properties (object_class, N_PROPERTIES, properties);
 
 	/**
 	 * GeditDocument::load:
@@ -360,7 +359,7 @@ gedit_document_class_init (GeditDocumentClass *klass)
 	 * file loading (the location, encoding, etc). Plugins should not need
 	 * those parameters.
 	 */
-	document_signals[LOAD] =
+	document_signals[SIGNAL_LOAD] =
 		g_signal_new ("load",
 			      G_OBJECT_CLASS_TYPE (object_class),
 			      G_SIGNAL_RUN_LAST,
@@ -379,7 +378,7 @@ gedit_document_class_init (GeditDocumentClass *klass)
 	 * signal was also emitted if an error occurred. Plugins should not need
 	 * the error parameter.
 	 */
-	document_signals[LOADED] =
+	document_signals[SIGNAL_LOADED] =
 		g_signal_new ("loaded",
 			      G_OBJECT_CLASS_TYPE (object_class),
 			      G_SIGNAL_RUN_FIRST,
@@ -397,7 +396,7 @@ gedit_document_class_init (GeditDocumentClass *klass)
 	 * file saving (the location, encoding, etc). Plugins should not need
 	 * those parameters.
 	 */
-	document_signals[SAVE] =
+	document_signals[SIGNAL_SAVE] =
 		g_signal_new ("save",
 			      G_OBJECT_CLASS_TYPE (object_class),
 			      G_SIGNAL_RUN_LAST,
@@ -417,7 +416,7 @@ gedit_document_class_init (GeditDocumentClass *klass)
 	 * get the result of the operation with
 	 * gedit_commands_save_document_finish().
 	 */
-	document_signals[SAVED] =
+	document_signals[SIGNAL_SAVED] =
 		g_signal_new ("saved",
 			      G_OBJECT_CLASS_TYPE (object_class),
 			      G_SIGNAL_RUN_FIRST,
