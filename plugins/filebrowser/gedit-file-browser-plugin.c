@@ -433,10 +433,19 @@ gedit_file_browser_plugin_update_state (GeditWindowActivatable *activatable)
 {
 	GeditFileBrowserPluginPrivate *priv = GEDIT_FILE_BROWSER_PLUGIN (activatable)->priv;
 	GeditDocument *doc;
+	GFile *location = NULL;
 
 	doc = gedit_window_get_active_document (priv->window);
-	gedit_file_browser_widget_set_active_root_enabled (priv->tree_widget,
-	                                                   doc != NULL && !gedit_document_is_untitled (doc));
+
+	if (doc != NULL)
+	{
+		TeplFile *file;
+
+		file = tepl_buffer_get_file (TEPL_BUFFER (doc));
+		location = tepl_file_get_location (file);
+	}
+
+	gedit_file_browser_widget_set_active_root_enabled (priv->tree_widget, location != NULL);
 }
 
 static void
