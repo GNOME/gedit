@@ -45,18 +45,18 @@ G_DEFINE_TYPE (GeditAppWin32, gedit_app_win32, GEDIT_TYPE_APP)
 
 static gchar *
 gedit_app_win32_help_link_id_impl (GeditApp    *app,
-                                   const gchar *name,
-                                   const gchar *link_id)
+                                   const gchar *name_of_user_manual,
+                                   const gchar *link_id_within_user_manual)
 {
-	if (link_id)
+	/* FIXME: name_of_user_manual is expected to be always "gedit" here. */
+
+	if (link_id_within_user_manual != NULL)
 	{
 		return g_strdup_printf ("https://gedit-technology.net/user-manuals/gedit/%s",
-		                        link_id);
+		                        link_id_within_user_manual);
 	}
-	else
-	{
-		return g_strdup ("https://gedit-technology.net/user-manuals/gedit/");
-	}
+
+	return g_strdup ("https://gedit-technology.net/user-manuals/gedit/");
 }
 
 static void
