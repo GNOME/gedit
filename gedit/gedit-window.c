@@ -1304,7 +1304,6 @@ remove_actions (GeditWindow *window)
 	g_action_map_remove_action (G_ACTION_MAP (window), "auto-indent");
 	g_action_map_remove_action (G_ACTION_MAP (window), "tab-width");
 	g_action_map_remove_action (G_ACTION_MAP (window), "use-spaces");
-	g_action_map_remove_action (G_ACTION_MAP (window), "display-right-margin");
 	g_action_map_remove_action (G_ACTION_MAP (window), "highlight-current-line");
 	g_action_map_remove_action (G_ACTION_MAP (window), "wrap-mode");
 }
@@ -1334,10 +1333,6 @@ sync_current_tab_actions (GeditWindow *window,
 		g_object_unref (action);
 
 		action = g_property_action_new ("use-spaces", new_view, "insert-spaces-instead-of-tabs");
-		g_action_map_add_action (G_ACTION_MAP (window), G_ACTION (action));
-		g_object_unref (action);
-
-		action = g_property_action_new ("display-right-margin", new_view, "show-right-margin");
 		g_action_map_add_action (G_ACTION_MAP (window), G_ACTION (action));
 		g_object_unref (action);
 
