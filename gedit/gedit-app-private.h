@@ -40,8 +40,6 @@ GMenuModel		*_gedit_app_get_notebook_menu		(GeditApp  *app);
 
 GMenuModel		*_gedit_app_get_tab_width_menu		(GeditApp  *app);
 
-GMenuModel		*_gedit_app_get_line_col_menu		(GeditApp  *app);
-
 GeditMenuExtension	*_gedit_app_extend_menu			(GeditApp    *app,
 								 const gchar *extension_point);
 

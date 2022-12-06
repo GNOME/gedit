@@ -878,10 +878,6 @@ setup_statusbar (GeditWindow *window)
 	                 "visible",
 	                 G_SETTINGS_BIND_GET);
 
-	/* Line Col button */
-	gtk_menu_button_set_menu_model (GTK_MENU_BUTTON (window->priv->line_col_button),
-	                                _gedit_app_get_line_col_menu (GEDIT_APP (g_application_get_default ())));
-
 	/* Tab Width button */
 	gtk_menu_button_set_menu_model (GTK_MENU_BUTTON (window->priv->tab_width_button),
 	                                _gedit_app_get_tab_width_menu (GEDIT_APP (g_application_get_default ())));

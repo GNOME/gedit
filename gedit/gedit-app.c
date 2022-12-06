@@ -62,7 +62,6 @@ typedef struct
 	GMenuModel        *hamburger_menu;
 	GMenuModel        *notebook_menu;
 	GMenuModel        *tab_width_menu;
-	GMenuModel        *line_col_menu;
 
 	PeasExtensionSet  *extensions;
 
@@ -168,7 +167,6 @@ gedit_app_dispose (GObject *object)
 	g_clear_object (&priv->hamburger_menu);
 	g_clear_object (&priv->notebook_menu);
 	g_clear_object (&priv->tab_width_menu);
-	g_clear_object (&priv->line_col_menu);
 
 	G_OBJECT_CLASS (gedit_app_parent_class)->dispose (object);
 }
@@ -678,7 +676,6 @@ gedit_app_startup (GApplication *application)
 
 	priv->notebook_menu = get_menu_model (GEDIT_APP (application), "notebook-menu");
 	priv->tab_width_menu = get_menu_model (GEDIT_APP (application), "tab-width-menu");
-	priv->line_col_menu = get_menu_model (GEDIT_APP (application), "line-col-menu");
 
 	/* Accelerators */
 	add_accelerator (GTK_APPLICATION (application), "app.new-window", "<Primary>N");
@@ -1643,18 +1640,6 @@ _gedit_app_get_tab_width_menu (GeditApp *app)
 	priv = gedit_app_get_instance_private (app);
 
 	return priv->tab_width_menu;
-}
-
-GMenuModel *
-_gedit_app_get_line_col_menu (GeditApp *app)
-{
-	GeditAppPrivate *priv;
-
-	g_return_val_if_fail (GEDIT_IS_APP (app), NULL);
-
-	priv = gedit_app_get_instance_private (app);
-
-	return priv->line_col_menu;
 }
 
 GeditMenuExtension *
