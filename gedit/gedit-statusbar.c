@@ -42,6 +42,8 @@ struct _GeditStatusbar
 	guint flash_timeout;
 	guint flash_context_id;
 	guint flash_message_id;
+
+	guint generic_message_context_id;
 };
 
 G_DEFINE_TYPE (GeditStatusbar, gedit_statusbar, GTK_TYPE_STATUSBAR)
@@ -90,6 +92,9 @@ gedit_statusbar_init (GeditStatusbar *statusbar)
 	gtk_box_pack_end (GTK_BOX (statusbar),
 			  GTK_WIDGET (statusbar->overwrite_indicator),
 			  FALSE, FALSE, 0);
+
+	statusbar->generic_message_context_id =
+		gtk_statusbar_get_context_id (GTK_STATUSBAR (statusbar), "generic_message");
 }
 
 /**
@@ -137,9 +142,37 @@ remove_message_timeout (GeditStatusbar *statusbar)
 	                      statusbar->flash_context_id,
 	                      statusbar->flash_message_id);
 
-	/* remove the timeout */
+	/* Remove the timeout. */
 	statusbar->flash_timeout = 0;
-  	return FALSE;
+	return G_SOURCE_REMOVE;
+}
+
+static void
+flash_text (GeditStatusbar *statusbar,
+	    guint           context_id,
+	    const gchar    *text)
+{
+	const guint32 flash_length = 3000; /* Three seconds. */
+
+	/* Remove a currently ongoing flash message. */
+	if (statusbar->flash_timeout > 0)
+	{
+		g_source_remove (statusbar->flash_timeout);
+		statusbar->flash_timeout = 0;
+
+		gtk_statusbar_remove (GTK_STATUSBAR (statusbar),
+				      statusbar->flash_context_id,
+				      statusbar->flash_message_id);
+	}
+
+	statusbar->flash_context_id = context_id;
+	statusbar->flash_message_id = gtk_statusbar_push (GTK_STATUSBAR (statusbar),
+							  context_id,
+							  text);
+
+	statusbar->flash_timeout = g_timeout_add (flash_length,
+						  (GSourceFunc) remove_message_timeout,
+						  statusbar);
 }
 
 /* FIXME this is an issue for introspection */
@@ -158,38 +191,39 @@ gedit_statusbar_flash_message (GeditStatusbar *statusbar,
 			       const gchar    *format,
 			       ...)
 {
-	const guint32 flash_length = 3000; /* three seconds */
 	va_list args;
-	gchar *msg;
+	gchar *text;
 
 	g_return_if_fail (GEDIT_IS_STATUSBAR (statusbar));
 	g_return_if_fail (format != NULL);
 
 	va_start (args, format);
-	msg = g_strdup_vprintf (format, args);
+	text = g_strdup_vprintf (format, args);
 	va_end (args);
 
-	/* remove a currently ongoing flash message */
-	if (statusbar->flash_timeout > 0)
-	{
-		g_source_remove (statusbar->flash_timeout);
-		statusbar->flash_timeout = 0;
+	flash_text (statusbar, context_id, text);
 
-		gtk_statusbar_remove (GTK_STATUSBAR (statusbar),
-		                      statusbar->flash_context_id,
-		                      statusbar->flash_message_id);
-	}
+	g_free (text);
+}
 
-	statusbar->flash_context_id = context_id;
-	statusbar->flash_message_id = gtk_statusbar_push (GTK_STATUSBAR (statusbar),
-							  context_id,
-							  msg);
+void
+_gedit_statusbar_flash_generic_message (GeditStatusbar *statusbar,
+					const gchar    *format,
+					...)
+{
+	va_list args;
+	gchar *text;
 
-	statusbar->flash_timeout = g_timeout_add (flash_length,
-						  (GSourceFunc) remove_message_timeout,
-						  statusbar);
+	g_return_if_fail (GEDIT_IS_STATUSBAR (statusbar));
+	g_return_if_fail (format != NULL);
 
-	g_free (msg);
+	va_start (args, format);
+	text = g_strdup_vprintf (format, args);
+	va_end (args);
+
+	flash_text (statusbar, statusbar->generic_message_context_id, text);
+
+	g_free (text);
 }
 
 void

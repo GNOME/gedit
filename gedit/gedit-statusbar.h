@@ -46,6 +46,11 @@ void		 gedit_statusbar_flash_message		(GeditStatusbar   *statusbar,
 							 const gchar      *format,
 							 ...) G_GNUC_PRINTF(3, 4);
 
+G_GNUC_INTERNAL
+void		_gedit_statusbar_flash_generic_message	(GeditStatusbar *statusbar,
+							 const gchar    *format,
+							 ...) G_GNUC_PRINTF(2, 3);
+
 G_END_DECLS
 
 #endif

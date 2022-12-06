@@ -36,7 +36,6 @@
 #include "gedit-tab.h"
 #include "gedit-tab-private.h"
 #include "gedit-window.h"
-#include "gedit-window-private.h"
 #include "gedit-notebook.h"
 #include "gedit-statusbar.h"
 #include "gedit-utils.h"
@@ -255,21 +254,19 @@ load_file_list (GeditWindow             *window,
 		doc = gedit_tab_get_document (tab);
 		full_name = tepl_file_get_full_name (tepl_buffer_get_file (TEPL_BUFFER (doc)));
 
-		gedit_statusbar_flash_message (statusbar,
-					       window->priv->generic_message_cid,
-					       _("Loading file “%s”\342\200\246"),
-					       full_name);
+		_gedit_statusbar_flash_generic_message (statusbar,
+							_("Loading file “%s”\342\200\246"),
+							full_name);
 
 		g_free (full_name);
 	}
 	else
 	{
-		gedit_statusbar_flash_message (statusbar,
-					       window->priv->generic_message_cid,
-					       ngettext ("Loading %d file\342\200\246",
-							 "Loading %d files\342\200\246",
-							 num_loaded_files),
-					       num_loaded_files);
+		_gedit_statusbar_flash_generic_message (statusbar,
+							ngettext ("Loading %d file\342\200\246",
+								  "Loading %d files\342\200\246",
+								  num_loaded_files),
+							num_loaded_files);
 	}
 
 	g_slist_free (files_to_load);
@@ -677,10 +674,9 @@ save_dialog_response_cb (GeditFileChooserDialog *dialog,
 	parse_name = g_file_get_parse_name (location);
 
 	statusbar = GEDIT_STATUSBAR (gedit_window_get_statusbar (window));
-	gedit_statusbar_flash_message (statusbar,
-				       window->priv->generic_message_cid,
-				       _("Saving file “%s”\342\200\246"),
-				       parse_name);
+	_gedit_statusbar_flash_generic_message (statusbar,
+						_("Saving file “%s”\342\200\246"),
+						parse_name);
 
 	g_free (parse_name);
 
@@ -967,10 +963,9 @@ gedit_commands_save_document_async (GeditDocument       *document,
 	full_name = tepl_file_get_full_name (tepl_buffer_get_file (TEPL_BUFFER (document)));
 
 	statusbar = GEDIT_STATUSBAR (gedit_window_get_statusbar (window));
-	gedit_statusbar_flash_message (statusbar,
-				       window->priv->generic_message_cid,
-				       _("Saving file “%s”\342\200\246"),
-				       full_name);
+	_gedit_statusbar_flash_generic_message (statusbar,
+						_("Saving file “%s”\342\200\246"),
+						full_name);
 
 	g_free (full_name);
 
@@ -1379,10 +1374,9 @@ do_revert (GeditWindow *window,
 	docname = tepl_file_get_short_name (tepl_buffer_get_file (TEPL_BUFFER (doc)));
 
 	statusbar = GEDIT_STATUSBAR (gedit_window_get_statusbar (window));
-	gedit_statusbar_flash_message (statusbar,
-				       window->priv->generic_message_cid,
-				       _("Reverting the document “%s”\342\200\246"),
-				       docname);
+	_gedit_statusbar_flash_generic_message (statusbar,
+						_("Reverting the document “%s”\342\200\246"),
+						docname);
 
 	g_free (docname);
 

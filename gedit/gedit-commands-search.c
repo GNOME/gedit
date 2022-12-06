@@ -37,7 +37,6 @@
 #include "gedit-tab-private.h"
 #include "gedit-view-frame.h"
 #include "gedit-window.h"
-#include "gedit-window-private.h"
 #include "gedit-utils.h"
 #include "gedit-replace-dialog.h"
 
@@ -103,24 +102,20 @@ text_found (GeditWindow *window,
 
 	if (occurrences > 1)
 	{
-		gedit_statusbar_flash_message (statusbar,
-					       window->priv->generic_message_cid,
-					       ngettext("Found and replaced %d occurrence",
-					     	        "Found and replaced %d occurrences",
-					     	        occurrences),
-					       occurrences);
+		_gedit_statusbar_flash_generic_message (statusbar,
+							ngettext("Found and replaced %d occurrence",
+								 "Found and replaced %d occurrences",
+								 occurrences),
+							occurrences);
 	}
 	else if (occurrences == 1)
 	{
-		gedit_statusbar_flash_message (statusbar,
-					       window->priv->generic_message_cid,
-					       _("Found and replaced one occurrence"));
+		_gedit_statusbar_flash_generic_message (statusbar,
+							_("Found and replaced one occurrence"));
 	}
 	else
 	{
-		gedit_statusbar_flash_message (statusbar,
-					       window->priv->generic_message_cid,
-					       " ");
+		_gedit_statusbar_flash_generic_message (statusbar, " ");
 	}
 }
 
@@ -139,11 +134,11 @@ text_not_found (GeditWindow        *window,
 
 	statusbar = GEDIT_STATUSBAR (gedit_window_get_statusbar (window));
 
-	gedit_statusbar_flash_message (statusbar,
-				       window->priv->generic_message_cid,
-				       /* Translators: %s is replaced by the text
-				          entered by the user in the search box */
-				       _("“%s” not found"), truncated_text);
+	_gedit_statusbar_flash_generic_message (statusbar,
+						/* Translators: %s is replaced by the text entered
+						 * by the user in the search box.
+						 */
+						_("“%s” not found"), truncated_text);
 
 	g_free (truncated_text);
 }
