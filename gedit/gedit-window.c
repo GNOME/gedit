@@ -82,6 +82,7 @@ struct _GeditWindowPrivate
 
 	/* statusbar and context ids for statusbar messages */
 	GtkWidget *statusbar;
+	TeplOverwriteIndicator *overwrite_indicator;
 	TeplLineColumnIndicator *line_column_indicator;
 	GtkWidget *tab_width_button;
 	GtkWidget *language_button;
@@ -877,15 +878,24 @@ setup_statusbar (GeditWindow *window)
 	                 "visible",
 	                 G_SETTINGS_BIND_GET);
 
+	/* Insert/Overwrite indicator */
+	window->priv->overwrite_indicator = tepl_overwrite_indicator_new ();
+	gtk_widget_show (GTK_WIDGET (window->priv->overwrite_indicator));
+	gtk_box_pack_end (GTK_BOX (window->priv->statusbar),
+			  GTK_WIDGET (window->priv->overwrite_indicator),
+			  FALSE, FALSE, 0);
+	// Explicit positioning.
+	gtk_box_reorder_child (GTK_BOX (window->priv->statusbar),
+			       GTK_WIDGET (window->priv->overwrite_indicator),
+			       0);
+
 	/* Line/Column indicator */
 	window->priv->line_column_indicator = tepl_line_column_indicator_new ();
 	gtk_widget_show (GTK_WIDGET (window->priv->line_column_indicator));
 	gtk_box_pack_end (GTK_BOX (window->priv->statusbar),
 			  GTK_WIDGET (window->priv->line_column_indicator),
 			  FALSE, FALSE, 0);
-	// Since it is a mix of *.ui and code, this is needed to put the
-	// TeplLineColumnIndicator just on the left of the
-	// TeplOverwriteIndicator.
+	// Explicit positioning.
 	gtk_box_reorder_child (GTK_BOX (window->priv->statusbar),
 			       GTK_WIDGET (window->priv->line_column_indicator),
 			       1);
@@ -1013,7 +1023,8 @@ set_overwrite_mode (GeditWindow *window,
 {
 	GAction *action;
 
-	gedit_statusbar_set_overwrite (GEDIT_STATUSBAR (window->priv->statusbar), overwrite);
+	tepl_overwrite_indicator_set_overwrite (window->priv->overwrite_indicator, overwrite);
+	gtk_widget_show (GTK_WIDGET (window->priv->overwrite_indicator));
 
 	action = g_action_map_lookup_action (G_ACTION_MAP (window), "overwrite-mode");
 	g_simple_action_set_state (G_SIMPLE_ACTION (action), g_variant_new_boolean (overwrite));
@@ -1962,10 +1973,8 @@ on_tab_removed (GeditMultiNotebook *multi,
 	{
 		set_title (window);
 
-		gedit_statusbar_clear_overwrite (
-				GEDIT_STATUSBAR (window->priv->statusbar));
-
 		/* hide the additional widgets */
+		gtk_widget_hide (GTK_WIDGET (window->priv->overwrite_indicator));
 		gtk_widget_hide (GTK_WIDGET (window->priv->line_column_indicator));
 		gtk_widget_hide (window->priv->tab_width_button);
 		gtk_widget_hide (window->priv->language_button);

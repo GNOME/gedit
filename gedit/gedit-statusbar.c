@@ -86,19 +86,6 @@ gedit_statusbar_init (GeditStatusbar *statusbar)
 {
 	gtk_widget_init_template (GTK_WIDGET (statusbar));
 
-	statusbar->overwrite_indicator = tepl_overwrite_indicator_new ();
-	gtk_widget_show (GTK_WIDGET (statusbar->overwrite_indicator));
-
-	gtk_box_pack_end (GTK_BOX (statusbar),
-			  GTK_WIDGET (statusbar->overwrite_indicator),
-			  FALSE, FALSE, 0);
-	/* Set the position explicitly, to be able to position also other
-	 * children.
-	 */
-	gtk_box_reorder_child (GTK_BOX (statusbar),
-			       GTK_WIDGET (statusbar->overwrite_indicator),
-			       0);
-
 	statusbar->generic_message_context_id =
 		gtk_statusbar_get_context_id (GTK_STATUSBAR (statusbar), "generic_message");
 }
@@ -114,31 +101,6 @@ GtkWidget *
 gedit_statusbar_new (void)
 {
 	return g_object_new (GEDIT_TYPE_STATUSBAR, NULL);
-}
-
-/**
- * gedit_statusbar_set_overwrite:
- * @statusbar: a #GeditStatusbar
- * @overwrite: if the overwrite mode is set
- *
- * Sets the overwrite mode on the statusbar.
- */
-void
-gedit_statusbar_set_overwrite (GeditStatusbar *statusbar,
-                               gboolean        overwrite)
-{
-	g_return_if_fail (GEDIT_IS_STATUSBAR (statusbar));
-
-	tepl_overwrite_indicator_set_overwrite (statusbar->overwrite_indicator, overwrite);
-	gtk_widget_show (GTK_WIDGET (statusbar->overwrite_indicator));
-}
-
-void
-gedit_statusbar_clear_overwrite (GeditStatusbar *statusbar)
-{
-	g_return_if_fail (GEDIT_IS_STATUSBAR (statusbar));
-
-	gtk_widget_hide (GTK_WIDGET (statusbar->overwrite_indicator));
 }
 
 static gboolean

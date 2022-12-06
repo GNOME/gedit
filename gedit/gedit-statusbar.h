@@ -36,11 +36,6 @@ void		 gedit_statusbar_set_window_state	(GeditStatusbar   *statusbar,
 							 GeditWindowState  state,
 							 gint              num_of_errors);
 
-void		 gedit_statusbar_set_overwrite		(GeditStatusbar   *statusbar,
-							 gboolean          overwrite);
-
-void		 gedit_statusbar_clear_overwrite 	(GeditStatusbar   *statusbar);
-
 void		 gedit_statusbar_flash_message		(GeditStatusbar   *statusbar,
 							 guint             context_id,
 							 const gchar      *format,
