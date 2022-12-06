@@ -65,7 +65,6 @@ struct _GeditWindowPrivate
 	GtkWidget *side_panel;
 	GtkWidget *side_stack_switcher;
 	GtkWidget *side_panel_inline_stack_switcher;
-	GtkWidget *bottom_panel_box;
 	GtkWidget *bottom_panel;
 
 	GtkWidget *hpaned;
@@ -78,7 +77,6 @@ struct _GeditWindowPrivate
 	GtkWidget *fullscreen_eventbox;
 	GtkRevealer *fullscreen_revealer;
 	GtkWidget *fullscreen_headerbar;
-	GtkWidget *fullscreen_new_button;
 	GtkMenuButton *fullscreen_gear_button;
 	GtkMenuButton *fullscreen_open_recent_button;
 
@@ -87,7 +85,6 @@ struct _GeditWindowPrivate
 	GtkWidget *line_col_button;
 	GtkWidget *tab_width_button;
 	GtkWidget *language_button;
-	GtkWidget *language_button_label;
 	GtkWidget *language_popover;
 	guint bracket_match_message_cid;
 	guint tab_width_id;
@@ -95,11 +92,8 @@ struct _GeditWindowPrivate
 	guint wrap_mode_changed_id;
 
 	/* Headerbars */
-	GtkWidget *titlebar_paned;
 	GtkWidget *side_headerbar;
 	GtkWidget *headerbar;
-
-	GtkWidget *new_button;
 
 	GtkMenuButton *gear_button;
 
@@ -527,17 +521,14 @@ gedit_window_class_init (GeditWindowClass *klass)
 	/* Bind class to template */
 	gtk_widget_class_set_template_from_resource (widget_class,
 	                                             "/org/gnome/gedit/ui/gedit-window.ui");
-	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, titlebar_paned);
 	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, side_headerbar);
 	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, headerbar);
-	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, new_button);
 	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, gear_button);
 	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, hpaned);
 	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, side_panel);
 	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, side_panel_inline_stack_switcher);
 	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, vpaned);
 	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, multi_notebook);
-	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, bottom_panel_box);
 	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, bottom_panel);
 	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, statusbar);
 	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, language_button);
@@ -546,7 +537,6 @@ gedit_window_class_init (GeditWindowClass *klass)
 	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, fullscreen_eventbox);
 	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, fullscreen_revealer);
 	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, fullscreen_headerbar);
-	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, fullscreen_new_button);
 	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, fullscreen_gear_button);
 }
 
