@@ -20,7 +20,6 @@
 
 #include "config.h"
 #include "gedit-statusbar.h"
-#include <tepl/tepl.h>
 #include <glib/gi18n.h>
 #include "gedit-app.h"
 #include "gedit-status-menu-button.h"
@@ -35,8 +34,6 @@ struct _GeditStatusbar
 	GtkWidget *load_image;
 	GtkWidget *save_image;
 	GtkWidget *print_image;
-
-	TeplOverwriteIndicator *overwrite_indicator;
 
 	/* tmp flash timeout data */
 	guint flash_timeout;
