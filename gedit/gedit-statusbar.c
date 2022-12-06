@@ -92,6 +92,12 @@ gedit_statusbar_init (GeditStatusbar *statusbar)
 	gtk_box_pack_end (GTK_BOX (statusbar),
 			  GTK_WIDGET (statusbar->overwrite_indicator),
 			  FALSE, FALSE, 0);
+	/* Set the position explicitly, to be able to position also other
+	 * children.
+	 */
+	gtk_box_reorder_child (GTK_BOX (statusbar),
+			       GTK_WIDGET (statusbar->overwrite_indicator),
+			       0);
 
 	statusbar->generic_message_context_id =
 		gtk_statusbar_get_context_id (GTK_STATUSBAR (statusbar), "generic_message");

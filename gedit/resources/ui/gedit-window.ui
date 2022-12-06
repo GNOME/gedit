@@ -241,23 +241,6 @@
                       <object class="GeditStatusbar" id="statusbar">
                         <property name="visible">True</property>
                         <child>
-                          <object class="GeditStatusMenuButton" id="line_col_button">
-                            <property name="visible">True</property>
-                            <property name="use_popover">True</property>
-                            <child internal-child="label">
-                              <object class="GtkLabel">
-                                <property name="width_chars">18</property>
-                                <property name="can_focus">False</property>
-                              </object>
-                            </child>
-                          </object>
-                          <packing>
-                            <property name="expand">False</property>
-                            <property name="fill">False</property>
-                            <property name="pack_type">end</property>
-                          </packing>
-                        </child>
-                        <child>
                           <object class="GeditStatusMenuButton" id="tab_width_button">
                             <property name="visible">True</property>
                             <property name="use_popover">True</property>
@@ -266,6 +249,7 @@
                             <property name="expand">False</property>
                             <property name="fill">False</property>
                             <property name="pack_type">end</property>
+                            <property name="position">2</property>
                           </packing>
                         </child>
                         <child>
@@ -277,6 +261,7 @@
                             <property name="expand">False</property>
                             <property name="fill">False</property>
                             <property name="pack_type">end</property>
+                            <property name="position">3</property>
                           </packing>
                         </child>
                       </object>

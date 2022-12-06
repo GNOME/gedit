@@ -82,7 +82,7 @@ struct _GeditWindowPrivate
 
 	/* statusbar and context ids for statusbar messages */
 	GtkWidget *statusbar;
-	GtkWidget *line_col_button;
+	TeplLineColumnIndicator *line_column_indicator;
 	GtkWidget *tab_width_button;
 	GtkWidget *language_button;
 	GtkWidget *language_popover;
@@ -532,7 +532,6 @@ gedit_window_class_init (GeditWindowClass *klass)
 	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, statusbar);
 	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, language_button);
 	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, tab_width_button);
-	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, line_col_button);
 	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, fullscreen_eventbox);
 	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, fullscreen_revealer);
 	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, fullscreen_headerbar);
@@ -878,6 +877,19 @@ setup_statusbar (GeditWindow *window)
 	                 "visible",
 	                 G_SETTINGS_BIND_GET);
 
+	/* Line/Column indicator */
+	window->priv->line_column_indicator = tepl_line_column_indicator_new ();
+	gtk_widget_show (GTK_WIDGET (window->priv->line_column_indicator));
+	gtk_box_pack_end (GTK_BOX (window->priv->statusbar),
+			  GTK_WIDGET (window->priv->line_column_indicator),
+			  FALSE, FALSE, 0);
+	// Since it is a mix of *.ui and code, this is needed to put the
+	// TeplLineColumnIndicator just on the left of the
+	// TeplOverwriteIndicator.
+	gtk_box_reorder_child (GTK_BOX (window->priv->statusbar),
+			       GTK_WIDGET (window->priv->line_column_indicator),
+			       1);
+
 	/* Tab Width button */
 	gtk_menu_button_set_menu_model (GTK_MENU_BUTTON (window->priv->tab_width_button),
 	                                _gedit_app_get_tab_width_menu (GEDIT_APP (g_application_get_default ())));
@@ -993,41 +1005,6 @@ bracket_matched_cb (GtkSourceBuffer           *buffer,
 		default:
 			g_assert_not_reached ();
 	}
-}
-
-static void
-update_cursor_position_statusbar (GtkTextBuffer *buffer,
-				  GeditWindow   *window)
-{
-	gint line, col;
-	GtkTextIter iter;
-	GeditView *view;
-	gchar *msg = NULL;
-
-	gedit_debug (DEBUG_WINDOW);
-
- 	if (buffer != GTK_TEXT_BUFFER (gedit_window_get_active_document (window)))
- 		return;
-
- 	view = gedit_window_get_active_view (window);
-
-	gtk_text_buffer_get_iter_at_mark (buffer,
-					  &iter,
-					  gtk_text_buffer_get_insert (buffer));
-
-	line = 1 + gtk_text_iter_get_line (&iter);
-	col = 1 + gtk_source_view_get_visual_column (GTK_SOURCE_VIEW (view), &iter);
-
-	if ((line >= 0) || (col >= 0))
-	{
-		/* Translators: "Ln" is an abbreviation for "Line", Col is an abbreviation for "Column". Please,
-		use abbreviations if possible to avoid space problems. */
-		msg = g_strdup_printf (_("  Ln %d, Col %d"), line, col);
-	}
-
-	gedit_status_menu_button_set_label (GEDIT_STATUS_MENU_BUTTON (window->priv->line_col_button), msg);
-
-	g_free (msg);
 }
 
 static void
@@ -1298,13 +1275,12 @@ update_statusbar (GeditWindow *window,
 
 		doc = GEDIT_DOCUMENT (gtk_text_view_get_buffer (GTK_TEXT_VIEW (new_view)));
 
-		/* sync the statusbar */
-		update_cursor_position_statusbar (GTK_TEXT_BUFFER (doc),
-						  window);
-
 		set_overwrite_mode (window, gtk_text_view_get_overwrite (GTK_TEXT_VIEW (new_view)));
 
-		gtk_widget_show (window->priv->line_col_button);
+		tepl_line_column_indicator_set_view (window->priv->line_column_indicator,
+						     TEPL_VIEW (new_view));
+		gtk_widget_show (GTK_WIDGET (window->priv->line_column_indicator));
+
 		gtk_widget_show (window->priv->tab_width_button);
 		gtk_widget_show (window->priv->language_button);
 
@@ -1851,10 +1827,6 @@ on_tab_added (GeditMultiNotebook *multi,
 			  G_CALLBACK (bracket_matched_cb),
 			  window);
 	g_signal_connect (doc,
-			  "tepl-cursor-moved",
-			  G_CALLBACK (update_cursor_position_statusbar),
-			  window);
-	g_signal_connect (doc,
 			  "notify::empty-search",
 			  G_CALLBACK (empty_search_notify_cb),
 			  window);
@@ -1952,9 +1924,6 @@ on_tab_removed (GeditMultiNotebook *multi,
 					      G_CALLBACK (bracket_matched_cb),
 					      window);
 	g_signal_handlers_disconnect_by_func (doc,
-					      G_CALLBACK (update_cursor_position_statusbar),
-					      window);
-	g_signal_handlers_disconnect_by_func (doc,
 					      G_CALLBACK (empty_search_notify_cb),
 					      window);
 	g_signal_handlers_disconnect_by_func (doc,
@@ -2001,8 +1970,8 @@ on_tab_removed (GeditMultiNotebook *multi,
 		gedit_statusbar_clear_overwrite (
 				GEDIT_STATUSBAR (window->priv->statusbar));
 
-		/* hide the combos */
-		gtk_widget_hide (window->priv->line_col_button);
+		/* hide the additional widgets */
+		gtk_widget_hide (GTK_WIDGET (window->priv->line_column_indicator));
 		gtk_widget_hide (window->priv->tab_width_button);
 		gtk_widget_hide (window->priv->language_button);
 	}
