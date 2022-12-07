@@ -10,8 +10,8 @@
 msgid ""
 msgstr "Project-Id-Version: gedit master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gedit/issues\n"
-"POT-Creation-Date: 2022-11-20 13:57+0000\n"
-"PO-Revision-Date: 2020-12-03 15:00+0100\n"
+"POT-Creation-Date: 2022-11-20 13:59+0000\n"
+"PO-Revision-Date: 2020-12-07 15:00+0100\n"
 "Last-Translator: Asier Sarasua Garmendia <asiersarasua@ni.eus>\n"
 "Language-Team: Basque <librezale@librezale.eus>\n"
 "Language: eu\n"
@@ -500,7 +500,6 @@ msgstr "Itxi gorde _gabe"
 #: gedit/gedit-commands-file.c:1513 gedit/gedit-encodings-dialog.c:192
 #: gedit/gedit-file-chooser-open-dialog.c:78 gedit/gedit-io-error-info-bar.c:94
 #: gedit/gedit-io-error-info-bar.c:293 gedit/gedit-preferences-dialog.c:721
-#: gedit/resources/ui/gedit-encodings-dialog.ui:44
 #: plugins/filebrowser/gedit-file-browser-utils.c:211
 #: plugins/quickopen/quickopen/popup.py:45
 #: plugins/snippets/snippets/manager.py:789
@@ -757,15 +756,15 @@ msgstr "Egile nagusiak:"
 
 #: gedit/gedit-commands-help.c:92
 msgid "Many thanks also to:"
-msgstr "Eskerrik asko, halaber, honakoei:"
+msgstr "Mila esker, baita ere, hauei:"
 
 #: gedit/gedit-commands-help.c:102
 msgid "and many other contributors."
-msgstr "eta lagundu duten beste askori."
+msgstr "eta lagundu duten beste hainbati."
 
 #: gedit/gedit-commands-help.c:120
 msgid "gedit is an easy-to-use and general-purpose text editor"
-msgstr "gedit erabilerraza den xede orokorreko testu-editorea da."
+msgstr "gedit erabiltzeko erraza den xede orokorreko testu-editorea da"
 
 #: gedit/gedit-commands-help.c:125
 msgid "translator-credits"
@@ -804,11 +803,11 @@ msgstr "Irakurtzeko soilik"
 msgid "Current Locale (%s)"
 msgstr "Uneko locale-a (%s)"
 
-#: gedit/gedit-encodings-combo-box.c:297
+#: gedit/gedit-encodings-combo-box.c:291
 msgid "Automatically Detected"
 msgstr "Automatikoki detektatuta"
 
-#: gedit/gedit-encodings-combo-box.c:326
+#: gedit/gedit-encodings-combo-box.c:320
 msgid "Add or Remove…"
 msgstr "Gehitu edo kendu…"
 
@@ -886,7 +885,7 @@ msgstr "S_aiatu berriro"
 
 #: gedit/gedit-io-error-info-bar.c:114
 msgid "File not found."
-msgstr "Fitxategia ez da aurkitu."
+msgstr "Ez da fitxategia aurkitu."
 
 #. How to reproduce this case: from the command line,
 #. * try to open a URI such as: foo://example.net/file
@@ -895,7 +894,7 @@ msgstr "Fitxategia ez da aurkitu."
 #: gedit/gedit-io-error-info-bar.c:133
 #, c-format
 msgid "“%s:” locations are not supported."
-msgstr "“%s:” kokalekuak ez dira onartzen.."
+msgstr "“%s” helbideak ez daude onartuta."
 
 #: gedit/gedit-io-error-info-bar.c:142
 msgid "The location of the file cannot be accessed."
@@ -917,11 +916,11 @@ msgstr "“%s” ostalari-izena ezezaguna da."
 
 #: gedit/gedit-io-error-info-bar.c:181
 msgid "The problem could come from the proxy settings."
-msgstr "Arazoa proxyaren ezarpenetan egon daiteke."
+msgstr "Arazoa proxy-ezarpenetan egon daiteke."
 
 #: gedit/gedit-io-error-info-bar.c:215
 msgid "File not found. Perhaps it has recently been deleted."
-msgstr "Fitxategia ez da aurkitu. Agian ezabatu egin da berriki."
+msgstr "Fitxategia ez da aurkitu. Agian ezabatu egin da duela gutxi."
 
 #: gedit/gedit-io-error-info-bar.c:225
 #, c-format
@@ -1001,7 +1000,7 @@ msgstr "Zehaztutako karaktere-kodeketarekin kodetu ezin den karaktere bat (edo g
 #: gedit/gedit-io-error-info-bar.c:460
 #, c-format
 msgid "The file “%s” has been externally modified."
-msgstr "'%s' fitxategia kanpoan aldatu da."
+msgstr "'%s' fitxategia kanpoko aplikazio batekin aldatu da."
 
 #: gedit/gedit-io-error-info-bar.c:461
 msgid "If you save it, all the external changes could be lost. Save it anyway?"
@@ -1445,8 +1444,8 @@ msgid "_Paste"
 msgstr "_Itsatsi"
 
 #: gedit/resources/gtk/menus-common.ui:207
-#: plugins/filebrowser/gedit-file-browser-plugin.c:892
-#: plugins/filebrowser/gedit-file-browser-plugin.c:927
+#: plugins/filebrowser/gedit-file-browser-plugin.c:882
+#: plugins/filebrowser/gedit-file-browser-plugin.c:917
 #: plugins/filebrowser/resources/ui/gedit-file-browser-menus.ui:37
 msgid "_Delete"
 msgstr "Ez_abatu"
@@ -1597,22 +1596,26 @@ msgstr "Las_ter-teklak"
 msgid "Character Encodings"
 msgstr "Karaktere-kodeketak"
 
+#: gedit/resources/ui/gedit-encodings-dialog.ui:44
+msgid "_Cancel Changes"
+msgstr "_Utzi aldaketak"
+
 #: gedit/resources/ui/gedit-encodings-dialog.ui:51
-msgid "_Apply"
-msgstr "_Aplikatu"
+msgid "_Save Settings"
+msgstr "G_orde ezarpenak"
 
 #: gedit/resources/ui/gedit-encodings-dialog.ui:82
-msgid "A_vailable Encodings"
-msgstr "Kodeketa _erabilgarriak:"
+msgid "_Other Available Encodings"
+msgstr "_Beste kodeketa erabilgarri batzuk"
 
 #: gedit/resources/ui/gedit-encodings-dialog.ui:100
-msgid "Cho_sen Encodings"
-msgstr "_Aukeratutako kodeketak"
+msgid "_Favorites"
+msgstr "_Gogokoak"
 
 #: gedit/resources/ui/gedit-encodings-dialog.ui:139
 #: gedit/resources/ui/gedit-encodings-dialog.ui:217
-msgid "_Description"
-msgstr "_Azalpena"
+msgid "Ca_tegory"
+msgstr "Ka_tegoria"
 
 #: gedit/resources/ui/gedit-encodings-dialog.ui:151
 #: gedit/resources/ui/gedit-encodings-dialog.ui:228
@@ -2592,68 +2595,68 @@ msgstr "Karpeta nagusia"
 msgid "File System"
 msgstr "Fitxategi-sistema"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:502
+#: plugins/filebrowser/gedit-file-browser-plugin.c:492
 msgid "File Browser"
 msgstr "Fitxategi-arakatzailea"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:632
+#: plugins/filebrowser/gedit-file-browser-plugin.c:622
 msgid "An error occurred while creating a new directory"
 msgstr "Errorea gertatu da direktorio berria sortzean"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:635
+#: plugins/filebrowser/gedit-file-browser-plugin.c:625
 msgid "An error occurred while creating a new file"
 msgstr "Errorea gertatu da fitxategi berria sortzean"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:638
+#: plugins/filebrowser/gedit-file-browser-plugin.c:628
 msgid "An error occurred while renaming a file or directory"
 msgstr "Errorea gertatu da fitxategia/direktorioa izenez aldatzean"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:641
+#: plugins/filebrowser/gedit-file-browser-plugin.c:631
 msgid "An error occurred while deleting a file or directory"
 msgstr "Errorea gertatu da fitxategia/direktorioa ezabatzean"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:644
+#: plugins/filebrowser/gedit-file-browser-plugin.c:634
 msgid "An error occurred while opening a directory in the file manager"
 msgstr "Errorea gertatu da direktorioa fitxategi-kudeatzailearekin irekitzean"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:647
+#: plugins/filebrowser/gedit-file-browser-plugin.c:637
 msgid "An error occurred while setting a root directory"
 msgstr "Errorea gertatu da erroko direktorioa ezartzean"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:650
+#: plugins/filebrowser/gedit-file-browser-plugin.c:640
 msgid "An error occurred while loading a directory"
 msgstr "Errorea gertatu da direktorioa kargatzean"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:653
+#: plugins/filebrowser/gedit-file-browser-plugin.c:643
 msgid "An error occurred"
 msgstr "Errorea gertatu da"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:875
+#: plugins/filebrowser/gedit-file-browser-plugin.c:865
 msgid ""
 "Cannot move file to trash, do you\n"
 "want to delete permanently?"
 msgstr "Ezin da fitxategia zakarrontzira bota.\n"
 "Betirako ezabatzea nahi duzu?"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:880
+#: plugins/filebrowser/gedit-file-browser-plugin.c:870
 #, c-format
 msgid "The file “%s” cannot be moved to the trash."
 msgstr "“%s” fitxategia ezin izan da zakarrontzira bota."
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:885
+#: plugins/filebrowser/gedit-file-browser-plugin.c:875
 msgid "The selected files cannot be moved to the trash."
 msgstr "Hautatutako fitxategia ezin da zakarrontzira bota."
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:913
+#: plugins/filebrowser/gedit-file-browser-plugin.c:903
 #, c-format
 msgid "Are you sure you want to permanently delete “%s”?"
 msgstr "Ziur zaude “%s” behin betiko ezabatu nahi duzula?"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:918
+#: plugins/filebrowser/gedit-file-browser-plugin.c:908
 msgid "Are you sure you want to permanently delete the selected files?"
 msgstr "Ziur zaude hautatutako fitxategiak betirako ezabatzea nahi dituzula?"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:921
+#: plugins/filebrowser/gedit-file-browser-plugin.c:911
 msgid "If you delete an item, it is permanently lost."
 msgstr "Elementu bat ezabatzen baduzu betirako galduko da."
 
@@ -3371,6 +3374,15 @@ msgstr "Uneko data eta ordua sartzen ditu kurtsorearen posizioan."
 #~ "Fitxategia gordetzeko erabili nahi duzun diskoak fitxategi-tamainaren "
 #~ "muga du. Saiatu fitxategia tamaina txikiagoan gordetzen edo muga hori ez "
 #~ "duen disko batean gordetzen."
+
+#~ msgid "_Apply"
+#~ msgstr "_Aplikatu"
+
+#~ msgid "Cho_sen Encodings"
+#~ msgstr "_Aukeratutako kodeketak"
+
+#~ msgid "_Description"
+#~ msgstr "_Azalpena"
 
 #~ msgid "Highlight Mode"
 #~ msgstr "Nabarmentze-modua"
