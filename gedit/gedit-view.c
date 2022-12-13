@@ -166,18 +166,19 @@ gedit_view_dispose (GObject *object)
 static void
 update_font (GeditView *view)
 {
-	GeditSettings *settings;
+	TeplSettings *settings;
 	gchar *selected_font;
 
-	settings = _gedit_settings_get_singleton ();
-	selected_font = _gedit_settings_get_selected_font (settings);
+	settings = tepl_settings_get_singleton ();
+
+	selected_font = tepl_settings_get_selected_font (settings);
 	tepl_utils_override_font_string (GTK_WIDGET (view), selected_font);
 	g_free (selected_font);
 }
 
 static void
-fonts_changed_cb (GeditSettings *settings,
-		  GeditView     *view)
+font_changed_cb (TeplSettings *settings,
+		 GeditView    *view)
 {
 	update_font (view);
 }
@@ -186,18 +187,21 @@ static void
 gedit_view_constructed (GObject *object)
 {
 	GeditView *view = GEDIT_VIEW (object);
-	GeditSettings *settings;
+	GeditSettings *gedit_settings;
+	TeplSettings *tepl_settings;
 	GSettings *editor_settings;
 
 	G_OBJECT_CLASS (gedit_view_parent_class)->constructed (object);
 
-	settings = _gedit_settings_get_singleton ();
-	editor_settings = _gedit_settings_peek_editor_settings (settings);
+	gedit_settings = _gedit_settings_get_singleton ();
+	tepl_settings = tepl_settings_get_singleton ();
+
+	editor_settings = _gedit_settings_peek_editor_settings (gedit_settings);
 
 	update_font (view);
-	g_signal_connect_object (settings,
-				 "fonts-changed",
-				 G_CALLBACK (fonts_changed_cb),
+	g_signal_connect_object (tepl_settings,
+				 "font-changed",
+				 G_CALLBACK (font_changed_cb),
 				 view,
 				 0);
 
