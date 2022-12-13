@@ -5,15 +5,93 @@
 
   <info>
     <link type="guide" xref="index#gedit-working-with-files" group="second"/>
-    <link type="seealso" xref="gedit-tabs-moving"/>
     <link type="seealso" xref="gedit-tab-groups"/>
     <desc>Edit several documents.</desc>
   </info>
 
-  <title>Tabs</title>
+  <title>Organize your tabs</title>
 
   <p>
     By default, documents are opened in new tabs inside the same
     <app>gedit</app> window.
   </p>
+
+  <section id="moving">
+    <title>Move a tab</title>
+    <p>
+      There are several means to move a tab to another location, to organize the
+      files you edit in the way you like.
+    </p>
+    <p>
+      You can right-click on a tab title and choose the desired option.
+    </p>
+    <p>
+      Keyboard shortcuts are available too.
+    </p>
+    <section id="drag-and-drop">
+      <title>Drag and drop tabs</title>
+      <p>
+        Another means is to drag and drop a tab:
+      </p>
+      <steps>
+        <item>
+          <p>Click and hold the mouse button on the tab title.</p>
+        </item>
+        <item>
+          <p>Move the tab to the desired location.</p>
+        </item>
+        <item>
+          <p>Release the mouse button.</p>
+        </item>
+      </steps>
+    </section>
+  </section>
+
+  <section id="drag-and-drop-locations">
+    <title>Drag and drop locations</title>
+
+    <section>
+      <title>To re-order tabs within the same window</title>
+      <p>
+        Drag and drop the tab along the tabs titles.
+      </p>
+    </section>
+
+    <section>
+      <title>To create a new window from an existing tab</title>
+      <p>
+        Drag and drop the tab out of the <app>gedit</app> window.
+      </p>
+      <p>
+        When <app>gedit</app> is maximized, drag the tab onto the top bar of
+        <gui>GNOME Shell</gui> at the top of the screen.
+      </p>
+    </section>
+
+    <section>
+      <title>To move a tab from one gedit window to another</title>
+      <p>
+        Drag and drop the tab to the other window, either within the text area,
+        or within the tabs titles to choose the exact location.
+      </p>
+
+      <!--
+        This is currently not super convenient to use: once in the Activities
+        overview, we don't have much time for choosing the right window. We
+        often end up on a wrong window to drop the tab.
+        So it's not a great tip to explain.
+      -->
+      <!--
+      <note style="tip">
+        <p>
+          You may find it easier to move a tab from one window to another by
+          dragging the tab to the <gui>Activities</gui> hot-corner of
+          <gui>GNOME Shell</gui>. This will reveal each of the open
+          <app>gedit</app> windows. You can then release the tab on the desired
+          <app>gedit</app> window.
+        </p>
+      </note>
+      -->
+    </section>
+  </section>
 </page>

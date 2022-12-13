@@ -33,7 +33,6 @@ gedit_help_sources = [
   'gedit-spellcheck.page',
   'gedit-syntax-highlighting.page',
   'gedit-tab-groups.page',
-  'gedit-tabs-moving.page',
   'gedit-tabs.page',
   'gedit-undo-redo.page',
   'index.page',
