@@ -44,9 +44,6 @@ G_GNUC_INTERNAL
 GSettings *	_gedit_settings_peek_file_chooser_state_settings	(GeditSettings *self);
 
 G_GNUC_INTERNAL
-gchar *		_gedit_settings_get_system_font				(GeditSettings *self);
-
-G_GNUC_INTERNAL
 gchar *		_gedit_settings_get_selected_font			(GeditSettings *self);
 
 GSList *	gedit_settings_get_candidate_encodings			(gboolean *default_candidates);

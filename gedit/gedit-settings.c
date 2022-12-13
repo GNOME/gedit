@@ -291,11 +291,9 @@ _gedit_settings_peek_file_chooser_state_settings (GeditSettings *self)
 	return self->settings_file_chooser_state;
 }
 
-gchar *
-_gedit_settings_get_system_font (GeditSettings *self)
+static gchar *
+get_system_font (GeditSettings *self)
 {
-	g_return_val_if_fail (GEDIT_IS_SETTINGS (self), NULL);
-
 	return g_settings_get_string (self->settings_interface, GEDIT_SETTINGS_SYSTEM_FONT);
 }
 
@@ -306,7 +304,7 @@ _gedit_settings_get_selected_font (GeditSettings *self)
 
 	if (g_settings_get_boolean (self->settings_editor, GEDIT_SETTINGS_USE_DEFAULT_FONT))
 	{
-		return _gedit_settings_get_system_font (self);
+		return get_system_font (self);
 	}
 
 	return g_settings_get_string (self->settings_editor, GEDIT_SETTINGS_EDITOR_FONT);
