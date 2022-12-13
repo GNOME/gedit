@@ -1,94 +1,53 @@
 <page xmlns="http://projectmallard.org/1.0/"
       xmlns:its="http://www.w3.org/2005/11/its"
-      type="topic" style="task"
+      type="topic"
       id="gedit-tab-groups">
 
   <info>
     <link type="guide" xref="index#gedit-working-with-files" group="last"/>
     <link type="seealso" xref="gedit-tabs"/>
-    <desc>Group similar tabs together.</desc>
+    <desc>View several documents side-by-side.</desc>
   </info>
 
   <title>Tab groups</title>
 
-  <p>If you are working with multiple tabs in <app>gedit</app> you can group
-  them, making it easier to keep your opened files organized. Adding a new tab
-  group will divide the <app>gedit</app> window in two panes, open a new
-  “Untitled Document” in the new pane, and make it active. You can open files
-  into that tab group and move tabs from one tab group to another.</p>
+  <p>
+    You can view several documents side-by-side inside the same <app>gedit</app>
+    window by creating a new <em>tab group</em>.
+  </p>
 
-<section id="open-new-tab-group">
-  <title>Open a new tab group in the gedit window</title>
+  <section>
+    <title>Managing tab groups</title>
+    <p>
+      There are several possibilities for managing tab groups.
+    </p>
+    <p>
+      To create a new tab group, you can right-click on a tab title and select
+      <gui>Move to New Tab Group</gui>.
+    </p>
+    <p>
+      Keyboard shortcuts are available too.
+    </p>
+    <p>
+      The tab groups will be placed into two panes that can be resized. It is an
+      horizontal split: the original tab group is on the left, the new tab group
+      is added on the right.
+    </p>
+    <p>
+      You can open as much tab groups in a <app>gedit</app> window as your
+      screen allows, but you will have to resize them in order to see them
+      correctly.
+    </p>
+  </section>
 
-  <p>To open a new tab group you can:</p>
-
-  <list>
-    <item>
-      <p>Right click on a tab and select <gui>Move to New Tab Group</gui>.</p>
-    </item>
-    <item>
-      <p>Use the <keyseq><key>Ctrl</key><key>Alt</key><key>N</key></keyseq>
-      shortcut.</p>
-    </item>
-  </list>
-
-  <p>This action will divide the <app>gedit</app> window in two panes, and the
-  pane with the new tab group will be placed on the right of the active tab.
-  You can move the handle right or left assigning more or less space of the
-  <app>gedit</app> window between panes according to your needs.</p>
-
-  <p>You can open as much tab groups in a <app>gedit</app> window as your screen
-  allows, but you will have to move the handle in order to see them
-  correctly.</p>
-
-  <p>To close a tab group pane just close all the tabs that are opened inside
-  it.</p>
-</section>
-
-<!--
-FIXME: These shortcuts don't work.
-<section id="moving-through-tab-groups">
-  <title>Move through tab groups</title>
-
-  <p>To move forward (on the next) tab group:</p>
-
-  <list>
-    <item>
-      <p>Use the <keyseq><key>Shift</key><key>Ctrl</key><key>Alt</key><key>Page
-      down</key></keyseq> shortcut.</p>
-    </item>
-  </list>
-
-  <p>To move backward (on the previous) tab group:</p>
-
-  <list>
-    <item>
-      <p>Use the <keyseq><key>Shift</key><key>Ctrl</key><key>Alt</key><key>Page
-      up</key></keyseq> shortcut.</p>
-    </item>
-  </list>
-</section>
--->
-
-<section id="moving-tabs-among-groups">
-  <title>Move a tab to another tab group</title>
-
-  <p>If you want to move a tab from one tab group to another:</p>
-
-  <steps>
-    <item>
-      <p>Click and hold the mouse button on the tab.</p>
-    </item>
-    <item>
-      <p>Drag the tab to another tab group pane.</p>
-    </item>
-    <item>
-      <p>Place it beside other tabs in the tab group.</p>
-    </item>
-    <item>
-      <p>Release the mouse button.</p>
-    </item>
-  </steps>
-
-</section>
+  <section>
+    <title>Move a tab to another tab group</title>
+    <p>
+      You can drag and drop a tab into another tab group.
+    </p>
+    <p>
+      See <link xref="gedit-tabs#drag-and-drop-tabs">Drag and drop tabs</link>
+      for more details.
+    </p>
+  </section>
 </page>
