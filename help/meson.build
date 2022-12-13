@@ -28,7 +28,6 @@ gedit_help_sources = [
   'gedit-printing-order.page',
   'gedit-printing.page',
   'gedit-printing-select.page',
-  'gedit-replace.page',
   'gedit-save-file.page',
   'gedit-search.page',
   'gedit-search-and-replace.page',
