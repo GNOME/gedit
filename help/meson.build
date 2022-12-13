@@ -36,7 +36,6 @@ gedit_help_sources = [
   'gedit-tabs.page',
   'gedit-undo-redo.page',
   'index.page',
-  'legal.xml',
 ]
 
 gedit_help_media = [
