@@ -1,0 +1,97 @@
+<page xmlns="http://projectmallard.org/1.0/"
+      type="topic"
+      id="gedit-general-intro">
+
+  <info>
+    <link type="guide" xref="index" />
+  </info>
+
+  <title>Introduction to text editors in general</title>
+
+  <section id="not-a-word-processor">
+    <title>Not a word processor</title>
+    <p>
+      A <em>text editor</em> must be differentiated from
+      <em>word processors</em>.
+    </p>
+    <p>
+      An example of a word processor is
+      <link href="https://www.libreoffice.org/">LibreOffice Writer</link>, which
+      is released as Free and open-source software.
+    </p>
+    <p>
+      A word processor permits to create different kinds of documents (reports,
+      letters, books, etc), with the ability to insert images, tables and other
+      elements.
+    </p>
+    <p>
+      A text editor like <app>gedit</app> is used for creating and editing
+      <em>text files</em>. The files that are saved by <app>gedit</app> and
+      stored on disk contain only text.
+    </p>
+  </section>
+
+  <section id="text-file-formats">
+    <title>Text file formats</title>
+    <p>
+      With a text editor, you can write simple notes as free-form text. But the
+      text can also follow a certain <em>format</em>.
+    </p>
+    <p>
+      Other programs take text files as input, read the text in it, and produce
+      a result. For example, web browsers can read text files that follow the
+      HTML format and renders them as pages.
+    </p>
+    <p>
+      A text file format specifies how the content needs to be structured in
+      order to be understood by the other programs.
+    </p>
+  </section>
+
+  <section id="examples">
+    <title>Examples</title>
+
+    <section id="example-documents">
+      <title>Writing documents</title>
+      <p>
+        It is interesting to note that, with a simple text editor and text
+        files, it is possible to write documents such as produced by a word
+        processor.
+      </p>
+      <p>
+        To take our earlier example with HTML, to insert an image, it is done by
+        referring to an external image file (for example stored on disk in the
+        same directory). Although the image file is not part of the HTML file, a
+        web browser knows that it needs to embed it in the page.
+      </p>
+    </section>
+
+    <section id="example-source-code">
+      <title>Source code</title>
+      <p>
+        Text files are not restricted to write notes or documents, another area
+        is writing <em>source code</em>, to develop a piece of software with a
+        programming or scripting language.
+      </p>
+    </section>
+  </section>
+
+  <section id="syntax-highlighting">
+    <title>Syntax highlighting</title>
+    <p>
+      When writing text in a certain format (or “language”), it is very useful
+      to visually distinguish the different kinds of elements, when a portion of
+      text has a special meaning. The special meanings depend on the
+      <em>syntax</em> of the language, i.e., how things should be structured.
+    </p>
+    <p>
+      This is done by adding colors to the text (or other highlighting means:
+      bold, italic, underline, etc).
+    </p>
+    <p>
+      It is important to note that these colors are <em>not</em> saved into the
+      file; instead, it is the text editor application that presents the text to
+      the user that way.
+    </p>
+  </section>
+</page>

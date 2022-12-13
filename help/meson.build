@@ -6,6 +6,7 @@ gedit_help_sources = [
   'gedit-edit-as-root.page',
   'gedit-files-basic.page',
   'gedit-full-screen.page',
+  'gedit-general-intro.page',
   'gedit-open-files-from-sidepane.page',
   'gedit-open-files.page',
   'gedit-open-on-server.page',
