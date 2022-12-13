@@ -31,6 +31,7 @@ gedit_help_sources = [
   'gedit-replace.page',
   'gedit-save-file.page',
   'gedit-search.page',
+  'gedit-search-and-replace.page',
   'gedit-spellcheck.page',
   'gedit-syntax-highlighting.page',
   'gedit-tab-groups.page',
