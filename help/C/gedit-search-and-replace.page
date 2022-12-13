@@ -94,8 +94,8 @@
   <section>
     <title>Using escape sequences</title>
     <p>
-      You can use <em>escape sequences</em> to search for line breaks, carriage
-      returns, and tabs.
+      In a search or replace entry, you can use <em>escape sequences</em> with
+      the following meanings:
     </p>
     <terms>
       <item>
@@ -110,11 +110,13 @@
         <title>\t</title>
         <p>Tab</p>
       </item>
+      <item>
+        <title>\\</title>
+        <p>
+          Backslash. If you actually want a backslash and avoid one of the above
+          special meanings, the backslash needs to be escaped.
+        </p>
+      </item>
     </terms>
-    <p>
-      If you actually want to search for a <output>\</output> (backslash), you
-      need to escape it with an extra backslash. In that case, enter
-      <input>\\</input> into the search or replace field.
-    </p>
   </section>
 </page>
