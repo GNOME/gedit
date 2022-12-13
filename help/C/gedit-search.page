@@ -1,6 +1,6 @@
 <page xmlns="http://projectmallard.org/1.0/" 
-  type="topic" style="task" 
-  id="gedit-search">
+      type="topic"
+      id="gedit-search">
 
   <info>
     <link type="guide" xref="index#gedit-working-with-files" group="sixth" />
@@ -9,83 +9,99 @@
   </info>
 
   <title>Search for text</title>
-  
-    <p>The Find tool can help you find specific sequences of text within in your
-    file.</p>
 
-    <steps>
-      <title>Finding text</title>
-      <item>
-        <p>Open the <gui>search window</gui> by clicking 
-        <guiseq><gui style="menu">Menu Button</gui>
-        <gui style="menuitem">Find…</gui> </guiseq> or
-        pressing <keyseq><key>Ctrl</key><key>F</key></keyseq>. This will move
-        your cursor to the start of the <gui>search window</gui>.</p>
-      </item>
-      <item>
-        <p>Type the text you wish to search for in the
-        <gui>search window</gui>.</p>
-      </item>
-      <item>
-        <p>As you type, <app>gedit</app> will begin highlighting the portions of
-        text that match what you have entered.</p>
-      </item>
-    </steps>
-    
-    <p>To scroll through the search results, do any of the following:</p>
+  <p>
+    To find a portion of text within a file.
+  </p>
+
+  <section>
+    <title>The search entry field</title>
+    <p>
+      To open the search entry field, click on:
+    </p>
+    <p>
+      <guiseq>
+        <gui style="menu">Menu Button</gui>
+        <gui style="menuitem">Find…</gui>
+      </guiseq>
+    </p>
+  </section>
+
+  <section>
+    <title>Clear highlight</title>
+    <p>
+      Usually, the text that you've searched for will remain highlighted in the
+      document. To remove the highlight, click on:
+    </p>
+    <p>
+      <guiseq>
+        <gui style="menu">Menu Button</gui>
+        <gui style="menuitem">Clear Highlight</gui>
+      </guiseq>
+    </p>
+  </section>
+
+  <section>
+    <title>Navigate through the search results</title>
+    <p>
+      There are several ways to go to the next or previous search result.
+    </p>
+    <p>
+      There are <gui style="button">up</gui> and <gui style="button">down</gui>
+      arrows next to the search entry.
+    </p>
+    <p>
+      You can also press the <key>up arrow</key> or <key>down arrow</key> keys
+      on your keyboard while the search entry is visible.
+    </p>
+    <p>
+      Keyboard shortcuts are also available.
+    </p>
+  </section>
+
+  <section>
+    <title>Closing the search entry field</title>
+    <p>
+      You can close the search entry by pressing different keys:
+    </p>
     <list>
-      <item>
-        <p>Click on the <gui style="button">up</gui> or
-        <gui style="button">down</gui> facing arrows next to the
-        <gui>search window</gui>.</p>
-      </item>
-      <item>
-        <p>Press the <key>up arrow</key> or <key>down arrow</key> keys on your
-        keyboard.</p>
-      </item>
-      <item>
-        <p>Press <keyseq><key>Ctrl</key><key>G</key></keyseq> or
-        <keyseq><key>Ctrl</key><key>Shift</key><key>G</key></keyseq>.</p>
-      </item>
+      <item><p>
+        Pressing <key>Esc</key> will return the cursor to where it was before
+        you began your search.
+      </p></item>
+      <item><p>
+        Pressing <key>Enter</key> will keep the cursor to its current position.
+      </p></item>
     </list>
+  </section>
 
-  <p>To close the <gui>search window</gui>, press either <key>Esc</key> or
-  <key>Enter</key>. Pressing <key>Esc</key> will return the cursor to where it
-  was before you began your search. Pressing <key>Enter</key> will return the
-  cursor to the current position in the search results.</p>
+  <section>
+    <title>Search options</title>
+    <p>
+      For more search options, click on the
+      <gui style="button">Magnifying Glass</gui> icon in the search entry. You
+      can select one or more of the following search options:
+    </p>
+    <list>
+      <item><p>
+        Select <gui>Match Case</gui> to make the search case sensitive.
+      </p></item>
+      <item><p>
+        Select <gui>Match Entire Word Only</gui> to search only complete words.
+      </p></item>
+      <item><p>
+        Select <gui>Wrap Around</gui> to continue at the other end of the
+        document when going to the next or previous search result.
+      </p></item>
+    </list>
+  </section>
 
-  <list>
+  <section>
     <title>Search tips</title>
-    <item>
-      <p>If you highlight a portion of text with your mouse, and then press
-      <keyseq><key>Ctrl</key><key>F</key></keyseq>, the text you've highlighted
-      will appear in the search window.</p>
-    </item>
-    <item>
-      <p>For more search options, click on the
-      <gui style="button">Magnifying Glass</gui> icon in the search window,
-      or right-click anywhere in the search window. You can select one or more
-      of the following search options:</p>
-      <list>
-        <item>
-          <p>Select <gui>Match Case</gui> to make the search case sensitive.</p>
-        </item>
-        <item>
-          <p>Select <gui>Match Entire Word Only</gui> to search only complete
-          words.</p>
-        </item>
-        <item>
-          <p>Select <gui>Wrap Around</gui> to search text from top to bottom
-          and cycle back again.</p>
-        </item>
-      </list>
-    </item>
-    <item>
-      <p>The text that you've searched for will remain highlighted by gedit,
-      even after you have completed your search. To remove the highlight,
-      click <gui style="menuitem">Clear Highlight</gui>, or
-      press <keyseq><key>Ctrl</key><key>Shift</key><key>K</key></keyseq>.</p>
-    </item>
-  </list>
-
+    <p>
+      If you first select a portion of text in the document, and then open the
+      search entry field, the text you've selected will appear in the search
+      entry.
+    </p>
+  </section>
 </page>
