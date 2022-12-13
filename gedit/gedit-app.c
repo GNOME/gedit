@@ -638,6 +638,24 @@ show_menubar (void)
 }
 
 static void
+init_tepl_settings (void)
+{
+	GeditSettings *gedit_settings;
+	GSettings *editor_settings;
+	TeplSettings *tepl_settings;
+
+	gedit_settings = _gedit_settings_get_singleton ();
+	editor_settings = _gedit_settings_peek_editor_settings (gedit_settings);
+
+	tepl_settings = tepl_settings_get_singleton ();
+
+	tepl_settings_provide_font_settings (tepl_settings,
+					     editor_settings,
+					     GEDIT_SETTINGS_USE_DEFAULT_FONT,
+					     GEDIT_SETTINGS_EDITOR_FONT);
+}
+
+static void
 gedit_app_startup (GApplication *application)
 {
 	GeditAppPrivate *priv;
@@ -657,6 +675,7 @@ gedit_app_startup (GApplication *application)
 	/* Load/init settings */
 	_gedit_settings_get_singleton ();
 	priv->window_settings = g_settings_new ("org.gnome.gedit.state.window");
+	init_tepl_settings ();
 
 	g_action_map_add_action_entries (G_ACTION_MAP (application),
 	                                 app_entries,
