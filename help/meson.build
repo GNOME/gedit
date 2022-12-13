@@ -12,6 +12,7 @@ gedit_help_sources = [
   'gedit-open-files.page',
   'gedit-open-on-server.page',
   'gedit-open-recent.page',
+  'gedit-open-several-files-at-once.page',
   'gedit-plugin-guide.page',
   'gedit-plugins-change-case.page',
   'gedit-plugins-doc-stats.page',
