@@ -56,7 +56,6 @@ typedef struct
 	GtkPageSetup      *page_setup;
 	GtkPrintSettings  *print_settings;
 
-	GSettings         *ui_settings;
 	GSettings         *window_settings;
 
 	GMenuModel        *hamburger_menu;
@@ -144,7 +143,6 @@ gedit_app_dispose (GObject *object)
 
 	priv = gedit_app_get_instance_private (GEDIT_APP (object));
 
-	g_clear_object (&priv->ui_settings);
 	g_clear_object (&priv->window_settings);
 
 	g_clear_object (&priv->page_setup);
@@ -658,7 +656,6 @@ gedit_app_startup (GApplication *application)
 
 	/* Load/init settings */
 	_gedit_settings_get_singleton ();
-	priv->ui_settings = g_settings_new ("org.gnome.gedit.preferences.ui");
 	priv->window_settings = g_settings_new ("org.gnome.gedit.state.window");
 
 	g_action_map_add_action_entries (G_ACTION_MAP (application),
