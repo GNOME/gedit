@@ -1,4 +1,5 @@
 gedit_help_sources = [
+  'gedit-brief-intro.page',
   'gedit-change-color-scheme.page',
   'gedit-change-default-font.page',
   'gedit-close-file.page',
@@ -26,7 +27,6 @@ gedit_help_sources = [
   'gedit-printing-order.page',
   'gedit-printing.page',
   'gedit-printing-select.page',
-  'gedit-quickstart.page',
   'gedit-replace.page',
   'gedit-save-file.page',
   'gedit-search.page',
