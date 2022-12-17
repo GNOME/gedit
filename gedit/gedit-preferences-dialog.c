@@ -74,11 +74,6 @@ struct _GeditPreferencesDialog
 
 	GtkWidget	*notebook;
 
-	/* Font */
-	GtkWidget	*default_font_checkbutton;
-	GtkWidget	*font_button;
-	GtkWidget	*font_grid;
-
 	/* Style Scheme */
 	GtkWidget	*schemes_list;
 	GtkWidget	*install_scheme_button;
@@ -118,6 +113,9 @@ struct _GeditPreferencesDialog
 
 	/* Plugin manager */
 	GtkWidget	*plugin_manager;
+
+	/* Placeholders */
+	GtkGrid *font_component_placeholder;
 };
 
 G_DEFINE_TYPE (GeditPreferencesDialog, gedit_preferences_dialog, GTK_TYPE_WINDOW)
@@ -183,14 +181,12 @@ gedit_preferences_dialog_class_init (GeditPreferencesDialogClass *klass)
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, backup_copy_checkbutton);
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, auto_save_checkbutton);
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, auto_save_spinbutton);
-	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, default_font_checkbutton);
-	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, font_button);
-	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, font_grid);
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, schemes_list);
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, install_scheme_button);
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, uninstall_scheme_button);
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, schemes_toolbar);
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, plugin_manager);
+	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, font_component_placeholder);
 }
 
 static void
@@ -423,42 +419,14 @@ setup_view_page (GeditPreferencesDialog *dlg)
 static void
 setup_font_colors_page_font_section (GeditPreferencesDialog *dlg)
 {
-	GeditSettings *settings;
-	gchar *system_font = NULL;
-	gchar *label;
+	GtkWidget *font_component;
 
-	gedit_debug (DEBUG_PREFS);
+	font_component = tepl_prefs_create_font_component (dlg->editor,
+							   GEDIT_SETTINGS_USE_DEFAULT_FONT,
+							   GEDIT_SETTINGS_EDITOR_FONT);
 
-	gtk_widget_set_tooltip_text (dlg->font_button,
-			 _("Click on this button to select the font to be used by the editor"));
-
-	/* Get values */
-	settings = _gedit_settings_get_singleton ();
-	system_font = _gedit_settings_get_system_font (settings);
-
-	label = g_strdup_printf(_("_Use the system fixed width font (%s)"),
-				system_font);
-	gtk_button_set_label (GTK_BUTTON (dlg->default_font_checkbutton),
-			      label);
-	g_free (system_font);
-	g_free (label);
-
-	/* Bind settings */
-	g_settings_bind (dlg->editor,
-			 GEDIT_SETTINGS_USE_DEFAULT_FONT,
-			 dlg->default_font_checkbutton,
-			 "active",
-			 G_SETTINGS_BIND_GET | G_SETTINGS_BIND_SET);
-	g_settings_bind (dlg->editor,
-			 GEDIT_SETTINGS_USE_DEFAULT_FONT,
-			 dlg->font_grid,
-			 "sensitive",
-			 G_SETTINGS_BIND_GET | G_SETTINGS_BIND_SET | G_SETTINGS_BIND_INVERT_BOOLEAN);
-	g_settings_bind (dlg->editor,
-			 GEDIT_SETTINGS_EDITOR_FONT,
-			 dlg->font_button,
-			 "font-name",
-			 G_SETTINGS_BIND_GET | G_SETTINGS_BIND_SET);
+	gtk_container_add (GTK_CONTAINER (dlg->font_component_placeholder),
+			   font_component);
 }
 
 static void
