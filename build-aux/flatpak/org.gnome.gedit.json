@@ -15,6 +15,7 @@
     "--socket=wayland",
     "--metadata=X-DConf=migrate-path=/org/gnome/gedit/",
     "--filesystem=host",
+    "--filesystem=xdg-run/gvfsd",
     "--talk-name=org.gtk.vfs.*"
   ],
   "build-options": {
@@ -50,8 +51,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://download.gnome.org/sources/libpeas/1.28/libpeas-1.28.0.tar.xz",
-          "sha256": "42d91993b46ed50f16add6d9577ecc22beb8e2dffa7101e2232c2b63733b8b15"
+          "url": "https://download.gnome.org/sources/libpeas/1.34/libpeas-1.34.0.tar.xz",
+          "sha256": "4305f715dab4b5ad3e8007daec316625e7065a94e63e25ef55eb1efb964a7bf0"
         }
       ]
     },
@@ -63,8 +64,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://download.gnome.org/sources/gspell/1.9/gspell-1.9.1.tar.xz",
-          "sha256": "dcbb769dfdde8e3c0a8ed3102ce7e661abbf7ddf85df08b29915e92cd723abdd"
+          "url": "https://download.gnome.org/sources/gspell/1.12/gspell-1.12.0.tar.xz",
+          "sha256": "40d2850f1bb6e8775246fa1e39438b36caafbdbada1d28a19fa1ca07e1ff82ad"
         }
       ]
     },
@@ -73,8 +74,9 @@
       "buildsystem": "meson",
       "sources": [
         {
-          "type": "git",
-          "url": "https://gitlab.gnome.org/GNOME/amtk.git"
+          "type": "archive",
+          "url": "https://download.gnome.org/sources/amtk/5.6/amtk-5.6.1.tar.xz",
+          "sha256": "d50115b85c872aac296934b5ee726a3fa156c6f5ad96d27e0edd0aa5ad173228"
         }
       ]
     },
@@ -84,7 +86,8 @@
       "sources": [
         {
           "type": "git",
-          "url": "https://gitlab.gnome.org/GNOME/tepl.git"
+          "url": "https://gitlab.gnome.org/swilmet/tepl.git",
+          "branch": "main"
         }
       ]
     },
