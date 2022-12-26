@@ -98,7 +98,6 @@ struct _GeditPreferencesDialog
 	GtkWidget	*auto_save_checkbutton;
 	GtkWidget	*auto_save_spinbutton;
 
-	GtkWidget	*display_line_numbers_checkbutton;
 	GtkWidget	*display_statusbar_checkbutton;
 	GtkWidget	*display_grid_checkbutton;
 
@@ -116,6 +115,7 @@ struct _GeditPreferencesDialog
 
 	/* Placeholders */
 	GtkGrid *font_component_placeholder;
+	GtkGrid *display_line_numbers_checkbutton_placeholder;
 };
 
 G_DEFINE_TYPE (GeditPreferencesDialog, gedit_preferences_dialog, GTK_TYPE_WINDOW)
@@ -165,7 +165,6 @@ gedit_preferences_dialog_class_init (GeditPreferencesDialogClass *klass)
 	gtk_widget_class_set_template_from_resource (widget_class,
 	                                             "/org/gnome/gedit/ui/gedit-preferences-dialog.ui");
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, notebook);
-	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, display_line_numbers_checkbutton);
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, display_statusbar_checkbutton);
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, display_grid_checkbutton);
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, right_margin_checkbutton);
@@ -187,6 +186,7 @@ gedit_preferences_dialog_class_init (GeditPreferencesDialogClass *klass)
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, schemes_toolbar);
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, plugin_manager);
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, font_component_placeholder);
+	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, display_line_numbers_checkbutton_placeholder);
 }
 
 static void
@@ -306,6 +306,7 @@ setup_view_page (GeditPreferencesDialog *dlg)
 	GtkSourceBackgroundPatternType background_pattern;
 	gboolean display_right_margin;
 	guint right_margin_position;
+	GtkWidget *display_line_numbers_checkbutton;
 
 	gedit_debug (DEBUG_PREFS);
 
@@ -368,11 +369,6 @@ setup_view_page (GeditPreferencesDialog *dlg)
 				  (wrap_mode != GTK_WRAP_NONE));
 
 	g_settings_bind (dlg->editor,
-			 GEDIT_SETTINGS_DISPLAY_LINE_NUMBERS,
-			 dlg->display_line_numbers_checkbutton,
-			 "active",
-			 G_SETTINGS_BIND_GET | G_SETTINGS_BIND_SET);
-	g_settings_bind (dlg->editor,
 			 GEDIT_SETTINGS_HIGHLIGHT_CURRENT_LINE,
 			 dlg->highlight_current_line_checkbutton,
 			 "active",
@@ -414,6 +410,11 @@ setup_view_page (GeditPreferencesDialog *dlg)
 			  "toggled",
 			  G_CALLBACK (grid_checkbutton_toggled),
 			  dlg);
+
+	display_line_numbers_checkbutton = tepl_prefs_create_display_line_numbers_checkbutton (dlg->editor,
+											       GEDIT_SETTINGS_DISPLAY_LINE_NUMBERS);
+	gtk_container_add (GTK_CONTAINER (dlg->display_line_numbers_checkbutton_placeholder),
+			   display_line_numbers_checkbutton);
 }
 
 static void
