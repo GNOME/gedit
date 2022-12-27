@@ -92,11 +92,6 @@ struct _GeditPreferencesDialog
 	GtkWidget	*wrap_text_checkbutton;
 	GtkWidget	*split_checkbutton;
 
-	/* File Saving */
-	GtkWidget	*backup_copy_checkbutton;
-	GtkWidget	*auto_save_checkbutton;
-	GtkWidget	*auto_save_spinbutton;
-
 	GtkWidget	*display_statusbar_checkbutton;
 	GtkWidget	*display_grid_checkbutton;
 
@@ -113,6 +108,7 @@ struct _GeditPreferencesDialog
 	GtkGrid *display_line_numbers_checkbutton_placeholder;
 	GtkGrid *tab_width_spinbutton_placeholder;
 	GtkGrid *highlighting_component_placeholder;
+	GtkGrid *files_component_placeholder;
 };
 
 G_DEFINE_TYPE (GeditPreferencesDialog, gedit_preferences_dialog, GTK_TYPE_WINDOW)
@@ -171,9 +167,6 @@ gedit_preferences_dialog_class_init (GeditPreferencesDialogClass *klass)
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, split_checkbutton);
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, insert_spaces_checkbutton);
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, auto_indent_checkbutton);
-	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, backup_copy_checkbutton);
-	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, auto_save_checkbutton);
-	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, auto_save_spinbutton);
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, schemes_list);
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, install_scheme_button);
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, uninstall_scheme_button);
@@ -183,12 +176,15 @@ gedit_preferences_dialog_class_init (GeditPreferencesDialogClass *klass)
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, display_line_numbers_checkbutton_placeholder);
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, tab_width_spinbutton_placeholder);
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, highlighting_component_placeholder);
+	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, files_component_placeholder);
 }
 
 static void
 setup_editor_page (GeditPreferencesDialog *dlg)
 {
 	GtkWidget *tab_width_spinbutton_component;
+	GtkWidget *files_component;
+
 	gedit_debug (DEBUG_PREFS);
 
 	/* Connect signal */
@@ -202,31 +198,17 @@ setup_editor_page (GeditPreferencesDialog *dlg)
 			 dlg->auto_indent_checkbutton,
 			 "active",
 			 G_SETTINGS_BIND_GET | G_SETTINGS_BIND_SET);
-	g_settings_bind (dlg->editor,
-			 GEDIT_SETTINGS_CREATE_BACKUP_COPY,
-			 dlg->backup_copy_checkbutton,
-			 "active",
-			 G_SETTINGS_BIND_GET | G_SETTINGS_BIND_SET);
-	g_settings_bind (dlg->editor,
-			 GEDIT_SETTINGS_AUTO_SAVE_INTERVAL,
-			 dlg->auto_save_spinbutton,
-			 "value",
-			 G_SETTINGS_BIND_GET | G_SETTINGS_BIND_SET);
-	g_settings_bind (dlg->editor,
-			 GEDIT_SETTINGS_AUTO_SAVE,
-			 dlg->auto_save_spinbutton,
-			 "sensitive",
-			 G_SETTINGS_BIND_GET);
-	g_settings_bind (dlg->editor,
-			 GEDIT_SETTINGS_AUTO_SAVE,
-			 dlg->auto_save_checkbutton,
-			 "active",
-			 G_SETTINGS_BIND_GET | G_SETTINGS_BIND_SET);
 
 	tab_width_spinbutton_component = tepl_prefs_create_tab_width_spinbutton (dlg->editor,
 										 GEDIT_SETTINGS_TABS_SIZE);
+	files_component = tepl_prefs_create_files_component (dlg->editor,
+							     GEDIT_SETTINGS_CREATE_BACKUP_COPY,
+							     GEDIT_SETTINGS_AUTO_SAVE,
+							     GEDIT_SETTINGS_AUTO_SAVE_INTERVAL);
 	gtk_container_add (GTK_CONTAINER (dlg->tab_width_spinbutton_placeholder),
 			   tab_width_spinbutton_component);
+	gtk_container_add (GTK_CONTAINER (dlg->files_component_placeholder),
+			   files_component);
 }
 
 static void
@@ -379,11 +361,6 @@ setup_view_page (GeditPreferencesDialog *dlg)
 	g_settings_bind (dlg->editor,
 			 GEDIT_SETTINGS_RIGHT_MARGIN_POSITION,
 			 dlg->right_margin_position_spinbutton,
-			 "value",
-			 G_SETTINGS_BIND_GET | G_SETTINGS_BIND_SET);
-	g_settings_bind (dlg->editor,
-			 GEDIT_SETTINGS_AUTO_SAVE_INTERVAL,
-			 dlg->auto_save_spinbutton,
 			 "value",
 			 G_SETTINGS_BIND_GET | G_SETTINGS_BIND_SET);
 	g_signal_connect (dlg->wrap_text_checkbutton,

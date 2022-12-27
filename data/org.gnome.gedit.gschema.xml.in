@@ -58,6 +58,7 @@
       <description>Whether gedit should automatically save modified files after a time interval. You can set the time interval with the “Autosave Interval” option.</description>
     </key>
     <key name="auto-save-interval" type="u">
+      <range min="1" max="100"/>
       <default>10</default>
       <summary>Autosave Interval</summary>
       <description>Number of minutes after which gedit will automatically save modified files. This will only take effect if the “Autosave” option is turned on.</description>
