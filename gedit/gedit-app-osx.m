@@ -31,6 +31,7 @@
 #include "gedit-debug.h"
 #include "gedit-commands.h"
 #include "gedit-commands-private.h"
+#include "gedit-document-private.h"
 #include "gedit-recent-osx.h"
 #import <AppKit/AppKit.h>
 
@@ -265,7 +266,7 @@ gedit_app_osx_set_window_title_impl (GeditApp    *app,
 	{
 		bool ismodified;
 
-		if (gedit_document_is_untitled (document))
+		if (_gedit_document_is_untitled (document))
 		{
 			[native setRepresentedURL:nil];
 		}
