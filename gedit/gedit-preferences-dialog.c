@@ -83,7 +83,6 @@ struct _GeditPreferencesDialog
 			 install_scheme_file_chooser;
 
 	/* Tabs */
-	GtkWidget	*tabs_width_spinbutton;
 	GtkWidget	*insert_spaces_checkbutton;
 
 	/* Auto indentation */
@@ -116,6 +115,7 @@ struct _GeditPreferencesDialog
 	/* Placeholders */
 	GtkGrid *font_component_placeholder;
 	GtkGrid *display_line_numbers_checkbutton_placeholder;
+	GtkGrid *tab_width_spinbutton_placeholder;
 };
 
 G_DEFINE_TYPE (GeditPreferencesDialog, gedit_preferences_dialog, GTK_TYPE_WINDOW)
@@ -174,7 +174,6 @@ gedit_preferences_dialog_class_init (GeditPreferencesDialogClass *klass)
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, bracket_matching_checkbutton);
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, wrap_text_checkbutton);
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, split_checkbutton);
-	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, tabs_width_spinbutton);
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, insert_spaces_checkbutton);
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, auto_indent_checkbutton);
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, backup_copy_checkbutton);
@@ -187,19 +186,16 @@ gedit_preferences_dialog_class_init (GeditPreferencesDialogClass *klass)
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, plugin_manager);
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, font_component_placeholder);
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, display_line_numbers_checkbutton_placeholder);
+	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, tab_width_spinbutton_placeholder);
 }
 
 static void
 setup_editor_page (GeditPreferencesDialog *dlg)
 {
+	GtkWidget *tab_width_spinbutton_component;
 	gedit_debug (DEBUG_PREFS);
 
 	/* Connect signal */
-	g_settings_bind (dlg->editor,
-			 GEDIT_SETTINGS_TABS_SIZE,
-			 dlg->tabs_width_spinbutton,
-			 "value",
-			 G_SETTINGS_BIND_GET | G_SETTINGS_BIND_SET);
 	g_settings_bind (dlg->editor,
 			 GEDIT_SETTINGS_INSERT_SPACES,
 			 dlg->insert_spaces_checkbutton,
@@ -235,6 +231,11 @@ setup_editor_page (GeditPreferencesDialog *dlg)
 			 dlg->auto_save_checkbutton,
 			 "active",
 			 G_SETTINGS_BIND_GET | G_SETTINGS_BIND_SET);
+
+	tab_width_spinbutton_component = tepl_prefs_create_tab_width_spinbutton (dlg->editor,
+										 GEDIT_SETTINGS_TABS_SIZE);
+	gtk_container_add (GTK_CONTAINER (dlg->tab_width_spinbutton_placeholder),
+			   tab_width_spinbutton_component);
 }
 
 static void
