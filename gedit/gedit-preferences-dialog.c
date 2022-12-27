@@ -105,10 +105,6 @@ struct _GeditPreferencesDialog
 	GtkWidget       *right_margin_position_grid;
 	GtkWidget	*right_margin_position_spinbutton;
 
-	/* Highlighting */
-	GtkWidget	*highlight_current_line_checkbutton;
-	GtkWidget	*bracket_matching_checkbutton;
-
 	/* Plugin manager */
 	GtkWidget	*plugin_manager;
 
@@ -116,6 +112,7 @@ struct _GeditPreferencesDialog
 	GtkGrid *font_component_placeholder;
 	GtkGrid *display_line_numbers_checkbutton_placeholder;
 	GtkGrid *tab_width_spinbutton_placeholder;
+	GtkGrid *highlighting_component_placeholder;
 };
 
 G_DEFINE_TYPE (GeditPreferencesDialog, gedit_preferences_dialog, GTK_TYPE_WINDOW)
@@ -170,8 +167,6 @@ gedit_preferences_dialog_class_init (GeditPreferencesDialogClass *klass)
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, right_margin_checkbutton);
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, right_margin_position_grid);
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, right_margin_position_spinbutton);
-	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, highlight_current_line_checkbutton);
-	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, bracket_matching_checkbutton);
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, wrap_text_checkbutton);
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, split_checkbutton);
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, insert_spaces_checkbutton);
@@ -187,6 +182,7 @@ gedit_preferences_dialog_class_init (GeditPreferencesDialogClass *klass)
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, font_component_placeholder);
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, display_line_numbers_checkbutton_placeholder);
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, tab_width_spinbutton_placeholder);
+	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, highlighting_component_placeholder);
 }
 
 static void
@@ -209,11 +205,6 @@ setup_editor_page (GeditPreferencesDialog *dlg)
 	g_settings_bind (dlg->editor,
 			 GEDIT_SETTINGS_CREATE_BACKUP_COPY,
 			 dlg->backup_copy_checkbutton,
-			 "active",
-			 G_SETTINGS_BIND_GET | G_SETTINGS_BIND_SET);
-	g_settings_bind (dlg->editor,
-			 GEDIT_SETTINGS_BRACKET_MATCHING,
-			 dlg->bracket_matching_checkbutton,
 			 "active",
 			 G_SETTINGS_BIND_GET | G_SETTINGS_BIND_SET);
 	g_settings_bind (dlg->editor,
@@ -308,6 +299,7 @@ setup_view_page (GeditPreferencesDialog *dlg)
 	gboolean display_right_margin;
 	guint right_margin_position;
 	GtkWidget *display_line_numbers_checkbutton;
+	GtkWidget *highlighting_component;
 
 	gedit_debug (DEBUG_PREFS);
 
@@ -369,11 +361,6 @@ setup_view_page (GeditPreferencesDialog *dlg)
 	gtk_widget_set_sensitive (dlg->split_checkbutton,
 				  (wrap_mode != GTK_WRAP_NONE));
 
-	g_settings_bind (dlg->editor,
-			 GEDIT_SETTINGS_HIGHLIGHT_CURRENT_LINE,
-			 dlg->highlight_current_line_checkbutton,
-			 "active",
-			 G_SETTINGS_BIND_GET | G_SETTINGS_BIND_SET);
 	g_settings_bind (dlg->uisettings,
 	                 GEDIT_SETTINGS_STATUSBAR_VISIBLE,
 	                 dlg->display_statusbar_checkbutton,
@@ -414,8 +401,13 @@ setup_view_page (GeditPreferencesDialog *dlg)
 
 	display_line_numbers_checkbutton = tepl_prefs_create_display_line_numbers_checkbutton (dlg->editor,
 											       GEDIT_SETTINGS_DISPLAY_LINE_NUMBERS);
+	highlighting_component = tepl_prefs_create_highlighting_component (dlg->editor,
+									   GEDIT_SETTINGS_HIGHLIGHT_CURRENT_LINE,
+									   GEDIT_SETTINGS_BRACKET_MATCHING);
 	gtk_container_add (GTK_CONTAINER (dlg->display_line_numbers_checkbutton_placeholder),
 			   display_line_numbers_checkbutton);
+	gtk_container_add (GTK_CONTAINER (dlg->highlighting_component_placeholder),
+			   highlighting_component);
 }
 
 static void
