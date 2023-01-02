@@ -156,7 +156,6 @@ void		_gedit_cmd_documents_next_tab_group	(GSimpleAction *action,
 							 GVariant      *parameter,
 							 gpointer       user_data);
 
-void		_gedit_cmd_help_keyboard_shortcuts	(GeditWindow *window);
 void		_gedit_cmd_help_contents		(GeditWindow *window);
 void		_gedit_cmd_help_about			(GeditWindow *window);
 

@@ -429,20 +429,6 @@ preferences_activated (GSimpleAction  *action,
 }
 
 static void
-keyboard_shortcuts_activated (GSimpleAction *action,
-                              GVariant      *parameter,
-                              gpointer       user_data)
-{
-	GtkApplication *app;
-	GeditWindow *window;
-
-	app = GTK_APPLICATION (user_data);
-	window = GEDIT_WINDOW (gtk_application_get_active_window (app));
-
-	_gedit_cmd_help_keyboard_shortcuts (window);
-}
-
-static void
 help_activated (GSimpleAction *action,
                 GVariant      *parameter,
                 gpointer       user_data)
@@ -482,7 +468,6 @@ static GActionEntry app_entries[] = {
 	{ "new-window", new_window_activated, NULL, NULL, NULL },
 	{ "new-document", new_document_activated, NULL, NULL, NULL },
 	{ "preferences", preferences_activated, NULL, NULL, NULL },
-	{ "shortcuts", keyboard_shortcuts_activated, NULL, NULL, NULL },
 	{ "help", help_activated, NULL, NULL, NULL },
 	{ "about", about_activated, NULL, NULL, NULL },
 	{ "quit", quit_activated, NULL, NULL, NULL }
@@ -697,7 +682,6 @@ gedit_app_startup (GApplication *application)
 	add_accelerator (GTK_APPLICATION (application), "app.new-window", "<Primary>N");
 	add_accelerator (GTK_APPLICATION (application), "app.quit", "<Primary>Q");
 	add_accelerator (GTK_APPLICATION (application), "app.help", "F1");
-	add_accelerator (GTK_APPLICATION (application), "app.shortcuts", "<Primary>question");
 
 	add_accelerator (GTK_APPLICATION (application), "win.hamburger-menu", "F10");
 	add_accelerator (GTK_APPLICATION (application), "win.open", "<Primary>O");
