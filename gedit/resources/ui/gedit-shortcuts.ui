@@ -15,70 +15,70 @@
             <child>
               <object class="GtkShortcutsShortcut">
                 <property name="visible">1</property>
-                <property name="accelerator">&lt;ctrl&gt;T</property>
+                <property name="action-name">win.new-tab</property>
                 <property name="title" translatable="yes" context="shortcut window">Create a new document in a tab</property>
               </object>
             </child>
             <child>
               <object class="GtkShortcutsShortcut">
                 <property name="visible">1</property>
-                <property name="accelerator">&lt;ctrl&gt;O</property>
+                <property name="action-name">win.open</property>
                 <property name="title" translatable="yes" context="shortcut window">Open a document</property>
               </object>
             </child>
             <child>
               <object class="GtkShortcutsShortcut">
                 <property name="visible">1</property>
-                <property name="accelerator">&lt;ctrl&gt;S</property>
+                <property name="action-name">win.save</property>
                 <property name="title" translatable="yes" context="shortcut window">Save the document</property>
               </object>
             </child>
             <child>
               <object class="GtkShortcutsShortcut">
                 <property name="visible">1</property>
-                <property name="accelerator">&lt;ctrl&gt;&lt;shift&gt;S</property>
+                <property name="action-name">win.save-as</property>
                 <property name="title" translatable="yes" context="shortcut window">Save the document with a new filename</property>
               </object>
             </child>
             <child>
               <object class="GtkShortcutsShortcut">
                 <property name="visible">1</property>
-                <property name="accelerator">&lt;ctrl&gt;&lt;shift&gt;L</property>
+                <property name="action-name">win.save-all</property>
                 <property name="title" translatable="yes" context="shortcut window">Save all the documents</property>
               </object>
             </child>
             <child>
               <object class="GtkShortcutsShortcut">
                 <property name="visible">1</property>
-                <property name="accelerator">&lt;ctrl&gt;W</property>
+                <property name="action-name">win.close</property>
                 <property name="title" translatable="yes" context="shortcut window">Close the document</property>
               </object>
             </child>
             <child>
               <object class="GtkShortcutsShortcut">
                 <property name="visible">1</property>
-                <property name="accelerator">&lt;ctrl&gt;&lt;shift&gt;W</property>
+                <property name="action-name">win.close-all</property>
                 <property name="title" translatable="yes" context="shortcut window">Close all the documents</property>
               </object>
             </child>
             <child>
               <object class="GtkShortcutsShortcut">
                 <property name="visible">1</property>
-                <property name="accelerator">&lt;ctrl&gt;&lt;shift&gt;T</property>
+                <property name="action-name">win.reopen-closed-tab</property>
                 <property name="title" translatable="yes" context="shortcut window">Reopen the most recently closed document</property>
               </object>
             </child>
             <child>
               <object class="GtkShortcutsShortcut">
                 <property name="visible">1</property>
-                <property name="accelerator">&lt;ctrl&gt;&lt;Alt&gt;Page_Down</property>
+                <property name="action-name">win.next-document</property>
                 <property name="title" translatable="yes" context="shortcut window">Switch to the next document</property>
               </object>
             </child>
             <child>
               <object class="GtkShortcutsShortcut">
                 <property name="visible">1</property>
-                <property name="accelerator">&lt;ctrl&gt;&lt;Alt&gt;Page_Up</property>
+                <property name="action-name">win.previous-document</property>
                 <property name="title" translatable="yes" context="shortcut window">Switch to the previous document</property>
               </object>
             </child>
@@ -98,42 +98,42 @@
             <child>
               <object class="GtkShortcutsShortcut">
                 <property name="visible">1</property>
-                <property name="accelerator">&lt;ctrl&gt;N</property>
+                <property name="action-name">app.new-window</property>
                 <property name="title" translatable="yes" context="shortcut window">Create a new document in a window</property>
               </object>
             </child>
             <child>
               <object class="GtkShortcutsShortcut">
                 <property name="visible">1</property>
-                <property name="accelerator">&lt;ctrl&gt;&lt;alt&gt;N</property>
+                <property name="action-name">win.new-tab-group</property>
                 <property name="title" translatable="yes" context="shortcut window">Create a new tab group</property>
               </object>
             </child>
             <child>
               <object class="GtkShortcutsShortcut">
                 <property name="visible">1</property>
-                <property name="accelerator">F9</property>
+                <property name="action-name">win.side-panel</property>
                 <property name="title" translatable="yes" context="shortcut window">Show side panel</property>
               </object>
             </child>
             <child>
               <object class="GtkShortcutsShortcut">
                 <property name="visible">1</property>
-                <property name="accelerator">&lt;ctrl&gt;F9</property>
+                <property name="action-name">win.bottom-panel</property>
                 <property name="title" translatable="yes" context="shortcut window">Show bottom panel</property>
               </object>
             </child>
             <child>
               <object class="GtkShortcutsShortcut">
                 <property name="visible">1</property>
-                <property name="accelerator">F11</property>
+                <property name="action-name">win.fullscreen</property>
                 <property name="title" translatable="yes" context="shortcut window">Fullscreen on / off</property>
               </object>
             </child>
             <child>
               <object class="GtkShortcutsShortcut">
                 <property name="visible">1</property>
-                <property name="accelerator">&lt;ctrl&gt;Q</property>
+                <property name="action-name">app.quit</property>
                 <property name="title" translatable="yes" context="shortcut window">Quit the application</property>
               </object>
             </child>
@@ -146,35 +146,35 @@
             <child>
               <object class="GtkShortcutsShortcut">
                 <property name="visible">1</property>
-                <property name="accelerator">&lt;ctrl&gt;F</property>
+                <property name="action-name">win.find</property>
                 <property name="title" translatable="yes" context="shortcut window">Find</property>
               </object>
             </child>
             <child>
               <object class="GtkShortcutsShortcut">
                 <property name="visible">1</property>
-                <property name="accelerator">&lt;ctrl&gt;G</property>
+                <property name="action-name">win.find-next</property>
                 <property name="title" translatable="yes" context="shortcut window">Find the next match</property>
               </object>
             </child>
             <child>
               <object class="GtkShortcutsShortcut">
                 <property name="visible">1</property>
-                <property name="accelerator">&lt;ctrl&gt;&lt;Shift&gt;G</property>
+                <property name="action-name">win.find-prev</property>
                 <property name="title" translatable="yes" context="shortcut window">Find the previous match</property>
               </object>
             </child>
             <child>
               <object class="GtkShortcutsShortcut">
                 <property name="visible">1</property>
-                <property name="accelerator">&lt;ctrl&gt;H</property>
+                <property name="action-name">win.replace</property>
                 <property name="title" translatable="yes" context="shortcut window">Find and Replace</property>
               </object>
             </child>
             <child>
               <object class="GtkShortcutsShortcut">
                 <property name="visible">1</property>
-                <property name="accelerator">&lt;ctrl&gt;&lt;Shift&gt;K</property>
+                <property name="action-name">win.clear-highlight</property>
                 <property name="title" translatable="yes" context="shortcut window">Clear highlight</property>
               </object>
             </child>
@@ -254,7 +254,7 @@
             <child>
               <object class="GtkShortcutsShortcut">
                 <property name="visible">1</property>
-                <property name="accelerator">&lt;ctrl&gt;I</property>
+                <property name="action-name">win.goto-line</property>
                 <property name="title" translatable="yes" context="shortcut window">Go to line</property>
               </object>
             </child>
@@ -324,14 +324,14 @@
             <child>
               <object class="GtkShortcutsShortcut">
                 <property name="visible">1</property>
-                <property name="accelerator">&lt;Shift&gt;&lt;Ctrl&gt;&lt;Alt&gt;Page_Up</property>
+                <property name="action-name">win.previous-tab-group</property>
                 <property name="title" translatable="yes" context="shortcut window">Go to previous tab group</property>
               </object>
             </child>
             <child>
               <object class="GtkShortcutsShortcut">
                 <property name="visible">1</property>
-                <property name="accelerator">&lt;Shift&gt;&lt;Ctrl&gt;&lt;Alt&gt;Page_Down</property>
+                <property name="action-name">win.next-tab-group</property>
                 <property name="title" translatable="yes" context="shortcut window">Go to next tab group</property>
               </object>
             </child>
@@ -441,7 +441,7 @@
             <child>
               <object class="GtkShortcutsShortcut">
                 <property name="visible">1</property>
-                <property name="accelerator">&lt;ctrl&gt;P</property>
+                <property name="action-name">win.print</property>
                 <property name="title" translatable="yes" context="shortcut window">Print the document</property>
               </object>
             </child>
@@ -461,21 +461,21 @@
             <child>
               <object class="GtkShortcutsShortcut">
                 <property name="visible">1</property>
-                <property name="accelerator">F1</property>
+                <property name="action-name">app.help</property>
                 <property name="title" translatable="yes" context="shortcut window">Show help</property>
               </object>
             </child>
             <child>
               <object class="GtkShortcutsShortcut">
                 <property name="visible">1</property>
-                <property name="accelerator">F10</property>
+                <property name="action-name">win.hamburger-menu</property>
                 <property name="title" translatable="yes" context="shortcut window">Open menu</property>
               </object>
             </child>
             <child>
               <object class="GtkShortcutsShortcut">
                 <property name="visible">1</property>
-                <property name="accelerator">&lt;ctrl&gt;question</property>
+                <property name="action-name">win.show-help-overlay</property>
                 <property name="title" translatable="yes" context="shortcut window">Keyboard shortcuts</property>
               </object>
             </child>
