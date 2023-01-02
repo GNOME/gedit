@@ -682,6 +682,7 @@ gedit_app_startup (GApplication *application)
 	add_accelerator (GTK_APPLICATION (application), "app.new-window", "<Primary>N");
 	add_accelerator (GTK_APPLICATION (application), "app.quit", "<Primary>Q");
 	add_accelerator (GTK_APPLICATION (application), "app.help", "F1");
+	add_accelerator (GTK_APPLICATION (application), "app.preferences", "<Primary>comma");
 
 	add_accelerator (GTK_APPLICATION (application), "win.hamburger-menu", "F10");
 	add_accelerator (GTK_APPLICATION (application), "win.open", "<Primary>O");
