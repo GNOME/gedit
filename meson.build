@@ -65,6 +65,7 @@ config_h.set_quoted('GETTEXT_PACKAGE', meson.project_name())
 config_h.set_quoted('LIBDIR', join_paths(get_option('prefix'), get_option('libdir')))
 config_h.set_quoted('DATADIR', join_paths(get_option('prefix'), get_option('datadir')))
 config_h.set_quoted('VERSION', meson.project_version())
+config_h.set10('INLINE_SIDE_PANEL_SWITCHER', get_option('inline_side_panel_switcher'))
 
 configure_file(
   output: 'config.h',

@@ -2226,7 +2226,7 @@ on_side_panel_stack_children_number_changed (GtkStack    *stack,
 	{
 		gtk_widget_show (priv->side_stack_switcher);
 
-#ifndef OS_OSX
+#if !INLINE_SIDE_PANEL_SWITCHER
 		gtk_header_bar_set_custom_title (GTK_HEADER_BAR (priv->side_headerbar), priv->side_stack_switcher);
 #endif
 	}
@@ -2239,7 +2239,7 @@ on_side_panel_stack_children_number_changed (GtkStack    *stack,
 			gtk_widget_hide (priv->side_stack_switcher);
 		}
 
-#ifndef OS_OSX
+#if !INLINE_SIDE_PANEL_SWITCHER
 		gtk_header_bar_set_custom_title (GTK_HEADER_BAR (priv->side_headerbar), NULL);
 #endif
 	}
@@ -2260,7 +2260,7 @@ setup_side_panel (GeditWindow *window)
 	                        G_CALLBACK (side_panel_visibility_changed),
 	                        window);
 
-#ifdef OS_OSX
+#if INLINE_SIDE_PANEL_SWITCHER
 	priv->side_stack_switcher = priv->side_panel_inline_stack_switcher;
 #else
 	priv->side_stack_switcher = gedit_menu_stack_switcher_new ();
