@@ -673,7 +673,6 @@ static void
 gedit_app_startup (GApplication *application)
 {
 	GeditAppPrivate *priv;
-	GtkCssProvider *css_provider;
 	GtkSourceStyleSchemeManager *manager;
 
 	priv = gedit_app_get_instance_private (GEDIT_APP (application));
@@ -743,8 +742,6 @@ gedit_app_startup (GApplication *application)
 
 	/* Load custom css */
 	g_object_unref (load_css_from_resource ("gedit-style.css", TRUE));
-	css_provider = load_css_from_resource ("gedit-style-os.css", FALSE);
-	g_clear_object (&css_provider);
 
 	/*
 	 * We use the default gtksourceview style scheme manager so that plugins
