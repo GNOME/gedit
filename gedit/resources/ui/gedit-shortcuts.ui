@@ -468,6 +468,13 @@
             <child>
               <object class="GtkShortcutsShortcut">
                 <property name="visible">1</property>
+                <property name="action-name">win.show-help-overlay</property>
+                <property name="title" translatable="yes" context="shortcut window">Keyboard shortcuts</property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkShortcutsShortcut">
+                <property name="visible">1</property>
                 <property name="action-name">win.hamburger-menu</property>
                 <property name="title" translatable="yes" context="shortcut window">Open menu</property>
               </object>
@@ -477,13 +484,6 @@
                 <property name="visible">1</property>
                 <property name="action-name">app.preferences</property>
                 <property name="title" translatable="yes" context="shortcut window">Show preferences</property>
-              </object>
-            </child>
-            <child>
-              <object class="GtkShortcutsShortcut">
-                <property name="visible">1</property>
-                <property name="action-name">win.show-help-overlay</property>
-                <property name="title" translatable="yes" context="shortcut window">Keyboard shortcuts</property>
               </object>
             </child>
           </object>
