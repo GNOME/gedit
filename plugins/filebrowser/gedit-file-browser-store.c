@@ -1951,8 +1951,7 @@ content_type_is_text (gchar const *content_type)
 	/* This covers a rare case in which on Windows the PerceivedType is
 	   not set to "text" but the Content Type is set to text/plain */
 	mime = g_content_type_get_mime_type (content_type);
-	ret = g_strcmp0 (mime, "text/plain");
-
+	ret = g_strcmp0 (mime, "text/plain") == 0;
 	g_free (mime);
 
 	return ret;
