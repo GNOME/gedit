@@ -113,6 +113,28 @@ setup_i18n (void)
 	textdomain (GETTEXT_PACKAGE);
 }
 
+static void
+setup_pango (void)
+{
+#ifdef G_OS_WIN32
+	PangoFontMap *font_map;
+
+	/* Prefer the fontconfig backend of pangocairo. The win32 backend gives
+	 * ugly fonts. The fontconfig backend is what is used on Linux.
+	 * Another way would be to set the environment variable:
+	 * PANGOCAIRO_BACKEND=fontconfig
+	 * See also the documentation of pango_cairo_font_map_new().
+	 */
+	font_map = pango_cairo_font_map_new_for_font_type (CAIRO_FONT_TYPE_FT);
+
+	if (font_map != NULL)
+	{
+		pango_cairo_font_map_set_default (PANGO_CAIRO_FONT_MAP (font_map));
+		g_object_unref (font_map);
+	}
+#endif
+}
+
 int
 main (int argc, char *argv[])
 {
@@ -140,6 +162,7 @@ main (int argc, char *argv[])
 	gedit_dirs_init ();
 
 	setup_i18n ();
+	setup_pango ();
 	tepl_init ();
 	factory = gedit_factory_new ();
 	tepl_abstract_factory_set_singleton (TEPL_ABSTRACT_FACTORY (factory));
