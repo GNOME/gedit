@@ -4,13 +4,13 @@
 #
 # Maxim Dziumanenko <dziumanenko@gmail.com>, 2007.
 # Назарій Ріттер <nazariy.ritter@gmail.com>, 2014.
-# Yuri Chornoivan <yurchor@ukr.net>, 2020, 2022.
+# Yuri Chornoivan <yurchor@ukr.net>, 2020, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: gedit manual\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-15 15:56+0000\n"
-"PO-Revision-Date: 2022-07-16 09:01+0300\n"
+"POT-Creation-Date: 2023-01-01 13:31+0000\n"
+"PO-Revision-Date: 2023-01-04 23:05+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -26,55 +26,81 @@ msgctxt "_"
 msgid "translator-credits"
 msgstr ""
 "Максим Дзюманенко <dziumanenko@gmail.com>, 2007\n"
-"Назарій Ріттер <nazariy.ritter@gmail.com>, 2014"
+"Назарій Ріттер <nazariy.ritter@gmail.com>, 2014\n"
+"Юрій Чорноіван <yurchor@ukr.net>, 2023"
+
+#. (itstool) path: page/title
+#: C/gedit-brief-intro.page:9
+#| msgid "A brief introduction to gedit."
+msgid "A brief introduction to gedit"
+msgstr "Короткий вступ до «gedit»"
+
+#. (itstool) path: page/p
+#: C/gedit-brief-intro.page:11
+msgid ""
+"<app>gedit</app> is an easy-to-use and general-purpose text editor. Its "
+"development started in 1998, at the beginnings of the <link href=\"https://"
+"www.gnome.org/\">GNOME</link> project, with a good integration with that "
+"desktop environment."
+msgstr ""
+"<app>gedit</app> — проста у користуванні програма загального призначення для"
+" редагування тексту. Її розробку було розпочато у 1998 році, на початку"
+" проєкту <link href=\"https://"
+"www.gnome.org/\">GNOME</link>, із доброю інтеграцією із цим стільничним"
+" середовищем."
+
+#. (itstool) path: page/p
+#: C/gedit-brief-intro.page:18
+#| msgid ""
+#| "<app>gedit</app> is a full-featured text editor for the GNOME desktop "
+#| "environment. You can use it to prepare simple notes and documents, or you "
+#| "can use some of its advanced features, making it your own software "
+#| "development environment."
+msgid ""
+"You can use it to write simple notes and documents, or you can enable more "
+"advanced features that are useful for software development."
+msgstr ""
+"Його можна використовувати для написання звичайних нотаток та документів,"
+" або ви можете увімкнути додаткові можливості, які є корисними для розробки"
+" програмного забезпечення."
+
+#. (itstool) path: page/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/gedit-brief-intro.page:23
+msgctxt "_"
+msgid ""
+"external ref='figures/gedit3-screenshot.png' "
+"md5='5fd76174e1e72f99c870b9983034ccd1'"
+msgstr ""
+"external ref='figures/gedit3-screenshot.png' "
+"md5='5fd76174e1e72f99c870b9983034ccd1'"
+
+#. (itstool) path: page/p
+#: C/gedit-brief-intro.page:25
+msgid ""
+"Once <app>gedit</app> launches, you can start writing right away. To save "
+"your text, just click the <gui>Save</gui> button in the <app>gedit</app> "
+"header bar."
+msgstr ""
+"Як тільки «<app>gedit</app>» запущено, можна відразу ж починати писати в "
+"ньому. Щоб зберегти написане, просто натисніть кнопку «<gui>Зберегти</gui>», "
+"що на панелі заголовка «<app>gedit</app>»."
 
 #. (itstool) path: info/desc
 #: C/gedit-change-color-scheme.page:8
 msgid "Change the text and background colors in gedit."
 msgstr "Зміна кольорів тексту та тла у «gedit»."
 
-#. (itstool) path: credit/name
-#: C/gedit-change-color-scheme.page:14 C/gedit-change-default-font.page:11
-#: C/gedit-close-file.page:11 C/gedit-create-new-file.page:12
-#: C/gedit-edit-as-root.page:10 C/gedit-files-basic.page:10
-#: C/gedit-full-screen.page:13 C/gedit-open-files-from-sidepane.page:11
-#: C/gedit-open-files.page:17 C/gedit-open-on-server.page:10
-#: C/gedit-open-recent.page:12 C/gedit-plugin-guide.page:13
-#: C/gedit-plugins-change-case.page:14 C/gedit-plugins-doc-stats.page:14
-#: C/gedit-plugins-external-tools.page:15 C/gedit-plugins-file-browser.page:15
-#: C/gedit-plugins-insert-date-time.page:15 C/gedit-plugins-install.page:8
-#: C/gedit-plugins-modelines.page:13 C/gedit-plugins-pyconsole.page:10
-#: C/gedit-plugins-quick-open.page:11 C/gedit-plugins-snippets.page:9
-#: C/gedit-plugins-sort.page:14 C/gedit-printing.page:10
-#: C/gedit-quickstart.page:12 C/gedit-replace.page:14 C/gedit-save-file.page:13
-#: C/gedit-search.page:12 C/gedit-spellcheck.page:12
-#: C/gedit-syntax-highlighting.page:10 C/gedit-tabs-moving.page:13
-#: C/gedit-tabs.page:14 C/gedit-undo-redo.page:12 C/index.page:14
-msgid "Jim Campbell"
-msgstr "Jim Campbell"
-
-#. (itstool) path: credit/name
-#: C/gedit-change-color-scheme.page:18
-msgid "Jana Svarova"
-msgstr "Jana Svarova"
-
-#. (itstool) path: credit/years
-#: C/gedit-change-color-scheme.page:20 C/gedit-change-color-scheme.page:25
-msgid "2015"
-msgstr "2015"
-
-#. (itstool) path: credit/name
-#: C/gedit-change-color-scheme.page:23 C/gedit-replace.page:26
-msgid "Ekaterina Gerasimova"
-msgstr "Катерина Герасимова"
-
 #. (itstool) path: page/title
-#: C/gedit-change-color-scheme.page:31
+#: C/gedit-change-color-scheme.page:11
 msgid "Change the color scheme"
 msgstr "Зміна кольорової схеми"
 
 #. (itstool) path: page/p
-#: C/gedit-change-color-scheme.page:33
+#: C/gedit-change-color-scheme.page:13
 msgid ""
 "<app>gedit</app> includes several different color schemes, allowing you to "
 "change the appearance of the main text window."
@@ -83,12 +109,12 @@ msgstr ""
 "таким чином, змінювати вигляд головного текстового вікна."
 
 #. (itstool) path: steps/title
-#: C/gedit-change-color-scheme.page:37
+#: C/gedit-change-color-scheme.page:17
 msgid "To change the color scheme:"
 msgstr "Щоб змінити схему кольорів:"
 
 #. (itstool) path: item/p
-#: C/gedit-change-color-scheme.page:39 C/gedit-change-default-font.page:29
+#: C/gedit-change-color-scheme.page:19 C/gedit-change-default-font.page:18
 msgid ""
 "Press the menu button in the top-right corner of the window and select "
 "<guiseq><gui style=\"menuitem\">Preferences</gui><gui>Font &amp; Colors</"
@@ -98,22 +124,22 @@ msgstr ""
 "style=\"menuitem\">«Параметри»</gui> <gui>«Шрифт і кольори»</gui></guiseq>."
 
 #. (itstool) path: item/p
-#: C/gedit-change-color-scheme.page:44
+#: C/gedit-change-color-scheme.page:24
 msgid "Choose your desired color scheme."
 msgstr "Виберіть бажану кольорову схему."
 
 #. (itstool) path: page/p
-#: C/gedit-change-color-scheme.page:48
+#: C/gedit-change-color-scheme.page:28
 msgid "The new color scheme will be applied immediately."
 msgstr "Нову кольорову схему буде застосовано негайно."
 
 #. (itstool) path: section/title
-#: C/gedit-change-color-scheme.page:51
+#: C/gedit-change-color-scheme.page:31
 msgid "Use a Custom Color Scheme"
 msgstr "Використання користувацької кольорової схеми"
 
 #. (itstool) path: section/p
-#: C/gedit-change-color-scheme.page:57
+#: C/gedit-change-color-scheme.page:37
 msgid ""
 "You can also use color schemes that have been created by others, or create "
 "and use your own color schemes."
@@ -122,7 +148,7 @@ msgstr ""
 "чи створювати свої власні."
 
 #. (itstool) path: section/p
-#: C/gedit-change-color-scheme.page:60
+#: C/gedit-change-color-scheme.page:40
 msgid ""
 "Instructions on how to install custom color schemes, as well as examples of "
 "color schemes that you can download and use, are available on the <link href="
@@ -139,18 +165,13 @@ msgstr ""
 msgid "Use a custom font for your text in gedit."
 msgstr "Використання нетипового шрифту для вашого тексту у «gedit»."
 
-#. (itstool) path: credit/years
-#: C/gedit-change-default-font.page:13
-msgid "2011 2012 2013"
-msgstr "2011 2012 2013"
-
 #. (itstool) path: page/title
-#: C/gedit-change-default-font.page:20
+#: C/gedit-change-default-font.page:9
 msgid "Change the default font"
 msgstr "Зміна типового шрифту"
 
 #. (itstool) path: page/p
-#: C/gedit-change-default-font.page:22
+#: C/gedit-change-default-font.page:11
 msgid ""
 "<app>gedit</app> will use the system fixed-width font by default, but you "
 "can change the default <app>gedit</app> font to suit your preferences."
@@ -160,19 +181,19 @@ msgstr ""
 "уподобанням."
 
 #. (itstool) path: steps/title
-#: C/gedit-change-default-font.page:27
+#: C/gedit-change-default-font.page:16
 msgid "To change the default font in <app>gedit</app>:"
 msgstr "Щоб змінити типовий шрифт в «<app>gedit</app>»:"
 
 #. (itstool) path: item/p
-#: C/gedit-change-default-font.page:32
+#: C/gedit-change-default-font.page:21
 msgid ""
 "Uncheck the box next to the phrase, \"Use the system fixed width font.\""
 msgstr ""
 "Зніміть прапорець біля фрази «Використовувати системний моноширинний шрифт»."
 
 #. (itstool) path: item/p
-#: C/gedit-change-default-font.page:34
+#: C/gedit-change-default-font.page:23
 msgid ""
 "Click on the current font name. <app>gedit</app> will open a font-chooser "
 "window, allowing you to see available fonts and choose the one that you "
@@ -183,7 +204,7 @@ msgstr ""
 "який Вам підходить."
 
 #. (itstool) path: item/p
-#: C/gedit-change-default-font.page:37
+#: C/gedit-change-default-font.page:26
 msgid ""
 "After you have chosen a new font, use the <gui>slider</gui> under the list "
 "of fonts to set the default font size."
@@ -192,7 +213,7 @@ msgstr ""
 "списку шрифтів, для встановлення типового розміру шрифту."
 
 #. (itstool) path: item/p
-#: C/gedit-change-default-font.page:39
+#: C/gedit-change-default-font.page:28
 msgid "Click <gui>Select</gui>, and then close the dialog."
 msgstr "Клацніть на «<gui>Вибрати</gui>», а потім закрийте діалогове вікно."
 
@@ -202,29 +223,36 @@ msgid "Exit from the file you are using."
 msgstr "Завершення роботи з файлом."
 
 #. (itstool) path: page/title
-#: C/gedit-close-file.page:18
+#: C/gedit-close-file.page:10
 msgid "Close a file"
 msgstr "Закриття файла"
 
 #. (itstool) path: page/p
-#: C/gedit-close-file.page:20
+#: C/gedit-close-file.page:12
+#| msgid ""
+#| "To close a file in <app>gedit</app>, click the <gui style=\"button\">×</"
+#| "gui> that appears on the right-side of the file's tab, or press "
+#| "<keyseq><key>Ctrl</key><key>W</key></keyseq>."
 msgid ""
 "To close a file in <app>gedit</app>, click the <gui style=\"button\">×</gui> "
-"that appears on the right-side of the file's tab, or press "
-"<keyseq><key>Ctrl</key><key>W</key></keyseq>."
+"button that appears on the tab title. Note that when only a single file is "
+"open in a window, you can close the window instead."
 msgstr ""
 "Щоб закрити файл у «<app>gedit</app>», натисніть кнопку <gui style=\"button"
-"\">×</gui> у правій частині вкладки файла або натисніть комбінацію клавіш "
-"<keyseq><key>Ctrl</key> <key>W</key></keyseq>."
+"\">×</gui> на смужці заголовка вкладки. Зауважте, що якщо у вікні відкрито"
+" лише один файл, ви можете просто закрити вікно."
 
 #. (itstool) path: page/p
-#: C/gedit-close-file.page:23
+#: C/gedit-close-file.page:17
+#| msgid ""
+#| "Any one of these actions will close a file in <app>gedit</app>. If your "
+#| "file contains changes that have not been saved, <app>gedit</app> will "
+#| "prompt you to save those changes before closing the file."
 msgid ""
-"Any one of these actions will close a file in <app>gedit</app>. If your file "
-"contains changes that have not been saved, <app>gedit</app> will prompt you "
-"to save those changes before closing the file."
+"If your file contains changes that have not been saved, <app>gedit</app> "
+"will prompt you to save those changes before closing the file."
 msgstr ""
-"Будь-яка з цих дій закриє файл в «<app>gedit</app>». Якщо файл міститиме "
+"Якщо файл міститиме "
 "незбережені зміни, «<app>gedit</app>» запропонує їх зберегти перед закриттям "
 "файла."
 
@@ -233,40 +261,36 @@ msgstr ""
 msgid "Open a new file for editing."
 msgstr "Відкриття нового файла для редагування."
 
-#. (itstool) path: credit/name
-#: C/gedit-create-new-file.page:16 C/gedit-full-screen.page:17
-#: C/gedit-open-files.page:21 C/gedit-plugins-quick-open.page:15
-#: C/gedit-replace.page:30 C/gedit-save-file.page:21 C/gedit-search.page:24
-#: C/gedit-tabs.page:31 C/gedit-undo-redo.page:24
-msgid "Shobha Tyagi"
-msgstr "Shobha Tyagi"
-
 #. (itstool) path: page/title
-#: C/gedit-create-new-file.page:22
+#: C/gedit-create-new-file.page:11
 msgid "Create a new file"
 msgstr "Створення нового файла"
 
 #. (itstool) path: page/p
-#: C/gedit-create-new-file.page:24
+#: C/gedit-create-new-file.page:13
+#| msgid ""
+#| "The easiest way to create a new file in <app>gedit</app>, is to click the "
+#| "<gui>Create a new document</gui> button on the left side of the header "
+#| "bar, or press <keyseq><key>Ctrl</key><key>T</key></keyseq>."
 msgid ""
-"The easiest way to create a new file in <app>gedit</app>, is to click the "
-"<gui>Create a new document</gui> button on the left side of the header bar, "
-"or press <keyseq><key>Ctrl</key><key>T</key></keyseq>."
+"The easiest way to create a new file in <app>gedit</app> is to click the "
+"<gui>+</gui> button (the <gui>Create a new document</gui> button) on the "
+"left side of the header bar."
 msgstr ""
 "Найпростіший спосіб створити новий файл в «<app>gedit</app>» – клацнути на "
-"кнопці «<gui>Створити новий документ</gui>», що з лівої сторони панелі "
+"кнопці <gui>+</gui> (кнопці «<gui>Створити новий документ</gui>»), що з"
+" лівої сторони панелі "
 "заголовка, або натиснути <keyseq><key>Ctrl</key><key>T</key></keyseq>."
 
 #. (itstool) path: page/p
-#: C/gedit-create-new-file.page:28
+#: C/gedit-create-new-file.page:18
+#| msgid "Drag the tab out of the <app>gedit</app> window."
 msgid ""
-"Any one of these actions will create a new file in the <app>gedit</app> "
-"window. If you have other files open in <app>gedit</app>, the new file that "
-"you create will appear as a new tab to the right of those files."
+"The new file will appear as a new tab inside the same <app>gedit</app> "
+"window."
 msgstr ""
-"Будь-яка з цих дій створить новий файл у вікні «<app>gedit</app>». Якщо в "
-"«<app>gedit</app>» вже є інші відкриті файли, то новий файл з'явиться в "
-"новій вкладці справа від цих файлів."
+"Новий файл буде представлено новою вкладкою у тому самому вікні <app>gedit<"
+"/app>."
 
 #. (itstool) path: info/desc
 #: C/gedit-edit-as-root.page:7
@@ -274,12 +298,12 @@ msgid "Use administrative privileges to edit a file."
 msgstr "Використання прав доступу адміністратора для редагування файла."
 
 #. (itstool) path: page/title
-#: C/gedit-edit-as-root.page:16
+#: C/gedit-edit-as-root.page:10
 msgid "Edit a file as the root user"
 msgstr "Редагування файла з правами адміністратора"
 
 #. (itstool) path: note/p
-#: C/gedit-edit-as-root.page:19
+#: C/gedit-edit-as-root.page:13
 msgid ""
 "Editing files as the root user is potentially dangerous, and may break your "
 "system in bad ways. Take great care when editing files as the root user."
@@ -289,7 +313,7 @@ msgstr ""
 "правами адміністратора."
 
 #. (itstool) path: page/p
-#: C/gedit-edit-as-root.page:24
+#: C/gedit-edit-as-root.page:18
 msgid ""
 "To edit files as the root user, launch <app>gedit</app> from the terminal by "
 "entering:"
@@ -298,13 +322,13 @@ msgstr ""
 "app>» з терміналу, ввівши:"
 
 #. (itstool) path: page/code
-#: C/gedit-edit-as-root.page:26
+#: C/gedit-edit-as-root.page:20
 #, no-wrap
 msgid "sudo gedit"
 msgstr "sudo gedit"
 
 #. (itstool) path: page/p
-#: C/gedit-edit-as-root.page:28
+#: C/gedit-edit-as-root.page:22
 msgid ""
 "Using the <cmd>sudo</cmd> command, you will need to successfully enter your "
 "password before <app>gedit</app> will open."
@@ -313,7 +337,7 @@ msgstr ""
 "пароль перед тим, як відкриється «<app>gedit</app>»."
 
 #. (itstool) path: page/p
-#: C/gedit-edit-as-root.page:31
+#: C/gedit-edit-as-root.page:25
 msgid ""
 "As an alternative to the <cmd>sudo</cmd> command, you may obtain "
 "administrative privileges by entering:"
@@ -322,13 +346,13 @@ msgstr ""
 "можна ввівши:"
 
 #. (itstool) path: page/code
-#: C/gedit-edit-as-root.page:33
+#: C/gedit-edit-as-root.page:27
 #, no-wrap
 msgid "su -"
 msgstr "su -"
 
 #. (itstool) path: page/p
-#: C/gedit-edit-as-root.page:35
+#: C/gedit-edit-as-root.page:29
 msgid ""
 "You would then launch <app>gedit</app> using the <cmd>gedit</cmd> command."
 msgstr ""
@@ -336,7 +360,7 @@ msgstr ""
 "cmd>»."
 
 #. (itstool) path: note/p
-#: C/gedit-edit-as-root.page:39
+#: C/gedit-edit-as-root.page:33
 msgid ""
 "Once you have opened <app>gedit</app> with administrative privileges, "
 "<app>gedit</app> will keep those privileges until you close it."
@@ -350,12 +374,12 @@ msgid "Learn the basics of how to work with files in gedit."
 msgstr "Дізнайтеся більше про основи роботи з файлами у «gedit»."
 
 #. (itstool) path: page/title
-#: C/gedit-files-basic.page:16
+#: C/gedit-files-basic.page:10
 msgid "File basics: Open, close, and save files"
 msgstr "Основи роботи з файлами: відкривання, закривання та збереження файлів"
 
 #. (itstool) path: page/p
-#: C/gedit-files-basic.page:18
+#: C/gedit-files-basic.page:12
 msgid ""
 "If you are new to <app>gedit</app>, these topics will help you with "
 "creating, saving, opening and closing files."
@@ -369,12 +393,12 @@ msgid "Set gedit to use the entire screen."
 msgstr "Використання усього екрана для редагування у «gedit»."
 
 #. (itstool) path: page/title
-#: C/gedit-full-screen.page:23
+#: C/gedit-full-screen.page:11
 msgid "Use fullscreen mode"
 msgstr "Використання повноекранного режиму"
 
 #. (itstool) path: page/p
-#: C/gedit-full-screen.page:25
+#: C/gedit-full-screen.page:13
 msgid ""
 "When working with a large document, you may find it helpful to work in "
 "<app>gedit's</app> fullscreen mode. Using fullscreen mode will hide the "
@@ -389,12 +413,12 @@ msgstr ""
 "сконцентруватися на своїх задачах."
 
 #. (itstool) path: section/title
-#: C/gedit-full-screen.page:32
+#: C/gedit-full-screen.page:20
 msgid "Turn on fullscreen mode"
 msgstr "Увімкнення повноекранного режиму"
 
 #. (itstool) path: section/p
-#: C/gedit-full-screen.page:33
+#: C/gedit-full-screen.page:21
 msgid ""
 "To turn on fullscreen mode, press <key>F11</key>. <app>gedit's</app> menu, "
 "title, and tab-bars will hide, and you will only be presented with the text "
@@ -405,7 +429,7 @@ msgstr ""
 "текст поточного файла залишиться видимим."
 
 #. (itstool) path: section/p
-#: C/gedit-full-screen.page:36
+#: C/gedit-full-screen.page:24
 msgid ""
 "If you need to perform an action from the <app>gedit</app> menu while "
 "working in fullscreen mode, move your mouse pointer to the top of the "
@@ -418,7 +442,7 @@ msgstr ""
 "потрібну дію."
 
 #. (itstool) path: note/p
-#: C/gedit-full-screen.page:42
+#: C/gedit-full-screen.page:30
 msgid ""
 "To switch between open tabs while in fullscreen mode, press either "
 "<keyseq><key>Ctrl</key><key>Alt</key><key>PgUp</key></keyseq> or "
@@ -429,12 +453,12 @@ msgstr ""
 "<keyseq><key>Ctrl</key><key>Alt</key><key>PgDn</key></keyseq>."
 
 #. (itstool) path: section/title
-#: C/gedit-full-screen.page:50
+#: C/gedit-full-screen.page:38
 msgid "Turn off fullscreen mode"
 msgstr "Вимкнення повноекранного режиму"
 
 #. (itstool) path: section/p
-#: C/gedit-full-screen.page:51
+#: C/gedit-full-screen.page:39
 msgid ""
 "To turn off fullscreen mode and return to the standard <app>gedit</app> "
 "window, press <key>F11</key>."
@@ -443,7 +467,7 @@ msgstr ""
 "«<app>gedit</app>», натисніть <key>F11</key>."
 
 #. (itstool) path: section/p
-#: C/gedit-full-screen.page:53
+#: C/gedit-full-screen.page:41
 msgid ""
 "You can also move your mouse cursor to the top of the screen, and wait for "
 "the <gui>menu bar</gui> to appear. When the <gui>menu bar</gui> appears, "
@@ -453,18 +477,237 @@ msgstr ""
 "до появи <gui>смужки меню</gui>. Коли <gui>смужка меню</gui> з'явиться, "
 "виберіть «<gui>Вийти з повноекранного режиму</gui>»."
 
+#. (itstool) path: page/title
+#: C/gedit-general-intro.page:9
+msgid "Introduction to text editors in general"
+msgstr "Загальний вступ до користування текстовими редакторами"
+
+#. (itstool) path: section/title
+#: C/gedit-general-intro.page:12
+msgid "Not a word processor"
+msgstr "Не є текстовим процесором"
+
+#. (itstool) path: section/p
+#: C/gedit-general-intro.page:13
+msgid ""
+"A <em>text editor</em> must be differentiated from <em>word processors</em>."
+msgstr ""
+"<em>Текстовий редактор</em> слід відрізняти від <em>текстового процесора</em"
+">."
+
+#. (itstool) path: section/p
+#: C/gedit-general-intro.page:17
+msgid ""
+"An example of a word processor is <link href=\"https://www.libreoffice.org/"
+"\">LibreOffice Writer</link>, which is released as Free and open-source "
+"software."
+msgstr ""
+"Прикладом текстового процесора є <link href=\"https://www.libreoffice.org/\""
+">LibreOffice Writer</link> — безкоштовна програма з відкритим кодом."
+
+#. (itstool) path: section/p
+#: C/gedit-general-intro.page:22
+msgid ""
+"A word processor permits to create different kinds of documents (reports, "
+"letters, books, etc), with the ability to insert images, tables and other "
+"elements."
+msgstr ""
+"Текстові процесори уможливлюють створення документів різних типів (звітів,"
+" листів, книг тощо) з можливістю вставлення зображень, таблиць та інших"
+" елементів."
+
+#. (itstool) path: section/p
+#: C/gedit-general-intro.page:27
+msgid ""
+"A text editor like <app>gedit</app> is used for creating and editing "
+"<em>text files</em>. The files that are saved by <app>gedit</app> and stored "
+"on disk contain only text."
+msgstr ""
+"Текстові редактори, подібні до <app>gedit</app> використовують для створення"
+" та редагування <em>текстових файлів</em>. Файли, які зберігає <app>gedit<"
+"/app>, на диску містять лише текст."
+
+#. (itstool) path: section/title
+#: C/gedit-general-intro.page:35
+msgid "Text file formats"
+msgstr "Формати текстових файлів"
+
+#. (itstool) path: section/p
+#: C/gedit-general-intro.page:36
+msgid ""
+"With a text editor, you can write simple notes as free-form text. But the "
+"text can also follow a certain <em>format</em>."
+msgstr ""
+"За допомогою текстового редактора ви можете писати прості нотатки у формі"
+" довільного тексту. Але текст також може відповідати певному <em>формату</em"
+">."
+
+#. (itstool) path: section/p
+#: C/gedit-general-intro.page:40
+msgid ""
+"Other programs take text files as input, read the text in it, and produce a "
+"result. For example, web browsers can read text files that follow the HTML "
+"format and renders them as pages."
+msgstr ""
+"Інші програми приймають текстові файли як вхідні дані, читають з них текст і"
+" видають результат. Наприклад, браузери можуть читати текстові файли, у яких"
+" використано формат HTML, і показують їх як вебсторінки."
+
+#. (itstool) path: section/p
+#: C/gedit-general-intro.page:45
+msgid ""
+"A text file format specifies how the content needs to be structured in order "
+"to be understood by the other programs."
+msgstr ""
+"Формат текстового файла вказує, як слід структурувати дані для того, щоб їх"
+" могли обробляти інші програми."
+
+#. (itstool) path: section/title
+#: C/gedit-general-intro.page:52
+msgid "Examples"
+msgstr "Приклади"
+
+#. (itstool) path: section/title
+#: C/gedit-general-intro.page:55
+#| msgid "Printing documents"
+msgid "Writing documents"
+msgstr "Записування документів"
+
+#. (itstool) path: section/p
+#: C/gedit-general-intro.page:56
+msgid ""
+"It is interesting to note that, with a simple text editor and text files, it "
+"is possible to write documents such as produced by a word processor."
+msgstr ""
+"Цікаво зауважити, що за допомогою простого текстового редактора і текстових"
+" файлів можна записувати такі самі документи, що і створені текстовим"
+" процесором."
+
+#. (itstool) path: section/p
+#: C/gedit-general-intro.page:61
+msgid ""
+"To take our earlier example with HTML, to insert an image, it is done by "
+"referring to an external image file (for example stored on disk in the same "
+"directory). Although the image file is not part of the HTML file, a web "
+"browser knows that it needs to embed it in the page."
+msgstr ""
+"Якщо розглядати наш попередній приклад з HTML, щоб вставити зображення, слід"
+" послатися на зовнішній файл зображення (наприклад, файл, що зберігається на"
+" диску у тому самому каталозі). Хоча файл зображення не є частиною файла"
+" HTML, веббраузер знає, що слід вбудувати це зображення до сторінки."
+
+#. (itstool) path: section/title
+#: C/gedit-general-intro.page:70
+msgid "Source code"
+msgstr "Початковий код"
+
+#. (itstool) path: section/p
+#: C/gedit-general-intro.page:71
+msgid ""
+"Text files are not restricted to write notes or documents, another area is "
+"writing <em>source code</em>, to develop a piece of software with a "
+"programming or scripting language."
+msgstr ""
+"Використання текстових файлів не обмежено написанням нотаток або документів."
+" Іншою областю їхнього застосування є <em>початковий програмний код</em>,"
+" тобто розробка програмного забезпечення мовою програмування або скриптовою"
+" мовою."
+
+#. (itstool) path: section/title
+#: C/gedit-general-intro.page:80 C/gedit-syntax-highlighting.page:13
+msgid "Syntax highlighting"
+msgstr "Підсвічування синтаксису"
+
+#. (itstool) path: section/p
+#: C/gedit-general-intro.page:81
+msgid ""
+"When writing text in a certain format (or “language”), it is very useful to "
+"visually distinguish the different kinds of elements, when a portion of text "
+"has a special meaning. The special meanings depend on the <em>syntax</em> of "
+"the language, i.e., how things should be structured."
+msgstr ""
+"При написанні тексту у певному форматі (або певною «мовою») дуже корисним є"
+" візуальне вирізнення елементів різних типів, якщо певна частина тексту має"
+" спеціалізоване призначення. Спеціалізоване призначення залежить від <em"
+">синтаксису</em> мови, тобто того, яким чином структуровано дані."
+
+#. (itstool) path: section/p
+#: C/gedit-general-intro.page:87
+msgid ""
+"This is done by adding colors to the text (or other highlighting means: "
+"bold, italic, underline, etc)."
+msgstr ""
+"Це завдання виконують додаванням кольорів до тексту (або іншого"
+" виокремлення, зокрема напівжирним, курсивним, підкресленим текстом тощо)."
+
+#. (itstool) path: section/p
+#: C/gedit-general-intro.page:91
+msgid ""
+"It is important to note that these colors are <em>not</em> saved into the "
+"file; instead, it is the text editor application that presents the text to "
+"the user that way."
+msgstr ""
+"Важливо зауважити, що ці кольори <em>не</em> зберігаються до файла. Так"
+" представляє користувачеві дані файла сама програма текстового редактора."
+
+#. (itstool) path: info/desc
+#: C/gedit-open-file.page:9
+#| msgid "Open files to start working on them."
+msgid "Open a file to start working on it."
+msgstr "Відкрийте файл, щоб розпочати над ним роботу."
+
+#. (itstool) path: page/title
+#: C/gedit-open-file.page:12
+#| msgid "Save a file"
+msgid "Open a file"
+msgstr "Відкриття файла"
+
+#. (itstool) path: page/p
+#: C/gedit-open-file.page:14
+#| msgid ""
+#| "To open a file in <app>gedit</app>, click the <gui>Open</gui> button, or "
+#| "press <keyseq><key>Ctrl</key><key>O</key></keyseq>."
+msgid "To open a file in <app>gedit</app>, click the <gui>Open</gui> button."
+msgstr ""
+"Щоб відкрити файл в «<app>gedit</app>», клацніть на кнопці «<gui>Відкрити</"
+"gui>»."
+
+#. (itstool) path: page/p
+#: C/gedit-open-file.page:17
+#| msgid ""
+#| "This will cause the <gui>Open</gui> dialog to appear. Use your mouse or "
+#| "keyboard to select the file that you wish to open, and then click "
+#| "<gui>Open</gui>. The file that you've selected will open in a new tab."
+msgid ""
+"This will cause the <gui>Open</gui> dialog to appear. Use your mouse or "
+"keyboard to select the file that you wish to open, and then click <gui>Open</"
+"gui>."
+msgstr ""
+"Відкриється діалогове вікно «<gui>Відкрити</gui>». Використовуйте мишу або "
+"клавіатуру для вибору файла для відкриття, а потім клацніть на "
+"«<gui>Відкрити</gui>»."
+
+#. (itstool) path: page/p
+#: C/gedit-open-file.page:22
+msgid ""
+"To close the <gui>Open</gui> dialog without opening a file, click "
+"<gui>Cancel</gui>."
+msgstr ""
+"Щоб закрити діалогове вікно «<gui>Відкрити</gui>» без відкриття файла, "
+"клацніть на «<gui>Скасувати</gui>»."
+
 #. (itstool) path: info/desc
 #: C/gedit-open-files-from-sidepane.page:8
 msgid "Use gedit's side pane as a file browser."
 msgstr "Використання бічної панелі «gedit» для навігації файловою системою."
 
 #. (itstool) path: page/title
-#: C/gedit-open-files-from-sidepane.page:17
+#: C/gedit-open-files-from-sidepane.page:11
 msgid "View and open files from the side panel"
 msgstr "Перегляд та відкриття файлів з бічної панелі"
 
 #. (itstool) path: page/p
-#: C/gedit-open-files-from-sidepane.page:18
+#: C/gedit-open-files-from-sidepane.page:12
 msgid ""
 "The most common way to switch between files in <app>gedit</app> is by using "
 "the tabs at the top of the <app>gedit</app> window. In some cases, though, "
@@ -477,7 +720,7 @@ msgstr ""
 "файлів, може бути простішим користуватися бічною панеллю."
 
 #. (itstool) path: page/p
-#: C/gedit-open-files-from-sidepane.page:25
+#: C/gedit-open-files-from-sidepane.page:19
 msgid ""
 "To activate the side panel, select <guiseq><gui>View</gui> <gui>Side Panel</"
 "gui></guiseq>, or just press the <key>F9</key> key."
@@ -486,7 +729,7 @@ msgstr ""
 "<gui>«Бічна панель»</gui></guiseq> або натисніть клавішу <key>F9</key>."
 
 #. (itstool) path: note/p
-#: C/gedit-open-files-from-sidepane.page:31
+#: C/gedit-open-files-from-sidepane.page:25
 msgid ""
 "You can toggle the side panel open or closed by pressing <key>F9</key> at "
 "any time."
@@ -494,14 +737,14 @@ msgstr ""
 "Завжди можна увімкнути/вимкнути бічну панель, натиснувши <key>F9</key>."
 
 #. (itstool) path: section/title
-#: C/gedit-open-files-from-sidepane.page:39
-#: C/gedit-plugins-file-browser.page:33
+#: C/gedit-open-files-from-sidepane.page:33
+#: C/gedit-plugins-file-browser.page:23
 msgid "Opening files from the side panel"
 msgstr "Відкриття файлів з бічної панелі"
 
 #. (itstool) path: section/p
-#: C/gedit-open-files-from-sidepane.page:40
-#: C/gedit-plugins-file-browser.page:34
+#: C/gedit-open-files-from-sidepane.page:34
+#: C/gedit-plugins-file-browser.page:24
 msgid ""
 "To open files from the side panel, first open the side panel by selecting "
 "<guiseq><gui>View</gui> <gui>Side Panel</gui></guiseq> (or just press "
@@ -514,8 +757,8 @@ msgstr ""
 "файлів»</gui> зі спадного списку у верхній частині панелі."
 
 #. (itstool) path: section/p
-#: C/gedit-open-files-from-sidepane.page:48
-#: C/gedit-plugins-file-browser.page:42
+#: C/gedit-open-files-from-sidepane.page:42
+#: C/gedit-plugins-file-browser.page:32
 msgid ""
 "This will activate the <em>File Browser</em> mode of the side panel. You can "
 "then use the navigation buttons at the top of the panel to locate and open "
@@ -526,12 +769,12 @@ msgstr ""
 "розміщування та відкривання потрібних файлів."
 
 #. (itstool) path: section/title
-#: C/gedit-open-files-from-sidepane.page:56
+#: C/gedit-open-files-from-sidepane.page:50
 msgid "Using the side panel to switch between open files"
 msgstr "Використання бічної панелі для перемикання між відкритими файлами"
 
 #. (itstool) path: section/p
-#: C/gedit-open-files-from-sidepane.page:57
+#: C/gedit-open-files-from-sidepane.page:51
 msgid ""
 "Once you have several files open, you can use the side panel to switch "
 "between open files. To list open files, choose <gui>Documents</gui> from the "
@@ -543,7 +786,7 @@ msgstr ""
 "панелі."
 
 #. (itstool) path: section/p
-#: C/gedit-open-files-from-sidepane.page:63
+#: C/gedit-open-files-from-sidepane.page:57
 msgid ""
 "Clicking on any file name in the side panel will open that file for editing."
 msgstr ""
@@ -551,80 +794,17 @@ msgstr ""
 "редагування."
 
 #. (itstool) path: info/desc
-#: C/gedit-open-files.page:12
-msgid "Open files to start working on them."
-msgstr "Відкриття файлів для роботи з ними."
-
-#. (itstool) path: page/title
-#: C/gedit-open-files.page:27
-msgid "Open a file or set of files"
-msgstr "Відкривання файла або набору файлів"
-
-#. (itstool) path: page/p
-#: C/gedit-open-files.page:29
-msgid ""
-"To open a file in <app>gedit</app>, click the <gui>Open</gui> button, or "
-"press <keyseq><key>Ctrl</key><key>O</key></keyseq>."
-msgstr ""
-"Щоб відкрити файл в «<app>gedit</app>», клацніть на кнопці «<gui>Відкрити</"
-"gui>» або натисніть <keyseq><key>Ctrl</key><key>O</key></keyseq>."
-
-#. (itstool) path: page/p
-#: C/gedit-open-files.page:31
-msgid ""
-"This will cause the <gui>Open</gui> dialog to appear. Use your mouse or "
-"keyboard to select the file that you wish to open, and then click <gui>Open</"
-"gui>. The file that you've selected will open in a new tab."
-msgstr ""
-"Відкриється діалогове вікно «<gui>Відкрити</gui>». Використовуйте мишу або "
-"клавіатуру для вибору файла для відкриття, а потім клацніть на "
-"«<gui>Відкрити</gui>». Вибраний файл відкриється в новій вкладці."
-
-#. (itstool) path: page/p
-#: C/gedit-open-files.page:34
-msgid ""
-"To close the <gui>Open</gui> dialog without opening a file, click "
-"<gui>Cancel</gui>."
-msgstr ""
-"Щоб закрити діалогове вікно «<gui>Відкрити</gui>» без відкриття файла, "
-"клацніть на «<gui>Скасувати</gui>»."
-
-#. (itstool) path: note/p
-#: C/gedit-open-files.page:37
-msgid ""
-"You can use the <key>Ctrl</key> and <key>Shift</key> keys to open more than "
-"one file at a time. If you hold down the <key>Ctrl</key> key while you "
-"select multiple files, clicking <gui>Open</gui> will open each of the files "
-"that you have selected."
-msgstr ""
-"Можна використовувати клавіші <key>Ctrl</key> та <key>Shift</key> для "
-"відкриття більш, ніж одного файла за раз. Якщо утримувати клавішу <key>Ctrl</"
-"key> під час вибору декількох файлів і клацнути на «<gui>Відкрити</gui>», то "
-"відкриються всі вибрані файли."
-
-#. (itstool) path: note/p
-#: C/gedit-open-files.page:44
-msgid ""
-"Holding down the <key>Shift</key> while you select multiple files will open "
-"the first file that you select, the last file that you select, and all of "
-"the files in between."
-msgstr ""
-"Утримування клавіші <key>Shift</key> під час вибору декількох файлів "
-"відкриває перший та останній вибраний файли та всі файли, що знаходяться між "
-"ними."
-
-#. (itstool) path: info/desc
 #: C/gedit-open-on-server.page:7
 msgid "Access files that are stored on a different computer."
 msgstr "Доступ до файлів, які зберігаються на іншому комп'ютері."
 
 #. (itstool) path: page/title
-#: C/gedit-open-on-server.page:16
+#: C/gedit-open-on-server.page:10
 msgid "Open a file that is located on a server"
 msgstr "Відкриття файла, що знаходиться на сервері"
 
 #. (itstool) path: page/p
-#: C/gedit-open-on-server.page:18
+#: C/gedit-open-on-server.page:12
 msgid ""
 "Prior to opening a file on a server from within <app>gedit</app>, you need "
 "to know some technical information about the server. For example, you will "
@@ -636,7 +816,7 @@ msgstr ""
 "URL сервера, або, можливо, потрібно знати тип сервера (HTTP, FTP, тощо)."
 
 #. (itstool) path: page/p
-#: C/gedit-open-on-server.page:23
+#: C/gedit-open-on-server.page:17
 msgid ""
 "Also, some types of servers impose restrictions on what you can do with "
 "files stored on the server. For example, you may be able to open a file from "
@@ -648,7 +828,7 @@ msgstr ""
 "зберегти зміни, внесені в файл, може бути потрібно на свій комп'ютер."
 
 #. (itstool) path: page/p
-#: C/gedit-open-on-server.page:28
+#: C/gedit-open-on-server.page:22
 msgid ""
 "With these caveats in mind, perform the following steps to open a file from "
 "a server using <app>gedit</app>:"
@@ -657,27 +837,27 @@ msgstr ""
 "сервера, використовуючи «<app>gedit</app>»:"
 
 #. (itstool) path: item/p
-#: C/gedit-open-on-server.page:32
+#: C/gedit-open-on-server.page:26
 msgid "In the header bar, click on <gui>Open</gui>."
 msgstr "На смужці заголовка натисніть кнопку «<gui>Відкрити</gui>»."
 
 #. (itstool) path: item/p
-#: C/gedit-open-on-server.page:33
+#: C/gedit-open-on-server.page:27
 msgid "Click <gui>Other Locations</gui>."
 msgstr "Натисніть «<gui>Інші місця</gui>»."
 
 #. (itstool) path: item/p
-#: C/gedit-open-on-server.page:34
+#: C/gedit-open-on-server.page:28
 msgid "Enter the IP Address or URL of the appropriate server."
 msgstr "Введіть IP-адресу чи URL потрібного сервера."
 
 #. (itstool) path: item/p
-#: C/gedit-open-on-server.page:36
+#: C/gedit-open-on-server.page:30
 msgid "Find and select the file that you wish to open."
 msgstr "Знайдіть та виберіть файл, який хочете відкрити."
 
 #. (itstool) path: item/p
-#: C/gedit-open-on-server.page:37
+#: C/gedit-open-on-server.page:31
 msgid ""
 "Use the Character Encoding drop-down list to select the appropriate "
 "character coding."
@@ -686,12 +866,12 @@ msgstr ""
 "кодування."
 
 #. (itstool) path: item/p
-#: C/gedit-open-on-server.page:39 C/gedit-plugins-quick-open.page:44
+#: C/gedit-open-on-server.page:33 C/gedit-plugins-quick-open.page:31
 msgid "Click <gui>Open</gui>."
 msgstr "Клацніть на <gui>«Відкрити»</gui>."
 
 #. (itstool) path: page/p
-#: C/gedit-open-on-server.page:42
+#: C/gedit-open-on-server.page:36
 msgid ""
 "Valid types of URI include http:, ftp:, file:, and all of the methods "
 "supported by <app>GVfs</app>."
@@ -700,7 +880,7 @@ msgstr ""
 "підтримуються <app>GVfs</app>."
 
 #. (itstool) path: note/p
-#: C/gedit-open-on-server.page:46
+#: C/gedit-open-on-server.page:40
 msgid ""
 "Files from some types of URI are opened as read-only, and any changes you "
 "make must be saved to a different location. For example, HTTP only allows "
@@ -718,12 +898,12 @@ msgid "Access files that you have previously opened in <app>gedit</app>."
 msgstr "Доступ до нещодавно відкритих у «<app>gedit</app>» файлів."
 
 #. (itstool) path: page/title
-#: C/gedit-open-recent.page:18
+#: C/gedit-open-recent.page:10
 msgid "Reopen a recently-used file"
 msgstr "Відкриття останнього файла знову"
 
 #. (itstool) path: page/p
-#: C/gedit-open-recent.page:20
+#: C/gedit-open-recent.page:12
 msgid ""
 "<app>gedit</app> provides easy access to your ten most recently-used files, "
 "that have been previously opened in <app>gedit</app>. Here is how you can "
@@ -734,7 +914,7 @@ msgstr ""
 "файли:"
 
 #. (itstool) path: item/p
-#: C/gedit-open-recent.page:24
+#: C/gedit-open-recent.page:16
 msgid ""
 "Click the arrow button next to the <gui>Open</gui> button in the header bar."
 msgstr ""
@@ -742,19 +922,19 @@ msgstr ""
 "«<gui>Відкрити</gui>» на панелі заголовка."
 
 #. (itstool) path: item/p
-#: C/gedit-open-recent.page:26
+#: C/gedit-open-recent.page:18
 msgid ""
 "<app>gedit</app> will display a menu with the ten most recently-used files."
 msgstr ""
 "«<app>gedit</app>» покаже меню із десятьма останніми використаними файлами."
 
 #. (itstool) path: item/p
-#: C/gedit-open-recent.page:28
+#: C/gedit-open-recent.page:20
 msgid "Select the desired file, and it will open in a new tab."
 msgstr "Виберіть потрібний файл. Він відкриється в новій вкладці."
 
 #. (itstool) path: note/p
-#: C/gedit-open-recent.page:31
+#: C/gedit-open-recent.page:23
 msgid ""
 "When hovering with the mouse over a recently-used file from the menu, the "
 "full path to the file is displayed in the status bar at the bottom of the "
@@ -765,17 +945,74 @@ msgstr ""
 "показано шлях до відповідного файла повністю."
 
 #. (itstool) path: info/desc
+#: C/gedit-open-several-files-at-once.page:9
+#| msgid "Select the desired lines of text."
+msgid "Select a set of files to open."
+msgstr "Виберіть набір файлів для відкриття."
+
+#. (itstool) path: page/title
+#: C/gedit-open-several-files-at-once.page:12
+#| msgid "Open a file or set of files"
+msgid "Open several files at once"
+msgstr "Одночасне відкриття декількох файлів"
+
+#. (itstool) path: page/p
+#: C/gedit-open-several-files-at-once.page:13
+#| msgid ""
+#| "Click the arrow button next to the <gui>Open</gui> button in the header "
+#| "bar."
+msgid ""
+"Click the <gui>Open</gui> button. This will cause the <gui>Open</gui> dialog "
+"to appear."
+msgstr ""
+"Натисніть кнопку <gui>Відкрити</gui>. У відповідь програма відкриє вікно <"
+"gui>Відкрити</gui>."
+
+#. (itstool) path: page/p
+#: C/gedit-open-several-files-at-once.page:17
+msgid ""
+"From the <gui>Open</gui> dialog, you can select more than one file with the "
+"<key>Ctrl</key> or <key>Shift</key> key."
+msgstr ""
+"За допомогою вікна <gui>Відкрити</gui> ви можете вибрати декілька файлів,"
+" скориставшись клавішами <key>Ctrl</key> і <key>Shift</key>."
+
+#. (itstool) path: page/p
+#: C/gedit-open-several-files-at-once.page:21
+msgid ""
+"If you hold down the <key>Ctrl</key> key while you select a file, that file "
+"will be added to the selection."
+msgstr ""
+"Якщо ви натиснете і утримуватимете клавішу <key>Ctrl</key> під час"
+" позначення файла, файли буде додано до позначеного набору."
+
+#. (itstool) path: page/p
+#: C/gedit-open-several-files-at-once.page:25
+#| msgid ""
+#| "Holding down the <key>Shift</key> while you select multiple files will "
+#| "open the first file that you select, the last file that you select, and "
+#| "all of the files in between."
+msgid ""
+"If you hold down the <key>Shift</key> key while you select a file, the "
+"selection of files will contain the first file, the last file, and all of "
+"the files in between."
+msgstr ""
+"Якщо ви утримуватимете натиснутою клавішу <key>Shift</key> під час"
+" позначення файла, до позначеного набору буде додано усі файли від першого"
+" до останнього."
+
+#. (itstool) path: info/desc
 #: C/gedit-plugin-guide.page:9
 msgid "Use plugins to customize how gedit works for you."
 msgstr "Використання додатків для налаштовування роботи «gedit»."
 
 #. (itstool) path: page/title
-#: C/gedit-plugin-guide.page:19
+#: C/gedit-plugin-guide.page:12
 msgid "Configure and use gedit plugins"
 msgstr "Налаштування та користування додатків «gedit»"
 
 #. (itstool) path: page/p
-#: C/gedit-plugin-guide.page:20
+#: C/gedit-plugin-guide.page:13
 msgid ""
 "You can do more with <app>gedit</app> by using plugins. Several plugins are "
 "installed by default, but a large number of other plugins are available "
@@ -786,7 +1023,7 @@ msgstr ""
 "окремо."
 
 #. (itstool) path: note/p
-#: C/gedit-plugin-guide.page:24
+#: C/gedit-plugin-guide.page:17
 msgid ""
 "Many Linux distributions make a group of these plugins available as a "
 "<app>gedit-plugins</app> package. Install the <app>gedit-plugins</app> "
@@ -797,7 +1034,7 @@ msgstr ""
 "щоб зробити ці додаткові додатки доступними в «<app>gedit</app>»."
 
 #. (itstool) path: when/p
-#: C/gedit-plugin-guide.page:30
+#: C/gedit-plugin-guide.page:23
 msgid ""
 "<link action=\"install:gedit-plugins\" href=\"ftp://ftp.gnome.org/pub/gnome/"
 "sources/gedit-plugins/\" style=\"button\">Install gedit-plugins</link>"
@@ -806,37 +1043,27 @@ msgstr ""
 "sources/gedit-plugins/\" style=\"button\">Встановити gedit-plugins</link>"
 
 #. (itstool) path: section/title
-#: C/gedit-plugin-guide.page:36
+#: C/gedit-plugin-guide.page:29
 msgid "Default gedit Plugins"
 msgstr "Типові додатки «gedit»"
 
 #. (itstool) path: section/title
-#: C/gedit-plugin-guide.page:40
+#: C/gedit-plugin-guide.page:33
 msgid "Additional gedit Plugins"
 msgstr "Додаткові додатки «gedit»"
 
-#. (itstool) path: credit/name
-#: C/gedit-plugins-change-case.page:9 C/gedit-plugins-doc-stats.page:10
-#: C/gedit-plugins-external-tools.page:11 C/gedit-plugins-file-browser.page:11
-#: C/gedit-plugins-insert-date-time.page:10 C/gedit-plugins-install.page:12
-#: C/gedit-plugins-modelines.page:9 C/gedit-plugins-sort.page:10
-#: C/gedit-replace.page:18 C/gedit-search.page:16 C/gedit-tabs-moving.page:17
-#: C/gedit-tabs.page:18 C/gedit-undo-redo.page:16
-msgid "Daniel Neel"
-msgstr "Daniel Neel"
-
 #. (itstool) path: info/desc
-#: C/gedit-plugins-change-case.page:17
+#: C/gedit-plugins-change-case.page:7
 msgid "Change the case of selected text."
 msgstr "Змінює регістр вибраного тексту."
 
 #. (itstool) path: page/title
-#: C/gedit-plugins-change-case.page:20
+#: C/gedit-plugins-change-case.page:10
 msgid "Change case"
 msgstr "Змінити регістр"
 
 #. (itstool) path: page/p
-#: C/gedit-plugins-change-case.page:22
+#: C/gedit-plugins-change-case.page:12
 msgid ""
 "This plugin helps you to change the case of selected portions of text. You "
 "can use it to change text to be all lower case, all upper case, to invert "
@@ -852,7 +1079,7 @@ msgstr ""
 "guiseq>."
 
 #. (itstool) path: page/p
-#: C/gedit-plugins-change-case.page:28
+#: C/gedit-plugins-change-case.page:18
 msgid ""
 "Once the <em>Change Case</em> plugin is enabled, you can use it by "
 "completing the following steps:"
@@ -861,12 +1088,12 @@ msgstr ""
 "використовувати, виконавши наступні дії:"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-change-case.page:32
+#: C/gedit-plugins-change-case.page:22
 msgid "Highlight the portion of text that you want to change."
 msgstr "Виділіть фрагмент тексту, який потрібно змінити."
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-change-case.page:33
+#: C/gedit-plugins-change-case.page:23
 msgid ""
 "Select <guiseq><gui style=\"menu\">gedit</gui><gui>Change Case</gui></guiseq>"
 msgstr ""
@@ -874,17 +1101,17 @@ msgstr ""
 "gui></guiseq>"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-change-case.page:35
+#: C/gedit-plugins-change-case.page:25
 msgid "Choose your desired text-formatting option."
 msgstr "Виберіть потрібний варіант форматування тексту."
 
 #. (itstool) path: page/p
-#: C/gedit-plugins-change-case.page:38
+#: C/gedit-plugins-change-case.page:28
 msgid "The updates to the text formatting will take place immediately."
 msgstr "Текст буде змінено негайно."
 
 #. (itstool) path: note/p
-#: C/gedit-plugins-change-case.page:41
+#: C/gedit-plugins-change-case.page:31
 msgid ""
 "The <gui>Invert Case</gui> option will convert all lower case letters to "
 "upper case, and will convert all upper case letters to lower case."
@@ -893,7 +1120,7 @@ msgstr ""
 "верхній, а верхній регістр символів на верхній."
 
 #. (itstool) path: note/p
-#: C/gedit-plugins-change-case.page:43
+#: C/gedit-plugins-change-case.page:33
 msgid ""
 "The <gui>Title Case</gui> option will convert the first letter of each word "
 "to upper case. All other letters will be converted to lower case."
@@ -902,7 +1129,7 @@ msgstr ""
 "слова на верхній. Регістр всіх інших літер змінюється на нижній."
 
 #. (itstool) path: note/p
-#: C/gedit-plugins-change-case.page:49
+#: C/gedit-plugins-change-case.page:39
 msgid ""
 "If you have not highlighted any text, the <em>Change Case</em> feature will "
 "be grayed-out. You need to select a portion of text before you use the "
@@ -913,17 +1140,17 @@ msgstr ""
 "регістр</em>»."
 
 #. (itstool) path: info/desc
-#: C/gedit-plugins-doc-stats.page:17
+#: C/gedit-plugins-doc-stats.page:7
 msgid "View document statistics."
 msgstr "Перегляд статистики документа."
 
 #. (itstool) path: page/title
-#: C/gedit-plugins-doc-stats.page:20
+#: C/gedit-plugins-doc-stats.page:10
 msgid "Document statistics"
 msgstr "Статистика документа"
 
 #. (itstool) path: page/p
-#: C/gedit-plugins-doc-stats.page:22
+#: C/gedit-plugins-doc-stats.page:12
 msgid ""
 "The <em>Document Statistics</em> plugin shows you various statistics about "
 "your current document. To enable this plugin, select <guiseq><gui style="
@@ -936,12 +1163,12 @@ msgstr ""
 "<gui>«Додатки»</gui><gui>«Статистика документа»</gui></guiseq>."
 
 #. (itstool) path: section/title
-#: C/gedit-plugins-doc-stats.page:28
+#: C/gedit-plugins-doc-stats.page:18
 msgid "Using Document Statistics"
 msgstr "Використання «Статистики документа»"
 
 #. (itstool) path: section/p
-#: C/gedit-plugins-doc-stats.page:30
+#: C/gedit-plugins-doc-stats.page:20
 msgid ""
 "Once the plugin is enabled, use it by selecting <guiseq><gui>Tools</gui> "
 "<gui>Document Statistics</gui></guiseq>. A window will display the "
@@ -954,7 +1181,7 @@ msgstr ""
 "слів, рядків, символів, символів без пробілів та розмір файла в байтах."
 
 #. (itstool) path: section/p
-#: C/gedit-plugins-doc-stats.page:36
+#: C/gedit-plugins-doc-stats.page:26
 msgid ""
 "You can also use <em>Document Statistics</em> to show you information about "
 "just a portion of your document. To do this, use the mouse pointer to select "
@@ -971,18 +1198,18 @@ msgstr ""
 "вибраного тексту."
 
 #. (itstool) path: info/desc
-#: C/gedit-plugins-external-tools.page:18
+#: C/gedit-plugins-external-tools.page:9
 msgid ""
 "Run scripts on your current files, and interact with other applications."
 msgstr "Виконує скрипти в поточних файлах та взаємодіє з іншими програмами."
 
 #. (itstool) path: page/title
-#: C/gedit-plugins-external-tools.page:22
+#: C/gedit-plugins-external-tools.page:13
 msgid "External tools"
 msgstr "Зовнішні інструменти"
 
 #. (itstool) path: page/p
-#: C/gedit-plugins-external-tools.page:24
+#: C/gedit-plugins-external-tools.page:15
 msgid ""
 "The <em>External Tools</em> plugin can help simplify repetitive tasks. "
 "Specifically, it extends <app>gedit</app> by helping you to run scripts on "
@@ -1000,12 +1227,12 @@ msgstr ""
 "gui> <gui>«Зовнішні інструменти»</gui></guiseq>."
 
 #. (itstool) path: section/title
-#: C/gedit-plugins-external-tools.page:33
+#: C/gedit-plugins-external-tools.page:24
 msgid "Configure the external tools plugin"
 msgstr "Налаштування додатка «Зовнішні інструменти»"
 
 #. (itstool) path: section/p
-#: C/gedit-plugins-external-tools.page:35
+#: C/gedit-plugins-external-tools.page:26
 msgid ""
 "Once you have enabled the plugin, you will need to configure it to suit your "
 "needs. The configuration options are available by selecting "
@@ -1017,7 +1244,7 @@ msgstr ""
 "gui></guiseq>."
 
 #. (itstool) path: note/p
-#: C/gedit-plugins-external-tools.page:40
+#: C/gedit-plugins-external-tools.page:31
 msgid ""
 "This plugin is for advanced users, and requires knowledge of scripting to be "
 "used effectively. Use this plugin with care, as mistakes with your scripts "
@@ -1028,17 +1255,17 @@ msgstr ""
 "помилки у скриптах можуть ненавмисно зіпсувати Вашу роботу."
 
 #. (itstool) path: info/desc
-#: C/gedit-plugins-file-browser.page:18
+#: C/gedit-plugins-file-browser.page:8
 msgid "Use the side panel to browse and open files."
 msgstr "Використовує бічну панель для огляду та відкриття файлів"
 
 #. (itstool) path: page/title
-#: C/gedit-plugins-file-browser.page:21
+#: C/gedit-plugins-file-browser.page:11
 msgid "File browser panel"
 msgstr "Панель оглядача файлів"
 
 #. (itstool) path: page/p
-#: C/gedit-plugins-file-browser.page:23
+#: C/gedit-plugins-file-browser.page:13
 msgid ""
 "Depending on how you use <app>gedit</app>, you may find it helpful to use "
 "the <app>File Browser panel</app> plugin. This plugin embeds a <app>file "
@@ -1051,7 +1278,7 @@ msgstr ""
 "найчастіше використовуваних файлів."
 
 #. (itstool) path: page/p
-#: C/gedit-plugins-file-browser.page:28
+#: C/gedit-plugins-file-browser.page:18
 msgid ""
 "You can enable the side panel by selecting <guiseq><gui style=\"menu"
 "\">gedit</gui><gui style=\"menuitem\">Preferences</gui> <gui>Plugins</"
@@ -1062,17 +1289,17 @@ msgstr ""
 "gui><gui>«Панель оглядача файлів»</gui></guiseq>."
 
 #. (itstool) path: info/desc
-#: C/gedit-plugins-insert-date-time.page:18
+#: C/gedit-plugins-insert-date-time.page:7
 msgid "Insert the current date/time at the cursor position."
 msgstr "Вставляє поточну дату/час в поточну позицію курсору."
 
 #. (itstool) path: page/title
-#: C/gedit-plugins-insert-date-time.page:21
+#: C/gedit-plugins-insert-date-time.page:10
 msgid "Insert date/time"
 msgstr "Вставка дати/часу"
 
 #. (itstool) path: page/p
-#: C/gedit-plugins-insert-date-time.page:23
+#: C/gedit-plugins-insert-date-time.page:12
 msgid ""
 "As this name of this plugin suggests, the <gui>Insert Date/Time</gui> plugin "
 "allows you to insert the date and/or time at the current cursor position."
@@ -1081,12 +1308,12 @@ msgstr ""
 "gui> надає вам змогу вставити дату і/або час до поточної позиції курсора."
 
 #. (itstool) path: steps/title
-#: C/gedit-plugins-insert-date-time.page:28
+#: C/gedit-plugins-insert-date-time.page:17
 msgid "To enable the plugin:"
 msgstr "Щоб увімкнути додаток:"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-insert-date-time.page:30
+#: C/gedit-plugins-insert-date-time.page:19
 msgid ""
 "Press the menu button in the top-right corner of the window and select "
 "<guiseq><gui style=\"menuitem\">Preferences</gui> <gui style=\"tab"
@@ -1097,7 +1324,7 @@ msgstr ""
 "guiseq>."
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-insert-date-time.page:35
+#: C/gedit-plugins-insert-date-time.page:24
 msgid ""
 "Select <gui style=\"menuitem\">Insert Date/Time</gui> to enable the plugin."
 msgstr ""
@@ -1105,7 +1332,7 @@ msgstr ""
 "увімкнути додаток."
 
 #. (itstool) path: page/p
-#: C/gedit-plugins-insert-date-time.page:39
+#: C/gedit-plugins-insert-date-time.page:28
 msgid ""
 "To use the plugin, press the menu button in the top-right corner of the "
 "window and select <guiseq><gui style=\"menuitem\">Tools</gui> <gui style="
@@ -1116,7 +1343,7 @@ msgstr ""
 "style=\"menuitem\">«Вставити дату і час»</gui></guiseq>."
 
 #. (itstool) path: page/p
-#: C/gedit-plugins-insert-date-time.page:43
+#: C/gedit-plugins-insert-date-time.page:32
 msgid ""
 "By default, the <gui>Insert Date/Time</gui> plugin will prompt you to choose "
 "your preferred date/time format each time that you use the plugin. However, "
@@ -1133,17 +1360,17 @@ msgstr ""
 "\">«Налаштування»</gui></guiseq>."
 
 #. (itstool) path: info/desc
-#: C/gedit-plugins-install.page:15
+#: C/gedit-plugins-install.page:6
 msgid "How to install third-party plugins."
 msgstr "Як встановити сторонні додатки."
 
 #. (itstool) path: page/title
-#: C/gedit-plugins-install.page:18
+#: C/gedit-plugins-install.page:9
 msgid "Additional gedit plugins"
 msgstr "Додаткові додатки «gedit»"
 
 #. (itstool) path: page/p
-#: C/gedit-plugins-install.page:20
+#: C/gedit-plugins-install.page:11
 msgid ""
 "Installing third-party plugins gives you extra functionality that isn't "
 "available in default <app>gedit</app> plugins, or even the extra plugins "
@@ -1158,7 +1385,7 @@ msgstr ""
 "Gedit\">міститься тут</link>."
 
 #. (itstool) path: page/p
-#: C/gedit-plugins-install.page:27
+#: C/gedit-plugins-install.page:18
 msgid ""
 "Installing a third-party plugin involves downloading the plugin, placing the "
 "plugin files in the right directory, and activating the plugin."
@@ -1167,7 +1394,7 @@ msgstr ""
 "розміщення його в правильному каталозі та активування додатка."
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-install.page:31
+#: C/gedit-plugins-install.page:22
 msgid ""
 "You can usually download a plugin from the plugin's website, but may need to "
 "use a revision-control program like <app>git</app>, <app> bazaar</app>, or "
@@ -1182,7 +1409,7 @@ msgstr ""
 "додатка для отримання інформації про додаток."
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-install.page:36
+#: C/gedit-plugins-install.page:27
 msgid ""
 "Place the plugin files into the <file>/home/<var>username</var>/.local/share/"
 "gedit/plugins</file> directory."
@@ -1191,14 +1418,14 @@ msgstr ""
 "local/share/gedit/plugins</file>»."
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-install.page:39
+#: C/gedit-plugins-install.page:30
 msgid ""
 "Of course, replace the word <var>username</var> with your own username."
 msgstr ""
 "Звичайно ж, замініть «<var>ім'я_користувача</var>» на своє власне ім'я."
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-install.page:41
+#: C/gedit-plugins-install.page:32
 msgid ""
 "After you have placed the plugin files into the correct directory, the "
 "plugin will appear in the Preferences menu. Press the menu button in the top-"
@@ -1213,18 +1440,18 @@ msgstr ""
 "додаток."
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-install.page:46
+#: C/gedit-plugins-install.page:37
 msgid "Click <gui>Close</gui>."
 msgstr "Клацніть на «<gui>Закрити</gui>»."
 
 #. (itstool) path: page/p
-#: C/gedit-plugins-install.page:49
+#: C/gedit-plugins-install.page:40
 msgid ""
 "After you have enabled the plugin, it should be available for you to use."
 msgstr "Після увімкнення додатка, він має стати доступним для користування."
 
 #. (itstool) path: note/p
-#: C/gedit-plugins-install.page:53
+#: C/gedit-plugins-install.page:44
 msgid ""
 "The <file>.local</file> directory is hidden by default. To view it and other "
 "hidden files, select <guiseq><gui>View</gui><gui>Show Hidden Files</gui></"
@@ -1236,7 +1463,7 @@ msgstr ""
 "key></keyseq>."
 
 #. (itstool) path: note/p
-#: C/gedit-plugins-install.page:60
+#: C/gedit-plugins-install.page:51
 msgid ""
 "If the directory <file>.local/share/gedit/plugins/</file> is not present on "
 "your system, you will need to create it."
@@ -1245,17 +1472,17 @@ msgstr ""
 "системі, його потрібно створити."
 
 #. (itstool) path: info/desc
-#: C/gedit-plugins-modelines.page:16
+#: C/gedit-plugins-modelines.page:7
 msgid "Emacs, Kate and Vim-style modelines support for gedit."
 msgstr "Підтримка режиму рядків в стилі «Emacs», «Kate» та «Vim»."
 
 #. (itstool) path: page/title
-#: C/gedit-plugins-modelines.page:19
+#: C/gedit-plugins-modelines.page:10
 msgid "Modelines"
 msgstr "Режим рядків"
 
 #. (itstool) path: page/p
-#: C/gedit-plugins-modelines.page:21
+#: C/gedit-plugins-modelines.page:12
 msgid ""
 "The <app>Modelines</app> plugin allows <app>gedit</app> to analyze the lines "
 "of text at the start and end of a file, and then apply a set of document "
@@ -1270,7 +1497,7 @@ msgstr ""
 "app>», «<app>Kate</app>» та «<app>Vim</app>»."
 
 #. (itstool) path: page/p
-#: C/gedit-plugins-modelines.page:27
+#: C/gedit-plugins-modelines.page:18
 msgid ""
 "To enable the <app>Modelines</app> plugin, select <guiseq><gui style=\"menu"
 "\">gedit</gui> <gui style=\"menuitem\">Preferences</gui><gui>Plugins</"
@@ -1281,44 +1508,44 @@ msgstr ""
 "gui><gui>«Додатки»</gui><gui>«Режим рядків»</gui></guiseq>."
 
 #. (itstool) path: section/title
-#: C/gedit-plugins-modelines.page:31
+#: C/gedit-plugins-modelines.page:22
 msgid "General Modeline Options"
 msgstr "Загальні параметри «Режиму рядків»"
 
 #. (itstool) path: section/p
-#: C/gedit-plugins-modelines.page:32
+#: C/gedit-plugins-modelines.page:23
 msgid "The following options can be set using <app>gedit</app> modelines:"
 msgstr ""
 "Можна вибрати наступні параметри, використовуючи режим рядків в «<app>gedit</"
 "app>»:"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-modelines.page:34
+#: C/gedit-plugins-modelines.page:25
 msgid "Tab width"
 msgstr "Ширина табуляції"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-modelines.page:35
+#: C/gedit-plugins-modelines.page:26
 msgid "Indent width"
 msgstr "Ширина відступу"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-modelines.page:36
+#: C/gedit-plugins-modelines.page:27
 msgid "Inserting spaces instead of tabs"
 msgstr "Вставка пробілів замість табуляції"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-modelines.page:37
+#: C/gedit-plugins-modelines.page:28
 msgid "Text Wrapping"
 msgstr "Перенесення тексту"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-modelines.page:38
+#: C/gedit-plugins-modelines.page:29
 msgid "Right margin width"
 msgstr "Ширина правого поля"
 
 #. (itstool) path: note/p
-#: C/gedit-plugins-modelines.page:42
+#: C/gedit-plugins-modelines.page:33
 msgid ""
 "Preferences set using modelines take precedence over the ones specified in "
 "the preference dialog."
@@ -1327,12 +1554,12 @@ msgstr ""
 "іншими параметрами, вказаними в діалоговому вікні параметрів."
 
 #. (itstool) path: section/title
-#: C/gedit-plugins-modelines.page:48
+#: C/gedit-plugins-modelines.page:39
 msgid "Emacs Modelines"
 msgstr "Режим рядків «Emacs»"
 
 #. (itstool) path: section/p
-#: C/gedit-plugins-modelines.page:50
+#: C/gedit-plugins-modelines.page:41
 msgid ""
 "The first two lines of a document are scanned for <app>Emacs</app> "
 "modelines, and <app>gedit</app> supports the following <app>Emacs</app> "
@@ -1343,27 +1570,27 @@ msgstr ""
 "app>»:"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-modelines.page:54
+#: C/gedit-plugins-modelines.page:45
 msgid "Tab-width"
 msgstr "Ширина табуляції"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-modelines.page:55
+#: C/gedit-plugins-modelines.page:46
 msgid "Indent-offset"
 msgstr "Зміщення відступу"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-modelines.page:56
+#: C/gedit-plugins-modelines.page:47
 msgid "Indent-tabs-mode"
 msgstr "Режим відступу-табуляцій"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-modelines.page:57
+#: C/gedit-plugins-modelines.page:48
 msgid "Text auto-wrap"
 msgstr "Автоматичне перенесення тексту"
 
 #. (itstool) path: section/p
-#: C/gedit-plugins-modelines.page:59
+#: C/gedit-plugins-modelines.page:50
 msgid ""
 "For more information on <app>Emacs</app> modelines, visit the <link href="
 "\"https://www.gnu.org/software/emacs/manual/emacs.html\">GNU Emacs Manual</"
@@ -1374,12 +1601,12 @@ msgstr ""
 "Emacs»</link>."
 
 #. (itstool) path: section/title
-#: C/gedit-plugins-modelines.page:65
+#: C/gedit-plugins-modelines.page:56
 msgid "Kate Modelines"
 msgstr "Режим рядків «Kate»"
 
 #. (itstool) path: section/p
-#: C/gedit-plugins-modelines.page:67
+#: C/gedit-plugins-modelines.page:58
 msgid ""
 "The first and last ten lines a document are scanned for <app>Kate</app> "
 "modelines, and <app>gedit</app> supports the following <app>Kate</app> "
@@ -1390,32 +1617,32 @@ msgstr ""
 "режиму рядків «<app>Kate</app>»:"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-modelines.page:72
+#: C/gedit-plugins-modelines.page:63
 msgid "tab-width"
 msgstr "ширина табуляції"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-modelines.page:73
+#: C/gedit-plugins-modelines.page:64
 msgid "indent-width"
 msgstr "ширина відступу"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-modelines.page:74
+#: C/gedit-plugins-modelines.page:65
 msgid "space-indent"
 msgstr "пробіл-відступ"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-modelines.page:75
+#: C/gedit-plugins-modelines.page:66
 msgid "word-wrap"
 msgstr "перенесення слів"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-modelines.page:76
+#: C/gedit-plugins-modelines.page:67
 msgid "word-wrap-column"
 msgstr "перенесення слів стовпчиком"
 
 #. (itstool) path: section/p
-#: C/gedit-plugins-modelines.page:79
+#: C/gedit-plugins-modelines.page:70
 msgid ""
 "For more information about <app>Kate</app> modelines, visit the <link href="
 "\"https://kate-editor.org/\">Kate website</link>."
@@ -1424,12 +1651,12 @@ msgstr ""
 "href=\"https://kate-editor.org/\">інтернет-сторінку «Kate»</link>."
 
 #. (itstool) path: section/title
-#: C/gedit-plugins-modelines.page:84
+#: C/gedit-plugins-modelines.page:75
 msgid "Vim Modelines"
 msgstr "Режим рядків «Vim»"
 
 #. (itstool) path: section/p
-#: C/gedit-plugins-modelines.page:85
+#: C/gedit-plugins-modelines.page:76
 msgid ""
 "The first and last three lines a document are scanned for <app>Vim</app> "
 "modelines, and <app>gedit</app> supports the following <app>Vim</app> "
@@ -1440,32 +1667,32 @@ msgstr ""
 "рядків «<app>Vim</app>»:"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-modelines.page:90
+#: C/gedit-plugins-modelines.page:81
 msgid "et (expandtab)"
 msgstr "рт (розгортання табуляції)"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-modelines.page:91
+#: C/gedit-plugins-modelines.page:82
 msgid "ts (tabstop)"
 msgstr "пт (позиція табуляції)"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-modelines.page:92
+#: C/gedit-plugins-modelines.page:83
 msgid "sw (shiftwidth)"
 msgstr "шз (ширина зсуву)"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-modelines.page:93
+#: C/gedit-plugins-modelines.page:84
 msgid "wrap"
 msgstr "перенесення"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-modelines.page:94
+#: C/gedit-plugins-modelines.page:85
 msgid "textwidth"
 msgstr "ширина тексту"
 
 #. (itstool) path: section/p
-#: C/gedit-plugins-modelines.page:97
+#: C/gedit-plugins-modelines.page:88
 msgid ""
 "For more information on <app>Vim</app> modelines, visit the <link href="
 "\"https://www.vim.org/\">Vim website</link>."
@@ -1474,17 +1701,17 @@ msgstr ""
 "href=\"https://www.vim.org/\">інтернет-сторінку «Vim»</link>."
 
 #. (itstool) path: info/desc
-#: C/gedit-plugins-pyconsole.page:14
+#: C/gedit-plugins-pyconsole.page:7
 msgid "Add an interactive Python console to the bottom pane."
 msgstr "Додає інтерактивну консоль «Python» до нижньої панелі."
 
 #. (itstool) path: page/title
-#: C/gedit-plugins-pyconsole.page:17
+#: C/gedit-plugins-pyconsole.page:10
 msgid "Python console"
 msgstr "Консоль «Python»"
 
 #. (itstool) path: page/p
-#: C/gedit-plugins-pyconsole.page:19
+#: C/gedit-plugins-pyconsole.page:12
 msgid ""
 "You can add a Python console to the bottom pane, allowing you to test Python "
 "scripts without leaving <app>gedit</app>. To enable the Python console, "
@@ -1498,7 +1725,7 @@ msgstr ""
 "<gui>«Консоль «Python»»</gui></guiseq>."
 
 #. (itstool) path: page/p
-#: C/gedit-plugins-pyconsole.page:25
+#: C/gedit-plugins-pyconsole.page:18
 msgid ""
 "Once the Python console is enabled, you can open it by selecting "
 "<guiseq><gui>View</gui><gui>Bottom Panel</gui></guiseq>."
@@ -1507,7 +1734,7 @@ msgstr ""
 "<guiseq><gui>«Вигляд»</gui><gui>«Нижня панель»</gui></guiseq>."
 
 #. (itstool) path: note/p
-#: C/gedit-plugins-pyconsole.page:28
+#: C/gedit-plugins-pyconsole.page:21
 msgid ""
 "If you have also enabled the <gui>Embeded Terminal</gui> plugin, the "
 "<gui>Python Console</gui> will appear as a separate tab in the bottom pane."
@@ -1516,17 +1743,17 @@ msgstr ""
 "«Python»</gui>» відкриється в окремій вкладці на нижній панелі."
 
 #. (itstool) path: info/desc
-#: C/gedit-plugins-quick-open.page:19
+#: C/gedit-plugins-quick-open.page:6
 msgid "Quickly open a file or set of files."
 msgstr "Швидко відкриває файли або набір файлів."
 
 #. (itstool) path: page/title
-#: C/gedit-plugins-quick-open.page:22
+#: C/gedit-plugins-quick-open.page:9
 msgid "Quick open"
 msgstr "Швидке відкриття"
 
 #. (itstool) path: page/p
-#: C/gedit-plugins-quick-open.page:24
+#: C/gedit-plugins-quick-open.page:11
 msgid ""
 "As the name of this plugin would imply, the <app>Quick Open</app> plugin "
 "helps you to open files more quickly than using the usual ways of opening "
@@ -1540,7 +1767,7 @@ msgstr ""
 "gui></guiseq>."
 
 #. (itstool) path: page/p
-#: C/gedit-plugins-quick-open.page:29
+#: C/gedit-plugins-quick-open.page:16
 msgid ""
 "Once you have enabled the <app>Quick Open</app> plugin you can use it as "
 "follows:"
@@ -1549,7 +1776,7 @@ msgstr ""
 "використовувати як описано нижче:"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-quick-open.page:33
+#: C/gedit-plugins-quick-open.page:20
 msgid ""
 "Open the <app>Quick Open</app> dialog box by pressing <keyseq><key>Ctrl</"
 "key><key>Alt</key><key>O</key></keyseq>, or by selecting <gui style="
@@ -1560,18 +1787,18 @@ msgstr ""
 "<gui style=\"menuitem\">«Швидке відкриття»</gui>."
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-quick-open.page:36
+#: C/gedit-plugins-quick-open.page:23
 msgid "The <gui>Quick Open</gui> file dialog will appear."
 msgstr "З'явиться файлове діалогове вікно «<gui>Швидке відкриття</gui>»."
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-quick-open.page:37
+#: C/gedit-plugins-quick-open.page:24
 msgid "Use your mouse to select the file or files that you want to open."
 msgstr ""
 "Використовуйте мишу для вибору файла або файлів, які потрібно відкрити."
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-quick-open.page:39
+#: C/gedit-plugins-quick-open.page:26
 msgid ""
 "To select several individual files, hold down your <key>Ctrl</key> key while "
 "you click on the files that you want to open."
@@ -1580,7 +1807,7 @@ msgstr ""
 "клацайте на файлах, які потрібно відкрити."
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-quick-open.page:41
+#: C/gedit-plugins-quick-open.page:28
 msgid ""
 "To select a group of files, click on the first file that you want to open, "
 "hold down the <key>Shift</key> key, and then click on the last file in the "
@@ -1591,17 +1818,17 @@ msgstr ""
 "потрібно відкрити."
 
 #. (itstool) path: page/p
-#: C/gedit-plugins-quick-open.page:47
+#: C/gedit-plugins-quick-open.page:34
 msgid "<app>Quick Open</app> will look for files in:"
 msgstr "«<app>Швидке відкриття</app>» буде шукати файли в:"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-quick-open.page:50
+#: C/gedit-plugins-quick-open.page:37
 msgid "The directory of the currently opened document"
 msgstr "каталозі поточного відкритого документа"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-quick-open.page:51
+#: C/gedit-plugins-quick-open.page:38
 msgid ""
 "The root directory of the <app xref=\"gedit-plugins-file-browser\">File "
 "Browser Panel</app> plugin"
@@ -1610,7 +1837,7 @@ msgstr ""
 "оглядача файлів</app>»"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-quick-open.page:54
+#: C/gedit-plugins-quick-open.page:41
 msgid ""
 "Recent documents which are also shown in the <file>Recent</file> folder in "
 "<app>Files</app>"
@@ -1619,22 +1846,22 @@ msgstr ""
 "в «<app>Файлах</app>»"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-quick-open.page:56
+#: C/gedit-plugins-quick-open.page:43
 msgid "Directories which you have bookmarked in <app>Files</app>"
 msgstr "Каталогах, які було позначено в «<app>Файлах</app>»"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-quick-open.page:58
+#: C/gedit-plugins-quick-open.page:45
 msgid "Your <file>Desktop</file> directory"
 msgstr "в каталозі Вашої «<file>Стільниці</file>»"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-quick-open.page:59
+#: C/gedit-plugins-quick-open.page:46
 msgid "Your <file>Home</file> directory"
 msgstr "в Вашій «<file>Домівці</file>»"
 
 #. (itstool) path: note/p
-#: C/gedit-plugins-quick-open.page:63
+#: C/gedit-plugins-quick-open.page:50
 msgid ""
 "<app>Quick Open</app> displays files in any of the above locations "
 "regardless of whether or not you have opened them previously."
@@ -1642,31 +1869,20 @@ msgstr ""
 "«<app>Швидке відкриття</app>» показує файл у будь-якому з вищеназваних "
 "каталогів, незважаючи на те, чи відкривалися вони раніше."
 
-#. (itstool) path: credit/name
-#: C/gedit-plugins-snippets.page:13 C/gedit-plugins-sort.page:18
-#: C/gedit-printing-order.page:15 C/gedit-printing.page:14
-#: C/gedit-printing-select.page:14 C/gedit-quickstart.page:16
-#: C/gedit-replace.page:22 C/gedit-save-file.page:17 C/gedit-search.page:20
-#: C/gedit-spellcheck.page:20 C/gedit-syntax-highlighting.page:14
-#: C/gedit-tabs-moving.page:21 C/gedit-tabs.page:22 C/gedit-undo-redo.page:20
-#: C/index.page:18
-msgid "Sindhu S"
-msgstr "Sindhu S"
-
 #. (itstool) path: info/desc
-#: C/gedit-plugins-snippets.page:17
+#: C/gedit-plugins-snippets.page:6
 msgid "Use snippets to quickly insert often-used pieces of text."
 msgstr ""
 "Використовує фрагменти для швидкої вставки фрагментів тексту, що часто "
 "використовуються."
 
 #. (itstool) path: page/title
-#: C/gedit-plugins-snippets.page:20
+#: C/gedit-plugins-snippets.page:9
 msgid "Snippets"
 msgstr "Фрагменти"
 
 #. (itstool) path: page/p
-#: C/gedit-plugins-snippets.page:22
+#: C/gedit-plugins-snippets.page:11
 msgid ""
 "<app>Snippets</app> provide a convenient way of inserting repetitive "
 "portions of code into your files. For example, an HTML snippet for the "
@@ -1681,18 +1897,18 @@ msgstr ""
 "написання коду простішим та швидшим."
 
 #. (itstool) path: section/title
-#: C/gedit-plugins-snippets.page:29
+#: C/gedit-plugins-snippets.page:18
 msgid "Enable Snippets Plugin"
 msgstr "Увімкнення додатка «Фрагменти»"
 
 #. (itstool) path: section/p
-#: C/gedit-plugins-snippets.page:31
+#: C/gedit-plugins-snippets.page:20
 msgid "To enable the <gui>Snippets</gui> plugin:"
 msgstr "Щоб увімкнути додаток «<gui>Фрагменти</gui>»:"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-snippets.page:35 C/gedit-plugins-sort.page:37
-#: C/gedit-spellcheck.page:36
+#: C/gedit-plugins-snippets.page:24 C/gedit-plugins-sort.page:22
+#: C/gedit-spellcheck.page:18
 msgid ""
 "Select <guiseq><gui style=\"menu\">gedit</gui> <gui style=\"menuitem"
 "\">Preferences</gui> <gui style=\"tab\">Plugins</gui></guiseq>."
@@ -1701,23 +1917,23 @@ msgstr ""
 "\">«Параметри»</gui> <gui style=\"tab\">«Додатки»</gui></guiseq>."
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-snippets.page:40
+#: C/gedit-plugins-snippets.page:29
 msgid "Select <gui style=\"menuitem\">Snippets</gui> to enable the plugin."
 msgstr ""
 "Виберіть «<gui style=\"menuitem\">Фрагменти</gui>», щоб увімкнути додаток."
 
 #. (itstool) path: section/title
-#: C/gedit-plugins-snippets.page:47
+#: C/gedit-plugins-snippets.page:36
 msgid "Browse Snippets"
 msgstr "Огляд фрагментів"
 
 #. (itstool) path: section/p
-#: C/gedit-plugins-snippets.page:49
+#: C/gedit-plugins-snippets.page:38
 msgid "To browse available snippets:"
 msgstr "Щоб оглянути доступні фрагменти:"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-snippets.page:52
+#: C/gedit-plugins-snippets.page:41
 msgid ""
 "Select <guiseq><gui style=\"menu\">Tools</gui> <gui style=\"menuitem"
 "\">Manage Snippets</gui></guiseq>."
@@ -1726,7 +1942,7 @@ msgstr ""
 "\"menuitem\">«Управління фрагментами»</gui></guiseq>."
 
 #. (itstool) path: note/p
-#: C/gedit-plugins-snippets.page:55
+#: C/gedit-plugins-snippets.page:44
 msgid ""
 "Make sure the syntax is set appropriately. The status bar at the bottom of "
 "the <app>gedit</app> window will show the current language setting. This "
@@ -1741,7 +1957,7 @@ msgstr ""
 "однак, інколи, може буде потрібно встановити його."
 
 #. (itstool) path: figure/desc
-#: C/gedit-plugins-snippets.page:62
+#: C/gedit-plugins-snippets.page:51
 msgid "In this example, the language is set to HTML."
 msgstr "В цьому прикладі, встановлено мову HTML."
 
@@ -1750,7 +1966,7 @@ msgstr "В цьому прикладі, встановлено мову HTML."
 #. the file changes, the md5 hash will change to let you know you need to
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
-#: C/gedit-plugins-snippets.page:64
+#: C/gedit-plugins-snippets.page:53
 msgctxt "_"
 msgid ""
 "external ref='figures/gedit-html-snippet.png' "
@@ -1760,27 +1976,27 @@ msgstr ""
 "md5='1f02c599b116ed209e6fb79e3e63b9ca'"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-snippets.page:69
+#: C/gedit-plugins-snippets.page:58
 msgid "Browse the snippets that are available for your language or syntax."
 msgstr "Перегляньте фрагменти, доступні для Вашої мови або синтаксису."
 
 #. (itstool) path: section/title
-#: C/gedit-plugins-snippets.page:76
+#: C/gedit-plugins-snippets.page:65
 msgid "Using Snippets"
 msgstr "Використання «Фрагментів»"
 
 #. (itstool) path: section/p
-#: C/gedit-plugins-snippets.page:78
+#: C/gedit-plugins-snippets.page:67
 msgid "To insert a snippet into your current document:"
 msgstr "Щоб вставити фрагмент до поточного документа:"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-snippets.page:82
+#: C/gedit-plugins-snippets.page:71
 msgid "Type the desired snippet name anywhere in your current document."
 msgstr "Введіть назву потрібного фрагменту будь-де в поточному документі."
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-snippets.page:85
+#: C/gedit-plugins-snippets.page:74
 msgid ""
 "Press <key>Tab</key> to insert the snippet associated with the input term."
 msgstr ""
@@ -1788,12 +2004,12 @@ msgstr ""
 "терміном."
 
 #. (itstool) path: section/title
-#: C/gedit-plugins-snippets.page:92
+#: C/gedit-plugins-snippets.page:81
 msgid "Snippet Example Usage"
 msgstr "Приклад використання «Фрагментів»"
 
 #. (itstool) path: section/p
-#: C/gedit-plugins-snippets.page:94
+#: C/gedit-plugins-snippets.page:83
 msgid ""
 "For example, if you have set the syntax to <em>HTML</em>, type <code>head </"
 "code>, and press the <key>Tab</key> key. The text would have auto completed "
@@ -1804,7 +2020,7 @@ msgstr ""
 "як:"
 
 #. (itstool) path: section/code
-#: C/gedit-plugins-snippets.page:98
+#: C/gedit-plugins-snippets.page:87
 #, no-wrap
 msgid ""
 "\n"
@@ -1824,12 +2040,12 @@ msgstr ""
 "    "
 
 #. (itstool) path: section/title
-#: C/gedit-plugins-snippets.page:108
+#: C/gedit-plugins-snippets.page:97
 msgid "Adding Snippets"
 msgstr "Додавання фрагментів"
 
 #. (itstool) path: section/p
-#: C/gedit-plugins-snippets.page:110
+#: C/gedit-plugins-snippets.page:99
 msgid ""
 "You can add new Snippets that work either globally (that is, they are "
 "language agnostic) or only in a particular syntax."
@@ -1838,7 +2054,7 @@ msgstr ""
 "від мови), або лише за певного синтаксису."
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-snippets.page:115
+#: C/gedit-plugins-snippets.page:104
 msgid ""
 "Select <guiseq style=\"menu\"><gui style=\"menuitem\">Tools</gui> <gui style="
 "\"menuitem\">Manage Snippets</gui></guiseq>."
@@ -1847,7 +2063,7 @@ msgstr ""
 "<gui style=\"menuitem\">«Управління фрагментами»</gui></guiseq>."
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-snippets.page:119
+#: C/gedit-plugins-snippets.page:108
 msgid ""
 "From the <gui>Manage Snippets</gui> sidebar select the desired syntax and "
 "click on the \"+\" button to list existing snippets for the selected syntax."
@@ -1857,7 +2073,7 @@ msgstr ""
 "обраного синтаксису."
 
 #. (itstool) path: note/p
-#: C/gedit-plugins-snippets.page:123
+#: C/gedit-plugins-snippets.page:112
 msgid ""
 "To add a snippet that works globally (that is, when no particular syntax or "
 "language has been set for the document), select <gui>Global</gui> from the "
@@ -1868,7 +2084,7 @@ msgstr ""
 "панелі «<gui>Управління фрагментами</gui>»."
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-snippets.page:129
+#: C/gedit-plugins-snippets.page:118
 msgid ""
 "To add a new snippet, click on the \"plus\" icon in the <gui>Manage "
 "Snippets</gui> sidebar."
@@ -1877,7 +2093,7 @@ msgstr ""
 "панелі «<gui>Управління фрагментами</gui>»."
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-snippets.page:133
+#: C/gedit-plugins-snippets.page:122
 msgid ""
 "Input a name for the new snippet. The name of the snippet can be different "
 "from the snippet you want to add."
@@ -1886,7 +2102,7 @@ msgstr ""
 "фрагменту, що додається."
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-snippets.page:137
+#: C/gedit-plugins-snippets.page:126
 msgid ""
 "Under the <gui style=\"group\">Activation</gui> section, you must input a "
 "term for the <gui style=\"input\">Tab trigger:</gui> textarea. You will be "
@@ -1897,7 +2113,7 @@ msgstr ""
 "буди використовуватися для вставки даного фрагменту."
 
 #. (itstool) path: note/p
-#: C/gedit-plugins-snippets.page:141
+#: C/gedit-plugins-snippets.page:130
 msgid ""
 "If you wish to insert a snippet with a keyboard shortcut, then click your "
 "mouse pointer on <gui style=\"input\">Shortcut key:</gui> textarea and press "
@@ -1910,7 +2126,7 @@ msgstr ""
 "натиснуті, комбінацію клавіш буде встановлено."
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-snippets.page:148
+#: C/gedit-plugins-snippets.page:137
 msgid ""
 "Under the textarea for <gui style=\"input\">Edit:</gui>, input the desired "
 "text for the snippet. You may use <code>${n}</code> to indicate variables, "
@@ -1923,12 +2139,12 @@ msgstr ""
 "включених змінних."
 
 #. (itstool) path: section/title
-#: C/gedit-plugins-snippets.page:158
+#: C/gedit-plugins-snippets.page:147
 msgid "New Snippet Example"
 msgstr "Ще один приклад використання «Фрагментів»"
 
 #. (itstool) path: section/p
-#: C/gedit-plugins-snippets.page:160
+#: C/gedit-plugins-snippets.page:149
 msgid ""
 "Consider you have created a snippet with the term <var>greetings</var> in "
 "<gui style=\"input\">Tab trigger:</gui>. The <gui style=\"input\">Edit:</"
@@ -1939,7 +2155,7 @@ msgstr ""
 "\">Змінити:</gui>» містить:"
 
 #. (itstool) path: section/code
-#: C/gedit-plugins-snippets.page:164
+#: C/gedit-plugins-snippets.page:153
 #, no-wrap
 msgid ""
 "\n"
@@ -1953,7 +2169,7 @@ msgstr ""
 "    "
 
 #. (itstool) path: section/p
-#: C/gedit-plugins-snippets.page:169
+#: C/gedit-plugins-snippets.page:158
 msgid ""
 "You can insert this snippet by typing <var>greetings</var> in the document "
 "and pressing the <key>Tab</key> key. The following text snippet will be "
@@ -1964,7 +2180,7 @@ msgstr ""
 "фрагмент:"
 
 #. (itstool) path: section/code
-#: C/gedit-plugins-snippets.page:173
+#: C/gedit-plugins-snippets.page:162
 #, no-wrap
 msgid ""
 "\n"
@@ -1976,7 +2192,7 @@ msgstr ""
 "    "
 
 #. (itstool) path: section/p
-#: C/gedit-plugins-snippets.page:177
+#: C/gedit-plugins-snippets.page:166
 msgid ""
 "The words \"wonderful\" and \"amazing\" can be retained or deleted depending "
 "on your choice of usage. To do so, press <key>Tab</key> to choose between "
@@ -1989,17 +2205,17 @@ msgstr ""
 "варіант."
 
 #. (itstool) path: info/desc
-#: C/gedit-plugins-sort.page:22
+#: C/gedit-plugins-sort.page:7
 msgid "Sort lines of text into alphabetical order."
 msgstr "Сортує текстові рядки в алфавітному порядку."
 
 #. (itstool) path: page/title
-#: C/gedit-plugins-sort.page:25
+#: C/gedit-plugins-sort.page:10
 msgid "Sort"
 msgstr "Сортування"
 
 #. (itstool) path: page/p
-#: C/gedit-plugins-sort.page:27
+#: C/gedit-plugins-sort.page:12
 msgid ""
 "The Sort plugin arranges selected lines of text into alphabetical order."
 msgstr ""
@@ -2007,39 +2223,39 @@ msgstr ""
 "порядку."
 
 #. (itstool) path: section/title
-#: C/gedit-plugins-sort.page:31
+#: C/gedit-plugins-sort.page:16
 msgid "Enable Sort Plugin"
 msgstr "Увімкнення додатка «Сортування»"
 
 #. (itstool) path: section/p
-#: C/gedit-plugins-sort.page:33
+#: C/gedit-plugins-sort.page:18
 msgid "To enable the <app>Sort</app> plugin:"
 msgstr "Щоб увімкнути додаток «<app>Сортування</app>»:"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-sort.page:42
+#: C/gedit-plugins-sort.page:27
 msgid "Select <gui style=\"menuitem\">Sort</gui> to enable the plugin."
 msgstr ""
 "Виберіть «<gui style=\"menuitem\">Сортування</gui>», щоб увімкнути додаток."
 
 #. (itstool) path: section/title
-#: C/gedit-plugins-sort.page:49
+#: C/gedit-plugins-sort.page:34
 msgid "Using Sort Plugin"
 msgstr "Використання додатка «Сортування»"
 
 #. (itstool) path: section/p
-#: C/gedit-plugins-sort.page:51
+#: C/gedit-plugins-sort.page:36
 msgid "To use the <gui>Sort</gui> plugin:"
 msgstr ""
 "Щоб скористатися додатком «<gui>Сортування</gui>», виконайте такі дії:"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-sort.page:55
+#: C/gedit-plugins-sort.page:40
 msgid "Select the desired lines of text."
 msgstr "Позначте потрібні рядки тексту."
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-sort.page:58
+#: C/gedit-plugins-sort.page:43
 msgid ""
 "Select <guiseq><gui style=\"menu\">Tools</gui> <gui style=\"menuitem\">Sort…"
 "</gui></guiseq>."
@@ -2048,7 +2264,7 @@ msgstr ""
 "\">«Упорядкувати…»</gui></guiseq>."
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-sort.page:62
+#: C/gedit-plugins-sort.page:47
 msgid ""
 "The <gui>Sort</gui> dialog will open, allowing you to choose between several "
 "sorting options:"
@@ -2057,7 +2273,7 @@ msgstr ""
 "декількома варіантами сортування:"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-sort.page:66
+#: C/gedit-plugins-sort.page:51
 msgid ""
 "<gui>Reverse order</gui> will arrange the text in reverse alphabetical order."
 msgstr ""
@@ -2065,18 +2281,18 @@ msgstr ""
 "порядку."
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-sort.page:70
+#: C/gedit-plugins-sort.page:55
 msgid ""
 "<gui>Remove duplicates</gui> will remove duplicate values from the list."
 msgstr "«<gui>Видалити дублікати</gui>» видалить дублікати зі списку."
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-sort.page:74
+#: C/gedit-plugins-sort.page:59
 msgid "<gui>Ignore case</gui> will ignore case sensitivity."
 msgstr "«<gui>Без врахування регістру</gui>» буде ігнорувати регістр."
 
 #. (itstool) path: note/p
-#: C/gedit-plugins-sort.page:76
+#: C/gedit-plugins-sort.page:61
 msgid ""
 "To have the sort ignore the characters at the start of the lines, set the "
 "first character that should be used for sorting in the <gui>Start at</gui> "
@@ -2087,7 +2303,7 @@ msgstr ""
 "«<gui>Починати з</gui>»."
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-sort.page:84
+#: C/gedit-plugins-sort.page:69
 msgid "To perform the sort operation, click <gui>Sort</gui>."
 msgstr "Для запуску операції сортування, клацніть на «<gui>Сортувати</gui>»."
 
@@ -2096,23 +2312,18 @@ msgstr "Для запуску операції сортування, клацн�
 msgid "Set the pages to print in a certain order."
 msgstr "Встановлення певного порядку друку сторінок."
 
-#. (itstool) path: credit/name
-#: C/gedit-printing-order.page:11 C/gedit-printing-select.page:10
-msgid "Phil Bull"
-msgstr "Phil Bull"
-
 #. (itstool) path: page/title
-#: C/gedit-printing-order.page:21
+#: C/gedit-printing-order.page:10
 msgid "Getting Copies To Print In The Correct Order"
 msgstr "Друкування в потрібному порядку"
 
 #. (itstool) path: section/title
-#: C/gedit-printing-order.page:24
+#: C/gedit-printing-order.page:13
 msgid "Reverse"
 msgstr "Зворотній порядок"
 
 #. (itstool) path: section/p
-#: C/gedit-printing-order.page:26
+#: C/gedit-printing-order.page:15
 msgid ""
 "Printers usually print the first page first, and the last page last, so the "
 "pages end up in reverse order when you pick them up. To reverse the order:"
@@ -2122,7 +2333,7 @@ msgstr ""
 "змінити порядок:"
 
 #. (itstool) path: item/p
-#: C/gedit-printing-order.page:32
+#: C/gedit-printing-order.page:21
 msgid ""
 "Select <guiseq><gui style=\"menu\">File</gui> <gui style=\"menuitem\">Print</"
 "gui></guiseq>."
@@ -2131,7 +2342,7 @@ msgstr ""
 "\">«Друкувати»</gui></guiseq>."
 
 #. (itstool) path: item/p
-#: C/gedit-printing-order.page:36
+#: C/gedit-printing-order.page:25
 msgid ""
 "In the <gui style=\"tab\">General</gui> tab of the Print dialog under <gui "
 "style=\"group\">Copies</gui>, check <gui style=\"checkbox\">Reverse</gui>."
@@ -2141,17 +2352,17 @@ msgstr ""
 "\">У зворотньому порядку</gui>»."
 
 #. (itstool) path: section/p
-#: C/gedit-printing-order.page:42
+#: C/gedit-printing-order.page:31
 msgid "The last page will be printed first, and so on."
 msgstr "Останню сторінку буде надруковано першою і так далі."
 
 #. (itstool) path: section/title
-#: C/gedit-printing-order.page:46
+#: C/gedit-printing-order.page:35
 msgid "Collate"
 msgstr "Впорядкування"
 
 #. (itstool) path: section/p
-#: C/gedit-printing-order.page:48
+#: C/gedit-printing-order.page:37
 msgid ""
 "If you are printing more than one copy of the document, the print outs will "
 "be grouped by page number by default. (e.g. The copies of page one come out, "
@@ -2164,12 +2375,12 @@ msgstr ""
 "сторінки одного екземпляру."
 
 #. (itstool) path: section/p
-#: C/gedit-printing-order.page:53
+#: C/gedit-printing-order.page:42
 msgid "To Collate:"
 msgstr "Для впорядкування:"
 
 #. (itstool) path: item/p
-#: C/gedit-printing-order.page:56
+#: C/gedit-printing-order.page:45
 msgid ""
 "Click <guiseq><gui style=\"menu\">File</gui> <gui style=\"menuitem\">Print</"
 "gui></guiseq>."
@@ -2178,7 +2389,7 @@ msgstr ""
 "\">«Друкувати»</gui></guiseq>."
 
 #. (itstool) path: item/p
-#: C/gedit-printing-order.page:60
+#: C/gedit-printing-order.page:49
 msgid ""
 "In the <gui style=\"tab\">General</gui> tab of the Print dialog under <gui "
 "style=\"group\">Copies</gui> check <gui style=\"checkbox\">Collate</gui>."
@@ -2193,12 +2404,12 @@ msgid "Print the files that you create with gedit."
 msgstr "Друк створених у «gedit» файлів."
 
 #. (itstool) path: page/title
-#: C/gedit-printing.page:20
+#: C/gedit-printing.page:10
 msgid "Printing documents"
 msgstr "Друкування документів"
 
 #. (itstool) path: note/p
-#: C/gedit-printing.page:23
+#: C/gedit-printing.page:13
 msgid ""
 "Printing with <app>gedit</app> requires that you have connected and "
 "configured your printer. If you have not done this, please consult the <link "
@@ -2209,17 +2420,17 @@ msgstr ""
 "help/printing\">довідки з друкування для GNOME</link>."
 
 #. (itstool) path: page/p
-#: C/gedit-printing.page:28
+#: C/gedit-printing.page:18
 msgid "<app>gedit</app> allows you to print both to a file and to paper."
 msgstr "В «<app>gedit</app>» можна друкувати і у файл і на папір."
 
 #. (itstool) path: section/title
-#: C/gedit-printing.page:31
+#: C/gedit-printing.page:21
 msgid "Print Preview"
 msgstr "Попередній перегляд"
 
 #. (itstool) path: section/p
-#: C/gedit-printing.page:33
+#: C/gedit-printing.page:23
 msgid ""
 "Prior to printing your document, you can preview how the printed document "
 "will look by using <gui>Print Preview</gui>. To preview the document:"
@@ -2229,7 +2440,7 @@ msgstr ""
 "Щоб попередньо переглянути документ:"
 
 #. (itstool) path: item/p
-#: C/gedit-printing.page:38
+#: C/gedit-printing.page:28
 msgid ""
 "Select <guiseq><gui style=\"menu\">File</gui> <gui style=\"menuitem\">Print "
 "Preview</gui></guiseq>. Alternatively, you can press <keyseq><key>Shift</"
@@ -2240,7 +2451,7 @@ msgstr ""
 "<keyseq><key>Shift</key><key>Ctrl</key> <key>P</key></keyseq>."
 
 #. (itstool) path: section/p
-#: C/gedit-printing.page:45
+#: C/gedit-printing.page:35
 msgid ""
 "A preview of your document will open in the same tab as the file. You can "
 "browse this preview with help of navigation buttons and tools in the toolbar "
@@ -2254,12 +2465,12 @@ msgstr ""
 "клацніть на «<gui style=\"button\">Закрити попередній перегляд</gui>»."
 
 #. (itstool) path: section/title
-#: C/gedit-printing.page:53
+#: C/gedit-printing.page:43
 msgid "Printing To Paper"
 msgstr "Друкування на папір"
 
 #. (itstool) path: section/p
-#: C/gedit-printing.page:55
+#: C/gedit-printing.page:45
 msgid ""
 "You can print your documents to paper using a local or remote printer. To "
 "print a file:"
@@ -2268,7 +2479,7 @@ msgstr ""
 "віддалений принтер. Щоб роздрукувати файл:"
 
 #. (itstool) path: item/p
-#: C/gedit-printing.page:60
+#: C/gedit-printing.page:50
 msgid ""
 "Select <guiseq><gui style=\"menu\">File</gui> <gui style=\"menuitem\">Print</"
 "gui> <gui style=\"tab\">General</gui></guiseq>."
@@ -2277,12 +2488,12 @@ msgstr ""
 "\">«Друкувати»</gui> <gui style=\"tab\">«Загальні»</gui></guiseq>."
 
 #. (itstool) path: item/p
-#: C/gedit-printing.page:65
+#: C/gedit-printing.page:55
 msgid "Select the desired printer from the list of printers available."
 msgstr "Виберіть потрібний принтер зі списку доступних принтерів."
 
 #. (itstool) path: item/p
-#: C/gedit-printing.page:68
+#: C/gedit-printing.page:58
 msgid ""
 "You can preview the file using <gui style=\"button\">Print Preview</gui> and "
 "once you are satisfied with the settings, click <gui style=\"button\">Print</"
@@ -2294,7 +2505,7 @@ msgstr ""
 "принтеру."
 
 #. (itstool) path: section/p
-#: C/gedit-printing.page:74
+#: C/gedit-printing.page:64
 msgid ""
 "Additionally, from <gui style=\"tab\">Page Setup</gui> tab: you can choose "
 "<gui style=\"group\">Layout</gui> and <gui style=\"group\">Paper</gui> "
@@ -2309,12 +2520,12 @@ msgstr ""
 "printing#paper\">Параметри розмітки та паперу</link>»."
 
 #. (itstool) path: section/title
-#: C/gedit-printing.page:84
+#: C/gedit-printing.page:74
 msgid "Print Multiple Copies And Between Specified Ranges"
 msgstr "Друкування декількох екземплярів та між визначеним діапазоном"
 
 #. (itstool) path: section/p
-#: C/gedit-printing.page:86
+#: C/gedit-printing.page:76
 msgid ""
 "You can set <gui style=\"group\">Range</gui> and <gui style=\"group"
 "\">Copies</gui> options to help you:"
@@ -2323,12 +2534,12 @@ msgstr ""
 "\"group\">Копій</gui>»:"
 
 #. (itstool) path: section/title
-#: C/gedit-printing.page:92
+#: C/gedit-printing.page:82
 msgid "Printing To File"
 msgstr "Друкування до файла"
 
 #. (itstool) path: section/p
-#: C/gedit-printing.page:94
+#: C/gedit-printing.page:84
 msgid ""
 "You can also use <app>gedit</app> to print to a file. To print your document "
 "to file of a different format:"
@@ -2337,7 +2548,7 @@ msgstr ""
 "друкувати документ до файла іншого формату:"
 
 #. (itstool) path: item/p
-#: C/gedit-printing.page:99
+#: C/gedit-printing.page:89
 msgid ""
 "Select <guiseq><gui style=\"menu\">File</gui> <gui style=\"menuitem\">Print</"
 "gui> <gui style=\"menuitem\">Print to File</gui></guiseq>."
@@ -2347,28 +2558,28 @@ msgstr ""
 "guiseq>."
 
 #. (itstool) path: item/p
-#: C/gedit-printing.page:104
+#: C/gedit-printing.page:94
 msgid ""
 "Printing is enabled for the following file formats, you may select from:"
 msgstr "Друкування доступне для наступних форматів файлів на вибір:"
 
 #. (itstool) path: item/p
-#: C/gedit-printing.page:108
+#: C/gedit-printing.page:98
 msgid "Portable Document Format (.pdf)"
 msgstr "Portable Document Format (.pdf)"
 
 #. (itstool) path: item/p
-#: C/gedit-printing.page:111
+#: C/gedit-printing.page:101
 msgid "PostScript (.ps)"
 msgstr "PostScript (.ps)"
 
 #. (itstool) path: item/p
-#: C/gedit-printing.page:114
+#: C/gedit-printing.page:104
 msgid "Scalable Vector Graphic (.svg)"
 msgstr "Scalable Vector Graphic (.svg)"
 
 #. (itstool) path: item/p
-#: C/gedit-printing.page:119
+#: C/gedit-printing.page:109
 msgid ""
 "To print the document to file, click <gui style=\"button\">Print</gui>."
 msgstr ""
@@ -2381,12 +2592,12 @@ msgid "Choose the pages that you want to print."
 msgstr "Виберіть сторінки, які ви хочете надрукувати."
 
 #. (itstool) path: page/title
-#: C/gedit-printing-select.page:20
+#: C/gedit-printing-select.page:10
 msgid "Only print certain pages"
 msgstr "Друк лише частини сторінок"
 
 #. (itstool) path: page/p
-#: C/gedit-printing-select.page:22
+#: C/gedit-printing-select.page:12
 msgid ""
 "You can selectively print only certain pages from the document. For example, "
 "if you enter the page numbers \"1,3,5-7,9\", then only pages 1, 3, 5, 6, 7 "
@@ -2397,7 +2608,7 @@ msgstr ""
 "Щоб роздрукувати вибрані сторінки:"
 
 #. (itstool) path: item/p
-#: C/gedit-printing-select.page:28
+#: C/gedit-printing-select.page:18
 msgid ""
 "Select <guiseq><gui style=\"menu\">File</gui> <gui style=\"menuitem\">Print…"
 "</gui></guiseq>."
@@ -2406,7 +2617,7 @@ msgstr ""
 "\">«Друкувати…»</gui></guiseq>."
 
 #. (itstool) path: item/p
-#: C/gedit-printing-select.page:32
+#: C/gedit-printing-select.page:22
 msgid ""
 "In the <gui style=\"tab\">General</gui> tab in the Print dialog choose <gui "
 "style=\"radiobutton\">Pages</gui> from the <gui style=\"group\">Range</gui> "
@@ -2417,7 +2628,7 @@ msgstr ""
 "\"group\">Діапазон</gui>»."
 
 #. (itstool) path: item/p
-#: C/gedit-printing-select.page:36
+#: C/gedit-printing-select.page:26
 msgid ""
 "Type the numbers of the pages you want to print from the document, separated "
 "by commas. Use a dash to specify a range of pages."
@@ -2426,501 +2637,366 @@ msgstr ""
 "Використовуйте дефіс, для задання діапазону сторінок."
 
 #. (itstool) path: info/desc
-#: C/gedit-quickstart.page:9
-msgid "A brief introduction to gedit."
-msgstr "Короткий вступ до «gedit»."
-
-#. (itstool) path: page/title
-#: C/gedit-quickstart.page:22
-msgid "Get started with gedit"
-msgstr "Початок роботи з «gedit»"
-
-#. (itstool) path: page/p
-#: C/gedit-quickstart.page:23
-msgid ""
-"<app>gedit</app> is a full-featured text editor for the GNOME desktop "
-"environment. You can use it to prepare simple notes and documents, or you "
-"can use some of its advanced features, making it your own software "
-"development environment."
-msgstr ""
-"«<app>gedit</app>» – повнофункціональний текстовий редактор для стільничного "
-"середовища «GNOME». Його можна використовувати для створення звичайних "
-"нотаток та документів, або, використовуючи деякі його вдосконалені функції, "
-"зробити його своїм середовищем для розробки програмного забезпечення."
-
-#. (itstool) path: page/media
-#. This is a reference to an external file such as an image or video. When
-#. the file changes, the md5 hash will change to let you know you need to
-#. update your localized copy. The msgstr is not used at all. Set it to
-#. whatever you like once you have updated your copy of the file.
-#: C/gedit-quickstart.page:28
-msgctxt "_"
-msgid ""
-"external ref='figures/gedit3-screenshot.png' "
-"md5='5fd76174e1e72f99c870b9983034ccd1'"
-msgstr ""
-"external ref='figures/gedit3-screenshot.png' "
-"md5='5fd76174e1e72f99c870b9983034ccd1'"
-
-#. (itstool) path: page/p
-#: C/gedit-quickstart.page:30
-msgid ""
-"Once <app>gedit</app> launches, you can start writing right away. To save "
-"your text, just click the <gui>Save</gui> button in the <app>gedit</app> "
-"header bar."
-msgstr ""
-"Як тільки «<app>gedit</app>» запущено, можна відразу ж починати писати в "
-"ньому. Щоб зберегти написане, просто натисніть кнопку «<gui>Зберегти</gui>», "
-"що на панелі заголовка «<app>gedit</app>»."
-
-#. (itstool) path: page/p
-#: C/gedit-quickstart.page:34
-msgid ""
-"To learn about additional <app>gedit</app> features and to get assistance "
-"with performing additional tasks, explore <link xref=\"index\">the other "
-"portions</link> of the <app>gedit</app> help."
-msgstr ""
-"Щоб дізнатися про додаткові функції «<app>gedit</app>» та отримати допомогу "
-"з виконанням додаткових задач, відвідайте <link xref=\"index\">інші розділи</"
-"link> довідки з «<app>gedit</app>»."
-
-#. (itstool) path: info/desc
-#: C/gedit-replace.page:8
-msgid "Replace portions of text in a file."
-msgstr "Заміна фрагментів тексту у файлі."
-
-#. (itstool) path: credit/name
-#: C/gedit-replace.page:34
-msgid "Young Li"
-msgstr "Young Li"
-
-#. (itstool) path: page/title
-#: C/gedit-replace.page:40
-msgid "Replace text"
-msgstr "Заміна тексту"
-
-#. (itstool) path: page/p
-#: C/gedit-replace.page:42
-msgid ""
-"Editing text can be time consuming. To save time, <app>gedit</app> includes "
-"a <app>Replace</app> function that helps you to find and replace portions of "
-"text."
-msgstr ""
-"Редагування тексту може забирати багато часу. Щоб зекономити час, "
-"«<app>gedit</app>» має функцію «<app>Замінити</app>», яка дозволяє знайти та "
-"замінити фрагменти тексту."
-
-#. (itstool) path: steps/title
-#: C/gedit-replace.page:47
-msgid "Replace text in <app>gedit</app>"
-msgstr "Заміна тексту з «<app>gedit</app>»"
-
-#. (itstool) path: item/p
-#: C/gedit-replace.page:49
-msgid ""
-"Open the <gui>Replace</gui> tool by clicking <guiseq><gui style=\"button"
-"\">Menu button</gui><gui style=\"menuitem\">Find and Replace…</gui></guiseq> "
-"or press <keyseq><key>Ctrl</key><key>H</key></keyseq>."
-msgstr ""
-"Відкрийте інструмент «<gui>Замінити</gui>», клацнувши на кнопці <guiseq><gui "
-"style=\"button\">>Меню</gui><gui style=\"menuitem\">«Замінити і замінити…»</"
-"gui></guiseq> або натиснувши <keyseq><key>Ctrl</key><key>H</key></keyseq>."
-
-#. (itstool) path: item/p
-#: C/gedit-replace.page:55
-msgid ""
-"Enter the text that you wish to replace into the <gui>Find</gui> field."
-msgstr "У полі «<gui>Знайти:</gui>» введіть текст, який потрібно замінити."
-
-#. (itstool) path: item/p
-#: C/gedit-replace.page:59
-msgid ""
-"Enter the new, replacement text into the <gui>Replace with</gui> field."
-msgstr ""
-"У полі «<gui>Замінити на</gui>» введіть текст, на який потрібно замінити."
-
-#. (itstool) path: item/p
-#: C/gedit-replace.page:63
-msgid ""
-"Once you have entered the original and replacement text, you can add extra "
-"parameters to the search. You can also choose what you want to replace:"
-msgstr ""
-"Як тільки початковий текст та текст заміни було введено, можна вибрати "
-"додаткові параметри пошуку. Можна вибрати, що потрібно замінити:"
-
-#. (itstool) path: item/p
-#: C/gedit-replace.page:68
-msgid "To replace <em>only</em> the next match, click <gui>Replace</gui>."
-msgstr ""
-"Щоб замінити <em>лише</em> наступне збіг, клацніть на «<gui>Замінити</gui>»."
-
-#. (itstool) path: item/p
-#: C/gedit-replace.page:72
-msgid ""
-"To replace <em>all occurrences</em> of the searched-for text, click "
-"<gui>Replace All</gui>."
-msgstr ""
-"Щоб замінити <em>всі збіг</em> шуканого тексту, клацніть на «<gui>Замінити "
-"все</gui>»."
-
-#. (itstool) path: note/p
-#: C/gedit-replace.page:80
-msgid ""
-"Use the <gui>Replace All</gui> function with care. <gui>Replace All</gui> "
-"works on the entirety of your text file, and does not allow you to highlight "
-"portions of text where the replace function will be performed."
-msgstr ""
-"Використовуйте функцію «<gui>Замінити все</gui>» обережно. «<gui>Замінити "
-"все</gui>» впливає на весь текст Вашого файла, та не дозволяє виділяти "
-"фрагменти тексту, які будуть замінені."
-
-#. (itstool) path: section/title
-#: C/gedit-replace.page:87
-msgid "More options"
-msgstr "Більше параметрів"
-
-#. (itstool) path: section/p
-#: C/gedit-replace.page:89
-msgid "If you wish, you can add some extra parameters to your search:"
-msgstr "Якщо потрібно, можна додати додаткові параметри для пошуку:"
-
-#. (itstool) path: item/title
-#: C/gedit-replace.page:93
-msgid "Match case"
-msgstr "Врахування регістру"
-
-#. (itstool) path: item/p
-#: C/gedit-replace.page:94
-msgid ""
-"The <em>Match case</em> option allows you to specify whether you want your "
-"search to be case-sensitive. If this option is selected, searches will be "
-"case-sensitive. If not, searches will not be case-sensitive."
-msgstr ""
-"Параметр «<em>Враховувати регістр</em>» дозволяє зробити пошук чутливим до "
-"регістру. Якщо цей параметр вибрано, пошук буде чутливим до регістру. Якщо "
-"ні, пошук буде виконуватися без врахування регістру."
-
-#. (itstool) path: item/title
-#: C/gedit-replace.page:99
-msgid "Match entire word only"
-msgstr "Лише ціле слово"
-
-#. (itstool) path: item/p
-#: C/gedit-replace.page:100
-msgid ""
-"Use this option to search for a specific word without including fragments of "
-"other words. For example, if you searched for the word 'and' with this "
-"option selected, the word 'and' would be matched, but the words 's<em>and</"
-"em>' and 'comm<em>and</em>er' would not be matched."
-msgstr ""
-"Використовуйте цей параметр для пошуку певного слова без врахування "
-"фрагментів інших слів. Наприклад, якщо шукане слово – «кіт», то при цьому "
-"вибраному параметрі, буде знайдено слово «кіт», а слова «гур<em>кіт</em>» та "
-"«ма<em>кіт</em>ра» – ні."
-
-#. (itstool) path: item/title
-#: C/gedit-replace.page:107
-msgid "Search backwards"
-msgstr "Пошук в зворотному напрямку"
-
-#. (itstool) path: item/p
-#: C/gedit-replace.page:108
-msgid ""
-"This command behaves identically to the Find Previous command. If you wish "
-"to step through search results from end to beginning, select this option."
-msgstr ""
-"Ця команда діє аналогічно команді «Знайти попереднє». Якщо потрібно пройтися "
-"по результатам пошуку з кінця до початку, виберіть дану опцію."
-
-#. (itstool) path: item/title
-#: C/gedit-replace.page:113
-msgid "Wrap around"
-msgstr "Перейти до початку"
-
-#. (itstool) path: item/p
-#: C/gedit-replace.page:114
-msgid ""
-"With the <app>wrap around</app> option enabled, <app>gedit</app> will re-"
-"start the search/replace action at the top of the file after it has reached "
-"the bottom of the file. This ensures that your search/replace action is made "
-"across your entire file."
-msgstr ""
-"Якщо параметр «<app>Перейти до початку</app>» увімкнено, «<app>gedit</app>» "
-"знову почне пошук/заміну з початку файла, після того як буде досягнуто кінця "
-"файла. Це забезпечує виконання пошуку/заміни по всьому файлові."
-
-#. (itstool) path: section/title
-#: C/gedit-replace.page:124
-msgid "Using escape sequences"
-msgstr "Використання керівних послідовностей"
-
-#. (itstool) path: section/p
-#: C/gedit-replace.page:126
-msgid ""
-"You can use <em>escape sequences</em> to search for line breaks, carriage "
-"returns, and tabs."
-msgstr ""
-"Можна використовувати <em>керівні послідовності</em> для пошуку розривів "
-"рядків, переведень каретки та символів табуляції."
-
-#. (itstool) path: item/title
-#: C/gedit-replace.page:131
-msgid "\\n"
-msgstr "\\n"
-
-#. (itstool) path: item/p
-#: C/gedit-replace.page:132
-msgid "Newline"
-msgstr "Символ нового рядка"
-
-#. (itstool) path: item/title
-#: C/gedit-replace.page:135
-msgid "\\r"
-msgstr "\\r"
-
-#. (itstool) path: item/p
-#: C/gedit-replace.page:136
-msgid "Carriage return"
-msgstr "Символ повернення каретки"
-
-#. (itstool) path: item/title
-#: C/gedit-replace.page:139
-msgid "\\t"
-msgstr "\\t"
-
-#. (itstool) path: item/p
-#: C/gedit-replace.page:140
-msgid "Tab"
-msgstr "Символ табуляції"
-
-#. (itstool) path: section/p
-#: C/gedit-replace.page:144
-msgid ""
-"If you actually want to search for a <output>\\</output> (backslash) or one "
-"of the escape sequences in the text, you need to escape the backslash with "
-"an extra backslash. For example, to search for <input>\\</input>, you need "
-"to enter <input>\\\\</input> into the search or replace field. You can "
-"search for escape sequences in the same way: to search for or replace with a "
-"<input>\\n</input>, use the <input>\\\\n</input> term."
-msgstr ""
-"Якщо потрібно шукати «<output>\\</output>» (зворотню похилу риску) або якусь "
-"керівну послідовність в тексті, то потрібно екранувати зворотню похилу риску "
-"додатковою зворотною похилою рискою. Наприклад, щоб шукати «<input>\\</"
-"input>», потрібно ввести «<input>\\\\</input>» в пошукове поле або поле "
-"заміни. Таким самим чином можна шукати керівні послідовності: для пошуку чи "
-"заміни на «<input>\\n</input>», використовуйте «<input>\\\\n</input>»."
-
-#. (itstool) path: info/desc
 #: C/gedit-save-file.page:8
 msgid "Save your file to work on it later."
 msgstr "Збереження вашого файла для наступної роботи з ним."
 
 #. (itstool) path: page/title
-#: C/gedit-save-file.page:28
+#: C/gedit-save-file.page:11
 msgid "Save a file"
 msgstr "Збереження файла"
 
 #. (itstool) path: page/p
-#: C/gedit-save-file.page:30
+#: C/gedit-save-file.page:12
+#| msgid ""
+#| "To save a file in <app>gedit</app>, click on the <gui style=\"button"
+#| "\">Save</gui> button on the right side of the header bar or just press "
+#| "<keyseq><key>Ctrl</key><key>S</key></keyseq>."
 msgid ""
 "To save a file in <app>gedit</app>, click on the <gui style=\"button\">Save</"
-"gui> button on the right side of the header bar or just press "
-"<keyseq><key>Ctrl</key><key>S</key></keyseq>."
+"gui> button on the right side of the header bar."
 msgstr ""
 "Щоб зберегти файл в «<app>gedit</app>», клацніть на кнопці «<gui style="
-"\"button\">Зберегти</gui>», що з правого боку панелі заголовка, або просто "
-"натисніть <keyseq><key>Ctrl</key><key>S</key></keyseq>."
+"\"button\">Зберегти</gui>», що з правого боку панелі заголовка."
 
 #. (itstool) path: page/p
-#: C/gedit-save-file.page:33
+#: C/gedit-save-file.page:16
+#| msgid ""
+#| "If you are saving a new file, a dialog will appear, and you can select a "
+#| "name for the file, as well as the directory where you would like the file "
+#| "to be saved."
 msgid ""
-"If you are saving a new file, a dialog will appear, and you can select a "
-"name for the file, as well as the directory where you would like the file to "
-"be saved."
+"For a new file, a dialog will appear, and you can choose the name and "
+"directory where the file will be saved."
 msgstr ""
-"Якщо Ви зберігаєте новий файл, то з'явиться діалогове вікно, де можна як "
-"ввести назву файла, так і вибрати каталог для збереження файла."
-
-#. (itstool) path: info/desc
-#: C/gedit-search.page:8
-msgid "Find a portion of text within a file."
-msgstr "Пошук фрагмента тексту у файлі."
+"Для нового файла буде показано діалогове вікно, і ви зможете вибрати назву і"
+" каталог, у якому зберігатиметься файл."
 
 #. (itstool) path: page/title
+#: C/gedit-search.page:9
+msgid "Simple search: additional topics"
+msgstr "Простий пошук: додаткові теми"
+
+#. (itstool) path: section/title
+#: C/gedit-search.page:12
+msgid "Navigate through the search results"
+msgstr "Навігація результатами пошуку"
+
+#. (itstool) path: section/p
+#: C/gedit-search.page:13
+msgid "There are several ways to go to the next or previous search result."
+msgstr ""
+"Існує декілька способів перейти до наступного або попереднього результату"
+" пошуку."
+
+#. (itstool) path: section/p
+#: C/gedit-search.page:16
+#| msgid ""
+#| "Click on the <gui style=\"button\">up</gui> or <gui style=\"button"
+#| "\">down</gui> facing arrows next to the <gui>search window</gui>."
+msgid ""
+"There are <gui style=\"button\">up</gui> and <gui style=\"button\">down</"
+"gui> arrows next to the search entry."
+msgstr ""
+"Поряд із поля для введення критерію пошуку буде показано кнопки зі стрілками"
+" <gui style=\"button\">вгору</gui> і <gui style=\"button\">вниз</gui>."
+
+#. (itstool) path: section/p
+#: C/gedit-search.page:20
+#| msgid ""
+#| "Press the <key>up arrow</key> or <key>down arrow</key> keys on your "
+#| "keyboard."
+msgid ""
+"You can also press the <key>up arrow</key> or <key>down arrow</key> keys on "
+"your keyboard while the search entry is visible."
+msgstr ""
+"Ви також можете натиснути клавіші <key>стрілка вгору</key> чи <key>стрілка"
+" вниз</key> на "
+"клавіатурі, доки поле введення критерію пошуку є видимим."
+
+#. (itstool) path: section/p
+#: C/gedit-search.page:24
+msgid "Keyboard shortcuts are also available."
+msgstr "Також можна скористатися натисканням комбінацій клавіш."
+
+#. (itstool) path: section/title
 #: C/gedit-search.page:30
-msgid "Search for text"
-msgstr "Пошук тексту"
+msgid "Closing the search entry field"
+msgstr "Закриття поля введення критерію пошуку"
 
-#. (itstool) path: page/p
-#: C/gedit-search.page:32
-msgid ""
-"The Find tool can help you find specific sequences of text within in your "
-"file."
+#. (itstool) path: section/p
+#: C/gedit-search.page:31
+msgid "You can close the search entry by pressing different keys:"
 msgstr ""
-"Інструмент «Знайти» допомагає знаходити задані послідовності тексту у файлі."
-
-#. (itstool) path: steps/title
-#: C/gedit-search.page:36
-msgid "Finding text"
-msgstr "Пошук тексту"
+"Ви можете закрити поле введення критерію пошуку натисканням різних клавіш:"
 
 #. (itstool) path: item/p
-#: C/gedit-search.page:38
+#: C/gedit-search.page:35
 msgid ""
-"Open the <gui>search window</gui> by clicking <guiseq><gui style=\"menu"
-"\">Menu Button</gui> <gui style=\"menuitem\">Find…</gui> </guiseq> or "
-"pressing <keyseq><key>Ctrl</key><key>F</key></keyseq>. This will move your "
-"cursor to the start of the <gui>search window</gui>."
+"Pressing <key>Esc</key> will return the cursor to where it was before you "
+"began your search."
 msgstr ""
-"Відкрийте <gui>вікно пошуку</gui>, клацнувши на кнопці <guiseq><gui style="
-"\"menu\">Меню</gui> <gui style=\"menuitem\">«Знайти»</gui></guiseq> або "
-"натиснувши <keyseq><key>Ctrl</key><key>F</key></keyseq>. Це помістить курсор "
-"на початок <gui>пошукового вікна</gui>."
+"Натискання клавіші <key>Esc</key> поверне курсор у позицію, де він був до"
+" того, як ви розпочали пошук."
 
 #. (itstool) path: item/p
-#: C/gedit-search.page:45
-msgid "Type the text you wish to search for in the <gui>search window</gui>."
-msgstr "У <gui>пошуковому вікні</gui> введіть текст, який потрібно шукати."
+#: C/gedit-search.page:39
+msgid ""
+"Pressing <key>Enter</key> will keep the cursor to its current position."
+msgstr ""
+"Натискання клавіші <key>Enter</key> збереже курсор у його поточній позиції."
+
+#. (itstool) path: info/desc
+#: C/gedit-search-and-replace.page:7
+#| msgid "Replace portions of text in a file."
+msgid "Find and replace portions of text in a file."
+msgstr "Пошук і заміна фрагментів тексту у файлі."
+
+#. (itstool) path: page/title
+#: C/gedit-search-and-replace.page:10
+msgid "Search and replace"
+msgstr "Пошук та заміна"
+
+#. (itstool) path: section/title
+#: C/gedit-search-and-replace.page:15
+msgid "The simple search"
+msgstr "Простий пошук"
+
+#. (itstool) path: section/p
+#: C/gedit-search-and-replace.page:16
+msgid "To open the search entry field, click on:"
+msgstr "Щоб відкрити поле введення критерію пошуку, натисніть:"
+
+#. (itstool) path: section/p
+#: C/gedit-search-and-replace.page:19
+#| msgid ""
+#| "Select <guiseq><gui style=\"menu\">File</gui> <gui style=\"menuitem"
+#| "\">Print…</gui></guiseq>."
+msgid ""
+"<guiseq> <gui style=\"menu\">Menu Button</gui> <gui style=\"menuitem\">Find…"
+"</gui> </guiseq>"
+msgstr ""
+"<guiseq> <gui style=\"menu\">Кнопка меню</gui> <gui style=\"menuitem\""
+">Знайти…"
+"</gui> </guiseq>"
+
+#. (itstool) path: section/title
+#: C/gedit-search-and-replace.page:28
+msgid "The search and replace"
+msgstr "Пошук із заміною"
+
+#. (itstool) path: section/p
+#: C/gedit-search-and-replace.page:29
+msgid "To open the Find and Replace dialog, click on:"
+msgstr "Щоб відкрити вікно пошуку із заміною, натисніть:"
+
+#. (itstool) path: section/p
+#: C/gedit-search-and-replace.page:32
+#| msgid ""
+#| "Select <guiseq><gui style=\"menu\">File</gui> <gui style=\"menuitem"
+#| "\">Print…</gui></guiseq>."
+msgid ""
+"<guiseq> <gui style=\"menu\">Menu Button</gui> <gui style=\"menuitem\">Find "
+"and Replace…</gui> </guiseq>"
+msgstr ""
+"<guiseq> <gui style=\"menu\">Кнопка меню</gui> <gui style=\"menuitem\""
+">Знайти та замінити…</gui> </guiseq>"
+
+#. (itstool) path: section/title
+#: C/gedit-search-and-replace.page:41
+#| msgid "Syntax highlighting"
+msgid "Clear highlight"
+msgstr "Прибирання підсвічування"
+
+#. (itstool) path: section/p
+#: C/gedit-search-and-replace.page:42
+msgid ""
+"Usually, the text that you've searched for will remain highlighted in the "
+"document. To remove the highlight, click on:"
+msgstr ""
+"Зазвичай, знайдений текст у документі буде підсвічено. Щоб усунути"
+" підсвічування, натисніть:"
+
+#. (itstool) path: section/p
+#: C/gedit-search-and-replace.page:46
+#| msgid ""
+#| "Click <guiseq><gui style=\"menu\">File</gui> <gui style=\"menuitem"
+#| "\">Print</gui></guiseq>."
+msgid ""
+"<guiseq> <gui style=\"menu\">Menu Button</gui> <gui style=\"menuitem\">Clear "
+"Highlight</gui> </guiseq>"
+msgstr ""
+"<guiseq> <gui style=\"menu\">Кнопка меню</gui> <gui style=\"menuitem\""
+">Очистити підкреслення кольором</gui> </guiseq>"
+
+#. (itstool) path: section/title
+#: C/gedit-search-and-replace.page:55
+msgid "Tips"
+msgstr "Підказки"
+
+#. (itstool) path: section/p
+#: C/gedit-search-and-replace.page:56
+#| msgid ""
+#| "If you highlight a portion of text with your mouse, and then press "
+#| "<keyseq><key>Ctrl</key><key>F</key></keyseq>, the text you've highlighted "
+#| "will appear in the search window."
+msgid ""
+"If you first select a portion of text in the document, and then start a "
+"simple search or open the Find and Replace dialog, the text you've selected "
+"will appear in the search entry."
+msgstr ""
+"Якщо ви спочатку позначите частину тексту у документі, а потім розпочнете"
+" простий пошук або відкриєте вікно «Знайти та замінити», у полі для введення"
+" критерію пошуку опиниться позначений вами текст."
+
+#. (itstool) path: section/title
+#: C/gedit-search-and-replace.page:64
+#| msgid "Search tips"
+msgid "Search options"
+msgstr "Параметри пошуку"
+
+#. (itstool) path: section/p
+#: C/gedit-search-and-replace.page:65
+msgid ""
+"The Find and Replace dialog presents the search options as check boxes."
+msgstr ""
+"У діалоговому вікні «Знайти та замінити» параметри пошуку представлено як"
+" пункти."
+
+#. (itstool) path: section/p
+#: C/gedit-search-and-replace.page:68
+#| msgid ""
+#| "For more search options, click on the <gui style=\"button\">Magnifying "
+#| "Glass</gui> icon in the search window, or right-click anywhere in the "
+#| "search window. You can select one or more of the following search options:"
+msgid ""
+"For the simple search, click on the <gui style=\"button\">Magnifying Glass</"
+"gui> icon in the search entry field."
+msgstr ""
+"Для простого пошуку натисніть піктограму <gui style=\"button\""
+">збільшувального скла</gui> на панелі введення критерію пошуку."
 
 #. (itstool) path: item/p
-#: C/gedit-search.page:49
-msgid ""
-"As you type, <app>gedit</app> will begin highlighting the portions of text "
-"that match what you have entered."
-msgstr ""
-"Під час введення тексту, «<app>gedit</app>» підсвічує фрагменти тексту, що "
-"відповідають введеному."
-
-#. (itstool) path: page/p
-#: C/gedit-search.page:54
-msgid "To scroll through the search results, do any of the following:"
-msgstr ""
-"Для переміщення по результатам пошуку, виконайте одну з наступних дій:"
-
-#. (itstool) path: item/p
-#: C/gedit-search.page:57
-msgid ""
-"Click on the <gui style=\"button\">up</gui> or <gui style=\"button\">down</"
-"gui> facing arrows next to the <gui>search window</gui>."
-msgstr ""
-"Клацніть на стрілках <gui style=\"button\">вгору</gui> або <gui style="
-"\"button\">вниз</gui> біля <gui>пошукового вікна</gui>."
-
-#. (itstool) path: item/p
-#: C/gedit-search.page:62
-msgid ""
-"Press the <key>up arrow</key> or <key>down arrow</key> keys on your keyboard."
-msgstr ""
-"Натисніть клавіші <key>стрілка вгору</key> чи <key>стрілка вниз</key> на "
-"клавіатурі."
-
-#. (itstool) path: item/p
-#: C/gedit-search.page:66
-msgid ""
-"Press <keyseq><key>Ctrl</key><key>G</key></keyseq> or <keyseq><key>Ctrl</"
-"key><key>Shift</key><key>G</key></keyseq>."
-msgstr ""
-"Натисніть <keyseq><key>Ctrl</key><key>G</key></keyseq> або "
-"<keyseq><key>Ctrl</key><key>Shift</key><key>G</key></keyseq>."
-
-#. (itstool) path: page/p
-#: C/gedit-search.page:71
-msgid ""
-"To close the <gui>search window</gui>, press either <key>Esc</key> or "
-"<key>Enter</key>. Pressing <key>Esc</key> will return the cursor to where it "
-"was before you began your search. Pressing <key>Enter</key> will return the "
-"cursor to the current position in the search results."
-msgstr ""
-"Для закриття <gui>пошукового вікна</gui>, натисніть <key>Esc</key> або "
-"<key>Enter</key>. Натиснення <key>Esc</key> поверне курсор на ту позицію, де "
-"він знаходився перед початком пошуку. Натиснення <key>Enter</key> – на "
-"поточну позицію результатів пошуку."
-
-#. (itstool) path: list/title
-#: C/gedit-search.page:77
-msgid "Search tips"
-msgstr "Поради з пошуку"
-
-#. (itstool) path: item/p
-#: C/gedit-search.page:79
-msgid ""
-"If you highlight a portion of text with your mouse, and then press "
-"<keyseq><key>Ctrl</key><key>F</key></keyseq>, the text you've highlighted "
-"will appear in the search window."
-msgstr ""
-"Якщо вибрати фрагмент тексту за допомогою миші, а потім натиснути "
-"<keyseq><key>Ctrl</key><key>F</key></keyseq>, то вибраний текст з'явиться в "
-"пошуковому вікні."
-
-#. (itstool) path: item/p
-#: C/gedit-search.page:84
-msgid ""
-"For more search options, click on the <gui style=\"button\">Magnifying "
-"Glass</gui> icon in the search window, or right-click anywhere in the search "
-"window. You can select one or more of the following search options:"
-msgstr ""
-"Для більшої кількості параметри, клацніть на піктограмі «<gui style=\"button"
-"\">Лупи</gui>» у вікні пошуку або клацніть правою кнопкою миші будь-де в "
-"пошуковому вікні. Можна вибрати одну або декілька опцій пошуку з наступних:"
-
-#. (itstool) path: item/p
-#: C/gedit-search.page:90
+#: C/gedit-search-and-replace.page:73
 msgid "Select <gui>Match Case</gui> to make the search case sensitive."
 msgstr ""
 "Виберіть «<gui>Враховувати регістр</gui>», щоб зробити пошук чутливим до "
 "регістру."
 
 #. (itstool) path: item/p
-#: C/gedit-search.page:93
+#: C/gedit-search-and-replace.page:77
+#| msgid ""
+#| "Select <gui>Match Entire Word Only</gui> to search only complete words."
 msgid ""
-"Select <gui>Match Entire Word Only</gui> to search only complete words."
-msgstr "Виберіть «<gui>Лише ціле слово</gui>», щоб шукати лише цілі слова."
+"Select <gui>Match Entire Word Only</gui> to search for a specific word "
+"without including fragments of other words."
+msgstr ""
+"Позначте пункт <gui>Збігається ціле слово</gui>, щоб було виконано пошук"
+" певного слова без включення фрагментів інших слів."
 
 #. (itstool) path: item/p
-#: C/gedit-search.page:97
+#: C/gedit-search-and-replace.page:81
+#| msgid ""
+#| "Use this option to search for a specific word without including fragments "
+#| "of other words. For example, if you searched for the word 'and' with this "
+#| "option selected, the word 'and' would be matched, but the words "
+#| "'s<em>and</em>' and 'comm<em>and</em>er' would not be matched."
 msgid ""
-"Select <gui>Wrap Around</gui> to search text from top to bottom and cycle "
-"back again."
+"For example, if you searched for the word “and” with this option selected, "
+"the word “and” would be matched, but the words “sand” and “comm<em>and</"
+"em>er” would not be matched."
 msgstr ""
-"Виберіть «<gui>Перейти до початку</gui>», щоб шукати текст з верху до низу і "
-"знову спочатку."
+"Наприклад, якщо шукане слово – «кіт», то при цьому "
+"вибраному параметрі, буде знайдено слово «кіт», а слова «гур<em>кіт</em>» та "
+"«ма<em>кіт</em>ра» – ні."
 
 #. (itstool) path: item/p
-#: C/gedit-search.page:103
+#: C/gedit-search-and-replace.page:87
 msgid ""
-"The text that you've searched for will remain highlighted by gedit, even "
-"after you have completed your search. To remove the highlight, click <gui "
-"style=\"menuitem\">Clear Highlight</gui>, or press <keyseq><key>Ctrl</"
-"key><key>Shift</key><key>K</key></keyseq>."
+"Select <gui>Wrap Around</gui> to continue at the other end of the document "
+"when going to the next or previous search result."
 msgstr ""
-"Шуканий текст буде залишатися виділеним, навіть, після закінчення пошуку. "
-"Щоб прибрати виділення, клацніть на <gui style=\"menuitem\">«Очистити "
-"виділення»</gui> або натисніть <keyseq><key>Ctrl</key><key>Shift</"
-"key><key>K</key></keyseq>."
+"Позначте пункт <gui>Досягнувши кінця, починати спочатку</gui>, щоб"
+" продовжувати пошук з іншого кінця документа при переході до наступного або"
+" попереднього результату пошуку."
+
+#. (itstool) path: section/title
+#: C/gedit-search-and-replace.page:95
+msgid "Using escape sequences"
+msgstr "Використання керівних послідовностей"
+
+#. (itstool) path: section/p
+#: C/gedit-search-and-replace.page:96
+msgid ""
+"In a search or replace entry, you can use <em>escape sequences</em> with the "
+"following meanings:"
+msgstr ""
+"У полі введення критерію пошуку та заміни ви можете скористатися <em"
+">керівними послідовностями</em> із такими значеннями:"
+
+#. (itstool) path: item/title
+#: C/gedit-search-and-replace.page:102
+msgid "\\n"
+msgstr "\\n"
+
+#. (itstool) path: item/p
+#: C/gedit-search-and-replace.page:103
+msgid "Newline"
+msgstr "Символ нового рядка"
+
+#. (itstool) path: item/title
+#: C/gedit-search-and-replace.page:106
+msgid "\\r"
+msgstr "\\r"
+
+#. (itstool) path: item/p
+#: C/gedit-search-and-replace.page:107
+msgid "Carriage return"
+msgstr "Символ повернення каретки"
+
+#. (itstool) path: item/title
+#: C/gedit-search-and-replace.page:110
+msgid "\\t"
+msgstr "\\t"
+
+#. (itstool) path: item/p
+#: C/gedit-search-and-replace.page:111
+msgid "Tab"
+msgstr "Символ табуляції"
+
+#. (itstool) path: item/title
+#: C/gedit-search-and-replace.page:114
+msgid "\\\\"
+msgstr "\\\\"
+
+#. (itstool) path: item/p
+#: C/gedit-search-and-replace.page:115
+msgid ""
+"Backslash. If you actually want a backslash and avoid one of the above "
+"special meanings, the backslash needs to be escaped."
+msgstr ""
+"Зворотна похила риска. Якщо вам потрібен сам символ похилої риски і не"
+" використовувати його в одному зі спеціалізованих його призначень, символ"
+" зворотної похилої риски слід екранувати."
 
 #. (itstool) path: info/desc
 #: C/gedit-spellcheck.page:7
 msgid "Check your files for spelling errors."
 msgstr "Перевірка ваших файлів на помилки у правописі."
 
-#. (itstool) path: credit/name
-#: C/gedit-spellcheck.page:16
-msgid "Baptiste Mille-Mathias"
-msgstr "Baptiste Mille-Mathias"
-
 #. (itstool) path: page/title
 #. (itstool) path: section/title
-#: C/gedit-spellcheck.page:28 C/gedit-spellcheck.page:49
+#: C/gedit-spellcheck.page:10 C/gedit-spellcheck.page:31
 msgid "Spell-check your document"
 msgstr "Перевірка орфографії документа"
 
 #. (itstool) path: section/title
-#: C/gedit-spellcheck.page:30
+#: C/gedit-spellcheck.page:12
 msgid "Enable the spell checker"
 msgstr "Увімкнення перевірки орфографії"
 
 #. (itstool) path: section/p
-#: C/gedit-spellcheck.page:31
+#: C/gedit-spellcheck.page:13
 msgid ""
 "The Spell-check feature is provided as a plugin in <app>gedit</app> which "
 "can be enabled as required. To enable the plugin:"
@@ -2929,7 +3005,7 @@ msgstr ""
 "який можна увімкнути, коли потрібно. Щоб увімкнути додаток:"
 
 #. (itstool) path: item/p
-#: C/gedit-spellcheck.page:41
+#: C/gedit-spellcheck.page:23
 msgid ""
 "Select <gui style=\"menuitem\">Spell Checker</gui> to enable the plugin."
 msgstr ""
@@ -2937,12 +3013,12 @@ msgstr ""
 "додаток."
 
 #. (itstool) path: section/p
-#: C/gedit-spellcheck.page:51
+#: C/gedit-spellcheck.page:33
 msgid "To check for misspelt words in your document:"
 msgstr "Щоб перевірити документ на наявність слів з орфографічними помилками:"
 
 #. (itstool) path: item/p
-#: C/gedit-spellcheck.page:55
+#: C/gedit-spellcheck.page:37
 msgid ""
 "Select <guiseq><gui style=\"menu\">Tools</gui> <gui style=\"menuitem\">Check "
 "Spelling</gui></guiseq>."
@@ -2951,7 +3027,7 @@ msgstr ""
 "\"menuitem\">«Перевірка орфографії»</gui></guiseq>."
 
 #. (itstool) path: note/p
-#: C/gedit-spellcheck.page:61
+#: C/gedit-spellcheck.page:43
 msgid ""
 "To have <app>gedit</app> automatically highlight misspelt words in your "
 "document as you type, select <guiseq><gui style=\"menu\">Tools</gui><gui "
@@ -2963,12 +3039,12 @@ msgstr ""
 "орфографічними помилками»</gui></guiseq>."
 
 #. (itstool) path: section/title
-#: C/gedit-spellcheck.page:68
+#: C/gedit-spellcheck.page:50
 msgid "Using spell-check"
 msgstr "Використання функції перевірки орфографії"
 
 #. (itstool) path: section/p
-#: C/gedit-spellcheck.page:70
+#: C/gedit-spellcheck.page:52
 msgid ""
 "You can choose the right substitution for misspelt words using the Check "
 "Spelling dialog. The misspelt word being checked by the spell-checker is "
@@ -2982,7 +3058,7 @@ msgstr ""
 "дії для виправлення:"
 
 #. (itstool) path: item/p
-#: C/gedit-spellcheck.page:77
+#: C/gedit-spellcheck.page:59
 msgid ""
 "<gui style=\"input\">Change to:</gui> allows you to input a word and use "
 "<gui style=\"button\">Check Word</gui> to check the validity of the spelling."
@@ -2992,7 +3068,7 @@ msgstr ""
 "правильності написання."
 
 #. (itstool) path: item/p
-#: C/gedit-spellcheck.page:82
+#: C/gedit-spellcheck.page:64
 msgid ""
 "<gui style=\"menu\">Suggestions:</gui> lists the available substitutions for "
 "the word."
@@ -3000,7 +3076,7 @@ msgstr ""
 "«<gui style=\"menu\">Варіанти:</gui>» показує список доступних замін слова."
 
 #. (itstool) path: item/p
-#: C/gedit-spellcheck.page:86
+#: C/gedit-spellcheck.page:68
 msgid ""
 "<gui style=\"button\">Ignore</gui> allows you to bypass spell check for "
 "<em>a</em> instance of current word."
@@ -3009,7 +3085,7 @@ msgstr ""
 "орфографії для <em>одного</em> екземпляру поточного слова."
 
 #. (itstool) path: item/p
-#: C/gedit-spellcheck.page:90
+#: C/gedit-spellcheck.page:72
 msgid ""
 "<gui style=\"button\">Ignore All</gui> allows you to bypass spell check for "
 "<em>all</em> instances of the current word."
@@ -3018,7 +3094,7 @@ msgstr ""
 "орфографії для <em>всіх</em> екземплярів поточного слова."
 
 #. (itstool) path: item/p
-#: C/gedit-spellcheck.page:94
+#: C/gedit-spellcheck.page:76
 msgid ""
 "<gui style=\"button\">Change</gui> substitutes the misspelt or unrecognized "
 "word with <em>a</em> chosen substitute from the <gui style=\"menuitem"
@@ -3029,7 +3105,7 @@ msgstr ""
 "\"menuitem\">Варіанти:</gui>»."
 
 #. (itstool) path: item/p
-#: C/gedit-spellcheck.page:99
+#: C/gedit-spellcheck.page:81
 msgid ""
 "<gui style=\"button\">Change all</gui> substitutes <em>all</em> misspelt or "
 "unrecognized words with the chosen substitute from the <gui style=\"menuitem"
@@ -3040,7 +3116,7 @@ msgstr ""
 "style=\"menuitem\">Варіанти:</gui>»."
 
 #. (itstool) path: item/p
-#: C/gedit-spellcheck.page:104
+#: C/gedit-spellcheck.page:86
 msgid ""
 "<gui style=\"button\">Add word</gui> allows you to add the current word to "
 "the <app>gedit</app> <gui>User dictionary</gui>. Adding custom words to the "
@@ -3054,12 +3130,12 @@ msgstr ""
 "будуть виділятися як слова з орфографічними помилками."
 
 #. (itstool) path: section/title
-#: C/gedit-spellcheck.page:115
+#: C/gedit-spellcheck.page:97
 msgid "Define the language to use for spell checking"
 msgstr "Визначення мови для перевірки орфографії"
 
 #. (itstool) path: section/p
-#: C/gedit-spellcheck.page:116
+#: C/gedit-spellcheck.page:98
 msgid ""
 "By default, <app>gedit</app> will use your current language to spell check "
 "your document. If you need to use another language, choose <guiseq><gui "
@@ -3072,12 +3148,12 @@ msgstr ""
 "\">«Встановити мову…»</gui></guiseq>, а потім виберіть потрібну мову."
 
 #. (itstool) path: section/title
-#: C/gedit-spellcheck.page:123
+#: C/gedit-spellcheck.page:105
 msgid "Dictionaries"
 msgstr "Словники"
 
 #. (itstool) path: section/p
-#: C/gedit-spellcheck.page:125
+#: C/gedit-spellcheck.page:107
 msgid ""
 "<app>gedit</app> uses <link href=\"https://www.abisource.com/projects/"
 "enchant/\">Enchant</link>, a small system utility, for spell checking. "
@@ -3091,7 +3167,7 @@ msgstr ""
 "«<em>Hunspell</em>» та «<em>Aspell</em>»."
 
 #. (itstool) path: section/p
-#: C/gedit-spellcheck.page:131
+#: C/gedit-spellcheck.page:113
 msgid ""
 "If the language you want to use is not available in <app>gedit</app>, use "
 "your computer's software installer or package manager to install the "
@@ -3107,17 +3183,12 @@ msgid "Highlight your text to make it easier to read."
 msgstr "Підсвічування тексту для полегшення його читання."
 
 #. (itstool) path: page/title
-#: C/gedit-syntax-highlighting.page:20
+#: C/gedit-syntax-highlighting.page:10
 msgid "Turn on syntax highlighting"
 msgstr "Увімкнення виділення синтаксису"
 
-#. (itstool) path: section/title
-#: C/gedit-syntax-highlighting.page:23
-msgid "Syntax highlighting"
-msgstr "Підсвічування синтаксису"
-
 #. (itstool) path: section/p
-#: C/gedit-syntax-highlighting.page:24
+#: C/gedit-syntax-highlighting.page:14
 msgid ""
 "<app>gedit</app> provides syntax highlighting for a wide range of markup, "
 "programming, and scientific languages. If <app>gedit</app> recognizes the "
@@ -3129,7 +3200,7 @@ msgstr ""
 "синтаксис при відкритті файла, то текст буде автоматично виділено."
 
 #. (itstool) path: section/p
-#: C/gedit-syntax-highlighting.page:29
+#: C/gedit-syntax-highlighting.page:19
 msgid ""
 "If your syntax or language is not highlighted upon startup, you can select "
 "the appropriate syntax or language by clicking <guiseq><gui style=\"menu"
@@ -3144,293 +3215,224 @@ msgstr ""
 "синтаксису зі списку, що внизу вікна «<app>gedit</app>»."
 
 #. (itstool) path: info/desc
-#: C/gedit-tab-groups.page:10
-msgid "Group similar tabs together."
-msgstr "Групування подібних вкладок."
-
-#. (itstool) path: credit/name
-#: C/gedit-tab-groups.page:14 C/gedit-tabs-moving.page:25 C/gedit-tabs.page:26
-msgid "Radina Matic"
-msgstr "Radina Matic"
-
-#. (itstool) path: credit/years
-#: C/gedit-tab-groups.page:16 C/gedit-tabs-moving.page:27 C/gedit-tabs.page:28
-msgid "2013"
-msgstr "2013"
+#: C/gedit-tab-groups.page:9
+#| msgid "View document statistics."
+msgid "View several documents side-by-side."
+msgstr "Паралельний перегляд декількох документів."
 
 #. (itstool) path: page/title
-#: C/gedit-tab-groups.page:22
-msgid "Organize files in grouped tabs"
-msgstr "Організація файлів в групові вкладки"
+#: C/gedit-tab-groups.page:12
+msgid "Tab groups"
+msgstr "Групи вкладок"
 
 #. (itstool) path: page/p
-#: C/gedit-tab-groups.page:24
-#| msgid ""
-#| "If you are working with multiple tabs in <app>gedit</app> you can group "
-#| "them, making it easier to keep your opened files organized. Adding a new "
-#| "tab group will divide the <app>gedit</app> window in two panes, open a "
-#| "new “Untitled File” in the new pane, and make it active. You can open "
-#| "files into that tab group and move tabs from one tab group to another."
+#: C/gedit-tab-groups.page:14
 msgid ""
-"If you are working with multiple tabs in <app>gedit</app> you can group "
-"them, making it easier to keep your opened files organized. Adding a new tab "
-"group will divide the <app>gedit</app> window in two panes, open a new "
-"“Untitled Document” in the new pane, and make it active. You can open files "
-"into that tab group and move tabs from one tab group to another."
+"You can view several documents side-by-side inside the same <app>gedit</app> "
+"window by creating a new <em>tab group</em>."
 msgstr ""
-"Якщо ви працюєте в «<app>gedit</app>» з декількома вкладками, то можна їх "
-"групувати, щоб полегшити зберігання відкритих файлів організованими. Додання "
-"нової групи вкладок розділяє вікно «<app>gedit</app>» на два підвікна, "
-"відкриває новий «Неназваний документ» в новому підвікні та робить його "
-"активним. Можна відкривати файли в цій групі вкладок і переміщати їх з "
-"однієї групи в іншу."
+"Ви можете паралельно переглядати декілька документів в одному вікні «<app"
+">gedit</app>» шляхом створення <em>групи вкладок</em>."
 
 #. (itstool) path: section/title
-#: C/gedit-tab-groups.page:31
-msgid "Open a new tab group in the gedit window"
-msgstr "Відкриття нової групи вкладок у вікні «gedit»"
+#: C/gedit-tab-groups.page:20
+msgid "Managing tab groups"
+msgstr "Керування групами вкладок"
 
 #. (itstool) path: section/p
-#: C/gedit-tab-groups.page:33
-msgid "To open a new tab group you can:"
-msgstr "Щоб відкрити нову групу вкладок:"
+#: C/gedit-tab-groups.page:21
+msgid "There are several possibilities for managing tab groups."
+msgstr "Передбачено декілька варіантів керування групами вкладок."
 
-#. (itstool) path: item/p
-#: C/gedit-tab-groups.page:37
-msgid "Right click on a tab and select <gui>Move to New Tab Group</gui>."
+#. (itstool) path: section/p
+#: C/gedit-tab-groups.page:24
+#| msgid "Right click on a tab and select <gui>Move to New Tab Group</gui>."
+msgid ""
+"To create a new tab group, you can right-click on a tab title and select "
+"<gui>Move to New Tab Group</gui>."
 msgstr ""
-"Клацніть правою кнопкою на вкладці і виберіть <gui>Перенести до нової групи "
+"Щоб створити групу вкладок, ви можете клацнути правою кнопкою на заголовку"
+" вкладки і виберіть <gui>Перенести до нової групи "
 "вкладок</gui>."
 
-#. (itstool) path: item/p
-#: C/gedit-tab-groups.page:40
-msgid ""
-"Use the <keyseq><key>Ctrl</key><key>Alt</key><key>N</key></keyseq> shortcut."
-msgstr ""
-"Використовуйте комбінацію клавіш <keyseq><key>Ctrl</key><key>Alt</"
-"key><key>N</key></keyseq>."
+#. (itstool) path: section/p
+#: C/gedit-tab-groups.page:28 C/gedit-tabs.page:28
+msgid "Keyboard shortcuts are available too."
+msgstr "Також можна скористатися клавіатурними скороченнями."
 
 #. (itstool) path: section/p
-#: C/gedit-tab-groups.page:45
+#: C/gedit-tab-groups.page:31
 msgid ""
-"This action will divide the <app>gedit</app> window in two panes, and the "
-"pane with the new tab group will be placed on the right of the active tab. "
-"You can move the handle right or left assigning more or less space of the "
-"<app>gedit</app> window between panes according to your needs."
+"The tab groups will be placed into two panes that can be resized. It is an "
+"horizontal split: the original tab group is on the left, the new tab group "
+"is added on the right."
 msgstr ""
-"Ця дія розділить вікно «<app>gedit</app>» на два підвікна, і, підвікно з "
-"новою групою вкладок буде розміщено справа від активної вкладки. Можна "
-"перетягнути маніпулятор вправо або вліво для збільшення або зменшення "
-"простору вікна «<app>gedit</app>» відповідно до власних потреб."
+"Групи вкладок буде розташовано на двох панелях, розміри яких може бути"
+" змінено. Це горизонтальний поділ: початкову групу вкладок буде розташовано"
+" ліворуч, нову групу вкладок буде додано праворуч."
 
 #. (itstool) path: section/p
-#: C/gedit-tab-groups.page:50
+#: C/gedit-tab-groups.page:36
+#| msgid ""
+#| "You can open as much tab groups in a <app>gedit</app> window as your "
+#| "screen allows, but you will have to move the handle in order to see them "
+#| "correctly."
 msgid ""
 "You can open as much tab groups in a <app>gedit</app> window as your screen "
-"allows, but you will have to move the handle in order to see them correctly."
+"allows, but you will have to resize them in order to see them correctly."
 msgstr ""
 "Можна відкрити стільки груп вкладок у вікні «<app>gedit</app>», скільки "
-"дозволяє екран. Однак, потрібно буде переміщувати маніпулятор, для їхнього "
+"дозволяє екран. Однак, потрібно буде змінити їхній розмір для їхнього "
 "коректного показу."
 
-#. (itstool) path: section/p
-#: C/gedit-tab-groups.page:54
-msgid ""
-"To close a tab group pane just close all the tabs that are opened inside it."
-msgstr ""
-"Щоб закрити підвікно групи вкладок, просто закрийте всі вкладки, що відкриті "
-"в ньому."
-
 #. (itstool) path: section/title
-#: C/gedit-tab-groups.page:84
+#: C/gedit-tab-groups.page:44
 msgid "Move a tab to another tab group"
 msgstr "Переміщення вкладки до іншої групи вкладок"
 
 #. (itstool) path: section/p
-#: C/gedit-tab-groups.page:86
-msgid "If you want to move a tab from one tab group to another:"
-msgstr "Якщо хочете перемістити вкладку з однієї групи вкладок до іншої:"
+#: C/gedit-tab-groups.page:45
+#| msgid "Move a tab to another tab group"
+msgid "You can drag and drop a tab into another tab group."
+msgstr ""
+"Ви можете перетягнути вкладку до іншої групи вкладок і скинути її туди."
+
+#. (itstool) path: section/p
+#: C/gedit-tab-groups.page:48
+msgid ""
+"See <link xref=\"gedit-tabs#drag-and-drop-tabs\">Drag and drop tabs</link> "
+"for more details."
+msgstr ""
+"Див. <link xref=\"gedit-tabs#drag-and-drop-tabs\">перетягування і скидання"
+" вкладок</link>, щоб дізнатися більше."
+
+#. (itstool) path: info/desc
+#: C/gedit-tabs.page:9
+#| msgid "Organize files in grouped tabs"
+msgid "Organize your tabs."
+msgstr "Упорядкування ваших вкладок."
+
+#. (itstool) path: page/title
+#: C/gedit-tabs.page:12
+#| msgid "Removing tabs"
+msgid "Move tabs"
+msgstr "Пересування вкладок"
+
+#. (itstool) path: page/p
+#: C/gedit-tabs.page:14
+msgid ""
+"By default, documents are opened in new tabs inside the same <app>gedit</"
+"app> window."
+msgstr ""
+"Типово, документи відкриваються у нових вкладках того самого вікна «<app"
+">gedit</app>»."
+
+#. (itstool) path: section/title
+#: C/gedit-tabs.page:20
+#| msgid "Move and re-order tabs"
+msgid "Move a tab"
+msgstr "Пересування вкладки"
+
+#. (itstool) path: section/p
+#: C/gedit-tabs.page:21
+msgid ""
+"There are several means to move a tab to another location, to organize the "
+"files you edit in the way you like."
+msgstr ""
+"Передбачено декілька способів пересування вкладки до іншого місця для"
+" упорядковування редагованих файлів потрібним вам чином."
+
+#. (itstool) path: section/p
+#: C/gedit-tabs.page:25
+msgid "You can right-click on a tab title and choose the desired option."
+msgstr ""
+"Ви можете клацнути на заголовку вкладки правою кнопкою миші і вибрати"
+" бажаний варіант розташування."
+
+#. (itstool) path: section/title
+#: C/gedit-tabs.page:33
+#| msgid "Add and remove tabs"
+msgid "Drag and drop tabs"
+msgstr "Перетягування і скидання вкладок"
+
+#. (itstool) path: section/p
+#: C/gedit-tabs.page:34
+msgid "Another means is to drag and drop a tab:"
+msgstr "Іншим способом є перетягування вкладки зі скиданням:"
 
 #. (itstool) path: item/p
-#: C/gedit-tab-groups.page:90 C/gedit-tabs-moving.page:45
-#: C/gedit-tabs-moving.page:65 C/gedit-tabs-moving.page:88
-msgid "Click and hold the mouse button on the tab."
-msgstr "Клацніть та утримуйте кнопку миші на вкладці."
+#: C/gedit-tabs.page:39
+#| msgid "Click and hold the mouse button on the tab."
+msgid "Click and hold the mouse button on the tab title."
+msgstr "Клацніть та утримуйте кнопку миші на заголовку вкладки."
 
 #. (itstool) path: item/p
-#: C/gedit-tab-groups.page:93
-msgid "Drag the tab to another tab group pane."
-msgstr "Перетягніть вкладку до іншого підвікна групи вкладок."
+#: C/gedit-tabs.page:42
+#| msgid "Move the tab to the desired position among the other tabs."
+msgid "Move the tab to the desired location."
+msgstr "Перемістіть вкладку у бажане місце."
 
 #. (itstool) path: item/p
-#: C/gedit-tab-groups.page:96
-msgid "Place it beside other tabs in the tab group."
-msgstr "Помістіть її поруч з іншими вкладками у групі вкладок."
-
-#. (itstool) path: item/p
-#: C/gedit-tab-groups.page:99 C/gedit-tabs-moving.page:51
-#: C/gedit-tabs-moving.page:71 C/gedit-tabs-moving.page:97
+#: C/gedit-tabs.page:45
 msgid "Release the mouse button."
 msgstr "Відпустіть кнопку миші."
 
-#. (itstool) path: info/desc
-#: C/gedit-tabs-moving.page:10
-msgid "Change the position of a tab in the gedit window."
-msgstr "Зміна розташування вкладки у вікні «gedit»."
-
-#. (itstool) path: page/title
-#: C/gedit-tabs-moving.page:32
-msgid "Move and re-order tabs"
-msgstr "Переміщення та зміна розташування вкладок"
-
-#. (itstool) path: page/p
-#: C/gedit-tabs-moving.page:33
-msgid ""
-"Tabs in <app>gedit</app> can be moved, making it easier to work with your "
-"files. Tabs can be can re-ordered within the same window, moved outside of "
-"<app>gedit</app> (creating a new <app>gedit</app> window), and moved from "
-"one window to another."
-msgstr ""
-"Вкладки в «<app>gedit</app>» можна переміщувати, полегшуючи, таким чином, "
-"роботу з файлами. Вкладки можна перерозміщувати в тому самому вікні, "
-"переміщувати за межі «<app>gedit</app>» (створюючи нове вікно «<app>gedit</"
-"app>») та переміщувати з одного вікна в інше."
-
 #. (itstool) path: section/title
-#: C/gedit-tabs-moving.page:39
-msgid "Change the order of tabs in the gedit window"
-msgstr "Зміна порядку вкладок у вікні «gedit»"
-
-#. (itstool) path: section/p
-#: C/gedit-tabs-moving.page:41
-msgid "To change the ordering of tabs in a window:"
-msgstr "Щоб змінити порядок вкладок у вікні:"
-
-#. (itstool) path: item/p
-#: C/gedit-tabs-moving.page:48
-msgid "Move the tab to the desired position among the other tabs."
-msgstr "Перемістіть вкладку до потрібної позиції між іншими вкладками."
-
-#. (itstool) path: section/p
-#: C/gedit-tabs-moving.page:55
-msgid ""
-"The tab will be placed in the position closest to where you release the tab, "
-"immediately beside other opened tabs."
-msgstr ""
-"Вкладка розміститься в позиції, найближчій до тієї, де вона була відпущена, "
-"безпосередньо поруч з іншими відкритими вкладками."
-
-#. (itstool) path: section/title
-#: C/gedit-tabs-moving.page:60
-msgid "Move a tab, creating a new gedit window"
-msgstr "Переміщення вкладки зі створенням нового вікна «gedit»"
-
-#. (itstool) path: section/p
-#: C/gedit-tabs-moving.page:61
-msgid "To create a new window from an existing tab:"
-msgstr "Для створення нового вікна з наявної вкладки:"
-
-#. (itstool) path: item/p
-#: C/gedit-tabs-moving.page:68
-msgid "Drag the tab out of the <app>gedit</app> window."
-msgstr "Перетягніть вкладку за межі вікна «<app>gedit</app>»."
-
-#. (itstool) path: note/p
-#: C/gedit-tabs-moving.page:76
-msgid ""
-"To move a tab into a new window when <app>gedit</app> is maximized, drag the "
-"tab onto the top bar at the top of the screen."
-msgstr ""
-"Щоб перемістити вкладку до нового вікна, при розгорнутому вікні «<app>gedit</"
-"app>», перетягніть вкладку на верхню панель, що вгорі екрану."
-
-#. (itstool) path: section/title
-#: C/gedit-tabs-moving.page:82
-msgid "Move a tab to another gedit window"
-msgstr "Переміщення вкладки до іншого вікна «gedit»"
-
-#. (itstool) path: section/p
-#: C/gedit-tabs-moving.page:84
-msgid "If you want to move a tab from one window to another:"
-msgstr "Якщо потрібно перемістити вкладку з одного вікна до іншого:"
-
-#. (itstool) path: item/p
-#: C/gedit-tabs-moving.page:91
-msgid "Drag the tab to the new window."
-msgstr "Перетягніть вкладку до нового вікна."
-
-#. (itstool) path: item/p
-#: C/gedit-tabs-moving.page:94
-msgid "Place it beside other tabs in the new window."
-msgstr "Розмістіть її поруч з іншими вкладками в новому вікні."
-
-#. (itstool) path: note/p
-#: C/gedit-tabs-moving.page:103
-msgid ""
-"You may find it easier to move a tab from one window to another by dragging "
-"the tab to the <gui>Activities</gui> hot-corner of <gui>GNOME Shell</gui>. "
-"This will reveal each of the open <app>gedit</app> windows. You can then "
-"release the tab on the desired <app>gedit</app> window."
-msgstr ""
-"Можливо, простіше перемістити вкладку з одного вікна до іншого, перетягнувши "
-"вкладку до кутка «<gui>Дії</gui>» <gui>оболонки «GNOME»</gui>. Це покаже всі "
-"відкриті вікна «<app>gedit</app>». Потім можна відпустити вкладку на "
-"потрібному вікні «<app>gedit</app>»."
-
-#. (itstool) path: info/desc
-#: C/gedit-tabs.page:10
-msgid "Create or close tabs in the gedit window."
-msgstr "Створення та закриття вкладок у вікні «gedit»."
-
-#. (itstool) path: page/title
-#: C/gedit-tabs.page:38
-msgid "Add and remove tabs"
-msgstr "Додавання та видалення вкладок"
-
-#. (itstool) path: page/p
-#: C/gedit-tabs.page:39
-msgid ""
-"Working with tabs in <app>gedit</app> allows you to keep an eye on several "
-"files in a single window."
-msgstr ""
-"Працюючи зі вкладками в «<app>gedit</app>», можна тримати в полі зору "
-"декілька файлів в одному вікні."
-
-#. (itstool) path: section/title
-#: C/gedit-tabs.page:43
-msgid "Adding tabs"
-msgstr "Додавання вкладок"
-
-#. (itstool) path: section/p
-#: C/gedit-tabs.page:44
-msgid ""
-"To add a new tab to create a new file, click the <gui>Create a new document</"
-"gui> button on the left side of the header bar, or press <keyseq><key>Ctrl</"
-"key><key>T</key></keyseq>. The tab will be added to the right side of any "
-"other tabs."
-msgstr ""
-"Щоб створити нову вкладку або новий файл, натисніть кнопку <gui>Створити "
-"новий документ</gui> у лівій частині панелі заголовка або натисніть "
-"комбінацію клавіш <keyseq><key>Ctrl</key> <key>T</key></keyseq>. Вкладку "
-"буде додано справа від інших вкладок."
-
-#. (itstool) path: section/title
-#: C/gedit-tabs.page:51
-msgid "Removing tabs"
-msgstr "Видалення вкладок"
-
-#. (itstool) path: section/p
 #: C/gedit-tabs.page:52
-msgid ""
-"To remove a tab, click the <gui style=\"button\">×</gui> on the tab's right "
-"side, or press <keyseq><key>Ctrl</key><key>W</key></keyseq>. To remove all "
-"open tabs, press <keyseq><key>Ctrl</key> <key>Shift</key><key>W</key></"
-"keyseq>."
+msgid "Drag and drop locations"
+msgstr "Місця перетягування зі скиданням"
+
+#. (itstool) path: section/title
+#: C/gedit-tabs.page:55
+#| msgid "Change the order of tabs in the gedit window"
+msgid "To re-order tabs within the same window"
+msgstr "Для переупорядковування вкладок в одному вікні"
+
+#. (itstool) path: section/p
+#: C/gedit-tabs.page:56
+#| msgid "Drag the tab to another tab group pane."
+msgid "Drag and drop the tab along the tabs titles."
+msgstr "Перетягування і скидання вкладки уздовж заголовків вкладок."
+
+#. (itstool) path: section/title
+#: C/gedit-tabs.page:62
+#| msgid "To create a new window from an existing tab:"
+msgid "To create a new window from an existing tab"
+msgstr "Для створення нового вікна з наявної вкладки"
+
+#. (itstool) path: section/p
+#: C/gedit-tabs.page:63
+#| msgid "Drag the tab out of the <app>gedit</app> window."
+msgid "Drag and drop the tab out of the <app>gedit</app> window."
 msgstr ""
-"Щоб видалити вкладку, клацніть на «<gui style=\"button\">×</gui>», що з "
-"правої сторони вкладки або натисніть комбінацію клавіш <keyseq><key>Ctrl</"
-"key><key>W</key></keyseq>. Щоб видалити всі відкриті вкладки, натисніть "
-"<keyseq><key>Ctrl</key> <key>Shift</key><key>W</key></keyseq>."
+"Перетягніть вкладку за межі вікна «<app>gedit</app>» і скиньте її там."
+
+#. (itstool) path: section/p
+#: C/gedit-tabs.page:66
+#| msgid ""
+#| "To move a tab into a new window when <app>gedit</app> is maximized, drag "
+#| "the tab onto the top bar at the top of the screen."
+msgid ""
+"When <app>gedit</app> is maximized, drag the tab onto the top bar of "
+"<gui>GNOME Shell</gui> at the top of the screen."
+msgstr ""
+"При розгорнутому вікні «<app>gedit</app>», перетягніть вкладку на верхню"
+" панель <gui>GNOME Shell</gui>, що вгорі екрана."
+
+#. (itstool) path: section/title
+#: C/gedit-tabs.page:73
+#| msgid "If you want to move a tab from one window to another:"
+msgid "To move a tab from one gedit window to another"
+msgstr "Щоб пересунути вкладку з одного вікна «gedit» до іншого"
+
+#. (itstool) path: section/p
+#: C/gedit-tabs.page:74
+msgid ""
+"Drag and drop the tab to the other window, either within the text area, or "
+"within the tabs titles to choose the exact location."
+msgstr ""
+"Перетягніть вкладку до іншого вікна і скиньте її там або у текстову область,"
+" або між заголовками вкладок, щоб вибрати точне місце."
 
 #. (itstool) path: info/desc
 #: C/gedit-undo-redo.page:8
@@ -3438,12 +3440,12 @@ msgid "Revert a recent change to one of your files."
 msgstr "Скасування нещодавніх змін у одному з ваших файлів."
 
 #. (itstool) path: page/title
-#: C/gedit-undo-redo.page:31
+#: C/gedit-undo-redo.page:11
 msgid "Undo/redo a recent action"
 msgstr "Скасування або повторення останньої дії"
 
 #. (itstool) path: page/p
-#: C/gedit-undo-redo.page:33
+#: C/gedit-undo-redo.page:13
 msgid ""
 "If you make a mistake while editing a document in <app>gedit</app>, you can "
 "undo the change by pressing <keyseq><key>Ctrl</key><key>Z</key></keyseq>."
@@ -3452,13 +3454,13 @@ msgstr ""
 "можна скасувати дію, натиснувши <keyseq><key>Ctrl</key><key>Z</key></keyseq>."
 
 #. (itstool) path: note/p
-#: C/gedit-undo-redo.page:37
+#: C/gedit-undo-redo.page:17
 msgid ""
 "You cannot undo a change after you have closed a <app>gedit</app> file."
 msgstr "Після закриття файла «<app>gedit</app>», скасувати зміни – неможливо."
 
 #. (itstool) path: page/p
-#: C/gedit-undo-redo.page:40
+#: C/gedit-undo-redo.page:20
 msgid ""
 "To redo the change that was undone, press <keyseq><key>Ctrl</key><key>Shift</"
 "key><key>Z</key></keyseq>."
@@ -3466,77 +3468,494 @@ msgstr ""
 "Щоб повторити раніше скасовану дію, натисніть комбінацію клавіш "
 "<keyseq><key>Ctrl</key><key>Shift</key> <key>Z</key></keyseq>."
 
-#. (itstool) path: info/title
-#: C/index.page:8
-msgctxt "link"
-msgid "gedit Text Editor"
-msgstr "Текстовий редактор «gedit»"
-
-#. (itstool) path: info/title
-#: C/index.page:9
-msgctxt "text"
-msgid "gedit Text Editor"
-msgstr "Текстовий редактор «gedit»"
-
-#. (itstool) path: info/desc
-#: C/index.page:11
-msgid "Home page of the gedit help guide."
-msgstr "Домашня сторінка підручника з «gedit»."
-
 #. (itstool) path: page/title
-#: C/index.page:26
-msgid "<_:media-1/> gedit Text Editor"
-msgstr "<_:media-1/> Текстовий редактор «gedit»"
-
-#. (itstool) path: page/p
-#: C/index.page:30
-msgid ""
-"Welcome to the <app>gedit</app> help guide. For a quick introduction into "
-"<app>gedit's</app> most basic features, visit the <link xref=\"gedit-"
-"quickstart\">Get started with gedit</link> page."
-msgstr ""
-"Ласкаво просимо до довідки з «<app>gedit</app>». Для швидкого ознайомлення і "
-"з основними функціями «<app>gedit</app>» відвідайте сторінку «<link xref="
-"\"gedit-quickstart\">Початок роботи з «gedit»</link>."
-
-#. (itstool) path: page/p
-#: C/index.page:34
-msgid ""
-"Other help topics are grouped together into sections below. Enjoy using "
-"<app>gedit</app>!"
-msgstr ""
-"Інші теми довідки згруповані в розділи нижче. Приємного користування "
-"«<app>gedit</app>»!"
+#: C/index.page:6
+#| msgid "<_:media-1/> gedit Text Editor"
+msgid "<_:media-1/> gedit"
+msgstr "<_:media-1/> gedit"
 
 #. (itstool) path: section/title
-#: C/index.page:38
-msgid "Working With Files"
+#: C/index.page:14
+#| msgid "Working With Files"
+msgid "Working with files"
 msgstr "Робота з файлами"
 
 #. (itstool) path: section/title
-#: C/index.page:43
+#: C/index.page:19
+msgid "Printing with gedit"
+msgstr "Друкування з «gedit»"
+
+#. (itstool) path: section/title
+#: C/index.page:23
+msgid "More advanced topics"
+msgstr "Додаткові теми"
+
+#. (itstool) path: section/title
+#: C/index.page:27
 msgid "Configure gedit"
 msgstr "Налаштування «gedit»"
 
 #. (itstool) path: section/title
-#: C/index.page:47
-msgid "gedit Plugins"
+#: C/index.page:31
+#| msgid "gedit Plugins"
+msgid "gedit plugins"
 msgstr "Додатки «gedit»"
 
-#. (itstool) path: section/title
-#: C/index.page:51
-msgid "Printing with gedit"
-msgstr "Друкування з «gedit»"
+#~ msgid "Jim Campbell"
+#~ msgstr "Jim Campbell"
 
-#. (itstool) path: p/link
-#: C/legal.xml:3
-msgid "Creative Commons Attribution-ShareAlike 3.0 Unported License"
-msgstr "Creative Commons Attribution-ShareAlike 3.0 Unported License"
+#~ msgid "Jana Svarova"
+#~ msgstr "Jana Svarova"
 
-#. (itstool) path: license/p
-#: C/legal.xml:3
-msgid "This work is licensed under a <_:link-1/>."
-msgstr "Ця робота розповсюджується за умов дотримання <_:link-1/>."
+#~ msgid "2015"
+#~ msgstr "2015"
+
+#~ msgid "Ekaterina Gerasimova"
+#~ msgstr "Катерина Герасимова"
+
+#~ msgid "2011 2012 2013"
+#~ msgstr "2011 2012 2013"
+
+#~ msgid "Shobha Tyagi"
+#~ msgstr "Shobha Tyagi"
+
+#~ msgid ""
+#~ "Any one of these actions will create a new file in the <app>gedit</app> "
+#~ "window. If you have other files open in <app>gedit</app>, the new file "
+#~ "that you create will appear as a new tab to the right of those files."
+#~ msgstr ""
+#~ "Будь-яка з цих дій створить новий файл у вікні «<app>gedit</app>». Якщо в "
+#~ "«<app>gedit</app>» вже є інші відкриті файли, то новий файл з'явиться в "
+#~ "новій вкладці справа від цих файлів."
+
+#~ msgid ""
+#~ "You can use the <key>Ctrl</key> and <key>Shift</key> keys to open more "
+#~ "than one file at a time. If you hold down the <key>Ctrl</key> key while "
+#~ "you select multiple files, clicking <gui>Open</gui> will open each of the "
+#~ "files that you have selected."
+#~ msgstr ""
+#~ "Можна використовувати клавіші <key>Ctrl</key> та <key>Shift</key> для "
+#~ "відкриття більш, ніж одного файла за раз. Якщо утримувати клавішу "
+#~ "<key>Ctrl</key> під час вибору декількох файлів і клацнути на "
+#~ "«<gui>Відкрити</gui>», то відкриються всі вибрані файли."
+
+#~ msgid "Daniel Neel"
+#~ msgstr "Daniel Neel"
+
+#~ msgid "Sindhu S"
+#~ msgstr "Sindhu S"
+
+#~ msgid "Phil Bull"
+#~ msgstr "Phil Bull"
+
+#~ msgid "Get started with gedit"
+#~ msgstr "Початок роботи з «gedit»"
+
+#~ msgid ""
+#~ "To learn about additional <app>gedit</app> features and to get assistance "
+#~ "with performing additional tasks, explore <link xref=\"index\">the other "
+#~ "portions</link> of the <app>gedit</app> help."
+#~ msgstr ""
+#~ "Щоб дізнатися про додаткові функції «<app>gedit</app>» та отримати "
+#~ "допомогу з виконанням додаткових задач, відвідайте <link xref=\"index"
+#~ "\">інші розділи</link> довідки з «<app>gedit</app>»."
+
+#~ msgid "Young Li"
+#~ msgstr "Young Li"
+
+#~ msgid "Replace text"
+#~ msgstr "Заміна тексту"
+
+#~ msgid ""
+#~ "Editing text can be time consuming. To save time, <app>gedit</app> "
+#~ "includes a <app>Replace</app> function that helps you to find and replace "
+#~ "portions of text."
+#~ msgstr ""
+#~ "Редагування тексту може забирати багато часу. Щоб зекономити час, "
+#~ "«<app>gedit</app>» має функцію «<app>Замінити</app>», яка дозволяє знайти "
+#~ "та замінити фрагменти тексту."
+
+#~ msgid "Replace text in <app>gedit</app>"
+#~ msgstr "Заміна тексту з «<app>gedit</app>»"
+
+#~ msgid ""
+#~ "Open the <gui>Replace</gui> tool by clicking <guiseq><gui style=\"button"
+#~ "\">Menu button</gui><gui style=\"menuitem\">Find and Replace…</gui></"
+#~ "guiseq> or press <keyseq><key>Ctrl</key><key>H</key></keyseq>."
+#~ msgstr ""
+#~ "Відкрийте інструмент «<gui>Замінити</gui>», клацнувши на кнопці "
+#~ "<guiseq><gui style=\"button\">>Меню</gui><gui style=\"menuitem"
+#~ "\">«Замінити і замінити…»</gui></guiseq> або натиснувши "
+#~ "<keyseq><key>Ctrl</key><key>H</key></keyseq>."
+
+#~ msgid ""
+#~ "Enter the text that you wish to replace into the <gui>Find</gui> field."
+#~ msgstr "У полі «<gui>Знайти:</gui>» введіть текст, який потрібно замінити."
+
+#~ msgid ""
+#~ "Enter the new, replacement text into the <gui>Replace with</gui> field."
+#~ msgstr ""
+#~ "У полі «<gui>Замінити на</gui>» введіть текст, на який потрібно замінити."
+
+#~ msgid ""
+#~ "Once you have entered the original and replacement text, you can add "
+#~ "extra parameters to the search. You can also choose what you want to "
+#~ "replace:"
+#~ msgstr ""
+#~ "Як тільки початковий текст та текст заміни було введено, можна вибрати "
+#~ "додаткові параметри пошуку. Можна вибрати, що потрібно замінити:"
+
+#~ msgid "To replace <em>only</em> the next match, click <gui>Replace</gui>."
+#~ msgstr ""
+#~ "Щоб замінити <em>лише</em> наступне збіг, клацніть на «<gui>Замінити</"
+#~ "gui>»."
+
+#~ msgid ""
+#~ "To replace <em>all occurrences</em> of the searched-for text, click "
+#~ "<gui>Replace All</gui>."
+#~ msgstr ""
+#~ "Щоб замінити <em>всі збіг</em> шуканого тексту, клацніть на "
+#~ "«<gui>Замінити все</gui>»."
+
+#~ msgid ""
+#~ "Use the <gui>Replace All</gui> function with care. <gui>Replace All</gui> "
+#~ "works on the entirety of your text file, and does not allow you to "
+#~ "highlight portions of text where the replace function will be performed."
+#~ msgstr ""
+#~ "Використовуйте функцію «<gui>Замінити все</gui>» обережно. «<gui>Замінити "
+#~ "все</gui>» впливає на весь текст Вашого файла, та не дозволяє виділяти "
+#~ "фрагменти тексту, які будуть замінені."
+
+#~ msgid "More options"
+#~ msgstr "Більше параметрів"
+
+#~ msgid "If you wish, you can add some extra parameters to your search:"
+#~ msgstr "Якщо потрібно, можна додати додаткові параметри для пошуку:"
+
+#~ msgid "Match case"
+#~ msgstr "Врахування регістру"
+
+#~ msgid ""
+#~ "The <em>Match case</em> option allows you to specify whether you want "
+#~ "your search to be case-sensitive. If this option is selected, searches "
+#~ "will be case-sensitive. If not, searches will not be case-sensitive."
+#~ msgstr ""
+#~ "Параметр «<em>Враховувати регістр</em>» дозволяє зробити пошук чутливим "
+#~ "до регістру. Якщо цей параметр вибрано, пошук буде чутливим до регістру. "
+#~ "Якщо ні, пошук буде виконуватися без врахування регістру."
+
+#~ msgid "Match entire word only"
+#~ msgstr "Лише ціле слово"
+
+#~ msgid "Search backwards"
+#~ msgstr "Пошук в зворотному напрямку"
+
+#~ msgid ""
+#~ "This command behaves identically to the Find Previous command. If you "
+#~ "wish to step through search results from end to beginning, select this "
+#~ "option."
+#~ msgstr ""
+#~ "Ця команда діє аналогічно команді «Знайти попереднє». Якщо потрібно "
+#~ "пройтися по результатам пошуку з кінця до початку, виберіть дану опцію."
+
+#~ msgid "Wrap around"
+#~ msgstr "Перейти до початку"
+
+#~ msgid ""
+#~ "With the <app>wrap around</app> option enabled, <app>gedit</app> will re-"
+#~ "start the search/replace action at the top of the file after it has "
+#~ "reached the bottom of the file. This ensures that your search/replace "
+#~ "action is made across your entire file."
+#~ msgstr ""
+#~ "Якщо параметр «<app>Перейти до початку</app>» увімкнено, «<app>gedit</"
+#~ "app>» знову почне пошук/заміну з початку файла, після того як буде "
+#~ "досягнуто кінця файла. Це забезпечує виконання пошуку/заміни по всьому "
+#~ "файлові."
+
+#~ msgid ""
+#~ "You can use <em>escape sequences</em> to search for line breaks, carriage "
+#~ "returns, and tabs."
+#~ msgstr ""
+#~ "Можна використовувати <em>керівні послідовності</em> для пошуку розривів "
+#~ "рядків, переведень каретки та символів табуляції."
+
+#~ msgid ""
+#~ "If you actually want to search for a <output>\\</output> (backslash) or "
+#~ "one of the escape sequences in the text, you need to escape the backslash "
+#~ "with an extra backslash. For example, to search for <input>\\</input>, "
+#~ "you need to enter <input>\\\\</input> into the search or replace field. "
+#~ "You can search for escape sequences in the same way: to search for or "
+#~ "replace with a <input>\\n</input>, use the <input>\\\\n</input> term."
+#~ msgstr ""
+#~ "Якщо потрібно шукати «<output>\\</output>» (зворотню похилу риску) або "
+#~ "якусь керівну послідовність в тексті, то потрібно екранувати зворотню "
+#~ "похилу риску додатковою зворотною похилою рискою. Наприклад, щоб шукати "
+#~ "«<input>\\</input>», потрібно ввести «<input>\\\\</input>» в пошукове "
+#~ "поле або поле заміни. Таким самим чином можна шукати керівні "
+#~ "послідовності: для пошуку чи заміни на «<input>\\n</input>», "
+#~ "використовуйте «<input>\\\\n</input>»."
+
+#~ msgid "Find a portion of text within a file."
+#~ msgstr "Пошук фрагмента тексту у файлі."
+
+#~ msgid "Search for text"
+#~ msgstr "Пошук тексту"
+
+#~ msgid ""
+#~ "The Find tool can help you find specific sequences of text within in your "
+#~ "file."
+#~ msgstr ""
+#~ "Інструмент «Знайти» допомагає знаходити задані послідовності тексту у "
+#~ "файлі."
+
+#~ msgid "Finding text"
+#~ msgstr "Пошук тексту"
+
+#~ msgid ""
+#~ "Open the <gui>search window</gui> by clicking <guiseq><gui style=\"menu"
+#~ "\">Menu Button</gui> <gui style=\"menuitem\">Find…</gui> </guiseq> or "
+#~ "pressing <keyseq><key>Ctrl</key><key>F</key></keyseq>. This will move "
+#~ "your cursor to the start of the <gui>search window</gui>."
+#~ msgstr ""
+#~ "Відкрийте <gui>вікно пошуку</gui>, клацнувши на кнопці <guiseq><gui style="
+#~ "\"menu\">Меню</gui> <gui style=\"menuitem\">«Знайти»</gui></guiseq> або "
+#~ "натиснувши <keyseq><key>Ctrl</key><key>F</key></keyseq>. Це помістить "
+#~ "курсор на початок <gui>пошукового вікна</gui>."
+
+#~ msgid ""
+#~ "Type the text you wish to search for in the <gui>search window</gui>."
+#~ msgstr "У <gui>пошуковому вікні</gui> введіть текст, який потрібно шукати."
+
+#~ msgid ""
+#~ "As you type, <app>gedit</app> will begin highlighting the portions of "
+#~ "text that match what you have entered."
+#~ msgstr ""
+#~ "Під час введення тексту, «<app>gedit</app>» підсвічує фрагменти тексту, "
+#~ "що відповідають введеному."
+
+#~ msgid "To scroll through the search results, do any of the following:"
+#~ msgstr ""
+#~ "Для переміщення по результатам пошуку, виконайте одну з наступних дій:"
+
+#~ msgid ""
+#~ "Press <keyseq><key>Ctrl</key><key>G</key></keyseq> or <keyseq><key>Ctrl</"
+#~ "key><key>Shift</key><key>G</key></keyseq>."
+#~ msgstr ""
+#~ "Натисніть <keyseq><key>Ctrl</key><key>G</key></keyseq> або "
+#~ "<keyseq><key>Ctrl</key><key>Shift</key><key>G</key></keyseq>."
+
+#~ msgid ""
+#~ "To close the <gui>search window</gui>, press either <key>Esc</key> or "
+#~ "<key>Enter</key>. Pressing <key>Esc</key> will return the cursor to where "
+#~ "it was before you began your search. Pressing <key>Enter</key> will "
+#~ "return the cursor to the current position in the search results."
+#~ msgstr ""
+#~ "Для закриття <gui>пошукового вікна</gui>, натисніть <key>Esc</key> або "
+#~ "<key>Enter</key>. Натиснення <key>Esc</key> поверне курсор на ту позицію, "
+#~ "де він знаходився перед початком пошуку. Натиснення <key>Enter</key> – на "
+#~ "поточну позицію результатів пошуку."
+
+#~ msgid ""
+#~ "Select <gui>Wrap Around</gui> to search text from top to bottom and cycle "
+#~ "back again."
+#~ msgstr ""
+#~ "Виберіть «<gui>Перейти до початку</gui>», щоб шукати текст з верху до "
+#~ "низу і знову спочатку."
+
+#~ msgid ""
+#~ "The text that you've searched for will remain highlighted by gedit, even "
+#~ "after you have completed your search. To remove the highlight, click <gui "
+#~ "style=\"menuitem\">Clear Highlight</gui>, or press <keyseq><key>Ctrl</"
+#~ "key><key>Shift</key><key>K</key></keyseq>."
+#~ msgstr ""
+#~ "Шуканий текст буде залишатися виділеним, навіть, після закінчення пошуку. "
+#~ "Щоб прибрати виділення, клацніть на <gui style=\"menuitem\">«Очистити "
+#~ "виділення»</gui> або натисніть <keyseq><key>Ctrl</key><key>Shift</"
+#~ "key><key>K</key></keyseq>."
+
+#~ msgid "Baptiste Mille-Mathias"
+#~ msgstr "Baptiste Mille-Mathias"
+
+#~ msgid "Group similar tabs together."
+#~ msgstr "Групування подібних вкладок."
+
+#~ msgid "Radina Matic"
+#~ msgstr "Radina Matic"
+
+#~ msgid "2013"
+#~ msgstr "2013"
+
+#~| msgid ""
+#~| "If you are working with multiple tabs in <app>gedit</app> you can group "
+#~| "them, making it easier to keep your opened files organized. Adding a new "
+#~| "tab group will divide the <app>gedit</app> window in two panes, open a "
+#~| "new “Untitled File” in the new pane, and make it active. You can open "
+#~| "files into that tab group and move tabs from one tab group to another."
+#~ msgid ""
+#~ "If you are working with multiple tabs in <app>gedit</app> you can group "
+#~ "them, making it easier to keep your opened files organized. Adding a new "
+#~ "tab group will divide the <app>gedit</app> window in two panes, open a "
+#~ "new “Untitled Document” in the new pane, and make it active. You can open "
+#~ "files into that tab group and move tabs from one tab group to another."
+#~ msgstr ""
+#~ "Якщо ви працюєте в «<app>gedit</app>» з декількома вкладками, то можна їх "
+#~ "групувати, щоб полегшити зберігання відкритих файлів організованими. "
+#~ "Додання нової групи вкладок розділяє вікно «<app>gedit</app>» на два "
+#~ "підвікна, відкриває новий «Неназваний документ» в новому підвікні та "
+#~ "робить його активним. Можна відкривати файли в цій групі вкладок і "
+#~ "переміщати їх з однієї групи в іншу."
+
+#~ msgid "Open a new tab group in the gedit window"
+#~ msgstr "Відкриття нової групи вкладок у вікні «gedit»"
+
+#~ msgid "To open a new tab group you can:"
+#~ msgstr "Щоб відкрити нову групу вкладок:"
+
+#~ msgid ""
+#~ "Use the <keyseq><key>Ctrl</key><key>Alt</key><key>N</key></keyseq> "
+#~ "shortcut."
+#~ msgstr ""
+#~ "Використовуйте комбінацію клавіш <keyseq><key>Ctrl</key><key>Alt</"
+#~ "key><key>N</key></keyseq>."
+
+#~ msgid ""
+#~ "This action will divide the <app>gedit</app> window in two panes, and the "
+#~ "pane with the new tab group will be placed on the right of the active "
+#~ "tab. You can move the handle right or left assigning more or less space "
+#~ "of the <app>gedit</app> window between panes according to your needs."
+#~ msgstr ""
+#~ "Ця дія розділить вікно «<app>gedit</app>» на два підвікна, і, підвікно з "
+#~ "новою групою вкладок буде розміщено справа від активної вкладки. Можна "
+#~ "перетягнути маніпулятор вправо або вліво для збільшення або зменшення "
+#~ "простору вікна «<app>gedit</app>» відповідно до власних потреб."
+
+#~ msgid ""
+#~ "To close a tab group pane just close all the tabs that are opened inside "
+#~ "it."
+#~ msgstr ""
+#~ "Щоб закрити підвікно групи вкладок, просто закрийте всі вкладки, що "
+#~ "відкриті в ньому."
+
+#~ msgid "If you want to move a tab from one tab group to another:"
+#~ msgstr "Якщо хочете перемістити вкладку з однієї групи вкладок до іншої:"
+
+#~ msgid "Place it beside other tabs in the tab group."
+#~ msgstr "Помістіть її поруч з іншими вкладками у групі вкладок."
+
+#~ msgid "Change the position of a tab in the gedit window."
+#~ msgstr "Зміна розташування вкладки у вікні «gedit»."
+
+#~ msgid ""
+#~ "Tabs in <app>gedit</app> can be moved, making it easier to work with your "
+#~ "files. Tabs can be can re-ordered within the same window, moved outside "
+#~ "of <app>gedit</app> (creating a new <app>gedit</app> window), and moved "
+#~ "from one window to another."
+#~ msgstr ""
+#~ "Вкладки в «<app>gedit</app>» можна переміщувати, полегшуючи, таким чином, "
+#~ "роботу з файлами. Вкладки можна перерозміщувати в тому самому вікні, "
+#~ "переміщувати за межі «<app>gedit</app>» (створюючи нове вікно "
+#~ "«<app>gedit</app>») та переміщувати з одного вікна в інше."
+
+#~ msgid "To change the ordering of tabs in a window:"
+#~ msgstr "Щоб змінити порядок вкладок у вікні:"
+
+#~ msgid ""
+#~ "The tab will be placed in the position closest to where you release the "
+#~ "tab, immediately beside other opened tabs."
+#~ msgstr ""
+#~ "Вкладка розміститься в позиції, найближчій до тієї, де вона була "
+#~ "відпущена, безпосередньо поруч з іншими відкритими вкладками."
+
+#~ msgid "Move a tab, creating a new gedit window"
+#~ msgstr "Переміщення вкладки зі створенням нового вікна «gedit»"
+
+#~ msgid "Move a tab to another gedit window"
+#~ msgstr "Переміщення вкладки до іншого вікна «gedit»"
+
+#~ msgid "Drag the tab to the new window."
+#~ msgstr "Перетягніть вкладку до нового вікна."
+
+#~ msgid "Place it beside other tabs in the new window."
+#~ msgstr "Розмістіть її поруч з іншими вкладками в новому вікні."
+
+#~ msgid ""
+#~ "You may find it easier to move a tab from one window to another by "
+#~ "dragging the tab to the <gui>Activities</gui> hot-corner of <gui>GNOME "
+#~ "Shell</gui>. This will reveal each of the open <app>gedit</app> windows. "
+#~ "You can then release the tab on the desired <app>gedit</app> window."
+#~ msgstr ""
+#~ "Можливо, простіше перемістити вкладку з одного вікна до іншого, "
+#~ "перетягнувши вкладку до кутка «<gui>Дії</gui>» <gui>оболонки «GNOME»</"
+#~ "gui>. Це покаже всі відкриті вікна «<app>gedit</app>». Потім можна "
+#~ "відпустити вкладку на потрібному вікні «<app>gedit</app>»."
+
+#~ msgid "Create or close tabs in the gedit window."
+#~ msgstr "Створення та закриття вкладок у вікні «gedit»."
+
+#~ msgid ""
+#~ "Working with tabs in <app>gedit</app> allows you to keep an eye on "
+#~ "several files in a single window."
+#~ msgstr ""
+#~ "Працюючи зі вкладками в «<app>gedit</app>», можна тримати в полі зору "
+#~ "декілька файлів в одному вікні."
+
+#~ msgid "Adding tabs"
+#~ msgstr "Додавання вкладок"
+
+#~ msgid ""
+#~ "To add a new tab to create a new file, click the <gui>Create a new "
+#~ "document</gui> button on the left side of the header bar, or press "
+#~ "<keyseq><key>Ctrl</key><key>T</key></keyseq>. The tab will be added to "
+#~ "the right side of any other tabs."
+#~ msgstr ""
+#~ "Щоб створити нову вкладку або новий файл, натисніть кнопку <gui>Створити "
+#~ "новий документ</gui> у лівій частині панелі заголовка або натисніть "
+#~ "комбінацію клавіш <keyseq><key>Ctrl</key> <key>T</key></keyseq>. Вкладку "
+#~ "буде додано справа від інших вкладок."
+
+#~ msgid ""
+#~ "To remove a tab, click the <gui style=\"button\">×</gui> on the tab's "
+#~ "right side, or press <keyseq><key>Ctrl</key><key>W</key></keyseq>. To "
+#~ "remove all open tabs, press <keyseq><key>Ctrl</key> <key>Shift</"
+#~ "key><key>W</key></keyseq>."
+#~ msgstr ""
+#~ "Щоб видалити вкладку, клацніть на «<gui style=\"button\">×</gui>», що з "
+#~ "правої сторони вкладки або натисніть комбінацію клавіш <keyseq><key>Ctrl</"
+#~ "key><key>W</key></keyseq>. Щоб видалити всі відкриті вкладки, натисніть "
+#~ "<keyseq><key>Ctrl</key> <key>Shift</key><key>W</key></keyseq>."
+
+#~ msgctxt "link"
+#~ msgid "gedit Text Editor"
+#~ msgstr "Текстовий редактор «gedit»"
+
+#~ msgctxt "text"
+#~ msgid "gedit Text Editor"
+#~ msgstr "Текстовий редактор «gedit»"
+
+#~ msgid "Home page of the gedit help guide."
+#~ msgstr "Домашня сторінка підручника з «gedit»."
+
+#~ msgid ""
+#~ "Welcome to the <app>gedit</app> help guide. For a quick introduction into "
+#~ "<app>gedit's</app> most basic features, visit the <link xref=\"gedit-"
+#~ "quickstart\">Get started with gedit</link> page."
+#~ msgstr ""
+#~ "Ласкаво просимо до довідки з «<app>gedit</app>». Для швидкого "
+#~ "ознайомлення і з основними функціями «<app>gedit</app>» відвідайте "
+#~ "сторінку «<link xref=\"gedit-quickstart\">Початок роботи з «gedit»</link>."
+
+#~ msgid ""
+#~ "Other help topics are grouped together into sections below. Enjoy using "
+#~ "<app>gedit</app>!"
+#~ msgstr ""
+#~ "Інші теми довідки згруповані в розділи нижче. Приємного користування "
+#~ "«<app>gedit</app>»!"
+
+#~ msgid "Creative Commons Attribution-ShareAlike 3.0 Unported License"
+#~ msgstr "Creative Commons Attribution-ShareAlike 3.0 Unported License"
+
+#~ msgid "This work is licensed under a <_:link-1/>."
+#~ msgstr "Ця робота розповсюджується за умов дотримання <_:link-1/>."
 
 #~ msgid ""
 #~ "Select <guiseq><gui style=\"menu\">gedit</gui> <gui style=\"menuitem"
