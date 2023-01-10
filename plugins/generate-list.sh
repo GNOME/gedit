@@ -39,6 +39,12 @@ write_content() {
 	echo
 
 	write_list_for_plugins_dir '../../gedit-plugins/plugins'
+
+	echo
+	echo 'Third-party plugins'
+	echo '-------------------'
+	echo
+	echo 'There are also [third-party gedit plugins](third-party-plugins.md).'
 }
 
 write_content > list-of-gedit-plugins.md

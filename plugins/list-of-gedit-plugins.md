@@ -40,3 +40,8 @@ of the time) too specific to be distributed with gedit itself.
 - **SyncTeX** - *Synchronize between LaTeX and PDF with gedit and evince.*
 - **Text Size** - *Easily increase and decrease the text size*
 - **Word Completion** - *Word completion using the completion framework*
+
+Third-party plugins
+-------------------
+
+There are also [third-party gedit plugins](third-party-plugins.md).
