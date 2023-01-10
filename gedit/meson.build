@@ -177,7 +177,7 @@ libgedit_shared_lib = shared_library(
 )
 
 # GObject Introspection
-libgedit_gir = gnome.generate_gir(
+gnome.generate_gir(
   libgedit_shared_lib,
   sources: [
     libgedit_public_headers,
@@ -199,15 +199,6 @@ libgedit_gir = gnome.generate_gir(
 python3.install_sources(
   'Gedit.py',
   subdir: 'gi/overrides',
-)
-
-# Vala API
-libgedit_vapi = gnome.generate_vapi(
-  'gedit',
-  sources: libgedit_gir[0],
-  packages: ['gio-2.0', 'atk', 'gdk-3.0', 'gtk+-3.0', 'gtksourceview-4'],
-  install: true,
-  install_dir: get_option('datadir') / 'vala/vapi',
 )
 
 libgedit_dep = declare_dependency(
