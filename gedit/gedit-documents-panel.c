@@ -148,8 +148,6 @@ static const GtkTargetEntry panel_targets [] = {
 	{"GEDIT_DOCUMENTS_DOCUMENT_ROW", GTK_TARGET_SAME_APP, 0},
 };
 
-#define MAX_DOC_NAME_LENGTH 60
-
 #define ROW_OUTSIDE_LISTBOX -1
 
 static guint
@@ -439,22 +437,6 @@ group_row_refresh_visibility (GeditDocumentsPanel *panel)
 	gtk_widget_set_visible (first_group_row, !notebook_is_unique);
 }
 
-static gchar *
-doc_get_name (GeditDocument *doc)
-{
-	gchar *name;
-	gchar *docname;
-
-	name = tepl_file_get_short_name (tepl_buffer_get_file (TEPL_BUFFER (doc)));
-
-	/* Truncate the name so it doesn't get insanely wide. */
-	docname = tepl_utils_str_middle_truncate (name, MAX_DOC_NAME_LENGTH);
-
-	g_free (name);
-
-	return docname;
-}
-
 static void
 document_row_sync_tab_name_and_icon (GeditTab   *tab,
                                      GParamSpec *pspec,
@@ -467,7 +449,7 @@ document_row_sync_tab_name_and_icon (GeditTab   *tab,
 	GdkPixbuf *pixbuf;
 
 	doc = gedit_tab_get_document (tab);
-	name = doc_get_name (doc);
+	name = tepl_file_get_short_name (tepl_buffer_get_file (TEPL_BUFFER (doc)));
 
 	if (!gtk_text_buffer_get_modified (GTK_TEXT_BUFFER (doc)))
 	{
@@ -928,7 +910,7 @@ panel_on_drag_begin (GtkWidget      *widget,
 
 	label = gtk_label_new (NULL);
 	gtk_label_set_markup (GTK_LABEL (label), name);
-	gtk_label_set_ellipsize (GTK_LABEL (label), PANGO_ELLIPSIZE_END);
+	gtk_label_set_ellipsize (GTK_LABEL (label), PANGO_ELLIPSIZE_MIDDLE);
 	gtk_widget_set_halign (label, GTK_ALIGN_START);
 	gtk_widget_set_valign (label, GTK_ALIGN_CENTER);
 
@@ -1558,7 +1540,7 @@ row_create (GtkWidget *row)
 	gtk_container_add (GTK_CONTAINER (event_box), generic_row->box);
 
 	generic_row->label = gtk_label_new (NULL);
-	gtk_label_set_ellipsize (GTK_LABEL (generic_row->label), PANGO_ELLIPSIZE_END);
+	gtk_label_set_ellipsize (GTK_LABEL (generic_row->label), PANGO_ELLIPSIZE_MIDDLE);
 	gtk_widget_set_halign (generic_row->label, GTK_ALIGN_START);
 	gtk_widget_set_valign (generic_row->label, GTK_ALIGN_CENTER);
 
