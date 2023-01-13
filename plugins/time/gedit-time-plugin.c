@@ -250,6 +250,20 @@ update_ui (GeditTimePlugin *plugin)
 }
 
 static void
+add_keyboard_shortcut (GtkApplication *app)
+{
+	const gchar *accels[] = { "<Shift><Alt>D", NULL };
+	gtk_application_set_accels_for_action (app, "win.time", accels);
+}
+
+static void
+remove_keyboard_shortcut (GtkApplication *app)
+{
+	const gchar *accels[] = {  NULL };
+	gtk_application_set_accels_for_action (app, "win.time", accels);
+}
+
+static void
 gedit_time_plugin_app_activate (GeditAppActivatable *activatable)
 {
 	GeditTimePluginPrivate *priv;
@@ -258,6 +272,8 @@ gedit_time_plugin_app_activate (GeditAppActivatable *activatable)
 	gedit_debug (DEBUG_PLUGINS);
 
 	priv = GEDIT_TIME_PLUGIN (activatable)->priv;
+
+	add_keyboard_shortcut (GTK_APPLICATION (priv->app));
 
 	priv->menu_ext = gedit_app_activatable_extend_menu (activatable, "tools-section");
 	item = g_menu_item_new (_("In_sert Date and Time…"), "win.time");
@@ -273,6 +289,8 @@ gedit_time_plugin_app_deactivate (GeditAppActivatable *activatable)
 	gedit_debug (DEBUG_PLUGINS);
 
 	priv = GEDIT_TIME_PLUGIN (activatable)->priv;
+
+	remove_keyboard_shortcut (GTK_APPLICATION (priv->app));
 
 	g_clear_object (&priv->menu_ext);
 }
