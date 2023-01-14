@@ -40,8 +40,8 @@ gedit_help_sources = [
 ]
 
 gedit_help_media = [
+  'figures/gedit.svg',
   'figures/gedit-html-snippet.png',
-  'figures/gedit-icon.png',
   'figures/gedit3-screenshot.png',
 ]
 
