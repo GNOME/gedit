@@ -2294,9 +2294,11 @@ directory_open (GeditFileBrowserWidget *obj,
 	if (FILE_IS_DIR (flags) && location)
 	{
 		gchar *uri = g_file_get_uri (location);
+		GtkWindow *window = GTK_WINDOW (gtk_widget_get_toplevel (GTK_WIDGET (obj)));
+
 		result = TRUE;
 
-		if (!gtk_show_uri_on_window (GTK_WINDOW (obj), uri, GDK_CURRENT_TIME, &error))
+		if (!gtk_show_uri_on_window (window, uri, GDK_CURRENT_TIME, &error))
 		{
 			g_signal_emit (obj, signals[ERROR], 0,
 				       GEDIT_FILE_BROWSER_ERROR_OPEN_DIRECTORY,
