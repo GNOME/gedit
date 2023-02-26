@@ -9,29 +9,29 @@
 # Vytautas Povilaitis <punktyras@nkm.lt>, 2007.
 # Gintautas Miliauskas <gintas@akl.lt>, 2007, 2008, 2010.
 # Algimantas Margevičius <margevicius.algimantas@gmail.com>, 2011, 2012.
-# Aurimas Černius <aurisc4@gmail.com>, 2010-2022.
+# Aurimas Černius <aurisc4@gmail.com>, 2010-2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: lt\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gedit/issues\n"
-"POT-Creation-Date: 2022-02-14 13:34+0000\n"
-"PO-Revision-Date: 2022-03-07 18:15+0200\n"
+"POT-Creation-Date: 2023-01-25 17:32+0000\n"
+"PO-Revision-Date: 2023-02-26 22:15+0200\n"
 "Last-Translator: Aurimas Černius <aurisc4@gmail.com>\n"
 "Language-Team: Lietuvių <gnome-lt@lists.akl.lt>\n"
 "Language: lt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
-"%100<10 || n%100>=20) ? 1 : 2)\n"
-"X-Generator: Gtranslator 40.0\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"(n%100<10 || n%100>=20) ? 1 : 2)\n"
+"X-Generator: Gtranslator 42.0\n"
 
-#: data/org.gnome.gedit.appdata.xml.in:7
+#: data/org.gnome.gedit.appdata.xml.in:7 data/org.gnome.gedit.desktop.in:3
 msgid "gedit"
 msgstr "gedit"
 
-#: data/org.gnome.gedit.appdata.xml.in:8 data/org.gnome.gedit.desktop.in:4
+#: data/org.gnome.gedit.appdata.xml.in:8 data/org.gnome.gedit.desktop.in:5
 msgid "Edit text files"
 msgstr "Redaguoti tekstinius failus"
 
@@ -47,23 +47,22 @@ msgstr ""
 "Svarbiausias gedit tikslas yra būti paprastu naudoti su paprasta numatytąją "
 "naudotojo sąsaja. Sudėtingesnės galimybės yra prieinamas įjungiant įskiepius."
 
-#: data/org.gnome.gedit.desktop.in:3 gedit/gedit-print-job.c:731
+#: data/org.gnome.gedit.desktop.in:4 gedit/gedit-print-job.c:731
 msgid "Text Editor"
 msgstr "Tekstų redaktorius"
 
 #. TRANSLATORS: Do NOT translate or localize the semicolons!
 #. The list MUST also end with a semicolon!
 #. Search terms to find this application.
-#: data/org.gnome.gedit.desktop.in:18
-#| msgid "Text;Editor;Plaintext;Write;gedit;"
+#: data/org.gnome.gedit.desktop.in:19
 msgid "Text;Editor;Plaintext;Write;gedit;notepad;"
 msgstr "Tekstas;Redaktorius;Grynasis;tekstas;Rašymas;gedit;notepad;"
 
-#: data/org.gnome.gedit.desktop.in:22
+#: data/org.gnome.gedit.desktop.in:23
 msgid "New Window"
 msgstr "Naujas langas"
 
-#: data/org.gnome.gedit.desktop.in:26
+#: data/org.gnome.gedit.desktop.in:27
 msgid "New Document"
 msgstr "Naujas dokumentas"
 
@@ -873,11 +872,11 @@ msgstr[2] "Pakeitimai, atlikti per paskutines %d valandų, bus prarasti."
 msgid "_Revert"
 msgstr "A_tstatyti"
 
-#: gedit/gedit-commands-help.c:110
+#: gedit/gedit-commands-help.c:120
 msgid "gedit is a small and lightweight text editor for the GNOME desktop"
 msgstr "gedit yra tekstų redaktorius, skirtas GNOME darbalaukio aplinkai"
 
-#: gedit/gedit-commands-help.c:115
+#: gedit/gedit-commands-help.c:125
 msgid "translator-credits"
 msgstr ""
 "Paskutinysis vertėjas:\n"
@@ -1437,64 +1436,64 @@ msgstr[2] "Yra %d kortelių su klaidomis"
 
 #. Translators: the first %s is a file name (e.g. test.txt) the second one
 #. is a directory (e.g. ssh://master.gnome.org/home/users/paolo)
-#: gedit/gedit-tab.c:834
+#: gedit/gedit-tab.c:841
 #, c-format
 msgid "Reverting %s from %s"
 msgstr "Atstatoma %s iš %s"
 
-#: gedit/gedit-tab.c:841
+#: gedit/gedit-tab.c:848
 #, c-format
 msgid "Reverting %s"
 msgstr "Atstatoma %s"
 
 #. Translators: the first %s is a file name (e.g. test.txt) the second one
 #. is a directory (e.g. ssh://master.gnome.org/home/users/paolo)
-#: gedit/gedit-tab.c:854
+#: gedit/gedit-tab.c:861
 #, c-format
 msgid "Loading %s from %s"
 msgstr "Įkeliama %s iš %s"
 
-#: gedit/gedit-tab.c:861
+#: gedit/gedit-tab.c:868
 #, c-format
 msgid "Loading %s"
 msgstr "Įkeliama %s"
 
 #. Translators: the first %s is a file name (e.g. test.txt) the second one
 #. is a directory (e.g. ssh://master.gnome.org/home/users/paolo)
-#: gedit/gedit-tab.c:941
+#: gedit/gedit-tab.c:948
 #, c-format
 msgid "Saving %s to %s"
 msgstr "Įrašoma %s į %s"
 
-#: gedit/gedit-tab.c:946
+#: gedit/gedit-tab.c:953
 #, c-format
 msgid "Saving %s"
 msgstr "Įrašoma %s"
 
-#: gedit/gedit-tab.c:1494
+#: gedit/gedit-tab.c:1523
 #, c-format
 msgid "Error opening file %s"
 msgstr "Klaida atveriant failą %s"
 
-#: gedit/gedit-tab.c:1499
+#: gedit/gedit-tab.c:1528
 #, c-format
 msgid "Error reverting file %s"
 msgstr "Klaida atstatant failą %s"
 
-#: gedit/gedit-tab.c:1504
+#: gedit/gedit-tab.c:1533
 #, c-format
 msgid "Error saving file %s"
 msgstr "Klaida įrašant failą %s"
 
-#: gedit/gedit-tab.c:1535
+#: gedit/gedit-tab.c:1564
 msgid "Name:"
 msgstr "Vardas:"
 
-#: gedit/gedit-tab.c:1536
+#: gedit/gedit-tab.c:1565
 msgid "MIME Type:"
 msgstr "MIME tipas:"
 
-#: gedit/gedit-tab.c:1537
+#: gedit/gedit-tab.c:1566
 msgid "Encoding:"
 msgstr "Koduotė:"
 
@@ -1825,8 +1824,8 @@ msgstr "_Žinynas"
 
 #: gedit/resources/gtk/menus-common.ui:394 gedit/resources/gtk/menus.ui:127
 #: gedit/resources/gtk/menus-traditional.ui:123
-msgid "_About Text Editor"
-msgstr "_Apie tekstų redaktorių"
+msgid "_About gedit"
+msgstr "_Apie gedit"
 
 #: gedit/resources/gtk/menus.ui:41 gedit/resources/gtk/menus-traditional.ui:37
 msgid "Save _All"
