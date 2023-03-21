@@ -2915,13 +2915,12 @@ _gedit_window_get_notebook (GeditWindow *window)
 
 /**
  * gedit_window_create_tab:
- * @window: a #GeditWindow
- * @jump_to: %TRUE to set the new #GeditTab as active
+ * @window: a #GeditWindow.
+ * @jump_to: if %TRUE, the #GtkNotebook switches to the new #GeditTab.
  *
- * Creates a new #GeditTab and adds the new tab to the #GtkNotebook.
- * In case @jump_to is %TRUE the #GtkNotebook switches to that new #GeditTab.
+ * Creates a new #GeditTab and adds it to the #GtkNotebook.
  *
- * Returns: (transfer none): a new #GeditTab
+ * Returns: (transfer none): the new #GeditTab.
  */
 GeditTab *
 gedit_window_create_tab (GeditWindow *window,
