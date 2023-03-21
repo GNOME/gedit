@@ -2374,55 +2374,64 @@ setup_bottom_panel (GeditWindow *window)
 }
 
 static void
-init_panels_visibility (GeditWindow *window)
+init_side_panel_visibility (GeditWindow *window)
 {
-	gchar *panel_page;
-	GtkWidget *panel_child;
+	gchar *child_name;
+	GtkWidget *child_widget;
 	gboolean side_panel_visible;
-	gboolean bottom_panel_visible;
 
 	gedit_debug (DEBUG_WINDOW);
 
-	/* side panel */
-	panel_page = g_settings_get_string (window->priv->window_settings,
-	                                    GEDIT_SETTINGS_SIDE_PANEL_ACTIVE_PAGE);
-	panel_child = gtk_stack_get_child_by_name (window->priv->side_panel, panel_page);
-	if (panel_child != NULL)
+	child_name = g_settings_get_string (window->priv->window_settings,
+					    GEDIT_SETTINGS_SIDE_PANEL_ACTIVE_PAGE);
+	child_widget = gtk_stack_get_child_by_name (window->priv->side_panel, child_name);
+	if (child_widget != NULL)
 	{
-		gtk_stack_set_visible_child (window->priv->side_panel, panel_child);
+		gtk_stack_set_visible_child (window->priv->side_panel, child_widget);
 	}
 
-	g_free (panel_page);
+	g_free (child_name);
 
 	side_panel_visible = g_settings_get_boolean (window->priv->ui_settings,
-						    GEDIT_SETTINGS_SIDE_PANEL_VISIBLE);
-	bottom_panel_visible = g_settings_get_boolean (window->priv->ui_settings,
-						      GEDIT_SETTINGS_BOTTOM_PANEL_VISIBLE);
+						     GEDIT_SETTINGS_SIDE_PANEL_VISIBLE);
 
 	if (side_panel_visible)
 	{
 		gtk_widget_show (GTK_WIDGET (window->priv->side_panel));
 	}
+}
 
-	/* bottom pane, it can be empty */
+static void
+init_bottom_panel_visibility (GeditWindow *window)
+{
+	gedit_debug (DEBUG_WINDOW);
+
+	/* The bottom panel can be empty, in which case it isn't shown. */
 	if (gtk_stack_get_visible_child (GTK_STACK (window->priv->bottom_panel)) != NULL)
 	{
-		panel_page = g_settings_get_string (window->priv->window_settings,
-		                                    GEDIT_SETTINGS_BOTTOM_PANEL_ACTIVE_PAGE);
-		/* FIXME: probably wrong to retrieve from side_panel. */
-		panel_child = gtk_stack_get_child_by_name (window->priv->side_panel, panel_page);
-		if (panel_child)
+		gchar *child_name;
+		GtkWidget *child_widget;
+		gboolean bottom_panel_visible;
+
+		child_name = g_settings_get_string (window->priv->window_settings,
+						    GEDIT_SETTINGS_BOTTOM_PANEL_ACTIVE_PAGE);
+		child_widget = gtk_stack_get_child_by_name (GTK_STACK (window->priv->bottom_panel),
+							    child_name);
+		if (child_widget != NULL)
 		{
 			gtk_stack_set_visible_child (GTK_STACK (window->priv->bottom_panel),
-			                             panel_child);
+			                             child_widget);
 		}
+
+		g_free (child_name);
+
+		bottom_panel_visible = g_settings_get_boolean (window->priv->ui_settings,
+							       GEDIT_SETTINGS_BOTTOM_PANEL_VISIBLE);
 
 		if (bottom_panel_visible)
 		{
 			gtk_widget_show (window->priv->bottom_panel);
 		}
-
-		g_free (panel_page);
 	}
 
 	/* start track sensitivity after the initial state is set */
@@ -2833,9 +2842,11 @@ gedit_window_init (GeditWindow *window)
 	                            (PeasExtensionSetForeachFunc) extension_added,
 	                            window);
 
-	/* set visibility of panels.
-	 * This needs to be done after plugins activatation */
-	init_panels_visibility (window);
+	/* Set visibility of panels. This needs to be done after plugins
+	 * activatation.
+	 */
+	init_side_panel_visibility (window);
+	init_bottom_panel_visibility (window);
 
 	update_actions_sensitivity (window);
 
