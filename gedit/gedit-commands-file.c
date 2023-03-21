@@ -220,24 +220,21 @@ load_file_list (GeditWindow             *window,
 	{
 		g_return_val_if_fail (l->data != NULL, NULL);
 
-		tab = gedit_window_create_tab_from_location (window,
-							     l->data,
-							     encoding,
-							     line_pos,
-							     column_pos,
-							     create,
-							     jump_to);
+		tab = gedit_window_create_tab (window, jump_to);
+		gedit_tab_load_file (tab,
+				     l->data,
+				     encoding,
+				     line_pos,
+				     column_pos,
+				     create);
 
-		if (tab != NULL)
-		{
-			jump_to = FALSE;
+		jump_to = FALSE;
 
-			++num_loaded_files;
-			loaded_files = g_slist_prepend (loaded_files,
-			                                gedit_tab_get_document (tab));
-		}
+		num_loaded_files++;
+		loaded_files = g_slist_prepend (loaded_files,
+						gedit_tab_get_document (tab));
 
-		l = g_slist_next (l);
+		l = l->next;
 	}
 
 	loaded_files = g_slist_reverse (loaded_files);
