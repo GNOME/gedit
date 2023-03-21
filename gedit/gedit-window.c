@@ -133,19 +133,18 @@ enum
 	N_PROPERTIES
 };
 
-static GParamSpec *properties[N_PROPERTIES];
-
 enum
 {
-	TAB_ADDED,
-	TAB_REMOVED,
-	TABS_REORDERED,
-	ACTIVE_TAB_CHANGED,
-	ACTIVE_TAB_STATE_CHANGED,
-	LAST_SIGNAL
+	SIGNAL_TAB_ADDED,
+	SIGNAL_TAB_REMOVED,
+	SIGNAL_TABS_REORDERED,
+	SIGNAL_ACTIVE_TAB_CHANGED,
+	SIGNAL_ACTIVE_TAB_STATE_CHANGED,
+	N_SIGNALS
 };
 
-static guint signals[LAST_SIGNAL];
+static GParamSpec *properties[N_PROPERTIES];
+static guint signals[N_SIGNALS];
 
 enum
 {
@@ -474,7 +473,7 @@ gedit_window_class_init (GeditWindowClass *klass)
 
 	g_object_class_install_properties (object_class, N_PROPERTIES, properties);
 
-	signals[TAB_ADDED] =
+	signals[SIGNAL_TAB_ADDED] =
 		g_signal_new ("tab-added",
 			      G_OBJECT_CLASS_TYPE (object_class),
 			      G_SIGNAL_RUN_FIRST,
@@ -483,7 +482,8 @@ gedit_window_class_init (GeditWindowClass *klass)
 			      G_TYPE_NONE,
 			      1,
 			      GEDIT_TYPE_TAB);
-	signals[TAB_REMOVED] =
+
+	signals[SIGNAL_TAB_REMOVED] =
 		g_signal_new ("tab-removed",
 			      G_OBJECT_CLASS_TYPE (object_class),
 			      G_SIGNAL_RUN_FIRST,
@@ -492,7 +492,8 @@ gedit_window_class_init (GeditWindowClass *klass)
 			      G_TYPE_NONE,
 			      1,
 			      GEDIT_TYPE_TAB);
-	signals[TABS_REORDERED] =
+
+	signals[SIGNAL_TABS_REORDERED] =
 		g_signal_new ("tabs-reordered",
 			      G_OBJECT_CLASS_TYPE (object_class),
 			      G_SIGNAL_RUN_FIRST,
@@ -500,7 +501,8 @@ gedit_window_class_init (GeditWindowClass *klass)
 			      NULL, NULL, NULL,
 			      G_TYPE_NONE,
 			      0);
-	signals[ACTIVE_TAB_CHANGED] =
+
+	signals[SIGNAL_ACTIVE_TAB_CHANGED] =
 		g_signal_new ("active-tab-changed",
 			      G_OBJECT_CLASS_TYPE (object_class),
 			      G_SIGNAL_RUN_FIRST,
@@ -509,7 +511,8 @@ gedit_window_class_init (GeditWindowClass *klass)
 			      G_TYPE_NONE,
 			      1,
 			      GEDIT_TYPE_TAB);
-	signals[ACTIVE_TAB_STATE_CHANGED] =
+
+	signals[SIGNAL_ACTIVE_TAB_STATE_CHANGED] =
 		g_signal_new ("active-tab-state-changed",
 			      G_OBJECT_CLASS_TYPE (object_class),
 			      G_SIGNAL_RUN_FIRST,
@@ -1329,7 +1332,7 @@ tab_switched (GeditMultiNotebook *mnb,
 	update_actions_sensitivity (window);
 
 	g_signal_emit (G_OBJECT (window),
-		       signals[ACTIVE_TAB_CHANGED],
+		       signals[SIGNAL_ACTIVE_TAB_CHANGED],
 		       0,
 		       new_tab);
 }
@@ -1460,7 +1463,7 @@ sync_state (GeditTab    *tab,
 	{
 		update_actions_sensitivity (window);
 
-		g_signal_emit (G_OBJECT (window), signals[ACTIVE_TAB_STATE_CHANGED], 0);
+		g_signal_emit (G_OBJECT (window), signals[SIGNAL_ACTIVE_TAB_STATE_CHANGED], 0);
 	}
 }
 
@@ -1864,7 +1867,7 @@ on_tab_added (GeditMultiNotebook *multi,
 	update_window_state (window);
 	update_can_close (window);
 
-	g_signal_emit (G_OBJECT (window), signals[TAB_ADDED], 0, tab);
+	g_signal_emit (G_OBJECT (window), signals[SIGNAL_TAB_ADDED], 0, tab);
 }
 
 static void
@@ -1995,7 +1998,7 @@ on_tab_removed (GeditMultiNotebook *multi,
 	update_window_state (window);
 	update_can_close (window);
 
-	g_signal_emit (G_OBJECT (window), signals[TAB_REMOVED], 0, tab);
+	g_signal_emit (G_OBJECT (window), signals[SIGNAL_TAB_REMOVED], 0, tab);
 }
 
 static void
@@ -2007,7 +2010,7 @@ on_page_reordered (GeditMultiNotebook *multi,
 {
 	update_actions_sensitivity (window);
 
-	g_signal_emit (G_OBJECT (window), signals[TABS_REORDERED], 0);
+	g_signal_emit (G_OBJECT (window), signals[SIGNAL_TABS_REORDERED], 0);
 }
 
 static GtkNotebook *
