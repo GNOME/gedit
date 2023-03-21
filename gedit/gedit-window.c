@@ -2913,27 +2913,6 @@ _gedit_window_get_notebook (GeditWindow *window)
 	return GTK_WIDGET (gedit_multi_notebook_get_active_notebook (window->priv->multi_notebook));
 }
 
-static void
-process_create_tab (GeditWindow *window,
-                    GeditTab    *tab,
-                    gboolean     jump_to)
-{
-	GeditNotebook *notebook;
-
-	notebook = GEDIT_NOTEBOOK (_gedit_window_get_notebook (window));
-
-	gtk_widget_show (GTK_WIDGET (tab));
-	gedit_notebook_add_tab (notebook,
-	                        tab,
-	                        -1,
-	                        jump_to);
-
-	if (!gtk_widget_get_visible (GTK_WIDGET (window)))
-	{
-		gtk_window_present (GTK_WINDOW (window));
-	}
-}
-
 /**
  * gedit_window_create_tab:
  * @window: a #GeditWindow
@@ -2949,13 +2928,22 @@ gedit_window_create_tab (GeditWindow *window,
 			 gboolean     jump_to)
 {
 	GeditTab *tab;
+	GeditNotebook *notebook;
 
 	g_return_val_if_fail (GEDIT_IS_WINDOW (window), NULL);
 
 	gedit_debug (DEBUG_WINDOW);
 
 	tab = _gedit_tab_new ();
-	process_create_tab (window, tab, jump_to);
+	gtk_widget_show (GTK_WIDGET (tab));
+
+	notebook = GEDIT_NOTEBOOK (_gedit_window_get_notebook (window));
+	gedit_notebook_add_tab (notebook, tab, -1, jump_to);
+
+	if (!gtk_widget_get_visible (GTK_WIDGET (window)))
+	{
+		gtk_window_present (GTK_WINDOW (window));
+	}
 
 	return tab;
 }
@@ -2995,7 +2983,7 @@ gedit_window_create_tab_from_location (GeditWindow             *window,
 
 	gedit_debug (DEBUG_WINDOW);
 
-	tab = _gedit_tab_new ();
+	tab = gedit_window_create_tab (window, jump_to);
 
 	_gedit_tab_load (tab,
 			 location,
@@ -3003,8 +2991,6 @@ gedit_window_create_tab_from_location (GeditWindow             *window,
 			 line_pos,
 			 column_pos,
 			 create);
-
-	process_create_tab (window, tab, jump_to);
 
 	return tab;
 }
@@ -3035,15 +3021,13 @@ gedit_window_create_tab_from_stream (GeditWindow             *window,
 	g_return_val_if_fail (GEDIT_IS_WINDOW (window), NULL);
 	g_return_val_if_fail (G_IS_INPUT_STREAM (stream), NULL);
 
-	tab = _gedit_tab_new ();
+	tab = gedit_window_create_tab (window, jump_to);
 
 	_gedit_tab_load_stream (tab,
 				stream,
 				encoding,
 				line_pos,
 				column_pos);
-
-	process_create_tab (window, tab, jump_to);
 
 	return tab;
 }
