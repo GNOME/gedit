@@ -2142,13 +2142,33 @@ load_stream_async (GeditTab                *tab,
 	launch_loader (loading_task, encoding);
 }
 
+/**
+ * gedit_tab_load_stream:
+ * @tab: a #GeditTab.
+ * @stream: the #GInputStream to load, e.g. stdin.
+ * @encoding: (nullable): a #GtkSourceEncoding, or %NULL.
+ * @line_pos: the line position to visualize.
+ * @column_pos: the column position to visualize.
+ *
+ * Loads @stream into @tab. This function is usually called only on a
+ * newly-created tab.
+ *
+ * The @tab needs to be in %GEDIT_TAB_STATE_NORMAL. The previous
+ * #GtkTextBuffer's content is lost.
+ *
+ * Since: 45
+ */
 void
-_gedit_tab_load_stream (GeditTab                *tab,
-			GInputStream            *stream,
-			const GtkSourceEncoding *encoding,
-			gint                     line_pos,
-			gint                     column_pos)
+gedit_tab_load_stream (GeditTab                *tab,
+		       GInputStream            *stream,
+		       const GtkSourceEncoding *encoding,
+		       gint                     line_pos,
+		       gint                     column_pos)
 {
+	g_return_if_fail (GEDIT_IS_TAB (tab));
+	g_return_if_fail (G_IS_INPUT_STREAM (stream));
+	g_return_if_fail (tab->state == GEDIT_TAB_STATE_NORMAL);
+
 	if (tab->cancellable != NULL)
 	{
 		g_cancellable_cancel (tab->cancellable);

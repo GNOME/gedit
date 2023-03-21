@@ -41,12 +41,6 @@ void		 _gedit_tab_load			(GeditTab                *tab,
 							 gint                     column_pos,
 							 gboolean                 create);
 
-void		 _gedit_tab_load_stream			(GeditTab                *tab,
-							 GInputStream            *location,
-							 const GtkSourceEncoding *encoding,
-							 gint                     line_pos,
-							 gint                     column_pos);
-
 void		 _gedit_tab_revert			(GeditTab                *tab);
 
 void		 _gedit_tab_save_async			(GeditTab                *tab,

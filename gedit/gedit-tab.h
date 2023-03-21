@@ -48,6 +48,12 @@ typedef enum
 
 G_DECLARE_FINAL_TYPE (GeditTab, gedit_tab, GEDIT, TAB, GtkBox)
 
+void		 gedit_tab_load_stream			(GeditTab                *tab,
+							 GInputStream            *stream,
+							 const GtkSourceEncoding *encoding,
+							 gint                     line_pos,
+							 gint                     column_pos);
+
 GeditView	*gedit_tab_get_view			(GeditTab            *tab);
 
 /* This is only an helper function */

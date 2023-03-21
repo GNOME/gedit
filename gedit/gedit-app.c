@@ -43,7 +43,6 @@
 #include "gedit-commands.h"
 #include "gedit-preferences-dialog.h"
 #include "gedit-tab.h"
-#include "gedit-tab-private.h"
 
 #define GEDIT_PAGE_SETUP_FILE		"gedit-page-setup"
 #define GEDIT_PRINT_SETTINGS_FILE	"gedit-print-settings"
@@ -320,11 +319,11 @@ open_files (GApplication            *application,
 		gedit_debug_message (DEBUG_APP, "Load stdin");
 
 		tab = gedit_window_create_tab (window, TRUE);
-		_gedit_tab_load_stream (tab,
-					stdin_stream,
-					encoding,
-					line_position,
-					column_position);
+		gedit_tab_load_stream (tab,
+				       stdin_stream,
+				       encoding,
+				       line_position,
+				       column_position);
 		doc_created = TRUE;
 
 		if (command_line != NULL)
