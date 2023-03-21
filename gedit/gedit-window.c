@@ -2913,21 +2913,17 @@ _gedit_window_get_notebook (GeditWindow *window)
 	return GTK_WIDGET (gedit_multi_notebook_get_active_notebook (window->priv->multi_notebook));
 }
 
-static GeditTab *
+static void
 process_create_tab (GeditWindow *window,
-                    GtkWidget   *notebook,
                     GeditTab    *tab,
                     gboolean     jump_to)
 {
-	if (tab == NULL)
-	{
-		return NULL;
-	}
+	GeditNotebook *notebook;
 
-	gedit_debug (DEBUG_WINDOW);
+	notebook = GEDIT_NOTEBOOK (_gedit_window_get_notebook (window));
 
 	gtk_widget_show (GTK_WIDGET (tab));
-	gedit_notebook_add_tab (GEDIT_NOTEBOOK (notebook),
+	gedit_notebook_add_tab (notebook,
 	                        tab,
 	                        -1,
 	                        jump_to);
@@ -2936,8 +2932,6 @@ process_create_tab (GeditWindow *window,
 	{
 		gtk_window_present (GTK_WINDOW (window));
 	}
-
-	return tab;
 }
 
 /**
@@ -2954,18 +2948,16 @@ GeditTab *
 gedit_window_create_tab (GeditWindow *window,
 			 gboolean     jump_to)
 {
-	GtkWidget *notebook;
 	GeditTab *tab;
 
 	g_return_val_if_fail (GEDIT_IS_WINDOW (window), NULL);
 
 	gedit_debug (DEBUG_WINDOW);
 
-	notebook = _gedit_window_get_notebook (window);
 	tab = _gedit_tab_new ();
-	gtk_widget_show (GTK_WIDGET (tab));
+	process_create_tab (window, tab, jump_to);
 
-	return process_create_tab (window, notebook, tab, jump_to);
+	return tab;
 }
 
 /**
@@ -2996,7 +2988,6 @@ gedit_window_create_tab_from_location (GeditWindow             *window,
 				       gboolean                 create,
 				       gboolean                 jump_to)
 {
-	GtkWidget *notebook;
 	GeditTab *tab;
 
 	g_return_val_if_fail (GEDIT_IS_WINDOW (window), NULL);
@@ -3013,9 +3004,9 @@ gedit_window_create_tab_from_location (GeditWindow             *window,
 			 column_pos,
 			 create);
 
-	notebook = _gedit_window_get_notebook (window);
+	process_create_tab (window, tab, jump_to);
 
-	return process_create_tab (window, notebook, tab, jump_to);
+	return tab;
 }
 
 /**
@@ -3037,7 +3028,6 @@ gedit_window_create_tab_from_stream (GeditWindow             *window,
 				     gint                     column_pos,
 				     gboolean                 jump_to)
 {
-	GtkWidget *notebook;
 	GeditTab *tab;
 
 	gedit_debug (DEBUG_WINDOW);
@@ -3053,9 +3043,9 @@ gedit_window_create_tab_from_stream (GeditWindow             *window,
 				line_pos,
 				column_pos);
 
-	notebook = _gedit_window_get_notebook (window);
+	process_create_tab (window, tab, jump_to);
 
-	return process_create_tab (window, notebook, tab, jump_to);
+	return tab;
 }
 
 /**
