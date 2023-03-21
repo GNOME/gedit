@@ -23,10 +23,6 @@
 #include "gedit-window.h"
 #include "gedit-window-private.h"
 
-#include <time.h>
-#include <sys/types.h>
-#include <string.h>
-
 #include <glib/gi18n.h>
 #include <libpeas/peas-extension-set.h>
 #include <tepl/tepl.h>
@@ -35,11 +31,9 @@
 #include "gedit-app-private.h"
 #include "gedit-notebook.h"
 #include "gedit-notebook-popup-menu.h"
-#include "gedit-multi-notebook.h"
 #include "gedit-statusbar.h"
 #include "gedit-tab.h"
 #include "gedit-tab-private.h"
-#include "gedit-view-frame.h"
 #include "gedit-utils.h"
 #include "gedit-commands.h"
 #include "gedit-commands-private.h"
@@ -50,7 +44,6 @@
 #include "gedit-plugins-engine.h"
 #include "gedit-window-activatable.h"
 #include "gedit-enum-types.h"
-#include "gedit-dirs.h"
 #include "gedit-status-menu-button.h"
 #include "gedit-settings.h"
 #include "gedit-menu-stack-switcher.h"
