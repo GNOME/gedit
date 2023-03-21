@@ -56,7 +56,7 @@ struct _GeditWindowPrivate
 
 	GeditMultiNotebook *multi_notebook;
 
-	GtkWidget *side_panel;
+	GtkStack *side_panel;
 	GtkWidget *side_stack_switcher;
 	GtkWidget *side_panel_inline_stack_switcher;
 	GtkWidget *bottom_panel;
@@ -190,7 +190,7 @@ save_panels_state (GeditWindow *window)
 				    window->priv->side_panel_size);
 	}
 
-	panel_page = gtk_stack_get_visible_child_name (GTK_STACK (window->priv->side_panel));
+	panel_page = gtk_stack_get_visible_child_name (window->priv->side_panel);
 	if (panel_page != NULL)
 	{
 		g_settings_set_string (window->priv->window_settings,
@@ -961,11 +961,11 @@ clone_window (GeditWindow *origin)
 	window->priv->side_panel_size = origin->priv->side_panel_size;
 	window->priv->bottom_panel_size = origin->priv->bottom_panel_size;
 
-	panel_page = gtk_stack_get_visible_child_name (GTK_STACK (origin->priv->side_panel));
+	panel_page = gtk_stack_get_visible_child_name (origin->priv->side_panel);
 
 	if (panel_page)
 	{
-		gtk_stack_set_visible_child_name (GTK_STACK (window->priv->side_panel), panel_page);
+		gtk_stack_set_visible_child_name (window->priv->side_panel, panel_page);
 	}
 
 	panel_page = gtk_stack_get_visible_child_name (GTK_STACK (origin->priv->bottom_panel));
@@ -975,8 +975,8 @@ clone_window (GeditWindow *origin)
 		gtk_stack_set_visible_child_name (GTK_STACK (window->priv->bottom_panel), panel_page);
 	}
 
-	gtk_widget_set_visible (window->priv->side_panel,
-	                        gtk_widget_get_visible (origin->priv->side_panel));
+	gtk_widget_set_visible (GTK_WIDGET (window->priv->side_panel),
+	                        gtk_widget_get_visible (GTK_WIDGET (origin->priv->side_panel)));
 	gtk_widget_set_visible (window->priv->bottom_panel,
 	                        gtk_widget_get_visible (origin->priv->bottom_panel));
 
@@ -2178,7 +2178,7 @@ side_panel_visibility_changed (GtkWidget   *panel,
 	/* focus the right widget and set the right styles */
 	if (visible)
 	{
-		gtk_widget_grab_focus (window->priv->side_panel);
+		gtk_widget_grab_focus (GTK_WIDGET (window->priv->side_panel));
 	}
 	else
 	{
@@ -2274,7 +2274,7 @@ setup_side_panel (GeditWindow *window)
 	gedit_utils_set_atk_name_description (priv->side_stack_switcher, _("Change side panel page"),  NULL);
 
 	gedit_menu_stack_switcher_set_stack (GEDIT_MENU_STACK_SWITCHER (priv->side_stack_switcher),
-	                                     GTK_STACK (priv->side_panel));
+	                                     priv->side_panel);
 
 	g_signal_connect (priv->side_panel,
 	                  "add",
@@ -2288,7 +2288,7 @@ setup_side_panel (GeditWindow *window)
 
 	documents_panel = gedit_documents_panel_new (window);
 	gtk_widget_show_all (documents_panel);
-	gtk_stack_add_titled (GTK_STACK (priv->side_panel),
+	gtk_stack_add_titled (priv->side_panel,
 	                      documents_panel,
 	                      "GeditWindowDocumentsPanel",
 	                      _("Documents"));
@@ -2315,7 +2315,7 @@ bottom_panel_visibility_changed (GtkWidget   *panel_box,
 	/* focus the right widget */
 	if (visible)
 	{
-		gtk_widget_grab_focus (window->priv->side_panel);
+		gtk_widget_grab_focus (GTK_WIDGET (window->priv->side_panel));
 	}
 	else
 	{
@@ -2386,12 +2386,10 @@ init_panels_visibility (GeditWindow *window)
 	/* side panel */
 	panel_page = g_settings_get_string (window->priv->window_settings,
 	                                    GEDIT_SETTINGS_SIDE_PANEL_ACTIVE_PAGE);
-	panel_child = gtk_stack_get_child_by_name (GTK_STACK (window->priv->side_panel),
-	                                           panel_page);
+	panel_child = gtk_stack_get_child_by_name (window->priv->side_panel, panel_page);
 	if (panel_child != NULL)
 	{
-		gtk_stack_set_visible_child (GTK_STACK (window->priv->side_panel),
-		                             panel_child);
+		gtk_stack_set_visible_child (window->priv->side_panel, panel_child);
 	}
 
 	g_free (panel_page);
@@ -2403,7 +2401,7 @@ init_panels_visibility (GeditWindow *window)
 
 	if (side_panel_visible)
 	{
-		gtk_widget_show (window->priv->side_panel);
+		gtk_widget_show (GTK_WIDGET (window->priv->side_panel));
 	}
 
 	/* bottom pane, it can be empty */
@@ -2411,8 +2409,8 @@ init_panels_visibility (GeditWindow *window)
 	{
 		panel_page = g_settings_get_string (window->priv->window_settings,
 		                                    GEDIT_SETTINGS_BOTTOM_PANEL_ACTIVE_PAGE);
-		panel_child = gtk_stack_get_child_by_name (GTK_STACK (window->priv->side_panel),
-		                                           panel_page);
+		/* FIXME: probably wrong to retrieve from side_panel. */
+		panel_child = gtk_stack_get_child_by_name (window->priv->side_panel, panel_page);
 		if (panel_child)
 		{
 			gtk_stack_set_visible_child (GTK_STACK (window->priv->bottom_panel),
@@ -3189,7 +3187,7 @@ gedit_window_get_side_panel (GeditWindow *window)
 {
 	g_return_val_if_fail (GEDIT_IS_WINDOW (window), NULL);
 
-	return window->priv->side_panel;
+	return GTK_WIDGET (window->priv->side_panel);
 }
 
 /**
