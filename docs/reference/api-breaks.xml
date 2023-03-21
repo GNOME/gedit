@@ -26,10 +26,12 @@
       </listitem>
       <listitem>
         <para>
-          The <code>gedit_window_create_tab_from_stream()</code> function has
-          been removed, use
+          The <code>gedit_window_create_tab_from_location()</code> and
+          <code>gedit_window_create_tab_from_stream()</code> functions have been
+          removed, use
           <link linkend="gedit-window-create-tab">gedit_window_create_tab()</link>
-          and
+          followed by
+          <link linkend="gedit-tab-load-file">gedit_tab_load_file()</link> or
           <link linkend="gedit-tab-load-stream">gedit_tab_load_stream()</link>
           instead.
         </para>

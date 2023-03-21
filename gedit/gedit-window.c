@@ -2948,50 +2948,6 @@ gedit_window_create_tab (GeditWindow *window,
 }
 
 /**
- * gedit_window_create_tab_from_location:
- * @window: a #GeditWindow.
- * @location: the #GFile to load.
- * @encoding: (nullable): a #GtkSourceEncoding, or %NULL.
- * @line_pos: the line position to visualize.
- * @column_pos: the column position to visualize.
- * @create: %TRUE to show no errors if @location doesn't exist.
- * @jump_to: if %TRUE, the #GtkNotebook switches to the new #GeditTab.
- *
- * This function always creates a new #GeditTab. It tries to load @location.
- *
- * See gedit_tab_load_file().
- *
- * Returns: (transfer none): the new #GeditTab.
- */
-GeditTab *
-gedit_window_create_tab_from_location (GeditWindow             *window,
-				       GFile                   *location,
-				       const GtkSourceEncoding *encoding,
-				       gint                     line_pos,
-				       gint                     column_pos,
-				       gboolean                 create,
-				       gboolean                 jump_to)
-{
-	GeditTab *tab;
-
-	g_return_val_if_fail (GEDIT_IS_WINDOW (window), NULL);
-	g_return_val_if_fail (G_IS_FILE (location), NULL);
-
-	gedit_debug (DEBUG_WINDOW);
-
-	tab = gedit_window_create_tab (window, jump_to);
-
-	gedit_tab_load_file (tab,
-			     location,
-			     encoding,
-			     line_pos,
-			     column_pos,
-			     create);
-
-	return tab;
-}
-
-/**
  * gedit_window_get_active_tab:
  * @window: a GeditWindow
  *
