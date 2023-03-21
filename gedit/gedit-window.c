@@ -173,9 +173,9 @@ gedit_window_get_property (GObject    *object,
 	switch (prop_id)
 	{
 		case PROP_STATE:
-			g_value_set_flags (value,
-					   gedit_window_get_state (window));
+			g_value_set_flags (value, gedit_window_get_state (window));
 			break;
+
 		default:
 			G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
 			break;
@@ -455,18 +455,23 @@ gedit_window_class_init (GeditWindowClass *klass)
 
 	klass->tab_removed = gedit_window_tab_removed;
 
+	object_class->get_property = gedit_window_get_property;
 	object_class->dispose = gedit_window_dispose;
 	object_class->finalize = gedit_window_finalize;
-	object_class->get_property = gedit_window_get_property;
 
 	widget_class->window_state_event = gedit_window_window_state_event;
 	widget_class->configure_event = gedit_window_configure_event;
 	widget_class->key_press_event = gedit_window_key_press_event;
 
+	/**
+	 * GeditWindow:state:
+	 *
+	 * The state of the #GeditWindow.
+	 */
 	properties[PROP_STATE] =
 		g_param_spec_flags ("state",
-		                    "State",
-		                    "The window's state",
+				    "state",
+				    "",
 		                    GEDIT_TYPE_WINDOW_STATE,
 		                    GEDIT_WINDOW_STATE_NORMAL,
 		                    G_PARAM_READABLE | G_PARAM_STATIC_STRINGS);
