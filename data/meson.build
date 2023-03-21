@@ -62,7 +62,7 @@ gschema_file = configure_file(
   install_dir: get_option('datadir') / 'glib-2.0/schemas'
 )
 
-gschema_dtd = gio_dep.get_pkgconfig_variable('schemasdir') / 'gschema.dtd'
+gschema_dtd = gio_dep.get_variable(pkgconfig: 'schemasdir') / 'gschema.dtd'
 
 xmllint = find_program('xmllint', required: get_option('require_all_tests'))
 if xmllint.found()
