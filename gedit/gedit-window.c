@@ -2971,20 +2971,22 @@ gedit_window_create_tab (GeditWindow *window,
 
 /**
  * gedit_window_create_tab_from_location:
- * @window: a #GeditWindow
- * @location: the location of the document
- * @encoding: (allow-none): a #GtkSourceEncoding, or %NULL
- * @line_pos: the line position to visualize
- * @column_pos: the column position to visualize
- * @create: %TRUE to create a new document in case @uri does exist
- * @jump_to: %TRUE to set the new #GeditTab as active
+ * @window: a #GeditWindow.
+ * @location: the #GFile to load.
+ * @encoding: (nullable): a #GtkSourceEncoding, or %NULL.
+ * @line_pos: the line position to visualize.
+ * @column_pos: the column position to visualize.
+ * @create: %TRUE to show no errors if @location doesn't exist.
+ * @jump_to: if %TRUE, the #GtkNotebook switches to the new #GeditTab.
  *
- * Creates a new #GeditTab loading the document specified by @uri.
- * In case @jump_to is %TRUE the #GtkNotebook swithes to that new #GeditTab.
- * Whether @create is %TRUE, creates a new empty document if location does
- * not refer to an existing file
+ * This function always creates a new #GeditTab. It tries to load @location.
  *
- * Returns: (transfer none): a new #GeditTab
+ * If @location doesn't exist, the behavior depends on @create:
+ * - If @create is %FALSE, an error is shown.
+ * - If @create is %TRUE, an empty #GeditDocument is created without error (but
+ *   the file is not yet created on disk).
+ *
+ * Returns: (transfer none): the new #GeditTab.
  */
 GeditTab *
 gedit_window_create_tab_from_location (GeditWindow             *window,
