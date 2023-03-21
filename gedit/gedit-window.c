@@ -2853,37 +2853,32 @@ gedit_window_init (GeditWindow *window)
 
 /**
  * gedit_window_get_active_view:
- * @window: a #GeditWindow
+ * @window: a #GeditWindow.
  *
- * Gets the active #GeditView.
- *
- * Returns: (transfer none): the active #GeditView
+ * Returns: (transfer none): the active #GeditView.
  */
 GeditView *
 gedit_window_get_active_view (GeditWindow *window)
 {
 	GeditTab *tab;
-	GeditView *view;
 
 	g_return_val_if_fail (GEDIT_IS_WINDOW (window), NULL);
 
 	tab = gedit_window_get_active_tab (window);
 
 	if (tab == NULL)
+	{
 		return NULL;
+	}
 
-	view = gedit_tab_get_view (tab);
-
-	return view;
+	return gedit_tab_get_view (tab);
 }
 
 /**
  * gedit_window_get_active_document:
- * @window: a #GeditWindow
+ * @window: a #GeditWindow.
  *
- * Gets the active #GeditDocument.
- *
- * Returns: (transfer none): the active #GeditDocument
+ * Returns: (transfer none): the active #GeditDocument.
  */
 GeditDocument *
 gedit_window_get_active_document (GeditWindow *window)
@@ -2893,8 +2888,11 @@ gedit_window_get_active_document (GeditWindow *window)
 	g_return_val_if_fail (GEDIT_IS_WINDOW (window), NULL);
 
 	view = gedit_window_get_active_view (window);
+
 	if (view == NULL)
+	{
 		return NULL;
+	}
 
 	return GEDIT_DOCUMENT (gtk_text_view_get_buffer (GTK_TEXT_VIEW (view)));
 }
