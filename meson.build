@@ -26,7 +26,7 @@ glibdir = get_option('prefix') / get_option('datadir') / 'glib-2.0'
 
 # Subprojects
 if not get_option('buildtype').contains('plain')
-  run_command('git', '-C', meson.source_root(), 'submodule', 'update', '--init', '--recursive')
+  run_command('git', '-C', meson.project_source_root(), 'submodule', 'update', '--init', '--recursive')
 endif
 
 libgd_subproject = subproject(
