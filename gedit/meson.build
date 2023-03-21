@@ -250,5 +250,5 @@ executable(
   c_args: gedit_c_args,
   install: true,
   install_rpath: get_option('prefix') / get_option('libdir') / 'gedit',
-  gui_app: true,
+  win_subsystem: 'windows',
 )
