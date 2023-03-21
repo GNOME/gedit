@@ -2071,14 +2071,40 @@ load_finish (GeditTab     *tab,
 	return g_task_propagate_boolean (G_TASK (result), NULL);
 }
 
+/**
+ * gedit_tab_load_file:
+ * @tab: a #GeditTab.
+ * @location: the #GFile to load.
+ * @encoding: (nullable): a #GtkSourceEncoding, or %NULL.
+ * @line_pos: the line position to visualize.
+ * @column_pos: the column position to visualize.
+ * @create: %TRUE to show no errors if @location doesn't exist.
+ *
+ * This function tries to load @location into @tab. It is usually called only on
+ * a newly-created tab.
+ *
+ * If @location doesn't exist, the behavior depends on @create:
+ * - If @create is %FALSE, an error is shown.
+ * - If @create is %TRUE, an empty #GeditDocument is created without error (but
+ *   the file is not yet created on disk).
+ *
+ * The @tab needs to be in %GEDIT_TAB_STATE_NORMAL. The previous
+ * #GtkTextBuffer's content is lost.
+ *
+ * Since: 45
+ */
 void
-_gedit_tab_load (GeditTab                *tab,
-		 GFile                   *location,
-		 const GtkSourceEncoding *encoding,
-		 gint                     line_pos,
-		 gint                     column_pos,
-		 gboolean                 create)
+gedit_tab_load_file (GeditTab                *tab,
+		     GFile                   *location,
+		     const GtkSourceEncoding *encoding,
+		     gint                     line_pos,
+		     gint                     column_pos,
+		     gboolean                 create)
 {
+	g_return_if_fail (GEDIT_IS_TAB (tab));
+	g_return_if_fail (G_IS_FILE (location));
+	g_return_if_fail (tab->state == GEDIT_TAB_STATE_NORMAL);
+
 	if (tab->cancellable != NULL)
 	{
 		g_cancellable_cancel (tab->cancellable);

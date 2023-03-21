@@ -34,13 +34,6 @@ gchar 		*_gedit_tab_get_tooltip			(GeditTab                *tab);
 
 GdkPixbuf 	*_gedit_tab_get_icon			(GeditTab                *tab);
 
-void		 _gedit_tab_load			(GeditTab                *tab,
-							 GFile                   *location,
-							 const GtkSourceEncoding *encoding,
-							 gint                     line_pos,
-							 gint                     column_pos,
-							 gboolean                 create);
-
 void		 _gedit_tab_revert			(GeditTab                *tab);
 
 void		 _gedit_tab_save_async			(GeditTab                *tab,

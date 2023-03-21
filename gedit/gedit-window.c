@@ -2959,10 +2959,7 @@ gedit_window_create_tab (GeditWindow *window,
  *
  * This function always creates a new #GeditTab. It tries to load @location.
  *
- * If @location doesn't exist, the behavior depends on @create:
- * - If @create is %FALSE, an error is shown.
- * - If @create is %TRUE, an empty #GeditDocument is created without error (but
- *   the file is not yet created on disk).
+ * See gedit_tab_load_file().
  *
  * Returns: (transfer none): the new #GeditTab.
  */
@@ -2984,12 +2981,12 @@ gedit_window_create_tab_from_location (GeditWindow             *window,
 
 	tab = gedit_window_create_tab (window, jump_to);
 
-	_gedit_tab_load (tab,
-			 location,
-			 encoding,
-			 line_pos,
-			 column_pos,
-			 create);
+	gedit_tab_load_file (tab,
+			     location,
+			     encoding,
+			     line_pos,
+			     column_pos,
+			     create);
 
 	return tab;
 }

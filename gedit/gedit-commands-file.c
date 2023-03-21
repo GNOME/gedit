@@ -197,12 +197,12 @@ load_file_list (GeditWindow             *window,
 		if (tepl_buffer_is_untouched (TEPL_BUFFER (doc)) &&
 		    gedit_tab_get_state (tab) == GEDIT_TAB_STATE_NORMAL)
 		{
-			_gedit_tab_load (tab,
-					 l->data,
-					 encoding,
-					 line_pos,
-					 column_pos,
-					 create);
+			gedit_tab_load_file (tab,
+					     l->data,
+					     encoding,
+					     line_pos,
+					     column_pos,
+					     create);
 
 			/* make sure the view has focus */
 			gtk_widget_grab_focus (GTK_WIDGET (gedit_tab_get_view (tab)));
