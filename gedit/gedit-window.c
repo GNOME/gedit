@@ -130,10 +130,10 @@ enum
 {
 	PROP_0,
 	PROP_STATE,
-	LAST_PROP
+	N_PROPERTIES
 };
 
-static GParamSpec *properties[LAST_PROP];
+static GParamSpec *properties[N_PROPERTIES];
 
 enum
 {
@@ -472,7 +472,7 @@ gedit_window_class_init (GeditWindowClass *klass)
 		                    GEDIT_WINDOW_STATE_NORMAL,
 		                    G_PARAM_READABLE | G_PARAM_STATIC_STRINGS);
 
-	g_object_class_install_properties (object_class, LAST_PROP, properties);
+	g_object_class_install_properties (object_class, N_PROPERTIES, properties);
 
 	signals[TAB_ADDED] =
 		g_signal_new ("tab-added",
