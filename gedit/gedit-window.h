@@ -88,13 +88,6 @@ GeditTab	*gedit_window_create_tab_from_location	(GeditWindow             *window
 							 gboolean                 create,
 							 gboolean                 jump_to);
 
-GeditTab	*gedit_window_create_tab_from_stream	(GeditWindow             *window,
-							 GInputStream            *stream,
-							 const GtkSourceEncoding *encoding,
-							 gint                     line_pos,
-							 gint                     column_pos,
-							 gboolean                 jump_to);
-
 void		 gedit_window_close_tab			(GeditWindow         *window,
 							 GeditTab            *tab);
 

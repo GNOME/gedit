@@ -2996,43 +2996,6 @@ gedit_window_create_tab_from_location (GeditWindow             *window,
 }
 
 /**
- * gedit_window_create_tab_from_stream:
- * @window: a #GeditWindow
- * @stream: a #GInputStream
- * @encoding: (allow-none): a #GtkSourceEncoding, or %NULL
- * @line_pos: the line position to visualize
- * @column_pos: the column position to visualize
- * @jump_to: %TRUE to set the new #GeditTab as active
- *
- * Returns: (transfer none): a new #GeditTab
- */
-GeditTab *
-gedit_window_create_tab_from_stream (GeditWindow             *window,
-				     GInputStream            *stream,
-				     const GtkSourceEncoding *encoding,
-				     gint                     line_pos,
-				     gint                     column_pos,
-				     gboolean                 jump_to)
-{
-	GeditTab *tab;
-
-	gedit_debug (DEBUG_WINDOW);
-
-	g_return_val_if_fail (GEDIT_IS_WINDOW (window), NULL);
-	g_return_val_if_fail (G_IS_INPUT_STREAM (stream), NULL);
-
-	tab = gedit_window_create_tab (window, jump_to);
-
-	_gedit_tab_load_stream (tab,
-				stream,
-				encoding,
-				line_pos,
-				column_pos);
-
-	return tab;
-}
-
-/**
  * gedit_window_get_active_tab:
  * @window: a GeditWindow
  *
