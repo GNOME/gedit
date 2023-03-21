@@ -21,6 +21,7 @@
 #include "config.h"
 
 #include "gedit-window.h"
+#include "gedit-window-private.h"
 
 #include <time.h>
 #include <sys/types.h>
@@ -2898,12 +2899,12 @@ gedit_window_get_active_document (GeditWindow *window)
 	return GEDIT_DOCUMENT (gtk_text_view_get_buffer (GTK_TEXT_VIEW (view)));
 }
 
-GtkWidget *
+GeditMultiNotebook *
 _gedit_window_get_multi_notebook (GeditWindow *window)
 {
 	g_return_val_if_fail (GEDIT_IS_WINDOW (window), NULL);
 
-	return GTK_WIDGET (window->priv->multi_notebook);
+	return window->priv->multi_notebook;
 }
 
 GtkWidget *

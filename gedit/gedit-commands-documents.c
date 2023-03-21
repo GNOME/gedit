@@ -27,9 +27,8 @@
 
 #include <gtk/gtk.h>
 
-#include "gedit-window.h"
+#include "gedit-window-private.h"
 #include "gedit-notebook.h"
-#include "gedit-multi-notebook.h"
 #include "gedit-debug.h"
 
 void
@@ -84,7 +83,7 @@ _gedit_cmd_documents_new_tab_group (GSimpleAction *action,
                                     GVariant      *parameter,
                                     gpointer       user_data)
 {
-	gedit_multi_notebook_add_new_notebook (GEDIT_MULTI_NOTEBOOK (_gedit_window_get_multi_notebook (GEDIT_WINDOW (user_data))));
+	gedit_multi_notebook_add_new_notebook (_gedit_window_get_multi_notebook (GEDIT_WINDOW (user_data)));
 }
 
 void
@@ -92,7 +91,7 @@ _gedit_cmd_documents_previous_tab_group (GSimpleAction *action,
                                          GVariant      *parameter,
                                          gpointer       user_data)
 {
-	gedit_multi_notebook_previous_notebook (GEDIT_MULTI_NOTEBOOK (_gedit_window_get_multi_notebook (GEDIT_WINDOW (user_data))));
+	gedit_multi_notebook_previous_notebook (_gedit_window_get_multi_notebook (GEDIT_WINDOW (user_data)));
 }
 
 void
@@ -100,7 +99,7 @@ _gedit_cmd_documents_next_tab_group (GSimpleAction *action,
                                      GVariant      *parameter,
                                      gpointer       user_data)
 {
-	gedit_multi_notebook_next_notebook (GEDIT_MULTI_NOTEBOOK (_gedit_window_get_multi_notebook (GEDIT_WINDOW (user_data))));
+	gedit_multi_notebook_next_notebook (_gedit_window_get_multi_notebook (GEDIT_WINDOW (user_data)));
 }
 
 /* ex:set ts=8 noet: */

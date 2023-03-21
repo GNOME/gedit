@@ -28,13 +28,13 @@
 #include "gedit-debug.h"
 #include "gedit-document.h"
 #include "gedit-document-private.h"
-#include "gedit-multi-notebook.h"
 #include "gedit-notebook.h"
 #include "gedit-notebook-popup-menu.h"
 #include "gedit-tab.h"
 #include "gedit-tab-private.h"
 #include "gedit-utils.h"
 #include "gedit-commands-private.h"
+#include "gedit-window-private.h"
 
 typedef struct _GeditDocumentsGenericRow GeditDocumentsGenericRow;
 typedef struct _GeditDocumentsGenericRow GeditDocumentsGroupRow;
@@ -717,7 +717,7 @@ set_window (GeditDocumentsPanel *panel,
             GeditWindow         *window)
 {
 	panel->window = g_object_ref (window);
-	panel->mnb = GEDIT_MULTI_NOTEBOOK (_gedit_window_get_multi_notebook (window));
+	panel->mnb = _gedit_window_get_multi_notebook (window);
 
 	g_signal_connect (panel->mnb,
 	                  "notebook-removed",

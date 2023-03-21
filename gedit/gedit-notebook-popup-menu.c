@@ -25,7 +25,7 @@
 #include "gedit-app.h"
 #include "gedit-app-private.h"
 #include "gedit-commands-private.h"
-#include "gedit-multi-notebook.h"
+#include "gedit-window-private.h"
 
 struct _GeditNotebookPopupMenu
 {
@@ -110,7 +110,7 @@ update_sensitivity (GeditNotebookPopupMenu *menu)
 
 	state = gedit_tab_get_state (menu->tab);
 
-	mnb = GEDIT_MULTI_NOTEBOOK (_gedit_window_get_multi_notebook (menu->window));
+	mnb = _gedit_window_get_multi_notebook (menu->window);
 
 	notebook = GTK_NOTEBOOK (gedit_multi_notebook_get_notebook_for_tab (mnb, menu->tab));
 	n_pages = gtk_notebook_get_n_pages (notebook);
@@ -189,7 +189,7 @@ on_move_left_activate (GSimpleAction *action,
 	GtkNotebook *notebook;
 	gint page_num;
 
-	mnb = GEDIT_MULTI_NOTEBOOK (_gedit_window_get_multi_notebook (menu->window));
+	mnb = _gedit_window_get_multi_notebook (menu->window);
 
 	notebook = GTK_NOTEBOOK (gedit_multi_notebook_get_notebook_for_tab (mnb, menu->tab));
 	page_num = gtk_notebook_page_num (notebook, GTK_WIDGET (menu->tab));
@@ -213,7 +213,7 @@ on_move_right_activate (GSimpleAction *action,
 	gint page_num;
 	gint n_pages;
 
-	mnb = GEDIT_MULTI_NOTEBOOK (_gedit_window_get_multi_notebook (menu->window));
+	mnb = _gedit_window_get_multi_notebook (menu->window);
 
 	notebook = GTK_NOTEBOOK (gedit_multi_notebook_get_notebook_for_tab (mnb, menu->tab));
 	n_pages = gtk_notebook_get_n_pages (notebook);

@@ -70,6 +70,7 @@ libgedit_private_headers = [
   'gedit-status-menu-button.h',
   'gedit-tab-label.h',
   'gedit-view-frame.h',
+  'gedit-window-private.h',
 ]
 
 libgedit_private_sources = [

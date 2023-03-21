@@ -141,7 +141,6 @@ GeditMessageBus	*gedit_window_get_message_bus		(GeditWindow         *window);
 /*
  * Non exported functions
  */
-GtkWidget	*_gedit_window_get_multi_notebook	(GeditWindow         *window);
 GtkWidget	*_gedit_window_get_notebook		(GeditWindow         *window);
 
 GMenuModel	*_gedit_window_get_hamburger_menu	(GeditWindow         *window);
