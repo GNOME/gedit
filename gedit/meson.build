@@ -190,7 +190,7 @@ gnome.generate_gir(
   symbol_prefix: 'gedit',
   identifier_prefix: 'Gedit',
   export_packages: 'gedit-@0@'.format(api_version),
-  includes: ['Gtk-3.0', 'GtkSource-4', 'Tepl-6'],
+  includes: ['Gtk-3.0', 'GtkSource-300', 'Tepl-6'],
   link_with: libgedit_shared_lib,
   install: true,
   install_dir_gir: get_option('datadir') / 'gedit/gir-1.0',
