@@ -1,14 +1,14 @@
 gedit
 =====
 
-gedit is a general-purpose text editor. It has been created in 1998, at the
-beginnings of GNOME.
+gedit is an easy-to-use and general-purpose text editor. Its development started
+in 1998, at the beginnings of the GNOME project, with a good integration with
+that desktop environment.
 
-The first goal of gedit is to be easy to use, with a simple interface by
-default. More advanced features are available by enabling plugins.
+You can use it to write simple notes and documents, or you can enable more
+advanced features that are useful for software development.
 
-See the [gedit official website](https://wiki.gnome.org/Apps/Gedit) for
-more information.
+See the [gedit website](https://wiki.gnome.org/Apps/Gedit) for more information.
 
 License
 -------
@@ -21,7 +21,7 @@ Dependencies
 
 gedit depends on GTK 3.
 
-For a complete list of dependencies, see the file [meson.build](meson.build).
+For a complete list of dependencies, see the [meson.build](meson.build) file.
 
 Installation
 ------------
@@ -51,4 +51,4 @@ Contributions
 gedit development relies on voluntary contributions and everyone is invited
 to help.
 
-See the file [CONTRIBUTING.md](CONTRIBUTING.md) for more information.
+See the [CONTRIBUTING.md](CONTRIBUTING.md) file for more information.
