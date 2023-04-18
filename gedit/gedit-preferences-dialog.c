@@ -471,29 +471,28 @@ copy_file (GFile   *src_file,
 			    error);
 }
 
-/* Get the style scheme ID of @user_style_scheme_file if it has been correctly
- * installed and @user_style_scheme_file is a valid style scheme file.
+/* Gets the corresponding #GtkSourceStyleScheme for
+ * @installed_style_scheme_file.
  */
-static const gchar *
-get_style_scheme_id_after_installing_user_style_scheme (GFile *user_style_scheme_file)
+static GtkSourceStyleScheme *
+get_installed_style_scheme (GFile *installed_style_scheme_file)
 {
 	GtkSourceStyleSchemeManager *manager;
-	const gchar * const *scheme_ids;
-	gint i;
+	GList *schemes;
+	GList *l;
+	GtkSourceStyleScheme *installed_style_scheme = NULL;
 
 	manager = gtk_source_style_scheme_manager_get_default ();
 	gtk_source_style_scheme_manager_force_rescan (manager);
 
-	scheme_ids = gtk_source_style_scheme_manager_get_scheme_ids (manager);
+	schemes = gtk_source_style_scheme_manager_get_schemes (manager);
 
-	for (i = 0; scheme_ids != NULL && scheme_ids[i] != NULL; i++)
+	for (l = schemes; l != NULL; l = l->next)
 	{
-		const gchar *cur_scheme_id = scheme_ids[i];
-		GtkSourceStyleScheme *scheme;
+		GtkSourceStyleScheme *scheme = GTK_SOURCE_STYLE_SCHEME (l->data);
 		const gchar *filename;
 		GFile *scheme_file;
 
-		scheme = gtk_source_style_scheme_manager_get_scheme (manager, cur_scheme_id);
 		filename = gtk_source_style_scheme_get_filename (scheme);
 		if (filename == NULL)
 		{
@@ -501,26 +500,30 @@ get_style_scheme_id_after_installing_user_style_scheme (GFile *user_style_scheme
 		}
 
 		scheme_file = g_file_new_for_path (filename);
-		if (g_file_equal (scheme_file, user_style_scheme_file))
+		if (g_file_equal (scheme_file, installed_style_scheme_file))
 		{
+			installed_style_scheme = scheme;
 			g_object_unref (scheme_file);
-			return cur_scheme_id;
+			break;
 		}
 
 		g_object_unref (scheme_file);
 	}
 
-	return NULL;
+	g_list_free (schemes);
+	return installed_style_scheme;
 }
 
-/* Returns: (nullable): the installed style scheme ID, or %NULL on failure. */
-static const gchar *
+/* Returns: (transfer none) (nullable): the installed style scheme, or %NULL on
+ * failure.
+ */
+static GtkSourceStyleScheme *
 install_style_scheme (GFile   *src_file,
 		      GError **error)
 {
 	GFile *dest_file;
 	gboolean copied;
-	const gchar *installed_style_scheme_id = NULL;
+	GtkSourceStyleScheme *installed_style_scheme;
 	GError *my_error = NULL;
 
 	g_return_val_if_fail (G_IS_FILE (src_file), NULL);
@@ -537,9 +540,9 @@ install_style_scheme (GFile   *src_file,
 		return NULL;
 	}
 
-	installed_style_scheme_id = get_style_scheme_id_after_installing_user_style_scheme (dest_file);
+	installed_style_scheme = get_installed_style_scheme (dest_file);
 
-	if (installed_style_scheme_id == NULL && copied)
+	if (installed_style_scheme == NULL && copied)
 	{
 		/* The style scheme has not been correctly installed. */
 		g_file_delete (dest_file, NULL, &my_error);
@@ -557,7 +560,7 @@ install_style_scheme (GFile   *src_file,
 	}
 
 	g_object_unref (dest_file);
-	return installed_style_scheme_id;
+	return installed_style_scheme;
 }
 
 /*
@@ -597,6 +600,7 @@ add_scheme_chooser_response_cb (GtkFileChooserNative   *chooser,
 				GeditPreferencesDialog *dialog)
 {
 	GFile *file;
+	GtkSourceStyleScheme *scheme;
 	const gchar *scheme_id;
 	GeditSettings *settings;
 	GSettings *editor_settings;
@@ -613,10 +617,10 @@ add_scheme_chooser_response_cb (GtkFileChooserNative   *chooser,
 		return;
 	}
 
-	scheme_id = install_style_scheme (file, &error);
+	scheme = install_style_scheme (file, &error);
 	g_object_unref (file);
 
-	if (scheme_id == NULL)
+	if (scheme == NULL)
 	{
 		if (error != NULL)
 		{
@@ -636,6 +640,7 @@ add_scheme_chooser_response_cb (GtkFileChooserNative   *chooser,
 
 	settings = _gedit_settings_get_singleton ();
 	editor_settings = _gedit_settings_peek_editor_settings (settings);
+	scheme_id = gtk_source_style_scheme_get_id (scheme);
 	g_settings_set_string (editor_settings, GEDIT_SETTINGS_SCHEME, scheme_id);
 }
 
