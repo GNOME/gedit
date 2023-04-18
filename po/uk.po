@@ -10,9 +10,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gedit\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gedit/issues\n"
-"POT-Creation-Date: 2023-01-25 17:33+0000\n"
-"PO-Revision-Date: 2023-01-27 18:47+0200\n"
-"Last-Translator: Fracture dept <yurchor@ukr.net>\n"
+"POT-Creation-Date: 2023-04-18 11:44+0000\n"
+"PO-Revision-Date: 2023-04-18 19:42+0300\n"
+"Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
@@ -32,21 +32,26 @@ msgid "Text editor"
 msgstr "Текстовий редактор"
 
 #: data/org.gnome.gedit.appdata.xml.in:10
+#| msgid ""
+#| "gedit is a general-purpose text editor. It has been created in 1998, at "
+#| "the beginnings of GNOME."
 msgid ""
-"gedit is a general-purpose text editor. It has been created in 1998, at the "
-"beginnings of GNOME."
+"gedit is an easy-to-use and general-purpose text editor. Its development "
+"started in 1998, at the beginnings of the GNOME project, with a good "
+"integration with that desktop environment."
 msgstr ""
-"gedit є текстовим редактором загального призначення. Програму було створено "
-"у 1998 року на початковому етапі розвитку GNOME."
+"gedit — проста у користуванні програма загального призначення для "
+"редагування тексту. Її розробку було розпочато у 1998 році, на початку "
+"проєкту GNOME, із доброю інтеграцією із цим стільничним середовищем."
 
-#: data/org.gnome.gedit.appdata.xml.in:14
+#: data/org.gnome.gedit.appdata.xml.in:15
 msgid ""
-"The first goal of gedit is to be easy to use, with a simple interface by "
-"default. More advanced features are available by enabling plugins."
+"You can use it to write simple notes and documents, or you can enable more "
+"advanced features that are useful for software development."
 msgstr ""
-"Gedit, передусім, проста у користуванні програма і типовим простим "
-"інтерфейсом. Доступ до додаткових можливостей відкривається за допомогою "
-"додатків."
+"Його можна використовувати для написання звичайних нотаток та документів, "
+"або ви можете увімкнути додаткові можливості, які є корисними для розробки "
+"програмного забезпечення."
 
 #: data/org.gnome.gedit.desktop.in:4
 msgid "Edit text files"
@@ -129,11 +134,11 @@ msgstr ""
 "Чи потрібно автоматично зберігати змінені файли з певною періодичністю. "
 "Інтервал між збереженнями визначається параметром «Інтервал автозбереження»."
 
-#: data/org.gnome.gedit.gschema.xml.in:62
+#: data/org.gnome.gedit.gschema.xml.in:63
 msgid "Autosave Interval"
 msgstr "Інтервал автозбереження"
 
-#: data/org.gnome.gedit.gschema.xml.in:63
+#: data/org.gnome.gedit.gschema.xml.in:64
 msgid ""
 "Number of minutes after which gedit will automatically save modified files. "
 "This will only take effect if the “Autosave” option is turned on."
@@ -142,11 +147,11 @@ msgstr ""
 "автоматично. Матиме ефект лише тоді, коли параметр «автозбереження» "
 "увімкнений."
 
-#: data/org.gnome.gedit.gschema.xml.in:67
+#: data/org.gnome.gedit.gschema.xml.in:68
 msgid "Maximum Number of Undo Actions"
 msgstr "Максимальна кількість скасувань дій"
 
-#: data/org.gnome.gedit.gschema.xml.in:68
+#: data/org.gnome.gedit.gschema.xml.in:69
 msgid ""
 "Maximum number of actions that gedit will be able to undo or redo. Use “-1” "
 "for unlimited number of actions."
@@ -154,11 +159,11 @@ msgstr ""
 "Максимальна кількість дій, які можна скасувати чи повторити. Значення «-1» "
 "означає необмежену кількість дій."
 
-#: data/org.gnome.gedit.gschema.xml.in:77
+#: data/org.gnome.gedit.gschema.xml.in:78
 msgid "Line Wrapping Mode"
 msgstr "Режим переносу рядків"
 
-#: data/org.gnome.gedit.gschema.xml.in:78
+#: data/org.gnome.gedit.gschema.xml.in:79
 msgid ""
 "Specifies how to wrap long lines in the editing area. Use “none” for no "
 "wrapping, “word” for wrapping at word boundaries, and “char” for wrapping at "
@@ -170,11 +175,11 @@ msgstr ""
 "символьного переносу. Зауважте, що значення чутливі до регістру і мають "
 "з'являтися точно у вказаному вигляді."
 
-#: data/org.gnome.gedit.gschema.xml.in:86
+#: data/org.gnome.gedit.gschema.xml.in:87
 msgid "Last split mode choice for line wrapping mode"
 msgstr "Останній вибір режиму розділення для перенесення рядків"
 
-#: data/org.gnome.gedit.gschema.xml.in:87
+#: data/org.gnome.gedit.gschema.xml.in:88
 msgid ""
 "Specifies the last split mode used with line wrapping mode, so that when "
 "wrapping mode is off we still remember the split mode choice. Use “word” for "
@@ -186,11 +191,11 @@ msgstr ""
 "Використовуйте «word» на межі слів і «char» для перенесення на окремих межах "
 "символів."
 
-#: data/org.gnome.gedit.gschema.xml.in:92
+#: data/org.gnome.gedit.gschema.xml.in:93
 msgid "Tab Size"
 msgstr "Розмір табуляції"
 
-#: data/org.gnome.gedit.gschema.xml.in:93
+#: data/org.gnome.gedit.gschema.xml.in:94
 msgid ""
 "Specifies the number of spaces that should be displayed instead of Tab "
 "characters."
@@ -198,75 +203,75 @@ msgstr ""
 "Визначає кількість пропусків, які потрібно показати замість символу "
 "табуляції."
 
-#: data/org.gnome.gedit.gschema.xml.in:97
+#: data/org.gnome.gedit.gschema.xml.in:98
 msgid "Insert spaces"
 msgstr "Вставляти пропуски"
 
-#: data/org.gnome.gedit.gschema.xml.in:98
+#: data/org.gnome.gedit.gschema.xml.in:99
 msgid "Whether gedit should insert spaces instead of tabs."
 msgstr "Чи вставляти пропуски замість знаків табуляції."
 
-#: data/org.gnome.gedit.gschema.xml.in:102
+#: data/org.gnome.gedit.gschema.xml.in:103
 msgid "Automatic indent"
 msgstr "Автовідступ"
 
-#: data/org.gnome.gedit.gschema.xml.in:103
+#: data/org.gnome.gedit.gschema.xml.in:104
 msgid "Whether gedit should enable automatic indentation."
 msgstr "Чи потрібно автоматично розставляти відступ."
 
-#: data/org.gnome.gedit.gschema.xml.in:107
+#: data/org.gnome.gedit.gschema.xml.in:108
 msgid "Display Line Numbers"
 msgstr "Показувати номери рядків"
 
-#: data/org.gnome.gedit.gschema.xml.in:108
+#: data/org.gnome.gedit.gschema.xml.in:109
 msgid "Whether gedit should display line numbers in the editing area."
 msgstr "Чи мають показуватись номери рядків у ділянці редагування."
 
-#: data/org.gnome.gedit.gschema.xml.in:112
+#: data/org.gnome.gedit.gschema.xml.in:113
 msgid "Highlight Current Line"
 msgstr "Виділяти кольором поточний рядок"
 
-#: data/org.gnome.gedit.gschema.xml.in:113
+#: data/org.gnome.gedit.gschema.xml.in:114
 msgid "Whether gedit should highlight the current line."
 msgstr "Чи виділяти кольором поточний рядок."
 
-#: data/org.gnome.gedit.gschema.xml.in:117
+#: data/org.gnome.gedit.gschema.xml.in:118
 msgid "Highlight Matching Brackets"
 msgstr "Виділяти кольором відповідні дужки"
 
-#: data/org.gnome.gedit.gschema.xml.in:118
+#: data/org.gnome.gedit.gschema.xml.in:119
 msgid "Whether gedit should highlight matching brackets."
 msgstr "Чи виділяти кольором поточний рядок."
 
-#: data/org.gnome.gedit.gschema.xml.in:122
+#: data/org.gnome.gedit.gschema.xml.in:123
 msgid "Display Right Margin"
 msgstr "Показувати праву поле"
 
-#: data/org.gnome.gedit.gschema.xml.in:123
+#: data/org.gnome.gedit.gschema.xml.in:124
 msgid "Whether gedit should display the right margin in the editing area."
 msgstr "Чи слід показувати праву межу у ділянці редагування."
 
-#: data/org.gnome.gedit.gschema.xml.in:127
+#: data/org.gnome.gedit.gschema.xml.in:128
 msgid "Right Margin Position"
 msgstr "Позиція правого поля"
 
-#: data/org.gnome.gedit.gschema.xml.in:128
+#: data/org.gnome.gedit.gschema.xml.in:129
 msgid "Specifies the position of the right margin."
 msgstr "Вказує позицію правого поля."
 
-#: data/org.gnome.gedit.gschema.xml.in:132
+#: data/org.gnome.gedit.gschema.xml.in:133
 msgid "Document background pattern type"
 msgstr "Тип шаблону тла документа"
 
-#: data/org.gnome.gedit.gschema.xml.in:133
+#: data/org.gnome.gedit.gschema.xml.in:134
 msgid "Whether the document will get a background pattern painted."
 msgstr "Чи буде використано візерунок тла для показу документа."
 
-#: data/org.gnome.gedit.gschema.xml.in:143
+#: data/org.gnome.gedit.gschema.xml.in:144
 msgid "Smart Home End"
 msgstr "Розумні клавіші Home End"
 
-#: data/org.gnome.gedit.gschema.xml.in:144
+#: data/org.gnome.gedit.gschema.xml.in:145
 msgid ""
 "Specifies how the cursor moves when the HOME and END keys are pressed. Use "
 "“disabled” to always move at the start/end of the line, “after” to move to "
@@ -284,50 +289,50 @@ msgstr ""
 "натисканні — переміщення до початку/кінця рядка. Якщо вказано «always» — "
 "курсор завжди переміщується до початку/кінця тексту, на початку/кінця рядка."
 
-#: data/org.gnome.gedit.gschema.xml.in:148
+#: data/org.gnome.gedit.gschema.xml.in:149
 msgid "Restore Previous Cursor Position"
 msgstr "Відновлювати попередню позицію курсора"
 
-#: data/org.gnome.gedit.gschema.xml.in:149
+#: data/org.gnome.gedit.gschema.xml.in:150
 msgid ""
 "Whether gedit should restore the previous cursor position when a file is "
 "loaded."
 msgstr ""
 "Чи слід відновлювати попередню позицію курсора після завантаження файлу."
 
-#: data/org.gnome.gedit.gschema.xml.in:153
+#: data/org.gnome.gedit.gschema.xml.in:154
 msgid "Enable Syntax Highlighting"
 msgstr "Увімкнути виділення синтаксису"
 
-#: data/org.gnome.gedit.gschema.xml.in:154
+#: data/org.gnome.gedit.gschema.xml.in:155
 msgid "Whether gedit should enable syntax highlighting."
 msgstr "Чи вмикати виділення синтаксису."
 
-#: data/org.gnome.gedit.gschema.xml.in:158
+#: data/org.gnome.gedit.gschema.xml.in:159
 msgid "Enable Search Highlighting"
 msgstr "Увімкнути виділення кольором при пошуку"
 
-#: data/org.gnome.gedit.gschema.xml.in:159
+#: data/org.gnome.gedit.gschema.xml.in:160
 msgid ""
 "Whether gedit should highlight all the occurrences of the searched text."
 msgstr "Чи виділяти кольором всі знайдені збіги при пошуку."
 
-#: data/org.gnome.gedit.gschema.xml.in:163
+#: data/org.gnome.gedit.gschema.xml.in:164
 msgid "Ensure Trailing Newline"
 msgstr "Забезпечити зайві нові лінії"
 
-#: data/org.gnome.gedit.gschema.xml.in:164
+#: data/org.gnome.gedit.gschema.xml.in:165
 msgid ""
 "Whether gedit will ensure that documents always end with a trailing newline."
 msgstr ""
 "Чи gedit буде забезпечувати, щоб документи завжди закінчувались на "
 "додатковий новий рядок."
 
-#: data/org.gnome.gedit.gschema.xml.in:170
+#: data/org.gnome.gedit.gschema.xml.in:171
 msgid "Notebook Show Tabs Mode"
 msgstr "Режим показу вкладок для ноутбука"
 
-#: data/org.gnome.gedit.gschema.xml.in:171
+#: data/org.gnome.gedit.gschema.xml.in:172
 msgid ""
 "Specifies when to show the notebook tabs. Use “never” to never show the "
 "tabs, “always” to always show the tabs, and “auto” to show the tabs only "
@@ -340,48 +345,48 @@ msgstr ""
 "до регістру, тож переконайтесь, що вони з'являються точно у вказаному "
 "вигляді."
 
-#: data/org.gnome.gedit.gschema.xml.in:175
+#: data/org.gnome.gedit.gschema.xml.in:176
 msgid "Status Bar is Visible"
 msgstr "Панель стану видима"
 
-#: data/org.gnome.gedit.gschema.xml.in:176
+#: data/org.gnome.gedit.gschema.xml.in:177
 msgid ""
 "Whether the status bar at the bottom of editing windows should be visible."
 msgstr "Чи показувати панель стану у вікнах редагування."
 
-#: data/org.gnome.gedit.gschema.xml.in:180
+#: data/org.gnome.gedit.gschema.xml.in:181
 msgid "Side panel is Visible"
 msgstr "Бічна панель — видима"
 
-#: data/org.gnome.gedit.gschema.xml.in:181
+#: data/org.gnome.gedit.gschema.xml.in:182
 msgid ""
 "Whether the side panel at the left of editing windows should be visible."
 msgstr "Чи показувати бічну панель зліва від вікон редагування."
 
-#: data/org.gnome.gedit.gschema.xml.in:190
+#: data/org.gnome.gedit.gschema.xml.in:191
 msgid "Print Syntax Highlighting"
 msgstr "Надрукувати виділення синтаксису"
 
-#: data/org.gnome.gedit.gschema.xml.in:191
+#: data/org.gnome.gedit.gschema.xml.in:192
 msgid ""
 "Whether gedit should print syntax highlighting when printing documents."
 msgstr ""
 "Чи застосовувати виділення кольором синтаксису при друкуванні документів."
 
-#: data/org.gnome.gedit.gschema.xml.in:195
+#: data/org.gnome.gedit.gschema.xml.in:196
 msgid "Print Header"
 msgstr "Друкувати заголовки сторінок"
 
-#: data/org.gnome.gedit.gschema.xml.in:196
+#: data/org.gnome.gedit.gschema.xml.in:197
 msgid ""
 "Whether gedit should include a document header when printing documents."
 msgstr "Чи слід друкувати заголовок документа."
 
-#: data/org.gnome.gedit.gschema.xml.in:205
+#: data/org.gnome.gedit.gschema.xml.in:206
 msgid "Printing Line Wrapping Mode"
 msgstr "Режим переносу рядків під час друкування"
 
-#: data/org.gnome.gedit.gschema.xml.in:206
+#: data/org.gnome.gedit.gschema.xml.in:207
 msgid ""
 "Specifies how to wrap long lines for printing. Use “none” for no wrapping, "
 "“word” for wrapping at word boundaries, and “char” for wrapping at "
@@ -393,11 +398,11 @@ msgstr ""
 "символьного переносу. Зауважте, що значення чутливі до регістру і мають "
 "з'являтися точно у вказаному вигляді."
 
-#: data/org.gnome.gedit.gschema.xml.in:210
+#: data/org.gnome.gedit.gschema.xml.in:211
 msgid "Print Line Numbers"
 msgstr "Друкувати номери рядків"
 
-#: data/org.gnome.gedit.gschema.xml.in:211
+#: data/org.gnome.gedit.gschema.xml.in:212
 msgid ""
 "If this value is 0, then no line numbers will be inserted when printing a "
 "document. Otherwise, gedit will print line numbers every such number of "
@@ -407,29 +412,29 @@ msgstr ""
 "друкуватиметься документ. Інакше, номер друкуватимуться біля кожного рядка."
 
 #. Translators: This is a GSettings default value. Do NOT change or localize the quotation marks!
-#: data/org.gnome.gedit.gschema.xml.in:215
+#: data/org.gnome.gedit.gschema.xml.in:216
 msgid "'Monospace 9'"
 msgstr "'Monospace 9'"
 
-#: data/org.gnome.gedit.gschema.xml.in:216
+#: data/org.gnome.gedit.gschema.xml.in:217
 msgid "Body Font for Printing"
 msgstr "Основний шрифт для друкування"
 
-#: data/org.gnome.gedit.gschema.xml.in:217
+#: data/org.gnome.gedit.gschema.xml.in:218
 msgid ""
 "Specifies the font to use for a document’s body when printing documents."
 msgstr "Визначає шрифт, що використовується для друкування тексту документів."
 
 #. Translators: This is a GSettings default value. Do NOT change or localize the quotation marks!
-#: data/org.gnome.gedit.gschema.xml.in:221
+#: data/org.gnome.gedit.gschema.xml.in:222
 msgid "'Sans 11'"
 msgstr "'Sans 11'"
 
-#: data/org.gnome.gedit.gschema.xml.in:222
+#: data/org.gnome.gedit.gschema.xml.in:223
 msgid "Header Font for Printing"
 msgstr "Шрифт заголовка для друкування"
 
-#: data/org.gnome.gedit.gschema.xml.in:223
+#: data/org.gnome.gedit.gschema.xml.in:224
 msgid ""
 "Specifies the font to use for page headers when printing a document. This "
 "will only take effect if the “Print Header” option is turned on."
@@ -438,15 +443,15 @@ msgstr ""
 "Матиме ефект лише тоді, коли параметр «Друкувати заголовок» увімкнено."
 
 #. Translators: This is a GSettings default value. Do NOT change or localize the quotation marks!
-#: data/org.gnome.gedit.gschema.xml.in:227
+#: data/org.gnome.gedit.gschema.xml.in:228
 msgid "'Sans 8'"
 msgstr "'Sans 8'"
 
-#: data/org.gnome.gedit.gschema.xml.in:228
+#: data/org.gnome.gedit.gschema.xml.in:229
 msgid "Line Number Font for Printing"
 msgstr "Шрифт номерів рядків для друкування"
 
-#: data/org.gnome.gedit.gschema.xml.in:229
+#: data/org.gnome.gedit.gschema.xml.in:230
 msgid ""
 "Specifies the font to use for line numbers when printing. This will only "
 "take effect if the “Print Line Numbers” option is non-zero."
@@ -454,43 +459,43 @@ msgstr ""
 "Визначає шрифт, що використовується для друкування номерів рядків. Матиме "
 "ефект лише тоді, коли параметр «Друкувати номерів рядків» увімкнено."
 
-#: data/org.gnome.gedit.gschema.xml.in:233
+#: data/org.gnome.gedit.gschema.xml.in:234
 msgid "Margin Left"
 msgstr "Ліва межа"
 
-#: data/org.gnome.gedit.gschema.xml.in:234
+#: data/org.gnome.gedit.gschema.xml.in:235
 msgid "The left margin, in millimeters."
 msgstr "Ліва межа в міліметрах."
 
-#: data/org.gnome.gedit.gschema.xml.in:238
+#: data/org.gnome.gedit.gschema.xml.in:239
 msgid "Margin Top"
 msgstr "Верхня межа"
 
-#: data/org.gnome.gedit.gschema.xml.in:239
+#: data/org.gnome.gedit.gschema.xml.in:240
 msgid "The top margin, in millimeters."
 msgstr "Верхня межа у міліметрах."
 
-#: data/org.gnome.gedit.gschema.xml.in:243
+#: data/org.gnome.gedit.gschema.xml.in:244
 msgid "Margin Right"
 msgstr "Права межа"
 
-#: data/org.gnome.gedit.gschema.xml.in:244
+#: data/org.gnome.gedit.gschema.xml.in:245
 msgid "The right margin, in millimeters."
 msgstr "Права межа в міліметрах."
 
-#: data/org.gnome.gedit.gschema.xml.in:248
+#: data/org.gnome.gedit.gschema.xml.in:249
 msgid "Margin Bottom"
 msgstr "Нижня межа"
 
-#: data/org.gnome.gedit.gschema.xml.in:249
+#: data/org.gnome.gedit.gschema.xml.in:250
 msgid "The bottom margin, in millimeters."
 msgstr "Нижня межа у міліметрах."
 
-#: data/org.gnome.gedit.gschema.xml.in:255
+#: data/org.gnome.gedit.gschema.xml.in:256
 msgid "Candidate Encodings"
 msgstr "Запропоновані кодування"
 
-#: data/org.gnome.gedit.gschema.xml.in:256
+#: data/org.gnome.gedit.gschema.xml.in:257
 msgid ""
 "List of candidate encodings shown in the Character Encoding menu in the open/"
 "save file chooser. “CURRENT” represents the current locale encoding. Only "
@@ -503,11 +508,11 @@ msgstr ""
 "порожні список, в разі якого програма вибере найкраще кодування відповідно "
 "до країни і локалі."
 
-#: data/org.gnome.gedit.gschema.xml.in:305
+#: data/org.gnome.gedit.gschema.xml.in:306
 msgid "Active plugins"
 msgstr "Активні модулі"
 
-#: data/org.gnome.gedit.gschema.xml.in:306
+#: data/org.gnome.gedit.gschema.xml.in:307
 msgid "List of active plugins."
 msgstr "Список активних модулів."
 
@@ -563,11 +568,11 @@ msgstr "%s: неправильне кодування."
 msgid "Close _without Saving"
 msgstr "_Закрити без збереження"
 
-#: gedit/gedit-close-confirmation-dialog.c:277 gedit/gedit-commands-file.c:492
-#: gedit/gedit-commands-file.c:568 gedit/gedit-commands-file.c:792
-#: gedit/gedit-commands-file.c:1517 gedit/gedit-encodings-dialog.c:192
+#: gedit/gedit-close-confirmation-dialog.c:277 gedit/gedit-commands-file.c:489
+#: gedit/gedit-commands-file.c:565 gedit/gedit-commands-file.c:789
+#: gedit/gedit-commands-file.c:1514 gedit/gedit-encodings-dialog.c:192
 #: gedit/gedit-file-chooser-open-dialog.c:78 gedit/gedit-io-error-info-bar.c:95
-#: gedit/gedit-io-error-info-bar.c:294 gedit/gedit-preferences-dialog.c:683
+#: gedit/gedit-io-error-info-bar.c:294 gedit/gedit-preferences-dialog.c:660
 #: plugins/filebrowser/gedit-file-browser-utils.c:211
 #: plugins/quickopen/quickopen/popup.py:45
 #: plugins/snippets/snippets/manager.py:789
@@ -583,7 +588,7 @@ msgstr "_Скасувати"
 msgid "_Save As…"
 msgstr "_Зберегти як…"
 
-#: gedit/gedit-close-confirmation-dialog.c:295 gedit/gedit-commands-file.c:791
+#: gedit/gedit-close-confirmation-dialog.c:295 gedit/gedit-commands-file.c:788
 #: gedit/resources/gtk/menus-common.ui:101
 #: gedit/resources/ui/gedit-window.ui:56
 #: plugins/snippets/snippets/manager.py:875
@@ -707,12 +712,12 @@ msgstr "_Виберіть документи, які необхідно збер
 msgid "If you don’t save, all your changes will be permanently lost."
 msgstr "Якщо ви не збережете, всі зміни будуть остаточно втрачені."
 
-#: gedit/gedit-commands-file.c:258
+#: gedit/gedit-commands-file.c:255
 #, c-format
 msgid "Loading file “%s”…"
 msgstr "Завантажується файл «%s»…"
 
-#: gedit/gedit-commands-file.c:266
+#: gedit/gedit-commands-file.c:263
 #, c-format
 msgid "Loading %d file…"
 msgid_plural "Loading %d files…"
@@ -720,29 +725,29 @@ msgstr[0] "Завантажується %d файл…"
 msgstr[1] "Завантажуються %d файли…"
 msgstr[2] "Завантажуються %d файлів…"
 
-#: gedit/gedit-commands-file.c:483
+#: gedit/gedit-commands-file.c:480
 #, c-format
 msgid "The file “%s” is read-only."
 msgstr "Файл «%s» лише для читання."
 
-#: gedit/gedit-commands-file.c:488
+#: gedit/gedit-commands-file.c:485
 msgid "Do you want to try to replace it with the one you are saving?"
 msgstr "Спробувати замінити його файлом, що ви записуєте?"
 
-#: gedit/gedit-commands-file.c:493
+#: gedit/gedit-commands-file.c:490
 #: gedit/resources/ui/gedit-replace-dialog.ui:55
 msgid "_Replace"
 msgstr "За_мінити"
 
-#: gedit/gedit-commands-file.c:533
+#: gedit/gedit-commands-file.c:530
 msgid "Save the file using compression?"
 msgstr "Зберегти файл зі стисненням?"
 
-#: gedit/gedit-commands-file.c:537
+#: gedit/gedit-commands-file.c:534
 msgid "Save the file as plain text?"
 msgstr "Зберегти файл у форматі простого тесту?"
 
-#: gedit/gedit-commands-file.c:550
+#: gedit/gedit-commands-file.c:547
 #, c-format
 msgid ""
 "The file “%s” was previously saved as plain text and will now be saved using "
@@ -751,11 +756,11 @@ msgstr ""
 "Файл «%s» було раніше збережено у форматі простого тексту і тепер буде "
 "збережено з використанням стиснення."
 
-#: gedit/gedit-commands-file.c:554
+#: gedit/gedit-commands-file.c:551
 msgid "_Save Using Compression"
 msgstr "З_берегти зі стисненням"
 
-#: gedit/gedit-commands-file.c:559
+#: gedit/gedit-commands-file.c:556
 #, c-format
 msgid ""
 "The file “%s” was previously saved using compression and will now be saved "
@@ -764,32 +769,32 @@ msgstr ""
 "Файл «%s» раніше був збережений з використанням стиснення і тепер "
 "зберігається у форматі простого тексту."
 
-#: gedit/gedit-commands-file.c:562
+#: gedit/gedit-commands-file.c:559
 msgid "_Save As Plain Text"
 msgstr "З_берегти як звичайний"
 
-#: gedit/gedit-commands-file.c:678 gedit/gedit-commands-file.c:967
+#: gedit/gedit-commands-file.c:675 gedit/gedit-commands-file.c:964
 #, c-format
 msgid "Saving file “%s”…"
 msgstr "Зберігається файл «%s»…"
 
 #. Translators: "Save As" is the title of the file chooser window.
-#: gedit/gedit-commands-file.c:789
+#: gedit/gedit-commands-file.c:786
 msgctxt "window title"
 msgid "Save As"
 msgstr "Зберегти як"
 
-#: gedit/gedit-commands-file.c:1378
+#: gedit/gedit-commands-file.c:1375
 #, c-format
 msgid "Reverting the document “%s”…"
 msgstr "Відновлення документу «%s»…"
 
-#: gedit/gedit-commands-file.c:1425
+#: gedit/gedit-commands-file.c:1422
 #, c-format
 msgid "Revert unsaved changes to document “%s”?"
 msgstr "Відновити незбережені зміни в документі «%s»?"
 
-#: gedit/gedit-commands-file.c:1434
+#: gedit/gedit-commands-file.c:1431
 #, c-format
 msgid ""
 "Changes made to the document in the last %ld second will be permanently lost."
@@ -803,13 +808,13 @@ msgstr[1] ""
 msgstr[2] ""
 "Зміни, внесені в документ за останні %ld секунд, будуть остаточно втрачені."
 
-#: gedit/gedit-commands-file.c:1443
+#: gedit/gedit-commands-file.c:1440
 msgid ""
 "Changes made to the document in the last minute will be permanently lost."
 msgstr ""
 "Зміни, внесені в документ за останню хвилину, будуть остаточно втрачені."
 
-#: gedit/gedit-commands-file.c:1449
+#: gedit/gedit-commands-file.c:1446
 #, c-format
 msgid ""
 "Changes made to the document in the last minute and %ld second will be "
@@ -827,7 +832,7 @@ msgstr[2] ""
 "Зміни, внесені в документ за останню хвилину та %ld секунд, будуть остаточно "
 "втрачені."
 
-#: gedit/gedit-commands-file.c:1459
+#: gedit/gedit-commands-file.c:1456
 #, c-format
 msgid ""
 "Changes made to the document in the last %ld minute will be permanently lost."
@@ -841,13 +846,13 @@ msgstr[1] ""
 msgstr[2] ""
 "Зміни, внесені в документ за останні %ld хвилини, будуть остаточно втрачені."
 
-#: gedit/gedit-commands-file.c:1474
+#: gedit/gedit-commands-file.c:1471
 msgid ""
 "Changes made to the document in the last hour will be permanently lost."
 msgstr ""
 "Зміни, внесені в документ за останню годину, будуть остаточно втрачені."
 
-#: gedit/gedit-commands-file.c:1480
+#: gedit/gedit-commands-file.c:1477
 #, c-format
 msgid ""
 "Changes made to the document in the last hour and %d minute will be "
@@ -865,7 +870,7 @@ msgstr[2] ""
 "Зміни, внесені в документ за останню годину та %d хвилин, будуть остаточно "
 "втрачені."
 
-#: gedit/gedit-commands-file.c:1495
+#: gedit/gedit-commands-file.c:1492
 #, c-format
 msgid ""
 "Changes made to the document in the last %d hour will be permanently lost."
@@ -878,7 +883,7 @@ msgstr[1] ""
 msgstr[2] ""
 "Зміни, внесені в документ за останні %d годин, будуть остаточно втрачені."
 
-#: gedit/gedit-commands-file.c:1518
+#: gedit/gedit-commands-file.c:1515
 msgid "_Revert"
 msgstr "Від_новити"
 
@@ -937,8 +942,8 @@ msgstr "Фрази «%s» не існує"
 msgid "Tab Group %i"
 msgstr "Група вкладок %i"
 
-#: gedit/gedit-documents-panel.c:481 gedit/gedit-window.c:1130
-#: gedit/gedit-window.c:1136 gedit/gedit-window.c:1144
+#: gedit/gedit-documents-panel.c:481 gedit/gedit-window.c:1132
+#: gedit/gedit-window.c:1138 gedit/gedit-window.c:1146
 msgid "Read-Only"
 msgstr "Лише читання"
 
@@ -990,7 +995,7 @@ msgstr "Пересунути на нижчий пріоритет"
 msgid "Untitled Document %d"
 msgstr "Неназваний документ %d"
 
-#: gedit/gedit-file-chooser.c:41 gedit/gedit-preferences-dialog.c:692
+#: gedit/gedit-file-chooser.c:41 gedit/gedit-preferences-dialog.c:669
 msgid "All Files"
 msgstr "Всі файли"
 
@@ -1014,7 +1019,7 @@ msgctxt "window title"
 msgid "Open Files"
 msgstr "Відкриття файлів"
 
-#: gedit/gedit-file-chooser-open-dialog.c:79 gedit/gedit-window.c:2595
+#: gedit/gedit-file-chooser-open-dialog.c:79 gedit/gedit-window.c:2604
 #: gedit/resources/gtk/menus-common.ui:74
 #: gedit/resources/gtk/menus-common.ui:80
 #: plugins/filebrowser/resources/ui/gedit-file-browser-menus.ui:7
@@ -1215,28 +1220,28 @@ msgstr ""
 msgid "Could not save the file “%s”."
 msgstr "Неможливо зберегти файл «%s»."
 
-#: gedit/gedit-preferences-dialog.c:647
+#: gedit/gedit-preferences-dialog.c:624
 #, c-format
 msgid "The selected color scheme cannot be installed: %s"
 msgstr "Обрана схема кольорів не може бути встановлена: %s"
 
-#: gedit/gedit-preferences-dialog.c:653
+#: gedit/gedit-preferences-dialog.c:630
 msgid "The selected color scheme cannot be installed."
 msgstr "Обрана схема кольорів не може бути встановлена."
 
-#: gedit/gedit-preferences-dialog.c:679
+#: gedit/gedit-preferences-dialog.c:656
 msgid "Add Color Scheme"
 msgstr "Додати схему кольорів"
 
-#: gedit/gedit-preferences-dialog.c:682
+#: gedit/gedit-preferences-dialog.c:659
 msgid "_Add Scheme"
 msgstr "_Додати схему"
 
-#: gedit/gedit-preferences-dialog.c:687
+#: gedit/gedit-preferences-dialog.c:664
 msgid "Color Scheme Files"
 msgstr "Файли схеми кольорів"
 
-#: gedit/gedit-preferences-dialog.c:725
+#: gedit/gedit-preferences-dialog.c:702
 #, c-format
 msgid "Could not remove color scheme “%s”."
 msgstr "Не вдалось вилучити схему кольорів «%s»."
@@ -1408,48 +1413,48 @@ msgstr "Рядок, яку треба знайти"
 msgid "Line you want to move the cursor to"
 msgstr "Рядок, куди треба перемістити курсор"
 
-#: gedit/gedit-window.c:1002
+#: gedit/gedit-window.c:1004
 msgid "Bracket match is out of range"
 msgstr "Відповідна дужка поза межами діапазону"
 
-#: gedit/gedit-window.c:1007
+#: gedit/gedit-window.c:1009
 msgid "Bracket match not found"
 msgstr "Не знайдено відповідну дужку"
 
-#: gedit/gedit-window.c:1012
+#: gedit/gedit-window.c:1014
 #, c-format
 msgid "Bracket match found on line: %d"
 msgstr "Відповідну дужку знайдено у рядку: %d"
 
-#: gedit/gedit-window.c:1196
+#: gedit/gedit-window.c:1198
 #, c-format
 msgid "Tab Width: %u"
 msgstr "Ширина табуляції: %u"
 
-#: gedit/gedit-window.c:1214 plugins/externaltools/tools/manager.py:115
+#: gedit/gedit-window.c:1216 plugins/externaltools/tools/manager.py:115
 #: plugins/externaltools/tools/manager.py:324
 #: plugins/externaltools/tools/manager.py:440
 #: plugins/externaltools/tools/manager.py:776
 msgid "Plain Text"
 msgstr "Звичайний текст"
 
-#: gedit/gedit-window.c:1444
+#: gedit/gedit-window.c:1446
 msgid "There are unsaved documents"
 msgstr "Є незбережені документи"
 
-#: gedit/gedit-window.c:2272
+#: gedit/gedit-window.c:2274
 msgid "Change side panel page"
 msgstr "Змінити сторінку бокової панелі"
 
-#: gedit/gedit-window.c:2292 gedit/resources/ui/gedit-window.ui:16
+#: gedit/gedit-window.c:2294 gedit/resources/ui/gedit-window.ui:16
 msgid "Documents"
 msgstr "Документи"
 
-#: gedit/gedit-window.c:2596
+#: gedit/gedit-window.c:2605
 msgid "Open a file"
 msgstr "Відкрити файл"
 
-#: gedit/gedit-window.c:2600
+#: gedit/gedit-window.c:2609
 msgid "Open a recently used file"
 msgstr "Відкрити файл, що нещодавно редагувався"
 
@@ -1795,7 +1800,6 @@ msgid "Open menu"
 msgstr "Відкрити меню"
 
 #: gedit/resources/gtk/help-overlay.ui:486
-#| msgid "Preferences"
 msgctxt "shortcut window"
 msgid "Show preferences"
 msgstr "Показати налаштування"
@@ -2120,53 +2124,37 @@ msgstr "Вставляти _пробіли замість табуляції"
 msgid "_Enable automatic indentation"
 msgstr "_Увімкнути автоматичний відступ"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:307
-msgid "File Saving"
-msgstr "Збереження файлів"
-
-#: gedit/resources/ui/gedit-preferences-dialog.ui:326
-msgid "Create a _backup copy of files before saving"
-msgstr "Створювати _резервну копію файлу перед збереженням"
-
-#: gedit/resources/ui/gedit-preferences-dialog.ui:341
-msgid "_Autosave files every"
-msgstr "_Автоматично зберігати поточний файл кожні"
-
-#: gedit/resources/ui/gedit-preferences-dialog.ui:357
-msgid "_minutes"
-msgstr "_хвилин"
-
-#: gedit/resources/ui/gedit-preferences-dialog.ui:404
+#: gedit/resources/ui/gedit-preferences-dialog.ui:316
 msgid "Editor"
 msgstr "Редактор"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:438
+#: gedit/resources/ui/gedit-preferences-dialog.ui:350
 msgid "Color Scheme"
 msgstr "Схема кольорів"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:474
-#: gedit/resources/ui/gedit-preferences-dialog.ui:475
+#: gedit/resources/ui/gedit-preferences-dialog.ui:386
+#: gedit/resources/ui/gedit-preferences-dialog.ui:387
 msgid "Install scheme"
 msgstr "Встановити схему"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:476
+#: gedit/resources/ui/gedit-preferences-dialog.ui:388
 msgid "Install Scheme"
 msgstr "Встановити схему"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:490
-#: gedit/resources/ui/gedit-preferences-dialog.ui:491
+#: gedit/resources/ui/gedit-preferences-dialog.ui:402
+#: gedit/resources/ui/gedit-preferences-dialog.ui:403
 msgid "Uninstall scheme"
 msgstr "Вилучити схему"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:492
+#: gedit/resources/ui/gedit-preferences-dialog.ui:404
 msgid "Uninstall Scheme"
 msgstr "Вилучити схему"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:532
+#: gedit/resources/ui/gedit-preferences-dialog.ui:444
 msgid "Font & Colors"
 msgstr "Шрифти й кольори"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:557
+#: gedit/resources/ui/gedit-preferences-dialog.ui:469
 msgid "Plugins"
 msgstr "Модулі"
 
@@ -3433,6 +3421,26 @@ msgstr "Вставити час або дату"
 #: plugins/time/time.plugin.desktop.in:6
 msgid "Inserts current date and time at the cursor position."
 msgstr "Вставляє поточну дату й час в позицію курсора."
+
+#~ msgid ""
+#~ "The first goal of gedit is to be easy to use, with a simple interface by "
+#~ "default. More advanced features are available by enabling plugins."
+#~ msgstr ""
+#~ "Gedit, передусім, проста у користуванні програма і типовим простим "
+#~ "інтерфейсом. Доступ до додаткових можливостей відкривається за допомогою "
+#~ "додатків."
+
+#~ msgid "File Saving"
+#~ msgstr "Збереження файлів"
+
+#~ msgid "Create a _backup copy of files before saving"
+#~ msgstr "Створювати _резервну копію файлу перед збереженням"
+
+#~ msgid "_Autosave files every"
+#~ msgstr "_Автоматично зберігати поточний файл кожні"
+
+#~ msgid "_minutes"
+#~ msgstr "_хвилин"
 
 #~ msgid "Click on this button to select the font to be used by the editor"
 #~ msgstr "Натисніть цю кнопку для вибору шрифту редактора"
