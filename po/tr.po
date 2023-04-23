@@ -17,8 +17,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gedit\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gedit/issues\n"
-"POT-Creation-Date: 2023-03-04 12:48+0000\n"
-"PO-Revision-Date: 2023-03-06 17:23+0300\n"
+"POT-Creation-Date: 2023-04-18 16:43+0000\n"
+"PO-Revision-Date: 2023-04-23 14:32+0300\n"
 "Last-Translator: Sabri Ünal <libreajans@gmail.com>\n"
 "Language-Team: Türkçe <gnome-turk@gnome.org>\n"
 "Language: tr\n"
@@ -26,7 +26,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.2.2\n"
 "X-POOTLE-MTIME: 1433962102.000000\n"
 
 #: data/org.gnome.gedit.appdata.xml.in:7 data/org.gnome.gedit.desktop.in:3
@@ -39,19 +39,21 @@ msgstr "Metin düzenleyici"
 
 #: data/org.gnome.gedit.appdata.xml.in:10
 msgid ""
-"gedit is a general-purpose text editor. It has been created in 1998, at the "
-"beginnings of GNOME."
+"gedit is an easy-to-use and general-purpose text editor. Its development "
+"started in 1998, at the beginnings of the GNOME project, with a good "
+"integration with that desktop environment."
 msgstr ""
-"gedit, genel amaçlı metin düzenleyicidir. 1998’de GNOME’un başlangıcında "
-"oluşturulmuştur."
+"gedit, kullanımı kolay genel amaçlı metin düzenleyicidir. 1998 yılında, "
+"GNOME projesinin başlangıcında, masaüstü ortamıyla iyi tümleşecek şekilde "
+"geliştirilmeye başlamıştır."
 
-#: data/org.gnome.gedit.appdata.xml.in:14
+#: data/org.gnome.gedit.appdata.xml.in:15
 msgid ""
-"The first goal of gedit is to be easy to use, with a simple interface by "
-"default. More advanced features are available by enabling plugins."
+"You can use it to write simple notes and documents, or you can enable more "
+"advanced features that are useful for software development."
 msgstr ""
-"gedit’in ilk amacı kolay kullanım ve basit arayüzdür. Gelişmiş özellikler, "
-"eklentileri etkinleştirerek kullanılabilir."
+"Basit notlar ve belgeler yazmak için kullanabilir ya da yazılım geliştirme "
+"için yararlı olan daha gelişmiş özellikleri etkinleştirebilirsiniz."
 
 #: data/org.gnome.gedit.desktop.in:4
 msgid "Edit text files"
@@ -567,9 +569,9 @@ msgstr "%s: geçersiz kodlama."
 msgid "Close _without Saving"
 msgstr "Kaydetmeden _Kapat"
 
-#: gedit/gedit-close-confirmation-dialog.c:277 gedit/gedit-commands-file.c:492
-#: gedit/gedit-commands-file.c:568 gedit/gedit-commands-file.c:792
-#: gedit/gedit-commands-file.c:1517 gedit/gedit-encodings-dialog.c:192
+#: gedit/gedit-close-confirmation-dialog.c:277 gedit/gedit-commands-file.c:489
+#: gedit/gedit-commands-file.c:565 gedit/gedit-commands-file.c:789
+#: gedit/gedit-commands-file.c:1514 gedit/gedit-encodings-dialog.c:192
 #: gedit/gedit-file-chooser-open-dialog.c:78 gedit/gedit-io-error-info-bar.c:95
 #: gedit/gedit-io-error-info-bar.c:294 gedit/gedit-preferences-dialog.c:660
 #: plugins/filebrowser/gedit-file-browser-utils.c:211
@@ -587,7 +589,7 @@ msgstr "_İptal"
 msgid "_Save As…"
 msgstr "Farklı _Kaydet…"
 
-#: gedit/gedit-close-confirmation-dialog.c:295 gedit/gedit-commands-file.c:791
+#: gedit/gedit-close-confirmation-dialog.c:295 gedit/gedit-commands-file.c:788
 #: gedit/resources/gtk/menus-common.ui:101
 #: gedit/resources/ui/gedit-window.ui:56
 #: plugins/snippets/snippets/manager.py:875
@@ -684,40 +686,40 @@ msgstr "Kaydetmek istediğiniz _belgeleri seçin:"
 msgid "If you don’t save, all your changes will be permanently lost."
 msgstr "Kaydetmezseniz yaptığınız tüm değişiklikler kaybolacak."
 
-#: gedit/gedit-commands-file.c:258
+#: gedit/gedit-commands-file.c:255
 #, c-format
 msgid "Loading file “%s”…"
 msgstr "“%s” dosyası yükleniyor…"
 
-#: gedit/gedit-commands-file.c:266
+#: gedit/gedit-commands-file.c:263
 #, c-format
 msgid "Loading %d file…"
 msgid_plural "Loading %d files…"
 msgstr[0] "%d dosya yükleniyor…"
 
-#: gedit/gedit-commands-file.c:483
+#: gedit/gedit-commands-file.c:480
 #, c-format
 msgid "The file “%s” is read-only."
 msgstr "“%s” dosyası salt-okunur."
 
-#: gedit/gedit-commands-file.c:488
+#: gedit/gedit-commands-file.c:485
 msgid "Do you want to try to replace it with the one you are saving?"
 msgstr "Onu kaydettiğiniz ile değiştirmeyi denemek ister misiniz?"
 
-#: gedit/gedit-commands-file.c:493
+#: gedit/gedit-commands-file.c:490
 #: gedit/resources/ui/gedit-replace-dialog.ui:55
 msgid "_Replace"
 msgstr "_Değiştir"
 
-#: gedit/gedit-commands-file.c:533
+#: gedit/gedit-commands-file.c:530
 msgid "Save the file using compression?"
 msgstr "Dosya sıkıştırılarak kaydedilsin mi ?"
 
-#: gedit/gedit-commands-file.c:537
+#: gedit/gedit-commands-file.c:534
 msgid "Save the file as plain text?"
 msgstr "Düz yazı olarak kaydedilsin mi?"
 
-#: gedit/gedit-commands-file.c:550
+#: gedit/gedit-commands-file.c:547
 #, c-format
 msgid ""
 "The file “%s” was previously saved as plain text and will now be saved using "
@@ -726,11 +728,11 @@ msgstr ""
 "“%s” dosyası daha önce düz metin olarak kaydedildi ve şimdi sıkıştırılarak "
 "kaydedilecek."
 
-#: gedit/gedit-commands-file.c:554
+#: gedit/gedit-commands-file.c:551
 msgid "_Save Using Compression"
 msgstr "_Sıkıştırarak Kaydet"
 
-#: gedit/gedit-commands-file.c:559
+#: gedit/gedit-commands-file.c:556
 #, c-format
 msgid ""
 "The file “%s” was previously saved using compression and will now be saved "
@@ -739,33 +741,33 @@ msgstr ""
 "“%s” dosyası daha önce sıkıştırılarak kaydedilmiş ve şimdi düz metin olarak "
 "kaydedilecek."
 
-#: gedit/gedit-commands-file.c:562
+#: gedit/gedit-commands-file.c:559
 msgid "_Save As Plain Text"
 msgstr "Düz Metin Olarak _Kaydet"
 
-#: gedit/gedit-commands-file.c:678 gedit/gedit-commands-file.c:967
+#: gedit/gedit-commands-file.c:675 gedit/gedit-commands-file.c:964
 #, c-format
 msgid "Saving file “%s”…"
 msgstr "“%s” dosyası kaydediliyor…"
 
 #. Translators: "Save As" is the title of the file chooser window.
-#: gedit/gedit-commands-file.c:789
+#: gedit/gedit-commands-file.c:786
 msgctxt "window title"
 msgid "Save As"
 msgstr "Farklı Kaydet"
 
-#: gedit/gedit-commands-file.c:1378
+#: gedit/gedit-commands-file.c:1375
 #, c-format
 msgid "Reverting the document “%s”…"
 msgstr "“%s” belgesi eski durumuna getiriliyor…"
 
-#: gedit/gedit-commands-file.c:1425
+#: gedit/gedit-commands-file.c:1422
 #, c-format
 msgid "Revert unsaved changes to document “%s”?"
 msgstr ""
 "“%s” belgesi içerisinde yapılan değişiklikler eski durumuna döndürülsün mü?"
 
-#: gedit/gedit-commands-file.c:1434
+#: gedit/gedit-commands-file.c:1431
 #, c-format
 msgid ""
 "Changes made to the document in the last %ld second will be permanently lost."
@@ -775,12 +777,12 @@ msgid_plural ""
 msgstr[0] ""
 "Belge içerisinde son %ld saat içerisinde yapılan değişiklikler kaybolacak."
 
-#: gedit/gedit-commands-file.c:1443
+#: gedit/gedit-commands-file.c:1440
 msgid ""
 "Changes made to the document in the last minute will be permanently lost."
 msgstr "Belge içerisinde son bir dakikada yapılan değişiklikler kaybolacak."
 
-#: gedit/gedit-commands-file.c:1449
+#: gedit/gedit-commands-file.c:1446
 #, c-format
 msgid ""
 "Changes made to the document in the last minute and %ld second will be "
@@ -792,7 +794,7 @@ msgstr[0] ""
 "Belge içerisinde son bir dakikada ve %ld saniyede yapılan değişiklikler "
 "kaybolacak."
 
-#: gedit/gedit-commands-file.c:1459
+#: gedit/gedit-commands-file.c:1456
 #, c-format
 msgid ""
 "Changes made to the document in the last %ld minute will be permanently lost."
@@ -801,12 +803,12 @@ msgid_plural ""
 "lost."
 msgstr[0] "Belge içerisinde son %ld dakikada yapılan değişiklikler kaybolacak."
 
-#: gedit/gedit-commands-file.c:1474
+#: gedit/gedit-commands-file.c:1471
 msgid "Changes made to the document in the last hour will be permanently lost."
 msgstr ""
 "Belge içerisinde son %d saat içerisinde yapılan değişiklikler kaybolacak."
 
-#: gedit/gedit-commands-file.c:1480
+#: gedit/gedit-commands-file.c:1477
 #, c-format
 msgid ""
 "Changes made to the document in the last hour and %d minute will be "
@@ -818,7 +820,7 @@ msgstr[0] ""
 "Belge içerisinde son bir saatte ve son %d dakikada yapılan değişiklikler "
 "kaybolacak."
 
-#: gedit/gedit-commands-file.c:1495
+#: gedit/gedit-commands-file.c:1492
 #, c-format
 msgid ""
 "Changes made to the document in the last %d hour will be permanently lost."
@@ -827,7 +829,7 @@ msgid_plural ""
 msgstr[0] ""
 "Belge içerisinde son %d saat içerisinde yapılan değişiklikler kaybolacak."
 
-#: gedit/gedit-commands-file.c:1518
+#: gedit/gedit-commands-file.c:1515
 msgid "_Revert"
 msgstr "_Eski Durumuna Döndür"
 
@@ -881,8 +883,8 @@ msgstr "“%s” bulunamadı"
 msgid "Tab Group %i"
 msgstr "Sekme Kümesi %i"
 
-#: gedit/gedit-documents-panel.c:481 gedit/gedit-window.c:1130
-#: gedit/gedit-window.c:1136 gedit/gedit-window.c:1144
+#: gedit/gedit-documents-panel.c:481 gedit/gedit-window.c:1132
+#: gedit/gedit-window.c:1138 gedit/gedit-window.c:1146
 msgid "Read-Only"
 msgstr "Salt Okunur"
 
@@ -958,7 +960,7 @@ msgctxt "window title"
 msgid "Open Files"
 msgstr "Dosyaları Aç"
 
-#: gedit/gedit-file-chooser-open-dialog.c:79 gedit/gedit-window.c:2595
+#: gedit/gedit-file-chooser-open-dialog.c:79 gedit/gedit-window.c:2604
 #: gedit/resources/gtk/menus-common.ui:74
 #: gedit/resources/gtk/menus-common.ui:80
 #: plugins/filebrowser/resources/ui/gedit-file-browser-menus.ui:7
@@ -1021,7 +1023,7 @@ msgstr "Karakter _Kodlaması:"
 
 #: gedit/gedit-io-error-info-bar.c:289
 msgid "_Edit Anyway"
-msgstr "_Gene De Düzenle"
+msgstr "Yine De _Düzenle"
 
 #: gedit/gedit-io-error-info-bar.c:327
 msgid ""
@@ -1350,48 +1352,48 @@ msgstr "Arama yapılacak dizgi"
 msgid "Line you want to move the cursor to"
 msgstr "İmleci taşımak istediğiniz satır"
 
-#: gedit/gedit-window.c:1002
+#: gedit/gedit-window.c:1004
 msgid "Bracket match is out of range"
 msgstr "Parantez eşlemesi erişim dışı"
 
-#: gedit/gedit-window.c:1007
+#: gedit/gedit-window.c:1009
 msgid "Bracket match not found"
 msgstr "Parantez eşleşmesi bulunamadı"
 
-#: gedit/gedit-window.c:1012
+#: gedit/gedit-window.c:1014
 #, c-format
 msgid "Bracket match found on line: %d"
 msgstr "%d satırında parantez eşleşmesi bulundu"
 
-#: gedit/gedit-window.c:1196
+#: gedit/gedit-window.c:1198
 #, c-format
 msgid "Tab Width: %u"
 msgstr "Etiket Genişliği: %u"
 
-#: gedit/gedit-window.c:1214 plugins/externaltools/tools/manager.py:115
+#: gedit/gedit-window.c:1216 plugins/externaltools/tools/manager.py:115
 #: plugins/externaltools/tools/manager.py:324
 #: plugins/externaltools/tools/manager.py:440
 #: plugins/externaltools/tools/manager.py:776
 msgid "Plain Text"
 msgstr "Düz Metin"
 
-#: gedit/gedit-window.c:1444
+#: gedit/gedit-window.c:1446
 msgid "There are unsaved documents"
 msgstr "Kaydedilmemiş belgeler var"
 
-#: gedit/gedit-window.c:2272
+#: gedit/gedit-window.c:2274
 msgid "Change side panel page"
 msgstr "Yan panel sayfasını değiştir"
 
-#: gedit/gedit-window.c:2292 gedit/resources/ui/gedit-window.ui:16
+#: gedit/gedit-window.c:2294 gedit/resources/ui/gedit-window.ui:16
 msgid "Documents"
 msgstr "Belgeler"
 
-#: gedit/gedit-window.c:2596
+#: gedit/gedit-window.c:2605
 msgid "Open a file"
 msgstr "Dosya aç"
 
-#: gedit/gedit-window.c:2600
+#: gedit/gedit-window.c:2609
 msgid "Open a recently used file"
 msgstr "En son kullanılan dosyayı aç"
 
@@ -3354,6 +3356,13 @@ msgstr "Tarih/Zaman Ekle"
 #: plugins/time/time.plugin.desktop.in:6
 msgid "Inserts current date and time at the cursor position."
 msgstr "İmlecin bulunduğu yere şimdiki tarihi ve zamanı ekler."
+
+#~ msgid ""
+#~ "The first goal of gedit is to be easy to use, with a simple interface by "
+#~ "default. More advanced features are available by enabling plugins."
+#~ msgstr ""
+#~ "gedit’in ilk amacı kolay kullanım ve basit arayüzdür. Gelişmiş "
+#~ "özellikler, eklentileri etkinleştirerek kullanılabilir."
 
 #~ msgid "File Saving"
 #~ msgstr "Dosya Kaydetme"
