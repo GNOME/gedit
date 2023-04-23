@@ -16,8 +16,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gedit\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gedit/issues\n"
-"POT-Creation-Date: 2023-02-01 19:54+0000\n"
-"PO-Revision-Date: 2023-02-05 14:42+0100\n"
+"POT-Creation-Date: 2023-04-18 11:44+0000\n"
+"PO-Revision-Date: 2023-04-23 15:15+0200\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <community-poland@mozilla.org>\n"
 "Language: pl\n"
@@ -37,19 +37,20 @@ msgstr "Edytor tekstu"
 
 #: data/org.gnome.gedit.appdata.xml.in:10
 msgid ""
-"gedit is a general-purpose text editor. It has been created in 1998, at the "
-"beginnings of GNOME."
+"gedit is an easy-to-use and general-purpose text editor. Its development "
+"started in 1998, at the beginnings of the GNOME project, with a good "
+"integration with that desktop environment."
 msgstr ""
-"gedit to uniwersalny edytor tekstu. Powstał w 1998 roku, na samym początku "
-"GNOME."
+"gedit to łatwy w użyciu i uniwersalny edytor tekstu. Powstał w 1998 roku, na "
+"samym początku GNOME, więc dobrze integruje się z tym środowiskiem."
 
-#: data/org.gnome.gedit.appdata.xml.in:14
+#: data/org.gnome.gedit.appdata.xml.in:15
 msgid ""
-"The first goal of gedit is to be easy to use, with a simple interface by "
-"default. More advanced features are available by enabling plugins."
+"You can use it to write simple notes and documents, or you can enable more "
+"advanced features that are useful for software development."
 msgstr ""
-"Głównym celem programu gedit jest łatwość obsługi, więc domyślny jest prosty "
-"interfejs. Bardziej zaawansowane funkcje są dostępne jako wtyczki."
+"Można go używać do pisania prostych notatek i dokumentów, albo włączyć "
+"bardziej zaawansowane funkcje przydatne do pisania oprogramowania."
 
 #: data/org.gnome.gedit.desktop.in:4
 msgid "Edit text files"
@@ -590,9 +591,9 @@ msgstr "%s: nieprawidłowe kodowanie."
 msgid "Close _without Saving"
 msgstr "Zamknij _bez zapisywania"
 
-#: gedit/gedit-close-confirmation-dialog.c:277 gedit/gedit-commands-file.c:492
-#: gedit/gedit-commands-file.c:568 gedit/gedit-commands-file.c:792
-#: gedit/gedit-commands-file.c:1517 gedit/gedit-encodings-dialog.c:192
+#: gedit/gedit-close-confirmation-dialog.c:277 gedit/gedit-commands-file.c:489
+#: gedit/gedit-commands-file.c:565 gedit/gedit-commands-file.c:789
+#: gedit/gedit-commands-file.c:1514 gedit/gedit-encodings-dialog.c:192
 #: gedit/gedit-file-chooser-open-dialog.c:78 gedit/gedit-io-error-info-bar.c:95
 #: gedit/gedit-io-error-info-bar.c:294 gedit/gedit-preferences-dialog.c:660
 #: plugins/filebrowser/gedit-file-browser-utils.c:211
@@ -610,7 +611,7 @@ msgstr "_Anuluj"
 msgid "_Save As…"
 msgstr "Zapi_sz jako…"
 
-#: gedit/gedit-close-confirmation-dialog.c:295 gedit/gedit-commands-file.c:791
+#: gedit/gedit-close-confirmation-dialog.c:295 gedit/gedit-commands-file.c:788
 #: gedit/resources/gtk/menus-common.ui:101
 #: gedit/resources/ui/gedit-window.ui:56
 #: plugins/snippets/snippets/manager.py:875
@@ -746,12 +747,12 @@ msgstr ""
 "Jeżeli dokument nie zostanie zapisany, wszystkie zmiany zostaną bezpowrotnie "
 "utracone."
 
-#: gedit/gedit-commands-file.c:258
+#: gedit/gedit-commands-file.c:255
 #, c-format
 msgid "Loading file “%s”…"
 msgstr "Wczytywanie pliku „%s”…"
 
-#: gedit/gedit-commands-file.c:266
+#: gedit/gedit-commands-file.c:263
 #, c-format
 msgid "Loading %d file…"
 msgid_plural "Loading %d files…"
@@ -759,29 +760,29 @@ msgstr[0] "Wczytywanie %d pliku…"
 msgstr[1] "Wczytywanie %d plików…"
 msgstr[2] "Wczytywanie %d plików…"
 
-#: gedit/gedit-commands-file.c:483
+#: gedit/gedit-commands-file.c:480
 #, c-format
 msgid "The file “%s” is read-only."
 msgstr "Plik „%s” jest tylko do odczytu."
 
-#: gedit/gedit-commands-file.c:488
+#: gedit/gedit-commands-file.c:485
 msgid "Do you want to try to replace it with the one you are saving?"
 msgstr "Spróbować zastąpić go obecnie zapisywanym plikiem?"
 
-#: gedit/gedit-commands-file.c:493
+#: gedit/gedit-commands-file.c:490
 #: gedit/resources/ui/gedit-replace-dialog.ui:55
 msgid "_Replace"
 msgstr "Z_mień"
 
-#: gedit/gedit-commands-file.c:533
+#: gedit/gedit-commands-file.c:530
 msgid "Save the file using compression?"
 msgstr "Zapisać plik, używając kompresji?"
 
-#: gedit/gedit-commands-file.c:537
+#: gedit/gedit-commands-file.c:534
 msgid "Save the file as plain text?"
 msgstr "Zapisać plik jako zwykły tekst?"
 
-#: gedit/gedit-commands-file.c:550
+#: gedit/gedit-commands-file.c:547
 #, c-format
 msgid ""
 "The file “%s” was previously saved as plain text and will now be saved using "
@@ -790,11 +791,11 @@ msgstr ""
 "Plik „%s” został poprzednio zapisany jako zwykły tekst, a teraz zostanie "
 "zapisany, używając kompresji."
 
-#: gedit/gedit-commands-file.c:554
+#: gedit/gedit-commands-file.c:551
 msgid "_Save Using Compression"
 msgstr "Zapi_sz, używając kompresji"
 
-#: gedit/gedit-commands-file.c:559
+#: gedit/gedit-commands-file.c:556
 #, c-format
 msgid ""
 "The file “%s” was previously saved using compression and will now be saved "
@@ -803,32 +804,32 @@ msgstr ""
 "Plik „%s” został poprzednio zapisany, używając kompresji, a teraz zostanie "
 "zapisany jako zwykły tekst."
 
-#: gedit/gedit-commands-file.c:562
+#: gedit/gedit-commands-file.c:559
 msgid "_Save As Plain Text"
 msgstr "Zapi_sz jako zwykły tekst"
 
-#: gedit/gedit-commands-file.c:678 gedit/gedit-commands-file.c:967
+#: gedit/gedit-commands-file.c:675 gedit/gedit-commands-file.c:964
 #, c-format
 msgid "Saving file “%s”…"
 msgstr "Zapisywanie pliku „%s”…"
 
 #. Translators: "Save As" is the title of the file chooser window.
-#: gedit/gedit-commands-file.c:789
+#: gedit/gedit-commands-file.c:786
 msgctxt "window title"
 msgid "Save As"
 msgstr "Zapis jako"
 
-#: gedit/gedit-commands-file.c:1378
+#: gedit/gedit-commands-file.c:1375
 #, c-format
 msgid "Reverting the document “%s”…"
 msgstr "Przywracanie dokumentu „%s”…"
 
-#: gedit/gedit-commands-file.c:1425
+#: gedit/gedit-commands-file.c:1422
 #, c-format
 msgid "Revert unsaved changes to document “%s”?"
 msgstr "Cofnąć niezapisane zmiany w dokumencie „%s”?"
 
-#: gedit/gedit-commands-file.c:1434
+#: gedit/gedit-commands-file.c:1431
 #, c-format
 msgid ""
 "Changes made to the document in the last %ld second will be permanently lost."
@@ -843,13 +844,13 @@ msgstr[1] ""
 msgstr[2] ""
 "Zmiany naniesione w ciągu ostatnich %ld sekund zostaną bezpowrotnie utracone."
 
-#: gedit/gedit-commands-file.c:1443
+#: gedit/gedit-commands-file.c:1440
 msgid ""
 "Changes made to the document in the last minute will be permanently lost."
 msgstr ""
 "Zmiany naniesione w ciągu ostatniej minuty zostaną bezpowrotnie utracone."
 
-#: gedit/gedit-commands-file.c:1449
+#: gedit/gedit-commands-file.c:1446
 #, c-format
 msgid ""
 "Changes made to the document in the last minute and %ld second will be "
@@ -867,7 +868,7 @@ msgstr[2] ""
 "Zmiany naniesione w ciągu ostatniej minuty i %ld sekund zostaną bezpowrotnie "
 "utracone."
 
-#: gedit/gedit-commands-file.c:1459
+#: gedit/gedit-commands-file.c:1456
 #, c-format
 msgid ""
 "Changes made to the document in the last %ld minute will be permanently lost."
@@ -881,12 +882,12 @@ msgstr[1] ""
 msgstr[2] ""
 "Zmiany naniesione w ciągu ostatnich %ld minut zostaną bezpowrotnie utracone."
 
-#: gedit/gedit-commands-file.c:1474
+#: gedit/gedit-commands-file.c:1471
 msgid "Changes made to the document in the last hour will be permanently lost."
 msgstr ""
 "Zmiany naniesione w ciągu ostatniej godziny zostaną bezpowrotnie utracone."
 
-#: gedit/gedit-commands-file.c:1480
+#: gedit/gedit-commands-file.c:1477
 #, c-format
 msgid ""
 "Changes made to the document in the last hour and %d minute will be "
@@ -904,7 +905,7 @@ msgstr[2] ""
 "Zmiany naniesione w ciągu ostatniej godziny i %d minut zostaną bezpowrotnie "
 "utracone."
 
-#: gedit/gedit-commands-file.c:1495
+#: gedit/gedit-commands-file.c:1492
 #, c-format
 msgid ""
 "Changes made to the document in the last %d hour will be permanently lost."
@@ -917,7 +918,7 @@ msgstr[1] ""
 msgstr[2] ""
 "Zmiany naniesione w ciągu ostatnich %d godzin zostaną bezpowrotnie utracone."
 
-#: gedit/gedit-commands-file.c:1518
+#: gedit/gedit-commands-file.c:1515
 msgid "_Revert"
 msgstr "_Przywróć"
 
@@ -980,8 +981,8 @@ msgstr "Nie odnaleziono wyrażenia „%s”"
 msgid "Tab Group %i"
 msgstr "%i. grupa kart"
 
-#: gedit/gedit-documents-panel.c:481 gedit/gedit-window.c:1130
-#: gedit/gedit-window.c:1136 gedit/gedit-window.c:1144
+#: gedit/gedit-documents-panel.c:481 gedit/gedit-window.c:1132
+#: gedit/gedit-window.c:1138 gedit/gedit-window.c:1146
 msgid "Read-Only"
 msgstr "Tylko do odczytu"
 
@@ -1057,7 +1058,7 @@ msgctxt "window title"
 msgid "Open Files"
 msgstr "Otwarcie pliku"
 
-#: gedit/gedit-file-chooser-open-dialog.c:79 gedit/gedit-window.c:2595
+#: gedit/gedit-file-chooser-open-dialog.c:79 gedit/gedit-window.c:2604
 #: gedit/resources/gtk/menus-common.ui:74
 #: gedit/resources/gtk/menus-common.ui:80
 #: plugins/filebrowser/resources/ui/gedit-file-browser-menus.ui:7
@@ -1453,48 +1454,48 @@ msgstr "Poszukiwane wyrażenie"
 msgid "Line you want to move the cursor to"
 msgstr "Numer wiersza, do którego ma zostać przeniesiony kursor"
 
-#: gedit/gedit-window.c:1002
+#: gedit/gedit-window.c:1004
 msgid "Bracket match is out of range"
 msgstr "Parowanie nawiasów jest poza zakresem"
 
-#: gedit/gedit-window.c:1007
+#: gedit/gedit-window.c:1009
 msgid "Bracket match not found"
 msgstr "Nie odnaleziono pasującego nawiasu"
 
-#: gedit/gedit-window.c:1012
+#: gedit/gedit-window.c:1014
 #, c-format
 msgid "Bracket match found on line: %d"
 msgstr "Odnaleziono pasujący nawias w wierszu: %d"
 
-#: gedit/gedit-window.c:1196
+#: gedit/gedit-window.c:1198
 #, c-format
 msgid "Tab Width: %u"
 msgstr "Szerokość tabulacji: %u"
 
-#: gedit/gedit-window.c:1214 plugins/externaltools/tools/manager.py:115
+#: gedit/gedit-window.c:1216 plugins/externaltools/tools/manager.py:115
 #: plugins/externaltools/tools/manager.py:324
 #: plugins/externaltools/tools/manager.py:440
 #: plugins/externaltools/tools/manager.py:776
 msgid "Plain Text"
 msgstr "Zwykły tekst"
 
-#: gedit/gedit-window.c:1444
+#: gedit/gedit-window.c:1446
 msgid "There are unsaved documents"
 msgstr "Są niezapisane dokumenty"
 
-#: gedit/gedit-window.c:2272
+#: gedit/gedit-window.c:2274
 msgid "Change side panel page"
 msgstr "Zmienia stronę panelu bocznego"
 
-#: gedit/gedit-window.c:2292 gedit/resources/ui/gedit-window.ui:16
+#: gedit/gedit-window.c:2294 gedit/resources/ui/gedit-window.ui:16
 msgid "Documents"
 msgstr "Dokumenty"
 
-#: gedit/gedit-window.c:2596
+#: gedit/gedit-window.c:2605
 msgid "Open a file"
 msgstr "Otwiera plik"
 
-#: gedit/gedit-window.c:2600
+#: gedit/gedit-window.c:2609
 msgid "Open a recently used file"
 msgstr "Otwiera ostatnio używany plik"
 
