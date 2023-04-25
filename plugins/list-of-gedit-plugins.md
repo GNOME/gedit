@@ -29,7 +29,6 @@ of the time) too specific to be distributed with gedit itself.
 - **Character Map** - *Insert special characters just by clicking on them.*
 - **Code Comment** - *Comment out or uncomment a selected block of code.*
 - **Color Picker** - *Pick a color from a dialog and insert its hexadecimal representation.*
-- **Color Scheme Editor** - *Source code color scheme editor*
 - **Draw Spaces** - *Draw spaces and tabs*
 - **Embedded Terminal** - *Embed a terminal in the bottom pane.*
 - **Git** - *Highlight lines that have been changed since the last commit*
