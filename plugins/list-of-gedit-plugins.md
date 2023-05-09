@@ -36,7 +36,6 @@ of the time) too specific to be distributed with gedit itself.
 - **Multi Edit** - *Edit document in multiple places at once*
 - **Session Saver** - *Save and restore your working sessions*
 - **Smart Spaces** - *Forget you’re not using tabulations.*
-- **SyncTeX** - *Synchronize between LaTeX and PDF with gedit and evince.*
 - **Text Size** - *Easily increase and decrease the text size*
 - **Word Completion** - *Word completion using the completion framework*
 
