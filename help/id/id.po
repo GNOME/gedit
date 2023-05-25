@@ -1,13 +1,13 @@
 # Indonesian translation for gedit.
 # Copyright (C) 2013 gedit's COPYRIGHT HOLDER
 # This file is distributed under the same license as the gedit package.
-# Andika Triwidada <andika@gmail.com>, 2013-2020.
+# Andika Triwidada <andika@gmail.com>, 2013-2020, 2022, 2023.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: gedit master\n"
-"POT-Creation-Date: 2022-11-20 14:00+0000\n"
-"PO-Revision-Date: 2022-11-28 18:55+0700\n"
+"Project-Id-Version: gedit help gedit-44\n"
+"POT-Creation-Date: 2023-02-27 16:31+0000\n"
+"PO-Revision-Date: 2023-05-25 11:31+0700\n"
 "Last-Translator: Andika Triwidada <andika@gmail.com>\n"
 "Language-Team: Indonesian <id@li.org>\n"
 "Language: id\n"
@@ -15,63 +15,79 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n>1;\n"
-"X-Generator: Poedit 3.2.1\n"
+"X-Generator: Poedit 3.3.1\n"
 "X-Poedit-Bookmarks: -1,118,-1,-1,-1,-1,-1,-1,-1,-1\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
 msgid "translator-credits"
 msgstr ""
-"Andika Triwidada <andika@gmail.com>, 2013, 2014, 2017, 2020, 2022\n"
+"Andika Triwidada <andika@gmail.com>, 2013-2020, 2022, 2023\n"
 "Kukuh Syafaat <syafaatkukuh@gmail.com>, 2016"
+
+#. (itstool) path: page/title
+#: C/gedit-brief-intro.page:9
+msgid "A brief introduction to gedit"
+msgstr "Sebuah pengantar singkat untuk gedit"
+
+#. (itstool) path: page/p
+#: C/gedit-brief-intro.page:11
+msgid ""
+"<app>gedit</app> is an easy-to-use and general-purpose text editor. Its "
+"development started in 1998, at the beginnings of the <link href=\"https://"
+"www.gnome.org/\">GNOME</link> project, with a good integration with that "
+"desktop environment."
+msgstr ""
+"<app>gedit</app> adalah penyunting teks yang mudah dipakai dan serba guna. "
+"Pengembangannya dimulai pada 1998, di awal proyek <link href=\"https://www."
+"gnome.org/\">GNOME</link>, dengan integrasi yang baik ke lingkungan desktop "
+"itu."
+
+#. (itstool) path: page/p
+#: C/gedit-brief-intro.page:18
+msgid ""
+"You can use it to write simple notes and documents, or you can enable more "
+"advanced features that are useful for software development."
+msgstr ""
+"Anda bisa memakainya untuk menulis dokumen dan catatan sederhana, atau Anda "
+"bisa memfungsikan fitur-fitur tingkat lebih lanjut yang berguna bagi "
+"pengembangan perangkat lunak."
+
+#. (itstool) path: page/media
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/gedit-brief-intro.page:23
+msgctxt "_"
+msgid ""
+"external ref='figures/gedit3-screenshot.png' "
+"md5='5fd76174e1e72f99c870b9983034ccd1'"
+msgstr "-"
+
+#. (itstool) path: page/p
+#: C/gedit-brief-intro.page:25
+msgid ""
+"Once <app>gedit</app> launches, you can start writing right away. To save "
+"your text, just click the <gui>Save</gui> button in the <app>gedit</app> "
+"header bar."
+msgstr ""
+"Sekali <app>gedit</app> diluncurkan, Anda dapat langsung mulai menulis. "
+"Untuk menyimpan teks Anda, klik saja tombol <gui>Simpan</gui> dalam bilah "
+"kepala <app>gedit</app>."
 
 #. (itstool) path: info/desc
 #: C/gedit-change-color-scheme.page:8
 msgid "Change the text and background colors in gedit."
 msgstr "Ubah teks dan warna latar belakang di gedit."
 
-#. (itstool) path: credit/name
-#: C/gedit-change-color-scheme.page:14 C/gedit-change-default-font.page:11
-#: C/gedit-close-file.page:11 C/gedit-create-new-file.page:12
-#: C/gedit-edit-as-root.page:10 C/gedit-files-basic.page:10
-#: C/gedit-full-screen.page:13 C/gedit-open-files-from-sidepane.page:11
-#: C/gedit-open-files.page:17 C/gedit-open-on-server.page:10
-#: C/gedit-open-recent.page:12 C/gedit-plugin-guide.page:13
-#: C/gedit-plugins-change-case.page:14 C/gedit-plugins-doc-stats.page:14
-#: C/gedit-plugins-external-tools.page:15 C/gedit-plugins-file-browser.page:15
-#: C/gedit-plugins-insert-date-time.page:15 C/gedit-plugins-install.page:8
-#: C/gedit-plugins-modelines.page:13 C/gedit-plugins-pyconsole.page:10
-#: C/gedit-plugins-quick-open.page:11 C/gedit-plugins-snippets.page:9
-#: C/gedit-plugins-sort.page:14 C/gedit-printing.page:10
-#: C/gedit-quickstart.page:12 C/gedit-replace.page:14 C/gedit-save-file.page:13
-#: C/gedit-search.page:12 C/gedit-spellcheck.page:12
-#: C/gedit-syntax-highlighting.page:10 C/gedit-tabs-moving.page:13
-#: C/gedit-tabs.page:14 C/gedit-undo-redo.page:12 C/index.page:14
-msgid "Jim Campbell"
-msgstr "Jim Campbell"
-
-#. (itstool) path: credit/name
-#: C/gedit-change-color-scheme.page:18
-msgid "Jana Svarova"
-msgstr "Jana Svarova"
-
-#. (itstool) path: credit/years
-#: C/gedit-change-color-scheme.page:20 C/gedit-change-color-scheme.page:25
-msgid "2015"
-msgstr "2015"
-
-#. (itstool) path: credit/name
-#: C/gedit-change-color-scheme.page:23 C/gedit-replace.page:26
-msgid "Ekaterina Gerasimova"
-msgstr "Ekaterina Gerasimova"
-
 #. (itstool) path: page/title
-#: C/gedit-change-color-scheme.page:31
+#: C/gedit-change-color-scheme.page:11
 msgid "Change the color scheme"
-msgstr "Ubah skema warna"
+msgstr "Mengubah skema warna"
 
 #. (itstool) path: page/p
-#: C/gedit-change-color-scheme.page:33
+#: C/gedit-change-color-scheme.page:13
 msgid ""
 "<app>gedit</app> includes several different color schemes, allowing you to "
 "change the appearance of the main text window."
@@ -80,37 +96,37 @@ msgstr ""
 "mengubah penampilan jendela teks utama."
 
 #. (itstool) path: steps/title
-#: C/gedit-change-color-scheme.page:37
+#: C/gedit-change-color-scheme.page:17
 msgid "To change the color scheme:"
 msgstr "Untuk mengubah skema warna:"
 
 #. (itstool) path: item/p
-#: C/gedit-change-color-scheme.page:39 C/gedit-change-default-font.page:29
+#: C/gedit-change-color-scheme.page:19 C/gedit-change-default-font.page:18
 msgid ""
 "Press the menu button in the top-right corner of the window and select "
 "<guiseq><gui style=\"menuitem\">Preferences</gui><gui>Font &amp; Colors</"
 "gui></guiseq>."
 msgstr ""
-"Tekan tombol menu di pojok kanan atas jendela dan pilih <guiseq><gui style="
-"\"menuitem\">Preferensi</gui><gui>Fonta &amp; Warna</gui></guiseq>."
+"Tekan tombol menu di pojok kanan atas jendela dan pilih <guiseq><gui "
+"style=\"menuitem\">Preferensi</gui><gui>Fonta &amp; Warna</gui></guiseq>."
 
 #. (itstool) path: item/p
-#: C/gedit-change-color-scheme.page:44
+#: C/gedit-change-color-scheme.page:24
 msgid "Choose your desired color scheme."
 msgstr "Pilih skema warna yang Anda inginkan."
 
 #. (itstool) path: page/p
-#: C/gedit-change-color-scheme.page:48
+#: C/gedit-change-color-scheme.page:28
 msgid "The new color scheme will be applied immediately."
 msgstr "Skema warna baru akan seketika diterapkan."
 
 #. (itstool) path: section/title
-#: C/gedit-change-color-scheme.page:51
+#: C/gedit-change-color-scheme.page:31
 msgid "Use a Custom Color Scheme"
 msgstr "Memakai Skema Warna Gubahan"
 
 #. (itstool) path: section/p
-#: C/gedit-change-color-scheme.page:57
+#: C/gedit-change-color-scheme.page:37
 msgid ""
 "You can also use color schemes that have been created by others, or create "
 "and use your own color schemes."
@@ -119,12 +135,12 @@ msgstr ""
 "membuat skema warna Anda sendiri."
 
 #. (itstool) path: section/p
-#: C/gedit-change-color-scheme.page:60
+#: C/gedit-change-color-scheme.page:40
 msgid ""
 "Instructions on how to install custom color schemes, as well as examples of "
-"color schemes that you can download and use, are available on the <link href="
-"\"https://wiki.gnome.org/Projects/GtkSourceView/StyleSchemes\">gedit wiki</"
-"link>."
+"color schemes that you can download and use, are available on the <link "
+"href=\"https://wiki.gnome.org/Projects/GtkSourceView/StyleSchemes\">gedit "
+"wiki</link>."
 msgstr ""
 "Petunjuk tentang cara memasang skema warna kustom, serta contoh skema warna "
 "yang dapat Anda unduh dan gunakan, tersedia di <link href=\"http://live."
@@ -135,18 +151,13 @@ msgstr ""
 msgid "Use a custom font for your text in gedit."
 msgstr "Menggunakan fonta kustom untuk teks Anda di gedit."
 
-#. (itstool) path: credit/years
-#: C/gedit-change-default-font.page:13
-msgid "2011 2012 2013"
-msgstr "2011 2012 2013"
-
 #. (itstool) path: page/title
-#: C/gedit-change-default-font.page:20
+#: C/gedit-change-default-font.page:9
 msgid "Change the default font"
-msgstr "Ubah fonta baku"
+msgstr "Mengubah fonta baku"
 
 #. (itstool) path: page/p
-#: C/gedit-change-default-font.page:22
+#: C/gedit-change-default-font.page:11
 msgid ""
 "<app>gedit</app> will use the system fixed-width font by default, but you "
 "can change the default <app>gedit</app> font to suit your preferences."
@@ -156,19 +167,19 @@ msgstr ""
 "Anda."
 
 #. (itstool) path: steps/title
-#: C/gedit-change-default-font.page:27
+#: C/gedit-change-default-font.page:16
 msgid "To change the default font in <app>gedit</app>:"
 msgstr "Untuk mengubah fonta baku dalam <app>gedit</app>:"
 
 #. (itstool) path: item/p
-#: C/gedit-change-default-font.page:32
+#: C/gedit-change-default-font.page:21
 msgid ""
 "Uncheck the box next to the phrase, \"Use the system fixed width font.\""
 msgstr ""
 "Hapus centang kotak di sebelah frasa \"Pakai fonta lebar tetap sistem\"."
 
 #. (itstool) path: item/p
-#: C/gedit-change-default-font.page:34
+#: C/gedit-change-default-font.page:23
 msgid ""
 "Click on the current font name. <app>gedit</app> will open a font-chooser "
 "window, allowing you to see available fonts and choose the one that you "
@@ -179,7 +190,7 @@ msgstr ""
 "satu yang Anda suka."
 
 #. (itstool) path: item/p
-#: C/gedit-change-default-font.page:37
+#: C/gedit-change-default-font.page:26
 msgid ""
 "After you have chosen a new font, use the <gui>slider</gui> under the list "
 "of fonts to set the default font size."
@@ -188,7 +199,7 @@ msgstr ""
 "fonta untuk menata ukuran fonta baku."
 
 #. (itstool) path: item/p
-#: C/gedit-change-default-font.page:39
+#: C/gedit-change-default-font.page:28
 msgid "Click <gui>Select</gui>, and then close the dialog."
 msgstr "Klik <gui>Pilih</gui>, lalu tutup dialog."
 
@@ -198,30 +209,29 @@ msgid "Exit from the file you are using."
 msgstr "Keluar dari berkas yang Anda gunakan."
 
 #. (itstool) path: page/title
-#: C/gedit-close-file.page:18
+#: C/gedit-close-file.page:10
 msgid "Close a file"
 msgstr "Tutup berkas"
 
 #. (itstool) path: page/p
-#: C/gedit-close-file.page:20
+#: C/gedit-close-file.page:12
 msgid ""
 "To close a file in <app>gedit</app>, click the <gui style=\"button\">×</gui> "
-"that appears on the right-side of the file's tab, or press "
-"<keyseq><key>Ctrl</key><key>W</key></keyseq>."
+"button that appears on the tab title. Note that when only a single file is "
+"open in a window, you can close the window instead."
 msgstr ""
-"Untuk menyimpan berkas dalam <app>gedit</app>, klik <gui style=\"button\">×</"
-"gui> yang muncul di sisi kanan tab berkas, atau tekan <keyseq><key>Ctrl</"
-"key><key>W</key></keyseq>."
+"Untuk menutup suatu berkas dalam <app>gedit</app>, klik <gui "
+"style=\"button\">×</gui> yang muncul di judul tab. Perhatikan bahwa ketika "
+"hanya ada berkas tunggal terbuka dalam suatu jendela, Anda bisa menutup "
+"jendela sebagai gantinya."
 
 #. (itstool) path: page/p
-#: C/gedit-close-file.page:23
+#: C/gedit-close-file.page:17
 msgid ""
-"Any one of these actions will close a file in <app>gedit</app>. If your file "
-"contains changes that have not been saved, <app>gedit</app> will prompt you "
-"to save those changes before closing the file."
+"If your file contains changes that have not been saved, <app>gedit</app> "
+"will prompt you to save those changes before closing the file."
 msgstr ""
-"Sebarang aksi ini akan menutup suatu berkas dalam <app>gedit</app>. Bila "
-"berkas Anda memuat perubahan yang belum disimpan, <app>gedit</app> akan "
+"Bila berkas Anda memuat perubahan yang belum disimpan, <app>gedit</app> akan "
 "bertanya apakah Anda akan menyimpan perubahan tersebut sebelum menutup "
 "berkas."
 
@@ -230,41 +240,30 @@ msgstr ""
 msgid "Open a new file for editing."
 msgstr "Membuka berkas baru untuk menyunting."
 
-#. (itstool) path: credit/name
-#: C/gedit-create-new-file.page:16 C/gedit-full-screen.page:17
-#: C/gedit-open-files.page:21 C/gedit-plugins-quick-open.page:15
-#: C/gedit-replace.page:30 C/gedit-save-file.page:21 C/gedit-search.page:24
-#: C/gedit-tabs.page:31 C/gedit-undo-redo.page:24
-msgid "Shobha Tyagi"
-msgstr "Shobha Tyagi"
-
 #. (itstool) path: page/title
-#: C/gedit-create-new-file.page:22
+#: C/gedit-create-new-file.page:11
 msgid "Create a new file"
 msgstr "Buat berkas baru"
 
 #. (itstool) path: page/p
-#: C/gedit-create-new-file.page:24
+#: C/gedit-create-new-file.page:13
 msgid ""
-"The easiest way to create a new file in <app>gedit</app>, is to click the "
-"<gui>Create a new document</gui> button on the left side of the header bar, "
-"or press <keyseq><key>Ctrl</key><key>T</key></keyseq>."
+"The easiest way to create a new file in <app>gedit</app> is to click the "
+"<gui>+</gui> button (the <gui>Create a new document</gui> button) on the "
+"left side of the header bar."
 msgstr ""
-"Cara termudah untuk membuat berkas baru dalam <app>gedit</app>, adalah "
-"dengan mengklik tombol <gui>Buat dokumen baru</gui> di sisi kiri bilah "
-"kepala, atau tekan <keyseq><key>Ctrl</key><key>T</key></keyseq>."
+"Cara termudah untuk membuat berkas baru dalam <app>gedit</app> adalah dengan "
+"mengklik tombol <gui>+</gui> (tombol <gui>Buat dokumen baru</gui>) di sisi "
+"kiri bilah kepala."
 
 #. (itstool) path: page/p
-#: C/gedit-create-new-file.page:28
+#: C/gedit-create-new-file.page:18
 msgid ""
-"Any one of these actions will create a new file in the <app>gedit</app> "
-"window. If you have other files open in <app>gedit</app>, the new file that "
-"you create will appear as a new tab to the right of those files."
+"The new file will appear as a new tab inside the same <app>gedit</app> "
+"window."
 msgstr ""
-"Sebarang aksi ini akan membuat suatu berkas baru dalam jendela <app>gedit</"
-"app>. Bila Anda memiliki berkas lain yang dibuka dalam <app>gedit</app>, "
-"berkas baru yang Anda buat akan muncul sebagai tab baru di sebelah kanan "
-"berkas-berkas tersebut."
+"Berkas baru akan muncul sebagai sebuah tab baru dalam jendela <app>gedit</"
+"app> yang sama."
 
 #. (itstool) path: info/desc
 #: C/gedit-edit-as-root.page:7
@@ -272,12 +271,12 @@ msgid "Use administrative privileges to edit a file."
 msgstr "Gunakan hak akses administratif untuk menyunting berkas."
 
 #. (itstool) path: page/title
-#: C/gedit-edit-as-root.page:16
+#: C/gedit-edit-as-root.page:10
 msgid "Edit a file as the root user"
 msgstr "Sunting suatu berkas sebagai pengguna root"
 
 #. (itstool) path: note/p
-#: C/gedit-edit-as-root.page:19
+#: C/gedit-edit-as-root.page:13
 msgid ""
 "Editing files as the root user is potentially dangerous, and may break your "
 "system in bad ways. Take great care when editing files as the root user."
@@ -287,7 +286,7 @@ msgstr ""
 "sebagai pengguna root."
 
 #. (itstool) path: page/p
-#: C/gedit-edit-as-root.page:24
+#: C/gedit-edit-as-root.page:18
 msgid ""
 "To edit files as the root user, launch <app>gedit</app> from the terminal by "
 "entering:"
@@ -296,13 +295,13 @@ msgstr ""
 "dari terminal dengan memasukkan:"
 
 #. (itstool) path: page/code
-#: C/gedit-edit-as-root.page:26
+#: C/gedit-edit-as-root.page:20
 #, no-wrap
 msgid "sudo gedit"
 msgstr "sudo gedit"
 
 #. (itstool) path: page/p
-#: C/gedit-edit-as-root.page:28
+#: C/gedit-edit-as-root.page:22
 msgid ""
 "Using the <cmd>sudo</cmd> command, you will need to successfully enter your "
 "password before <app>gedit</app> will open."
@@ -311,7 +310,7 @@ msgstr ""
 "Anda sebelum <app>gedit</app> terbuka."
 
 #. (itstool) path: page/p
-#: C/gedit-edit-as-root.page:31
+#: C/gedit-edit-as-root.page:25
 msgid ""
 "As an alternative to the <cmd>sudo</cmd> command, you may obtain "
 "administrative privileges by entering:"
@@ -320,20 +319,20 @@ msgstr ""
 "privilese administratif dengan memasukkan:"
 
 #. (itstool) path: page/code
-#: C/gedit-edit-as-root.page:33
+#: C/gedit-edit-as-root.page:27
 #, no-wrap
 msgid "su -"
 msgstr "su -"
 
 #. (itstool) path: page/p
-#: C/gedit-edit-as-root.page:35
+#: C/gedit-edit-as-root.page:29
 msgid ""
 "You would then launch <app>gedit</app> using the <cmd>gedit</cmd> command."
 msgstr ""
 "Anda kemudian meluncurkan <app>gedit</app> memakai perintah <cmd>gedit</cmd>."
 
 #. (itstool) path: note/p
-#: C/gedit-edit-as-root.page:39
+#: C/gedit-edit-as-root.page:33
 msgid ""
 "Once you have opened <app>gedit</app> with administrative privileges, "
 "<app>gedit</app> will keep those privileges until you close it."
@@ -348,12 +347,12 @@ msgid "Learn the basics of how to work with files in gedit."
 msgstr "Pelajari dasar-dasar bagaimana bekerja dengan berkas dalam gedit."
 
 #. (itstool) path: page/title
-#: C/gedit-files-basic.page:16
+#: C/gedit-files-basic.page:10
 msgid "File basics: Open, close, and save files"
 msgstr "Dasar berkas: Buka, tutup, dan simpan berkas"
 
 #. (itstool) path: page/p
-#: C/gedit-files-basic.page:18
+#: C/gedit-files-basic.page:12
 msgid ""
 "If you are new to <app>gedit</app>, these topics will help you with "
 "creating, saving, opening and closing files."
@@ -367,12 +366,12 @@ msgid "Set gedit to use the entire screen."
 msgstr "Setel gedit untuk menggunakan seluruh layar."
 
 #. (itstool) path: page/title
-#: C/gedit-full-screen.page:23
+#: C/gedit-full-screen.page:11
 msgid "Use fullscreen mode"
 msgstr "Memakai mode layar penuh"
 
 #. (itstool) path: page/p
-#: C/gedit-full-screen.page:25
+#: C/gedit-full-screen.page:13
 msgid ""
 "When working with a large document, you may find it helpful to work in "
 "<app>gedit's</app> fullscreen mode. Using fullscreen mode will hide the "
@@ -387,12 +386,12 @@ msgstr ""
 "Anda fokus lebih baik ke tugas Anda."
 
 #. (itstool) path: section/title
-#: C/gedit-full-screen.page:32
+#: C/gedit-full-screen.page:20
 msgid "Turn on fullscreen mode"
 msgstr "Menyalakan mode layar penuh"
 
 #. (itstool) path: section/p
-#: C/gedit-full-screen.page:33
+#: C/gedit-full-screen.page:21
 msgid ""
 "To turn on fullscreen mode, press <key>F11</key>. <app>gedit's</app> menu, "
 "title, and tab-bars will hide, and you will only be presented with the text "
@@ -403,7 +402,7 @@ msgstr ""
 "penyajian hanya teks dari berkas saat ini."
 
 #. (itstool) path: section/p
-#: C/gedit-full-screen.page:36
+#: C/gedit-full-screen.page:24
 msgid ""
 "If you need to perform an action from the <app>gedit</app> menu while "
 "working in fullscreen mode, move your mouse pointer to the top of the "
@@ -416,7 +415,7 @@ msgstr ""
 "memilih aksi yang Anda inginkan."
 
 #. (itstool) path: note/p
-#: C/gedit-full-screen.page:42
+#: C/gedit-full-screen.page:30
 msgid ""
 "To switch between open tabs while in fullscreen mode, press either "
 "<keyseq><key>Ctrl</key><key>Alt</key><key>PgUp</key></keyseq> or "
@@ -427,12 +426,12 @@ msgstr ""
 "<keyseq><key>Ctrl</key><key>Alt</key><key>PgDn</key></keyseq>."
 
 #. (itstool) path: section/title
-#: C/gedit-full-screen.page:50
+#: C/gedit-full-screen.page:38
 msgid "Turn off fullscreen mode"
 msgstr "Matikan mode layar penuh"
 
 #. (itstool) path: section/p
-#: C/gedit-full-screen.page:51
+#: C/gedit-full-screen.page:39
 msgid ""
 "To turn off fullscreen mode and return to the standard <app>gedit</app> "
 "window, press <key>F11</key>."
@@ -441,7 +440,7 @@ msgstr ""
 "standar, tekan <key>F11</key>."
 
 #. (itstool) path: section/p
-#: C/gedit-full-screen.page:53
+#: C/gedit-full-screen.page:41
 msgid ""
 "You can also move your mouse cursor to the top of the screen, and wait for "
 "the <gui>menu bar</gui> to appear. When the <gui>menu bar</gui> appears, "
@@ -451,18 +450,229 @@ msgstr ""
 "menunggu <gui>bilah menu</gui> muncul. Ketika <gui>bilah menu</gui> muncul, "
 "pilih tombol <gui>Tinggalkan Layar Penuh</gui>."
 
+#. (itstool) path: page/title
+#: C/gedit-general-intro.page:9
+msgid "Introduction to text editors in general"
+msgstr "Pengenalan ke penyunting teks secara umum"
+
+#. (itstool) path: section/title
+#: C/gedit-general-intro.page:12
+msgid "Not a word processor"
+msgstr "Bukan suatu pengolah kata"
+
+#. (itstool) path: section/p
+#: C/gedit-general-intro.page:13
+msgid ""
+"A <em>text editor</em> must be differentiated from <em>word processors</em>."
+msgstr ""
+"Sebuah <em>penyunting teks</em> mesti dibedakan dari <em>pengolah kata</em>."
+
+#. (itstool) path: section/p
+#: C/gedit-general-intro.page:17
+msgid ""
+"An example of a word processor is <link href=\"https://www.libreoffice.org/"
+"\">LibreOffice Writer</link>, which is released as Free and open-source "
+"software."
+msgstr ""
+"Suatu contoh dari sebuah pengolah kata adalah <link href=\"https://www."
+"libreoffice.org/\">LibreOffice Writer</link>, yang dirilis sebagai sebuah "
+"perangkat lunak yang Bebas dan sumber terbuka."
+
+#. (itstool) path: section/p
+#: C/gedit-general-intro.page:22
+msgid ""
+"A word processor permits to create different kinds of documents (reports, "
+"letters, books, etc), with the ability to insert images, tables and other "
+"elements."
+msgstr ""
+"Suatu pengolah kata mengizinkan penciptaan jenis-jenis dokumen yang berbeda "
+"(laporan, surat, buku, dsb.), dengan kemampuan menyisipkan gambar, tabel, "
+"dan elemen-elemen lain."
+
+#. (itstool) path: section/p
+#: C/gedit-general-intro.page:27
+msgid ""
+"A text editor like <app>gedit</app> is used for creating and editing "
+"<em>text files</em>. The files that are saved by <app>gedit</app> and stored "
+"on disk contain only text."
+msgstr ""
+"Suatu penyunting teks seperti <app>gedit</app> dipakai untuk membuat dan "
+"menyunting <em>berkas teks</em>. Berkas yang disimpan oleh <app>gedit</app> "
+"dan disimpan pada disk hanya memuat teks."
+
+#. (itstool) path: section/title
+#: C/gedit-general-intro.page:35
+msgid "Text file formats"
+msgstr "Format berkas teks"
+
+#. (itstool) path: section/p
+#: C/gedit-general-intro.page:36
+msgid ""
+"With a text editor, you can write simple notes as free-form text. But the "
+"text can also follow a certain <em>format</em>."
+msgstr ""
+"Dengan suatu penyunting teks, Anda dapat menulis catatan sederhana sebagai "
+"teks bentuk bebas. Tapi teks juga bisa mengikuti <em>format</em> tertentu."
+
+#. (itstool) path: section/p
+#: C/gedit-general-intro.page:40
+msgid ""
+"Other programs take text files as input, read the text in it, and produce a "
+"result. For example, web browsers can read text files that follow the HTML "
+"format and renders them as pages."
+msgstr ""
+"Program lain mengambil berkas teks sebagai masukan, membaca teks di "
+"dalamnya, dan memproduksi suatu hasil. Sebagai contoh, peramban web dapat "
+"membaca berkas teks yang mengikuti format HTML dan merender mereka sebagai "
+"halaman."
+
+#. (itstool) path: section/p
+#: C/gedit-general-intro.page:45
+msgid ""
+"A text file format specifies how the content needs to be structured in order "
+"to be understood by the other programs."
+msgstr ""
+"Suatu format berkas teks menentukan bagaimana konten perlu distrukturkan "
+"agar bisa dipahami oleh program lain."
+
+#. (itstool) path: section/title
+#: C/gedit-general-intro.page:52
+msgid "Examples"
+msgstr "Contoh"
+
+#. (itstool) path: section/title
+#: C/gedit-general-intro.page:55
+msgid "Writing documents"
+msgstr "Menulis dokumen"
+
+#. (itstool) path: section/p
+#: C/gedit-general-intro.page:56
+msgid ""
+"It is interesting to note that, with a simple text editor and text files, it "
+"is possible to write documents such as produced by a word processor."
+msgstr ""
+"Menarik untuk dicatat bahwa, dengan sebuah penyunting teks sederhana dan "
+"berkas-berkas teks, dimungkinkan untuk menulis dokumen-dokumen seperti yang "
+"dihasilkan oleh suatu pengolah kata."
+
+#. (itstool) path: section/p
+#: C/gedit-general-intro.page:61
+msgid ""
+"To take our earlier example with HTML, to insert an image, it is done by "
+"referring to an external image file (for example stored on disk in the same "
+"directory). Although the image file is not part of the HTML file, a web "
+"browser knows that it needs to embed it in the page."
+msgstr ""
+"Mengambil contoh kita sebelumnya dengan HTML, untuk menyisipkan suatu "
+"gambar, itu dilakukan dengan mengacu ke suatu berkas gambar eksternal "
+"(misalnya tersimpan pada disk dalam direktori yang sama). Walaupun berkas "
+"gambar bukan merupakan bagian dari berkas HTML, suatu peramban web tahu "
+"bahwa itu perlu menempelkannya dalam halaman."
+
+#. (itstool) path: section/title
+#: C/gedit-general-intro.page:70
+msgid "Source code"
+msgstr "Kode sumber"
+
+#. (itstool) path: section/p
+#: C/gedit-general-intro.page:71
+msgid ""
+"Text files are not restricted to write notes or documents, another area is "
+"writing <em>source code</em>, to develop a piece of software with a "
+"programming or scripting language."
+msgstr ""
+"Berkas teks tidak terbatas hanya pada menulis catatan atau dokumen, wilayah "
+"lain adalah menulis <em>kode sumber</em>, untuk mengembangkan sepotong "
+"perangkat lunak dengan suatu bahasa pemrograman atau skrip."
+
+#. (itstool) path: section/title
+#: C/gedit-general-intro.page:80 C/gedit-syntax-highlighting.page:13
+msgid "Syntax highlighting"
+msgstr "Penyorotan sintaks"
+
+#. (itstool) path: section/p
+#: C/gedit-general-intro.page:81
+msgid ""
+"When writing text in a certain format (or “language”), it is very useful to "
+"visually distinguish the different kinds of elements, when a portion of text "
+"has a special meaning. The special meanings depend on the <em>syntax</em> of "
+"the language, i.e., how things should be structured."
+msgstr ""
+"Ketika menulis teks dalam format (atau \"bahasa\") tertentu, sangat berguna "
+"untuk secara visual membedakan elemen-elemen yang berbeda, ketika suatu "
+"bagian dari teks memiliki arti khusus. Arti khusus bergantung pada "
+"<em>sintaks</em> dari bahasa, mis., bagaimana berbagai hal mesti "
+"distrukturkan."
+
+#. (itstool) path: section/p
+#: C/gedit-general-intro.page:87
+msgid ""
+"This is done by adding colors to the text (or other highlighting means: "
+"bold, italic, underline, etc)."
+msgstr ""
+"Ini dilakukan dengan menambahkan warna-warni ke teks (atau cara-cara "
+"penyorotan lain: tebal, miring, garis bawah, dsb)."
+
+#. (itstool) path: section/p
+#: C/gedit-general-intro.page:91
+msgid ""
+"It is important to note that these colors are <em>not</em> saved into the "
+"file; instead, it is the text editor application that presents the text to "
+"the user that way."
+msgstr ""
+"Penting dicatat bahwa warna-warni ini <em>tidak</em> disimpan ke dalam "
+"berkas; tapi itu aplikasi penyunting teks yang menyajikan teks ke pengguna "
+"dengan cara itu."
+
+#. (itstool) path: info/desc
+#: C/gedit-open-file.page:9
+msgid "Open a file to start working on it."
+msgstr "Membuka berkas untuk mulai bekerja dengannya."
+
+#. (itstool) path: page/title
+#: C/gedit-open-file.page:12
+msgid "Open a file"
+msgstr "Membuka berkas"
+
+#. (itstool) path: page/p
+#: C/gedit-open-file.page:14
+msgid "To open a file in <app>gedit</app>, click the <gui>Open</gui> button."
+msgstr ""
+"Untuk membuka berkas dalam <app>gedit</app> klik tombol <gui>Buka</gui>."
+
+#. (itstool) path: page/p
+#: C/gedit-open-file.page:17
+msgid ""
+"This will cause the <gui>Open</gui> dialog to appear. Use your mouse or "
+"keyboard to select the file that you wish to open, and then click <gui>Open</"
+"gui>."
+msgstr ""
+"Ini akan menyebabkan dialog <gui>Buka</gui> muncul. Gunakan tetikus atau "
+"papan tik Anda untuk memilih berkas yang ingin Anda buka, lalu klik "
+"<gui>Open</gui>. Berkas yang telah Anda pilih akan dibuka dalam suatu tab "
+"baru."
+
+#. (itstool) path: page/p
+#: C/gedit-open-file.page:22
+msgid ""
+"To close the <gui>Open</gui> dialog without opening a file, click "
+"<gui>Cancel</gui>."
+msgstr ""
+"Untuk menutup dialog <gui>Buka</gui> tanpa membuka suatu berkas, klik "
+"<gui>Batal</gui>."
+
 #. (itstool) path: info/desc
 #: C/gedit-open-files-from-sidepane.page:8
 msgid "Use gedit's side pane as a file browser."
 msgstr "Gunakan panel sisi gedit sebagai peramban berkas."
 
 #. (itstool) path: page/title
-#: C/gedit-open-files-from-sidepane.page:17
+#: C/gedit-open-files-from-sidepane.page:11
 msgid "View and open files from the side panel"
 msgstr "Melihat dan membuka berkas dari panel sisi"
 
 #. (itstool) path: page/p
-#: C/gedit-open-files-from-sidepane.page:18
+#: C/gedit-open-files-from-sidepane.page:12
 msgid ""
 "The most common way to switch between files in <app>gedit</app> is by using "
 "the tabs at the top of the <app>gedit</app> window. In some cases, though, "
@@ -475,7 +685,7 @@ msgstr ""
 "terbuka, Anda mungkin merasakan lebih mudah memakai panel sisi."
 
 #. (itstool) path: page/p
-#: C/gedit-open-files-from-sidepane.page:25
+#: C/gedit-open-files-from-sidepane.page:19
 msgid ""
 "To activate the side panel, select <guiseq><gui>View</gui> <gui>Side Panel</"
 "gui></guiseq>, or just press the <key>F9</key> key."
@@ -484,7 +694,7 @@ msgstr ""
 "Sisi</gui></guiseq>, atau cukup tekan tombol <key>F9</key>."
 
 #. (itstool) path: note/p
-#: C/gedit-open-files-from-sidepane.page:31
+#: C/gedit-open-files-from-sidepane.page:25
 msgid ""
 "You can toggle the side panel open or closed by pressing <key>F9</key> at "
 "any time."
@@ -493,14 +703,14 @@ msgstr ""
 "kapanpun."
 
 #. (itstool) path: section/title
-#: C/gedit-open-files-from-sidepane.page:39
-#: C/gedit-plugins-file-browser.page:33
+#: C/gedit-open-files-from-sidepane.page:33
+#: C/gedit-plugins-file-browser.page:23
 msgid "Opening files from the side panel"
 msgstr "Membuka berkas dari panel sisi"
 
 #. (itstool) path: section/p
-#: C/gedit-open-files-from-sidepane.page:40
-#: C/gedit-plugins-file-browser.page:34
+#: C/gedit-open-files-from-sidepane.page:34
+#: C/gedit-plugins-file-browser.page:24
 msgid ""
 "To open files from the side panel, first open the side panel by selecting "
 "<guiseq><gui>View</gui> <gui>Side Panel</gui></guiseq> (or just press "
@@ -513,8 +723,8 @@ msgstr ""
 "puncak panel."
 
 #. (itstool) path: section/p
-#: C/gedit-open-files-from-sidepane.page:48
-#: C/gedit-plugins-file-browser.page:42
+#: C/gedit-open-files-from-sidepane.page:42
+#: C/gedit-plugins-file-browser.page:32
 msgid ""
 "This will activate the <em>File Browser</em> mode of the side panel. You can "
 "then use the navigation buttons at the top of the panel to locate and open "
@@ -525,12 +735,12 @@ msgstr ""
 "membuka berkas yang Anda inginkan."
 
 #. (itstool) path: section/title
-#: C/gedit-open-files-from-sidepane.page:56
+#: C/gedit-open-files-from-sidepane.page:50
 msgid "Using the side panel to switch between open files"
 msgstr "Menggunakan panel sisi untuk bertukar antara berkas yang terbuka"
 
 #. (itstool) path: section/p
-#: C/gedit-open-files-from-sidepane.page:57
+#: C/gedit-open-files-from-sidepane.page:51
 msgid ""
 "Once you have several files open, you can use the side panel to switch "
 "between open files. To list open files, choose <gui>Documents</gui> from the "
@@ -541,7 +751,7 @@ msgstr ""
 "yang terbuka, pilih <gui>Dokumen</gui> dari dropdown di puncak panel."
 
 #. (itstool) path: section/p
-#: C/gedit-open-files-from-sidepane.page:63
+#: C/gedit-open-files-from-sidepane.page:57
 msgid ""
 "Clicking on any file name in the side panel will open that file for editing."
 msgstr ""
@@ -549,81 +759,17 @@ msgstr ""
 "tersebut untuk penyuntingan."
 
 #. (itstool) path: info/desc
-#: C/gedit-open-files.page:12
-msgid "Open files to start working on them."
-msgstr "Membuka berkas untuk mulai bekerja."
-
-#. (itstool) path: page/title
-#: C/gedit-open-files.page:27
-msgid "Open a file or set of files"
-msgstr "Buka suatu berkas atau suatu set berkas"
-
-#. (itstool) path: page/p
-#: C/gedit-open-files.page:29
-msgid ""
-"To open a file in <app>gedit</app>, click the <gui>Open</gui> button, or "
-"press <keyseq><key>Ctrl</key><key>O</key></keyseq>."
-msgstr ""
-"Untuk membuka berkas dalam <app>gedit</app> klik tombol <gui>Buka</gui>, "
-"atau tekan <keyseq><key>Ctrl</key><key>O</key></keyseq>."
-
-#. (itstool) path: page/p
-#: C/gedit-open-files.page:31
-msgid ""
-"This will cause the <gui>Open</gui> dialog to appear. Use your mouse or "
-"keyboard to select the file that you wish to open, and then click <gui>Open</"
-"gui>. The file that you've selected will open in a new tab."
-msgstr ""
-"Ini akan menyebabkan dialog <gui>Buka</gui> muncul. Gunakan tetikus atau "
-"papan tik Anda untuk memilih berkas yang ingin Anda buka, lalu klik "
-"<gui>Open</gui>. Berkas yang telah Anda pilih akan dibuka dalam suatu tab "
-"baru."
-
-#. (itstool) path: page/p
-#: C/gedit-open-files.page:34
-msgid ""
-"To close the <gui>Open</gui> dialog without opening a file, click "
-"<gui>Cancel</gui>."
-msgstr ""
-"Untuk menutup dialog <gui>Buka</gui> tanpa membuka suatu berkas, klik "
-"<gui>Batal</gui>."
-
-#. (itstool) path: note/p
-#: C/gedit-open-files.page:37
-msgid ""
-"You can use the <key>Ctrl</key> and <key>Shift</key> keys to open more than "
-"one file at a time. If you hold down the <key>Ctrl</key> key while you "
-"select multiple files, clicking <gui>Open</gui> will open each of the files "
-"that you have selected."
-msgstr ""
-"Anda dapat memakai tombol <key>Ctrl</key> dan <key>Shift</key> untuk membuka "
-"lebih dari satu berkas pada saat yang sama. Bila Anda menahan tombol "
-"<key>Ctrl</key> ketika Anda memilih berkas bergada, mengklik <gui>Open</gui> "
-"akan membuka masing-masing berkas yang telah Anda pilih."
-
-#. (itstool) path: note/p
-#: C/gedit-open-files.page:44
-msgid ""
-"Holding down the <key>Shift</key> while you select multiple files will open "
-"the first file that you select, the last file that you select, and all of "
-"the files in between."
-msgstr ""
-"Menahan <key>Shift</key> ketika Anda memilih berkas berganda akan membuka "
-"berkas pertama yang Anda pilih, berkas terakhir yang Anda pilih, dan semua "
-"berkas diantaranya."
-
-#. (itstool) path: info/desc
 #: C/gedit-open-on-server.page:7
 msgid "Access files that are stored on a different computer."
 msgstr "Akses berkas yang disimpan pada komputer yang berbeda."
 
 #. (itstool) path: page/title
-#: C/gedit-open-on-server.page:16
+#: C/gedit-open-on-server.page:10
 msgid "Open a file that is located on a server"
 msgstr "Buka suatu berkas yang terletak pada suatu server"
 
 #. (itstool) path: page/p
-#: C/gedit-open-on-server.page:18
+#: C/gedit-open-on-server.page:12
 msgid ""
 "Prior to opening a file on a server from within <app>gedit</app>, you need "
 "to know some technical information about the server. For example, you will "
@@ -636,7 +782,7 @@ msgstr ""
 "(mis. HTTP, FTP, dsb.)."
 
 #. (itstool) path: page/p
-#: C/gedit-open-on-server.page:23
+#: C/gedit-open-on-server.page:17
 msgid ""
 "Also, some types of servers impose restrictions on what you can do with "
 "files stored on the server. For example, you may be able to open a file from "
@@ -649,7 +795,7 @@ msgstr ""
 "perubahan ke berkas sercara lokal, pada komputer Anda."
 
 #. (itstool) path: page/p
-#: C/gedit-open-on-server.page:28
+#: C/gedit-open-on-server.page:22
 msgid ""
 "With these caveats in mind, perform the following steps to open a file from "
 "a server using <app>gedit</app>:"
@@ -658,27 +804,27 @@ msgstr ""
 "membuka berkas dari suatu server memakai <app>gedit</app>:"
 
 #. (itstool) path: item/p
-#: C/gedit-open-on-server.page:32
+#: C/gedit-open-on-server.page:26
 msgid "In the header bar, click on <gui>Open</gui>."
 msgstr "Di bilah kepala, klik <gui>Buka</gui>."
 
 #. (itstool) path: item/p
-#: C/gedit-open-on-server.page:33
+#: C/gedit-open-on-server.page:27
 msgid "Click <gui>Other Locations</gui>."
 msgstr "Klik <gui>Lokasi Lain</gui>."
 
 #. (itstool) path: item/p
-#: C/gedit-open-on-server.page:34
+#: C/gedit-open-on-server.page:28
 msgid "Enter the IP Address or URL of the appropriate server."
 msgstr "Masukkan Alamat IP atau URL dari server yang sesuai."
 
 #. (itstool) path: item/p
-#: C/gedit-open-on-server.page:36
+#: C/gedit-open-on-server.page:30
 msgid "Find and select the file that you wish to open."
 msgstr "Cari dan pilih berkas yang ingin Anda buka."
 
 #. (itstool) path: item/p
-#: C/gedit-open-on-server.page:37
+#: C/gedit-open-on-server.page:31
 msgid ""
 "Use the Character Encoding drop-down list to select the appropriate "
 "character coding."
@@ -687,12 +833,12 @@ msgstr ""
 "yang sesuai."
 
 #. (itstool) path: item/p
-#: C/gedit-open-on-server.page:39 C/gedit-plugins-quick-open.page:44
+#: C/gedit-open-on-server.page:33 C/gedit-plugins-quick-open.page:31
 msgid "Click <gui>Open</gui>."
 msgstr "Klik <gui>Buka</gui>."
 
 #. (itstool) path: page/p
-#: C/gedit-open-on-server.page:42
+#: C/gedit-open-on-server.page:36
 msgid ""
 "Valid types of URI include http:, ftp:, file:, and all of the methods "
 "supported by <app>GVfs</app>."
@@ -701,7 +847,7 @@ msgstr ""
 "didukung oleh <app>GVfs</app>."
 
 #. (itstool) path: note/p
-#: C/gedit-open-on-server.page:46
+#: C/gedit-open-on-server.page:40
 msgid ""
 "Files from some types of URI are opened as read-only, and any changes you "
 "make must be saved to a different location. For example, HTTP only allows "
@@ -720,12 +866,12 @@ msgid "Access files that you have previously opened in <app>gedit</app>."
 msgstr "Akses berkas yang sebelumnya telah Anda buka di <app>gedit</app>."
 
 #. (itstool) path: page/title
-#: C/gedit-open-recent.page:18
+#: C/gedit-open-recent.page:10
 msgid "Reopen a recently-used file"
 msgstr "Buka ulang berkas yang baru-baru ini dipakai"
 
 #. (itstool) path: page/p
-#: C/gedit-open-recent.page:20
+#: C/gedit-open-recent.page:12
 msgid ""
 "<app>gedit</app> provides easy access to your ten most recently-used files, "
 "that have been previously opened in <app>gedit</app>. Here is how you can "
@@ -736,13 +882,13 @@ msgstr ""
 "Berikut adalah cara membuka berkas yang baru-baru ini digunakan:"
 
 #. (itstool) path: item/p
-#: C/gedit-open-recent.page:24
+#: C/gedit-open-recent.page:16
 msgid ""
 "Click the arrow button next to the <gui>Open</gui> button in the header bar."
 msgstr "Klik tombol panah di samping tombol <gui>Buka</gui> di bilah kepala."
 
 #. (itstool) path: item/p
-#: C/gedit-open-recent.page:26
+#: C/gedit-open-recent.page:18
 msgid ""
 "<app>gedit</app> will display a menu with the ten most recently-used files."
 msgstr ""
@@ -750,12 +896,12 @@ msgstr ""
 "digunakan."
 
 #. (itstool) path: item/p
-#: C/gedit-open-recent.page:28
+#: C/gedit-open-recent.page:20
 msgid "Select the desired file, and it will open in a new tab."
 msgstr "Pilih berkas yang diinginkan, dan itu akan dibuka di tab baru."
 
 #. (itstool) path: note/p
-#: C/gedit-open-recent.page:31
+#: C/gedit-open-recent.page:23
 msgid ""
 "When hovering with the mouse over a recently-used file from the menu, the "
 "full path to the file is displayed in the status bar at the bottom of the "
@@ -766,17 +912,68 @@ msgstr ""
 "jendela <app>gedit</app>."
 
 #. (itstool) path: info/desc
+#: C/gedit-open-several-files-at-once.page:9
+msgid "Select a set of files to open."
+msgstr "Memilih sekelompok berkas yang akan dibuka."
+
+#. (itstool) path: page/title
+#: C/gedit-open-several-files-at-once.page:12
+msgid "Open several files at once"
+msgstr "Membuka beberapa berkas sekaligus"
+
+#. (itstool) path: page/p
+#: C/gedit-open-several-files-at-once.page:13
+#| msgid ""
+#| "Click the arrow button next to the <gui>Open</gui> button in the header "
+#| "bar."
+msgid ""
+"Click the <gui>Open</gui> button. This will cause the <gui>Open</gui> dialog "
+"to appear."
+msgstr ""
+"Klik tombol <gui>Buka</gui>. Ini akan menyebabkan dialog <gui>Buka</gui> "
+"muncul."
+
+#. (itstool) path: page/p
+#: C/gedit-open-several-files-at-once.page:17
+msgid ""
+"From the <gui>Open</gui> dialog, you can select more than one file with the "
+"<key>Ctrl</key> or <key>Shift</key> key."
+msgstr ""
+"Dari dialog <gui>Buka</gui>, Anda dapat memilih lebih dari satu berkas "
+"dengan tombol <key>Ctrl</key> atau <key>Shift</key>."
+
+#. (itstool) path: page/p
+#: C/gedit-open-several-files-at-once.page:21
+msgid ""
+"If you hold down the <key>Ctrl</key> key while you select a file, that file "
+"will be added to the selection."
+msgstr ""
+"Bila Anda menahan tombol <key>Ctrl</key> ketika Anda memilih sebuah berkas, "
+"maka berkas itu akan ditambahkan ke pilihan."
+
+#. (itstool) path: page/p
+#: C/gedit-open-several-files-at-once.page:25
+msgid ""
+"If you hold down the <key>Shift</key> key while you select a file, the "
+"selection of files will contain the first file, the last file, and all of "
+"the files in between."
+msgstr ""
+"Bila Anda menahan <key>Shift</key> ketika Anda memilih suatu berkas, pilihan "
+"berkas akan memuat berkas pertama, berkas terakhir, dan semua berkas "
+"diantaranya."
+
+#. (itstool) path: info/desc
 #: C/gedit-plugin-guide.page:9
 msgid "Use plugins to customize how gedit works for you."
 msgstr "Gunakan plugin untuk menyesuaikan cara gedit bekerja untuk Anda."
 
 #. (itstool) path: page/title
-#: C/gedit-plugin-guide.page:19
+#: C/gedit-plugin-guide.page:12
 msgid "Configure and use gedit plugins"
 msgstr "Menata dan memakai pengaya gedit"
 
 #. (itstool) path: page/p
-#: C/gedit-plugin-guide.page:20
+#: C/gedit-plugin-guide.page:13
 msgid ""
 "You can do more with <app>gedit</app> by using plugins. Several plugins are "
 "installed by default, but a large number of other plugins are available "
@@ -787,7 +984,7 @@ msgstr ""
 "lain tersedia secara terpisah."
 
 #. (itstool) path: note/p
-#: C/gedit-plugin-guide.page:24
+#: C/gedit-plugin-guide.page:17
 msgid ""
 "Many Linux distributions make a group of these plugins available as a "
 "<app>gedit-plugins</app> package. Install the <app>gedit-plugins</app> "
@@ -798,7 +995,7 @@ msgstr ""
 "untuk membuat plugin tambahan ini tersedia bagi <app>gedit</app>."
 
 #. (itstool) path: when/p
-#: C/gedit-plugin-guide.page:30
+#: C/gedit-plugin-guide.page:23
 msgid ""
 "<link action=\"install:gedit-plugins\" href=\"ftp://ftp.gnome.org/pub/gnome/"
 "sources/gedit-plugins/\" style=\"button\">Install gedit-plugins</link>"
@@ -807,37 +1004,27 @@ msgstr ""
 "sources/gedit-plugins/\" style=\"button\">Pasang gedit-plugins</link>"
 
 #. (itstool) path: section/title
-#: C/gedit-plugin-guide.page:36
+#: C/gedit-plugin-guide.page:29
 msgid "Default gedit Plugins"
 msgstr "Pengaya gedit baku"
 
 #. (itstool) path: section/title
-#: C/gedit-plugin-guide.page:40
+#: C/gedit-plugin-guide.page:33
 msgid "Additional gedit Plugins"
 msgstr "Plugin tambahan gedit"
 
-#. (itstool) path: credit/name
-#: C/gedit-plugins-change-case.page:9 C/gedit-plugins-doc-stats.page:10
-#: C/gedit-plugins-external-tools.page:11 C/gedit-plugins-file-browser.page:11
-#: C/gedit-plugins-insert-date-time.page:10 C/gedit-plugins-install.page:12
-#: C/gedit-plugins-modelines.page:9 C/gedit-plugins-sort.page:10
-#: C/gedit-replace.page:18 C/gedit-search.page:16 C/gedit-tabs-moving.page:17
-#: C/gedit-tabs.page:18 C/gedit-undo-redo.page:16
-msgid "Daniel Neel"
-msgstr "Daniel Neel"
-
 #. (itstool) path: info/desc
-#: C/gedit-plugins-change-case.page:17
+#: C/gedit-plugins-change-case.page:7
 msgid "Change the case of selected text."
 msgstr "Ubah besar kecil huruf teks yang dipilih."
 
 #. (itstool) path: page/title
-#: C/gedit-plugins-change-case.page:20
+#: C/gedit-plugins-change-case.page:10
 msgid "Change case"
 msgstr "Ubah kapitalisasi"
 
 #. (itstool) path: page/p
-#: C/gedit-plugins-change-case.page:22
+#: C/gedit-plugins-change-case.page:12
 msgid ""
 "This plugin helps you to change the case of selected portions of text. You "
 "can use it to change text to be all lower case, all upper case, to invert "
@@ -848,12 +1035,12 @@ msgstr ""
 "Plugin ini membantu Anda mengubah huruf besar kecil dari bagian teks yang "
 "dipilih. Anda dapat memakainya untuk mengubah teks menjadi semua huruf "
 "kecil, semua huruf besar, membalik besar kecil huruf, atau menerapkan huruf "
-"besar judul. Untuk memfungsikan plugin ini, pilih <guiseq><gui style=\"menu"
-"\">gedit</gui><gui style=\"menuitem\">Preferensi</gui> <gui>Plugin</"
-"gui><gui>Ubah Kapitalisasi</gui></guiseq>."
+"besar judul. Untuk memfungsikan plugin ini, pilih <guiseq><gui "
+"style=\"menu\">gedit</gui><gui style=\"menuitem\">Preferensi</gui> "
+"<gui>Plugin</gui><gui>Ubah Kapitalisasi</gui></guiseq>."
 
 #. (itstool) path: page/p
-#: C/gedit-plugins-change-case.page:28
+#: C/gedit-plugins-change-case.page:18
 msgid ""
 "Once the <em>Change Case</em> plugin is enabled, you can use it by "
 "completing the following steps:"
@@ -862,12 +1049,12 @@ msgstr ""
 "dengan melengkapi langkah berikut:"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-change-case.page:32
+#: C/gedit-plugins-change-case.page:22
 msgid "Highlight the portion of text that you want to change."
 msgstr "Sorot bagian teks yang ingin Anda ubah."
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-change-case.page:33
+#: C/gedit-plugins-change-case.page:23
 msgid ""
 "Select <guiseq><gui style=\"menu\">gedit</gui><gui>Change Case</gui></guiseq>"
 msgstr ""
@@ -875,17 +1062,17 @@ msgstr ""
 "guiseq>"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-change-case.page:35
+#: C/gedit-plugins-change-case.page:25
 msgid "Choose your desired text-formatting option."
 msgstr "Pilih opsi pemformatan teks yang Anda kehendaki."
 
 #. (itstool) path: page/p
-#: C/gedit-plugins-change-case.page:38
+#: C/gedit-plugins-change-case.page:28
 msgid "The updates to the text formatting will take place immediately."
 msgstr "Pemutakhiran ke pemformatan teks akan terjadi seketika."
 
 #. (itstool) path: note/p
-#: C/gedit-plugins-change-case.page:41
+#: C/gedit-plugins-change-case.page:31
 msgid ""
 "The <gui>Invert Case</gui> option will convert all lower case letters to "
 "upper case, and will convert all upper case letters to lower case."
@@ -894,7 +1081,7 @@ msgstr ""
 "menjadi huruf besar, dan semua huruf besar menjadi huruf kecil."
 
 #. (itstool) path: note/p
-#: C/gedit-plugins-change-case.page:43
+#: C/gedit-plugins-change-case.page:33
 msgid ""
 "The <gui>Title Case</gui> option will convert the first letter of each word "
 "to upper case. All other letters will be converted to lower case."
@@ -903,7 +1090,7 @@ msgstr ""
 "setiap kata ke huruf besar. Semua huruf lain akan diubah menjadi huruf kecil."
 
 #. (itstool) path: note/p
-#: C/gedit-plugins-change-case.page:49
+#: C/gedit-plugins-change-case.page:39
 msgid ""
 "If you have not highlighted any text, the <em>Change Case</em> feature will "
 "be grayed-out. You need to select a portion of text before you use the "
@@ -914,22 +1101,22 @@ msgstr ""
 "fitur <em>Ubah Kapitalisasi</em>."
 
 #. (itstool) path: info/desc
-#: C/gedit-plugins-doc-stats.page:17
+#: C/gedit-plugins-doc-stats.page:7
 msgid "View document statistics."
 msgstr "Lihat statistik dokumen."
 
 #. (itstool) path: page/title
-#: C/gedit-plugins-doc-stats.page:20
+#: C/gedit-plugins-doc-stats.page:10
 msgid "Document statistics"
 msgstr "Statistik dokumen"
 
 #. (itstool) path: page/p
-#: C/gedit-plugins-doc-stats.page:22
+#: C/gedit-plugins-doc-stats.page:12
 msgid ""
 "The <em>Document Statistics</em> plugin shows you various statistics about "
-"your current document. To enable this plugin, select <guiseq><gui style="
-"\"menu\">gedit</gui><gui style=\"menuitem\">Preferences</gui> <gui>Plugins</"
-"gui><gui>Document Statistics</gui></guiseq>."
+"your current document. To enable this plugin, select <guiseq><gui "
+"style=\"menu\">gedit</gui><gui style=\"menuitem\">Preferences</gui> "
+"<gui>Plugins</gui><gui>Document Statistics</gui></guiseq>."
 msgstr ""
 "Plugin <em>Statistik Dokumen</em> menunjukkan berbagai statistik tentang "
 "dokumen Anda saat ini. Untuk memfungsikan plugin ini, pilih <guiseq><gui "
@@ -937,12 +1124,12 @@ msgstr ""
 "<gui>Plugin</gui><gui>Statistik Dokumen</gui></guiseq>."
 
 #. (itstool) path: section/title
-#: C/gedit-plugins-doc-stats.page:28
+#: C/gedit-plugins-doc-stats.page:18
 msgid "Using Document Statistics"
 msgstr "Memakai Statistik Dokumen"
 
 #. (itstool) path: section/p
-#: C/gedit-plugins-doc-stats.page:30
+#: C/gedit-plugins-doc-stats.page:20
 msgid ""
 "Once the plugin is enabled, use it by selecting <guiseq><gui>Tools</gui> "
 "<gui>Document Statistics</gui></guiseq>. A window will display the "
@@ -955,7 +1142,7 @@ msgstr ""
 "karakter, karaktor bukan spasi, dan ukuran berkas Anda dalam byte."
 
 #. (itstool) path: section/p
-#: C/gedit-plugins-doc-stats.page:36
+#: C/gedit-plugins-doc-stats.page:26
 msgid ""
 "You can also use <em>Document Statistics</em> to show you information about "
 "just a portion of your document. To do this, use the mouse pointer to select "
@@ -972,7 +1159,7 @@ msgstr ""
 "bagian teks yang Anda sorot."
 
 #. (itstool) path: info/desc
-#: C/gedit-plugins-external-tools.page:18
+#: C/gedit-plugins-external-tools.page:9
 msgid ""
 "Run scripts on your current files, and interact with other applications."
 msgstr ""
@@ -980,35 +1167,36 @@ msgstr ""
 "lain."
 
 #. (itstool) path: page/title
-#: C/gedit-plugins-external-tools.page:22
+#: C/gedit-plugins-external-tools.page:13
 msgid "External tools"
 msgstr "Alat Luar"
 
 #. (itstool) path: page/p
-#: C/gedit-plugins-external-tools.page:24
+#: C/gedit-plugins-external-tools.page:15
 msgid ""
 "The <em>External Tools</em> plugin can help simplify repetitive tasks. "
 "Specifically, it extends <app>gedit</app> by helping you to run scripts on "
 "your working files, and by allowing <app>gedit</app> to interact with other "
 "programs on your computer. To enable the <app>External Tools</app> plugin, "
-"select <guiseq><gui style=\"menu\">gedit</gui> <gui style=\"menuitem"
-"\">Preferences</gui><gui>Plugins</gui> <gui>External Tools</gui></guiseq>."
+"select <guiseq><gui style=\"menu\">gedit</gui> <gui "
+"style=\"menuitem\">Preferences</gui><gui>Plugins</gui> <gui>External Tools</"
+"gui></guiseq>."
 msgstr ""
 "Plugin <em>Alat Eksternal</em> dapat membantu menyederhanakan tugas "
 "berulang. Khususnya, ini memperluas <app>gedit</app> dengan membantu Anda "
 "menjalankan skrip pada berkas kerja Anda, dan dengan mengijinkan <app>gedit</"
 "app> untuk berinteraksi dengan program lain pada komputer Anda. Untuk "
-"memfungsikan plugin <app>Perkakas Eksternal</app>, pilih <guiseq><gui style="
-"\"menu\">gedit</gui> <gui style=\"menuitem\">Preferensi</gui><gui>Plugin</"
-"gui> <gui>Perkakas Eksternal</gui></guiseq>."
+"memfungsikan plugin <app>Perkakas Eksternal</app>, pilih <guiseq><gui "
+"style=\"menu\">gedit</gui> <gui style=\"menuitem\">Preferensi</"
+"gui><gui>Plugin</gui> <gui>Perkakas Eksternal</gui></guiseq>."
 
 #. (itstool) path: section/title
-#: C/gedit-plugins-external-tools.page:33
+#: C/gedit-plugins-external-tools.page:24
 msgid "Configure the external tools plugin"
 msgstr "Menata pengaya alat eksternal"
 
 #. (itstool) path: section/p
-#: C/gedit-plugins-external-tools.page:35
+#: C/gedit-plugins-external-tools.page:26
 msgid ""
 "Once you have enabled the plugin, you will need to configure it to suit your "
 "needs. The configuration options are available by selecting "
@@ -1019,7 +1207,7 @@ msgstr ""
 "<guiseq><gui>Perkakas</gui><gui>Kelola Perkakas Luar</gui></guiseq>."
 
 #. (itstool) path: note/p
-#: C/gedit-plugins-external-tools.page:40
+#: C/gedit-plugins-external-tools.page:31
 msgid ""
 "This plugin is for advanced users, and requires knowledge of scripting to be "
 "used effectively. Use this plugin with care, as mistakes with your scripts "
@@ -1031,17 +1219,17 @@ msgstr ""
 "dengan cara yang tak diinginkan."
 
 #. (itstool) path: info/desc
-#: C/gedit-plugins-file-browser.page:18
+#: C/gedit-plugins-file-browser.page:8
 msgid "Use the side panel to browse and open files."
 msgstr "Menggunakan panel sisi untuk meramban dan membuka berkas."
 
 #. (itstool) path: page/title
-#: C/gedit-plugins-file-browser.page:21
+#: C/gedit-plugins-file-browser.page:11
 msgid "File browser panel"
 msgstr "Panel peramban berkas"
 
 #. (itstool) path: page/p
-#: C/gedit-plugins-file-browser.page:23
+#: C/gedit-plugins-file-browser.page:13
 msgid ""
 "Depending on how you use <app>gedit</app>, you may find it helpful to use "
 "the <app>File Browser panel</app> plugin. This plugin embeds a <app>file "
@@ -1054,28 +1242,28 @@ msgstr ""
 "Anda akses mudah ke berkas yang sering digunakan."
 
 #. (itstool) path: page/p
-#: C/gedit-plugins-file-browser.page:28
+#: C/gedit-plugins-file-browser.page:18
 msgid ""
-"You can enable the side panel by selecting <guiseq><gui style=\"menu"
-"\">gedit</gui><gui style=\"menuitem\">Preferences</gui> <gui>Plugins</"
-"gui><gui>File Browser Panel</gui></guiseq>."
+"You can enable the side panel by selecting <guiseq><gui "
+"style=\"menu\">gedit</gui><gui style=\"menuitem\">Preferences</gui> "
+"<gui>Plugins</gui><gui>File Browser Panel</gui></guiseq>."
 msgstr ""
-"Anda dapat memfungsikan panel sisi dengan memilih <guiseq><gui style=\"menu"
-"\">gedit</gui><gui style=\"menuitem\">Preferensi</gui> <gui>Plugin</"
-"gui><gui>Panel Peramban Berkas</gui></guiseq>."
+"Anda dapat memfungsikan panel sisi dengan memilih <guiseq><gui "
+"style=\"menu\">gedit</gui><gui style=\"menuitem\">Preferensi</gui> "
+"<gui>Plugin</gui><gui>Panel Peramban Berkas</gui></guiseq>."
 
 #. (itstool) path: info/desc
-#: C/gedit-plugins-insert-date-time.page:18
+#: C/gedit-plugins-insert-date-time.page:7
 msgid "Insert the current date/time at the cursor position."
 msgstr "Sisipkan tanggal/waktu saat ini pada posisi kursor sekarang."
 
 #. (itstool) path: page/title
-#: C/gedit-plugins-insert-date-time.page:21
+#: C/gedit-plugins-insert-date-time.page:10
 msgid "Insert date/time"
 msgstr "Menyisipkan tanggal/waktu"
 
 #. (itstool) path: page/p
-#: C/gedit-plugins-insert-date-time.page:23
+#: C/gedit-plugins-insert-date-time.page:12
 msgid ""
 "As this name of this plugin suggests, the <gui>Insert Date/Time</gui> plugin "
 "allows you to insert the date and/or time at the current cursor position."
@@ -1085,22 +1273,23 @@ msgstr ""
 "waktu pada posisi kursor saat ini."
 
 #. (itstool) path: steps/title
-#: C/gedit-plugins-insert-date-time.page:28
+#: C/gedit-plugins-insert-date-time.page:17
 msgid "To enable the plugin:"
 msgstr "Untuk memfungsikan pengaya:"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-insert-date-time.page:30
+#: C/gedit-plugins-insert-date-time.page:19
 msgid ""
 "Press the menu button in the top-right corner of the window and select "
-"<guiseq><gui style=\"menuitem\">Preferences</gui> <gui style=\"tab"
-"\">Plugins</gui></guiseq>."
+"<guiseq><gui style=\"menuitem\">Preferences</gui> <gui "
+"style=\"tab\">Plugins</gui></guiseq>."
 msgstr ""
-"Tekan tombol menu di pojok kanan atas jendela dan pilih <guiseq><gui style="
-"\"menuitem\">Preferensi</gui> <gui style=\"tab\">Pengaya</gui></guiseq>."
+"Tekan tombol menu di pojok kanan atas jendela dan pilih <guiseq><gui "
+"style=\"menuitem\">Preferensi</gui> <gui style=\"tab\">Pengaya</gui></"
+"guiseq>."
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-insert-date-time.page:35
+#: C/gedit-plugins-insert-date-time.page:24
 msgid ""
 "Select <gui style=\"menuitem\">Insert Date/Time</gui> to enable the plugin."
 msgstr ""
@@ -1108,18 +1297,18 @@ msgstr ""
 "memfungsikan pengaya."
 
 #. (itstool) path: page/p
-#: C/gedit-plugins-insert-date-time.page:39
+#: C/gedit-plugins-insert-date-time.page:28
 msgid ""
 "To use the plugin, press the menu button in the top-right corner of the "
-"window and select <guiseq><gui style=\"menuitem\">Tools</gui> <gui style="
-"\"menuitem\">Insert Date and Time…</gui></guiseq>."
+"window and select <guiseq><gui style=\"menuitem\">Tools</gui> <gui "
+"style=\"menuitem\">Insert Date and Time…</gui></guiseq>."
 msgstr ""
 "Untuk memakai pengaya, tekan tombol menu di pojok kanan atas jendela dan "
-"pilih <guiseq><gui style=\"menuitem\">Perkakas</gui> <gui style=\"menuitem"
-"\">Sisipkan Tanggal dan Waktu…</gui></guiseq>."
+"pilih <guiseq><gui style=\"menuitem\">Perkakas</gui> <gui "
+"style=\"menuitem\">Sisipkan Tanggal dan Waktu…</gui></guiseq>."
 
 #. (itstool) path: page/p
-#: C/gedit-plugins-insert-date-time.page:43
+#: C/gedit-plugins-insert-date-time.page:32
 msgid ""
 "By default, the <gui>Insert Date/Time</gui> plugin will prompt you to choose "
 "your preferred date/time format each time that you use the plugin. However, "
@@ -1132,22 +1321,22 @@ msgstr ""
 "memilih format tanggal/waktu yang Anda sukai setiap kali Anda memakai "
 "pengaya tersebut. Namun, Anda dapat memilih format tanggal dan waktu baku "
 "Anda sendiri dengan menekan tombol menu di pojok kanan atas jendela dan "
-"memilih <guiseq> <gui style=\"menuitem\">Preferensi</gui><gui style=\"tab"
-"\">Pengaya</gui><gui>Sisipkan Tanggal/Waktu</gui><gui style=\"button"
-"\">Preferensi</gui></guiseq>."
+"memilih <guiseq> <gui style=\"menuitem\">Preferensi</gui><gui "
+"style=\"tab\">Pengaya</gui><gui>Sisipkan Tanggal/Waktu</gui><gui "
+"style=\"button\">Preferensi</gui></guiseq>."
 
 #. (itstool) path: info/desc
-#: C/gedit-plugins-install.page:15
+#: C/gedit-plugins-install.page:6
 msgid "How to install third-party plugins."
 msgstr "Bagaimana memasang plugin pihak ketiga."
 
 #. (itstool) path: page/title
-#: C/gedit-plugins-install.page:18
+#: C/gedit-plugins-install.page:9
 msgid "Additional gedit plugins"
 msgstr "Plugin tambahan gedit"
 
 #. (itstool) path: page/p
-#: C/gedit-plugins-install.page:20
+#: C/gedit-plugins-install.page:11
 msgid ""
 "Installing third-party plugins gives you extra functionality that isn't "
 "available in default <app>gedit</app> plugins, or even the extra plugins "
@@ -1162,7 +1351,7 @@ msgstr ""
 "\">disimpan di sini</link>."
 
 #. (itstool) path: page/p
-#: C/gedit-plugins-install.page:27
+#: C/gedit-plugins-install.page:18
 msgid ""
 "Installing a third-party plugin involves downloading the plugin, placing the "
 "plugin files in the right directory, and activating the plugin."
@@ -1171,7 +1360,7 @@ msgstr ""
 "berkas plugin dalam direktori yang benar, dan mengaktifkan plugin."
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-install.page:31
+#: C/gedit-plugins-install.page:22
 msgid ""
 "You can usually download a plugin from the plugin's website, but may need to "
 "use a revision-control program like <app>git</app>, <app> bazaar</app>, or "
@@ -1186,7 +1375,7 @@ msgstr ""
 "untuk informasi tentang mendapatkan plugin."
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-install.page:36
+#: C/gedit-plugins-install.page:27
 msgid ""
 "Place the plugin files into the <file>/home/<var>username</var>/.local/share/"
 "gedit/plugins</file> directory."
@@ -1195,14 +1384,14 @@ msgstr ""
 "var>/.local/share/gedit/plugins</file>."
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-install.page:39
+#: C/gedit-plugins-install.page:30
 msgid "Of course, replace the word <var>username</var> with your own username."
 msgstr ""
 "Tentu saja, ganti kata <var>namapengguna</var> dengan nama penggunamu "
 "sendiri."
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-install.page:41
+#: C/gedit-plugins-install.page:32
 msgid ""
 "After you have placed the plugin files into the correct directory, the "
 "plugin will appear in the Preferences menu. Press the menu button in the top-"
@@ -1217,19 +1406,19 @@ msgstr ""
 "memfungsikan plugin."
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-install.page:46
+#: C/gedit-plugins-install.page:37
 msgid "Click <gui>Close</gui>."
 msgstr "Klik <gui>Tutup</gui>."
 
 #. (itstool) path: page/p
-#: C/gedit-plugins-install.page:49
+#: C/gedit-plugins-install.page:40
 msgid ""
 "After you have enabled the plugin, it should be available for you to use."
 msgstr ""
 "Setelah Anda memfungsikan plugin, itu mestinya jadi siap untuk Anda pakai."
 
 #. (itstool) path: note/p
-#: C/gedit-plugins-install.page:53
+#: C/gedit-plugins-install.page:44
 msgid ""
 "The <file>.local</file> directory is hidden by default. To view it and other "
 "hidden files, select <guiseq><gui>View</gui><gui>Show Hidden Files</gui></"
@@ -1241,7 +1430,7 @@ msgstr ""
 "key></keyseq>."
 
 #. (itstool) path: note/p
-#: C/gedit-plugins-install.page:60
+#: C/gedit-plugins-install.page:51
 msgid ""
 "If the directory <file>.local/share/gedit/plugins/</file> is not present on "
 "your system, you will need to create it."
@@ -1250,17 +1439,17 @@ msgstr ""
 "Anda, Anda perlu membuatnya."
 
 #. (itstool) path: info/desc
-#: C/gedit-plugins-modelines.page:16
+#: C/gedit-plugins-modelines.page:7
 msgid "Emacs, Kate and Vim-style modelines support for gedit."
 msgstr "Dukungan baris mode gaya Emacs, Kate, dan Vim bagi gedit."
 
 #. (itstool) path: page/title
-#: C/gedit-plugins-modelines.page:19
+#: C/gedit-plugins-modelines.page:10
 msgid "Modelines"
 msgstr "Baris Mode"
 
 #. (itstool) path: page/p
-#: C/gedit-plugins-modelines.page:21
+#: C/gedit-plugins-modelines.page:12
 msgid ""
 "The <app>Modelines</app> plugin allows <app>gedit</app> to analyze the lines "
 "of text at the start and end of a file, and then apply a set of document "
@@ -1275,53 +1464,53 @@ msgstr ""
 "<app>Emacs</app>, <app>Kate</app>, dan <app>Vim</app>."
 
 #. (itstool) path: page/p
-#: C/gedit-plugins-modelines.page:27
+#: C/gedit-plugins-modelines.page:18
 msgid ""
-"To enable the <app>Modelines</app> plugin, select <guiseq><gui style=\"menu"
-"\">gedit</gui> <gui style=\"menuitem\">Preferences</gui><gui>Plugins</"
-"gui><gui>Modelines</gui></guiseq>."
+"To enable the <app>Modelines</app> plugin, select <guiseq><gui "
+"style=\"menu\">gedit</gui> <gui style=\"menuitem\">Preferences</"
+"gui><gui>Plugins</gui><gui>Modelines</gui></guiseq>."
 msgstr ""
-"Untuk memfungsikan plugin <app>Baris Mode</app>, pilih <guiseq><gui style="
-"\"menu\">gedit</gui> <gui style=\"menuitem\">Preferensi</gui><gui>Plugin</"
-"gui><gui>Baris Mode</gui></guiseq>."
+"Untuk memfungsikan plugin <app>Baris Mode</app>, pilih <guiseq><gui "
+"style=\"menu\">gedit</gui> <gui style=\"menuitem\">Preferensi</"
+"gui><gui>Plugin</gui><gui>Baris Mode</gui></guiseq>."
 
 #. (itstool) path: section/title
-#: C/gedit-plugins-modelines.page:31
+#: C/gedit-plugins-modelines.page:22
 msgid "General Modeline Options"
 msgstr "Opsi Baris Mode Umum"
 
 #. (itstool) path: section/p
-#: C/gedit-plugins-modelines.page:32
+#: C/gedit-plugins-modelines.page:23
 msgid "The following options can be set using <app>gedit</app> modelines:"
 msgstr "Opsi-opsi berikut dapat ditata memakai baris mode <app>gedit</app>:"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-modelines.page:34
+#: C/gedit-plugins-modelines.page:25
 msgid "Tab width"
 msgstr "Lebar tab"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-modelines.page:35
+#: C/gedit-plugins-modelines.page:26
 msgid "Indent width"
 msgstr "Lebar indentasi"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-modelines.page:36
+#: C/gedit-plugins-modelines.page:27
 msgid "Inserting spaces instead of tabs"
 msgstr "Menyisipkan spasi sebagai ganti tab"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-modelines.page:37
+#: C/gedit-plugins-modelines.page:28
 msgid "Text Wrapping"
 msgstr "Pelipatan Teks"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-modelines.page:38
+#: C/gedit-plugins-modelines.page:29
 msgid "Right margin width"
 msgstr "Lebar marjin kanan"
 
 #. (itstool) path: note/p
-#: C/gedit-plugins-modelines.page:42
+#: C/gedit-plugins-modelines.page:33
 msgid ""
 "Preferences set using modelines take precedence over the ones specified in "
 "the preference dialog."
@@ -1330,12 +1519,12 @@ msgstr ""
 "dialog preferensi."
 
 #. (itstool) path: section/title
-#: C/gedit-plugins-modelines.page:48
+#: C/gedit-plugins-modelines.page:39
 msgid "Emacs Modelines"
 msgstr "Baris Mode Emacs"
 
 #. (itstool) path: section/p
-#: C/gedit-plugins-modelines.page:50
+#: C/gedit-plugins-modelines.page:41
 msgid ""
 "The first two lines of a document are scanned for <app>Emacs</app> "
 "modelines, and <app>gedit</app> supports the following <app>Emacs</app> "
@@ -1346,43 +1535,43 @@ msgstr ""
 "app> berikut:"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-modelines.page:54
+#: C/gedit-plugins-modelines.page:45
 msgid "Tab-width"
 msgstr "Tab-width"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-modelines.page:55
+#: C/gedit-plugins-modelines.page:46
 msgid "Indent-offset"
 msgstr "Indent-offset"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-modelines.page:56
+#: C/gedit-plugins-modelines.page:47
 msgid "Indent-tabs-mode"
 msgstr "Indent-tabs-mode"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-modelines.page:57
+#: C/gedit-plugins-modelines.page:48
 msgid "Text auto-wrap"
 msgstr "Text auto-wrap"
 
 #. (itstool) path: section/p
-#: C/gedit-plugins-modelines.page:59
+#: C/gedit-plugins-modelines.page:50
 msgid ""
-"For more information on <app>Emacs</app> modelines, visit the <link href="
-"\"https://www.gnu.org/software/emacs/manual/emacs.html\">GNU Emacs Manual</"
-"link>."
+"For more information on <app>Emacs</app> modelines, visit the <link "
+"href=\"https://www.gnu.org/software/emacs/manual/emacs.html\">GNU Emacs "
+"Manual</link>."
 msgstr ""
 "Untuk lebih banyak informasi tentang baris mode <app>Emacs</app>, kunjungi "
 "<link href=\"https://www.gnu.org/software/emacs/manual/emacs.html\">Manual "
 "GNU Emacs</link>."
 
 #. (itstool) path: section/title
-#: C/gedit-plugins-modelines.page:65
+#: C/gedit-plugins-modelines.page:56
 msgid "Kate Modelines"
 msgstr "Baris Mode Kate"
 
 #. (itstool) path: section/p
-#: C/gedit-plugins-modelines.page:67
+#: C/gedit-plugins-modelines.page:58
 msgid ""
 "The first and last ten lines a document are scanned for <app>Kate</app> "
 "modelines, and <app>gedit</app> supports the following <app>Kate</app> "
@@ -1393,46 +1582,46 @@ msgstr ""
 "baris mode <app>Kate</app> berikut:"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-modelines.page:72
+#: C/gedit-plugins-modelines.page:63
 msgid "tab-width"
 msgstr "tab-width"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-modelines.page:73
+#: C/gedit-plugins-modelines.page:64
 msgid "indent-width"
 msgstr "indent-width"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-modelines.page:74
+#: C/gedit-plugins-modelines.page:65
 msgid "space-indent"
 msgstr "space-indent"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-modelines.page:75
+#: C/gedit-plugins-modelines.page:66
 msgid "word-wrap"
 msgstr "word-wrap"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-modelines.page:76
+#: C/gedit-plugins-modelines.page:67
 msgid "word-wrap-column"
 msgstr "word-wrap-column"
 
 #. (itstool) path: section/p
-#: C/gedit-plugins-modelines.page:79
+#: C/gedit-plugins-modelines.page:70
 msgid ""
-"For more information about <app>Kate</app> modelines, visit the <link href="
-"\"https://kate-editor.org/\">Kate website</link>."
+"For more information about <app>Kate</app> modelines, visit the <link "
+"href=\"https://kate-editor.org/\">Kate website</link>."
 msgstr ""
 "Untuk lebih banyak informasi tentang baris mode <app>Kate</app>, kunjungi "
 "<link href=\"https://kate-editor.org/\">situs web Kate</link>."
 
 #. (itstool) path: section/title
-#: C/gedit-plugins-modelines.page:84
+#: C/gedit-plugins-modelines.page:75
 msgid "Vim Modelines"
 msgstr "Modeline Vim"
 
 #. (itstool) path: section/p
-#: C/gedit-plugins-modelines.page:85
+#: C/gedit-plugins-modelines.page:76
 msgid ""
 "The first and last three lines a document are scanned for <app>Vim</app> "
 "modelines, and <app>gedit</app> supports the following <app>Vim</app> "
@@ -1443,56 +1632,57 @@ msgstr ""
 "baris mode <app>Vim</app> berikut:"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-modelines.page:90
+#: C/gedit-plugins-modelines.page:81
 msgid "et (expandtab)"
 msgstr "et (expandtab)"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-modelines.page:91
+#: C/gedit-plugins-modelines.page:82
 msgid "ts (tabstop)"
 msgstr "ts (tabstop)"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-modelines.page:92
+#: C/gedit-plugins-modelines.page:83
 msgid "sw (shiftwidth)"
 msgstr "sw (shiftwidth)"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-modelines.page:93
+#: C/gedit-plugins-modelines.page:84
 msgid "wrap"
 msgstr "wrap"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-modelines.page:94
+#: C/gedit-plugins-modelines.page:85
 msgid "textwidth"
 msgstr "textwidth"
 
 #. (itstool) path: section/p
-#: C/gedit-plugins-modelines.page:97
+#: C/gedit-plugins-modelines.page:88
 msgid ""
-"For more information on <app>Vim</app> modelines, visit the <link href="
-"\"https://www.vim.org/\">Vim website</link>."
+"For more information on <app>Vim</app> modelines, visit the <link "
+"href=\"https://www.vim.org/\">Vim website</link>."
 msgstr ""
 "Untuk lebih banyak informasi tentang baris mode <app>Vim</app>, kunjungi "
 "<link href=\"https://www.vim.org/\">situs web Vim</link>."
 
 #. (itstool) path: info/desc
-#: C/gedit-plugins-pyconsole.page:14
+#: C/gedit-plugins-pyconsole.page:7
 msgid "Add an interactive Python console to the bottom pane."
 msgstr "Menambahkan konsol Python interaktif ke panel bawah."
 
 #. (itstool) path: page/title
-#: C/gedit-plugins-pyconsole.page:17
+#: C/gedit-plugins-pyconsole.page:10
 msgid "Python console"
 msgstr "Konsol Python"
 
 #. (itstool) path: page/p
-#: C/gedit-plugins-pyconsole.page:19
+#: C/gedit-plugins-pyconsole.page:12
 msgid ""
 "You can add a Python console to the bottom pane, allowing you to test Python "
 "scripts without leaving <app>gedit</app>. To enable the Python console, "
-"select <guiseq><gui style=\"menu\">gedit</gui> <gui style=\"menuitem"
-"\">Preferences</gui><gui>Plugins</gui> <gui>Python Console</gui></guiseq>."
+"select <guiseq><gui style=\"menu\">gedit</gui> <gui "
+"style=\"menuitem\">Preferences</gui><gui>Plugins</gui> <gui>Python Console</"
+"gui></guiseq>."
 msgstr ""
 "Anda dapat menambahkan suatu konsol Python ke panel di dasar, yang "
 "memungkinkan Anda menguji skrip Python tanpa meninggalkan <app>gedit</app>. "
@@ -1501,7 +1691,7 @@ msgstr ""
 "Python</gui></guiseq>."
 
 #. (itstool) path: page/p
-#: C/gedit-plugins-pyconsole.page:25
+#: C/gedit-plugins-pyconsole.page:18
 msgid ""
 "Once the Python console is enabled, you can open it by selecting "
 "<guiseq><gui>View</gui><gui>Bottom Panel</gui></guiseq>."
@@ -1510,7 +1700,7 @@ msgstr ""
 "<guiseq><gui>Tilik</gui><gui>Panel Bawah</gui></guiseq>."
 
 #. (itstool) path: note/p
-#: C/gedit-plugins-pyconsole.page:28
+#: C/gedit-plugins-pyconsole.page:21
 msgid ""
 "If you have also enabled the <gui>Embeded Terminal</gui> plugin, the "
 "<gui>Python Console</gui> will appear as a separate tab in the bottom pane."
@@ -1519,17 +1709,17 @@ msgstr ""
 "Python</gui> akan muncul sebagai tab terpisah dalam panel bawah."
 
 #. (itstool) path: info/desc
-#: C/gedit-plugins-quick-open.page:19
+#: C/gedit-plugins-quick-open.page:6
 msgid "Quickly open a file or set of files."
 msgstr "Membuka secara cepat satu berkas atau satu set berkas."
 
 #. (itstool) path: page/title
-#: C/gedit-plugins-quick-open.page:22
+#: C/gedit-plugins-quick-open.page:9
 msgid "Quick open"
 msgstr "Buka cepat"
 
 #. (itstool) path: page/p
-#: C/gedit-plugins-quick-open.page:24
+#: C/gedit-plugins-quick-open.page:11
 msgid ""
 "As the name of this plugin would imply, the <app>Quick Open</app> plugin "
 "helps you to open files more quickly than using the usual ways of opening "
@@ -1543,7 +1733,7 @@ msgstr ""
 "gui><gui>Buka Cepat</gui></guiseq>."
 
 #. (itstool) path: page/p
-#: C/gedit-plugins-quick-open.page:29
+#: C/gedit-plugins-quick-open.page:16
 msgid ""
 "Once you have enabled the <app>Quick Open</app> plugin you can use it as "
 "follows:"
@@ -1552,30 +1742,30 @@ msgstr ""
 "memakainya sebagai berikut:"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-quick-open.page:33
+#: C/gedit-plugins-quick-open.page:20
 msgid ""
 "Open the <app>Quick Open</app> dialog box by pressing <keyseq><key>Ctrl</"
-"key><key>Alt</key><key>O</key></keyseq>, or by selecting <gui style="
-"\"menuitem\">Quick Open…</gui>."
+"key><key>Alt</key><key>O</key></keyseq>, or by selecting <gui "
+"style=\"menuitem\">Quick Open…</gui>."
 msgstr ""
 "Buka kotak dialog <app>Buka Cepat</app> dengan menekan <keyseq><key>Ctrl</"
-"key><key>Alt</key><key>O</key></keyseq>, atau dengan memilih <gui style="
-"\"menuitem\">Buka Cepat</gui>."
+"key><key>Alt</key><key>O</key></keyseq>, atau dengan memilih <gui "
+"style=\"menuitem\">Buka Cepat</gui>."
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-quick-open.page:36
+#: C/gedit-plugins-quick-open.page:23
 msgid "The <gui>Quick Open</gui> file dialog will appear."
 msgstr "Dialog berkas <gui>Buka Cepat</gui> akan muncul."
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-quick-open.page:37
+#: C/gedit-plugins-quick-open.page:24
 msgid "Use your mouse to select the file or files that you want to open."
 msgstr ""
 "Gunakan tetikus Anda untuk memilih berkas atau berkas-berkas yang ingin Anda "
 "buka."
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-quick-open.page:39
+#: C/gedit-plugins-quick-open.page:26
 msgid ""
 "To select several individual files, hold down your <key>Ctrl</key> key while "
 "you click on the files that you want to open."
@@ -1584,7 +1774,7 @@ msgstr ""
 "ketika Anda mengklik pada berkas yang ingin Anda buka."
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-quick-open.page:41
+#: C/gedit-plugins-quick-open.page:28
 msgid ""
 "To select a group of files, click on the first file that you want to open, "
 "hold down the <key>Shift</key> key, and then click on the last file in the "
@@ -1595,17 +1785,17 @@ msgstr ""
 "daftar yang ingin Anda buka."
 
 #. (itstool) path: page/p
-#: C/gedit-plugins-quick-open.page:47
+#: C/gedit-plugins-quick-open.page:34
 msgid "<app>Quick Open</app> will look for files in:"
 msgstr "<app>Buka Cepat</app> akan mencari berkas dalam:"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-quick-open.page:50
+#: C/gedit-plugins-quick-open.page:37
 msgid "The directory of the currently opened document"
 msgstr "Direktori dari dokumen yang sedang dibuka"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-quick-open.page:51
+#: C/gedit-plugins-quick-open.page:38
 msgid ""
 "The root directory of the <app xref=\"gedit-plugins-file-browser\">File "
 "Browser Panel</app> plugin"
@@ -1614,7 +1804,7 @@ msgstr ""
 "Peramban Berkas</app>"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-quick-open.page:54
+#: C/gedit-plugins-quick-open.page:41
 msgid ""
 "Recent documents which are also shown in the <file>Recent</file> folder in "
 "<app>Files</app>"
@@ -1623,22 +1813,22 @@ msgstr ""
 "Ini</file> dalam <app>Berkas</app>"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-quick-open.page:56
+#: C/gedit-plugins-quick-open.page:43
 msgid "Directories which you have bookmarked in <app>Files</app>"
 msgstr "Direktori yang telah dimarkah dalam <app>Berkas</app>"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-quick-open.page:58
+#: C/gedit-plugins-quick-open.page:45
 msgid "Your <file>Desktop</file> directory"
 msgstr "Direktori <file>Desktop</file> Anda"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-quick-open.page:59
+#: C/gedit-plugins-quick-open.page:46
 msgid "Your <file>Home</file> directory"
 msgstr "Direktori <file>Rumah</file> Anda"
 
 #. (itstool) path: note/p
-#: C/gedit-plugins-quick-open.page:63
+#: C/gedit-plugins-quick-open.page:50
 msgid ""
 "<app>Quick Open</app> displays files in any of the above locations "
 "regardless of whether or not you have opened them previously."
@@ -1646,31 +1836,20 @@ msgstr ""
 "<app>Buka Cepat</app> menampilkan berkas dalam sebarang lokasi di atas tanpa "
 "peduli apakah Anda sebelumnya pernah membukanya atau belum."
 
-#. (itstool) path: credit/name
-#: C/gedit-plugins-snippets.page:13 C/gedit-plugins-sort.page:18
-#: C/gedit-printing-order.page:15 C/gedit-printing.page:14
-#: C/gedit-printing-select.page:14 C/gedit-quickstart.page:16
-#: C/gedit-replace.page:22 C/gedit-save-file.page:17 C/gedit-search.page:20
-#: C/gedit-spellcheck.page:20 C/gedit-syntax-highlighting.page:14
-#: C/gedit-tabs-moving.page:21 C/gedit-tabs.page:22 C/gedit-undo-redo.page:20
-#: C/index.page:18
-msgid "Sindhu S"
-msgstr "Sindhu S"
-
 #. (itstool) path: info/desc
-#: C/gedit-plugins-snippets.page:17
+#: C/gedit-plugins-snippets.page:6
 msgid "Use snippets to quickly insert often-used pieces of text."
 msgstr ""
 "Memakai snippet untuk secara cepat menyisipkan penggalan teks yang sering "
 "dipakai."
 
 #. (itstool) path: page/title
-#: C/gedit-plugins-snippets.page:20
+#: C/gedit-plugins-snippets.page:9
 msgid "Snippets"
 msgstr "Snippet"
 
 #. (itstool) path: page/p
-#: C/gedit-plugins-snippets.page:22
+#: C/gedit-plugins-snippets.page:11
 msgid ""
 "<app>Snippets</app> provide a convenient way of inserting repetitive "
 "portions of code into your files. For example, an HTML snippet for the "
@@ -1685,52 +1864,53 @@ msgstr ""
 "gambar. Ini dapat membuat penulisan kode lebih mudah dan cepat."
 
 #. (itstool) path: section/title
-#: C/gedit-plugins-snippets.page:29
+#: C/gedit-plugins-snippets.page:18
 msgid "Enable Snippets Plugin"
 msgstr "Fungsikan Pengaya Snippet"
 
 #. (itstool) path: section/p
-#: C/gedit-plugins-snippets.page:31
+#: C/gedit-plugins-snippets.page:20
 msgid "To enable the <gui>Snippets</gui> plugin:"
 msgstr "Untuk memfungsikan plugin <gui>Snippet</gui>:"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-snippets.page:35 C/gedit-plugins-sort.page:37
-#: C/gedit-spellcheck.page:36
+#: C/gedit-plugins-snippets.page:24 C/gedit-plugins-sort.page:22
+#: C/gedit-spellcheck.page:18
 msgid ""
-"Select <guiseq><gui style=\"menu\">gedit</gui> <gui style=\"menuitem"
-"\">Preferences</gui> <gui style=\"tab\">Plugins</gui></guiseq>."
+"Select <guiseq><gui style=\"menu\">gedit</gui> <gui "
+"style=\"menuitem\">Preferences</gui> <gui style=\"tab\">Plugins</gui></"
+"guiseq>."
 msgstr ""
-"Pilih <guiseq><gui style=\"menu\">gedit</gui> <gui style=\"menuitem"
-"\">Preferensi</gui> <gui style=\"tab\">Plugin</gui></guiseq>."
+"Pilih <guiseq><gui style=\"menu\">gedit</gui> <gui "
+"style=\"menuitem\">Preferensi</gui> <gui style=\"tab\">Plugin</gui></guiseq>."
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-snippets.page:40
+#: C/gedit-plugins-snippets.page:29
 msgid "Select <gui style=\"menuitem\">Snippets</gui> to enable the plugin."
 msgstr ""
 "Pilih <gui style=\"menuitem\">Snippets</gui> untuk memfungsikan plugin."
 
 #. (itstool) path: section/title
-#: C/gedit-plugins-snippets.page:47
+#: C/gedit-plugins-snippets.page:36
 msgid "Browse Snippets"
 msgstr "Ramban Snippet"
 
 #. (itstool) path: section/p
-#: C/gedit-plugins-snippets.page:49
+#: C/gedit-plugins-snippets.page:38
 msgid "To browse available snippets:"
 msgstr "Untuk meramban snippet yang tersedia:"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-snippets.page:52
+#: C/gedit-plugins-snippets.page:41
 msgid ""
-"Select <guiseq><gui style=\"menu\">Tools</gui> <gui style=\"menuitem"
-"\">Manage Snippets</gui></guiseq>."
+"Select <guiseq><gui style=\"menu\">Tools</gui> <gui "
+"style=\"menuitem\">Manage Snippets</gui></guiseq>."
 msgstr ""
-"Pilih <guiseq><gui style=\"menu\">Perkakas</gui> <gui style=\"menuitem"
-"\">Kelola Snippet</gui></guiseq>."
+"Pilih <guiseq><gui style=\"menu\">Perkakas</gui> <gui "
+"style=\"menuitem\">Kelola Snippet</gui></guiseq>."
 
 #. (itstool) path: note/p
-#: C/gedit-plugins-snippets.page:55
+#: C/gedit-plugins-snippets.page:44
 msgid ""
 "Make sure the syntax is set appropriately. The status bar at the bottom of "
 "the <app>gedit</app> window will show the current language setting. This "
@@ -1746,7 +1926,7 @@ msgstr ""
 "menatanya."
 
 #. (itstool) path: figure/desc
-#: C/gedit-plugins-snippets.page:62
+#: C/gedit-plugins-snippets.page:51
 msgid "In this example, the language is set to HTML."
 msgstr "Dalam contoh ini, bahasa diatur ke HTML."
 
@@ -1755,7 +1935,7 @@ msgstr "Dalam contoh ini, bahasa diatur ke HTML."
 #. the file changes, the md5 hash will change to let you know you need to
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
-#: C/gedit-plugins-snippets.page:64
+#: C/gedit-plugins-snippets.page:53
 msgctxt "_"
 msgid ""
 "external ref='figures/gedit-html-snippet.png' "
@@ -1763,28 +1943,28 @@ msgid ""
 msgstr "-"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-snippets.page:69
+#: C/gedit-plugins-snippets.page:58
 msgid "Browse the snippets that are available for your language or syntax."
 msgstr "Ramban snippet yang tersedia bagi bahasa atau sintaks Anda."
 
 #. (itstool) path: section/title
-#: C/gedit-plugins-snippets.page:76
+#: C/gedit-plugins-snippets.page:65
 msgid "Using Snippets"
 msgstr "Memakai Snippet"
 
 #. (itstool) path: section/p
-#: C/gedit-plugins-snippets.page:78
+#: C/gedit-plugins-snippets.page:67
 msgid "To insert a snippet into your current document:"
 msgstr "Untuk menyisipkan suatu snippet ke dalam dokumen Anda saat ini:"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-snippets.page:82
+#: C/gedit-plugins-snippets.page:71
 msgid "Type the desired snippet name anywhere in your current document."
 msgstr ""
 "Ketikkan nama snippet yang dikehendaki dimanapun dalam dokumen Anda saat ini."
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-snippets.page:85
+#: C/gedit-plugins-snippets.page:74
 msgid ""
 "Press <key>Tab</key> to insert the snippet associated with the input term."
 msgstr ""
@@ -1792,12 +1972,12 @@ msgstr ""
 "masukan."
 
 #. (itstool) path: section/title
-#: C/gedit-plugins-snippets.page:92
+#: C/gedit-plugins-snippets.page:81
 msgid "Snippet Example Usage"
 msgstr "Cara Pakai Contoh Snippet"
 
 #. (itstool) path: section/p
-#: C/gedit-plugins-snippets.page:94
+#: C/gedit-plugins-snippets.page:83
 msgid ""
 "For example, if you have set the syntax to <em>HTML</em>, type <code>head </"
 "code>, and press the <key>Tab</key> key. The text would have auto completed "
@@ -1808,7 +1988,7 @@ msgstr ""
 "secara otomatis menjadi snippet:"
 
 #. (itstool) path: section/code
-#: C/gedit-plugins-snippets.page:98
+#: C/gedit-plugins-snippets.page:87
 #, no-wrap
 msgid ""
 "\n"
@@ -1826,12 +2006,12 @@ msgstr ""
 "    "
 
 #. (itstool) path: section/title
-#: C/gedit-plugins-snippets.page:108
+#: C/gedit-plugins-snippets.page:97
 msgid "Adding Snippets"
 msgstr "Menambah Snippet"
 
 #. (itstool) path: section/p
-#: C/gedit-plugins-snippets.page:110
+#: C/gedit-plugins-snippets.page:99
 msgid ""
 "You can add new Snippets that work either globally (that is, they are "
 "language agnostic) or only in a particular syntax."
@@ -1840,16 +2020,16 @@ msgstr ""
 "mereka agnostik bahasa) atau hanya dalam sintaks tertentu."
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-snippets.page:115
+#: C/gedit-plugins-snippets.page:104
 msgid ""
-"Select <guiseq style=\"menu\"><gui style=\"menuitem\">Tools</gui> <gui style="
-"\"menuitem\">Manage Snippets</gui></guiseq>."
+"Select <guiseq style=\"menu\"><gui style=\"menuitem\">Tools</gui> <gui "
+"style=\"menuitem\">Manage Snippets</gui></guiseq>."
 msgstr ""
 "Pilih <guiseq style=\"menu\"><gui style=\"menuitem\">Perkakas</gui> <gui "
 "style=\"menuitem\">Kelola Snippet</gui></guiseq>."
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-snippets.page:119
+#: C/gedit-plugins-snippets.page:108
 msgid ""
 "From the <gui>Manage Snippets</gui> sidebar select the desired syntax and "
 "click on the \"+\" button to list existing snippets for the selected syntax."
@@ -1859,7 +2039,7 @@ msgstr ""
 "sintaks yang dipilih."
 
 #. (itstool) path: note/p
-#: C/gedit-plugins-snippets.page:123
+#: C/gedit-plugins-snippets.page:112
 msgid ""
 "To add a snippet that works globally (that is, when no particular syntax or "
 "language has been set for the document), select <gui>Global</gui> from the "
@@ -1870,7 +2050,7 @@ msgstr ""
 "dari bilah sisi <gui>Kelola Snippet</gui>."
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-snippets.page:129
+#: C/gedit-plugins-snippets.page:118
 msgid ""
 "To add a new snippet, click on the \"plus\" icon in the <gui>Manage "
 "Snippets</gui> sidebar."
@@ -1879,7 +2059,7 @@ msgstr ""
 "<gui>Kelola Snippet</gui>."
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-snippets.page:133
+#: C/gedit-plugins-snippets.page:122
 msgid ""
 "Input a name for the new snippet. The name of the snippet can be different "
 "from the snippet you want to add."
@@ -1888,7 +2068,7 @@ msgstr ""
 "snippet yang ingin Anda tambahkan."
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-snippets.page:137
+#: C/gedit-plugins-snippets.page:126
 msgid ""
 "Under the <gui style=\"group\">Activation</gui> section, you must input a "
 "term for the <gui style=\"input\">Tab trigger:</gui> textarea. You will be "
@@ -1899,7 +2079,7 @@ msgstr ""
 "akan memakai istilah ini untuk menyisipkan snippet Anda."
 
 #. (itstool) path: note/p
-#: C/gedit-plugins-snippets.page:141
+#: C/gedit-plugins-snippets.page:130
 msgid ""
 "If you wish to insert a snippet with a keyboard shortcut, then click your "
 "mouse pointer on <gui style=\"input\">Shortcut key:</gui> textarea and press "
@@ -1912,7 +2092,7 @@ msgstr ""
 "telah menekan dan melepas tombol, pintasan papan tik akan ditata."
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-snippets.page:148
+#: C/gedit-plugins-snippets.page:137
 msgid ""
 "Under the textarea for <gui style=\"input\">Edit:</gui>, input the desired "
 "text for the snippet. You may use <code>${n}</code> to indicate variables, "
@@ -1925,23 +2105,23 @@ msgstr ""
 "yang mewakili urutan numerik dari variabel yang disertakan."
 
 #. (itstool) path: section/title
-#: C/gedit-plugins-snippets.page:158
+#: C/gedit-plugins-snippets.page:147
 msgid "New Snippet Example"
 msgstr "Contoh Snippet Baru"
 
 #. (itstool) path: section/p
-#: C/gedit-plugins-snippets.page:160
+#: C/gedit-plugins-snippets.page:149
 msgid ""
 "Consider you have created a snippet with the term <var>greetings</var> in "
 "<gui style=\"input\">Tab trigger:</gui>. The <gui style=\"input\">Edit:</"
 "gui> textarea contains:"
 msgstr ""
 "Anggap saja Anda telah membuat suatu snippet dengan istilah <var>greetings</"
-"var> dalam in <gui style=\"input\">Pemicu tab:</gui>. Area teks <gui style="
-"\"input\">Sunting:</gui> memuat:"
+"var> dalam in <gui style=\"input\">Pemicu tab:</gui>. Area teks <gui "
+"style=\"input\">Sunting:</gui> memuat:"
 
 #. (itstool) path: section/code
-#: C/gedit-plugins-snippets.page:164
+#: C/gedit-plugins-snippets.page:153
 #, no-wrap
 msgid ""
 "\n"
@@ -1955,7 +2135,7 @@ msgstr ""
 "    "
 
 #. (itstool) path: section/p
-#: C/gedit-plugins-snippets.page:169
+#: C/gedit-plugins-snippets.page:158
 msgid ""
 "You can insert this snippet by typing <var>greetings</var> in the document "
 "and pressing the <key>Tab</key> key. The following text snippet will be "
@@ -1966,7 +2146,7 @@ msgstr ""
 "disisipkan:"
 
 #. (itstool) path: section/code
-#: C/gedit-plugins-snippets.page:173
+#: C/gedit-plugins-snippets.page:162
 #, no-wrap
 msgid ""
 "\n"
@@ -1978,7 +2158,7 @@ msgstr ""
 "    "
 
 #. (itstool) path: section/p
-#: C/gedit-plugins-snippets.page:177
+#: C/gedit-plugins-snippets.page:166
 msgid ""
 "The words \"wonderful\" and \"amazing\" can be retained or deleted depending "
 "on your choice of usage. To do so, press <key>Tab</key> to choose between "
@@ -1991,17 +2171,17 @@ msgstr ""
 "<key>Del</key> untuk menghapus opsi yang paling tidak disukai."
 
 #. (itstool) path: info/desc
-#: C/gedit-plugins-sort.page:22
+#: C/gedit-plugins-sort.page:7
 msgid "Sort lines of text into alphabetical order."
 msgstr "Urutkan baris-baris teks secara alfabet."
 
 #. (itstool) path: page/title
-#: C/gedit-plugins-sort.page:25
+#: C/gedit-plugins-sort.page:10
 msgid "Sort"
 msgstr "Urutkan"
 
 #. (itstool) path: page/p
-#: C/gedit-plugins-sort.page:27
+#: C/gedit-plugins-sort.page:12
 msgid ""
 "The Sort plugin arranges selected lines of text into alphabetical order."
 msgstr ""
@@ -2009,37 +2189,37 @@ msgstr ""
 "alfabetis."
 
 #. (itstool) path: section/title
-#: C/gedit-plugins-sort.page:31
+#: C/gedit-plugins-sort.page:16
 msgid "Enable Sort Plugin"
 msgstr "Fungsikan Pengaya Urutkan"
 
 #. (itstool) path: section/p
-#: C/gedit-plugins-sort.page:33
+#: C/gedit-plugins-sort.page:18
 msgid "To enable the <app>Sort</app> plugin:"
 msgstr "Untuk memfungsikan plugin <app>Urutkan</app>:"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-sort.page:42
+#: C/gedit-plugins-sort.page:27
 msgid "Select <gui style=\"menuitem\">Sort</gui> to enable the plugin."
 msgstr "Pilih <gui style=\"menuitem\">Urutkan</gui> untuk memfungsikan plugin."
 
 #. (itstool) path: section/title
-#: C/gedit-plugins-sort.page:49
+#: C/gedit-plugins-sort.page:34
 msgid "Using Sort Plugin"
 msgstr "Memakai Plugin Urutkan"
 
 #. (itstool) path: section/p
-#: C/gedit-plugins-sort.page:51
+#: C/gedit-plugins-sort.page:36
 msgid "To use the <gui>Sort</gui> plugin:"
 msgstr "Untuk memakai plugin <gui>Urutkan</gui>:"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-sort.page:55
+#: C/gedit-plugins-sort.page:40
 msgid "Select the desired lines of text."
 msgstr "Pilih baris teks yang diinginkan."
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-sort.page:58
+#: C/gedit-plugins-sort.page:43
 msgid ""
 "Select <guiseq><gui style=\"menu\">Tools</gui> <gui style=\"menuitem\">Sort…"
 "</gui></guiseq>."
@@ -2048,7 +2228,7 @@ msgstr ""
 "gui></guiseq>."
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-sort.page:62
+#: C/gedit-plugins-sort.page:47
 msgid ""
 "The <gui>Sort</gui> dialog will open, allowing you to choose between several "
 "sorting options:"
@@ -2057,7 +2237,7 @@ msgstr ""
 "beberapa opsi pengurutan:"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-sort.page:66
+#: C/gedit-plugins-sort.page:51
 msgid ""
 "<gui>Reverse order</gui> will arrange the text in reverse alphabetical order."
 msgstr ""
@@ -2065,20 +2245,20 @@ msgstr ""
 "terbalik."
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-sort.page:70
+#: C/gedit-plugins-sort.page:55
 msgid ""
 "<gui>Remove duplicates</gui> will remove duplicate values from the list."
 msgstr ""
 "<gui>Hapus duplikat</gui> akan menghapus nilai yang duplikat dari daftar."
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-sort.page:74
+#: C/gedit-plugins-sort.page:59
 msgid "<gui>Ignore case</gui> will ignore case sensitivity."
 msgstr ""
 "<gui>Abaikan kapitalisasi</gui> akan mengabaikan perbedaan huruf besar kecil."
 
 #. (itstool) path: note/p
-#: C/gedit-plugins-sort.page:76
+#: C/gedit-plugins-sort.page:61
 msgid ""
 "To have the sort ignore the characters at the start of the lines, set the "
 "first character that should be used for sorting in the <gui>Start at</gui> "
@@ -2089,7 +2269,7 @@ msgstr ""
 "<gui>Mulai pada</gui>."
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-sort.page:84
+#: C/gedit-plugins-sort.page:69
 msgid "To perform the sort operation, click <gui>Sort</gui>."
 msgstr "Untuk melakukan operasi pengurutan, klik <gui>Urutkan</gui>."
 
@@ -2098,23 +2278,18 @@ msgstr "Untuk melakukan operasi pengurutan, klik <gui>Urutkan</gui>."
 msgid "Set the pages to print in a certain order."
 msgstr "Mengatur halaman untuk mencetak dalam urutan tertentu."
 
-#. (itstool) path: credit/name
-#: C/gedit-printing-order.page:11 C/gedit-printing-select.page:10
-msgid "Phil Bull"
-msgstr "Phil Bull"
-
 #. (itstool) path: page/title
-#: C/gedit-printing-order.page:21
+#: C/gedit-printing-order.page:10
 msgid "Getting Copies To Print In The Correct Order"
 msgstr "Membuat Salinan Dicetak Dalam Urutan Yang Benar"
 
 #. (itstool) path: section/title
-#: C/gedit-printing-order.page:24
+#: C/gedit-printing-order.page:13
 msgid "Reverse"
 msgstr "Balikkan"
 
 #. (itstool) path: section/p
-#: C/gedit-printing-order.page:26
+#: C/gedit-printing-order.page:15
 msgid ""
 "Printers usually print the first page first, and the last page last, so the "
 "pages end up in reverse order when you pick them up. To reverse the order:"
@@ -2124,16 +2299,16 @@ msgstr ""
 "Untuk membalik urutan:"
 
 #. (itstool) path: item/p
-#: C/gedit-printing-order.page:32
+#: C/gedit-printing-order.page:21
 msgid ""
 "Select <guiseq><gui style=\"menu\">File</gui> <gui style=\"menuitem\">Print</"
 "gui></guiseq>."
 msgstr ""
-"Pilih <guiseq><gui style=\"menu\">Berkas</gui> <gui style=\"menuitem"
-"\">Cetak</gui></guiseq>."
+"Pilih <guiseq><gui style=\"menu\">Berkas</gui> <gui "
+"style=\"menuitem\">Cetak</gui></guiseq>."
 
 #. (itstool) path: item/p
-#: C/gedit-printing-order.page:36
+#: C/gedit-printing-order.page:25
 msgid ""
 "In the <gui style=\"tab\">General</gui> tab of the Print dialog under <gui "
 "style=\"group\">Copies</gui>, check <gui style=\"checkbox\">Reverse</gui>."
@@ -2142,17 +2317,17 @@ msgstr ""
 "style=\"group\">Salinan</gui> contreng <gui style=\"checkbox\">Balik</gui>."
 
 #. (itstool) path: section/p
-#: C/gedit-printing-order.page:42
+#: C/gedit-printing-order.page:31
 msgid "The last page will be printed first, and so on."
 msgstr "Halaman terakhir akan dicetak pertama, dan seterusnya."
 
 #. (itstool) path: section/title
-#: C/gedit-printing-order.page:46
+#: C/gedit-printing-order.page:35
 msgid "Collate"
 msgstr "Kolasi"
 
 #. (itstool) path: section/p
-#: C/gedit-printing-order.page:48
+#: C/gedit-printing-order.page:37
 msgid ""
 "If you are printing more than one copy of the document, the print outs will "
 "be grouped by page number by default. (e.g. The copies of page one come out, "
@@ -2165,12 +2340,12 @@ msgstr ""
 "keluar dengan halaman-halamannya dikelompokkan bersama."
 
 #. (itstool) path: section/p
-#: C/gedit-printing-order.page:53
+#: C/gedit-printing-order.page:42
 msgid "To Collate:"
 msgstr "Melakukan Kolasi:"
 
 #. (itstool) path: item/p
-#: C/gedit-printing-order.page:56
+#: C/gedit-printing-order.page:45
 msgid ""
 "Click <guiseq><gui style=\"menu\">File</gui> <gui style=\"menuitem\">Print</"
 "gui></guiseq>."
@@ -2179,7 +2354,7 @@ msgstr ""
 "gui></guiseq>."
 
 #. (itstool) path: item/p
-#: C/gedit-printing-order.page:60
+#: C/gedit-printing-order.page:49
 msgid ""
 "In the <gui style=\"tab\">General</gui> tab of the Print dialog under <gui "
 "style=\"group\">Copies</gui> check <gui style=\"checkbox\">Collate</gui>."
@@ -2193,12 +2368,12 @@ msgid "Print the files that you create with gedit."
 msgstr "Cari dan pilih berkas yang ingin Anda buka dengan gedit."
 
 #. (itstool) path: page/title
-#: C/gedit-printing.page:20
+#: C/gedit-printing.page:10
 msgid "Printing documents"
 msgstr "Mencetak dokumen"
 
 #. (itstool) path: note/p
-#: C/gedit-printing.page:23
+#: C/gedit-printing.page:13
 msgid ""
 "Printing with <app>gedit</app> requires that you have connected and "
 "configured your printer. If you have not done this, please consult the <link "
@@ -2210,17 +2385,17 @@ msgstr ""
 "GNOME</link>."
 
 #. (itstool) path: page/p
-#: C/gedit-printing.page:28
+#: C/gedit-printing.page:18
 msgid "<app>gedit</app> allows you to print both to a file and to paper."
 msgstr "<app>gedit</app> memungkinkan Anda mencetak ke berkas dan ke kertas."
 
 #. (itstool) path: section/title
-#: C/gedit-printing.page:31
+#: C/gedit-printing.page:21
 msgid "Print Preview"
 msgstr "Pratinjau Cetak"
 
 #. (itstool) path: section/p
-#: C/gedit-printing.page:33
+#: C/gedit-printing.page:23
 msgid ""
 "Prior to printing your document, you can preview how the printed document "
 "will look by using <gui>Print Preview</gui>. To preview the document:"
@@ -2230,18 +2405,18 @@ msgstr ""
 "dokumen:"
 
 #. (itstool) path: item/p
-#: C/gedit-printing.page:38
+#: C/gedit-printing.page:28
 msgid ""
 "Select <guiseq><gui style=\"menu\">File</gui> <gui style=\"menuitem\">Print "
 "Preview</gui></guiseq>. Alternatively, you can press <keyseq><key>Shift</"
 "key><key>Ctrl</key> <key>P</key></keyseq>."
 msgstr ""
-"Pilih <guiseq><gui style=\"menu\">Berkas</gui> <gui style=\"menuitem"
-"\">Pratinjau Cetak</gui></guiseq>. Sebagai alternative, Anda dapat menekan "
-"<keyseq><key>Shift</key><key>Ctrl</key> <key>P</key></keyseq>."
+"Pilih <guiseq><gui style=\"menu\">Berkas</gui> <gui "
+"style=\"menuitem\">Pratinjau Cetak</gui></guiseq>. Sebagai alternative, Anda "
+"dapat menekan <keyseq><key>Shift</key><key>Ctrl</key> <key>P</key></keyseq>."
 
 #. (itstool) path: section/p
-#: C/gedit-printing.page:45
+#: C/gedit-printing.page:35
 msgid ""
 "A preview of your document will open in the same tab as the file. You can "
 "browse this preview with help of navigation buttons and tools in the toolbar "
@@ -2254,12 +2429,12 @@ msgstr ""
 "ke dokumen klik <gui style=\"button\">Tutup Pratilik</gui>."
 
 #. (itstool) path: section/title
-#: C/gedit-printing.page:53
+#: C/gedit-printing.page:43
 msgid "Printing To Paper"
 msgstr "Mencetak Ke Kertas"
 
 #. (itstool) path: section/p
-#: C/gedit-printing.page:55
+#: C/gedit-printing.page:45
 msgid ""
 "You can print your documents to paper using a local or remote printer. To "
 "print a file:"
@@ -2268,66 +2443,66 @@ msgstr ""
 "Untuk mencetak suatu berkas:"
 
 #. (itstool) path: item/p
-#: C/gedit-printing.page:60
+#: C/gedit-printing.page:50
 msgid ""
 "Select <guiseq><gui style=\"menu\">File</gui> <gui style=\"menuitem\">Print</"
 "gui> <gui style=\"tab\">General</gui></guiseq>."
 msgstr ""
-"Pilih <guiseq><gui style=\"menu\">Berkas</gui> <gui style=\"menuitem"
-"\">Cetak</gui> <gui style=\"tab\">Umum</gui></guiseq>."
+"Pilih <guiseq><gui style=\"menu\">Berkas</gui> <gui "
+"style=\"menuitem\">Cetak</gui> <gui style=\"tab\">Umum</gui></guiseq>."
 
 #. (itstool) path: item/p
-#: C/gedit-printing.page:65
+#: C/gedit-printing.page:55
 msgid "Select the desired printer from the list of printers available."
 msgstr "Pilih pencetak yang diinginkan dari daftar pencetak yang tersedia."
 
 #. (itstool) path: item/p
-#: C/gedit-printing.page:68
+#: C/gedit-printing.page:58
 msgid ""
 "You can preview the file using <gui style=\"button\">Print Preview</gui> and "
 "once you are satisfied with the settings, click <gui style=\"button\">Print</"
 "gui> to send the file to printer."
 msgstr ""
 "Anda dapat mempratinjau berkas memakai <gui style=\"button\">Pratinjau "
-"Cetak</gui> dan setelah Anda puas dengan pengaturan, klik <gui style=\"button"
-"\">Cetak</gui> untuk mengirim berkas ke pencetak."
+"Cetak</gui> dan setelah Anda puas dengan pengaturan, klik <gui "
+"style=\"button\">Cetak</gui> untuk mengirim berkas ke pencetak."
 
 #. (itstool) path: section/p
-#: C/gedit-printing.page:74
+#: C/gedit-printing.page:64
 msgid ""
 "Additionally, from <gui style=\"tab\">Page Setup</gui> tab: you can choose "
 "<gui style=\"group\">Layout</gui> and <gui style=\"group\">Paper</gui> "
 "options. As these settings are available throughout <app>GNOME</app> "
-"programs, please consult <link href=\"help:gnome-help/printing#paper"
-"\">Layout and Paper options</link> help."
+"programs, please consult <link href=\"help:gnome-help/"
+"printing#paper\">Layout and Paper options</link> help."
 msgstr ""
 "Sebagai tambahan, dari tab <gui style=\"tab\">Penyiapan Halaman</gui>: Anda "
-"bisa memilih opsi <gui style=\"group\">Tata Letak</gui> dan <gui style="
-"\"group\">Kertas</gui>. Karena pengaturan ini tersedia di seluruh program-"
-"program <app>GNOME</app>, silakan pelajari bantuan <link href=\"help:gnome-"
-"help/printing#paper\">Opsi Tata Letak dan Kertas</link>."
+"bisa memilih opsi <gui style=\"group\">Tata Letak</gui> dan <gui "
+"style=\"group\">Kertas</gui>. Karena pengaturan ini tersedia di seluruh "
+"program-program <app>GNOME</app>, silakan pelajari bantuan <link href=\"help:"
+"gnome-help/printing#paper\">Opsi Tata Letak dan Kertas</link>."
 
 #. (itstool) path: section/title
-#: C/gedit-printing.page:84
+#: C/gedit-printing.page:74
 msgid "Print Multiple Copies And Between Specified Ranges"
 msgstr "Mencetak Beberapa Salinan Dan Memilih Halaman Tertentu"
 
 #. (itstool) path: section/p
-#: C/gedit-printing.page:86
+#: C/gedit-printing.page:76
 msgid ""
-"You can set <gui style=\"group\">Range</gui> and <gui style=\"group"
-"\">Copies</gui> options to help you:"
+"You can set <gui style=\"group\">Range</gui> and <gui "
+"style=\"group\">Copies</gui> options to help you:"
 msgstr ""
-"Anda bisa mengatur opsi <gui style=\"group\">Jangkauan</gui> dan <gui style="
-"\"group\">Salinan</gui> untuk membantu Anda:"
+"Anda bisa mengatur opsi <gui style=\"group\">Jangkauan</gui> dan <gui "
+"style=\"group\">Salinan</gui> untuk membantu Anda:"
 
 #. (itstool) path: section/title
-#: C/gedit-printing.page:92
+#: C/gedit-printing.page:82
 msgid "Printing To File"
 msgstr "Mencetak Ke Berkas"
 
 #. (itstool) path: section/p
-#: C/gedit-printing.page:94
+#: C/gedit-printing.page:84
 msgid ""
 "You can also use <app>gedit</app> to print to a file. To print your document "
 "to file of a different format:"
@@ -2336,16 +2511,17 @@ msgstr ""
 "mencetak dokumen Anda ke berkas dengan format berbeda:"
 
 #. (itstool) path: item/p
-#: C/gedit-printing.page:99
+#: C/gedit-printing.page:89
 msgid ""
 "Select <guiseq><gui style=\"menu\">File</gui> <gui style=\"menuitem\">Print</"
 "gui> <gui style=\"menuitem\">Print to File</gui></guiseq>."
 msgstr ""
-"Pilih <guiseq><gui style=\"menu\">Berkas</gui> <gui style=\"menuitem"
-"\">Cetak</gui> <gui style=\"menuitem\">Cetak ke Berkas</gui></guiseq>."
+"Pilih <guiseq><gui style=\"menu\">Berkas</gui> <gui "
+"style=\"menuitem\">Cetak</gui> <gui style=\"menuitem\">Cetak ke Berkas</"
+"gui></guiseq>."
 
 #. (itstool) path: item/p
-#: C/gedit-printing.page:104
+#: C/gedit-printing.page:94
 msgid ""
 "Printing is enabled for the following file formats, you may select from:"
 msgstr ""
@@ -2353,22 +2529,22 @@ msgstr ""
 "dari:"
 
 #. (itstool) path: item/p
-#: C/gedit-printing.page:108
+#: C/gedit-printing.page:98
 msgid "Portable Document Format (.pdf)"
 msgstr "Portable Document Format (.pdf)"
 
 #. (itstool) path: item/p
-#: C/gedit-printing.page:111
+#: C/gedit-printing.page:101
 msgid "PostScript (.ps)"
 msgstr "PostScript (.ps)"
 
 #. (itstool) path: item/p
-#: C/gedit-printing.page:114
+#: C/gedit-printing.page:104
 msgid "Scalable Vector Graphic (.svg)"
 msgstr "Scalable Vector Graphic (.svg)"
 
 #. (itstool) path: item/p
-#: C/gedit-printing.page:119
+#: C/gedit-printing.page:109
 msgid "To print the document to file, click <gui style=\"button\">Print</gui>."
 msgstr ""
 "Untuk mencetak dokumen ke berkas, klik <gui style=\"button\">Cetak</gui>."
@@ -2379,12 +2555,12 @@ msgid "Choose the pages that you want to print."
 msgstr "Pilih halaman yang ingin Anda cetak."
 
 #. (itstool) path: page/title
-#: C/gedit-printing-select.page:20
+#: C/gedit-printing-select.page:10
 msgid "Only print certain pages"
 msgstr "Hanya mencetak halaman tertentu"
 
 #. (itstool) path: page/p
-#: C/gedit-printing-select.page:22
+#: C/gedit-printing-select.page:12
 msgid ""
 "You can selectively print only certain pages from the document. For example, "
 "if you enter the page numbers \"1,3,5-7,9\", then only pages 1, 3, 5, 6, 7 "
@@ -2396,7 +2572,7 @@ msgstr ""
 "halaman pilihan Anda:"
 
 #. (itstool) path: item/p
-#: C/gedit-printing-select.page:28
+#: C/gedit-printing-select.page:18
 msgid ""
 "Select <guiseq><gui style=\"menu\">File</gui> <gui style=\"menuitem\">Print…"
 "</gui></guiseq>."
@@ -2405,7 +2581,7 @@ msgstr ""
 "</gui></guiseq>."
 
 #. (itstool) path: item/p
-#: C/gedit-printing-select.page:32
+#: C/gedit-printing-select.page:22
 msgid ""
 "In the <gui style=\"tab\">General</gui> tab in the Print dialog choose <gui "
 "style=\"radiobutton\">Pages</gui> from the <gui style=\"group\">Range</gui> "
@@ -2416,7 +2592,7 @@ msgstr ""
 "gui>."
 
 #. (itstool) path: item/p
-#: C/gedit-printing-select.page:36
+#: C/gedit-printing-select.page:26
 msgid ""
 "Type the numbers of the pages you want to print from the document, separated "
 "by commas. Use a dash to specify a range of pages."
@@ -2425,504 +2601,316 @@ msgstr ""
 "dengan koma. Gunakan tanda hubung untuk menyatakan suatu jangkauan halaman."
 
 #. (itstool) path: info/desc
-#: C/gedit-quickstart.page:9
-msgid "A brief introduction to gedit."
-msgstr "Sebuah pengantar singkat untuk gedit."
-
-#. (itstool) path: page/title
-#: C/gedit-quickstart.page:22
-msgid "Get started with gedit"
-msgstr "Mulai memakai gedit"
-
-#. (itstool) path: page/p
-#: C/gedit-quickstart.page:23
-msgid ""
-"<app>gedit</app> is a full-featured text editor for the GNOME desktop "
-"environment. You can use it to prepare simple notes and documents, or you "
-"can use some of its advanced features, making it your own software "
-"development environment."
-msgstr ""
-"<app>gedit</app> adalah penyunting teks berfitur lengkap bagi lingkungan "
-"desktop GNOME. Anda bisa memakainya untuk menyiapkan dokumen dan catatan "
-"serderhana, atau Anda bisa memakai fitur tingkat lanjutnya, membuatnya "
-"menjadi lingkungan pengembangan perangkat lunak milik Anda sendiri."
-
-#. (itstool) path: page/media
-#. This is a reference to an external file such as an image or video. When
-#. the file changes, the md5 hash will change to let you know you need to
-#. update your localized copy. The msgstr is not used at all. Set it to
-#. whatever you like once you have updated your copy of the file.
-#: C/gedit-quickstart.page:28
-msgctxt "_"
-msgid ""
-"external ref='figures/gedit3-screenshot.png' "
-"md5='5fd76174e1e72f99c870b9983034ccd1'"
-msgstr "-"
-
-#. (itstool) path: page/p
-#: C/gedit-quickstart.page:30
-msgid ""
-"Once <app>gedit</app> launches, you can start writing right away. To save "
-"your text, just click the <gui>Save</gui> button in the <app>gedit</app> "
-"header bar."
-msgstr ""
-"Sekali <app>gedit</app> diluncurkan, Anda dapat langsung mulai menulis. "
-"Untuk menyimpan teks Anda, klik saja tombol <gui>Simpan</gui> dalam bilah "
-"kepala <app>gedit</app>."
-
-#. (itstool) path: page/p
-#: C/gedit-quickstart.page:34
-msgid ""
-"To learn about additional <app>gedit</app> features and to get assistance "
-"with performing additional tasks, explore <link xref=\"index\">the other "
-"portions</link> of the <app>gedit</app> help."
-msgstr ""
-"Untuk mempelajari fitur tambahan <app>gedit</app> dan untuk mendapat bantuan "
-"dalam melaksanakan tugas-tugas tambahan, jelajahi <link xref=\"index"
-"\">bagian lain</link> dari bantuan <app>gedit</app>."
-
-#. (itstool) path: info/desc
-#: C/gedit-replace.page:8
-msgid "Replace portions of text in a file."
-msgstr "Ganti bagian dari teks dalam sebuah berkas."
-
-#. (itstool) path: credit/name
-#: C/gedit-replace.page:34
-msgid "Young Li"
-msgstr "Young Li"
-
-#. (itstool) path: page/title
-#: C/gedit-replace.page:40
-msgid "Replace text"
-msgstr "Mengganti teks"
-
-#. (itstool) path: page/p
-#: C/gedit-replace.page:42
-msgid ""
-"Editing text can be time consuming. To save time, <app>gedit</app> includes "
-"a <app>Replace</app> function that helps you to find and replace portions of "
-"text."
-msgstr ""
-"Menyunting teks bisa menghabiskan waktu. Untuk menghematnya, <app>gedit</"
-"app> menyertakan suatu fungsi <app>Gantikan</app> yang membantu Anda "
-"menemukan dan menggantikan bagian dari teks."
-
-#. (itstool) path: steps/title
-#: C/gedit-replace.page:47
-msgid "Replace text in <app>gedit</app>"
-msgstr "Mengganti teks dalam <app>gedit</app>"
-
-#. (itstool) path: item/p
-#: C/gedit-replace.page:49
-msgid ""
-"Open the <gui>Replace</gui> tool by clicking <guiseq><gui style=\"button"
-"\">Menu button</gui><gui style=\"menuitem\">Find and Replace…</gui></guiseq> "
-"or press <keyseq><key>Ctrl</key><key>H</key></keyseq>."
-msgstr ""
-"Buka alat <gui>Gantikan</gui> dengan mengklik <guiseq><gui style=\"button"
-"\">Tombol Menu</gui><gui style=\"menuitem\">Cari dan Ganti…</gui></guiseq> "
-"atau tekan <keyseq><key>Ctrl</key><key>H</key></keyseq>."
-
-#. (itstool) path: item/p
-#: C/gedit-replace.page:55
-msgid "Enter the text that you wish to replace into the <gui>Find</gui> field."
-msgstr "Masukkan teks yang hendak Anda ganti ke dalam ruas <gui>Mencari</gui>."
-
-#. (itstool) path: item/p
-#: C/gedit-replace.page:59
-msgid "Enter the new, replacement text into the <gui>Replace with</gui> field."
-msgstr ""
-"Masukkan teks pengganti yang baru ke dalam ruas <gui>Ganti dengan</gui>."
-
-#. (itstool) path: item/p
-#: C/gedit-replace.page:63
-msgid ""
-"Once you have entered the original and replacement text, you can add extra "
-"parameters to the search. You can also choose what you want to replace:"
-msgstr ""
-"Sekali Anda telah memasukkan teks asli dan pengganti, Anda dapat menambah "
-"parameter ekstra ke pencarian. Anda juga bisa memilih apa yang ingin Anda "
-"gantikan:"
-
-#. (itstool) path: item/p
-#: C/gedit-replace.page:68
-msgid "To replace <em>only</em> the next match, click <gui>Replace</gui>."
-msgstr ""
-"Untuk mengganti <em>hanya</em> kecocokan berikutnya, klik <gui>Ganti</gui>."
-
-#. (itstool) path: item/p
-#: C/gedit-replace.page:72
-msgid ""
-"To replace <em>all occurrences</em> of the searched-for text, click "
-"<gui>Replace All</gui>."
-msgstr ""
-"Untuk mengganti <em>semua kemunculan</em> dari teks yang dicari, klik "
-"<gui>Ganti Semua</gui>."
-
-#. (itstool) path: note/p
-#: C/gedit-replace.page:80
-msgid ""
-"Use the <gui>Replace All</gui> function with care. <gui>Replace All</gui> "
-"works on the entirety of your text file, and does not allow you to highlight "
-"portions of text where the replace function will be performed."
-msgstr ""
-"Pakailah fungsi <gui>Ganti Semua</gui> secara hati-hati. <gui>Ganti Semua</"
-"gui> bekerja pada seluruh berkas teks Anda, dan tidak mengijinkan Anda "
-"menyorot bagian teks dimana fungsi penggantian akan dilaksanakan."
-
-#. (itstool) path: section/title
-#: C/gedit-replace.page:87
-msgid "More options"
-msgstr "Lebih banyak opsi"
-
-#. (itstool) path: section/p
-#: C/gedit-replace.page:89
-msgid "If you wish, you can add some extra parameters to your search:"
-msgstr ""
-"Bila Anda mau, Anda dapat menambah beberapa parameter ekstra ke pencarian "
-"Anda:"
-
-#. (itstool) path: item/title
-#: C/gedit-replace.page:93
-msgid "Match case"
-msgstr "Cocok huruf besar kecil"
-
-#. (itstool) path: item/p
-#: C/gedit-replace.page:94
-msgid ""
-"The <em>Match case</em> option allows you to specify whether you want your "
-"search to be case-sensitive. If this option is selected, searches will be "
-"case-sensitive. If not, searches will not be case-sensitive."
-msgstr ""
-"Opsi <em>Cocok huruf besar/kecil</em> memungkinkan Anda menyatakan apakah "
-"Anda ingin pencarian Anda membedakan huruf besar kecil. Bila opsi ini "
-"dipilih, pencarian akan membedakan huruf besar kecil. Bila tidak, pencarian "
-"tidak membedakan huruf besar kecil."
-
-#. (itstool) path: item/title
-#: C/gedit-replace.page:99
-msgid "Match entire word only"
-msgstr "Cocok hanya seluruh kata"
-
-#. (itstool) path: item/p
-#: C/gedit-replace.page:100
-msgid ""
-"Use this option to search for a specific word without including fragments of "
-"other words. For example, if you searched for the word 'and' with this "
-"option selected, the word 'and' would be matched, but the words 's<em>and</"
-"em>' and 'comm<em>and</em>er' would not be matched."
-msgstr ""
-"Pakai opsi ini untuk mencari suatu kata tertentu tanpa menyertakan fragmen "
-"dari kata lain. Sebagai contoh, bila Anda mencari kata 'and' dengan opsi ini "
-"dipili, kata 'and' akan cocok, tapi kata 's<em>and</em>' dan 'comm<em>and</"
-"em>er' tidak akan cocok."
-
-#. (itstool) path: item/title
-#: C/gedit-replace.page:107
-msgid "Search backwards"
-msgstr "Pencarian mundur"
-
-#. (itstool) path: item/p
-#: C/gedit-replace.page:108
-msgid ""
-"This command behaves identically to the Find Previous command. If you wish "
-"to step through search results from end to beginning, select this option."
-msgstr ""
-"Perintah ini berperilaku identik dengan perintah Cari Sebelumnya. Bila Anda "
-"hendak menelusu melalui hasil pencarian dari akhir ke awal, pilih opsi ini."
-
-#. (itstool) path: item/title
-#: C/gedit-replace.page:113
-msgid "Wrap around"
-msgstr "Putar balik"
-
-#. (itstool) path: item/p
-#: C/gedit-replace.page:114
-msgid ""
-"With the <app>wrap around</app> option enabled, <app>gedit</app> will re-"
-"start the search/replace action at the top of the file after it has reached "
-"the bottom of the file. This ensures that your search/replace action is made "
-"across your entire file."
-msgstr ""
-"Dengan opsi <app>putar balik</app> difungsikan, <app>gedit</app> akan "
-"mengulangi aksi cari/ganti di puncak berkas setelah mencapai bagian bawah "
-"berkas. Ini memastikan bahwa aksi cari/ganti Anda dilakukan di seluruh "
-"berkas Anda."
-
-#. (itstool) path: section/title
-#: C/gedit-replace.page:124
-msgid "Using escape sequences"
-msgstr "Memakai urutan escape"
-
-#. (itstool) path: section/p
-#: C/gedit-replace.page:126
-msgid ""
-"You can use <em>escape sequences</em> to search for line breaks, carriage "
-"returns, and tabs."
-msgstr ""
-"Anda dapat memakai <em>urutan escape</em> untuk untuk jeda baris, tombol "
-"kembali, dan tab."
-
-#. (itstool) path: item/title
-#: C/gedit-replace.page:131
-msgid "\\n"
-msgstr "\\n"
-
-#. (itstool) path: item/p
-#: C/gedit-replace.page:132
-msgid "Newline"
-msgstr "Ganti baris"
-
-#. (itstool) path: item/title
-#: C/gedit-replace.page:135
-msgid "\\r"
-msgstr "\\r"
-
-#. (itstool) path: item/p
-#: C/gedit-replace.page:136
-msgid "Carriage return"
-msgstr "Carriage return"
-
-#. (itstool) path: item/title
-#: C/gedit-replace.page:139
-msgid "\\t"
-msgstr "\\t"
-
-#. (itstool) path: item/p
-#: C/gedit-replace.page:140
-msgid "Tab"
-msgstr "Tab"
-
-#. (itstool) path: section/p
-#: C/gedit-replace.page:144
-msgid ""
-"If you actually want to search for a <output>\\</output> (backslash) or one "
-"of the escape sequences in the text, you need to escape the backslash with "
-"an extra backslash. For example, to search for <input>\\</input>, you need "
-"to enter <input>\\\\</input> into the search or replace field. You can "
-"search for escape sequences in the same way: to search for or replace with a "
-"<input>\\n</input>, use the <input>\\\\n</input> term."
-msgstr ""
-"Bila Anda ingin mencari suatu <output>\\</output> (backslash) atau satu dari "
-"urutan escape dalam teks, Anda perlu meng-escape backslash dengan backslash "
-"ekstra. Sebagai contoh, untuk mencari <input>\\</input>, Anda perlu "
-"memasukkan <input>\\\\</input> ke dalam ruas cari atau ganti. Anda dapat "
-"mencari urutan escape dengan cara yang sama: untuk mencari atau mengganti "
-"dengan <input>\\n</input>, gunakan istilah <input>\\\\n</input>."
-
-#. (itstool) path: info/desc
 #: C/gedit-save-file.page:8
 msgid "Save your file to work on it later."
 msgstr "Simpan berkas Anda untuk bekerja nanti."
 
 #. (itstool) path: page/title
-#: C/gedit-save-file.page:28
+#: C/gedit-save-file.page:11
 msgid "Save a file"
 msgstr "Menyimpan berkas"
 
 #. (itstool) path: page/p
-#: C/gedit-save-file.page:30
+#: C/gedit-save-file.page:12
 msgid ""
 "To save a file in <app>gedit</app>, click on the <gui style=\"button\">Save</"
-"gui> button on the right side of the header bar or just press "
-"<keyseq><key>Ctrl</key><key>S</key></keyseq>."
+"gui> button on the right side of the header bar."
 msgstr ""
-"Untuk menyimpan berkas dalam <app>gedit</app>, klik tombol <gui style="
-"\"button\">Simpan</gui> di sisi kanan bilah kepala atau tekan saja "
-"<keyseq><key>Ctrl</key><key>S</key></keyseq>."
+"Untuk menyimpan berkas dalam <app>gedit</app>, klik tombol <gui "
+"style=\"button\">Simpan</gui> di sisi kanan bilah kepala."
 
 #. (itstool) path: page/p
-#: C/gedit-save-file.page:33
+#: C/gedit-save-file.page:16
 msgid ""
-"If you are saving a new file, a dialog will appear, and you can select a "
-"name for the file, as well as the directory where you would like the file to "
-"be saved."
+"For a new file, a dialog will appear, and you can choose the name and "
+"directory where the file will be saved."
 msgstr ""
-"Bila Anda menyimpan suatu berkas baru, suatu dialog akan muncul, dan Anda "
-"dapat memilih suatu nama bagi berkas, maupun direktori dimana Anda hendak "
-"menyimpan berkas tersebut."
-
-#. (itstool) path: info/desc
-#: C/gedit-search.page:8
-msgid "Find a portion of text within a file."
-msgstr "Cari bagian dari teks dalam sebuah berkas."
+"Untuk suatu berkas baru, suatu dialog akan muncul, dan Anda dapat memilih "
+"nama dan direktori di mana berkas akan disimpan."
 
 #. (itstool) path: page/title
+#: C/gedit-search.page:9
+msgid "Simple search: additional topics"
+msgstr "Pencarian sederhana: topik-topik tambahan"
+
+#. (itstool) path: section/title
+#: C/gedit-search.page:12
+msgid "Navigate through the search results"
+msgstr "Menavigasi sekitar hasil pencarian"
+
+#. (itstool) path: section/p
+#: C/gedit-search.page:13
+msgid "There are several ways to go to the next or previous search result."
+msgstr ""
+"Ada beberapa cara untuk pergi ke hasil pencarian selanjutnya atau sebelumnya."
+
+#. (itstool) path: section/p
+#: C/gedit-search.page:16
+msgid ""
+"There are <gui style=\"button\">up</gui> and <gui style=\"button\">down</"
+"gui> arrows next to the search entry."
+msgstr ""
+"Ada panah <gui style=\"button\">naik</gui> dan <gui style=\"button\">turun</"
+"gui> di sebelah entri pencarian."
+
+#. (itstool) path: section/p
+#: C/gedit-search.page:20
+msgid ""
+"You can also press the <key>up arrow</key> or <key>down arrow</key> keys on "
+"your keyboard while the search entry is visible."
+msgstr ""
+"Anda juga bisa menekan tombol <key>panah atas</key> atau <key>panah bawah</"
+"key> pada papan tik Anda ketika entri pencarian tampak."
+
+#. (itstool) path: section/p
+#: C/gedit-search.page:24
+msgid "Keyboard shortcuts are also available."
+msgstr "Pintasan papan tik juga tersedia."
+
+#. (itstool) path: section/title
 #: C/gedit-search.page:30
-msgid "Search for text"
-msgstr "Mencari teks"
+msgid "Closing the search entry field"
+msgstr "Menutup bidang entri pencarian"
 
-#. (itstool) path: page/p
-#: C/gedit-search.page:32
-msgid ""
-"The Find tool can help you find specific sequences of text within in your "
-"file."
+#. (itstool) path: section/p
+#: C/gedit-search.page:31
+msgid "You can close the search entry by pressing different keys:"
 msgstr ""
-"Alat Pencarian bisa membantu Anda mencari urutan teks tertentu dalam berkas "
-"Anda."
-
-#. (itstool) path: steps/title
-#: C/gedit-search.page:36
-msgid "Finding text"
-msgstr "Menemukan teks"
+"Anda dapat menutup entri pencarian dengan menekan tombol-tombol yang berbeda:"
 
 #. (itstool) path: item/p
-#: C/gedit-search.page:38
+#: C/gedit-search.page:35
 msgid ""
-"Open the <gui>search window</gui> by clicking <guiseq><gui style=\"menu"
-"\">Menu Button</gui> <gui style=\"menuitem\">Find…</gui> </guiseq> or "
-"pressing <keyseq><key>Ctrl</key><key>F</key></keyseq>. This will move your "
-"cursor to the start of the <gui>search window</gui>."
+"Pressing <key>Esc</key> will return the cursor to where it was before you "
+"began your search."
 msgstr ""
-"Buka <gui>jendela pencarian</gui> dengan mengklik <guiseq><gui style=\"menu"
-"\">Tombol Menu</gui> <gui style=\"menuitem\">Temukan...</gui> </guiseq> atau "
-"tekan <keyseq><key>Ctrl</key><key>F</key></keyseq>. Ini akan memindahkan "
-"kursor Anda ke awal <gui>jendela pencarian</gui>."
+"Menekan <key>Esc</key> akan mengembalikan kursor ke tempat semula sebelum "
+"Anda memulai pencarian."
 
 #. (itstool) path: item/p
-#: C/gedit-search.page:45
-msgid "Type the text you wish to search for in the <gui>search window</gui>."
+#: C/gedit-search.page:39
+msgid "Pressing <key>Enter</key> will keep the cursor to its current position."
 msgstr ""
-"Ketikkan teks yang hendak Anda cari dalam <gui>jendela pencarian</gui>."
+"Menekan <key>Enter</key> akan mempertahankan kursor di posisinya saat ini."
+
+#. (itstool) path: info/desc
+#: C/gedit-search-and-replace.page:7
+msgid "Find and replace portions of text in a file."
+msgstr "Mencari dan mengganti bagian dari teks dalam sebuah berkas."
+
+#. (itstool) path: page/title
+#: C/gedit-search-and-replace.page:10
+msgid "Search and replace"
+msgstr "Cari dan ganti"
+
+#. (itstool) path: section/title
+#: C/gedit-search-and-replace.page:15
+msgid "The simple search"
+msgstr "Pencarian sederhana"
+
+#. (itstool) path: section/p
+#: C/gedit-search-and-replace.page:16
+msgid "To open the search entry field, click on:"
+msgstr "Untuk membuka ruas entri pencarian, klik pada:"
+
+#. (itstool) path: section/p
+#: C/gedit-search-and-replace.page:19
+msgid ""
+"<guiseq> <gui style=\"menu\">Menu Button</gui> <gui style=\"menuitem\">Find…"
+"</gui> </guiseq>"
+msgstr ""
+"<guiseq><gui style=\"menu\">Tombol Menu</gui> <gui style=\"menuitem\">Cari…</"
+"gui> </guiseq>"
+
+#. (itstool) path: section/title
+#: C/gedit-search-and-replace.page:28
+msgid "The search and replace"
+msgstr "Pencarian dan penggantian"
+
+#. (itstool) path: section/p
+#: C/gedit-search-and-replace.page:29
+msgid "To open the Find and Replace dialog, click on:"
+msgstr "Untuk membuka dialog Cari dan Ganti, klik pada:"
+
+#. (itstool) path: section/p
+#: C/gedit-search-and-replace.page:32
+msgid ""
+"<guiseq> <gui style=\"menu\">Menu Button</gui> <gui style=\"menuitem\">Find "
+"and Replace…</gui> </guiseq>"
+msgstr ""
+"<guiseq><gui style=\"menu\">Tombol Menu</gui> <gui style=\"menuitem\">Cari "
+"dan Ganti…</gui> </guiseq>"
+
+#. (itstool) path: section/title
+#: C/gedit-search-and-replace.page:41
+msgid "Clear highlight"
+msgstr "Membersihkan penyorotan"
+
+#. (itstool) path: section/p
+#: C/gedit-search-and-replace.page:42
+msgid ""
+"Usually, the text that you've searched for will remain highlighted in the "
+"document. To remove the highlight, click on:"
+msgstr ""
+"Biasanya, teks yang telah Anda cari akan tetap disorot dalam dokumen. Untuk "
+"membersihkan penyorotan, klik pada:"
+
+#. (itstool) path: section/p
+#: C/gedit-search-and-replace.page:46
+msgid ""
+"<guiseq> <gui style=\"menu\">Menu Button</gui> <gui style=\"menuitem\">Clear "
+"Highlight</gui> </guiseq>"
+msgstr ""
+"<guiseq><gui style=\"menu\">Tombol Menu</gui> <gui "
+"style=\"menuitem\">Bersihkan Sorotan</gui></guiseq>"
+
+#. (itstool) path: section/title
+#: C/gedit-search-and-replace.page:55
+msgid "Tips"
+msgstr "Tips"
+
+#. (itstool) path: section/p
+#: C/gedit-search-and-replace.page:56
+msgid ""
+"If you first select a portion of text in the document, and then start a "
+"simple search or open the Find and Replace dialog, the text you've selected "
+"will appear in the search entry."
+msgstr ""
+"Bila Anda menyorot suatu bagian teks dalam dokumen, lalu memulai suatu "
+"pencarian sederhana atau membuka dialog Cari dan Ganti, teks yang telah Anda "
+"sorot akan muncul dalam entri pencarian."
+
+#. (itstool) path: section/title
+#: C/gedit-search-and-replace.page:64
+msgid "Search options"
+msgstr "Opsi pencarian"
+
+#. (itstool) path: section/p
+#: C/gedit-search-and-replace.page:65
+msgid "The Find and Replace dialog presents the search options as check boxes."
+msgstr ""
+"Dialog Cari dan Ganti menyajikan opsi pencarian sebagai kotak-kotak centang."
+
+#. (itstool) path: section/p
+#: C/gedit-search-and-replace.page:68
+msgid ""
+"For the simple search, click on the <gui style=\"button\">Magnifying Glass</"
+"gui> icon in the search entry field."
+msgstr ""
+"Untuk pencarian sederhana, klik pada ikon <gui style=\"button\">Kaca "
+"Pembesar</gui> dalam ruas entri pencarian."
 
 #. (itstool) path: item/p
-#: C/gedit-search.page:49
-msgid ""
-"As you type, <app>gedit</app> will begin highlighting the portions of text "
-"that match what you have entered."
-msgstr ""
-"Sembari Anda mengetik, <app>gedit</app> akan mulai menyorot bagian teks yang "
-"cocok dengan apa yang telah Anda masukkan."
-
-#. (itstool) path: page/p
-#: C/gedit-search.page:54
-msgid "To scroll through the search results, do any of the following:"
-msgstr ""
-"Untuk menggulung melalui hasil pencarian, lakukan sebarang dari yang berikut:"
-
-#. (itstool) path: item/p
-#: C/gedit-search.page:57
-msgid ""
-"Click on the <gui style=\"button\">up</gui> or <gui style=\"button\">down</"
-"gui> facing arrows next to the <gui>search window</gui>."
-msgstr ""
-"Klik pada panah arah <gui style=\"button\">naik</gui> atau <gui style="
-"\"button\">turun</gui> di sebelah <gui>jendela pencarian</gui>."
-
-#. (itstool) path: item/p
-#: C/gedit-search.page:62
-msgid ""
-"Press the <key>up arrow</key> or <key>down arrow</key> keys on your keyboard."
-msgstr ""
-"Tekan tombol <key>panah atas</key> atau <key>panah bawah</key> pada papan "
-"tik Anda."
-
-#. (itstool) path: item/p
-#: C/gedit-search.page:66
-msgid ""
-"Press <keyseq><key>Ctrl</key><key>G</key></keyseq> or <keyseq><key>Ctrl</"
-"key><key>Shift</key><key>G</key></keyseq>."
-msgstr ""
-"Tekan <keyseq><key>Ctrl</key><key>G</key></keyseq> atau <keyseq><key>Ctrl</"
-"key><key>Shift</key><key>G</key></keyseq>."
-
-#. (itstool) path: page/p
-#: C/gedit-search.page:71
-msgid ""
-"To close the <gui>search window</gui>, press either <key>Esc</key> or "
-"<key>Enter</key>. Pressing <key>Esc</key> will return the cursor to where it "
-"was before you began your search. Pressing <key>Enter</key> will return the "
-"cursor to the current position in the search results."
-msgstr ""
-"Untuk menutup <gui>jendela pencarian</gui>, tekan <key>Esc</key> atau "
-"<key>Enter</key>. Menekan <key>Esc</key> akan mengembalikan kursor ke tempat "
-"dimana Anda memulai pencarian. Menekan <key>Enter</key> akan mengembalikan "
-"kursor ke posisi saat ini dari hasil pencarian."
-
-#. (itstool) path: list/title
-#: C/gedit-search.page:77
-msgid "Search tips"
-msgstr "Tips pencarian"
-
-#. (itstool) path: item/p
-#: C/gedit-search.page:79
-msgid ""
-"If you highlight a portion of text with your mouse, and then press "
-"<keyseq><key>Ctrl</key><key>F</key></keyseq>, the text you've highlighted "
-"will appear in the search window."
-msgstr ""
-"Bila Anda menyorot suatu bagian teks dengan tetikus Anda, lalu menekan "
-"<keyseq><key>Ctrl</key><key>F</key></keyseq>, teks yang telah Anda sorot "
-"akan muncul dalam jendela pencarian."
-
-#. (itstool) path: item/p
-#: C/gedit-search.page:84
-msgid ""
-"For more search options, click on the <gui style=\"button\">Magnifying "
-"Glass</gui> icon in the search window, or right-click anywhere in the search "
-"window. You can select one or more of the following search options:"
-msgstr ""
-"Untuk lebih banyak opsi pencarian, klik pada ikon <gui style=\"button\">Kaca "
-"Pembesar</gui> dalam jendela pencarian, atau klik kanan di manapun dalam "
-"jendela pencarian. Anda dapat memilih satu atau lebih opsi pencarian berikut:"
-
-#. (itstool) path: item/p
-#: C/gedit-search.page:90
+#: C/gedit-search-and-replace.page:73
 msgid "Select <gui>Match Case</gui> to make the search case sensitive."
 msgstr ""
 "Pilih <gui>Cocok Huruf Besar/Kecil</gui> untuk membuat pencarian membedakan "
 "huruf besar/kecil."
 
 #. (itstool) path: item/p
-#: C/gedit-search.page:93
-msgid "Select <gui>Match Entire Word Only</gui> to search only complete words."
-msgstr "Pilih <gui>Cocok Seluruh Kata</gui> untuk mencari hanya kata lengkap."
+#: C/gedit-search-and-replace.page:77
+msgid ""
+"Select <gui>Match Entire Word Only</gui> to search for a specific word "
+"without including fragments of other words."
+msgstr ""
+"Pilih <gui>Hanya Cocok Seluruh Kata</gui> untuk mencari hanya kata lengkap "
+"tanpa menyertakan penggalan dari kata-kata lain."
 
 #. (itstool) path: item/p
-#: C/gedit-search.page:97
+#: C/gedit-search-and-replace.page:81
 msgid ""
-"Select <gui>Wrap Around</gui> to search text from top to bottom and cycle "
-"back again."
+"For example, if you searched for the word “and” with this option selected, "
+"the word “and” would be matched, but the words “sand” and “comm<em>and</"
+"em>er” would not be matched."
 msgstr ""
-"Pilih <gui>Putar Balik</gui> untuk mencari teks dari puncak ke dasar dan "
-"kembali lagi ke atas."
+"Sebagai contoh, bila Anda mencari kata 'and' dengan opsi ini dipilih, kata "
+"'and' akan cocok, tapi kata 'sand' dan 'comm<em>and</em>er' tidak akan cocok."
 
 #. (itstool) path: item/p
-#: C/gedit-search.page:103
+#: C/gedit-search-and-replace.page:87
 msgid ""
-"The text that you've searched for will remain highlighted by gedit, even "
-"after you have completed your search. To remove the highlight, click <gui "
-"style=\"menuitem\">Clear Highlight</gui>, or press <keyseq><key>Ctrl</"
-"key><key>Shift</key><key>K</key></keyseq>."
+"Select <gui>Wrap Around</gui> to continue at the other end of the document "
+"when going to the next or previous search result."
 msgstr ""
-"Teks yang telah Anda cari akan tetap disorot oleh gedit, bahkan setelah Anda "
-"telah menyelesaikan pencarian Anda. Untuk menghapus penyorotan, klik <gui "
-"style=\"menuitem\">Bersihkan Penyorotan</gui>, atau tekan <keyseq><key>Ctrl</"
-"key><key>Shift</key><key>K</key></keyseq>."
+"Pilih <gui>Balik Arah</gui> untuk melanjutkan di ujung lain dokumen ketika "
+"menuju ke hasil pencarian selanjutnya atau sebelumnya."
+
+#. (itstool) path: section/title
+#: C/gedit-search-and-replace.page:95
+msgid "Using escape sequences"
+msgstr "Memakai urutan escape"
+
+#. (itstool) path: section/p
+#: C/gedit-search-and-replace.page:96
+msgid ""
+"In a search or replace entry, you can use <em>escape sequences</em> with the "
+"following meanings:"
+msgstr ""
+"Dalam suatu entri cari atau ganti, Anda dapat memakai <em>urutan escape</em> "
+"dengan arti-arti berikut:"
+
+#. (itstool) path: item/title
+#: C/gedit-search-and-replace.page:102
+msgid "\\n"
+msgstr "\\n"
+
+#. (itstool) path: item/p
+#: C/gedit-search-and-replace.page:103
+msgid "Newline"
+msgstr "Ganti baris"
+
+#. (itstool) path: item/title
+#: C/gedit-search-and-replace.page:106
+msgid "\\r"
+msgstr "\\r"
+
+#. (itstool) path: item/p
+#: C/gedit-search-and-replace.page:107
+msgid "Carriage return"
+msgstr "Carriage return"
+
+#. (itstool) path: item/title
+#: C/gedit-search-and-replace.page:110
+msgid "\\t"
+msgstr "\\t"
+
+#. (itstool) path: item/p
+#: C/gedit-search-and-replace.page:111
+msgid "Tab"
+msgstr "Tab"
+
+#. (itstool) path: item/title
+#: C/gedit-search-and-replace.page:114
+msgid "\\\\"
+msgstr "\\\\"
+
+#. (itstool) path: item/p
+#: C/gedit-search-and-replace.page:115
+msgid ""
+"Backslash. If you actually want a backslash and avoid one of the above "
+"special meanings, the backslash needs to be escaped."
+msgstr ""
+"Backslash. Bila Anda sebenarnya ingin suatu backslash dan menghindari satu "
+"dari arti-arti khusus di atas, backslash perlu di-escape."
 
 #. (itstool) path: info/desc
 #: C/gedit-spellcheck.page:7
 msgid "Check your files for spelling errors."
 msgstr "Periksa kesalahan ejaan pada berkas Anda."
 
-#. (itstool) path: credit/name
-#: C/gedit-spellcheck.page:16
-msgid "Baptiste Mille-Mathias"
-msgstr "Baptiste Mille-Mathias"
-
 #. (itstool) path: page/title
 #. (itstool) path: section/title
-#: C/gedit-spellcheck.page:28 C/gedit-spellcheck.page:49
+#: C/gedit-spellcheck.page:10 C/gedit-spellcheck.page:31
 msgid "Spell-check your document"
 msgstr "Periksa ejaan dokumen Anda"
 
 #. (itstool) path: section/title
-#: C/gedit-spellcheck.page:30
+#: C/gedit-spellcheck.page:12
 msgid "Enable the spell checker"
 msgstr "Fungsikan pemeriksa ejaan"
 
 #. (itstool) path: section/p
-#: C/gedit-spellcheck.page:31
+#: C/gedit-spellcheck.page:13
 msgid ""
 "The Spell-check feature is provided as a plugin in <app>gedit</app> which "
 "can be enabled as required. To enable the plugin:"
@@ -2931,45 +2919,45 @@ msgstr ""
 "dapat difungsikan seperlunya. Untuk memfungsikan pengaya:"
 
 #. (itstool) path: item/p
-#: C/gedit-spellcheck.page:41
+#: C/gedit-spellcheck.page:23
 msgid ""
 "Select <gui style=\"menuitem\">Spell Checker</gui> to enable the plugin."
 msgstr ""
 "Pilih <gui style=\"menuitem\">Periksa Ejaan</gui> untuk memfungsikan plugin."
 
 #. (itstool) path: section/p
-#: C/gedit-spellcheck.page:51
+#: C/gedit-spellcheck.page:33
 msgid "To check for misspelt words in your document:"
 msgstr "Untuk memeriksa kata salah eja dalam dokumen Anda:"
 
 #. (itstool) path: item/p
-#: C/gedit-spellcheck.page:55
+#: C/gedit-spellcheck.page:37
 msgid ""
 "Select <guiseq><gui style=\"menu\">Tools</gui> <gui style=\"menuitem\">Check "
 "Spelling</gui></guiseq>."
 msgstr ""
-"Pilih <guiseq><gui style=\"menu\">Perkakas</gui> <gui style=\"menuitem"
-"\">Periksa Ejaan</gui></guiseq>."
+"Pilih <guiseq><gui style=\"menu\">Perkakas</gui> <gui "
+"style=\"menuitem\">Periksa Ejaan</gui></guiseq>."
 
 #. (itstool) path: note/p
-#: C/gedit-spellcheck.page:61
+#: C/gedit-spellcheck.page:43
 msgid ""
 "To have <app>gedit</app> automatically highlight misspelt words in your "
 "document as you type, select <guiseq><gui style=\"menu\">Tools</gui><gui "
 "style=\"menuitem\">Highlight Misspelled Words</gui></guiseq>."
 msgstr ""
 "Agar <app>gedit</app> secara otomatis menyorot kata-kata salah eja dalam "
-"dokumen Anda sembari Anda mengetik, pilih <guiseq><gui style=\"menu"
-"\">Perkakas</gui><gui style=\"menuitem\">Sorot Kata-kata Salah Eja</gui></"
-"guiseq>."
+"dokumen Anda sembari Anda mengetik, pilih <guiseq><gui "
+"style=\"menu\">Perkakas</gui><gui style=\"menuitem\">Sorot Kata-kata Salah "
+"Eja</gui></guiseq>."
 
 #. (itstool) path: section/title
-#: C/gedit-spellcheck.page:68
+#: C/gedit-spellcheck.page:50
 msgid "Using spell-check"
 msgstr "Memakai pemeriksaan ejaan"
 
 #. (itstool) path: section/p
-#: C/gedit-spellcheck.page:70
+#: C/gedit-spellcheck.page:52
 msgid ""
 "You can choose the right substitution for misspelt words using the Check "
 "Spelling dialog. The misspelt word being checked by the spell-checker is "
@@ -2982,7 +2970,7 @@ msgstr ""
 "</gui>. Anda dapat memilih dari aksi-aksi perbaikan berikut:"
 
 #. (itstool) path: item/p
-#: C/gedit-spellcheck.page:77
+#: C/gedit-spellcheck.page:59
 msgid ""
 "<gui style=\"input\">Change to:</gui> allows you to input a word and use "
 "<gui style=\"button\">Check Word</gui> to check the validity of the spelling."
@@ -2992,7 +2980,7 @@ msgstr ""
 "keabsahan ejaan."
 
 #. (itstool) path: item/p
-#: C/gedit-spellcheck.page:82
+#: C/gedit-spellcheck.page:64
 msgid ""
 "<gui style=\"menu\">Suggestions:</gui> lists the available substitutions for "
 "the word."
@@ -3001,7 +2989,7 @@ msgstr ""
 "tersebut."
 
 #. (itstool) path: item/p
-#: C/gedit-spellcheck.page:86
+#: C/gedit-spellcheck.page:68
 msgid ""
 "<gui style=\"button\">Ignore</gui> allows you to bypass spell check for "
 "<em>a</em> instance of current word."
@@ -3010,7 +2998,7 @@ msgstr ""
 "ejaan bagi <em>suatu</em> kemunculan kata saat ini."
 
 #. (itstool) path: item/p
-#: C/gedit-spellcheck.page:90
+#: C/gedit-spellcheck.page:72
 msgid ""
 "<gui style=\"button\">Ignore All</gui> allows you to bypass spell check for "
 "<em>all</em> instances of the current word."
@@ -3019,29 +3007,29 @@ msgstr ""
 "pemeriksaan ejaan bagi <em>semua</em> kemunculan kata saat ini."
 
 #. (itstool) path: item/p
-#: C/gedit-spellcheck.page:94
+#: C/gedit-spellcheck.page:76
 msgid ""
 "<gui style=\"button\">Change</gui> substitutes the misspelt or unrecognized "
-"word with <em>a</em> chosen substitute from the <gui style=\"menuitem"
-"\">Suggestions:</gui> list."
+"word with <em>a</em> chosen substitute from the <gui "
+"style=\"menuitem\">Suggestions:</gui> list."
 msgstr ""
 "<gui style=\"button\">Ubah semua</gui> menggantikan kata yang salah eja atau "
-"tak dikenal dengan pengganti yang dipilih dari daftar <gui style=\"menuitem"
-"\">Saran:</gui>."
+"tak dikenal dengan pengganti yang dipilih dari daftar <gui "
+"style=\"menuitem\">Saran:</gui>."
 
 #. (itstool) path: item/p
-#: C/gedit-spellcheck.page:99
+#: C/gedit-spellcheck.page:81
 msgid ""
 "<gui style=\"button\">Change all</gui> substitutes <em>all</em> misspelt or "
-"unrecognized words with the chosen substitute from the <gui style=\"menuitem"
-"\">Suggestions:</gui> list."
+"unrecognized words with the chosen substitute from the <gui "
+"style=\"menuitem\">Suggestions:</gui> list."
 msgstr ""
 "<gui style=\"button\">Ubah semua</gui> menggantikan <em>semua</em> kata yang "
 "salah eja atau tak dikenal dengan pengganti yang dipilih dari daftar <gui "
 "style=\"menuitem\">Saran:</gui>."
 
 #. (itstool) path: item/p
-#: C/gedit-spellcheck.page:104
+#: C/gedit-spellcheck.page:86
 msgid ""
 "<gui style=\"button\">Add word</gui> allows you to add the current word to "
 "the <app>gedit</app> <gui>User dictionary</gui>. Adding custom words to the "
@@ -3055,12 +3043,12 @@ msgstr ""
 "salah eja."
 
 #. (itstool) path: section/title
-#: C/gedit-spellcheck.page:115
+#: C/gedit-spellcheck.page:97
 msgid "Define the language to use for spell checking"
 msgstr "Menentukan bahasa yang dipakai untuk memeriksa ejaan"
 
 #. (itstool) path: section/p
-#: C/gedit-spellcheck.page:116
+#: C/gedit-spellcheck.page:98
 msgid ""
 "By default, <app>gedit</app> will use your current language to spell check "
 "your document. If you need to use another language, choose <guiseq><gui "
@@ -3073,12 +3061,12 @@ msgstr ""
 "Bahasa…</gui></guiseq>, lalu pilih bahasa yang ingin Anda pakai."
 
 #. (itstool) path: section/title
-#: C/gedit-spellcheck.page:123
+#: C/gedit-spellcheck.page:105
 msgid "Dictionaries"
 msgstr "Kamus"
 
 #. (itstool) path: section/p
-#: C/gedit-spellcheck.page:125
+#: C/gedit-spellcheck.page:107
 msgid ""
 "<app>gedit</app> uses <link href=\"https://www.abisource.com/projects/"
 "enchant/\">Enchant</link>, a small system utility, for spell checking. "
@@ -3092,7 +3080,7 @@ msgstr ""
 "dan <em>Aspell</em>."
 
 #. (itstool) path: section/p
-#: C/gedit-spellcheck.page:131
+#: C/gedit-spellcheck.page:113
 msgid ""
 "If the language you want to use is not available in <app>gedit</app>, use "
 "your computer's software installer or package manager to install the "
@@ -3108,17 +3096,12 @@ msgid "Highlight your text to make it easier to read."
 msgstr "Sorot teks Anda agar lebih mudah dibaca."
 
 #. (itstool) path: page/title
-#: C/gedit-syntax-highlighting.page:20
+#: C/gedit-syntax-highlighting.page:10
 msgid "Turn on syntax highlighting"
 msgstr "Menyalakan penyorotan sintaks"
 
-#. (itstool) path: section/title
-#: C/gedit-syntax-highlighting.page:23
-msgid "Syntax highlighting"
-msgstr "Penyorotan sintaks"
-
 #. (itstool) path: section/p
-#: C/gedit-syntax-highlighting.page:24
+#: C/gedit-syntax-highlighting.page:14
 msgid ""
 "<app>gedit</app> provides syntax highlighting for a wide range of markup, "
 "programming, and scientific languages. If <app>gedit</app> recognizes the "
@@ -3131,299 +3114,216 @@ msgstr ""
 "menyorot teks."
 
 #. (itstool) path: section/p
-#: C/gedit-syntax-highlighting.page:29
+#: C/gedit-syntax-highlighting.page:19
 msgid ""
 "If your syntax or language is not highlighted upon startup, you can select "
-"the appropriate syntax or language by clicking <guiseq><gui style=\"menu"
-"\">View</gui> <gui style=\"menuitem\">Highlight Mode</gui></guiseq>, and "
-"then choosing the desired syntax. Alternately, you can select the syntax "
-"name from a list at the bottom of the <app>gedit</app> window."
+"the appropriate syntax or language by clicking <guiseq><gui "
+"style=\"menu\">View</gui> <gui style=\"menuitem\">Highlight Mode</gui></"
+"guiseq>, and then choosing the desired syntax. Alternately, you can select "
+"the syntax name from a list at the bottom of the <app>gedit</app> window."
 msgstr ""
 "Bila sintaks atau bahasa Anda tak disorot saat awal mula, Anda dapat memilih "
-"sintaks atau bahasa yang sesuai dengan mengklik <guiseq><gui style=\"menu"
-"\">Tilik</gui> <gui style=\"menuitem\">Mode Penyorotan</gui></guiseq>, lalu "
-"memilih sintaks yang diinginkan. Sebagai alternatif, Anda dapat memilih nama "
-"sintaks dari suatu daftar di bagian bawah jendela <app>gedit</app>."
+"sintaks atau bahasa yang sesuai dengan mengklik <guiseq><gui "
+"style=\"menu\">Tilik</gui> <gui style=\"menuitem\">Mode Penyorotan</gui></"
+"guiseq>, lalu memilih sintaks yang diinginkan. Sebagai alternatif, Anda "
+"dapat memilih nama sintaks dari suatu daftar di bagian bawah jendela "
+"<app>gedit</app>."
 
 #. (itstool) path: info/desc
-#: C/gedit-tab-groups.page:10
-msgid "Group similar tabs together."
-msgstr "Kelompokkan tab yang sama bersama-sama."
-
-#. (itstool) path: credit/name
-#: C/gedit-tab-groups.page:14 C/gedit-tabs-moving.page:25 C/gedit-tabs.page:26
-msgid "Radina Matic"
-msgstr "Radina Matic"
-
-#. (itstool) path: credit/years
-#: C/gedit-tab-groups.page:16 C/gedit-tabs-moving.page:27 C/gedit-tabs.page:28
-msgid "2013"
-msgstr "2013"
+#: C/gedit-tab-groups.page:9
+msgid "View several documents side-by-side."
+msgstr "Melihat beberapa dokumen bersisian."
 
 #. (itstool) path: page/title
-#: C/gedit-tab-groups.page:22
-msgid "Organize files in grouped tabs"
-msgstr "Organisasikan berkas dalam tab terkelompok"
+#: C/gedit-tab-groups.page:12
+msgid "Tab groups"
+msgstr "Kelompok tab"
 
 #. (itstool) path: page/p
+#: C/gedit-tab-groups.page:14
+msgid ""
+"You can view several documents side-by-side inside the same <app>gedit</app> "
+"window by creating a new <em>tab group</em>."
+msgstr ""
+"Anda dapat melihat beberapa dokumen bersisian di dalam jendela <app>gedit</"
+"app> yang sama dengan membuat sebuah <em>grup tab</em> baru."
+
+#. (itstool) path: section/title
+#: C/gedit-tab-groups.page:20
+msgid "Managing tab groups"
+msgstr "Mengelola kelompok tab"
+
+#. (itstool) path: section/p
+#: C/gedit-tab-groups.page:21
+msgid "There are several possibilities for managing tab groups."
+msgstr "Ada beberapa kemungkinan untuk mengelola grup tab."
+
+#. (itstool) path: section/p
 #: C/gedit-tab-groups.page:24
 msgid ""
-"If you are working with multiple tabs in <app>gedit</app> you can group "
-"them, making it easier to keep your opened files organized. Adding a new tab "
-"group will divide the <app>gedit</app> window in two panes, open a new "
-"“Untitled Document” in the new pane, and make it active. You can open files "
-"into that tab group and move tabs from one tab group to another."
+"To create a new tab group, you can right-click on a tab title and select "
+"<gui>Move to New Tab Group</gui>."
 msgstr ""
-"Bila Anda bekerja dengan multi tab dalam <app>gedit</app> Anda dapat "
-"mengelompokkan mereka, membuat jadi lebih mudah untuk mengorganisasi berkas-"
-"berkas Anda yang terbuka. Menambahkan suatu grup tab baru akan membagi "
-"jendela <app>gedit</app> ke dalam dua panel, membuka suatu \"Dokumen Tanpa "
-"Judul\" dalam panel baru, dan menjadikan itu aktif. Anda dapat membuka "
-"berkas ke dalam grup tab itu dan memindah tab dari satu grup tab ke lainnya."
+"Untuk membuat sebuah grup tab baru, Anda dapat mengklik kanan pada suatu "
+"judul tab dan memilih <gui>Pindah ke Grup Tab Baru</gui>."
 
-#. (itstool) path: section/title
+#. (itstool) path: section/p
+#: C/gedit-tab-groups.page:28 C/gedit-tabs.page:28
+msgid "Keyboard shortcuts are available too."
+msgstr "Pintasan papan tik juga tersedia."
+
+#. (itstool) path: section/p
 #: C/gedit-tab-groups.page:31
-msgid "Open a new tab group in the gedit window"
-msgstr "Buka suatu grup tab baru dalam jendela gedit"
-
-#. (itstool) path: section/p
-#: C/gedit-tab-groups.page:33
-msgid "To open a new tab group you can:"
-msgstr "Untuk membuka suatu grup tab baru Anda bisa:"
-
-#. (itstool) path: item/p
-#: C/gedit-tab-groups.page:37
-msgid "Right click on a tab and select <gui>Move to New Tab Group</gui>."
-msgstr "Klik kanan pada tab dan pilih <gui>Pindah ke Grup Tab Baru</gui>."
-
-#. (itstool) path: item/p
-#: C/gedit-tab-groups.page:40
 msgid ""
-"Use the <keyseq><key>Ctrl</key><key>Alt</key><key>N</key></keyseq> shortcut."
+"The tab groups will be placed into two panes that can be resized. It is an "
+"horizontal split: the original tab group is on the left, the new tab group "
+"is added on the right."
 msgstr ""
-"Pakai pintasan <keyseq><key>Ctrl</key><key>Alt</key><key>N</key></keyseq>."
+"Grup tab akan ditempatkan ke dalam dua panel yang dapat diubah ukurannya. "
+"Itu adalah suatu pembelahan horizontal: grup tab yang asli ada di kiri, grub "
+"tab baru ditambahkan ke kanan."
 
 #. (itstool) path: section/p
-#: C/gedit-tab-groups.page:45
-msgid ""
-"This action will divide the <app>gedit</app> window in two panes, and the "
-"pane with the new tab group will be placed on the right of the active tab. "
-"You can move the handle right or left assigning more or less space of the "
-"<app>gedit</app> window between panes according to your needs."
-msgstr ""
-"Aksi ini akan membagi jendela <app>gedit</app> ke dalam dua panel, dan panel "
-"dengan grup tab baru akan ditempatkan di kanan tab aktif. Anda dapat "
-"memindah pegangan ke kanan atau kiri yang memberi ruang lebih atau kurang "
-"dari jendela <app>gedit</app> antara panel-panel sesuai kebutuhan Anda."
-
-#. (itstool) path: section/p
-#: C/gedit-tab-groups.page:50
+#: C/gedit-tab-groups.page:36
 msgid ""
 "You can open as much tab groups in a <app>gedit</app> window as your screen "
-"allows, but you will have to move the handle in order to see them correctly."
+"allows, but you will have to resize them in order to see them correctly."
 msgstr ""
-"Anda dapat membuka grup tab dalam jendela <app>gedit</app> sebanyak mungkin "
-"yang diijinkan oleh layar Anda, tapi Anda mesti menggeser pegangan agar "
-"dapat melihat mereka dengan benar."
-
-#. (itstool) path: section/p
-#: C/gedit-tab-groups.page:54
-msgid ""
-"To close a tab group pane just close all the tabs that are opened inside it."
-msgstr ""
-"Untuk menutup suatu panel grup tab tutup saja semua tab yang terbuka di "
-"dalamnya."
+"Anda dapat membuka sebanyak mungkin grup tab dalam suatu jendela <app>gedit</"
+"app> yang diizinkan oleh layar Anda, tapi Anda mesti mengubah ukuran mereka "
+"agar dapat melihat mereka dengan benar."
 
 #. (itstool) path: section/title
-#: C/gedit-tab-groups.page:84
+#: C/gedit-tab-groups.page:44
 msgid "Move a tab to another tab group"
 msgstr "Memindah suatu tab ke grup tab lain"
 
 #. (itstool) path: section/p
-#: C/gedit-tab-groups.page:86
-msgid "If you want to move a tab from one tab group to another:"
-msgstr "Bila Anda ingin memindah suatu tab dari satu grup tab ke lainnya:"
+#: C/gedit-tab-groups.page:45
+msgid "You can drag and drop a tab into another tab group."
+msgstr "Anda dapat menyeret dan menjatuhkan suatu tab ke grup tab lain."
+
+#. (itstool) path: section/p
+#: C/gedit-tab-groups.page:48
+msgid ""
+"See <link xref=\"gedit-tabs#drag-and-drop-tabs\">Drag and drop tabs</link> "
+"for more details."
+msgstr ""
+"Lihat <link xref=\"gedit-tabs#drag-and-drop-tabs\">Seret dan jatuhkan tab</"
+"link> untuk rincian lebih lanjut."
+
+#. (itstool) path: info/desc
+#: C/gedit-tabs.page:9
+msgid "Organize your tabs."
+msgstr "Mengorganisasikan tab-tab Anda."
+
+#. (itstool) path: page/title
+#: C/gedit-tabs.page:12
+msgid "Move tabs"
+msgstr "Memindah tab"
+
+#. (itstool) path: page/p
+#: C/gedit-tabs.page:14
+msgid ""
+"By default, documents are opened in new tabs inside the same <app>gedit</"
+"app> window."
+msgstr ""
+"Secara baku, dokumen-dokumen dibuka dalam tab-tab baru di dalam jendela "
+"<app>gedit</app> yang sama."
+
+#. (itstool) path: section/title
+#: C/gedit-tabs.page:20
+msgid "Move a tab"
+msgstr "Memindahkan suatu tab"
+
+#. (itstool) path: section/p
+#: C/gedit-tabs.page:21
+msgid ""
+"There are several means to move a tab to another location, to organize the "
+"files you edit in the way you like."
+msgstr ""
+"Ada beberapa cara untuk memindahkan suatu tab ke lokasi lain, untuk "
+"mengorganisasi berkas-berkas yang Anda sunting dengan cara yang Anda sukai."
+
+#. (itstool) path: section/p
+#: C/gedit-tabs.page:25
+msgid "You can right-click on a tab title and choose the desired option."
+msgstr ""
+"Anda dapat mengklik kanan pada suatu judul tab dan memilih opsi yang "
+"diinginkan."
+
+#. (itstool) path: section/title
+#: C/gedit-tabs.page:33
+msgid "Drag and drop tabs"
+msgstr "Menyeret dan menjatuhkan tab"
+
+#. (itstool) path: section/p
+#: C/gedit-tabs.page:34
+msgid "Another means is to drag and drop a tab:"
+msgstr "Cara lain adalah dengan menyeret dan menjatuhkan suatu tab:"
 
 #. (itstool) path: item/p
-#: C/gedit-tab-groups.page:90 C/gedit-tabs-moving.page:45
-#: C/gedit-tabs-moving.page:65 C/gedit-tabs-moving.page:88
-msgid "Click and hold the mouse button on the tab."
-msgstr "Klik dan tahan tombol tetikus pada tab."
+#: C/gedit-tabs.page:39
+msgid "Click and hold the mouse button on the tab title."
+msgstr "Klik dan tahan tombol tetikus pada judul tab."
 
 #. (itstool) path: item/p
-#: C/gedit-tab-groups.page:93
-msgid "Drag the tab to another tab group pane."
-msgstr "Seret tab ke panel grup tab lain."
+#: C/gedit-tabs.page:42
+msgid "Move the tab to the desired location."
+msgstr "Pindahkan tab ke posisi yang diinginkan."
 
 #. (itstool) path: item/p
-#: C/gedit-tab-groups.page:96
-msgid "Place it beside other tabs in the tab group."
-msgstr "Tempatkan itu di sebelah tab lain di dalam grup tab."
-
-#. (itstool) path: item/p
-#: C/gedit-tab-groups.page:99 C/gedit-tabs-moving.page:51
-#: C/gedit-tabs-moving.page:71 C/gedit-tabs-moving.page:97
+#: C/gedit-tabs.page:45
 msgid "Release the mouse button."
 msgstr "Lepas tombol tetikus."
 
-#. (itstool) path: info/desc
-#: C/gedit-tabs-moving.page:10
-msgid "Change the position of a tab in the gedit window."
-msgstr "Ubah posisi tab dalam jendela gedit."
-
-#. (itstool) path: page/title
-#: C/gedit-tabs-moving.page:32
-msgid "Move and re-order tabs"
-msgstr "Memindah dan mengatur ulang tab"
-
-#. (itstool) path: page/p
-#: C/gedit-tabs-moving.page:33
-msgid ""
-"Tabs in <app>gedit</app> can be moved, making it easier to work with your "
-"files. Tabs can be can re-ordered within the same window, moved outside of "
-"<app>gedit</app> (creating a new <app>gedit</app> window), and moved from "
-"one window to another."
-msgstr ""
-"Tab dalam <app>gedit</app> dapat dipindah, membuat jadi lebih mudah untuk "
-"bekerja dengan berkas Anda. Tab dapat diurut ulang dalam jendela yang sama, "
-"dipindahkan ke luar <app>gedit</app> (membuat suatu jendela <app>gedit</app> "
-"baru), dan dipindah dari satu jendela ke lainnya."
-
 #. (itstool) path: section/title
-#: C/gedit-tabs-moving.page:39
-msgid "Change the order of tabs in the gedit window"
-msgstr "Ubah urutan tab dalam jendela gedit"
-
-#. (itstool) path: section/p
-#: C/gedit-tabs-moving.page:41
-msgid "To change the ordering of tabs in a window:"
-msgstr "Untuk mengubah urutan tab dalam suatu jendela:"
-
-#. (itstool) path: item/p
-#: C/gedit-tabs-moving.page:48
-msgid "Move the tab to the desired position among the other tabs."
-msgstr "Memindah tab ke posisi yang diinginkan di antara tab lain."
-
-#. (itstool) path: section/p
-#: C/gedit-tabs-moving.page:55
-msgid ""
-"The tab will be placed in the position closest to where you release the tab, "
-"immediately beside other opened tabs."
-msgstr ""
-"Tab akan ditempatkan dalam posisi terdekat ke tempat Anda melepas tab, "
-"seketika di sebelah tab lain yang terbuka."
-
-#. (itstool) path: section/title
-#: C/gedit-tabs-moving.page:60
-msgid "Move a tab, creating a new gedit window"
-msgstr "Memindah tab, membuat jendela gedit baru"
-
-#. (itstool) path: section/p
-#: C/gedit-tabs-moving.page:61
-msgid "To create a new window from an existing tab:"
-msgstr "Untuk membuat suatu jendela baru dari tab yang ada:"
-
-#. (itstool) path: item/p
-#: C/gedit-tabs-moving.page:68
-msgid "Drag the tab out of the <app>gedit</app> window."
-msgstr "Seret tab keluar dari jendela <app>gedit</app>."
-
-#. (itstool) path: note/p
-#: C/gedit-tabs-moving.page:76
-msgid ""
-"To move a tab into a new window when <app>gedit</app> is maximized, drag the "
-"tab onto the top bar at the top of the screen."
-msgstr ""
-"Untuk memindah tab ke jendela baru ketika <app>gedit</app> dimaksimalkan, "
-"seret tab ke bilah puncak di bagian atas layar."
-
-#. (itstool) path: section/title
-#: C/gedit-tabs-moving.page:82
-msgid "Move a tab to another gedit window"
-msgstr "Memindah suatu tab ke jendela gedit lain"
-
-#. (itstool) path: section/p
-#: C/gedit-tabs-moving.page:84
-msgid "If you want to move a tab from one window to another:"
-msgstr "Bila Anda ingin memindah suatu tab dari satu jendela ke lainnya:"
-
-#. (itstool) path: item/p
-#: C/gedit-tabs-moving.page:91
-msgid "Drag the tab to the new window."
-msgstr "Seret tab ke jendela baru."
-
-#. (itstool) path: item/p
-#: C/gedit-tabs-moving.page:94
-msgid "Place it beside other tabs in the new window."
-msgstr "Tempatkan itu di sebelah tab lain di dalam jendela baru."
-
-#. (itstool) path: note/p
-#: C/gedit-tabs-moving.page:103
-msgid ""
-"You may find it easier to move a tab from one window to another by dragging "
-"the tab to the <gui>Activities</gui> hot-corner of <gui>GNOME Shell</gui>. "
-"This will reveal each of the open <app>gedit</app> windows. You can then "
-"release the tab on the desired <app>gedit</app> window."
-msgstr ""
-"Mungkin lebih mudah bagi Anda untuk memindah suatu tab dari jendela satu ke "
-"lainnya dengan menyeret tab ke pojok panas <gui>Aktivitas</gui> <gui>GNOME "
-"Shell</gui>. Ini akan menyingkap setiap jendela <app>gedit</app> yang "
-"terbuka. Anda kemudian dapat melepas tab ke jendela <app>gedit</app> yang "
-"dikehendaki."
-
-#. (itstool) path: info/desc
-#: C/gedit-tabs.page:10
-msgid "Create or close tabs in the gedit window."
-msgstr "Buat atau tutup tab di jendela gedit."
-
-#. (itstool) path: page/title
-#: C/gedit-tabs.page:38
-msgid "Add and remove tabs"
-msgstr "Menambah dan menghapus tab"
-
-#. (itstool) path: page/p
-#: C/gedit-tabs.page:39
-msgid ""
-"Working with tabs in <app>gedit</app> allows you to keep an eye on several "
-"files in a single window."
-msgstr ""
-"Bekerja dengan tab dalam <app>gedit</app> memungkinkan Anda untuk mengawasi "
-"beberapa berkas dalam satu jendela."
-
-#. (itstool) path: section/title
-#: C/gedit-tabs.page:43
-msgid "Adding tabs"
-msgstr "Menambah tab"
-
-#. (itstool) path: section/p
-#: C/gedit-tabs.page:44
-msgid ""
-"To add a new tab to create a new file, click the <gui>Create a new document</"
-"gui> button on the left side of the header bar, or press <keyseq><key>Ctrl</"
-"key><key>T</key></keyseq>. The tab will be added to the right side of any "
-"other tabs."
-msgstr ""
-"Untuk menambahkan tab baru untuk membuat berkas baru, klik tombol <gui>Buat "
-"dokumen baru</gui> di sisi kiri bilah kepala, atau tekan <keyseq> <key>Ctrl</"
-"key><key>T</key></keyseq>. Tab akan ditambahkan ke sisi kanan tab lainnya."
-
-#. (itstool) path: section/title
-#: C/gedit-tabs.page:51
-msgid "Removing tabs"
-msgstr "Menghapus tab"
-
-#. (itstool) path: section/p
 #: C/gedit-tabs.page:52
+msgid "Drag and drop locations"
+msgstr "Lokasi seret dan jatuhkan"
+
+#. (itstool) path: section/title
+#: C/gedit-tabs.page:55
+msgid "To re-order tabs within the same window"
+msgstr "Untuk mengubah urutan tab dalam jendela yang sama"
+
+#. (itstool) path: section/p
+#: C/gedit-tabs.page:56
+msgid "Drag and drop the tab along the tabs titles."
+msgstr "Seret dan jatuhkan tab sepanjang judul-judul tab."
+
+#. (itstool) path: section/title
+#: C/gedit-tabs.page:62
+msgid "To create a new window from an existing tab"
+msgstr "Untuk membuat suatu jendela baru dari tab yang ada"
+
+#. (itstool) path: section/p
+#: C/gedit-tabs.page:63
+msgid "Drag and drop the tab out of the <app>gedit</app> window."
+msgstr "Seret dan jatuhkan tab keluar dari jendela <app>gedit</app>."
+
+#. (itstool) path: section/p
+#: C/gedit-tabs.page:66
 msgid ""
-"To remove a tab, click the <gui style=\"button\">×</gui> on the tab's right "
-"side, or press <keyseq><key>Ctrl</key><key>W</key></keyseq>. To remove all "
-"open tabs, press <keyseq><key>Ctrl</key> <key>Shift</key><key>W</key></"
-"keyseq>."
+"When <app>gedit</app> is maximized, drag the tab onto the top bar of "
+"<gui>GNOME Shell</gui> at the top of the screen."
 msgstr ""
-"Untuk menghapus suatu tab, klik <gui style=\"button\">×</gui> pada sisi "
-"kanan tab, atau tekan <keyseq><key>Ctrl</key><key>W</key></keyseq>. Untuk "
-"menghapus semua tab yang terbuka, tekan <keyseq><key>Ctrl</key> <key>Shift</"
-"key><key>W</key></keyseq>."
+"Ketika <app>gedit</app> dimaksimalkan, seret tab ke bilah puncak dari "
+"<gui>Shell GNOME</gui> di bagian atas layar."
+
+#. (itstool) path: section/title
+#: C/gedit-tabs.page:73
+msgid "To move a tab from one gedit window to another"
+msgstr "Untuk memindahkan suatu tab dari satu jendela ke lainnya"
+
+#. (itstool) path: section/p
+#: C/gedit-tabs.page:74
+msgid ""
+"Drag and drop the tab to the other window, either within the text area, or "
+"within the tabs titles to choose the exact location."
+msgstr ""
+"Seret dan jatuhkan tab ke jendela lain, baik dalam wilayan teks, atau di "
+"dalam judul-judul tab untuk memilih lokasi yang eksak."
 
 #. (itstool) path: info/desc
 #: C/gedit-undo-redo.page:8
@@ -3431,12 +3331,12 @@ msgid "Revert a recent change to one of your files."
 msgstr "Kembalikan perubahan terbaru ke salah satu berkas Anda."
 
 #. (itstool) path: page/title
-#: C/gedit-undo-redo.page:31
+#: C/gedit-undo-redo.page:11
 msgid "Undo/redo a recent action"
 msgstr "Membatalkan/menjadikan ulang suatu aksi baru-baru ini"
 
 #. (itstool) path: page/p
-#: C/gedit-undo-redo.page:33
+#: C/gedit-undo-redo.page:13
 msgid ""
 "If you make a mistake while editing a document in <app>gedit</app>, you can "
 "undo the change by pressing <keyseq><key>Ctrl</key><key>Z</key></keyseq>."
@@ -3446,14 +3346,14 @@ msgstr ""
 "key><key>Z</key></keyseq>."
 
 #. (itstool) path: note/p
-#: C/gedit-undo-redo.page:37
+#: C/gedit-undo-redo.page:17
 msgid "You cannot undo a change after you have closed a <app>gedit</app> file."
 msgstr ""
 "Anda tak bisa membatalkan suatu perubahan setelah Anda menutup suatu berkas "
 "<app>gedit</app>."
 
 #. (itstool) path: page/p
-#: C/gedit-undo-redo.page:40
+#: C/gedit-undo-redo.page:20
 msgid ""
 "To redo the change that was undone, press <keyseq><key>Ctrl</key><key>Shift</"
 "key><key>Z</key></keyseq>."
@@ -3461,74 +3361,33 @@ msgstr ""
 "Untuk mengulangi perubahan yang dibatalkan, tekan <keyseq> <key>Ctrl</"
 "key><key>Shift</key><key>Z</key></keyseq>."
 
-#. (itstool) path: info/title
-#: C/index.page:8
-msgctxt "link"
-msgid "gedit Text Editor"
-msgstr "gedit Penyunting Teks"
-
-#. (itstool) path: info/title
-#: C/index.page:9
-msgctxt "text"
-msgid "gedit Text Editor"
-msgstr "gedit Penyunting Teks"
-
-#. (itstool) path: info/desc
-#: C/index.page:11
-msgid "Home page of the gedit help guide."
-msgstr "Buka panduan pengguna gedit."
-
 #. (itstool) path: page/title
-#: C/index.page:26
-msgid "<_:media-1/> gedit Text Editor"
-msgstr "<_:media-1/> gedit Penyunting Teks"
-
-#. (itstool) path: page/p
-#: C/index.page:30
-msgid ""
-"Welcome to the <app>gedit</app> help guide. For a quick introduction into "
-"<app>gedit's</app> most basic features, visit the <link xref=\"gedit-"
-"quickstart\">Get started with gedit</link> page."
-msgstr ""
-"Selamat datang ke panduan bantuan <app>gedit</app>. Untuk pengenalan singkat "
-"ke fitur paling dasar <app>gedit</app>, kunjungilah halaman <link xref="
-"\"gedit-quickstart\">Mulai memakai gedit</link>."
-
-#. (itstool) path: page/p
-#: C/index.page:34
-msgid ""
-"Other help topics are grouped together into sections below. Enjoy using "
-"<app>gedit</app>!"
-msgstr ""
-"Topik bantuan lain dikelompokkan bersama ke dalam seksi di bawah. Nikmati "
-"<app>gedit</app>!"
+#: C/index.page:6
+#| msgid "<_:media-1/> gedit Text Editor"
+msgid "<_:media-1/> gedit"
+msgstr "<_:media-1/> gedit"
 
 #. (itstool) path: section/title
-#: C/index.page:38
-msgid "Working With Files"
-msgstr "Bekerja Dengan Berkas"
+#: C/index.page:14
+msgid "Working with files"
+msgstr "Bekerja dengan berkas"
 
 #. (itstool) path: section/title
-#: C/index.page:43
-msgid "Configure gedit"
-msgstr "Tata gedit"
-
-#. (itstool) path: section/title
-#: C/index.page:47
-msgid "gedit Plugins"
-msgstr "Pengaya gedit"
-
-#. (itstool) path: section/title
-#: C/index.page:51
+#: C/index.page:19
 msgid "Printing with gedit"
 msgstr "Mencetak dengan gedit"
 
-#. (itstool) path: p/link
-#: C/legal.xml:3
-msgid "Creative Commons Attribution-ShareAlike 3.0 Unported License"
-msgstr "Creative Commons Attribution-ShareAlike 3.0 Unported License"
+#. (itstool) path: section/title
+#: C/index.page:23
+msgid "More advanced topics"
+msgstr "Berbagai topik tingkat lanjut"
 
-#. (itstool) path: license/p
-#: C/legal.xml:3
-msgid "This work is licensed under a <_:link-1/>."
-msgstr "Karya ini berada dibawah lisensi <_:link-1/>."
+#. (itstool) path: section/title
+#: C/index.page:27
+msgid "Configure gedit"
+msgstr "Menata gedit"
+
+#. (itstool) path: section/title
+#: C/index.page:31
+msgid "gedit plugins"
+msgstr "Pengaya gedit"
