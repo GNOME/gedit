@@ -1,5 +1,5 @@
 <page xmlns="http://projectmallard.org/1.0/"
-      type="guide" style="task"
+      type="topic"
       id="gedit-printing">
 
   <info>
@@ -9,108 +9,53 @@
 
   <title>Printing documents</title>
 
-    <note style="important">
-      <p>Printing with <app>gedit</app> requires that you have connected and
-      configured your printer. If you have not done this, please consult the
-      <link href="help:gnome-help/printing">printing help for GNOME</link>.</p>
-    </note>
-  
-  <p><app>gedit</app> allows you to print both to a file and to paper.</p>
+  <p>
+    <app>gedit</app> allows you to print both to a file and to paper.
+  </p>
+
+  <note style="important"><p>
+    Please also consult the
+    <link href="help:gnome-help/printing">printing help for GNOME</link>
+    for more general information.
+  </p></note>
+
+  <section id="print-dialog">
+    <title>Print Dialog</title>
+    <p>
+      To open the <gui>Print</gui> dialog, either:
+    </p>
+    <list>
+      <item><p>
+        Click on <guiseq><gui style="menu">Menu Button</gui>
+        <gui style="menuitem">Print icon</gui></guiseq>.
+      </p></item>
+      <item><p>
+        Or press <keyseq><key>Ctrl</key><key>P</key></keyseq>.
+      </p></item>
+    </list>
+  </section>
 
   <section id="print-preview">
     <title>Print Preview</title>
-
-  <p>Prior to printing your document, you can preview how the printed document
-  will look by using <gui>Print Preview</gui>. To preview the document:</p>
-
-  <steps>
-    <item>
-      <p>Select <guiseq><gui style="menu">File</gui>
-      <gui style="menuitem">Print Preview</gui></guiseq>. Alternatively, you
-      can press <keyseq><key>Shift</key><key>Ctrl</key>
-      <key>P</key></keyseq>.</p>
-    </item>
-  </steps>
-
-  <p>A preview of your document will open in the same tab as the file. You can
-  browse this preview with help of navigation buttons and tools in the toolbar
-  at the top of the document preview tab. To close and return to the document
-  click <gui style="button">Close Preview</gui>.</p>
-
+    <p>
+      Prior to printing your document, you can preview how the printed document
+      will look by using <gui>Print Preview</gui>. To preview the document:
+    </p>
+    <p>
+      From the <gui>Print</gui> dialog, click on the
+      <gui style="button">Preview</gui> button.
+    </p>
   </section>
 
-  <section id="printing-to-paper">
-    <title>Printing To Paper</title>
-
-  <p>You can print your documents to paper using a local or remote printer. To
-  print a file:</p>
-
-  <steps>
-    <item>
-      <p>Select <guiseq><gui style="menu">File</gui>
-      <gui style="menuitem">Print</gui>
-      <gui style="tab">General</gui></guiseq>.</p>
-    </item>
-    <item>
-      <p>Select the desired printer from the list of printers available.</p>
-    </item>
-    <item>
-      <p>You can preview the file using <gui style="button">Print Preview</gui>
-      and once you are satisfied with the settings, click
-      <gui style="button">Print</gui> to send the file to printer.</p>
-    </item>
-  </steps>
-
-  <p>Additionally, from <gui style="tab">Page Setup</gui> tab: you can choose
-  <gui style="group">Layout</gui> and <gui style="group">Paper</gui> options. As
-  these settings are available throughout <app>GNOME</app> programs, please
-  consult
-  <link href="help:gnome-help/printing#paper">Layout and Paper options</link>
-  help.</p>
-
+  <section id="print-text-editor-settings-tab">
+    <title>Text Editor Settings Tab</title>
+    <p>
+      Inside the <gui>Print</gui> dialog, there is the <gui>Text Editor</gui>
+      tab to configure how the text is printed.
+    </p>
+    <p>
+      From there, you can choose whether to print line numbers, configure text
+      wrapping, configure the fonts, whether there are page headers, and more.
+    </p>
   </section>
-
-  <section id="printing-order-select">
-    <title>Print Multiple Copies And Between Specified Ranges</title>
-
-    <p>You can set <gui style="group">Range</gui> and
-    <gui style="group">Copies</gui> options to help you:</p>
-
-  </section>
-
-  <section id="printing-to-file">
-    <title>Printing To File</title>
-
-  <p>You can also use <app>gedit</app> to print to a file. To print your
-  document to file of a different format:</p>
-
-  <steps>
-    <item>
-      <p>Select <guiseq><gui style="menu">File</gui>
-      <gui style="menuitem">Print</gui>
-      <gui style="menuitem">Print to File</gui></guiseq>.</p>
-    </item>
-    <item>
-      <p>Printing is enabled for the following file formats, you may select
-      from:</p>
-      <list>
-        <item>
-          <p>Portable Document Format (.pdf)</p>
-        </item>
-        <item>
-          <p>PostScript (.ps)</p>
-        </item>
-        <item>
-          <p>Scalable Vector Graphic (.svg)</p>
-        </item>
-        </list>
-    </item>
-    <item>
-      <p>To print the document to file, click
-      <gui style="button">Print</gui>.</p>
-    </item>
-  </steps>
-
-  </section>
-
 </page>
