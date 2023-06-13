@@ -1,7 +1,6 @@
 gedit_help_sources = [
   'gedit-brief-intro.page',
   'gedit-change-color-scheme.page',
-  'gedit-change-default-font.page',
   'gedit-close-file.page',
   'gedit-create-new-file.page',
   'gedit-edit-as-root.page',
