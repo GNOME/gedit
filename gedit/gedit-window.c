@@ -1061,7 +1061,7 @@ set_titles (GeditWindow *window,
 #define MAX_TITLE_LENGTH 100
 
 static void
-set_title (GeditWindow *window)
+update_titles (GeditWindow *window)
 {
 	GeditTab *tab;
 	GeditDocument *doc = NULL;
@@ -1321,7 +1321,7 @@ tab_switched (GeditMultiNotebook *mnb,
 	if (new_tab == NULL || window->priv->dispose_has_run)
 		return;
 
-	set_title (window);
+	update_titles (window);
 	update_actions_sensitivity (window);
 
 	g_signal_emit (G_OBJECT (window),
@@ -1467,7 +1467,7 @@ sync_name (GeditTab    *tab,
 {
 	if (tab == gedit_window_get_active_tab (window))
 	{
-		set_title (window);
+		update_titles (window);
 		update_actions_sensitivity (window);
 	}
 }
@@ -1967,7 +1967,7 @@ on_tab_removed (GeditMultiNotebook *multi,
 	g_return_if_fail (num_tabs >= 0);
 	if (num_tabs == 0)
 	{
-		set_title (window);
+		update_titles (window);
 
 		/* hide the additional widgets */
 		gtk_widget_hide (GTK_WIDGET (window->priv->overwrite_indicator));
