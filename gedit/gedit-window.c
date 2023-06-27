@@ -1043,6 +1043,21 @@ overwrite_mode_changed (GtkTextView *view,
 	set_overwrite_mode (window, gtk_text_view_get_overwrite (view));
 }
 
+static void
+set_titles (GeditWindow *window,
+	    const gchar *single_title,
+	    const gchar *title,
+	    const gchar *subtitle)
+{
+	gedit_app_set_window_title (GEDIT_APP (g_application_get_default ()), window, single_title);
+
+	gtk_header_bar_set_title (GTK_HEADER_BAR (window->priv->headerbar), title);
+	gtk_header_bar_set_subtitle (GTK_HEADER_BAR (window->priv->headerbar), subtitle);
+
+	gtk_header_bar_set_title (GTK_HEADER_BAR (window->priv->fullscreen_headerbar), title);
+	gtk_header_bar_set_subtitle (GTK_HEADER_BAR (window->priv->fullscreen_headerbar), subtitle);
+}
+
 #define MAX_TITLE_LENGTH 100
 
 static void
@@ -1062,17 +1077,7 @@ set_title (GeditWindow *window)
 
 	if (tab == NULL)
 	{
-		gedit_app_set_window_title (GEDIT_APP (g_application_get_default ()),
-		                            window,
-		                            "gedit");
-		gtk_header_bar_set_title (GTK_HEADER_BAR (window->priv->headerbar),
-		                          "gedit");
-		gtk_header_bar_set_subtitle (GTK_HEADER_BAR (window->priv->headerbar),
-		                             NULL);
-		gtk_header_bar_set_title (GTK_HEADER_BAR (window->priv->fullscreen_headerbar),
-		                          "gedit");
-		gtk_header_bar_set_subtitle (GTK_HEADER_BAR (window->priv->fullscreen_headerbar),
-		                             NULL);
+		set_titles (window, "gedit", "gedit", NULL);
 		return;
 	}
 
@@ -1164,18 +1169,7 @@ set_title (GeditWindow *window)
 		}
 	}
 
-	gedit_app_set_window_title (GEDIT_APP (g_application_get_default ()),
-				    window,
-				    main_title);
-
-	gtk_header_bar_set_title (GTK_HEADER_BAR (window->priv->headerbar),
-	                          title);
-	gtk_header_bar_set_subtitle (GTK_HEADER_BAR (window->priv->headerbar),
-	                             subtitle);
-	gtk_header_bar_set_title (GTK_HEADER_BAR (window->priv->fullscreen_headerbar),
-	                          title);
-	gtk_header_bar_set_subtitle (GTK_HEADER_BAR (window->priv->fullscreen_headerbar),
-	                             subtitle);
+	set_titles (window, main_title, title, subtitle);
 
 	g_free (dirname);
 	g_free (name);
