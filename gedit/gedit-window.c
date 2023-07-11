@@ -46,7 +46,6 @@
 #include "gedit-enum-types.h"
 #include "gedit-status-menu-button.h"
 #include "gedit-settings.h"
-#include "gedit-menu-stack-switcher.h"
 #include "gedit-header-bar.h"
 
 struct _GeditWindowPrivate
@@ -58,7 +57,6 @@ struct _GeditWindowPrivate
 	GeditMultiNotebook *multi_notebook;
 
 	GeditSidePanel *side_panel;
-	GtkWidget *side_stack_switcher;
 	GtkWidget *bottom_panel;
 
 	GtkWidget *hpaned;
@@ -284,8 +282,6 @@ gedit_window_dispose (GObject *object)
 	 * force collection again.
 	 */
 	peas_engine_garbage_collect (PEAS_ENGINE (gedit_plugins_engine_get_default ()));
-
-	g_clear_object (&window->priv->side_stack_switcher);
 
 	/* GTK+/GIO unref the action map in an idle. For the last GeditWindow,
 	 * the application quits before the idle, so the action map is not
@@ -2232,15 +2228,7 @@ setup_side_panel (GeditWindow *window)
 	                        G_CALLBACK (side_panel_visibility_changed),
 	                        window);
 
-	priv->side_stack_switcher = gedit_menu_stack_switcher_new ();
-
-	gtk_button_set_relief (GTK_BUTTON (priv->side_stack_switcher), GTK_RELIEF_NONE);
-	g_object_ref_sink (priv->side_stack_switcher);
-
-	gedit_utils_set_atk_name_description (priv->side_stack_switcher, _("Change side panel page"),  NULL);
-
 	stack = gedit_side_panel_get_stack (priv->side_panel);
-	gedit_menu_stack_switcher_set_stack (GEDIT_MENU_STACK_SWITCHER (priv->side_stack_switcher), stack);
 
 	documents_panel = gedit_documents_panel_new (window);
 	gtk_widget_show_all (documents_panel);
