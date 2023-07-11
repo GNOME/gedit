@@ -2259,6 +2259,7 @@ bottom_panel_visibility_changed (GtkWidget   *panel_box,
 	/* focus the right widget */
 	if (visible)
 	{
+		/* FIXME: probably copy/paste error, should be the bottom panel. */
 		gtk_widget_grab_focus (GTK_WIDGET (window->priv->side_panel));
 	}
 	else
