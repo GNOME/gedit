@@ -5,7 +5,7 @@
 #ifndef GEDIT_HEADER_BAR_H
 #define GEDIT_HEADER_BAR_H
 
-#include <glib-object.h>
+#include "gedit-window.h"
 
 G_BEGIN_DECLS
 
@@ -34,7 +34,7 @@ struct _GeditHeaderBarClass
 
 GType			_gedit_header_bar_get_type		(void);
 
-GeditHeaderBar *	_gedit_header_bar_new			(void);
+GeditHeaderBar *	_gedit_header_bar_new			(GeditWindow *window);
 
 G_END_DECLS
 
