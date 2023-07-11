@@ -47,6 +47,7 @@
 #include "gedit-status-menu-button.h"
 #include "gedit-settings.h"
 #include "gedit-menu-stack-switcher.h"
+#include "gedit-header-bar.h"
 
 struct _GeditWindowPrivate
 {
@@ -88,6 +89,7 @@ struct _GeditWindowPrivate
 	/* Headerbars */
 	GtkWidget *side_headerbar;
 	GtkWidget *headerbar;
+	GeditHeaderBar *gedit_header_bar;
 
 	GtkMenuButton *gear_button;
 
@@ -296,6 +298,8 @@ gedit_window_dispose (GObject *object)
 	remove_actions (window);
 
 	window->priv->fullscreen_open_recent_button = NULL;
+
+	g_clear_object (&window->priv->gedit_header_bar);
 
 	G_OBJECT_CLASS (gedit_window_parent_class)->dispose (object);
 }
@@ -2560,84 +2564,16 @@ init_amtk_application_window (GeditWindow *gedit_window)
 }
 
 static void
-open_recent_menu_item_activated_cb (GtkRecentChooser *recent_chooser,
-				    gpointer          user_data)
-{
-	GeditWindow *window = GEDIT_WINDOW (user_data);
-	gchar *uri;
-	GFile *location;
-
-	uri = gtk_recent_chooser_get_current_uri (recent_chooser);
-	location = g_file_new_for_uri (uri);
-
-	gedit_commands_load_location (window, location, NULL, 0, 0);
-
-	g_free (uri);
-	g_object_unref (location);
-}
-
-static GtkWidget *
-create_open_buttons (GeditWindow    *window,
-		     GtkMenuButton **open_recent_button)
-{
-	GtkWidget *hbox;
-	GtkStyleContext *style_context;
-	GtkWidget *open_dialog_button;
-	GtkWidget *my_open_recent_button;
-	AmtkApplicationWindow *amtk_window;
-	GtkRecentChooserMenu *recent_menu;
-
-	/* It currently needs to be a GtkBox, not a GtkGrid, because GtkGrid and
-	 * GTK_STYLE_CLASS_LINKED doesn't work as expected in a RTL locale.
-	 * Probably a GtkGrid bug.
-	 */
-	hbox = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
-	style_context = gtk_widget_get_style_context (hbox);
-	gtk_style_context_add_class (style_context, GTK_STYLE_CLASS_LINKED);
-
-	open_dialog_button = gtk_button_new_with_mnemonic (_("_Open"));
-	gtk_widget_set_tooltip_text (open_dialog_button, _("Open a file"));
-	gtk_actionable_set_action_name (GTK_ACTIONABLE (open_dialog_button), "win.open");
-
-	my_open_recent_button = gtk_menu_button_new ();
-	gtk_widget_set_tooltip_text (my_open_recent_button, _("Open a recently used file"));
-
-	recent_menu = amtk_application_window_create_open_recent_menu_base ();
-
-	amtk_window = amtk_application_window_get_from_gtk_application_window (GTK_APPLICATION_WINDOW (window));
-	amtk_application_window_connect_recent_chooser_menu_to_statusbar (amtk_window, recent_menu);
-
-	g_signal_connect_object (recent_menu,
-				 "item-activated",
-				 G_CALLBACK (open_recent_menu_item_activated_cb),
-				 window,
-				 0);
-
-	gtk_menu_button_set_popup (GTK_MENU_BUTTON (my_open_recent_button),
-				   GTK_WIDGET (recent_menu));
-
-	gtk_container_add (GTK_CONTAINER (hbox), open_dialog_button);
-	gtk_container_add (GTK_CONTAINER (hbox), my_open_recent_button);
-	gtk_widget_show_all (hbox);
-
-	if (open_recent_button != NULL)
-	{
-		*open_recent_button = GTK_MENU_BUTTON (my_open_recent_button);
-	}
-
-	return hbox;
-}
-
-static void
 init_open_buttons (GeditWindow *window)
 {
 	gtk_container_add_with_properties (GTK_CONTAINER (window->priv->headerbar),
-					   create_open_buttons (window, NULL),
+					   _gedit_header_bar_create_open_buttons (window->priv->gedit_header_bar, NULL),
 					   "position", 0, /* The first on the left. */
 					   NULL);
 
 	gtk_container_add_with_properties (GTK_CONTAINER (window->priv->fullscreen_headerbar),
-					   create_open_buttons (window, &(window->priv->fullscreen_open_recent_button)),
+					   _gedit_header_bar_create_open_buttons (window->priv->gedit_header_bar,
+										  &(window->priv->fullscreen_open_recent_button)),
 					   "position", 0, /* The first on the left. */
 					   NULL);
 
@@ -2674,6 +2610,9 @@ gedit_window_init (GeditWindow *window)
 	window->priv->message_bus = gedit_message_bus_new ();
 
 	gtk_widget_init_template (GTK_WIDGET (window));
+
+	window->priv->gedit_header_bar = _gedit_header_bar_new (window);
+
 	init_amtk_application_window (window);
 	init_open_buttons (window);
 
