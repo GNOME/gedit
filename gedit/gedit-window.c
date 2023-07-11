@@ -48,7 +48,6 @@
 #include "gedit-settings.h"
 #include "gedit-menu-stack-switcher.h"
 #include "gedit-header-bar.h"
-#include "gedit-side-panel.h"
 
 struct _GeditWindowPrivate
 {
@@ -3125,20 +3124,27 @@ _gedit_window_is_removing_tabs (GeditWindow *window)
 	return window->priv->removing_tabs;
 }
 
-/**
- * gedit_window_get_side_panel:
- * @window: a #GeditWindow
- *
- * Gets the side panel of the @window.
- *
- * Returns: (transfer none): the side panel's #GtkStack.
- */
-GtkWidget *
-gedit_window_get_side_panel (GeditWindow *window)
+GeditSidePanel *
+_gedit_window_get_side_panel (GeditWindow *window)
 {
 	g_return_val_if_fail (GEDIT_IS_WINDOW (window), NULL);
 
-	return GTK_WIDGET (gedit_side_panel_get_stack (window->priv->side_panel));
+	return window->priv->side_panel;
+}
+
+/**
+ * gedit_window_get_side_panel_stack:
+ * @window: a #GeditWindow
+ *
+ * Returns: (transfer none): the side panel's #GtkStack.
+ * Since: 46
+ */
+GtkStack *
+gedit_window_get_side_panel_stack (GeditWindow *window)
+{
+	g_return_val_if_fail (GEDIT_IS_WINDOW (window), NULL);
+
+	return gedit_side_panel_get_stack (window->priv->side_panel);
 }
 
 /**

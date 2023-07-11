@@ -105,7 +105,7 @@ GList		*gedit_window_get_views			(GeditWindow         *window);
 
 GtkWindowGroup  *gedit_window_get_group			(GeditWindow         *window);
 
-GtkWidget	*gedit_window_get_side_panel		(GeditWindow         *window);
+GtkStack	*gedit_window_get_side_panel_stack	(GeditWindow         *window);
 
 GtkWidget	*gedit_window_get_bottom_panel		(GeditWindow         *window);
 

@@ -453,7 +453,7 @@ gedit_file_browser_plugin_activate (GeditWindowActivatable *activatable)
 {
 	GeditFileBrowserPlugin *plugin = GEDIT_FILE_BROWSER_PLUGIN (activatable);
 	GeditFileBrowserPluginPrivate *priv;
-	GtkWidget *panel;
+	GtkStack *panel;
 	GeditFileBrowserStore *store;
 
 	priv = plugin->priv;
@@ -493,9 +493,9 @@ gedit_file_browser_plugin_activate (GeditWindowActivatable *activatable)
 	                 FILEBROWSER_FILTER_PATTERN,
 	                 G_SETTINGS_BIND_GET | G_SETTINGS_BIND_SET);
 
-	panel = gedit_window_get_side_panel (priv->window);
+	panel = gedit_window_get_side_panel_stack (priv->window);
 
-	gtk_stack_add_titled (GTK_STACK (panel),
+	gtk_stack_add_titled (panel,
 	                      GTK_WIDGET (priv->tree_widget),
 	                      "GeditFileBrowserPanel",
 	                      _("File Browser"));
@@ -551,8 +551,7 @@ gedit_file_browser_plugin_deactivate (GeditWindowActivatable *activatable)
 {
 	GeditFileBrowserPlugin *plugin = GEDIT_FILE_BROWSER_PLUGIN (activatable);
 	GeditFileBrowserPluginPrivate *priv = plugin->priv;
-	GtkWidget *panel;
-
+	GtkStack *panel;
 
 	/* Unregister messages from the bus */
 	gedit_file_browser_messages_unregister (priv->window);
@@ -568,7 +567,7 @@ gedit_file_browser_plugin_deactivate (GeditWindowActivatable *activatable)
 					     priv->click_policy_handle);
 	}
 
-	panel = gedit_window_get_side_panel (priv->window);
+	panel = gedit_window_get_side_panel_stack (priv->window);
 	gtk_container_remove (GTK_CONTAINER (panel), GTK_WIDGET (priv->tree_widget));
 }
 

@@ -26,6 +26,7 @@
 #include <tepl/tepl.h>
 #include "gedit-debug.h"
 #include "gedit-window.h"
+#include "gedit-window-private.h"
 
 void
 _gedit_cmd_view_focus_active (GSimpleAction *action,
@@ -51,19 +52,19 @@ _gedit_cmd_view_toggle_side_panel (GSimpleAction *action,
                                    gpointer       user_data)
 {
 	GeditWindow *window = GEDIT_WINDOW (user_data);
-	GtkWidget *panel;
+	GeditSidePanel *panel;
 	gboolean visible;
 
 	gedit_debug (DEBUG_COMMANDS);
 
-	panel = gedit_window_get_side_panel (window);
+	panel = _gedit_window_get_side_panel (window);
 
 	visible = g_variant_get_boolean (state);
-	gtk_widget_set_visible (panel, visible);
+	gtk_widget_set_visible (GTK_WIDGET (panel), visible);
 
 	if (visible)
 	{
-		gtk_widget_grab_focus (panel);
+		gtk_widget_grab_focus (GTK_WIDGET (panel));
 	}
 
 	g_simple_action_set_state (action, state);
