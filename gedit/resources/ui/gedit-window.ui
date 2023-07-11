@@ -6,7 +6,7 @@
     <property name="has_focus">False</property>
     <property name="is_focus">False</property>
     <child type="titlebar">
-      <object class="GtkPaned" id="titlebar_paned">
+      <object class="GtkPaned">
         <property name="visible">True</property>
         <property name="position" bind-source="hpaned" bind-property="position" bind-flags="bidirectional|sync-create"/>
         <child>
@@ -25,7 +25,7 @@
             <property name="visible">True</property>
             <property name="show_close_button">True</property>
             <child>
-              <object class="GtkButton" id="new_button">
+              <object class="GtkButton">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="can_default">True</property>
@@ -34,7 +34,7 @@
                 <property name="action_name">win.new-tab</property>
                 <property name="image">new_tab_image</property>
                 <child internal-child="accessible">
-                  <object class="AtkObject" id="new_button_a11y">
+                  <object class="AtkObject">
                     <property name="accessible-name" translatable="yes">New</property>
                     <property name="accessible-description" translatable="yes">Create a new document</property>
                   </object>
@@ -52,14 +52,14 @@
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="save_button">
+              <object class="GtkButton">
                 <property name="label" translatable="yes">_Save</property>
                 <property name="use-underline">True</property>
                 <property name="visible">True</property>
                 <property name="tooltip_text" translatable="yes">Save the current file</property>
                 <property name="action_name">win.save</property>
                 <child internal-child="accessible">
-                  <object class="AtkObject" id="save_button_a11y">
+                  <object class="AtkObject">
                     <property name="accessible-name" translatable="yes">Save</property>
                     <property name="accessible-description" translatable="yes">Save the current file</property>
                   </object>
@@ -77,13 +77,13 @@
       </object>
     </child>
     <child>
-      <object class="GtkOverlay" id="fullscreen_overlay">
+      <object class="GtkOverlay">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <property name="has_focus">False</property>
         <property name="is_focus">False</property>
         <child>
-          <object class="GtkBox" id="main_box">
+          <object class="GtkBox">
             <property name="visible">True</property>
             <property name="orientation">vertical</property>
             <child>
@@ -96,7 +96,7 @@
                   <class name="gedit-side-panel-paned"/>
                 </style>
                 <child>
-                  <object class="GtkBox" id="side_panel_box">
+                  <object class="GtkBox">
                     <property name="visible" bind-source="side_panel" bind-property="visible" bind-flags="sync-create"/>
                     <property name="orientation">vertical</property>
                     <child>
@@ -126,7 +126,7 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkBox" id="content_box">
+                  <object class="GtkBox">
                     <property name="visible">True</property>
                     <property name="orientation">vertical</property>
                     <child>
@@ -149,14 +149,14 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkBox" id="bottom_panel_box">
+                          <object class="GtkBox">
                             <property name="visible" bind-source="bottom_panel" bind-property="visible" bind-flags="sync-create"/>
                             <property name="orientation">horizontal</property>
                             <style>
                               <class name="gedit-bottom-panel"/>
                             </style>
                             <child>
-                              <object class="GtkBox" id="bottom_panel_stack_box">
+                              <object class="GtkBox">
                                 <property name="visible">True</property>
                                 <property name="orientation">vertical</property>
                                 <child>
@@ -170,7 +170,7 @@
                                   </packing>
                                 </child>
                                 <child>
-                                  <object class="GeditNotebookStackSwitcher" id="bottom_panel_stack_switcher">
+                                  <object class="GeditNotebookStackSwitcher">
                                     <property name="visible">True</property>
                                     <property name="stack">bottom_panel</property>
                                     <style>
@@ -191,11 +191,11 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkBox" id="bottom_panel_sidebar">
+                              <object class="GtkBox">
                                 <property name="visible">True</property>
                                 <property name="orientation">vertical</property>
                                 <child>
-                                  <object class="GtkButton" id="bottom_panel_close_button">
+                                  <object class="GtkButton">
                                     <property name="visible">True</property>
                                     <property name="relief">none</property>
                                     <property name="focus-on-click">False</property>
@@ -297,7 +297,7 @@
                   <object class="GtkHeaderBar" id="fullscreen_headerbar">
                     <property name="visible">True</property>
                     <child>
-                      <object class="GtkButton" id="fullscreen_new_button">
+                      <object class="GtkButton">
                         <property name="visible">True</property>
                         <property name="can_focus">True</property>
                         <property name="can_default">True</property>
@@ -306,7 +306,7 @@
                         <property name="action_name">win.new-tab</property>
                         <property name="image">fullscreen_new_tab_image</property>
                         <child internal-child="accessible">
-                          <object class="AtkObject" id="fullscreen_new_button_a11y">
+                          <object class="AtkObject">
                             <property name="accessible-name" translatable="yes">New</property>
                             <property name="accessible-description" translatable="yes">Create a new document</property>
                           </object>
@@ -314,13 +314,13 @@
                       </object>
                     </child>
                     <child>
-                      <object class="GtkButton" id="leave_fullscreen_button">
+                      <object class="GtkButton">
                         <property name="visible">True</property>
                         <property name="tooltip_text" translatable="yes">Leave Fullscreen</property>
                         <property name="action_name">win.leave-fullscreen</property>
                         <property name="image">leave_fullscreen_image</property>
                         <child internal-child="accessible">
-                          <object class="AtkObject" id="leave_fullscreen_button_a11y">
+                          <object class="AtkObject">
                             <property name="accessible-name" translatable="yes">Leave Fullscreen</property>
                             <property name="accessible-description" translatable="yes">Leave Fullscreen</property>
                           </object>
@@ -340,13 +340,13 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkButton" id="fullscreen_save_button">
+                      <object class="GtkButton">
                         <property name="label" translatable="yes">Save</property>
                         <property name="visible">True</property>
                         <property name="tooltip_text" translatable="yes">Save the current file</property>
                         <property name="action_name">win.save</property>
                         <child internal-child="accessible">
-                          <object class="AtkObject" id="fullscreen_save_button_a11y">
+                          <object class="AtkObject">
                             <property name="accessible-name" translatable="yes">Save</property>
                             <property name="accessible-description" translatable="yes">Save the current file</property>
                           </object>
@@ -397,4 +397,3 @@
     </widgets>
   </object>
 </interface>
-
