@@ -1415,6 +1415,10 @@ gedit_documents_panel_init (GeditDocumentsPanel *panel)
 	panel->row_destination_index = ROW_OUTSIDE_LISTBOX;
 	panel->row_source_row_offset = 0;
 	panel->is_on_drag = FALSE;
+
+	/* Some widget config */
+	gtk_widget_set_hexpand (GTK_WIDGET (panel), TRUE);
+	gtk_widget_set_vexpand (GTK_WIDGET (panel), TRUE);
 }
 
 GtkWidget *
