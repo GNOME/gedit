@@ -2,6 +2,7 @@
  * SPDX-License-Identifier: LGPL-3.0-or-later
  */
 
+#include "config.h"
 #include "gedit-side-panel.h"
 
 struct _GeditSidePanelPrivate
@@ -30,24 +31,32 @@ gedit_side_panel_class_init (GeditSidePanelClass *klass)
 }
 
 static void
+add_inline_switcher_if_needed (GeditSidePanel *panel,
+			       GtkGrid        *vgrid)
+{
+#if INLINE_SIDE_PANEL_SWITCHER
+	TeplStackSwitcherMenu *switcher;
+
+	switcher = tepl_stack_switcher_menu_new (panel->priv->stack);
+
+	gtk_container_add (GTK_CONTAINER (vgrid),
+			   GTK_WIDGET (switcher));
+#endif
+}
+
+static void
 gedit_side_panel_init (GeditSidePanel *panel)
 {
-	TeplStackSwitcherMenu *switcher;
 	GtkGrid *vgrid;
 
 	panel->priv = gedit_side_panel_get_instance_private (panel);
 
 	panel->priv->stack = tepl_stack_new ();
 
-	switcher = tepl_stack_switcher_menu_new (panel->priv->stack);
-
-	/* Packing */
-
 	vgrid = GTK_GRID (gtk_grid_new ());
 	gtk_orientable_set_orientation (GTK_ORIENTABLE (vgrid), GTK_ORIENTATION_VERTICAL);
 
-	gtk_container_add (GTK_CONTAINER (vgrid),
-			   GTK_WIDGET (switcher));
+	add_inline_switcher_if_needed (panel, vgrid);
 
 	gtk_container_add (GTK_CONTAINER (vgrid),
 			   GTK_WIDGET (panel->priv->stack));
