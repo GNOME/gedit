@@ -127,10 +127,20 @@ add_open_buttons (GeditHeaderBar *bar)
 	gtk_container_add (GTK_CONTAINER (hbox), GTK_WIDGET (bar->priv->open_recent_menu_button));
 	gtk_widget_show_all (hbox);
 
-	gtk_container_add_with_properties (GTK_CONTAINER (bar->priv->header_bar),
-					   hbox,
-					   "position", 0, /* The first on the left. */
-					   NULL);
+	gtk_header_bar_pack_start (bar->priv->header_bar, hbox);
+}
+
+static void
+add_new_tab_button (GeditHeaderBar *bar)
+{
+	GtkWidget *button;
+
+	button = gtk_button_new_from_icon_name ("tab-new-symbolic", GTK_ICON_SIZE_BUTTON);
+	gtk_widget_set_tooltip_text (button, _("Create a new document"));
+	gtk_actionable_set_action_name (GTK_ACTIONABLE (button), "win.new-tab");
+	gtk_widget_show (button);
+
+	gtk_header_bar_pack_start (bar->priv->header_bar, button);
 }
 
 GeditHeaderBar *
@@ -148,6 +158,7 @@ _gedit_header_bar_new (GtkHeaderBar *header_bar,
 	g_set_weak_pointer (&bar->priv->window, window);
 
 	add_open_buttons (bar);
+	add_new_tab_button (bar);
 
 	return bar;
 }
