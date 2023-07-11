@@ -13,6 +13,9 @@ struct _GeditHeaderBarPrivate
 
 	/* Weak ref */
 	GeditWindow *window;
+
+	/* Part of the GtkHeaderBar */
+	GtkMenuButton *open_recent_menu_button;
 };
 
 G_DEFINE_TYPE_WITH_PRIVATE (GeditHeaderBar, _gedit_header_bar, G_TYPE_OBJECT)
@@ -24,6 +27,7 @@ _gedit_header_bar_dispose (GObject *object)
 
 	g_clear_object (&bar->priv->header_bar);
 	g_clear_weak_pointer (&bar->priv->window);
+	bar->priv->open_recent_menu_button = NULL;
 
 	G_OBJECT_CLASS (_gedit_header_bar_parent_class)->dispose (object);
 }
@@ -40,23 +44,6 @@ static void
 _gedit_header_bar_init (GeditHeaderBar *bar)
 {
 	bar->priv = _gedit_header_bar_get_instance_private (bar);
-}
-
-GeditHeaderBar *
-_gedit_header_bar_new (GtkHeaderBar *header_bar,
-		       GeditWindow  *window)
-{
-	GeditHeaderBar *bar;
-
-	g_return_val_if_fail (GTK_IS_HEADER_BAR (header_bar), NULL);
-	g_return_val_if_fail (GEDIT_IS_WINDOW (window), NULL);
-
-	bar = g_object_new (GEDIT_TYPE_HEADER_BAR, NULL);
-
-	bar->priv->header_bar = g_object_ref_sink (header_bar);
-	g_set_weak_pointer (&bar->priv->window, window);
-
-	return bar;
 }
 
 static GtkWidget *
@@ -93,15 +80,17 @@ open_recent_menu_item_activated_cb (GtkRecentChooser *recent_chooser,
 	g_object_unref (location);
 }
 
-static GtkMenuButton *
+static void
 create_open_recent_menu_button (GeditHeaderBar *bar)
 {
-	GtkWidget *button;
 	GtkRecentChooserMenu *recent_menu;
 	AmtkApplicationWindow *amtk_window;
 
-	button = gtk_menu_button_new ();
-	gtk_widget_set_tooltip_text (button, _("Open a recently used file"));
+	g_return_if_fail (bar->priv->open_recent_menu_button == NULL);
+
+	bar->priv->open_recent_menu_button = GTK_MENU_BUTTON (gtk_menu_button_new ());
+	gtk_widget_set_tooltip_text (GTK_WIDGET (bar->priv->open_recent_menu_button),
+				     _("Open a recently used file"));
 
 	recent_menu = amtk_application_window_create_open_recent_menu_base ();
 
@@ -114,22 +103,17 @@ create_open_recent_menu_button (GeditHeaderBar *bar)
 				 bar,
 				 G_CONNECT_DEFAULT);
 
-	gtk_menu_button_set_popup (GTK_MENU_BUTTON (button),
+	gtk_menu_button_set_popup (bar->priv->open_recent_menu_button,
 				   GTK_WIDGET (recent_menu));
-
-	return GTK_MENU_BUTTON (button);
 }
 
-GtkWidget *
-_gedit_header_bar_create_open_buttons (GeditHeaderBar  *bar,
-				       GtkMenuButton  **open_recent_button)
+static void
+add_open_buttons (GeditHeaderBar *bar)
 {
 	GtkWidget *hbox;
 	GtkStyleContext *style_context;
-	GtkMenuButton *my_open_recent_button;
 
-	g_return_val_if_fail (GEDIT_IS_HEADER_BAR (bar), NULL);
-	g_return_val_if_fail (bar->priv->window != NULL, NULL);
+	create_open_recent_menu_button (bar);
 
 	/* It currently needs to be a GtkBox, not a GtkGrid, because GtkGrid and
 	 * GTK_STYLE_CLASS_LINKED doesn't work as expected in a RTL locale.
@@ -139,16 +123,38 @@ _gedit_header_bar_create_open_buttons (GeditHeaderBar  *bar,
 	style_context = gtk_widget_get_style_context (hbox);
 	gtk_style_context_add_class (style_context, GTK_STYLE_CLASS_LINKED);
 
-	my_open_recent_button = create_open_recent_menu_button (bar);
-
 	gtk_container_add (GTK_CONTAINER (hbox), create_open_dialog_button ());
-	gtk_container_add (GTK_CONTAINER (hbox), GTK_WIDGET (my_open_recent_button));
+	gtk_container_add (GTK_CONTAINER (hbox), GTK_WIDGET (bar->priv->open_recent_menu_button));
 	gtk_widget_show_all (hbox);
 
-	if (open_recent_button != NULL)
-	{
-		*open_recent_button = my_open_recent_button;
-	}
+	gtk_container_add_with_properties (GTK_CONTAINER (bar->priv->header_bar),
+					   hbox,
+					   "position", 0, /* The first on the left. */
+					   NULL);
+}
 
-	return hbox;
+GeditHeaderBar *
+_gedit_header_bar_new (GtkHeaderBar *header_bar,
+		       GeditWindow  *window)
+{
+	GeditHeaderBar *bar;
+
+	g_return_val_if_fail (GTK_IS_HEADER_BAR (header_bar), NULL);
+	g_return_val_if_fail (GEDIT_IS_WINDOW (window), NULL);
+
+	bar = g_object_new (GEDIT_TYPE_HEADER_BAR, NULL);
+
+	bar->priv->header_bar = g_object_ref_sink (header_bar);
+	g_set_weak_pointer (&bar->priv->window, window);
+
+	add_open_buttons (bar);
+
+	return bar;
+}
+
+GtkMenuButton *
+_gedit_header_bar_get_open_recent_menu_button (GeditHeaderBar *bar)
+{
+	g_return_val_if_fail (GEDIT_IS_HEADER_BAR (bar), NULL);
+	return bar->priv->open_recent_menu_button;
 }

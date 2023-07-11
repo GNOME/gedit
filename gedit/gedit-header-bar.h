@@ -32,13 +32,12 @@ struct _GeditHeaderBarClass
 	GObjectClass parent_class;
 };
 
-GType			_gedit_header_bar_get_type		(void);
+GType			_gedit_header_bar_get_type			(void);
 
-GeditHeaderBar *	_gedit_header_bar_new			(GtkHeaderBar *header_bar,
-								 GeditWindow  *window);
+GeditHeaderBar *	_gedit_header_bar_new				(GtkHeaderBar *header_bar,
+									 GeditWindow  *window);
 
-GtkWidget *		_gedit_header_bar_create_open_buttons	(GeditHeaderBar  *bar,
-								 GtkMenuButton  **open_recent_button);
+GtkMenuButton *		_gedit_header_bar_get_open_recent_menu_button	(GeditHeaderBar *bar);
 
 G_END_DECLS
 

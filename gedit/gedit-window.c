@@ -73,7 +73,6 @@ struct _GeditWindowPrivate
 	GtkRevealer *fullscreen_revealer;
 	GtkWidget *fullscreen_headerbar;
 	GtkMenuButton *fullscreen_gear_button;
-	GtkMenuButton *fullscreen_open_recent_button;
 
 	/* statusbar and context ids for statusbar messages */
 	GtkWidget *statusbar;
@@ -298,8 +297,6 @@ gedit_window_dispose (GObject *object)
 	 * nicer.
 	 */
 	remove_actions (window);
-
-	window->priv->fullscreen_open_recent_button = NULL;
 
 	g_clear_object (&window->priv->gedit_header_bar_normal);
 	g_clear_object (&window->priv->gedit_header_bar_fullscreen);
@@ -1644,10 +1641,13 @@ drop_uris_cb (GtkWidget    *widget,
 static void
 update_fullscreen_revealer_state (GeditWindow *window)
 {
+	GtkMenuButton *open_recent_menu_button;
 	gboolean open_recent_menu_is_active;
 	gboolean hamburger_menu_is_active;
 
-	open_recent_menu_is_active = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (window->priv->fullscreen_open_recent_button));
+	open_recent_menu_button = _gedit_header_bar_get_open_recent_menu_button (window->priv->gedit_header_bar_fullscreen);
+
+	open_recent_menu_is_active = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (open_recent_menu_button));
 	hamburger_menu_is_active = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (window->priv->fullscreen_gear_button));
 
 	gtk_revealer_set_reveal_child (window->priv->fullscreen_revealer,
@@ -2569,18 +2569,11 @@ init_amtk_application_window (GeditWindow *gedit_window)
 static void
 init_open_buttons (GeditWindow *window)
 {
-	gtk_container_add_with_properties (GTK_CONTAINER (window->priv->headerbar),
-					   _gedit_header_bar_create_open_buttons (window->priv->gedit_header_bar_normal, NULL),
-					   "position", 0, /* The first on the left. */
-					   NULL);
+	GtkMenuButton *fullscreen_open_recent_menu_button;
 
-	gtk_container_add_with_properties (GTK_CONTAINER (window->priv->fullscreen_headerbar),
-					   _gedit_header_bar_create_open_buttons (window->priv->gedit_header_bar_fullscreen,
-										  &(window->priv->fullscreen_open_recent_button)),
-					   "position", 0, /* The first on the left. */
-					   NULL);
+	fullscreen_open_recent_menu_button = _gedit_header_bar_get_open_recent_menu_button (window->priv->gedit_header_bar_fullscreen);
 
-	g_signal_connect (GTK_TOGGLE_BUTTON (window->priv->fullscreen_open_recent_button),
+	g_signal_connect (fullscreen_open_recent_menu_button,
 	                  "toggled",
 	                  G_CALLBACK (on_fullscreen_toggle_button_toggled),
 	                  window);
@@ -2614,12 +2607,13 @@ gedit_window_init (GeditWindow *window)
 
 	gtk_widget_init_template (GTK_WIDGET (window));
 
+	init_amtk_application_window (window);
+
 	window->priv->gedit_header_bar_normal =
 		_gedit_header_bar_new (GTK_HEADER_BAR (window->priv->headerbar), window);
 	window->priv->gedit_header_bar_fullscreen =
 		_gedit_header_bar_new (GTK_HEADER_BAR (window->priv->fullscreen_headerbar), window);
 
-	init_amtk_application_window (window);
 	init_open_buttons (window);
 
 	g_action_map_add_action_entries (G_ACTION_MAP (window),
