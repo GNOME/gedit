@@ -176,7 +176,8 @@ gedit_window_get_property (GObject    *object,
 static void
 save_panels_state (GeditWindow *window)
 {
-	GtkStack *side_panel_stack;
+	TeplStack *side_panel_stack;
+	gchar *stack_item_name;
 	const gchar *panel_page;
 
 	gedit_debug (DEBUG_WINDOW);
@@ -189,12 +190,13 @@ save_panels_state (GeditWindow *window)
 	}
 
 	side_panel_stack = gedit_side_panel_get_stack (window->priv->side_panel);
-	panel_page = gtk_stack_get_visible_child_name (side_panel_stack);
-	if (panel_page != NULL)
+	stack_item_name = tepl_stack_get_visible_item_name (side_panel_stack);
+	if (stack_item_name != NULL)
 	{
 		g_settings_set_string (window->priv->window_settings,
 				       GEDIT_SETTINGS_SIDE_PANEL_ACTIVE_PAGE,
-				       panel_page);
+				       stack_item_name);
+		g_free (stack_item_name);
 	}
 
 	if (window->priv->bottom_panel_size > 0)
@@ -928,7 +930,8 @@ clone_window (GeditWindow *origin)
 	GeditWindow *window;
 	GdkScreen *screen;
 	GeditApp  *app;
-	GtkStack *origin_side_panel_stack;
+	TeplStack *origin_side_panel_stack;
+	gchar *stack_item_name;
 	const gchar *panel_page;
 
 	gedit_debug (DEBUG_WINDOW);
@@ -958,12 +961,12 @@ clone_window (GeditWindow *origin)
 	window->priv->bottom_panel_size = origin->priv->bottom_panel_size;
 
 	origin_side_panel_stack = gedit_side_panel_get_stack (origin->priv->side_panel);
-	panel_page = gtk_stack_get_visible_child_name (origin_side_panel_stack);
-
-	if (panel_page)
+	stack_item_name = tepl_stack_get_visible_item_name (origin_side_panel_stack);
+	if (stack_item_name != NULL)
 	{
-		GtkStack *stack = gedit_side_panel_get_stack (window->priv->side_panel);
-		gtk_stack_set_visible_child_name (stack, panel_page);
+		TeplStack *stack = gedit_side_panel_get_stack (window->priv->side_panel);
+		tepl_stack_set_visible_item_name (stack, stack_item_name);
+		g_free (stack_item_name);
 	}
 
 	panel_page = gtk_stack_get_visible_child_name (GTK_STACK (origin->priv->bottom_panel));
@@ -2215,27 +2218,34 @@ side_panel_visibility_changed (GtkWidget   *panel,
 }
 
 static void
-setup_side_panel (GeditWindow *window)
+add_documents_panel (GeditWindow *window)
 {
-	GeditWindowPrivate *priv = window->priv;
-	GtkStack *stack;
 	GtkWidget *documents_panel;
-
-	gedit_debug (DEBUG_WINDOW);
-
-	g_signal_connect_after (priv->side_panel,
-	                        "notify::visible",
-	                        G_CALLBACK (side_panel_visibility_changed),
-	                        window);
-
-	stack = gedit_side_panel_get_stack (priv->side_panel);
+	TeplStackItem *item;
+	TeplStack *stack;
 
 	documents_panel = gedit_documents_panel_new (window);
 	gtk_widget_show_all (documents_panel);
-	gtk_stack_add_titled (stack,
-	                      documents_panel,
-	                      "GeditWindowDocumentsPanel",
-	                      _("Documents"));
+
+	item = tepl_stack_item_new (documents_panel,
+				    "GeditWindowDocumentsPanel",
+				    _("Documents"),
+				    NULL);
+
+	stack = gedit_side_panel_get_stack (window->priv->side_panel);
+	tepl_stack_add_item (stack, item);
+	g_object_unref (item);
+}
+
+static void
+setup_side_panel (GeditWindow *window)
+{
+	g_signal_connect_after (window->priv->side_panel,
+				"notify::visible",
+				G_CALLBACK (side_panel_visibility_changed),
+				window);
+
+	add_documents_panel (window);
 }
 
 static void
@@ -2321,24 +2331,16 @@ setup_bottom_panel (GeditWindow *window)
 static void
 init_side_panel_visibility (GeditWindow *window)
 {
-	GtkStack *stack;
-	gchar *child_name;
-	GtkWidget *child_widget;
+	TeplStack *stack;
+	gchar *item_name;
 	gboolean side_panel_visible;
-
-	gedit_debug (DEBUG_WINDOW);
 
 	stack = gedit_side_panel_get_stack (window->priv->side_panel);
 
-	child_name = g_settings_get_string (window->priv->window_settings,
-					    GEDIT_SETTINGS_SIDE_PANEL_ACTIVE_PAGE);
-	child_widget = gtk_stack_get_child_by_name (stack, child_name);
-	if (child_widget != NULL)
-	{
-		gtk_stack_set_visible_child (stack, child_widget);
-	}
-
-	g_free (child_name);
+	item_name = g_settings_get_string (window->priv->window_settings,
+					   GEDIT_SETTINGS_SIDE_PANEL_ACTIVE_PAGE);
+	tepl_stack_set_visible_item_name (stack, item_name);
+	g_free (item_name);
 
 	side_panel_visible = g_settings_get_boolean (window->priv->ui_settings,
 						     GEDIT_SETTINGS_SIDE_PANEL_VISIBLE);
@@ -3080,10 +3082,10 @@ _gedit_window_get_side_panel (GeditWindow *window)
  * gedit_window_get_side_panel_stack:
  * @window: a #GeditWindow
  *
- * Returns: (transfer none): the side panel's #GtkStack.
+ * Returns: (transfer none): the side panel's #TeplStack.
  * Since: 46
  */
-GtkStack *
+TeplStack *
 gedit_window_get_side_panel_stack (GeditWindow *window)
 {
 	g_return_val_if_fail (GEDIT_IS_WINDOW (window), NULL);

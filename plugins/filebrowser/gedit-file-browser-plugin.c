@@ -68,6 +68,8 @@ struct _GeditFileBrowserPluginPrivate
 	gulong                  end_loading_handle;
 
 	guint			click_policy_handle;
+
+	TeplStackItem          *side_panel_stack_item;
 };
 
 enum
@@ -453,7 +455,7 @@ gedit_file_browser_plugin_activate (GeditWindowActivatable *activatable)
 {
 	GeditFileBrowserPlugin *plugin = GEDIT_FILE_BROWSER_PLUGIN (activatable);
 	GeditFileBrowserPluginPrivate *priv;
-	GtkStack *panel;
+	TeplStack *side_panel_stack;
 	GeditFileBrowserStore *store;
 
 	priv = plugin->priv;
@@ -493,14 +495,14 @@ gedit_file_browser_plugin_activate (GeditWindowActivatable *activatable)
 	                 FILEBROWSER_FILTER_PATTERN,
 	                 G_SETTINGS_BIND_GET | G_SETTINGS_BIND_SET);
 
-	panel = gedit_window_get_side_panel_stack (priv->window);
+	g_clear_object (&priv->side_panel_stack_item);
+	priv->side_panel_stack_item = tepl_stack_item_new (GTK_WIDGET (priv->tree_widget),
+							   "GeditFileBrowserPanel",
+							   _("File Browser"),
+							   NULL);
 
-	gtk_stack_add_titled (panel,
-	                      GTK_WIDGET (priv->tree_widget),
-	                      "GeditFileBrowserPanel",
-	                      _("File Browser"));
-
-	gtk_widget_show (GTK_WIDGET (priv->tree_widget));
+	side_panel_stack = gedit_window_get_side_panel_stack (priv->window);
+	tepl_stack_add_item (side_panel_stack, priv->side_panel_stack_item);
 
 	/* Install nautilus preferences */
 	install_nautilus_prefs (plugin);
@@ -551,7 +553,7 @@ gedit_file_browser_plugin_deactivate (GeditWindowActivatable *activatable)
 {
 	GeditFileBrowserPlugin *plugin = GEDIT_FILE_BROWSER_PLUGIN (activatable);
 	GeditFileBrowserPluginPrivate *priv = plugin->priv;
-	GtkStack *panel;
+	TeplStack *side_panel_stack;
 
 	/* Unregister messages from the bus */
 	gedit_file_browser_messages_unregister (priv->window);
@@ -567,8 +569,9 @@ gedit_file_browser_plugin_deactivate (GeditWindowActivatable *activatable)
 					     priv->click_policy_handle);
 	}
 
-	panel = gedit_window_get_side_panel_stack (priv->window);
-	gtk_container_remove (GTK_CONTAINER (panel), GTK_WIDGET (priv->tree_widget));
+	side_panel_stack = gedit_window_get_side_panel_stack (priv->window);
+	tepl_stack_remove_item (side_panel_stack, priv->side_panel_stack_item);
+	g_clear_object (&priv->side_panel_stack_item);
 }
 
 static void

@@ -5,7 +5,7 @@
 #ifndef GEDIT_SIDE_PANEL_H
 #define GEDIT_SIDE_PANEL_H
 
-#include <gtk/gtk.h>
+#include <tepl/tepl.h>
 
 G_BEGIN_DECLS
 
@@ -36,7 +36,7 @@ GType			gedit_side_panel_get_type	(void);
 
 GeditSidePanel *	gedit_side_panel_new		(void);
 
-GtkStack *		gedit_side_panel_get_stack	(GeditSidePanel *panel);
+TeplStack *		gedit_side_panel_get_stack	(GeditSidePanel *panel);
 
 G_END_DECLS
 

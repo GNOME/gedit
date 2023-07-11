@@ -6,7 +6,7 @@
 
 struct _GeditSidePanelPrivate
 {
-	GtkStack *stack;
+	TeplStack *stack;
 };
 
 G_DEFINE_TYPE_WITH_PRIVATE (GeditSidePanel, gedit_side_panel, GTK_TYPE_BIN)
@@ -32,19 +32,27 @@ gedit_side_panel_class_init (GeditSidePanelClass *klass)
 static void
 gedit_side_panel_init (GeditSidePanel *panel)
 {
+	TeplStackSwitcherMenu *switcher;
 	GtkGrid *vgrid;
 
 	panel->priv = gedit_side_panel_get_instance_private (panel);
 
+	panel->priv->stack = tepl_stack_new ();
+
+	switcher = tepl_stack_switcher_menu_new (panel->priv->stack);
+
+	/* Packing */
+
 	vgrid = GTK_GRID (gtk_grid_new ());
 	gtk_orientable_set_orientation (GTK_ORIENTABLE (vgrid), GTK_ORIENTATION_VERTICAL);
 
-	panel->priv->stack = GTK_STACK (gtk_stack_new ());
-	gtk_widget_show (GTK_WIDGET (panel->priv->stack));
+	gtk_container_add (GTK_CONTAINER (vgrid),
+			   GTK_WIDGET (switcher));
+
 	gtk_container_add (GTK_CONTAINER (vgrid),
 			   GTK_WIDGET (panel->priv->stack));
 
-	gtk_widget_show (GTK_WIDGET (vgrid));
+	gtk_widget_show_all (GTK_WIDGET (vgrid));
 	gtk_container_add (GTK_CONTAINER (panel), GTK_WIDGET (vgrid));
 }
 
@@ -54,16 +62,9 @@ gedit_side_panel_new (void)
 	return g_object_new (GEDIT_TYPE_SIDE_PANEL, NULL);
 }
 
-/*
- * gedit_side_panel_get_stack:
- * @panel: a #GeditSidePanel.
- *
- * Returns: (transfer none): the #GtkStack of @panel.
- */
-GtkStack *
+TeplStack *
 gedit_side_panel_get_stack (GeditSidePanel *panel)
 {
 	g_return_val_if_fail (GEDIT_IS_SIDE_PANEL (panel), NULL);
-
 	return panel->priv->stack;
 }
