@@ -39,6 +39,11 @@ add_inline_switcher_if_needed (GeditSidePanel *panel,
 
 	switcher = tepl_stack_switcher_menu_new (panel->priv->stack);
 
+	gtk_widget_set_halign (GTK_WIDGET (switcher), GTK_ALIGN_CENTER);
+	g_object_set (switcher,
+		      "margin", 6,
+		      NULL);
+
 	gtk_container_add (GTK_CONTAINER (vgrid),
 			   GTK_WIDGET (switcher));
 #endif
