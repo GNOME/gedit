@@ -174,13 +174,10 @@ gedit_window_get_property (GObject    *object,
 }
 
 static void
-save_panels_state (GeditWindow *window)
+save_side_panel_state (GeditWindow *window)
 {
-	TeplPanelContainer *side_panel;
-	const gchar *side_panel_item_name;
-	const gchar *panel_page;
-
-	gedit_debug (DEBUG_WINDOW);
+	TeplPanelContainer *panel_container;
+	const gchar *item_name;
 
 	if (window->priv->side_panel_size > 0)
 	{
@@ -189,14 +186,20 @@ save_panels_state (GeditWindow *window)
 				    window->priv->side_panel_size);
 	}
 
-	side_panel = gedit_side_panel_get_panel_container (window->priv->side_panel);
-	side_panel_item_name = tepl_panel_container_get_active_item_name (side_panel);
-	if (side_panel_item_name != NULL)
+	panel_container = gedit_side_panel_get_panel_container (window->priv->side_panel);
+	item_name = tepl_panel_container_get_active_item_name (panel_container);
+	if (item_name != NULL)
 	{
 		g_settings_set_string (window->priv->window_settings,
 				       GEDIT_SETTINGS_SIDE_PANEL_ACTIVE_PAGE,
-				       side_panel_item_name);
+				       item_name);
 	}
+}
+
+static void
+save_bottom_panel_state (GeditWindow *window)
+{
+	const gchar *panel_page;
 
 	if (window->priv->bottom_panel_size > 0)
 	{
@@ -212,6 +215,13 @@ save_panels_state (GeditWindow *window)
 				       GEDIT_SETTINGS_BOTTOM_PANEL_ACTIVE_PAGE,
 				       panel_page);
 	}
+}
+
+static void
+save_panels_state (GeditWindow *window)
+{
+	save_side_panel_state (window);
+	save_bottom_panel_state (window);
 
 	g_settings_apply (window->priv->window_settings);
 }
