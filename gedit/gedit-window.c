@@ -89,7 +89,9 @@ struct _GeditWindowPrivate
 	/* Headerbars */
 	GtkWidget *side_headerbar;
 	GtkWidget *headerbar;
-	GeditHeaderBar *gedit_header_bar;
+
+	GeditHeaderBar *gedit_header_bar_normal;
+	GeditHeaderBar *gedit_header_bar_fullscreen;
 
 	GtkMenuButton *gear_button;
 
@@ -299,7 +301,8 @@ gedit_window_dispose (GObject *object)
 
 	window->priv->fullscreen_open_recent_button = NULL;
 
-	g_clear_object (&window->priv->gedit_header_bar);
+	g_clear_object (&window->priv->gedit_header_bar_normal);
+	g_clear_object (&window->priv->gedit_header_bar_fullscreen);
 
 	G_OBJECT_CLASS (gedit_window_parent_class)->dispose (object);
 }
@@ -2567,12 +2570,12 @@ static void
 init_open_buttons (GeditWindow *window)
 {
 	gtk_container_add_with_properties (GTK_CONTAINER (window->priv->headerbar),
-					   _gedit_header_bar_create_open_buttons (window->priv->gedit_header_bar, NULL),
+					   _gedit_header_bar_create_open_buttons (window->priv->gedit_header_bar_normal, NULL),
 					   "position", 0, /* The first on the left. */
 					   NULL);
 
 	gtk_container_add_with_properties (GTK_CONTAINER (window->priv->fullscreen_headerbar),
-					   _gedit_header_bar_create_open_buttons (window->priv->gedit_header_bar,
+					   _gedit_header_bar_create_open_buttons (window->priv->gedit_header_bar_fullscreen,
 										  &(window->priv->fullscreen_open_recent_button)),
 					   "position", 0, /* The first on the left. */
 					   NULL);
@@ -2611,7 +2614,10 @@ gedit_window_init (GeditWindow *window)
 
 	gtk_widget_init_template (GTK_WIDGET (window));
 
-	window->priv->gedit_header_bar = _gedit_header_bar_new (window);
+	window->priv->gedit_header_bar_normal =
+		_gedit_header_bar_new (GTK_HEADER_BAR (window->priv->headerbar), window);
+	window->priv->gedit_header_bar_fullscreen =
+		_gedit_header_bar_new (GTK_HEADER_BAR (window->priv->fullscreen_headerbar), window);
 
 	init_amtk_application_window (window);
 	init_open_buttons (window);

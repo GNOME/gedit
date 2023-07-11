@@ -34,7 +34,8 @@ struct _GeditHeaderBarClass
 
 GType			_gedit_header_bar_get_type		(void);
 
-GeditHeaderBar *	_gedit_header_bar_new			(GeditWindow *window);
+GeditHeaderBar *	_gedit_header_bar_new			(GtkHeaderBar *header_bar,
+								 GeditWindow  *window);
 
 GtkWidget *		_gedit_header_bar_create_open_buttons	(GeditHeaderBar  *bar,
 								 GtkMenuButton  **open_recent_button);

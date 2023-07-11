@@ -8,6 +8,9 @@
 
 struct _GeditHeaderBarPrivate
 {
+	/* Owned */
+	GtkHeaderBar *header_bar;
+
 	/* Weak ref */
 	GeditWindow *window;
 };
@@ -19,6 +22,7 @@ _gedit_header_bar_dispose (GObject *object)
 {
 	GeditHeaderBar *bar = GEDIT_HEADER_BAR (object);
 
+	g_clear_object (&bar->priv->header_bar);
 	g_clear_weak_pointer (&bar->priv->window);
 
 	G_OBJECT_CLASS (_gedit_header_bar_parent_class)->dispose (object);
@@ -39,14 +43,17 @@ _gedit_header_bar_init (GeditHeaderBar *bar)
 }
 
 GeditHeaderBar *
-_gedit_header_bar_new (GeditWindow *window)
+_gedit_header_bar_new (GtkHeaderBar *header_bar,
+		       GeditWindow  *window)
 {
 	GeditHeaderBar *bar;
 
+	g_return_val_if_fail (GTK_IS_HEADER_BAR (header_bar), NULL);
 	g_return_val_if_fail (GEDIT_IS_WINDOW (window), NULL);
 
 	bar = g_object_new (GEDIT_TYPE_HEADER_BAR, NULL);
 
+	bar->priv->header_bar = g_object_ref_sink (header_bar);
 	g_set_weak_pointer (&bar->priv->window, window);
 
 	return bar;
