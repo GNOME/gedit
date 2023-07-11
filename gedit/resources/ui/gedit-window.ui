@@ -251,23 +251,6 @@
                 <child>
                   <object class="GtkHeaderBar" id="fullscreen_headerbar">
                     <property name="visible">True</property>
-                    <child>
-                      <object class="GtkButton">
-                        <property name="visible">True</property>
-                        <property name="tooltip_text" translatable="yes">Leave Fullscreen</property>
-                        <property name="action_name">win.leave-fullscreen</property>
-                        <property name="image">leave_fullscreen_image</property>
-                        <child internal-child="accessible">
-                          <object class="AtkObject">
-                            <property name="accessible-name" translatable="yes">Leave Fullscreen</property>
-                            <property name="accessible-description" translatable="yes">Leave Fullscreen</property>
-                          </object>
-                        </child>
-                      </object>
-                      <packing>
-                        <property name="pack_type">end</property>
-                      </packing>
-                    </child>
                   </object>
                 </child>
               </object>
@@ -277,10 +260,6 @@
       </object>
     </child>
   </template>
-  <object class="GtkImage" id="leave_fullscreen_image">
-    <property name="visible">True</property>
-    <property name="icon_name">view-restore-symbolic</property>
-  </object>
   <object class="GtkImage" id="close_button_image">
     <property name="visible">True</property>
     <property name="icon_name">window-close-symbolic</property>

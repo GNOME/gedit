@@ -147,6 +147,19 @@ add_new_tab_button (GeditHeaderBar *bar)
 }
 
 static void
+add_leave_fullscreen_button (GeditHeaderBar *bar)
+{
+	GtkWidget *button;
+
+	button = gtk_button_new_from_icon_name ("view-restore-symbolic", GTK_ICON_SIZE_BUTTON);
+	gtk_widget_set_tooltip_text (button, _("Leave Fullscreen"));
+	gtk_actionable_set_action_name (GTK_ACTIONABLE (button), "win.leave-fullscreen");
+	gtk_widget_show (button);
+
+	gtk_header_bar_pack_end (bar->priv->header_bar, button);
+}
+
+static void
 add_hamburger_menu_button (GeditHeaderBar *bar)
 {
 	GMenuModel *hamburger_menu;
@@ -199,6 +212,12 @@ _gedit_header_bar_new (GtkHeaderBar *header_bar,
 
 	add_open_buttons (bar);
 	add_new_tab_button (bar);
+
+	if (fullscreen)
+	{
+		add_leave_fullscreen_button (bar);
+	}
+
 	add_hamburger_menu_button (bar);
 	add_save_button (bar);
 
