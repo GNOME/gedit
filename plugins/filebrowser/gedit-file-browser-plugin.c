@@ -69,7 +69,7 @@ struct _GeditFileBrowserPluginPrivate
 
 	guint			click_policy_handle;
 
-	TeplStackItem          *side_panel_stack_item;
+	TeplPanelItem          *side_panel_item;
 };
 
 enum
@@ -455,7 +455,7 @@ gedit_file_browser_plugin_activate (GeditWindowActivatable *activatable)
 {
 	GeditFileBrowserPlugin *plugin = GEDIT_FILE_BROWSER_PLUGIN (activatable);
 	GeditFileBrowserPluginPrivate *priv;
-	TeplStack *side_panel_stack;
+	TeplPanel *side_panel;
 	GeditFileBrowserStore *store;
 
 	priv = plugin->priv;
@@ -495,14 +495,14 @@ gedit_file_browser_plugin_activate (GeditWindowActivatable *activatable)
 	                 FILEBROWSER_FILTER_PATTERN,
 	                 G_SETTINGS_BIND_GET | G_SETTINGS_BIND_SET);
 
-	g_clear_object (&priv->side_panel_stack_item);
-	priv->side_panel_stack_item = tepl_stack_item_new (GTK_WIDGET (priv->tree_widget),
-							   "GeditFileBrowserPanel",
-							   _("File Browser"),
-							   NULL);
+	side_panel = gedit_window_get_side_panel (priv->window);
 
-	side_panel_stack = gedit_window_get_side_panel_stack (priv->window);
-	tepl_stack_add_item (side_panel_stack, priv->side_panel_stack_item);
+	g_clear_object (&priv->side_panel_item);
+	priv->side_panel_item = tepl_panel_add (side_panel,
+						GTK_WIDGET (priv->tree_widget),
+						"GeditFileBrowserPanel",
+						_("File Browser"),
+						NULL);
 
 	/* Install nautilus preferences */
 	install_nautilus_prefs (plugin);
@@ -553,7 +553,7 @@ gedit_file_browser_plugin_deactivate (GeditWindowActivatable *activatable)
 {
 	GeditFileBrowserPlugin *plugin = GEDIT_FILE_BROWSER_PLUGIN (activatable);
 	GeditFileBrowserPluginPrivate *priv = plugin->priv;
-	TeplStack *side_panel_stack;
+	TeplPanel *side_panel;
 
 	/* Unregister messages from the bus */
 	gedit_file_browser_messages_unregister (priv->window);
@@ -569,9 +569,9 @@ gedit_file_browser_plugin_deactivate (GeditWindowActivatable *activatable)
 					     priv->click_policy_handle);
 	}
 
-	side_panel_stack = gedit_window_get_side_panel_stack (priv->window);
-	tepl_stack_remove_item (side_panel_stack, priv->side_panel_stack_item);
-	g_clear_object (&priv->side_panel_stack_item);
+	side_panel = gedit_window_get_side_panel (priv->window);
+	tepl_panel_remove (side_panel, priv->side_panel_item);
+	g_clear_object (&priv->side_panel_item);
 }
 
 static void

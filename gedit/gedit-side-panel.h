@@ -32,11 +32,11 @@ struct _GeditSidePanelClass
 	GtkBinClass parent_class;
 };
 
-GType			gedit_side_panel_get_type	(void);
+GType			gedit_side_panel_get_type		(void);
 
-GeditSidePanel *	gedit_side_panel_new		(void);
+GeditSidePanel *	gedit_side_panel_new			(void);
 
-TeplStack *		gedit_side_panel_get_stack	(GeditSidePanel *panel);
+TeplPanelContainer *	gedit_side_panel_get_panel_container	(GeditSidePanel *panel);
 
 G_END_DECLS
 

@@ -57,7 +57,7 @@ _gedit_cmd_view_toggle_side_panel (GSimpleAction *action,
 
 	gedit_debug (DEBUG_COMMANDS);
 
-	panel = _gedit_window_get_side_panel (window);
+	panel = _gedit_window_get_whole_side_panel (window);
 
 	visible = g_variant_get_boolean (state);
 	gtk_widget_set_visible (GTK_WIDGET (panel), visible);
