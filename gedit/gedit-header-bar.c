@@ -184,7 +184,8 @@ add_save_button (GeditHeaderBar *bar)
 
 GeditHeaderBar *
 _gedit_header_bar_new (GtkHeaderBar *header_bar,
-		       GeditWindow  *window)
+		       GeditWindow  *window,
+		       gboolean      fullscreen)
 {
 	GeditHeaderBar *bar;
 

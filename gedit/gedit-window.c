@@ -2623,9 +2623,9 @@ gedit_window_init (GeditWindow *window)
 	init_amtk_application_window (window);
 
 	window->priv->gedit_header_bar_normal =
-		_gedit_header_bar_new (GTK_HEADER_BAR (window->priv->headerbar), window);
+		_gedit_header_bar_new (GTK_HEADER_BAR (window->priv->headerbar), window, FALSE);
 	window->priv->gedit_header_bar_fullscreen =
-		_gedit_header_bar_new (GTK_HEADER_BAR (window->priv->fullscreen_headerbar), window);
+		_gedit_header_bar_new (GTK_HEADER_BAR (window->priv->fullscreen_headerbar), window, TRUE);
 
 	init_open_buttons (window);
 
