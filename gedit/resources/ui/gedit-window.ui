@@ -51,29 +51,8 @@
                   <class name="gedit-side-panel-paned"/>
                 </style>
                 <child>
-                  <object class="GtkBox">
-                    <property name="visible" bind-source="side_panel" bind-property="visible" bind-flags="sync-create"/>
-                    <property name="orientation">vertical</property>
-                    <child>
-                      <object class="GeditMenuStackSwitcher" id="side_panel_inline_stack_switcher">
-                        <property name="visible">False</property>
-                      </object>
-                      <packing>
-                        <property name="expand">False</property>
-                        <property name="fill">False</property>
-                        <property name="position">0</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkStack" id="side_panel">
-                        <property name="visible">False</property>
-                      </object>
-                      <packing>
-                        <property name="expand">True</property>
-                        <property name="fill">True</property>
-                        <property name="position">1</property>
-                      </packing>
-                    </child>
+                  <object class="GtkStack" id="side_panel">
+                    <property name="visible">False</property>
                   </object>
                   <packing>
                     <property name="resize">False</property>

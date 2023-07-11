@@ -59,7 +59,6 @@ struct _GeditWindowPrivate
 
 	GtkStack *side_panel;
 	GtkWidget *side_stack_switcher;
-	GtkWidget *side_panel_inline_stack_switcher;
 	GtkWidget *bottom_panel;
 
 	GtkWidget *hpaned;
@@ -528,7 +527,6 @@ gedit_window_class_init (GeditWindowClass *klass)
 	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, headerbar);
 	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, hpaned);
 	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, side_panel);
-	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, side_panel_inline_stack_switcher);
 	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, vpaned);
 	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, multi_notebook);
 	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, bottom_panel);
@@ -2263,11 +2261,7 @@ setup_side_panel (GeditWindow *window)
 	                        G_CALLBACK (side_panel_visibility_changed),
 	                        window);
 
-#if INLINE_SIDE_PANEL_SWITCHER
-	priv->side_stack_switcher = priv->side_panel_inline_stack_switcher;
-#else
 	priv->side_stack_switcher = gedit_menu_stack_switcher_new ();
-#endif
 
 	gtk_button_set_relief (GTK_BUTTON (priv->side_stack_switcher), GTK_RELIEF_NONE);
 	g_object_ref_sink (priv->side_stack_switcher);
