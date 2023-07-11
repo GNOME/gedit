@@ -4,6 +4,7 @@
 
 #include "gedit-header-bar.h"
 #include <glib/gi18n.h>
+#include "gedit-app-private.h"
 #include "gedit-commands.h"
 
 struct _GeditHeaderBarPrivate
@@ -148,10 +149,20 @@ add_new_tab_button (GeditHeaderBar *bar)
 static void
 add_hamburger_menu_button (GeditHeaderBar *bar)
 {
+	GMenuModel *hamburger_menu;
+
 	g_return_if_fail (bar->priv->hamburger_menu_button == NULL);
+
+	hamburger_menu = _gedit_app_get_hamburger_menu (GEDIT_APP (g_application_get_default ()));
+
+	if (hamburger_menu == NULL)
+	{
+		return;
+	}
 
 	bar->priv->hamburger_menu_button = GTK_MENU_BUTTON (gtk_menu_button_new ());
 	gtk_menu_button_set_direction (bar->priv->hamburger_menu_button, GTK_ARROW_NONE);
+	gtk_menu_button_set_menu_model (bar->priv->hamburger_menu_button, hamburger_menu);
 	gtk_widget_show (GTK_WIDGET (bar->priv->hamburger_menu_button));
 
 	gtk_header_bar_pack_end (bar->priv->header_bar,

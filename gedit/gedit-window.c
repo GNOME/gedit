@@ -1637,15 +1637,18 @@ static void
 update_fullscreen_revealer_state (GeditWindow *window)
 {
 	GtkMenuButton *open_recent_menu_button;
-	GtkMenuButton *hamburger_menu_button;
 	gboolean open_recent_menu_is_active;
-	gboolean hamburger_menu_is_active;
+	GtkMenuButton *hamburger_menu_button;
+	gboolean hamburger_menu_is_active = FALSE;
 
 	open_recent_menu_button = _gedit_header_bar_get_open_recent_menu_button (window->priv->gedit_header_bar_fullscreen);
-	hamburger_menu_button = _gedit_header_bar_get_hamburger_menu_button (window->priv->gedit_header_bar_fullscreen);
-
 	open_recent_menu_is_active = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (open_recent_menu_button));
-	hamburger_menu_is_active = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (hamburger_menu_button));
+
+	hamburger_menu_button = _gedit_header_bar_get_hamburger_menu_button (window->priv->gedit_header_bar_fullscreen);
+	if (hamburger_menu_button != NULL)
+	{
+		hamburger_menu_is_active = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (hamburger_menu_button));
+	}
 
 	gtk_revealer_set_reveal_child (window->priv->fullscreen_revealer,
 				       (window->priv->in_fullscreen_eventbox ||
@@ -2545,7 +2548,6 @@ sync_fullscreen_actions (GeditWindow *window,
 			 gboolean     fullscreen)
 {
 	GtkMenuButton *button;
-	GPropertyAction *action;
 
 	if (fullscreen)
 	{
@@ -2557,9 +2559,15 @@ sync_fullscreen_actions (GeditWindow *window,
 	}
 
 	g_action_map_remove_action (G_ACTION_MAP (window), "hamburger-menu");
-	action = g_property_action_new ("hamburger-menu", button, "active");
-	g_action_map_add_action (G_ACTION_MAP (window), G_ACTION (action));
-	g_object_unref (action);
+
+	if (button != NULL)
+	{
+		GPropertyAction *action;
+
+		action = g_property_action_new ("hamburger-menu", button, "active");
+		g_action_map_add_action (G_ACTION_MAP (window), G_ACTION (action));
+		g_object_unref (action);
+	}
 }
 
 static void
@@ -2588,7 +2596,6 @@ static void
 gedit_window_init (GeditWindow *window)
 {
 	GtkTargetList *tl;
-	GMenuModel *hamburger_menu;
 	GtkMenuButton *button;
 
 	gedit_debug (DEBUG_WINDOW);
@@ -2633,31 +2640,14 @@ gedit_window_init (GeditWindow *window)
 	setup_fullscreen_eventbox (window);
 	sync_fullscreen_actions (window, FALSE);
 
-	hamburger_menu = _gedit_app_get_hamburger_menu (GEDIT_APP (g_application_get_default ()));
-	if (hamburger_menu != NULL)
-	{
-		button = _gedit_header_bar_get_hamburger_menu_button (window->priv->gedit_header_bar_normal);
-		gtk_menu_button_set_menu_model (button, hamburger_menu);
-
-		button = _gedit_header_bar_get_hamburger_menu_button (window->priv->gedit_header_bar_fullscreen);
-		gtk_menu_button_set_menu_model (button, hamburger_menu);
-	}
-	else
-	{
-		button = _gedit_header_bar_get_hamburger_menu_button (window->priv->gedit_header_bar_normal);
-		gtk_widget_hide (GTK_WIDGET (button));
-		gtk_widget_set_no_show_all (GTK_WIDGET (button), TRUE);
-
-		button = _gedit_header_bar_get_hamburger_menu_button (window->priv->gedit_header_bar_fullscreen);
-		gtk_widget_hide (GTK_WIDGET (button));
-		gtk_widget_set_no_show_all (GTK_WIDGET (button), TRUE);
-	}
-
 	button = _gedit_header_bar_get_hamburger_menu_button (window->priv->gedit_header_bar_fullscreen);
-	g_signal_connect (button,
-	                  "toggled",
-	                  G_CALLBACK (on_fullscreen_toggle_button_toggled),
-	                  window);
+	if (button != NULL)
+	{
+		g_signal_connect (button,
+				  "toggled",
+				  G_CALLBACK (on_fullscreen_toggle_button_toggled),
+				  window);
+	}
 
 	/* Setup status bar */
 	setup_statusbar (window);
