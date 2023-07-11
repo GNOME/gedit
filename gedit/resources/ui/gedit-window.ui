@@ -24,16 +24,6 @@
           <object class="GtkHeaderBar" id="headerbar">
             <property name="visible">True</property>
             <property name="show_close_button">True</property>
-            <child>
-              <object class="GtkMenuButton" id="gear_button">
-                <property name="visible">True</property>
-                <property name="use_popover">True</property>
-                <property name="image">menu_image</property>
-              </object>
-              <packing>
-                <property name="pack_type">end</property>
-              </packing>
-            </child>
           </object>
           <packing>
             <property name="shrink">False</property>
@@ -278,15 +268,6 @@
                         <property name="pack_type">end</property>
                       </packing>
                     </child>
-                    <child>
-                      <object class="GtkMenuButton" id="fullscreen_gear_button">
-                        <property name="visible">True</property>
-                        <property name="image">fullscreen_menu_image</property>
-                      </object>
-                      <packing>
-                        <property name="pack_type">end</property>
-                      </packing>
-                    </child>
                   </object>
                 </child>
               </object>
@@ -296,14 +277,6 @@
       </object>
     </child>
   </template>
-  <object class="GtkImage" id="menu_image">
-    <property name="visible">True</property>
-    <property name="icon_name">open-menu-symbolic</property>
-  </object>
-  <object class="GtkImage" id="fullscreen_menu_image">
-    <property name="visible">True</property>
-    <property name="icon_name">open-menu-symbolic</property>
-  </object>
   <object class="GtkImage" id="leave_fullscreen_image">
     <property name="visible">True</property>
     <property name="icon_name">view-restore-symbolic</property>

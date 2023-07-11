@@ -39,6 +39,8 @@ GeditHeaderBar *	_gedit_header_bar_new				(GtkHeaderBar *header_bar,
 
 GtkMenuButton *		_gedit_header_bar_get_open_recent_menu_button	(GeditHeaderBar *bar);
 
+GtkMenuButton *		_gedit_header_bar_get_hamburger_menu_button	(GeditHeaderBar *bar);
+
 G_END_DECLS
 
 #endif /* GEDIT_HEADER_BAR_H */

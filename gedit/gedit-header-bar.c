@@ -16,6 +16,7 @@ struct _GeditHeaderBarPrivate
 
 	/* Part of the GtkHeaderBar */
 	GtkMenuButton *open_recent_menu_button;
+	GtkMenuButton *hamburger_menu_button;
 };
 
 G_DEFINE_TYPE_WITH_PRIVATE (GeditHeaderBar, _gedit_header_bar, G_TYPE_OBJECT)
@@ -28,6 +29,7 @@ _gedit_header_bar_dispose (GObject *object)
 	g_clear_object (&bar->priv->header_bar);
 	g_clear_weak_pointer (&bar->priv->window);
 	bar->priv->open_recent_menu_button = NULL;
+	bar->priv->hamburger_menu_button = NULL;
 
 	G_OBJECT_CLASS (_gedit_header_bar_parent_class)->dispose (object);
 }
@@ -144,6 +146,19 @@ add_new_tab_button (GeditHeaderBar *bar)
 }
 
 static void
+add_hamburger_menu_button (GeditHeaderBar *bar)
+{
+	g_return_if_fail (bar->priv->hamburger_menu_button == NULL);
+
+	bar->priv->hamburger_menu_button = GTK_MENU_BUTTON (gtk_menu_button_new ());
+	gtk_menu_button_set_direction (bar->priv->hamburger_menu_button, GTK_ARROW_NONE);
+	gtk_widget_show (GTK_WIDGET (bar->priv->hamburger_menu_button));
+
+	gtk_header_bar_pack_end (bar->priv->header_bar,
+				 GTK_WIDGET (bar->priv->hamburger_menu_button));
+}
+
+static void
 add_save_button (GeditHeaderBar *bar)
 {
 	GtkWidget *button;
@@ -172,6 +187,7 @@ _gedit_header_bar_new (GtkHeaderBar *header_bar,
 
 	add_open_buttons (bar);
 	add_new_tab_button (bar);
+	add_hamburger_menu_button (bar);
 	add_save_button (bar);
 
 	return bar;
@@ -182,4 +198,11 @@ _gedit_header_bar_get_open_recent_menu_button (GeditHeaderBar *bar)
 {
 	g_return_val_if_fail (GEDIT_IS_HEADER_BAR (bar), NULL);
 	return bar->priv->open_recent_menu_button;
+}
+
+GtkMenuButton *
+_gedit_header_bar_get_hamburger_menu_button (GeditHeaderBar *bar)
+{
+	g_return_val_if_fail (GEDIT_IS_HEADER_BAR (bar), NULL);
+	return bar->priv->hamburger_menu_button;
 }
