@@ -2219,41 +2219,6 @@ side_panel_visibility_changed (GtkWidget   *panel,
 }
 
 static void
-on_side_panel_stack_children_number_changed (GtkStack    *stack,
-                                             GtkWidget   *widget,
-                                             GeditWindow *window)
-{
-	GeditWindowPrivate *priv = window->priv;
-	GList *children;
-
-	children = gtk_container_get_children (GTK_CONTAINER (stack));
-
-	if (children != NULL && children->next != NULL)
-	{
-		gtk_widget_show (priv->side_stack_switcher);
-
-#if !INLINE_SIDE_PANEL_SWITCHER
-		gtk_header_bar_set_custom_title (GTK_HEADER_BAR (priv->side_headerbar), priv->side_stack_switcher);
-#endif
-	}
-	else
-	{
-		/* side_stack_switcher can get NULL in dispose, before stack children
-		   are being removed */
-		if (priv->side_stack_switcher != NULL)
-		{
-			gtk_widget_hide (priv->side_stack_switcher);
-		}
-
-#if !INLINE_SIDE_PANEL_SWITCHER
-		gtk_header_bar_set_custom_title (GTK_HEADER_BAR (priv->side_headerbar), NULL);
-#endif
-	}
-
-	g_list_free (children);
-}
-
-static void
 setup_side_panel (GeditWindow *window)
 {
 	GeditWindowPrivate *priv = window->priv;
@@ -2276,16 +2241,6 @@ setup_side_panel (GeditWindow *window)
 
 	stack = gedit_side_panel_get_stack (priv->side_panel);
 	gedit_menu_stack_switcher_set_stack (GEDIT_MENU_STACK_SWITCHER (priv->side_stack_switcher), stack);
-
-	g_signal_connect (stack,
-	                  "add",
-	                  G_CALLBACK (on_side_panel_stack_children_number_changed),
-	                  window);
-
-	g_signal_connect (stack,
-	                  "remove",
-	                  G_CALLBACK (on_side_panel_stack_children_number_changed),
-	                  window);
 
 	documents_panel = gedit_documents_panel_new (window);
 	gtk_widget_show_all (documents_panel);
