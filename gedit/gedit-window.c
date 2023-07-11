@@ -82,7 +82,7 @@ struct _GeditWindowPrivate
 	guint language_changed_id;
 
 	/* Headerbars */
-	GtkWidget *side_headerbar;
+	GtkHeaderBar *side_headerbar;
 	GtkWidget *headerbar;
 
 	GeditHeaderBar *gedit_header_bar_normal;
@@ -2202,7 +2202,7 @@ side_panel_visibility_changed (GtkWidget   *panel,
 
 			layout_headerbar = g_strdup_printf ("%c%s", ':', tokens[1]);
 			gtk_header_bar_set_decoration_layout (GTK_HEADER_BAR (window->priv->headerbar), layout_headerbar);
-			gtk_header_bar_set_decoration_layout (GTK_HEADER_BAR (window->priv->side_headerbar), tokens[0]);
+			gtk_header_bar_set_decoration_layout (window->priv->side_headerbar, tokens[0]);
 
 			g_free (layout_headerbar);
 			g_strfreev (tokens);
@@ -2211,7 +2211,7 @@ side_panel_visibility_changed (GtkWidget   *panel,
 	else
 	{
 		gtk_header_bar_set_decoration_layout (GTK_HEADER_BAR (window->priv->headerbar), layout_desc);
-		gtk_header_bar_set_decoration_layout (GTK_HEADER_BAR (window->priv->side_headerbar), NULL);
+		gtk_header_bar_set_decoration_layout (window->priv->side_headerbar, NULL);
 	}
 
 	g_free (layout_desc);
@@ -2529,6 +2529,21 @@ init_amtk_application_window (GeditWindow *gedit_window)
 }
 
 static void
+init_side_headerbar (GeditWindow *window)
+{
+#if !INLINE_SIDE_PANEL_SWITCHER
+	TeplStack *stack;
+	TeplStackSwitcherMenu *switcher;
+
+	stack = gedit_side_panel_get_stack (window->priv->side_panel);
+	switcher = tepl_stack_switcher_menu_new (stack);
+	gtk_widget_show (GTK_WIDGET (switcher));
+
+	gtk_header_bar_set_custom_title (window->priv->side_headerbar, GTK_WIDGET (switcher));
+#endif
+}
+
+static void
 init_open_buttons (GeditWindow *window)
 {
 	GtkMenuButton *fullscreen_open_recent_menu_button;
@@ -2576,6 +2591,7 @@ gedit_window_init (GeditWindow *window)
 	window->priv->gedit_header_bar_fullscreen =
 		_gedit_header_bar_new (GTK_HEADER_BAR (window->priv->fullscreen_headerbar), window, TRUE);
 
+	init_side_headerbar (window);
 	init_open_buttons (window);
 
 	g_action_map_add_action_entries (G_ACTION_MAP (window),
