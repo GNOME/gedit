@@ -34,24 +34,6 @@
                 <property name="pack_type">end</property>
               </packing>
             </child>
-            <child>
-              <object class="GtkButton">
-                <property name="label" translatable="yes">_Save</property>
-                <property name="use-underline">True</property>
-                <property name="visible">True</property>
-                <property name="tooltip_text" translatable="yes">Save the current file</property>
-                <property name="action_name">win.save</property>
-                <child internal-child="accessible">
-                  <object class="AtkObject">
-                    <property name="accessible-name" translatable="yes">Save</property>
-                    <property name="accessible-description" translatable="yes">Save the current file</property>
-                  </object>
-                </child>
-              </object>
-              <packing>
-                <property name="pack_type">end</property>
-              </packing>
-            </child>
           </object>
           <packing>
             <property name="shrink">False</property>
@@ -300,23 +282,6 @@
                       <object class="GtkMenuButton" id="fullscreen_gear_button">
                         <property name="visible">True</property>
                         <property name="image">fullscreen_menu_image</property>
-                      </object>
-                      <packing>
-                        <property name="pack_type">end</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkButton">
-                        <property name="label" translatable="yes">Save</property>
-                        <property name="visible">True</property>
-                        <property name="tooltip_text" translatable="yes">Save the current file</property>
-                        <property name="action_name">win.save</property>
-                        <child internal-child="accessible">
-                          <object class="AtkObject">
-                            <property name="accessible-name" translatable="yes">Save</property>
-                            <property name="accessible-description" translatable="yes">Save the current file</property>
-                          </object>
-                        </child>
                       </object>
                       <packing>
                         <property name="pack_type">end</property>

@@ -143,6 +143,19 @@ add_new_tab_button (GeditHeaderBar *bar)
 	gtk_header_bar_pack_start (bar->priv->header_bar, button);
 }
 
+static void
+add_save_button (GeditHeaderBar *bar)
+{
+	GtkWidget *button;
+
+	button = gtk_button_new_with_mnemonic (_("_Save"));
+	gtk_widget_set_tooltip_text (button, _("Save the current file"));
+	gtk_actionable_set_action_name (GTK_ACTIONABLE (button), "win.save");
+	gtk_widget_show (button);
+
+	gtk_header_bar_pack_end (bar->priv->header_bar, button);
+}
+
 GeditHeaderBar *
 _gedit_header_bar_new (GtkHeaderBar *header_bar,
 		       GeditWindow  *window)
@@ -159,6 +172,7 @@ _gedit_header_bar_new (GtkHeaderBar *header_bar,
 
 	add_open_buttons (bar);
 	add_new_tab_button (bar);
+	add_save_button (bar);
 
 	return bar;
 }
