@@ -1,6 +1,6 @@
 project(
   'gedit', 'c',
-  version: '45.0',
+  version: '46.alpha',
   meson_version: '>= 0.59'
 )
 
@@ -13,7 +13,7 @@ i18n = import('i18n')
 pkg_config = import('pkgconfig')
 python = import('python')
 
-api_version = '45'
+api_version = '46'
 
 # Paths
 root_include_dir = include_directories('.')
@@ -49,7 +49,7 @@ libgedit_public_deps = [
   gio_dep,
   dependency('gtk+-3.0', version: '>= 3.22'),
   dependency('amtk-5', version: '>= 5.6'),
-  dependency('tepl-6', version: '>= 6.5.1'),
+  dependency('tepl-6', version: '>= 6.7.1'),
   dependency('libpeas-gtk-1.0'),
 ]
 
