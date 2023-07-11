@@ -48,6 +48,7 @@
 #include "gedit-settings.h"
 #include "gedit-menu-stack-switcher.h"
 #include "gedit-header-bar.h"
+#include "gedit-side-panel.h"
 
 struct _GeditWindowPrivate
 {
@@ -57,7 +58,7 @@ struct _GeditWindowPrivate
 
 	GeditMultiNotebook *multi_notebook;
 
-	GtkStack *side_panel;
+	GeditSidePanel *side_panel;
 	GtkWidget *side_stack_switcher;
 	GtkWidget *bottom_panel;
 
@@ -178,6 +179,7 @@ gedit_window_get_property (GObject    *object,
 static void
 save_panels_state (GeditWindow *window)
 {
+	GtkStack *side_panel_stack;
 	const gchar *panel_page;
 
 	gedit_debug (DEBUG_WINDOW);
@@ -189,7 +191,8 @@ save_panels_state (GeditWindow *window)
 				    window->priv->side_panel_size);
 	}
 
-	panel_page = gtk_stack_get_visible_child_name (window->priv->side_panel);
+	side_panel_stack = gedit_side_panel_get_stack (window->priv->side_panel);
+	panel_page = gtk_stack_get_visible_child_name (side_panel_stack);
 	if (panel_page != NULL)
 	{
 		g_settings_set_string (window->priv->window_settings,
@@ -930,6 +933,7 @@ clone_window (GeditWindow *origin)
 	GeditWindow *window;
 	GdkScreen *screen;
 	GeditApp  *app;
+	GtkStack *origin_side_panel_stack;
 	const gchar *panel_page;
 
 	gedit_debug (DEBUG_WINDOW);
@@ -958,11 +962,13 @@ clone_window (GeditWindow *origin)
 	window->priv->side_panel_size = origin->priv->side_panel_size;
 	window->priv->bottom_panel_size = origin->priv->bottom_panel_size;
 
-	panel_page = gtk_stack_get_visible_child_name (origin->priv->side_panel);
+	origin_side_panel_stack = gedit_side_panel_get_stack (origin->priv->side_panel);
+	panel_page = gtk_stack_get_visible_child_name (origin_side_panel_stack);
 
 	if (panel_page)
 	{
-		gtk_stack_set_visible_child_name (window->priv->side_panel, panel_page);
+		GtkStack *stack = gedit_side_panel_get_stack (window->priv->side_panel);
+		gtk_stack_set_visible_child_name (stack, panel_page);
 	}
 
 	panel_page = gtk_stack_get_visible_child_name (GTK_STACK (origin->priv->bottom_panel));
@@ -2221,7 +2227,7 @@ on_side_panel_stack_children_number_changed (GtkStack    *stack,
 	GeditWindowPrivate *priv = window->priv;
 	GList *children;
 
-	children = gtk_container_get_children (GTK_CONTAINER (priv->side_panel));
+	children = gtk_container_get_children (GTK_CONTAINER (stack));
 
 	if (children != NULL && children->next != NULL)
 	{
@@ -2252,6 +2258,7 @@ static void
 setup_side_panel (GeditWindow *window)
 {
 	GeditWindowPrivate *priv = window->priv;
+	GtkStack *stack;
 	GtkWidget *documents_panel;
 
 	gedit_debug (DEBUG_WINDOW);
@@ -2268,22 +2275,22 @@ setup_side_panel (GeditWindow *window)
 
 	gedit_utils_set_atk_name_description (priv->side_stack_switcher, _("Change side panel page"),  NULL);
 
-	gedit_menu_stack_switcher_set_stack (GEDIT_MENU_STACK_SWITCHER (priv->side_stack_switcher),
-	                                     priv->side_panel);
+	stack = gedit_side_panel_get_stack (priv->side_panel);
+	gedit_menu_stack_switcher_set_stack (GEDIT_MENU_STACK_SWITCHER (priv->side_stack_switcher), stack);
 
-	g_signal_connect (priv->side_panel,
+	g_signal_connect (stack,
 	                  "add",
 	                  G_CALLBACK (on_side_panel_stack_children_number_changed),
 	                  window);
 
-	g_signal_connect (priv->side_panel,
+	g_signal_connect (stack,
 	                  "remove",
 	                  G_CALLBACK (on_side_panel_stack_children_number_changed),
 	                  window);
 
 	documents_panel = gedit_documents_panel_new (window);
 	gtk_widget_show_all (documents_panel);
-	gtk_stack_add_titled (priv->side_panel,
+	gtk_stack_add_titled (stack,
 	                      documents_panel,
 	                      "GeditWindowDocumentsPanel",
 	                      _("Documents"));
@@ -2371,18 +2378,21 @@ setup_bottom_panel (GeditWindow *window)
 static void
 init_side_panel_visibility (GeditWindow *window)
 {
+	GtkStack *stack;
 	gchar *child_name;
 	GtkWidget *child_widget;
 	gboolean side_panel_visible;
 
 	gedit_debug (DEBUG_WINDOW);
 
+	stack = gedit_side_panel_get_stack (window->priv->side_panel);
+
 	child_name = g_settings_get_string (window->priv->window_settings,
 					    GEDIT_SETTINGS_SIDE_PANEL_ACTIVE_PAGE);
-	child_widget = gtk_stack_get_child_by_name (window->priv->side_panel, child_name);
+	child_widget = gtk_stack_get_child_by_name (stack, child_name);
 	if (child_widget != NULL)
 	{
-		gtk_stack_set_visible_child (window->priv->side_panel, child_widget);
+		gtk_stack_set_visible_child (stack, child_widget);
 	}
 
 	g_free (child_name);
@@ -3128,7 +3138,7 @@ gedit_window_get_side_panel (GeditWindow *window)
 {
 	g_return_val_if_fail (GEDIT_IS_WINDOW (window), NULL);
 
-	return GTK_WIDGET (window->priv->side_panel);
+	return GTK_WIDGET (gedit_side_panel_get_stack (window->priv->side_panel));
 }
 
 /**
