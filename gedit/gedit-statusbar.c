@@ -20,6 +20,7 @@
 
 #include "gedit-statusbar.h"
 #include <tepl/tepl.h>
+#include "gedit-settings.h"
 
 struct _GeditStatusbar
 {
@@ -37,6 +38,56 @@ struct _GeditStatusbar
 };
 
 G_DEFINE_TYPE (GeditStatusbar, gedit_statusbar, GTK_TYPE_STATUSBAR)
+
+static void
+update_visibility (GeditStatusbar *statusbar)
+{
+	GeditSettings *settings;
+	GSettings *ui_settings;
+	gboolean visible;
+
+	if (statusbar->window == NULL)
+	{
+		return;
+	}
+
+	if (_gedit_window_is_fullscreen (statusbar->window))
+	{
+		gtk_widget_hide (GTK_WIDGET (statusbar));
+		return;
+	}
+
+	settings = _gedit_settings_get_singleton ();
+	ui_settings = _gedit_settings_peek_ui_settings (settings);
+
+	visible = g_settings_get_boolean (ui_settings, GEDIT_SETTINGS_STATUSBAR_VISIBLE);
+	gtk_widget_set_visible (GTK_WIDGET (statusbar), visible);
+}
+
+static void
+statusbar_visible_setting_changed_cb (GSettings   *ui_settings,
+				      const gchar *key,
+				      gpointer     user_data)
+{
+	GeditStatusbar *statusbar = GEDIT_STATUSBAR (user_data);
+	update_visibility (statusbar);
+}
+
+static gboolean
+window_state_event_cb (GtkWidget *window,
+		       GdkEvent  *event,
+		       gpointer   user_data)
+{
+	GeditStatusbar *statusbar = GEDIT_STATUSBAR (user_data);
+	GdkEventWindowState *event_window_state = (GdkEventWindowState *) event;
+
+	if (event_window_state->changed_mask & GDK_WINDOW_STATE_FULLSCREEN)
+	{
+		update_visibility (statusbar);
+	}
+
+	return GDK_EVENT_PROPAGATE;
+}
 
 static void
 gedit_statusbar_dispose (GObject *object)
@@ -84,11 +135,31 @@ void
 _gedit_statusbar_set_window (GeditStatusbar *statusbar,
 			     GeditWindow    *window)
 {
+	GeditSettings *settings;
+	GSettings *ui_settings;
+
 	g_return_if_fail (GEDIT_IS_STATUSBAR (statusbar));
 	g_return_if_fail (GEDIT_IS_WINDOW (window));
 	g_return_if_fail (statusbar->window == NULL);
 
 	g_set_weak_pointer (&statusbar->window, window);
+
+	settings = _gedit_settings_get_singleton ();
+	ui_settings = _gedit_settings_peek_ui_settings (settings);
+
+	g_signal_connect_object (ui_settings,
+				 "changed::" GEDIT_SETTINGS_STATUSBAR_VISIBLE,
+				 G_CALLBACK (statusbar_visible_setting_changed_cb),
+				 statusbar,
+				 G_CONNECT_DEFAULT);
+
+	g_signal_connect_object (window,
+				 "window-state-event",
+				 G_CALLBACK (window_state_event_cb),
+				 statusbar,
+				 G_CONNECT_AFTER);
+
+	update_visibility (statusbar);
 }
 
 static gboolean

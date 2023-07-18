@@ -151,35 +151,6 @@ G_DEFINE_TYPE_WITH_PRIVATE (GeditWindow, gedit_window, GTK_TYPE_APPLICATION_WIND
 static void remove_actions (GeditWindow *window);
 
 static void
-update_statusbar_visibility (GeditWindow *window)
-{
-	GeditSettings *settings;
-	GSettings *ui_settings;
-	gboolean visible;
-
-	if (_gedit_window_is_fullscreen (window))
-	{
-		gtk_widget_hide (GTK_WIDGET (window->priv->statusbar));
-		return;
-	}
-
-	settings = _gedit_settings_get_singleton ();
-	ui_settings = _gedit_settings_peek_ui_settings (settings);
-
-	visible = g_settings_get_boolean (ui_settings, GEDIT_SETTINGS_STATUSBAR_VISIBLE);
-	gtk_widget_set_visible (GTK_WIDGET (window->priv->statusbar), visible);
-}
-
-static void
-statusbar_visible_setting_changed_cb (GSettings   *ui_settings,
-				      const gchar *key,
-				      gpointer     user_data)
-{
-	GeditWindow *window = GEDIT_WINDOW (user_data);
-	update_statusbar_visibility (window);
-}
-
-static void
 gedit_window_get_property (GObject    *object,
 			   guint       prop_id,
 			   GValue     *value,
@@ -353,8 +324,6 @@ update_fullscreen (GeditWindow *window,
 	GAction *fullscreen_action;
 
 	_gedit_multi_notebook_set_show_tabs (window->priv->multi_notebook, !is_fullscreen);
-
-	update_statusbar_visibility (window);
 
 #ifndef OS_OSX
 	if (is_fullscreen)
@@ -889,8 +858,6 @@ language_activated_cb (TeplLanguageChooser *language_chooser,
 static void
 setup_statusbar (GeditWindow *window)
 {
-	GeditSettings *settings;
-	GSettings *ui_settings;
 	TeplLanguageChooserWidget *language_chooser;
 
 	gedit_debug (DEBUG_WINDOW);
@@ -899,17 +866,6 @@ setup_statusbar (GeditWindow *window)
 
 	window->priv->bracket_match_message_cid = gtk_statusbar_get_context_id
 		(GTK_STATUSBAR (window->priv->statusbar), "bracket_match_message");
-
-	settings = _gedit_settings_get_singleton ();
-	ui_settings = _gedit_settings_peek_ui_settings (settings);
-
-	g_signal_connect_object (ui_settings,
-				 "changed::" GEDIT_SETTINGS_STATUSBAR_VISIBLE,
-				 G_CALLBACK (statusbar_visible_setting_changed_cb),
-				 window,
-				 G_CONNECT_DEFAULT);
-
-	update_statusbar_visibility (window);
 
 	/* Insert/Overwrite indicator */
 	window->priv->overwrite_indicator = tepl_overwrite_indicator_new ();
