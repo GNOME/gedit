@@ -895,6 +895,8 @@ setup_statusbar (GeditWindow *window)
 
 	gedit_debug (DEBUG_WINDOW);
 
+	_gedit_statusbar_set_window (window->priv->statusbar, window);
+
 	window->priv->bracket_match_message_cid = gtk_statusbar_get_context_id
 		(GTK_STATUSBAR (window->priv->statusbar), "bracket_match_message");
 

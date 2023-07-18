@@ -22,6 +22,7 @@
 #define GEDIT_STATUSBAR_H
 
 #include <gtk/gtk.h>
+#include <gedit/gedit-window.h>
 
 G_BEGIN_DECLS
 
@@ -31,6 +32,10 @@ G_DECLARE_FINAL_TYPE (GeditStatusbar, gedit_statusbar, GEDIT, STATUSBAR, GtkStat
 
 G_GNUC_INTERNAL
 GeditStatusbar *_gedit_statusbar_new			(void);
+
+G_GNUC_INTERNAL
+void		_gedit_statusbar_set_window		(GeditStatusbar *statusbar,
+							 GeditWindow    *window);
 
 void		gedit_statusbar_flash_message		(GeditStatusbar   *statusbar,
 							 guint             context_id,

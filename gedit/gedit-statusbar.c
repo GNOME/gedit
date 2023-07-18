@@ -25,6 +25,9 @@ struct _GeditStatusbar
 {
 	GtkStatusbar parent_instance;
 
+	/* Weak ref */
+	GeditWindow *window;
+
 	/* tmp flash timeout data */
 	guint flash_timeout;
 	guint flash_context_id;
@@ -39,6 +42,8 @@ static void
 gedit_statusbar_dispose (GObject *object)
 {
 	GeditStatusbar *statusbar = GEDIT_STATUSBAR (object);
+
+	g_clear_weak_pointer (&statusbar->window);
 
 	if (statusbar->flash_timeout > 0)
 	{
@@ -70,6 +75,20 @@ GeditStatusbar *
 _gedit_statusbar_new (void)
 {
 	return g_object_new (GEDIT_TYPE_STATUSBAR, NULL);
+}
+
+/* TODO: remove this function, and take a GeditWindow parameter in new().
+ * This requires to create the statusbar in code, not in a *.ui file.
+ */
+void
+_gedit_statusbar_set_window (GeditStatusbar *statusbar,
+			     GeditWindow    *window)
+{
+	g_return_if_fail (GEDIT_IS_STATUSBAR (statusbar));
+	g_return_if_fail (GEDIT_IS_WINDOW (window));
+	g_return_if_fail (statusbar->window == NULL);
+
+	g_set_weak_pointer (&statusbar->window, window);
 }
 
 static gboolean
