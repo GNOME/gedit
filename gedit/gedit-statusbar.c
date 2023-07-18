@@ -18,10 +18,8 @@
  * along with this program; if not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "config.h"
 #include "gedit-statusbar.h"
 #include <glib/gi18n.h>
-#include "gedit-app.h"
 
 struct _GeditStatusbar
 {
