@@ -74,8 +74,8 @@ struct _GeditWindowPrivate
 	GtkWidget *statusbar;
 	TeplOverwriteIndicator *overwrite_indicator;
 	TeplLineColumnIndicator *line_column_indicator;
-	GtkWidget *tab_width_button;
-	GtkWidget *language_button;
+	TeplStatusMenuButton *tab_width_button;
+	TeplStatusMenuButton *language_button;
 	GtkWidget *language_popover;
 	guint bracket_match_message_cid;
 	guint tab_width_id;
@@ -913,7 +913,8 @@ setup_statusbar (GeditWindow *window)
 	                                _gedit_app_get_tab_width_menu (GEDIT_APP (g_application_get_default ())));
 
 	/* Language button */
-	window->priv->language_popover = gtk_popover_new (window->priv->language_button);
+	gtk_widget_set_margin_end (GTK_WIDGET (window->priv->language_button), 3);
+	window->priv->language_popover = gtk_popover_new (GTK_WIDGET (window->priv->language_button));
 	gtk_menu_button_set_popover (GTK_MENU_BUTTON (window->priv->language_button),
 	                             window->priv->language_popover);
 
@@ -1201,7 +1202,7 @@ tab_width_changed (GObject     *object,
 	new_tab_width = gtk_source_view_get_tab_width (GTK_SOURCE_VIEW (object));
 
 	label = g_strdup_printf (_("Tab Width: %u"), new_tab_width);
-	gedit_status_menu_button_set_label (GEDIT_STATUS_MENU_BUTTON (window->priv->tab_width_button), label);
+	tepl_status_menu_button_set_label_text (window->priv->tab_width_button, label);
 	g_free (label);
 }
 
@@ -1220,7 +1221,7 @@ language_changed (GObject     *object,
 	else
 		label = _("Plain Text");
 
-	gedit_status_menu_button_set_label (GEDIT_STATUS_MENU_BUTTON (window->priv->language_button), label);
+	tepl_status_menu_button_set_label_text (window->priv->language_button, label);
 
 	peas_extension_set_foreach (window->priv->extensions,
 	                            (PeasExtensionSetForeachFunc) extension_update_state,
@@ -1294,8 +1295,8 @@ update_statusbar (GeditWindow *window,
 						     TEPL_VIEW (new_view));
 		gtk_widget_show (GTK_WIDGET (window->priv->line_column_indicator));
 
-		gtk_widget_show (window->priv->tab_width_button);
-		gtk_widget_show (window->priv->language_button);
+		gtk_widget_show (GTK_WIDGET (window->priv->tab_width_button));
+		gtk_widget_show (GTK_WIDGET (window->priv->language_button));
 
 		window->priv->tab_width_id = g_signal_connect (new_view,
 							       "notify::tab-width",
@@ -1991,8 +1992,8 @@ on_tab_removed (GeditMultiNotebook *multi,
 		/* hide the additional widgets */
 		gtk_widget_hide (GTK_WIDGET (window->priv->overwrite_indicator));
 		gtk_widget_hide (GTK_WIDGET (window->priv->line_column_indicator));
-		gtk_widget_hide (window->priv->tab_width_button);
-		gtk_widget_hide (window->priv->language_button);
+		gtk_widget_hide (GTK_WIDGET (window->priv->tab_width_button));
+		gtk_widget_hide (GTK_WIDGET (window->priv->language_button));
 	}
 
 	if (!window->priv->dispose_has_run)
