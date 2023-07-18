@@ -979,36 +979,29 @@ clone_window (GeditWindow *origin)
 static void
 bracket_matched_cb (GtkSourceBuffer           *buffer,
 		    GtkTextIter               *iter,
-		    GtkSourceBracketMatchType  result,
+		    GtkSourceBracketMatchType  state,
 		    GeditWindow               *window)
 {
-	if (buffer != GTK_SOURCE_BUFFER (gedit_window_get_active_document (window)))
-		return;
+	gchar *msg;
 
-	switch (result)
+	if (buffer != GTK_SOURCE_BUFFER (gedit_window_get_active_document (window)))
 	{
-		case GTK_SOURCE_BRACKET_MATCH_NONE:
-			gtk_statusbar_pop (GTK_STATUSBAR (window->priv->statusbar),
-					   window->priv->bracket_match_message_cid);
-			break;
-		case GTK_SOURCE_BRACKET_MATCH_OUT_OF_RANGE:
-			gedit_statusbar_flash_message (window->priv->statusbar,
-						       window->priv->bracket_match_message_cid,
-						       _("Bracket match is out of range"));
-			break;
-		case GTK_SOURCE_BRACKET_MATCH_NOT_FOUND:
-			gedit_statusbar_flash_message (window->priv->statusbar,
-						       window->priv->bracket_match_message_cid,
-						       _("Bracket match not found"));
-			break;
-		case GTK_SOURCE_BRACKET_MATCH_FOUND:
-			gedit_statusbar_flash_message (window->priv->statusbar,
-						       window->priv->bracket_match_message_cid,
-						       _("Bracket match found on line: %d"),
-						       gtk_text_iter_get_line (iter) + 1);
-			break;
-		default:
-			g_assert_not_reached ();
+		return;
+	}
+
+	msg = gtk_source_utils_get_bracket_matched_message (iter, state);
+
+	if (msg != NULL)
+	{
+		gedit_statusbar_flash_message (window->priv->statusbar,
+					       window->priv->bracket_match_message_cid,
+					       msg);
+		g_free (msg);
+	}
+	else
+	{
+		gtk_statusbar_pop (GTK_STATUSBAR (window->priv->statusbar),
+				   window->priv->bracket_match_message_cid);
 	}
 }
 
