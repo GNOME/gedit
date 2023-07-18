@@ -25,13 +25,6 @@ struct _GeditStatusbar
 {
 	GtkStatusbar parent_instance;
 
-	GtkWidget *error_frame;
-	GtkWidget *error_image;
-	GtkWidget *state_frame;
-	GtkWidget *load_image;
-	GtkWidget *save_image;
-	GtkWidget *print_image;
-
 	/* tmp flash timeout data */
 	guint flash_timeout;
 	guint flash_context_id;
@@ -65,14 +58,7 @@ gedit_statusbar_class_init (GeditStatusbarClass *klass)
 	object_class->dispose = gedit_statusbar_dispose;
 
 	gtk_widget_class_set_template_from_resource (widget_class,
-		                                    "/org/gnome/gedit/ui/gedit-statusbar.ui");
-
-	gtk_widget_class_bind_template_child (widget_class, GeditStatusbar, error_frame);
-	gtk_widget_class_bind_template_child (widget_class, GeditStatusbar, error_image);
-	gtk_widget_class_bind_template_child (widget_class, GeditStatusbar, state_frame);
-	gtk_widget_class_bind_template_child (widget_class, GeditStatusbar, load_image);
-	gtk_widget_class_bind_template_child (widget_class, GeditStatusbar, save_image);
-	gtk_widget_class_bind_template_child (widget_class, GeditStatusbar, print_image);
+						     "/org/gnome/gedit/ui/gedit-statusbar.ui");
 }
 
 static void
@@ -186,53 +172,6 @@ _gedit_statusbar_flash_generic_message (GeditStatusbar *statusbar,
 	flash_text (statusbar, statusbar->generic_message_context_id, text);
 
 	g_free (text);
-}
-
-void
-gedit_statusbar_set_window_state (GeditStatusbar   *statusbar,
-				  GeditWindowState  state,
-				  gint              num_of_errors)
-{
-	g_return_if_fail (GEDIT_IS_STATUSBAR (statusbar));
-
-	gtk_widget_hide (statusbar->state_frame);
-	gtk_widget_hide (statusbar->save_image);
-	gtk_widget_hide (statusbar->load_image);
-	gtk_widget_hide (statusbar->print_image);
-
-	if (state & GEDIT_WINDOW_STATE_SAVING)
-	{
-		gtk_widget_show (statusbar->state_frame);
-		gtk_widget_show (statusbar->save_image);
-	}
-	if (state & GEDIT_WINDOW_STATE_LOADING)
-	{
-		gtk_widget_show (statusbar->state_frame);
-		gtk_widget_show (statusbar->load_image);
-	}
-	if (state & GEDIT_WINDOW_STATE_PRINTING)
-	{
-		gtk_widget_show (statusbar->state_frame);
-		gtk_widget_show (statusbar->print_image);
-	}
-	if (state & GEDIT_WINDOW_STATE_ERROR)
-	{
-	 	gchar *tip;
-
- 		tip = g_strdup_printf (ngettext("There is a tab with errors",
-		                                "There are %d tabs with errors",
-		                                num_of_errors),
-		                       num_of_errors);
-
-		gtk_widget_set_tooltip_text (statusbar->error_image, tip);
-		g_free (tip);
-
-		gtk_widget_show (statusbar->error_frame);
-	}
-	else
-	{
-		gtk_widget_hide (statusbar->error_frame);
-	}
 }
 
 /* ex:set ts=8 noet: */

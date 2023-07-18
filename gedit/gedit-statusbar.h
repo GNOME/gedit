@@ -22,7 +22,6 @@
 #define GEDIT_STATUSBAR_H
 
 #include <gtk/gtk.h>
-#include <gedit/gedit-window.h>
 
 G_BEGIN_DECLS
 
@@ -31,10 +30,6 @@ G_BEGIN_DECLS
 G_DECLARE_FINAL_TYPE (GeditStatusbar, gedit_statusbar, GEDIT, STATUSBAR, GtkStatusbar)
 
 GtkWidget	*gedit_statusbar_new			(void);
-
-void		 gedit_statusbar_set_window_state	(GeditStatusbar   *statusbar,
-							 GeditWindowState  state,
-							 gint              num_of_errors);
 
 void		 gedit_statusbar_flash_message		(GeditStatusbar   *statusbar,
 							 guint             context_id,
