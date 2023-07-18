@@ -22,7 +22,6 @@
 #include "gedit-statusbar.h"
 #include <glib/gi18n.h>
 #include "gedit-app.h"
-#include "gedit-status-menu-button.h"
 
 struct _GeditStatusbar
 {

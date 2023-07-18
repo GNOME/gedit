@@ -68,7 +68,6 @@ libgedit_private_headers = [
   'gedit-replace-dialog.h',
   'gedit-settings.h',
   'gedit-side-panel.h',
-  'gedit-status-menu-button.h',
   'gedit-tab-label.h',
   'gedit-view-frame.h',
   'gedit-window-private.h',
@@ -108,7 +107,6 @@ libgedit_private_sources = [
   'gedit-replace-dialog.c',
   'gedit-settings.c',
   'gedit-side-panel.c',
-  'gedit-status-menu-button.c',
   'gedit-tab-label.c',
   'gedit-view-frame.c',
 ]

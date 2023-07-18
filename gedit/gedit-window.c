@@ -44,7 +44,6 @@
 #include "gedit-plugins-engine.h"
 #include "gedit-window-activatable.h"
 #include "gedit-enum-types.h"
-#include "gedit-status-menu-button.h"
 #include "gedit-settings.h"
 #include "gedit-header-bar.h"
 
