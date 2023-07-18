@@ -6,7 +6,7 @@ gio_docpath = dependency('gio-2.0').get_variable(pkgconfig: 'prefix') / 'share/g
 gdk_docpath = dependency('gdk-3.0').get_variable(pkgconfig: 'prefix') / 'share/gtk-doc/html/gdk3'
 gtk_docpath = dependency('gtk+-3.0').get_variable(pkgconfig: 'prefix') / 'share/gtk-doc/html/gtk3'
 gsv_docpath = dependency('libgedit-gtksourceview-300').get_variable(pkgconfig: 'prefix') / 'share/gtk-doc/html/libgedit-gtksourceview-300'
-amtk_docpath = dependency('amtk-5').get_variable(pkgconfig: 'prefix') / 'share/gtk-doc/html/amtk-5'
+amtk_docpath = dependency('libgedit-amtk-5').get_variable(pkgconfig: 'prefix') / 'share/gtk-doc/html/libgedit-amtk-5'
 tepl_docpath = dependency('tepl-6').get_variable(pkgconfig: 'prefix') / 'share/gtk-doc/html/tepl-6'
 libpeas_docpath = dependency('libpeas-1.0').get_variable(pkgconfig: 'prefix') / 'share/gtk-doc/html/libpeas'
 

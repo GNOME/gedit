@@ -48,7 +48,7 @@ gio_dep = dependency('gio-2.0', version: '>= 2.70')
 libgedit_public_deps = [
   gio_dep,
   dependency('gtk+-3.0', version: '>= 3.22'),
-  dependency('amtk-5', version: '>= 5.6'),
+  dependency('libgedit-amtk-5'),
   dependency('tepl-6', version: '>= 6.7.1'),
   dependency('libpeas-gtk-1.0'),
 ]
