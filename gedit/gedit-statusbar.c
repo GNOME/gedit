@@ -19,6 +19,7 @@
  */
 
 #include "gedit-statusbar.h"
+#include <tepl/tepl.h>
 #include <glib/gi18n.h>
 
 struct _GeditStatusbar
@@ -53,21 +54,17 @@ static void
 gedit_statusbar_class_init (GeditStatusbarClass *klass)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
-	GtkWidgetClass *widget_class = GTK_WIDGET_CLASS (klass);
 
 	object_class->dispose = gedit_statusbar_dispose;
-
-	gtk_widget_class_set_template_from_resource (widget_class,
-						     "/org/gnome/gedit/ui/gedit-statusbar.ui");
 }
 
 static void
 gedit_statusbar_init (GeditStatusbar *statusbar)
 {
-	gtk_widget_init_template (GTK_WIDGET (statusbar));
-
 	statusbar->generic_message_context_id =
 		gtk_statusbar_get_context_id (GTK_STATUSBAR (statusbar), "generic_message");
+
+	tepl_utils_setup_statusbar (GTK_STATUSBAR (statusbar));
 }
 
 /**
