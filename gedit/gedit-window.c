@@ -87,8 +87,6 @@ struct _GeditWindowPrivate
 	GeditHeaderBar *gedit_header_bar_normal;
 	GeditHeaderBar *gedit_header_bar_fullscreen;
 
-	gint num_tabs_with_error;
-
 	gint width;
 	gint height;
 	GdkWindowState window_state;
@@ -1369,7 +1367,8 @@ analyze_tab_state (GeditTab    *tab,
 		case GEDIT_TAB_STATE_SAVING_ERROR:
 		case GEDIT_TAB_STATE_GENERIC_ERROR:
 			window->priv->state |= GEDIT_WINDOW_STATE_ERROR;
-			++window->priv->num_tabs_with_error;
+			break;
+
 		default:
 			/* NOP */
 			break;
@@ -1379,16 +1378,13 @@ analyze_tab_state (GeditTab    *tab,
 static void
 update_window_state (GeditWindow *window)
 {
-	GeditWindowState old_ws;
-	gint old_num_of_errors;
+	GeditWindowState old_window_state;
 
 	gedit_debug_message (DEBUG_WINDOW, "Old state: %x", window->priv->state);
 
-	old_ws = window->priv->state;
-	old_num_of_errors = window->priv->num_tabs_with_error;
+	old_window_state = window->priv->state;
 
 	window->priv->state = 0;
-	window->priv->num_tabs_with_error = 0;
 
 	gedit_multi_notebook_foreach_tab (window->priv->multi_notebook,
 					  (GtkCallback)analyze_tab_state,
@@ -1396,21 +1392,10 @@ update_window_state (GeditWindow *window)
 
 	gedit_debug_message (DEBUG_WINDOW, "New state: %x", window->priv->state);
 
-	if (old_ws != window->priv->state)
+	if (old_window_state != window->priv->state)
 	{
 		update_actions_sensitivity (window);
-
-		gedit_statusbar_set_window_state (GEDIT_STATUSBAR (window->priv->statusbar),
-						  window->priv->state,
-						  window->priv->num_tabs_with_error);
-
 		g_object_notify_by_pspec (G_OBJECT (window), properties[PROP_STATE]);
-	}
-	else if (old_num_of_errors != window->priv->num_tabs_with_error)
-	{
-		gedit_statusbar_set_window_state (GEDIT_STATUSBAR (window->priv->statusbar),
-						  window->priv->state,
-						  window->priv->num_tabs_with_error);
 	}
 }
 
