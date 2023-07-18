@@ -70,7 +70,7 @@ struct _GeditWindowPrivate
 	GtkWidget *fullscreen_headerbar;
 
 	/* statusbar and context ids for statusbar messages */
-	GtkWidget *statusbar;
+	GeditStatusbar *statusbar;
 	TeplOverwriteIndicator *overwrite_indicator;
 	TeplLineColumnIndicator *line_column_indicator;
 	TeplStatusMenuButton *tab_width_button;
@@ -159,7 +159,7 @@ update_statusbar_visibility (GeditWindow *window)
 
 	if (_gedit_window_is_fullscreen (window))
 	{
-		gtk_widget_hide (window->priv->statusbar);
+		gtk_widget_hide (GTK_WIDGET (window->priv->statusbar));
 		return;
 	}
 
@@ -167,7 +167,7 @@ update_statusbar_visibility (GeditWindow *window)
 	ui_settings = _gedit_settings_peek_ui_settings (settings);
 
 	visible = g_settings_get_boolean (ui_settings, GEDIT_SETTINGS_STATUSBAR_VISIBLE);
-	gtk_widget_set_visible (window->priv->statusbar, visible);
+	gtk_widget_set_visible (GTK_WIDGET (window->priv->statusbar), visible);
 }
 
 static void
@@ -1034,17 +1034,17 @@ bracket_matched_cb (GtkSourceBuffer           *buffer,
 					   window->priv->bracket_match_message_cid);
 			break;
 		case GTK_SOURCE_BRACKET_MATCH_OUT_OF_RANGE:
-			gedit_statusbar_flash_message (GEDIT_STATUSBAR (window->priv->statusbar),
+			gedit_statusbar_flash_message (window->priv->statusbar,
 						       window->priv->bracket_match_message_cid,
 						       _("Bracket match is out of range"));
 			break;
 		case GTK_SOURCE_BRACKET_MATCH_NOT_FOUND:
-			gedit_statusbar_flash_message (GEDIT_STATUSBAR (window->priv->statusbar),
+			gedit_statusbar_flash_message (window->priv->statusbar,
 						       window->priv->bracket_match_message_cid,
 						       _("Bracket match not found"));
 			break;
 		case GTK_SOURCE_BRACKET_MATCH_FOUND:
-			gedit_statusbar_flash_message (GEDIT_STATUSBAR (window->priv->statusbar),
+			gedit_statusbar_flash_message (window->priv->statusbar,
 						       window->priv->bracket_match_message_cid,
 						       _("Bracket match found on line: %d"),
 						       gtk_text_iter_get_line (iter) + 1);
@@ -3158,7 +3158,7 @@ gedit_window_get_statusbar (GeditWindow *window)
 {
 	g_return_val_if_fail (GEDIT_IS_WINDOW (window), NULL);
 
-	return window->priv->statusbar;
+	return GTK_WIDGET (window->priv->statusbar);
 }
 
 /**
