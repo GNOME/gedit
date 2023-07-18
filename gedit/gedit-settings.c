@@ -212,6 +212,14 @@ _gedit_settings_peek_editor_settings (GeditSettings *self)
 }
 
 GSettings *
+_gedit_settings_peek_ui_settings (GeditSettings *self)
+{
+	g_return_val_if_fail (GEDIT_IS_SETTINGS (self), NULL);
+
+	return self->settings_ui;
+}
+
+GSettings *
 _gedit_settings_peek_file_chooser_state_settings (GeditSettings *self)
 {
 	g_return_val_if_fail (GEDIT_IS_SETTINGS (self), NULL);
