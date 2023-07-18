@@ -1,5 +1,4 @@
 /*
- * gedit-utils.h
  * This file is part of gedit
  *
  * Copyright (C) 1998, 1999 Alex Roberts, Evan Lawrence
@@ -29,10 +28,6 @@ G_BEGIN_DECLS
 
 gboolean                   gedit_utils_menu_position_under_tree_view          (GtkTreeView     *tree_view,
                                                                                GdkRectangle    *rect);
-
-void                       gedit_utils_set_atk_name_description               (GtkWidget       *widget,
-                                                                               const gchar     *name,
-                                                                               const gchar     *description);
 
 gchar                     *gedit_utils_location_get_dirname_for_display       (GFile *location);
 

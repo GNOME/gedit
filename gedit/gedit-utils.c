@@ -1,5 +1,4 @@
 /*
- * gedit-utils.c
  * This file is part of gedit
  *
  * Copyright (C) 1998, 1999 Alex Roberts, Evan Lawrence
@@ -57,34 +56,6 @@ gedit_utils_menu_position_under_tree_view (GtkTreeView  *tree_view,
 
 	g_list_free_full (rows, (GDestroyNotify) gtk_tree_path_free);
 	return TRUE;
-}
-
-/**
- * gedit_utils_set_atk_name_description:
- * @widget: The Gtk widget for which name/description to be set
- * @name: Atk name string
- * @description: Atk description string
- *
- * This function sets up name and description
- * for a specified gtk widget.
- */
-void
-gedit_utils_set_atk_name_description (GtkWidget   *widget,
-				      const gchar *name,
-				      const gchar *description)
-{
-	AtkObject *aobj;
-
-	aobj = gtk_widget_get_accessible (widget);
-
-	if (!(GTK_IS_ACCESSIBLE (aobj)))
-		return;
-
-	if (name)
-		atk_object_set_name (aobj, name);
-
-	if (description)
-		atk_object_set_description (aobj, description);
 }
 
 static gchar *
