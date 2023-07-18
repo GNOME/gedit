@@ -66,15 +66,8 @@ gedit_statusbar_init (GeditStatusbar *statusbar)
 	tepl_utils_setup_statusbar (GTK_STATUSBAR (statusbar));
 }
 
-/**
- * gedit_statusbar_new:
- *
- * Creates a new #GeditStatusbar.
- *
- * Return value: the new #GeditStatusbar object
- */
-GtkWidget *
-gedit_statusbar_new (void)
+GeditStatusbar *
+_gedit_statusbar_new (void)
 {
 	return g_object_new (GEDIT_TYPE_STATUSBAR, NULL);
 }
