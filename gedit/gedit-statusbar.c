@@ -20,7 +20,6 @@
 
 #include "gedit-statusbar.h"
 #include <tepl/tepl.h>
-#include <glib/gi18n.h>
 
 struct _GeditStatusbar
 {
