@@ -10,8 +10,8 @@
 msgid ""
 msgstr "Project-Id-Version: gedit master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gedit/issues\n"
-"POT-Creation-Date: 2023-03-10 23:20+0000\n"
-"PO-Revision-Date: 2023-04-09 15:00+0100\n"
+"POT-Creation-Date: 2023-07-21 20:39+0000\n"
+"PO-Revision-Date: 2023-07-22 15:00+0100\n"
 "Last-Translator: Asier Sarasua Garmendia <asiersarasua@ni.eus>\n"
 "Language-Team: Basque <librezale@librezale.eus>\n"
 "Language: eu\n"
@@ -31,15 +31,16 @@ msgstr "Testu-editorea"
 
 #: data/org.gnome.gedit.appdata.xml.in:10
 msgid ""
-"gedit is a general-purpose text editor. It has been created in 1998, at the "
-"beginnings of GNOME."
-msgstr "Gedit erabilera orokorreko testu-editorea da. 1998an sortu zen, GNOME proiektuaren hasieran."
+"gedit is an easy-to-use and general-purpose text editor. Its development "
+"started in 1998, at the beginnings of the GNOME project, with a good "
+"integration with that desktop environment."
+msgstr "Gedit erabiltzeko erraza den xede orokorreko testu-editorea da Garapena 1998an hasi zen, GNOME proiektuaren hastapenetan, eta horregatik, GNOMEren mahaigainarekin integrazio ona du."
 
-#: data/org.gnome.gedit.appdata.xml.in:14
+#: data/org.gnome.gedit.appdata.xml.in:15
 msgid ""
-"The first goal of gedit is to be easy to use, with a simple interface by "
-"default. More advanced features are available by enabling plugins."
-msgstr "Aplikazioaren lehen helburua erabilerrraztasuna da, eta horretarako interfaze sinplea du modu lehenetsian. Eginbide aurreratuagoak ere erabili daitezke pluginak aktibatzen badira."
+"You can use it to write simple notes and documents, or you can enable more "
+"advanced features that are useful for software development."
+msgstr "Ohar eta dokumentu sinpleak idazteko erabili daiteke, baina softwarea garatzeko erabilgarriak diren eginbide aurreratuagoak ere gaitu daitezke."
 
 #: data/org.gnome.gedit.desktop.in:4
 msgid "Edit text files"
@@ -497,11 +498,11 @@ msgstr "%s: kodeketa baliogabea."
 msgid "Close _without Saving"
 msgstr "Itxi gorde _gabe"
 
-#: gedit/gedit-close-confirmation-dialog.c:277 gedit/gedit-commands-file.c:492
-#: gedit/gedit-commands-file.c:568 gedit/gedit-commands-file.c:792
-#: gedit/gedit-commands-file.c:1517 gedit/gedit-encodings-dialog.c:192
+#: gedit/gedit-close-confirmation-dialog.c:277 gedit/gedit-commands-file.c:489
+#: gedit/gedit-commands-file.c:565 gedit/gedit-commands-file.c:789
+#: gedit/gedit-commands-file.c:1514 gedit/gedit-encodings-dialog.c:192
 #: gedit/gedit-file-chooser-open-dialog.c:78 gedit/gedit-io-error-info-bar.c:95
-#: gedit/gedit-io-error-info-bar.c:294 gedit/gedit-preferences-dialog.c:660
+#: gedit/gedit-io-error-info-bar.c:294 gedit/gedit-preferences-dialog.c:665
 #: plugins/filebrowser/gedit-file-browser-utils.c:211
 #: plugins/quickopen/quickopen/popup.py:45
 #: plugins/snippets/snippets/manager.py:789
@@ -517,9 +518,8 @@ msgstr "_Utzi"
 msgid "_Save As…"
 msgstr "Gorde _honela…"
 
-#: gedit/gedit-close-confirmation-dialog.c:295 gedit/gedit-commands-file.c:791
-#: gedit/resources/gtk/menus-common.ui:101
-#: gedit/resources/ui/gedit-window.ui:56
+#: gedit/gedit-close-confirmation-dialog.c:295 gedit/gedit-commands-file.c:788
+#: gedit/gedit-header-bar.c:190 gedit/resources/gtk/menus-common.ui:101
 #: plugins/snippets/snippets/manager.py:875
 #: plugins/snippets/snippets/manager.py:913
 msgid "_Save"
@@ -607,84 +607,84 @@ msgstr "_Hautatu dokumentuak, gordetzea nahi dituzunak:"
 msgid "If you don’t save, all your changes will be permanently lost."
 msgstr "Gordetzen ez baduzu, aldaketa guztiak betiko galduko dira."
 
-#: gedit/gedit-commands-file.c:258
+#: gedit/gedit-commands-file.c:255
 #, c-format
 msgid "Loading file “%s”…"
 msgstr "\"%s” fitxategia kargatzen…"
 
-#: gedit/gedit-commands-file.c:266
+#: gedit/gedit-commands-file.c:263
 #, c-format
 msgid "Loading %d file…"
 msgid_plural "Loading %d files…"
 msgstr[0] "Fitxategi %d kargatzen…"
 msgstr[1] "%d fitxategi kargatzen…"
 
-#: gedit/gedit-commands-file.c:483
+#: gedit/gedit-commands-file.c:480
 #, c-format
 msgid "The file “%s” is read-only."
 msgstr "\"%s” fitxategia irakurtzeko soilik da."
 
-#: gedit/gedit-commands-file.c:488
+#: gedit/gedit-commands-file.c:485
 msgid "Do you want to try to replace it with the one you are saving?"
 msgstr "Gordetzen ari zarenarekin ordezten saiatu nahi duzu?"
 
-#: gedit/gedit-commands-file.c:493
+#: gedit/gedit-commands-file.c:490
 #: gedit/resources/ui/gedit-replace-dialog.ui:55
 msgid "_Replace"
 msgstr "_Ordeztu"
 
-#: gedit/gedit-commands-file.c:533
+#: gedit/gedit-commands-file.c:530
 msgid "Save the file using compression?"
 msgstr "Gorde fitxategia konpresioa erabiliz?"
 
-#: gedit/gedit-commands-file.c:537
+#: gedit/gedit-commands-file.c:534
 msgid "Save the file as plain text?"
 msgstr "Gorde fitxategia testu arrunt gisa?"
 
-#: gedit/gedit-commands-file.c:550
+#: gedit/gedit-commands-file.c:547
 #, c-format
 msgid ""
 "The file “%s” was previously saved as plain text and will now be saved using "
 "compression."
 msgstr "\"%s” fitxategia testu arrunt gisa gorde da lehenago, eta orain konprimatuta gordeko da."
 
-#: gedit/gedit-commands-file.c:554
+#: gedit/gedit-commands-file.c:551
 msgid "_Save Using Compression"
 msgstr "_Gorde konpresioa erabiliz"
 
-#: gedit/gedit-commands-file.c:559
+#: gedit/gedit-commands-file.c:556
 #, c-format
 msgid ""
 "The file “%s” was previously saved using compression and will now be saved "
 "as plain text."
 msgstr "\"%s” fitxategia konprimatuta gorde da lehenago, eta orain testu arrunt gisa gordeko da."
 
-#: gedit/gedit-commands-file.c:562
+#: gedit/gedit-commands-file.c:559
 msgid "_Save As Plain Text"
 msgstr "_Gorde testu arrunt gisa"
 
-#: gedit/gedit-commands-file.c:678 gedit/gedit-commands-file.c:967
+#: gedit/gedit-commands-file.c:675 gedit/gedit-commands-file.c:964
 #, c-format
 msgid "Saving file “%s”…"
 msgstr "\"%s” fitxategia gordetzen…"
 
 #. Translators: "Save As" is the title of the file chooser window.
-#: gedit/gedit-commands-file.c:789
+#: gedit/gedit-commands-file.c:786
 msgctxt "window title"
 msgid "Save As"
 msgstr "Gorde honela"
 
-#: gedit/gedit-commands-file.c:1378
+#: gedit/gedit-commands-file.c:1375
 #, c-format
 msgid "Reverting the document “%s”…"
 msgstr "\"%s” dokumentua leheneratzen…"
 
-#: gedit/gedit-commands-file.c:1425
+#: gedit/gedit-commands-file.c:1422
 #, c-format
 msgid "Revert unsaved changes to document “%s”?"
 msgstr "Leheneratu \"%s” dokumentuan gorde gabeko aldaketak?"
 
-#: gedit/gedit-commands-file.c:1434
+#: gedit/gedit-commands-file.c:1431
 #, c-format
 msgid ""
 "Changes made to the document in the last %ld second will be permanently lost."
@@ -694,12 +694,12 @@ msgid_plural ""
 msgstr[0] "Azken %ld segundoan dokumentuan egin diren aldaketak betirako galduko dira."
 msgstr[1] "Azken %ld segundotan dokumentuan egin diren aldaketak betirako galduko dira."
 
-#: gedit/gedit-commands-file.c:1443
+#: gedit/gedit-commands-file.c:1440
 msgid ""
 "Changes made to the document in the last minute will be permanently lost."
 msgstr "Azken minutuan dokumentuan egin diren aldaketak betirako galduko dira."
 
-#: gedit/gedit-commands-file.c:1449
+#: gedit/gedit-commands-file.c:1446
 #, c-format
 msgid ""
 "Changes made to the document in the last minute and %ld second will be "
@@ -710,7 +710,7 @@ msgid_plural ""
 msgstr[0] "Azken minutuan eta %ld segundoan dokumentuan egin diren aldaketak betirako galduko dira."
 msgstr[1] "Azken minutuan eta %ld segundotan dokumentuan egin diren aldaketak betirako galduko dira."
 
-#: gedit/gedit-commands-file.c:1459
+#: gedit/gedit-commands-file.c:1456
 #, c-format
 msgid ""
 "Changes made to the document in the last %ld minute will be permanently lost."
@@ -720,11 +720,11 @@ msgid_plural ""
 msgstr[0] "Azken %ld minutuan dokumentuan egin diren aldaketak betirako galduko dira."
 msgstr[1] "Azken %ld minututan dokumentuan egin diren aldaketak betirako galduko dira."
 
-#: gedit/gedit-commands-file.c:1474
+#: gedit/gedit-commands-file.c:1471
 msgid "Changes made to the document in the last hour will be permanently lost."
 msgstr "Azken orduan dokumentuan egin diren aldaketak betirako galduko dira."
 
-#: gedit/gedit-commands-file.c:1480
+#: gedit/gedit-commands-file.c:1477
 #, c-format
 msgid ""
 "Changes made to the document in the last hour and %d minute will be "
@@ -735,7 +735,7 @@ msgid_plural ""
 msgstr[0] "Azken orduan eta %d minutuan dokumentuan egin diren aldaketak betirako galduko dira."
 msgstr[1] "Azken orduan eta %d minututan dokumentuan egin diren aldaketak betirako galduko dira."
 
-#: gedit/gedit-commands-file.c:1495
+#: gedit/gedit-commands-file.c:1492
 #, c-format
 msgid ""
 "Changes made to the document in the last %d hour will be permanently lost."
@@ -744,7 +744,7 @@ msgid_plural ""
 msgstr[0] "Azken orduan (%d) dokumentuan egin diren aldaketak betirako galduko dira."
 msgstr[1] "Azken %d ordutan dokumentuan egin diren aldaketak betirako galduko dira."
 
-#: gedit/gedit-commands-file.c:1518
+#: gedit/gedit-commands-file.c:1515
 msgid "_Revert"
 msgstr "_Leheneratu"
 
@@ -796,8 +796,8 @@ msgstr "\"%s” ez da aurkitu"
 msgid "Tab Group %i"
 msgstr "Fitxen %i. taldea"
 
-#: gedit/gedit-documents-panel.c:481 gedit/gedit-window.c:1130
-#: gedit/gedit-window.c:1136 gedit/gedit-window.c:1144
+#: gedit/gedit-documents-panel.c:481 gedit/gedit-window.c:1123
+#: gedit/gedit-window.c:1129 gedit/gedit-window.c:1137
 msgid "Read-Only"
 msgstr "Irakurtzeko soilik"
 
@@ -849,7 +849,7 @@ msgstr "Eraman lehentasun baxuagora"
 msgid "Untitled Document %d"
 msgstr "Izenik gabeko %d. dokumentua"
 
-#: gedit/gedit-file-chooser.c:41 gedit/gedit-preferences-dialog.c:669
+#: gedit/gedit-file-chooser.c:41 gedit/gedit-preferences-dialog.c:674
 msgid "All Files"
 msgstr "Fitxategi guztiak"
 
@@ -873,7 +873,7 @@ msgctxt "window title"
 msgid "Open Files"
 msgstr "Ireki fitxategiak"
 
-#: gedit/gedit-file-chooser-open-dialog.c:79 gedit/gedit-window.c:2595
+#: gedit/gedit-file-chooser-open-dialog.c:79 gedit/gedit-header-bar.c:57
 #: gedit/resources/gtk/menus-common.ui:74
 #: gedit/resources/gtk/menus-common.ui:80
 #: plugins/filebrowser/resources/ui/gedit-file-browser-menus.ui:7
@@ -881,6 +881,26 @@ msgstr "Ireki fitxategiak"
 #: plugins/snippets/snippets/manager.py:790
 msgid "_Open"
 msgstr "_Ireki"
+
+#: gedit/gedit-header-bar.c:58
+msgid "Open a file"
+msgstr "Ireki fitxategia"
+
+#: gedit/gedit-header-bar.c:96
+msgid "Open a recently used file"
+msgstr "Ireki erabili berri duzun fitxategia"
+
+#: gedit/gedit-header-bar.c:142
+msgid "Create a new document"
+msgstr "Dokumentu berria sortzen du"
+
+#: gedit/gedit-header-bar.c:155
+msgid "Leave Fullscreen"
+msgstr "Irten pantaila osotik"
+
+#: gedit/gedit-header-bar.c:191
+msgid "Save the current file"
+msgstr "Uneko fitxategia gordetzen du"
 
 #: gedit/gedit-io-error-info-bar.c:91 gedit/gedit-io-error-info-bar.c:283
 msgid "_Retry"
@@ -923,7 +943,7 @@ msgstr "Arazoa proxy-ezarpenetan egon daiteke."
 
 #: gedit/gedit-io-error-info-bar.c:216
 msgid "File not found. Perhaps it has recently been deleted."
-msgstr "Fitxategia ez da aurkitu. Agian ezabatu egin da duela gutxi."
+msgstr "Ez da fitxategia aurkitu. Agian ezabatu egin da duela gutxi."
 
 #: gedit/gedit-io-error-info-bar.c:226
 #, c-format
@@ -1041,7 +1061,7 @@ msgstr "Irakurtzeko soilik den diskoan fitxategia gordetzen saiatzen ari zara. E
 
 #: gedit/gedit-io-error-info-bar.c:510
 msgid "A file with the same name already exists. Please use a different name."
-msgstr "Izen berdineko fitxategia badago lehendik ere. Erabili beste izen bat."
+msgstr "Izen bereko fitxategia dago lehendik ere. Erabili beste izen bat."
 
 #: gedit/gedit-io-error-info-bar.c:515
 msgid ""
@@ -1054,28 +1074,28 @@ msgstr "Fitxategia gordetzeko erabili nahi duzun diskoak fitxategi-izenaren muga
 msgid "Could not save the file “%s”."
 msgstr "Ezin izan da '%s' fitxategia gorde."
 
-#: gedit/gedit-preferences-dialog.c:624
+#: gedit/gedit-preferences-dialog.c:628
 #, c-format
 msgid "The selected color scheme cannot be installed: %s"
 msgstr "Hautatutako kolore-eskema ezin da instalatu: %s"
 
-#: gedit/gedit-preferences-dialog.c:630
+#: gedit/gedit-preferences-dialog.c:634
 msgid "The selected color scheme cannot be installed."
 msgstr "Hautatutako kolore-eskema ezin da instalatu."
 
-#: gedit/gedit-preferences-dialog.c:656
+#: gedit/gedit-preferences-dialog.c:661
 msgid "Add Color Scheme"
 msgstr "Gehitu kolore-eskema"
 
-#: gedit/gedit-preferences-dialog.c:659
+#: gedit/gedit-preferences-dialog.c:664
 msgid "_Add Scheme"
 msgstr "_Gehitu eskema"
 
-#: gedit/gedit-preferences-dialog.c:664
+#: gedit/gedit-preferences-dialog.c:669
 msgid "Color Scheme Files"
 msgstr "Kolore-eskemaren fitxategiak"
 
-#: gedit/gedit-preferences-dialog.c:702
+#: gedit/gedit-preferences-dialog.c:707
 #, c-format
 msgid "Could not remove color scheme “%s”."
 msgstr "Ezin izan da \"%s” kolore-eskema kendu."
@@ -1120,13 +1140,6 @@ msgstr "Ezer ez"
 #: gedit/resources/ui/gedit-replace-dialog.ui:7
 msgid "Find and Replace"
 msgstr "Bilatu eta ordeztu"
-
-#: gedit/gedit-statusbar.c:225
-#, c-format
-msgid "There is a tab with errors"
-msgid_plural "There are %d tabs with errors"
-msgstr[0] "Erroreak dituen fitxa bat dago"
-msgstr[1] "Erroreak dituzten %d fitxa daude"
 
 #. Translators: the first %s is a file name (e.g. test.txt) the second one
 #. is a directory (e.g. ssh://master.gnome.org/home/users/paolo)
@@ -1246,50 +1259,25 @@ msgstr "Bilatzea nahi duzun katea"
 msgid "Line you want to move the cursor to"
 msgstr "Lerroa kurtsorea kokatzeko"
 
-#: gedit/gedit-window.c:1002
-msgid "Bracket match is out of range"
-msgstr "Parentesien bat-etortzea barrutitik kanpo"
-
-#: gedit/gedit-window.c:1007
-msgid "Bracket match not found"
-msgstr "Parentesien bat-etortzea ez da aurkitu"
-
-#: gedit/gedit-window.c:1012
-#, c-format
-msgid "Bracket match found on line: %d"
-msgstr "Bat datorren parentesia honako lerroan aurkituta: %d"
-
-#: gedit/gedit-window.c:1196
+#: gedit/gedit-window.c:1178
 #, c-format
 msgid "Tab Width: %u"
 msgstr "Tabulazio-zabalera: %u"
 
-#: gedit/gedit-window.c:1214 plugins/externaltools/tools/manager.py:115
+#: gedit/gedit-window.c:1196 plugins/externaltools/tools/manager.py:115
 #: plugins/externaltools/tools/manager.py:324
 #: plugins/externaltools/tools/manager.py:440
 #: plugins/externaltools/tools/manager.py:776
 msgid "Plain Text"
 msgstr "Testu soila"
 
-#: gedit/gedit-window.c:1444
+#: gedit/gedit-window.c:1413
 msgid "There are unsaved documents"
 msgstr "Gorde gabeko dokumentuak daude"
 
-#: gedit/gedit-window.c:2272
-msgid "Change side panel page"
-msgstr "Aldatu alboko paneleko orria"
-
-#: gedit/gedit-window.c:2292 gedit/resources/ui/gedit-window.ui:16
+#: gedit/gedit-window.c:2206
 msgid "Documents"
 msgstr "Dokumentuak"
-
-#: gedit/gedit-window.c:2596
-msgid "Open a file"
-msgstr "Ireki fitxategia"
-
-#: gedit/gedit-window.c:2600
-msgid "Open a recently used file"
-msgstr "Ireki erabili berri duzun fitxategia"
 
 #: gedit/resources/gtk/help-overlay.ui:14
 msgctxt "shortcut window"
@@ -1731,8 +1719,8 @@ msgid "_Paste"
 msgstr "_Itsatsi"
 
 #: gedit/resources/gtk/menus-common.ui:181
-#: plugins/filebrowser/gedit-file-browser-plugin.c:891
-#: plugins/filebrowser/gedit-file-browser-plugin.c:926
+#: plugins/filebrowser/gedit-file-browser-plugin.c:893
+#: plugins/filebrowser/gedit-file-browser-plugin.c:928
 #: plugins/filebrowser/resources/ui/gedit-file-browser-menus.ui:37
 msgid "_Delete"
 msgstr "Ez_abatu"
@@ -2148,36 +2136,9 @@ msgstr "Egok_itu"
 msgid "Close Document"
 msgstr "Itxi dokumentua"
 
-#: gedit/resources/ui/gedit-window.ui:33 gedit/resources/ui/gedit-window.ui:39
-#: gedit/resources/ui/gedit-window.ui:305
-#: gedit/resources/ui/gedit-window.ui:311
-msgid "Create a new document"
-msgstr "Dokumentu berria sortzen du"
-
-#: gedit/resources/ui/gedit-window.ui:38 gedit/resources/ui/gedit-window.ui:310
-msgid "New"
-msgstr "Berria"
-
-#: gedit/resources/ui/gedit-window.ui:59 gedit/resources/ui/gedit-window.ui:64
-#: gedit/resources/ui/gedit-window.ui:346
-#: gedit/resources/ui/gedit-window.ui:351
-msgid "Save the current file"
-msgstr "Uneko fitxategia gordetzen du"
-
-#: gedit/resources/ui/gedit-window.ui:63 gedit/resources/ui/gedit-window.ui:344
-#: gedit/resources/ui/gedit-window.ui:350
-msgid "Save"
-msgstr "Gorde"
-
-#: gedit/resources/ui/gedit-window.ui:202
+#: gedit/resources/ui/gedit-window.ui:135
 msgid "Hide panel"
 msgstr "Ezkutatu panela"
-
-#: gedit/resources/ui/gedit-window.ui:319
-#: gedit/resources/ui/gedit-window.ui:324
-#: gedit/resources/ui/gedit-window.ui:325
-msgid "Leave Fullscreen"
-msgstr "Irten pantaila osotik"
 
 #: plugins/docinfo/docinfo.plugin.desktop.in:5
 #: plugins/docinfo/resources/ui/gedit-docinfo-plugin.ui:7
@@ -2496,68 +2457,68 @@ msgstr "Karpeta nagusia"
 msgid "File System"
 msgstr "Fitxategi-sistema"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:501
+#: plugins/filebrowser/gedit-file-browser-plugin.c:504
 msgid "File Browser"
 msgstr "Fitxategi-arakatzailea"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:631
+#: plugins/filebrowser/gedit-file-browser-plugin.c:633
 msgid "An error occurred while creating a new directory"
 msgstr "Errorea gertatu da direktorio berria sortzean"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:634
+#: plugins/filebrowser/gedit-file-browser-plugin.c:636
 msgid "An error occurred while creating a new file"
 msgstr "Errorea gertatu da fitxategi berria sortzean"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:637
+#: plugins/filebrowser/gedit-file-browser-plugin.c:639
 msgid "An error occurred while renaming a file or directory"
 msgstr "Errorea gertatu da fitxategia/direktorioa izenez aldatzean"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:640
+#: plugins/filebrowser/gedit-file-browser-plugin.c:642
 msgid "An error occurred while deleting a file or directory"
 msgstr "Errorea gertatu da fitxategia/direktorioa ezabatzean"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:643
+#: plugins/filebrowser/gedit-file-browser-plugin.c:645
 msgid "An error occurred while opening a directory in the file manager"
 msgstr "Errorea gertatu da direktorioa fitxategi-kudeatzailearekin irekitzean"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:646
+#: plugins/filebrowser/gedit-file-browser-plugin.c:648
 msgid "An error occurred while setting a root directory"
 msgstr "Errorea gertatu da erroko direktorioa ezartzean"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:649
+#: plugins/filebrowser/gedit-file-browser-plugin.c:651
 msgid "An error occurred while loading a directory"
 msgstr "Errorea gertatu da direktorioa kargatzean"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:652
+#: plugins/filebrowser/gedit-file-browser-plugin.c:654
 msgid "An error occurred"
 msgstr "Errorea gertatu da"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:874
+#: plugins/filebrowser/gedit-file-browser-plugin.c:876
 msgid ""
 "Cannot move file to trash, do you\n"
 "want to delete permanently?"
 msgstr "Ezin da fitxategia zakarrontzira bota.\n"
 "Betirako ezabatzea nahi duzu?"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:879
+#: plugins/filebrowser/gedit-file-browser-plugin.c:881
 #, c-format
 msgid "The file “%s” cannot be moved to the trash."
 msgstr "“%s” fitxategia ezin izan da zakarrontzira bota."
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:884
+#: plugins/filebrowser/gedit-file-browser-plugin.c:886
 msgid "The selected files cannot be moved to the trash."
 msgstr "Hautatutako fitxategia ezin da zakarrontzira bota."
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:912
+#: plugins/filebrowser/gedit-file-browser-plugin.c:914
 #, c-format
 msgid "Are you sure you want to permanently delete “%s”?"
 msgstr "Ziur zaude “%s” behin betiko ezabatu nahi duzula?"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:917
+#: plugins/filebrowser/gedit-file-browser-plugin.c:919
 msgid "Are you sure you want to permanently delete the selected files?"
 msgstr "Ziur zaude hautatutako fitxategiak betirako ezabatzea nahi dituzula?"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:920
+#: plugins/filebrowser/gedit-file-browser-plugin.c:922
 msgid "If you delete an item, it is permanently lost."
 msgstr "Elementu bat ezabatzen baduzu betirako galduko da."
 
@@ -3218,6 +3179,39 @@ msgstr "Sartu data/ordua"
 #: plugins/time/time.plugin.desktop.in:6
 msgid "Inserts current date and time at the cursor position."
 msgstr "Uneko data eta ordua sartzen ditu kurtsorearen posizioan."
+
+#~ msgid ""
+#~ "The first goal of gedit is to be easy to use, with a simple interface by "
+#~ "default. More advanced features are available by enabling plugins."
+#~ msgstr ""
+#~ "Aplikazioaren lehen helburua erabilerrraztasuna da, eta horretarako "
+#~ "interfaze sinplea du modu lehenetsian. Eginbide aurreratuagoak ere "
+#~ "erabili daitezke pluginak aktibatzen badira."
+
+#, c-format
+#~ msgid "There is a tab with errors"
+#~ msgid_plural "There are %d tabs with errors"
+#~ msgstr[0] "Erroreak dituen fitxa bat dago"
+#~ msgstr[1] "Erroreak dituzten %d fitxa daude"
+
+#~ msgid "Bracket match is out of range"
+#~ msgstr "Parentesien bat-etortzea barrutitik kanpo"
+
+#~ msgid "Bracket match not found"
+#~ msgstr "Parentesien bat-etortzea ez da aurkitu"
+
+#, c-format
+#~ msgid "Bracket match found on line: %d"
+#~ msgstr "Bat datorren parentesia honako lerroan aurkituta: %d"
+
+#~ msgid "Change side panel page"
+#~ msgstr "Aldatu alboko paneleko orria"
+
+#~ msgid "New"
+#~ msgstr "Berria"
+
+#~ msgid "Save"
+#~ msgstr "Gorde"
 
 #~ msgid "_Display line numbers"
 #~ msgstr "B_istaratu lerro-zenbakiak"
