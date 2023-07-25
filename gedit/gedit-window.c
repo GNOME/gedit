@@ -25,7 +25,6 @@
 
 #include <glib/gi18n.h>
 #include <libpeas/peas-extension-set.h>
-#include <tepl/tepl.h>
 
 #include "gedit-app.h"
 #include "gedit-app-private.h"
