@@ -1,3 +1,17 @@
+News in 46.0, 2023-07-29
+------------------------
+* Adapt for Amtk -> libgedit-amtk rename.
+* API changes for plugins: see the API docs.
+* Code refactorings in GeditWindow, and delegate some of its work to new
+  classes: GeditHeaderBar and GeditSidePanel.
+* Replace GeditMenuStackSwitcher by TeplPanelSwitcherMenu.
+* Replace GeditStatusMenuButton by TeplStatusMenuButton.
+* Remove a small feature from the statusbar: the small icons for the window
+  state. You now need to look at each individual tab to know its state.
+* Build: replace inline_side_panel_switcher option -> headerbar option.
+* Bug fixes for macOS.
+* Translation updates.
+
 News in 45.0, 2023-06-23
 ------------------------
 * User manual: a few improvements.
