@@ -755,6 +755,7 @@ get_configure_widget (GeditSpellPlugin *plugin)
 {
 	SpellConfigureWidget *widget;
 	GtkBuilder *builder;
+	gboolean status;
 	gchar *root_objects[] = {
 		"spell_dialog_content",
 		NULL
@@ -774,7 +775,7 @@ get_configure_widget (GeditSpellPlugin *plugin)
 	widget->highlight_button = GTK_WIDGET (gtk_builder_get_object (builder, "highlight_button"));
 	g_object_unref (builder);
 
-	gboolean status = g_settings_get_boolean(widget->settings, SETTINGS_KEY_HIGHLIGHT_MISSPELLED);
+	status = g_settings_get_boolean (widget->settings, SETTINGS_KEY_HIGHLIGHT_MISSPELLED);
 	gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (widget->highlight_button), status);
 
 	g_signal_connect (widget->highlight_button,
