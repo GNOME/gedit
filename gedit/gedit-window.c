@@ -989,7 +989,7 @@ bracket_matched_cb (GtkSourceBuffer           *buffer,
 	{
 		gedit_statusbar_flash_message (window->priv->statusbar,
 					       window->priv->bracket_match_message_cid,
-					       msg);
+					       "%s", msg);
 		g_free (msg);
 	}
 	else
