@@ -69,7 +69,12 @@ config_h.set_quoted('LIBDIR', join_paths(get_option('prefix'), get_option('libdi
 config_h.set_quoted('DATADIR', join_paths(get_option('prefix'), get_option('datadir')))
 config_h.set_quoted('VERSION', meson.project_version())
 config_h.set10('OS_MACOS', host_machine.system() == 'darwin')
-config_h.set10('INLINE_SIDE_PANEL_SWITCHER', get_option('inline_side_panel_switcher'))
+
+if get_option('headerbar') == 'auto'
+  config_h.set10('GEDIT_HAS_HEADERBAR', host_machine.system() != 'darwin')
+else
+  config_h.set10('GEDIT_HAS_HEADERBAR', get_option('headerbar') == 'yes')
+endif
 
 configure_file(
   output: 'config.h',
@@ -105,3 +110,4 @@ summary('Prefix', get_option('prefix'))
 summary('API documentation', get_option('gtk_doc'))
 summary('User documentation', get_option('user_documentation'))
 summary('Require all tests', get_option('require_all_tests'))
+summary('Headerbar', get_option('headerbar'))

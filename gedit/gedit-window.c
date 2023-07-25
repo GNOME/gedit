@@ -2539,7 +2539,7 @@ create_fullscreen_headerbar (GeditWindow *window)
 static void
 init_side_headerbar (GeditWindow *window)
 {
-#if !INLINE_SIDE_PANEL_SWITCHER
+#if GEDIT_HAS_HEADERBAR
 	TeplPanelContainer *panel_container;
 	TeplPanelSwitcherMenu *switcher;
 	GtkSizeGroup *size_group;

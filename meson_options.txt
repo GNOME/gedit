@@ -23,7 +23,13 @@ option(
 
 option('plugin_externaltools', type: 'boolean', value: true)
 
-# For the side panel switcher menu. If false, the switcher will be placed in the
-# headerbar. If true, it will be inside the panel.
-# Only macOS should choose a value for this option (or for testing purposes).
-option('inline_side_panel_switcher', type: 'boolean', value: false)
+# Whether to have a GtkHeaderBar (instead of the default window titlebar).
+# 'auto' will choose a value depending on the platform.
+# 'yes' and 'no' permit to force a certain value (useful for testing purposes).
+option(
+  'headerbar',
+  type: 'combo',
+  choices: ['yes', 'no', 'auto'],
+  value: 'auto',
+  description: 'Have a GtkHeaderBar'
+)

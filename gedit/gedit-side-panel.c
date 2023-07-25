@@ -34,7 +34,7 @@ static void
 add_inline_switcher_if_needed (GeditSidePanel *panel,
 			       GtkGrid        *vgrid)
 {
-#if INLINE_SIDE_PANEL_SWITCHER
+#if !GEDIT_HAS_HEADERBAR
 	TeplPanelSwitcherMenu *switcher;
 
 	switcher = tepl_panel_switcher_menu_new (panel->priv->panel);
