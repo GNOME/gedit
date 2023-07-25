@@ -296,6 +296,7 @@ gedit_window_dispose (GObject *object)
 	 */
 	remove_actions (window);
 
+	window->priv->side_headerbar = NULL;
 	window->priv->headerbar = NULL;
 	window->priv->fullscreen_headerbar = NULL;
 
@@ -1030,8 +1031,11 @@ set_titles (GeditWindow *window,
 {
 	gedit_app_set_window_title (GEDIT_APP (g_application_get_default ()), window, single_title);
 
-	gtk_header_bar_set_title (GTK_HEADER_BAR (window->priv->headerbar), title);
-	gtk_header_bar_set_subtitle (GTK_HEADER_BAR (window->priv->headerbar), subtitle);
+	if (window->priv->headerbar != NULL)
+	{
+		gtk_header_bar_set_title (GTK_HEADER_BAR (window->priv->headerbar), title);
+		gtk_header_bar_set_subtitle (GTK_HEADER_BAR (window->priv->headerbar), subtitle);
+	}
 
 	gtk_header_bar_set_title (GTK_HEADER_BAR (window->priv->fullscreen_headerbar), title);
 	gtk_header_bar_set_subtitle (GTK_HEADER_BAR (window->priv->fullscreen_headerbar), subtitle);
@@ -2139,11 +2143,11 @@ side_panel_visibility_changed (GtkWidget   *panel,
 				GEDIT_SETTINGS_SIDE_PANEL_VISIBLE,
 				visible);
 
-	/* sync the action state if the panel visibility was changed programmatically */
+	/* Sync the action state if the panel visibility was changed programmatically */
 	action = g_action_map_lookup_action (G_ACTION_MAP (window), "side-panel");
 	g_simple_action_set_state (G_SIMPLE_ACTION (action), g_variant_new_boolean (visible));
 
-	/* focus the right widget and set the right styles */
+	/* Focus the right widget */
 	if (visible)
 	{
 		gtk_widget_grab_focus (GTK_WIDGET (window->priv->side_panel));
@@ -2151,6 +2155,13 @@ side_panel_visibility_changed (GtkWidget   *panel,
 	else
 	{
 		gtk_widget_grab_focus (GTK_WIDGET (window->priv->multi_notebook));
+	}
+
+	/* Adapt the decoration layout if needed */
+	if (window->priv->headerbar == NULL ||
+	    window->priv->side_headerbar == NULL)
+	{
+		return;
 	}
 
 	g_object_get (gtk_settings_get_default (),
@@ -2460,13 +2471,13 @@ static void
 sync_fullscreen_actions (GeditWindow *window,
 			 gboolean     fullscreen)
 {
-	GtkMenuButton *button;
+	GtkMenuButton *button = NULL;
 
 	if (fullscreen)
 	{
 		button = _gedit_header_bar_get_hamburger_menu_button (window->priv->fullscreen_headerbar);
 	}
-	else
+	else if (window->priv->headerbar != NULL)
 	{
 		button = _gedit_header_bar_get_hamburger_menu_button (window->priv->headerbar);
 	}
@@ -2492,16 +2503,46 @@ init_amtk_application_window (GeditWindow *gedit_window)
 	amtk_application_window_set_statusbar (amtk_window, GTK_STATUSBAR (gedit_window->priv->statusbar));
 }
 
+#if GEDIT_HAS_HEADERBAR
 static void
-init_titlebar (GeditWindow *window)
+create_side_headerbar (GeditWindow *window)
 {
-	GtkPaned *titlebar_hpaned;
+	TeplPanelContainer *panel_container;
+	TeplPanelSwitcherMenu *switcher;
+	GtkSizeGroup *size_group;
 
 	g_return_if_fail (window->priv->side_headerbar == NULL);
-	g_return_if_fail (window->priv->headerbar == NULL);
 
 	window->priv->side_headerbar = GTK_HEADER_BAR (gtk_header_bar_new ());
 	gtk_header_bar_set_show_close_button (window->priv->side_headerbar, TRUE);
+
+	panel_container = gedit_side_panel_get_panel_container (window->priv->side_panel);
+	switcher = tepl_panel_switcher_menu_new (panel_container);
+	gtk_widget_show (GTK_WIDGET (switcher));
+
+	gtk_header_bar_set_custom_title (window->priv->side_headerbar, GTK_WIDGET (switcher));
+
+	g_object_bind_property (window->priv->side_panel, "visible",
+				window->priv->side_headerbar, "visible",
+				G_BINDING_SYNC_CREATE);
+
+	/* There are two horizontal GtkPaned, but one should not be able to have
+	 * a lower position than the other.
+	 */
+	size_group = gtk_size_group_new (GTK_SIZE_GROUP_HORIZONTAL);
+	gtk_size_group_add_widget (size_group, GTK_WIDGET (window->priv->side_headerbar));
+	gtk_size_group_add_widget (size_group, GTK_WIDGET (window->priv->side_panel));
+	g_object_unref (size_group);
+}
+
+static void
+create_titlebar (GeditWindow *window)
+{
+	GtkPaned *titlebar_hpaned;
+
+	g_return_if_fail (window->priv->headerbar == NULL);
+
+	create_side_headerbar (window);
 
 	window->priv->headerbar = _gedit_header_bar_new (window, FALSE);
 	gtk_widget_show (GTK_WIDGET (window->priv->headerbar));
@@ -2523,6 +2564,7 @@ init_titlebar (GeditWindow *window)
 
 	gtk_window_set_titlebar (GTK_WINDOW (window), GTK_WIDGET (titlebar_hpaned));
 }
+#endif /* GEDIT_HAS_HEADERBAR */
 
 static void
 create_fullscreen_headerbar (GeditWindow *window)
@@ -2554,34 +2596,6 @@ create_fullscreen_headerbar (GeditWindow *window)
 }
 
 static void
-init_side_headerbar (GeditWindow *window)
-{
-#if GEDIT_HAS_HEADERBAR
-	TeplPanelContainer *panel_container;
-	TeplPanelSwitcherMenu *switcher;
-	GtkSizeGroup *size_group;
-
-	panel_container = gedit_side_panel_get_panel_container (window->priv->side_panel);
-	switcher = tepl_panel_switcher_menu_new (panel_container);
-	gtk_widget_show (GTK_WIDGET (switcher));
-
-	gtk_header_bar_set_custom_title (window->priv->side_headerbar, GTK_WIDGET (switcher));
-
-	g_object_bind_property (window->priv->side_panel, "visible",
-				window->priv->side_headerbar, "visible",
-				G_BINDING_SYNC_CREATE);
-
-	/* There are two horizontal GtkPaned, but one should not be able to have
-	 * a lower position than the other.
-	 */
-	size_group = gtk_size_group_new (GTK_SIZE_GROUP_HORIZONTAL);
-	gtk_size_group_add_widget (size_group, GTK_WIDGET (window->priv->side_headerbar));
-	gtk_size_group_add_widget (size_group, GTK_WIDGET (window->priv->side_panel));
-	g_object_unref (size_group);
-#endif
-}
-
-static void
 gedit_window_init (GeditWindow *window)
 {
 	GtkTargetList *tl;
@@ -2610,9 +2624,11 @@ gedit_window_init (GeditWindow *window)
 
 	init_amtk_application_window (window);
 
-	init_titlebar (window);
+#if GEDIT_HAS_HEADERBAR
+	create_titlebar (window);
+#endif
+
 	create_fullscreen_headerbar (window);
-	init_side_headerbar (window);
 
 	g_action_map_add_action_entries (G_ACTION_MAP (window),
 	                                 win_entries,

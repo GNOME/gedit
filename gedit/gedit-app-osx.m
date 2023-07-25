@@ -507,8 +507,6 @@ gedit_app_osx_create_window_impl (GeditApp *app)
 
 	window = GEDIT_APP_CLASS (gedit_app_osx_parent_class)->create_window (app);
 
-	gtk_window_set_titlebar (GTK_WINDOW (window), NULL);
-
 	if (gtk_widget_get_realized (GTK_WIDGET (window)))
 	{
 		set_window_allow_fullscreen (window);
