@@ -13,6 +13,7 @@ gnome = import('gnome')
 i18n = import('i18n')
 pkg_config = import('pkgconfig')
 python = import('python')
+fs = import('fs')
 
 api_version = '46'
 
@@ -86,7 +87,7 @@ pkgdatadir = get_option('prefix') / get_option('datadir') / 'gedit'
 glibdir = get_option('prefix') / get_option('datadir') / 'glib-2.0'
 
 # Subprojects
-if not get_option('buildtype').contains('plain')
+if fs.is_dir('.git')
   run_command(
     'git', '-C', meson.project_source_root(), 'submodule', 'update', '--init', '--recursive',
     check: true,
