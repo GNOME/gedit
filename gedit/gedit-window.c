@@ -2505,6 +2505,7 @@ init_side_headerbar (GeditWindow *window)
 #if !INLINE_SIDE_PANEL_SWITCHER
 	TeplPanelContainer *panel_container;
 	TeplPanelSwitcherMenu *switcher;
+	GtkSizeGroup *size_group;
 
 	panel_container = gedit_side_panel_get_panel_container (window->priv->side_panel);
 	switcher = tepl_panel_switcher_menu_new (panel_container);
@@ -2515,6 +2516,14 @@ init_side_headerbar (GeditWindow *window)
 	g_object_bind_property (window->priv->side_panel, "visible",
 				window->priv->side_headerbar, "visible",
 				G_BINDING_SYNC_CREATE);
+
+	/* There are two horizontal GtkPaned, but one should not be able to have
+	 * a lower position than the other.
+	 */
+	size_group = gtk_size_group_new (GTK_SIZE_GROUP_HORIZONTAL);
+	gtk_size_group_add_widget (size_group, GTK_WIDGET (window->priv->side_headerbar));
+	gtk_size_group_add_widget (size_group, GTK_WIDGET (window->priv->side_panel));
+	g_object_unref (size_group);
 #endif
 }
 
