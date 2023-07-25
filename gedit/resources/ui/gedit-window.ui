@@ -11,7 +11,6 @@
         <property name="position" bind-source="hpaned" bind-property="position" bind-flags="bidirectional|sync-create"/>
         <child>
           <object class="GtkHeaderBar" id="side_headerbar">
-            <property name="visible" bind-source="side_panel" bind-property="visible" bind-flags="sync-create"/>
             <property name="show_close_button">True</property>
           </object>
           <packing>

@@ -2511,6 +2511,10 @@ init_side_headerbar (GeditWindow *window)
 	gtk_widget_show (GTK_WIDGET (switcher));
 
 	gtk_header_bar_set_custom_title (window->priv->side_headerbar, GTK_WIDGET (switcher));
+
+	g_object_bind_property (window->priv->side_panel, "visible",
+				window->priv->side_headerbar, "visible",
+				G_BINDING_SYNC_CREATE);
 #endif
 }
 
