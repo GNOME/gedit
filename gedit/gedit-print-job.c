@@ -244,7 +244,7 @@ create_custom_widget_cb (GtkPrintOperation *operation,
 	guint line_numbers;
 	GtkWrapMode wrap_mode;
 
-	gchar *root_objects[] = {
+	const gchar *root_objects[] = {
 		"adjustment1",
 		"contents",
 		NULL
@@ -252,7 +252,7 @@ create_custom_widget_cb (GtkPrintOperation *operation,
 
 	builder = gtk_builder_new ();
 	gtk_builder_add_objects_from_resource (builder, "/org/gnome/gedit/ui/gedit-print-preferences.ui",
-	                                       root_objects, NULL);
+	                                       (gchar **)root_objects, NULL);
 	contents = GTK_WIDGET (gtk_builder_get_object (builder, "contents"));
 	g_object_ref (contents);
 	job->syntax_checkbutton = GTK_TOGGLE_BUTTON (gtk_builder_get_object (builder, "syntax_checkbutton"));
