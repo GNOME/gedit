@@ -488,6 +488,8 @@ response_cb (GtkDialog *dialog,
 						 str);
 			}
 			/* fall through, so that we also save the find entry */
+			G_GNUC_FALLTHROUGH;
+
 		case GEDIT_REPLACE_DIALOG_FIND_RESPONSE:
 			str = gtk_entry_get_text (GTK_ENTRY (dlg->search_text_entry));
 			if (*str != '\0')
