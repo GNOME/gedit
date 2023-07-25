@@ -136,9 +136,9 @@ enum
 	TARGET_XDNDDIRECTSAVE
 };
 
-static const GtkTargetEntry drop_types [] = {
-	{ "XdndDirectSave0", 0, TARGET_XDNDDIRECTSAVE }, /* XDS Protocol Type */
-	{ "text/uri-list", 0, TARGET_URI_LIST}
+static const GtkTargetEntry drop_types[] = {
+	{ (gchar *) "XdndDirectSave0", 0, TARGET_XDNDDIRECTSAVE }, /* XDS Protocol Type */
+	{ (gchar *) "text/uri-list", 0, TARGET_URI_LIST }
 };
 
 G_DEFINE_TYPE_WITH_PRIVATE (GeditWindow, gedit_window, GTK_TYPE_APPLICATION_WINDOW)
