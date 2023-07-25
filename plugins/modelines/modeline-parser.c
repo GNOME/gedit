@@ -86,7 +86,7 @@ modeline_parser_init (const gchar *data_dir)
 }
 
 void
-modeline_parser_shutdown ()
+modeline_parser_shutdown (void)
 {
 	if (vim_languages != NULL)
 		g_hash_table_unref (vim_languages);
