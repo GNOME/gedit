@@ -6,9 +6,8 @@
     <property name="has_focus">False</property>
     <property name="is_focus">False</property>
     <child type="titlebar">
-      <object class="GtkPaned">
+      <object class="GtkPaned" id="titlebar_hpaned">
         <property name="visible">True</property>
-        <property name="position" bind-source="hpaned" bind-property="position" bind-flags="bidirectional|sync-create"/>
         <child>
           <object class="GtkHeaderBar" id="side_headerbar">
             <property name="show_close_button">True</property>

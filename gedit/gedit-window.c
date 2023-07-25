@@ -81,6 +81,7 @@ struct _GeditWindowPrivate
 	guint language_changed_id;
 
 	/* Headerbars */
+	GtkPaned *titlebar_hpaned;
 	GtkHeaderBar *side_headerbar;
 	GtkWidget *headerbar;
 
@@ -517,6 +518,7 @@ gedit_window_class_init (GeditWindowClass *klass)
 	/* Bind class to template */
 	gtk_widget_class_set_template_from_resource (widget_class,
 	                                             "/org/gnome/gedit/ui/gedit-window.ui");
+	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, titlebar_hpaned);
 	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, side_headerbar);
 	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, headerbar);
 	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, hpaned);
@@ -2500,6 +2502,14 @@ init_amtk_application_window (GeditWindow *gedit_window)
 }
 
 static void
+init_titlebar (GeditWindow *window)
+{
+	g_object_bind_property (window->priv->hpaned, "position",
+				window->priv->titlebar_hpaned, "position",
+				G_BINDING_BIDIRECTIONAL | G_BINDING_SYNC_CREATE);
+}
+
+static void
 init_side_headerbar (GeditWindow *window)
 {
 #if !INLINE_SIDE_PANEL_SWITCHER
@@ -2575,6 +2585,7 @@ gedit_window_init (GeditWindow *window)
 	window->priv->gedit_header_bar_fullscreen =
 		_gedit_header_bar_new (GTK_HEADER_BAR (window->priv->fullscreen_headerbar), window, TRUE);
 
+	init_titlebar (window);
 	init_side_headerbar (window);
 	init_open_buttons (window);
 
