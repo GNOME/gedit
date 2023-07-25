@@ -22,21 +22,20 @@ typedef struct _GeditHeaderBarPrivate  GeditHeaderBarPrivate;
 
 struct _GeditHeaderBar
 {
-	GObject parent;
+	GtkHeaderBar parent;
 
 	GeditHeaderBarPrivate *priv;
 };
 
 struct _GeditHeaderBarClass
 {
-	GObjectClass parent_class;
+	GtkHeaderBarClass parent_class;
 };
 
 GType			_gedit_header_bar_get_type			(void);
 
-GeditHeaderBar *	_gedit_header_bar_new				(GtkHeaderBar *header_bar,
-									 GeditWindow  *window,
-									 gboolean      fullscreen);
+GeditHeaderBar *	_gedit_header_bar_new				(GeditWindow *window,
+									 gboolean     fullscreen);
 
 GtkMenuButton *		_gedit_header_bar_get_open_recent_menu_button	(GeditHeaderBar *bar);
 

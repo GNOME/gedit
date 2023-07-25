@@ -66,7 +66,7 @@ struct _GeditWindowPrivate
 	/* Widgets for fullscreen mode */
 	GtkWidget *fullscreen_eventbox;
 	GtkRevealer *fullscreen_revealer;
-	GtkHeaderBar *fullscreen_headerbar;
+	GeditHeaderBar *fullscreen_headerbar;
 
 	/* statusbar and context ids for statusbar messages */
 	GeditStatusbar *statusbar;
@@ -81,9 +81,7 @@ struct _GeditWindowPrivate
 
 	/* Headerbars */
 	GtkHeaderBar *side_headerbar;
-	GtkHeaderBar *headerbar;
-	GeditHeaderBar *gedit_header_bar_normal;
-	GeditHeaderBar *gedit_header_bar_fullscreen;
+	GeditHeaderBar *headerbar;
 
 	gint width;
 	gint height;
@@ -298,8 +296,8 @@ gedit_window_dispose (GObject *object)
 	 */
 	remove_actions (window);
 
-	g_clear_object (&window->priv->gedit_header_bar_normal);
-	g_clear_object (&window->priv->gedit_header_bar_fullscreen);
+	window->priv->headerbar = NULL;
+	window->priv->fullscreen_headerbar = NULL;
 
 	G_OBJECT_CLASS (gedit_window_parent_class)->dispose (object);
 }
@@ -1032,11 +1030,11 @@ set_titles (GeditWindow *window,
 {
 	gedit_app_set_window_title (GEDIT_APP (g_application_get_default ()), window, single_title);
 
-	gtk_header_bar_set_title (window->priv->headerbar, title);
-	gtk_header_bar_set_subtitle (window->priv->headerbar, subtitle);
+	gtk_header_bar_set_title (GTK_HEADER_BAR (window->priv->headerbar), title);
+	gtk_header_bar_set_subtitle (GTK_HEADER_BAR (window->priv->headerbar), subtitle);
 
-	gtk_header_bar_set_title (window->priv->fullscreen_headerbar, title);
-	gtk_header_bar_set_subtitle (window->priv->fullscreen_headerbar, subtitle);
+	gtk_header_bar_set_title (GTK_HEADER_BAR (window->priv->fullscreen_headerbar), title);
+	gtk_header_bar_set_subtitle (GTK_HEADER_BAR (window->priv->fullscreen_headerbar), subtitle);
 }
 
 #define MAX_TITLE_LENGTH 100
@@ -1610,10 +1608,10 @@ update_fullscreen_revealer_state (GeditWindow *window)
 	GtkMenuButton *hamburger_menu_button;
 	gboolean hamburger_menu_is_active = FALSE;
 
-	open_recent_menu_button = _gedit_header_bar_get_open_recent_menu_button (window->priv->gedit_header_bar_fullscreen);
+	open_recent_menu_button = _gedit_header_bar_get_open_recent_menu_button (window->priv->fullscreen_headerbar);
 	open_recent_menu_is_active = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (open_recent_menu_button));
 
-	hamburger_menu_button = _gedit_header_bar_get_hamburger_menu_button (window->priv->gedit_header_bar_fullscreen);
+	hamburger_menu_button = _gedit_header_bar_get_hamburger_menu_button (window->priv->fullscreen_headerbar);
 	if (hamburger_menu_button != NULL)
 	{
 		hamburger_menu_is_active = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (hamburger_menu_button));
@@ -2168,7 +2166,7 @@ side_panel_visibility_changed (GtkWidget   *panel,
 			gchar *layout_headerbar;
 
 			layout_headerbar = g_strdup_printf ("%c%s", ':', tokens[1]);
-			gtk_header_bar_set_decoration_layout (window->priv->headerbar, layout_headerbar);
+			gtk_header_bar_set_decoration_layout (GTK_HEADER_BAR (window->priv->headerbar), layout_headerbar);
 			gtk_header_bar_set_decoration_layout (window->priv->side_headerbar, tokens[0]);
 
 			g_free (layout_headerbar);
@@ -2177,7 +2175,7 @@ side_panel_visibility_changed (GtkWidget   *panel,
 	}
 	else
 	{
-		gtk_header_bar_set_decoration_layout (window->priv->headerbar, layout_desc);
+		gtk_header_bar_set_decoration_layout (GTK_HEADER_BAR (window->priv->headerbar), layout_desc);
 		gtk_header_bar_set_decoration_layout (window->priv->side_headerbar, NULL);
 	}
 
@@ -2466,11 +2464,11 @@ sync_fullscreen_actions (GeditWindow *window,
 
 	if (fullscreen)
 	{
-		button = _gedit_header_bar_get_hamburger_menu_button (window->priv->gedit_header_bar_fullscreen);
+		button = _gedit_header_bar_get_hamburger_menu_button (window->priv->fullscreen_headerbar);
 	}
 	else
 	{
-		button = _gedit_header_bar_get_hamburger_menu_button (window->priv->gedit_header_bar_normal);
+		button = _gedit_header_bar_get_hamburger_menu_button (window->priv->headerbar);
 	}
 
 	g_action_map_remove_action (G_ACTION_MAP (window), "hamburger-menu");
@@ -2505,9 +2503,9 @@ init_titlebar (GeditWindow *window)
 	window->priv->side_headerbar = GTK_HEADER_BAR (gtk_header_bar_new ());
 	gtk_header_bar_set_show_close_button (window->priv->side_headerbar, TRUE);
 
-	window->priv->headerbar = GTK_HEADER_BAR (gtk_header_bar_new ());
+	window->priv->headerbar = _gedit_header_bar_new (window, FALSE);
 	gtk_widget_show (GTK_WIDGET (window->priv->headerbar));
-	gtk_header_bar_set_show_close_button (window->priv->headerbar, TRUE);
+	gtk_header_bar_set_show_close_button (GTK_HEADER_BAR (window->priv->headerbar), TRUE);
 
 	titlebar_hpaned = GTK_PANED (gtk_paned_new (GTK_ORIENTATION_HORIZONTAL));
 	gtk_widget_show (GTK_WIDGET (titlebar_hpaned));
@@ -2530,13 +2528,9 @@ static void
 create_fullscreen_headerbar (GeditWindow *window)
 {
 	g_return_if_fail (window->priv->fullscreen_headerbar == NULL);
-	g_return_if_fail (window->priv->gedit_header_bar_fullscreen == NULL);
 
-	window->priv->fullscreen_headerbar = GTK_HEADER_BAR (gtk_header_bar_new ());
+	window->priv->fullscreen_headerbar = _gedit_header_bar_new (window, TRUE);
 	gtk_widget_show (GTK_WIDGET (window->priv->fullscreen_headerbar));
-
-	window->priv->gedit_header_bar_fullscreen =
-		_gedit_header_bar_new (window->priv->fullscreen_headerbar, window, TRUE);
 
 	gtk_container_add (GTK_CONTAINER (window->priv->fullscreen_revealer),
 			   GTK_WIDGET (window->priv->fullscreen_headerbar));
@@ -2575,7 +2569,7 @@ init_open_buttons (GeditWindow *window)
 {
 	GtkMenuButton *fullscreen_open_recent_menu_button;
 
-	fullscreen_open_recent_menu_button = _gedit_header_bar_get_open_recent_menu_button (window->priv->gedit_header_bar_fullscreen);
+	fullscreen_open_recent_menu_button = _gedit_header_bar_get_open_recent_menu_button (window->priv->fullscreen_headerbar);
 
 	g_signal_connect (fullscreen_open_recent_menu_button,
 	                  "toggled",
@@ -2614,10 +2608,6 @@ gedit_window_init (GeditWindow *window)
 	init_amtk_application_window (window);
 
 	init_titlebar (window);
-
-	window->priv->gedit_header_bar_normal =
-		_gedit_header_bar_new (window->priv->headerbar, window, FALSE);
-
 	create_fullscreen_headerbar (window);
 
 	init_side_headerbar (window);
@@ -2634,7 +2624,7 @@ gedit_window_init (GeditWindow *window)
 	setup_fullscreen_eventbox (window);
 	sync_fullscreen_actions (window, FALSE);
 
-	button = _gedit_header_bar_get_hamburger_menu_button (window->priv->gedit_header_bar_fullscreen);
+	button = _gedit_header_bar_get_hamburger_menu_button (window->priv->fullscreen_headerbar);
 	if (button != NULL)
 	{
 		g_signal_connect (button,

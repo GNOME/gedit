@@ -9,9 +9,6 @@
 
 struct _GeditHeaderBarPrivate
 {
-	/* Owned */
-	GtkHeaderBar *header_bar;
-
 	/* Weak ref */
 	GeditWindow *window;
 
@@ -20,14 +17,13 @@ struct _GeditHeaderBarPrivate
 	GtkMenuButton *hamburger_menu_button;
 };
 
-G_DEFINE_TYPE_WITH_PRIVATE (GeditHeaderBar, _gedit_header_bar, G_TYPE_OBJECT)
+G_DEFINE_TYPE_WITH_PRIVATE (GeditHeaderBar, _gedit_header_bar, GTK_TYPE_HEADER_BAR)
 
 static void
 _gedit_header_bar_dispose (GObject *object)
 {
 	GeditHeaderBar *bar = GEDIT_HEADER_BAR (object);
 
-	g_clear_object (&bar->priv->header_bar);
 	g_clear_weak_pointer (&bar->priv->window);
 	bar->priv->open_recent_menu_button = NULL;
 	bar->priv->hamburger_menu_button = NULL;
@@ -130,7 +126,7 @@ add_open_buttons (GeditHeaderBar *bar)
 	gtk_container_add (GTK_CONTAINER (hbox), GTK_WIDGET (bar->priv->open_recent_menu_button));
 	gtk_widget_show_all (hbox);
 
-	gtk_header_bar_pack_start (bar->priv->header_bar, hbox);
+	gtk_header_bar_pack_start (GTK_HEADER_BAR (bar), hbox);
 }
 
 static void
@@ -143,7 +139,7 @@ add_new_tab_button (GeditHeaderBar *bar)
 	gtk_actionable_set_action_name (GTK_ACTIONABLE (button), "win.new-tab");
 	gtk_widget_show (button);
 
-	gtk_header_bar_pack_start (bar->priv->header_bar, button);
+	gtk_header_bar_pack_start (GTK_HEADER_BAR (bar), button);
 }
 
 static void
@@ -156,7 +152,7 @@ add_leave_fullscreen_button (GeditHeaderBar *bar)
 	gtk_actionable_set_action_name (GTK_ACTIONABLE (button), "win.leave-fullscreen");
 	gtk_widget_show (button);
 
-	gtk_header_bar_pack_end (bar->priv->header_bar, button);
+	gtk_header_bar_pack_end (GTK_HEADER_BAR (bar), button);
 }
 
 static void
@@ -178,7 +174,7 @@ add_hamburger_menu_button (GeditHeaderBar *bar)
 	gtk_menu_button_set_menu_model (bar->priv->hamburger_menu_button, hamburger_menu);
 	gtk_widget_show (GTK_WIDGET (bar->priv->hamburger_menu_button));
 
-	gtk_header_bar_pack_end (bar->priv->header_bar,
+	gtk_header_bar_pack_end (GTK_HEADER_BAR (bar),
 				 GTK_WIDGET (bar->priv->hamburger_menu_button));
 }
 
@@ -192,22 +188,19 @@ add_save_button (GeditHeaderBar *bar)
 	gtk_actionable_set_action_name (GTK_ACTIONABLE (button), "win.save");
 	gtk_widget_show (button);
 
-	gtk_header_bar_pack_end (bar->priv->header_bar, button);
+	gtk_header_bar_pack_end (GTK_HEADER_BAR (bar), button);
 }
 
 GeditHeaderBar *
-_gedit_header_bar_new (GtkHeaderBar *header_bar,
-		       GeditWindow  *window,
-		       gboolean      fullscreen)
+_gedit_header_bar_new (GeditWindow *window,
+		       gboolean     fullscreen)
 {
 	GeditHeaderBar *bar;
 
-	g_return_val_if_fail (GTK_IS_HEADER_BAR (header_bar), NULL);
 	g_return_val_if_fail (GEDIT_IS_WINDOW (window), NULL);
 
 	bar = g_object_new (GEDIT_TYPE_HEADER_BAR, NULL);
 
-	bar->priv->header_bar = g_object_ref_sink (header_bar);
 	g_set_weak_pointer (&bar->priv->window, window);
 
 	add_open_buttons (bar);
