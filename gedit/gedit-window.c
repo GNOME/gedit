@@ -2527,6 +2527,8 @@ init_titlebar (GeditWindow *window)
 static void
 create_fullscreen_headerbar (GeditWindow *window)
 {
+	GtkMenuButton *fullscreen_open_recent_menu_button;
+
 	g_return_if_fail (window->priv->fullscreen_headerbar == NULL);
 
 	window->priv->fullscreen_headerbar = _gedit_header_bar_new (window, TRUE);
@@ -2534,6 +2536,13 @@ create_fullscreen_headerbar (GeditWindow *window)
 
 	gtk_container_add (GTK_CONTAINER (window->priv->fullscreen_revealer),
 			   GTK_WIDGET (window->priv->fullscreen_headerbar));
+
+	fullscreen_open_recent_menu_button = _gedit_header_bar_get_open_recent_menu_button (window->priv->fullscreen_headerbar);
+
+	g_signal_connect (fullscreen_open_recent_menu_button,
+			  "toggled",
+			  G_CALLBACK (on_fullscreen_toggle_button_toggled),
+			  window);
 }
 
 static void
@@ -2562,19 +2571,6 @@ init_side_headerbar (GeditWindow *window)
 	gtk_size_group_add_widget (size_group, GTK_WIDGET (window->priv->side_panel));
 	g_object_unref (size_group);
 #endif
-}
-
-static void
-init_open_buttons (GeditWindow *window)
-{
-	GtkMenuButton *fullscreen_open_recent_menu_button;
-
-	fullscreen_open_recent_menu_button = _gedit_header_bar_get_open_recent_menu_button (window->priv->fullscreen_headerbar);
-
-	g_signal_connect (fullscreen_open_recent_menu_button,
-	                  "toggled",
-	                  G_CALLBACK (on_fullscreen_toggle_button_toggled),
-	                  window);
 }
 
 static void
@@ -2609,9 +2605,7 @@ gedit_window_init (GeditWindow *window)
 
 	init_titlebar (window);
 	create_fullscreen_headerbar (window);
-
 	init_side_headerbar (window);
-	init_open_buttons (window);
 
 	g_action_map_add_action_entries (G_ACTION_MAP (window),
 	                                 win_entries,
