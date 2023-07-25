@@ -79,7 +79,7 @@ struct _GeditWindowPrivate
 	guint tab_width_id;
 	guint language_changed_id;
 
-	/* Headerbars */
+	/* Headerbars (can be NULL) */
 	GtkHeaderBar *side_headerbar;
 	GeditHeaderBar *headerbar;
 
