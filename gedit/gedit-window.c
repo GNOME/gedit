@@ -82,8 +82,7 @@ struct _GeditWindowPrivate
 
 	/* Headerbars */
 	GtkHeaderBar *side_headerbar;
-	GtkWidget *headerbar;
-
+	GtkHeaderBar *headerbar;
 	GeditHeaderBar *gedit_header_bar_normal;
 	GeditHeaderBar *gedit_header_bar_fullscreen;
 
@@ -1035,8 +1034,8 @@ set_titles (GeditWindow *window,
 {
 	gedit_app_set_window_title (GEDIT_APP (g_application_get_default ()), window, single_title);
 
-	gtk_header_bar_set_title (GTK_HEADER_BAR (window->priv->headerbar), title);
-	gtk_header_bar_set_subtitle (GTK_HEADER_BAR (window->priv->headerbar), subtitle);
+	gtk_header_bar_set_title (window->priv->headerbar, title);
+	gtk_header_bar_set_subtitle (window->priv->headerbar, subtitle);
 
 	gtk_header_bar_set_title (GTK_HEADER_BAR (window->priv->fullscreen_headerbar), title);
 	gtk_header_bar_set_subtitle (GTK_HEADER_BAR (window->priv->fullscreen_headerbar), subtitle);
@@ -2171,7 +2170,7 @@ side_panel_visibility_changed (GtkWidget   *panel,
 			gchar *layout_headerbar;
 
 			layout_headerbar = g_strdup_printf ("%c%s", ':', tokens[1]);
-			gtk_header_bar_set_decoration_layout (GTK_HEADER_BAR (window->priv->headerbar), layout_headerbar);
+			gtk_header_bar_set_decoration_layout (window->priv->headerbar, layout_headerbar);
 			gtk_header_bar_set_decoration_layout (window->priv->side_headerbar, tokens[0]);
 
 			g_free (layout_headerbar);
@@ -2180,7 +2179,7 @@ side_panel_visibility_changed (GtkWidget   *panel,
 	}
 	else
 	{
-		gtk_header_bar_set_decoration_layout (GTK_HEADER_BAR (window->priv->headerbar), layout_desc);
+		gtk_header_bar_set_decoration_layout (window->priv->headerbar, layout_desc);
 		gtk_header_bar_set_decoration_layout (window->priv->side_headerbar, NULL);
 	}
 
@@ -2508,9 +2507,9 @@ init_titlebar (GeditWindow *window)
 	window->priv->side_headerbar = GTK_HEADER_BAR (gtk_header_bar_new ());
 	gtk_header_bar_set_show_close_button (window->priv->side_headerbar, TRUE);
 
-	window->priv->headerbar = gtk_header_bar_new ();
-	gtk_widget_show (window->priv->headerbar);
-	gtk_header_bar_set_show_close_button (GTK_HEADER_BAR (window->priv->headerbar), TRUE);
+	window->priv->headerbar = GTK_HEADER_BAR (gtk_header_bar_new ());
+	gtk_widget_show (GTK_WIDGET (window->priv->headerbar));
+	gtk_header_bar_set_show_close_button (window->priv->headerbar, TRUE);
 
 	titlebar_hpaned = GTK_PANED (gtk_paned_new (GTK_ORIENTATION_HORIZONTAL));
 	gtk_widget_show (GTK_WIDGET (titlebar_hpaned));
@@ -2519,7 +2518,7 @@ init_titlebar (GeditWindow *window)
 			 GTK_WIDGET (window->priv->side_headerbar),
 			 FALSE, FALSE);
 	gtk_paned_pack2 (titlebar_hpaned,
-			 window->priv->headerbar,
+			 GTK_WIDGET (window->priv->headerbar),
 			 TRUE, FALSE);
 
 	g_object_bind_property (window->priv->hpaned, "position",
@@ -2603,7 +2602,7 @@ gedit_window_init (GeditWindow *window)
 	init_titlebar (window);
 
 	window->priv->gedit_header_bar_normal =
-		_gedit_header_bar_new (GTK_HEADER_BAR (window->priv->headerbar), window, FALSE);
+		_gedit_header_bar_new (window->priv->headerbar, window, FALSE);
 	window->priv->gedit_header_bar_fullscreen =
 		_gedit_header_bar_new (GTK_HEADER_BAR (window->priv->fullscreen_headerbar), window, TRUE);
 
