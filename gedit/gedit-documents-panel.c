@@ -144,8 +144,8 @@ static GParamSpec *properties[LAST_PROP];
 
 G_DEFINE_TYPE (GeditDocumentsPanel, gedit_documents_panel, GTK_TYPE_BOX)
 
-static const GtkTargetEntry panel_targets [] = {
-	{"GEDIT_DOCUMENTS_DOCUMENT_ROW", GTK_TARGET_SAME_APP, 0},
+static const GtkTargetEntry panel_targets[] = {
+	{ (gchar *) "GEDIT_DOCUMENTS_DOCUMENT_ROW", GTK_TARGET_SAME_APP, 0 },
 };
 
 #define ROW_OUTSIDE_LISTBOX -1
