@@ -2071,6 +2071,15 @@ load_finish (GeditTab     *tab,
 	return g_task_propagate_boolean (G_TASK (result), NULL);
 }
 
+static void
+tab_load_cb (GObject      *source_object,
+	     GAsyncResult *result,
+	     gpointer      user_data)
+{
+	GeditTab *tab = GEDIT_TAB (source_object);
+	load_finish (tab, result);
+}
+
 /**
  * gedit_tab_load_file:
  * @tab: a #GeditTab.
@@ -2120,7 +2129,7 @@ gedit_tab_load_file (GeditTab                *tab,
 		    column_pos,
 		    create,
 		    tab->cancellable,
-		    (GAsyncReadyCallback) load_finish,
+		    tab_load_cb,
 		    NULL);
 }
 
@@ -2209,7 +2218,7 @@ gedit_tab_load_stream (GeditTab                *tab,
 			   line_pos,
 			   column_pos,
 			   tab->cancellable,
-			   (GAsyncReadyCallback) load_finish,
+			   tab_load_cb,
 			   NULL);
 }
 
@@ -2268,7 +2277,7 @@ _gedit_tab_revert (GeditTab *tab)
 
 	revert_async (tab,
 		      tab->cancellable,
-		      (GAsyncReadyCallback) load_finish,
+		      tab_load_cb,
 		      NULL);
 }
 
