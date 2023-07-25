@@ -2527,7 +2527,7 @@ init_titlebar (GeditWindow *window)
 static void
 create_fullscreen_headerbar (GeditWindow *window)
 {
-	GtkMenuButton *fullscreen_open_recent_menu_button;
+	GtkMenuButton *button;
 
 	g_return_if_fail (window->priv->fullscreen_headerbar == NULL);
 
@@ -2537,12 +2537,20 @@ create_fullscreen_headerbar (GeditWindow *window)
 	gtk_container_add (GTK_CONTAINER (window->priv->fullscreen_revealer),
 			   GTK_WIDGET (window->priv->fullscreen_headerbar));
 
-	fullscreen_open_recent_menu_button = _gedit_header_bar_get_open_recent_menu_button (window->priv->fullscreen_headerbar);
-
-	g_signal_connect (fullscreen_open_recent_menu_button,
+	button = _gedit_header_bar_get_open_recent_menu_button (window->priv->fullscreen_headerbar);
+	g_signal_connect (button,
 			  "toggled",
 			  G_CALLBACK (on_fullscreen_toggle_button_toggled),
 			  window);
+
+	button = _gedit_header_bar_get_hamburger_menu_button (window->priv->fullscreen_headerbar);
+	if (button != NULL)
+	{
+		g_signal_connect (button,
+				  "toggled",
+				  G_CALLBACK (on_fullscreen_toggle_button_toggled),
+				  window);
+	}
 }
 
 static void
@@ -2577,7 +2585,6 @@ static void
 gedit_window_init (GeditWindow *window)
 {
 	GtkTargetList *tl;
-	GtkMenuButton *button;
 
 	gedit_debug (DEBUG_WINDOW);
 
@@ -2617,15 +2624,6 @@ gedit_window_init (GeditWindow *window)
 
 	setup_fullscreen_eventbox (window);
 	sync_fullscreen_actions (window, FALSE);
-
-	button = _gedit_header_bar_get_hamburger_menu_button (window->priv->fullscreen_headerbar);
-	if (button != NULL)
-	{
-		g_signal_connect (button,
-				  "toggled",
-				  G_CALLBACK (on_fullscreen_toggle_button_toggled),
-				  window);
-	}
 
 	/* Setup status bar */
 	setup_statusbar (window);
