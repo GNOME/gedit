@@ -79,7 +79,7 @@ enum
 static guint signals[NUM_SIGNALS] = { 0 };
 
 static const GtkTargetEntry drag_source_targets[] = {
-	{ "text/uri-list", 0, 0 }
+	{ (gchar *) "text/uri-list", 0, 0 }
 };
 
 G_DEFINE_DYNAMIC_TYPE_EXTENDED (GeditFileBrowserView,
