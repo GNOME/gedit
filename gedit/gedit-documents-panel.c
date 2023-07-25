@@ -1198,15 +1198,15 @@ panel_on_drag_data_received (GtkWidget        *widget,
 {
 	GeditDocumentsPanel *panel = GEDIT_DOCUMENTS_PANEL (widget);
 	GeditDocumentsPanel *source_panel = NULL;
-
 	GtkWidget *source_widget = gtk_drag_get_source_widget (context);
+	GtkWidget **source_row;
 
 	if (GEDIT_IS_DOCUMENTS_PANEL (source_widget))
 	{
 		source_panel = GEDIT_DOCUMENTS_PANEL (source_widget);
 	}
 
-	GtkWidget **source_row = (void*) gtk_selection_data_get_data (data);
+	source_row = (void*) gtk_selection_data_get_data (data);
 
 	if (source_panel &&
 	    gtk_selection_data_get_target (data) == gdk_atom_intern_static_string ("GEDIT_DOCUMENTS_DOCUMENT_ROW"))
