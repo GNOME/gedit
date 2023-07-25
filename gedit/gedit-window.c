@@ -321,7 +321,7 @@ update_fullscreen (GeditWindow *window,
 
 	_gedit_multi_notebook_set_show_tabs (window->priv->multi_notebook, !is_fullscreen);
 
-#ifndef OS_OSX
+#if !OS_MACOS
 	if (is_fullscreen)
 	{
 		gtk_widget_show_all (window->priv->fullscreen_eventbox);

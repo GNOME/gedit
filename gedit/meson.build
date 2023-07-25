@@ -111,7 +111,6 @@ libgedit_private_sources = [
   'gedit-view-frame.c',
 ]
 
-libgedit_c_args = []
 libgedit_link_args = []
 
 libgedit_deps = [
@@ -123,9 +122,6 @@ if host_machine.system() == 'darwin'
   libgedit_private_sources += [
     'gedit-app-osx.m',
     'gedit-recent-osx.c',
-  ]
-  libgedit_c_args += [
-    '-DOS_OSX=1',
   ]
   libgedit_link_args += [
     '-Wl,-framework', '-Wl,Foundation',
@@ -171,7 +167,6 @@ libgedit_shared_lib = shared_library(
    libgedit_gresources],
   include_directories: root_include_dir,
   dependencies: libgedit_deps,
-  c_args: libgedit_c_args,
   link_args: libgedit_link_args,
   install: true,
   install_dir: get_option('libdir') / 'gedit',
@@ -239,16 +234,10 @@ custom_target(
   install_dir: get_option('datadir') / 'glib-2.0/schemas'
 )
 
-gedit_c_args = []
-if host_machine.system() == 'darwin'
-  gedit_c_args += '-DOS_OSX=1'
-endif
-
 executable(
   'gedit',
   'gedit.c',
   dependencies: libgedit_dep,
-  c_args: gedit_c_args,
   install: true,
   install_rpath: get_option('prefix') / get_option('libdir') / 'gedit',
   win_subsystem: 'windows',

@@ -22,7 +22,7 @@
 
 #include "gedit-dirs.h"
 
-#ifdef OS_OSX
+#if OS_MACOS
 #include <gtkosxapplication.h>
 #endif
 
@@ -60,7 +60,7 @@ gedit_dirs_init ()
 	g_free (win32_dir);
 #endif /* G_OS_WIN32 */
 
-#ifdef OS_OSX
+#if OS_MACOS
 	if (gtkosx_application_get_bundle_id () != NULL)
 	{
 		const gchar *bundle_resource_dir = gtkosx_application_get_resource_path ();
@@ -79,7 +79,7 @@ gedit_dirs_init ()
 							   "plugins",
 							   NULL);
 	}
-#endif /* OS_OSX */
+#endif /* OS_MACOS */
 
 	if (gedit_locale_dir == NULL)
 	{

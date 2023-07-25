@@ -18,6 +18,8 @@
  * along with this program; if not, see <http://www.gnu.org/licenses/>.
  */
 
+#include "config.h"
+
 #include <string.h>
 #include <glib/gi18n.h>
 #include <gio/gio.h>
@@ -203,7 +205,7 @@ init_special_directories (GeditFileBookmarksStore *model)
 		g_object_unref (file);
 	}
 
-#if defined(G_OS_WIN32) || defined(OS_OSX)
+#if defined(G_OS_WIN32) || OS_MACOS
 	path = g_get_user_special_dir (G_USER_DIRECTORY_DESKTOP);
 	if (path != NULL)
 	{

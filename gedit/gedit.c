@@ -19,13 +19,14 @@
  */
 
 #include "config.h"
-
 #include "gedit-app.h"
 
-#if defined OS_OSX
-#  include "gedit-app-osx.h"
-#elif defined G_OS_WIN32
-#  include "gedit-app-win32.h"
+#if OS_MACOS
+#include "gedit-app-osx.h"
+#endif
+
+#ifdef G_OS_WIN32
+#include "gedit-app-win32.h"
 #endif
 
 #include <locale.h>
@@ -143,7 +144,7 @@ main (int argc, char *argv[])
 	GeditApp *app;
 	gint status;
 
-#if defined OS_OSX
+#if OS_MACOS
 	type = GEDIT_TYPE_APP_OSX;
 #elif defined G_OS_WIN32
 	if (!gedit_w32_load_private_dll ())
