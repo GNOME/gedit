@@ -694,6 +694,7 @@ modeline_parser_apply_modeline (GtkSourceView *view)
 	GtkTextIter iter, liter;
 	gint line_count;
 	GSettings *settings;
+	ModelineOptions *previous;
 
 	options.language_id = NULL;
 	options.set = MODELINE_SET_NONE;
@@ -791,8 +792,7 @@ modeline_parser_apply_modeline (GtkSourceView *view)
 		}
 	}
 
-	ModelineOptions *previous = g_object_get_data (G_OBJECT (buffer),
-	                                               MODELINE_OPTIONS_DATA_KEY);
+	previous = g_object_get_data (G_OBJECT (buffer), MODELINE_OPTIONS_DATA_KEY);
 
 	settings = g_settings_new ("org.gnome.gedit.preferences.editor");
 
