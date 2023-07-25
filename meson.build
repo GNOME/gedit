@@ -41,7 +41,10 @@ warning_cflags = [
   '-Wcast-align',
   '-Wformat-nonliteral',
   '-Wformat-security',
-  '-Wsign-compare',
+
+  #'-Wsign-compare',
+  '-Wno-sign-compare',
+
   '-Wstrict-aliasing',
   #'-Wshadow',
   '-Winline',
