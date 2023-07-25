@@ -36,7 +36,7 @@ static gchar *gedit_plugins_dir      = NULL;
 static gchar *gedit_plugins_data_dir = NULL;
 
 void
-gedit_dirs_init ()
+gedit_dirs_init (void)
 {
 #ifdef G_OS_WIN32
 	gchar *win32_dir;
@@ -113,7 +113,7 @@ gedit_dirs_init ()
 }
 
 void
-gedit_dirs_shutdown ()
+gedit_dirs_shutdown (void)
 {
 	g_clear_pointer (&user_config_dir, g_free);
 	g_clear_pointer (&user_data_dir, g_free);
