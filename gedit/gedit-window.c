@@ -81,7 +81,6 @@ struct _GeditWindowPrivate
 	guint language_changed_id;
 
 	/* Headerbars */
-	GtkPaned *titlebar_hpaned;
 	GtkHeaderBar *side_headerbar;
 	GtkWidget *headerbar;
 
@@ -518,7 +517,6 @@ gedit_window_class_init (GeditWindowClass *klass)
 	/* Bind class to template */
 	gtk_widget_class_set_template_from_resource (widget_class,
 	                                             "/org/gnome/gedit/ui/gedit-window.ui");
-	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, titlebar_hpaned);
 	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, hpaned);
 	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, side_panel);
 	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, vpaned);
@@ -2502,6 +2500,8 @@ init_amtk_application_window (GeditWindow *gedit_window)
 static void
 init_titlebar (GeditWindow *window)
 {
+	GtkPaned *titlebar_hpaned;
+
 	g_return_if_fail (window->priv->side_headerbar == NULL);
 	g_return_if_fail (window->priv->headerbar == NULL);
 
@@ -2512,16 +2512,21 @@ init_titlebar (GeditWindow *window)
 	gtk_widget_show (window->priv->headerbar);
 	gtk_header_bar_set_show_close_button (GTK_HEADER_BAR (window->priv->headerbar), TRUE);
 
-	gtk_paned_pack1 (window->priv->titlebar_hpaned,
+	titlebar_hpaned = GTK_PANED (gtk_paned_new (GTK_ORIENTATION_HORIZONTAL));
+	gtk_widget_show (GTK_WIDGET (titlebar_hpaned));
+
+	gtk_paned_pack1 (titlebar_hpaned,
 			 GTK_WIDGET (window->priv->side_headerbar),
 			 FALSE, FALSE);
-	gtk_paned_pack2 (window->priv->titlebar_hpaned,
+	gtk_paned_pack2 (titlebar_hpaned,
 			 window->priv->headerbar,
 			 TRUE, FALSE);
 
 	g_object_bind_property (window->priv->hpaned, "position",
-				window->priv->titlebar_hpaned, "position",
+				titlebar_hpaned, "position",
 				G_BINDING_BIDIRECTIONAL | G_BINDING_SYNC_CREATE);
+
+	gtk_window_set_titlebar (GTK_WINDOW (window), GTK_WIDGET (titlebar_hpaned));
 }
 
 static void
