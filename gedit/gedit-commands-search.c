@@ -225,6 +225,17 @@ forward_search_from_dialog_finished (GtkSourceSearchContext *search_context,
 }
 
 static void
+forward_search_finished_cb (GObject      *source_object,
+			    GAsyncResult *result,
+			    gpointer      user_data)
+{
+	GtkSourceSearchContext *search_context = GTK_SOURCE_SEARCH_CONTEXT (source_object);
+	GeditView *view = GEDIT_VIEW (user_data);
+
+	forward_search_finished (search_context, result, view);
+}
+
+static void
 run_forward_search (GeditWindow *window,
 		    gboolean     from_dialog)
 {
@@ -264,7 +275,7 @@ run_forward_search (GeditWindow *window,
 		gtk_source_search_context_forward_async (search_context,
 							 &start_at,
 							 NULL,
-							 (GAsyncReadyCallback)forward_search_finished,
+							 forward_search_finished_cb,
 							 view);
 	}
 }
