@@ -66,7 +66,7 @@ struct _GeditWindowPrivate
 	/* Widgets for fullscreen mode */
 	GtkWidget *fullscreen_eventbox;
 	GtkRevealer *fullscreen_revealer;
-	GtkWidget *fullscreen_headerbar;
+	GtkHeaderBar *fullscreen_headerbar;
 
 	/* statusbar and context ids for statusbar messages */
 	GeditStatusbar *statusbar;
@@ -1036,8 +1036,8 @@ set_titles (GeditWindow *window,
 	gtk_header_bar_set_title (window->priv->headerbar, title);
 	gtk_header_bar_set_subtitle (window->priv->headerbar, subtitle);
 
-	gtk_header_bar_set_title (GTK_HEADER_BAR (window->priv->fullscreen_headerbar), title);
-	gtk_header_bar_set_subtitle (GTK_HEADER_BAR (window->priv->fullscreen_headerbar), subtitle);
+	gtk_header_bar_set_title (window->priv->fullscreen_headerbar, title);
+	gtk_header_bar_set_subtitle (window->priv->fullscreen_headerbar, subtitle);
 }
 
 #define MAX_TITLE_LENGTH 100
@@ -2603,7 +2603,7 @@ gedit_window_init (GeditWindow *window)
 	window->priv->gedit_header_bar_normal =
 		_gedit_header_bar_new (window->priv->headerbar, window, FALSE);
 	window->priv->gedit_header_bar_fullscreen =
-		_gedit_header_bar_new (GTK_HEADER_BAR (window->priv->fullscreen_headerbar), window, TRUE);
+		_gedit_header_bar_new (window->priv->fullscreen_headerbar, window, TRUE);
 
 	init_side_headerbar (window);
 	init_open_buttons (window);
