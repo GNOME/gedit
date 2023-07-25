@@ -665,7 +665,7 @@ get_configure_widget (GeditTimePlugin *plugin)
 	GeditTimePluginPromptType prompt_type;
 	gchar *sf;
 	GtkBuilder *builder;
-	gchar *root_objects[] = {
+	const gchar *root_objects[] = {
 		"time_dialog_content",
 		NULL
 	};
@@ -677,7 +677,7 @@ get_configure_widget (GeditTimePlugin *plugin)
 
 	builder = gtk_builder_new ();
 	gtk_builder_add_objects_from_resource (builder, "/org/gnome/gedit/plugins/time/ui/gedit-time-setup-dialog.ui",
-	                                       root_objects, NULL);
+	                                       (gchar **)root_objects, NULL);
 	widget->content = GTK_WIDGET (gtk_builder_get_object (builder, "time_dialog_content"));
 	g_object_ref (widget->content);
 	viewport = GTK_WIDGET (gtk_builder_get_object (builder, "formats_viewport"));
