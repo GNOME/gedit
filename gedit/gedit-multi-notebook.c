@@ -689,7 +689,7 @@ gedit_multi_notebook_init (GeditMultiNotebook *mnb)
 }
 
 GeditMultiNotebook *
-gedit_multi_notebook_new ()
+gedit_multi_notebook_new (void)
 {
 	return g_object_new (GEDIT_TYPE_MULTI_NOTEBOOK, NULL);
 }
