@@ -158,6 +158,13 @@ message_cache_data_free (MessageCacheData *data)
 	g_slice_free (MessageCacheData, data);
 }
 
+static void
+message_closure_destroy_data_cb (gpointer  data,
+				 GClosure *closure)
+{
+	message_cache_data_free (data);
+}
+
 static MessageCacheData *
 message_cache_data_new (GeditWindow  *window,
 			GeditMessage *message)
@@ -925,7 +932,7 @@ register_signals (GeditWindow            *window,
 		                       "row-inserted",
 		                       G_CALLBACK (store_row_inserted),
 		                       message_cache_data_new (window, message),
-		                       (GClosureNotify)message_cache_data_free,
+		                       message_closure_destroy_data_cb,
 		                       0);
 
 	message = g_object_new (GEDIT_TYPE_FILE_BROWSER_MESSAGE_ID_LOCATION,
@@ -938,7 +945,7 @@ register_signals (GeditWindow            *window,
 		                       "before-row-deleted",
 		                       G_CALLBACK (store_before_row_deleted),
 		                       message_cache_data_new (window, message),
-		                       (GClosureNotify)message_cache_data_free,
+		                       message_closure_destroy_data_cb,
 		                       0);
 
 	message = g_object_new (GEDIT_TYPE_FILE_BROWSER_MESSAGE_ID_LOCATION,
@@ -951,7 +958,7 @@ register_signals (GeditWindow            *window,
 		                       "notify::virtual-root",
 		                       G_CALLBACK (store_virtual_root_changed),
 		                       message_cache_data_new (window, message),
-		                       (GClosureNotify)message_cache_data_free,
+		                       message_closure_destroy_data_cb,
 		                       0);
 
 	message = g_object_new (GEDIT_TYPE_FILE_BROWSER_MESSAGE_ID_LOCATION,
@@ -964,7 +971,7 @@ register_signals (GeditWindow            *window,
 		                       "begin_loading",
 		                       G_CALLBACK (store_begin_loading),
 		                       message_cache_data_new (window, message),
-		                       (GClosureNotify)message_cache_data_free,
+		                       message_closure_destroy_data_cb,
 		                       0);
 
 	message = g_object_new (GEDIT_TYPE_FILE_BROWSER_MESSAGE_ID_LOCATION,
@@ -977,7 +984,7 @@ register_signals (GeditWindow            *window,
 		                       "end_loading",
 		                       G_CALLBACK (store_end_loading),
 		                       message_cache_data_new (window, message),
-		                       (GClosureNotify)message_cache_data_free,
+		                       message_closure_destroy_data_cb,
 		                       0);
 }
 
