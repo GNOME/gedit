@@ -519,8 +519,6 @@ gedit_window_class_init (GeditWindowClass *klass)
 	gtk_widget_class_set_template_from_resource (widget_class,
 	                                             "/org/gnome/gedit/ui/gedit-window.ui");
 	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, titlebar_hpaned);
-	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, side_headerbar);
-	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, headerbar);
 	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, hpaned);
 	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, side_panel);
 	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, vpaned);
@@ -2504,6 +2502,23 @@ init_amtk_application_window (GeditWindow *gedit_window)
 static void
 init_titlebar (GeditWindow *window)
 {
+	g_return_if_fail (window->priv->side_headerbar == NULL);
+	g_return_if_fail (window->priv->headerbar == NULL);
+
+	window->priv->side_headerbar = GTK_HEADER_BAR (gtk_header_bar_new ());
+	gtk_header_bar_set_show_close_button (window->priv->side_headerbar, TRUE);
+
+	window->priv->headerbar = gtk_header_bar_new ();
+	gtk_widget_show (window->priv->headerbar);
+	gtk_header_bar_set_show_close_button (GTK_HEADER_BAR (window->priv->headerbar), TRUE);
+
+	gtk_paned_pack1 (window->priv->titlebar_hpaned,
+			 GTK_WIDGET (window->priv->side_headerbar),
+			 FALSE, FALSE);
+	gtk_paned_pack2 (window->priv->titlebar_hpaned,
+			 window->priv->headerbar,
+			 TRUE, FALSE);
+
 	g_object_bind_property (window->priv->hpaned, "position",
 				window->priv->titlebar_hpaned, "position",
 				G_BINDING_BIDIRECTIONAL | G_BINDING_SYNC_CREATE);
@@ -2580,12 +2595,13 @@ gedit_window_init (GeditWindow *window)
 
 	init_amtk_application_window (window);
 
+	init_titlebar (window);
+
 	window->priv->gedit_header_bar_normal =
 		_gedit_header_bar_new (GTK_HEADER_BAR (window->priv->headerbar), window, FALSE);
 	window->priv->gedit_header_bar_fullscreen =
 		_gedit_header_bar_new (GTK_HEADER_BAR (window->priv->fullscreen_headerbar), window, TRUE);
 
-	init_titlebar (window);
 	init_side_headerbar (window);
 	init_open_buttons (window);
 
