@@ -1751,7 +1751,7 @@ gedit_file_browser_widget_add_filter (GeditFileBrowserWidget           *obj,
 				      gpointer                          user_data,
 				      GDestroyNotify                    notify)
 {
-	FilterFunc *f = filter_func_new (obj, func, user_data, notify);;
+	FilterFunc *f = filter_func_new (obj, func, user_data, notify);
 	GtkTreeModel *model = gtk_tree_view_get_model (GTK_TREE_VIEW (obj->priv->treeview));
 
 	obj->priv->filter_funcs = g_slist_append (obj->priv->filter_funcs, f);
