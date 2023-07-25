@@ -525,7 +525,6 @@ gedit_window_class_init (GeditWindowClass *klass)
 	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, tab_width_button);
 	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, fullscreen_eventbox);
 	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, fullscreen_revealer);
-	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, fullscreen_headerbar);
 }
 
 static void
@@ -2528,6 +2527,22 @@ init_titlebar (GeditWindow *window)
 }
 
 static void
+create_fullscreen_headerbar (GeditWindow *window)
+{
+	g_return_if_fail (window->priv->fullscreen_headerbar == NULL);
+	g_return_if_fail (window->priv->gedit_header_bar_fullscreen == NULL);
+
+	window->priv->fullscreen_headerbar = GTK_HEADER_BAR (gtk_header_bar_new ());
+	gtk_widget_show (GTK_WIDGET (window->priv->fullscreen_headerbar));
+
+	window->priv->gedit_header_bar_fullscreen =
+		_gedit_header_bar_new (window->priv->fullscreen_headerbar, window, TRUE);
+
+	gtk_container_add (GTK_CONTAINER (window->priv->fullscreen_revealer),
+			   GTK_WIDGET (window->priv->fullscreen_headerbar));
+}
+
+static void
 init_side_headerbar (GeditWindow *window)
 {
 #if !INLINE_SIDE_PANEL_SWITCHER
@@ -2602,8 +2617,8 @@ gedit_window_init (GeditWindow *window)
 
 	window->priv->gedit_header_bar_normal =
 		_gedit_header_bar_new (window->priv->headerbar, window, FALSE);
-	window->priv->gedit_header_bar_fullscreen =
-		_gedit_header_bar_new (window->priv->fullscreen_headerbar, window, TRUE);
+
+	create_fullscreen_headerbar (window);
 
 	init_side_headerbar (window);
 	init_open_buttons (window);
