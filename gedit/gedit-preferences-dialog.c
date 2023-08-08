@@ -104,7 +104,7 @@ struct _GeditPreferencesDialog
 	GtkWidget	*plugin_manager;
 
 	/* Placeholders */
-	GtkGrid *font_component_placeholder;
+	GtkGrid *font_and_colors_placeholder;
 	GtkGrid *display_line_numbers_checkbutton_placeholder;
 	GtkGrid *tab_width_spinbutton_placeholder;
 	GtkGrid *highlighting_component_placeholder;
@@ -172,7 +172,7 @@ gedit_preferences_dialog_class_init (GeditPreferencesDialogClass *klass)
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, uninstall_scheme_button);
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, schemes_toolbar);
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, plugin_manager);
-	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, font_component_placeholder);
+	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, font_and_colors_placeholder);
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, display_line_numbers_checkbutton_placeholder);
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, tab_width_spinbutton_placeholder);
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, highlighting_component_placeholder);
@@ -396,7 +396,7 @@ setup_font_colors_page_font_section (GeditPreferencesDialog *dlg)
 							   GEDIT_SETTINGS_USE_DEFAULT_FONT,
 							   GEDIT_SETTINGS_EDITOR_FONT);
 
-	gtk_container_add (GTK_CONTAINER (dlg->font_component_placeholder),
+	gtk_container_add (GTK_CONTAINER (dlg->font_and_colors_placeholder),
 			   font_component);
 }
 
