@@ -99,17 +99,6 @@ struct _GeditPreferencesDialog
 G_DEFINE_TYPE (GeditPreferencesDialog, gedit_preferences_dialog, GTK_TYPE_WINDOW)
 
 static void
-gedit_preferences_dialog_dispose (GObject *object)
-{
-	GeditPreferencesDialog *dlg = GEDIT_PREFERENCES_DIALOG (object);
-
-	g_clear_object (&dlg->editor);
-	g_clear_object (&dlg->uisettings);
-
-	G_OBJECT_CLASS (gedit_preferences_dialog_parent_class)->dispose (object);
-}
-
-static void
 gedit_preferences_dialog_close (GeditPreferencesDialog *dialog)
 {
 	gtk_window_close (GTK_WINDOW (dialog));
@@ -118,14 +107,11 @@ gedit_preferences_dialog_close (GeditPreferencesDialog *dialog)
 static void
 gedit_preferences_dialog_class_init (GeditPreferencesDialogClass *klass)
 {
-	GObjectClass *object_class = G_OBJECT_CLASS (klass);
 	GtkWidgetClass *widget_class = GTK_WIDGET_CLASS (klass);
 	GtkBindingSet *binding_set;
 
 	/* Otherwise libpeas-gtk might not be linked */
 	g_type_ensure (PEAS_GTK_TYPE_PLUGIN_MANAGER);
-
-	object_class->dispose = gedit_preferences_dialog_dispose;
 
 	signals[SIGNAL_CLOSE] =
 		g_signal_new_class_handler ("close",
@@ -773,19 +759,20 @@ setup_plugins_page (GeditPreferencesDialog *dlg)
 }
 
 static void
-gedit_preferences_dialog_init (GeditPreferencesDialog *dlg)
+gedit_preferences_dialog_init (GeditPreferencesDialog *dialog)
 {
-	gedit_debug (DEBUG_PREFS);
+	GeditSettings *gedit_settings;
 
-	dlg->editor = g_settings_new ("org.gnome.gedit.preferences.editor");
-	dlg->uisettings = g_settings_new ("org.gnome.gedit.preferences.ui");
+	gedit_settings = _gedit_settings_get_singleton ();
+	dialog->editor = _gedit_settings_peek_editor_settings (gedit_settings);
+	dialog->uisettings = _gedit_settings_peek_ui_settings (gedit_settings);
 
-	gtk_widget_init_template (GTK_WIDGET (dlg));
+	gtk_widget_init_template (GTK_WIDGET (dialog));
 
-	setup_editor_page (dlg);
-	setup_view_page (dlg);
-	setup_font_colors_page (dlg);
-	setup_plugins_page (dlg);
+	setup_editor_page (dialog);
+	setup_view_page (dialog);
+	setup_font_colors_page (dialog);
+	setup_plugins_page (dialog);
 }
 
 void
