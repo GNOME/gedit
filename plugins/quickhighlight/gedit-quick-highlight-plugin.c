@@ -83,7 +83,7 @@ gedit_quick_highlight_plugin_load_style (GeditQuickHighlightPlugin *plugin)
 
 	gedit_debug (DEBUG_PLUGINS);
 
-	g_clear_object (&plugin->priv->style);
+	g_clear_pointer (&plugin->priv->style, gtk_source_style_unref);
 
 	style_scheme = gtk_source_buffer_get_style_scheme (GTK_SOURCE_BUFFER (plugin->priv->buffer));
 
@@ -93,7 +93,7 @@ gedit_quick_highlight_plugin_load_style (GeditQuickHighlightPlugin *plugin)
 
 		if (style != NULL)
 		{
-			plugin->priv->style = gtk_source_style_copy (style);
+			plugin->priv->style = gtk_source_style_ref (style);
 		}
 	}
 }
@@ -336,7 +336,7 @@ gedit_quick_highlight_plugin_finalize (GObject *object)
 {
 	GeditQuickHighlightPlugin *plugin = GEDIT_QUICK_HIGHLIGHT_PLUGIN (object);
 
-	g_clear_object (&plugin->priv->style);
+	g_clear_pointer (&plugin->priv->style, gtk_source_style_unref);
 
 	G_OBJECT_CLASS (gedit_quick_highlight_plugin_parent_class)->finalize (object);
 }
@@ -435,7 +435,7 @@ gedit_quick_highlight_plugin_deactivate (GeditViewActivatable *activatable)
 
 	plugin = GEDIT_QUICK_HIGHLIGHT_PLUGIN (activatable);
 
-	g_clear_object (&plugin->priv->style);
+	g_clear_pointer (&plugin->priv->style, gtk_source_style_unref);
 	g_clear_object (&plugin->priv->search_context);
 
 	gedit_quick_highlight_plugin_unref_weak_buffer (plugin);
