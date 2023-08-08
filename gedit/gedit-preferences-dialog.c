@@ -46,11 +46,11 @@ G_DECLARE_FINAL_TYPE (GeditPreferencesDialog, gedit_preferences_dialog,
 
 enum
 {
-	CLOSE,
-	LAST_SIGNAL
+	SIGNAL_CLOSE,
+	N_SIGNALS
 };
 
-static guint signals[LAST_SIGNAL];
+static guint signals[N_SIGNALS];
 
 struct _GeditPreferencesDialog
 {
@@ -129,7 +129,7 @@ gedit_preferences_dialog_class_init (GeditPreferencesDialogClass *klass)
 
 	object_class->dispose = gedit_preferences_dialog_dispose;
 
-	signals[CLOSE] =
+	signals[SIGNAL_CLOSE] =
 		g_signal_new_class_handler ("close",
 		                            G_TYPE_FROM_CLASS (klass),
 		                            G_SIGNAL_RUN_LAST | G_SIGNAL_ACTION,
