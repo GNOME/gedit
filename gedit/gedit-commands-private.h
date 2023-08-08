@@ -92,9 +92,6 @@ void		_gedit_cmd_edit_delete			(GSimpleAction *action,
 void		_gedit_cmd_edit_select_all		(GSimpleAction *action,
 							 GVariant      *parameter,
 							 gpointer       user_data);
-void		_gedit_cmd_edit_preferences		(GSimpleAction *action,
-							 GVariant      *parameter,
-							 gpointer       user_data);
 void		_gedit_cmd_edit_overwrite_mode		(GSimpleAction *action,
 							 GVariant      *parameter,
 							 gpointer       user_data);

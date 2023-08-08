@@ -169,18 +169,6 @@ _gedit_cmd_edit_select_all (GSimpleAction *action,
 }
 
 void
-_gedit_cmd_edit_preferences (GSimpleAction *action,
-                             GVariant      *parameter,
-                             gpointer       user_data)
-{
-	GeditWindow *window = GEDIT_WINDOW (user_data);
-
-	gedit_debug (DEBUG_COMMANDS);
-
-	gedit_show_preferences_dialog (GTK_WINDOW (window));
-}
-
-void
 _gedit_cmd_edit_overwrite_mode (GSimpleAction *action,
                                 GVariant      *state,
                                 gpointer       user_data)
@@ -200,6 +188,3 @@ _gedit_cmd_edit_overwrite_mode (GSimpleAction *action,
 	gtk_text_view_set_overwrite (GTK_TEXT_VIEW (active_view), overwrite);
 	gtk_widget_grab_focus (GTK_WIDGET (active_view));
 }
-
-
-/* ex:set ts=8 noet: */
