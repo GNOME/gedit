@@ -30,30 +30,21 @@
 #include "gedit-dirs.h"
 #include "gedit-settings.h"
 
-/*
- * gedit-preferences dialog is a singleton since we don't
+/* gedit-preferences dialog is a singleton since we don't
  * want two dialogs showing an inconsistent state of the
  * preferences.
- * When gedit_show_preferences_dialog is called and there
+ * When gedit_show_preferences_dialog() is called and there
  * is already a prefs dialog dialog open, it is reparented
  * and shown.
  */
 
 static GtkWidget *preferences_dialog = NULL;
 
-#define GEDIT_SCHEME_ROW_ID_KEY "gedit-scheme-row-id"
-
 #define GEDIT_TYPE_PREFERENCES_DIALOG (gedit_preferences_dialog_get_type())
 
-G_DECLARE_FINAL_TYPE (GeditPreferencesDialog, gedit_preferences_dialog, GEDIT, PREFERENCES_DIALOG, GtkWindow)
-
-enum
-{
-	ID_COLUMN = 0,
-	NAME_COLUMN,
-	DESC_COLUMN,
-	NUM_COLUMNS
-};
+G_DECLARE_FINAL_TYPE (GeditPreferencesDialog, gedit_preferences_dialog,
+		      GEDIT, PREFERENCES_DIALOG,
+		      GtkWindow)
 
 enum
 {
@@ -65,41 +56,41 @@ static guint signals[LAST_SIGNAL];
 
 struct _GeditPreferencesDialog
 {
-	GtkWindow	parent_instance;
+	GtkWindow parent_instance;
 
-	GSettings	*editor;
-	GSettings	*uisettings; /* unfortunately our settings are split for historical reasons */
+	/* Unfortunately our settings are split for historical reasons. */
+	GSettings *editor;
+	GSettings *uisettings;
 
-	GtkWidget	*notebook;
+	GtkWidget *notebook;
 
 	/* Style Scheme */
-	GtkWidget	*schemes_list;
-	GtkWidget	*install_scheme_button;
-	GtkWidget	*uninstall_scheme_button;
-	GtkWidget	*schemes_toolbar;
-	GtkFileChooserNative *
-			 install_scheme_file_chooser;
+	GtkWidget *schemes_list;
+	GtkWidget *install_scheme_button;
+	GtkWidget *uninstall_scheme_button;
+	GtkWidget *schemes_toolbar;
+	GtkFileChooserNative *install_scheme_file_chooser;
 
 	/* Tabs */
-	GtkWidget	*insert_spaces_checkbutton;
+	GtkWidget *insert_spaces_checkbutton;
 
 	/* Auto indentation */
-	GtkWidget	*auto_indent_checkbutton;
+	GtkWidget *auto_indent_checkbutton;
 
 	/* Text Wrapping */
-	GtkWidget	*wrap_text_checkbutton;
-	GtkWidget	*split_checkbutton;
+	GtkWidget *wrap_text_checkbutton;
+	GtkWidget *split_checkbutton;
 
-	GtkWidget	*display_statusbar_checkbutton;
-	GtkWidget	*display_grid_checkbutton;
+	GtkWidget *display_statusbar_checkbutton;
+	GtkWidget *display_grid_checkbutton;
 
 	/* Right margin */
-	GtkWidget	*right_margin_checkbutton;
-	GtkWidget       *right_margin_position_grid;
-	GtkWidget	*right_margin_position_spinbutton;
+	GtkWidget *right_margin_checkbutton;
+	GtkWidget *right_margin_position_grid;
+	GtkWidget *right_margin_position_spinbutton;
 
 	/* Plugin manager */
-	GtkWidget	*plugin_manager;
+	GtkWidget *plugin_manager;
 
 	/* Placeholders */
 	GtkGrid *font_and_colors_placeholder;
