@@ -56,8 +56,6 @@ typedef struct
 	GtkPageSetup      *page_setup;
 	GtkPrintSettings  *print_settings;
 
-	GSettings         *window_settings;
-
 	GMenuModel        *hamburger_menu;
 	GMenuModel        *notebook_menu;
 	GMenuModel        *tab_width_menu;
@@ -142,8 +140,6 @@ gedit_app_dispose (GObject *object)
 	GeditAppPrivate *priv;
 
 	priv = gedit_app_get_instance_private (GEDIT_APP (object));
-
-	g_clear_object (&priv->window_settings);
 
 	g_clear_object (&priv->page_setup);
 	g_clear_object (&priv->print_settings);
@@ -687,7 +683,6 @@ gedit_app_startup (GApplication *application)
 
 	/* Load/init settings */
 	_gedit_settings_get_singleton ();
-	priv->window_settings = g_settings_new ("org.gnome.gedit.state.window");
 	init_tepl_settings ();
 
 	g_action_map_add_action_entries (G_ACTION_MAP (application),
@@ -1294,25 +1289,28 @@ gedit_app_init (GeditApp *app)
 
 /**
  * gedit_app_create_window:
- * @app: the #GeditApp
- * @screen: (allow-none):
+ * @app: the #GeditApp.
+ * @screen: (nullable): a #GdkScreen, or %NULL.
  *
- * Create a new #GeditWindow part of @app.
+ * Creates a new #GeditWindow part of @app.
  *
- * Return value: (transfer none): the new #GeditWindow
+ * Returns: (transfer none): the new #GeditWindow.
  */
 GeditWindow *
 gedit_app_create_window (GeditApp  *app,
 			 GdkScreen *screen)
 {
-	GeditAppPrivate *priv;
 	GeditWindow *window;
+	GeditSettings *settings;
+	GSettings *window_state_settings;
+	gint width;
+	gint height;
 	GdkWindowState state;
-	gint w, h;
+
+	g_return_val_if_fail (GEDIT_IS_APP (app), NULL);
+	g_return_val_if_fail (screen == NULL || GDK_IS_SCREEN (screen), NULL);
 
 	gedit_debug (DEBUG_APP);
-
-	priv = gedit_app_get_instance_private (app);
 
 	window = GEDIT_APP_GET_CLASS (app)->create_window (app);
 
@@ -1321,16 +1319,18 @@ gedit_app_create_window (GeditApp  *app,
 		gtk_window_set_screen (GTK_WINDOW (window), screen);
 	}
 
-	state = g_settings_get_int (priv->window_settings,
-	                            GEDIT_SETTINGS_WINDOW_STATE);
+	settings = _gedit_settings_get_singleton ();
+	window_state_settings = _gedit_settings_peek_window_state_settings (settings);
 
-	g_settings_get (priv->window_settings,
-	                GEDIT_SETTINGS_WINDOW_SIZE,
-	                "(ii)", &w, &h);
+	g_settings_get (window_state_settings,
+			GEDIT_SETTINGS_WINDOW_SIZE,
+			"(ii)", &width, &height);
 
-	gtk_window_set_default_size (GTK_WINDOW (window), w, h);
+	gtk_window_set_default_size (GTK_WINDOW (window), width, height);
 
-	if ((state & GDK_WINDOW_STATE_MAXIMIZED) != 0)
+	state = g_settings_get_int (window_state_settings, GEDIT_SETTINGS_WINDOW_STATE);
+
+	if (state & GDK_WINDOW_STATE_MAXIMIZED)
 	{
 		gtk_window_maximize (GTK_WINDOW (window));
 	}
@@ -1339,7 +1339,7 @@ gedit_app_create_window (GeditApp  *app,
 		gtk_window_unmaximize (GTK_WINDOW (window));
 	}
 
-	if ((state & GDK_WINDOW_STATE_STICKY ) != 0)
+	if (state & GDK_WINDOW_STATE_STICKY)
 	{
 		gtk_window_stick (GTK_WINDOW (window));
 	}
