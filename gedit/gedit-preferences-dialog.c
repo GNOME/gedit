@@ -60,8 +60,6 @@ struct _GeditPreferencesDialog
 	GSettings *editor;
 	GSettings *uisettings;
 
-	GtkWidget *notebook;
-
 	/* Style Scheme */
 	GtkWidget *schemes_list;
 	GtkWidget *install_scheme_button;
@@ -144,7 +142,6 @@ gedit_preferences_dialog_class_init (GeditPreferencesDialogClass *klass)
 	/* Bind class to template */
 	gtk_widget_class_set_template_from_resource (widget_class,
 	                                             "/org/gnome/gedit/ui/gedit-preferences-dialog.ui");
-	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, notebook);
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, display_statusbar_checkbutton);
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, display_grid_checkbutton);
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, right_margin_checkbutton);
