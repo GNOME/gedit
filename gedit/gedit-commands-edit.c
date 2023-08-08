@@ -30,7 +30,6 @@
 #include "gedit-window.h"
 #include "gedit-debug.h"
 #include "gedit-view.h"
-#include "gedit-preferences-dialog.h"
 
 void
 _gedit_cmd_edit_undo (GSimpleAction *action,
