@@ -388,19 +388,6 @@ setup_view_page (GeditPreferencesDialog *dlg)
 }
 
 static void
-setup_font_colors_page_font_section (GeditPreferencesDialog *dlg)
-{
-	GtkWidget *font_component;
-
-	font_component = tepl_prefs_create_font_component (dlg->editor,
-							   GEDIT_SETTINGS_USE_DEFAULT_FONT,
-							   GEDIT_SETTINGS_EDITOR_FONT);
-
-	gtk_container_add (GTK_CONTAINER (dlg->font_and_colors_placeholder),
-			   font_component);
-}
-
-static void
 update_style_scheme_buttons_sensisitivity (GeditPreferencesDialog *dlg)
 {
 	GtkSourceStyleScheme *selected_style_scheme;
@@ -763,7 +750,35 @@ setup_font_colors_page_style_scheme_section (GeditPreferencesDialog *dlg)
 static void
 setup_font_colors_page (GeditPreferencesDialog *dlg)
 {
-	setup_font_colors_page_font_section (dlg);
+	GeditSettings *gedit_settings;
+	GSettings *editor_settings;
+	GSettings *ui_settings;
+	GtkWidget *font_component;
+	GtkWidget *theme_variant_combo_box;
+
+	gedit_settings = _gedit_settings_get_singleton ();
+	editor_settings = _gedit_settings_peek_editor_settings (gedit_settings);
+	ui_settings = _gedit_settings_peek_ui_settings (gedit_settings);
+
+	/* Configure GtkGrid placeholder */
+	gtk_orientable_set_orientation (GTK_ORIENTABLE (dlg->font_and_colors_placeholder),
+					GTK_ORIENTATION_VERTICAL);
+	gtk_grid_set_row_spacing (dlg->font_and_colors_placeholder, 18);
+
+	/* Font */
+	font_component = tepl_prefs_create_font_component (editor_settings,
+							   GEDIT_SETTINGS_USE_DEFAULT_FONT,
+							   GEDIT_SETTINGS_EDITOR_FONT);
+	gtk_container_add (GTK_CONTAINER (dlg->font_and_colors_placeholder),
+			   font_component);
+
+	/* Theme variant */
+	theme_variant_combo_box = tepl_prefs_create_theme_variant_combo_box (ui_settings,
+									     GEDIT_SETTINGS_THEME_VARIANT);
+	gtk_container_add (GTK_CONTAINER (dlg->font_and_colors_placeholder),
+			   theme_variant_combo_box);
+
+	/* Color/Style scheme */
 	setup_font_colors_page_style_scheme_section (dlg);
 }
 
