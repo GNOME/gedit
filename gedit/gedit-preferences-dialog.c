@@ -84,12 +84,11 @@ struct _GeditPreferencesDialog
 	GtkWidget *plugin_manager;
 
 	/* Placeholders */
+	GtkGrid *view_placeholder;
 	GtkGrid *font_and_colors_placeholder;
-	GtkGrid *display_line_numbers_checkbutton_placeholder;
 	GtkGrid *tab_width_spinbutton_placeholder;
 	GtkGrid *highlighting_component_placeholder;
 	GtkGrid *files_component_placeholder;
-	GtkGrid *right_margin_placeholder;
 };
 
 G_DEFINE_TYPE (GeditPreferencesDialog, gedit_preferences_dialog, GTK_TYPE_WINDOW)
@@ -135,12 +134,11 @@ gedit_preferences_dialog_class_init (GeditPreferencesDialogClass *klass)
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, uninstall_scheme_button);
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, schemes_toolbar);
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, plugin_manager);
+	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, view_placeholder);
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, font_and_colors_placeholder);
-	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, display_line_numbers_checkbutton_placeholder);
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, tab_width_spinbutton_placeholder);
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, highlighting_component_placeholder);
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, files_component_placeholder);
-	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, right_margin_placeholder);
 }
 
 static void
@@ -243,8 +241,8 @@ setup_view_page (GeditPreferencesDialog *dlg)
 	GtkWrapMode last_split_mode;
 	GtkSourceBackgroundPatternType background_pattern;
 	GtkWidget *display_line_numbers_checkbutton;
-	GtkWidget *highlighting_component;
 	GtkWidget *right_margin_component;
+	GtkWidget *highlighting_component;
 
 	gedit_debug (DEBUG_PREFS);
 
@@ -319,19 +317,23 @@ setup_view_page (GeditPreferencesDialog *dlg)
 
 	display_line_numbers_checkbutton = tepl_prefs_create_display_line_numbers_checkbutton (dlg->editor,
 											       GEDIT_SETTINGS_DISPLAY_LINE_NUMBERS);
-	highlighting_component = tepl_prefs_create_highlighting_component (dlg->editor,
-									   GEDIT_SETTINGS_HIGHLIGHT_CURRENT_LINE,
-									   GEDIT_SETTINGS_BRACKET_MATCHING);
 	right_margin_component = tepl_prefs_create_right_margin_component (dlg->editor,
 									   GEDIT_SETTINGS_DISPLAY_RIGHT_MARGIN,
 									   GEDIT_SETTINGS_RIGHT_MARGIN_POSITION);
+	highlighting_component = tepl_prefs_create_highlighting_component (dlg->editor,
+									   GEDIT_SETTINGS_HIGHLIGHT_CURRENT_LINE,
+									   GEDIT_SETTINGS_BRACKET_MATCHING);
 
-	gtk_container_add (GTK_CONTAINER (dlg->display_line_numbers_checkbutton_placeholder),
+	gtk_orientable_set_orientation (GTK_ORIENTABLE (dlg->view_placeholder),
+					GTK_ORIENTATION_VERTICAL);
+	gtk_grid_set_row_spacing (dlg->view_placeholder, 6);
+
+	gtk_container_add (GTK_CONTAINER (dlg->view_placeholder),
 			   display_line_numbers_checkbutton);
+	gtk_container_add (GTK_CONTAINER (dlg->view_placeholder),
+			   right_margin_component);
 	gtk_container_add (GTK_CONTAINER (dlg->highlighting_component_placeholder),
 			   highlighting_component);
-	gtk_container_add (GTK_CONTAINER (dlg->right_margin_placeholder),
-			   right_margin_component);
 }
 
 static void
@@ -746,8 +748,8 @@ gedit_preferences_dialog_init (GeditPreferencesDialog *dialog)
 
 	gtk_widget_init_template (GTK_WIDGET (dialog));
 
-	setup_editor_page (dialog);
 	setup_view_page (dialog);
+	setup_editor_page (dialog);
 	setup_font_colors_page (dialog);
 	setup_plugins_page (dialog);
 }
