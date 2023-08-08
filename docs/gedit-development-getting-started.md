@@ -7,8 +7,7 @@ missing, a feedback is welcome.
 Programming languages and paradigms
 -----------------------------------
 
-gedit is mostly written in C, with some plugins in Python or
-[Vala](https://wiki.gnome.org/Projects/Vala/). The
+gedit is mostly written in C, with some plugins in Python. The
 [Meson](https://mesonbuild.com/) build system is used.
 
 The code is object-oriented and event-driven. In C, it's thanks to the use of
@@ -22,23 +21,20 @@ Libraries used
 
 As every GNOME application, gedit uses the GLib, GObject and GTK libraries. To
 modify the gedit source code, you should be familiar with those libraries. See
-the [GTK website](https://www.gtk.org/) and the document
-[The GLib/GTK Development Platform – A Getting Started Guide](https://informatique-libre.be/swilmet/glib-gtk-book/).
+the [GTK website](https://www.gtk.org/) and the little book
+[The GLib/GTK Development Platform – A Getting Started Guide](https://gitlab.gnome.org/swilmet/glib-gtk-book).
 
-The main widget used by gedit is GtkTextView, a general-purpose multiline text
-editor. To learn that widget API, read the excellent
-[GtkTextView tutorial](http://www.bravegnu.org/gtktext/) (a bit old but still
-mostly valid). But GtkTextView is not enough for source code edition. gedit
-actually uses the
-[GtkSourceView](https://wiki.gnome.org/Projects/GtkSourceView) library, which
-contains a subclass of GtkTextView with many features useful for a text editor
-or an IDE. But GtkSourceView is not enough to have a full-blown text editor,
-gedit is actually in the process of using more features from the
-[Tepl](https://gitlab.gnome.org/swilmet/tepl) library, and to further develop
-Tepl alongside gedit.
+The main "text area" in gedit is a GtkTextView widget. This widget is part of
+GTK. You can learn it with the
+[GtkTextView tutorial](http://www.bravegnu.org/gtktext/). The tutorial is a bit
+old but the GtkTextView API has not changed a lot. (By the way, contributing to
+update the tutorial would be a useful task!).
 
-For its plugin system, gedit uses the
-[libpeas](https://wiki.gnome.org/Projects/Libpeas) library.
+GtkTextView provides the basis, and is extended by other libraries to add more
+features. See [Gedit Technology](https://gedit-technology.net/).
+
+For its plugin system, gedit uses
+[libpeas](https://wiki.gnome.org/Projects/Libpeas).
 
 Plugins may have other dependencies, for example the spell-checking plugin uses
 [gspell](https://gitlab.gnome.org/GNOME/gspell).
@@ -46,13 +42,15 @@ Plugins may have other dependencies, for example the spell-checking plugin uses
 gedit architecture
 ------------------
 
-The [gedit Git repository](https://gitlab.gnome.org/GNOME/gedit) contains the
-_gedit core_ plus the default plugins. There is also the
-[gedit-plugins Git repository](https://gitlab.gnome.org/GNOME/gedit-plugins)
-for additional official plugins. The gedit core source code is in the `gedit/`
-directory. And as can be expected, the plugins are in …*drum roll*: `plugins/`!
+The [gedit git repository](https://gitlab.gnome.org/GNOME/gedit) contains:
+- The "gedit core" in the `gedit/` directory.
+- The default plugins in `plugins/`.
 
-gedit core provides:
+There is also the
+[gedit-plugins git repository](https://gitlab.gnome.org/GNOME/gedit-plugins)
+for additional official plugins.
+
+The gedit core provides:
 - A basic text editor.
 - The integration of libpeas, with an API for plugins.
 
