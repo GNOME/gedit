@@ -36,7 +36,7 @@
  * and shown.
  */
 
-static GtkWidget *preferences_dialog = NULL;
+static GtkWindow *preferences_dialog = NULL;
 
 #define GEDIT_TYPE_PREFERENCES_DIALOG (gedit_preferences_dialog_get_type())
 
@@ -793,23 +793,22 @@ gedit_show_preferences_dialog (GtkWindow *parent)
 {
 	g_return_if_fail (GTK_IS_WINDOW (parent));
 
-	gedit_debug (DEBUG_PREFS);
-
 	if (preferences_dialog == NULL)
 	{
-		preferences_dialog = GTK_WIDGET (g_object_new (GEDIT_TYPE_PREFERENCES_DIALOG,
-							       "application", g_application_get_default (),
-							       NULL));
+		preferences_dialog = g_object_new (GEDIT_TYPE_PREFERENCES_DIALOG,
+						   "application", g_application_get_default (),
+						   NULL);
+
 		g_signal_connect (preferences_dialog,
 				  "destroy",
 				  G_CALLBACK (gtk_widget_destroyed),
 				  &preferences_dialog);
 	}
 
-	if (parent != gtk_window_get_transient_for (GTK_WINDOW (preferences_dialog)))
+	if (parent != gtk_window_get_transient_for (preferences_dialog))
 	{
-		gtk_window_set_transient_for (GTK_WINDOW (preferences_dialog), parent);
+		gtk_window_set_transient_for (preferences_dialog, parent);
 	}
 
-	gtk_window_present (GTK_WINDOW (preferences_dialog));
+	gtk_window_present (preferences_dialog);
 }
