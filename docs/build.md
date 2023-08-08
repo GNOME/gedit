@@ -10,7 +10,7 @@ is highly recommended that you install in a separate prefix instead of
 overwriting your system binaries.
 
 Note however that when running gedit from a custom prefix you will need to set
-many environment variables accordingly, for instance `PATH` and `XDG_DATA_DIR`.
+many environment variables accordingly, for instance `PATH` and `XDG_DATA_DIRS`.
 
 There exists several tools that GNOME developers use to take care of all of
 this. See the _Tools_ section below.
