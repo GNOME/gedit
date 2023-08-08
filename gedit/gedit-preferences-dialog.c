@@ -1,6 +1,4 @@
-/* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 /*
- * gedit-preferences-dialog.c
  * This file is part of gedit
  *
  * Copyright (C) 2001-2005 Paolo Maggi
@@ -794,8 +792,10 @@ gedit_preferences_dialog_init (GeditPreferencesDialog *dlg)
 }
 
 void
-gedit_show_preferences_dialog (GeditWindow *parent)
+gedit_show_preferences_dialog (GtkWindow *parent)
 {
+	g_return_if_fail (GTK_IS_WINDOW (parent));
+
 	gedit_debug (DEBUG_PREFS);
 
 	if (preferences_dialog == NULL)
@@ -809,13 +809,10 @@ gedit_show_preferences_dialog (GeditWindow *parent)
 				  &preferences_dialog);
 	}
 
-	if (GTK_WINDOW (parent) != gtk_window_get_transient_for (GTK_WINDOW (preferences_dialog)))
+	if (parent != gtk_window_get_transient_for (GTK_WINDOW (preferences_dialog)))
 	{
-		gtk_window_set_transient_for (GTK_WINDOW (preferences_dialog),
-					      GTK_WINDOW (parent));
+		gtk_window_set_transient_for (GTK_WINDOW (preferences_dialog), parent);
 	}
 
 	gtk_window_present (GTK_WINDOW (preferences_dialog));
 }
-
-/* ex:set ts=8 noet: */

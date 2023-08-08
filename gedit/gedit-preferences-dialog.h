@@ -1,6 +1,4 @@
-/* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 /*
- * gedit-preferences-dialog.c
  * This file is part of gedit
  *
  * Copyright (C) 2001-2005 Paolo Maggi
@@ -22,14 +20,12 @@
 #ifndef GEDIT_PREFERENCES_DIALOG_H
 #define GEDIT_PREFERENCES_DIALOG_H
 
-#include "gedit-window.h"
+#include <gtk/gtk.h>
 
 G_BEGIN_DECLS
 
-void		 gedit_show_preferences_dialog		(GeditWindow *parent);
+void gedit_show_preferences_dialog (GtkWindow *parent);
 
 G_END_DECLS
 
 #endif /* GEDIT_PREFERENCES_DIALOG_H */
-
-/* ex:set ts=8 noet: */

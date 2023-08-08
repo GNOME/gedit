@@ -404,17 +404,16 @@ new_document_activated (GSimpleAction *action,
 }
 
 static void
-preferences_activated (GSimpleAction  *action,
-                       GVariant       *parameter,
-                       gpointer        user_data)
+preferences_activated (GSimpleAction *action,
+		       GVariant      *parameter,
+		       gpointer       user_data)
 {
-	GtkApplication *app;
+	GtkApplication *app = GTK_APPLICATION (user_data);
 	GeditWindow *window;
 
-	app = GTK_APPLICATION (user_data);
 	window = GEDIT_WINDOW (gtk_application_get_active_window (app));
 
-	gedit_show_preferences_dialog (window);
+	gedit_show_preferences_dialog (GTK_WINDOW (window));
 }
 
 static void

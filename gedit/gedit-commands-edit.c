@@ -177,7 +177,7 @@ _gedit_cmd_edit_preferences (GSimpleAction *action,
 
 	gedit_debug (DEBUG_COMMANDS);
 
-	gedit_show_preferences_dialog (window);
+	gedit_show_preferences_dialog (GTK_WINDOW (window));
 }
 
 void
