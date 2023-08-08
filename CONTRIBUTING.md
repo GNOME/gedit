@@ -13,9 +13,12 @@ Contributions other than software development
 
 See the [GNOME wiki](https://wiki.gnome.org/).
 
-Doing **bug triaging** on the bug tracker is a very useful task for gedit,
-because gedit is used by many people and there are therefore lots of bug reports
-or feature requests.
+There are many possible tasks:
+- Doing bug triaging on the bug tracker.
+- Improving the documentation.
+- Translations.
+- Graphics design.
+- Etc.
 
 Software development
 --------------------
