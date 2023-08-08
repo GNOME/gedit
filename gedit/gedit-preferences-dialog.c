@@ -19,8 +19,6 @@
  * along with this program; if not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "config.h"
-
 #include "gedit-preferences-dialog.h"
 
 #include <glib/gi18n.h>
