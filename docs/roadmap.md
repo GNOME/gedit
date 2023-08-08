@@ -4,13 +4,6 @@ gedit roadmap
 This page contains the plans for major code changes we hope to get done in the
 future.
 
-See the [roadmap-done.md](roadmap-done.md) file for done tasks.
-
-See the [NEWS file](../NEWS) for a detailed history.
-
-See also the
-[Tepl roadmap](https://gitlab.gnome.org/swilmet/tepl/-/blob/main/docs/roadmap.md).
-
 Continue to make the gedit source code more re-usable
 -----------------------------------------------------
 
