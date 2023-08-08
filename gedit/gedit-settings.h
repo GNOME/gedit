@@ -46,6 +46,9 @@ GSettings *	_gedit_settings_peek_ui_settings			(GeditSettings *self);
 G_GNUC_INTERNAL
 GSettings *	_gedit_settings_peek_file_chooser_state_settings	(GeditSettings *self);
 
+G_GNUC_INTERNAL
+GSettings *	_gedit_settings_peek_window_state_settings		(GeditSettings *self);
+
 GSList *	gedit_settings_get_candidate_encodings			(gboolean *default_candidates);
 
 /* key constants */
