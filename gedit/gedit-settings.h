@@ -77,6 +77,7 @@ GSList *	gedit_settings_get_candidate_encodings			(gboolean *default_candidates)
 #define GEDIT_SETTINGS_STATUSBAR_VISIBLE		"statusbar-visible"
 #define GEDIT_SETTINGS_SIDE_PANEL_VISIBLE		"side-panel-visible"
 #define GEDIT_SETTINGS_BOTTOM_PANEL_VISIBLE		"bottom-panel-visible"
+#define GEDIT_SETTINGS_THEME_VARIANT			"theme-variant"
 #define GEDIT_SETTINGS_PRINT_SYNTAX_HIGHLIGHTING	"print-syntax-highlighting"
 #define GEDIT_SETTINGS_PRINT_HEADER			"print-header"
 #define GEDIT_SETTINGS_PRINT_WRAP_MODE			"print-wrap-mode"

@@ -19,6 +19,12 @@
     <value nick="grid" value="1"/>
   </enum>
 
+  <enum id='org.gnome.gedit.ThemeVariant'>
+    <value nick='system' value='0'/>
+    <value nick='light' value='1'/>
+    <value nick='dark' value='2'/>
+  </enum>
+
   <schema id="org.gnome.gedit" path="/org/gnome/gedit/">
     <child name="preferences" schema="org.gnome.gedit.preferences"/>
     <child name="state" schema="org.gnome.gedit.state"/>
@@ -183,6 +189,10 @@
     </key>
     <key name="bottom-panel-visible" type="b">
       <default>false</default>
+    </key>
+    <key name="theme-variant" enum="org.gnome.gedit.ThemeVariant">
+      <default>'system'</default>
+      <summary>Which theme variant to use</summary>
     </key>
   </schema>
   <schema id="org.gnome.gedit.preferences.print" path="/org/gnome/gedit/preferences/print/">

@@ -651,18 +651,24 @@ static void
 init_tepl_settings (void)
 {
 	GeditSettings *gedit_settings;
-	GSettings *editor_settings;
 	TeplSettings *tepl_settings;
+	GSettings *editor_settings;
+	GSettings *ui_settings;
 
 	gedit_settings = _gedit_settings_get_singleton ();
-	editor_settings = _gedit_settings_peek_editor_settings (gedit_settings);
-
 	tepl_settings = tepl_settings_get_singleton ();
+
+	editor_settings = _gedit_settings_peek_editor_settings (gedit_settings);
+	ui_settings = _gedit_settings_peek_ui_settings (gedit_settings);
 
 	tepl_settings_provide_font_settings (tepl_settings,
 					     editor_settings,
 					     GEDIT_SETTINGS_USE_DEFAULT_FONT,
 					     GEDIT_SETTINGS_EDITOR_FONT);
+
+	tepl_settings_handle_prefer_dark_theme (tepl_settings,
+						ui_settings,
+						GEDIT_SETTINGS_THEME_VARIANT);
 }
 
 static void
@@ -679,11 +685,11 @@ gedit_app_startup (GApplication *application)
 	gedit_debug_init ();
 	gedit_debug_message (DEBUG_APP, "Startup");
 
-	setup_theme_extensions (GEDIT_APP (application));
-
 	/* Load/init settings */
 	_gedit_settings_get_singleton ();
 	init_tepl_settings ();
+
+	setup_theme_extensions (GEDIT_APP (application));
 
 	g_action_map_add_action_entries (G_ACTION_MAP (application),
 	                                 app_entries,
