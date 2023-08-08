@@ -411,7 +411,7 @@ preferences_activated (GSimpleAction *action,
 	GtkApplication *app = GTK_APPLICATION (user_data);
 	GeditWindow *window;
 
-	window = GEDIT_WINDOW (gtk_application_get_active_window (app));
+	window = get_active_window (app);
 
 	gedit_show_preferences_dialog (GTK_WINDOW (window));
 }
