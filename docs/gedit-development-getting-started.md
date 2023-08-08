@@ -63,31 +63,18 @@ Build/Installation
 
 See the file [build.md](build.md).
 
-More information
-----------------
+Suggestions
+-----------
 
-See the [Newcomers](https://wiki.gnome.org/Newcomers/) page to start
-contributing to GNOME in general. But perhaps some things explained there are
-not relevant for gedit, in case of doubt the gedit documentation takes
-precedence.
+A good way to learn a lot of things is to write a new plugin (it can be a
+third-party plugin at first).
 
-To know how to contribute to gedit specifically, read the
-[CONTRIBUTING.md](../CONTRIBUTING.md) file.
+Improving the API reference of the gedit core would be useful, because some
+parts lack proper documentation.
 
-A good way to learn a lot of things is to write a new plugin (as a third-party
-plugin first).
+A potentially easy task is to fix compilation warnings, for example when a
+deprecated function is used. If you encounter a runtime warning or critical
+message, it is also a good idea to fix it.
 
-A potentially easy task (but not always) is to fix compilation warnings, for
-example when a deprecated function is used. If you encounter a runtime warning
-or critical message, it is also a good idea to fix it.
-
-Improvements to the documentation (for users or developers) is also useful,
-especially to improve the API reference for developing gedit plugins.
-
-Note that gedit, although simple to use, is old. Some parts of the code is
-legacy code and would benefit from some refactoring. That's why writing plugins
-is normally easier.
-
-    Happy hacking,
-
-    the gedit developers.
+Note that gedit, although simple to use, is an old piece of software. Some parts
+of the code is legacy code and would benefit from some refactoring.
