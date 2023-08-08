@@ -51,9 +51,10 @@ There are several tools available that take care of the following:
 - Plus, for some tools: run in a container/sandbox.
 
 GNOME developers usually use one of these tools:
-- [JHBuild](https://developer.gnome.org/jhbuild/unstable/)
-- Or [BuildStream](https://buildstream.build/)
+- [Toolbx](https://containertoolbx.org/)
+- Or [JHBuild](https://developer.gnome.org/jhbuild/unstable/)
 - Or [Flatpak](https://flatpak.org/)
+- Or [BuildStream](https://buildstream.build/)
 
 JHBuild tips:
 - Try `ignore_suggests = True` in your jhbuildrc to have fewer dependencies to
