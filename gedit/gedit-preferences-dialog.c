@@ -80,11 +80,6 @@ struct _GeditPreferencesDialog
 	GtkWidget *display_statusbar_checkbutton;
 	GtkWidget *display_grid_checkbutton;
 
-	/* Right margin */
-	GtkWidget *right_margin_checkbutton;
-	GtkWidget *right_margin_position_grid;
-	GtkWidget *right_margin_position_spinbutton;
-
 	/* Plugin manager */
 	GtkWidget *plugin_manager;
 
@@ -94,6 +89,7 @@ struct _GeditPreferencesDialog
 	GtkGrid *tab_width_spinbutton_placeholder;
 	GtkGrid *highlighting_component_placeholder;
 	GtkGrid *files_component_placeholder;
+	GtkGrid *right_margin_placeholder;
 };
 
 G_DEFINE_TYPE (GeditPreferencesDialog, gedit_preferences_dialog, GTK_TYPE_WINDOW)
@@ -130,9 +126,6 @@ gedit_preferences_dialog_class_init (GeditPreferencesDialogClass *klass)
 	                                             "/org/gnome/gedit/ui/gedit-preferences-dialog.ui");
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, display_statusbar_checkbutton);
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, display_grid_checkbutton);
-	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, right_margin_checkbutton);
-	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, right_margin_position_grid);
-	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, right_margin_position_spinbutton);
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, wrap_text_checkbutton);
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, split_checkbutton);
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, insert_spaces_checkbutton);
@@ -147,6 +140,7 @@ gedit_preferences_dialog_class_init (GeditPreferencesDialogClass *klass)
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, tab_width_spinbutton_placeholder);
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, highlighting_component_placeholder);
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, files_component_placeholder);
+	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, right_margin_placeholder);
 }
 
 static void
@@ -248,18 +242,13 @@ setup_view_page (GeditPreferencesDialog *dlg)
 	GtkWrapMode wrap_mode;
 	GtkWrapMode last_split_mode;
 	GtkSourceBackgroundPatternType background_pattern;
-	gboolean display_right_margin;
-	guint right_margin_position;
 	GtkWidget *display_line_numbers_checkbutton;
 	GtkWidget *highlighting_component;
+	GtkWidget *right_margin_component;
 
 	gedit_debug (DEBUG_PREFS);
 
 	/* Get values */
-	display_right_margin = g_settings_get_boolean (dlg->editor,
-						       GEDIT_SETTINGS_DISPLAY_RIGHT_MARGIN);
-	g_settings_get (dlg->editor, GEDIT_SETTINGS_RIGHT_MARGIN_POSITION,
-			"u", &right_margin_position);
 	background_pattern = g_settings_get_enum (dlg->editor,
 	                                          GEDIT_SETTINGS_BACKGROUND_PATTERN);
 
@@ -303,9 +292,6 @@ setup_view_page (GeditPreferencesDialog *dlg)
 	}
 
 	gtk_toggle_button_set_active (
-		GTK_TOGGLE_BUTTON (dlg->right_margin_checkbutton),
-		display_right_margin);
-	gtk_toggle_button_set_active (
 		GTK_TOGGLE_BUTTON (dlg->display_grid_checkbutton),
 		background_pattern == GTK_SOURCE_BACKGROUND_PATTERN_TYPE_GRID);
 
@@ -318,21 +304,6 @@ setup_view_page (GeditPreferencesDialog *dlg)
 	                 dlg->display_statusbar_checkbutton,
 	                 "active",
 	                 G_SETTINGS_BIND_GET | G_SETTINGS_BIND_SET);
-	g_settings_bind (dlg->editor,
-	                 GEDIT_SETTINGS_DISPLAY_RIGHT_MARGIN,
-	                 dlg->right_margin_checkbutton,
-	                 "active",
-	                 G_SETTINGS_BIND_GET | G_SETTINGS_BIND_SET);
-	g_settings_bind (dlg->editor,
-	                 GEDIT_SETTINGS_DISPLAY_RIGHT_MARGIN,
-	                 dlg->right_margin_position_grid,
-	                 "sensitive",
-	                 G_SETTINGS_BIND_GET | G_SETTINGS_BIND_SET);
-	g_settings_bind (dlg->editor,
-			 GEDIT_SETTINGS_RIGHT_MARGIN_POSITION,
-			 dlg->right_margin_position_spinbutton,
-			 "value",
-			 G_SETTINGS_BIND_GET | G_SETTINGS_BIND_SET);
 	g_signal_connect (dlg->wrap_text_checkbutton,
 			  "toggled",
 			  G_CALLBACK (wrap_mode_checkbutton_toggled),
@@ -351,10 +322,16 @@ setup_view_page (GeditPreferencesDialog *dlg)
 	highlighting_component = tepl_prefs_create_highlighting_component (dlg->editor,
 									   GEDIT_SETTINGS_HIGHLIGHT_CURRENT_LINE,
 									   GEDIT_SETTINGS_BRACKET_MATCHING);
+	right_margin_component = tepl_prefs_create_right_margin_component (dlg->editor,
+									   GEDIT_SETTINGS_DISPLAY_RIGHT_MARGIN,
+									   GEDIT_SETTINGS_RIGHT_MARGIN_POSITION);
+
 	gtk_container_add (GTK_CONTAINER (dlg->display_line_numbers_checkbutton_placeholder),
 			   display_line_numbers_checkbutton);
 	gtk_container_add (GTK_CONTAINER (dlg->highlighting_component_placeholder),
 			   highlighting_component);
+	gtk_container_add (GTK_CONTAINER (dlg->right_margin_placeholder),
+			   right_margin_component);
 }
 
 static void
