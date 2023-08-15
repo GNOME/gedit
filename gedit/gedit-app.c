@@ -673,10 +673,7 @@ init_tepl_settings (void)
 static void
 gedit_app_startup (GApplication *application)
 {
-	GeditAppPrivate *priv;
-	GtkSourceStyleSchemeManager *manager;
-
-	priv = gedit_app_get_instance_private (GEDIT_APP (application));
+	GeditAppPrivate *priv = gedit_app_get_instance_private (GEDIT_APP (application));
 
 	G_APPLICATION_CLASS (gedit_app_parent_class)->startup (application);
 
@@ -742,15 +739,6 @@ gedit_app_startup (GApplication *application)
 
 	/* Load custom css */
 	g_object_unref (load_css_from_resource ("gedit-style.css", TRUE));
-
-	/*
-	 * We use the default gtksourceview style scheme manager so that plugins
-	 * can obtain it easily without a gedit specific api, but we need to
-	 * add our search path at startup before the manager is actually used.
-	 */
-	manager = gtk_source_style_scheme_manager_get_default ();
-	gtk_source_style_scheme_manager_append_search_path (manager,
-	                                                    gedit_dirs_get_user_styles_dir ());
 
 	priv->engine = gedit_plugins_engine_get_default ();
 	priv->extensions = peas_extension_set_new (PEAS_ENGINE (priv->engine),
