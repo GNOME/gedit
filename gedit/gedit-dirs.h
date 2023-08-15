@@ -36,8 +36,6 @@ const gchar	*gedit_dirs_get_user_config_dir		(void);
 
 const gchar	*gedit_dirs_get_user_data_dir		(void);
 
-const gchar	*gedit_dirs_get_user_styles_dir		(void);
-
 const gchar	*gedit_dirs_get_user_plugins_dir	(void);
 
 const gchar	*gedit_dirs_get_gedit_locale_dir	(void);
