@@ -75,8 +75,6 @@ struct _GeditPreferencesDialog
 	GtkWidget *wrap_text_checkbutton;
 	GtkWidget *split_checkbutton;
 
-	GtkWidget *display_grid_checkbutton;
-
 	/* Plugin manager */
 	GtkWidget *plugin_manager;
 
@@ -120,7 +118,6 @@ gedit_preferences_dialog_class_init (GeditPreferencesDialogClass *klass)
 	/* Bind class to template */
 	gtk_widget_class_set_template_from_resource (widget_class,
 	                                             "/org/gnome/gedit/ui/gedit-preferences-dialog.ui");
-	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, display_grid_checkbutton);
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, wrap_text_checkbutton);
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, split_checkbutton);
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, insert_spaces_checkbutton);
@@ -217,43 +214,24 @@ wrap_mode_checkbutton_toggled (GtkToggleButton        *button,
 }
 
 static void
-grid_checkbutton_toggled (GtkToggleButton        *button,
-                          GeditPreferencesDialog *dlg)
-{
-	GtkSourceBackgroundPatternType background_type;
-
-	background_type = gtk_toggle_button_get_active (button) ?
-	                  GTK_SOURCE_BACKGROUND_PATTERN_TYPE_GRID :
-		          GTK_SOURCE_BACKGROUND_PATTERN_TYPE_NONE;
-	g_settings_set_enum (dlg->editor,
-	                     GEDIT_SETTINGS_BACKGROUND_PATTERN,
-	                     background_type);
-}
-
-static void
 setup_view_page (GeditPreferencesDialog *dlg)
 {
 	GeditSettings *gedit_settings;
 	GSettings *ui_settings;
 	GtkWrapMode wrap_mode;
 	GtkWrapMode last_split_mode;
-	GtkSourceBackgroundPatternType background_pattern;
 	GtkWidget *display_line_numbers_checkbutton;
 	GtkWidget *right_margin_component;
+	GtkWidget *display_grid_checkbutton;
 	GtkWidget *display_statusbar_checkbutton;
 	GtkWidget *highlighting_component;
 
 	gedit_settings = _gedit_settings_get_singleton ();
 	ui_settings = _gedit_settings_peek_ui_settings (gedit_settings);
 
-	/* Get values */
-	background_pattern = g_settings_get_enum (dlg->editor,
-	                                          GEDIT_SETTINGS_BACKGROUND_PATTERN);
-
-	wrap_mode = g_settings_get_enum (dlg->editor,
-					 GEDIT_SETTINGS_WRAP_MODE);
-
 	/* Set initial state */
+	wrap_mode = g_settings_get_enum (dlg->editor, GEDIT_SETTINGS_WRAP_MODE);
+
 	switch (wrap_mode)
 	{
 		case GTK_WRAP_WORD:
@@ -289,10 +267,6 @@ setup_view_page (GeditPreferencesDialog *dlg)
 				GTK_TOGGLE_BUTTON (dlg->split_checkbutton), TRUE);
 	}
 
-	gtk_toggle_button_set_active (
-		GTK_TOGGLE_BUTTON (dlg->display_grid_checkbutton),
-		background_pattern == GTK_SOURCE_BACKGROUND_PATTERN_TYPE_GRID);
-
 	/* Set widgets sensitivity */
 	gtk_widget_set_sensitive (dlg->split_checkbutton,
 				  (wrap_mode != GTK_WRAP_NONE));
@@ -305,16 +279,14 @@ setup_view_page (GeditPreferencesDialog *dlg)
 			  "toggled",
 			  G_CALLBACK (wrap_mode_checkbutton_toggled),
 			  dlg);
-	g_signal_connect (dlg->display_grid_checkbutton,
-			  "toggled",
-			  G_CALLBACK (grid_checkbutton_toggled),
-			  dlg);
 
 	display_line_numbers_checkbutton = tepl_prefs_create_display_line_numbers_checkbutton (dlg->editor,
 											       GEDIT_SETTINGS_DISPLAY_LINE_NUMBERS);
 	right_margin_component = tepl_prefs_create_right_margin_component (dlg->editor,
 									   GEDIT_SETTINGS_DISPLAY_RIGHT_MARGIN,
 									   GEDIT_SETTINGS_RIGHT_MARGIN_POSITION);
+	display_grid_checkbutton = tepl_prefs_create_display_grid_checkbutton (dlg->editor,
+									       GEDIT_SETTINGS_BACKGROUND_PATTERN);
 	display_statusbar_checkbutton = tepl_prefs_create_display_statusbar_checkbutton (ui_settings,
 											 GEDIT_SETTINGS_STATUSBAR_VISIBLE);
 	highlighting_component = tepl_prefs_create_highlighting_component (dlg->editor,
@@ -329,6 +301,8 @@ setup_view_page (GeditPreferencesDialog *dlg)
 			   display_line_numbers_checkbutton);
 	gtk_container_add (GTK_CONTAINER (dlg->view_placeholder),
 			   right_margin_component);
+	gtk_container_add (GTK_CONTAINER (dlg->view_placeholder),
+			   display_grid_checkbutton);
 	gtk_container_add (GTK_CONTAINER (dlg->view_placeholder),
 			   display_statusbar_checkbutton);
 	gtk_container_add (GTK_CONTAINER (dlg->highlighting_component_placeholder),
