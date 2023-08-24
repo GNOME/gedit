@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gedit manual\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-23 13:47+0000\n"
-"PO-Revision-Date: 2023-06-25 17:03+0300\n"
+"POT-Creation-Date: 2023-08-22 15:33+0000\n"
+"PO-Revision-Date: 2023-08-24 22:49+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -83,31 +83,34 @@ msgstr ""
 "що на панелі заголовка «<app>gedit</app>»."
 
 #. (itstool) path: info/desc
-#: C/gedit-change-color-scheme.page:8
+#: C/gedit-change-color-scheme.page:7
 msgid "Change the text and background colors in gedit."
 msgstr "Зміна кольорів тексту та тла у «gedit»."
 
 #. (itstool) path: page/title
-#: C/gedit-change-color-scheme.page:11
+#: C/gedit-change-color-scheme.page:10
 msgid "Change the color scheme"
 msgstr "Зміна кольорової схеми"
 
 #. (itstool) path: page/p
-#: C/gedit-change-color-scheme.page:13
+#: C/gedit-change-color-scheme.page:12
+#| msgid ""
+#| "<app>gedit</app> includes several different color schemes, allowing you "
+#| "to change the appearance of the main text window."
 msgid ""
 "<app>gedit</app> includes several different color schemes, allowing you to "
-"change the appearance of the main text window."
+"change the appearance of the main text area."
 msgstr ""
 "«<app>gedit</app>» містить декілька різних кольорових схем, дозволяючи, "
-"таким чином, змінювати вигляд головного текстового вікна."
+"таким чином, змінювати вигляд головної текстової області."
 
 #. (itstool) path: steps/title
-#: C/gedit-change-color-scheme.page:17
+#: C/gedit-change-color-scheme.page:18
 msgid "To change the color scheme:"
 msgstr "Щоб змінити схему кольорів:"
 
 #. (itstool) path: item/p
-#: C/gedit-change-color-scheme.page:19
+#: C/gedit-change-color-scheme.page:20
 msgid ""
 "Press the menu button in the top-right corner of the window and select "
 "<guiseq><gui style=\"menuitem\">Preferences</gui><gui>Font &amp; Colors</"
@@ -117,41 +120,32 @@ msgstr ""
 "style=\"menuitem\">«Параметри»</gui> <gui>«Шрифт і кольори»</gui></guiseq>."
 
 #. (itstool) path: item/p
-#: C/gedit-change-color-scheme.page:24
+#: C/gedit-change-color-scheme.page:25
 msgid "Choose your desired color scheme."
 msgstr "Виберіть бажану кольорову схему."
 
 #. (itstool) path: page/p
-#: C/gedit-change-color-scheme.page:28
+#: C/gedit-change-color-scheme.page:29
 msgid "The new color scheme will be applied immediately."
 msgstr "Нову кольорову схему буде застосовано негайно."
 
 #. (itstool) path: section/title
-#: C/gedit-change-color-scheme.page:31
+#: C/gedit-change-color-scheme.page:32
 msgid "Use a Custom Color Scheme"
 msgstr "Використання користувацької кольорової схеми"
 
 #. (itstool) path: section/p
-#: C/gedit-change-color-scheme.page:37
+#: C/gedit-change-color-scheme.page:34
 msgid ""
 "You can also use color schemes that have been created by others, or create "
-"and use your own color schemes."
+"and use your own color schemes. See the <link href=\"https://gedit-"
+"technology.net/developer-docs/extra/libgedit-gtksourceview/style-schemes."
+"html\">libgedit-gtksourceview documentation</link>."
 msgstr ""
 "Також можна використовувати кольорові схеми, створені іншими користувачами, "
-"чи створювати свої власні."
-
-#. (itstool) path: section/p
-#: C/gedit-change-color-scheme.page:40
-msgid ""
-"Instructions on how to install custom color schemes, as well as examples of "
-"color schemes that you can download and use, are available on the <link "
-"href=\"https://wiki.gnome.org/Projects/GtkSourceView/StyleSchemes\">gedit "
-"wiki</link>."
-msgstr ""
-"Інструкції зі встановлення користувацьких кольорових схем, а також зразки "
-"кольорових схем, які можна завантажити та використовувати, доступні у <link "
-"href=\"https://wiki.gnome.org/Projects/GtkSourceView/StyleSchemes\">вікі "
-"gedit</link>."
+"чи створювати свої власні.</link>. Див. <link href=\"https://gedit-"
+"technology.net/developer-docs/extra/libgedit-gtksourceview/style-schemes."
+"html\">документацію з libgedit-gtksourceview</link>."
 
 #. (itstool) path: info/desc
 #: C/gedit-close-file.page:7
@@ -2236,9 +2230,9 @@ msgid ""
 "Please also consult the <link href=\"help:gnome-help/printing\">printing "
 "help for GNOME</link> for more general information."
 msgstr ""
-"Будь ласка, також ознайомтеся із <link href=\"help:gnome-help/printing\""
-">довідкою щодо друку у GNOME</link>, щоб дізнатися більше про загальні"
-" налаштування."
+"Будь ласка, також ознайомтеся із <link href=\"help:gnome-help/"
+"printing\">довідкою щодо друку у GNOME</link>, щоб дізнатися більше про "
+"загальні налаштування."
 
 #. (itstool) path: section/title
 #: C/gedit-printing.page:23
@@ -2247,29 +2241,22 @@ msgstr "Вікно друку"
 
 #. (itstool) path: section/p
 #: C/gedit-printing.page:24
-#| msgid "To use the <gui>Sort</gui> plugin:"
 msgid "To open the <gui>Print</gui> dialog, either:"
 msgstr ""
-"Щоб відкрити вікно <gui>Друк</gui>, виконайте одну з таких послідовностей"
-" дій:"
+"Щоб відкрити вікно <gui>Друк</gui>, виконайте одну з таких послідовностей "
+"дій:"
 
 #. (itstool) path: item/p
 #: C/gedit-printing.page:28
-#| msgid ""
-#| "Click <guiseq><gui style=\"menu\">File</gui> <gui "
-#| "style=\"menuitem\">Print</gui></guiseq>."
 msgid ""
 "Click on <guiseq><gui style=\"menu\">Menu Button</gui> <gui "
 "style=\"menuitem\">Print icon</gui></guiseq>."
 msgstr ""
-"Натисніть <guiseq><gui style=\"menu\">кнопку меню</gui> <gui"
-" style=\"menuitem\">піктограму друку</gui></guiseq>."
+"Натисніть <guiseq><gui style=\"menu\">кнопку меню</gui> <gui "
+"style=\"menuitem\">піктограму друку</gui></guiseq>."
 
 #. (itstool) path: item/p
 #: C/gedit-printing.page:32
-#| msgid ""
-#| "Use the <keyseq><key>Ctrl</key><key>Alt</key><key>N</key></keyseq> "
-#| "shortcut."
 msgid "Or press <keyseq><key>Ctrl</key><key>P</key></keyseq>."
 msgstr "Або натисніть <keyseq><key>Ctrl</key><key>P</key></keyseq>."
 
@@ -2290,14 +2277,12 @@ msgstr ""
 
 #. (itstool) path: section/p
 #: C/gedit-printing.page:44
-#| msgid ""
-#| "To print the document to file, click <gui style=\"button\">Print</gui>."
 msgid ""
 "From the <gui>Print</gui> dialog, click on the <gui "
 "style=\"button\">Preview</gui> button."
 msgstr ""
-"У вікні <gui>Друк</gui> натисніть кнопку <gui style=\"button\">Перегляд</gui"
-">."
+"У вікні <gui>Друк</gui> натисніть кнопку <gui style=\"button\">Перегляд</"
+"gui>."
 
 #. (itstool) path: section/title
 #: C/gedit-printing.page:51
@@ -2310,8 +2295,8 @@ msgid ""
 "Inside the <gui>Print</gui> dialog, there is the <gui>Text Editor</gui> tab "
 "to configure how the text is printed."
 msgstr ""
-"У вікні <gui>Друк</gui> є вкладка <gui>Текстовий редактор</gui>, яку"
-" призначено для налаштовування способу друку тексту."
+"У вікні <gui>Друк</gui> є вкладка <gui>Текстовий редактор</gui>, яку "
+"призначено для налаштовування способу друку тексту."
 
 #. (itstool) path: section/p
 #: C/gedit-printing.page:56
@@ -2319,9 +2304,9 @@ msgid ""
 "From there, you can choose whether to print line numbers, configure text "
 "wrapping, configure the fonts, whether there are page headers, and more."
 msgstr ""
-"На вкладці ви можете вибрати, чи слід друкувати номери рядків, налаштувати"
-" перенесення рядків тексту, налаштувати шрифти, те, чи слід друкувати"
-" заголовки сторінок, тощо."
+"На вкладці ви можете вибрати, чи слід друкувати номери рядків, налаштувати "
+"перенесення рядків тексту, налаштувати шрифти, те, чи слід друкувати "
+"заголовки сторінок, тощо."
 
 #. (itstool) path: info/desc
 #: C/gedit-save-file.page:8
@@ -3138,6 +3123,24 @@ msgstr "Налаштування «gedit»"
 #: C/index.page:37
 msgid "gedit plugins"
 msgstr "Додатки «gedit»"
+
+#~ msgid ""
+#~ "You can also use color schemes that have been created by others, or "
+#~ "create and use your own color schemes."
+#~ msgstr ""
+#~ "Також можна використовувати кольорові схеми, створені іншими "
+#~ "користувачами, чи створювати свої власні."
+
+#~ msgid ""
+#~ "Instructions on how to install custom color schemes, as well as examples "
+#~ "of color schemes that you can download and use, are available on the "
+#~ "<link href=\"https://wiki.gnome.org/Projects/GtkSourceView/"
+#~ "StyleSchemes\">gedit wiki</link>."
+#~ msgstr ""
+#~ "Інструкції зі встановлення користувацьких кольорових схем, а також зразки "
+#~ "кольорових схем, які можна завантажити та використовувати, доступні у "
+#~ "<link href=\"https://wiki.gnome.org/Projects/GtkSourceView/"
+#~ "StyleSchemes\">вікі gedit</link>."
 
 #~ msgid "Use a custom font for your text in gedit."
 #~ msgstr "Використання нетипового шрифту для вашого тексту у «gedit»."
