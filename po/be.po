@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gedit.master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gedit/issues\n"
-"POT-Creation-Date: 2023-08-19 17:54+0000\n"
-"PO-Revision-Date: 2023-08-19 23:52+0300\n"
+"POT-Creation-Date: 2023-08-25 16:31+0000\n"
+"PO-Revision-Date: 2023-08-26 01:01+0300\n"
 "Last-Translator: Yuras Shumovich <shumovichy@gmail.com>\n"
 "Language-Team: Belarusian <i18n-bel-gnome@googlegroups.com>\n"
 "Language: be\n"
@@ -551,7 +551,7 @@ msgstr "[ФАЙЛ...] [+РАДОК[:СЛУПОК]]"
 msgid "There was an error displaying the help."
 msgstr "Узнікла памылка паказу даведкі."
 
-#: gedit/gedit-app.c:866
+#: gedit/gedit-app.c:854
 #, c-format
 msgid "%s: invalid encoding."
 msgstr "%s: хібнае кадаванне."
@@ -564,7 +564,7 @@ msgstr "Закрыць _без захавання"
 #: gedit/gedit-commands-file.c:565 gedit/gedit-commands-file.c:789
 #: gedit/gedit-commands-file.c:1514 gedit/gedit-encodings-dialog.c:192
 #: gedit/gedit-file-chooser-open-dialog.c:78 gedit/gedit-io-error-info-bar.c:95
-#: gedit/gedit-io-error-info-bar.c:294 gedit/gedit-preferences-dialog.c:574
+#: gedit/gedit-io-error-info-bar.c:294
 #: plugins/filebrowser/gedit-file-browser-utils.c:211
 #: plugins/quickopen/quickopen/popup.py:45
 #: plugins/snippets/snippets/manager.py:789
@@ -997,7 +997,7 @@ msgstr "Перамясціць, каб надаць ніжэйшы прыяры�
 msgid "Untitled Document %d"
 msgstr "Неназваны дакумент %d"
 
-#: gedit/gedit-file-chooser.c:41 gedit/gedit-preferences-dialog.c:583
+#: gedit/gedit-file-chooser.c:41
 msgid "All Files"
 msgstr "Усе файлы"
 
@@ -1241,32 +1241,6 @@ msgstr ""
 #, c-format
 msgid "Could not save the file “%s”."
 msgstr "Не ўдалося захаваць файл «%s»."
-
-#: gedit/gedit-preferences-dialog.c:537
-#, c-format
-msgid "The selected color scheme cannot be installed: %s"
-msgstr "Не ўдалося ўсталяваць выбраную схему колераў: %s"
-
-#: gedit/gedit-preferences-dialog.c:543
-msgid "The selected color scheme cannot be installed."
-msgstr "Не ўдалося ўсталяваць выбраную схему колераў."
-
-#: gedit/gedit-preferences-dialog.c:570
-msgid "Add Color Scheme"
-msgstr "Дадаць схему колераў"
-
-#: gedit/gedit-preferences-dialog.c:573
-msgid "_Add Scheme"
-msgstr "_Дадаць схему"
-
-#: gedit/gedit-preferences-dialog.c:578
-msgid "Color Scheme Files"
-msgstr "Файлы схем колераў"
-
-#: gedit/gedit-preferences-dialog.c:616
-#, c-format
-msgid "Could not remove color scheme “%s”."
-msgstr "Не ўдалося выдаліць схему колераў «%s»."
 
 #: gedit/gedit-print-job.c:223
 msgid "Preparing…"
@@ -2114,29 +2088,11 @@ msgstr "Рэдактар"
 msgid "Color Scheme"
 msgstr "Схема колераў"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:304
-#: gedit/resources/ui/gedit-preferences-dialog.ui:305
-msgid "Install scheme"
-msgstr "Усталяваць схему"
-
-#: gedit/resources/ui/gedit-preferences-dialog.ui:306
-msgid "Install Scheme"
-msgstr "Усталяваць схему"
-
-#: gedit/resources/ui/gedit-preferences-dialog.ui:320
-#: gedit/resources/ui/gedit-preferences-dialog.ui:321
-msgid "Uninstall scheme"
-msgstr "Выдаліць схему"
-
-#: gedit/resources/ui/gedit-preferences-dialog.ui:322
-msgid "Uninstall Scheme"
-msgstr "Выдаліць схему"
-
-#: gedit/resources/ui/gedit-preferences-dialog.ui:362
+#: gedit/resources/ui/gedit-preferences-dialog.ui:303
 msgid "Font & Colors"
 msgstr "Шрыфт і колеры"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:387
+#: gedit/resources/ui/gedit-preferences-dialog.ui:328
 msgid "Plugins"
 msgstr "Плагіны"
 
@@ -3376,6 +3332,38 @@ msgstr "Устаўка даты/часу"
 #: plugins/time/time.plugin.desktop.in:6
 msgid "Inserts current date and time at the cursor position."
 msgstr "Устаўка бягучай даты і часу ў месцы размяшчэння курсора."
+
+#, c-format
+#~ msgid "The selected color scheme cannot be installed: %s"
+#~ msgstr "Не ўдалося ўсталяваць выбраную схему колераў: %s"
+
+#~ msgid "The selected color scheme cannot be installed."
+#~ msgstr "Не ўдалося ўсталяваць выбраную схему колераў."
+
+#~ msgid "Add Color Scheme"
+#~ msgstr "Дадаць схему колераў"
+
+#~ msgid "_Add Scheme"
+#~ msgstr "_Дадаць схему"
+
+#~ msgid "Color Scheme Files"
+#~ msgstr "Файлы схем колераў"
+
+#, c-format
+#~ msgid "Could not remove color scheme “%s”."
+#~ msgstr "Не ўдалося выдаліць схему колераў «%s»."
+
+#~ msgid "Install scheme"
+#~ msgstr "Усталяваць схему"
+
+#~ msgid "Install Scheme"
+#~ msgstr "Усталяваць схему"
+
+#~ msgid "Uninstall scheme"
+#~ msgstr "Выдаліць схему"
+
+#~ msgid "Uninstall Scheme"
+#~ msgstr "Выдаліць схему"
 
 #~ msgid "Display right _margin at column:"
 #~ msgstr "Паказваць правы _бераг на слупку:"
