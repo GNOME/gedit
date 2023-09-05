@@ -16,8 +16,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gedit master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gedit/issues\n"
-"POT-Creation-Date: 2023-07-23 20:16+0000\n"
-"PO-Revision-Date: 2023-07-26 00:58+0200\n"
+"POT-Creation-Date: 2023-08-26 10:59+0000\n"
+"PO-Revision-Date: 2023-09-05 19:06+0200\n"
 "Last-Translator: Balázs Úr <ur.balazs at fsf dot hu>\n"
 "Language-Team: Hungarian <openscope at fsf dot hu>\n"
 "Language: hu\n"
@@ -25,7 +25,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.04.1\n"
+"X-Generator: Lokalize 23.04.3\n"
 
 #: data/org.gnome.gedit.appdata.xml.in:7 data/org.gnome.gedit.desktop.in:3
 msgid "gedit"
@@ -36,25 +36,22 @@ msgid "Text editor"
 msgstr "Szövegszerkesztő"
 
 #: data/org.gnome.gedit.appdata.xml.in:10
-#| msgid ""
-#| "gedit is a general-purpose text editor. It has been created in 1998, at "
-#| "the beginnings of GNOME."
 msgid ""
 "gedit is an easy-to-use and general-purpose text editor. Its development "
 "started in 1998, at the beginnings of the GNOME project, with a good "
 "integration with that desktop environment."
 msgstr ""
-"A gedit egy könnyen használható, általános célú szövegszerkesztő. A"
-" fejlesztése 1998-ban, a GNOME projekt kezdeteinél indult, és jól"
-" integrálódott az asztali környezetbe."
+"A gedit egy könnyen használható, általános célú szövegszerkesztő. A "
+"fejlesztése 1998-ban, a GNOME projekt kezdeteinél indult, és jól "
+"integrálódott az asztali környezetbe."
 
 #: data/org.gnome.gedit.appdata.xml.in:15
 msgid ""
 "You can use it to write simple notes and documents, or you can enable more "
 "advanced features that are useful for software development."
 msgstr ""
-"Használhatja egyszerű jegyzetek és dokumentumok írásához, vagy engedélyezhet"
-" a szoftverfejlesztéshez hasznos, speciálisabb funkciókat."
+"Használhatja egyszerű jegyzetek és dokumentumok írásához, vagy engedélyezhet "
+"a szoftverfejlesztéshez hasznos, speciálisabb funkciókat."
 
 #: data/org.gnome.gedit.desktop.in:4
 msgid "Edit text files"
@@ -74,11 +71,11 @@ msgstr "Új ablak"
 msgid "New Document"
 msgstr "Új dokumentum"
 
-#: data/org.gnome.gedit.gschema.xml.in:36
+#: data/org.gnome.gedit.gschema.xml.in:42
 msgid "Use Default Font"
 msgstr "Alapértelmezett betűkészlet használata"
 
-#: data/org.gnome.gedit.gschema.xml.in:37
+#: data/org.gnome.gedit.gschema.xml.in:43
 msgid ""
 "Whether to use the system’s default fixed width font for editing text "
 "instead of a font specific to gedit. If this option is turned off, then the "
@@ -91,15 +88,15 @@ msgstr ""
 "felhasználva a rendszer betűkészlete helyett."
 
 #. Translators: This is a GSettings default value. Do NOT change or localize the quotation marks!
-#: data/org.gnome.gedit.gschema.xml.in:41
+#: data/org.gnome.gedit.gschema.xml.in:47
 msgid "'Monospace 12'"
 msgstr "'Monospace 12'"
 
-#: data/org.gnome.gedit.gschema.xml.in:42
+#: data/org.gnome.gedit.gschema.xml.in:48
 msgid "Editor Font"
 msgstr "Szerkesztő betűkészlete"
 
-#: data/org.gnome.gedit.gschema.xml.in:43
+#: data/org.gnome.gedit.gschema.xml.in:49
 msgid ""
 "A custom font that will be used for the editing area. This will only take "
 "effect if the “Use Default Font” option is turned off."
@@ -107,29 +104,29 @@ msgstr ""
 "A szerkesztőterülethez használt egyéni betűkészlet. Ez csak akkor lép "
 "érvénybe, ha az „Alapértelmezett betűkészlet használata” ki van kapcsolva."
 
-#: data/org.gnome.gedit.gschema.xml.in:47
+#: data/org.gnome.gedit.gschema.xml.in:53
 msgid "Style Scheme"
 msgstr "Stílusséma"
 
-#: data/org.gnome.gedit.gschema.xml.in:48
+#: data/org.gnome.gedit.gschema.xml.in:54
 msgid "The ID of a GtkSourceView Style Scheme used to color the text."
 msgstr "A szöveg színezésére használt GtkSourceView stílusséma azonosítója."
 
-#: data/org.gnome.gedit.gschema.xml.in:52
+#: data/org.gnome.gedit.gschema.xml.in:58
 msgid "Create Backup Copies"
 msgstr "Biztonsági mentések létrehozása"
 
-#: data/org.gnome.gedit.gschema.xml.in:53
+#: data/org.gnome.gedit.gschema.xml.in:59
 msgid "Whether gedit should create backup copies for the files it saves."
 msgstr ""
 "Hozzon-e létre a gedit biztonsági mentéseket azokhoz a fájlokhoz, amelyeket "
 "elment."
 
-#: data/org.gnome.gedit.gschema.xml.in:57
+#: data/org.gnome.gedit.gschema.xml.in:63
 msgid "Autosave"
 msgstr "Automatikus mentés"
 
-#: data/org.gnome.gedit.gschema.xml.in:58
+#: data/org.gnome.gedit.gschema.xml.in:64
 msgid ""
 "Whether gedit should automatically save modified files after a time "
 "interval. You can set the time interval with the “Autosave Interval” option."
@@ -137,11 +134,11 @@ msgstr ""
 "A módosított fájlok automatikus mentésének ki/bekapcsolása. Az automatikus "
 "mentés időközét beállíthatja az „Automatikus mentés időköze” beállítással."
 
-#: data/org.gnome.gedit.gschema.xml.in:63
+#: data/org.gnome.gedit.gschema.xml.in:69
 msgid "Autosave Interval"
 msgstr "Automatikus mentés időköze"
 
-#: data/org.gnome.gedit.gschema.xml.in:64
+#: data/org.gnome.gedit.gschema.xml.in:70
 msgid ""
 "Number of minutes after which gedit will automatically save modified files. "
 "This will only take effect if the “Autosave” option is turned on."
@@ -149,11 +146,11 @@ msgstr ""
 "Az automatikus mentés időközének megadása (percekben). Csak akkor lép "
 "érvénybe ha az „Automatikus mentés” beállítás be van kapcsolva."
 
-#: data/org.gnome.gedit.gschema.xml.in:68
+#: data/org.gnome.gedit.gschema.xml.in:74
 msgid "Maximum Number of Undo Actions"
 msgstr "Visszavonási műveletek maximális száma"
 
-#: data/org.gnome.gedit.gschema.xml.in:69
+#: data/org.gnome.gedit.gschema.xml.in:75
 msgid ""
 "Maximum number of actions that gedit will be able to undo or redo. Use “-1” "
 "for unlimited number of actions."
@@ -161,11 +158,11 @@ msgstr ""
 "A gedit által visszavonható/mégis elvégezhető műveletek maximális száma. "
 "Végtelen műveletszám engedélyezéséhez használja a „-1” értéket."
 
-#: data/org.gnome.gedit.gschema.xml.in:78
+#: data/org.gnome.gedit.gschema.xml.in:84
 msgid "Line Wrapping Mode"
 msgstr "Sortörési mód"
 
-#: data/org.gnome.gedit.gschema.xml.in:79
+#: data/org.gnome.gedit.gschema.xml.in:85
 msgid ""
 "Specifies how to wrap long lines in the editing area. Use “none” for no "
 "wrapping, “word” for wrapping at word boundaries, and “char” for wrapping at "
@@ -178,11 +175,11 @@ msgstr ""
 "Megjegyzés: ezek az értékek kisbetű/nagybetű érzékenyek, pontosan úgy "
 "használja őket, ahogy itt vannak."
 
-#: data/org.gnome.gedit.gschema.xml.in:87
+#: data/org.gnome.gedit.gschema.xml.in:93
 msgid "Last split mode choice for line wrapping mode"
 msgstr "Az utolsó felosztási mód választás a sortörés módhoz"
 
-#: data/org.gnome.gedit.gschema.xml.in:88
+#: data/org.gnome.gedit.gschema.xml.in:94
 msgid ""
 "Specifies the last split mode used with line wrapping mode, so that when "
 "wrapping mode is off we still remember the split mode choice. Use “word” for "
@@ -194,85 +191,85 @@ msgstr ""
 "mód választására. Használja a „szó” értéket a szóhatáron való tördeléshez, "
 "illetve a „karakter” értéket az egyes karakterek határainál való tördeléshez."
 
-#: data/org.gnome.gedit.gschema.xml.in:93
+#: data/org.gnome.gedit.gschema.xml.in:99
 msgid "Tab Size"
 msgstr "Tabulátor mérete"
 
-#: data/org.gnome.gedit.gschema.xml.in:94
+#: data/org.gnome.gedit.gschema.xml.in:100
 msgid ""
 "Specifies the number of spaces that should be displayed instead of Tab "
 "characters."
 msgstr "Meghatározza a tabulátor karakter helyett használt szóközök számát."
 
-#: data/org.gnome.gedit.gschema.xml.in:98
+#: data/org.gnome.gedit.gschema.xml.in:104
 msgid "Insert spaces"
 msgstr "Szóközök beszúrása"
 
-#: data/org.gnome.gedit.gschema.xml.in:99
+#: data/org.gnome.gedit.gschema.xml.in:105
 msgid "Whether gedit should insert spaces instead of tabs."
 msgstr "Tabulátor helyett szóköz használatának ki/bekapcsolása."
 
-#: data/org.gnome.gedit.gschema.xml.in:103
+#: data/org.gnome.gedit.gschema.xml.in:109
 msgid "Automatic indent"
 msgstr "Automatikus behúzás"
 
-#: data/org.gnome.gedit.gschema.xml.in:104
+#: data/org.gnome.gedit.gschema.xml.in:110
 msgid "Whether gedit should enable automatic indentation."
 msgstr "Engedélyezve legyen-e az automatikus behúzás."
 
-#: data/org.gnome.gedit.gschema.xml.in:108
+#: data/org.gnome.gedit.gschema.xml.in:114
 msgid "Display Line Numbers"
 msgstr "Sorok számának megjelenítése"
 
-#: data/org.gnome.gedit.gschema.xml.in:109
+#: data/org.gnome.gedit.gschema.xml.in:115
 msgid "Whether gedit should display line numbers in the editing area."
 msgstr "Jelenítse-e meg a sorok számát a szerkesztő területen."
 
-#: data/org.gnome.gedit.gschema.xml.in:113
+#: data/org.gnome.gedit.gschema.xml.in:119
 msgid "Highlight Current Line"
 msgstr "Aktuális sor kiemelése"
 
-#: data/org.gnome.gedit.gschema.xml.in:114
+#: data/org.gnome.gedit.gschema.xml.in:120
 msgid "Whether gedit should highlight the current line."
 msgstr "Ki legyen-e emelve az aktuális sor."
 
-#: data/org.gnome.gedit.gschema.xml.in:118
+#: data/org.gnome.gedit.gschema.xml.in:124
 msgid "Highlight Matching Brackets"
 msgstr "Zárójelpárok kiemelése"
 
-#: data/org.gnome.gedit.gschema.xml.in:119
+#: data/org.gnome.gedit.gschema.xml.in:125
 msgid "Whether gedit should highlight matching brackets."
 msgstr "Ki legyenek-e emelve a zárójelpárok."
 
-#: data/org.gnome.gedit.gschema.xml.in:123
+#: data/org.gnome.gedit.gschema.xml.in:129
 msgid "Display Right Margin"
 msgstr "Jobb oldali margó megjelenítése"
 
-#: data/org.gnome.gedit.gschema.xml.in:124
+#: data/org.gnome.gedit.gschema.xml.in:130
 msgid "Whether gedit should display the right margin in the editing area."
 msgstr "Meg legyen-e jelenítve a jobb oldali margó a szerkesztő területen."
 
-#: data/org.gnome.gedit.gschema.xml.in:128
+#: data/org.gnome.gedit.gschema.xml.in:134
 msgid "Right Margin Position"
 msgstr "Jobb oldali margó pozíciója"
 
-#: data/org.gnome.gedit.gschema.xml.in:129
+#: data/org.gnome.gedit.gschema.xml.in:135
 msgid "Specifies the position of the right margin."
 msgstr "Jobb oldali margó pozíciójának megadása."
 
-#: data/org.gnome.gedit.gschema.xml.in:133
+#: data/org.gnome.gedit.gschema.xml.in:139
 msgid "Document background pattern type"
 msgstr "Dokumentum háttérmintájának típusa"
 
-#: data/org.gnome.gedit.gschema.xml.in:134
+#: data/org.gnome.gedit.gschema.xml.in:140
 msgid "Whether the document will get a background pattern painted."
 msgstr "Legyen-e a dokumentum háttérmintával kifestve."
 
-#: data/org.gnome.gedit.gschema.xml.in:144
+#: data/org.gnome.gedit.gschema.xml.in:150
 msgid "Smart Home End"
 msgstr "Intelligens Home/End"
 
-#: data/org.gnome.gedit.gschema.xml.in:145
+#: data/org.gnome.gedit.gschema.xml.in:151
 msgid ""
 "Specifies how the cursor moves when the HOME and END keys are pressed. Use "
 "“disabled” to always move at the start/end of the line, “after” to move to "
@@ -290,49 +287,49 @@ msgstr ""
 "„always” esetén mindig a szöveg elejére/végére mozognak a sor elejére/végére "
 "mozgás helyett."
 
-#: data/org.gnome.gedit.gschema.xml.in:149
+#: data/org.gnome.gedit.gschema.xml.in:155
 msgid "Restore Previous Cursor Position"
 msgstr "Kurzor előző helyének helyreállítása"
 
-#: data/org.gnome.gedit.gschema.xml.in:150
+#: data/org.gnome.gedit.gschema.xml.in:156
 msgid ""
 "Whether gedit should restore the previous cursor position when a file is "
 "loaded."
 msgstr "Az utolsó kurzorpozíció vissza legyen-e állítva egy fájl betöltésekor."
 
-#: data/org.gnome.gedit.gschema.xml.in:154
+#: data/org.gnome.gedit.gschema.xml.in:160
 msgid "Enable Syntax Highlighting"
 msgstr "Szintaxiskiemelés engedélyezése"
 
-#: data/org.gnome.gedit.gschema.xml.in:155
+#: data/org.gnome.gedit.gschema.xml.in:161
 msgid "Whether gedit should enable syntax highlighting."
 msgstr "Engedélyezve legyen-e a szintaxiskiemelés."
 
-#: data/org.gnome.gedit.gschema.xml.in:159
+#: data/org.gnome.gedit.gschema.xml.in:165
 msgid "Enable Search Highlighting"
 msgstr "Találatok kiemelésének engedélyezése"
 
-#: data/org.gnome.gedit.gschema.xml.in:160
+#: data/org.gnome.gedit.gschema.xml.in:166
 msgid ""
 "Whether gedit should highlight all the occurrences of the searched text."
 msgstr "Ki legyen-e emelve a keresett szöveg összes előfordulása."
 
-#: data/org.gnome.gedit.gschema.xml.in:164
+#: data/org.gnome.gedit.gschema.xml.in:170
 msgid "Ensure Trailing Newline"
 msgstr "Záró új sor biztosítása"
 
-#: data/org.gnome.gedit.gschema.xml.in:165
+#: data/org.gnome.gedit.gschema.xml.in:171
 msgid ""
 "Whether gedit will ensure that documents always end with a trailing newline."
 msgstr ""
 "A gedit biztosítsa-e, hogy a dokumentumok mindig záró új sorral fejeződjenek "
 "be."
 
-#: data/org.gnome.gedit.gschema.xml.in:171
+#: data/org.gnome.gedit.gschema.xml.in:177
 msgid "Notebook Show Tabs Mode"
 msgstr "Jegyzettömb lapmegjelenítési módja"
 
-#: data/org.gnome.gedit.gschema.xml.in:172
+#: data/org.gnome.gedit.gschema.xml.in:178
 msgid ""
 "Specifies when to show the notebook tabs. Use “never” to never show the "
 "tabs, “always” to always show the tabs, and “auto” to show the tabs only "
@@ -345,45 +342,49 @@ msgstr ""
 "értékek kisbetű/nagybetű érzékenyek, pontosan úgy használja őket, ahogy itt "
 "vannak."
 
-#: data/org.gnome.gedit.gschema.xml.in:176
+#: data/org.gnome.gedit.gschema.xml.in:182
 msgid "Status Bar is Visible"
 msgstr "Státuszsor látható"
 
-#: data/org.gnome.gedit.gschema.xml.in:177
+#: data/org.gnome.gedit.gschema.xml.in:183
 msgid ""
 "Whether the status bar at the bottom of editing windows should be visible."
 msgstr "Legyen-e látható a szerkesztőablak alján található állapotsor."
 
-#: data/org.gnome.gedit.gschema.xml.in:181
+#: data/org.gnome.gedit.gschema.xml.in:187
 msgid "Side panel is Visible"
 msgstr "Az oldalpanel látható"
 
-#: data/org.gnome.gedit.gschema.xml.in:182
+#: data/org.gnome.gedit.gschema.xml.in:188
 msgid ""
 "Whether the side panel at the left of editing windows should be visible."
 msgstr "Legyen-e látható a szerkesztőablakok bal oldalán található oldalpanel."
 
-#: data/org.gnome.gedit.gschema.xml.in:191
+#: data/org.gnome.gedit.gschema.xml.in:195
+msgid "Which theme variant to use"
+msgstr "Melyik témaváltozatot kell használni"
+
+#: data/org.gnome.gedit.gschema.xml.in:201
 msgid "Print Syntax Highlighting"
 msgstr "Szintaxiskiemelés nyomtatása"
 
-#: data/org.gnome.gedit.gschema.xml.in:192
+#: data/org.gnome.gedit.gschema.xml.in:202
 msgid "Whether gedit should print syntax highlighting when printing documents."
 msgstr "Legyen-e kinyomtatva a szintaxiskiemelés a dokumentumok nyomtatásakor."
 
-#: data/org.gnome.gedit.gschema.xml.in:196
+#: data/org.gnome.gedit.gschema.xml.in:206
 msgid "Print Header"
 msgstr "Fejléc nyomtatása"
 
-#: data/org.gnome.gedit.gschema.xml.in:197
+#: data/org.gnome.gedit.gschema.xml.in:207
 msgid "Whether gedit should include a document header when printing documents."
 msgstr "A dokumentum tartalmazzon-e fejlécet a dokumentumok nyomtatásakor."
 
-#: data/org.gnome.gedit.gschema.xml.in:206
+#: data/org.gnome.gedit.gschema.xml.in:216
 msgid "Printing Line Wrapping Mode"
 msgstr "Sortörési mód nyomtatáskor"
 
-#: data/org.gnome.gedit.gschema.xml.in:207
+#: data/org.gnome.gedit.gschema.xml.in:217
 msgid ""
 "Specifies how to wrap long lines for printing. Use “none” for no wrapping, "
 "“word” for wrapping at word boundaries, and “char” for wrapping at "
@@ -396,11 +397,11 @@ msgstr ""
 "Megjegyzés: ezek az értékek kisbetű/nagybetű érzékenyek, pontosan úgy "
 "használja őket, ahogy itt vannak."
 
-#: data/org.gnome.gedit.gschema.xml.in:211
+#: data/org.gnome.gedit.gschema.xml.in:221
 msgid "Print Line Numbers"
 msgstr "Sorszámok nyomtatása"
 
-#: data/org.gnome.gedit.gschema.xml.in:212
+#: data/org.gnome.gedit.gschema.xml.in:222
 msgid ""
 "If this value is 0, then no line numbers will be inserted when printing a "
 "document. Otherwise, gedit will print line numbers every such number of "
@@ -410,30 +411,30 @@ msgstr ""
 "esetben a gedit ennyi soronként nyomtatja a sorok számát."
 
 #. Translators: This is a GSettings default value. Do NOT change or localize the quotation marks!
-#: data/org.gnome.gedit.gschema.xml.in:216
+#: data/org.gnome.gedit.gschema.xml.in:226
 msgid "'Monospace 9'"
 msgstr "'Monospace 9'"
 
-#: data/org.gnome.gedit.gschema.xml.in:217
+#: data/org.gnome.gedit.gschema.xml.in:227
 msgid "Body Font for Printing"
 msgstr "Törzs betűkészlete nyomtatáskor"
 
-#: data/org.gnome.gedit.gschema.xml.in:218
+#: data/org.gnome.gedit.gschema.xml.in:228
 msgid ""
 "Specifies the font to use for a document’s body when printing documents."
 msgstr ""
 "Meghatározza nyomtatáskor a dokumentum törzséhez használt betűkészletet."
 
 #. Translators: This is a GSettings default value. Do NOT change or localize the quotation marks!
-#: data/org.gnome.gedit.gschema.xml.in:222
+#: data/org.gnome.gedit.gschema.xml.in:232
 msgid "'Sans 11'"
 msgstr "'Sans 11'"
 
-#: data/org.gnome.gedit.gschema.xml.in:223
+#: data/org.gnome.gedit.gschema.xml.in:233
 msgid "Header Font for Printing"
 msgstr "Fejléc betűkészlete nyomtatáskor"
 
-#: data/org.gnome.gedit.gschema.xml.in:224
+#: data/org.gnome.gedit.gschema.xml.in:234
 msgid ""
 "Specifies the font to use for page headers when printing a document. This "
 "will only take effect if the “Print Header” option is turned on."
@@ -442,15 +443,15 @@ msgstr ""
 "akkor lép érvénybe, ha a „Nyomtatási fejléc” be van kapcsolva."
 
 #. Translators: This is a GSettings default value. Do NOT change or localize the quotation marks!
-#: data/org.gnome.gedit.gschema.xml.in:228
+#: data/org.gnome.gedit.gschema.xml.in:238
 msgid "'Sans 8'"
 msgstr "'Sans 8'"
 
-#: data/org.gnome.gedit.gschema.xml.in:229
+#: data/org.gnome.gedit.gschema.xml.in:239
 msgid "Line Number Font for Printing"
 msgstr "Sorok számának betűkészlete nyomtatáskor"
 
-#: data/org.gnome.gedit.gschema.xml.in:230
+#: data/org.gnome.gedit.gschema.xml.in:240
 msgid ""
 "Specifies the font to use for line numbers when printing. This will only "
 "take effect if the “Print Line Numbers” option is non-zero."
@@ -458,43 +459,43 @@ msgstr ""
 "Meghatározza nyomtatáskor a sorok számához használt betűkészletet. Csak "
 "akkor lép érvénybe, ha a „Sorok számának kiírása” be van állítva."
 
-#: data/org.gnome.gedit.gschema.xml.in:234
+#: data/org.gnome.gedit.gschema.xml.in:244
 msgid "Margin Left"
 msgstr "Bal margó"
 
-#: data/org.gnome.gedit.gschema.xml.in:235
+#: data/org.gnome.gedit.gschema.xml.in:245
 msgid "The left margin, in millimeters."
 msgstr "A bal margó milliméterben."
 
-#: data/org.gnome.gedit.gschema.xml.in:239
+#: data/org.gnome.gedit.gschema.xml.in:249
 msgid "Margin Top"
 msgstr "Felső margó"
 
-#: data/org.gnome.gedit.gschema.xml.in:240
+#: data/org.gnome.gedit.gschema.xml.in:250
 msgid "The top margin, in millimeters."
 msgstr "A felső margó milliméterben."
 
-#: data/org.gnome.gedit.gschema.xml.in:244
+#: data/org.gnome.gedit.gschema.xml.in:254
 msgid "Margin Right"
 msgstr "Jobb margó"
 
-#: data/org.gnome.gedit.gschema.xml.in:245
+#: data/org.gnome.gedit.gschema.xml.in:255
 msgid "The right margin, in millimeters."
 msgstr "A jobb margó milliméterben."
 
-#: data/org.gnome.gedit.gschema.xml.in:249
+#: data/org.gnome.gedit.gschema.xml.in:259
 msgid "Margin Bottom"
 msgstr "Alsó margó"
 
-#: data/org.gnome.gedit.gschema.xml.in:250
+#: data/org.gnome.gedit.gschema.xml.in:260
 msgid "The bottom margin, in millimeters."
 msgstr "Az alsó margó milliméterben."
 
-#: data/org.gnome.gedit.gschema.xml.in:256
+#: data/org.gnome.gedit.gschema.xml.in:266
 msgid "Candidate Encodings"
 msgstr "Kódolásjelöltek"
 
-#: data/org.gnome.gedit.gschema.xml.in:257
+#: data/org.gnome.gedit.gschema.xml.in:267
 msgid ""
 "List of candidate encodings shown in the Character Encoding menu in the open/"
 "save file chooser. “CURRENT” represents the current locale encoding. Only "
@@ -507,23 +508,23 @@ msgstr ""
 "alapértelmezett érték az üres lista, amely esetben a gedit jó alapértékeket "
 "fog választani az országtól és a nyelvtől függően."
 
-#: data/org.gnome.gedit.gschema.xml.in:306
+#: data/org.gnome.gedit.gschema.xml.in:316
 msgid "Active plugins"
 msgstr "Aktív bővítmények"
 
-#: data/org.gnome.gedit.gschema.xml.in:307
+#: data/org.gnome.gedit.gschema.xml.in:317
 msgid "List of active plugins."
 msgstr "Aktív bővítmények listája."
 
-#: gedit/gedit-app.c:83
+#: gedit/gedit-app.c:81
 msgid "Show the application’s version"
 msgstr "Az alkalmazás verziószámának megjelenítése"
 
-#: gedit/gedit-app.c:89
+#: gedit/gedit-app.c:87
 msgid "Display list of possible values for the encoding option"
 msgstr "A kódolás beállításhoz használható értékek listájának megjelenítése"
 
-#: gedit/gedit-app.c:96
+#: gedit/gedit-app.c:94
 msgid ""
 "Set the character encoding to be used to open the files listed on the "
 "command line"
@@ -531,35 +532,35 @@ msgstr ""
 "A parancssorban felsorolt fájlok megnyitásához használandó karakterkódolás "
 "beállítása"
 
-#: gedit/gedit-app.c:97
+#: gedit/gedit-app.c:95
 msgid "ENCODING"
 msgstr "KÓDOLÁS"
 
-#: gedit/gedit-app.c:103
+#: gedit/gedit-app.c:101
 msgid "Create a new top-level window in an existing instance of gedit"
 msgstr "Új felső szintű ablak létrehozása a gedit egy már futó példányában"
 
-#: gedit/gedit-app.c:110
+#: gedit/gedit-app.c:108
 msgid "Create a new document in an existing instance of gedit"
 msgstr "Új dokumentum létrehozása egy már megnyitott gedit példányban"
 
-#: gedit/gedit-app.c:117
+#: gedit/gedit-app.c:115
 msgid "Open files and block process until files are closed"
 msgstr "Fájlok megnyitása, és a folytatás blokkolása a fájlok bezárásáig"
 
-#: gedit/gedit-app.c:124
+#: gedit/gedit-app.c:122
 msgid "Run gedit in standalone mode"
 msgstr "A gedit futtatása önálló módban"
 
-#: gedit/gedit-app.c:131
+#: gedit/gedit-app.c:129
 msgid "[FILE…] [+LINE[:COLUMN]]"
 msgstr "[FÁJL…] [+SOR[:OSZLOP]]"
 
-#: gedit/gedit-app.c:216
+#: gedit/gedit-app.c:212
 msgid "There was an error displaying the help."
 msgstr "Hiba történt a súgó megjelenítése közben."
 
-#: gedit/gedit-app.c:866
+#: gedit/gedit-app.c:854
 #, c-format
 msgid "%s: invalid encoding."
 msgstr "%s: érvénytelen kódolás."
@@ -572,7 +573,7 @@ msgstr "Bezárás mentés _nélkül"
 #: gedit/gedit-commands-file.c:565 gedit/gedit-commands-file.c:789
 #: gedit/gedit-commands-file.c:1514 gedit/gedit-encodings-dialog.c:192
 #: gedit/gedit-file-chooser-open-dialog.c:78 gedit/gedit-io-error-info-bar.c:95
-#: gedit/gedit-io-error-info-bar.c:294 gedit/gedit-preferences-dialog.c:665
+#: gedit/gedit-io-error-info-bar.c:294
 #: plugins/filebrowser/gedit-file-browser-utils.c:211
 #: plugins/quickopen/quickopen/popup.py:45
 #: plugins/snippets/snippets/manager.py:789
@@ -589,7 +590,7 @@ msgid "_Save As…"
 msgstr "M_entés másként…"
 
 #: gedit/gedit-close-confirmation-dialog.c:295 gedit/gedit-commands-file.c:788
-#: gedit/gedit-header-bar.c:190 gedit/resources/gtk/menus-common.ui:101
+#: gedit/gedit-header-bar.c:186 gedit/resources/gtk/menus-common.ui:101
 #: plugins/snippets/snippets/manager.py:875
 #: plugins/snippets/snippets/manager.py:913
 msgid "_Save"
@@ -916,8 +917,8 @@ msgstr "„%s” nem található"
 msgid "Tab Group %i"
 msgstr "%i. lapcsoport"
 
-#: gedit/gedit-documents-panel.c:481 gedit/gedit-window.c:1123
-#: gedit/gedit-window.c:1129 gedit/gedit-window.c:1137
+#: gedit/gedit-documents-panel.c:481 gedit/gedit-window.c:1120
+#: gedit/gedit-window.c:1126 gedit/gedit-window.c:1134
 msgid "Read-Only"
 msgstr "Csak olvasható"
 
@@ -969,7 +970,7 @@ msgstr "Áthelyezés alacsonyabb prioritásra"
 msgid "Untitled Document %d"
 msgstr "Névtelen dokumentum %d"
 
-#: gedit/gedit-file-chooser.c:41 gedit/gedit-preferences-dialog.c:674
+#: gedit/gedit-file-chooser.c:41
 msgid "All Files"
 msgstr "Minden fájl"
 
@@ -993,7 +994,7 @@ msgctxt "window title"
 msgid "Open Files"
 msgstr "Fájlok megnyitása"
 
-#: gedit/gedit-file-chooser-open-dialog.c:79 gedit/gedit-header-bar.c:57
+#: gedit/gedit-file-chooser-open-dialog.c:79 gedit/gedit-header-bar.c:53
 #: gedit/resources/gtk/menus-common.ui:74
 #: gedit/resources/gtk/menus-common.ui:80
 #: plugins/filebrowser/resources/ui/gedit-file-browser-menus.ui:7
@@ -1002,23 +1003,23 @@ msgstr "Fájlok megnyitása"
 msgid "_Open"
 msgstr "_Megnyitás"
 
-#: gedit/gedit-header-bar.c:58
+#: gedit/gedit-header-bar.c:54
 msgid "Open a file"
 msgstr "Fájl megnyitása"
 
-#: gedit/gedit-header-bar.c:96
+#: gedit/gedit-header-bar.c:92
 msgid "Open a recently used file"
 msgstr "Legutóbb használt fájl megnyitása"
 
-#: gedit/gedit-header-bar.c:142
+#: gedit/gedit-header-bar.c:138
 msgid "Create a new document"
 msgstr "Új dokumentum létrehozása"
 
-#: gedit/gedit-header-bar.c:155
+#: gedit/gedit-header-bar.c:151
 msgid "Leave Fullscreen"
 msgstr "Teljes képernyő elhagyása"
 
-#: gedit/gedit-header-bar.c:191
+#: gedit/gedit-header-bar.c:187
 msgid "Save the current file"
 msgstr "A jelenlegi fájl mentése"
 
@@ -1214,32 +1215,6 @@ msgstr ""
 msgid "Could not save the file “%s”."
 msgstr "Nem sikerült elmenteni a(z) „%s” fájlt."
 
-#: gedit/gedit-preferences-dialog.c:628
-#, c-format
-msgid "The selected color scheme cannot be installed: %s"
-msgstr "A kijelölt színséma nem telepíthető: %s"
-
-#: gedit/gedit-preferences-dialog.c:634
-msgid "The selected color scheme cannot be installed."
-msgstr "A kijelölt színséma nem telepíthető."
-
-#: gedit/gedit-preferences-dialog.c:661
-msgid "Add Color Scheme"
-msgstr "Színséma hozzáadása"
-
-#: gedit/gedit-preferences-dialog.c:664
-msgid "_Add Scheme"
-msgstr "Séma hozzá_adása"
-
-#: gedit/gedit-preferences-dialog.c:669
-msgid "Color Scheme Files"
-msgstr "Színsémafájlok"
-
-#: gedit/gedit-preferences-dialog.c:707
-#, c-format
-msgid "Could not remove color scheme “%s”."
-msgstr "Nem távolítható el a(z) „%s” színséma."
-
 #: gedit/gedit-print-job.c:223
 msgid "Preparing…"
 msgstr "Előkészítés…"
@@ -1270,13 +1245,13 @@ msgstr "Szövegszerkesztő"
 msgid "Page %d of %d"
 msgstr "%d/%d oldal"
 
-#: gedit/gedit-replace-dialog.c:688 plugins/externaltools/tools/tools.ui:49
+#: gedit/gedit-replace-dialog.c:690 plugins/externaltools/tools/tools.ui:49
 #: plugins/externaltools/tools/tools.ui:83
 #: plugins/externaltools/tools/tools.ui:121
 msgid "Nothing"
 msgstr "Semmi"
 
-#: gedit/gedit-replace-dialog.c:777
+#: gedit/gedit-replace-dialog.c:779
 #: gedit/resources/ui/gedit-replace-dialog.ui:7
 msgid "Find and Replace"
 msgstr "Keresés és csere"
@@ -1399,23 +1374,23 @@ msgstr "A keresendő karaktersorozat"
 msgid "Line you want to move the cursor to"
 msgstr "A kurzor mozgatása a megadott sor elejére"
 
-#: gedit/gedit-window.c:1178
+#: gedit/gedit-window.c:1175
 #, c-format
 msgid "Tab Width: %u"
 msgstr "Tabulátorszélesség: %u"
 
-#: gedit/gedit-window.c:1196 plugins/externaltools/tools/manager.py:115
+#: gedit/gedit-window.c:1193 plugins/externaltools/tools/manager.py:115
 #: plugins/externaltools/tools/manager.py:324
 #: plugins/externaltools/tools/manager.py:440
 #: plugins/externaltools/tools/manager.py:776
 msgid "Plain Text"
 msgstr "Egyszerű szöveg"
 
-#: gedit/gedit-window.c:1413
+#: gedit/gedit-window.c:1410
 msgid "There are unsaved documents"
 msgstr "Mentetlen dokumentumok találhatók"
 
-#: gedit/gedit-window.c:2206
+#: gedit/gedit-window.c:2210
 msgid "Documents"
 msgstr "Dokumentumok"
 
@@ -2042,80 +2017,50 @@ msgstr "_Kódolás"
 msgid "Preferences"
 msgstr "Beállítások"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:51
-msgid "Display right _margin at column:"
-msgstr "Jobb mar_gó ebben az oszlopban:"
-
-#: gedit/resources/ui/gedit-preferences-dialog.ui:90
-msgid "Display _statusbar"
-msgstr "Á_llapotsor megjelenítése"
-
-#: gedit/resources/ui/gedit-preferences-dialog.ui:105
-msgid "Display _grid pattern"
-msgstr "_Rácsminta megjelenítése"
-
-#: gedit/resources/ui/gedit-preferences-dialog.ui:134
+#: gedit/resources/ui/gedit-preferences-dialog.ui:52
 #: gedit/resources/ui/gedit-print-preferences.ui:197
 msgid "Text Wrapping"
 msgstr "Szöveg tördelése"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:152
+#: gedit/resources/ui/gedit-preferences-dialog.ui:70
 #: gedit/resources/ui/gedit-print-preferences.ui:217
 msgid "Enable text _wrapping"
 msgstr "_Sortörés engedélyezése"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:166
+#: gedit/resources/ui/gedit-preferences-dialog.ui:84
 #: gedit/resources/ui/gedit-print-preferences.ui:237
 msgid "Do not _split words over two lines"
 msgstr "Ne _törje a szavakat két sorba"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:208
+#: gedit/resources/ui/gedit-preferences-dialog.ui:126
 msgid "View"
 msgstr "Nézet"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:230
+#: gedit/resources/ui/gedit-preferences-dialog.ui:148
 msgid "Tab Stops"
 msgstr "Tabulátorok"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:259
+#: gedit/resources/ui/gedit-preferences-dialog.ui:177
 msgid "Insert _spaces instead of tabs"
 msgstr "_Szóközök beillesztése tabulátorok helyett"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:273
+#: gedit/resources/ui/gedit-preferences-dialog.ui:191
 msgid "_Enable automatic indentation"
 msgstr "_Automatikus behúzás engedélyezése"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:316
+#: gedit/resources/ui/gedit-preferences-dialog.ui:234
 msgid "Editor"
 msgstr "Szerkesztő"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:350
+#: gedit/resources/ui/gedit-preferences-dialog.ui:268
 msgid "Color Scheme"
 msgstr "Színséma"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:386
-#: gedit/resources/ui/gedit-preferences-dialog.ui:387
-msgid "Install scheme"
-msgstr "Séma telepítése"
-
-#: gedit/resources/ui/gedit-preferences-dialog.ui:388
-msgid "Install Scheme"
-msgstr "Séma telepítése"
-
-#: gedit/resources/ui/gedit-preferences-dialog.ui:402
-#: gedit/resources/ui/gedit-preferences-dialog.ui:403
-msgid "Uninstall scheme"
-msgstr "Séma eltávolítása"
-
-#: gedit/resources/ui/gedit-preferences-dialog.ui:404
-msgid "Uninstall Scheme"
-msgstr "Séma eltávolítása"
-
-#: gedit/resources/ui/gedit-preferences-dialog.ui:444
+#: gedit/resources/ui/gedit-preferences-dialog.ui:303
 msgid "Font & Colors"
 msgstr "Betűk és színek"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:469
+#: gedit/resources/ui/gedit-preferences-dialog.ui:328
 msgid "Plugins"
 msgstr "Bővítmények"
 
@@ -2276,7 +2221,7 @@ msgstr "Kö_rbe"
 msgid "Close Document"
 msgstr "Dokumentum bezárása"
 
-#: gedit/resources/ui/gedit-window.ui:135
+#: gedit/resources/ui/gedit-window.ui:110
 msgid "Hide panel"
 msgstr "Panel elrejtése"
 
@@ -2595,11 +2540,11 @@ msgstr "Fájlböngésző panel"
 msgid "Easy file access from the side panel."
 msgstr "Egyszerű fájlelérés az oldalpanelről."
 
-#: plugins/filebrowser/gedit-file-bookmarks-store.c:200
+#: plugins/filebrowser/gedit-file-bookmarks-store.c:202
 msgid "Home"
 msgstr "Saját mappa"
 
-#: plugins/filebrowser/gedit-file-bookmarks-store.c:233
+#: plugins/filebrowser/gedit-file-bookmarks-store.c:235
 msgid "File System"
 msgstr "Fájlrendszer"
 
