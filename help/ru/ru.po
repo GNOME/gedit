@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gedit HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-23 13:47+0000\n"
-"PO-Revision-Date: 2023-06-25 22:50+1000\n"
+"POT-Creation-Date: 2023-08-26 10:59+0000\n"
+"PO-Revision-Date: 2023-08-27 18:08+1000\n"
 "Last-Translator: Ser82-png <asvmail.as@gmail.com>\n"
 "Language-Team: Русский <gnome-cyr@gnome.org>\n"
 "Language: ru\n"
@@ -84,31 +84,31 @@ msgstr ""
 "инструментов <app>gedit</app>."
 
 #. (itstool) path: info/desc
-#: C/gedit-change-color-scheme.page:8
+#: C/gedit-change-color-scheme.page:7
 msgid "Change the text and background colors in gedit."
 msgstr "Изменение цвета текста и фона в gedit."
 
 #. (itstool) path: page/title
-#: C/gedit-change-color-scheme.page:11
+#: C/gedit-change-color-scheme.page:10
 msgid "Change the color scheme"
 msgstr "Изменение цветовой схемы"
 
 #. (itstool) path: page/p
-#: C/gedit-change-color-scheme.page:13
+#: C/gedit-change-color-scheme.page:12
 msgid ""
 "<app>gedit</app> includes several different color schemes, allowing you to "
-"change the appearance of the main text window."
+"change the appearance of the main text area."
 msgstr ""
 "Текстовый редактор <app>gedit</app> включает в себя несколько различных "
-"цветовых схем, что позволяет изменять внешний вид главного окна."
+"цветовых схем, что позволяет изменять внешний вид главной текстовой области."
 
 #. (itstool) path: steps/title
-#: C/gedit-change-color-scheme.page:17
+#: C/gedit-change-color-scheme.page:18
 msgid "To change the color scheme:"
 msgstr "Для изменения цветовой схемы:"
 
 #. (itstool) path: item/p
-#: C/gedit-change-color-scheme.page:19
+#: C/gedit-change-color-scheme.page:20
 msgid ""
 "Press the menu button in the top-right corner of the window and select "
 "<guiseq><gui style=\"menuitem\">Preferences</gui><gui>Font &amp; Colors</"
@@ -118,46 +118,38 @@ msgstr ""
 "style=\"menuitem\">Параметры</gui><gui>Шрифты и цвета</gui></guiseq>."
 
 #. (itstool) path: item/p
-#: C/gedit-change-color-scheme.page:24
+#: C/gedit-change-color-scheme.page:25
 msgid "Choose your desired color scheme."
 msgstr "Выберите нужную цветовую схему."
 
 #. (itstool) path: page/p
-#: C/gedit-change-color-scheme.page:28
+#: C/gedit-change-color-scheme.page:29
 msgid "The new color scheme will be applied immediately."
 msgstr "Новая цветовая схема будет сразу применена."
 
 #. (itstool) path: section/title
-#: C/gedit-change-color-scheme.page:31
+#: C/gedit-change-color-scheme.page:32
 msgid "Use a Custom Color Scheme"
 msgstr "Использование собственной цветовой схемы"
 
 #. (itstool) path: section/p
-#: C/gedit-change-color-scheme.page:37
+#: C/gedit-change-color-scheme.page:34
 msgid ""
 "You can also use color schemes that have been created by others, or create "
-"and use your own color schemes."
+"and use your own color schemes. See the <link href=\"https://gedit-"
+"technology.net/developer-docs/extra/libgedit-gtksourceview/style-schemes."
+"html\">libgedit-gtksourceview documentation</link>."
 msgstr ""
-"Можно создавать и использовать собственные цветовые схемы, а также "
-"использовать цветовые схемы, созданные другими."
-
-#. (itstool) path: section/p
-#: C/gedit-change-color-scheme.page:40
-msgid ""
-"Instructions on how to install custom color schemes, as well as examples of "
-"color schemes that you can download and use, are available on the <link "
-"href=\"https://wiki.gnome.org/Projects/GtkSourceView/StyleSchemes\">gedit "
-"wiki</link>."
-msgstr ""
-"Инструкции по установке собственных цветовых схем, а также примеры цветовых "
-"схем, которые можно загрузить и использовать, доступны в <link "
-"href=\"https://wiki.gnome.org/Projects/GtkSourceView/StyleSchemes\">gedit "
-"wiki</link>."
+"Вы также можете использовать цветовые схемы, созданные другими "
+"пользователями, или создавать и использовать свои собственные. См. <link "
+"href=\"https://gedit-technology.net/developer-docs/extra/libgedit-"
+"gtksourceview/style-schemes.html\">libgedit-gtksourceview documentation</"
+"link>."
 
 #. (itstool) path: info/desc
 #: C/gedit-close-file.page:7
 msgid "Exit from the file you are using."
-msgstr "Выйти из используемого файла."
+msgstr "Завершение работы с файлом."
 
 #. (itstool) path: page/title
 #: C/gedit-close-file.page:10
@@ -2268,7 +2260,6 @@ msgstr ""
 
 #. (itstool) path: item/p
 #: C/gedit-printing.page:32
-#| msgid "<keyseq><key>Ctrl </key><key>P</key></keyseq>"
 msgid "Or press <keyseq><key>Ctrl</key><key>P</key></keyseq>."
 msgstr "Или нажмите <keyseq><key>Ctrl</key><key>P</key></keyseq>."
 
@@ -2289,8 +2280,6 @@ msgstr ""
 
 #. (itstool) path: section/p
 #: C/gedit-printing.page:44
-#| msgid ""
-#| "To print the document to file, click <gui style=\"button\">Print</gui>."
 msgid ""
 "From the <gui>Print</gui> dialog, click on the <gui "
 "style=\"button\">Preview</gui> button."
@@ -3134,6 +3123,24 @@ msgstr "Настройка gedit"
 #: C/index.page:37
 msgid "gedit plugins"
 msgstr "Модули gedit"
+
+#~ msgid ""
+#~ "You can also use color schemes that have been created by others, or "
+#~ "create and use your own color schemes."
+#~ msgstr ""
+#~ "Можно создавать и использовать собственные цветовые схемы, а также "
+#~ "использовать цветовые схемы, созданные другими."
+
+#~ msgid ""
+#~ "Instructions on how to install custom color schemes, as well as examples "
+#~ "of color schemes that you can download and use, are available on the "
+#~ "<link href=\"https://wiki.gnome.org/Projects/GtkSourceView/"
+#~ "StyleSchemes\">gedit wiki</link>."
+#~ msgstr ""
+#~ "Инструкции по установке собственных цветовых схем, а также примеры "
+#~ "цветовых схем, которые можно загрузить и использовать, доступны в <link "
+#~ "href=\"https://wiki.gnome.org/Projects/GtkSourceView/StyleSchemes\">gedit "
+#~ "wiki</link>."
 
 #~ msgid "Use a custom font for your text in gedit."
 #~ msgstr "Использование собственного шрифта для текста в gedit."
