@@ -17,8 +17,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gedit\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gedit/issues\n"
-"POT-Creation-Date: 2023-08-11 20:01+0000\n"
-"PO-Revision-Date: 2023-08-12 00:05+0300\n"
+"POT-Creation-Date: 2023-09-16 08:59+0000\n"
+"PO-Revision-Date: 2023-10-17 01:34+0300\n"
 "Last-Translator: Sabri Ünal <libreajans@gmail.com>\n"
 "Language-Team: Türkçe <takim@gnome.org.tr>\n"
 "Language: tr\n"
@@ -26,7 +26,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 3.4\n"
 "X-POOTLE-MTIME: 1433962102.000000\n"
 
 #: data/org.gnome.gedit.appdata.xml.in:7 data/org.gnome.gedit.desktop.in:3
@@ -564,7 +564,7 @@ msgstr "[DOSYA…] [+SATIR[:SÜTUN]]"
 msgid "There was an error displaying the help."
 msgstr "Yardım görüntülenirken hata oluştu."
 
-#: gedit/gedit-app.c:867
+#: gedit/gedit-app.c:854
 #, c-format
 msgid "%s: invalid encoding."
 msgstr "%s: geçersiz kodlama."
@@ -577,7 +577,7 @@ msgstr "Kaydetmeden _Kapat"
 #: gedit/gedit-commands-file.c:565 gedit/gedit-commands-file.c:789
 #: gedit/gedit-commands-file.c:1514 gedit/gedit-encodings-dialog.c:192
 #: gedit/gedit-file-chooser-open-dialog.c:78 gedit/gedit-io-error-info-bar.c:95
-#: gedit/gedit-io-error-info-bar.c:294 gedit/gedit-preferences-dialog.c:665
+#: gedit/gedit-io-error-info-bar.c:294
 #: plugins/filebrowser/gedit-file-browser-utils.c:211
 #: plugins/quickopen/quickopen/popup.py:45
 #: plugins/snippets/snippets/manager.py:789
@@ -586,7 +586,7 @@ msgstr "Kaydetmeden _Kapat"
 #: plugins/sort/resources/ui/gedit-sort-plugin.ui:143
 #: plugins/time/resources/ui/gedit-time-dialog.ui:150
 msgid "_Cancel"
-msgstr "_İptal"
+msgstr "İ_ptal"
 
 #: gedit/gedit-close-confirmation-dialog.c:295
 #: gedit/resources/gtk/menus-traditional.ui:33 gedit/resources/gtk/menus.ui:37
@@ -939,7 +939,7 @@ msgstr "Daha düşük önceliğe taşı"
 msgid "Untitled Document %d"
 msgstr "Adsız Belge %d"
 
-#: gedit/gedit-file-chooser.c:41 gedit/gedit-preferences-dialog.c:674
+#: gedit/gedit-file-chooser.c:41
 msgid "All Files"
 msgstr "Tüm Dosyalar"
 
@@ -1183,32 +1183,6 @@ msgstr ""
 #, c-format
 msgid "Could not save the file “%s”."
 msgstr "“%s” dosyası kaydedilemedi."
-
-#: gedit/gedit-preferences-dialog.c:628
-#, c-format
-msgid "The selected color scheme cannot be installed: %s"
-msgstr "Seçilen renk şeması yüklenemedi: %s"
-
-#: gedit/gedit-preferences-dialog.c:634
-msgid "The selected color scheme cannot be installed."
-msgstr "Seçilen renk şeması yüklenemedi."
-
-#: gedit/gedit-preferences-dialog.c:661
-msgid "Add Color Scheme"
-msgstr "Renk Şeması Ekle"
-
-#: gedit/gedit-preferences-dialog.c:664
-msgid "_Add Scheme"
-msgstr "Şema _Ekle"
-
-#: gedit/gedit-preferences-dialog.c:669
-msgid "Color Scheme Files"
-msgstr "Renk Şeması Dosyalar"
-
-#: gedit/gedit-preferences-dialog.c:707
-#, c-format
-msgid "Could not remove color scheme “%s”."
-msgstr "“%s” renk şeması silinemedi."
 
 #: gedit/gedit-print-job.c:223
 msgid "Preparing…"
@@ -1983,7 +1957,7 @@ msgstr "Karakter Kodlamaları"
 
 #: gedit/resources/ui/gedit-encodings-dialog.ui:44
 msgid "_Cancel Changes"
-msgstr "Değişiklikleri İptal _Et"
+msgstr "Değişiklikleri İ_ptal Et"
 
 #: gedit/resources/ui/gedit-encodings-dialog.ui:51
 msgid "_Save Settings"
@@ -2012,80 +1986,50 @@ msgstr "_Kodlama"
 msgid "Preferences"
 msgstr "Tercihler"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:51
-msgid "Display right _margin at column:"
-msgstr "Sağ kenar boşluğunu sütunda _göster:"
-
-#: gedit/resources/ui/gedit-preferences-dialog.ui:90
-msgid "Display _statusbar"
-msgstr "_Durum çubuğunu göster"
-
-#: gedit/resources/ui/gedit-preferences-dialog.ui:105
-msgid "Display _grid pattern"
-msgstr "Izgara _desenini göster"
-
-#: gedit/resources/ui/gedit-preferences-dialog.ui:134
+#: gedit/resources/ui/gedit-preferences-dialog.ui:52
 #: gedit/resources/ui/gedit-print-preferences.ui:197
 msgid "Text Wrapping"
 msgstr "Metin Kaydırma"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:152
+#: gedit/resources/ui/gedit-preferences-dialog.ui:70
 #: gedit/resources/ui/gedit-print-preferences.ui:217
 msgid "Enable text _wrapping"
 msgstr "Metin _kaydırmayı etkinleştir"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:166
+#: gedit/resources/ui/gedit-preferences-dialog.ui:84
 #: gedit/resources/ui/gedit-print-preferences.ui:237
 msgid "Do not _split words over two lines"
 msgstr "_Sözcükleri iki ayrı satıra bölme"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:208
+#: gedit/resources/ui/gedit-preferences-dialog.ui:126
 msgid "View"
 msgstr "Görünüm"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:230
+#: gedit/resources/ui/gedit-preferences-dialog.ui:148
 msgid "Tab Stops"
 msgstr "Sekmeler"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:259
+#: gedit/resources/ui/gedit-preferences-dialog.ui:177
 msgid "Insert _spaces instead of tabs"
 msgstr "Sekme yerine _boşluk ekle"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:273
+#: gedit/resources/ui/gedit-preferences-dialog.ui:191
 msgid "_Enable automatic indentation"
 msgstr "Kendiliğinden _girintilemeyi etkinleştir"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:316
+#: gedit/resources/ui/gedit-preferences-dialog.ui:234
 msgid "Editor"
 msgstr "Düzenleyici"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:350
+#: gedit/resources/ui/gedit-preferences-dialog.ui:268
 msgid "Color Scheme"
 msgstr "Renk Şeması"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:386
-#: gedit/resources/ui/gedit-preferences-dialog.ui:387
-msgid "Install scheme"
-msgstr "Şema kur"
-
-#: gedit/resources/ui/gedit-preferences-dialog.ui:388
-msgid "Install Scheme"
-msgstr "Şema Kur"
-
-#: gedit/resources/ui/gedit-preferences-dialog.ui:402
-#: gedit/resources/ui/gedit-preferences-dialog.ui:403
-msgid "Uninstall scheme"
-msgstr "Şema kaldır"
-
-#: gedit/resources/ui/gedit-preferences-dialog.ui:404
-msgid "Uninstall Scheme"
-msgstr "Şema Kaldır"
-
-#: gedit/resources/ui/gedit-preferences-dialog.ui:444
+#: gedit/resources/ui/gedit-preferences-dialog.ui:303
 msgid "Font & Colors"
 msgstr "Yazı Tipleri ve Renkler"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:469
+#: gedit/resources/ui/gedit-preferences-dialog.ui:328
 msgid "Plugins"
 msgstr "Eklentiler"
 
@@ -2838,6 +2782,7 @@ msgid "Show _Binary"
 msgstr "İ_kilileri Göster"
 
 #: plugins/filebrowser/resources/ui/gedit-file-browser-menus.ui:67
+#: plugins/filebrowser/resources/ui/gedit-file-browser-widget.ui:248
 msgid "Match Filename"
 msgstr "Dosya Adını Eşleştir"
 
@@ -3321,6 +3266,47 @@ msgstr "Tarih/Zaman Ekle"
 #: plugins/time/time.plugin.desktop.in:6
 msgid "Inserts current date and time at the cursor position."
 msgstr "İmlecin bulunduğu yere şimdiki tarihi ve zamanı ekler."
+
+#, c-format
+#~ msgid "The selected color scheme cannot be installed: %s"
+#~ msgstr "Seçilen renk şeması yüklenemedi: %s"
+
+#~ msgid "The selected color scheme cannot be installed."
+#~ msgstr "Seçilen renk şeması yüklenemedi."
+
+#~ msgid "Add Color Scheme"
+#~ msgstr "Renk Şeması Ekle"
+
+#~ msgid "_Add Scheme"
+#~ msgstr "Şema _Ekle"
+
+#~ msgid "Color Scheme Files"
+#~ msgstr "Renk Şeması Dosyalar"
+
+#, c-format
+#~ msgid "Could not remove color scheme “%s”."
+#~ msgstr "“%s” renk şeması silinemedi."
+
+#~ msgid "Display right _margin at column:"
+#~ msgstr "Sağ kenar boşluğunu sütunda _göster:"
+
+#~ msgid "Display _statusbar"
+#~ msgstr "_Durum çubuğunu göster"
+
+#~ msgid "Display _grid pattern"
+#~ msgstr "Izgara _desenini göster"
+
+#~ msgid "Install scheme"
+#~ msgstr "Şema kur"
+
+#~ msgid "Install Scheme"
+#~ msgstr "Şema Kur"
+
+#~ msgid "Uninstall scheme"
+#~ msgstr "Şema kaldır"
+
+#~ msgid "Uninstall Scheme"
+#~ msgstr "Şema Kaldır"
 
 #, c-format
 #~ msgid "There is a tab with errors"
