@@ -28,7 +28,7 @@ struct _GeditTabLabel
 	GeditTab *tab;
 
 	GtkSpinner *spinner;
-	GtkWidget *icon;
+	GtkImage *icon;
 	GtkWidget *label;
 	GtkWidget *close_button;
 };
@@ -160,7 +160,7 @@ sync_state (GeditTab      *tab,
 	    (state == GEDIT_TAB_STATE_SAVING) ||
 	    (state == GEDIT_TAB_STATE_REVERTING))
 	{
-		gtk_widget_hide (tab_label->icon);
+		gtk_widget_hide (GTK_WIDGET (tab_label->icon));
 
 		gtk_widget_show (GTK_WIDGET (tab_label->spinner));
 		gtk_spinner_start (tab_label->spinner);
@@ -173,16 +173,15 @@ sync_state (GeditTab      *tab,
 
 		if (pixbuf != NULL)
 		{
-			gtk_image_set_from_pixbuf (GTK_IMAGE (tab_label->icon),
-			                           pixbuf);
+			gtk_image_set_from_pixbuf (tab_label->icon, pixbuf);
 
 			g_clear_object (&pixbuf);
 
-			gtk_widget_show (tab_label->icon);
+			gtk_widget_show (GTK_WIDGET (tab_label->icon));
 		}
 		else
 		{
-			gtk_widget_hide (tab_label->icon);
+			gtk_widget_hide (GTK_WIDGET (tab_label->icon));
 		}
 
 		gtk_spinner_stop (tab_label->spinner);
