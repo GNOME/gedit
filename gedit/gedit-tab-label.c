@@ -288,6 +288,8 @@ gedit_tab_label_get_tab (GeditTabLabel *tab_label)
 GtkWidget *
 gedit_tab_label_new (GeditTab *tab)
 {
+	g_return_val_if_fail (GEDIT_IS_TAB (tab), NULL);
+
 	return g_object_new (GEDIT_TYPE_TAB_LABEL,
 			     "tab", tab,
 			     NULL);
