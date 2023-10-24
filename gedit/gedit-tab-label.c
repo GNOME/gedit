@@ -85,7 +85,7 @@ gedit_tab_label_get_property (GObject    *object,
 	switch (prop_id)
 	{
 		case PROP_TAB:
-			g_value_set_object (value, tab_label->tab);
+			g_value_set_object (value, gedit_tab_label_get_tab (tab_label));
 			break;
 
 		default:
@@ -277,14 +277,6 @@ gedit_tab_label_init (GeditTabLabel *tab_label)
 	                  tab_label);
 }
 
-GeditTab *
-gedit_tab_label_get_tab (GeditTabLabel *tab_label)
-{
-	g_return_val_if_fail (GEDIT_IS_TAB_LABEL (tab_label), NULL);
-
-	return tab_label->tab;
-}
-
 GtkWidget *
 gedit_tab_label_new (GeditTab *tab)
 {
@@ -293,6 +285,14 @@ gedit_tab_label_new (GeditTab *tab)
 	return g_object_new (GEDIT_TYPE_TAB_LABEL,
 			     "tab", tab,
 			     NULL);
+}
+
+GeditTab *
+gedit_tab_label_get_tab (GeditTabLabel *tab_label)
+{
+	g_return_val_if_fail (GEDIT_IS_TAB_LABEL (tab_label), NULL);
+
+	return tab_label->tab;
 }
 
 /* ex:set ts=8 noet: */
