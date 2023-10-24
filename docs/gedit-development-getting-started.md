@@ -31,7 +31,7 @@ old but the GtkTextView API has not changed a lot. (By the way, contributing to
 update the tutorial would be a useful task!).
 
 GtkTextView provides the basis, and is extended by other libraries to add more
-features. See [Gedit Technology](https://gedit-technology.net/).
+features. See [Gedit Technology](https://gedit-technology.github.io/).
 
 For its plugin system, gedit uses
 [libpeas](https://wiki.gnome.org/Projects/Libpeas).
