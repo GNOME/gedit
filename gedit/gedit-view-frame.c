@@ -21,7 +21,6 @@
 #include "gedit-view-frame.h"
 #include <glib/gi18n.h>
 #include "libgd/gd.h"
-#include "gedit-debug.h"
 
 #define FLUSH_TIMEOUT_DURATION 30 /* in seconds */
 
@@ -1439,8 +1438,6 @@ gedit_view_frame_init (GeditViewFrame *frame)
 {
 	GeditDocument *doc;
 	GtkSourceFile *file;
-
-	gedit_debug (DEBUG_WINDOW);
 
 	gtk_widget_init_template (GTK_WIDGET (frame));
 
