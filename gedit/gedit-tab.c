@@ -146,7 +146,7 @@ static void launch_saver (GTask *saving_task);
 static SaverData *
 saver_data_new (void)
 {
-	return g_slice_new0 (SaverData);
+	return g_new0 (SaverData, 1);
 }
 
 static void
@@ -164,14 +164,14 @@ saver_data_free (SaverData *data)
 			g_timer_destroy (data->timer);
 		}
 
-		g_slice_free (SaverData, data);
+		g_free (data);
 	}
 }
 
 static LoaderData *
 loader_data_new (void)
 {
-	return g_slice_new0 (LoaderData);
+	return g_new0 (LoaderData, 1);
 }
 
 static void
@@ -189,7 +189,7 @@ loader_data_free (LoaderData *data)
 			g_timer_destroy (data->timer);
 		}
 
-		g_slice_free (LoaderData, data);
+		g_free (data);
 	}
 }
 
