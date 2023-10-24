@@ -1559,35 +1559,6 @@ _gedit_tab_get_icon_name (GeditTab *tab)
 	return NULL;
 }
 
-/* TODO: try to get rid of this function and use _gedit_tab_get_icon_name() instead. */
-GdkPixbuf *
-_gedit_tab_get_icon (GeditTab *tab)
-{
-	const gchar *icon_name;
-	GdkPixbuf *pixbuf = NULL;
-
-	g_return_val_if_fail (GEDIT_IS_TAB (tab), NULL);
-
-	icon_name = _gedit_tab_get_icon_name (tab);
-
-	if (icon_name != NULL)
-	{
-		GdkScreen *screen;
-		GtkIconTheme *theme;
-		gint icon_size;
-
-		screen = gtk_widget_get_screen (GTK_WIDGET (tab));
-		theme = gtk_icon_theme_get_for_screen (screen);
-		g_return_val_if_fail (theme != NULL, NULL);
-
-		gtk_icon_size_lookup (GTK_ICON_SIZE_MENU, NULL, &icon_size);
-
-		pixbuf = gtk_icon_theme_load_icon (theme, icon_name, icon_size, 0, NULL);
-	}
-
-	return pixbuf;
-}
-
 /**
  * gedit_tab_get_from_document:
  * @doc: a #GeditDocument
