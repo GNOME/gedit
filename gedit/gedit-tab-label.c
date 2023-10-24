@@ -100,14 +100,16 @@ close_button_clicked_cb (GtkButton     *close_button,
 }
 
 static void
-sync_tooltip (GeditTab      *tab,
-	      GeditTabLabel *tab_label)
+update_tooltip (GeditTabLabel *tab_label)
 {
 	gchar *str;
 
-	str = _gedit_tab_get_tooltip (tab);
-	g_return_if_fail (str != NULL);
+	if (tab_label->tab == NULL)
+	{
+		return;
+	}
 
+	str = _gedit_tab_get_tooltip (tab_label->tab);
 	gtk_widget_set_tooltip_markup (GTK_WIDGET (tab_label), str);
 	g_free (str);
 }
@@ -127,7 +129,7 @@ sync_name (GeditTab      *tab,
 	gtk_label_set_text (tab_label->label, str);
 	g_free (str);
 
-	sync_tooltip (tab, tab_label);
+	update_tooltip (tab_label);
 }
 
 static void
@@ -188,8 +190,8 @@ sync_state (GeditTab      *tab,
 		gtk_widget_hide (GTK_WIDGET (tab_label->spinner));
 	}
 
-	/* sync tip since encoding is known only after load/save end */
-	sync_tooltip (tab, tab_label);
+	/* Update tooltip since encoding is known only after load/save end. */
+	update_tooltip (tab_label);
 }
 
 static void
