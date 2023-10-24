@@ -29,7 +29,7 @@ struct _GeditTabLabel
 
 	GtkSpinner *spinner;
 	GtkImage *icon;
-	GtkWidget *label;
+	GtkLabel *label;
 	GtkWidget *close_button;
 };
 
@@ -124,7 +124,7 @@ sync_name (GeditTab      *tab,
 	str = _gedit_tab_get_name (tab);
 	g_return_if_fail (str != NULL);
 
-	gtk_label_set_text (GTK_LABEL (tab_label->label), str);
+	gtk_label_set_text (tab_label->label, str);
 	g_free (str);
 
 	sync_tooltip (tab, tab_label);
