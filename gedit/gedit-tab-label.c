@@ -200,6 +200,11 @@ gedit_tab_label_constructed (GObject *object)
 {
 	GeditTabLabel *tab_label = GEDIT_TAB_LABEL (object);
 
+	if (G_OBJECT_CLASS (gedit_tab_label_parent_class)->constructed != NULL)
+	{
+		G_OBJECT_CLASS (gedit_tab_label_parent_class)->constructed (object);
+	}
+
 	if (tab_label->tab == NULL)
 	{
 		g_critical ("The tab label was not properly constructed");
@@ -220,8 +225,6 @@ gedit_tab_label_constructed (GObject *object)
 				 G_CALLBACK (sync_state),
 				 tab_label,
 				 0);
-
-	G_OBJECT_CLASS (gedit_tab_label_parent_class)->constructed (object);
 }
 
 static void
