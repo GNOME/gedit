@@ -28,8 +28,9 @@
 
 typedef enum
 {
-	GOTO_LINE,
-	SEARCH
+	SEARCH_MODE_GOTO_LINE,
+	/* "Simple search", in contrast to "search and replace". */
+	SEARCH_MODE_SIMPLE_SEARCH,
 } SearchMode;
 
 typedef enum
@@ -343,7 +344,7 @@ start_search (GeditViewFrame *frame)
 	GtkSourceSearchContext *search_context;
 	GtkTextIter start_at;
 
-	g_return_if_fail (frame->search_mode == SEARCH);
+	g_return_if_fail (frame->search_mode == SEARCH_MODE_SIMPLE_SEARCH);
 
 	search_context = get_search_context (frame);
 
@@ -396,7 +397,7 @@ forward_search (GeditViewFrame *frame)
 	GtkTextBuffer *buffer;
 	GtkSourceSearchContext *search_context;
 
-	g_return_if_fail (frame->search_mode == SEARCH);
+	g_return_if_fail (frame->search_mode == SEARCH_MODE_SIMPLE_SEARCH);
 
 	search_context = get_search_context (frame);
 
@@ -454,7 +455,7 @@ backward_search (GeditViewFrame *frame)
 	GtkTextBuffer *buffer;
 	GtkSourceSearchContext *search_context;
 
-	g_return_if_fail (frame->search_mode == SEARCH);
+	g_return_if_fail (frame->search_mode == SEARCH_MODE_SIMPLE_SEARCH);
 
 	search_context = get_search_context (frame);
 
@@ -481,7 +482,7 @@ search_widget_scroll_event (GtkWidget      *widget,
                             GdkEventScroll *event,
                             GeditViewFrame *frame)
 {
-	if (frame->search_mode == GOTO_LINE)
+	if (frame->search_mode == SEARCH_MODE_GOTO_LINE)
 	{
 		return GDK_EVENT_PROPAGATE;
 	}
@@ -547,12 +548,12 @@ search_widget_key_press_event (GtkWidget      *widget,
 		return GDK_EVENT_STOP;
 	}
 
-	if (frame->search_mode == GOTO_LINE)
+	if (frame->search_mode == SEARCH_MODE_GOTO_LINE)
 	{
 		return GDK_EVENT_PROPAGATE;
 	}
 
-	/* SEARCH mode */
+	/* SEARCH_MODE_SIMPLE_SEARCH */
 
 	/* select previous matching iter */
 	if (event->keyval == GDK_KEY_Up || event->keyval == GDK_KEY_KP_Up)
@@ -593,7 +594,7 @@ update_entry_tag (GeditViewFrame *frame)
 	gint pos;
 	gchar *label;
 
-	if (frame->search_mode == GOTO_LINE)
+	if (frame->search_mode == SEARCH_MODE_GOTO_LINE)
 	{
 		gd_tagged_entry_remove_tag (frame->search_entry,
 					    frame->entry_tag);
@@ -832,7 +833,7 @@ search_entry_escaped (GtkSearchEntry *entry,
 {
 	GtkSourceSearchContext *search_context = get_search_context (frame);
 
-	if (frame->search_mode == SEARCH &&
+	if (frame->search_mode == SEARCH_MODE_SIMPLE_SEARCH &&
 	    search_context != NULL)
 	{
 		GtkSourceSearchContext *search_context;
@@ -881,7 +882,7 @@ search_entry_populate_popup (GtkEntry       *entry,
 {
 	GtkWidget *menu_item;
 
-	if (frame->search_mode == GOTO_LINE)
+	if (frame->search_mode == SEARCH_MODE_GOTO_LINE)
 	{
 		return;
 	}
@@ -904,7 +905,7 @@ search_entry_icon_release (GtkEntry             *entry,
 {
 	GtkWidget *menu;
 
-	if (frame->search_mode == GOTO_LINE ||
+	if (frame->search_mode == SEARCH_MODE_GOTO_LINE ||
 	    icon_pos != GTK_ENTRY_ICON_PRIMARY)
 	{
 		return;
@@ -944,7 +945,7 @@ search_entry_insert_text (GtkEditable    *editable,
 	const gchar *end;
 	const gchar *next;
 
-	if (frame->search_mode == SEARCH)
+	if (frame->search_mode == SEARCH_MODE_SIMPLE_SEARCH)
 	{
 		return;
 	}
@@ -1002,7 +1003,7 @@ customize_for_search_mode (GeditViewFrame *frame)
 	GIcon *icon;
 	gint width_request;
 
-	if (frame->search_mode == SEARCH)
+	if (frame->search_mode == SEARCH_MODE_SIMPLE_SEARCH)
 	{
 		icon = g_themed_icon_new_with_default_fallbacks ("edit-find-symbolic");
 
@@ -1124,7 +1125,7 @@ search_entry_changed_cb (GtkEntry       *entry,
 {
 	renew_flush_timeout (frame);
 
-	if (frame->search_mode == SEARCH)
+	if (frame->search_mode == SEARCH_MODE_SIMPLE_SEARCH)
 	{
 		update_search_text (frame);
 		start_search (frame);
@@ -1196,7 +1197,7 @@ get_selected_text (GtkTextBuffer  *doc,
 static void
 init_search_entry (GeditViewFrame *frame)
 {
-	if (frame->search_mode == GOTO_LINE)
+	if (frame->search_mode == SEARCH_MODE_GOTO_LINE)
 	{
 		gint line;
 		gchar *line_str;
@@ -1217,7 +1218,7 @@ init_search_entry (GeditViewFrame *frame)
 	}
 	else
 	{
-		/* SEARCH mode */
+		/* SEARCH_MODE_SIMPLE_SEARCH */
 		GtkTextBuffer *buffer;
 		gboolean selection_exists;
 		gchar *search_text = NULL;
@@ -1357,7 +1358,7 @@ start_interactive_search_real (GeditViewFrame *frame,
 
 	buffer = gtk_text_view_get_buffer (GTK_TEXT_VIEW (frame->view));
 
-	if (frame->search_mode == SEARCH)
+	if (frame->search_mode == SEARCH_MODE_SIMPLE_SEARCH)
 	{
 		gtk_text_buffer_get_selection_bounds (buffer, &iter, NULL);
 	}
@@ -1551,7 +1552,7 @@ gedit_view_frame_popup_search (GeditViewFrame *frame)
 {
 	g_return_if_fail (GEDIT_IS_VIEW_FRAME (frame));
 
-	start_interactive_search_real (frame, SEARCH);
+	start_interactive_search_real (frame, SEARCH_MODE_SIMPLE_SEARCH);
 }
 
 void
@@ -1559,7 +1560,7 @@ gedit_view_frame_popup_goto_line (GeditViewFrame *frame)
 {
 	g_return_if_fail (GEDIT_IS_VIEW_FRAME (frame));
 
-	start_interactive_search_real (frame, GOTO_LINE);
+	start_interactive_search_real (frame, SEARCH_MODE_GOTO_LINE);
 }
 
 void
