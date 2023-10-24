@@ -142,6 +142,9 @@ gedit_view_init (GeditView *view)
 	/* CSS stuff */
 	style_context = gtk_widget_get_style_context (GTK_WIDGET (view));
 	gtk_style_context_add_class (style_context, "gedit-view");
+
+	/* Useful for on screen keyboards */
+	gtk_text_view_set_input_hints (GTK_TEXT_VIEW (view), GTK_INPUT_HINT_WORD_COMPLETION);
 }
 
 static void
