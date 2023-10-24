@@ -236,10 +236,12 @@ gedit_tab_label_class_init (GeditTabLabelClass *klass)
 
 	properties[PROP_TAB] =
 		g_param_spec_object ("tab",
-		                     "Tab",
-		                     "The GeditTab",
+		                     "tab",
+		                     "",
 		                     GEDIT_TYPE_TAB,
-		                     G_PARAM_READWRITE | G_PARAM_CONSTRUCT_ONLY);
+		                     G_PARAM_READWRITE |
+				     G_PARAM_CONSTRUCT_ONLY |
+				     G_PARAM_STATIC_STRINGS);
 
 	g_object_class_install_properties (object_class, N_PROPERTIES, properties);
 
