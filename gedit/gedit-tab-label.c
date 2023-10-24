@@ -98,7 +98,7 @@ static void
 close_button_clicked_cb (GtkWidget     *widget,
 			 GeditTabLabel *tab_label)
 {
-	g_signal_emit (tab_label, signals[SIGNAL_CLOSE_CLICKED], 0, NULL);
+	g_signal_emit (tab_label, signals[SIGNAL_CLOSE_CLICKED], 0);
 }
 
 static void
@@ -225,11 +225,6 @@ gedit_tab_label_constructed (GObject *object)
 }
 
 static void
-gedit_tab_label_close_clicked (GeditTabLabel *tab_label)
-{
-}
-
-static void
 gedit_tab_label_class_init (GeditTabLabelClass *klass)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
@@ -249,13 +244,11 @@ gedit_tab_label_class_init (GeditTabLabelClass *klass)
 	g_object_class_install_properties (object_class, N_PROPERTIES, properties);
 
 	signals[SIGNAL_CLOSE_CLICKED] =
-		g_signal_new_class_handler ("close-clicked",
-		                            G_TYPE_FROM_CLASS (klass),
-		                            G_SIGNAL_RUN_LAST,
-		                            G_CALLBACK (gedit_tab_label_close_clicked),
-		                            NULL, NULL, NULL,
-		                            G_TYPE_NONE,
-		                            0);
+		g_signal_new ("close-clicked",
+			      G_TYPE_FROM_CLASS (klass),
+			      G_SIGNAL_RUN_FIRST,
+			      0, NULL, NULL, NULL,
+			      G_TYPE_NONE, 0);
 
 	/* Bind class to template */
 	gtk_widget_class_set_template_from_resource (widget_class,
