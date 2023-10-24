@@ -291,6 +291,9 @@ gedit_tab_label_init (GeditTabLabel *tab_label)
 {
 	gtk_widget_init_template (GTK_WIDGET (tab_label));
 
+	gtk_label_set_ellipsize (tab_label->label, PANGO_ELLIPSIZE_MIDDLE);
+	gtk_label_set_width_chars (tab_label->label, 12);
+
 	g_signal_connect (tab_label->close_button,
 			  "clicked",
 			  G_CALLBACK (close_button_clicked_cb),
