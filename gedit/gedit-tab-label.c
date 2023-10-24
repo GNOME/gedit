@@ -2,6 +2,7 @@
  * This file is part of gedit
  *
  * Copyright (C) 2010 - Paolo Borelli
+ * Copyright (C) 2023 - Sébastien Wilmet
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,6 +19,7 @@
  */
 
 #include "gedit-tab-label.h"
+#include <glib/gi18n.h>
 #include "gedit-tab-private.h"
 
 struct _GeditTabLabel
@@ -252,7 +254,6 @@ static void
 gedit_tab_label_class_init (GeditTabLabelClass *klass)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
-	GtkWidgetClass *widget_class = GTK_WIDGET_CLASS (klass);
 
 	object_class->set_property = gedit_tab_label_set_property;
 	object_class->get_property = gedit_tab_label_get_property;
@@ -276,23 +277,31 @@ gedit_tab_label_class_init (GeditTabLabelClass *klass)
 			      G_SIGNAL_RUN_FIRST,
 			      0, NULL, NULL, NULL,
 			      G_TYPE_NONE, 0);
-
-	/* Bind class to template */
-	gtk_widget_class_set_template_from_resource (widget_class,
-	                                             "/org/gnome/gedit/ui/gedit-tab-label.ui");
-	gtk_widget_class_bind_template_child (widget_class, GeditTabLabel, spinner);
-	gtk_widget_class_bind_template_child (widget_class, GeditTabLabel, icon);
-	gtk_widget_class_bind_template_child (widget_class, GeditTabLabel, label);
-	gtk_widget_class_bind_template_child (widget_class, GeditTabLabel, close_button);
 }
 
 static void
 gedit_tab_label_init (GeditTabLabel *tab_label)
 {
-	gtk_widget_init_template (GTK_WIDGET (tab_label));
-
+	/* Label */
+	tab_label->label = GTK_LABEL (gtk_label_new (NULL));
 	gtk_label_set_ellipsize (tab_label->label, PANGO_ELLIPSIZE_MIDDLE);
 	gtk_label_set_width_chars (tab_label->label, 12);
+	gtk_widget_show (GTK_WIDGET (tab_label->label));
+	gtk_box_set_center_widget (GTK_BOX (tab_label), GTK_WIDGET (tab_label->label));
+
+	/* Icon */
+	tab_label->icon = GTK_IMAGE (gtk_image_new ());
+	gtk_box_pack_start (GTK_BOX (tab_label), GTK_WIDGET (tab_label->icon), FALSE, FALSE, 0);
+
+	/* Spinner */
+	tab_label->spinner = GTK_SPINNER (gtk_spinner_new ());
+	gtk_box_pack_start (GTK_BOX (tab_label), GTK_WIDGET (tab_label->spinner), FALSE, FALSE, 0);
+
+	/* Close button */
+	tab_label->close_button = tepl_utils_create_close_button ();
+	gtk_widget_set_tooltip_text (tab_label->close_button, _("Close Document"));
+	gtk_widget_show (tab_label->close_button);
+	gtk_box_pack_end (GTK_BOX (tab_label), tab_label->close_button, FALSE, FALSE, 0);
 
 	g_signal_connect (tab_label->close_button,
 			  "clicked",
