@@ -36,18 +36,17 @@ enum
 {
 	PROP_0,
 	PROP_TAB,
-	LAST_PROP
+	N_PROPERTIES
 };
-
-static GParamSpec *properties[LAST_PROP];
 
 enum
 {
-	CLOSE_CLICKED,
-	LAST_SIGNAL
+	SIGNAL_CLOSE_CLICKED,
+	N_SIGNALS
 };
 
-static guint signals[LAST_SIGNAL];
+static GParamSpec *properties[N_PROPERTIES];
+static guint signals[N_SIGNALS];
 
 G_DEFINE_TYPE (GeditTabLabel, gedit_tab_label, GTK_TYPE_BOX)
 
@@ -96,7 +95,7 @@ static void
 close_button_clicked_cb (GtkWidget     *widget,
 			 GeditTabLabel *tab_label)
 {
-	g_signal_emit (tab_label, signals[CLOSE_CLICKED], 0, NULL);
+	g_signal_emit (tab_label, signals[SIGNAL_CLOSE_CLICKED], 0, NULL);
 }
 
 static void
@@ -244,9 +243,9 @@ gedit_tab_label_class_init (GeditTabLabelClass *klass)
 		                     GEDIT_TYPE_TAB,
 		                     G_PARAM_READWRITE | G_PARAM_CONSTRUCT_ONLY);
 
-	g_object_class_install_properties (object_class, LAST_PROP, properties);
+	g_object_class_install_properties (object_class, N_PROPERTIES, properties);
 
-	signals[CLOSE_CLICKED] =
+	signals[SIGNAL_CLOSE_CLICKED] =
 		g_signal_new_class_handler ("close-clicked",
 		                            G_TYPE_FROM_CLASS (klass),
 		                            G_SIGNAL_RUN_LAST,
