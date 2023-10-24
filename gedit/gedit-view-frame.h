@@ -20,8 +20,6 @@
 #ifndef GEDIT_VIEW_FRAME_H
 #define GEDIT_VIEW_FRAME_H
 
-#include <gtk/gtk.h>
-#include "gedit-document.h"
 #include "gedit-view.h"
 
 G_BEGIN_DECLS
