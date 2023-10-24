@@ -446,7 +446,7 @@ document_row_sync_tab_name_and_icon (GeditTab   *tab,
 	GeditDocument *doc;
 	GtkSourceFile *file;
 	gchar *name;
-	GdkPixbuf *pixbuf;
+	const gchar *icon_name;
 
 	doc = gedit_tab_get_document (tab);
 	name = tepl_file_get_short_name (tepl_buffer_get_file (TEPL_BUFFER (doc)));
@@ -487,11 +487,13 @@ document_row_sync_tab_name_and_icon (GeditTab   *tab,
 	}
 
 	/* Update header of the row */
-	pixbuf = _gedit_tab_get_icon (tab);
+	icon_name = _gedit_tab_get_icon_name (tab);
 
-	if (pixbuf)
+	if (icon_name != NULL)
 	{
-		gtk_image_set_from_pixbuf (GTK_IMAGE (document_row->image), pixbuf);
+		gtk_image_set_from_icon_name (GTK_IMAGE (document_row->image),
+					      icon_name,
+					      GTK_ICON_SIZE_MENU);
 	}
 	else
 	{
