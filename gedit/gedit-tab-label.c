@@ -27,7 +27,7 @@ struct _GeditTabLabel
 	/* Weak ref */
 	GeditTab *tab;
 
-	GtkWidget *spinner;
+	GtkSpinner *spinner;
 	GtkWidget *icon;
 	GtkWidget *label;
 	GtkWidget *close_button;
@@ -162,8 +162,8 @@ sync_state (GeditTab      *tab,
 	{
 		gtk_widget_hide (tab_label->icon);
 
-		gtk_widget_show (tab_label->spinner);
-		gtk_spinner_start (GTK_SPINNER (tab_label->spinner));
+		gtk_widget_show (GTK_WIDGET (tab_label->spinner));
+		gtk_spinner_start (tab_label->spinner);
 	}
 	else
 	{
@@ -185,8 +185,8 @@ sync_state (GeditTab      *tab,
 			gtk_widget_hide (tab_label->icon);
 		}
 
-		gtk_spinner_stop (GTK_SPINNER (tab_label->spinner));
-		gtk_widget_hide (tab_label->spinner);
+		gtk_spinner_stop (tab_label->spinner);
+		gtk_widget_hide (GTK_WIDGET (tab_label->spinner));
 	}
 
 	/* sync tip since encoding is known only after load/save end */
