@@ -119,7 +119,11 @@ gedit_utils_location_get_dirname_for_display (GFile *location)
 		mount_name = g_mount_get_name (mount);
 		g_object_unref (mount);
 
-		/* obtain the "path" part of the uri */
+		/* Obtain the "path" part of the uri.
+		 * Note that g_uri_split() can give a different result for path,
+		 * especially when tepl_utils_decode_uri() returns a NULL path.
+		 * So it needs further work to get rid of tepl_utils_decode_uri().
+		 */
 		tepl_utils_decode_uri (uri,
 				       NULL, NULL,
 				       NULL, NULL,
