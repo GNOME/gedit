@@ -167,7 +167,7 @@ get_detailed_error_messages (GFile         *location,
 
 		if (file_uri != NULL)
 		{
-			uri_decoded = tepl_utils_decode_uri (file_uri, NULL, NULL, &hn, NULL, NULL);
+			uri_decoded = g_uri_split_network (file_uri, G_URI_FLAGS_NONE, NULL, &hn, NULL, NULL);
 		}
 
 		if (uri_decoded && hn != NULL)
