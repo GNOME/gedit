@@ -1419,37 +1419,15 @@ gedit_tab_get_document (GeditTab *tab)
 	return GEDIT_DOCUMENT (gtk_text_view_get_buffer (GTK_TEXT_VIEW (view)));
 }
 
-#define MAX_DOC_NAME_LENGTH 40
-
 gchar *
 _gedit_tab_get_name (GeditTab *tab)
 {
 	GeditDocument *doc;
-	gchar *name;
-	gchar *docname;
-	gchar *tab_name;
 
 	g_return_val_if_fail (GEDIT_IS_TAB (tab), NULL);
 
 	doc = gedit_tab_get_document (tab);
-	name = tepl_file_get_short_name (tepl_buffer_get_file (TEPL_BUFFER (doc)));
-
-	/* Truncate the name so it doesn't get insanely wide. */
-	docname = tepl_utils_str_middle_truncate (name, MAX_DOC_NAME_LENGTH);
-
-	if (gtk_text_buffer_get_modified (GTK_TEXT_BUFFER (doc)))
-	{
-		tab_name = g_strdup_printf ("*%s", docname);
-	}
-	else
-	{
-		tab_name = g_strdup (docname);
-	}
-
-	g_free (docname);
-	g_free (name);
-
-	return tab_name;
+	return tepl_buffer_get_short_title (TEPL_BUFFER (doc));
 }
 
 gchar *
