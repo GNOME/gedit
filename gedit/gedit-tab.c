@@ -1530,6 +1530,36 @@ _gedit_tab_get_tooltip (GeditTab *tab)
 	return tip;
 }
 
+const gchar *
+_gedit_tab_get_icon_name (GeditTab *tab)
+{
+	g_return_val_if_fail (GEDIT_IS_TAB (tab), NULL);
+
+	switch (tab->state)
+	{
+		case GEDIT_TAB_STATE_PRINTING:
+			return "printer-printing-symbolic";
+
+		case GEDIT_TAB_STATE_SHOWING_PRINT_PREVIEW:
+			return "printer-symbolic";
+
+		case GEDIT_TAB_STATE_LOADING_ERROR:
+		case GEDIT_TAB_STATE_REVERTING_ERROR:
+		case GEDIT_TAB_STATE_SAVING_ERROR:
+		case GEDIT_TAB_STATE_GENERIC_ERROR:
+			return "dialog-error-symbolic";
+
+		case GEDIT_TAB_STATE_EXTERNALLY_MODIFIED_NOTIFICATION:
+			return "dialog-warning-symbolic";
+
+		default:
+			break;
+	}
+
+	return NULL;
+}
+
+/* TODO: try to get rid of this function and use _gedit_tab_get_icon_name() instead. */
 GdkPixbuf *
 _gedit_tab_get_icon (GeditTab *tab)
 {
@@ -1538,30 +1568,7 @@ _gedit_tab_get_icon (GeditTab *tab)
 
 	g_return_val_if_fail (GEDIT_IS_TAB (tab), NULL);
 
-	switch (tab->state)
-	{
-		case GEDIT_TAB_STATE_PRINTING:
-			icon_name = "printer-printing-symbolic";
-			break;
-
-		case GEDIT_TAB_STATE_SHOWING_PRINT_PREVIEW:
-			icon_name = "printer-symbolic";
-			break;
-
-		case GEDIT_TAB_STATE_LOADING_ERROR:
-		case GEDIT_TAB_STATE_REVERTING_ERROR:
-		case GEDIT_TAB_STATE_SAVING_ERROR:
-		case GEDIT_TAB_STATE_GENERIC_ERROR:
-			icon_name = "dialog-error-symbolic";
-			break;
-
-		case GEDIT_TAB_STATE_EXTERNALLY_MODIFIED_NOTIFICATION:
-			icon_name = "dialog-warning-symbolic";
-			break;
-
-		default:
-			icon_name = NULL;
-	}
+	icon_name = _gedit_tab_get_icon_name (tab);
 
 	if (icon_name != NULL)
 	{

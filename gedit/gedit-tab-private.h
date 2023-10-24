@@ -32,6 +32,8 @@ gchar 		*_gedit_tab_get_name			(GeditTab                *tab);
 
 gchar 		*_gedit_tab_get_tooltip			(GeditTab                *tab);
 
+const gchar	*_gedit_tab_get_icon_name		(GeditTab                *tab);
+
 GdkPixbuf 	*_gedit_tab_get_icon			(GeditTab                *tab);
 
 void		 _gedit_tab_revert			(GeditTab                *tab);
