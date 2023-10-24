@@ -115,21 +115,28 @@ update_tooltip (GeditTabLabel *tab_label)
 }
 
 static void
-sync_name (GeditTab      *tab,
-	   GParamSpec    *pspec,
-	   GeditTabLabel *tab_label)
+update_name (GeditTabLabel *tab_label)
 {
 	gchar *str;
 
-	g_return_if_fail (tab == tab_label->tab);
+	if (tab_label->tab == NULL)
+	{
+		return;
+	}
 
-	str = _gedit_tab_get_name (tab);
-	g_return_if_fail (str != NULL);
-
+	str = _gedit_tab_get_name (tab_label->tab);
 	gtk_label_set_text (tab_label->label, str);
 	g_free (str);
 
 	update_tooltip (tab_label);
+}
+
+static void
+tab_name_notify_cb (GeditTab      *tab,
+		    GParamSpec    *pspec,
+		    GeditTabLabel *tab_label)
+{
+	update_name (tab_label);
 }
 
 static void
@@ -210,20 +217,20 @@ gedit_tab_label_constructed (GObject *object)
 		return;
 	}
 
-	sync_name (tab_label->tab, NULL, tab_label);
+	update_name (tab_label);
 	sync_state (tab_label->tab, NULL, tab_label);
 
 	g_signal_connect_object (tab_label->tab,
 				 "notify::name",
-				 G_CALLBACK (sync_name),
+				 G_CALLBACK (tab_name_notify_cb),
 				 tab_label,
-				 0);
+				 G_CONNECT_DEFAULT);
 
 	g_signal_connect_object (tab_label->tab,
 				 "notify::state",
 				 G_CALLBACK (sync_state),
 				 tab_label,
-				 0);
+				 G_CONNECT_DEFAULT);
 }
 
 static void
