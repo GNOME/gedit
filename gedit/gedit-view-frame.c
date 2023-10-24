@@ -19,16 +19,9 @@
  */
 
 #include "gedit-view-frame.h"
-
-#include <gtksourceview/gtksource.h>
-#include <gdk/gdkkeysyms.h>
 #include <glib/gi18n.h>
-#include <stdlib.h>
-
-#include "gedit-debug.h"
-#include "gedit-utils.h"
-#include "gedit-settings.h"
 #include "libgd/gd.h"
+#include "gedit-debug.h"
 
 #define FLUSH_TIMEOUT_DURATION 30 /* in seconds */
 
