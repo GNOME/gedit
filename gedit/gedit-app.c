@@ -73,7 +73,7 @@ typedef struct
 	GApplicationCommandLine *command_line;
 } GeditAppPrivate;
 
-static const GOptionEntry options[] =
+static const GOptionEntry option_entries[] =
 {
 	/* Version */
 	{
@@ -1274,7 +1274,7 @@ gedit_app_init (GeditApp *app)
 	g_set_application_name ("gedit");
 	gtk_window_set_default_icon_name ("org.gnome.gedit");
 
-	g_application_add_main_option_entries (G_APPLICATION (app), options);
+	g_application_add_main_option_entries (G_APPLICATION (app), option_entries);
 
 	tepl_app = tepl_application_get_from_gtk_application (GTK_APPLICATION (app));
 	tepl_application_handle_metadata (tepl_app);
