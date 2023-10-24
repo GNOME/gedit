@@ -106,7 +106,6 @@ static void
 gedit_view_init (GeditView *view)
 {
 	GtkTargetList *target_list;
-	GtkStyleContext *style_context;
 
 	gedit_debug (DEBUG_VIEW);
 
@@ -138,10 +137,6 @@ gedit_view_init (GeditView *view)
 			  "notify::buffer",
 			  G_CALLBACK (buffer_notify_cb),
 			  NULL);
-
-	/* CSS stuff */
-	style_context = gtk_widget_get_style_context (GTK_WIDGET (view));
-	gtk_style_context_add_class (style_context, "gedit-view");
 
 	/* Useful for on screen keyboards */
 	gtk_text_view_set_input_hints (GTK_TEXT_VIEW (view), GTK_INPUT_HINT_WORD_COMPLETION);
