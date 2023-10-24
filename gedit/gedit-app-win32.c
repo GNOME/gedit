@@ -52,11 +52,11 @@ gedit_app_win32_get_help_uri_impl (GeditApp    *app,
 
 	if (link_id_within_user_manual != NULL)
 	{
-		return g_strdup_printf ("https://gedit-technology.net/user-manuals/gedit/%s",
+		return g_strdup_printf ("https://gedit-technology.github.io/user-manuals/gedit/%s",
 		                        link_id_within_user_manual);
 	}
 
-	return g_strdup ("https://gedit-technology.net/user-manuals/gedit/");
+	return g_strdup ("https://gedit-technology.github.io/user-manuals/gedit/");
 }
 
 static void
