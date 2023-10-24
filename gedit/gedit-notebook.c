@@ -231,15 +231,15 @@ gedit_notebook_switch_page (GtkNotebook *notebook,
 
 	if (!priv->ignore_focused_page_update)
 	{
-		gint page_num;
+		gint new_page_num;
 
 		/* Get again page_num and page, the signal handler may have
 		 * changed them.
 		 */
-		page_num = gtk_notebook_get_current_page (notebook);
-		if (page_num != -1)
+		new_page_num = gtk_notebook_get_current_page (notebook);
+		if (new_page_num != -1)
 		{
-			GtkWidget *page = gtk_notebook_get_nth_page (notebook, page_num);
+			GtkWidget *page = gtk_notebook_get_nth_page (notebook, new_page_num);
 			g_assert (page != NULL);
 
 			/* Remove the old page, we dont want to grow unnecessarily
