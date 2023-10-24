@@ -153,17 +153,18 @@ update_close_button_sensitivity (GeditTabLabel *tab_label)
 }
 
 static void
-sync_state (GeditTab      *tab,
-	    GParamSpec    *pspec,
-	    GeditTabLabel *tab_label)
+update_state (GeditTabLabel *tab_label)
 {
 	GeditTabState state;
 
-	g_return_if_fail (tab == tab_label->tab);
+	if (tab_label->tab == NULL)
+	{
+		return;
+	}
 
 	update_close_button_sensitivity (tab_label);
 
-	state = gedit_tab_get_state (tab);
+	state = gedit_tab_get_state (tab_label->tab);
 
 	if ((state == GEDIT_TAB_STATE_LOADING) ||
 	    (state == GEDIT_TAB_STATE_SAVING) ||
@@ -178,15 +179,14 @@ sync_state (GeditTab      *tab,
 	{
 		GdkPixbuf *pixbuf;
 
-		pixbuf = _gedit_tab_get_icon (tab);
+		pixbuf = _gedit_tab_get_icon (tab_label->tab);
 
 		if (pixbuf != NULL)
 		{
 			gtk_image_set_from_pixbuf (tab_label->icon, pixbuf);
+			gtk_widget_show (GTK_WIDGET (tab_label->icon));
 
 			g_clear_object (&pixbuf);
-
-			gtk_widget_show (GTK_WIDGET (tab_label->icon));
 		}
 		else
 		{
@@ -202,6 +202,14 @@ sync_state (GeditTab      *tab,
 }
 
 static void
+tab_state_notify_cb (GeditTab      *tab,
+		     GParamSpec    *pspec,
+		     GeditTabLabel *tab_label)
+{
+	update_state (tab_label);
+}
+
+static void
 gedit_tab_label_constructed (GObject *object)
 {
 	GeditTabLabel *tab_label = GEDIT_TAB_LABEL (object);
@@ -213,12 +221,11 @@ gedit_tab_label_constructed (GObject *object)
 
 	if (tab_label->tab == NULL)
 	{
-		g_critical ("The tab label was not properly constructed");
 		return;
 	}
 
 	update_name (tab_label);
-	sync_state (tab_label->tab, NULL, tab_label);
+	update_state (tab_label);
 
 	g_signal_connect_object (tab_label->tab,
 				 "notify::name",
@@ -228,7 +235,7 @@ gedit_tab_label_constructed (GObject *object)
 
 	g_signal_connect_object (tab_label->tab,
 				 "notify::state",
-				 G_CALLBACK (sync_state),
+				 G_CALLBACK (tab_state_notify_cb),
 				 tab_label,
 				 G_CONNECT_DEFAULT);
 }
