@@ -47,7 +47,7 @@ warning_cflags = [
   '-Wno-sign-compare',
 
   '-Wstrict-aliasing',
-  #'-Wshadow',
+  '-Wshadow',
   '-Winline',
   '-Wpacked',
   '-Wmissing-format-attribute',
