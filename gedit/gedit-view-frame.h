@@ -1,5 +1,4 @@
 /*
- * gedit-view-frame.h
  * This file is part of gedit
  *
  * Copyright (C) 2010 - Ignacio Casal Quinteiro
@@ -28,17 +27,20 @@
 G_BEGIN_DECLS
 
 #define GEDIT_TYPE_VIEW_FRAME (gedit_view_frame_get_type ())
-G_DECLARE_FINAL_TYPE (GeditViewFrame, gedit_view_frame, GEDIT, VIEW_FRAME, GtkOverlay)
 
-GeditViewFrame	*gedit_view_frame_new			(void);
+G_DECLARE_FINAL_TYPE (GeditViewFrame, gedit_view_frame,
+		      GEDIT, VIEW_FRAME,
+		      GtkOverlay)
 
-GeditView	*gedit_view_frame_get_view		(GeditViewFrame *frame);
+GeditViewFrame *	gedit_view_frame_new			(void);
 
-void		 gedit_view_frame_popup_search		(GeditViewFrame *frame);
+GeditView *		gedit_view_frame_get_view		(GeditViewFrame *frame);
 
-void		 gedit_view_frame_popup_goto_line	(GeditViewFrame *frame);
+void			gedit_view_frame_popup_search		(GeditViewFrame *frame);
 
-void		 gedit_view_frame_clear_search		(GeditViewFrame *frame);
+void			gedit_view_frame_popup_goto_line	(GeditViewFrame *frame);
+
+void			gedit_view_frame_clear_search		(GeditViewFrame *frame);
 
 G_END_DECLS
 
