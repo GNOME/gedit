@@ -177,16 +177,14 @@ update_state (GeditTabLabel *tab_label)
 	}
 	else
 	{
-		GdkPixbuf *pixbuf;
+		const gchar *icon_name;
 
-		pixbuf = _gedit_tab_get_icon (tab_label->tab);
+		icon_name = _gedit_tab_get_icon_name (tab_label->tab);
 
-		if (pixbuf != NULL)
+		if (icon_name != NULL)
 		{
-			gtk_image_set_from_pixbuf (tab_label->icon, pixbuf);
+			gtk_image_set_from_icon_name (tab_label->icon, icon_name, GTK_ICON_SIZE_MENU);
 			gtk_widget_show (GTK_WIDGET (tab_label->icon));
-
-			g_clear_object (&pixbuf);
 		}
 		else
 		{
