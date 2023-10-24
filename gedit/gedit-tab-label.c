@@ -95,7 +95,7 @@ gedit_tab_label_get_property (GObject    *object,
 }
 
 static void
-close_button_clicked_cb (GtkWidget     *widget,
+close_button_clicked_cb (GtkButton     *close_button,
 			 GeditTabLabel *tab_label)
 {
 	g_signal_emit (tab_label, signals[SIGNAL_CLOSE_CLICKED], 0);
@@ -267,9 +267,9 @@ gedit_tab_label_init (GeditTabLabel *tab_label)
 	gtk_widget_init_template (GTK_WIDGET (tab_label));
 
 	g_signal_connect (tab_label->close_button,
-	                  "clicked",
-	                  G_CALLBACK (close_button_clicked_cb),
-	                  tab_label);
+			  "clicked",
+			  G_CALLBACK (close_button_clicked_cb),
+			  tab_label);
 }
 
 GtkWidget *
