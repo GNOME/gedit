@@ -6,7 +6,7 @@ help.
 
 If you are interested in helping us to improve gedit, you can contact the
 developers, see the “Getting in Touch” section on the
-[gedit wiki page](https://wiki.gnome.org/Apps/Gedit).
+[gedit web page](https://gedit-technology.github.io/apps/gedit/).
 
 Contributions other than software development
 ---------------------------------------------

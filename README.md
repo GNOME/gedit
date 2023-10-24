@@ -8,7 +8,8 @@ that desktop environment.
 You can use it to write simple notes and documents, or you can enable more
 advanced features that are useful for software development.
 
-See the [gedit website](https://wiki.gnome.org/Apps/Gedit) for more information.
+See the [gedit website](https://gedit-technology.github.io/apps/gedit/) for more
+information.
 
 License
 -------
@@ -32,7 +33,7 @@ How to report bugs
 ------------------
 
 Please read
-[the wiki page on how to report bugs](https://wiki.gnome.org/Apps/Gedit/ReportingBugs),
+[the web page on how to report bugs](https://gedit-technology.github.io/apps/gedit/reporting-bugs.html),
 it contains a list of frequently reported bugs and a link to the bug
 tracker.
 
