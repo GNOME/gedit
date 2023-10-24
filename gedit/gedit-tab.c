@@ -569,33 +569,18 @@ gedit_tab_set_state (GeditTab      *tab,
 }
 
 static void
-document_location_notify_handler (GtkSourceFile *file,
-				  GParamSpec    *pspec,
-				  GeditTab      *tab)
+document_modified_changed_cb (GtkTextBuffer *document,
+			      GeditTab      *tab)
 {
-	gedit_debug (DEBUG_TAB);
-
-	/* Notify the change in the location */
-	g_object_notify_by_pspec (G_OBJECT (tab), properties[PROP_NAME]);
-}
-
-static void
-document_shortname_notify_handler (TeplFile   *file,
-				   GParamSpec *pspec,
-				   GeditTab   *tab)
-{
-	gedit_debug (DEBUG_TAB);
-
-	/* Notify the change in the shortname */
-	g_object_notify_by_pspec (G_OBJECT (tab), properties[PROP_NAME]);
-}
-
-static void
-document_modified_changed (GtkTextBuffer *document,
-			   GeditTab      *tab)
-{
-	g_object_notify_by_pspec (G_OBJECT (tab), properties[PROP_NAME]);
 	g_object_notify_by_pspec (G_OBJECT (tab), properties[PROP_CAN_CLOSE]);
+}
+
+static void
+buffer_short_title_notify_cb (TeplBuffer *buffer,
+			      GParamSpec *pspec,
+			      GeditTab   *tab)
+{
+	g_object_notify_by_pspec (G_OBJECT (tab), properties[PROP_NAME]);
 }
 
 /* This function must be used carefully, and should be replaced by
@@ -1308,8 +1293,6 @@ gedit_tab_init (GeditTab *tab)
 	gint auto_save_interval;
 	GeditDocument *doc;
 	GeditView *view;
-	GtkSourceFile *file;
-	TeplFile *tepl_file;
 
 	tab->state = GEDIT_TAB_STATE_NORMAL;
 
@@ -1339,25 +1322,18 @@ gedit_tab_init (GeditTab *tab)
 	doc = gedit_tab_get_document (tab);
 	g_object_set_data (G_OBJECT (doc), GEDIT_TAB_KEY, tab);
 
-	file = gedit_document_get_file (doc);
-	tepl_file = tepl_buffer_get_file (TEPL_BUFFER (doc));
-
-	g_signal_connect_object (file,
-				 "notify::location",
-				 G_CALLBACK (document_location_notify_handler),
+	g_signal_connect_object (doc,
+				 "modified-changed",
+				 G_CALLBACK (document_modified_changed_cb),
 				 tab,
-				 0);
+				 G_CONNECT_DEFAULT);
 
-	g_signal_connect_object (tepl_file,
-				 "notify::short-name",
-				 G_CALLBACK (document_shortname_notify_handler),
+	g_signal_connect_object (doc,
+				 "notify::tepl-short-title",
+				 G_CALLBACK (buffer_short_title_notify_cb),
 				 tab,
-				 0);
+				 G_CONNECT_DEFAULT);
 
-	g_signal_connect (doc,
-			  "modified_changed",
-			  G_CALLBACK (document_modified_changed),
-			  tab);
 
 	view = gedit_tab_get_view (tab);
 
