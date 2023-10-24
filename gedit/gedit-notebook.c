@@ -239,15 +239,15 @@ gedit_notebook_switch_page (GtkNotebook *notebook,
 		new_page_num = gtk_notebook_get_current_page (notebook);
 		if (new_page_num != -1)
 		{
-			GtkWidget *page = gtk_notebook_get_nth_page (notebook, new_page_num);
-			g_assert (page != NULL);
+			GtkWidget *new_page = gtk_notebook_get_nth_page (notebook, new_page_num);
+			g_assert (new_page != NULL);
 
-			/* Remove the old page, we dont want to grow unnecessarily
+			/* Remove the old item, we don't want to grow unnecessarily
 			 * the list.
 			 */
-			priv->focused_pages = g_list_remove (priv->focused_pages, page);
+			priv->focused_pages = g_list_remove (priv->focused_pages, new_page);
 
-			priv->focused_pages = g_list_prepend (priv->focused_pages, page);
+			priv->focused_pages = g_list_prepend (priv->focused_pages, new_page);
 		}
 	}
 
