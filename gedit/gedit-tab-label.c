@@ -24,9 +24,7 @@ struct _GeditTabLabel
 {
 	GtkBox parent_instance;
 
-	/* Unowned.
-	 * TODO: change to weak ref.
-	 */
+	/* Weak ref */
 	GeditTab *tab;
 
 	GtkWidget *spinner;
@@ -65,7 +63,7 @@ gedit_tab_label_set_property (GObject      *object,
 	{
 		case PROP_TAB:
 			g_return_if_fail (tab_label->tab == NULL);
-			tab_label->tab = GEDIT_TAB (g_value_get_object (value));
+			g_set_weak_pointer (&tab_label->tab, GEDIT_TAB (g_value_get_object (value)));
 			break;
 
 		default:
@@ -228,6 +226,16 @@ gedit_tab_label_constructed (GObject *object)
 }
 
 static void
+gedit_tab_label_dispose (GObject *object)
+{
+	GeditTabLabel *tab_label = GEDIT_TAB_LABEL (object);
+
+	g_clear_weak_pointer (&tab_label->tab);
+
+	G_OBJECT_CLASS (gedit_tab_label_parent_class)->dispose (object);
+}
+
+static void
 gedit_tab_label_class_init (GeditTabLabelClass *klass)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
@@ -236,6 +244,7 @@ gedit_tab_label_class_init (GeditTabLabelClass *klass)
 	object_class->set_property = gedit_tab_label_set_property;
 	object_class->get_property = gedit_tab_label_get_property;
 	object_class->constructed = gedit_tab_label_constructed;
+	object_class->dispose = gedit_tab_label_dispose;
 
 	properties[PROP_TAB] =
 		g_param_spec_object ("tab",
