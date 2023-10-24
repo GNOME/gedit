@@ -24,6 +24,9 @@ struct _GeditTabLabel
 {
 	GtkBox parent_instance;
 
+	/* Unowned.
+	 * TODO: change to weak ref.
+	 */
 	GeditTab *tab;
 
 	GtkWidget *spinner;
