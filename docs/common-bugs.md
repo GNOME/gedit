@@ -28,6 +28,16 @@ the content.
 
 [GitLab issue](https://gitlab.gnome.org/GNOME/gedit/issues/365).
 
+Setup translations for all Gedit Technology modules
+---------------------------------------------------
+
+gedit relies on other modules for which translations are not yet set up, so in
+gedit you sometimes see English text mixed with translated text. We understand
+that this is important to fix, localization (l10n) is important to reach a wider
+audience.
+
+We will find a good solution, rest assured.
+
 Recently fixed
 --------------
 
