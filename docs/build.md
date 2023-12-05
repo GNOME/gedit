@@ -35,8 +35,8 @@ dependencies from source too, and it can become a complicated task if you do it
 manually.
 
 Also, during gedit development, gedit may depend on a not-yet-released
-development version of a GNOME dependency. So certain GNOME dependencies may
-need to be installed from Git.
+development version of a dependency. So certain dependencies may need to be
+installed from Git.
 
 That's why if you have difficulties installing recent enough versions of the
 dependencies, it is usually easier to use one of the tools explained in the next
@@ -51,18 +51,19 @@ There are several tools available that take care of the following:
 - Plus, for some tools: run in a container/sandbox.
 
 GNOME developers usually use one of these tools:
-- [Toolbx](https://containertoolbx.org/)
-- Or [JHBuild](https://developer.gnome.org/jhbuild/unstable/)
+- [Toolbx](https://containertoolbx.org/) (probably the easiest)
 - Or [Flatpak](https://flatpak.org/)
-- Or [BuildStream](https://buildstream.build/)
+- Or [JHBuild](https://gitlab.gnome.org/GNOME/jhbuild)
+
+General tips for gedit:
+- At the time of writing, no need to build GLib or GTK from source, taking their
+  latest stable versions are sufficient.
 
 JHBuild tips:
 - Try `ignore_suggests = True` in your jhbuildrc to have fewer dependencies to
   build (see the difference with "jhbuild list gedit"). Another solution is to
   put some modules in the skip variable in jhbuildrc.
-
-There is also [Imovo](https://github.com/gedit-technology/imovo), a more minimal
-tool.
+- Note that the moduleset for gedit may be out-of-date.
 
 Building the gedit module manually
 ----------------------------------
@@ -81,8 +82,8 @@ the gedit module from source.
 overwrite your system binaries.
 
 ```
-$ mkdir build && cd build/
-$ meson                      # Build configuration
+$ cd build/
+$ meson setup                # Build configuration
 $ ninja                      # Build
 [ Become root if necessary ]
 $ ninja install              # Installation
@@ -90,7 +91,7 @@ $ ninja install              # Installation
 
 ### Installation in a separate prefix
 
-Just change the above `meson` command by:
+Just change the above `meson setup` command by:
 ```
-$ meson --prefix /an/other/path
+$ meson setup --prefix /an/other/path
 ```
