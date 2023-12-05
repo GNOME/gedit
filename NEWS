@@ -1,10 +1,30 @@
-News in 47.alpha, 2023-xx-yy (not yet released)
+News in 47.alpha, yyyy-mm-dd (not yet released)
 ----------------------------
+Web presence:
+* New website for gedit: https://gedit-technology.github.io/apps/gedit/
+* Update URLs for gedit-technology.net -> https://gedit-technology.github.io/
+* Start to migrate away from wiki.gnome.org.
+
+Features:
 * New feature: add light/dark GTK theme variant configuration.
+* In the preferences dialog, remove the toolbar to install/uninstall color
+  schemes. Third-party color schemes are still supported, but the XML file(s)
+  need to be copied into the right directory by another means, see:
+  https://gedit-technology.github.io/developer-docs/extra/libgedit-gtksourceview/style-schemes.html
+  or also the gedit user help documentation.
+* Links to some third-party plugins.
+
+Under-the-hood changes:
 * Adapt the code for libgedit-gtksourceview API changes.
-* Update documentation for contributors.
-* Code refactorings.
+* Code refactorings and various small improvements.
 * Continue to reduce usage of *.ui files, write code instead.
+* Use newer GLib API at some places.
+* Refactor GeditTabLabel.
+* Start to refactor GeditViewFrame.
+* Add -Wshadow to the CFLAGS and fix the corresponding warnings.
+
+Misc:
+* Update documentation for contributors.
 * Translation updates.
 
 News in 46.1, 2023-08-06
