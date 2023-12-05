@@ -43,6 +43,6 @@ Recently fixed
 
 ### View does not scroll to the end of the text in some cases (text cut off)
 
-Fixed in 40.2, 41.1, 42.2 and >= 43, will normally be rolled out soon.
+Fixed in 40.2, 41.1, 42.2 and >= 43.
 
 [GitLab issue](https://gitlab.gnome.org/GNOME/gedit/issues/42).
