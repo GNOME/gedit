@@ -93,8 +93,7 @@ _gedit_cmd_help_about (GeditWindow *window)
 			       "documenters", documenters,
 			       "translator-credits", _("translator-credits"),
 			       "version", VERSION,
-			       "website", "http://www.gedit.org",
-			       "website-label", "www.gedit.org",
+			       "website", "https://gedit-technology.github.io/apps/gedit/",
 			       NULL);
 }
 
