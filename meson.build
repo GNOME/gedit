@@ -1,6 +1,6 @@
 project(
   'gedit', 'c',
-  version: '46.1',
+  version: '47.alpha',
   meson_version: '>= 0.59',
   default_options: ['warning_level=2']
 )
@@ -15,7 +15,7 @@ pkg_config = import('pkgconfig')
 python = import('python')
 fs = import('fs')
 
-api_version = '46'
+api_version = '47'
 
 #####
 # CFLAGS
