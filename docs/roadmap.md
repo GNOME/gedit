@@ -4,22 +4,27 @@ gedit roadmap
 This page contains the plans for major code changes we hope to get done in the
 future.
 
+Take care and fix the common bugs
+---------------------------------
+
+Status: **in progress**
+
+See the list in the [common-bugs.md](common-bugs.md) file.
+
 Continue to make the gedit source code more re-usable
 -----------------------------------------------------
 
 Status: **in progress** (this is an ongoing effort)
 
-Next steps:
-- Use more features from the Tepl library, and develop Tepl alongside gedit.
-  The goal is to reduce the amount of code in gedit, by having re-usable code
-  in Tepl instead.
+Develop and use the [Gedit Technology](https://gedit-technology.github.io/) set
+of libraries.
 
-Replace search & replace dialog window by an horizontal bar
------------------------------------------------------------
+Rework the search & replace UI
+------------------------------
 
 Status: **todo**
 
-To not occlude the text.
+Have an horizontal bar, to not occlude the text.
 
 Be able to quit the application with all documents saved, and restored on next start
 ------------------------------------------------------------------------------------
@@ -27,7 +32,7 @@ Be able to quit the application with all documents saved, and restored on next s
 Status: **todo**
 
 Even for unsaved and untitled files, be able to quit gedit, restart it later and
-come back to the state before with all tabs restored.
+come back to the previous state with all tabs restored.
 
 Improve the workflow for printing to paper
 ------------------------------------------
@@ -36,31 +41,16 @@ Status: **todo**
 
 Show first a preview of the file to print and do the configuration from there.
 
-Handle problem with large files or files containing very long lines
--------------------------------------------------------------------
-
-Status: **started in Tepl**
-
-See the [common-bugs.md](common-bugs.md) file.
-
 Use native file chooser dialog windows (GtkFileChooserNative)
 -------------------------------------------------------------
 
-Status: **in progress**
+Status: **todo**
 
 To have the native file chooser on MS Windows, and use the Flatpak portal.
 
-Do not allow incompatible plugins to be loaded
-----------------------------------------------
-
-Status: **todo**
-
-There are currently no checks to see if a plugin is compatible with the gedit
-version. Currently enabling a plugin can make gedit to crash.
-
-Solution: include the gedit plugin API version in the directory names where
-plugins need to be installed. Better solution: see
-[this libpeas feature request](https://bugzilla.gnome.org/show_bug.cgi?id=642694#c15).
+This task requires to rework the file loading and saving code. To have a
+different - but still user-friendly - way to choose the character encoding and
+line ending type.
 
 Avoid the need for gedit forks
 ------------------------------
