@@ -28,15 +28,19 @@ the content.
 
 [GitLab issue](https://gitlab.gnome.org/GNOME/gedit/issues/365).
 
-Setup translations for all Gedit Technology modules
----------------------------------------------------
+Untranslated text (English sentences)
+-------------------------------------
 
-gedit relies on other modules for which translations are not yet set up, so in
-gedit you sometimes see English text mixed with translated text. We understand
-that this is important to fix, localization (l10n) is important to reach a wider
-audience.
+gedit relies on other modules for which translation contribution is not yet set
+up, so in recent gedit versions you sometimes see English text mixed with
+translated text.
 
-We will find a good solution, rest assured.
+We understand that this is important to fix, localization (l10n) is important to
+reach a wider audience.
+
+In the meantime, if you are comfortable in English, we recommend that you setup
+your environment to use gedit in English. See the
+[GNU gettext](https://www.gnu.org/software/gettext/) documentation.
 
 Recently fixed
 --------------
