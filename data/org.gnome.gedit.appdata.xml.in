@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Copyright 2014 Paolo Borelli <pborelli@gnome.org> -->
-<component type="desktop">
+<component type="desktop-application">
   <id>org.gnome.gedit.desktop</id>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-2.0+</project_license>
@@ -29,8 +29,15 @@
   </screenshots>
   <url type="homepage">https://gedit-technology.github.io/apps/gedit/</url>
   <url type="bugtracker">https://gedit-technology.github.io/apps/gedit/reporting-bugs.html</url>
-  <url type="translate">https://wiki.gnome.org/TranslationProject</url>
+  <url type="vcs-browser">https://gedit-technology.github.io/apps/gedit/</url>
+  <url type="translate">https://l10n.gnome.org/module/gedit/</url>
+  <!-- developer_name tag deprecated with Appstream 1.0 -->
+  <developer_name translatable="no">The Gedit Team</developer_name>
+  <developer id="gnome.org">
+    <name translatable="no">The Gedit Team</name>
+  </developer>
   <update_contact>swilmet@gnome.org</update_contact>
+  <launchable type="desktop-id">org.gnome.gedit.desktop</launchable>
   <translation type="gettext">gedit</translation>
   <content_rating type="oars-1.1" />
   <releases>
