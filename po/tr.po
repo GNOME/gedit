@@ -17,8 +17,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gedit\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gedit/issues\n"
-"POT-Creation-Date: 2023-10-18 18:43+0000\n"
-"PO-Revision-Date: 2023-10-26 16:41+0300\n"
+"POT-Creation-Date: 2023-12-06 16:05+0000\n"
+"PO-Revision-Date: 2024-02-08 01:34+0300\n"
 "Last-Translator: Sabri Ünal <libreajans@gmail.com>\n"
 "Language-Team: Türkçe <takim@gnome.org.tr>\n"
 "Language: tr\n"
@@ -26,7 +26,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.4\n"
+"X-Generator: Poedit 3.4.2\n"
 "X-POOTLE-MTIME: 1433962102.000000\n"
 
 #: data/org.gnome.gedit.appdata.xml.in:7 data/org.gnome.gedit.desktop.in:3
@@ -301,11 +301,11 @@ msgstr ""
 
 #: data/org.gnome.gedit.gschema.xml.in:160
 msgid "Enable Syntax Highlighting"
-msgstr "Sözdizimi Vurgulamayı Etkinleştir"
+msgstr "Söz Dizimi Vurgulamayı Etkinleştir"
 
 #: data/org.gnome.gedit.gschema.xml.in:161
 msgid "Whether gedit should enable syntax highlighting."
-msgstr "gedit’in sözdizimi renklendirmeyi etkinleştirmesi."
+msgstr "gedit’in söz dizimi renklendirmeyi etkinleştirmesi."
 
 #: data/org.gnome.gedit.gschema.xml.in:165
 msgid "Enable Search Highlighting"
@@ -370,12 +370,12 @@ msgstr "Hangi tema türevi kullanılacak"
 
 #: data/org.gnome.gedit.gschema.xml.in:201
 msgid "Print Syntax Highlighting"
-msgstr "Sözdizimi Vurgulamasını Yazdır"
+msgstr "Söz Dizimi Vurgulamasını Yazdır"
 
 #: data/org.gnome.gedit.gschema.xml.in:202
 msgid "Whether gedit should print syntax highlighting when printing documents."
 msgstr ""
-"gedit’in belgeleri yazdırırken sözdizimi vurgulamasını yazdırıp "
+"gedit’in belgeleri yazdırırken söz dizimi vurgulamasını yazdırıp "
 "yazdırmayacağı."
 
 #: data/org.gnome.gedit.gschema.xml.in:206
@@ -1227,82 +1227,86 @@ msgstr "Bul ve Değiştir"
 
 #. Translators: the first %s is a file name (e.g. test.txt) the second one
 #. is a directory (e.g. ssh://master.gnome.org/home/users/paolo)
-#: gedit/gedit-tab.c:805
+#: gedit/gedit-tab.c:790
 #, c-format
 msgid "Reverting %s from %s"
 msgstr "%s dosyası %s konumundan eski durumuna döndürülüyor"
 
-#: gedit/gedit-tab.c:812
+#: gedit/gedit-tab.c:797
 #, c-format
 msgid "Reverting %s"
 msgstr "%s eski durumuna döndürülüyor"
 
 #. Translators: the first %s is a file name (e.g. test.txt) the second one
 #. is a directory (e.g. ssh://master.gnome.org/home/users/paolo)
-#: gedit/gedit-tab.c:825
+#: gedit/gedit-tab.c:810
 #, c-format
 msgid "Loading %s from %s"
 msgstr "%s dosyası %s konumundan yükleniyor"
 
-#: gedit/gedit-tab.c:832
+#: gedit/gedit-tab.c:817
 #, c-format
 msgid "Loading %s"
 msgstr "%s yükleniyor"
 
 #. Translators: the first %s is a file name (e.g. test.txt) the second one
 #. is a directory (e.g. ssh://master.gnome.org/home/users/paolo)
-#: gedit/gedit-tab.c:910
+#: gedit/gedit-tab.c:895
 #, c-format
 msgid "Saving %s to %s"
 msgstr "%s, %s konumuna kaydediliyor"
 
-#: gedit/gedit-tab.c:915
+#: gedit/gedit-tab.c:900
 #, c-format
 msgid "Saving %s"
 msgstr "%s kaydediliyor"
 
-#: gedit/gedit-tab.c:1480
+#: gedit/gedit-tab.c:1434
 #, c-format
 msgid "Error opening file %s"
 msgstr "%s dosyası açılırken hata"
 
-#: gedit/gedit-tab.c:1484
+#: gedit/gedit-tab.c:1438
 #, c-format
 msgid "Error reverting file %s"
 msgstr "%s dosyası eski durumuna döndürülürken hata"
 
-#: gedit/gedit-tab.c:1488
+#: gedit/gedit-tab.c:1442
 #, c-format
 msgid "Error saving file %s"
 msgstr "%s dosyası kaydedilirken hata"
 
-#: gedit/gedit-tab.c:1519
+#: gedit/gedit-tab.c:1473
 msgid "Name:"
 msgstr "Ad:"
 
-#: gedit/gedit-tab.c:1520
+#: gedit/gedit-tab.c:1474
 msgid "MIME Type:"
 msgstr "MIME Türü:"
 
-#: gedit/gedit-tab.c:1521
+#: gedit/gedit-tab.c:1475
 msgid "Encoding:"
 msgstr "Kodlama:"
 
+#: gedit/gedit-tab-label.c:302
+msgid "Close Document"
+msgstr "Belgeyi Kapat"
+
 #. Translators: '/ on <remote-share>'
-#: gedit/gedit-utils.c:358
+#: gedit/gedit-utils.c:362
 #, c-format
 msgid "/ on %s"
 msgstr "%s üzerinde /"
 
-#: gedit/gedit-utils.c:503
+#: gedit/gedit-utils.c:507
 msgid "Unix/Linux"
 msgstr "Unix/Linux"
 
-#: gedit/gedit-utils.c:505
+#: gedit/gedit-utils.c:509
 msgid "Mac OS Classic"
 msgstr "Klasik Mac OS"
 
-#: gedit/gedit-utils.c:507
+#: gedit/gedit-utils.c:511
 msgid "Windows"
 msgstr "Windows"
 
@@ -1310,36 +1314,36 @@ msgstr "Windows"
 #. * occurrence, and the second %d is the total number of search
 #. * occurrences.
 #.
-#: gedit/gedit-view-frame.c:668
+#: gedit/gedit-view-frame.c:658
 #, c-format
 msgid "%d of %d"
 msgstr "%d / %d"
 
 #. create "Wrap Around" menu item.
-#: gedit/gedit-view-frame.c:760
+#: gedit/gedit-view-frame.c:750
 msgid "_Wrap Around"
 msgstr "Başa _Sar"
 
 #. create "Match as Regular Expression" menu item.
-#: gedit/gedit-view-frame.c:770
+#: gedit/gedit-view-frame.c:760
 msgid "Match as _Regular Expression"
 msgstr "_Düzenli İfade Olarak Eşleştir"
 
 #. create "Match Entire Word Only" menu item.
-#: gedit/gedit-view-frame.c:784
+#: gedit/gedit-view-frame.c:774
 msgid "Match _Entire Word Only"
 msgstr "Yalnızca Tüm _Sözcüğü Eşleştir"
 
 #. create "Match Case" menu item.
-#: gedit/gedit-view-frame.c:798
+#: gedit/gedit-view-frame.c:788
 msgid "_Match Case"
 msgstr "Büyük/Küçük _Harf Eşleştir"
 
-#: gedit/gedit-view-frame.c:1023
+#: gedit/gedit-view-frame.c:1013
 msgid "String you want to search for"
 msgstr "Arama yapılacak dizge"
 
-#: gedit/gedit-view-frame.c:1035
+#: gedit/gedit-view-frame.c:1025
 msgid "Line you want to move the cursor to"
 msgstr "İmleci taşımak istediğiniz satır"
 
@@ -2035,11 +2039,11 @@ msgstr "Eklentiler"
 
 #: gedit/resources/ui/gedit-print-preferences.ui:39
 msgid "Syntax Highlighting"
-msgstr "Sözdizimi Vurgulaması"
+msgstr "Söz Dizimi Vurgulaması"
 
 #: gedit/resources/ui/gedit-print-preferences.ui:52
 msgid "Print synta_x highlighting"
-msgstr "Vurgulanan sözdizimini _yazdır"
+msgstr "Vurgulanan söz dizimini _yazdır"
 
 #: gedit/resources/ui/gedit-print-preferences.ui:85
 msgid "Line Numbers"
@@ -2185,10 +2189,6 @@ msgstr "_Geriye doğru ara"
 #: gedit/resources/ui/gedit-replace-dialog.ui:206
 msgid "Wra_p around"
 msgstr "Başa _sar"
-
-#: gedit/resources/ui/gedit-tab-label.ui:34
-msgid "Close Document"
-msgstr "Belgeyi Kapat"
 
 #: gedit/resources/ui/gedit-window.ui:110
 msgid "Hide panel"
