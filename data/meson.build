@@ -2,10 +2,10 @@ subdir('icons')
 
 install_man('gedit.1')
 
-appdata = 'org.gnome.gedit.appdata.xml'
-appdata_file = i18n.merge_file(
-  input: appdata + '.in',
-  output: appdata,
+metainfo = 'org.gnome.gedit.metainfo.xml'
+metainfo_file = i18n.merge_file(
+  input: metainfo + '.in',
+  output: metainfo,
   po_dir: '../po/',
   install: true,
   install_dir: get_option('datadir') / 'metainfo'
@@ -14,9 +14,9 @@ appdata_file = i18n.merge_file(
 appstream_util = find_program('appstream-util', required: get_option('require_all_tests'))
 if appstream_util.found()
   test(
-    'validate-appdata',
+    'validate-metainfo',
     appstream_util,
-    args: ['validate-relax', '--nonet', appdata_file]
+    args: ['validate-relax', '--nonet', metainfo_file]
   )
 endif
 
