@@ -87,14 +87,13 @@ _gedit_cmd_help_about (GeditWindow *window)
 			       "program-name", "gedit",
 			       "authors", authors,
 			       "comments", _("gedit is an easy-to-use and general-purpose text editor"),
-			       "copyright", "Copyright 1998-2023 – the gedit team",
+			       "copyright", "Copyright 1998-2024 – the gedit team",
 			       "license-type", GTK_LICENSE_GPL_2_0,
 			       "logo-icon-name", "org.gnome.gedit",
 			       "documenters", documenters,
 			       "translator-credits", _("translator-credits"),
 			       "version", VERSION,
-			       "website", "http://www.gedit.org",
-			       "website-label", "www.gedit.org",
+			       "website", "https://gedit-technology.github.io/apps/gedit/",
 			       NULL);
 }
 
