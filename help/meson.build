@@ -37,7 +37,7 @@ gedit_help_sources = [
 ]
 
 gedit_help_media = [
-  'figures/gedit.svg',
+  'figures/gedit-icon-24x24.png',
   'figures/gedit-html-snippet.png',
   'figures/gedit3-screenshot.png',
 ]
