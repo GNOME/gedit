@@ -20,9 +20,8 @@
   </enum>
 
   <enum id='org.gnome.gedit.ThemeVariant'>
-    <value nick='system' value='0'/>
-    <value nick='light' value='1'/>
-    <value nick='dark' value='2'/>
+    <value nick='light' value='0'/>
+    <value nick='dark' value='1'/>
   </enum>
 
   <schema id="org.gnome.gedit" path="/org/gnome/gedit/">
@@ -191,7 +190,7 @@
       <default>false</default>
     </key>
     <key name="theme-variant" enum="org.gnome.gedit.ThemeVariant">
-      <default>'system'</default>
+      <default>'light'</default>
       <summary>Which theme variant to use</summary>
     </key>
   </schema>

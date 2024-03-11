@@ -665,9 +665,9 @@ init_tepl_settings (void)
 					     GEDIT_SETTINGS_USE_DEFAULT_FONT,
 					     GEDIT_SETTINGS_EDITOR_FONT);
 
-	tepl_settings_handle_theme_variant (tepl_settings,
-					    ui_settings,
-					    GEDIT_SETTINGS_THEME_VARIANT);
+	tepl_settings_handle_simple_theme_variant (tepl_settings,
+						   ui_settings,
+						   GEDIT_SETTINGS_THEME_VARIANT);
 }
 
 static void

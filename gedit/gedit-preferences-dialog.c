@@ -337,8 +337,8 @@ setup_font_colors_page (GeditPreferencesDialog *dlg)
 			   font_component);
 
 	/* Theme variant */
-	theme_variant_combo_box = tepl_prefs_create_theme_variant_combo_box (ui_settings,
-									     GEDIT_SETTINGS_THEME_VARIANT);
+	theme_variant_combo_box = tepl_prefs_create_simple_theme_variant_combo_box (ui_settings,
+										    GEDIT_SETTINGS_THEME_VARIANT);
 	gtk_container_add (GTK_CONTAINER (dlg->font_and_colors_placeholder),
 			   theme_variant_combo_box);
 
