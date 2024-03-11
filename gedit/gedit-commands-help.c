@@ -89,7 +89,7 @@ _gedit_cmd_help_about (GeditWindow *window)
 			       "comments", _("gedit is an easy-to-use and general-purpose text editor"),
 			       "copyright", "Copyright 1998-2024 – the gedit team",
 			       "license-type", GTK_LICENSE_GPL_2_0,
-			       "logo-icon-name", "org.gnome.gedit",
+			       "logo-icon-name", "gedit-logo",
 			       "documenters", documenters,
 			       "translator-credits", _("translator-credits"),
 			       "version", VERSION,
