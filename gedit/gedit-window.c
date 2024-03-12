@@ -1060,7 +1060,10 @@ update_titles (GeditWindow *window)
 
 	if (tab == NULL)
 	{
-		set_titles (window, "gedit", "gedit", NULL);
+		set_titles (window,
+			    g_get_application_name (),
+			    g_get_application_name (),
+			    NULL);
 		return;
 	}
 
