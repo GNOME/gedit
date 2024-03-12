@@ -1046,8 +1046,7 @@ set_titles (GeditWindow *window,
 static void
 update_titles (GeditWindow *window)
 {
-	GeditTab *tab;
-	GeditDocument *doc = NULL;
+	GeditDocument *doc;
 	GtkSourceFile *file;
 	gchar *name;
 	gchar *dirname = NULL;
@@ -1056,9 +1055,9 @@ update_titles (GeditWindow *window)
 	gchar *subtitle = NULL;
 	gint len;
 
-	tab = gedit_window_get_active_tab (window);
+	doc = gedit_window_get_active_document (window);
 
-	if (tab == NULL)
+	if (doc == NULL)
 	{
 		set_titles (window,
 			    g_get_application_name (),
@@ -1066,9 +1065,6 @@ update_titles (GeditWindow *window)
 			    NULL);
 		return;
 	}
-
-	doc = gedit_tab_get_document (tab);
-	g_return_if_fail (doc != NULL);
 
 	file = gedit_document_get_file (doc);
 
