@@ -125,6 +125,7 @@ enum
 	SIGNAL_TAB_REMOVED,
 	SIGNAL_TABS_REORDERED,
 	SIGNAL_ACTIVE_TAB_CHANGED,
+	SIGNAL_ACTIVE_TAB_CHANGED_SIMPLE,
 	SIGNAL_ACTIVE_TAB_STATE_CHANGED,
 	N_SIGNALS
 };
@@ -515,6 +516,23 @@ gedit_window_class_init (GeditWindowClass *klass)
 			      G_TYPE_NONE,
 			      1,
 			      GEDIT_TYPE_TAB);
+
+	/**
+	 * GeditWindow::active-tab-changed-simple:
+	 * @window: the #GeditWindow emitting the signal.
+	 *
+	 * The ::active-tab-changed-simple signal is emitted when the active
+	 * #GeditTab of @window changes (including when it becomes %NULL). You
+	 * can get its value with gedit_window_get_active_tab().
+	 *
+	 * Since: 47
+	 */
+	signals[SIGNAL_ACTIVE_TAB_CHANGED_SIMPLE] =
+		g_signal_new ("active-tab-changed-simple",
+			      G_OBJECT_CLASS_TYPE (object_class),
+			      G_SIGNAL_RUN_FIRST,
+			      0, NULL, NULL, NULL,
+			      G_TYPE_NONE, 0);
 
 	signals[SIGNAL_ACTIVE_TAB_STATE_CHANGED] =
 		g_signal_new ("active-tab-state-changed",
@@ -1177,6 +1195,9 @@ tab_switched (GeditMultiNotebook *mnb,
 	sync_current_tab_actions (window, old_view, new_view);
 	update_statusbar (window, old_view, new_view);
 
+	/* FIXME: it seems that this signal is never emitted with
+	 * new_tab == NULL. So some cleanup is probably possible.
+	 */
 	if (new_tab == NULL || window->priv->dispose_has_run)
 	{
 		return;
@@ -1184,10 +1205,8 @@ tab_switched (GeditMultiNotebook *mnb,
 
 	update_actions_sensitivity (window);
 
-	g_signal_emit (G_OBJECT (window),
-		       signals[SIGNAL_ACTIVE_TAB_CHANGED],
-		       0,
-		       new_tab);
+	g_signal_emit (G_OBJECT (window), signals[SIGNAL_ACTIVE_TAB_CHANGED], 0, new_tab);
+	g_signal_emit (G_OBJECT (window), signals[SIGNAL_ACTIVE_TAB_CHANGED_SIMPLE], 0);
 }
 
 static void
@@ -1829,6 +1848,8 @@ on_tab_removed (GeditMultiNotebook *multi,
 		gtk_widget_hide (GTK_WIDGET (window->priv->line_column_indicator));
 		gtk_widget_hide (GTK_WIDGET (window->priv->tab_width_button));
 		gtk_widget_hide (GTK_WIDGET (window->priv->language_button));
+
+		g_signal_emit (G_OBJECT (window), signals[SIGNAL_ACTIVE_TAB_CHANGED_SIMPLE], 0);
 	}
 
 	if (!window->priv->dispose_has_run)
