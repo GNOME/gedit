@@ -123,6 +123,14 @@ _gedit_window_titles_init (GeditWindowTitles *titles)
 	titles->priv = _gedit_window_titles_get_instance_private (titles);
 }
 
+static void
+active_tab_changed_cb (GeditWindow       *window,
+		       GeditTab          *tab,
+		       GeditWindowTitles *titles)
+{
+	_gedit_window_titles_update (titles);
+}
+
 GeditWindowTitles *
 _gedit_window_titles_new (GeditWindow *window)
 {
@@ -133,6 +141,12 @@ _gedit_window_titles_new (GeditWindow *window)
 	titles = g_object_new (GEDIT_TYPE_WINDOW_TITLES, NULL);
 
 	g_set_weak_pointer (&titles->priv->window, window);
+
+	g_signal_connect_object (titles->priv->window,
+				 "active-tab-changed",
+				 G_CALLBACK (active_tab_changed_cb),
+				 titles,
+				 G_CONNECT_DEFAULT);
 
 	return titles;
 }

@@ -1166,9 +1166,10 @@ tab_switched (GeditMultiNotebook *mnb,
 	update_statusbar (window, old_view, new_view);
 
 	if (new_tab == NULL || window->priv->dispose_has_run)
+	{
 		return;
+	}
 
-	_gedit_window_titles_update (window->priv->window_titles);
 	update_actions_sensitivity (window);
 
 	g_signal_emit (G_OBJECT (window),
