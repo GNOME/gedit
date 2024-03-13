@@ -495,6 +495,17 @@ gedit_window_class_init (GeditWindowClass *klass)
 			      G_TYPE_NONE,
 			      0);
 
+	/**
+	 * GeditWindow::active-tab-changed:
+	 * @window: the #GeditWindow emitting the signal.
+	 * @tab: the new active #GeditTab.
+	 *
+	 * The ::active-tab-changed signal is emitted when the active #GeditTab
+	 * of @window changes, but only when @tab is not %NULL.
+	 *
+	 * You need to use another signal to be notified when the active tab
+	 * becomes %NULL.
+	 */
 	signals[SIGNAL_ACTIVE_TAB_CHANGED] =
 		g_signal_new ("active-tab-changed",
 			      G_OBJECT_CLASS_TYPE (object_class),
@@ -1157,10 +1168,11 @@ tab_switched (GeditMultiNotebook *mnb,
 	      GeditTab           *new_tab,
 	      GeditWindow        *window)
 {
-	GeditView *old_view, *new_view;
+	GeditView *old_view;
+	GeditView *new_view;
 
-	old_view = old_tab ? gedit_tab_get_view (old_tab) : NULL;
-	new_view = new_tab ? gedit_tab_get_view (new_tab) : NULL;
+	old_view = old_tab != NULL ? gedit_tab_get_view (old_tab) : NULL;
+	new_view = new_tab != NULL ? gedit_tab_get_view (new_tab) : NULL;
 
 	sync_current_tab_actions (window, old_view, new_view);
 	update_statusbar (window, old_view, new_view);
