@@ -71,6 +71,7 @@ libgedit_private_headers = [
   'gedit-tab-label.h',
   'gedit-view-frame.h',
   'gedit-window-private.h',
+  'gedit-window-titles.h',
 ]
 
 libgedit_private_sources = [
@@ -109,6 +110,7 @@ libgedit_private_sources = [
   'gedit-side-panel.c',
   'gedit-tab-label.c',
   'gedit-view-frame.c',
+  'gedit-window-titles.c',
 ]
 
 libgedit_link_args = []
