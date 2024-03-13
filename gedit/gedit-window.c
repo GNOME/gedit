@@ -1336,7 +1336,6 @@ sync_name (GeditTab    *tab,
 {
 	if (tab == gedit_window_get_active_tab (window))
 	{
-		_gedit_window_titles_update (window->priv->window_titles);
 		update_actions_sensitivity (window);
 	}
 }
@@ -1646,8 +1645,6 @@ readonly_changed (GtkSourceFile *file,
 		  GeditWindow   *window)
 {
 	update_actions_sensitivity (window);
-
-	sync_name (gedit_window_get_active_tab (window), NULL, window);
 
 	peas_extension_set_foreach (window->priv->extensions,
 	                            (PeasExtensionSetForeachFunc) extension_update_state,
