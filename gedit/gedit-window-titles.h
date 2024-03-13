@@ -42,8 +42,6 @@ const gchar *		_gedit_window_titles_get_title		(GeditWindowTitles *titles);
 
 const gchar *		_gedit_window_titles_get_subtitle	(GeditWindowTitles *titles);
 
-void			_gedit_window_titles_update		(GeditWindowTitles *titles);
-
 G_END_DECLS
 
 #endif /* GEDIT_WINDOW_TITLES_H */
