@@ -1032,8 +1032,6 @@ set_titles (GeditWindow *window,
 	    const gchar *title,
 	    const gchar *subtitle)
 {
-	gedit_app_set_window_title (GEDIT_APP (g_application_get_default ()), window, single_title);
-
 	if (window->priv->headerbar != NULL)
 	{
 		gtk_header_bar_set_title (GTK_HEADER_BAR (window->priv->headerbar), title);
@@ -2505,6 +2503,41 @@ init_amtk_application_window (GeditWindow *gedit_window)
 	amtk_application_window_set_statusbar (amtk_window, GTK_STATUSBAR (gedit_window->priv->statusbar));
 }
 
+static void
+update_single_title (GeditWindow *window)
+{
+	const gchar *single_title;
+
+	single_title = _gedit_window_titles_get_single_title (window->priv->window_titles);
+
+	gedit_app_set_window_title (GEDIT_APP (g_application_get_default ()),
+				    window,
+				    single_title);
+}
+
+static void
+single_title_notify_cb (GeditWindowTitles *window_titles,
+			GParamSpec        *pspec,
+			GeditWindow       *window)
+{
+	update_single_title (window);
+}
+
+static void
+init_window_titles (GeditWindow *window)
+{
+	g_return_if_fail (window->priv->window_titles == NULL);
+	window->priv->window_titles = _gedit_window_titles_new (window);
+
+	g_signal_connect_object (window->priv->window_titles,
+				 "notify::single-title",
+				 G_CALLBACK (single_title_notify_cb),
+				 window,
+				 G_CONNECT_DEFAULT);
+
+	update_single_title (window);
+}
+
 #if GEDIT_HAS_HEADERBAR
 static void
 create_side_headerbar (GeditWindow *window)
@@ -2626,7 +2659,7 @@ gedit_window_init (GeditWindow *window)
 
 	init_amtk_application_window (window);
 
-	window->priv->window_titles = _gedit_window_titles_new (window);
+	init_window_titles (window);
 
 #if GEDIT_HAS_HEADERBAR
 	create_titlebar (window);
