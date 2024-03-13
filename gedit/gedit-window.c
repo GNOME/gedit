@@ -1027,135 +1027,6 @@ overwrite_mode_changed (GtkTextView *view,
 }
 
 static void
-set_titles (GeditWindow *window,
-	    const gchar *single_title,
-	    const gchar *title,
-	    const gchar *subtitle)
-{
-	/* TODO: migrate to GeditWindowTitles. */
-}
-
-#define MAX_TITLE_LENGTH 100
-
-static void
-update_titles (GeditWindow *window)
-{
-	GeditDocument *doc;
-	GtkSourceFile *file;
-	gchar *name;
-	gchar *dirname = NULL;
-	gchar *main_title = NULL;
-	gchar *title = NULL;
-	gchar *subtitle = NULL;
-	gint len;
-
-	doc = gedit_window_get_active_document (window);
-
-	if (doc == NULL)
-	{
-		set_titles (window,
-			    g_get_application_name (),
-			    g_get_application_name (),
-			    NULL);
-		return;
-	}
-
-	file = gedit_document_get_file (doc);
-
-	name = tepl_file_get_short_name (tepl_buffer_get_file (TEPL_BUFFER (doc)));
-	len = g_utf8_strlen (name, -1);
-
-	/* if the name is awfully long, truncate it and be done with it,
-	 * otherwise also show the directory (ellipsized if needed)
-	 */
-	if (len > MAX_TITLE_LENGTH)
-	{
-		gchar *tmp;
-
-		tmp = tepl_utils_str_middle_truncate (name,
-						      MAX_TITLE_LENGTH);
-		g_free (name);
-		name = tmp;
-	}
-	else
-	{
-		GFile *location = gtk_source_file_get_location (file);
-
-		if (location != NULL)
-		{
-			gchar *str = gedit_utils_location_get_dirname_for_display (location);
-
-			/* use the remaining space for the dir, but use a min of 20 chars
-			 * so that we do not end up with a dirname like "(a...b)".
-			 * This means that in the worst case when the filename is long 99
-			 * we have a title long 99 + 20, but I think it's a rare enough
-			 * case to be acceptable. It's justa darn title afterall :)
-			 */
-			dirname = tepl_utils_str_middle_truncate (str,
-								  MAX (20, MAX_TITLE_LENGTH - len));
-			g_free (str);
-		}
-	}
-
-	if (gtk_text_buffer_get_modified (GTK_TEXT_BUFFER (doc)))
-	{
-		gchar *tmp_name;
-
-		tmp_name = g_strdup_printf ("*%s", name);
-		g_free (name);
-
-		name = tmp_name;
-	}
-
-	if (gtk_source_file_is_readonly (file))
-	{
-		title = g_strdup_printf ("%s [%s]",
-		                         name, _("Read-Only"));
-
-		if (dirname != NULL)
-		{
-			main_title = g_strdup_printf ("%s [%s] (%s) - gedit",
-			                              name,
-			                              _("Read-Only"),
-			                              dirname);
-			subtitle = dirname;
-		}
-		else
-		{
-			main_title = g_strdup_printf ("%s [%s] - gedit",
-			                              name,
-			                              _("Read-Only"));
-		}
-	}
-	else
-	{
-		title = g_strdup (name);
-
-		if (dirname != NULL)
-		{
-			main_title = g_strdup_printf ("%s (%s) - gedit",
-			                              name,
-			                              dirname);
-			subtitle = dirname;
-		}
-		else
-		{
-			main_title = g_strdup_printf ("%s - gedit",
-			                              name);
-		}
-	}
-
-	set_titles (window, main_title, title, subtitle);
-
-	g_free (dirname);
-	g_free (name);
-	g_free (title);
-	g_free (main_title);
-}
-
-#undef MAX_TITLE_LENGTH
-
-static void
 tab_width_changed (GObject     *object,
 		   GParamSpec  *pspec,
 		   GeditWindow *window)
@@ -1297,7 +1168,7 @@ tab_switched (GeditMultiNotebook *mnb,
 	if (new_tab == NULL || window->priv->dispose_has_run)
 		return;
 
-	update_titles (window);
+	_gedit_window_titles_update (window->priv->window_titles);
 	update_actions_sensitivity (window);
 
 	g_signal_emit (G_OBJECT (window),
@@ -1430,7 +1301,7 @@ sync_name (GeditTab    *tab,
 {
 	if (tab == gedit_window_get_active_tab (window))
 	{
-		update_titles (window);
+		_gedit_window_titles_update (window->priv->window_titles);
 		update_actions_sensitivity (window);
 	}
 }
@@ -1938,7 +1809,7 @@ on_tab_removed (GeditMultiNotebook *multi,
 	g_return_if_fail (num_tabs >= 0);
 	if (num_tabs == 0)
 	{
-		update_titles (window);
+		_gedit_window_titles_update (window->priv->window_titles);
 
 		/* hide the additional widgets */
 		gtk_widget_hide (GTK_WIDGET (window->priv->overwrite_indicator));
