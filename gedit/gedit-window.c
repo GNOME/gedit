@@ -2687,7 +2687,7 @@ gedit_window_init (GeditWindow *window)
  * gedit_window_get_active_view:
  * @window: a #GeditWindow.
  *
- * Returns: (transfer none): the active #GeditView.
+ * Returns: (transfer none) (nullable): the active #GeditView of @window.
  */
 GeditView *
 gedit_window_get_active_view (GeditWindow *window)
@@ -2710,7 +2710,7 @@ gedit_window_get_active_view (GeditWindow *window)
  * gedit_window_get_active_document:
  * @window: a #GeditWindow.
  *
- * Returns: (transfer none): the active #GeditDocument.
+ * Returns: (transfer none) (nullable): the active #GeditDocument of @window.
  */
 GeditDocument *
 gedit_window_get_active_document (GeditWindow *window)
@@ -2783,9 +2783,7 @@ gedit_window_create_tab (GeditWindow *window,
  * gedit_window_get_active_tab:
  * @window: a GeditWindow
  *
- * Gets the active #GeditTab in the @window.
- *
- * Returns: (transfer none): the active #GeditTab in the @window.
+ * Returns: (transfer none) (nullable): the active #GeditTab of @window.
  */
 GeditTab *
 gedit_window_get_active_tab (GeditWindow *window)
