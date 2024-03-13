@@ -52,6 +52,8 @@ struct _GeditWindowPrivate
 	GSettings *ui_settings;
 	GSettings *window_settings;
 
+	GeditWindowTitles *window_titles;
+
 	GeditMultiNotebook *multi_notebook;
 
 	GeditSidePanel *side_panel;
@@ -276,6 +278,7 @@ gedit_window_dispose (GObject *object)
 
 	g_clear_object (&window->priv->message_bus);
 	g_clear_object (&window->priv->window_group);
+	g_clear_object (&window->priv->window_titles);
 
 	/* We must free the settings after saving the panels */
 	g_clear_object (&window->priv->editor_settings);
@@ -2623,6 +2626,8 @@ gedit_window_init (GeditWindow *window)
 
 	init_amtk_application_window (window);
 
+	window->priv->window_titles = _gedit_window_titles_new (window);
+
 #if GEDIT_HAS_HEADERBAR
 	create_titlebar (window);
 #endif
@@ -3390,6 +3395,17 @@ gedit_window_get_message_bus (GeditWindow *window)
 	g_return_val_if_fail (GEDIT_IS_WINDOW (window), NULL);
 
 	return window->priv->message_bus;
+}
+
+/* Returns: (transfer none): the #GeditWindowTitles of @window. Is guaranteed to
+ * be the same for the lifetime of @window.
+ */
+GeditWindowTitles *
+_gedit_window_get_window_titles (GeditWindow *window)
+{
+	g_return_val_if_fail (GEDIT_IS_WINDOW (window), NULL);
+
+	return window->priv->window_titles;
 }
 
 /* ex:set ts=8 noet: */
