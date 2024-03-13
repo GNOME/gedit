@@ -506,11 +506,14 @@ gedit_window_class_init (GeditWindowClass *klass)
 	 *
 	 * You need to use another signal to be notified when the active tab
 	 * becomes %NULL.
+	 *
+	 * Deprecated: 47: Use the #GeditWindow::active-tab-changed-simple
+	 *   signal instead.
 	 */
 	signals[SIGNAL_ACTIVE_TAB_CHANGED] =
 		g_signal_new ("active-tab-changed",
 			      G_OBJECT_CLASS_TYPE (object_class),
-			      G_SIGNAL_RUN_FIRST,
+			      G_SIGNAL_RUN_FIRST | G_SIGNAL_DEPRECATED,
 			      G_STRUCT_OFFSET (GeditWindowClass, active_tab_changed),
 			      NULL, NULL, NULL,
 			      G_TYPE_NONE,
