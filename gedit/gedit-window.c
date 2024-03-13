@@ -1844,8 +1844,6 @@ on_tab_removed (GeditMultiNotebook *multi,
 	g_return_if_fail (num_tabs >= 0);
 	if (num_tabs == 0)
 	{
-		_gedit_window_titles_update (window->priv->window_titles);
-
 		/* hide the additional widgets */
 		gtk_widget_hide (GTK_WIDGET (window->priv->overwrite_indicator));
 		gtk_widget_hide (GTK_WIDGET (window->priv->line_column_indicator));
