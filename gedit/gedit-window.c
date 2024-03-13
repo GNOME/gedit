@@ -1032,14 +1032,7 @@ set_titles (GeditWindow *window,
 	    const gchar *title,
 	    const gchar *subtitle)
 {
-	if (window->priv->headerbar != NULL)
-	{
-		gtk_header_bar_set_title (GTK_HEADER_BAR (window->priv->headerbar), title);
-		gtk_header_bar_set_subtitle (GTK_HEADER_BAR (window->priv->headerbar), subtitle);
-	}
-
-	gtk_header_bar_set_title (GTK_HEADER_BAR (window->priv->fullscreen_headerbar), title);
-	gtk_header_bar_set_subtitle (GTK_HEADER_BAR (window->priv->fullscreen_headerbar), subtitle);
+	/* TODO: migrate to GeditWindowTitles. */
 }
 
 #define MAX_TITLE_LENGTH 100

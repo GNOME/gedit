@@ -6,6 +6,7 @@
 #include <glib/gi18n.h>
 #include "gedit-app-private.h"
 #include "gedit-commands.h"
+#include "gedit-window-private.h"
 
 struct _GeditHeaderBarPrivate
 {
@@ -191,6 +192,27 @@ add_save_button (GeditHeaderBar *bar)
 	gtk_header_bar_pack_end (GTK_HEADER_BAR (bar), button);
 }
 
+static void
+setup_titles (GeditHeaderBar *bar)
+{
+	GeditWindowTitles *window_titles;
+
+	if (bar->priv->window == NULL)
+	{
+		return;
+	}
+
+	window_titles = _gedit_window_get_window_titles (bar->priv->window);
+
+	g_object_bind_property (window_titles, "title",
+				bar, "title",
+				G_BINDING_DEFAULT | G_BINDING_SYNC_CREATE);
+
+	g_object_bind_property (window_titles, "subtitle",
+				bar, "subtitle",
+				G_BINDING_DEFAULT | G_BINDING_SYNC_CREATE);
+}
+
 GeditHeaderBar *
 _gedit_header_bar_new (GeditWindow *window,
 		       gboolean     fullscreen)
@@ -213,6 +235,8 @@ _gedit_header_bar_new (GeditWindow *window,
 
 	add_hamburger_menu_button (bar);
 	add_save_button (bar);
+
+	setup_titles (bar);
 
 	return bar;
 }
