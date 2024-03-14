@@ -28,28 +28,34 @@ enum
 	N_PROPERTIES
 };
 
-#define MAX_TITLE_LENGTH 100
-
 static GParamSpec *properties[N_PROPERTIES];
 
 G_DEFINE_TYPE_WITH_PRIVATE (GeditWindowTitles, _gedit_window_titles, G_TYPE_OBJECT)
 
 static void
-set_titles (GeditWindowTitles *titles,
-	    const gchar       *single_title,
-	    const gchar       *title,
-	    const gchar       *subtitle)
+set_single_title (GeditWindowTitles *titles,
+		  const gchar       *single_title)
 {
 	if (g_set_str (&titles->priv->single_title, single_title))
 	{
 		g_object_notify_by_pspec (G_OBJECT (titles), properties[PROP_SINGLE_TITLE]);
 	}
+}
 
+static void
+set_title (GeditWindowTitles *titles,
+	   const gchar       *title)
+{
 	if (g_set_str (&titles->priv->title, title))
 	{
 		g_object_notify_by_pspec (G_OBJECT (titles), properties[PROP_TITLE]);
 	}
+}
 
+static void
+set_subtitle (GeditWindowTitles *titles,
+	      const gchar       *subtitle)
+{
 	if (g_set_str (&titles->priv->subtitle, subtitle))
 	{
 		g_object_notify_by_pspec (G_OBJECT (titles), properties[PROP_SUBTITLE]);
@@ -57,16 +63,36 @@ set_titles (GeditWindowTitles *titles,
 }
 
 static void
+update_single_title (GeditWindowTitles *titles,
+		     const gchar       *title,
+		     const gchar       *dirname)
+{
+	GString *string;
+
+	string = g_string_new (title);
+
+	if (dirname != NULL)
+	{
+		g_string_append_printf (string, " (%s)", dirname);
+	}
+
+	g_string_append_printf (string, " - %s", g_get_application_name ());
+
+	set_single_title (titles, string->str);
+
+	g_string_free (string, TRUE);
+}
+
+static void
 update_titles (GeditWindowTitles *titles)
 {
 	GeditDocument *doc;
-	GtkSourceFile *file;
-	gchar *name;
+	GtkSourceFile *source_file;
+	TeplFile *tepl_file;
+	GFile *location;
+	gchar *short_title;
+	gchar *title;
 	gchar *dirname = NULL;
-	gchar *main_title = NULL;
-	gchar *title = NULL;
-	gchar *subtitle = NULL;
-	gint len;
 
 	if (titles->priv->window == NULL)
 	{
@@ -77,102 +103,38 @@ update_titles (GeditWindowTitles *titles)
 
 	if (doc == NULL)
 	{
-		set_titles (titles,
-			    g_get_application_name (),
-			    g_get_application_name (),
-			    NULL);
+		set_single_title (titles, g_get_application_name ());
+		set_title (titles, g_get_application_name ());
+		set_subtitle (titles, NULL);
 		return;
 	}
 
-	file = gedit_document_get_file (doc);
+	short_title = tepl_buffer_get_short_title (TEPL_BUFFER (doc));
 
-	name = tepl_file_get_short_name (tepl_buffer_get_file (TEPL_BUFFER (doc)));
-	len = g_utf8_strlen (name, -1);
-
-	/* if the name is awfully long, truncate it and be done with it,
-	 * otherwise also show the directory (ellipsized if needed)
-	 */
-	if (len > MAX_TITLE_LENGTH)
+	source_file = gedit_document_get_file (doc);
+	if (gtk_source_file_is_readonly (source_file))
 	{
-		gchar *truncated_name;
-
-		truncated_name = tepl_utils_str_middle_truncate (name, MAX_TITLE_LENGTH);
-		g_free (name);
-		name = truncated_name;
+		title = g_strdup_printf ("%s [%s]", short_title, _("Read-Only"));
 	}
 	else
 	{
-		GFile *location = gtk_source_file_get_location (file);
-
-		if (location != NULL)
-		{
-			gchar *str = gedit_utils_location_get_dirname_for_display (location);
-
-			/* use the remaining space for the dir, but use a min of 20 chars
-			 * so that we do not end up with a dirname like "(a...b)".
-			 * This means that in the worst case when the filename is long 99
-			 * we have a title long 99 + 20, but I think it's a rare enough
-			 * case to be acceptable. It's justa darn title afterall :)
-			 */
-			dirname = tepl_utils_str_middle_truncate (str, MAX (20, MAX_TITLE_LENGTH - len));
-			g_free (str);
-		}
+		title = g_strdup (short_title);
 	}
 
-	if (gtk_text_buffer_get_modified (GTK_TEXT_BUFFER (doc)))
+	tepl_file = tepl_buffer_get_file (TEPL_BUFFER (doc));
+	location = tepl_file_get_location (tepl_file);
+	if (location != NULL)
 	{
-		gchar *tmp_name;
-
-		tmp_name = g_strdup_printf ("*%s", name);
-		g_free (name);
-		name = tmp_name;
+		dirname = gedit_utils_location_get_dirname_for_display (location);
 	}
 
-	if (gtk_source_file_is_readonly (file))
-	{
-		title = g_strdup_printf ("%s [%s]",
-					 name,
-					 _("Read-Only"));
+	update_single_title (titles, title, dirname);
+	set_title (titles, title);
+	set_subtitle (titles, dirname);
 
-		if (dirname != NULL)
-		{
-			main_title = g_strdup_printf ("%s [%s] (%s) - gedit",
-			                              name,
-			                              _("Read-Only"),
-			                              dirname);
-			subtitle = dirname;
-		}
-		else
-		{
-			main_title = g_strdup_printf ("%s [%s] - gedit",
-			                              name,
-			                              _("Read-Only"));
-		}
-	}
-	else
-	{
-		title = g_strdup (name);
-
-		if (dirname != NULL)
-		{
-			main_title = g_strdup_printf ("%s (%s) - gedit",
-			                              name,
-			                              dirname);
-			subtitle = dirname;
-		}
-		else
-		{
-			main_title = g_strdup_printf ("%s - gedit",
-			                              name);
-		}
-	}
-
-	set_titles (titles, main_title, title, subtitle);
-
-	g_free (dirname);
-	g_free (name);
+	g_free (short_title);
 	g_free (title);
-	g_free (main_title);
+	g_free (dirname);
 }
 
 static void
