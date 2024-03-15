@@ -1,5 +1,4 @@
 /*
- * gedit-notebook-stack-switcher.h
  * This file is part of gedit
  *
  * Copyright (C) 2014 - Paolo Borelli
@@ -40,7 +39,6 @@ struct _GeditNotebookStackSwitcher
 {
 	GtkBin parent;
 
-	/*< private >*/
 	GeditNotebookStackSwitcherPrivate *priv;
 };
 
@@ -48,24 +46,18 @@ struct _GeditNotebookStackSwitcherClass
 {
 	GtkBinClass parent_class;
 
-	/* Padding for future expansion */
-	void (*_gedit_reserved1) (void);
-	void (*_gedit_reserved2) (void);
-	void (*_gedit_reserved3) (void);
-	void (*_gedit_reserved4) (void);
+	gpointer padding[12];
 };
 
-GType		 gedit_notebook_stack_switcher_get_type   (void) G_GNUC_CONST;
+GType		gedit_notebook_stack_switcher_get_type	(void);
 
-GtkWidget	*gedit_notebook_stack_switcher_new        (void);
+GtkWidget *	gedit_notebook_stack_switcher_new	(void);
 
-void		 gedit_notebook_stack_switcher_set_stack  (GeditNotebookStackSwitcher *switcher,
-		                                           GtkStack                   *stack);
+void		gedit_notebook_stack_switcher_set_stack	(GeditNotebookStackSwitcher *switcher,
+							 GtkStack                   *stack);
 
-GtkStack	*gedit_notebook_stack_switcher_get_stack  (GeditNotebookStackSwitcher *switcher);
+GtkStack *	gedit_notebook_stack_switcher_get_stack	(GeditNotebookStackSwitcher *switcher);
 
 G_END_DECLS
 
-#endif  /* GEDIT_NOTEBOOK_STACK_SWITCHER_H  */
-
-/* ex:set ts=8 noet: */
+#endif /* GEDIT_NOTEBOOK_STACK_SWITCHER_H */

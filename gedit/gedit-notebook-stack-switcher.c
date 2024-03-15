@@ -1,5 +1,4 @@
 /*
- * gedit-notebook-stack-switcher.h
  * This file is part of gedit
  *
  * Copyright (C) 2014 - Paolo Borelli
@@ -18,16 +17,9 @@
  * along with this program; if not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "config.h"
-
 #include "gedit-notebook-stack-switcher.h"
 
-#include <glib.h>
-#include <glib/gi18n.h>
-#include <gtk/gtk.h>
-
-/*
- * This widget is a rather ugly kludge: it uses a GtkNotebook full of empty
+/* This widget is a rather ugly kludge: it uses a GtkNotebook full of empty
  * pages to create a stack switcher for the bottom pane. This is needed
  * because we want to expose GtkStack in the API but we want the tabs styled
  * as notebook tabs. Hopefully Gtk itself will grow a "tabs" stack switcher...
@@ -39,7 +31,8 @@ struct _GeditNotebookStackSwitcherPrivate
 	GtkStack *stack;
 };
 
-enum {
+enum
+{
 	PROP_0,
 	PROP_STACK
 };
@@ -358,5 +351,3 @@ gedit_notebook_stack_switcher_new (void)
 {
 	return g_object_new (GEDIT_TYPE_NOTEBOOK_STACK_SWITCHER, NULL);
 }
-
-/* ex:set ts=8 noet: */
