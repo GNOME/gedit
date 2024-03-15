@@ -55,7 +55,7 @@ class WindowActivatable(GObject.Object, Gedit.WindowActivatable, Signals):
             self.window.add_accel_group(self.accel_group)
 
         self.connect_signal(self.window,
-                    'active-tab-changed-simple',
+                    'active-tab-changed',
                     self.on_active_tab_changed)
 
         self.do_update_state()

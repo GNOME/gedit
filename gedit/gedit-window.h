@@ -60,15 +60,15 @@ struct _GeditWindowClass
 	GtkApplicationWindowClass parent_class;
 
 	/* Signals */
-	void	 (* tab_added)      	(GeditWindow *window,
-					 GeditTab    *tab);
-	void	 (* tab_removed)    	(GeditWindow *window,
-					 GeditTab    *tab);
-	void	 (* tabs_reordered) 	(GeditWindow *window);
-	void	 (* active_tab_changed)	(GeditWindow *window,
-				     	 GeditTab    *tab);
-	void	 (* active_tab_state_changed)
-					(GeditWindow *window);
+	void	(* tab_added)			(GeditWindow *window,
+						 GeditTab    *tab);
+
+	void	(* tab_removed)			(GeditWindow *window,
+						 GeditTab    *tab);
+
+	void	(* tabs_reordered)		(GeditWindow *window);
+
+	void	(* active_tab_state_changed)	(GeditWindow *window);
 };
 
 /* Public methods */
