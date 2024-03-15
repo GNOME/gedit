@@ -15,7 +15,7 @@ struct _GeditWindowTitlesPrivate
 	gchar *title;
 	gchar *subtitle;
 
-	TeplSignalGroup *tab_signal_group;
+	TeplSignalGroup *buffer_signal_group;
 	TeplSignalGroup *file_signal_group;
 };
 
@@ -171,7 +171,7 @@ _gedit_window_titles_dispose (GObject *object)
 	GeditWindowTitles *titles = GEDIT_WINDOW_TITLES (object);
 
 	g_clear_weak_pointer (&titles->priv->window);
-	tepl_signal_group_clear (&titles->priv->tab_signal_group);
+	tepl_signal_group_clear (&titles->priv->buffer_signal_group);
 	tepl_signal_group_clear (&titles->priv->file_signal_group);
 
 	G_OBJECT_CLASS (_gedit_window_titles_parent_class)->dispose (object);
@@ -232,9 +232,9 @@ _gedit_window_titles_init (GeditWindowTitles *titles)
 }
 
 static void
-tab_name_notify_cb (GeditTab          *tab,
-		    GParamSpec        *pspec,
-		    GeditWindowTitles *titles)
+buffer_short_title_notify_cb (TeplBuffer        *buffer,
+			      GParamSpec        *pspec,
+			      GeditWindowTitles *titles)
 {
 	update_titles (titles);
 }
@@ -250,7 +250,6 @@ file_read_only_notify_cb (GtkSourceFile     *file,
 static void
 active_tab_changed (GeditWindowTitles *titles)
 {
-	GeditTab *active_tab;
 	GeditDocument *active_doc;
 	GtkSourceFile *active_file;
 
@@ -261,28 +260,27 @@ active_tab_changed (GeditWindowTitles *titles)
 
 	update_titles (titles);
 
-	tepl_signal_group_clear (&titles->priv->tab_signal_group);
+	tepl_signal_group_clear (&titles->priv->buffer_signal_group);
 	tepl_signal_group_clear (&titles->priv->file_signal_group);
 
-	active_tab = gedit_window_get_active_tab (titles->priv->window);
-	if (active_tab == NULL)
+	active_doc = gedit_window_get_active_document (titles->priv->window);
+	if (active_doc == NULL)
 	{
 		return;
 	}
 
-	/* Connect to GeditTab signals */
+	/* Connect to GeditDocument signals */
 
-	titles->priv->tab_signal_group = tepl_signal_group_new (G_OBJECT (active_tab));
+	titles->priv->buffer_signal_group = tepl_signal_group_new (G_OBJECT (active_doc));
 
-	tepl_signal_group_add (titles->priv->tab_signal_group,
-			       g_signal_connect (active_tab,
-						 "notify::name",
-						 G_CALLBACK (tab_name_notify_cb),
+	tepl_signal_group_add (titles->priv->buffer_signal_group,
+			       g_signal_connect (active_doc,
+						 "notify::tepl-short-title",
+						 G_CALLBACK (buffer_short_title_notify_cb),
 						 titles));
 
 	/* Connect to GtkSourceFile signals */
 
-	active_doc = gedit_tab_get_document (active_tab);
 	active_file = gedit_document_get_file (active_doc);
 
 	titles->priv->file_signal_group = tepl_signal_group_new (G_OBJECT (active_file));
