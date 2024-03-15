@@ -55,7 +55,7 @@ class WindowActivatable(GObject.Object, Gedit.WindowActivatable, Signals):
             self.window.add_accel_group(self.accel_group)
 
         self.connect_signal(self.window,
-                    'active-tab-changed',
+                    'active-tab-changed-simple',
                     self.on_active_tab_changed)
 
         self.do_update_state()
@@ -171,8 +171,10 @@ class WindowActivatable(GObject.Object, Gedit.WindowActivatable, Signals):
 
         self.current_language_accel_group = accelgroup
 
-    def on_active_tab_changed(self, window, tab):
-        self.update_language(SharedData().get_controller(tab.get_view()))
+    def on_active_tab_changed(self, window):
+        active_tab = window.get_active_tab()
+        if active_tab != None:
+            self.update_language(SharedData().get_controller(active_tab.get_view()))
 
     def accelerator_activated(self, group, obj, keyval, mod):
         if obj == self.window:
