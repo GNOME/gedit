@@ -26,23 +26,25 @@
 
 G_BEGIN_DECLS
 
-gboolean                   gedit_utils_menu_position_under_tree_view          (GtkTreeView     *tree_view,
-                                                                               GdkRectangle    *rect);
+gboolean	gedit_utils_menu_position_under_tree_view		(GtkTreeView  *tree_view,
+									 GdkRectangle *rect);
 
-gchar                     *gedit_utils_location_get_dirname_for_display       (GFile *location);
+gboolean	gedit_utils_is_valid_location				(GFile *location);
 
-gboolean                   gedit_utils_is_valid_location                      (GFile *location);
-
-gchar                     *gedit_utils_basename_for_display                   (GFile *location);
+gchar *		gedit_utils_basename_for_display			(GFile *location);
 
 /* Turns data from a drop into a list of well formatted uris */
-gchar                    **gedit_utils_drop_get_uris                          (GtkSelectionData     *selection_data);
+gchar **	gedit_utils_drop_get_uris				(GtkSelectionData *selection_data);
 
-gchar                     *gedit_utils_set_direct_save_filename               (GdkDragContext       *context);
+gchar *		gedit_utils_set_direct_save_filename			(GdkDragContext *context);
 
-GtkSourceCompressionType   gedit_utils_get_compression_type_from_content_type (const gchar          *content_type);
+GtkSourceCompressionType
+		gedit_utils_get_compression_type_from_content_type	(const gchar *content_type);
 
-const gchar               *gedit_utils_newline_type_to_string                 (GtkSourceNewlineType  newline_type);
+const gchar *	gedit_utils_newline_type_to_string			(GtkSourceNewlineType newline_type);
+
+G_GNUC_INTERNAL
+gchar *		_gedit_utils_location_get_dirname_for_display		(GFile *location);
 
 G_END_DECLS
 

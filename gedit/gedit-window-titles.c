@@ -125,7 +125,7 @@ update_titles (GeditWindowTitles *titles)
 	location = tepl_file_get_location (tepl_file);
 	if (location != NULL)
 	{
-		dirname = gedit_utils_location_get_dirname_for_display (location);
+		dirname = _gedit_utils_location_get_dirname_for_display (location);
 	}
 
 	update_single_title (titles, title, dirname);

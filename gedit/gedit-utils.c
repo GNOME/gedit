@@ -84,25 +84,24 @@ uri_get_dirname (const gchar *uri)
 	return res;
 }
 
-/**
- * gedit_utils_location_get_dirname_for_display:
+/*
+ * _gedit_utils_location_get_dirname_for_display:
  * @location: the location
  *
- * Returns a string suitable to be displayed in the UI indicating
- * the name of the directory where the file is located.
- * For remote files it may also contain the hostname etc.
- * For local files it tries to replace the home dir with ~.
+ * Returns a string suitable to be displayed in the UI indicating the name of
+ * the directory where the file is located. For remote files it may also contain
+ * the hostname etc. For local files it tries to replace the home dir with `~`.
  *
- * Returns: (transfer full): a string to display the dirname
+ * Returns: (transfer full): a string to display the dirname.
  */
 gchar *
-gedit_utils_location_get_dirname_for_display (GFile *location)
+_gedit_utils_location_get_dirname_for_display (GFile *location)
 {
 	gchar *uri;
 	gchar *res;
 	GMount *mount;
 
-	g_return_val_if_fail (location != NULL, NULL);
+	g_return_val_if_fail (G_IS_FILE (location), NULL);
 
 	/* we use the parse name, that is either the local path
 	 * or an uri but which is utf8 safe */
