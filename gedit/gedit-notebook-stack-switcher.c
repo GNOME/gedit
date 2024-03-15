@@ -27,7 +27,7 @@
 
 struct _GeditNotebookStackSwitcherPrivate
 {
-	GtkWidget *notebook;
+	GtkNotebook *notebook;
 	GtkStack *stack;
 };
 
@@ -44,18 +44,18 @@ gedit_notebook_stack_switcher_init (GeditNotebookStackSwitcher *switcher)
 {
 	GeditNotebookStackSwitcherPrivate *priv;
 
-	priv = gedit_notebook_stack_switcher_get_instance_private (switcher);
-	switcher->priv = priv;
+	switcher->priv = gedit_notebook_stack_switcher_get_instance_private (switcher);
+	priv = switcher->priv;
 
-	priv->notebook = gtk_notebook_new ();
+	priv->notebook = GTK_NOTEBOOK (gtk_notebook_new ());
 
-	gtk_notebook_set_tab_pos (GTK_NOTEBOOK (priv->notebook), GTK_POS_BOTTOM);
-	gtk_notebook_set_scrollable (GTK_NOTEBOOK (priv->notebook), TRUE);
-	gtk_notebook_set_show_border (GTK_NOTEBOOK (priv->notebook), FALSE);
+	gtk_notebook_set_tab_pos (priv->notebook, GTK_POS_BOTTOM);
+	gtk_notebook_set_scrollable (priv->notebook, TRUE);
+	gtk_notebook_set_show_border (priv->notebook, FALSE);
 	gtk_container_set_border_width (GTK_CONTAINER (priv->notebook), 0);
 
-	gtk_widget_show (priv->notebook);
-	gtk_container_add (GTK_CONTAINER (switcher), priv->notebook);
+	gtk_widget_show (GTK_WIDGET (priv->notebook));
+	gtk_container_add (GTK_CONTAINER (switcher), GTK_WIDGET (priv->notebook));
 }
 
 static GtkWidget *
@@ -108,9 +108,7 @@ sync_label (GeditNotebookStackSwitcher *switcher,
 		                         "title", &title,
 		                         NULL);
 
-		gtk_notebook_set_tab_label_text (GTK_NOTEBOOK (priv->notebook),
-		                                 notebook_child,
-		                                 title);
+		gtk_notebook_set_tab_label_text (priv->notebook, notebook_child, title);
 
 		g_free (title);
 	}
@@ -137,7 +135,7 @@ on_child_changed (GtkWidget                  *widget,
 	GtkWidget *nb_child;
 	gint nb_page;
 
-	notebook = GTK_NOTEBOOK (switcher->priv->notebook);
+	notebook = switcher->priv->notebook;
 
 	child = gtk_stack_get_visible_child (GTK_STACK (widget));
 	nb_child = find_notebook_child (switcher, child);
@@ -161,9 +159,7 @@ on_stack_child_added (GtkStack                   *stack,
 
 	dummy = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
 	g_object_set_data (G_OBJECT (dummy), "stack-child", widget);
-	gtk_notebook_append_page (GTK_NOTEBOOK (priv->notebook),
-	                          dummy,
-	                          NULL);
+	gtk_notebook_append_page (priv->notebook, dummy, NULL);
 
 	g_signal_connect (widget, "notify::visible",
 	                  G_CALLBACK (on_child_prop_changed), switcher);
