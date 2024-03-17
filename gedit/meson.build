@@ -39,6 +39,7 @@ libgedit_public_sources = [
 libgedit_private_headers = [
   'gedit-app-osx.h',
   'gedit-app-win32.h',
+  'gedit-bottom-panel.h',
   'gedit-close-confirmation-dialog.h',
   'gedit-dirs.h',
   'gedit-document-private.h',
@@ -75,6 +76,7 @@ libgedit_private_headers = [
 ]
 
 libgedit_private_sources = [
+  'gedit-bottom-panel.c',
   'gedit-close-confirmation-dialog.c',
   'gedit-commands-documents.c',
   'gedit-commands-edit.c',
