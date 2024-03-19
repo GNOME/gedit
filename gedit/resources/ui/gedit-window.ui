@@ -55,14 +55,14 @@
                         </child>
                         <child>
                           <object class="GtkBox">
-                            <property name="visible" bind-source="bottom_panel" bind-property="visible" bind-flags="sync-create"/>
+                            <property name="visible" bind-source="bottom_panel_stack" bind-property="visible" bind-flags="sync-create"/>
                             <property name="orientation">horizontal</property>
                             <child>
                               <object class="GtkBox">
                                 <property name="visible">True</property>
                                 <property name="orientation">vertical</property>
                                 <child>
-                                  <object class="GtkStack" id="bottom_panel">
+                                  <object class="GtkStack" id="bottom_panel_stack">
                                     <property name="visible">False</property>
                                   </object>
                                   <packing>
@@ -74,7 +74,7 @@
                                 <child>
                                   <object class="GeditNotebookStackSwitcher">
                                     <property name="visible">True</property>
-                                    <property name="stack">bottom_panel</property>
+                                    <property name="stack">bottom_panel_stack</property>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
