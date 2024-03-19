@@ -90,28 +90,18 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkBox">
+                              <object class="GtkButton">
                                 <property name="visible">True</property>
-                                <property name="orientation">vertical</property>
-                                <child>
-                                  <object class="GtkButton">
-                                    <property name="visible">True</property>
-                                    <property name="relief">none</property>
-                                    <property name="focus-on-click">False</property>
-                                    <property name="tooltip-text" translatable="yes">Hide panel</property>
-                                    <property name="action_name">win.bottom-panel</property>
-                                    <property name="image">close_button_image</property>
-                                    <style>
-                                      <class name="small-button"/>
-                                      <class name="flat"/>
-                                    </style>
-                                  </object>
-                                  <packing>
-                                    <property name="expand">False</property>
-                                    <property name="fill">False</property>
-                                    <property name="position">1</property>
-                                  </packing>
-                                </child>
+                                <property name="relief">none</property>
+                                <property name="focus-on-click">False</property>
+                                <property name="tooltip-text" translatable="yes">Hide panel</property>
+                                <property name="action_name">win.bottom-panel</property>
+                                <property name="image">close_button_image</property>
+                                <property name="valign">start</property>
+                                <style>
+                                  <class name="small-button"/>
+                                  <class name="flat"/>
+                                </style>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
