@@ -38,6 +38,9 @@ GType			_gedit_bottom_panel_get_type	(void);
 G_GNUC_INTERNAL
 GeditBottomPanel *	_gedit_bottom_panel_new		(void);
 
+G_GNUC_INTERNAL
+GtkStack *		_gedit_bottom_panel_get_stack	(GeditBottomPanel *panel);
+
 G_END_DECLS
 
 #endif /* GEDIT_BOTTOM_PANEL_H */
