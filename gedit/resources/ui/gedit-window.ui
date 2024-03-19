@@ -54,8 +54,7 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkBox">
-                            <property name="visible" bind-source="bottom_panel_stack" bind-property="visible" bind-flags="sync-create"/>
+                          <object class="GtkBox" id="bottom_panel">
                             <property name="orientation">horizontal</property>
                             <child>
                               <object class="GtkBox">
@@ -63,7 +62,7 @@
                                 <property name="orientation">vertical</property>
                                 <child>
                                   <object class="GtkStack" id="bottom_panel_stack">
-                                    <property name="visible">False</property>
+                                    <property name="visible">True</property>
                                   </object>
                                   <packing>
                                     <property name="expand">True</property>

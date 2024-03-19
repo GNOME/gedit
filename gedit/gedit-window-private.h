@@ -16,6 +16,8 @@ GeditMultiNotebook *	_gedit_window_get_multi_notebook	(GeditWindow *window);
 
 GeditSidePanel *	_gedit_window_get_whole_side_panel	(GeditWindow *window);
 
+GtkWidget *		_gedit_window_get_whole_bottom_panel	(GeditWindow *window);
+
 GeditWindowTitles *	_gedit_window_get_window_titles		(GeditWindow *window);
 
 G_END_DECLS

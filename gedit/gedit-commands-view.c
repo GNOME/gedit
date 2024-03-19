@@ -81,7 +81,7 @@ _gedit_cmd_view_toggle_bottom_panel (GSimpleAction *action,
 
 	gedit_debug (DEBUG_COMMANDS);
 
-	panel = gedit_window_get_bottom_panel (window);
+	panel = _gedit_window_get_whole_bottom_panel (window);
 
 	visible = g_variant_get_boolean (state);
 	gtk_widget_set_visible (panel, visible);

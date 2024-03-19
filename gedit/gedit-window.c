@@ -57,6 +57,7 @@ struct _GeditWindowPrivate
 	GeditMultiNotebook *multi_notebook;
 
 	GeditSidePanel *side_panel;
+	GtkWidget *bottom_panel;
 	GtkStack *bottom_panel_stack;
 
 	GtkWidget *hpaned;
@@ -528,6 +529,7 @@ gedit_window_class_init (GeditWindowClass *klass)
 	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, side_panel);
 	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, vpaned);
 	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, multi_notebook);
+	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, bottom_panel);
 	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, bottom_panel_stack);
 	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, statusbar);
 	gtk_widget_class_bind_template_child_private (widget_class, GeditWindow, language_button);
@@ -974,8 +976,8 @@ clone_window (GeditWindow *origin)
 
 	gtk_widget_set_visible (GTK_WIDGET (window->priv->side_panel),
 	                        gtk_widget_get_visible (GTK_WIDGET (origin->priv->side_panel)));
-	gtk_widget_set_visible (GTK_WIDGET (window->priv->bottom_panel_stack),
-	                        gtk_widget_get_visible (GTK_WIDGET (origin->priv->bottom_panel_stack)));
+	gtk_widget_set_visible (window->priv->bottom_panel,
+	                        gtk_widget_get_visible (origin->priv->bottom_panel));
 
 	return window;
 }
@@ -1989,7 +1991,7 @@ vpaned_restore_position (GtkWidget   *widget,
 	gtk_paned_set_position (GTK_PANED (window->priv->vpaned), pos);
 
 	/* start monitoring the size */
-	g_signal_connect (window->priv->bottom_panel_stack,
+	g_signal_connect (window->priv->bottom_panel,
 			  "size-allocate",
 			  G_CALLBACK (bottom_panel_size_allocate),
 			  window);
@@ -2094,14 +2096,14 @@ setup_side_panel (GeditWindow *window)
 }
 
 static void
-bottom_panel_visibility_changed (GtkWidget   *panel_box,
+bottom_panel_visibility_changed (GtkWidget   *bottom_panel,
                                  GParamSpec  *pspec,
                                  GeditWindow *window)
 {
 	gboolean visible;
 	GAction *action;
 
-	visible = gtk_widget_get_visible (panel_box);
+	visible = gtk_widget_get_visible (bottom_panel);
 
 	g_settings_set_boolean (window->priv->ui_settings,
 				GEDIT_SETTINGS_BOTTOM_PANEL_VISIBLE,
@@ -2124,25 +2126,25 @@ bottom_panel_visibility_changed (GtkWidget   *panel_box,
 }
 
 static void
-bottom_panel_item_removed (GtkStack    *panel,
+bottom_panel_item_removed (GtkStack    *bottom_panel_stack,
 			   GtkWidget   *item,
 			   GeditWindow *window)
 {
-	gtk_widget_set_visible (GTK_WIDGET (window->priv->bottom_panel_stack),
-				gtk_stack_get_visible_child (panel) != NULL);
+	gtk_widget_set_visible (window->priv->bottom_panel,
+				gtk_stack_get_visible_child (bottom_panel_stack) != NULL);
 
 	update_actions_sensitivity (window);
 }
 
 static void
-bottom_panel_item_added (GtkStack    *panel,
+bottom_panel_item_added (GtkStack    *bottom_panel_stack,
 			 GtkWidget   *item,
 			 GeditWindow *window)
 {
 	GList *children;
 	int n_children;
 
-	children = gtk_container_get_children (GTK_CONTAINER (panel));
+	children = gtk_container_get_children (GTK_CONTAINER (bottom_panel_stack));
 	n_children = g_list_length (children);
 	g_list_free (children);
 
@@ -2155,7 +2157,7 @@ bottom_panel_item_added (GtkStack    *panel,
 		                               "bottom-panel-visible");
 		if (show)
 		{
-			gtk_widget_show (GTK_WIDGET (window->priv->bottom_panel_stack));
+			gtk_widget_show (window->priv->bottom_panel);
 		}
 
 		update_actions_sensitivity (window);
@@ -2167,7 +2169,7 @@ setup_bottom_panel (GeditWindow *window)
 {
 	gedit_debug (DEBUG_WINDOW);
 
-	g_signal_connect_after (window->priv->bottom_panel_stack,
+	g_signal_connect_after (window->priv->bottom_panel,
 	                        "notify::visible",
 	                        G_CALLBACK (bottom_panel_visibility_changed),
 	                        window);
@@ -2223,7 +2225,7 @@ init_bottom_panel_visibility (GeditWindow *window)
 
 		if (bottom_panel_visible)
 		{
-			gtk_widget_show (GTK_WIDGET (window->priv->bottom_panel_stack));
+			gtk_widget_show (window->priv->bottom_panel);
 		}
 	}
 
@@ -3051,8 +3053,14 @@ GtkWidget *
 gedit_window_get_bottom_panel (GeditWindow *window)
 {
 	g_return_val_if_fail (GEDIT_IS_WINDOW (window), NULL);
-
 	return GTK_WIDGET (window->priv->bottom_panel_stack);
+}
+
+GtkWidget *
+_gedit_window_get_whole_bottom_panel (GeditWindow *window)
+{
+	g_return_val_if_fail (GEDIT_IS_WINDOW (window), NULL);
+	return window->priv->bottom_panel;
 }
 
 /**
