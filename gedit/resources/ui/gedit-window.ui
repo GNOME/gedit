@@ -44,9 +44,6 @@
                         <property name="has_focus">False</property>
                         <property name="is_focus">False</property>
                         <property name="orientation">vertical</property>
-                        <style>
-                          <class name="gedit-bottom-panel-paned"/>
-                        </style>
                         <child>
                           <object class="GeditMultiNotebook" id="multi_notebook">
                             <property name="visible">True</property>
@@ -60,9 +57,6 @@
                           <object class="GtkBox">
                             <property name="visible" bind-source="bottom_panel" bind-property="visible" bind-flags="sync-create"/>
                             <property name="orientation">horizontal</property>
-                            <style>
-                              <class name="gedit-bottom-panel"/>
-                            </style>
                             <child>
                               <object class="GtkBox">
                                 <property name="visible">True</property>
@@ -81,9 +75,6 @@
                                   <object class="GeditNotebookStackSwitcher">
                                     <property name="visible">True</property>
                                     <property name="stack">bottom_panel</property>
-                                    <style>
-                                      <class name="gedit-bottom-panel-stack-switcher"/>
-                                    </style>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
