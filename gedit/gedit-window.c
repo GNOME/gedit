@@ -322,13 +322,9 @@ static gboolean
 gedit_window_configure_event (GtkWidget         *widget,
 			      GdkEventConfigure *event)
 {
-	GeditWindow *window = GEDIT_WINDOW (widget);
-
-	if (gtk_widget_get_realized (widget) &&
-	    (window->priv->window_state &
-	     (GDK_WINDOW_STATE_MAXIMIZED | GDK_WINDOW_STATE_FULLSCREEN)) == 0)
+	if (gtk_widget_get_realized (widget))
 	{
-		save_window_state (window);
+		save_window_state (GEDIT_WINDOW (widget));
 	}
 
 	return GTK_WIDGET_CLASS (gedit_window_parent_class)->configure_event (widget, event);
