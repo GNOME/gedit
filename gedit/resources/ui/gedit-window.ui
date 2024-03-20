@@ -54,61 +54,7 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkBox" id="bottom_panel">
-                            <property name="orientation">horizontal</property>
-                            <child>
-                              <object class="GtkBox">
-                                <property name="visible">True</property>
-                                <property name="orientation">vertical</property>
-                                <child>
-                                  <object class="GtkStack" id="bottom_panel_stack">
-                                    <property name="visible">True</property>
-                                  </object>
-                                  <packing>
-                                    <property name="expand">True</property>
-                                    <property name="fill">True</property>
-                                    <property name="position">1</property>
-                                  </packing>
-                                </child>
-                                <child>
-                                  <object class="GeditNotebookStackSwitcher">
-                                    <property name="visible">True</property>
-                                    <property name="stack">bottom_panel_stack</property>
-                                  </object>
-                                  <packing>
-                                    <property name="expand">False</property>
-                                    <property name="fill">False</property>
-                                    <property name="position">2</property>
-                                  </packing>
-                                </child>
-                              </object>
-                              <packing>
-                                <property name="expand">True</property>
-                                <property name="fill">True</property>
-                                <property name="position">1</property>
-                              </packing>
-                            </child>
-                            <child>
-                              <object class="GtkButton">
-                                <property name="visible">True</property>
-                                <property name="relief">none</property>
-                                <property name="focus-on-click">False</property>
-                                <property name="tooltip-text" translatable="yes">Hide panel</property>
-                                <property name="action_name">win.bottom-panel</property>
-                                <property name="image">close_button_image</property>
-                                <property name="valign">start</property>
-                                <style>
-                                  <class name="small-button"/>
-                                  <class name="flat"/>
-                                </style>
-                              </object>
-                              <packing>
-                                <property name="expand">False</property>
-                                <property name="fill">False</property>
-                                <property name="position">2</property>
-                              </packing>
-                            </child>
-                          </object>
+                          <object class="GeditBottomPanel" id="bottom_panel"></object>
                           <packing>
                             <property name="resize">False</property>
                             <property name="shrink">False</property>
@@ -188,8 +134,4 @@
       </object>
     </child>
   </template>
-  <object class="GtkImage" id="close_button_image">
-    <property name="visible">True</property>
-    <property name="icon_name">window-close-symbolic</property>
-  </object>
 </interface>

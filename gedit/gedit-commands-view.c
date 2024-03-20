@@ -76,7 +76,7 @@ _gedit_cmd_view_toggle_bottom_panel (GSimpleAction *action,
                                      gpointer       user_data)
 {
 	GeditWindow *window = GEDIT_WINDOW (user_data);
-	GtkWidget *panel;
+	GeditBottomPanel *panel;
 	gboolean visible;
 
 	gedit_debug (DEBUG_COMMANDS);
@@ -84,11 +84,11 @@ _gedit_cmd_view_toggle_bottom_panel (GSimpleAction *action,
 	panel = _gedit_window_get_whole_bottom_panel (window);
 
 	visible = g_variant_get_boolean (state);
-	gtk_widget_set_visible (panel, visible);
+	gtk_widget_set_visible (GTK_WIDGET (panel), visible);
 
 	if (visible)
 	{
-		gtk_widget_grab_focus (panel);
+		gtk_widget_grab_focus (GTK_WIDGET (panel));
 	}
 
 	g_simple_action_set_state (action, state);
