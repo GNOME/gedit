@@ -179,14 +179,12 @@ save_panels_state (GeditWindow *window)
 }
 
 static void
-save_window_state (GtkWidget *widget)
+save_window_state (GeditWindow *window)
 {
-	GeditWindow *window = GEDIT_WINDOW (widget);
-
-	if ((window->priv->window_state &
-	     (GDK_WINDOW_STATE_MAXIMIZED | GDK_WINDOW_STATE_FULLSCREEN)) == 0)
+	if ((window->priv->window_state & GDK_WINDOW_STATE_MAXIMIZED) == 0 &&
+	    (window->priv->window_state & GDK_WINDOW_STATE_FULLSCREEN) == 0)
 	{
-		gtk_window_get_size (GTK_WINDOW (widget), &window->priv->width, &window->priv->height);
+		gtk_window_get_size (GTK_WINDOW (window), &window->priv->width, &window->priv->height);
 
 		g_settings_set (window->priv->window_settings, GEDIT_SETTINGS_WINDOW_SIZE,
 				"(ii)", window->priv->width, window->priv->height);
@@ -224,7 +222,7 @@ gedit_window_dispose (GObject *object)
 	 * for this window, but only once */
 	if (!window->priv->dispose_has_run)
 	{
-		save_window_state (GTK_WIDGET (window));
+		save_window_state (window);
 		save_panels_state (window);
 
 		/* Note that unreffing the extensions will automatically remove
@@ -332,7 +330,7 @@ gedit_window_configure_event (GtkWidget         *widget,
 	    (window->priv->window_state &
 	     (GDK_WINDOW_STATE_MAXIMIZED | GDK_WINDOW_STATE_FULLSCREEN)) == 0)
 	{
-		save_window_state (widget);
+		save_window_state (window);
 	}
 
 	return GTK_WIDGET_CLASS (gedit_window_parent_class)->configure_event (widget, event);
