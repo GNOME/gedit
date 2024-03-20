@@ -171,23 +171,13 @@ gedit_window_get_property (GObject    *object,
 static void
 save_side_panel_state (GeditWindow *window)
 {
-	TeplPanelContainer *panel_container;
-	const gchar *item_name;
+	_gedit_side_panel_save_state (window->priv->side_panel);
 
 	if (window->priv->side_panel_size > 0)
 	{
 		g_settings_set_int (window->priv->window_settings,
 				    GEDIT_SETTINGS_SIDE_PANEL_SIZE,
 				    window->priv->side_panel_size);
-	}
-
-	panel_container = _gedit_side_panel_get_panel_container (window->priv->side_panel);
-	item_name = tepl_panel_container_get_active_item_name (panel_container);
-	if (item_name != NULL)
-	{
-		g_settings_set_string (window->priv->window_settings,
-				       GEDIT_SETTINGS_SIDE_PANEL_ACTIVE_PAGE,
-				       item_name);
 	}
 }
 

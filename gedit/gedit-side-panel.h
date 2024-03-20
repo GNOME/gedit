@@ -41,6 +41,9 @@ GeditSidePanel *	_gedit_side_panel_new			(void);
 G_GNUC_INTERNAL
 TeplPanelContainer *	_gedit_side_panel_get_panel_container	(GeditSidePanel *panel);
 
+G_GNUC_INTERNAL
+void			_gedit_side_panel_save_state		(GeditSidePanel *panel);
+
 G_END_DECLS
 
 #endif /* GEDIT_SIDE_PANEL_H */

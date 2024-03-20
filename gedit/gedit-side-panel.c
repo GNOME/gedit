@@ -4,6 +4,7 @@
 
 #include "config.h"
 #include "gedit-side-panel.h"
+#include "gedit-settings.h"
 
 struct _GeditSidePanelPrivate
 {
@@ -81,4 +82,25 @@ _gedit_side_panel_get_panel_container (GeditSidePanel *panel)
 {
 	g_return_val_if_fail (GEDIT_IS_SIDE_PANEL (panel), NULL);
 	return panel->priv->panel;
+}
+
+void
+_gedit_side_panel_save_state (GeditSidePanel *panel)
+{
+	GeditSettings *settings;
+	GSettings *window_state_settings;
+	const gchar *item_name;
+
+	g_return_if_fail (GEDIT_IS_SIDE_PANEL (panel));
+
+	settings = _gedit_settings_get_singleton ();
+	window_state_settings = _gedit_settings_peek_window_state_settings (settings);
+
+	item_name = tepl_panel_container_get_active_item_name (panel->priv->panel);
+	if (item_name != NULL)
+	{
+		g_settings_set_string (window_state_settings,
+				       GEDIT_SETTINGS_SIDE_PANEL_ACTIVE_PAGE,
+				       item_name);
+	}
 }
