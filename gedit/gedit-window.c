@@ -224,6 +224,7 @@ gedit_window_dispose (GObject *object)
 	{
 		save_window_state (window);
 		save_panels_state (window);
+		g_settings_apply (window->priv->window_settings);
 
 		/* Note that unreffing the extensions will automatically remove
 		   all extensions which in turn will deactivate the extension */
