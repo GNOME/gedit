@@ -169,38 +169,13 @@ gedit_window_get_property (GObject    *object,
 }
 
 static void
-save_side_panel_state (GeditWindow *window)
-{
-	_gedit_side_panel_save_state (window->priv->side_panel);
-
-	if (window->priv->side_panel_size > 0)
-	{
-		g_settings_set_int (window->priv->window_settings,
-				    GEDIT_SETTINGS_SIDE_PANEL_SIZE,
-				    window->priv->side_panel_size);
-	}
-}
-
-static void
-save_bottom_panel_state (GeditWindow *window)
-{
-	_gedit_bottom_panel_save_state (window->priv->bottom_panel);
-
-	if (window->priv->bottom_panel_size > 0)
-	{
-		g_settings_set_int (window->priv->window_settings,
-				    GEDIT_SETTINGS_BOTTOM_PANEL_SIZE,
-				    window->priv->bottom_panel_size);
-	}
-}
-
-static void
 save_panels_state (GeditWindow *window)
 {
-	save_side_panel_state (window);
-	save_bottom_panel_state (window);
+	_gedit_side_panel_save_state (window->priv->side_panel,
+				      window->priv->side_panel_size);
 
-	g_settings_apply (window->priv->window_settings);
+	_gedit_bottom_panel_save_state (window->priv->bottom_panel,
+					window->priv->bottom_panel_size);
 }
 
 static void

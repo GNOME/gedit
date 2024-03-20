@@ -42,7 +42,8 @@ G_GNUC_INTERNAL
 GtkStack *		_gedit_bottom_panel_get_stack	(GeditBottomPanel *panel);
 
 G_GNUC_INTERNAL
-void			_gedit_bottom_panel_save_state	(GeditBottomPanel *panel);
+void			_gedit_bottom_panel_save_state	(GeditBottomPanel *panel,
+							 gint              height);
 
 G_END_DECLS
 

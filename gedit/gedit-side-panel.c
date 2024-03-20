@@ -85,7 +85,8 @@ _gedit_side_panel_get_panel_container (GeditSidePanel *panel)
 }
 
 void
-_gedit_side_panel_save_state (GeditSidePanel *panel)
+_gedit_side_panel_save_state (GeditSidePanel *panel,
+			      gint            width)
 {
 	GeditSettings *settings;
 	GSettings *window_state_settings;
@@ -102,5 +103,12 @@ _gedit_side_panel_save_state (GeditSidePanel *panel)
 		g_settings_set_string (window_state_settings,
 				       GEDIT_SETTINGS_SIDE_PANEL_ACTIVE_PAGE,
 				       item_name);
+	}
+
+	if (width > 0)
+	{
+		g_settings_set_int (window_state_settings,
+				    GEDIT_SETTINGS_SIDE_PANEL_SIZE,
+				    width);
 	}
 }

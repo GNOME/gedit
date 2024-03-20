@@ -83,7 +83,8 @@ _gedit_bottom_panel_get_stack (GeditBottomPanel *panel)
 }
 
 void
-_gedit_bottom_panel_save_state (GeditBottomPanel *panel)
+_gedit_bottom_panel_save_state (GeditBottomPanel *panel,
+				gint              height)
 {
 	GeditSettings *settings;
 	GSettings *window_state_settings;
@@ -100,5 +101,12 @@ _gedit_bottom_panel_save_state (GeditBottomPanel *panel)
 		g_settings_set_string (window_state_settings,
 				       GEDIT_SETTINGS_BOTTOM_PANEL_ACTIVE_PAGE,
 				       panel_page);
+	}
+
+	if (height > 0)
+	{
+		g_settings_set_int (window_state_settings,
+				    GEDIT_SETTINGS_BOTTOM_PANEL_SIZE,
+				    height);
 	}
 }

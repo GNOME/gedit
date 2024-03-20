@@ -42,7 +42,8 @@ G_GNUC_INTERNAL
 TeplPanelContainer *	_gedit_side_panel_get_panel_container	(GeditSidePanel *panel);
 
 G_GNUC_INTERNAL
-void			_gedit_side_panel_save_state		(GeditSidePanel *panel);
+void			_gedit_side_panel_save_state		(GeditSidePanel *panel,
+								 gint            width);
 
 G_END_DECLS
 
