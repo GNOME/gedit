@@ -194,11 +194,9 @@ save_window_state (GeditWindow *window)
 static void
 gedit_window_dispose (GObject *object)
 {
-	GeditWindow *window;
+	GeditWindow *window = GEDIT_WINDOW (object);
 
 	gedit_debug (DEBUG_WINDOW);
-
-	window = GEDIT_WINDOW (object);
 
 	/* Stop tracking removal of panels otherwise we always
 	 * end up with thinking we had no panel active, since they
@@ -295,9 +293,7 @@ update_fullscreen (GeditWindow *window,
 	}
 #endif
 
-	fullscreen_action = g_action_map_lookup_action (G_ACTION_MAP (window),
-	                                                "fullscreen");
-
+	fullscreen_action = g_action_map_lookup_action (G_ACTION_MAP (window), "fullscreen");
 	g_simple_action_set_state (G_SIMPLE_ACTION (fullscreen_action),
 	                           g_variant_new_boolean (is_fullscreen));
 }
@@ -310,7 +306,8 @@ gedit_window_window_state_event (GtkWidget           *widget,
 
 	window->priv->window_state = event->new_window_state;
 
-	g_settings_set_int (window->priv->window_settings, GEDIT_SETTINGS_WINDOW_STATE,
+	g_settings_set_int (window->priv->window_settings,
+			    GEDIT_SETTINGS_WINDOW_STATE,
 			    window->priv->window_state);
 
 	if ((event->changed_mask & GDK_WINDOW_STATE_FULLSCREEN) != 0)
