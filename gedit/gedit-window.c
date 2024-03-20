@@ -181,7 +181,7 @@ save_side_panel_state (GeditWindow *window)
 				    window->priv->side_panel_size);
 	}
 
-	panel_container = gedit_side_panel_get_panel_container (window->priv->side_panel);
+	panel_container = _gedit_side_panel_get_panel_container (window->priv->side_panel);
 	item_name = tepl_panel_container_get_active_item_name (panel_container);
 	if (item_name != NULL)
 	{
@@ -527,6 +527,7 @@ gedit_window_class_init (GeditWindowClass *klass)
 			      0);
 
 	/* Bind class to template */
+	g_type_ensure (GEDIT_TYPE_SIDE_PANEL);
 	g_type_ensure (GEDIT_TYPE_BOTTOM_PANEL);
 	gtk_widget_class_set_template_from_resource (widget_class,
 	                                             "/org/gnome/gedit/ui/gedit-window.ui");
@@ -962,13 +963,13 @@ clone_window (GeditWindow *origin)
 	window->priv->side_panel_size = origin->priv->side_panel_size;
 	window->priv->bottom_panel_size = origin->priv->bottom_panel_size;
 
-	origin_side_panel = gedit_side_panel_get_panel_container (origin->priv->side_panel);
+	origin_side_panel = _gedit_side_panel_get_panel_container (origin->priv->side_panel);
 	side_panel_item_name = tepl_panel_container_get_active_item_name (origin_side_panel);
 	if (side_panel_item_name != NULL)
 	{
 		TeplPanelContainer *side_panel;
 
-		side_panel = gedit_side_panel_get_panel_container (window->priv->side_panel);
+		side_panel = _gedit_side_panel_get_panel_container (window->priv->side_panel);
 		tepl_panel_container_set_active_item_name (side_panel, side_panel_item_name);
 	}
 
@@ -2084,7 +2085,7 @@ add_documents_panel (GeditWindow *window)
 	documents_panel = gedit_documents_panel_new (window);
 	gtk_widget_show_all (documents_panel);
 
-	panel_container = gedit_side_panel_get_panel_container (window->priv->side_panel);
+	panel_container = _gedit_side_panel_get_panel_container (window->priv->side_panel);
 	item = tepl_panel_add (TEPL_PANEL (panel_container),
 			       documents_panel,
 			       "GeditWindowDocumentsPanel",
@@ -2190,7 +2191,7 @@ init_side_panel_visibility (GeditWindow *window)
 	gchar *item_name;
 	gboolean side_panel_visible;
 
-	side_panel = gedit_side_panel_get_panel_container (window->priv->side_panel);
+	side_panel = _gedit_side_panel_get_panel_container (window->priv->side_panel);
 
 	item_name = g_settings_get_string (window->priv->window_settings,
 					   GEDIT_SETTINGS_SIDE_PANEL_ACTIVE_PAGE);
@@ -2433,7 +2434,7 @@ create_side_headerbar (GeditWindow *window)
 	window->priv->side_headerbar = GTK_HEADER_BAR (gtk_header_bar_new ());
 	gtk_header_bar_set_show_close_button (window->priv->side_headerbar, TRUE);
 
-	panel_container = gedit_side_panel_get_panel_container (window->priv->side_panel);
+	panel_container = _gedit_side_panel_get_panel_container (window->priv->side_panel);
 	switcher = tepl_panel_switcher_menu_new (panel_container);
 	gtk_widget_show (GTK_WIDGET (switcher));
 
@@ -3048,7 +3049,7 @@ TeplPanel *
 gedit_window_get_side_panel (GeditWindow *window)
 {
 	g_return_val_if_fail (GEDIT_IS_WINDOW (window), NULL);
-	return TEPL_PANEL (gedit_side_panel_get_panel_container (window->priv->side_panel));
+	return TEPL_PANEL (_gedit_side_panel_get_panel_container (window->priv->side_panel));
 }
 
 GeditBottomPanel *

@@ -1,4 +1,4 @@
-/* SPDX-FileCopyrightText: 2023 - Sébastien Wilmet <swilmet@gnome.org>
+/* SPDX-FileCopyrightText: 2023-2024 - Sébastien Wilmet <swilmet@gnome.org>
  * SPDX-License-Identifier: LGPL-3.0-or-later
  */
 
@@ -9,7 +9,7 @@
 
 G_BEGIN_DECLS
 
-#define GEDIT_TYPE_SIDE_PANEL             (gedit_side_panel_get_type ())
+#define GEDIT_TYPE_SIDE_PANEL             (_gedit_side_panel_get_type ())
 #define GEDIT_SIDE_PANEL(obj)             (G_TYPE_CHECK_INSTANCE_CAST ((obj), GEDIT_TYPE_SIDE_PANEL, GeditSidePanel))
 #define GEDIT_SIDE_PANEL_CLASS(klass)     (G_TYPE_CHECK_CLASS_CAST ((klass), GEDIT_TYPE_SIDE_PANEL, GeditSidePanelClass))
 #define GEDIT_IS_SIDE_PANEL(obj)          (G_TYPE_CHECK_INSTANCE_TYPE ((obj), GEDIT_TYPE_SIDE_PANEL))
@@ -32,11 +32,14 @@ struct _GeditSidePanelClass
 	GtkBinClass parent_class;
 };
 
-GType			gedit_side_panel_get_type		(void);
+G_GNUC_INTERNAL
+GType			_gedit_side_panel_get_type		(void);
 
-GeditSidePanel *	gedit_side_panel_new			(void);
+G_GNUC_INTERNAL
+GeditSidePanel *	_gedit_side_panel_new			(void);
 
-TeplPanelContainer *	gedit_side_panel_get_panel_container	(GeditSidePanel *panel);
+G_GNUC_INTERNAL
+TeplPanelContainer *	_gedit_side_panel_get_panel_container	(GeditSidePanel *panel);
 
 G_END_DECLS
 
