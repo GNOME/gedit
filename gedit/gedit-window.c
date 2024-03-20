@@ -184,23 +184,13 @@ save_side_panel_state (GeditWindow *window)
 static void
 save_bottom_panel_state (GeditWindow *window)
 {
-	GtkStack *stack;
-	const gchar *panel_page;
+	_gedit_bottom_panel_save_state (window->priv->bottom_panel);
 
 	if (window->priv->bottom_panel_size > 0)
 	{
 		g_settings_set_int (window->priv->window_settings,
 				    GEDIT_SETTINGS_BOTTOM_PANEL_SIZE,
 				    window->priv->bottom_panel_size);
-	}
-
-	stack = _gedit_bottom_panel_get_stack (window->priv->bottom_panel);
-	panel_page = gtk_stack_get_visible_child_name (stack);
-	if (panel_page != NULL)
-	{
-		g_settings_set_string (window->priv->window_settings,
-				       GEDIT_SETTINGS_BOTTOM_PANEL_ACTIVE_PAGE,
-				       panel_page);
 	}
 }
 

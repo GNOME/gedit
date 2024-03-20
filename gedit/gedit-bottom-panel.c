@@ -6,6 +6,7 @@
 #include <tepl/tepl.h>
 #include <glib/gi18n.h>
 #include "gedit-notebook-stack-switcher.h"
+#include "gedit-settings.h"
 
 struct _GeditBottomPanelPrivate
 {
@@ -79,4 +80,25 @@ _gedit_bottom_panel_get_stack (GeditBottomPanel *panel)
 {
 	g_return_val_if_fail (GEDIT_IS_BOTTOM_PANEL (panel), NULL);
 	return panel->priv->stack;
+}
+
+void
+_gedit_bottom_panel_save_state (GeditBottomPanel *panel)
+{
+	GeditSettings *settings;
+	GSettings *window_state_settings;
+	const gchar *panel_page;
+
+	g_return_if_fail (GEDIT_IS_BOTTOM_PANEL (panel));
+
+	settings = _gedit_settings_get_singleton ();
+	window_state_settings = _gedit_settings_peek_window_state_settings (settings);
+
+	panel_page = gtk_stack_get_visible_child_name (panel->priv->stack);
+	if (panel_page != NULL)
+	{
+		g_settings_set_string (window_state_settings,
+				       GEDIT_SETTINGS_BOTTOM_PANEL_ACTIVE_PAGE,
+				       panel_page);
+	}
 }
