@@ -21,7 +21,6 @@
 
 #include "gedit-commands-private.h"
 #include "gedit-window-private.h"
-#include "gedit-notebook.h"
 
 void
 _gedit_cmd_documents_previous_document (GSimpleAction *action,
