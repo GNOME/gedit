@@ -444,21 +444,13 @@ about_activated (GSimpleAction  *action,
 	_gedit_cmd_help_about (window);
 }
 
-static void
-quit_activated (GSimpleAction *action,
-                GVariant      *parameter,
-                gpointer       user_data)
-{
-	_gedit_cmd_file_quit (NULL);
-}
-
 static GActionEntry app_entries[] = {
 	{ "new-window", new_window_activated, NULL, NULL, NULL },
 	{ "new-document", new_document_activated, NULL, NULL, NULL },
 	{ "preferences", preferences_activated, NULL, NULL, NULL },
 	{ "help", help_activated, NULL, NULL, NULL },
 	{ "about", about_activated, NULL, NULL, NULL },
-	{ "quit", quit_activated, NULL, NULL, NULL }
+	{ "quit", _gedit_cmd_file_quit, NULL, NULL, NULL }
 };
 
 static void
@@ -1148,7 +1140,7 @@ window_delete_event (GeditWindow *window,
 		return TRUE;
 	}
 
-	_gedit_cmd_file_quit (window);
+	_gedit_cmd_file_close_window (window);
 
 	/* Do not destroy the window */
 	return TRUE;

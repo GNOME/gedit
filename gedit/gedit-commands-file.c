@@ -2106,9 +2106,22 @@ _gedit_cmd_file_close_all (GSimpleAction *action,
 	file_close_all (window, FALSE);
 }
 
-/* Quit */
-static void
-quit_all (void)
+void
+_gedit_cmd_file_close_window (GeditWindow *window)
+{
+	g_return_if_fail (GEDIT_IS_WINDOW (window));
+	g_return_if_fail (!(gedit_window_get_state (window) &
+	                    (GEDIT_WINDOW_STATE_SAVING |
+	                     GEDIT_WINDOW_STATE_PRINTING)));
+
+	file_close_all (window, TRUE);
+}
+
+/* Close all windows */
+void
+_gedit_cmd_file_quit (GSimpleAction *action,
+		      GVariant      *parameter,
+		      gpointer       user_data)
 {
 	GList *windows;
 	GList *l;
@@ -2139,22 +2152,6 @@ quit_all (void)
 	}
 
 	g_list_free (windows);
-}
-
-void
-_gedit_cmd_file_quit (GeditWindow *window)
-{
-	if (window == NULL)
-	{
-		quit_all ();
-		return;
-	}
-
-	g_return_if_fail (!(gedit_window_get_state (window) &
-	                    (GEDIT_WINDOW_STATE_SAVING |
-	                     GEDIT_WINDOW_STATE_PRINTING)));
-
-	file_close_all (window, TRUE);
 }
 
 /* ex:set ts=8 noet: */
