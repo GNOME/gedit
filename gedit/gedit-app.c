@@ -449,7 +449,7 @@ quit_activated (GSimpleAction *action,
                 GVariant      *parameter,
                 gpointer       user_data)
 {
-	_gedit_cmd_file_quit (NULL, NULL, NULL);
+	_gedit_cmd_file_quit (NULL);
 }
 
 static GActionEntry app_entries[] = {
@@ -1148,7 +1148,7 @@ window_delete_event (GeditWindow *window,
 		return TRUE;
 	}
 
-	_gedit_cmd_file_quit (NULL, NULL, window);
+	_gedit_cmd_file_quit (window);
 
 	/* Do not destroy the window */
 	return TRUE;

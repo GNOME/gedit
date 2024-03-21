@@ -67,9 +67,7 @@ void		_gedit_cmd_file_close			(GSimpleAction *action,
 void		_gedit_cmd_file_close_all		(GSimpleAction *action,
 							 GVariant      *parameter,
 							 gpointer       user_data);
-void		_gedit_cmd_file_quit			(GSimpleAction *action,
-							 GVariant      *parameter,
-							 gpointer       user_data);
+void		_gedit_cmd_file_quit			(GeditWindow *window);
 
 void		_gedit_cmd_edit_undo			(GSimpleAction *action,
 							 GVariant      *parameter,

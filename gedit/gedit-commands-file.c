@@ -2142,14 +2142,8 @@ quit_all (void)
 }
 
 void
-_gedit_cmd_file_quit (GSimpleAction *action,
-                      GVariant      *parameter,
-                      gpointer       user_data)
+_gedit_cmd_file_quit (GeditWindow *window)
 {
-	GeditWindow *window = GEDIT_WINDOW (user_data);
-
-	gedit_debug (DEBUG_COMMANDS);
-
 	if (window == NULL)
 	{
 		quit_all ();
