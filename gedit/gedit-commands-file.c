@@ -2123,9 +2123,9 @@ _gedit_cmd_file_quit (GSimpleAction *action,
 		      GVariant      *parameter,
 		      gpointer       user_data)
 {
+	GApplication *app;
 	GList *windows;
 	GList *l;
-	GApplication *app;
 
 	app = g_application_get_default ();
 	windows = gedit_app_get_main_windows (GEDIT_APP (app));
@@ -2136,16 +2136,19 @@ _gedit_cmd_file_quit (GSimpleAction *action,
 		return;
 	}
 
-	for (l = windows; l != NULL; l = g_list_next (l))
+	for (l = windows; l != NULL; l = l->next)
 	{
-		GeditWindow *window = l->data;
+		GeditWindow *window = GEDIT_WINDOW (l->data);
+		GeditWindowState window_state;
 
 		g_object_set_data (G_OBJECT (window),
-		                   GEDIT_IS_QUITTING_ALL,
-		                   GBOOLEAN_TO_POINTER (TRUE));
+				   GEDIT_IS_QUITTING_ALL,
+				   GBOOLEAN_TO_POINTER (TRUE));
 
-		if (!(gedit_window_get_state (window) &
-		      (GEDIT_WINDOW_STATE_SAVING | GEDIT_WINDOW_STATE_PRINTING)))
+		window_state = gedit_window_get_state (window);
+
+		if ((window_state & GEDIT_WINDOW_STATE_SAVING) == 0 &&
+		    (window_state & GEDIT_WINDOW_STATE_PRINTING) == 0)
 		{
 			file_close_all (window, TRUE);
 		}
