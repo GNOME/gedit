@@ -53,10 +53,13 @@ _gedit_cmd_view_toggle_side_panel (GSimpleAction *action,
 	visible = g_variant_get_boolean (state);
 	gtk_widget_set_visible (GTK_WIDGET (panel), visible);
 
+	/* TODO: either remove this code, or make it work as desired. */
+#if 0
 	if (visible)
 	{
 		gtk_widget_grab_focus (GTK_WIDGET (panel));
 	}
+#endif
 
 	g_simple_action_set_state (action, state);
 }
@@ -75,10 +78,13 @@ _gedit_cmd_view_toggle_bottom_panel (GSimpleAction *action,
 	visible = g_variant_get_boolean (state);
 	gtk_widget_set_visible (GTK_WIDGET (panel), visible);
 
+	/* TODO: either remove this code, or make it work as desired. */
+#if 0
 	if (visible)
 	{
 		gtk_widget_grab_focus (GTK_WIDGET (panel));
 	}
+#endif
 
 	g_simple_action_set_state (action, state);
 }
