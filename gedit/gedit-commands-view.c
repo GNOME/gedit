@@ -1,5 +1,4 @@
 /*
- * gedit-view-commands.c
  * This file is part of gedit
  *
  * Copyright (C) 1998, 1999 Alex Roberts, Evan Lawrence
@@ -20,27 +19,21 @@
  * along with this program; if not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "config.h"
-#include "gedit-commands.h"
 #include "gedit-commands-private.h"
 #include <tepl/tepl.h>
-#include "gedit-debug.h"
-#include "gedit-window.h"
 #include "gedit-window-private.h"
 
 void
 _gedit_cmd_view_focus_active (GSimpleAction *action,
-                              GVariant      *state,
-                              gpointer       user_data)
+			      GVariant      *state,
+			      gpointer       user_data)
 {
-	GeditView *active_view;
 	GeditWindow *window = GEDIT_WINDOW (user_data);
-
-	gedit_debug (DEBUG_COMMANDS);
+	GeditView *active_view;
 
 	active_view = gedit_window_get_active_view (window);
 
-	if (active_view)
+	if (active_view != NULL)
 	{
 		gtk_widget_grab_focus (GTK_WIDGET (active_view));
 	}
@@ -48,14 +41,12 @@ _gedit_cmd_view_focus_active (GSimpleAction *action,
 
 void
 _gedit_cmd_view_toggle_side_panel (GSimpleAction *action,
-                                   GVariant      *state,
-                                   gpointer       user_data)
+				   GVariant      *state,
+				   gpointer       user_data)
 {
 	GeditWindow *window = GEDIT_WINDOW (user_data);
 	GeditSidePanel *panel;
 	gboolean visible;
-
-	gedit_debug (DEBUG_COMMANDS);
 
 	panel = _gedit_window_get_whole_side_panel (window);
 
@@ -72,14 +63,12 @@ _gedit_cmd_view_toggle_side_panel (GSimpleAction *action,
 
 void
 _gedit_cmd_view_toggle_bottom_panel (GSimpleAction *action,
-                                     GVariant      *state,
-                                     gpointer       user_data)
+				     GVariant      *state,
+				     gpointer       user_data)
 {
 	GeditWindow *window = GEDIT_WINDOW (user_data);
 	GeditBottomPanel *panel;
 	gboolean visible;
-
-	gedit_debug (DEBUG_COMMANDS);
 
 	panel = _gedit_window_get_whole_bottom_panel (window);
 
@@ -96,12 +85,10 @@ _gedit_cmd_view_toggle_bottom_panel (GSimpleAction *action,
 
 void
 _gedit_cmd_view_toggle_fullscreen_mode (GSimpleAction *action,
-                                        GVariant      *state,
-                                        gpointer       user_data)
+					GVariant      *state,
+					gpointer       user_data)
 {
 	GeditWindow *window = GEDIT_WINDOW (user_data);
-
-	gedit_debug (DEBUG_COMMANDS);
 
 	if (g_variant_get_boolean (state))
 	{
@@ -115,8 +102,8 @@ _gedit_cmd_view_toggle_fullscreen_mode (GSimpleAction *action,
 
 void
 _gedit_cmd_view_leave_fullscreen_mode (GSimpleAction *action,
-                                       GVariant      *parameter,
-                                       gpointer       user_data)
+				       GVariant      *parameter,
+				       gpointer       user_data)
 {
 	_gedit_window_unfullscreen (GEDIT_WINDOW (user_data));
 }
@@ -147,8 +134,8 @@ language_chooser_dialog_response_after_cb (TeplLanguageChooserDialog *dialog,
 
 void
 _gedit_cmd_view_highlight_mode (GSimpleAction *action,
-                                GVariant      *parameter,
-                                gpointer       user_data)
+				GVariant      *parameter,
+				gpointer       user_data)
 {
 	GeditWindow *window = GEDIT_WINDOW (user_data);
 	TeplLanguageChooserDialog *dialog;
@@ -169,7 +156,7 @@ _gedit_cmd_view_highlight_mode (GSimpleAction *action,
 				 "language-activated",
 				 G_CALLBACK (language_activated_cb),
 				 window,
-				 0);
+				 G_CONNECT_DEFAULT);
 
 	g_signal_connect_after (dialog,
 				"response",
