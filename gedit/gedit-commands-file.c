@@ -35,7 +35,7 @@
 #include "gedit-document-private.h"
 #include "gedit-tab.h"
 #include "gedit-tab-private.h"
-#include "gedit-window.h"
+#include "gedit-window-private.h"
 #include "gedit-notebook.h"
 #include "gedit-statusbar.h"
 #include "gedit-utils.h"
@@ -2060,12 +2060,6 @@ file_close_all (GeditWindow *window,
 {
 	GList *unsaved_docs;
 
-	gedit_debug (DEBUG_COMMANDS);
-
-	g_return_if_fail (!(gedit_window_get_state (window) &
-	                    (GEDIT_WINDOW_STATE_SAVING |
-	                     GEDIT_WINDOW_STATE_PRINTING)));
-
 	g_object_set_data (G_OBJECT (window),
 			   GEDIT_IS_CLOSING_ALL,
 			   GBOOLEAN_TO_POINTER (TRUE));
@@ -2097,11 +2091,7 @@ _gedit_cmd_file_close_all (GSimpleAction *action,
 {
 	GeditWindow *window = GEDIT_WINDOW (user_data);
 
-	gedit_debug (DEBUG_COMMANDS);
-
-	g_return_if_fail (!(gedit_window_get_state (window) &
-			    (GEDIT_WINDOW_STATE_SAVING |
-			     GEDIT_WINDOW_STATE_PRINTING)));
+	g_return_if_fail (_gedit_window_get_can_close (window));
 
 	file_close_all (window, FALSE);
 }
@@ -2110,9 +2100,7 @@ void
 _gedit_cmd_file_close_window (GeditWindow *window)
 {
 	g_return_if_fail (GEDIT_IS_WINDOW (window));
-	g_return_if_fail (!(gedit_window_get_state (window) &
-	                    (GEDIT_WINDOW_STATE_SAVING |
-	                     GEDIT_WINDOW_STATE_PRINTING)));
+	g_return_if_fail (_gedit_window_get_can_close (window));
 
 	file_close_all (window, TRUE);
 }
@@ -2139,16 +2127,12 @@ _gedit_cmd_file_quit (GSimpleAction *action,
 	for (l = windows; l != NULL; l = l->next)
 	{
 		GeditWindow *window = GEDIT_WINDOW (l->data);
-		GeditWindowState window_state;
 
 		g_object_set_data (G_OBJECT (window),
 				   GEDIT_IS_QUITTING_ALL,
 				   GBOOLEAN_TO_POINTER (TRUE));
 
-		window_state = gedit_window_get_state (window);
-
-		if ((window_state & GEDIT_WINDOW_STATE_SAVING) == 0 &&
-		    (window_state & GEDIT_WINDOW_STATE_PRINTING) == 0)
+		if (_gedit_window_get_can_close (window))
 		{
 			file_close_all (window, TRUE);
 		}
