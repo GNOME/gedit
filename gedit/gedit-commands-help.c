@@ -1,5 +1,4 @@
 /*
- * gedit-help-commands.c
  * This file is part of gedit
  *
  * Copyright (C) 1998, 1999 Alex Roberts, Evan Lawrence
@@ -21,26 +20,17 @@
  */
 
 #include "config.h"
-
-#include "gedit-commands.h"
 #include "gedit-commands-private.h"
-
 #include <glib/gi18n.h>
-#include <gtk/gtk.h>
-
-#include "gedit-debug.h"
 #include "gedit-app.h"
-#include "gedit-dirs.h"
 
 void
 _gedit_cmd_help_contents (GeditWindow *window)
 {
-	gedit_debug (DEBUG_COMMANDS);
-
 	gedit_app_show_help (GEDIT_APP (g_application_get_default ()),
-	                     GTK_WINDOW (window),
-	                     NULL,
-	                     NULL);
+			     GTK_WINDOW (window),
+			     NULL,
+			     NULL);
 }
 
 void
@@ -52,8 +42,8 @@ _gedit_cmd_help_about (GeditWindow *window)
 		 * writing).
 		 */
 		_("Main authors:"),
-		"   Paolo Borelli",
 		"   Sébastien Wilmet",
+		"   Paolo Borelli",
 		"   Ignacio Casal Quinteiro",
 		"   Jesse van den Kieboom",
 		"   Paolo Maggi",
@@ -81,10 +71,7 @@ _gedit_cmd_help_about (GeditWindow *window)
 		NULL
 	};
 
-	gedit_debug (DEBUG_COMMANDS);
-
 	gtk_show_about_dialog (GTK_WINDOW (window),
-			       "program-name", "gedit",
 			       "authors", authors,
 			       "comments", _("gedit is an easy-to-use and general-purpose text editor"),
 			       "copyright", "Copyright 1998-2024 – the gedit team",
