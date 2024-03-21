@@ -1,5 +1,4 @@
 /*
- * gedit-commands-file-print.c
  * This file is part of gedit
  *
  * Copyright (C) 1998, 1999 Alex Roberts, Evan Lawrence
@@ -20,23 +19,16 @@
  * along with this program; if not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "gedit-commands.h"
 #include "gedit-commands-private.h"
-
-#include "gedit-window.h"
-#include "gedit-tab.h"
 #include "gedit-tab-private.h"
-#include "gedit-debug.h"
 
 void
 _gedit_cmd_file_print (GSimpleAction *action,
-                       GVariant      *parameter,
-                       gpointer       user_data)
+		       GVariant      *parameter,
+		       gpointer       user_data)
 {
 	GeditWindow *window = GEDIT_WINDOW (user_data);
 	GeditTab *tab;
-
-	gedit_debug (DEBUG_COMMANDS);
 
 	tab = gedit_window_get_active_tab (window);
 
