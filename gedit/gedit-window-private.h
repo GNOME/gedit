@@ -21,6 +21,8 @@ GeditBottomPanel *	_gedit_window_get_whole_bottom_panel	(GeditWindow *window);
 
 GeditWindowTitles *	_gedit_window_get_window_titles		(GeditWindow *window);
 
+gboolean		_gedit_window_get_can_close		(GeditWindow *window);
+
 G_END_DECLS
 
 #endif /* GEDIT_WINDOW_PRIVATE_H */

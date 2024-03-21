@@ -3273,4 +3273,14 @@ _gedit_window_get_window_titles (GeditWindow *window)
 	return window->priv->window_titles;
 }
 
+/* Note: this doesn't take into account whether there are unsaved documents. */
+gboolean
+_gedit_window_get_can_close (GeditWindow *window)
+{
+	g_return_val_if_fail (GEDIT_IS_WINDOW (window), FALSE);
+
+	return ((window->priv->state & GEDIT_WINDOW_STATE_SAVING) == 0 &&
+		(window->priv->state & GEDIT_WINDOW_STATE_PRINTING) == 0);
+}
+
 /* ex:set ts=8 noet: */
