@@ -43,6 +43,7 @@
 #include "gedit-commands.h"
 #include "gedit-preferences-dialog.h"
 #include "gedit-tab.h"
+#include "gedit-window-private.h"
 
 #define GEDIT_PAGE_SETUP_FILE		"gedit-page-setup"
 #define GEDIT_PRINT_SETTINGS_FILE	"gedit-print-settings"
@@ -1126,24 +1127,17 @@ gedit_app_shutdown (GApplication *app)
 }
 
 static gboolean
-window_delete_event (GeditWindow *window,
-                     GdkEvent    *event,
-                     GeditApp    *app)
+window_delete_event_cb (GeditWindow *window,
+			GdkEvent    *event,
+			gpointer     user_data)
 {
-	GeditWindowState ws;
-
-	ws = gedit_window_get_state (window);
-
-	if (ws &
-	    (GEDIT_WINDOW_STATE_SAVING | GEDIT_WINDOW_STATE_PRINTING))
+	if (_gedit_window_get_can_close (window))
 	{
-		return TRUE;
+		_gedit_cmd_file_close_window (window);
 	}
 
-	_gedit_cmd_file_close_window (window);
-
-	/* Do not destroy the window */
-	return TRUE;
+	/* Do not destroy the window. */
+	return GDK_EVENT_STOP;
 }
 
 static GeditWindow *
@@ -1151,14 +1145,14 @@ gedit_app_create_window_impl (GeditApp *app)
 {
 	GeditWindow *window;
 
-	window = g_object_new (GEDIT_TYPE_WINDOW, "application", app, NULL);
-
-	gedit_debug_message (DEBUG_APP, "Window created");
+	window = g_object_new (GEDIT_TYPE_WINDOW,
+			       "application", app,
+			       NULL);
 
 	g_signal_connect (window,
-			  "delete_event",
-			  G_CALLBACK (window_delete_event),
-			  app);
+			  "delete-event",
+			  G_CALLBACK (window_delete_event_cb),
+			  NULL);
 
 	return window;
 }
