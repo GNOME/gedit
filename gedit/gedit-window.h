@@ -27,6 +27,16 @@
 
 G_BEGIN_DECLS
 
+/**
+ * GeditWindowState:
+ * @GEDIT_WINDOW_STATE_NORMAL: Normal state.
+ * @GEDIT_WINDOW_STATE_SAVING: Saving.
+ * @GEDIT_WINDOW_STATE_PRINTING: Printing.
+ * @GEDIT_WINDOW_STATE_LOADING: Loading.
+ * @GEDIT_WINDOW_STATE_ERROR: Error.
+ *
+ * Flags for the state of a #GeditWindow.
+ */
 typedef enum
 {
 	GEDIT_WINDOW_STATE_NORMAL		= 0,
