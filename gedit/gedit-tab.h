@@ -27,6 +27,25 @@
 
 G_BEGIN_DECLS
 
+/**
+ * GeditTabState:
+ * @GEDIT_TAB_STATE_NORMAL: Normal state.
+ * @GEDIT_TAB_STATE_LOADING: Loading.
+ * @GEDIT_TAB_STATE_REVERTING: Reverting.
+ * @GEDIT_TAB_STATE_SAVING: Saving.
+ * @GEDIT_TAB_STATE_PRINTING: Printing.
+ * @GEDIT_TAB_STATE_SHOWING_PRINT_PREVIEW: Showing print preview.
+ * @GEDIT_TAB_STATE_LOADING_ERROR: There is a loading error.
+ * @GEDIT_TAB_STATE_REVERTING_ERROR: There is a reverting error.
+ * @GEDIT_TAB_STATE_SAVING_ERROR: There is a saving error.
+ * @GEDIT_TAB_STATE_GENERIC_ERROR: There is another kind of error.
+ * @GEDIT_TAB_STATE_CLOSING: Closing.
+ * @GEDIT_TAB_STATE_EXTERNALLY_MODIFIED_NOTIFICATION: There is a notification
+ *   about the document being externally modified.
+ *
+ * The state of a #GeditTab. Note that the enumerators are not flags, so they
+ * cannot be combined. A #GeditTab is in only one state at a time.
+ */
 typedef enum
 {
 	GEDIT_TAB_STATE_NORMAL = 0,
@@ -41,7 +60,8 @@ typedef enum
 	GEDIT_TAB_STATE_GENERIC_ERROR,
 	GEDIT_TAB_STATE_CLOSING,
 	GEDIT_TAB_STATE_EXTERNALLY_MODIFIED_NOTIFICATION,
-	GEDIT_TAB_NUM_OF_STATES /* This is not a valid state */
+	/*< private >*/
+	GEDIT_TAB_NUM_OF_STATES /* This is not a valid state. */
 } GeditTabState;
 
 #define GEDIT_TYPE_TAB (gedit_tab_get_type())
