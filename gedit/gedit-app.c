@@ -1432,7 +1432,7 @@ gedit_app_get_views (GeditApp *app)
  * @name_of_user_manual: (nullable): %NULL for gedit's user manual, otherwise
  *   the name of another user manual (e.g., one from another application).
  * @link_id_within_user_manual: (nullable): a link ID within the user manual, or
- *   %NULL to show the start page.
+ *   %NULL to show its start page.
  *
  * To show the user manual.
  *
@@ -1450,7 +1450,8 @@ gedit_app_get_views (GeditApp *app)
  *
  * `$ yelp 'help:gedit/gedit-replace'`
  *
- * It is also possible to refer to a section id within a page id, for example:
+ * With @link_id_within_user_manual set to `"gedit-spellcheck#dict"` (it refers
+ * to a section id within a page id):
  *
  * `$ yelp 'help:gedit/gedit-spellcheck#dict'`
  *
