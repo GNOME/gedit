@@ -47,10 +47,12 @@
 /**
  * SECTION:gedit-app
  * @Title: GeditApp
- * @Short_description: Subclass of #GtkApplication
+ * @Short_description: The whole application
  *
  * #GeditApp is a subclass of #GtkApplication, representing the whole
  * application.
+ *
+ * It contains #GeditWindow's and other #GtkWindow's.
  */
 
 #define GEDIT_PAGE_SETUP_FILE		"gedit-page-setup"

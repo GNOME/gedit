@@ -46,6 +46,16 @@
 #include "gedit-settings.h"
 #include "gedit-header-bar.h"
 
+/**
+ * SECTION:gedit-window
+ * @Title: GeditWindow
+ * @Short_description: A main window
+ *
+ * #GeditWindow is a main window, a subclass of #GtkApplicationWindow.
+ *
+ * It contains #GeditTab's.
+ */
+
 struct _GeditWindowPrivate
 {
 	GSettings *editor_settings;

@@ -30,6 +30,15 @@
 #include "gedit-debug.h"
 #include "gedit-utils.h"
 
+/**
+ * SECTION:gedit-document
+ * @Title: GeditDocument
+ * @Short_description: A document
+ *
+ * #GeditDocument is a subclass of #TeplBuffer. It contains the content of a
+ * document.
+ */
+
 #define NO_LANGUAGE_NAME "_NORMAL_"
 
 static void	gedit_document_loaded_real	(GeditDocument *doc);

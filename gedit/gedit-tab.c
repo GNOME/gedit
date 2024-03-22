@@ -40,6 +40,15 @@
 #include "gedit-settings.h"
 #include "gedit-view-frame.h"
 
+/**
+ * SECTION:gedit-tab
+ * @Title: GeditTab
+ * @Short_description: A document tab
+ *
+ * #GeditTab is a #GtkContainer that contains a #GeditView and can show other
+ * widgets such as a #TeplInfoBar.
+ */
+
 #define GEDIT_TAB_KEY "GEDIT_TAB_KEY"
 
 struct _GeditTab

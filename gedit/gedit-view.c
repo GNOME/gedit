@@ -27,6 +27,18 @@
 #include "gedit-utils.h"
 #include "gedit-settings.h"
 
+/**
+ * SECTION:gedit-view
+ * @Title: GeditView
+ * @Short_description: A document view
+ *
+ * #GeditView is a subclass of #TeplView and is the #GtkWidget showing a
+ * document.
+ *
+ * It contains a #GeditDocument which can be retrieved with
+ * gtk_text_view_get_buffer().
+ */
+
 struct _GeditViewPrivate
 {
 	PeasExtensionSet *extensions;
