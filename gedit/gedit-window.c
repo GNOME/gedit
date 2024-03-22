@@ -2756,7 +2756,7 @@ gedit_window_create_tab (GeditWindow *window,
 
 /**
  * gedit_window_get_active_tab:
- * @window: a GeditWindow
+ * @window: a #GeditWindow.
  *
  * Returns: (transfer none) (nullable): the active #GeditTab of @window.
  */
@@ -2782,13 +2782,10 @@ add_document (GeditTab  *tab,
 
 /**
  * gedit_window_get_documents:
- * @window: a #GeditWindow
+ * @window: a #GeditWindow.
  *
- * Gets a newly allocated list with all the documents in the window.
- * This list must be freed.
- *
- * Returns: (element-type Gedit.Document) (transfer container): a newly
- * allocated list with all the documents in the window
+ * Returns: (element-type GeditDocument) (transfer container): a newly allocated
+ *   list with all the #GeditDocument's currently part of @window.
  */
 GList *
 gedit_window_get_documents (GeditWindow *window)
@@ -2819,12 +2816,10 @@ add_view (GeditTab  *tab,
 
 /**
  * gedit_window_get_views:
- * @window: a #GeditWindow
+ * @window: a #GeditWindow.
  *
- * Gets a list with all the views in the window. This list must be freed.
- *
- * Returns: (element-type Gedit.View) (transfer container): a newly allocated
- * list with all the views in the window
+ * Returns: (element-type GeditView) (transfer container): a newly allocated
+ *   list with all the #GeditView's currently part of @window.
  */
 GList *
 gedit_window_get_views (GeditWindow *window)
@@ -2844,8 +2839,8 @@ gedit_window_get_views (GeditWindow *window)
 
 /**
  * gedit_window_close_tab:
- * @window: a #GeditWindow
- * @tab: the #GeditTab to close
+ * @window: a #GeditWindow.
+ * @tab: the #GeditTab to close.
  *
  * Closes the @tab.
  */
@@ -2867,9 +2862,9 @@ gedit_window_close_tab (GeditWindow *window,
 
 /**
  * gedit_window_close_all_tabs:
- * @window: a #GeditWindow
+ * @window: a #GeditWindow.
  *
- * Closes all opened tabs.
+ * Closes all tabs of @window.
  */
 void
 gedit_window_close_all_tabs (GeditWindow *window)
@@ -2886,10 +2881,10 @@ gedit_window_close_all_tabs (GeditWindow *window)
 
 /**
  * gedit_window_close_tabs:
- * @window: a #GeditWindow
- * @tabs: (element-type Gedit.Tab): a list of #GeditTab
+ * @window: a #GeditWindow.
+ * @tabs: (element-type GeditTab): a list of #GeditTab's.
  *
- * Closes all tabs specified by @tabs.
+ * Closes all tabs specified in @tabs.
  */
 void
 gedit_window_close_tabs (GeditWindow *window,
@@ -2949,10 +2944,10 @@ _gedit_window_move_tab_to_new_tab_group (GeditWindow *window,
 
 /**
  * gedit_window_set_active_tab:
- * @window: a #GeditWindow
- * @tab: a #GeditTab
+ * @window: a #GeditWindow.
+ * @tab: a #GeditTab.
  *
- * Switches to the tab that matches with @tab.
+ * Switches to @tab.
  */
 void
 gedit_window_set_active_tab (GeditWindow *window,
@@ -2960,17 +2955,14 @@ gedit_window_set_active_tab (GeditWindow *window,
 {
 	g_return_if_fail (GEDIT_IS_WINDOW (window));
 
-	gedit_multi_notebook_set_active_tab (window->priv->multi_notebook,
-					     tab);
+	gedit_multi_notebook_set_active_tab (window->priv->multi_notebook, tab);
 }
 
 /**
  * gedit_window_get_group:
- * @window: a #GeditWindow
+ * @window: a #GeditWindow.
  *
- * Gets the #GtkWindowGroup in which @window resides.
- *
- * Returns: (transfer none): the #GtkWindowGroup
+ * Returns: (transfer none): the #GtkWindowGroup in which @window resides.
  */
 GtkWindowGroup *
 gedit_window_get_group (GeditWindow *window)
@@ -2997,9 +2989,9 @@ _gedit_window_get_whole_side_panel (GeditWindow *window)
 
 /**
  * gedit_window_get_side_panel:
- * @window: a #GeditWindow
+ * @window: a #GeditWindow.
  *
- * Returns: (transfer none): the side panel.
+ * Returns: (transfer none): the side panel of @window.
  * Since: 46
  */
 TeplPanel *
@@ -3018,11 +3010,10 @@ _gedit_window_get_whole_bottom_panel (GeditWindow *window)
 
 /**
  * gedit_window_get_bottom_panel:
- * @window: a #GeditWindow
+ * @window: a #GeditWindow.
  *
- * Gets the bottom panel of the @window.
- *
- * Returns: (transfer none): the bottom panel's #GtkStack.
+ * Returns: (transfer none): the bottom panel's #GtkStack that is part of
+ *   @window.
  */
 GtkWidget *
 gedit_window_get_bottom_panel (GeditWindow *window)
@@ -3033,11 +3024,9 @@ gedit_window_get_bottom_panel (GeditWindow *window)
 
 /**
  * gedit_window_get_statusbar:
- * @window: a #GeditWindow
+ * @window: a #GeditWindow.
  *
- * Gets the #GeditStatusbar of the @window.
- *
- * Returns: (transfer none): the #GeditStatusbar of the @window.
+ * Returns: (transfer none): the #GeditStatusbar of @window.
  */
 GtkWidget *
 gedit_window_get_statusbar (GeditWindow *window)
@@ -3049,11 +3038,9 @@ gedit_window_get_statusbar (GeditWindow *window)
 
 /**
  * gedit_window_get_state:
- * @window: a #GeditWindow
+ * @window: a #GeditWindow.
  *
- * Retrieves the state of the @window.
- *
- * Returns: the current #GeditWindowState of the @window.
+ * Returns: the current #GeditWindowState of @window.
  */
 GeditWindowState
 gedit_window_get_state (GeditWindow *window)
@@ -3139,12 +3126,10 @@ add_unsaved_doc (GeditTab *tab,
 
 /**
  * gedit_window_get_unsaved_documents:
- * @window: a #GeditWindow
+ * @window: a #GeditWindow.
  *
- * Gets the list of documents that need to be saved before closing the window.
- *
- * Returns: (element-type Gedit.Document) (transfer container): a list of
- * #GeditDocument that need to be saved before closing the window
+ * Returns: (element-type GeditDocument) (transfer container): a newly allocated
+ *   list of #GeditDocument's part of @window that currently have unsaved changes.
  */
 GList *
 gedit_window_get_unsaved_documents (GeditWindow *window)
@@ -3206,12 +3191,10 @@ _gedit_window_is_fullscreen (GeditWindow *window)
 
 /**
  * gedit_window_get_tab_from_location:
- * @window: a #GeditWindow
- * @location: a #GFile
+ * @window: a #GeditWindow.
+ * @location: a #GFile.
  *
- * Gets the #GeditTab that matches with the given @location.
- *
- * Returns: (transfer none): the #GeditTab that matches with the given @location.
+ * Returns: (transfer none): the #GeditTab that matches the given @location.
  */
 GeditTab *
 gedit_window_get_tab_from_location (GeditWindow *window,
@@ -3257,12 +3240,10 @@ gedit_window_get_tab_from_location (GeditWindow *window,
 
 /**
  * gedit_window_get_message_bus:
- * @window: a #GeditWindow
+ * @window: a #GeditWindow.
  *
- * Gets the #GeditMessageBus associated with @window. The returned reference
- * is owned by the window and should not be unreffed.
- *
- * Return value: (transfer none): the #GeditMessageBus associated with @window
+ * Returns: (transfer none): the #GeditMessageBus associated with @window. The
+ *   returned reference is owned by the window and should not be unreffed.
  */
 GeditMessageBus *
 gedit_window_get_message_bus (GeditWindow *window)
