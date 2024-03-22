@@ -49,6 +49,10 @@ void			_gedit_app_set_window_title		(GeditApp    *app,
 								 GeditWindow *window,
 								 const gchar *title);
 
+gboolean		_gedit_app_process_window_event		(GeditApp    *app,
+								 GeditWindow *window,
+								 GdkEvent    *event);
+
 G_END_DECLS
 
 #endif /* GEDIT_APP_PRIVATE_H */

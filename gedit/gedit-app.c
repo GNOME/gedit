@@ -1487,19 +1487,19 @@ _gedit_app_set_window_title (GeditApp    *app,
 }
 
 gboolean
-gedit_app_process_window_event (GeditApp    *app,
-                                GeditWindow *window,
-                                GdkEvent    *event)
+_gedit_app_process_window_event (GeditApp    *app,
+				 GeditWindow *window,
+				 GdkEvent    *event)
 {
 	g_return_val_if_fail (GEDIT_IS_APP (app), FALSE);
 	g_return_val_if_fail (GEDIT_IS_WINDOW (window), FALSE);
 
-	if (GEDIT_APP_GET_CLASS (app)->process_window_event)
+	if (GEDIT_APP_GET_CLASS (app)->process_window_event != NULL)
 	{
 		return GEDIT_APP_GET_CLASS (app)->process_window_event (app, window, event);
 	}
 
-    return FALSE;
+	return FALSE;
 }
 
 static GMenuModel *

@@ -68,10 +68,6 @@ gboolean	gedit_app_show_help		(GeditApp    *app,
 						 const gchar *name_of_user_manual,
 						 const gchar *link_id_within_user_manual);
 
-gboolean	gedit_app_process_window_event	(GeditApp    *app,
-						 GeditWindow *window,
-						 GdkEvent    *event);
-
 G_END_DECLS
 
 #endif /* GEDIT_APP_H */

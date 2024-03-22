@@ -372,9 +372,9 @@ gedit_window_key_press_event (GtkWidget   *widget,
 
 	if (!handled)
 	{
-		return gedit_app_process_window_event (GEDIT_APP (g_application_get_default ()),
-		                                       GEDIT_WINDOW (widget),
-		                                       (GdkEvent *)event);
+		return _gedit_app_process_window_event (GEDIT_APP (g_application_get_default ()),
+							GEDIT_WINDOW (widget),
+							(GdkEvent *)event);
 	}
 
 	return TRUE;
