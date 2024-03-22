@@ -1468,9 +1468,9 @@ gedit_app_show_help (GeditApp    *app,
 }
 
 void
-gedit_app_set_window_title (GeditApp    *app,
-                            GeditWindow *window,
-                            const gchar *title)
+_gedit_app_set_window_title (GeditApp    *app,
+			     GeditWindow *window,
+			     const gchar *title)
 {
 	g_return_if_fail (GEDIT_IS_APP (app));
 	g_return_if_fail (GEDIT_IS_WINDOW (window));

@@ -2340,9 +2340,9 @@ update_single_title (GeditWindow *window)
 
 	single_title = _gedit_window_titles_get_single_title (window->priv->window_titles);
 
-	gedit_app_set_window_title (GEDIT_APP (g_application_get_default ()),
-				    window,
-				    single_title);
+	_gedit_app_set_window_title (GEDIT_APP (g_application_get_default ()),
+				     window,
+				     single_title);
 }
 
 static void
