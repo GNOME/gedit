@@ -8,22 +8,28 @@
 
   <part id="api-reference">
     <title>API Reference</title>
-    <xi:include href="xml/gedit-app.xml"/>
-    <xi:include href="xml/gedit-app-activatable.xml"/>
-    <xi:include href="xml/gedit-commands.xml"/>
-    <xi:include href="xml/gedit-document.xml"/>
-    <xi:include href="xml/gedit-encodings-combo-box.xml"/>
-    <xi:include href="xml/gedit-menu-extension.xml"/>
-    <xi:include href="xml/gedit-message-bus.xml"/>
-    <xi:include href="xml/gedit-message.xml"/>
-    <xi:include href="xml/gedit-statusbar.xml"/>
-    <xi:include href="xml/gedit-tab.xml"/>
-    <xi:include href="xml/gedit-view.xml"/>
-    <xi:include href="xml/gedit-view-activatable.xml"/>
-    <xi:include href="xml/gedit-window.xml"/>
-    <xi:include href="xml/gedit-window-activatable.xml"/>
-    <xi:include href="xml/gedit-debug.xml"/>
-    <xi:include href="xml/gedit-utils.xml"/>
+    <chapter>
+      <title>Main Classes</title>
+      <xi:include href="xml/gedit-app.xml"/>
+      <xi:include href="xml/gedit-app-activatable.xml"/>
+      <xi:include href="xml/gedit-window.xml"/>
+      <xi:include href="xml/gedit-window-activatable.xml"/>
+      <xi:include href="xml/gedit-tab.xml"/>
+      <xi:include href="xml/gedit-view.xml"/>
+      <xi:include href="xml/gedit-view-activatable.xml"/>
+      <xi:include href="xml/gedit-document.xml"/>
+    </chapter>
+    <chapter>
+      <title>Other</title>
+      <xi:include href="xml/gedit-commands.xml"/>
+      <xi:include href="xml/gedit-encodings-combo-box.xml"/>
+      <xi:include href="xml/gedit-menu-extension.xml"/>
+      <xi:include href="xml/gedit-message-bus.xml"/>
+      <xi:include href="xml/gedit-message.xml"/>
+      <xi:include href="xml/gedit-statusbar.xml"/>
+      <xi:include href="xml/gedit-debug.xml"/>
+      <xi:include href="xml/gedit-utils.xml"/>
+    </chapter>
   </part>
 
   <xi:include href="api-breaks.xml"/>
