@@ -1,5 +1,4 @@
 /*
- * gedit-app.c
  * This file is part of gedit
  *
  * Copyright (C) 2005-2006 - Paolo Maggi
@@ -44,6 +43,15 @@
 #include "gedit-preferences-dialog.h"
 #include "gedit-tab.h"
 #include "gedit-window-private.h"
+
+/**
+ * SECTION:gedit-app
+ * @Title: GeditApp
+ * @Short_description: Subclass of #GtkApplication
+ *
+ * #GeditApp is a subclass of #GtkApplication, representing the whole
+ * application.
+ */
 
 #define GEDIT_PAGE_SETUP_FILE		"gedit-page-setup"
 #define GEDIT_PRINT_SETTINGS_FILE	"gedit-print-settings"
