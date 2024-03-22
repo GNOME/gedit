@@ -1340,14 +1340,14 @@ gedit_app_create_window (GeditApp  *app,
 
 /**
  * gedit_app_get_main_windows:
- * @app: the #GeditApp
+ * @app: the #GeditApp.
  *
- * Returns all #GeditWindows currently open in #GeditApp.
- * This differs from gtk_application_get_windows() since it does not
- * include the preferences dialog and other auxiliary windows.
+ * Returns all #GeditWindow's currently open in #GeditApp. This differs from
+ * gtk_application_get_windows() since it does not include the preferences
+ * dialog and other auxiliary windows.
  *
- * Return value: (element-type Gedit.Window) (transfer container):
- * a newly allocated list of #GeditWindow objects
+ * Returns: (element-type GeditWindow) (transfer container): a newly allocated
+ *   list of #GeditWindow objects.
  */
 GList *
 gedit_app_get_main_windows (GeditApp *app)
@@ -1371,12 +1371,10 @@ gedit_app_get_main_windows (GeditApp *app)
 
 /**
  * gedit_app_get_documents:
- * @app: the #GeditApp
+ * @app: the #GeditApp.
  *
- * Returns all the documents currently open in #GeditApp.
- *
- * Return value: (element-type Gedit.Document) (transfer container):
- * a newly allocated list of #GeditDocument objects
+ * Returns: (element-type GeditDocument) (transfer container): a newly allocated
+ *   list of all the #GeditDocument's currently part of @app.
  */
 GList *
 gedit_app_get_documents	(GeditApp *app)
@@ -1401,12 +1399,10 @@ gedit_app_get_documents	(GeditApp *app)
 
 /**
  * gedit_app_get_views:
- * @app: the #GeditApp
+ * @app: the #GeditApp.
  *
- * Returns all the views currently present in #GeditApp.
- *
- * Return value: (element-type Gedit.View) (transfer container):
- * a newly allocated list of #GeditView objects
+ * Returns: (element-type GeditView) (transfer container): a newly allocated
+ *   list of all the #GeditView's currently part of @app.
  */
 GList *
 gedit_app_get_views (GeditApp *app)
