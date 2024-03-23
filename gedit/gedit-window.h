@@ -29,13 +29,16 @@ G_BEGIN_DECLS
 
 /**
  * GeditWindowState:
- * @GEDIT_WINDOW_STATE_NORMAL: Normal state.
- * @GEDIT_WINDOW_STATE_SAVING: Saving.
- * @GEDIT_WINDOW_STATE_PRINTING: Printing.
- * @GEDIT_WINDOW_STATE_LOADING: Loading.
- * @GEDIT_WINDOW_STATE_ERROR: Error.
+ * @GEDIT_WINDOW_STATE_NORMAL: No flags.
+ * @GEDIT_WINDOW_STATE_SAVING: A tab is in saving state.
+ * @GEDIT_WINDOW_STATE_PRINTING: There is a printing operation on a tab.
+ * @GEDIT_WINDOW_STATE_LOADING: A tab is in loading or reverting state.
+ * @GEDIT_WINDOW_STATE_ERROR: A tab is in an error state.
  *
- * Flags for the state of a #GeditWindow.
+ * Flags for the state of a #GeditWindow. The enumerators are flags and can be
+ * combined. #GeditWindow combines and summarizes the state of its #GeditTab's
+ * into one #GeditWindowState value. See #GeditTabState for the more precise
+ * states.
  */
 typedef enum
 {
