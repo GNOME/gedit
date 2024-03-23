@@ -437,6 +437,20 @@ gedit_window_class_init (GeditWindowClass *klass)
 			      1,
 			      GEDIT_TYPE_TAB);
 
+	/**
+	 * GeditWindow::tab-removed:
+	 * @window: the #GeditWindow emitting the signal.
+	 * @tab: the #GeditTab.
+	 *
+	 * The ::tab-removed signal is emitted when a #GeditTab is removed from
+	 * @window.
+	 */
+	/* TODO: document whether @tab can be used (e.g. to get its GeditView
+	 * and GeditDocument) during the signal emission; and whether "@tab" is
+	 * still present in the "list" returned by e.g.
+	 * gedit_window_get_views() (there is no gedit_window_get_tabs()
+	 * function).
+	 */
 	signals[SIGNAL_TAB_REMOVED] =
 		g_signal_new ("tab-removed",
 			      G_OBJECT_CLASS_TYPE (object_class),
