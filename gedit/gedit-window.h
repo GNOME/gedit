@@ -80,8 +80,6 @@ struct _GeditWindowClass
 						 GeditTab    *tab);
 
 	void	(* tabs_reordered)		(GeditWindow *window);
-
-	void	(* active_tab_state_changed)	(GeditWindow *window);
 };
 
 /* Public methods */

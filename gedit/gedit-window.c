@@ -135,7 +135,6 @@ enum
 	SIGNAL_TAB_REMOVED,
 	SIGNAL_TABS_REORDERED,
 	SIGNAL_ACTIVE_TAB_CHANGED,
-	SIGNAL_ACTIVE_TAB_STATE_CHANGED,
 	N_SIGNALS
 };
 
@@ -473,15 +472,6 @@ gedit_window_class_init (GeditWindowClass *klass)
 			      G_SIGNAL_RUN_FIRST,
 			      0, NULL, NULL, NULL,
 			      G_TYPE_NONE, 0);
-
-	signals[SIGNAL_ACTIVE_TAB_STATE_CHANGED] =
-		g_signal_new ("active-tab-state-changed",
-			      G_OBJECT_CLASS_TYPE (object_class),
-			      G_SIGNAL_RUN_FIRST,
-			      G_STRUCT_OFFSET (GeditWindowClass, active_tab_state_changed),
-			      NULL, NULL, NULL,
-			      G_TYPE_NONE,
-			      0);
 
 	/* Bind class to template */
 	g_type_ensure (GEDIT_TYPE_SIDE_PANEL);
@@ -1267,8 +1257,6 @@ sync_state (GeditTab    *tab,
 	if (tab == gedit_window_get_active_tab (window))
 	{
 		update_actions_sensitivity (window);
-
-		g_signal_emit (G_OBJECT (window), signals[SIGNAL_ACTIVE_TAB_STATE_CHANGED], 0);
 	}
 }
 
