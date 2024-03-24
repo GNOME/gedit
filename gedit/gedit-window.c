@@ -425,6 +425,14 @@ gedit_window_class_init (GeditWindowClass *klass)
 
 	g_object_class_install_properties (object_class, N_PROPERTIES, properties);
 
+	/**
+	 * GeditWindow::tab-added:
+	 * @window: the #GeditWindow emitting the signal.
+	 * @tab: the added #GeditTab.
+	 *
+	 * The ::tab-added signal is emitted right after a #GeditTab is added to
+	 * @window.
+	 */
 	signals[SIGNAL_TAB_ADDED] =
 		g_signal_new ("tab-added",
 			      G_OBJECT_CLASS_TYPE (object_class),
@@ -438,16 +446,19 @@ gedit_window_class_init (GeditWindowClass *klass)
 	/**
 	 * GeditWindow::tab-removed:
 	 * @window: the #GeditWindow emitting the signal.
-	 * @tab: the #GeditTab.
+	 * @tab: the removed #GeditTab.
 	 *
-	 * The ::tab-removed signal is emitted when a #GeditTab is removed from
-	 * @window.
-	 */
-	/* TODO: document whether @tab can be used (e.g. to get its GeditView
-	 * and GeditDocument) during the signal emission; and whether "@tab" is
-	 * still present in the "list" returned by e.g.
-	 * gedit_window_get_views() (there is no gedit_window_get_tabs()
-	 * function).
+	 * The ::tab-removed signal is emitted right after a #GeditTab is
+	 * removed from @window.
+	 *
+	 * During the signal emission, the @tab's #GeditView and #GeditDocument
+	 * objects are absent from the lists returned by
+	 * gedit_window_get_views() and gedit_window_get_documents() (@tab is
+	 * not part of @window).
+	 *
+	 * During the signal emission, @tab is still a valid object. As such you
+	 * can call functions like gedit_tab_get_view() and
+	 * gedit_tab_get_document(), for example to disconnect signal handlers.
 	 */
 	signals[SIGNAL_TAB_REMOVED] =
 		g_signal_new ("tab-removed",
