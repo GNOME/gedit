@@ -450,11 +450,9 @@ gedit_tab_class_init (GeditTabClass *klass)
 
 /**
  * gedit_tab_get_state:
- * @tab: a #GeditTab
+ * @tab: a #GeditTab.
  *
- * Gets the #GeditTabState of @tab.
- *
- * Returns: the #GeditTabState of @tab
+ * Returns: the current #GeditTabState of @tab.
  */
 GeditTabState
 gedit_tab_get_state (GeditTab *tab)
@@ -1370,11 +1368,9 @@ _gedit_tab_new (void)
 
 /**
  * gedit_tab_get_view:
- * @tab: a #GeditTab
+ * @tab: a #GeditTab.
  *
- * Gets the #GeditView inside @tab.
- *
- * Returns: (transfer none): the #GeditView inside @tab
+ * Returns: (transfer none): the #GeditView of @tab.
  */
 GeditView *
 gedit_tab_get_view (GeditTab *tab)
@@ -1386,11 +1382,12 @@ gedit_tab_get_view (GeditTab *tab)
 
 /**
  * gedit_tab_get_document:
- * @tab: a #GeditTab
+ * @tab: a #GeditTab.
  *
- * Gets the #GeditDocument associated to @tab.
+ * Convenience function. It is equivalent to call gedit_tab_get_view() followed
+ * by gtk_text_view_get_buffer().
  *
- * Returns: (transfer none): the #GeditDocument associated to @tab
+ * Returns: (transfer none): the #GeditDocument associated to @tab.
  */
 GeditDocument *
 gedit_tab_get_document (GeditTab *tab)
@@ -1524,11 +1521,9 @@ _gedit_tab_get_icon_name (GeditTab *tab)
 
 /**
  * gedit_tab_get_from_document:
- * @doc: a #GeditDocument
+ * @doc: a #GeditDocument.
  *
- * Gets the #GeditTab associated with @doc.
- *
- * Returns: (transfer none): the #GeditTab associated with @doc
+ * Returns: (transfer none) (nullable): the #GeditTab associated with @doc.
  */
 GeditTab *
 gedit_tab_get_from_document (GeditDocument *doc)
@@ -2949,12 +2944,10 @@ _gedit_tab_get_can_close (GeditTab *tab)
 
 /**
  * gedit_tab_get_auto_save_enabled:
- * @tab: a #GeditTab
+ * @tab: a #GeditTab.
  *
- * Gets the current state for the autosave feature
- *
- * Return value: %TRUE if the autosave is enabled, else %FALSE
- **/
+ * Returns: the value of the #GeditTab:autosave property.
+ */
 gboolean
 gedit_tab_get_auto_save_enabled	(GeditTab *tab)
 {
@@ -2967,12 +2960,14 @@ gedit_tab_get_auto_save_enabled	(GeditTab *tab)
 
 /**
  * gedit_tab_set_auto_save_enabled:
- * @tab: a #GeditTab
- * @enable: enable (%TRUE) or disable (%FALSE) auto save
+ * @tab: a #GeditTab.
+ * @enable: the new value.
  *
- * Enables or disables the autosave feature. It does not install an
- * autosave timeout if the document is new or is read-only
- **/
+ * Sets the #GeditTab:autosave property.
+ *
+ * It does not install an autosave timeout if the document is new or is
+ * read-only.
+ */
 void
 gedit_tab_set_auto_save_enabled	(GeditTab *tab,
 				 gboolean  enable)
@@ -2993,12 +2988,10 @@ gedit_tab_set_auto_save_enabled	(GeditTab *tab,
 
 /**
  * gedit_tab_get_auto_save_interval:
- * @tab: a #GeditTab
+ * @tab: a #GeditTab.
  *
- * Gets the current interval for the autosaves
- *
- * Return value: the value of the autosave
- **/
+ * Returns: the value of the #GeditTab:autosave-interval property.
+ */
 gint
 gedit_tab_get_auto_save_interval (GeditTab *tab)
 {
@@ -3011,10 +3004,10 @@ gedit_tab_get_auto_save_interval (GeditTab *tab)
 
 /**
  * gedit_tab_set_auto_save_interval:
- * @tab: a #GeditTab
- * @interval: the new interval
+ * @tab: a #GeditTab.
+ * @interval: the new value.
  *
- * Sets the interval for the autosave feature.
+ * Sets the #GeditTab:autosave-interval property.
  */
 void
 gedit_tab_set_auto_save_interval (GeditTab *tab,
@@ -3033,6 +3026,17 @@ gedit_tab_set_auto_save_interval (GeditTab *tab,
 	}
 }
 
+/**
+ * gedit_tab_set_info_bar:
+ * @tab: a #GeditTab.
+ * @info_bar: a #GtkInfoBar.
+ *
+ * Sets the #GtkInfoBar of @tab. Note that there can be only one #GtkInfoBar per
+ * #GeditTab. If there was already an infobar set, it is destroyed and replaced
+ * by the new one.
+ *
+ * See also #TeplInfoBar, it permits to create a #GtkInfoBar more easily.
+ */
 void
 gedit_tab_set_info_bar (GeditTab  *tab,
                         GtkWidget *info_bar)
