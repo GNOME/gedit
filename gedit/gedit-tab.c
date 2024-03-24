@@ -397,41 +397,66 @@ gedit_tab_class_init (GeditTabClass *klass)
 
 	gtkwidget_class->grab_focus = gedit_tab_grab_focus;
 
+	/**
+	 * GeditTab:name:
+	 *
+	 * The tab's name.
+	 */
 	properties[PROP_NAME] =
 		g_param_spec_string ("name",
-		                     "Name",
-		                     "The tab's name",
+		                     "name",
+		                     "",
 		                     NULL,
 		                     G_PARAM_READABLE | G_PARAM_STATIC_STRINGS);
 
+	/**
+	 * GeditTab:state:
+	 *
+	 * The tab's state.
+	 */
 	properties[PROP_STATE] =
 		g_param_spec_enum ("state",
-		                   "State",
-		                   "The tab's state",
+		                   "state",
+		                   "",
 		                   GEDIT_TYPE_TAB_STATE,
 		                   GEDIT_TAB_STATE_NORMAL,
 		                   G_PARAM_READABLE | G_PARAM_STATIC_STRINGS);
 
+	/**
+	 * GeditTab:autosave:
+	 *
+	 * Autosave feature.
+	 */
 	properties[PROP_AUTO_SAVE] =
 		g_param_spec_boolean ("autosave",
-		                      "Autosave",
-		                      "Autosave feature",
+		                      "autosave",
+		                      "",
 		                      TRUE,
 		                      G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS);
 
+	/**
+	 * GeditTab:autosave-interval:
+	 *
+	 * Time between two autosaves.
+	 */
 	properties[PROP_AUTO_SAVE_INTERVAL] =
 		g_param_spec_int ("autosave-interval",
-		                  "AutosaveInterval",
-		                  "Time between two autosaves",
+		                  "autosave-interval",
+		                  "",
 		                  0,
 		                  G_MAXINT,
 		                  0,
 		                  G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS);
 
+	/**
+	 * GeditTab:can-close:
+	 *
+	 * Whether the tab can be closed.
+	 */
 	properties[PROP_CAN_CLOSE] =
 		g_param_spec_boolean ("can-close",
-		                      "Can close",
-		                      "Whether the tab can be closed",
+		                      "can-close",
+		                      "",
 		                      TRUE,
 		                      G_PARAM_READABLE | G_PARAM_STATIC_STRINGS);
 
