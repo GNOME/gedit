@@ -1,5 +1,4 @@
 /*
- * gedit-window.c
  * This file is part of gedit
  *
  * Copyright (C) 2005 - Paolo Maggi
