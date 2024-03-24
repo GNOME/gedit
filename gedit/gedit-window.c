@@ -133,7 +133,6 @@ enum
 {
 	SIGNAL_TAB_ADDED,
 	SIGNAL_TAB_REMOVED,
-	SIGNAL_TABS_REORDERED,
 	SIGNAL_ACTIVE_TAB_CHANGED,
 	N_SIGNALS
 };
@@ -460,15 +459,6 @@ gedit_window_class_init (GeditWindowClass *klass)
 			      G_TYPE_NONE,
 			      1,
 			      GEDIT_TYPE_TAB);
-
-	signals[SIGNAL_TABS_REORDERED] =
-		g_signal_new ("tabs-reordered",
-			      G_OBJECT_CLASS_TYPE (object_class),
-			      G_SIGNAL_RUN_FIRST,
-			      G_STRUCT_OFFSET (GeditWindowClass, tabs_reordered),
-			      NULL, NULL, NULL,
-			      G_TYPE_NONE,
-			      0);
 
 	/**
 	 * GeditWindow::active-tab-changed:
@@ -1821,8 +1811,6 @@ on_page_reordered (GeditMultiNotebook *multi,
                    GeditWindow        *window)
 {
 	update_actions_sensitivity (window);
-
-	g_signal_emit (G_OBJECT (window), signals[SIGNAL_TABS_REORDERED], 0);
 }
 
 static GtkNotebook *

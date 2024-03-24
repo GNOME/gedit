@@ -34,6 +34,14 @@
       </listitem>
       <listitem>
         <para>
+          The <code>GeditWindow::tabs-reordered</code> signal has been removed.
+          It was unused. Also, functions like
+          <link linkend="gedit-window-get-documents">gedit_window_get_documents()</link>
+          don't specify the order in which the objects are listed.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
           The <code>gedit_utils_location_get_dirname_for_display()</code>
           function has been removed.
         </para>
