@@ -595,12 +595,11 @@ gedit_view_class_init (GeditViewClass *klass)
 
 /**
  * gedit_view_new:
- * @doc: a #GeditDocument
+ * @doc: a #GeditDocument.
  *
- * Creates a new #GeditView object displaying the @doc document.
- * @doc cannot be %NULL.
+ * Creates a new #GeditView object displaying @doc. @doc cannot be %NULL.
  *
- * Returns: a new #GeditView.
+ * Returns: (transfer floating): a new #GeditView.
  */
 GtkWidget *
 gedit_view_new (GeditDocument *doc)
