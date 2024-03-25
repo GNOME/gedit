@@ -1,5 +1,4 @@
 /*
- * gedit-document.h
  * This file is part of gedit
  *
  * Copyright (C) 1998, 1999 Alex Roberts, Evan Lawrence
@@ -30,7 +29,9 @@ G_BEGIN_DECLS
 
 #define GEDIT_TYPE_DOCUMENT (gedit_document_get_type())
 
-G_DECLARE_DERIVABLE_TYPE (GeditDocument, gedit_document, GEDIT, DOCUMENT, TeplBuffer)
+G_DECLARE_DERIVABLE_TYPE (GeditDocument, gedit_document,
+			  GEDIT, DOCUMENT,
+			  TeplBuffer)
 
 struct _GeditDocumentClass
 {
@@ -38,40 +39,41 @@ struct _GeditDocumentClass
 
 	/* Signals */
 
-	void (* load)			(GeditDocument *document);
+	void (* load)		(GeditDocument *document);
 
-	void (* loaded)			(GeditDocument *document);
+	void (* loaded)		(GeditDocument *document);
 
-	void (* save)			(GeditDocument *document);
+	void (* save)		(GeditDocument *document);
 
-	void (* saved)  		(GeditDocument *document);
+	void (* saved)		(GeditDocument *document);
 };
 
-GeditDocument   *gedit_document_new				(void);
+GeditDocument *	gedit_document_new			(void);
 
-GtkSourceFile	*gedit_document_get_file			(GeditDocument       *doc);
+GtkSourceFile *	gedit_document_get_file			(GeditDocument *doc);
 
-gchar		*gedit_document_get_content_type		(GeditDocument       *doc);
+gchar *		gedit_document_get_content_type		(GeditDocument *doc);
 
-gchar		*gedit_document_get_mime_type			(GeditDocument       *doc);
+gchar *		gedit_document_get_mime_type		(GeditDocument *doc);
 
-void 		 gedit_document_set_language			(GeditDocument       *doc,
-								 GtkSourceLanguage   *lang);
+void 		gedit_document_set_language		(GeditDocument     *doc,
+							 GtkSourceLanguage *lang);
 
-gchar		*gedit_document_get_metadata			(GeditDocument       *doc,
-								 const gchar         *key);
+gchar *		gedit_document_get_metadata		(GeditDocument *doc,
+							 const gchar   *key);
 
-void		 gedit_document_set_metadata			(GeditDocument       *doc,
-								 const gchar         *first_key,
-								 ...);
+void		gedit_document_set_metadata		(GeditDocument *doc,
+							 const gchar   *first_key,
+							 ...);
 
-void		 gedit_document_set_search_context		(GeditDocument          *doc,
-								 GtkSourceSearchContext *search_context);
+void		gedit_document_set_search_context	(GeditDocument          *doc,
+							 GtkSourceSearchContext *search_context);
 
 GtkSourceSearchContext *
-		 gedit_document_get_search_context		(GeditDocument       *doc);
+		gedit_document_get_search_context	(GeditDocument *doc);
 
 G_END_DECLS
 
 #endif /* GEDIT_DOCUMENT_H */
+
 /* ex:set ts=8 noet: */
