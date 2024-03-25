@@ -417,7 +417,7 @@ gedit_tab_class_init (GeditTabClass *klass)
 	/**
 	 * GeditTab:state:
 	 *
-	 * The tab's state.
+	 * The state of the #GeditTab.
 	 */
 	properties[PROP_STATE] =
 		g_param_spec_enum ("state",
@@ -430,7 +430,7 @@ gedit_tab_class_init (GeditTabClass *klass)
 	/**
 	 * GeditTab:autosave:
 	 *
-	 * Autosave feature.
+	 * Whether the autosave feature is enabled.
 	 */
 	properties[PROP_AUTO_SAVE] =
 		g_param_spec_boolean ("autosave",
@@ -442,7 +442,7 @@ gedit_tab_class_init (GeditTabClass *klass)
 	/**
 	 * GeditTab:autosave-interval:
 	 *
-	 * Time between two autosaves.
+	 * Time in minutes between two autosaves.
 	 */
 	properties[PROP_AUTO_SAVE_INTERVAL] =
 		g_param_spec_int ("autosave-interval",
