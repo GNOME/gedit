@@ -401,13 +401,18 @@ gedit_tab_class_init (GeditTabClass *klass)
 	 * GeditTab:name:
 	 *
 	 * The tab's name.
+	 *
+	 * Deprecated: 47: Use the #TeplBuffer:tepl-short-title property
+	 *   instead.
 	 */
 	properties[PROP_NAME] =
 		g_param_spec_string ("name",
 		                     "name",
 		                     "",
 		                     NULL,
-		                     G_PARAM_READABLE | G_PARAM_STATIC_STRINGS);
+		                     G_PARAM_READABLE |
+				     G_PARAM_STATIC_STRINGS |
+				     G_PARAM_DEPRECATED);
 
 	/**
 	 * GeditTab:state:
