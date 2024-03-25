@@ -359,9 +359,9 @@ gedit_document_class_init (GeditDocumentClass *klass)
 
 	/**
 	 * GeditDocument::load:
-	 * @document: the #GeditDocument.
+	 * @document: the #GeditDocument emitting the signal.
 	 *
-	 * The "load" signal is emitted at the beginning of a file loading.
+	 * The ::load signal is emitted at the beginning of a file loading.
 	 *
 	 * Before gedit 3.14 this signal contained parameters to configure the
 	 * file loading (the location, encoding, etc). Plugins should not need
@@ -377,9 +377,9 @@ gedit_document_class_init (GeditDocumentClass *klass)
 
 	/**
 	 * GeditDocument::loaded:
-	 * @document: the #GeditDocument.
+	 * @document: the #GeditDocument emitting the signal.
 	 *
-	 * The "loaded" signal is emitted at the end of a successful file
+	 * The ::loaded signal is emitted at the end of a successful file
 	 * loading.
 	 *
 	 * Before gedit 3.14 this signal contained a #GError parameter, and the
@@ -396,9 +396,9 @@ gedit_document_class_init (GeditDocumentClass *klass)
 
 	/**
 	 * GeditDocument::save:
-	 * @document: the #GeditDocument.
+	 * @document: the #GeditDocument emitting the signal.
 	 *
-	 * The "save" signal is emitted at the beginning of a file saving.
+	 * The ::save signal is emitted at the beginning of a file saving.
 	 *
 	 * Before gedit 3.14 this signal contained parameters to configure the
 	 * file saving (the location, encoding, etc). Plugins should not need
@@ -414,9 +414,9 @@ gedit_document_class_init (GeditDocumentClass *klass)
 
 	/**
 	 * GeditDocument::saved:
-	 * @document: the #GeditDocument.
+	 * @document: the #GeditDocument emitting the signal.
 	 *
-	 * The "saved" signal is emitted at the end of a successful file saving.
+	 * The ::saved signal is emitted at the end of a successful file saving.
 	 *
 	 * Before gedit 3.14 this signal contained a #GError parameter, and the
 	 * signal was also emitted if an error occurred. To save a document, a
