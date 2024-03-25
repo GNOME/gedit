@@ -628,6 +628,11 @@ gedit_document_init (GeditDocument *doc)
 			  NULL);
 }
 
+/**
+ * gedit_document_new:
+ *
+ * Returns: (transfer full): a new #GeditDocument object.
+ */
 GeditDocument *
 gedit_document_new (void)
 {
@@ -742,6 +747,12 @@ set_content_type (GeditDocument *doc,
 	}
 }
 
+/**
+ * gedit_document_get_content_type:
+ * @doc: a #GeditDocument.
+ *
+ * Returns: (transfer full): the content-type of @doc.
+ */
 gchar *
 gedit_document_get_content_type (GeditDocument *doc)
 {
@@ -758,8 +769,8 @@ gedit_document_get_content_type (GeditDocument *doc)
  * gedit_document_get_mime_type:
  * @doc: a #GeditDocument.
  *
- * Note: this never returns %NULL.
- **/
+ * Returns: (transfer full) (not nullable): the mime-type of @doc.
+ */
 gchar *
 gedit_document_get_mime_type (GeditDocument *doc)
 {
@@ -968,9 +979,11 @@ _gedit_document_needs_saving (GeditDocument *doc)
 
 /**
  * gedit_document_set_language:
- * @doc:
- * @lang: (allow-none):
- **/
+ * @doc: a #GeditDocument.
+ * @lang: (nullable): a #GtkSourceLanguage.
+ *
+ * Like gtk_source_buffer_set_language(), but this function is preferred.
+ */
 void
 gedit_document_set_language (GeditDocument     *doc,
 			     GtkSourceLanguage *lang)
@@ -1012,12 +1025,10 @@ _gedit_document_get_seconds_since_last_save_or_load (GeditDocument *doc)
 
 /**
  * gedit_document_get_metadata:
- * @doc: a #GeditDocument
- * @key: name of the key
+ * @doc: a #GeditDocument.
+ * @key: the name of the key.
  *
- * Gets the metadata assigned to @key.
- *
- * Returns: the value assigned to @key. Free with g_free().
+ * Returns: (transfer full) (nullable): the metadata assigned to @key.
  */
 gchar *
 gedit_document_get_metadata (GeditDocument *doc,
@@ -1039,11 +1050,11 @@ gedit_document_get_metadata (GeditDocument *doc,
 }
 
 /**
- * gedit_document_set_metadata:
- * @doc: a #GeditDocument
- * @first_key: name of the first key to set
- * @...: (allow-none): value for the first key, followed optionally by more key/value pairs,
- * followed by %NULL.
+ * gedit_document_set_metadata: (skip)
+ * @doc: a #GeditDocument.
+ * @first_key: the name of the first key to set.
+ * @...: value for the first key, followed optionally by more key/value pairs,
+ *   followed by %NULL.
  *
  * Sets metadata on a document.
  */
@@ -1131,8 +1142,8 @@ connect_search_settings (GeditDocument *doc)
 
 /**
  * gedit_document_set_search_context:
- * @doc: a #GeditDocument
- * @search_context: (allow-none): the new #GtkSourceSearchContext
+ * @doc: a #GeditDocument.
+ * @search_context: (nullable): the new #GtkSourceSearchContext.
  *
  * Sets the new search context for the document. Use this function only when the
  * search occurrences are highlighted. So this function should not be used for
@@ -1193,7 +1204,7 @@ gedit_document_set_search_context (GeditDocument          *doc,
 
 /**
  * gedit_document_get_search_context:
- * @doc: a #GeditDocument
+ * @doc: a #GeditDocument.
  *
  * Gets the search context. Use this function only if you have used
  * gedit_document_set_search_context() before. You should not alter other search
@@ -1201,8 +1212,8 @@ gedit_document_set_search_context (GeditDocument          *doc,
  * One way to verify that is to compare the search settings object, or to mark
  * the search context with g_object_set_data().
  *
- * Returns: (transfer none): the current search context of the document, or NULL
- * if there is no current search context.
+ * Returns: (transfer none) (nullable): the current search context of the
+ *   document, or NULL if there is no current search context.
  */
 GtkSourceSearchContext *
 gedit_document_get_search_context (GeditDocument *doc)
