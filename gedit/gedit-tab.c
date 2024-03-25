@@ -133,14 +133,7 @@ enum
 	N_PROPERTIES
 };
 
-enum
-{
-	SIGNAL_DROP_URIS,
-	N_SIGNALS
-};
-
 static GParamSpec *properties[N_PROPERTIES];
-static guint signals[N_SIGNALS];
 
 G_DEFINE_TYPE (GeditTab, gedit_tab, GTK_TYPE_BOX)
 
@@ -379,13 +372,6 @@ gedit_tab_grab_focus (GtkWidget *widget)
 }
 
 static void
-gedit_tab_drop_uris (GeditTab  *tab,
-                     gchar    **uri_list)
-{
-	gedit_debug (DEBUG_TAB);
-}
-
-static void
 gedit_tab_class_init (GeditTabClass *klass)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
@@ -466,16 +452,6 @@ gedit_tab_class_init (GeditTabClass *klass)
 		                      G_PARAM_READABLE | G_PARAM_STATIC_STRINGS);
 
 	g_object_class_install_properties (object_class, N_PROPERTIES, properties);
-
-	signals[SIGNAL_DROP_URIS] =
-		g_signal_new_class_handler ("drop-uris",
-		                            G_TYPE_FROM_CLASS (klass),
-		                            G_SIGNAL_RUN_LAST | G_SIGNAL_ACTION,
-		                            G_CALLBACK (gedit_tab_drop_uris),
-		                            NULL, NULL, NULL,
-		                            G_TYPE_NONE,
-		                            1,
-		                            G_TYPE_STRV);
 }
 
 /**
@@ -1316,14 +1292,6 @@ view_focused_in (GtkWidget     *widget,
 }
 
 static void
-on_drop_uris (GeditView  *view,
-	      gchar     **uri_list,
-	      GeditTab   *tab)
-{
-	g_signal_emit (G_OBJECT (tab), signals[SIGNAL_DROP_URIS], 0, uri_list);
-}
-
-static void
 gedit_tab_init (GeditTab *tab)
 {
 	gboolean auto_save;
@@ -1383,11 +1351,6 @@ gedit_tab_init (GeditTab *tab)
 				"realize",
 				G_CALLBACK (view_realized),
 				tab);
-
-	g_signal_connect (view,
-			  "drop-uris",
-			  G_CALLBACK (on_drop_uris),
-			  tab);
 }
 
 GeditTab *
