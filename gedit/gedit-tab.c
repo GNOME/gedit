@@ -122,8 +122,6 @@ struct _LoaderData
 	guint user_requested_encoding : 1;
 };
 
-G_DEFINE_TYPE (GeditTab, gedit_tab, GTK_TYPE_BOX)
-
 enum
 {
 	PROP_0,
@@ -132,19 +130,21 @@ enum
 	PROP_AUTO_SAVE,
 	PROP_AUTO_SAVE_INTERVAL,
 	PROP_CAN_CLOSE,
-	LAST_PROP
+	N_PROPERTIES
 };
-
-static GParamSpec *properties[LAST_PROP];
 
 enum
 {
-	DROP_URIS,
-	LAST_SIGNAL
+	SIGNAL_DROP_URIS,
+	N_SIGNALS
 };
 
-static guint signals[LAST_SIGNAL];
+static GParamSpec *properties[N_PROPERTIES];
+static guint signals[N_SIGNALS];
 
+G_DEFINE_TYPE (GeditTab, gedit_tab, GTK_TYPE_BOX)
+
+/* Prototypes */
 static gboolean gedit_tab_auto_save (GeditTab *tab);
 
 static void launch_loader (GTask                   *loading_task,
@@ -465,9 +465,9 @@ gedit_tab_class_init (GeditTabClass *klass)
 		                      TRUE,
 		                      G_PARAM_READABLE | G_PARAM_STATIC_STRINGS);
 
-	g_object_class_install_properties (object_class, LAST_PROP, properties);
+	g_object_class_install_properties (object_class, N_PROPERTIES, properties);
 
-	signals[DROP_URIS] =
+	signals[SIGNAL_DROP_URIS] =
 		g_signal_new_class_handler ("drop-uris",
 		                            G_TYPE_FROM_CLASS (klass),
 		                            G_SIGNAL_RUN_LAST | G_SIGNAL_ACTION,
@@ -1320,7 +1320,7 @@ on_drop_uris (GeditView  *view,
 	      gchar     **uri_list,
 	      GeditTab   *tab)
 {
-	g_signal_emit (G_OBJECT (tab), signals[DROP_URIS], 0, uri_list);
+	g_signal_emit (G_OBJECT (tab), signals[SIGNAL_DROP_URIS], 0, uri_list);
 }
 
 static void
