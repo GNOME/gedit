@@ -751,7 +751,8 @@ set_content_type (GeditDocument *doc,
  * gedit_document_get_content_type:
  * @doc: a #GeditDocument.
  *
- * Returns: (transfer full): the content-type of @doc.
+ * Returns: (transfer full): the value of the #GeditDocument:content-type
+ *   property.
  */
 gchar *
 gedit_document_get_content_type (GeditDocument *doc)
@@ -769,7 +770,8 @@ gedit_document_get_content_type (GeditDocument *doc)
  * gedit_document_get_mime_type:
  * @doc: a #GeditDocument.
  *
- * Returns: (transfer full) (not nullable): the mime-type of @doc.
+ * Returns: (transfer full) (not nullable): the value of the
+ *   #GeditDocument:mime-type property.
  */
 gchar *
 gedit_document_get_mime_type (GeditDocument *doc)
