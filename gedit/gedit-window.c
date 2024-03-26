@@ -97,9 +97,6 @@ struct _GeditWindowPrivate
 	gint height;
 	GdkWindowState window_state;
 
-	gint side_panel_size;
-	gint bottom_panel_size;
-
 	GeditWindowState state;
 
 	guint inhibition_cookie;
@@ -178,10 +175,10 @@ static void
 save_panels_state (GeditWindow *window)
 {
 	_gedit_side_panel_save_state (window->priv->side_panel,
-				      window->priv->side_panel_size);
+				      _gedit_side_panel_get_width (window->priv->side_panel));
 
 	_gedit_bottom_panel_save_state (window->priv->bottom_panel,
-					window->priv->bottom_panel_size);
+					_gedit_bottom_panel_get_height (window->priv->bottom_panel));
 }
 
 static void
@@ -925,8 +922,10 @@ clone_window (GeditWindow *origin)
 
 	/* set the panels size, the paned position will be set when
 	 * they are mapped */
-	window->priv->side_panel_size = origin->priv->side_panel_size;
-	window->priv->bottom_panel_size = origin->priv->bottom_panel_size;
+	_gedit_side_panel_set_width (window->priv->side_panel,
+				     _gedit_side_panel_get_width (origin->priv->side_panel));
+	_gedit_bottom_panel_set_height (window->priv->bottom_panel,
+					_gedit_bottom_panel_get_height (origin->priv->bottom_panel));
 
 	origin_side_panel = _gedit_side_panel_get_panel_container (origin->priv->side_panel);
 	side_panel_item_name = tepl_panel_container_get_active_item_name (origin_side_panel);
@@ -1910,7 +1909,7 @@ side_panel_size_allocate (GtkWidget     *widget,
 			  GtkAllocation *allocation,
 			  GeditWindow   *window)
 {
-	window->priv->side_panel_size = allocation->width;
+	_gedit_side_panel_set_width (window->priv->side_panel, allocation->width);
 }
 
 static void
@@ -1918,20 +1917,18 @@ bottom_panel_size_allocate (GtkWidget     *widget,
 			    GtkAllocation *allocation,
 			    GeditWindow   *window)
 {
-	window->priv->bottom_panel_size = allocation->height;
+	_gedit_bottom_panel_set_height (window->priv->bottom_panel, allocation->height);
 }
 
 static void
 hpaned_restore_position (GtkWidget   *widget,
 			 GeditWindow *window)
 {
+	gint side_panel_width;
 	gint pos;
 
-	gedit_debug_message (DEBUG_WINDOW,
-			     "Restoring hpaned position: side panel size %d",
-			     window->priv->side_panel_size);
-
-	pos = MAX (100, window->priv->side_panel_size);
+	side_panel_width = _gedit_side_panel_get_width (window->priv->side_panel);
+	pos = MAX (100, side_panel_width);
 	gtk_paned_set_position (GTK_PANED (window->priv->hpaned), pos);
 
 	/* start monitoring the size */
@@ -1948,16 +1945,13 @@ static void
 vpaned_restore_position (GtkWidget   *widget,
 			 GeditWindow *window)
 {
+	gint bottom_panel_height;
 	gint pos;
 	GtkAllocation allocation;
 
-	gedit_debug_message (DEBUG_WINDOW,
-			     "Restoring vpaned position: bottom panel size %d",
-			     window->priv->bottom_panel_size);
-
+	bottom_panel_height = _gedit_bottom_panel_get_height (window->priv->bottom_panel);
 	gtk_widget_get_allocation (widget, &allocation);
-	pos = allocation.height -
-	      MAX (50, window->priv->bottom_panel_size);
+	pos = allocation.height - MAX (50, bottom_panel_height);
 	gtk_paned_set_position (GTK_PANED (window->priv->vpaned), pos);
 
 	/* start monitoring the size */
@@ -2574,10 +2568,13 @@ gedit_window_init (GeditWindow *window)
 
 	/* panels' state must be restored after panels have been mapped,
 	 * since the bottom panel position depends on the size of the vpaned. */
-	window->priv->side_panel_size = g_settings_get_int (window->priv->window_settings,
-							    GEDIT_SETTINGS_SIDE_PANEL_SIZE);
-	window->priv->bottom_panel_size = g_settings_get_int (window->priv->window_settings,
-							      GEDIT_SETTINGS_BOTTOM_PANEL_SIZE);
+	_gedit_side_panel_set_width (window->priv->side_panel,
+				     g_settings_get_int (window->priv->window_settings,
+							 GEDIT_SETTINGS_SIDE_PANEL_SIZE));
+
+	_gedit_bottom_panel_set_height (window->priv->bottom_panel,
+					g_settings_get_int (window->priv->window_settings,
+							    GEDIT_SETTINGS_BOTTOM_PANEL_SIZE));
 
 	g_signal_connect_after (window->priv->hpaned,
 				"map",
