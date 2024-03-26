@@ -9,6 +9,7 @@
 struct _GeditSidePanelPrivate
 {
 	TeplPanelContainer *panel;
+	gint width;
 };
 
 G_DEFINE_TYPE_WITH_PRIVATE (GeditSidePanel, _gedit_side_panel, GTK_TYPE_BIN)
@@ -82,6 +83,21 @@ _gedit_side_panel_get_panel_container (GeditSidePanel *panel)
 {
 	g_return_val_if_fail (GEDIT_IS_SIDE_PANEL (panel), NULL);
 	return panel->priv->panel;
+}
+
+gint
+_gedit_side_panel_get_width (GeditSidePanel *panel)
+{
+	g_return_val_if_fail (GEDIT_IS_SIDE_PANEL (panel), 0);
+	return panel->priv->width;
+}
+
+void
+_gedit_side_panel_set_width (GeditSidePanel *panel,
+			     gint            width)
+{
+	g_return_if_fail (GEDIT_IS_SIDE_PANEL (panel));
+	panel->priv->width = width;
 }
 
 void
