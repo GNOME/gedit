@@ -145,8 +145,17 @@ void
 _gedit_bottom_panel_copy_settings (GeditBottomPanel *origin,
 				   GeditBottomPanel *target)
 {
+	const gchar *visible_child_name;
+
 	g_return_if_fail (GEDIT_IS_BOTTOM_PANEL (origin));
 	g_return_if_fail (GEDIT_IS_BOTTOM_PANEL (target));
 
 	target->priv->height = origin->priv->height;
+
+	visible_child_name = gtk_stack_get_visible_child_name (origin->priv->stack);
+	if (visible_child_name != NULL)
+	{
+		gtk_stack_set_visible_child_name (target->priv->stack,
+						  visible_child_name);
+	}
 }

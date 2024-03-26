@@ -882,19 +882,13 @@ setup_statusbar (GeditWindow *window)
 static GeditWindow *
 clone_window (GeditWindow *origin)
 {
-	GeditWindow *window;
+	GeditApp *app;
 	GdkScreen *screen;
-	GeditApp  *app;
-	TeplPanelContainer *origin_side_panel;
-	const gchar *side_panel_item_name;
-	GtkStack *origin_stack;
-	const gchar *panel_page;
-
-	gedit_debug (DEBUG_WINDOW);
+	GeditWindow *window;
 
 	app = GEDIT_APP (g_application_get_default ());
-
 	screen = gtk_window_get_screen (GTK_WINDOW (origin));
+
 	window = gedit_app_create_window (app, screen);
 
 	gtk_window_set_default_size (GTK_WINDOW (window),
@@ -902,14 +896,22 @@ clone_window (GeditWindow *origin)
 				     origin->priv->height);
 
 	if ((origin->priv->window_state & GDK_WINDOW_STATE_MAXIMIZED) != 0)
+	{
 		gtk_window_maximize (GTK_WINDOW (window));
+	}
 	else
+	{
 		gtk_window_unmaximize (GTK_WINDOW (window));
+	}
 
 	if ((origin->priv->window_state & GDK_WINDOW_STATE_STICKY) != 0)
+	{
 		gtk_window_stick (GTK_WINDOW (window));
+	}
 	else
+	{
 		gtk_window_unstick (GTK_WINDOW (window));
+	}
 
 	/* set the panels size, the paned position will be set when
 	 * they are mapped */
@@ -918,31 +920,10 @@ clone_window (GeditWindow *origin)
 	_gedit_bottom_panel_copy_settings (origin->priv->bottom_panel,
 					   window->priv->bottom_panel);
 
-	origin_side_panel = _gedit_side_panel_get_panel_container (origin->priv->side_panel);
-	side_panel_item_name = tepl_panel_container_get_active_item_name (origin_side_panel);
-	if (side_panel_item_name != NULL)
-	{
-		TeplPanelContainer *side_panel;
-
-		side_panel = _gedit_side_panel_get_panel_container (window->priv->side_panel);
-		tepl_panel_container_set_active_item_name (side_panel, side_panel_item_name);
-	}
-
-	origin_stack = _gedit_bottom_panel_get_stack (origin->priv->bottom_panel);
-	panel_page = gtk_stack_get_visible_child_name (origin_stack);
-
-	if (panel_page != NULL)
-	{
-		GtkStack *stack;
-
-		stack = _gedit_bottom_panel_get_stack (window->priv->bottom_panel);
-		gtk_stack_set_visible_child_name (stack, panel_page);
-	}
-
 	gtk_widget_set_visible (GTK_WIDGET (window->priv->side_panel),
-	                        gtk_widget_get_visible (GTK_WIDGET (origin->priv->side_panel)));
+				gtk_widget_get_visible (GTK_WIDGET (origin->priv->side_panel)));
 	gtk_widget_set_visible (GTK_WIDGET (window->priv->bottom_panel),
-	                        gtk_widget_get_visible (GTK_WIDGET (origin->priv->bottom_panel)));
+				gtk_widget_get_visible (GTK_WIDGET (origin->priv->bottom_panel)));
 
 	return window;
 }

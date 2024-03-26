@@ -147,8 +147,17 @@ void
 _gedit_side_panel_copy_settings (GeditSidePanel *origin,
 				 GeditSidePanel *target)
 {
+	const gchar *active_item_name;
+
 	g_return_if_fail (GEDIT_IS_SIDE_PANEL (origin));
 	g_return_if_fail (GEDIT_IS_SIDE_PANEL (target));
 
 	target->priv->width = origin->priv->width;
+
+	active_item_name = tepl_panel_container_get_active_item_name (origin->priv->panel);
+	if (active_item_name != NULL)
+	{
+		tepl_panel_container_set_active_item_name (target->priv->panel,
+							   active_item_name);
+	}
 }
