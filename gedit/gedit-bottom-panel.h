@@ -49,8 +49,7 @@ void			_gedit_bottom_panel_set_height	(GeditBottomPanel *panel,
 							 gint              height);
 
 G_GNUC_INTERNAL
-void			_gedit_bottom_panel_save_state	(GeditBottomPanel *panel,
-							 gint              height);
+void			_gedit_bottom_panel_save_state	(GeditBottomPanel *panel);
 
 G_END_DECLS
 

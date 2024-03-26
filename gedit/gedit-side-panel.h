@@ -49,8 +49,7 @@ void			_gedit_side_panel_set_width		(GeditSidePanel *panel,
 								 gint            width);
 
 G_GNUC_INTERNAL
-void			_gedit_side_panel_save_state		(GeditSidePanel *panel,
-								 gint            width);
+void			_gedit_side_panel_save_state		(GeditSidePanel *panel);
 
 G_END_DECLS
 

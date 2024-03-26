@@ -172,16 +172,6 @@ gedit_window_get_property (GObject    *object,
 }
 
 static void
-save_panels_state (GeditWindow *window)
-{
-	_gedit_side_panel_save_state (window->priv->side_panel,
-				      _gedit_side_panel_get_width (window->priv->side_panel));
-
-	_gedit_bottom_panel_save_state (window->priv->bottom_panel,
-					_gedit_bottom_panel_get_height (window->priv->bottom_panel));
-}
-
-static void
 save_window_state (GeditWindow *window)
 {
 	if ((window->priv->window_state & GDK_WINDOW_STATE_MAXIMIZED) == 0 &&
@@ -224,7 +214,8 @@ gedit_window_dispose (GObject *object)
 	if (!window->priv->dispose_has_run)
 	{
 		save_window_state (window);
-		save_panels_state (window);
+		_gedit_side_panel_save_state (window->priv->side_panel);
+		_gedit_bottom_panel_save_state (window->priv->bottom_panel);
 		g_settings_apply (window->priv->window_settings);
 
 		/* Note that unreffing the extensions will automatically remove

@@ -99,8 +99,7 @@ _gedit_bottom_panel_set_height (GeditBottomPanel *panel,
 }
 
 void
-_gedit_bottom_panel_save_state (GeditBottomPanel *panel,
-				gint              height)
+_gedit_bottom_panel_save_state (GeditBottomPanel *panel)
 {
 	GeditSettings *settings;
 	GSettings *window_state_settings;
@@ -119,10 +118,10 @@ _gedit_bottom_panel_save_state (GeditBottomPanel *panel,
 				       panel_page);
 	}
 
-	if (height > 0)
+	if (panel->priv->height > 0)
 	{
 		g_settings_set_int (window_state_settings,
 				    GEDIT_SETTINGS_BOTTOM_PANEL_SIZE,
-				    height);
+				    panel->priv->height);
 	}
 }
