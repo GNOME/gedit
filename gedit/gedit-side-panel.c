@@ -160,4 +160,7 @@ _gedit_side_panel_copy_settings (GeditSidePanel *origin,
 		tepl_panel_container_set_active_item_name (target->priv->panel,
 							   active_item_name);
 	}
+
+	gtk_widget_set_visible (GTK_WIDGET (target),
+				gtk_widget_get_visible (GTK_WIDGET (origin)));
 }

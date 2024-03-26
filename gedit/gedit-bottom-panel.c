@@ -158,4 +158,7 @@ _gedit_bottom_panel_copy_settings (GeditBottomPanel *origin,
 		gtk_stack_set_visible_child_name (target->priv->stack,
 						  visible_child_name);
 	}
+
+	gtk_widget_set_visible (GTK_WIDGET (target),
+				gtk_widget_get_visible (GTK_WIDGET (origin)));
 }

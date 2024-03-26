@@ -920,11 +920,6 @@ clone_window (GeditWindow *origin)
 	_gedit_bottom_panel_copy_settings (origin->priv->bottom_panel,
 					   window->priv->bottom_panel);
 
-	gtk_widget_set_visible (GTK_WIDGET (window->priv->side_panel),
-				gtk_widget_get_visible (GTK_WIDGET (origin->priv->side_panel)));
-	gtk_widget_set_visible (GTK_WIDGET (window->priv->bottom_panel),
-				gtk_widget_get_visible (GTK_WIDGET (origin->priv->bottom_panel)));
-
 	return window;
 }
 
