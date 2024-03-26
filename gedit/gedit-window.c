@@ -2060,8 +2060,10 @@ bottom_panel_item_removed (GtkStack    *bottom_panel_stack,
 			   GtkWidget   *item,
 			   GeditWindow *window)
 {
-	gtk_widget_set_visible (GTK_WIDGET (window->priv->bottom_panel),
-				gtk_stack_get_visible_child (bottom_panel_stack) != NULL);
+	if (gtk_stack_get_visible_child (bottom_panel_stack) == NULL)
+	{
+		gtk_widget_hide (GTK_WIDGET (window->priv->bottom_panel));
+	}
 
 	update_actions_sensitivity (window);
 }
