@@ -42,6 +42,13 @@ G_GNUC_INTERNAL
 GtkStack *		_gedit_bottom_panel_get_stack	(GeditBottomPanel *panel);
 
 G_GNUC_INTERNAL
+gint			_gedit_bottom_panel_get_height	(GeditBottomPanel *panel);
+
+G_GNUC_INTERNAL
+void			_gedit_bottom_panel_set_height	(GeditBottomPanel *panel,
+							 gint              height);
+
+G_GNUC_INTERNAL
 void			_gedit_bottom_panel_save_state	(GeditBottomPanel *panel,
 							 gint              height);
 

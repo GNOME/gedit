@@ -11,6 +11,7 @@
 struct _GeditBottomPanelPrivate
 {
 	GtkStack *stack;
+	gint height;
 };
 
 G_DEFINE_TYPE_WITH_PRIVATE (GeditBottomPanel, _gedit_bottom_panel, GTK_TYPE_GRID)
@@ -80,6 +81,21 @@ _gedit_bottom_panel_get_stack (GeditBottomPanel *panel)
 {
 	g_return_val_if_fail (GEDIT_IS_BOTTOM_PANEL (panel), NULL);
 	return panel->priv->stack;
+}
+
+gint
+_gedit_bottom_panel_get_height (GeditBottomPanel *panel)
+{
+	g_return_val_if_fail (GEDIT_IS_BOTTOM_PANEL (panel), 0);
+	return panel->priv->height;
+}
+
+void
+_gedit_bottom_panel_set_height (GeditBottomPanel *panel,
+				gint              height)
+{
+	g_return_if_fail (GEDIT_IS_BOTTOM_PANEL (panel));
+	panel->priv->height = height;
 }
 
 void
