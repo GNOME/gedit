@@ -66,6 +66,7 @@ struct _GeditWindowPrivate
 
 	GeditSidePanel *side_panel;
 	GeditBottomPanel *bottom_panel;
+	gint bottom_panel_item_removed_handler_id;
 
 	GtkWidget *hpaned;
 	GtkWidget *vpaned;
@@ -100,8 +101,6 @@ struct _GeditWindowPrivate
 	GeditWindowState state;
 
 	guint inhibition_cookie;
-
-	gint bottom_panel_item_removed_handler_id;
 
 	GtkWindowGroup *window_group;
 
