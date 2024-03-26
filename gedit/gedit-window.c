@@ -57,7 +57,6 @@
 
 struct _GeditWindowPrivate
 {
-	GSettings *editor_settings;
 	GSettings *ui_settings;
 	GSettings *window_settings;
 
@@ -245,7 +244,6 @@ gedit_window_dispose (GObject *object)
 	g_clear_object (&window->priv->window_titles);
 
 	/* We must free the settings after saving the panels */
-	g_clear_object (&window->priv->editor_settings);
 	g_clear_object (&window->priv->ui_settings);
 	g_clear_object (&window->priv->window_settings);
 
@@ -586,6 +584,8 @@ extension_update_state (PeasExtensionSet *extensions,
 static void
 update_actions_sensitivity (GeditWindow *window)
 {
+	GeditSettings *settings;
+	GSettings *editor_settings;
 	GeditNotebook *notebook;
 	GeditTab *tab;
 	gint num_notebooks;
@@ -602,6 +602,9 @@ update_actions_sensitivity (GeditWindow *window)
 	gboolean enable_syntax_highlighting;
 
 	gedit_debug (DEBUG_WINDOW);
+
+	settings = _gedit_settings_get_singleton ();
+	editor_settings = _gedit_settings_peek_editor_settings (settings);
 
 	notebook = gedit_multi_notebook_get_active_notebook (window->priv->multi_notebook);
 	tab = gedit_multi_notebook_get_active_tab (window->priv->multi_notebook);
@@ -734,7 +737,8 @@ update_actions_sensitivity (GeditWindow *window)
 	                             (doc != NULL));
 
 	action = g_action_map_lookup_action (G_ACTION_MAP (window), "highlight-mode");
-	enable_syntax_highlighting = g_settings_get_boolean (window->priv->editor_settings,
+	/* TODO: listen for changes to that gsetting. */
+	enable_syntax_highlighting = g_settings_get_boolean (editor_settings,
 	                                                     GEDIT_SETTINGS_SYNTAX_HIGHLIGHTING);
 	g_simple_action_set_enabled (G_SIMPLE_ACTION (action),
 	                             (state != GEDIT_TAB_STATE_CLOSING) &&
@@ -2484,7 +2488,6 @@ gedit_window_init (GeditWindow *window)
 	window->priv->dispose_has_run = FALSE;
 	window->priv->direct_save_uri = NULL;
 	window->priv->closed_docs_stack = NULL;
-	window->priv->editor_settings = g_settings_new ("org.gnome.gedit.preferences.editor");
 	window->priv->ui_settings = g_settings_new ("org.gnome.gedit.preferences.ui");
 
 	/* window settings are applied only once the window is closed. We do not
