@@ -912,8 +912,6 @@ clone_window (GeditWindow *origin)
 		gtk_window_unstick (GTK_WINDOW (window));
 	}
 
-	/* set the panels size, the paned position will be set when
-	 * they are mapped */
 	_gedit_side_panel_copy_settings (origin->priv->side_panel,
 					 window->priv->side_panel);
 	_gedit_bottom_panel_copy_settings (origin->priv->bottom_panel,
