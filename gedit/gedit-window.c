@@ -2551,6 +2551,9 @@ gedit_window_init (GeditWindow *window)
 	 * since the bottom panel position depends on the total height of the
 	 * vpaned.
 	 */
+	/* FIXME: probably change to g_signal_connect() (without the after flag)
+	 * because the ::map signal is "Run First". Small simplification.
+	 */
 	g_signal_connect_after (window->priv->hpaned,
 				"map",
 				G_CALLBACK (hpaned_map_cb),
