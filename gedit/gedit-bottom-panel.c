@@ -35,12 +35,27 @@ _gedit_bottom_panel_class_init (GeditBottomPanelClass *klass)
 }
 
 static void
+init_height (GeditBottomPanel *panel)
+{
+	GeditSettings *settings;
+	GSettings *window_state_settings;
+
+	settings = _gedit_settings_get_singleton ();
+	window_state_settings = _gedit_settings_peek_window_state_settings (settings);
+
+	panel->priv->height = g_settings_get_int (window_state_settings,
+						  GEDIT_SETTINGS_BOTTOM_PANEL_SIZE);
+}
+
+static void
 _gedit_bottom_panel_init (GeditBottomPanel *panel)
 {
 	GtkWidget *close_button;
 	GtkWidget *switcher;
 
 	panel->priv = _gedit_bottom_panel_get_instance_private (panel);
+
+	init_height (panel);
 
 	panel->priv->stack = GTK_STACK (gtk_stack_new ());
 	g_object_ref_sink (panel->priv->stack);

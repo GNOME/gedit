@@ -2557,16 +2557,10 @@ gedit_window_init (GeditWindow *window)
 	setup_side_panel (window);
 	setup_bottom_panel (window);
 
-	/* panels' state must be restored after panels have been mapped,
-	 * since the bottom panel position depends on the size of the vpaned. */
-	_gedit_side_panel_set_width (window->priv->side_panel,
-				     g_settings_get_int (window->priv->window_settings,
-							 GEDIT_SETTINGS_SIDE_PANEL_SIZE));
-
-	_gedit_bottom_panel_set_height (window->priv->bottom_panel,
-					g_settings_get_int (window->priv->window_settings,
-							    GEDIT_SETTINGS_BOTTOM_PANEL_SIZE));
-
+	/* The state of the panels must be restored after they have been mapped,
+	 * since the bottom panel position depends on the total height of the
+	 * vpaned.
+	 */
 	g_signal_connect_after (window->priv->hpaned,
 				"map",
 				G_CALLBACK (hpaned_restore_position),

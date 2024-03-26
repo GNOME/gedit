@@ -52,11 +52,26 @@ add_inline_switcher_if_needed (GeditSidePanel *panel,
 }
 
 static void
+init_width (GeditSidePanel *panel)
+{
+	GeditSettings *settings;
+	GSettings *window_state_settings;
+
+	settings = _gedit_settings_get_singleton ();
+	window_state_settings = _gedit_settings_peek_window_state_settings (settings);
+
+	panel->priv->width = g_settings_get_int (window_state_settings,
+						 GEDIT_SETTINGS_SIDE_PANEL_SIZE);
+}
+
+static void
 _gedit_side_panel_init (GeditSidePanel *panel)
 {
 	GtkGrid *vgrid;
 
 	panel->priv = _gedit_side_panel_get_instance_private (panel);
+
+	init_width (panel);
 
 	panel->priv->panel = tepl_panel_container_new ();
 
