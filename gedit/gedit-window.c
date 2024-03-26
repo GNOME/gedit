@@ -1869,24 +1869,23 @@ on_fullscreen_toggle_button_toggled (GtkToggleButton *fullscreen_toggle_button,
 }
 
 static void
-side_panel_size_allocate (GtkWidget     *widget,
-			  GtkAllocation *allocation,
-			  GeditWindow   *window)
+side_panel_size_allocate_cb (GtkWidget     *side_panel,
+			     GtkAllocation *allocation,
+			     GeditWindow   *window)
 {
 	_gedit_side_panel_set_width (window->priv->side_panel, allocation->width);
 }
 
 static void
-bottom_panel_size_allocate (GtkWidget     *widget,
-			    GtkAllocation *allocation,
-			    GeditWindow   *window)
+bottom_panel_size_allocate_cb (GtkWidget     *bottom_panel,
+			       GtkAllocation *allocation,
+			       GeditWindow   *window)
 {
 	_gedit_bottom_panel_set_height (window->priv->bottom_panel, allocation->height);
 }
 
 static void
-hpaned_restore_position (GtkWidget   *widget,
-			 GeditWindow *window)
+restore_hpaned_position (GeditWindow *window)
 {
 	gint side_panel_width;
 	gint pos;
@@ -1894,38 +1893,54 @@ hpaned_restore_position (GtkWidget   *widget,
 	side_panel_width = _gedit_side_panel_get_width (window->priv->side_panel);
 	pos = MAX (100, side_panel_width);
 	gtk_paned_set_position (GTK_PANED (window->priv->hpaned), pos);
-
-	/* start monitoring the size */
-	g_signal_connect (window->priv->side_panel,
-			  "size-allocate",
-			  G_CALLBACK (side_panel_size_allocate),
-			  window);
-
-	/* run this only once */
-	g_signal_handlers_disconnect_by_func (widget, hpaned_restore_position, window);
 }
 
 static void
-vpaned_restore_position (GtkWidget   *widget,
-			 GeditWindow *window)
+restore_vpaned_position (GeditWindow *window)
 {
 	gint bottom_panel_height;
-	gint pos;
 	GtkAllocation allocation;
+	gint pos;
 
 	bottom_panel_height = _gedit_bottom_panel_get_height (window->priv->bottom_panel);
-	gtk_widget_get_allocation (widget, &allocation);
-	pos = allocation.height - MAX (50, bottom_panel_height);
-	gtk_paned_set_position (GTK_PANED (window->priv->vpaned), pos);
+	gtk_widget_get_allocation (window->priv->vpaned, &allocation);
 
-	/* start monitoring the size */
-	g_signal_connect (window->priv->bottom_panel,
+	/* FIXME: what if pos becomes negative? */
+	pos = allocation.height - MAX (50, bottom_panel_height);
+
+	gtk_paned_set_position (GTK_PANED (window->priv->vpaned), pos);
+}
+
+static void
+hpaned_map_cb (GtkWidget   *hpaned,
+	       GeditWindow *window)
+{
+	restore_hpaned_position (window);
+
+	/* Start monitoring the size. */
+	g_signal_connect (window->priv->side_panel,
 			  "size-allocate",
-			  G_CALLBACK (bottom_panel_size_allocate),
+			  G_CALLBACK (side_panel_size_allocate_cb),
 			  window);
 
-	/* run this only once */
-	g_signal_handlers_disconnect_by_func (widget, vpaned_restore_position, window);
+	/* Run this only once. */
+	g_signal_handlers_disconnect_by_func (hpaned, hpaned_map_cb, window);
+}
+
+static void
+vpaned_map_cb (GtkWidget   *vpaned,
+	       GeditWindow *window)
+{
+	restore_vpaned_position (window);
+
+	/* Start monitoring the size. */
+	g_signal_connect (window->priv->bottom_panel,
+			  "size-allocate",
+			  G_CALLBACK (bottom_panel_size_allocate_cb),
+			  window);
+
+	/* Run this only once. */
+	g_signal_handlers_disconnect_by_func (vpaned, vpaned_map_cb, window);
 }
 
 static void
@@ -2538,11 +2553,12 @@ gedit_window_init (GeditWindow *window)
 	 */
 	g_signal_connect_after (window->priv->hpaned,
 				"map",
-				G_CALLBACK (hpaned_restore_position),
+				G_CALLBACK (hpaned_map_cb),
 				window);
+
 	g_signal_connect_after (window->priv->vpaned,
 				"map",
-				G_CALLBACK (vpaned_restore_position),
+				G_CALLBACK (vpaned_map_cb),
 				window);
 
 	/* Drag and drop support */
