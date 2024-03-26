@@ -913,10 +913,10 @@ clone_window (GeditWindow *origin)
 
 	/* set the panels size, the paned position will be set when
 	 * they are mapped */
-	_gedit_side_panel_set_width (window->priv->side_panel,
-				     _gedit_side_panel_get_width (origin->priv->side_panel));
-	_gedit_bottom_panel_set_height (window->priv->bottom_panel,
-					_gedit_bottom_panel_get_height (origin->priv->bottom_panel));
+	_gedit_side_panel_copy_settings (origin->priv->side_panel,
+					 window->priv->side_panel);
+	_gedit_bottom_panel_copy_settings (origin->priv->bottom_panel,
+					   window->priv->bottom_panel);
 
 	origin_side_panel = _gedit_side_panel_get_panel_container (origin->priv->side_panel);
 	side_panel_item_name = tepl_panel_container_get_active_item_name (origin_side_panel);

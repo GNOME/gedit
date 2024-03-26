@@ -140,3 +140,13 @@ _gedit_bottom_panel_save_state (GeditBottomPanel *panel)
 				    panel->priv->height);
 	}
 }
+
+void
+_gedit_bottom_panel_copy_settings (GeditBottomPanel *origin,
+				   GeditBottomPanel *target)
+{
+	g_return_if_fail (GEDIT_IS_BOTTOM_PANEL (origin));
+	g_return_if_fail (GEDIT_IS_BOTTOM_PANEL (target));
+
+	target->priv->height = origin->priv->height;
+}

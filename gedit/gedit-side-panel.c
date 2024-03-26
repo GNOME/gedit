@@ -142,3 +142,13 @@ _gedit_side_panel_save_state (GeditSidePanel *panel)
 				    panel->priv->width);
 	}
 }
+
+void
+_gedit_side_panel_copy_settings (GeditSidePanel *origin,
+				 GeditSidePanel *target)
+{
+	g_return_if_fail (GEDIT_IS_SIDE_PANEL (origin));
+	g_return_if_fail (GEDIT_IS_SIDE_PANEL (target));
+
+	target->priv->width = origin->priv->width;
+}

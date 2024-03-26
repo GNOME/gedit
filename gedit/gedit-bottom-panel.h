@@ -33,23 +33,27 @@ struct _GeditBottomPanelClass
 };
 
 G_GNUC_INTERNAL
-GType			_gedit_bottom_panel_get_type	(void);
+GType			_gedit_bottom_panel_get_type		(void);
 
 G_GNUC_INTERNAL
-GeditBottomPanel *	_gedit_bottom_panel_new		(void);
+GeditBottomPanel *	_gedit_bottom_panel_new			(void);
 
 G_GNUC_INTERNAL
-GtkStack *		_gedit_bottom_panel_get_stack	(GeditBottomPanel *panel);
+GtkStack *		_gedit_bottom_panel_get_stack		(GeditBottomPanel *panel);
 
 G_GNUC_INTERNAL
-gint			_gedit_bottom_panel_get_height	(GeditBottomPanel *panel);
+gint			_gedit_bottom_panel_get_height		(GeditBottomPanel *panel);
 
 G_GNUC_INTERNAL
-void			_gedit_bottom_panel_set_height	(GeditBottomPanel *panel,
-							 gint              height);
+void			_gedit_bottom_panel_set_height		(GeditBottomPanel *panel,
+								 gint              height);
 
 G_GNUC_INTERNAL
-void			_gedit_bottom_panel_save_state	(GeditBottomPanel *panel);
+void			_gedit_bottom_panel_save_state		(GeditBottomPanel *panel);
+
+G_GNUC_INTERNAL
+void			_gedit_bottom_panel_copy_settings	(GeditBottomPanel *origin,
+								 GeditBottomPanel *target);
 
 G_END_DECLS
 
