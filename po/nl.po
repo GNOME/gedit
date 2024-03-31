@@ -21,9 +21,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gedit\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gedit/issues\n"
-"POT-Creation-Date: 2023-02-27 16:31+0000\n"
-"PO-Revision-Date: 2024-03-31 15:03+0200\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gedit/issues/\n"
+"POT-Creation-Date: 2024-03-31 13:05+0000\n"
+"PO-Revision-Date: 2024-03-31 15:08+0200\n"
 "Last-Translator: Nathan Follens <nfollens@gnome.org>\n"
 "Language-Team: GNOME-NL https://matrix.to/#/#nl:gnome.org\n"
 "Language: nl\n"
@@ -33,30 +33,9 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.4.2\n"
 
-#: data/org.gnome.gedit.appdata.xml.in:7 data/org.gnome.gedit.desktop.in:3
+#: data/org.gnome.gedit.desktop.in:3 data/org.gnome.gedit.metainfo.xml.in:7
 msgid "gedit"
 msgstr "gedit"
-
-#: data/org.gnome.gedit.appdata.xml.in:8
-msgid "Text editor"
-msgstr "Tekstbewerker"
-
-#: data/org.gnome.gedit.appdata.xml.in:10
-msgid ""
-"gedit is a general-purpose text editor. It has been created in 1998, at the "
-"beginnings of GNOME."
-msgstr ""
-"gedit is een algemene tekstbewerker. De ontwikkeling ervan is begonnen in "
-"1998, bij de start van GNOME."
-
-#: data/org.gnome.gedit.appdata.xml.in:14
-msgid ""
-"The first goal of gedit is to be easy to use, with a simple interface by "
-"default. More advanced features are available by enabling plugins."
-msgstr ""
-"Het hoofddoel van gedit is gebruiksgemak, met standaard een eenvoudige "
-"interface. Meer geavanceerde functies zijn beschikbaar door plug-ins in te "
-"schakelen."
 
 #: data/org.gnome.gedit.desktop.in:4
 msgid "Edit text files"
@@ -78,11 +57,11 @@ msgstr "Nieuw venster"
 msgid "New Document"
 msgstr "Nieuw document"
 
-#: data/org.gnome.gedit.gschema.xml.in:36
+#: data/org.gnome.gedit.gschema.xml.in:41
 msgid "Use Default Font"
 msgstr "Standaardlettertype gebruiken"
 
-#: data/org.gnome.gedit.gschema.xml.in:37
+#: data/org.gnome.gedit.gschema.xml.in:42
 msgid ""
 "Whether to use the system’s default fixed width font for editing text "
 "instead of a font specific to gedit. If this option is turned off, then the "
@@ -96,15 +75,15 @@ msgstr ""
 "systeemlettertype."
 
 #. Translators: This is a GSettings default value. Do NOT change or localize the quotation marks!
-#: data/org.gnome.gedit.gschema.xml.in:41
+#: data/org.gnome.gedit.gschema.xml.in:46
 msgid "'Monospace 12'"
 msgstr "'Monospace 12'"
 
-#: data/org.gnome.gedit.gschema.xml.in:42
+#: data/org.gnome.gedit.gschema.xml.in:47
 msgid "Editor Font"
 msgstr "Editorlettertype"
 
-#: data/org.gnome.gedit.gschema.xml.in:43
+#: data/org.gnome.gedit.gschema.xml.in:48
 msgid ""
 "A custom font that will be used for the editing area. This will only take "
 "effect if the “Use Default Font” option is turned off."
@@ -113,29 +92,29 @@ msgstr ""
 "teksteditor. Dit heeft alleen effect indien de optie ‘Standaardlettertype "
 "gebruiken’ is uitgeschakeld."
 
-#: data/org.gnome.gedit.gschema.xml.in:47
+#: data/org.gnome.gedit.gschema.xml.in:52
 msgid "Style Scheme"
 msgstr "Stijlschema"
 
-#: data/org.gnome.gedit.gschema.xml.in:48
+#: data/org.gnome.gedit.gschema.xml.in:53
 msgid "The ID of a GtkSourceView Style Scheme used to color the text."
 msgstr ""
 "Het ID van een GtkSourceView-stijlschema dat gebruikt wordt om de tekst te "
 "kleuren."
 
-#: data/org.gnome.gedit.gschema.xml.in:52
+#: data/org.gnome.gedit.gschema.xml.in:57
 msgid "Create Backup Copies"
 msgstr "Reservekopieën maken"
 
-#: data/org.gnome.gedit.gschema.xml.in:53
+#: data/org.gnome.gedit.gschema.xml.in:58
 msgid "Whether gedit should create backup copies for the files it saves."
 msgstr "Of gedit reservekopieën van opgeslagen bestanden moet aanmaken."
 
-#: data/org.gnome.gedit.gschema.xml.in:57
+#: data/org.gnome.gedit.gschema.xml.in:62
 msgid "Autosave"
 msgstr "Automatisch opslaan"
 
-#: data/org.gnome.gedit.gschema.xml.in:58
+#: data/org.gnome.gedit.gschema.xml.in:63
 msgid ""
 "Whether gedit should automatically save modified files after a time "
 "interval. You can set the time interval with the “Autosave Interval” option."
@@ -144,11 +123,11 @@ msgstr ""
 "deze tijdsinterval instellen met de de optie ‘Interval voor automatisch "
 "opslaan’."
 
-#: data/org.gnome.gedit.gschema.xml.in:62
+#: data/org.gnome.gedit.gschema.xml.in:68
 msgid "Autosave Interval"
 msgstr "Interval voor automatisch opslaan"
 
-#: data/org.gnome.gedit.gschema.xml.in:63
+#: data/org.gnome.gedit.gschema.xml.in:69
 msgid ""
 "Number of minutes after which gedit will automatically save modified files. "
 "This will only take effect if the “Autosave” option is turned on."
@@ -156,11 +135,11 @@ msgstr ""
 "Aantal minuten waarna gedit gewijzigde bestanden automatisch opslaat. Dit "
 "heeft alleen effect wanneer de optie ‘Automatisch opslaan’ ingeschakeld is."
 
-#: data/org.gnome.gedit.gschema.xml.in:67
+#: data/org.gnome.gedit.gschema.xml.in:73
 msgid "Maximum Number of Undo Actions"
 msgstr "Maximum aantal acties dat ongedaan gemaakt kan worden"
 
-#: data/org.gnome.gedit.gschema.xml.in:68
+#: data/org.gnome.gedit.gschema.xml.in:74
 msgid ""
 "Maximum number of actions that gedit will be able to undo or redo. Use “-1” "
 "for unlimited number of actions."
@@ -168,11 +147,11 @@ msgstr ""
 "Maximum aantal acties dat gedit ongedaan kan maken of opnieuw kan doen. "
 "Gebruik ‘-1’ voor een ongelimiteerd aantal acties."
 
-#: data/org.gnome.gedit.gschema.xml.in:77
+#: data/org.gnome.gedit.gschema.xml.in:83
 msgid "Line Wrapping Mode"
 msgstr "Regelafbreekmodus"
 
-#: data/org.gnome.gedit.gschema.xml.in:78
+#: data/org.gnome.gedit.gschema.xml.in:84
 msgid ""
 "Specifies how to wrap long lines in the editing area. Use “none” for no "
 "wrapping, “word” for wrapping at word boundaries, and “char” for wrapping at "
@@ -184,11 +163,11 @@ msgstr ""
 "op letters af te breken. Let op dat de waarden hoofdlettergevoelig zijn. "
 "Zorg er dus voor dat ze exact zo zijn als hier weergegeven."
 
-#: data/org.gnome.gedit.gschema.xml.in:86
+#: data/org.gnome.gedit.gschema.xml.in:92
 msgid "Last split mode choice for line wrapping mode"
 msgstr "Laatste keuze deelmodus voor regelafbreking gebruiken"
 
-#: data/org.gnome.gedit.gschema.xml.in:87
+#: data/org.gnome.gedit.gschema.xml.in:93
 msgid ""
 "Specifies the last split mode used with line wrapping mode, so that when "
 "wrapping mode is off we still remember the split mode choice. Use “word” for "
@@ -200,85 +179,85 @@ msgstr ""
 "‘word’ voor afbreking op woordgrenzen en ‘char’ voor afbreken op individuele "
 "letters."
 
-#: data/org.gnome.gedit.gschema.xml.in:91
+#: data/org.gnome.gedit.gschema.xml.in:98
 msgid "Tab Size"
 msgstr "Tabgrootte"
 
-#: data/org.gnome.gedit.gschema.xml.in:92
+#: data/org.gnome.gedit.gschema.xml.in:99
 msgid ""
 "Specifies the number of spaces that should be displayed instead of Tab "
 "characters."
 msgstr "Het aantal spaties dat weergegeven moet worden in plaats van tabs."
 
-#: data/org.gnome.gedit.gschema.xml.in:96
+#: data/org.gnome.gedit.gschema.xml.in:103
 msgid "Insert spaces"
 msgstr "Spaties invoegen"
 
-#: data/org.gnome.gedit.gschema.xml.in:97
+#: data/org.gnome.gedit.gschema.xml.in:104
 msgid "Whether gedit should insert spaces instead of tabs."
 msgstr "Invoegen van spaties in plaats van tabs."
 
-#: data/org.gnome.gedit.gschema.xml.in:101
+#: data/org.gnome.gedit.gschema.xml.in:108
 msgid "Automatic indent"
 msgstr "Automatisch inspringen"
 
-#: data/org.gnome.gedit.gschema.xml.in:102
+#: data/org.gnome.gedit.gschema.xml.in:109
 msgid "Whether gedit should enable automatic indentation."
 msgstr "Inschakelen automatisch inspringen."
 
-#: data/org.gnome.gedit.gschema.xml.in:106
+#: data/org.gnome.gedit.gschema.xml.in:113
 msgid "Display Line Numbers"
 msgstr "Regelnummers weergeven"
 
-#: data/org.gnome.gedit.gschema.xml.in:107
+#: data/org.gnome.gedit.gschema.xml.in:114
 msgid "Whether gedit should display line numbers in the editing area."
 msgstr "Inschakelen weergave regelnummers in het bewerkingsgedeelte."
 
-#: data/org.gnome.gedit.gschema.xml.in:111
+#: data/org.gnome.gedit.gschema.xml.in:118
 msgid "Highlight Current Line"
 msgstr "Huidige regel markeren"
 
-#: data/org.gnome.gedit.gschema.xml.in:112
+#: data/org.gnome.gedit.gschema.xml.in:119
 msgid "Whether gedit should highlight the current line."
 msgstr "Inschakelen markering van de huidige regel."
 
-#: data/org.gnome.gedit.gschema.xml.in:116
+#: data/org.gnome.gedit.gschema.xml.in:123
 msgid "Highlight Matching Brackets"
 msgstr "Gepaarde haakjes markeren"
 
-#: data/org.gnome.gedit.gschema.xml.in:117
+#: data/org.gnome.gedit.gschema.xml.in:124
 msgid "Whether gedit should highlight matching brackets."
 msgstr "Inschakelen markering van gepaarde haakjes."
 
-#: data/org.gnome.gedit.gschema.xml.in:121
+#: data/org.gnome.gedit.gschema.xml.in:128
 msgid "Display Right Margin"
 msgstr "Rechterkantlijn weergeven"
 
-#: data/org.gnome.gedit.gschema.xml.in:122
+#: data/org.gnome.gedit.gschema.xml.in:129
 msgid "Whether gedit should display the right margin in the editing area."
 msgstr "Inschakelen weergave rechterkantlijn in het bewerkingsgedeelte."
 
-#: data/org.gnome.gedit.gschema.xml.in:126
+#: data/org.gnome.gedit.gschema.xml.in:133
 msgid "Right Margin Position"
 msgstr "Positie van rechterkantlijn"
 
-#: data/org.gnome.gedit.gschema.xml.in:127
+#: data/org.gnome.gedit.gschema.xml.in:134
 msgid "Specifies the position of the right margin."
 msgstr "De positie van de rechterkantlijn."
 
-#: data/org.gnome.gedit.gschema.xml.in:131
+#: data/org.gnome.gedit.gschema.xml.in:138
 msgid "Document background pattern type"
 msgstr "Type achtergrondpatroon van document"
 
-#: data/org.gnome.gedit.gschema.xml.in:132
+#: data/org.gnome.gedit.gschema.xml.in:139
 msgid "Whether the document will get a background pattern painted."
 msgstr "Of het document voorzien wordt van een achtergrondpatroon."
 
-#: data/org.gnome.gedit.gschema.xml.in:142
+#: data/org.gnome.gedit.gschema.xml.in:149
 msgid "Smart Home End"
 msgstr "Slimme Home/End-toetsen"
 
-#: data/org.gnome.gedit.gschema.xml.in:143
+#: data/org.gnome.gedit.gschema.xml.in:150
 msgid ""
 "Specifies how the cursor moves when the HOME and END keys are pressed. Use "
 "“disabled” to always move at the start/end of the line, “after” to move to "
@@ -297,50 +276,50 @@ msgstr ""
 "regel en ‘always’ om altijd naar het begin/einde van de tekst te springen in "
 "plaats van het begin/einde van de regel."
 
-#: data/org.gnome.gedit.gschema.xml.in:147
+#: data/org.gnome.gedit.gschema.xml.in:154
 msgid "Restore Previous Cursor Position"
 msgstr "Vorige cursorpositie herstellen"
 
-#: data/org.gnome.gedit.gschema.xml.in:148
+#: data/org.gnome.gedit.gschema.xml.in:155
 msgid ""
 "Whether gedit should restore the previous cursor position when a file is "
 "loaded."
 msgstr ""
 "Herstellen van de vorige cursorpositie wanneer een bestand wordt geladen."
 
-#: data/org.gnome.gedit.gschema.xml.in:152
+#: data/org.gnome.gedit.gschema.xml.in:159
 msgid "Enable Syntax Highlighting"
 msgstr "Syntaxismarkering inschakelen"
 
-#: data/org.gnome.gedit.gschema.xml.in:153
+#: data/org.gnome.gedit.gschema.xml.in:160
 msgid "Whether gedit should enable syntax highlighting."
 msgstr "Inschakelen syntaxismarkering."
 
-#: data/org.gnome.gedit.gschema.xml.in:157
+#: data/org.gnome.gedit.gschema.xml.in:164
 msgid "Enable Search Highlighting"
 msgstr "Zoektermmarkering inschakelen"
 
 # Alle overeenkomsten met de gezochte tekst sytaxkleuring geven.
-#: data/org.gnome.gedit.gschema.xml.in:158
+#: data/org.gnome.gedit.gschema.xml.in:165
 msgid ""
 "Whether gedit should highlight all the occurrences of the searched text."
 msgstr "Inschakelen markering van alle zoekresultaten met de gezochte tekst."
 
-#: data/org.gnome.gedit.gschema.xml.in:162
+#: data/org.gnome.gedit.gschema.xml.in:169
 msgid "Ensure Trailing Newline"
 msgstr "Nieuwe regel aan het einde"
 
-#: data/org.gnome.gedit.gschema.xml.in:163
+#: data/org.gnome.gedit.gschema.xml.in:170
 msgid ""
 "Whether gedit will ensure that documents always end with a trailing newline."
 msgstr "Ervoor zorgen dat documenten altijd eindigen met een nieuwe regel."
 
 # Vrij vertaald (Wouter Bolsterlee)
-#: data/org.gnome.gedit.gschema.xml.in:169
+#: data/org.gnome.gedit.gschema.xml.in:176
 msgid "Notebook Show Tabs Mode"
 msgstr "Zichtbaarheid tabbladen"
 
-#: data/org.gnome.gedit.gschema.xml.in:170
+#: data/org.gnome.gedit.gschema.xml.in:177
 msgid ""
 "Specifies when to show the notebook tabs. Use “never” to never show the "
 "tabs, “always” to always show the tabs, and “auto” to show the tabs only "
@@ -353,48 +332,52 @@ msgstr ""
 "hoofdlettergevoelig zijn, dus zorg er dus voor dat ze exact zo zijn als hier "
 "weergegeven."
 
-#: data/org.gnome.gedit.gschema.xml.in:174
+#: data/org.gnome.gedit.gschema.xml.in:181
 msgid "Status Bar is Visible"
 msgstr "Statusbalk is zichtbaar"
 
-#: data/org.gnome.gedit.gschema.xml.in:175
+#: data/org.gnome.gedit.gschema.xml.in:182
 msgid ""
 "Whether the status bar at the bottom of editing windows should be visible."
 msgstr ""
 "Bepaalt of de statusbalk onderaan het editorvenster zichtbaar moet zijn."
 
-#: data/org.gnome.gedit.gschema.xml.in:179
+#: data/org.gnome.gedit.gschema.xml.in:186
 msgid "Side panel is Visible"
 msgstr "Zijpaneel is zichtbaar"
 
-#: data/org.gnome.gedit.gschema.xml.in:180
+#: data/org.gnome.gedit.gschema.xml.in:187
 msgid ""
 "Whether the side panel at the left of editing windows should be visible."
 msgstr ""
 "Bepaalt of het zijpaneel, dat zich links bevindt van het bewerkingsvenster, "
 "zichtbaar moet zijn."
 
-#: data/org.gnome.gedit.gschema.xml.in:189
+#: data/org.gnome.gedit.gschema.xml.in:194
+msgid "Which theme variant to use"
+msgstr "Welke thema-variant wordt gebruikt"
+
+#: data/org.gnome.gedit.gschema.xml.in:200
 msgid "Print Syntax Highlighting"
 msgstr "Syntaxismarkering afdrukken"
 
-#: data/org.gnome.gedit.gschema.xml.in:190
+#: data/org.gnome.gedit.gschema.xml.in:201
 msgid "Whether gedit should print syntax highlighting when printing documents."
 msgstr "Syntaxismarkering gebruiken bij het afdrukken van documenten."
 
-#: data/org.gnome.gedit.gschema.xml.in:194
+#: data/org.gnome.gedit.gschema.xml.in:205
 msgid "Print Header"
 msgstr "Paginakoppen afdrukken"
 
-#: data/org.gnome.gedit.gschema.xml.in:195
+#: data/org.gnome.gedit.gschema.xml.in:206
 msgid "Whether gedit should include a document header when printing documents."
 msgstr "Documentkoppen toevoegen bij het afdrukken van documenten."
 
-#: data/org.gnome.gedit.gschema.xml.in:204
+#: data/org.gnome.gedit.gschema.xml.in:215
 msgid "Printing Line Wrapping Mode"
 msgstr "Regels afbreken bij afdrukken"
 
-#: data/org.gnome.gedit.gschema.xml.in:205
+#: data/org.gnome.gedit.gschema.xml.in:216
 msgid ""
 "Specifies how to wrap long lines for printing. Use “none” for no wrapping, "
 "“word” for wrapping at word boundaries, and “char” for wrapping at "
@@ -406,11 +389,11 @@ msgstr ""
 "op letters af te breken. Let op dat de waarden hoofdlettergevoelig zijn. "
 "Zorg er dus voor dat ze exact zo zijn als hier weergegeven."
 
-#: data/org.gnome.gedit.gschema.xml.in:209
+#: data/org.gnome.gedit.gschema.xml.in:220
 msgid "Print Line Numbers"
 msgstr "Regelnummers afdrukken"
 
-#: data/org.gnome.gedit.gschema.xml.in:210
+#: data/org.gnome.gedit.gschema.xml.in:221
 msgid ""
 "If this value is 0, then no line numbers will be inserted when printing a "
 "document. Otherwise, gedit will print line numbers every such number of "
@@ -420,15 +403,15 @@ msgstr ""
 "zal gedit, om de zoveel regels, het regelnummer afdrukken."
 
 #. Translators: This is a GSettings default value. Do NOT change or localize the quotation marks!
-#: data/org.gnome.gedit.gschema.xml.in:214
+#: data/org.gnome.gedit.gschema.xml.in:225
 msgid "'Monospace 9'"
 msgstr "'Monospace 9'"
 
-#: data/org.gnome.gedit.gschema.xml.in:215
+#: data/org.gnome.gedit.gschema.xml.in:226
 msgid "Body Font for Printing"
 msgstr "Afdruklettertype voor inhoud"
 
-#: data/org.gnome.gedit.gschema.xml.in:216
+#: data/org.gnome.gedit.gschema.xml.in:227
 msgid ""
 "Specifies the font to use for a document’s body when printing documents."
 msgstr ""
@@ -436,15 +419,15 @@ msgstr ""
 "documenten."
 
 #. Translators: This is a GSettings default value. Do NOT change or localize the quotation marks!
-#: data/org.gnome.gedit.gschema.xml.in:220
+#: data/org.gnome.gedit.gschema.xml.in:231
 msgid "'Sans 11'"
 msgstr "'Sans 11'"
 
-#: data/org.gnome.gedit.gschema.xml.in:221
+#: data/org.gnome.gedit.gschema.xml.in:232
 msgid "Header Font for Printing"
 msgstr "Afdruklettertype voor kop"
 
-#: data/org.gnome.gedit.gschema.xml.in:222
+#: data/org.gnome.gedit.gschema.xml.in:233
 msgid ""
 "Specifies the font to use for page headers when printing a document. This "
 "will only take effect if the “Print Header” option is turned on."
@@ -454,15 +437,15 @@ msgstr ""
 "ingeschakeld."
 
 #. Translators: This is a GSettings default value. Do NOT change or localize the quotation marks!
-#: data/org.gnome.gedit.gschema.xml.in:226
+#: data/org.gnome.gedit.gschema.xml.in:237
 msgid "'Sans 8'"
 msgstr "'Sans 8'"
 
-#: data/org.gnome.gedit.gschema.xml.in:227
+#: data/org.gnome.gedit.gschema.xml.in:238
 msgid "Line Number Font for Printing"
 msgstr "Afdruklettertype voor regelnummers"
 
-#: data/org.gnome.gedit.gschema.xml.in:228
+#: data/org.gnome.gedit.gschema.xml.in:239
 msgid ""
 "Specifies the font to use for line numbers when printing. This will only "
 "take effect if the “Print Line Numbers” option is non-zero."
@@ -471,43 +454,43 @@ msgstr ""
 "Dit heeft alleen effect indien de optie ‘Regelnummers afdrukken’ is "
 "ingeschakeld."
 
-#: data/org.gnome.gedit.gschema.xml.in:232
+#: data/org.gnome.gedit.gschema.xml.in:243
 msgid "Margin Left"
 msgstr "Marge links"
 
-#: data/org.gnome.gedit.gschema.xml.in:233
+#: data/org.gnome.gedit.gschema.xml.in:244
 msgid "The left margin, in millimeters."
 msgstr "De linkermarge, in millimeters."
 
-#: data/org.gnome.gedit.gschema.xml.in:237
+#: data/org.gnome.gedit.gschema.xml.in:248
 msgid "Margin Top"
 msgstr "Marge boven"
 
-#: data/org.gnome.gedit.gschema.xml.in:238
+#: data/org.gnome.gedit.gschema.xml.in:249
 msgid "The top margin, in millimeters."
 msgstr "De bovenmarge, in millimeters."
 
-#: data/org.gnome.gedit.gschema.xml.in:242
+#: data/org.gnome.gedit.gschema.xml.in:253
 msgid "Margin Right"
 msgstr "Marge rechts"
 
-#: data/org.gnome.gedit.gschema.xml.in:243
+#: data/org.gnome.gedit.gschema.xml.in:254
 msgid "The right margin, in millimeters."
 msgstr "De rechtermarge, in millimeters."
 
-#: data/org.gnome.gedit.gschema.xml.in:247
+#: data/org.gnome.gedit.gschema.xml.in:258
 msgid "Margin Bottom"
 msgstr "Marge onder"
 
-#: data/org.gnome.gedit.gschema.xml.in:248
+#: data/org.gnome.gedit.gschema.xml.in:259
 msgid "The bottom margin, in millimeters."
 msgstr "De ondermarge, in millimeters."
 
-#: data/org.gnome.gedit.gschema.xml.in:254
+#: data/org.gnome.gedit.gschema.xml.in:265
 msgid "Candidate Encodings"
 msgstr "Kandidaatsets"
 
-#: data/org.gnome.gedit.gschema.xml.in:255
+#: data/org.gnome.gedit.gschema.xml.in:266
 msgid ""
 "List of candidate encodings shown in the Character Encoding menu in the open/"
 "save file chooser. “CURRENT” represents the current locale encoding. Only "
@@ -519,51 +502,74 @@ msgstr ""
 "erkende tekensets gebruikt. De standaardwaarde is de lege lijst, waarbij "
 "gedit goede standaardwaarden kiest, afhankelijk van land en taal."
 
-#: data/org.gnome.gedit.gschema.xml.in:304
+#: data/org.gnome.gedit.gschema.xml.in:315
 msgid "Active plugins"
 msgstr "Actieve plug-ins"
 
-#: data/org.gnome.gedit.gschema.xml.in:305
+#: data/org.gnome.gedit.gschema.xml.in:316
 msgid "List of active plugins."
 msgstr "Lijst met actieve plug-ins."
 
-#: gedit/gedit-app.c:83
+#: data/org.gnome.gedit.metainfo.xml.in:8
+msgid "Text editor"
+msgstr "Tekstbewerker"
+
+#: data/org.gnome.gedit.metainfo.xml.in:10
+msgid ""
+"gedit is an easy-to-use and general-purpose text editor. Its development "
+"started in 1998, at the beginnings of the GNOME project, with a good "
+"integration with that desktop environment."
+msgstr ""
+"gedit is een eenvoudige en algemene tekstbewerker. De ontwikkeling ervan is "
+"begonnen in 1998, bij de start van GNOME, met een goede integratie met die "
+"bureaubladomgeving."
+
+#: data/org.gnome.gedit.metainfo.xml.in:15
+msgid ""
+"You can use it to write simple notes and documents, or you can enable more "
+"advanced features that are useful for software development."
+msgstr ""
+"U kunt het gebruiken om eenvoudige notities en documenten te schrijven, of "
+"geavanceerdere functies inschakelen die nuttig zijn voor "
+"softwareontwikkeling."
+
+#: gedit/gedit-app.c:92
 msgid "Show the application’s version"
 msgstr "De toepassingsversie tonen"
 
-#: gedit/gedit-app.c:89
+#: gedit/gedit-app.c:98
 msgid "Display list of possible values for the encoding option"
 msgstr "Toon lijst van mogelijke waarden voor de optie codering"
 
-#: gedit/gedit-app.c:96
+#: gedit/gedit-app.c:105
 msgid ""
 "Set the character encoding to be used to open the files listed on the "
 "command line"
 msgstr ""
 "De tekenset voor het openen van bestanden vanaf de opdrachtregel instellen"
 
-#: gedit/gedit-app.c:97
+#: gedit/gedit-app.c:106
 msgid "ENCODING"
 msgstr "CODERING"
 
-#: gedit/gedit-app.c:103
+#: gedit/gedit-app.c:112
 msgid "Create a new top-level window in an existing instance of gedit"
 msgstr ""
 "Een nieuw top-level-venster in een bestaande instantie van gedit aanmaken"
 
-#: gedit/gedit-app.c:110
+#: gedit/gedit-app.c:119
 msgid "Create a new document in an existing instance of gedit"
 msgstr "Een nieuw document maken in een bestaande instantie van gedit"
 
-#: gedit/gedit-app.c:117
+#: gedit/gedit-app.c:126
 msgid "Open files and block process until files are closed"
 msgstr "Bestanden openen en blokkeren totdat alle bestanden gesloten zijn"
 
-#: gedit/gedit-app.c:124
+#: gedit/gedit-app.c:133
 msgid "Run gedit in standalone mode"
 msgstr "gedit in standalone-modus uitvoeren"
 
-#: gedit/gedit-app.c:131
+#: gedit/gedit-app.c:140
 msgid "[FILE…] [+LINE[:COLUMN]]"
 msgstr "[BESTAND…] [+REGEL[:KOLOM]]"
 
@@ -571,20 +577,24 @@ msgstr "[BESTAND…] [+REGEL[:KOLOM]]"
 msgid "There was an error displaying the help."
 msgstr "Er is een fout opgetreden bij het weergeven van de hulp."
 
-#: gedit/gedit-app.c:855
+#: gedit/gedit-app.c:857
 #, c-format
 msgid "%s: invalid encoding."
 msgstr "%s: ongeldige codering."
+
+#: gedit/gedit-bottom-panel.c:79
+msgid "Hide panel"
+msgstr "Paneel verbergen"
 
 #: gedit/gedit-close-confirmation-dialog.c:271
 msgid "Close _without Saving"
 msgstr "Sluiten _zonder opslaan"
 
-#: gedit/gedit-close-confirmation-dialog.c:277 gedit/gedit-commands-file.c:492
-#: gedit/gedit-commands-file.c:568 gedit/gedit-commands-file.c:792
-#: gedit/gedit-commands-file.c:1517 gedit/gedit-encodings-dialog.c:192
+#: gedit/gedit-close-confirmation-dialog.c:277 gedit/gedit-commands-file.c:489
+#: gedit/gedit-commands-file.c:565 gedit/gedit-commands-file.c:789
+#: gedit/gedit-commands-file.c:1514 gedit/gedit-encodings-dialog.c:192
 #: gedit/gedit-file-chooser-open-dialog.c:78 gedit/gedit-io-error-info-bar.c:95
-#: gedit/gedit-io-error-info-bar.c:294 gedit/gedit-preferences-dialog.c:689
+#: gedit/gedit-io-error-info-bar.c:294
 #: plugins/filebrowser/gedit-file-browser-utils.c:211
 #: plugins/quickopen/quickopen/popup.py:45
 #: plugins/snippets/snippets/manager.py:789
@@ -600,9 +610,8 @@ msgstr "_Annuleren"
 msgid "_Save As…"
 msgstr "Opslaan _als…"
 
-#: gedit/gedit-close-confirmation-dialog.c:295 gedit/gedit-commands-file.c:791
-#: gedit/resources/gtk/menus-common.ui:101
-#: gedit/resources/ui/gedit-window.ui:56
+#: gedit/gedit-close-confirmation-dialog.c:295 gedit/gedit-commands-file.c:788
+#: gedit/gedit-header-bar.c:187 gedit/resources/gtk/menus-common.ui:101
 #: plugins/snippets/snippets/manager.py:875
 #: plugins/snippets/snippets/manager.py:913
 msgid "_Save"
@@ -718,41 +727,41 @@ msgstr "S_electeer de documenten die u wilt opslaan:"
 msgid "If you don’t save, all your changes will be permanently lost."
 msgstr "Als u niet opslaat, zullen al uw wijzigingen definitief verloren gaan."
 
-#: gedit/gedit-commands-file.c:258
+#: gedit/gedit-commands-file.c:255
 #, c-format
 msgid "Loading file “%s”…"
 msgstr "Laden van bestand ‘%s’…"
 
-#: gedit/gedit-commands-file.c:266
+#: gedit/gedit-commands-file.c:263
 #, c-format
 msgid "Loading %d file…"
 msgid_plural "Loading %d files…"
 msgstr[0] "%d bestand wordt geladen…"
 msgstr[1] "%d bestanden worden geladen…"
 
-#: gedit/gedit-commands-file.c:483
+#: gedit/gedit-commands-file.c:480
 #, c-format
 msgid "The file “%s” is read-only."
 msgstr "Het bestand ‘%s’ is alleen-lezen."
 
-#: gedit/gedit-commands-file.c:488
+#: gedit/gedit-commands-file.c:485
 msgid "Do you want to try to replace it with the one you are saving?"
 msgstr "Wilt u proberen het te vervangen door hetgeen dat u nu opslaat?"
 
-#: gedit/gedit-commands-file.c:493
+#: gedit/gedit-commands-file.c:490
 #: gedit/resources/ui/gedit-replace-dialog.ui:55
 msgid "_Replace"
 msgstr "_Vervangen"
 
-#: gedit/gedit-commands-file.c:533
+#: gedit/gedit-commands-file.c:530
 msgid "Save the file using compression?"
 msgstr "Bestand gecomprimeerd opslaan?"
 
-#: gedit/gedit-commands-file.c:537
+#: gedit/gedit-commands-file.c:534
 msgid "Save the file as plain text?"
 msgstr "Bestand als platte tekst opslaan?"
 
-#: gedit/gedit-commands-file.c:550
+#: gedit/gedit-commands-file.c:547
 #, c-format
 msgid ""
 "The file “%s” was previously saved as plain text and will now be saved using "
@@ -761,11 +770,11 @@ msgstr ""
 "Het bestand ‘%s’ was hiervoor als platte tekst opgeslagen en zal nu met "
 "compressie opgeslagen worden."
 
-#: gedit/gedit-commands-file.c:554
+#: gedit/gedit-commands-file.c:551
 msgid "_Save Using Compression"
 msgstr "_Opslaan met compressie"
 
-#: gedit/gedit-commands-file.c:559
+#: gedit/gedit-commands-file.c:556
 #, c-format
 msgid ""
 "The file “%s” was previously saved using compression and will now be saved "
@@ -774,32 +783,32 @@ msgstr ""
 "Het bestand ‘%s’ was hiervoor met compressie opgeslagen en zal nu als platte "
 "tekst opgeslagen worden."
 
-#: gedit/gedit-commands-file.c:562
+#: gedit/gedit-commands-file.c:559
 msgid "_Save As Plain Text"
 msgstr "Op_slaan als platte tekst"
 
-#: gedit/gedit-commands-file.c:678 gedit/gedit-commands-file.c:967
+#: gedit/gedit-commands-file.c:675 gedit/gedit-commands-file.c:964
 #, c-format
 msgid "Saving file “%s”…"
 msgstr "Opslaan van bestand ‘%s’…"
 
 #. Translators: "Save As" is the title of the file chooser window.
-#: gedit/gedit-commands-file.c:789
+#: gedit/gedit-commands-file.c:786
 msgctxt "window title"
 msgid "Save As"
 msgstr "Opslaan als"
 
-#: gedit/gedit-commands-file.c:1378
+#: gedit/gedit-commands-file.c:1375
 #, c-format
 msgid "Reverting the document “%s”…"
 msgstr "Terugzetten van document ‘%s’…"
 
-#: gedit/gedit-commands-file.c:1425
+#: gedit/gedit-commands-file.c:1422
 #, c-format
 msgid "Revert unsaved changes to document “%s”?"
 msgstr "Niet opgeslagen wijzigingen in document ‘%s’ terugdraaien?"
 
-#: gedit/gedit-commands-file.c:1434
+#: gedit/gedit-commands-file.c:1431
 #, c-format
 msgid ""
 "Changes made to the document in the last %ld second will be permanently lost."
@@ -813,14 +822,14 @@ msgstr[1] ""
 "Wijzigingen in het document van de laatste %ld seconden zullen definitief "
 "verloren zijn."
 
-#: gedit/gedit-commands-file.c:1443
+#: gedit/gedit-commands-file.c:1440
 msgid ""
 "Changes made to the document in the last minute will be permanently lost."
 msgstr ""
 "Wijzigingen in het document van de laatste minuut zullen definitief verloren "
 "zijn."
 
-#: gedit/gedit-commands-file.c:1449
+#: gedit/gedit-commands-file.c:1446
 #, c-format
 msgid ""
 "Changes made to the document in the last minute and %ld second will be "
@@ -835,7 +844,7 @@ msgstr[1] ""
 "Wijzigingen in het document van de laatste minuut en %ld seconden zullen "
 "definitief verloren zijn."
 
-#: gedit/gedit-commands-file.c:1459
+#: gedit/gedit-commands-file.c:1456
 #, c-format
 msgid ""
 "Changes made to the document in the last %ld minute will be permanently lost."
@@ -849,13 +858,13 @@ msgstr[1] ""
 "Wijzigingen in het document van de laatste %ld minuten zullen definitief "
 "verloren zijn."
 
-#: gedit/gedit-commands-file.c:1474
+#: gedit/gedit-commands-file.c:1471
 msgid "Changes made to the document in the last hour will be permanently lost."
 msgstr ""
 "Wijzigingen in het document van het laatste uur zullen definitief verloren "
 "zijn."
 
-#: gedit/gedit-commands-file.c:1480
+#: gedit/gedit-commands-file.c:1477
 #, c-format
 msgid ""
 "Changes made to the document in the last hour and %d minute will be "
@@ -870,7 +879,7 @@ msgstr[1] ""
 "Wijzigingen in het document van het laatste uur en %d minuten zullen "
 "definitief verloren zijn."
 
-#: gedit/gedit-commands-file.c:1495
+#: gedit/gedit-commands-file.c:1492
 #, c-format
 msgid ""
 "Changes made to the document in the last %d hour will be permanently lost."
@@ -883,7 +892,7 @@ msgstr[1] ""
 "Wijzigingen in het document van de laatste %d uur zullen definitief verloren "
 "zijn."
 
-#: gedit/gedit-commands-file.c:1518
+#: gedit/gedit-commands-file.c:1515
 msgid "_Revert"
 msgstr "_Terugdraaien"
 
@@ -891,23 +900,23 @@ msgstr "_Terugdraaien"
 #. * relative contribution (number of commits at the time of
 #. * writing).
 #.
-#: gedit/gedit-commands-help.c:85
+#: gedit/gedit-commands-help.c:44
 msgid "Main authors:"
 msgstr "Hoofdontwikkelaars:"
 
-#: gedit/gedit-commands-help.c:92
+#: gedit/gedit-commands-help.c:51
 msgid "Many thanks also to:"
 msgstr "Met dank aan:"
 
-#: gedit/gedit-commands-help.c:102
+#: gedit/gedit-commands-help.c:61
 msgid "and many other contributors."
 msgstr "en veel andere bijdragers."
 
-#: gedit/gedit-commands-help.c:120
+#: gedit/gedit-commands-help.c:76
 msgid "gedit is an easy-to-use and general-purpose text editor"
 msgstr "gedit is een eenvoudige en algemene tekstbewerker"
 
-#: gedit/gedit-commands-help.c:125
+#: gedit/gedit-commands-help.c:81
 msgid "translator-credits"
 msgstr ""
 "Reinout van Schouwen \n"
@@ -924,9 +933,8 @@ msgstr ""
 "Kenneth Venken\n"
 "Hannie Dumoleyn\n"
 "Erwin Poeze\n"
-"Nathan Follens\n"
+"Nathan Follens <nfollens@gnome.org>\n"
 "Justin van Steijn\n"
-"\n"
 "Meer info over Gnome-NL http://nl.gnome.org/"
 
 #: gedit/gedit-commands-search.c:106
@@ -948,13 +956,12 @@ msgstr "Eén zoekterm gevonden en vervangen"
 msgid "“%s” not found"
 msgstr "‘%s’ niet gevonden"
 
-#: gedit/gedit-documents-panel.c:399
+#: gedit/gedit-documents-panel.c:397
 #, c-format
 msgid "Tab Group %i"
 msgstr "Tabgroep %i"
 
-#: gedit/gedit-documents-panel.c:499 gedit/gedit-window.c:1130
-#: gedit/gedit-window.c:1136 gedit/gedit-window.c:1144
+#: gedit/gedit-documents-panel.c:481 gedit/gedit-window-titles.c:117
 msgid "Read-Only"
 msgstr "Alleen-lezen"
 
@@ -1006,7 +1013,7 @@ msgstr "Verplaatsen naar een lagere prioriteit"
 msgid "Untitled Document %d"
 msgstr "Niet-opgeslagen document %d"
 
-#: gedit/gedit-file-chooser.c:41 gedit/gedit-preferences-dialog.c:698
+#: gedit/gedit-file-chooser.c:41
 msgid "All Files"
 msgstr "Alle bestanden"
 
@@ -1030,7 +1037,7 @@ msgctxt "window title"
 msgid "Open Files"
 msgstr "Bestanden openen"
 
-#: gedit/gedit-file-chooser-open-dialog.c:79 gedit/gedit-window.c:2595
+#: gedit/gedit-file-chooser-open-dialog.c:79 gedit/gedit-header-bar.c:54
 #: gedit/resources/gtk/menus-common.ui:74
 #: gedit/resources/gtk/menus-common.ui:80
 #: plugins/filebrowser/resources/ui/gedit-file-browser-menus.ui:7
@@ -1038,6 +1045,26 @@ msgstr "Bestanden openen"
 #: plugins/snippets/snippets/manager.py:790
 msgid "_Open"
 msgstr "_Openen"
+
+#: gedit/gedit-header-bar.c:55
+msgid "Open a file"
+msgstr "Bestand openen"
+
+#: gedit/gedit-header-bar.c:93
+msgid "Open a recently used file"
+msgstr "Een recent gebruikt bestand openen"
+
+#: gedit/gedit-header-bar.c:139
+msgid "Create a new document"
+msgstr "Nieuw document aanmaken"
+
+#: gedit/gedit-header-bar.c:152
+msgid "Leave Fullscreen"
+msgstr "Volledig scherm verlaten"
+
+#: gedit/gedit-header-bar.c:188
+msgid "Save the current file"
+msgstr "Huidige bestand opslaan"
 
 #: gedit/gedit-io-error-info-bar.c:91 gedit/gedit-io-error-info-bar.c:283
 msgid "_Retry"
@@ -1232,32 +1259,6 @@ msgstr ""
 msgid "Could not save the file “%s”."
 msgstr "Het bestand ‘%s’ kon niet opgeslagen worden."
 
-#: gedit/gedit-preferences-dialog.c:653
-#, c-format
-msgid "The selected color scheme cannot be installed: %s"
-msgstr "Het geselecteerde kleurenschema kan niet worden geïnstalleerd: %s"
-
-#: gedit/gedit-preferences-dialog.c:659
-msgid "The selected color scheme cannot be installed."
-msgstr "Het geselecteerde kleurenschema kan niet worden geïnstalleerd."
-
-#: gedit/gedit-preferences-dialog.c:685
-msgid "Add Color Scheme"
-msgstr "Kleurenschema toevoegen"
-
-#: gedit/gedit-preferences-dialog.c:688
-msgid "_Add Scheme"
-msgstr "_Schema toevoegen"
-
-#: gedit/gedit-preferences-dialog.c:693
-msgid "Color Scheme Files"
-msgstr "Kleurenschema-bestanden"
-
-#: gedit/gedit-preferences-dialog.c:731
-#, c-format
-msgid "Could not remove color scheme “%s”."
-msgstr "Het kleurenschema ‘%s’ kon niet worden verwijderd."
-
 #: gedit/gedit-print-job.c:223
 msgid "Preparing…"
 msgstr "Voorbereiden…"
@@ -1288,102 +1289,99 @@ msgstr "Teksteditor"
 msgid "Page %d of %d"
 msgstr "Pagina %d van %d"
 
-#: gedit/gedit-replace-dialog.c:688 plugins/externaltools/tools/tools.ui:49
+#: gedit/gedit-replace-dialog.c:690 plugins/externaltools/tools/tools.ui:49
 #: plugins/externaltools/tools/tools.ui:83
 #: plugins/externaltools/tools/tools.ui:121
 msgid "Nothing"
 msgstr "Niets"
 
-#: gedit/gedit-replace-dialog.c:777
+#: gedit/gedit-replace-dialog.c:779
 #: gedit/resources/ui/gedit-replace-dialog.ui:7
 msgid "Find and Replace"
 msgstr "Zoeken en vervangen"
 
-#: gedit/gedit-statusbar.c:225
-#, c-format
-msgid "There is a tab with errors"
-msgid_plural "There are %d tabs with errors"
-msgstr[0] "Er is een tabblad met fouten"
-msgstr[1] "Er zijn %d tabbladen met fouten"
-
 #. Translators: the first %s is a file name (e.g. test.txt) the second one
 #. is a directory (e.g. ssh://master.gnome.org/home/users/paolo)
-#: gedit/gedit-tab.c:805
+#: gedit/gedit-tab.c:803
 #, c-format
 msgid "Reverting %s from %s"
 msgstr "%s terugzetten vanaf %s"
 
-#: gedit/gedit-tab.c:812
+#: gedit/gedit-tab.c:810
 #, c-format
 msgid "Reverting %s"
 msgstr "Terugzetten van %s>"
 
 #. Translators: the first %s is a file name (e.g. test.txt) the second one
 #. is a directory (e.g. ssh://master.gnome.org/home/users/paolo)
-#: gedit/gedit-tab.c:825
+#: gedit/gedit-tab.c:823
 #, c-format
 msgid "Loading %s from %s"
 msgstr "%s laden vanaf %s"
 
-#: gedit/gedit-tab.c:832
+#: gedit/gedit-tab.c:830
 #, c-format
 msgid "Loading %s"
 msgstr "Laden van %s"
 
 #. Translators: the first %s is a file name (e.g. test.txt) the second one
 #. is a directory (e.g. ssh://master.gnome.org/home/users/paolo)
-#: gedit/gedit-tab.c:910
+#: gedit/gedit-tab.c:908
 #, c-format
 msgid "Saving %s to %s"
 msgstr "%s opslaan naar %s"
 
-#: gedit/gedit-tab.c:915
+#: gedit/gedit-tab.c:913
 #, c-format
 msgid "Saving %s"
 msgstr "%s opslaan"
 
-#: gedit/gedit-tab.c:1480
+#: gedit/gedit-tab.c:1433
 #, c-format
 msgid "Error opening file %s"
 msgstr "Fout bij openen van bestand %s"
 
-#: gedit/gedit-tab.c:1484
+#: gedit/gedit-tab.c:1437
 #, c-format
 msgid "Error reverting file %s"
 msgstr "Fout bij terugzetten van bestand %s"
 
-#: gedit/gedit-tab.c:1488
+#: gedit/gedit-tab.c:1441
 #, c-format
 msgid "Error saving file %s"
 msgstr "Er is een fout opgetreden bij het opslaan van bestand %s"
 
-#: gedit/gedit-tab.c:1519
+#: gedit/gedit-tab.c:1472
 msgid "Name:"
 msgstr "Naam:"
 
-#: gedit/gedit-tab.c:1520
+#: gedit/gedit-tab.c:1473
 msgid "MIME Type:"
 msgstr "MIME-type:"
 
-#: gedit/gedit-tab.c:1521
+#: gedit/gedit-tab.c:1474
 msgid "Encoding:"
 msgstr "Codering:"
 
+#: gedit/gedit-tab-label.c:302
+msgid "Close Document"
+msgstr "Document sluiten"
+
 #. Translators: '/ on <remote-share>'
-#: gedit/gedit-utils.c:387
+#: gedit/gedit-utils.c:361
 #, c-format
 msgid "/ on %s"
 msgstr "/ op %s"
 
-#: gedit/gedit-utils.c:532
+#: gedit/gedit-utils.c:506
 msgid "Unix/Linux"
 msgstr "Unix/Linux"
 
-#: gedit/gedit-utils.c:534
+#: gedit/gedit-utils.c:508
 msgid "Mac OS Classic"
 msgstr "Mac OS Classic"
 
-#: gedit/gedit-utils.c:536
+#: gedit/gedit-utils.c:510
 msgid "Windows"
 msgstr "Windows"
 
@@ -1391,83 +1389,404 @@ msgstr "Windows"
 #. * occurrence, and the second %d is the total number of search
 #. * occurrences.
 #.
-#: gedit/gedit-view-frame.c:668
+#: gedit/gedit-view-frame.c:658
 #, c-format
 msgid "%d of %d"
 msgstr "%d van %d"
 
 #. create "Wrap Around" menu item.
-#: gedit/gedit-view-frame.c:760
+#: gedit/gedit-view-frame.c:750
 msgid "_Wrap Around"
 msgstr "Doo_rgaan na documenteinde"
 
 #. create "Match as Regular Expression" menu item.
-#: gedit/gedit-view-frame.c:770
+#: gedit/gedit-view-frame.c:760
 msgid "Match as _Regular Expression"
 msgstr "Als _reguliere expressie"
 
 #. create "Match Entire Word Only" menu item.
-#: gedit/gedit-view-frame.c:784
+#: gedit/gedit-view-frame.c:774
 msgid "Match _Entire Word Only"
 msgstr "_Alleen hele woorden"
 
 #. create "Match Case" menu item.
-#: gedit/gedit-view-frame.c:798
+#: gedit/gedit-view-frame.c:788
 msgid "_Match Case"
 msgstr "Hoo_fdlettergevoelig"
 
-#: gedit/gedit-view-frame.c:1023
+#: gedit/gedit-view-frame.c:1013
 msgid "String you want to search for"
 msgstr "Te zoeken tekenreeks"
 
-#: gedit/gedit-view-frame.c:1035
+#: gedit/gedit-view-frame.c:1025
 msgid "Line you want to move the cursor to"
 msgstr "Regelnummer waar u de cursor heen wilt verplaatsen"
 
-#: gedit/gedit-window.c:1002
-msgid "Bracket match is out of range"
-msgstr "Gepaard haakje buiten bereik"
-
-#: gedit/gedit-window.c:1007
-msgid "Bracket match not found"
-msgstr "Gepaard haakje niet gevonden"
-
-#: gedit/gedit-window.c:1012
-#, c-format
-msgid "Bracket match found on line: %d"
-msgstr "Gepaard haakje gevonden op regel %d"
-
-#: gedit/gedit-window.c:1196
+#: gedit/gedit-window.c:986
 #, c-format
 msgid "Tab Width: %u"
 msgstr "Tabbreedte: %u"
 
-#: gedit/gedit-window.c:1214 plugins/externaltools/tools/manager.py:115
+#: gedit/gedit-window.c:1004 plugins/externaltools/tools/manager.py:115
 #: plugins/externaltools/tools/manager.py:324
 #: plugins/externaltools/tools/manager.py:440
 #: plugins/externaltools/tools/manager.py:776
 msgid "Plain Text"
 msgstr "Platte tekst"
 
-#: gedit/gedit-window.c:1444
+#: gedit/gedit-window.c:1223
 msgid "There are unsaved documents"
 msgstr "Er zijn niet-opgeslagen documenten"
 
-#: gedit/gedit-window.c:2272
-msgid "Change side panel page"
-msgstr "Zijpaneelpagina aanpassen"
-
-#: gedit/gedit-window.c:2292 gedit/resources/ui/gedit-window.ui:16
+#: gedit/gedit-window.c:2025
 msgid "Documents"
 msgstr "Documenten"
 
-#: gedit/gedit-window.c:2596
-msgid "Open a file"
-msgstr "Bestand openen"
+#: gedit/resources/gtk/help-overlay.ui:14
+msgctxt "shortcut window"
+msgid "Documents"
+msgstr "Documenten"
 
-#: gedit/gedit-window.c:2600
-msgid "Open a recently used file"
-msgstr "Een recent gebruikt bestand openen"
+#: gedit/resources/gtk/help-overlay.ui:19
+msgctxt "shortcut window"
+msgid "Create a new document in a tab"
+msgstr "Een nieuw document in een tabblad maken"
+
+#: gedit/resources/gtk/help-overlay.ui:26
+msgctxt "shortcut window"
+msgid "Open a document"
+msgstr "Een document openen"
+
+#: gedit/resources/gtk/help-overlay.ui:33
+msgctxt "shortcut window"
+msgid "Save the document"
+msgstr "Het bestand opslaan"
+
+#: gedit/resources/gtk/help-overlay.ui:40
+msgctxt "shortcut window"
+msgid "Save the document with a new filename"
+msgstr "Het bestand opslaan met een nieuwe bestandsnaam"
+
+#: gedit/resources/gtk/help-overlay.ui:47
+msgctxt "shortcut window"
+msgid "Save all the documents"
+msgstr "Alle documenten opslaan"
+
+#: gedit/resources/gtk/help-overlay.ui:54
+msgctxt "shortcut window"
+msgid "Close the document"
+msgstr "Document sluiten"
+
+#: gedit/resources/gtk/help-overlay.ui:61
+msgctxt "shortcut window"
+msgid "Close all the documents"
+msgstr "Alle documenten sluiten"
+
+#: gedit/resources/gtk/help-overlay.ui:68
+msgctxt "shortcut window"
+msgid "Reopen the most recently closed document"
+msgstr "Het meest recent gesloten document heropenen"
+
+#: gedit/resources/gtk/help-overlay.ui:75
+msgctxt "shortcut window"
+msgid "Switch to the next document"
+msgstr "Naar volgend document wisselen"
+
+#: gedit/resources/gtk/help-overlay.ui:82
+msgctxt "shortcut window"
+msgid "Switch to the previous document"
+msgstr "Naar vorig document wisselen"
+
+#: gedit/resources/gtk/help-overlay.ui:89
+msgctxt "shortcut window"
+msgid "Switch to the first — ninth document"
+msgstr "Naar het eerste — negende document wisselen"
+
+#: gedit/resources/gtk/help-overlay.ui:97
+msgctxt "shortcut window"
+msgid "Windows and Panels"
+msgstr "Vensters en panelen"
+
+#: gedit/resources/gtk/help-overlay.ui:102
+msgctxt "shortcut window"
+msgid "Create a new document in a window"
+msgstr "Een nieuw document in een venster maken"
+
+#: gedit/resources/gtk/help-overlay.ui:109
+msgctxt "shortcut window"
+msgid "Create a new tab group"
+msgstr "Een nieuwe tabbladgroep maken"
+
+#: gedit/resources/gtk/help-overlay.ui:116
+msgctxt "shortcut window"
+msgid "Show side panel"
+msgstr "Zijpaneel tonen"
+
+#: gedit/resources/gtk/help-overlay.ui:123
+msgctxt "shortcut window"
+msgid "Show bottom panel"
+msgstr "Onderpaneel tonen"
+
+#: gedit/resources/gtk/help-overlay.ui:130
+msgctxt "shortcut window"
+msgid "Fullscreen on / off"
+msgstr "Volledig scherm aan/uit"
+
+#: gedit/resources/gtk/help-overlay.ui:137
+msgctxt "shortcut window"
+msgid "Quit the application"
+msgstr "De toepassing verlaten"
+
+#: gedit/resources/gtk/help-overlay.ui:145
+#: gedit/resources/gtk/help-overlay.ui:171
+msgctxt "shortcut window"
+msgid "Find and Replace"
+msgstr "Zoeken en vervangen"
+
+#: gedit/resources/gtk/help-overlay.ui:150
+msgctxt "shortcut window"
+msgid "Find"
+msgstr "Zoeken"
+
+#: gedit/resources/gtk/help-overlay.ui:157
+msgctxt "shortcut window"
+msgid "Find the next match"
+msgstr "De volgende overeenkomst tonen"
+
+#: gedit/resources/gtk/help-overlay.ui:164
+msgctxt "shortcut window"
+msgid "Find the previous match"
+msgstr "De vorige overeenkomst tonen"
+
+#: gedit/resources/gtk/help-overlay.ui:178
+msgctxt "shortcut window"
+msgid "Clear highlight"
+msgstr "Markering wissen"
+
+#: gedit/resources/gtk/help-overlay.ui:186
+msgctxt "shortcut window"
+msgid "Undo and Redo"
+msgstr "Ongedaan maken en herhalen"
+
+#: gedit/resources/gtk/help-overlay.ui:191
+msgctxt "shortcut window"
+msgid "Undo previous command"
+msgstr "De vorige opdracht ongedaan maken"
+
+#: gedit/resources/gtk/help-overlay.ui:198
+msgctxt "shortcut window"
+msgid "Redo previous command"
+msgstr "De vorige opdracht herhalen"
+
+#: gedit/resources/gtk/help-overlay.ui:206
+msgctxt "shortcut window"
+msgid "Selection"
+msgstr "Selectie"
+
+#: gedit/resources/gtk/help-overlay.ui:211
+msgctxt "shortcut window"
+msgid "Select all text"
+msgstr "Alle tekst selecteren"
+
+#: gedit/resources/gtk/help-overlay.ui:218
+msgctxt "shortcut window"
+msgid "Unselect all text"
+msgstr "Alle tekst deselecteren"
+
+#: gedit/resources/gtk/help-overlay.ui:226
+msgctxt "shortcut window"
+msgid "Copy and Paste"
+msgstr "Kopiëren en plakken"
+
+#: gedit/resources/gtk/help-overlay.ui:231
+msgctxt "shortcut window"
+msgid "Copy selected text to clipboard"
+msgstr "Geselecteerde tekst naar klembord kopiëren"
+
+#: gedit/resources/gtk/help-overlay.ui:238
+msgctxt "shortcut window"
+msgid "Cut selected text to clipboard"
+msgstr "Geselecteerde tekst naar klembord knippen"
+
+#: gedit/resources/gtk/help-overlay.ui:245
+msgctxt "shortcut window"
+msgid "Paste text from clipboard"
+msgstr "Tekst van klembord plakken"
+
+#: gedit/resources/gtk/help-overlay.ui:253
+msgctxt "shortcut window"
+msgid "Navigation"
+msgstr "Navigatie"
+
+#: gedit/resources/gtk/help-overlay.ui:258
+msgctxt "shortcut window"
+msgid "Go to line"
+msgstr "Ga naar regel"
+
+#: gedit/resources/gtk/help-overlay.ui:265
+msgctxt "shortcut window"
+msgid "Move to the beginning of the current line"
+msgstr "Naar het begin van de huidige regel gaan"
+
+#: gedit/resources/gtk/help-overlay.ui:272
+msgctxt "shortcut window"
+msgid "Move to the end of the current line"
+msgstr "Naar het einde van de huidige regel gaan"
+
+#: gedit/resources/gtk/help-overlay.ui:279
+msgctxt "shortcut window"
+msgid "Move to the beginning of the document"
+msgstr "Naar het begin van het document gaan"
+
+#: gedit/resources/gtk/help-overlay.ui:286
+msgctxt "shortcut window"
+msgid "Move to the end of the document"
+msgstr "Naar het einde van het document gaan"
+
+#: gedit/resources/gtk/help-overlay.ui:293
+msgctxt "shortcut window"
+msgid "Move viewport up within the file"
+msgstr "Weergave binnen het bestand omhoog schuiven"
+
+#: gedit/resources/gtk/help-overlay.ui:300
+msgctxt "shortcut window"
+msgid "Move viewport down within the file"
+msgstr "Weergave binnen het bestand omlaag schuiven"
+
+#: gedit/resources/gtk/help-overlay.ui:307
+msgctxt "shortcut window"
+msgid "Move viewport to end of file"
+msgstr "Weergave naar eind van bestand schuiven"
+
+#: gedit/resources/gtk/help-overlay.ui:314
+msgctxt "shortcut window"
+msgid "Move viewport to beginning of file"
+msgstr "Weergave naar begin van bestand schuiven"
+
+#: gedit/resources/gtk/help-overlay.ui:321
+msgctxt "shortcut window"
+msgid "Move to matching bracket"
+msgstr "Naar bijbehorend haakje gaan"
+
+#: gedit/resources/gtk/help-overlay.ui:328
+msgctxt "shortcut window"
+msgid "Go to previous tab group"
+msgstr "Naar vorige tabbladgroep gaan"
+
+#: gedit/resources/gtk/help-overlay.ui:335
+msgctxt "shortcut window"
+msgid "Go to next tab group"
+msgstr "Naar volgende tabbladgroep gaan"
+
+#: gedit/resources/gtk/help-overlay.ui:343
+msgctxt "shortcut window"
+msgid "Editing"
+msgstr "Bewerken"
+
+#: gedit/resources/gtk/help-overlay.ui:348
+msgctxt "shortcut window"
+msgid "Toggle insert / overwrite"
+msgstr "Tussen invoegen en overschrijven wisselen"
+
+#: gedit/resources/gtk/help-overlay.ui:355
+msgctxt "shortcut window"
+msgid "Toggle cursor visibility"
+msgstr "De zichtbaarheid van de cursor in- en uitschakelen"
+
+#: gedit/resources/gtk/help-overlay.ui:362
+msgctxt "shortcut window"
+msgid "Delete current line"
+msgstr "Huidige regel verwijderen"
+
+#: gedit/resources/gtk/help-overlay.ui:369
+msgctxt "shortcut window"
+msgid "Move current line up"
+msgstr "Huidige regel omhoog schuiven"
+
+#: gedit/resources/gtk/help-overlay.ui:376
+msgctxt "shortcut window"
+msgid "Move current line down"
+msgstr "Huidige regel omlaag schuiven"
+
+#: gedit/resources/gtk/help-overlay.ui:383
+msgctxt "shortcut window"
+msgid "Move current word left"
+msgstr "Huidig woord naar links verplaatsen"
+
+#: gedit/resources/gtk/help-overlay.ui:390
+msgctxt "shortcut window"
+msgid "Move current word right"
+msgstr "Huidig woord naar rechts verplaatsen"
+
+#: gedit/resources/gtk/help-overlay.ui:397
+msgctxt "shortcut window"
+msgid "Convert to uppercase"
+msgstr "Omzetten naar hoofdletters"
+
+#: gedit/resources/gtk/help-overlay.ui:404
+msgctxt "shortcut window"
+msgid "Convert to lowercase"
+msgstr "Omzetten naar kleine letters"
+
+#: gedit/resources/gtk/help-overlay.ui:411
+msgctxt "shortcut window"
+msgid "Invert case"
+msgstr "Hoofdlettergebruik omkeren"
+
+#: gedit/resources/gtk/help-overlay.ui:418
+msgctxt "shortcut window"
+msgid "Increment number at cursor"
+msgstr "Nummer bij muisaanwijzer verhogen"
+
+#: gedit/resources/gtk/help-overlay.ui:425
+msgctxt "shortcut window"
+msgid "Decrement number at cursor"
+msgstr "Nummer bij muisaanwijzer verlagen"
+
+#: gedit/resources/gtk/help-overlay.ui:433
+msgctxt "shortcut window"
+msgid "Tools"
+msgstr "Extra"
+
+#: gedit/resources/gtk/help-overlay.ui:438
+msgctxt "shortcut window"
+msgid "Check spelling"
+msgstr "Spelling controleren"
+
+#: gedit/resources/gtk/help-overlay.ui:445
+msgctxt "shortcut window"
+msgid "Print the document"
+msgstr "Document printen"
+
+#: gedit/resources/gtk/help-overlay.ui:452
+msgctxt "shortcut window"
+msgid "Show completion window"
+msgstr "Voltooiingsscherm weergeven"
+
+#: gedit/resources/gtk/help-overlay.ui:460
+msgctxt "shortcut window"
+msgid "General"
+msgstr "Algemeen"
+
+#: gedit/resources/gtk/help-overlay.ui:465
+msgctxt "shortcut window"
+msgid "Show help"
+msgstr "Hulp tonen"
+
+#: gedit/resources/gtk/help-overlay.ui:472
+msgctxt "shortcut window"
+msgid "Keyboard shortcuts"
+msgstr "Sneltoetsen"
+
+#: gedit/resources/gtk/help-overlay.ui:479
+msgctxt "shortcut window"
+msgid "Open menu"
+msgstr "Menu openen"
+
+#: gedit/resources/gtk/help-overlay.ui:486
+msgctxt "shortcut window"
+msgid "Show preferences"
+msgstr "Voorkeuren tonen"
 
 #: gedit/resources/gtk/menus-common.ui:7
 msgid "Move _Left"
@@ -1563,8 +1882,8 @@ msgid "_Paste"
 msgstr "_Plakken"
 
 #: gedit/resources/gtk/menus-common.ui:181
-#: plugins/filebrowser/gedit-file-browser-plugin.c:891
-#: plugins/filebrowser/gedit-file-browser-plugin.c:926
+#: plugins/filebrowser/gedit-file-browser-plugin.c:893
+#: plugins/filebrowser/gedit-file-browser-plugin.c:928
 #: plugins/filebrowser/resources/ui/gedit-file-browser-menus.ui:37
 msgid "_Delete"
 msgstr "_Verwijderen"
@@ -1746,116 +2065,50 @@ msgstr "_Codering"
 msgid "Preferences"
 msgstr "Voorkeuren"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:41
-msgid "_Display line numbers"
-msgstr "Regelnummers _weergeven"
-
-#: gedit/resources/ui/gedit-preferences-dialog.ui:56
-msgid "Display right _margin at column:"
-msgstr "Rechter_kantlijn weergeven op kolom:"
-
-#: gedit/resources/ui/gedit-preferences-dialog.ui:95
-msgid "Display _statusbar"
-msgstr "_Statusbalk tonen"
-
-#: gedit/resources/ui/gedit-preferences-dialog.ui:110
-msgid "Display _grid pattern"
-msgstr "_Rasterpatroon weergeven"
-
-#: gedit/resources/ui/gedit-preferences-dialog.ui:139
+#: gedit/resources/ui/gedit-preferences-dialog.ui:52
 #: gedit/resources/ui/gedit-print-preferences.ui:197
 msgid "Text Wrapping"
 msgstr "Regelafbreking"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:157
+#: gedit/resources/ui/gedit-preferences-dialog.ui:70
 #: gedit/resources/ui/gedit-print-preferences.ui:217
 msgid "Enable text _wrapping"
 msgstr "Re_gelafbreking inschakelen"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:171
+#: gedit/resources/ui/gedit-preferences-dialog.ui:84
 #: gedit/resources/ui/gedit-print-preferences.ui:237
 msgid "Do not _split words over two lines"
 msgstr "_Woorden niet over twee regels splitsen"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:205
-msgid "Highlighting"
-msgstr "Markeren"
-
-#: gedit/resources/ui/gedit-preferences-dialog.ui:223
-msgid "Highlight current _line"
-msgstr "Huidige _regel markeren"
-
-#: gedit/resources/ui/gedit-preferences-dialog.ui:237
-msgid "Highlight matching _brackets"
-msgstr "Gepaarde h_aakjes markeren"
-
-#: gedit/resources/ui/gedit-preferences-dialog.ui:270
+#: gedit/resources/ui/gedit-preferences-dialog.ui:126
 msgid "View"
 msgstr "Beeld"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:292
+#: gedit/resources/ui/gedit-preferences-dialog.ui:148
 msgid "Tab Stops"
 msgstr "Tabstops"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:315
-msgid "_Tab width:"
-msgstr "_Tabgrootte:"
-
-#: gedit/resources/ui/gedit-preferences-dialog.ui:344
+#: gedit/resources/ui/gedit-preferences-dialog.ui:177
 msgid "Insert _spaces instead of tabs"
 msgstr "_Spaties invoegen in plaats van tabs"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:359
+#: gedit/resources/ui/gedit-preferences-dialog.ui:191
 msgid "_Enable automatic indentation"
 msgstr "_Automatisch inspringen inschakelen"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:394
-msgid "File Saving"
-msgstr "Bestanden opslaan"
-
-#: gedit/resources/ui/gedit-preferences-dialog.ui:413
-msgid "Create a _backup copy of files before saving"
-msgstr "_Reservekopie maken van bestanden voor het opslaan"
-
-#: gedit/resources/ui/gedit-preferences-dialog.ui:428
-msgid "_Autosave files every"
-msgstr "_Automatisch bestanden opslaan elke"
-
-#: gedit/resources/ui/gedit-preferences-dialog.ui:444
-msgid "_minutes"
-msgstr "_minuten"
-
-#: gedit/resources/ui/gedit-preferences-dialog.ui:491
+#: gedit/resources/ui/gedit-preferences-dialog.ui:234
 msgid "Editor"
 msgstr "Editor"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:525
+#: gedit/resources/ui/gedit-preferences-dialog.ui:268
 msgid "Color Scheme"
 msgstr "Kleurenschema"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:561
-#: gedit/resources/ui/gedit-preferences-dialog.ui:562
-msgid "Install scheme"
-msgstr "Schema installeren"
-
-#: gedit/resources/ui/gedit-preferences-dialog.ui:563
-msgid "Install Scheme"
-msgstr "Schema installeren"
-
-#: gedit/resources/ui/gedit-preferences-dialog.ui:577
-#: gedit/resources/ui/gedit-preferences-dialog.ui:578
-msgid "Uninstall scheme"
-msgstr "Schema deïnstalleren"
-
-#: gedit/resources/ui/gedit-preferences-dialog.ui:579
-msgid "Uninstall Scheme"
-msgstr "Schema deïnstalleren"
-
-#: gedit/resources/ui/gedit-preferences-dialog.ui:619
+#: gedit/resources/ui/gedit-preferences-dialog.ui:303
 msgid "Font & Colors"
 msgstr "Lettertype & kleuren"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:644
+#: gedit/resources/ui/gedit-preferences-dialog.ui:328
 msgid "Plugins"
 msgstr "Plug-ins"
 
@@ -2011,382 +2264,6 @@ msgstr "_Achterwaarts zoeken"
 #: gedit/resources/ui/gedit-replace-dialog.ui:206
 msgid "Wra_p around"
 msgstr "Doo_rgaan na documenteinde"
-
-#: gedit/resources/ui/gedit-shortcuts.ui:14
-msgctxt "shortcut window"
-msgid "Documents"
-msgstr "Documenten"
-
-#: gedit/resources/ui/gedit-shortcuts.ui:19
-msgctxt "shortcut window"
-msgid "Create a new document in a tab"
-msgstr "Een nieuw document in een tabblad maken"
-
-#: gedit/resources/ui/gedit-shortcuts.ui:26
-msgctxt "shortcut window"
-msgid "Open a document"
-msgstr "Een document openen"
-
-#: gedit/resources/ui/gedit-shortcuts.ui:33
-msgctxt "shortcut window"
-msgid "Save the document"
-msgstr "Het bestand opslaan"
-
-#: gedit/resources/ui/gedit-shortcuts.ui:40
-msgctxt "shortcut window"
-msgid "Save the document with a new filename"
-msgstr "Het bestand opslaan met een nieuwe bestandsnaam"
-
-#: gedit/resources/ui/gedit-shortcuts.ui:47
-msgctxt "shortcut window"
-msgid "Save all the documents"
-msgstr "Alle documenten opslaan"
-
-#: gedit/resources/ui/gedit-shortcuts.ui:54
-msgctxt "shortcut window"
-msgid "Close the document"
-msgstr "Document sluiten"
-
-#: gedit/resources/ui/gedit-shortcuts.ui:61
-msgctxt "shortcut window"
-msgid "Close all the documents"
-msgstr "Alle documenten sluiten"
-
-#: gedit/resources/ui/gedit-shortcuts.ui:68
-msgctxt "shortcut window"
-msgid "Reopen the most recently closed document"
-msgstr "Het meest recent gesloten document heropenen"
-
-#: gedit/resources/ui/gedit-shortcuts.ui:75
-msgctxt "shortcut window"
-msgid "Switch to the next document"
-msgstr "Naar volgend document wisselen"
-
-#: gedit/resources/ui/gedit-shortcuts.ui:82
-msgctxt "shortcut window"
-msgid "Switch to the previous document"
-msgstr "Naar vorig document wisselen"
-
-#: gedit/resources/ui/gedit-shortcuts.ui:89
-msgctxt "shortcut window"
-msgid "Switch to the first — ninth document"
-msgstr "Naar het eerste — negende document wisselen"
-
-#: gedit/resources/ui/gedit-shortcuts.ui:97
-msgctxt "shortcut window"
-msgid "Windows and Panels"
-msgstr "Vensters en panelen"
-
-#: gedit/resources/ui/gedit-shortcuts.ui:102
-msgctxt "shortcut window"
-msgid "Create a new document in a window"
-msgstr "Een nieuw document in een venster maken"
-
-#: gedit/resources/ui/gedit-shortcuts.ui:109
-msgctxt "shortcut window"
-msgid "Create a new tab group"
-msgstr "Een nieuwe tabbladgroep maken"
-
-#: gedit/resources/ui/gedit-shortcuts.ui:116
-msgctxt "shortcut window"
-msgid "Show side panel"
-msgstr "Zijpaneel tonen"
-
-#: gedit/resources/ui/gedit-shortcuts.ui:123
-msgctxt "shortcut window"
-msgid "Show bottom panel"
-msgstr "Onderpaneel tonen"
-
-#: gedit/resources/ui/gedit-shortcuts.ui:130
-msgctxt "shortcut window"
-msgid "Fullscreen on / off"
-msgstr "Volledig scherm aan/uit"
-
-#: gedit/resources/ui/gedit-shortcuts.ui:137
-msgctxt "shortcut window"
-msgid "Quit the application"
-msgstr "De toepassing verlaten"
-
-#: gedit/resources/ui/gedit-shortcuts.ui:145
-#: gedit/resources/ui/gedit-shortcuts.ui:171
-msgctxt "shortcut window"
-msgid "Find and Replace"
-msgstr "Zoeken en vervangen"
-
-#: gedit/resources/ui/gedit-shortcuts.ui:150
-msgctxt "shortcut window"
-msgid "Find"
-msgstr "Zoeken"
-
-#: gedit/resources/ui/gedit-shortcuts.ui:157
-msgctxt "shortcut window"
-msgid "Find the next match"
-msgstr "De volgende overeenkomst tonen"
-
-#: gedit/resources/ui/gedit-shortcuts.ui:164
-msgctxt "shortcut window"
-msgid "Find the previous match"
-msgstr "De vorige overeenkomst tonen"
-
-#: gedit/resources/ui/gedit-shortcuts.ui:178
-msgctxt "shortcut window"
-msgid "Clear highlight"
-msgstr "Markering wissen"
-
-#: gedit/resources/ui/gedit-shortcuts.ui:186
-msgctxt "shortcut window"
-msgid "Undo and Redo"
-msgstr "Ongedaan maken en herhalen"
-
-#: gedit/resources/ui/gedit-shortcuts.ui:191
-msgctxt "shortcut window"
-msgid "Undo previous command"
-msgstr "De vorige opdracht ongedaan maken"
-
-#: gedit/resources/ui/gedit-shortcuts.ui:198
-msgctxt "shortcut window"
-msgid "Redo previous command"
-msgstr "De vorige opdracht herhalen"
-
-#: gedit/resources/ui/gedit-shortcuts.ui:206
-msgctxt "shortcut window"
-msgid "Selection"
-msgstr "Selectie"
-
-#: gedit/resources/ui/gedit-shortcuts.ui:211
-msgctxt "shortcut window"
-msgid "Select all text"
-msgstr "Alle tekst selecteren"
-
-#: gedit/resources/ui/gedit-shortcuts.ui:218
-msgctxt "shortcut window"
-msgid "Unselect all text"
-msgstr "Alle tekst deselecteren"
-
-#: gedit/resources/ui/gedit-shortcuts.ui:226
-msgctxt "shortcut window"
-msgid "Copy and Paste"
-msgstr "Kopiëren en plakken"
-
-#: gedit/resources/ui/gedit-shortcuts.ui:231
-msgctxt "shortcut window"
-msgid "Copy selected text to clipboard"
-msgstr "Geselecteerde tekst naar klembord kopiëren"
-
-#: gedit/resources/ui/gedit-shortcuts.ui:238
-msgctxt "shortcut window"
-msgid "Cut selected text to clipboard"
-msgstr "Geselecteerde tekst naar klembord knippen"
-
-#: gedit/resources/ui/gedit-shortcuts.ui:245
-msgctxt "shortcut window"
-msgid "Paste text from clipboard"
-msgstr "Tekst van klembord plakken"
-
-#: gedit/resources/ui/gedit-shortcuts.ui:253
-msgctxt "shortcut window"
-msgid "Navigation"
-msgstr "Navigatie"
-
-#: gedit/resources/ui/gedit-shortcuts.ui:258
-msgctxt "shortcut window"
-msgid "Go to line"
-msgstr "Ga naar regel"
-
-#: gedit/resources/ui/gedit-shortcuts.ui:265
-msgctxt "shortcut window"
-msgid "Move to the beginning of the current line"
-msgstr "Naar het begin van de huidige regel gaan"
-
-#: gedit/resources/ui/gedit-shortcuts.ui:272
-msgctxt "shortcut window"
-msgid "Move to the end of the current line"
-msgstr "Naar het einde van de huidige regel gaan"
-
-#: gedit/resources/ui/gedit-shortcuts.ui:279
-msgctxt "shortcut window"
-msgid "Move to the beginning of the document"
-msgstr "Naar het begin van het document gaan"
-
-#: gedit/resources/ui/gedit-shortcuts.ui:286
-msgctxt "shortcut window"
-msgid "Move to the end of the document"
-msgstr "Naar het einde van het document gaan"
-
-#: gedit/resources/ui/gedit-shortcuts.ui:293
-msgctxt "shortcut window"
-msgid "Move viewport up within the file"
-msgstr "Weergave binnen het bestand omhoog schuiven"
-
-#: gedit/resources/ui/gedit-shortcuts.ui:300
-msgctxt "shortcut window"
-msgid "Move viewport down within the file"
-msgstr "Weergave binnen het bestand omlaag schuiven"
-
-#: gedit/resources/ui/gedit-shortcuts.ui:307
-msgctxt "shortcut window"
-msgid "Move viewport to end of file"
-msgstr "Weergave naar eind van bestand schuiven"
-
-#: gedit/resources/ui/gedit-shortcuts.ui:314
-msgctxt "shortcut window"
-msgid "Move viewport to beginning of file"
-msgstr "Weergave naar begin van bestand schuiven"
-
-#: gedit/resources/ui/gedit-shortcuts.ui:321
-msgctxt "shortcut window"
-msgid "Move to matching bracket"
-msgstr "Naar bijbehorend haakje gaan"
-
-#: gedit/resources/ui/gedit-shortcuts.ui:328
-msgctxt "shortcut window"
-msgid "Go to previous tab group"
-msgstr "Naar vorige tabbladgroep gaan"
-
-#: gedit/resources/ui/gedit-shortcuts.ui:335
-msgctxt "shortcut window"
-msgid "Go to next tab group"
-msgstr "Naar volgende tabbladgroep gaan"
-
-#: gedit/resources/ui/gedit-shortcuts.ui:343
-msgctxt "shortcut window"
-msgid "Editing"
-msgstr "Bewerken"
-
-#: gedit/resources/ui/gedit-shortcuts.ui:348
-msgctxt "shortcut window"
-msgid "Toggle insert / overwrite"
-msgstr "Tussen invoegen en overschrijven wisselen"
-
-#: gedit/resources/ui/gedit-shortcuts.ui:355
-msgctxt "shortcut window"
-msgid "Toggle cursor visibility"
-msgstr "De zichtbaarheid van de cursor in- en uitschakelen"
-
-#: gedit/resources/ui/gedit-shortcuts.ui:362
-msgctxt "shortcut window"
-msgid "Delete current line"
-msgstr "Huidige regel verwijderen"
-
-#: gedit/resources/ui/gedit-shortcuts.ui:369
-msgctxt "shortcut window"
-msgid "Move current line up"
-msgstr "Huidige regel omhoog schuiven"
-
-#: gedit/resources/ui/gedit-shortcuts.ui:376
-msgctxt "shortcut window"
-msgid "Move current line down"
-msgstr "Huidige regel omlaag schuiven"
-
-#: gedit/resources/ui/gedit-shortcuts.ui:383
-msgctxt "shortcut window"
-msgid "Move current word left"
-msgstr "Huidig woord naar links verplaatsen"
-
-#: gedit/resources/ui/gedit-shortcuts.ui:390
-msgctxt "shortcut window"
-msgid "Move current word right"
-msgstr "Huidig woord naar rechts verplaatsen"
-
-#: gedit/resources/ui/gedit-shortcuts.ui:397
-msgctxt "shortcut window"
-msgid "Convert to uppercase"
-msgstr "Omzetten naar hoofdletters"
-
-#: gedit/resources/ui/gedit-shortcuts.ui:404
-msgctxt "shortcut window"
-msgid "Convert to lowercase"
-msgstr "Omzetten naar kleine letters"
-
-#: gedit/resources/ui/gedit-shortcuts.ui:411
-msgctxt "shortcut window"
-msgid "Invert case"
-msgstr "Hoofdlettergebruik omkeren"
-
-#: gedit/resources/ui/gedit-shortcuts.ui:418
-msgctxt "shortcut window"
-msgid "Increment number at cursor"
-msgstr "Nummer bij muisaanwijzer verhogen"
-
-#: gedit/resources/ui/gedit-shortcuts.ui:425
-msgctxt "shortcut window"
-msgid "Decrement number at cursor"
-msgstr "Nummer bij muisaanwijzer verlagen"
-
-#: gedit/resources/ui/gedit-shortcuts.ui:433
-msgctxt "shortcut window"
-msgid "Tools"
-msgstr "Extra"
-
-#: gedit/resources/ui/gedit-shortcuts.ui:438
-msgctxt "shortcut window"
-msgid "Check spelling"
-msgstr "Spelling controleren"
-
-#: gedit/resources/ui/gedit-shortcuts.ui:445
-msgctxt "shortcut window"
-msgid "Print the document"
-msgstr "Document printen"
-
-#: gedit/resources/ui/gedit-shortcuts.ui:452
-msgctxt "shortcut window"
-msgid "Show completion window"
-msgstr "Voltooiingsscherm weergeven"
-
-#: gedit/resources/ui/gedit-shortcuts.ui:460
-msgctxt "shortcut window"
-msgid "General"
-msgstr "Algemeen"
-
-#: gedit/resources/ui/gedit-shortcuts.ui:465
-msgctxt "shortcut window"
-msgid "Show help"
-msgstr "Hulp tonen"
-
-#: gedit/resources/ui/gedit-shortcuts.ui:472
-msgctxt "shortcut window"
-msgid "Open menu"
-msgstr "Menu openen"
-
-#: gedit/resources/ui/gedit-shortcuts.ui:479
-msgctxt "shortcut window"
-msgid "Keyboard shortcuts"
-msgstr "Sneltoetsen"
-
-#: gedit/resources/ui/gedit-tab-label.ui:34
-msgid "Close Document"
-msgstr "Document sluiten"
-
-#: gedit/resources/ui/gedit-window.ui:33 gedit/resources/ui/gedit-window.ui:39
-#: gedit/resources/ui/gedit-window.ui:309
-#: gedit/resources/ui/gedit-window.ui:315
-msgid "Create a new document"
-msgstr "Nieuw document aanmaken"
-
-#: gedit/resources/ui/gedit-window.ui:38 gedit/resources/ui/gedit-window.ui:314
-msgid "New"
-msgstr "Nieuw"
-
-#: gedit/resources/ui/gedit-window.ui:59 gedit/resources/ui/gedit-window.ui:64
-#: gedit/resources/ui/gedit-window.ui:350
-#: gedit/resources/ui/gedit-window.ui:355
-msgid "Save the current file"
-msgstr "Huidige bestand opslaan"
-
-#: gedit/resources/ui/gedit-window.ui:63 gedit/resources/ui/gedit-window.ui:348
-#: gedit/resources/ui/gedit-window.ui:354
-msgid "Save"
-msgstr "Opslaan"
-
-#: gedit/resources/ui/gedit-window.ui:206
-msgid "Hide panel"
-msgstr "Paneel verbergen"
-
-#: gedit/resources/ui/gedit-window.ui:323
-#: gedit/resources/ui/gedit-window.ui:328
-#: gedit/resources/ui/gedit-window.ui:329
-msgid "Leave Fullscreen"
-msgstr "Volledig scherm verlaten"
 
 #: plugins/docinfo/docinfo.plugin.desktop.in:5
 #: plugins/docinfo/resources/ui/gedit-docinfo-plugin.ui:7
@@ -2706,53 +2583,53 @@ msgstr "Bestandspaneel"
 msgid "Easy file access from the side panel."
 msgstr "Gemakkelijke toegang tot bestanden vanaf het zijpaneel."
 
-#: plugins/filebrowser/gedit-file-bookmarks-store.c:200
+#: plugins/filebrowser/gedit-file-bookmarks-store.c:202
 msgid "Home"
 msgstr "Persoonlijke map"
 
-#: plugins/filebrowser/gedit-file-bookmarks-store.c:233
+#: plugins/filebrowser/gedit-file-bookmarks-store.c:235
 msgid "File System"
 msgstr "Bestandssysteem"
 
 # verkenner/kiezer/browser/bladeraar
-#: plugins/filebrowser/gedit-file-browser-plugin.c:501
+#: plugins/filebrowser/gedit-file-browser-plugin.c:504
 msgid "File Browser"
 msgstr "Bestandsverkenner"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:631
+#: plugins/filebrowser/gedit-file-browser-plugin.c:633
 msgid "An error occurred while creating a new directory"
 msgstr "Er is een fout opgetreden bij het aanmaken van een nieuwe map"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:634
+#: plugins/filebrowser/gedit-file-browser-plugin.c:636
 msgid "An error occurred while creating a new file"
 msgstr "Er is een fout opgetreden bij het aanmaken van een nieuw bestand"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:637
+#: plugins/filebrowser/gedit-file-browser-plugin.c:639
 msgid "An error occurred while renaming a file or directory"
 msgstr "Er is een fout opgetreden bij het hernoemen van een bestand of map"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:640
+#: plugins/filebrowser/gedit-file-browser-plugin.c:642
 msgid "An error occurred while deleting a file or directory"
 msgstr "Er is een fout opgetreden bij het verwijderen van een bestand of map"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:643
+#: plugins/filebrowser/gedit-file-browser-plugin.c:645
 msgid "An error occurred while opening a directory in the file manager"
 msgstr ""
 "Er is een fout opgetreden bij het openen van een map in het bestandsbeheer"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:646
+#: plugins/filebrowser/gedit-file-browser-plugin.c:648
 msgid "An error occurred while setting a root directory"
 msgstr "Er is een fout opgetreden tijdens het instellen van de hoofdmap"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:649
+#: plugins/filebrowser/gedit-file-browser-plugin.c:651
 msgid "An error occurred while loading a directory"
 msgstr "Er is een fout opgetreden bij het laden van een map"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:652
+#: plugins/filebrowser/gedit-file-browser-plugin.c:654
 msgid "An error occurred"
 msgstr "Er is een fout opgetreden"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:874
+#: plugins/filebrowser/gedit-file-browser-plugin.c:876
 msgid ""
 "Cannot move file to trash, do you\n"
 "want to delete permanently?"
@@ -2760,27 +2637,27 @@ msgstr ""
 "Kan het bestand niet naar de prullenbak verplaatsen.\n"
 "Wilt u het definitief verwijderen?"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:879
+#: plugins/filebrowser/gedit-file-browser-plugin.c:881
 #, c-format
 msgid "The file “%s” cannot be moved to the trash."
 msgstr "Het bestand ‘%s’ kan niet naar de prullenbak worden verplaatst."
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:884
+#: plugins/filebrowser/gedit-file-browser-plugin.c:886
 msgid "The selected files cannot be moved to the trash."
 msgstr ""
 "De geselecteerde bestanden kunnen niet naar de prullenbak worden verplaatst."
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:912
+#: plugins/filebrowser/gedit-file-browser-plugin.c:914
 #, c-format
 msgid "Are you sure you want to permanently delete “%s”?"
 msgstr "Weet u zeker dat u ‘%s’ definitief wilt verwijderen?"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:917
+#: plugins/filebrowser/gedit-file-browser-plugin.c:919
 msgid "Are you sure you want to permanently delete the selected files?"
 msgstr ""
 "Weet u zeker dat u de geselecteerde bestanden definitief wilt verwijderen?"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:920
+#: plugins/filebrowser/gedit-file-browser-plugin.c:922
 msgid "If you delete an item, it is permanently lost."
 msgstr "Wanneer u een item verwijdert is het definitief weg."
 
@@ -2998,6 +2875,7 @@ msgid "Show _Binary"
 msgstr "_Binaire tonen"
 
 #: plugins/filebrowser/resources/ui/gedit-file-browser-menus.ui:67
+#: plugins/filebrowser/resources/ui/gedit-file-browser-widget.ui:248
 msgid "Match Filename"
 msgstr "Overeenkomst met bestands_naam"
 
@@ -3400,11 +3278,11 @@ msgstr "Spellingcontrole"
 msgid "Checks the spelling of the current document."
 msgstr "Controleert de spelling van het huidige document."
 
-#: plugins/time/gedit-time-plugin.c:263
+#: plugins/time/gedit-time-plugin.c:279
 msgid "In_sert Date and Time…"
 msgstr "Dat_um en tijd invoegen…"
 
-#: plugins/time/gedit-time-plugin.c:489
+#: plugins/time/gedit-time-plugin.c:507
 msgid "Available formats"
 msgstr "Beschikbare vormen"
 
@@ -3485,6 +3363,107 @@ msgstr "Datum/tijd invoegen"
 #: plugins/time/time.plugin.desktop.in:6
 msgid "Inserts current date and time at the cursor position."
 msgstr "Voegt de huidige datum en tijd in op de cursor positie."
+
+#~ msgid ""
+#~ "The first goal of gedit is to be easy to use, with a simple interface by "
+#~ "default. More advanced features are available by enabling plugins."
+#~ msgstr ""
+#~ "Het hoofddoel van gedit is gebruiksgemak, met standaard een eenvoudige "
+#~ "interface. Meer geavanceerde functies zijn beschikbaar door plug-ins in "
+#~ "te schakelen."
+
+#, c-format
+#~ msgid "The selected color scheme cannot be installed: %s"
+#~ msgstr "Het geselecteerde kleurenschema kan niet worden geïnstalleerd: %s"
+
+#~ msgid "The selected color scheme cannot be installed."
+#~ msgstr "Het geselecteerde kleurenschema kan niet worden geïnstalleerd."
+
+#~ msgid "Add Color Scheme"
+#~ msgstr "Kleurenschema toevoegen"
+
+#~ msgid "_Add Scheme"
+#~ msgstr "_Schema toevoegen"
+
+#~ msgid "Color Scheme Files"
+#~ msgstr "Kleurenschema-bestanden"
+
+#, c-format
+#~ msgid "Could not remove color scheme “%s”."
+#~ msgstr "Het kleurenschema ‘%s’ kon niet worden verwijderd."
+
+#, c-format
+#~ msgid "There is a tab with errors"
+#~ msgid_plural "There are %d tabs with errors"
+#~ msgstr[0] "Er is een tabblad met fouten"
+#~ msgstr[1] "Er zijn %d tabbladen met fouten"
+
+#~ msgid "Bracket match is out of range"
+#~ msgstr "Gepaard haakje buiten bereik"
+
+#~ msgid "Bracket match not found"
+#~ msgstr "Gepaard haakje niet gevonden"
+
+#, c-format
+#~ msgid "Bracket match found on line: %d"
+#~ msgstr "Gepaard haakje gevonden op regel %d"
+
+#~ msgid "Change side panel page"
+#~ msgstr "Zijpaneelpagina aanpassen"
+
+#~ msgid "_Display line numbers"
+#~ msgstr "Regelnummers _weergeven"
+
+#~ msgid "Display right _margin at column:"
+#~ msgstr "Rechter_kantlijn weergeven op kolom:"
+
+#~ msgid "Display _statusbar"
+#~ msgstr "_Statusbalk tonen"
+
+#~ msgid "Display _grid pattern"
+#~ msgstr "_Rasterpatroon weergeven"
+
+#~ msgid "Highlighting"
+#~ msgstr "Markeren"
+
+#~ msgid "Highlight current _line"
+#~ msgstr "Huidige _regel markeren"
+
+#~ msgid "Highlight matching _brackets"
+#~ msgstr "Gepaarde h_aakjes markeren"
+
+#~ msgid "_Tab width:"
+#~ msgstr "_Tabgrootte:"
+
+#~ msgid "File Saving"
+#~ msgstr "Bestanden opslaan"
+
+#~ msgid "Create a _backup copy of files before saving"
+#~ msgstr "_Reservekopie maken van bestanden voor het opslaan"
+
+#~ msgid "_Autosave files every"
+#~ msgstr "_Automatisch bestanden opslaan elke"
+
+#~ msgid "_minutes"
+#~ msgstr "_minuten"
+
+#~ msgid "Install scheme"
+#~ msgstr "Schema installeren"
+
+#~ msgid "Install Scheme"
+#~ msgstr "Schema installeren"
+
+#~ msgid "Uninstall scheme"
+#~ msgstr "Schema deïnstalleren"
+
+#~ msgid "Uninstall Scheme"
+#~ msgstr "Schema deïnstalleren"
+
+#~ msgid "New"
+#~ msgstr "Nieuw"
+
+#~ msgid "Save"
+#~ msgstr "Opslaan"
 
 #~| msgid "gedit is a small and lightweight text editor for the GNOME Desktop"
 #~ msgid "gedit is the text editor of the GNOME desktop environment."
