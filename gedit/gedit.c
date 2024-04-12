@@ -101,7 +101,17 @@ gedit_w32_unload_private_dll (void)
 #endif /* G_OS_WIN32 */
 
 static void
-setup_i18n (void)
+setup_i18n_first_part (void)
+{
+	/* Disable translations because some underlying modules are not on
+	 * l10n.gnome.org or equivalent.
+	 * See the docs of g_setenv(), needs to be called very early in main().
+	 */
+	g_setenv ("LC_ALL", "C.UTF-8", TRUE);
+}
+
+static void
+setup_i18n_second_part (void)
 {
 	const gchar *dir;
 
@@ -144,6 +154,8 @@ main (int argc, char *argv[])
 	GeditApp *app;
 	gint status;
 
+	setup_i18n_first_part ();
+
 #if OS_MACOS
 	type = GEDIT_TYPE_APP_OSX;
 #elif defined G_OS_WIN32
@@ -162,7 +174,7 @@ main (int argc, char *argv[])
 	 */
 	gedit_dirs_init ();
 
-	setup_i18n ();
+	setup_i18n_second_part ();
 	setup_pango ();
 	tepl_init ();
 	factory = gedit_factory_new ();
