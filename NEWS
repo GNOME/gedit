@@ -21,16 +21,9 @@ Removed features:
 
 Under-the-hood changes:
 * Adapt the code for libgedit-gtksourceview API changes.
-* Code refactorings and various improvements.
+* Code refactorings, various improvements and bug fixes.
 * Continue to reduce usage of *.ui files, write code instead.
 * Use newer GLib API at some places.
-* Refactor GeditTabLabel.
-* Start to refactor GeditViewFrame.
-* Window/headerbar titles: delegate the work to a new class (GeditWindowTitles),
-  fix a bug and let GTK truncate the titles if needed.
-* Start to refactor the bottom panel (with some bug fixes), delegate the work to
-  a new class (GeditBottomPanel).
-* Refactor some of the gedit-commands-*.c files.
 * Add -Wshadow to the CFLAGS and fix the corresponding warnings.
 
 For plugins:
