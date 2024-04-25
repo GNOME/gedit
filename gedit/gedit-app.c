@@ -28,6 +28,7 @@
 
 #include <glib/gi18n.h>
 #include <libpeas/peas-extension-set.h>
+#include <gfls/gfls.h>
 #include <tepl/tepl.h>
 
 #include "gedit-commands-private.h"
@@ -673,6 +674,21 @@ init_tepl_settings (void)
 						   GEDIT_SETTINGS_THEME_VARIANT);
 }
 
+static gchar *
+unsaved_document_title_cb (gint num)
+{
+	return g_strdup_printf (_("Untitled Document %d"), num);
+}
+
+static void
+init_unsaved_document_titles (void)
+{
+	GflsUnsavedDocumentTitles *titles;
+
+	titles = gfls_unsaved_document_titles_get_default ();
+	gfls_unsaved_document_titles_set_title_callback (titles, unsaved_document_title_cb);
+}
+
 static void
 gedit_app_startup (GApplication *application)
 {
@@ -687,6 +703,7 @@ gedit_app_startup (GApplication *application)
 	/* Load/init settings */
 	_gedit_settings_get_singleton ();
 	init_tepl_settings ();
+	init_unsaved_document_titles ();
 
 	setup_theme_extensions (GEDIT_APP (application));
 
