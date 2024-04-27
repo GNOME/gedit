@@ -1,5 +1,5 @@
-News in 47.alpha, yyyy-mm-dd (not yet released)
-----------------------------
+News in 47.0, 2024-04-27 (stable version)
+-----------------------------------------
 Web presence:
 * New website for gedit: https://gedit-technology.github.io/apps/gedit/
 * Update URLs for gedit-technology.net -> https://gedit-technology.github.io/
@@ -9,10 +9,13 @@ Branding:
 * Restore the previous app icons and logo.
 
 New features:
-* Add light/dark GTK theme variant configuration.
-* Links to some third-party plugins.
+* Experimental: add light/dark GTK theme variant configuration (as a hidden
+  GSettings key for now).
 
 Removed features:
+* Localization (l10n): all the translations are disabled, gedit is available in
+  English only because some underlying modules are not on l10n.gnome.org or
+  equivalent.
 * In the preferences dialog, remove the toolbar to install/uninstall color
   schemes. Third-party color schemes are still supported, but the XML file(s)
   need to be copied into the right directory by another means, see:
@@ -21,6 +24,7 @@ Removed features:
 
 Under-the-hood changes:
 * Adapt the code for libgedit-gtksourceview API changes.
+* Adapt the code for the Tepl -> libgedit-tepl module rename.
 * Code refactorings, various improvements and bug fixes.
 * Continue to reduce usage of *.ui files, write code instead.
 * Use newer GLib API at some places.
@@ -33,7 +37,7 @@ For plugins:
 Misc:
 * Rename *.appdata.xml to *.metainfo.xml and do some updates to that file.
 * Update documentation for contributors.
-* Translation updates.
+* Links to some third-party plugins.
 
 News in 46.1, 2023-08-06
 ------------------------
