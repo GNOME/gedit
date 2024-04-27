@@ -1,6 +1,6 @@
 project(
   'gedit', 'c',
-  version: '47.0',
+  version: '47.1',
   meson_version: '>= 0.59',
   default_options: ['warning_level=2']
 )
