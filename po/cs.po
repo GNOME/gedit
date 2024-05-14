@@ -19,9 +19,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: gedit\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gedit/issues\n"
-"POT-Creation-Date: 2023-03-10 23:20+0000\n"
-"PO-Revision-Date: 2023-04-02 14:08+0200\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gedit/issues/\n"
+"POT-Creation-Date: 2024-05-11 15:02+0000\n"
+"PO-Revision-Date: 2024-05-14 22:18+0200\n"
 "Last-Translator: Daniel Rusek <mail@asciiwolf.com>\n"
 "Language-Team: čeština <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -29,7 +29,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 3.4.2\n"
 
 #: data/org.gnome.gedit.appdata.xml.in:7 data/org.gnome.gedit.desktop.in:3
 msgid "gedit"
@@ -41,20 +41,20 @@ msgstr "Textový editor"
 
 #: data/org.gnome.gedit.appdata.xml.in:10
 msgid ""
-"gedit is a general-purpose text editor. It has been created in 1998, at the "
-"beginnings of GNOME."
+"gedit is an easy-to-use and general-purpose text editor. Its development "
+"started in 1998, at the beginnings of the GNOME project, with a good "
+"integration with that desktop environment."
 msgstr ""
-"gedit je univerzální textový editor. Byl vytvořen v roce 1998, na počátku "
-"GNOME."
+"gedit je snadno použitelný a univerzální textový editor. Byl vytvořen v roce "
+"1998, na počátku GNOME, s dobrou integrací s tímto uživatelským prostředím."
 
-#: data/org.gnome.gedit.appdata.xml.in:14
+#: data/org.gnome.gedit.appdata.xml.in:15
 msgid ""
-"The first goal of gedit is to be easy to use, with a simple interface by "
-"default. More advanced features are available by enabling plugins."
+"You can use it to write simple notes and documents, or you can enable more "
+"advanced features that are useful for software development."
 msgstr ""
-"Prvotním cílem editoru gedit je snadné používání a jednoduché výchozí "
-"uživatelské rozhraní. Pokročilé funkce jsou pak dostupné pomocí zásuvných "
-"modulů."
+"Můžete jej použít k psaní jednoduchých poznámek a dokumentů, nebo můžete "
+"povolit pokročilejší funkce, které jsou užitečné pro vývoj softwaru."
 
 #: data/org.gnome.gedit.desktop.in:4
 msgid "Edit text files"
@@ -568,11 +568,11 @@ msgstr "%s: neplatné kódování."
 msgid "Close _without Saving"
 msgstr "Zavřít _bez uložení"
 
-#: gedit/gedit-close-confirmation-dialog.c:277 gedit/gedit-commands-file.c:492
-#: gedit/gedit-commands-file.c:568 gedit/gedit-commands-file.c:792
-#: gedit/gedit-commands-file.c:1517 gedit/gedit-encodings-dialog.c:192
+#: gedit/gedit-close-confirmation-dialog.c:277 gedit/gedit-commands-file.c:489
+#: gedit/gedit-commands-file.c:565 gedit/gedit-commands-file.c:789
+#: gedit/gedit-commands-file.c:1514 gedit/gedit-encodings-dialog.c:192
 #: gedit/gedit-file-chooser-open-dialog.c:78 gedit/gedit-io-error-info-bar.c:95
-#: gedit/gedit-io-error-info-bar.c:294 gedit/gedit-preferences-dialog.c:660
+#: gedit/gedit-io-error-info-bar.c:294 gedit/gedit-preferences-dialog.c:665
 #: plugins/filebrowser/gedit-file-browser-utils.c:211
 #: plugins/quickopen/quickopen/popup.py:45
 #: plugins/snippets/snippets/manager.py:789
@@ -588,9 +588,8 @@ msgstr "_Zrušit"
 msgid "_Save As…"
 msgstr "_Uložit jako…"
 
-#: gedit/gedit-close-confirmation-dialog.c:295 gedit/gedit-commands-file.c:791
-#: gedit/resources/gtk/menus-common.ui:101
-#: gedit/resources/ui/gedit-window.ui:56
+#: gedit/gedit-close-confirmation-dialog.c:295 gedit/gedit-commands-file.c:788
+#: gedit/gedit-header-bar.c:186 gedit/resources/gtk/menus-common.ui:101
 #: plugins/snippets/snippets/manager.py:875
 #: plugins/snippets/snippets/manager.py:913
 msgid "_Save"
@@ -716,12 +715,12 @@ msgstr "_Vyberte dokumenty, které chcete uložit:"
 msgid "If you don’t save, all your changes will be permanently lost."
 msgstr "Pokud je neuložíte, budou všechny vaše změny trvale ztraceny."
 
-#: gedit/gedit-commands-file.c:258
+#: gedit/gedit-commands-file.c:255
 #, c-format
 msgid "Loading file “%s”…"
 msgstr "Načítá se soubor „%s“…"
 
-#: gedit/gedit-commands-file.c:266
+#: gedit/gedit-commands-file.c:263
 #, c-format
 msgid "Loading %d file…"
 msgid_plural "Loading %d files…"
@@ -729,29 +728,29 @@ msgstr[0] "Načítá se %d soubor…"
 msgstr[1] "Načítají se %d soubory…"
 msgstr[2] "Načítá se %d souborů…"
 
-#: gedit/gedit-commands-file.c:483
+#: gedit/gedit-commands-file.c:480
 #, c-format
 msgid "The file “%s” is read-only."
 msgstr "Soubor „%s“ je pouze pro čtení."
 
-#: gedit/gedit-commands-file.c:488
+#: gedit/gedit-commands-file.c:485
 msgid "Do you want to try to replace it with the one you are saving?"
 msgstr "Chcete se pokusit nahradit jej souborem, který ukládáte?"
 
-#: gedit/gedit-commands-file.c:493
+#: gedit/gedit-commands-file.c:490
 #: gedit/resources/ui/gedit-replace-dialog.ui:55
 msgid "_Replace"
 msgstr "Nah_radit"
 
-#: gedit/gedit-commands-file.c:533
+#: gedit/gedit-commands-file.c:530
 msgid "Save the file using compression?"
 msgstr "Uložit soubor v komprimované podobě?"
 
-#: gedit/gedit-commands-file.c:537
+#: gedit/gedit-commands-file.c:534
 msgid "Save the file as plain text?"
 msgstr "Uložit soubor jako prostý text?"
 
-#: gedit/gedit-commands-file.c:550
+#: gedit/gedit-commands-file.c:547
 #, c-format
 msgid ""
 "The file “%s” was previously saved as plain text and will now be saved using "
@@ -760,11 +759,11 @@ msgstr ""
 "Soubor „%s“ byl původně uložen jako prostý text a nyní bude uložen jako "
 "komprimovaný."
 
-#: gedit/gedit-commands-file.c:554
+#: gedit/gedit-commands-file.c:551
 msgid "_Save Using Compression"
 msgstr "_Uložit jako komprimovaný"
 
-#: gedit/gedit-commands-file.c:559
+#: gedit/gedit-commands-file.c:556
 #, c-format
 msgid ""
 "The file “%s” was previously saved using compression and will now be saved "
@@ -773,32 +772,32 @@ msgstr ""
 "Soubor „%s“ byl původně uložen jako komprimovaný a nyní bude uložen jako "
 "prostý text."
 
-#: gedit/gedit-commands-file.c:562
+#: gedit/gedit-commands-file.c:559
 msgid "_Save As Plain Text"
 msgstr "_Uložit jako prostý text"
 
-#: gedit/gedit-commands-file.c:678 gedit/gedit-commands-file.c:967
+#: gedit/gedit-commands-file.c:675 gedit/gedit-commands-file.c:964
 #, c-format
 msgid "Saving file “%s”…"
 msgstr "Ukládá se soubor „%s“…"
 
 #. Translators: "Save As" is the title of the file chooser window.
-#: gedit/gedit-commands-file.c:789
+#: gedit/gedit-commands-file.c:786
 msgctxt "window title"
 msgid "Save As"
 msgstr "Uložení jako"
 
-#: gedit/gedit-commands-file.c:1378
+#: gedit/gedit-commands-file.c:1375
 #, c-format
 msgid "Reverting the document “%s”…"
 msgstr "Vrací se původní stav dokumentu „%s“…"
 
-#: gedit/gedit-commands-file.c:1425
+#: gedit/gedit-commands-file.c:1422
 #, c-format
 msgid "Revert unsaved changes to document “%s”?"
 msgstr "Vrátit neuložené změny v dokumentu „%s“?"
 
-#: gedit/gedit-commands-file.c:1434
+#: gedit/gedit-commands-file.c:1431
 #, c-format
 msgid ""
 "Changes made to the document in the last %ld second will be permanently lost."
@@ -812,12 +811,12 @@ msgstr[1] ""
 msgstr[2] ""
 "Změny provedené v dokumentu za posledních %ld sekund budou navždy ztraceny."
 
-#: gedit/gedit-commands-file.c:1443
+#: gedit/gedit-commands-file.c:1440
 msgid ""
 "Changes made to the document in the last minute will be permanently lost."
 msgstr "Změny provedené v dokumentu za poslední minutu budou navždy ztraceny."
 
-#: gedit/gedit-commands-file.c:1449
+#: gedit/gedit-commands-file.c:1446
 #, c-format
 msgid ""
 "Changes made to the document in the last minute and %ld second will be "
@@ -835,7 +834,7 @@ msgstr[2] ""
 "Změny provedené v dokumentu za poslední minutu a %ld sekund budou navždy "
 "ztraceny."
 
-#: gedit/gedit-commands-file.c:1459
+#: gedit/gedit-commands-file.c:1456
 #, c-format
 msgid ""
 "Changes made to the document in the last %ld minute will be permanently lost."
@@ -849,11 +848,11 @@ msgstr[1] ""
 msgstr[2] ""
 "Změny provedené v dokumentu za posledních %ld minut budou navždy ztraceny."
 
-#: gedit/gedit-commands-file.c:1474
+#: gedit/gedit-commands-file.c:1471
 msgid "Changes made to the document in the last hour will be permanently lost."
 msgstr "Změny provedené v dokumentu za poslední hodinu budou navždy ztraceny."
 
-#: gedit/gedit-commands-file.c:1480
+#: gedit/gedit-commands-file.c:1477
 #, c-format
 msgid ""
 "Changes made to the document in the last hour and %d minute will be "
@@ -871,7 +870,7 @@ msgstr[2] ""
 "Změny provedené v dokumentu za poslední hodinu a %d minut budou navždy "
 "ztraceny."
 
-#: gedit/gedit-commands-file.c:1495
+#: gedit/gedit-commands-file.c:1492
 #, c-format
 msgid ""
 "Changes made to the document in the last %d hour will be permanently lost."
@@ -884,7 +883,7 @@ msgstr[1] ""
 msgstr[2] ""
 "Změny provedené v dokumentu za posledních %d hodin budou navždy ztraceny."
 
-#: gedit/gedit-commands-file.c:1518
+#: gedit/gedit-commands-file.c:1515
 msgid "_Revert"
 msgstr "V_rátit"
 
@@ -945,8 +944,8 @@ msgstr "„%s“ nebylo nalezeno"
 msgid "Tab Group %i"
 msgstr "Skupina karet %i"
 
-#: gedit/gedit-documents-panel.c:481 gedit/gedit-window.c:1130
-#: gedit/gedit-window.c:1136 gedit/gedit-window.c:1144
+#: gedit/gedit-documents-panel.c:481 gedit/gedit-window.c:1120
+#: gedit/gedit-window.c:1126 gedit/gedit-window.c:1134
 msgid "Read-Only"
 msgstr "Pouze ke čtení"
 
@@ -998,7 +997,7 @@ msgstr "Přesunout do nižší priority"
 msgid "Untitled Document %d"
 msgstr "Nepojmenovaný dokument %d"
 
-#: gedit/gedit-file-chooser.c:41 gedit/gedit-preferences-dialog.c:669
+#: gedit/gedit-file-chooser.c:41 gedit/gedit-preferences-dialog.c:674
 msgid "All Files"
 msgstr "Všechny soubory"
 
@@ -1022,7 +1021,7 @@ msgctxt "window title"
 msgid "Open Files"
 msgstr "Otevření souborů"
 
-#: gedit/gedit-file-chooser-open-dialog.c:79 gedit/gedit-window.c:2595
+#: gedit/gedit-file-chooser-open-dialog.c:79 gedit/gedit-header-bar.c:53
 #: gedit/resources/gtk/menus-common.ui:74
 #: gedit/resources/gtk/menus-common.ui:80
 #: plugins/filebrowser/resources/ui/gedit-file-browser-menus.ui:7
@@ -1030,6 +1029,26 @@ msgstr "Otevření souborů"
 #: plugins/snippets/snippets/manager.py:790
 msgid "_Open"
 msgstr "_Otevřít"
+
+#: gedit/gedit-header-bar.c:54
+msgid "Open a file"
+msgstr "Otevřít soubor"
+
+#: gedit/gedit-header-bar.c:92
+msgid "Open a recently used file"
+msgstr "Otevřít nedávno použitý soubor"
+
+#: gedit/gedit-header-bar.c:138
+msgid "Create a new document"
+msgstr "Vytvořit nový dokument"
+
+#: gedit/gedit-header-bar.c:151
+msgid "Leave Fullscreen"
+msgstr "Opustit celou obrazovku"
+
+#: gedit/gedit-header-bar.c:187
+msgid "Save the current file"
+msgstr "Uložit aktuální soubor"
 
 #: gedit/gedit-io-error-info-bar.c:91 gedit/gedit-io-error-info-bar.c:283
 msgid "_Retry"
@@ -1223,28 +1242,28 @@ msgstr ""
 msgid "Could not save the file “%s”."
 msgstr "Nelze uložit soubor „%s“."
 
-#: gedit/gedit-preferences-dialog.c:624
+#: gedit/gedit-preferences-dialog.c:628
 #, c-format
 msgid "The selected color scheme cannot be installed: %s"
 msgstr "Vybrané schéma barev nelze nainstalovat: %s"
 
-#: gedit/gedit-preferences-dialog.c:630
+#: gedit/gedit-preferences-dialog.c:634
 msgid "The selected color scheme cannot be installed."
 msgstr "Vybrané schéma barev nelze nainstalovat."
 
-#: gedit/gedit-preferences-dialog.c:656
+#: gedit/gedit-preferences-dialog.c:661
 msgid "Add Color Scheme"
 msgstr "Přidání barevného schématu"
 
-#: gedit/gedit-preferences-dialog.c:659
+#: gedit/gedit-preferences-dialog.c:664
 msgid "_Add Scheme"
 msgstr "Přid_at schéma"
 
-#: gedit/gedit-preferences-dialog.c:664
+#: gedit/gedit-preferences-dialog.c:669
 msgid "Color Scheme Files"
 msgstr "Soubory s barevnými schématy"
 
-#: gedit/gedit-preferences-dialog.c:702
+#: gedit/gedit-preferences-dialog.c:707
 #, c-format
 msgid "Could not remove color scheme “%s”."
 msgstr "Nezdařilo se odstranit schéma barev „%s“."
@@ -1279,24 +1298,16 @@ msgstr "Textový editor"
 msgid "Page %d of %d"
 msgstr "Stránka %d z %d"
 
-#: gedit/gedit-replace-dialog.c:688 plugins/externaltools/tools/tools.ui:49
+#: gedit/gedit-replace-dialog.c:690 plugins/externaltools/tools/tools.ui:49
 #: plugins/externaltools/tools/tools.ui:83
 #: plugins/externaltools/tools/tools.ui:121
 msgid "Nothing"
 msgstr "Nic"
 
-#: gedit/gedit-replace-dialog.c:777
+#: gedit/gedit-replace-dialog.c:779
 #: gedit/resources/ui/gedit-replace-dialog.ui:7
 msgid "Find and Replace"
 msgstr "Hledání a nahrazování"
-
-#: gedit/gedit-statusbar.c:225
-#, c-format
-msgid "There is a tab with errors"
-msgid_plural "There are %d tabs with errors"
-msgstr[0] "Na kartě je chyba"
-msgstr[1] "Na %d kartách jsou chyby"
-msgstr[2] "Na %d kartách jsou chyby"
 
 #. Translators: the first %s is a file name (e.g. test.txt) the second one
 #. is a directory (e.g. ssh://master.gnome.org/home/users/paolo)
@@ -1362,20 +1373,20 @@ msgid "Encoding:"
 msgstr "Kódování:"
 
 #. Translators: '/ on <remote-share>'
-#: gedit/gedit-utils.c:387
+#: gedit/gedit-utils.c:358
 #, c-format
 msgid "/ on %s"
 msgstr "/ na %s"
 
-#: gedit/gedit-utils.c:532
+#: gedit/gedit-utils.c:503
 msgid "Unix/Linux"
 msgstr "Unix/Linux"
 
-#: gedit/gedit-utils.c:534
+#: gedit/gedit-utils.c:505
 msgid "Mac OS Classic"
 msgstr "Mac OS Classic"
 
-#: gedit/gedit-utils.c:536
+#: gedit/gedit-utils.c:507
 msgid "Windows"
 msgstr "Windows"
 
@@ -1416,50 +1427,25 @@ msgstr "Řetězec, který chcete hledat"
 msgid "Line you want to move the cursor to"
 msgstr "Řádek, na který chcete přesunout kurzor"
 
-#: gedit/gedit-window.c:1002
-msgid "Bracket match is out of range"
-msgstr "Odpovídající závorka je mimo rozsah"
-
-#: gedit/gedit-window.c:1007
-msgid "Bracket match not found"
-msgstr "Odpovídající závorka nenalezena"
-
-#: gedit/gedit-window.c:1012
-#, c-format
-msgid "Bracket match found on line: %d"
-msgstr "Odpovídající závorka nalezena na řádku: %d"
-
-#: gedit/gedit-window.c:1196
+#: gedit/gedit-window.c:1175
 #, c-format
 msgid "Tab Width: %u"
 msgstr "Šířka tabulátoru: %u"
 
-#: gedit/gedit-window.c:1214 plugins/externaltools/tools/manager.py:115
+#: gedit/gedit-window.c:1193 plugins/externaltools/tools/manager.py:115
 #: plugins/externaltools/tools/manager.py:324
 #: plugins/externaltools/tools/manager.py:440
 #: plugins/externaltools/tools/manager.py:776
 msgid "Plain Text"
 msgstr "Prostý text"
 
-#: gedit/gedit-window.c:1444
+#: gedit/gedit-window.c:1410
 msgid "There are unsaved documents"
 msgstr "Některé dokumenty nejsou uložené"
 
-#: gedit/gedit-window.c:2272
-msgid "Change side panel page"
-msgstr "Změnit stránku postranního panelu"
-
-#: gedit/gedit-window.c:2292 gedit/resources/ui/gedit-window.ui:16
+#: gedit/gedit-window.c:2210
 msgid "Documents"
 msgstr "Dokumenty"
-
-#: gedit/gedit-window.c:2596
-msgid "Open a file"
-msgstr "Otevřít soubor"
-
-#: gedit/gedit-window.c:2600
-msgid "Open a recently used file"
-msgstr "Otevřít nedávno použitý soubor"
 
 #: gedit/resources/gtk/help-overlay.ui:14
 msgctxt "shortcut window"
@@ -1901,8 +1887,8 @@ msgid "_Paste"
 msgstr "V_ložit"
 
 #: gedit/resources/gtk/menus-common.ui:181
-#: plugins/filebrowser/gedit-file-browser-plugin.c:891
-#: plugins/filebrowser/gedit-file-browser-plugin.c:926
+#: plugins/filebrowser/gedit-file-browser-plugin.c:893
+#: plugins/filebrowser/gedit-file-browser-plugin.c:928
 #: plugins/filebrowser/resources/ui/gedit-file-browser-menus.ui:37
 msgid "_Delete"
 msgstr "_Smazat"
@@ -2318,36 +2304,9 @@ msgstr "Přecházet přes _okraj"
 msgid "Close Document"
 msgstr "Zavřít dokument"
 
-#: gedit/resources/ui/gedit-window.ui:33 gedit/resources/ui/gedit-window.ui:39
-#: gedit/resources/ui/gedit-window.ui:305
-#: gedit/resources/ui/gedit-window.ui:311
-msgid "Create a new document"
-msgstr "Vytvořit nový dokument"
-
-#: gedit/resources/ui/gedit-window.ui:38 gedit/resources/ui/gedit-window.ui:310
-msgid "New"
-msgstr "Nový"
-
-#: gedit/resources/ui/gedit-window.ui:59 gedit/resources/ui/gedit-window.ui:64
-#: gedit/resources/ui/gedit-window.ui:346
-#: gedit/resources/ui/gedit-window.ui:351
-msgid "Save the current file"
-msgstr "Uložit aktuální soubor"
-
-#: gedit/resources/ui/gedit-window.ui:63 gedit/resources/ui/gedit-window.ui:344
-#: gedit/resources/ui/gedit-window.ui:350
-msgid "Save"
-msgstr "Uložit"
-
-#: gedit/resources/ui/gedit-window.ui:202
+#: gedit/resources/ui/gedit-window.ui:110
 msgid "Hide panel"
 msgstr "Skrýt panel"
-
-#: gedit/resources/ui/gedit-window.ui:319
-#: gedit/resources/ui/gedit-window.ui:324
-#: gedit/resources/ui/gedit-window.ui:325
-msgid "Leave Fullscreen"
-msgstr "Opustit celou obrazovku"
 
 #: plugins/docinfo/docinfo.plugin.desktop.in:5
 #: plugins/docinfo/resources/ui/gedit-docinfo-plugin.ui:7
@@ -2663,51 +2622,51 @@ msgstr "Panel prohlížeče souborů"
 msgid "Easy file access from the side panel."
 msgstr "Snadný přístup k souborům z postranního panelu"
 
-#: plugins/filebrowser/gedit-file-bookmarks-store.c:200
+#: plugins/filebrowser/gedit-file-bookmarks-store.c:202
 msgid "Home"
 msgstr "Domů"
 
-#: plugins/filebrowser/gedit-file-bookmarks-store.c:233
+#: plugins/filebrowser/gedit-file-bookmarks-store.c:235
 msgid "File System"
 msgstr "Systém souborů"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:501
+#: plugins/filebrowser/gedit-file-browser-plugin.c:504
 msgid "File Browser"
 msgstr "Prohlížeč souborů"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:631
+#: plugins/filebrowser/gedit-file-browser-plugin.c:633
 msgid "An error occurred while creating a new directory"
 msgstr "Během vytváření nové složky došlo k chybě"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:634
+#: plugins/filebrowser/gedit-file-browser-plugin.c:636
 msgid "An error occurred while creating a new file"
 msgstr "Během vytváření nového souboru došlo k chybě"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:637
+#: plugins/filebrowser/gedit-file-browser-plugin.c:639
 msgid "An error occurred while renaming a file or directory"
 msgstr "Během přejmenovávání souboru či složky došlo k chybě"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:640
+#: plugins/filebrowser/gedit-file-browser-plugin.c:642
 msgid "An error occurred while deleting a file or directory"
 msgstr "Během mazání souboru či složky došlo k chybě"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:643
+#: plugins/filebrowser/gedit-file-browser-plugin.c:645
 msgid "An error occurred while opening a directory in the file manager"
 msgstr "Během otevírání složky ve správci souborů došlo k chybě"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:646
+#: plugins/filebrowser/gedit-file-browser-plugin.c:648
 msgid "An error occurred while setting a root directory"
 msgstr "Během nastavování kořenové složky došlo k chybě"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:649
+#: plugins/filebrowser/gedit-file-browser-plugin.c:651
 msgid "An error occurred while loading a directory"
 msgstr "Během načítání složky došlo k chybě"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:652
+#: plugins/filebrowser/gedit-file-browser-plugin.c:654
 msgid "An error occurred"
 msgstr "Vyskytla se chyba"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:874
+#: plugins/filebrowser/gedit-file-browser-plugin.c:876
 msgid ""
 "Cannot move file to trash, do you\n"
 "want to delete permanently?"
@@ -2715,25 +2674,25 @@ msgstr ""
 "Soubor nelze přesunout do koše,\n"
 "chcete ho trvale smazat?"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:879
+#: plugins/filebrowser/gedit-file-browser-plugin.c:881
 #, c-format
 msgid "The file “%s” cannot be moved to the trash."
 msgstr "Soubor „%s“ nelze přesunout do koše."
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:884
+#: plugins/filebrowser/gedit-file-browser-plugin.c:886
 msgid "The selected files cannot be moved to the trash."
 msgstr "Vybrané soubory nelze přesunout do koše."
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:912
+#: plugins/filebrowser/gedit-file-browser-plugin.c:914
 #, c-format
 msgid "Are you sure you want to permanently delete “%s”?"
 msgstr "Opravdu chcete trvale smazat „%s“?"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:917
+#: plugins/filebrowser/gedit-file-browser-plugin.c:919
 msgid "Are you sure you want to permanently delete the selected files?"
 msgstr "Opravdu chcete trvale smazat vybrané soubory?"
 
-#: plugins/filebrowser/gedit-file-browser-plugin.c:920
+#: plugins/filebrowser/gedit-file-browser-plugin.c:922
 msgid "If you delete an item, it is permanently lost."
 msgstr "Pokud položku smažete, bude nenávratně ztracena."
 
@@ -3426,6 +3385,40 @@ msgstr "Vložit datum/čas"
 #: plugins/time/time.plugin.desktop.in:6
 msgid "Inserts current date and time at the cursor position."
 msgstr "Vkládání aktuálního data a času na pozici kurzoru"
+
+#~ msgid ""
+#~ "The first goal of gedit is to be easy to use, with a simple interface by "
+#~ "default. More advanced features are available by enabling plugins."
+#~ msgstr ""
+#~ "Prvotním cílem editoru gedit je snadné používání a jednoduché výchozí "
+#~ "uživatelské rozhraní. Pokročilé funkce jsou pak dostupné pomocí zásuvných "
+#~ "modulů."
+
+#, c-format
+#~ msgid "There is a tab with errors"
+#~ msgid_plural "There are %d tabs with errors"
+#~ msgstr[0] "Na kartě je chyba"
+#~ msgstr[1] "Na %d kartách jsou chyby"
+#~ msgstr[2] "Na %d kartách jsou chyby"
+
+#~ msgid "Bracket match is out of range"
+#~ msgstr "Odpovídající závorka je mimo rozsah"
+
+#~ msgid "Bracket match not found"
+#~ msgstr "Odpovídající závorka nenalezena"
+
+#, c-format
+#~ msgid "Bracket match found on line: %d"
+#~ msgstr "Odpovídající závorka nalezena na řádku: %d"
+
+#~ msgid "Change side panel page"
+#~ msgstr "Změnit stránku postranního panelu"
+
+#~ msgid "New"
+#~ msgstr "Nový"
+
+#~ msgid "Save"
+#~ msgstr "Uložit"
 
 #~ msgid "gedit is the text editor of the GNOME desktop environment."
 #~ msgstr "gedit je textový editor pro uživatelské prostředí GNOME."
