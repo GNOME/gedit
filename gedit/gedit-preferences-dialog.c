@@ -53,9 +53,6 @@ struct _GeditPreferencesDialog
 
 	GSettings *editor;
 
-	/* Style Scheme */
-	GtkWidget *schemes_list;
-
 	/* Tabs */
 	GtkWidget *insert_spaces_checkbutton;
 
@@ -113,7 +110,6 @@ gedit_preferences_dialog_class_init (GeditPreferencesDialogClass *klass)
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, split_checkbutton);
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, insert_spaces_checkbutton);
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, auto_indent_checkbutton);
-	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, schemes_list);
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, plugin_manager);
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, view_placeholder);
 	gtk_widget_class_bind_template_child (widget_class, GeditPreferencesDialog, font_and_colors_placeholder);
@@ -298,17 +294,17 @@ setup_view_page (GeditPreferencesDialog *dlg)
 }
 
 static void
-setup_font_colors_page_style_scheme_section (GeditPreferencesDialog *dlg)
+setup_font_colors_page_style_scheme_section (GeditPreferencesDialog *dialog)
 {
 	GeditSettings *settings;
 	GSettings *editor_settings;
+	GtkWidget *component;
 
 	settings = _gedit_settings_get_singleton ();
 	editor_settings = _gedit_settings_peek_editor_settings (settings);
 
-	g_settings_bind (editor_settings, GEDIT_SETTINGS_SCHEME,
-			 dlg->schemes_list, "tepl-style-scheme-id",
-			 G_SETTINGS_BIND_DEFAULT);
+	component = tepl_prefs_create_color_scheme_component (editor_settings, GEDIT_SETTINGS_SCHEME);
+	gtk_container_add (GTK_CONTAINER (dialog->font_and_colors_placeholder), component);
 }
 
 static void
