@@ -52,9 +52,10 @@ GSettings *	_gedit_settings_peek_window_state_settings		(GeditSettings *self);
 GSList *	gedit_settings_get_candidate_encodings			(gboolean *default_candidates);
 
 /* key constants */
+#define GEDIT_SETTINGS_STYLE_SCHEME_FOR_LIGHT_THEME_VARIANT	"style-scheme-for-light-theme-variant"
+#define GEDIT_SETTINGS_STYLE_SCHEME_FOR_DARK_THEME_VARIANT 	"style-scheme-for-dark-theme-variant"
 #define GEDIT_SETTINGS_USE_DEFAULT_FONT			"use-default-font"
 #define GEDIT_SETTINGS_EDITOR_FONT			"editor-font"
-#define GEDIT_SETTINGS_SCHEME				"scheme"
 #define GEDIT_SETTINGS_CREATE_BACKUP_COPY		"create-backup-copy"
 #define GEDIT_SETTINGS_AUTO_SAVE			"auto-save"
 #define GEDIT_SETTINGS_AUTO_SAVE_INTERVAL		"auto-save-interval"

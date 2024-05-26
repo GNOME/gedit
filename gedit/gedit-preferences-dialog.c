@@ -303,7 +303,8 @@ setup_font_colors_page_style_scheme_section (GeditPreferencesDialog *dialog)
 	settings = _gedit_settings_get_singleton ();
 	editor_settings = _gedit_settings_peek_editor_settings (settings);
 
-	component = tepl_prefs_create_color_scheme_component (editor_settings, GEDIT_SETTINGS_SCHEME);
+	component = tepl_prefs_create_color_scheme_component (editor_settings,
+							      GEDIT_SETTINGS_STYLE_SCHEME_FOR_LIGHT_THEME_VARIANT);
 	gtk_container_add (GTK_CONTAINER (dialog->font_and_colors_placeholder), component);
 }
 

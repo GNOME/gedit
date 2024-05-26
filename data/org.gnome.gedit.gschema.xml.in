@@ -48,10 +48,15 @@
       <summary>Editor Font</summary>
       <description>A custom font that will be used for the editing area. This will only take effect if the “Use Default Font” option is turned off.</description>
     </key>
-    <key name="scheme" type="s">
+    <key name="style-scheme-for-light-theme-variant" type="s">
       <default>'tango'</default>
-      <summary>Style Scheme</summary>
-      <description>The ID of a GtkSourceView Style Scheme used to color the text.</description>
+      <summary>Style Scheme for Light Theme Variant</summary>
+      <description>The ID of a libgedit-gtksourceview style scheme used to color the main text area when the application has a light theme applied.</description>
+    </key>
+    <key name="style-scheme-for-dark-theme-variant" type="s">
+      <default>'solarized-dark'</default>
+      <summary>Style Scheme for Dark Theme Variant</summary>
+      <description>The ID of a libgedit-gtksourceview style scheme used to color the main text area when the application has a dark theme applied.</description>
     </key>
     <key name="create-backup-copy" type="b">
       <default>false</default>
