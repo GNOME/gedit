@@ -618,9 +618,7 @@ gedit_document_init (GeditDocument *doc)
 	                 doc, "highlight-matching-brackets",
 	                 G_SETTINGS_BIND_GET | G_SETTINGS_BIND_NO_SENSITIVITY);
 
-	tepl_buffer_provide_style_scheme_id_gsetting (TEPL_BUFFER (doc),
-						      editor_settings, GEDIT_SETTINGS_STYLE_SCHEME_FOR_LIGHT_THEME_VARIANT,
-						      TRUE);
+	tepl_buffer_connect_style_scheme_settings (TEPL_BUFFER (doc));
 
 	g_signal_connect (doc,
 			  "notify::content-type",
