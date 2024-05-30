@@ -294,21 +294,6 @@ setup_view_page (GeditPreferencesDialog *dlg)
 }
 
 static void
-setup_font_colors_page_style_scheme_section (GeditPreferencesDialog *dialog)
-{
-	GeditSettings *settings;
-	GSettings *editor_settings;
-	GtkWidget *component;
-
-	settings = _gedit_settings_get_singleton ();
-	editor_settings = _gedit_settings_peek_editor_settings (settings);
-
-	component = tepl_prefs_create_color_scheme_component (editor_settings,
-							      GEDIT_SETTINGS_STYLE_SCHEME_FOR_LIGHT_THEME_VARIANT);
-	gtk_container_add (GTK_CONTAINER (dialog->font_and_colors_placeholder), component);
-}
-
-static void
 setup_font_colors_page (GeditPreferencesDialog *dlg)
 {
 	GeditSettings *gedit_settings;
@@ -340,7 +325,8 @@ setup_font_colors_page (GeditPreferencesDialog *dlg)
 			   theme_variant_combo_box);
 
 	/* Color/Style scheme */
-	setup_font_colors_page_style_scheme_section (dlg);
+	gtk_container_add (GTK_CONTAINER (dlg->font_and_colors_placeholder),
+			   GTK_WIDGET (tepl_style_scheme_chooser_widget_new (TRUE)));
 }
 
 static void
