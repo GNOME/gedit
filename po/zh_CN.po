@@ -19,46 +19,26 @@
 # Bin Li <binli@gnome.org>, 2015.
 # Mingcong Bai <jeffbai@aosc.xyz>, 2015, 2016, 2018.
 # Dingzhong Chen <wsxy162@gmail.com>, 2019.
-# lumingzh <lumingzh@qq.com>, 2016-2022.
+# lumingzh <lumingzh@qq.com>, 2016-2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gedit master\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gedit/issues\n"
-"POT-Creation-Date: 2023-08-11 20:01+0000\n"
-"PO-Revision-Date: 2023-08-13 09:27-0400\n"
-"Last-Translator: Boyuan Yang <073plan@gmail.com>\n"
-"Language-Team: Chinese - China <i18n-zh@googlegroups.com>\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/gedit/issues/\n"
+"POT-Creation-Date: 2024-05-31 17:38+0000\n"
+"PO-Revision-Date: 2024-06-01 10:05+0800\n"
+"Last-Translator: lumingzh <lumingzh@qq.com>\n"
+"Language-Team: Chinese (China) <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 2.4.3\n"
+"X-Generator: Gtranslator 46.1\n"
 
-#: data/org.gnome.gedit.appdata.xml.in:7 data/org.gnome.gedit.desktop.in:3
+#: data/org.gnome.gedit.desktop.in:3 data/org.gnome.gedit.metainfo.xml.in:7
 msgid "gedit"
 msgstr "gedit"
-
-#: data/org.gnome.gedit.appdata.xml.in:8
-msgid "Text editor"
-msgstr "文本编辑器"
-
-#: data/org.gnome.gedit.appdata.xml.in:10
-msgid ""
-"gedit is an easy-to-use and general-purpose text editor. Its development "
-"started in 1998, at the beginnings of the GNOME project, with a good "
-"integration with that desktop environment."
-msgstr ""
-"gedit 是一个易用的通用文本编辑器。它创建于 1998 年，在 GNOME 诞生之时，并和 "
-"GNOME 桌面环境有良好的集成。"
-
-#: data/org.gnome.gedit.appdata.xml.in:15
-msgid ""
-"You can use it to write simple notes and documents, or you can enable more "
-"advanced features that are useful for software development."
-msgstr ""
-"您可以用它来编写简单的笔记和文档，也可以启用对软件开发有用的更高级功能。"
 
 #: data/org.gnome.gedit.desktop.in:4
 msgid "Edit text files"
@@ -108,26 +88,42 @@ msgid ""
 msgstr "编辑区域使用的自定义字体。仅在“使用默认字体”选项关闭时才有效。"
 
 #: data/org.gnome.gedit.gschema.xml.in:53
-msgid "Style Scheme"
-msgstr "风格方案"
+msgid "Style Scheme for Light Theme Variant"
+msgstr "亮色主题的风格方案"
 
 #: data/org.gnome.gedit.gschema.xml.in:54
-msgid "The ID of a GtkSourceView Style Scheme used to color the text."
-msgstr "用于文本配色的 GtkSourceView 风格方案 ID。"
+msgid ""
+"The ID of a libgedit-gtksourceview style scheme used to color the main text "
+"area when the application has a light theme applied."
+msgstr ""
+"应用程序应用亮色主题时用于着色主要文本区域的 libgedit-gtksourceview 风格方案"
+"的标识符。"
 
 #: data/org.gnome.gedit.gschema.xml.in:58
+msgid "Style Scheme for Dark Theme Variant"
+msgstr "暗色主题的风格方案"
+
+#: data/org.gnome.gedit.gschema.xml.in:59
+msgid ""
+"The ID of a libgedit-gtksourceview style scheme used to color the main text "
+"area when the application has a dark theme applied."
+msgstr ""
+"应用程序应用暗色主题时用于着色主要文本区域的 libgedit-gtksourceview 风格方案"
+"的标识符。"
+
+#: data/org.gnome.gedit.gschema.xml.in:63
 msgid "Create Backup Copies"
 msgstr "创建备份文件"
 
-#: data/org.gnome.gedit.gschema.xml.in:59
+#: data/org.gnome.gedit.gschema.xml.in:64
 msgid "Whether gedit should create backup copies for the files it saves."
 msgstr "Gedit 是否应该在保存文件时创建备份文件。"
 
-#: data/org.gnome.gedit.gschema.xml.in:63
+#: data/org.gnome.gedit.gschema.xml.in:68
 msgid "Autosave"
 msgstr "自动保存"
 
-#: data/org.gnome.gedit.gschema.xml.in:64
+#: data/org.gnome.gedit.gschema.xml.in:69
 msgid ""
 "Whether gedit should automatically save modified files after a time "
 "interval. You can set the time interval with the “Autosave Interval” option."
@@ -135,31 +131,31 @@ msgstr ""
 "指定 gedit 是否每隔一段时间自动保存已修改的文件。您可以在“自动保存时间间隔”选"
 "项中设置该时间间隔。"
 
-#: data/org.gnome.gedit.gschema.xml.in:69
+#: data/org.gnome.gedit.gschema.xml.in:74
 msgid "Autosave Interval"
 msgstr "自动保存时间间隔"
 
-#: data/org.gnome.gedit.gschema.xml.in:70
+#: data/org.gnome.gedit.gschema.xml.in:75
 msgid ""
 "Number of minutes after which gedit will automatically save modified files. "
 "This will only take effect if the “Autosave” option is turned on."
 msgstr "文件修改后直到自动保存的时间（分钟）。仅当“自动保存”选项启用时才有效。"
 
-#: data/org.gnome.gedit.gschema.xml.in:74
+#: data/org.gnome.gedit.gschema.xml.in:79
 msgid "Maximum Number of Undo Actions"
 msgstr "最多撤消次数"
 
-#: data/org.gnome.gedit.gschema.xml.in:75
+#: data/org.gnome.gedit.gschema.xml.in:80
 msgid ""
 "Maximum number of actions that gedit will be able to undo or redo. Use “-1” "
 "for unlimited number of actions."
 msgstr "Gedit 撤消或重做的最多次数。使用“-1”表示无限制。"
 
-#: data/org.gnome.gedit.gschema.xml.in:84
+#: data/org.gnome.gedit.gschema.xml.in:89
 msgid "Line Wrapping Mode"
 msgstr "折行模式"
 
-#: data/org.gnome.gedit.gschema.xml.in:85
+#: data/org.gnome.gedit.gschema.xml.in:90
 msgid ""
 "Specifies how to wrap long lines in the editing area. Use “none” for no "
 "wrapping, “word” for wrapping at word boundaries, and “char” for wrapping at "
@@ -170,11 +166,11 @@ msgstr ""
 "折行，“char”表示在字符间折行。请注意，这些值是区分大小写的，所以请务必严格按"
 "照此处说明的大小写进行设置。"
 
-#: data/org.gnome.gedit.gschema.xml.in:93
+#: data/org.gnome.gedit.gschema.xml.in:98
 msgid "Last split mode choice for line wrapping mode"
 msgstr "使用上次的分割方式来处理折行"
 
-#: data/org.gnome.gedit.gschema.xml.in:94
+#: data/org.gnome.gedit.gschema.xml.in:99
 msgid ""
 "Specifies the last split mode used with line wrapping mode, so that when "
 "wrapping mode is off we still remember the split mode choice. Use “word” for "
@@ -184,85 +180,85 @@ msgstr ""
 "指定上一次的分割方式来处理折行，这样当折行模式关闭时我们仍然记得如何分割。使"
 "用“word”来表示在单词后折行，用“char”表示在单个字符后折行。"
 
-#: data/org.gnome.gedit.gschema.xml.in:99
+#: data/org.gnome.gedit.gschema.xml.in:104
 msgid "Tab Size"
 msgstr "制表符宽度"
 
-#: data/org.gnome.gedit.gschema.xml.in:100
+#: data/org.gnome.gedit.gschema.xml.in:105
 msgid ""
 "Specifies the number of spaces that should be displayed instead of Tab "
 "characters."
 msgstr "指定用于代替制表符的空格数。"
 
-#: data/org.gnome.gedit.gschema.xml.in:104
+#: data/org.gnome.gedit.gschema.xml.in:109
 msgid "Insert spaces"
 msgstr "插入空格"
 
-#: data/org.gnome.gedit.gschema.xml.in:105
+#: data/org.gnome.gedit.gschema.xml.in:110
 msgid "Whether gedit should insert spaces instead of tabs."
 msgstr "指定 gedit 是否用空格代替制表符插入。"
 
-#: data/org.gnome.gedit.gschema.xml.in:109
+#: data/org.gnome.gedit.gschema.xml.in:114
 msgid "Automatic indent"
 msgstr "自动缩进"
 
-#: data/org.gnome.gedit.gschema.xml.in:110
+#: data/org.gnome.gedit.gschema.xml.in:115
 msgid "Whether gedit should enable automatic indentation."
 msgstr "指定 gedit 是否启用自动缩进。"
 
-#: data/org.gnome.gedit.gschema.xml.in:114
+#: data/org.gnome.gedit.gschema.xml.in:119
 msgid "Display Line Numbers"
 msgstr "显示行号"
 
-#: data/org.gnome.gedit.gschema.xml.in:115
+#: data/org.gnome.gedit.gschema.xml.in:120
 msgid "Whether gedit should display line numbers in the editing area."
 msgstr "指定 gedit 是否在编辑区域显示行号。"
 
-#: data/org.gnome.gedit.gschema.xml.in:119
+#: data/org.gnome.gedit.gschema.xml.in:124
 msgid "Highlight Current Line"
 msgstr "突出显示当前行"
 
-#: data/org.gnome.gedit.gschema.xml.in:120
+#: data/org.gnome.gedit.gschema.xml.in:125
 msgid "Whether gedit should highlight the current line."
 msgstr "指定 gedit 是否突出显示当前行。"
 
-#: data/org.gnome.gedit.gschema.xml.in:124
+#: data/org.gnome.gedit.gschema.xml.in:129
 msgid "Highlight Matching Brackets"
 msgstr "突出显示匹配的括号"
 
-#: data/org.gnome.gedit.gschema.xml.in:125
+#: data/org.gnome.gedit.gschema.xml.in:130
 msgid "Whether gedit should highlight matching brackets."
 msgstr "指定 gedit 是否突出显示匹配的括号。"
 
-#: data/org.gnome.gedit.gschema.xml.in:129
+#: data/org.gnome.gedit.gschema.xml.in:134
 msgid "Display Right Margin"
 msgstr "显示右侧提示线"
 
-#: data/org.gnome.gedit.gschema.xml.in:130
+#: data/org.gnome.gedit.gschema.xml.in:135
 msgid "Whether gedit should display the right margin in the editing area."
 msgstr "指定 gedit 是否在编辑区域显示右侧提示线。"
 
-#: data/org.gnome.gedit.gschema.xml.in:134
+#: data/org.gnome.gedit.gschema.xml.in:139
 msgid "Right Margin Position"
 msgstr "右侧提示线位置"
 
-#: data/org.gnome.gedit.gschema.xml.in:135
+#: data/org.gnome.gedit.gschema.xml.in:140
 msgid "Specifies the position of the right margin."
 msgstr "指定右侧提示线的位置。"
 
-#: data/org.gnome.gedit.gschema.xml.in:139
+#: data/org.gnome.gedit.gschema.xml.in:144
 msgid "Document background pattern type"
 msgstr "文档背景图案类型"
 
-#: data/org.gnome.gedit.gschema.xml.in:140
+#: data/org.gnome.gedit.gschema.xml.in:145
 msgid "Whether the document will get a background pattern painted."
 msgstr "指定文档背景是否由图案填充。"
 
-#: data/org.gnome.gedit.gschema.xml.in:150
+#: data/org.gnome.gedit.gschema.xml.in:155
 msgid "Smart Home End"
 msgstr "智能 Home End"
 
-#: data/org.gnome.gedit.gschema.xml.in:151
+#: data/org.gnome.gedit.gschema.xml.in:156
 msgid ""
 "Specifies how the cursor moves when the HOME and END keys are pressed. Use "
 "“disabled” to always move at the start/end of the line, “after” to move to "
@@ -278,47 +274,47 @@ msgstr ""
 "后），“before”表示第一次按下键时移动到文本的开始或结尾、第二次按下键时移动到"
 "行的开始或结尾，“always”表示总是移动到文本的开始或结尾而非行的开始或结尾。"
 
-#: data/org.gnome.gedit.gschema.xml.in:155
+#: data/org.gnome.gedit.gschema.xml.in:160
 msgid "Restore Previous Cursor Position"
 msgstr "恢复上次光标所在位置"
 
-#: data/org.gnome.gedit.gschema.xml.in:156
+#: data/org.gnome.gedit.gschema.xml.in:161
 msgid ""
 "Whether gedit should restore the previous cursor position when a file is "
 "loaded."
 msgstr "指定 gedit 是否在加载文件时恢复上次光标所在位置。"
 
-#: data/org.gnome.gedit.gschema.xml.in:160
+#: data/org.gnome.gedit.gschema.xml.in:165
 msgid "Enable Syntax Highlighting"
 msgstr "启用语法高亮"
 
-#: data/org.gnome.gedit.gschema.xml.in:161
+#: data/org.gnome.gedit.gschema.xml.in:166
 msgid "Whether gedit should enable syntax highlighting."
 msgstr "指定 gedit 是否启用语法高亮显示。"
 
-#: data/org.gnome.gedit.gschema.xml.in:165
+#: data/org.gnome.gedit.gschema.xml.in:170
 msgid "Enable Search Highlighting"
 msgstr "启用搜索高亮"
 
-#: data/org.gnome.gedit.gschema.xml.in:166
+#: data/org.gnome.gedit.gschema.xml.in:171
 msgid ""
 "Whether gedit should highlight all the occurrences of the searched text."
 msgstr "指定 gedit 是否高亮显示文件中所有搜索到的文本。"
 
-#: data/org.gnome.gedit.gschema.xml.in:170
+#: data/org.gnome.gedit.gschema.xml.in:175
 msgid "Ensure Trailing Newline"
 msgstr "保证文档以新行结尾"
 
-#: data/org.gnome.gedit.gschema.xml.in:171
+#: data/org.gnome.gedit.gschema.xml.in:176
 msgid ""
 "Whether gedit will ensure that documents always end with a trailing newline."
 msgstr "指定 gedit 是否应当保证文档末尾有一个新行。"
 
-#: data/org.gnome.gedit.gschema.xml.in:177
+#: data/org.gnome.gedit.gschema.xml.in:182
 msgid "Notebook Show Tabs Mode"
 msgstr "笔记本式标签页显示模式"
 
-#: data/org.gnome.gedit.gschema.xml.in:178
+#: data/org.gnome.gedit.gschema.xml.in:183
 msgid ""
 "Specifies when to show the notebook tabs. Use “never” to never show the "
 "tabs, “always” to always show the tabs, and “auto” to show the tabs only "
@@ -329,49 +325,49 @@ msgstr ""
 "显示标签页 ，“auto”表示只在多于一个标签页时显示。请注意，这些值是区分大小写"
 "的，所以请务必严格按照此处说明的大小写进行设置。"
 
-#: data/org.gnome.gedit.gschema.xml.in:182
+#: data/org.gnome.gedit.gschema.xml.in:187
 msgid "Status Bar is Visible"
 msgstr "状态栏可见"
 
-#: data/org.gnome.gedit.gschema.xml.in:183
+#: data/org.gnome.gedit.gschema.xml.in:188
 msgid ""
 "Whether the status bar at the bottom of editing windows should be visible."
 msgstr "指定编辑窗口底部的状态栏是否可见。"
 
-#: data/org.gnome.gedit.gschema.xml.in:187
+#: data/org.gnome.gedit.gschema.xml.in:192
 msgid "Side panel is Visible"
 msgstr "侧边栏可见"
 
-#: data/org.gnome.gedit.gschema.xml.in:188
+#: data/org.gnome.gedit.gschema.xml.in:193
 msgid ""
 "Whether the side panel at the left of editing windows should be visible."
 msgstr "指定位于编辑窗口左侧的侧边栏是否可见。"
 
-#: data/org.gnome.gedit.gschema.xml.in:195
+#: data/org.gnome.gedit.gschema.xml.in:200
 msgid "Which theme variant to use"
 msgstr "要使用的主题类型"
 
-#: data/org.gnome.gedit.gschema.xml.in:201
+#: data/org.gnome.gedit.gschema.xml.in:206
 msgid "Print Syntax Highlighting"
 msgstr "打印语法高亮"
 
-#: data/org.gnome.gedit.gschema.xml.in:202
+#: data/org.gnome.gedit.gschema.xml.in:207
 msgid "Whether gedit should print syntax highlighting when printing documents."
 msgstr "指定 gedit 是否在打印文档时打印语法高亮。"
 
-#: data/org.gnome.gedit.gschema.xml.in:206
+#: data/org.gnome.gedit.gschema.xml.in:211
 msgid "Print Header"
 msgstr "打印页眉"
 
-#: data/org.gnome.gedit.gschema.xml.in:207
+#: data/org.gnome.gedit.gschema.xml.in:212
 msgid "Whether gedit should include a document header when printing documents."
 msgstr "指定 gedit 是否在打印文档时包含页眉。"
 
-#: data/org.gnome.gedit.gschema.xml.in:216
+#: data/org.gnome.gedit.gschema.xml.in:221
 msgid "Printing Line Wrapping Mode"
 msgstr "打印时使用的折行模式"
 
-#: data/org.gnome.gedit.gschema.xml.in:217
+#: data/org.gnome.gedit.gschema.xml.in:222
 msgid ""
 "Specifies how to wrap long lines for printing. Use “none” for no wrapping, "
 "“word” for wrapping at word boundaries, and “char” for wrapping at "
@@ -382,11 +378,11 @@ msgstr ""
 "行，“char”表示在字符间折行。请注意，这些值是区分大小写的，所以请务必严格按照"
 "此处说明的大小写进行设置。"
 
-#: data/org.gnome.gedit.gschema.xml.in:221
+#: data/org.gnome.gedit.gschema.xml.in:226
 msgid "Print Line Numbers"
 msgstr "打印行号"
 
-#: data/org.gnome.gedit.gschema.xml.in:222
+#: data/org.gnome.gedit.gschema.xml.in:227
 msgid ""
 "If this value is 0, then no line numbers will be inserted when printing a "
 "document. Otherwise, gedit will print line numbers every such number of "
@@ -396,86 +392,86 @@ msgstr ""
 "N 行打印一个行号。"
 
 #. Translators: This is a GSettings default value. Do NOT change or localize the quotation marks!
-#: data/org.gnome.gedit.gschema.xml.in:226
+#: data/org.gnome.gedit.gschema.xml.in:231
 msgid "'Monospace 9'"
 msgstr "'Monospace 9'"
 
-#: data/org.gnome.gedit.gschema.xml.in:227
+#: data/org.gnome.gedit.gschema.xml.in:232
 msgid "Body Font for Printing"
 msgstr "打印正文使用的字体"
 
-#: data/org.gnome.gedit.gschema.xml.in:228
+#: data/org.gnome.gedit.gschema.xml.in:233
 msgid ""
 "Specifies the font to use for a document’s body when printing documents."
 msgstr "指定打印时正文内容使用的字体。"
 
 #. Translators: This is a GSettings default value. Do NOT change or localize the quotation marks!
-#: data/org.gnome.gedit.gschema.xml.in:232
+#: data/org.gnome.gedit.gschema.xml.in:237
 msgid "'Sans 11'"
 msgstr "'Sans 11'"
 
-#: data/org.gnome.gedit.gschema.xml.in:233
+#: data/org.gnome.gedit.gschema.xml.in:238
 msgid "Header Font for Printing"
 msgstr "打印页眉使用的字体"
 
-#: data/org.gnome.gedit.gschema.xml.in:234
+#: data/org.gnome.gedit.gschema.xml.in:239
 msgid ""
 "Specifies the font to use for page headers when printing a document. This "
 "will only take effect if the “Print Header” option is turned on."
 msgstr "指定打印时页眉使用的字体。仅当“打印页眉”选项启用时才有效。"
 
 #. Translators: This is a GSettings default value. Do NOT change or localize the quotation marks!
-#: data/org.gnome.gedit.gschema.xml.in:238
+#: data/org.gnome.gedit.gschema.xml.in:243
 msgid "'Sans 8'"
 msgstr "'Sans 8'"
 
-#: data/org.gnome.gedit.gschema.xml.in:239
+#: data/org.gnome.gedit.gschema.xml.in:244
 msgid "Line Number Font for Printing"
 msgstr "打印行号使用的字体"
 
-#: data/org.gnome.gedit.gschema.xml.in:240
+#: data/org.gnome.gedit.gschema.xml.in:245
 msgid ""
 "Specifies the font to use for line numbers when printing. This will only "
 "take effect if the “Print Line Numbers” option is non-zero."
 msgstr "指定打印时行号使用的字体。仅当“打印行号”选项值不为0时有效。"
 
-#: data/org.gnome.gedit.gschema.xml.in:244
+#: data/org.gnome.gedit.gschema.xml.in:249
 msgid "Margin Left"
 msgstr "左边界"
 
-#: data/org.gnome.gedit.gschema.xml.in:245
+#: data/org.gnome.gedit.gschema.xml.in:250
 msgid "The left margin, in millimeters."
 msgstr "左边边界，以毫米计。"
 
-#: data/org.gnome.gedit.gschema.xml.in:249
+#: data/org.gnome.gedit.gschema.xml.in:254
 msgid "Margin Top"
 msgstr "顶部边界"
 
-#: data/org.gnome.gedit.gschema.xml.in:250
+#: data/org.gnome.gedit.gschema.xml.in:255
 msgid "The top margin, in millimeters."
 msgstr "顶部边界，以毫米计。"
 
-#: data/org.gnome.gedit.gschema.xml.in:254
+#: data/org.gnome.gedit.gschema.xml.in:259
 msgid "Margin Right"
 msgstr "右边界"
 
-#: data/org.gnome.gedit.gschema.xml.in:255
+#: data/org.gnome.gedit.gschema.xml.in:260
 msgid "The right margin, in millimeters."
 msgstr "右边边界，以毫米计。"
 
-#: data/org.gnome.gedit.gschema.xml.in:259
+#: data/org.gnome.gedit.gschema.xml.in:264
 msgid "Margin Bottom"
 msgstr "底部边界"
 
-#: data/org.gnome.gedit.gschema.xml.in:260
+#: data/org.gnome.gedit.gschema.xml.in:265
 msgid "The bottom margin, in millimeters."
 msgstr "底部边界，以毫米计。"
 
-#: data/org.gnome.gedit.gschema.xml.in:266
+#: data/org.gnome.gedit.gschema.xml.in:271
 msgid "Candidate Encodings"
 msgstr "备选编码"
 
-#: data/org.gnome.gedit.gschema.xml.in:267
+#: data/org.gnome.gedit.gschema.xml.in:272
 msgid ""
 "List of candidate encodings shown in the Character Encoding menu in the open/"
 "save file chooser. “CURRENT” represents the current locale encoding. Only "
@@ -486,60 +482,89 @@ msgstr ""
 "本地编码。只有可识别的编码格式可用。默认值为空，在这种情况下，Gedit 会根据区"
 "域和语言来选择最佳默认选项。"
 
-#: data/org.gnome.gedit.gschema.xml.in:316
+#: data/org.gnome.gedit.gschema.xml.in:321
 msgid "Active plugins"
 msgstr "激活插件"
 
-#: data/org.gnome.gedit.gschema.xml.in:317
+#: data/org.gnome.gedit.gschema.xml.in:322
 msgid "List of active plugins."
 msgstr "已激活插件的列表。"
 
-#: gedit/gedit-app.c:81
+#: data/org.gnome.gedit.metainfo.xml.in:8
+msgid "Text editor"
+msgstr "文本编辑器"
+
+#: data/org.gnome.gedit.metainfo.xml.in:10
+msgid ""
+"gedit is an easy-to-use and general-purpose text editor. Its development "
+"started in 1998, at the beginnings of the GNOME project, with a good "
+"integration with that desktop environment."
+msgstr ""
+"gedit 是一个易用的通用文本编辑器。它创建于 1998 年，在 GNOME 诞生之时，并和 "
+"GNOME 桌面环境有良好的集成。"
+
+#: data/org.gnome.gedit.metainfo.xml.in:15
+msgid ""
+"You can use it to write simple notes and documents, or you can enable more "
+"advanced features that are useful for software development."
+msgstr ""
+"您可以用它来编写简单的笔记和文档，也可以启用对软件开发有用的更高级功能。"
+
+#: gedit/gedit-app.c:93
 msgid "Show the application’s version"
 msgstr "显示应用程序版本"
 
-#: gedit/gedit-app.c:87
+#: gedit/gedit-app.c:99
 msgid "Display list of possible values for the encoding option"
 msgstr "显示可使用的编码选项列表"
 
-#: gedit/gedit-app.c:94
+#: gedit/gedit-app.c:106
 msgid ""
 "Set the character encoding to be used to open the files listed on the "
 "command line"
 msgstr "设置打开命令行中列出的文件时使用的字符编码"
 
-#: gedit/gedit-app.c:95
+#: gedit/gedit-app.c:107
 msgid "ENCODING"
 msgstr "编码"
 
-#: gedit/gedit-app.c:101
+#: gedit/gedit-app.c:113
 msgid "Create a new top-level window in an existing instance of gedit"
 msgstr "在已存在的gedit 实例中新建一个最上层窗口"
 
-#: gedit/gedit-app.c:108
+#: gedit/gedit-app.c:120
 msgid "Create a new document in an existing instance of gedit"
 msgstr "在已存在的 gedit 实例中新建一个文档"
 
-#: gedit/gedit-app.c:115
+#: gedit/gedit-app.c:127
 msgid "Open files and block process until files are closed"
 msgstr "以独占方式打开文件直到文件关闭"
 
-#: gedit/gedit-app.c:122
+#: gedit/gedit-app.c:134
 msgid "Run gedit in standalone mode"
 msgstr "以独立模式运行gedit"
 
-#: gedit/gedit-app.c:129
+#: gedit/gedit-app.c:141
 msgid "[FILE…] [+LINE[:COLUMN]]"
 msgstr "[文件…] [+行[:列]]"
 
-#: gedit/gedit-app.c:212
+#: gedit/gedit-app.c:224
 msgid "There was an error displaying the help."
 msgstr "显示帮助时出错。"
 
-#: gedit/gedit-app.c:867
+#: gedit/gedit-app.c:685
+#, c-format
+msgid "Untitled Document %d"
+msgstr "无标题文档 %d"
+
+#: gedit/gedit-app.c:879
 #, c-format
 msgid "%s: invalid encoding."
 msgstr "%s：无效的编码。"
+
+#: gedit/gedit-bottom-panel.c:79
+msgid "Hide panel"
+msgstr "隐藏面板"
 
 #: gedit/gedit-close-confirmation-dialog.c:271
 msgid "Close _without Saving"
@@ -549,7 +574,7 @@ msgstr "不保存退出(_W)"
 #: gedit/gedit-commands-file.c:565 gedit/gedit-commands-file.c:789
 #: gedit/gedit-commands-file.c:1514 gedit/gedit-encodings-dialog.c:192
 #: gedit/gedit-file-chooser-open-dialog.c:78 gedit/gedit-io-error-info-bar.c:95
-#: gedit/gedit-io-error-info-bar.c:294 gedit/gedit-preferences-dialog.c:665
+#: gedit/gedit-io-error-info-bar.c:294
 #: plugins/filebrowser/gedit-file-browser-utils.c:211
 #: plugins/quickopen/quickopen/popup.py:45
 #: plugins/snippets/snippets/manager.py:789
@@ -566,7 +591,7 @@ msgid "_Save As…"
 msgstr "另存为(_S)…"
 
 #: gedit/gedit-close-confirmation-dialog.c:295 gedit/gedit-commands-file.c:788
-#: gedit/gedit-header-bar.c:186 gedit/resources/gtk/menus-common.ui:101
+#: gedit/gedit-header-bar.c:187 gedit/resources/gtk/menus-common.ui:101
 #: plugins/snippets/snippets/manager.py:875
 #: plugins/snippets/snippets/manager.py:913
 msgid "_Save"
@@ -787,23 +812,23 @@ msgstr "还原(_R)"
 #. * relative contribution (number of commits at the time of
 #. * writing).
 #.
-#: gedit/gedit-commands-help.c:54
+#: gedit/gedit-commands-help.c:44
 msgid "Main authors:"
 msgstr "主要作者："
 
-#: gedit/gedit-commands-help.c:61
+#: gedit/gedit-commands-help.c:51
 msgid "Many thanks also to:"
 msgstr "同时非常感谢："
 
-#: gedit/gedit-commands-help.c:71
+#: gedit/gedit-commands-help.c:61
 msgid "and many other contributors."
 msgstr "和其它很多贡献者。"
 
-#: gedit/gedit-commands-help.c:89
+#: gedit/gedit-commands-help.c:76
 msgid "gedit is an easy-to-use and general-purpose text editor"
 msgstr "gedit 是一个易于使用的通用文本编辑器"
 
-#: gedit/gedit-commands-help.c:94
+#: gedit/gedit-commands-help.c:81
 msgid "translator-credits"
 msgstr ""
 "Dillion Chen <dillon.chen@turbolinux.com.cn>, 2001\n"
@@ -823,7 +848,7 @@ msgstr ""
 "Tong Hui <tonghuix@gmail.com>, 2014\n"
 "Bin Li <binli@gnome.org>, 2015.\n"
 "Mingcong Bai <jeffbai@aosc.xyz>, 2015, 2016, 2018.\n"
-"lumingzh <lumingzh@qq.com>, 2016, 2022.\n"
+"lumingzh <lumingzh@qq.com>, 2016, 2022, 2024.\n"
 "Dingzhong Chen <wsxy162@gmail.com>, 2019."
 
 #: gedit/gedit-commands-search.c:106
@@ -849,8 +874,7 @@ msgstr "未找到“%s”"
 msgid "Tab Group %i"
 msgstr "标签页组 %i"
 
-#: gedit/gedit-documents-panel.c:481 gedit/gedit-window.c:1120
-#: gedit/gedit-window.c:1126 gedit/gedit-window.c:1134
+#: gedit/gedit-documents-panel.c:481 gedit/gedit-window-titles.c:117
 msgid "Read-Only"
 msgstr "只读"
 
@@ -897,12 +921,7 @@ msgstr "优先级提高一级"
 msgid "Move to a lower priority"
 msgstr "优先级降低一级"
 
-#: gedit/gedit-factory.c:29
-#, c-format
-msgid "Untitled Document %d"
-msgstr "无标题文档 %d"
-
-#: gedit/gedit-file-chooser.c:41 gedit/gedit-preferences-dialog.c:674
+#: gedit/gedit-file-chooser.c:41
 msgid "All Files"
 msgstr "所有文件"
 
@@ -926,7 +945,7 @@ msgctxt "window title"
 msgid "Open Files"
 msgstr "打开文件"
 
-#: gedit/gedit-file-chooser-open-dialog.c:79 gedit/gedit-header-bar.c:53
+#: gedit/gedit-file-chooser-open-dialog.c:79 gedit/gedit-header-bar.c:54
 #: gedit/resources/gtk/menus-common.ui:74
 #: gedit/resources/gtk/menus-common.ui:80
 #: plugins/filebrowser/resources/ui/gedit-file-browser-menus.ui:7
@@ -935,23 +954,23 @@ msgstr "打开文件"
 msgid "_Open"
 msgstr "打开(_O)"
 
-#: gedit/gedit-header-bar.c:54
+#: gedit/gedit-header-bar.c:55
 msgid "Open a file"
 msgstr "打开文件"
 
-#: gedit/gedit-header-bar.c:92
+#: gedit/gedit-header-bar.c:93
 msgid "Open a recently used file"
 msgstr "打开最近使用的文件"
 
-#: gedit/gedit-header-bar.c:138
+#: gedit/gedit-header-bar.c:139
 msgid "Create a new document"
 msgstr "新建文档"
 
-#: gedit/gedit-header-bar.c:151
+#: gedit/gedit-header-bar.c:152
 msgid "Leave Fullscreen"
 msgstr "退出全屏"
 
-#: gedit/gedit-header-bar.c:187
+#: gedit/gedit-header-bar.c:188
 msgid "Save the current file"
 msgstr "保存当前文件"
 
@@ -1127,32 +1146,6 @@ msgstr "您试图用来保存文件的磁盘对文件名长度有限制。请使
 msgid "Could not save the file “%s”."
 msgstr "无法保存文件“%s”。"
 
-#: gedit/gedit-preferences-dialog.c:628
-#, c-format
-msgid "The selected color scheme cannot be installed: %s"
-msgstr "无法安装选中的配色方案：%s"
-
-#: gedit/gedit-preferences-dialog.c:634
-msgid "The selected color scheme cannot be installed."
-msgstr "无法安装选中的配色方案。"
-
-#: gedit/gedit-preferences-dialog.c:661
-msgid "Add Color Scheme"
-msgstr "添加配色方案"
-
-#: gedit/gedit-preferences-dialog.c:664
-msgid "_Add Scheme"
-msgstr "添加方案(_A)"
-
-#: gedit/gedit-preferences-dialog.c:669
-msgid "Color Scheme Files"
-msgstr "配色方案文件"
-
-#: gedit/gedit-preferences-dialog.c:707
-#, c-format
-msgid "Could not remove color scheme “%s”."
-msgstr "无法删除配色方案“%s”。"
-
 #: gedit/gedit-print-job.c:223
 msgid "Preparing…"
 msgstr "正在准备…"
@@ -1196,82 +1189,86 @@ msgstr "查找和替换"
 
 #. Translators: the first %s is a file name (e.g. test.txt) the second one
 #. is a directory (e.g. ssh://master.gnome.org/home/users/paolo)
-#: gedit/gedit-tab.c:805
+#: gedit/gedit-tab.c:803
 #, c-format
 msgid "Reverting %s from %s"
 msgstr "正在从 %2$s 还原 %1$s"
 
-#: gedit/gedit-tab.c:812
+#: gedit/gedit-tab.c:810
 #, c-format
 msgid "Reverting %s"
 msgstr "正在还原 %s"
 
 #. Translators: the first %s is a file name (e.g. test.txt) the second one
 #. is a directory (e.g. ssh://master.gnome.org/home/users/paolo)
-#: gedit/gedit-tab.c:825
+#: gedit/gedit-tab.c:823
 #, c-format
 msgid "Loading %s from %s"
 msgstr "正在从 %2$s 载入 %1$s"
 
-#: gedit/gedit-tab.c:832
+#: gedit/gedit-tab.c:830
 #, c-format
 msgid "Loading %s"
 msgstr "正在载入 %s"
 
 #. Translators: the first %s is a file name (e.g. test.txt) the second one
 #. is a directory (e.g. ssh://master.gnome.org/home/users/paolo)
-#: gedit/gedit-tab.c:910
+#: gedit/gedit-tab.c:908
 #, c-format
 msgid "Saving %s to %s"
 msgstr "正在将 %2$s 保存到 %1$s"
 
-#: gedit/gedit-tab.c:915
+#: gedit/gedit-tab.c:913
 #, c-format
 msgid "Saving %s"
 msgstr "正在保存 %s"
 
-#: gedit/gedit-tab.c:1480
+#: gedit/gedit-tab.c:1433
 #, c-format
 msgid "Error opening file %s"
 msgstr "打开文件 %s 时出错"
 
-#: gedit/gedit-tab.c:1484
+#: gedit/gedit-tab.c:1437
 #, c-format
 msgid "Error reverting file %s"
 msgstr "还原文件 %s 时出错"
 
-#: gedit/gedit-tab.c:1488
+#: gedit/gedit-tab.c:1441
 #, c-format
 msgid "Error saving file %s"
 msgstr "保存文件 %s 时出错"
 
-#: gedit/gedit-tab.c:1519
+#: gedit/gedit-tab.c:1472
 msgid "Name:"
 msgstr "名称："
 
-#: gedit/gedit-tab.c:1520
+#: gedit/gedit-tab.c:1473
 msgid "MIME Type:"
 msgstr "MIME 类型："
 
-#: gedit/gedit-tab.c:1521
+#: gedit/gedit-tab.c:1474
 msgid "Encoding:"
 msgstr "编码："
 
+#: gedit/gedit-tab-label.c:302
+msgid "Close Document"
+msgstr "关闭文档"
+
 #. Translators: '/ on <remote-share>'
-#: gedit/gedit-utils.c:358
+#: gedit/gedit-utils.c:361
 #, c-format
 msgid "/ on %s"
 msgstr "%s 上的 /"
 
-#: gedit/gedit-utils.c:503
+#: gedit/gedit-utils.c:506
 msgid "Unix/Linux"
 msgstr "Unix/Linux"
 
-#: gedit/gedit-utils.c:505
+#: gedit/gedit-utils.c:508
 msgid "Mac OS Classic"
 msgstr "Mac OS Classic"
 
-#: gedit/gedit-utils.c:507
+#: gedit/gedit-utils.c:510
 msgid "Windows"
 msgstr "Windows"
 
@@ -1279,56 +1276,56 @@ msgstr "Windows"
 #. * occurrence, and the second %d is the total number of search
 #. * occurrences.
 #.
-#: gedit/gedit-view-frame.c:668
+#: gedit/gedit-view-frame.c:658
 #, c-format
 msgid "%d of %d"
 msgstr "第 %d 次，共 %d 次出现"
 
 #. create "Wrap Around" menu item.
-#: gedit/gedit-view-frame.c:760
+#: gedit/gedit-view-frame.c:750
 msgid "_Wrap Around"
 msgstr "回到文档头部继续搜索(_W)"
 
 #. create "Match as Regular Expression" menu item.
-#: gedit/gedit-view-frame.c:770
+#: gedit/gedit-view-frame.c:760
 msgid "Match as _Regular Expression"
 msgstr "作为正则表达式匹配(_R)"
 
 #. create "Match Entire Word Only" menu item.
-#: gedit/gedit-view-frame.c:784
+#: gedit/gedit-view-frame.c:774
 msgid "Match _Entire Word Only"
 msgstr "只匹配整个单词(_E)"
 
 #. create "Match Case" menu item.
-#: gedit/gedit-view-frame.c:798
+#: gedit/gedit-view-frame.c:788
 msgid "_Match Case"
 msgstr "区分大小写(_M)"
 
-#: gedit/gedit-view-frame.c:1023
+#: gedit/gedit-view-frame.c:1013
 msgid "String you want to search for"
 msgstr "您想要搜索的字符串"
 
-#: gedit/gedit-view-frame.c:1035
+#: gedit/gedit-view-frame.c:1025
 msgid "Line you want to move the cursor to"
 msgstr "您想要将光标移动到的行"
 
-#: gedit/gedit-window.c:1175
+#: gedit/gedit-window.c:986
 #, c-format
 msgid "Tab Width: %u"
 msgstr "制表符宽度：%u"
 
-#: gedit/gedit-window.c:1193 plugins/externaltools/tools/manager.py:115
+#: gedit/gedit-window.c:1004 plugins/externaltools/tools/manager.py:115
 #: plugins/externaltools/tools/manager.py:324
 #: plugins/externaltools/tools/manager.py:440
 #: plugins/externaltools/tools/manager.py:776
 msgid "Plain Text"
 msgstr "纯文本"
 
-#: gedit/gedit-window.c:1410
+#: gedit/gedit-window.c:1223
 msgid "There are unsaved documents"
 msgstr "有未保存的文档"
 
-#: gedit/gedit-window.c:2210
+#: gedit/gedit-window.c:2025
 msgid "Documents"
 msgstr "文档"
 
@@ -1955,80 +1952,46 @@ msgstr "编码(_E)"
 msgid "Preferences"
 msgstr "首选项"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:51
-msgid "Display right _margin at column:"
-msgstr "显示右边距线（列）(_M)："
-
-#: gedit/resources/ui/gedit-preferences-dialog.ui:90
-msgid "Display _statusbar"
-msgstr "显示状态栏(_S)"
-
-#: gedit/resources/ui/gedit-preferences-dialog.ui:105
-msgid "Display _grid pattern"
-msgstr "显示网格图案(_G)"
-
-#: gedit/resources/ui/gedit-preferences-dialog.ui:134
+#: gedit/resources/ui/gedit-preferences-dialog.ui:52
 #: gedit/resources/ui/gedit-print-preferences.ui:197
 msgid "Text Wrapping"
 msgstr "文本折行"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:152
+#: gedit/resources/ui/gedit-preferences-dialog.ui:70
 #: gedit/resources/ui/gedit-print-preferences.ui:217
 msgid "Enable text _wrapping"
 msgstr "启用自动折行(_W)"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:166
+#: gedit/resources/ui/gedit-preferences-dialog.ui:84
 #: gedit/resources/ui/gedit-print-preferences.ui:237
 msgid "Do not _split words over two lines"
 msgstr "避免在单词内换行(_S)"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:208
+#: gedit/resources/ui/gedit-preferences-dialog.ui:126
 msgid "View"
 msgstr "查看"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:230
+#: gedit/resources/ui/gedit-preferences-dialog.ui:148
 msgid "Tab Stops"
 msgstr "制表符"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:259
+#: gedit/resources/ui/gedit-preferences-dialog.ui:177
 msgid "Insert _spaces instead of tabs"
 msgstr "使用空格代替制表符插入(_S)"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:273
+#: gedit/resources/ui/gedit-preferences-dialog.ui:191
 msgid "_Enable automatic indentation"
 msgstr "启用自动缩进(_E)"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:316
+#: gedit/resources/ui/gedit-preferences-dialog.ui:234
 msgid "Editor"
 msgstr "编辑器"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:350
-msgid "Color Scheme"
-msgstr "配色方案"
-
-#: gedit/resources/ui/gedit-preferences-dialog.ui:386
-#: gedit/resources/ui/gedit-preferences-dialog.ui:387
-msgid "Install scheme"
-msgstr "安装方案"
-
-#: gedit/resources/ui/gedit-preferences-dialog.ui:388
-msgid "Install Scheme"
-msgstr "安装方案"
-
-#: gedit/resources/ui/gedit-preferences-dialog.ui:402
-#: gedit/resources/ui/gedit-preferences-dialog.ui:403
-msgid "Uninstall scheme"
-msgstr "卸载方案"
-
-#: gedit/resources/ui/gedit-preferences-dialog.ui:404
-msgid "Uninstall Scheme"
-msgstr "卸载方案"
-
-#: gedit/resources/ui/gedit-preferences-dialog.ui:444
+#: gedit/resources/ui/gedit-preferences-dialog.ui:255
 msgid "Font & Colors"
 msgstr "字体和颜色"
 
-#: gedit/resources/ui/gedit-preferences-dialog.ui:469
+#: gedit/resources/ui/gedit-preferences-dialog.ui:280
 msgid "Plugins"
 msgstr "插件"
 
@@ -2184,14 +2147,6 @@ msgstr "反向搜索(_B)"
 #: gedit/resources/ui/gedit-replace-dialog.ui:206
 msgid "Wra_p around"
 msgstr "回到文档头部继续搜索(_P)"
-
-#: gedit/resources/ui/gedit-tab-label.ui:34
-msgid "Close Document"
-msgstr "关闭文档"
-
-#: gedit/resources/ui/gedit-window.ui:110
-msgid "Hide panel"
-msgstr "隐藏面板"
 
 #: plugins/docinfo/docinfo.plugin.desktop.in:5
 #: plugins/docinfo/resources/ui/gedit-docinfo-plugin.ui:7
@@ -2770,6 +2725,7 @@ msgid "Show _Binary"
 msgstr "显示二进制文件(_B)"
 
 #: plugins/filebrowser/resources/ui/gedit-file-browser-menus.ui:67
+#: plugins/filebrowser/resources/ui/gedit-file-browser-widget.ui:248
 msgid "Match Filename"
 msgstr "匹配文件名"
 
@@ -3249,6 +3205,53 @@ msgstr "插入日期/时间"
 #: plugins/time/time.plugin.desktop.in:6
 msgid "Inserts current date and time at the cursor position."
 msgstr "在光标处插入当前的日期和时间。"
+
+#~ msgid "Style Scheme"
+#~ msgstr "风格方案"
+
+#, c-format
+#~ msgid "The selected color scheme cannot be installed: %s"
+#~ msgstr "无法安装选中的配色方案：%s"
+
+#~ msgid "The selected color scheme cannot be installed."
+#~ msgstr "无法安装选中的配色方案。"
+
+#~ msgid "Add Color Scheme"
+#~ msgstr "添加配色方案"
+
+#~ msgid "_Add Scheme"
+#~ msgstr "添加方案(_A)"
+
+#~ msgid "Color Scheme Files"
+#~ msgstr "配色方案文件"
+
+#, c-format
+#~ msgid "Could not remove color scheme “%s”."
+#~ msgstr "无法删除配色方案“%s”。"
+
+#~ msgid "Display right _margin at column:"
+#~ msgstr "显示右边距线（列）(_M)："
+
+#~ msgid "Display _statusbar"
+#~ msgstr "显示状态栏(_S)"
+
+#~ msgid "Display _grid pattern"
+#~ msgstr "显示网格图案(_G)"
+
+#~ msgid "Color Scheme"
+#~ msgstr "配色方案"
+
+#~ msgid "Install scheme"
+#~ msgstr "安装方案"
+
+#~ msgid "Install Scheme"
+#~ msgstr "安装方案"
+
+#~ msgid "Uninstall scheme"
+#~ msgstr "卸载方案"
+
+#~ msgid "Uninstall Scheme"
+#~ msgstr "卸载方案"
 
 #~ msgid ""
 #~ "The first goal of gedit is to be easy to use, with a simple interface by "
