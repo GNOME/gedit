@@ -326,7 +326,7 @@ setup_font_colors_page (GeditPreferencesDialog *dlg)
 
 	/* Color/Style scheme */
 	gtk_container_add (GTK_CONTAINER (dlg->font_and_colors_placeholder),
-			   GTK_WIDGET (tepl_style_scheme_chooser_widget_new (TRUE)));
+			   GTK_WIDGET (tepl_style_scheme_chooser_full_new ()));
 }
 
 static void
