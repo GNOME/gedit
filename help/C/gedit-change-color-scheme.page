@@ -29,8 +29,32 @@
   <p>The new color scheme will be applied immediately.</p>
 
   <section>
-    <title>Use a Custom Color Scheme</title>
+    <title>For light and dark theme variants</title>
+    <p>
+      There are actually two color scheme settings: one color scheme to choose
+      when a light theme is applied to the whole application, and one color
+      scheme to choose when a dark theme is applied. The <gui>Preferences</gui>
+      dialog allows you to configure both.
+    </p>
+  </section>
 
+  <section>
+    <title>About unsupported color schemes</title>
+    <p>
+      Some color schemes may be unsupported for the theme variant used (light or
+      dark). When that is the case, the color scheme cannot be selected and is
+      marked explicitly as unsupported.
+    </p>
+    <p>
+      This happens when a color scheme inherits some colors from the theme, and
+      it is assumed that the theme is either light or dark. If it were possible
+      to apply such a color scheme when the wrong theme is used, it would appear
+      that the color scheme has bugs and some of the text would be unreadable.
+    </p>
+  </section>
+
+  <section>
+    <title>Use a custom color scheme</title>
     <p>
       You can also use color schemes that have been created by others, or create
       and use your own color schemes. See the
