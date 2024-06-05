@@ -1917,17 +1917,20 @@ model_add_nodes_batch (GeditFileBrowserStore *model,
 static gchar const *
 backup_content_type (GFileInfo *info)
 {
-	gchar const *content;
+	if (g_file_info_has_attribute (info, G_FILE_ATTRIBUTE_STANDARD_IS_BACKUP) &&
+	    g_file_info_get_is_backup (info))
+	{
+		gchar const *content = g_file_info_get_content_type (info);
 
-	if (!g_file_info_get_is_backup (info))
-		return NULL;
+		if (content == NULL || g_content_type_equals (content, "application/x-trash"))
+		{
+			return "text/plain";
+		}
 
-	content = g_file_info_get_content_type (info);
+		return content;
+	}
 
-	if (!content || g_content_type_equals (content, "application/x-trash"))
-		return "text/plain";
-
-	return content;
+	return NULL;
 }
 
 static gboolean
@@ -1994,8 +1997,13 @@ file_browser_node_set_from_info (GeditFileBrowserStore *model,
 		free_info = TRUE;
 	}
 
-	if (g_file_info_get_is_hidden (info) || g_file_info_get_is_backup (info))
+	if ((g_file_info_has_attribute (info, G_FILE_ATTRIBUTE_STANDARD_IS_HIDDEN) &&
+	     g_file_info_get_is_hidden (info)) ||
+	    (g_file_info_has_attribute (info, G_FILE_ATTRIBUTE_STANDARD_IS_BACKUP) &&
+	     g_file_info_get_is_backup (info)))
+	{
 		node->flags |= GEDIT_FILE_BROWSER_STORE_FLAG_IS_HIDDEN;
+	}
 
 	if (g_file_info_get_file_type (info) == G_FILE_TYPE_DIRECTORY)
 	{
