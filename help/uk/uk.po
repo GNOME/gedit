@@ -4,20 +4,20 @@
 #
 # Maxim Dziumanenko <dziumanenko@gmail.com>, 2007.
 # Назарій Ріттер <nazariy.ritter@gmail.com>, 2014.
-# Yuri Chornoivan <yurchor@ukr.net>, 2020, 2022, 2023.
+# Yuri Chornoivan <yurchor@ukr.net>, 2020, 2022, 2023, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: gedit manual\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-25 23:50+0000\n"
-"PO-Revision-Date: 2023-10-26 23:21+0300\n"
+"POT-Creation-Date: 2024-06-04 21:06+0000\n"
+"PO-Revision-Date: 2024-06-05 09:39+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
-"Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
+"Language-Team: Ukrainian\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 20.12.0\n"
+"X-Generator: Lokalize 23.04.3\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
@@ -128,16 +128,61 @@ msgstr "Нову кольорову схему буде застосовано �
 
 #. (itstool) path: section/title
 #: C/gedit-change-color-scheme.page:32
-msgid "Use a Custom Color Scheme"
-msgstr "Використання користувацької кольорової схеми"
+msgid "For light and dark theme variants"
+msgstr "Для світлих і темних варіантів теми"
 
 #. (itstool) path: section/p
-#: C/gedit-change-color-scheme.page:34
-#| msgid ""
-#| "You can also use color schemes that have been created by others, or "
-#| "create and use your own color schemes. See the <link href=\"https://gedit-"
-#| "technology.net/developer-docs/extra/libgedit-gtksourceview/style-schemes."
-#| "html\">libgedit-gtksourceview documentation</link>."
+#: C/gedit-change-color-scheme.page:33
+msgid ""
+"There are actually two color scheme settings: one color scheme to choose "
+"when a light theme is applied to the whole application, and one color scheme "
+"to choose when a dark theme is applied. The <gui>Preferences</gui> dialog "
+"allows you to configure both."
+msgstr ""
+"Фактично існує два варіанти схеми кольорів: одна схема кольорів, яку має"
+" бути вибрано, коли до всієї програми застосовується світла тема, і одна"
+" схема кольорів, яку слід вибрати, коли застосована темна тема. Діалогове"
+" вікно <gui>Параметри</gui> надає змогу налаштувати обидва варіанти."
+
+#. (itstool) path: section/title
+#: C/gedit-change-color-scheme.page:42
+#| msgid "Choose your desired color scheme."
+msgid "About unsupported color schemes"
+msgstr "Про непідтримувані схеми кольорів"
+
+#. (itstool) path: section/p
+#: C/gedit-change-color-scheme.page:43
+msgid ""
+"Some color schemes may be unsupported for the theme variant used (light or "
+"dark). When that is the case, the color scheme cannot be selected and is "
+"marked explicitly as unsupported."
+msgstr ""
+"Підтримки деяких схем кольорів для використаного варіанта теми (світлий або"
+" темний) може бути не передбачено. У цьому випадку схему кольорів не можна"
+" вибрати, і вона явно позначена як непідтримувана."
+
+#. (itstool) path: section/p
+#: C/gedit-change-color-scheme.page:48
+msgid ""
+"This happens when a color scheme inherits some colors from the theme, and it "
+"is assumed that the theme is either light or dark. If it were possible to "
+"apply such a color scheme when the wrong theme is used, it would appear that "
+"the color scheme has bugs and some of the text would be unreadable."
+msgstr ""
+"Це трапляється, коли схема кольорів успадковує деякі кольори з теми, і"
+" передбачено, що тема є або світлою, або темною. Якби можна було застосувати"
+" таку схему кольорів, коли використовується неправильна тема, здавалося б,"
+" що схема кольорів містить помилки, і частина тексту було б непридатною до"
+" читання."
+
+#. (itstool) path: section/title
+#: C/gedit-change-color-scheme.page:57
+#| msgid "Use a Custom Color Scheme"
+msgid "Use a custom color scheme"
+msgstr "Використання нетипової схеми кольорів"
+
+#. (itstool) path: section/p
+#: C/gedit-change-color-scheme.page:58
 msgid ""
 "You can also use color schemes that have been created by others, or create "
 "and use your own color schemes. See the <link href=\"https://gedit-"
@@ -146,8 +191,8 @@ msgid ""
 msgstr ""
 "Також можна використовувати кольорові схеми, створені іншими користувачами, "
 "чи створювати свої власні. Див. <link href=\"https://gedit-technology.github."
-"io/developer-docs/extra/libgedit-gtksourceview/style-schemes.html\""
-">документацію з libgedit-gtksourceview</link>."
+"io/developer-docs/extra/libgedit-gtksourceview/style-schemes."
+"html\">документацію з libgedit-gtksourceview</link>."
 
 #. (itstool) path: info/desc
 #: C/gedit-close-file.page:7
@@ -1272,12 +1317,6 @@ msgstr "Додаткові додатки «gedit»"
 
 #. (itstool) path: page/p
 #: C/gedit-plugins-install.page:11
-#| msgid ""
-#| "Installing third-party plugins gives you extra functionality that isn't "
-#| "available in default <app>gedit</app> plugins, or even the extra plugins "
-#| "that are part of the <app>gedit-plugins</app> package. An online list of "
-#| "third-party plugins is <link href=\"https://wiki.gnome.org/Apps/"
-#| "Gedit\">kept here</link>."
 msgid ""
 "Installing third-party plugins gives you extra functionality that isn't "
 "available in default <app>gedit</app> plugins, or even the extra plugins "
