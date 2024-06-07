@@ -50,8 +50,8 @@
 
 void
 _gedit_cmd_file_new (GSimpleAction *action,
-                     GVariant      *parameter,
-                     gpointer       user_data)
+		     GVariant      *parameter,
+		     gpointer       user_data)
 {
 	GeditWindow *window = GEDIT_WINDOW (user_data);
 
@@ -392,8 +392,8 @@ file_chooser_open_done_cb (GeditFileChooserOpen *file_chooser,
 
 void
 _gedit_cmd_file_open (GSimpleAction *action,
-                      GVariant      *parameter,
-                      gpointer       user_data)
+		      GVariant      *parameter,
+		      gpointer       user_data)
 {
 	GeditWindow *window = NULL;
 	GeditFileChooserOpen *file_chooser;
@@ -500,8 +500,8 @@ replace_read_only_file (GtkWindow *parent,
 
 static gboolean
 change_compression (GtkWindow *parent,
-                    GFile     *file,
-                    gboolean   compressed)
+		    GFile     *file,
+		    gboolean   compressed)
 {
 	GtkWidget *dialog;
 	gint ret;
@@ -1015,8 +1015,8 @@ save_tab (GeditTab    *tab,
 
 void
 _gedit_cmd_file_save (GSimpleAction *action,
-                      GVariant      *parameter,
-                      gpointer       user_data)
+		      GVariant      *parameter,
+		      gpointer       user_data)
 {
 	GeditWindow *window = GEDIT_WINDOW (user_data);
 	GeditTab *tab;
@@ -1040,8 +1040,8 @@ _gedit_cmd_file_save_as_cb (GeditTab     *tab,
 
 void
 _gedit_cmd_file_save_as (GSimpleAction *action,
-                         GVariant      *parameter,
-                         gpointer       user_data)
+			 GVariant      *parameter,
+			 gpointer       user_data)
 {
 	GeditWindow *window = GEDIT_WINDOW (user_data);
 	GeditTab *tab;
@@ -1323,8 +1323,8 @@ gedit_commands_save_all_documents (GeditWindow *window)
 
 void
 _gedit_cmd_file_save_all (GSimpleAction *action,
-                          GVariant      *parameter,
-                          gpointer       user_data)
+			  GVariant      *parameter,
+			  gpointer       user_data)
 {
 	gedit_commands_save_all_documents (GEDIT_WINDOW (user_data));
 }
@@ -1339,7 +1339,7 @@ _gedit_cmd_file_save_all (GSimpleAction *action,
  */
 void
 gedit_commands_save_document (GeditWindow   *window,
-                              GeditDocument *document)
+			      GeditDocument *document)
 {
 	GeditTab *tab;
 
@@ -1519,8 +1519,8 @@ revert_dialog (GeditWindow   *window,
 
 void
 _gedit_cmd_file_revert (GSimpleAction *action,
-                        GVariant      *parameter,
-                        gpointer       user_data)
+			GVariant      *parameter,
+			gpointer       user_data)
 {
 	GeditWindow *window = GEDIT_WINDOW (user_data);
 	GeditTab *tab;
@@ -1605,8 +1605,8 @@ save_and_close (GeditTab    *tab,
 
 static void
 save_and_close_documents (GList         *docs,
-                          GeditWindow   *window,
-                          GeditNotebook *notebook)
+			  GeditWindow   *window,
+			  GeditNotebook *notebook)
 {
 	GList *tabs;
 	GList *l;
@@ -1773,8 +1773,8 @@ close_document (GeditWindow   *window,
 
 static void
 close_confirmation_dialog_response_handler (GeditCloseConfirmationDialog *dlg,
-                                            gint                          response_id,
-                                            GeditWindow                  *window)
+					    gint                          response_id,
+					    GeditWindow                  *window)
 {
 	GList *selected_documents;
 	gboolean is_closing_all;
@@ -1941,8 +1941,8 @@ _gedit_cmd_file_close_tab (GeditTab    *tab,
 
 void
 _gedit_cmd_file_close (GSimpleAction *action,
-                       GVariant      *parameter,
-                       gpointer       user_data)
+		       GVariant      *parameter,
+		       gpointer       user_data)
 {
 	GeditWindow *window = GEDIT_WINDOW (user_data);
 	GeditTab *active_tab;
@@ -1962,7 +1962,7 @@ _gedit_cmd_file_close (GSimpleAction *action,
 
 static void
 file_close_dialog (GeditWindow *window,
-                   GList       *unsaved_docs)
+		   GList       *unsaved_docs)
 {
 	GtkWidget *dlg;
 
@@ -2024,7 +2024,7 @@ notebook_get_unsaved_documents (GeditNotebook *notebook)
 /* Close a notebook */
 void
 _gedit_cmd_file_close_notebook (GeditWindow   *window,
-                                GeditNotebook *notebook)
+				GeditNotebook *notebook)
 {
 	GList *unsaved_docs;
 
@@ -2052,7 +2052,7 @@ _gedit_cmd_file_close_notebook (GeditWindow   *window,
 /* Close all tabs */
 static void
 file_close_all (GeditWindow *window,
-                gboolean     is_quitting)
+		gboolean     is_quitting)
 {
 	GList *unsaved_docs;
 
@@ -2082,8 +2082,8 @@ file_close_all (GeditWindow *window,
 
 void
 _gedit_cmd_file_close_all (GSimpleAction *action,
-                           GVariant      *parameter,
-                           gpointer       user_data)
+			   GVariant      *parameter,
+			   gpointer       user_data)
 {
 	GeditWindow *window = GEDIT_WINDOW (user_data);
 
