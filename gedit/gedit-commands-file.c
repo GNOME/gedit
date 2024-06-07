@@ -1,5 +1,4 @@
 /*
- * gedit-commands-file.c
  * This file is part of gedit
  *
  * Copyright (C) 1998, 1999 Alex Roberts, Evan Lawrence
@@ -21,8 +20,6 @@
  * along with this program; if not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "config.h"
-
 #include "gedit-commands.h"
 #include "gedit-commands-private.h"
 
@@ -30,27 +27,26 @@
 #include <tepl/tepl.h>
 
 #include "gedit-app.h"
+#include "gedit-close-confirmation-dialog.h"
 #include "gedit-debug.h"
 #include "gedit-document.h"
 #include "gedit-document-private.h"
-#include "gedit-tab.h"
-#include "gedit-tab-private.h"
-#include "gedit-window-private.h"
-#include "gedit-notebook.h"
-#include "gedit-statusbar.h"
-#include "gedit-utils.h"
 #include "gedit-file-chooser-dialog.h"
 #include "gedit-file-chooser-open.h"
-#include "gedit-close-confirmation-dialog.h"
+#include "gedit-notebook.h"
+#include "gedit-statusbar.h"
+#include "gedit-tab.h"
+#include "gedit-tab-private.h"
+#include "gedit-utils.h"
+#include "gedit-window-private.h"
 
-/* useful macro */
 #define GBOOLEAN_TO_POINTER(i) (GINT_TO_POINTER ((i) ? 2 : 1))
 #define GPOINTER_TO_BOOLEAN(i) ((gboolean) ((GPOINTER_TO_INT(i) == 2) ? TRUE : FALSE))
 
-#define GEDIT_IS_CLOSING_ALL "gedit-is-closing-all"
-#define GEDIT_NOTEBOOK_TO_CLOSE "gedit-notebook-to-close"
-#define GEDIT_IS_QUITTING "gedit-is-quitting"
-#define GEDIT_IS_QUITTING_ALL "gedit-is-quitting-all"
+#define GEDIT_IS_CLOSING_ALL     "gedit-is-closing-all"
+#define GEDIT_NOTEBOOK_TO_CLOSE  "gedit-notebook-to-close"
+#define GEDIT_IS_QUITTING        "gedit-is-quitting"
+#define GEDIT_IS_QUITTING_ALL    "gedit-is-quitting-all"
 
 void
 _gedit_cmd_file_new (GSimpleAction *action,
