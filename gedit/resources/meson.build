@@ -19,3 +19,9 @@ libgedit_gresources = gnome.compile_resources(
   'gedit-resources',
   gresource_xml_file,
 )
+
+# Windows PE (Portable Executable) header icon
+if host_machine.system() == 'windows'
+  windows = import('windows')
+  gedit_sources += windows.compile_resources('gedit.rc')
+endif

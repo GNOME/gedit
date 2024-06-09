@@ -115,6 +115,10 @@ libgedit_private_sources = [
   'gedit-window-titles.c',
 ]
 
+gedit_sources = [
+  'gedit.c',
+]
+
 libgedit_link_args = []
 
 libgedit_deps = [
@@ -240,7 +244,7 @@ custom_target(
 
 executable(
   'gedit',
-  'gedit.c',
+  sources: gedit_sources,
   dependencies: libgedit_dep,
   install: true,
   install_rpath: get_option('prefix') / get_option('libdir') / 'gedit',
