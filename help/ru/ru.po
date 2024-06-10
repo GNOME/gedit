@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gedit HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-25 23:50+0000\n"
-"PO-Revision-Date: 2023-10-26 15:06+1000\n"
+"POT-Creation-Date: 2024-06-04 21:06+0000\n"
+"PO-Revision-Date: 2024-06-06 20:00+1000\n"
 "Last-Translator: Ser82-png <asvmail.as@gmail.com>\n"
 "Language-Team: Русский <gnome-cyr@gnome.org>\n"
 "Language: ru\n"
@@ -28,7 +28,7 @@ msgid "translator-credits"
 msgstr ""
 "Stas Solovey <whats_up@tut.by>, 2011-2018\n"
 "Ivan Komaritsyn <vantu5z@mail.ru>, 2017\n"
-"Ser82-png <asvmail.as@gmail.com>, 2023"
+"Ser82-png <asvmail.as@gmail.com>, 2023-2024"
 
 #. (itstool) path: page/title
 #: C/gedit-brief-intro.page:9
@@ -129,11 +129,59 @@ msgstr "Новая цветовая схема будет сразу приме�
 
 #. (itstool) path: section/title
 #: C/gedit-change-color-scheme.page:32
-msgid "Use a Custom Color Scheme"
+msgid "For light and dark theme variants"
+msgstr "Для светлого и тёмного вариантов оформления"
+
+#. (itstool) path: section/p
+#: C/gedit-change-color-scheme.page:33
+msgid ""
+"There are actually two color scheme settings: one color scheme to choose "
+"when a light theme is applied to the whole application, and one color scheme "
+"to choose when a dark theme is applied. The <gui>Preferences</gui> dialog "
+"allows you to configure both."
+msgstr ""
+"Фактически существует два варианта цветовых схем: одна цветовая схема для "
+"использования светлой темы в приложении, и другая цветовая схема для "
+"применения тёмной темы. Диалоговое окно <gui>Параметры</gui> позволяет "
+"выбрать один из этих вариантов."
+
+#. (itstool) path: section/title
+#: C/gedit-change-color-scheme.page:42
+msgid "About unsupported color schemes"
+msgstr "О неподдерживаемых цветовых схемах"
+
+#. (itstool) path: section/p
+#: C/gedit-change-color-scheme.page:43
+msgid ""
+"Some color schemes may be unsupported for the theme variant used (light or "
+"dark). When that is the case, the color scheme cannot be selected and is "
+"marked explicitly as unsupported."
+msgstr ""
+"Поддержка некоторых цветовых схем для используемого варианта темы (светлая "
+"или тёмная) может быть не предусмотрена. В этом случае цветовая схема не "
+"может быть выбрана и помечается как неподдерживаемая."
+
+#. (itstool) path: section/p
+#: C/gedit-change-color-scheme.page:48
+msgid ""
+"This happens when a color scheme inherits some colors from the theme, and it "
+"is assumed that the theme is either light or dark. If it were possible to "
+"apply such a color scheme when the wrong theme is used, it would appear that "
+"the color scheme has bugs and some of the text would be unreadable."
+msgstr ""
+"Это происходит, когда цветовая схема наследует некоторые цвета из темы, и "
+"предполагается, что она может использоваться только либо для светлой, либо "
+"для тёмной темы. Если бы была возможность применить такую цветовую схему при "
+"использовании неправильной темы, то оказалось бы, что цветовая схема "
+"содержит ошибки и часть текста непригодна для чтения."
+
+#. (itstool) path: section/title
+#: C/gedit-change-color-scheme.page:57
+msgid "Use a custom color scheme"
 msgstr "Использование собственной цветовой схемы"
 
 #. (itstool) path: section/p
-#: C/gedit-change-color-scheme.page:34
+#: C/gedit-change-color-scheme.page:58
 msgid ""
 "You can also use color schemes that have been created by others, or create "
 "and use your own color schemes. See the <link href=\"https://gedit-"
