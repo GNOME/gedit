@@ -2012,18 +2012,19 @@ static void
 add_documents_panel (GeditWindow *window)
 {
 	GtkWidget *documents_panel;
-	TeplPanelContainer *panel_container;
+	TeplPanel *panel;
 	TeplPanelItem *item;
 
 	documents_panel = gedit_documents_panel_new (window);
 	gtk_widget_show_all (documents_panel);
 
-	panel_container = _gedit_side_panel_get_panel_container (window->priv->side_panel);
-	item = tepl_panel_add (TEPL_PANEL (panel_container),
-			       documents_panel,
-			       "GeditWindowDocumentsPanel",
-			       _("Documents"),
-			       NULL);
+	item = tepl_panel_item_new (documents_panel,
+				    "GeditWindowDocumentsPanel",
+				    _("Documents"),
+				    NULL);
+
+	panel = gedit_window_get_side_panel (window);
+	tepl_panel_add (panel, item);
 	g_object_unref (item);
 }
 

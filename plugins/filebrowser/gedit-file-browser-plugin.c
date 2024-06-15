@@ -495,14 +495,14 @@ gedit_file_browser_plugin_activate (GeditWindowActivatable *activatable)
 	                 FILEBROWSER_FILTER_PATTERN,
 	                 G_SETTINGS_BIND_GET | G_SETTINGS_BIND_SET);
 
-	side_panel = gedit_window_get_side_panel (priv->window);
-
 	g_clear_object (&priv->side_panel_item);
-	priv->side_panel_item = tepl_panel_add (side_panel,
-						GTK_WIDGET (priv->tree_widget),
-						"GeditFileBrowserPanel",
-						_("File Browser"),
-						NULL);
+	priv->side_panel_item = tepl_panel_item_new (GTK_WIDGET (priv->tree_widget),
+						     "GeditFileBrowserPanel",
+						     _("File Browser"),
+						     NULL);
+
+	side_panel = gedit_window_get_side_panel (priv->window);
+	tepl_panel_add (side_panel, priv->side_panel_item);
 
 	/* Install nautilus preferences */
 	install_nautilus_prefs (plugin);
