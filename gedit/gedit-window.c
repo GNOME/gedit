@@ -2134,6 +2134,20 @@ init_side_panel_visibility (GeditWindow *window)
 	tepl_panel_simple_set_active_item_name (panel_simple, item_name);
 	g_free (item_name);
 
+	if (tepl_panel_simple_get_active_item (panel_simple) == NULL)
+	{
+		GList *items;
+		TeplPanelItem *first_item;
+
+		items = tepl_panel_simple_get_items (panel_simple);
+		items = g_list_sort (items, (GCompareFunc) tepl_panel_item_compare);
+
+		first_item = items != NULL ? items->data : NULL;
+		tepl_panel_set_active (TEPL_PANEL (panel_simple), first_item);
+
+		g_list_free_full (items, g_object_unref);
+	}
+
 	side_panel_visible = g_settings_get_boolean (window->priv->ui_settings,
 						     GEDIT_SETTINGS_SIDE_PANEL_VISIBLE);
 
