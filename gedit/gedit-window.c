@@ -2123,15 +2123,15 @@ setup_bottom_panel (GeditWindow *window)
 static void
 init_side_panel_visibility (GeditWindow *window)
 {
-	TeplPanelContainer *side_panel;
+	TeplPanelSimple *panel_simple;
 	gchar *item_name;
 	gboolean side_panel_visible;
 
-	side_panel = _gedit_side_panel_get_panel_container (window->priv->side_panel);
+	panel_simple = _gedit_side_panel_get_panel_simple (window->priv->side_panel);
 
 	item_name = g_settings_get_string (window->priv->window_settings,
 					   GEDIT_SETTINGS_SIDE_PANEL_ACTIVE_PAGE);
-	tepl_panel_container_set_active_item_name (side_panel, item_name);
+	tepl_panel_simple_set_active_item_name (panel_simple, item_name);
 	g_free (item_name);
 
 	side_panel_visible = g_settings_get_boolean (window->priv->ui_settings,
@@ -2361,7 +2361,7 @@ init_window_titles (GeditWindow *window)
 static void
 create_side_headerbar (GeditWindow *window)
 {
-	TeplPanelContainer *panel_container;
+	TeplPanelSimple *panel_simple;
 	TeplPanelSwitcherMenu *switcher;
 	GtkSizeGroup *size_group;
 
@@ -2370,8 +2370,8 @@ create_side_headerbar (GeditWindow *window)
 	window->priv->side_headerbar = GTK_HEADER_BAR (gtk_header_bar_new ());
 	gtk_header_bar_set_show_close_button (window->priv->side_headerbar, TRUE);
 
-	panel_container = _gedit_side_panel_get_panel_container (window->priv->side_panel);
-	switcher = tepl_panel_switcher_menu_new (panel_container);
+	panel_simple = _gedit_side_panel_get_panel_simple (window->priv->side_panel);
+	switcher = tepl_panel_switcher_menu_new (panel_simple);
 	gtk_widget_show (GTK_WIDGET (switcher));
 
 	gtk_header_bar_set_custom_title (window->priv->side_headerbar, GTK_WIDGET (switcher));
@@ -2977,7 +2977,7 @@ TeplPanel *
 gedit_window_get_side_panel (GeditWindow *window)
 {
 	g_return_val_if_fail (GEDIT_IS_WINDOW (window), NULL);
-	return TEPL_PANEL (_gedit_side_panel_get_panel_container (window->priv->side_panel));
+	return TEPL_PANEL (_gedit_side_panel_get_panel_simple (window->priv->side_panel));
 }
 
 GeditBottomPanel *

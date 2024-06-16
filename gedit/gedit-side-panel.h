@@ -39,7 +39,7 @@ G_GNUC_INTERNAL
 GeditSidePanel *	_gedit_side_panel_new			(void);
 
 G_GNUC_INTERNAL
-TeplPanelContainer *	_gedit_side_panel_get_panel_container	(GeditSidePanel *panel);
+TeplPanelSimple *	_gedit_side_panel_get_panel_simple	(GeditSidePanel *panel);
 
 G_GNUC_INTERNAL
 gint			_gedit_side_panel_get_width		(GeditSidePanel *panel);

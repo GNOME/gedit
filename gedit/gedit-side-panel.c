@@ -8,7 +8,7 @@
 
 struct _GeditSidePanelPrivate
 {
-	TeplPanelContainer *panel;
+	TeplPanelStack *panel_stack;
 	gint width;
 };
 
@@ -19,7 +19,7 @@ _gedit_side_panel_dispose (GObject *object)
 {
 	GeditSidePanel *panel = GEDIT_SIDE_PANEL (object);
 
-	panel->priv->panel = NULL;
+	g_clear_object (&panel->priv->panel_stack);
 
 	G_OBJECT_CLASS (_gedit_side_panel_parent_class)->dispose (object);
 }
@@ -37,9 +37,11 @@ add_inline_switcher_if_needed (GeditSidePanel *panel,
 			       GtkGrid        *vgrid)
 {
 #if !GEDIT_HAS_HEADERBAR
+	TeplPanelSimple *panel_simple;
 	TeplPanelSwitcherMenu *switcher;
 
-	switcher = tepl_panel_switcher_menu_new (panel->priv->panel);
+	panel_simple = tepl_panel_stack_get_panel_simple (panel->priv->panel_stack);
+	switcher = tepl_panel_switcher_menu_new (panel_simple);
 
 	gtk_widget_set_halign (GTK_WIDGET (switcher), GTK_ALIGN_CENTER);
 	g_object_set (switcher,
@@ -68,20 +70,21 @@ static void
 _gedit_side_panel_init (GeditSidePanel *panel)
 {
 	GtkGrid *vgrid;
+	GtkStack *stack;
 
 	panel->priv = _gedit_side_panel_get_instance_private (panel);
 
 	init_width (panel);
 
-	panel->priv->panel = tepl_panel_container_new ();
+	panel->priv->panel_stack = tepl_panel_stack_new (NULL);
 
 	vgrid = GTK_GRID (gtk_grid_new ());
 	gtk_orientable_set_orientation (GTK_ORIENTABLE (vgrid), GTK_ORIENTATION_VERTICAL);
 
 	add_inline_switcher_if_needed (panel, vgrid);
 
-	gtk_container_add (GTK_CONTAINER (vgrid),
-			   GTK_WIDGET (panel->priv->panel));
+	stack = tepl_panel_stack_get_stack (panel->priv->panel_stack);
+	gtk_container_add (GTK_CONTAINER (vgrid), GTK_WIDGET (stack));
 
 	gtk_widget_show_all (GTK_WIDGET (vgrid));
 	gtk_container_add (GTK_CONTAINER (panel), GTK_WIDGET (vgrid));
@@ -93,11 +96,11 @@ _gedit_side_panel_new (void)
 	return g_object_new (GEDIT_TYPE_SIDE_PANEL, NULL);
 }
 
-TeplPanelContainer *
-_gedit_side_panel_get_panel_container (GeditSidePanel *panel)
+TeplPanelSimple *
+_gedit_side_panel_get_panel_simple (GeditSidePanel *panel)
 {
 	g_return_val_if_fail (GEDIT_IS_SIDE_PANEL (panel), NULL);
-	return panel->priv->panel;
+	return tepl_panel_stack_get_panel_simple (panel->priv->panel_stack);
 }
 
 gint
@@ -120,6 +123,7 @@ _gedit_side_panel_save_state (GeditSidePanel *panel)
 {
 	GeditSettings *settings;
 	GSettings *window_state_settings;
+	TeplPanelSimple *panel_simple;
 	const gchar *item_name;
 
 	g_return_if_fail (GEDIT_IS_SIDE_PANEL (panel));
@@ -127,7 +131,8 @@ _gedit_side_panel_save_state (GeditSidePanel *panel)
 	settings = _gedit_settings_get_singleton ();
 	window_state_settings = _gedit_settings_peek_window_state_settings (settings);
 
-	item_name = tepl_panel_container_get_active_item_name (panel->priv->panel);
+	panel_simple = tepl_panel_stack_get_panel_simple (panel->priv->panel_stack);
+	item_name = tepl_panel_simple_get_active_item_name (panel_simple);
 	if (item_name != NULL)
 	{
 		g_settings_set_string (window_state_settings,
@@ -147,6 +152,7 @@ void
 _gedit_side_panel_copy_settings (GeditSidePanel *origin,
 				 GeditSidePanel *target)
 {
+	TeplPanelSimple *origin_panel_simple;
 	const gchar *active_item_name;
 
 	g_return_if_fail (GEDIT_IS_SIDE_PANEL (origin));
@@ -154,11 +160,14 @@ _gedit_side_panel_copy_settings (GeditSidePanel *origin,
 
 	target->priv->width = origin->priv->width;
 
-	active_item_name = tepl_panel_container_get_active_item_name (origin->priv->panel);
+	origin_panel_simple = tepl_panel_stack_get_panel_simple (origin->priv->panel_stack);
+	active_item_name = tepl_panel_simple_get_active_item_name (origin_panel_simple);
 	if (active_item_name != NULL)
 	{
-		tepl_panel_container_set_active_item_name (target->priv->panel,
-							   active_item_name);
+		TeplPanelSimple *target_panel_simple;
+
+		target_panel_simple = tepl_panel_stack_get_panel_simple (target->priv->panel_stack);
+		tepl_panel_simple_set_active_item_name (target_panel_simple, active_item_name);
 	}
 
 	gtk_widget_set_visible (GTK_WIDGET (target),
