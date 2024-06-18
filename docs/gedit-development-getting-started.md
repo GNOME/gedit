@@ -21,8 +21,8 @@ Libraries used
 
 As every GNOME application, gedit uses the GLib, GObject and GTK libraries. To
 modify the gedit source code, you should be familiar with those libraries. See
-the [GTK website](https://www.gtk.org/) and the little book
-[The GLib/GTK Development Platform – A Getting Started Guide](https://gitlab.gnome.org/swilmet/glib-gtk-book).
+the [GTK website](https://www.gtk.org/) and
+[The GLib/GTK Development Platform – A Getting Started Guide](https://github.com/gdev-technology/glib-gtk-learning).
 
 The main "text area" in gedit is a GtkTextView widget. This widget is part of
 GTK. You can learn it with the
@@ -76,5 +76,5 @@ A potentially easy task is to fix compilation warnings, for example when a
 deprecated function is used. If you encounter a runtime warning or critical
 message, it is also a good idea to fix it.
 
-Note that gedit, although simple to use, is an old piece of software. Some parts
-of the code is legacy code and would benefit from some refactoring.
+Note that gedit is an old piece of software. Some parts are legacy code and
+would benefit from some refactoring.

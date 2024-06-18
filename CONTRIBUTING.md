@@ -17,7 +17,7 @@ To get started with gedit development, see the file
 Contributions other than software development
 ---------------------------------------------
 
-See: https://www.gnome.org/get-involved/
+See: https://welcome.gnome.org/
 
 There are many possible tasks:
 - Doing bug triaging on the bug tracker.
@@ -27,3 +27,8 @@ There are many possible tasks:
 - Helping other users.
 - Sharing news and tips about gedit in your native language / local community.
 - Etc.
+
+Useful links
+------------
+
+- https://handbook.gnome.org/

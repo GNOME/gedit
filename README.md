@@ -20,7 +20,8 @@ later, see the file [COPYING](COPYING) for more information.
 Dependencies
 ------------
 
-gedit depends on GTK 3.
+gedit depends on GTK 3 and
+[Gedit Technology](https://gedit-technology.github.io/).
 
 For a complete list of dependencies, see the [meson.build](meson.build) file.
 
