@@ -1,18 +1,18 @@
 # Daniel Nylander <po@danielnylander.se>, 2007, 2008, 2009.
-# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2016, 2017, 2019, 2020, 2022, 2023.
+# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2016, 2017, 2019, 2020, 2022, 2023, 2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: gedit\n"
-"POT-Creation-Date: 2023-10-25 23:50+0000\n"
-"PO-Revision-Date: 2023-10-26 10:38+0200\n"
+"POT-Creation-Date: 2024-06-04 21:06+0000\n"
+"PO-Revision-Date: 2024-06-20 18:25+0200\n"
 "Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.4\n"
+"X-Generator: Poedit 3.4.2\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
@@ -120,11 +120,58 @@ msgstr "Det nya färgschemat kommer tillämpas omedelbart."
 
 #. (itstool) path: section/title
 #: C/gedit-change-color-scheme.page:32
-msgid "Use a Custom Color Scheme"
+msgid "For light and dark theme variants"
+msgstr "För ljusa och mörka temavarianter"
+
+#. (itstool) path: section/p
+#: C/gedit-change-color-scheme.page:33
+msgid ""
+"There are actually two color scheme settings: one color scheme to choose "
+"when a light theme is applied to the whole application, and one color scheme "
+"to choose when a dark theme is applied. The <gui>Preferences</gui> dialog "
+"allows you to configure both."
+msgstr ""
+"Det finns faktiskt två färgschemainställningar: ett färgschema att välja när "
+"ett ljust tema tillämpas på hela programmet, och ett färgschema att välja "
+"när ett mörkt tema tillämpas. Dialogrutan <gui>Inställningar</gui> låter dig "
+"konfigurera båda."
+
+#. (itstool) path: section/title
+#: C/gedit-change-color-scheme.page:42
+msgid "About unsupported color schemes"
+msgstr "Om färgscheman som inte stöds"
+
+#. (itstool) path: section/p
+#: C/gedit-change-color-scheme.page:43
+msgid ""
+"Some color schemes may be unsupported for the theme variant used (light or "
+"dark). When that is the case, the color scheme cannot be selected and is "
+"marked explicitly as unsupported."
+msgstr ""
+"Några färgscheman kanske inte stöds för temavarianten som används (ljus "
+"eller mörk). När så är fallet kan färgschemat inte väljas och är "
+"uttryckligen markerat som att det inte stöds."
+
+#. (itstool) path: section/p
+#: C/gedit-change-color-scheme.page:48
+msgid ""
+"This happens when a color scheme inherits some colors from the theme, and it "
+"is assumed that the theme is either light or dark. If it were possible to "
+"apply such a color scheme when the wrong theme is used, it would appear that "
+"the color scheme has bugs and some of the text would be unreadable."
+msgstr ""
+"Detta händer då ett färgschema ärver några färger från temat, och det antas "
+"att temat antingen är ljust eller mörkt. Om det vore möjligt att tillämpa "
+"ett sådant färgschema då fel tema används, så skulle det verka som att "
+"färgschemat innehåller fel och delar av texten skulle vara oläslig."
+
+#. (itstool) path: section/title
+#: C/gedit-change-color-scheme.page:57
+msgid "Use a custom color scheme"
 msgstr "Använda ett anpassat färgschema"
 
 #. (itstool) path: section/p
-#: C/gedit-change-color-scheme.page:34
+#: C/gedit-change-color-scheme.page:58
 msgid ""
 "You can also use color schemes that have been created by others, or create "
 "and use your own color schemes. See the <link href=\"https://gedit-"
@@ -3202,18 +3249,6 @@ msgstr "Insticksmoduler för gedit"
 #~ msgid "Collate"
 #~ msgstr "Sortera"
 
-# TODO: e.g -> i.e
-#~ msgid ""
-#~ "If you are printing more than one copy of the document, the print outs "
-#~ "will be grouped by page number by default. (e.g. The copies of page one "
-#~ "come out, then the copies of page two, etc.) Collating will make each "
-#~ "copy come out with its pages grouped together."
-#~ msgstr ""
-#~ "Om du skriver ut mer än ett exemplar av dokumentet kommer utskrifterna "
-#~ "att som standard grupperas efter sidnummer. (D.v.s. kommer först exemplar "
-#~ "av sida ett att komma ut, sedan exemplar av sida två, o.s.v.) Sortering "
-#~ "kommer att få varje exemplar att komma ut med dess sidor grupperade ihop."
-
 #~ msgid "To Collate:"
 #~ msgstr "För att sortera:"
 
@@ -3381,24 +3416,6 @@ msgstr "Insticksmoduler för gedit"
 #~ "separerade av kommatecken. Använd ett bindestreck för att ange ett "
 #~ "sidintervall."
 
-#~ msgid "Jim Campbell"
-#~ msgstr "Jim Campbell"
-
-#~ msgid "Jana Svarova"
-#~ msgstr "Jana Svarova"
-
-#~ msgid "2015"
-#~ msgstr "2015"
-
-#~ msgid "Ekaterina Gerasimova"
-#~ msgstr "Ekaterina Gerasimova"
-
-#~ msgid "2011 2012 2013"
-#~ msgstr "2011 2012 2013"
-
-#~ msgid "Shobha Tyagi"
-#~ msgstr "Shobha Tyagi"
-
 #~ msgid ""
 #~ "Any one of these actions will create a new file in the <app>gedit</app> "
 #~ "window. If you have other files open in <app>gedit</app>, the new file "
@@ -3419,15 +3436,6 @@ msgstr "Insticksmoduler för gedit"
 #~ "medan du markerar flera filer så kommer att klicka på <gui>Öppna</gui> "
 #~ "att öppna var och en av filerna som du har markerat."
 
-#~ msgid "Daniel Neel"
-#~ msgstr "Daniel Neel"
-
-#~ msgid "Sindhu S"
-#~ msgstr "Sindhu S"
-
-#~ msgid "Phil Bull"
-#~ msgstr "Phil Bull"
-
 #~ msgid "Get started with gedit"
 #~ msgstr "Kom igång med gedit"
 
@@ -3439,9 +3447,6 @@ msgstr "Insticksmoduler för gedit"
 #~ "För att lära dig om ytterligare funktioner i <app>gedit</app> och för att "
 #~ "få hjälp med att utföra andra uppgifter, utforska <link xref=\"index\">de "
 #~ "andra avsnitten</link> i hjälpen för <app>gedit</app>."
-
-#~ msgid "Young Li"
-#~ msgstr "Young Li"
 
 #~ msgid "Replace text"
 #~ msgstr "Ersätt text"
@@ -3915,18 +3920,6 @@ msgstr "Insticksmoduler för gedit"
 #~ msgid "Use keyboard shortcuts to help you work more quickly."
 #~ msgstr "Använd tangentbordsgenvägar för att få hjälp att arbeta snabbare."
 
-#~ msgid "Paolo Borelli"
-#~ msgstr "Paolo Borelli"
-
-#~ msgid "Jesse van den Kieboom"
-#~ msgstr "Jesse van den Kieboom"
-
-#~ msgid "Steve Frécinaux"
-#~ msgstr "Steve Frécinaux"
-
-#~ msgid "Ignacio Casal Quinteiro"
-#~ msgstr "Ignacio Casal Quinteiro"
-
 #~ msgid "Shortcut keys"
 #~ msgstr "Kortkommandon"
 
@@ -3948,61 +3941,23 @@ msgstr "Insticksmoduler för gedit"
 #~ msgid "Switch to the next tab to the left"
 #~ msgstr "Växla till nästa flik åt vänster"
 
-#~ msgid "<keyseq><key>Ctrl</key><key>Alt</key> <key>PageUp</key></keyseq>"
-#~ msgstr "<keyseq><key>Ctrl</key><key>Alt</key> <key>PageUp</key></keyseq>"
-
 #~ msgid "Switch to the next tab to the right"
 #~ msgstr "Växla till nästa flik åt höger"
-
-#~ msgid "<keyseq><key>Ctrl</key><key>Alt</key> <key>PageDown</key></keyseq>"
-#~ msgstr "<keyseq><key>Ctrl</key><key>Alt</key> <key>PageDown</key></keyseq>"
-
-#~ msgid "<keyseq><key>Ctrl</key><key>W</key></keyseq>"
-#~ msgstr "<keyseq><key>Ctrl</key><key>W</key></keyseq>"
-
-#~ msgid "<keyseq><key>Ctrl</key><key>Shift</key> <key>L</key></keyseq>"
-#~ msgstr "<keyseq><key>Ctrl</key><key>Skift</key> <key>L</key></keyseq>"
 
 #~ msgid "Close all tabs"
 #~ msgstr "Stäng alla flikar"
 
-#~ msgid "<keyseq><key>Ctrl</key><key>Shift</key><key>W</key></keyseq>"
-#~ msgstr "<keyseq><key>Ctrl</key><key>Skift</key><key>W</key></keyseq>"
-
 #~ msgid "Reopen the most recently closed tab"
 #~ msgstr "Återöppna den senast stängda fliken"
-
-#~ msgid "<keyseq><key>Ctrl</key><key>Shift</key><key>T</key></keyseq>"
-#~ msgstr "<keyseq><key>Ctrl</key><key>Skift</key><key>T</key></keyseq>"
 
 #~ msgid "Jump to <var>n</var>th tab"
 #~ msgstr "Hoppa till flik nummer <var>n</var>"
 
-#~ msgid "<keyseq><key>Alt</key><key> <var>n</var></key></keyseq>"
-#~ msgstr "<keyseq><key>Alt</key><key> <var>n</var></key></keyseq>"
-
-#~ msgid "<keyseq><key>Ctrl</key><key>Alt</key><key>N</key></keyseq>"
-#~ msgstr "<keyseq><key>Ctrl</key><key>Alt</key><key>N</key></keyseq>"
-
 #~ msgid "Previous tab group"
 #~ msgstr "Föregående flikgrupp"
 
-#~ msgid ""
-#~ "<keyseq><key>Shift</key><key>Ctrl</key><key>Alt</key><key>Page up</key></"
-#~ "keyseq>"
-#~ msgstr ""
-#~ "<keyseq><key>Skift</key><key>Ctrl</key><key>Alt</key><key>Page up</key></"
-#~ "keyseq>"
-
 #~ msgid "Next tab group"
 #~ msgstr "Nästa flikgrupp"
-
-#~ msgid ""
-#~ "<keyseq><key>Shift</key><key>Ctrl</key><key>Alt</key><key>Page down</"
-#~ "key></keyseq>"
-#~ msgstr ""
-#~ "<keyseq><key>Skift</key><key>Ctrl</key><key>Alt</key><key>Page down</"
-#~ "key></keyseq>"
 
 #~ msgid "Shortcut keys for working with files"
 #~ msgstr "Kortkommandon för arbete med filer"
@@ -4016,26 +3971,14 @@ msgstr "Insticksmoduler för gedit"
 #~ msgid "Create a new document in a new tab"
 #~ msgstr "Skapa ett nytt dokument i en ny flik"
 
-#~ msgid "<keyseq><key>Ctrl</key><key>T</key></keyseq>"
-#~ msgstr "<keyseq><key>Ctrl</key><key>T</key></keyseq>"
-
 #~ msgid "Open a document"
 #~ msgstr "Öppna ett dokument"
-
-#~ msgid "<keyseq><key>Ctrl</key><key>O</key></keyseq>"
-#~ msgstr "<keyseq><key>Ctrl</key><key>O</key></keyseq>"
 
 #~ msgid "Save the current document"
 #~ msgstr "Spara aktuellt dokument"
 
-#~ msgid "<keyseq><key>Ctrl</key><key>S</key></keyseq>"
-#~ msgstr "<keyseq><key>Ctrl</key><key>S</key></keyseq>"
-
 #~ msgid "Save the current document with a new filename"
 #~ msgstr "Spara aktuellt dokument med ett nytt filnamn"
-
-#~ msgid "<keyseq><key>Ctrl</key><key>Shift</key> <key>S</key></keyseq>"
-#~ msgstr "<keyseq><key>Ctrl</key><key>Skift</key> <key>S</key></keyseq>"
 
 #~ msgid "Print the current document"
 #~ msgstr "Skriv ut aktuellt dokument"
@@ -4045,9 +3988,6 @@ msgstr "Insticksmoduler för gedit"
 
 #~ msgid "Quit gedit"
 #~ msgstr "Avsluta gedit"
-
-#~ msgid "<keyseq><key>Ctrl</key><key>Q</key></keyseq>"
-#~ msgstr "<keyseq><key>Ctrl</key><key>Q</key></keyseq>"
 
 #~ msgid "Shortcut keys for editing files"
 #~ msgstr "Kortkommandon för redigering av filer"
@@ -4067,53 +4007,29 @@ msgstr "Insticksmoduler för gedit"
 #~ msgid "Undo the last action"
 #~ msgstr "Ångra föregående åtgärd"
 
-#~ msgid "<keyseq><key>Ctrl</key><key>Z</key></keyseq>"
-#~ msgstr "<keyseq><key>Ctrl</key><key>Z</key></keyseq>"
-
 #~ msgid "Redo the last undone action"
 #~ msgstr "Gör om senaste ångrade åtgärden"
 
 #~ msgid "Cut the selected text or region and place it on the clipboard"
 #~ msgstr "Klipp ut markerad text eller område och placera den i urklipp"
 
-#~ msgid "<keyseq><key>Ctrl</key><key>X</key></keyseq>"
-#~ msgstr "<keyseq><key>Ctrl</key><key>X</key></keyseq>"
-
 #~ msgid "Copy the selected text or region onto the clipboard"
 #~ msgstr "Kopiera markerad text eller område till urklipp"
-
-#~ msgid "<keyseq><key>Ctrl</key><key>C</key></keyseq>"
-#~ msgstr "<keyseq><key>Ctrl</key><key>C</key></keyseq>"
 
 #~ msgid "Paste the contents of the clipboard"
 #~ msgstr "Klistra in innehållet i urklipp"
 
-#~ msgid "<keyseq><key>Ctrl</key><key>V</key></keyseq>"
-#~ msgstr "<keyseq><key>Ctrl</key><key>V</key></keyseq>"
-
 #~ msgid "Select all text in the file"
 #~ msgstr "Markera all text i filen"
-
-#~ msgid "<keyseq><key>Ctrl</key><key>A</key></keyseq>"
-#~ msgstr "<keyseq><key>Ctrl</key><key>A</key></keyseq>"
 
 #~ msgid "Unselect all text"
 #~ msgstr "Avmarkera all text"
 
-#~ msgid "<keyseq><key>Ctrl</key><key>Backslash</key></keyseq>"
-#~ msgstr "<keyseq><key>Ctrl</key><key>Bakstreck</key></keyseq>"
-
 #~ msgid "Delete the current line"
 #~ msgstr "Ta bort aktuell rad"
 
-#~ msgid "<keyseq><key>Ctrl</key><key>D</key></keyseq>"
-#~ msgstr "<keyseq><key>Ctrl</key><key>D</key></keyseq>"
-
 #~ msgid "Move the selected line up one line"
 #~ msgstr "Flytta markerad rad en rad uppåt"
-
-#~ msgid "<keyseq><key>Alt</key><key>Up Arrow</key></keyseq>"
-#~ msgstr "<keyseq><key>Alt</key><key>Uppåtpil</key></keyseq>"
 
 #~ msgid "Move the selected line down one line"
 #~ msgstr "Flytta markerad rad en rad nedåt"
@@ -4130,26 +4046,14 @@ msgstr "Insticksmoduler för gedit"
 #~ msgid "Remove a tab stop"
 #~ msgstr "Ta bort ett tabulatorstopp"
 
-#~ msgid "<keyseq><key>Shift</key><key>Tab</key></keyseq>"
-#~ msgstr "<keyseq><key>Skift</key><key>Tabb</key></keyseq>"
-
 #~ msgid "Convert the selected text to upper case"
 #~ msgstr "Konvertera markerad text till versaler"
-
-#~ msgid "<keyseq><key>Ctrl</key><key>U</key></keyseq>"
-#~ msgstr "<keyseq><key>Ctrl</key><key>U</key></keyseq>"
 
 #~ msgid "Convert the selected text to lower case"
 #~ msgstr "Konvertera markerad text till gemener"
 
-#~ msgid "<keyseq><key>Ctrl</key><key>L</key></keyseq>"
-#~ msgstr "<keyseq><key>Ctrl</key><key>L</key></keyseq>"
-
 #~ msgid "Toggle case of the selected text"
 #~ msgstr "Växla skiftläge för markerad text"
-
-#~ msgid "<keyseq><key>Ctrl</key><key>~</key></keyseq>"
-#~ msgstr "<keyseq><key>Ctrl</key><key>~</key></keyseq>"
 
 #~ msgid "Toggle cursor visibility"
 #~ msgstr "Växla markörsynlighet"
@@ -4178,14 +4082,8 @@ msgstr "Insticksmoduler för gedit"
 #~ msgid "Move to matching bracket"
 #~ msgstr "Gå till matchande parentes"
 
-#~ msgid "<keyseq><key>Ctrl</key><key>%</key></keyseq>"
-#~ msgstr "<keyseq><key>Ctrl</key><key>%</key></keyseq>"
-
 #~ msgid "Goto line"
 #~ msgstr "Gå till rad"
-
-#~ msgid "<keyseq><key>Ctrl</key><key>I</key></keyseq>"
-#~ msgstr "<keyseq><key>Ctrl</key><key>I</key></keyseq>"
 
 #~ msgid "Move to the beginning of the current line"
 #~ msgstr "Gå till början på aktuell rad"
@@ -4202,38 +4100,20 @@ msgstr "Insticksmoduler för gedit"
 #~ msgid "Move to the beginning of the document"
 #~ msgstr "Gå till början på dokumentet"
 
-#~ msgid "<keyseq><key>Ctrl</key><key>Home</key></keyseq>"
-#~ msgstr "<keyseq><key>Ctrl</key><key>Home</key></keyseq>"
-
 #~ msgid "Move to the end of the document"
 #~ msgstr "Gå till slutet på dokumentet"
-
-#~ msgid "<keyseq><key>Ctrl</key><key>End</key></keyseq>"
-#~ msgstr "<keyseq><key>Ctrl</key><key>End</key></keyseq>"
 
 #~ msgid "Move viewport up within the file"
 #~ msgstr "Flytta visningsområde uppåt i filen"
 
-#~ msgid "<keyseq><key>Shift</key><key>Alt</key><key>Up</key></keyseq>"
-#~ msgstr "<keyseq><key>Skift</key><key>Alt</key><key>Upp</key></keyseq>"
-
 #~ msgid "Move viewport down within the file"
 #~ msgstr "Flytta visningsområde nedåt i filen"
-
-#~ msgid "<keyseq><key>Shift</key><key>Alt</key><key>Down</key></keyseq>"
-#~ msgstr "<keyseq><key>Skift</key><key>Alt</key><key>Ned</key></keyseq>"
 
 #~ msgid "Move viewport to beginning of file"
 #~ msgstr "Flytta visningsområde till början på filen"
 
-#~ msgid "<keyseq><key>Shift</key><key>Alt</key><key>Home</key></keyseq>"
-#~ msgstr "<keyseq><key>Skift</key><key>Alt</key><key>Home</key></keyseq>"
-
 #~ msgid "Move viewport to end of file"
 #~ msgstr "Flytta visningsområde till slutet på filen"
-
-#~ msgid "<keyseq><key>Shift</key><key>Alt</key><key>End</key></keyseq>"
-#~ msgstr "<keyseq><key>Skift</key><key>Alt</key><key>End</key></keyseq>"
 
 #~ msgid "Shortcut keys for searching"
 #~ msgstr "Kortkommandon för sökning"
@@ -4241,26 +4121,14 @@ msgstr "Insticksmoduler för gedit"
 #~ msgid "Find a string"
 #~ msgstr "Sök efter en sträng"
 
-#~ msgid "<keyseq><key>Ctrl</key><key>F</key></keyseq>"
-#~ msgstr "<keyseq><key>Ctrl</key><key>F</key></keyseq>"
-
 #~ msgid "Find the next instance of the string"
 #~ msgstr "Sök nästa förekomst av strängen"
-
-#~ msgid "<keyseq><key>Ctrl</key><key>G</key></keyseq>"
-#~ msgstr "<keyseq><key>Ctrl</key><key>G</key></keyseq>"
 
 #~ msgid "Find the previous instance of the string"
 #~ msgstr "Sök föregående förekomst av strängen"
 
-#~ msgid "<keyseq><key>Ctrl</key><key>Shift</key><key>G</key></keyseq>"
-#~ msgstr "<keyseq><key>Ctrl</key><key>Skift</key><key>G</key></keyseq>"
-
 #~ msgid "<keyseq><key>Ctrl</key><key>H</key></keyseq>"
 #~ msgstr "<keyseq><key>Ctrl</key><key>H</key></keyseq>"
-
-#~ msgid "<keyseq><key>Ctrl</key><key>Shift</key> <key>K</key></keyseq>"
-#~ msgstr "<keyseq><key>Ctrl</key><key>Skift</key> <key>K</key></keyseq>"
 
 #~ msgid "Shortcut keys for tools"
 #~ msgstr "Kortkommandon för verktyg"
@@ -4268,35 +4136,20 @@ msgstr "Insticksmoduler för gedit"
 #~ msgid "Check spelling"
 #~ msgstr "Kontrollera stavning"
 
-#~ msgid "<keyseq><key>Shift</key><key>F7</key></keyseq>"
-#~ msgstr "<keyseq><key>Skift</key><key>F7</key></keyseq>"
-
 #~ msgid "Remove trailing spaces (with plugin)"
 #~ msgstr "Ta bort eftersläpande blanksteg (med insticksmodul)"
-
-#~ msgid "<keyseq><key>Alt</key><key>F12</key></keyseq>"
-#~ msgstr "<keyseq><key>Alt</key><key>F12</key></keyseq>"
 
 #~ msgid "Run \"make\" in the current directory (with plugin)"
 #~ msgstr "Kör ”make” i aktuell katalog (med insticksmodul)"
 
-#~ msgid "<key>F8</key>"
-#~ msgstr "<key>F8</key>"
-
 #~ msgid "Directory listing (with plugin)"
 #~ msgstr "Kataloglistning (med insticksmodul)"
-
-#~ msgid "<keyseq><key>Ctrl</key><key>Shift</key> <key>D</key></keyseq>"
-#~ msgstr "<keyseq><key>Ctrl</key><key>Skift</key> <key>D</key></keyseq>"
 
 #~ msgid "Shortcut keys for user help"
 #~ msgstr "Kortkommandon för användarhjälp"
 
 #~ msgid "Open the gedit user guide"
 #~ msgstr "Öppna användarguiden för gedit"
-
-#~ msgid "<key>F1</key>"
-#~ msgstr "<key>F1</key>"
 
 #~ msgid ""
 #~ "Go to <guiseq><gui>Documents</gui><gui>New Tab Group</gui></guiseq> in "
@@ -4446,6 +4299,3 @@ msgstr "Insticksmoduler för gedit"
 
 #~ msgid "Show / hide the bottom pane"
 #~ msgstr "Visa / dölj underpanelen"
-
-#~ msgid "<keyseq><key>Ctrl</key><key>F9</key></keyseq>"
-#~ msgstr "<keyseq><key>Ctrl</key><key>F9</key></keyseq>"
