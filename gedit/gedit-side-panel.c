@@ -76,7 +76,7 @@ _gedit_side_panel_init (GeditSidePanel *panel)
 
 	init_width (panel);
 
-	panel->priv->panel_stack = tepl_panel_stack_new (NULL);
+	panel->priv->panel_stack = tepl_panel_stack_new (NULL, NULL);
 
 	vgrid = GTK_GRID (gtk_grid_new ());
 	gtk_orientable_set_orientation (GTK_ORIENTABLE (vgrid), GTK_ORIENTATION_VERTICAL);
