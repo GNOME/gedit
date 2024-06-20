@@ -499,7 +499,8 @@ gedit_file_browser_plugin_activate (GeditWindowActivatable *activatable)
 	priv->side_panel_item = tepl_panel_item_new (GTK_WIDGET (priv->tree_widget),
 						     "GeditFileBrowserPanel",
 						     _("File Browser"),
-						     NULL);
+						     NULL,
+						     0);
 
 	side_panel = gedit_window_get_side_panel (priv->window);
 	tepl_panel_add (side_panel, priv->side_panel_item);

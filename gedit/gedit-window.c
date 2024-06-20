@@ -2021,7 +2021,8 @@ add_documents_panel (GeditWindow *window)
 	item = tepl_panel_item_new (documents_panel,
 				    "GeditWindowDocumentsPanel",
 				    _("Documents"),
-				    NULL);
+				    NULL,
+				    0);
 
 	panel = gedit_window_get_side_panel (window);
 	tepl_panel_add (panel, item);
