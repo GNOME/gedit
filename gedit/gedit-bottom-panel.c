@@ -3,14 +3,14 @@
  */
 
 #include "gedit-bottom-panel.h"
-#include <tepl/tepl.h>
 #include <glib/gi18n.h>
-#include "gedit-notebook-stack-switcher.h"
 #include "gedit-settings.h"
 
 struct _GeditBottomPanelPrivate
 {
-	GtkStack *stack;
+	TeplPanelSimple *panel_simple;
+	TeplPanelNotebook *panel_notebook;
+
 	gint height;
 };
 
@@ -21,7 +21,8 @@ _gedit_bottom_panel_dispose (GObject *object)
 {
 	GeditBottomPanel *panel = GEDIT_BOTTOM_PANEL (object);
 
-	g_clear_object (&panel->priv->stack);
+	g_clear_object (&panel->priv->panel_simple);
+	g_clear_object (&panel->priv->panel_notebook);
 
 	G_OBJECT_CLASS (_gedit_bottom_panel_parent_class)->dispose (object);
 }
@@ -47,42 +48,55 @@ init_height (GeditBottomPanel *panel)
 						  GEDIT_SETTINGS_BOTTOM_PANEL_SIZE);
 }
 
-static void
-_gedit_bottom_panel_init (GeditBottomPanel *panel)
+static GtkNotebook *
+create_notebook (void)
+{
+	GtkNotebook *notebook;
+
+	notebook = GTK_NOTEBOOK (gtk_notebook_new ());
+	gtk_notebook_set_tab_pos (notebook, GTK_POS_BOTTOM);
+	gtk_notebook_set_scrollable (notebook, TRUE);
+	gtk_notebook_set_show_border (notebook, FALSE);
+	gtk_container_set_border_width (GTK_CONTAINER (notebook), 0);
+	gtk_widget_set_hexpand (GTK_WIDGET (notebook), TRUE);
+	gtk_widget_set_vexpand (GTK_WIDGET (notebook), TRUE);
+	gtk_widget_show (GTK_WIDGET (notebook));
+
+	return notebook;
+}
+
+static GtkWidget *
+create_close_button (void)
 {
 	GtkWidget *close_button;
-	GtkWidget *switcher;
-
-	panel->priv = _gedit_bottom_panel_get_instance_private (panel);
-
-	init_height (panel);
-
-	panel->priv->stack = GTK_STACK (gtk_stack_new ());
-	g_object_ref_sink (panel->priv->stack);
-	gtk_widget_set_hexpand (GTK_WIDGET (panel->priv->stack), TRUE);
-	gtk_widget_set_vexpand (GTK_WIDGET (panel->priv->stack), TRUE);
-	gtk_widget_show (GTK_WIDGET (panel->priv->stack));
-	gtk_grid_attach (GTK_GRID (panel),
-			 GTK_WIDGET (panel->priv->stack),
-			 0, 0, 1, 1);
-
-	switcher = gedit_notebook_stack_switcher_new ();
-	gtk_widget_set_vexpand (switcher, TRUE);
-	gedit_notebook_stack_switcher_set_stack (GEDIT_NOTEBOOK_STACK_SWITCHER (switcher),
-						 panel->priv->stack);
-	gtk_widget_show (switcher);
-	gtk_grid_attach (GTK_GRID (panel),
-			 switcher,
-			 0, 1, 1, 1);
 
 	close_button = tepl_utils_create_close_button ();
 	gtk_widget_set_tooltip_text (close_button, _("Hide panel"));
 	gtk_actionable_set_action_name (GTK_ACTIONABLE (close_button), "win.bottom-panel");
 	gtk_widget_set_valign (close_button, GTK_ALIGN_START);
 	gtk_widget_show (close_button);
-	gtk_grid_attach (GTK_GRID (panel),
-			 close_button,
-			 1, 0, 1, 2);
+
+	return close_button;
+}
+
+static void
+_gedit_bottom_panel_init (GeditBottomPanel *panel)
+{
+	GtkNotebook *notebook;
+
+	panel->priv = _gedit_bottom_panel_get_instance_private (panel);
+
+	init_height (panel);
+
+	notebook = create_notebook ();
+	gtk_container_add (GTK_CONTAINER (panel),
+			   GTK_WIDGET (notebook));
+	gtk_container_add (GTK_CONTAINER (panel),
+			   create_close_button ());
+
+	panel->priv->panel_simple = tepl_panel_simple_new ();
+	panel->priv->panel_notebook = tepl_panel_notebook_new (panel->priv->panel_simple,
+							       notebook);
 }
 
 GeditBottomPanel *
@@ -91,11 +105,11 @@ _gedit_bottom_panel_new (void)
 	return g_object_new (GEDIT_TYPE_BOTTOM_PANEL, NULL);
 }
 
-GtkStack *
-_gedit_bottom_panel_get_stack (GeditBottomPanel *panel)
+TeplPanelSimple *
+_gedit_bottom_panel_get_panel_simple (GeditBottomPanel *panel)
 {
 	g_return_val_if_fail (GEDIT_IS_BOTTOM_PANEL (panel), NULL);
-	return panel->priv->stack;
+	return panel->priv->panel_simple;
 }
 
 gint
@@ -118,19 +132,19 @@ _gedit_bottom_panel_save_state (GeditBottomPanel *panel)
 {
 	GeditSettings *settings;
 	GSettings *window_state_settings;
-	const gchar *panel_page;
+	const gchar *active_item_name;
 
 	g_return_if_fail (GEDIT_IS_BOTTOM_PANEL (panel));
 
 	settings = _gedit_settings_get_singleton ();
 	window_state_settings = _gedit_settings_peek_window_state_settings (settings);
 
-	panel_page = gtk_stack_get_visible_child_name (panel->priv->stack);
-	if (panel_page != NULL)
+	active_item_name = tepl_panel_simple_get_active_item_name (panel->priv->panel_simple);
+	if (active_item_name != NULL)
 	{
 		g_settings_set_string (window_state_settings,
 				       GEDIT_SETTINGS_BOTTOM_PANEL_ACTIVE_PAGE,
-				       panel_page);
+				       active_item_name);
 	}
 
 	if (panel->priv->height > 0)
@@ -145,18 +159,18 @@ void
 _gedit_bottom_panel_copy_settings (GeditBottomPanel *origin,
 				   GeditBottomPanel *target)
 {
-	const gchar *visible_child_name;
+	const gchar *active_item_name;
 
 	g_return_if_fail (GEDIT_IS_BOTTOM_PANEL (origin));
 	g_return_if_fail (GEDIT_IS_BOTTOM_PANEL (target));
 
 	target->priv->height = origin->priv->height;
 
-	visible_child_name = gtk_stack_get_visible_child_name (origin->priv->stack);
-	if (visible_child_name != NULL)
+	active_item_name = tepl_panel_simple_get_active_item_name (origin->priv->panel_simple);
+	if (active_item_name != NULL)
 	{
-		gtk_stack_set_visible_child_name (target->priv->stack,
-						  visible_child_name);
+		tepl_panel_simple_set_active_item_name (target->priv->panel_simple,
+							active_item_name);
 	}
 
 	gtk_widget_set_visible (GTK_WIDGET (target),

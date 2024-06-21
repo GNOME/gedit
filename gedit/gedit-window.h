@@ -111,7 +111,7 @@ GtkWindowGroup *gedit_window_get_group			(GeditWindow *window);
 
 TeplPanel *	gedit_window_get_side_panel		(GeditWindow *window);
 
-GtkWidget *	gedit_window_get_bottom_panel		(GeditWindow *window);
+TeplPanel *	gedit_window_get_bottom_panel		(GeditWindow *window);
 
 GtkWidget *	gedit_window_get_statusbar		(GeditWindow *window);
 

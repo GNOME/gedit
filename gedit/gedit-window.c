@@ -66,7 +66,7 @@ struct _GeditWindowPrivate
 
 	GeditSidePanel *side_panel;
 	GeditBottomPanel *bottom_panel;
-	gint bottom_panel_item_removed_handler_id;
+	gint bottom_panel_remove_item_handler_id;
 
 	GtkWidget *hpaned;
 	GtkWidget *vpaned;
@@ -193,14 +193,14 @@ gedit_window_dispose (GObject *object)
 	/* Stop tracking removal of panels otherwise we always
 	 * end up with thinking we had no panel active, since they
 	 * should all be removed below */
-	if (window->priv->bottom_panel_item_removed_handler_id != 0)
+	if (window->priv->bottom_panel_remove_item_handler_id != 0)
 	{
-		GtkStack *stack;
+		TeplPanelSimple *panel_simple;
 
-		stack = _gedit_bottom_panel_get_stack (window->priv->bottom_panel);
+		panel_simple = _gedit_bottom_panel_get_panel_simple (window->priv->bottom_panel);
 
-		g_signal_handler_disconnect (stack, window->priv->bottom_panel_item_removed_handler_id);
-		window->priv->bottom_panel_item_removed_handler_id = 0;
+		g_signal_handler_disconnect (panel_simple, window->priv->bottom_panel_remove_item_handler_id);
+		window->priv->bottom_panel_remove_item_handler_id = 0;
 	}
 
 	/* First of all, force collection so that plugins
@@ -2070,11 +2070,11 @@ bottom_panel_visibility_changed (GtkWidget   *bottom_panel,
 }
 
 static void
-bottom_panel_item_removed (GtkStack    *bottom_panel_stack,
-			   GtkWidget   *item,
-			   GeditWindow *window)
+bottom_panel_remove_item_cb (TeplPanelSimple *panel_simple,
+			     TeplPanelItem   *item,
+			     GeditWindow     *window)
 {
-	if (gtk_stack_get_visible_child (bottom_panel_stack) == NULL)
+	if (tepl_panel_simple_get_active_item (panel_simple) == NULL)
 	{
 		gtk_widget_hide (GTK_WIDGET (window->priv->bottom_panel));
 	}
@@ -2083,19 +2083,19 @@ bottom_panel_item_removed (GtkStack    *bottom_panel_stack,
 }
 
 static void
-bottom_panel_item_added (GtkStack    *bottom_panel_stack,
-			 GtkWidget   *item,
-			 GeditWindow *window)
+bottom_panel_add_item_cb (TeplPanelSimple *panel_simple,
+			  TeplPanelItem   *item,
+			  GeditWindow     *window)
 {
-	GList *children;
-	int n_children;
+	GList *items;
+	gint n_items;
 
-	children = gtk_container_get_children (GTK_CONTAINER (bottom_panel_stack));
-	n_children = g_list_length (children);
-	g_list_free (children);
+	items = tepl_panel_simple_get_items (panel_simple);
+	n_items = g_list_length (items);
+	g_list_free_full (items, g_object_unref);
 
 	/* First item added. */
-	if (n_children == 1)
+	if (n_items == 1)
 	{
 		gboolean show;
 
@@ -2113,8 +2113,6 @@ bottom_panel_item_added (GtkStack    *bottom_panel_stack,
 static void
 setup_bottom_panel (GeditWindow *window)
 {
-	gedit_debug (DEBUG_WINDOW);
-
 	g_signal_connect_after (window->priv->bottom_panel,
 	                        "notify::visible",
 	                        G_CALLBACK (bottom_panel_visibility_changed),
@@ -2161,28 +2159,20 @@ init_side_panel_visibility (GeditWindow *window)
 static void
 init_bottom_panel_visibility (GeditWindow *window)
 {
-	GtkStack *stack;
+	TeplPanelSimple *panel_simple;
 
-	gedit_debug (DEBUG_WINDOW);
-
-	stack = _gedit_bottom_panel_get_stack (window->priv->bottom_panel);
+	panel_simple = _gedit_bottom_panel_get_panel_simple (window->priv->bottom_panel);
 
 	/* The bottom panel can be empty, in which case it isn't shown. */
-	if (gtk_stack_get_visible_child (stack) != NULL)
+	if (tepl_panel_simple_get_active_item (panel_simple) != NULL)
 	{
-		gchar *child_name;
-		GtkWidget *child_widget;
+		gchar *item_name;
 		gboolean bottom_panel_visible;
 
-		child_name = g_settings_get_string (window->priv->window_settings,
-						    GEDIT_SETTINGS_BOTTOM_PANEL_ACTIVE_PAGE);
-		child_widget = gtk_stack_get_child_by_name (stack, child_name);
-		if (child_widget != NULL)
-		{
-			gtk_stack_set_visible_child (stack, child_widget);
-		}
-
-		g_free (child_name);
+		item_name = g_settings_get_string (window->priv->window_settings,
+						   GEDIT_SETTINGS_BOTTOM_PANEL_ACTIVE_PAGE);
+		tepl_panel_simple_set_active_item_name (panel_simple, item_name);
+		g_free (item_name);
 
 		bottom_panel_visible = g_settings_get_boolean (window->priv->ui_settings,
 							       GEDIT_SETTINGS_BOTTOM_PANEL_VISIBLE);
@@ -2194,16 +2184,17 @@ init_bottom_panel_visibility (GeditWindow *window)
 	}
 
 	/* start track sensitivity after the initial state is set */
-	window->priv->bottom_panel_item_removed_handler_id =
-		g_signal_connect (stack,
-				  "remove",
-				  G_CALLBACK (bottom_panel_item_removed),
-				  window);
+	window->priv->bottom_panel_remove_item_handler_id =
+		g_signal_connect_after (panel_simple,
+					"remove-item",
+					G_CALLBACK (bottom_panel_remove_item_cb),
+					window);
 
-	g_signal_connect_after (stack,
-	                        "add",
-	                        G_CALLBACK (bottom_panel_item_added),
-	                        window);
+	g_signal_connect_object (panel_simple,
+				 "add-item",
+				 G_CALLBACK (bottom_panel_add_item_cb),
+				 window,
+				 G_CONNECT_AFTER);
 }
 
 static void
@@ -3006,14 +2997,14 @@ _gedit_window_get_whole_bottom_panel (GeditWindow *window)
  * gedit_window_get_bottom_panel:
  * @window: a #GeditWindow.
  *
- * Returns: (transfer none): the bottom panel's #GtkStack that is part of
- *   @window.
+ * Returns: (transfer none): the bottom panel of @window.
+ * Since: 48
  */
-GtkWidget *
+TeplPanel *
 gedit_window_get_bottom_panel (GeditWindow *window)
 {
 	g_return_val_if_fail (GEDIT_IS_WINDOW (window), NULL);
-	return GTK_WIDGET (_gedit_bottom_panel_get_stack (window->priv->bottom_panel));
+	return TEPL_PANEL (_gedit_bottom_panel_get_panel_simple (window->priv->bottom_panel));
 }
 
 /**

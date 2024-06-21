@@ -5,7 +5,7 @@
 #ifndef GEDIT_BOTTOM_PANEL_H
 #define GEDIT_BOTTOM_PANEL_H
 
-#include <gtk/gtk.h>
+#include <tepl/tepl.h>
 
 G_BEGIN_DECLS
 
@@ -39,7 +39,7 @@ G_GNUC_INTERNAL
 GeditBottomPanel *	_gedit_bottom_panel_new			(void);
 
 G_GNUC_INTERNAL
-GtkStack *		_gedit_bottom_panel_get_stack		(GeditBottomPanel *panel);
+TeplPanelSimple *	_gedit_bottom_panel_get_panel_simple	(GeditBottomPanel *panel);
 
 G_GNUC_INTERNAL
 gint			_gedit_bottom_panel_get_height		(GeditBottomPanel *panel);
