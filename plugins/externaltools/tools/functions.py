@@ -294,9 +294,7 @@ def capture_menu_action(action, parameter, window, panel, node):
 
 
 def capture_stderr_line_panel(capture, line, panel):
-    if not panel.visible():
-        panel.show()
-
+    panel.show()
     panel.write(line, panel.error_tag)
 
 

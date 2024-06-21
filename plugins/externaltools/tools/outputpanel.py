@@ -139,10 +139,6 @@ class OutputPanel(UniqueById):
         self['view'].get_buffer().set_text("")
         self.links = []
 
-    def visible(self):
-        panel = self.window.get_bottom_panel()
-        return panel.props.visible and panel.props.visible_child == self.panel
-
     def write(self, text, tag=None):
         buffer = self['view'].get_buffer()
 
@@ -179,9 +175,9 @@ class OutputPanel(UniqueById):
         GLib.idle_add(self.scroll_to_end)
 
     def show(self):
-        panel = self.window.get_bottom_panel()
-        panel.props.visible_child = self.panel
-        panel.show()
+        bottom_panel = self.window.get_bottom_panel()
+        #bottom_panel.set_active() # TODO
+        bottom_panel.show()
 
     def update_cursor_style(self, view, x, y):
         if self.get_link_at_location(view, x, y) is not None:
