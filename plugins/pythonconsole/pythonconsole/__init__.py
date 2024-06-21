@@ -29,7 +29,7 @@ gi.require_version('Peas', '1.0')
 gi.require_version('PeasGtk', '1.0')
 gi.require_version('Gtk', '3.0')
 
-from gi.repository import GObject, Gtk, Gedit, Peas, PeasGtk
+from gi.repository import GObject, Gtk, Gedit, Peas, PeasGtk, Tepl
 from .console import PythonConsole
 from .config import PythonConsoleConfigWidget
 
@@ -57,12 +57,15 @@ class PythonConsolePlugin(GObject.Object, Gedit.WindowActivatable, PeasGtk.Confi
                            '\'window\' :\\n%s" % window)', False)
         bottom = self.window.get_bottom_panel()
         self._console.show_all()
-        bottom.add_titled(self._console, "GeditPythonConsolePanel", _('Python Console'))
+        self.panel_item = Tepl.PanelItem.new(self._console, "GeditPythonConsolePanel",
+            _('Python Console'), None, 0)
+        bottom.add(self.panel_item)
 
     def do_deactivate(self):
         self._console.stop()
         bottom = self.window.get_bottom_panel()
-        bottom.remove(self._console)
+        bottom.remove(self.panel_item)
+        self.panel_item = None
 
     def do_update_state(self):
         pass
