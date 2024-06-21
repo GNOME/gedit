@@ -18,7 +18,7 @@
 
 __all__ = ('ExternalToolsPlugin', 'OutputPanel', 'Capture', 'UniqueById')
 
-from gi.repository import GLib, Gio, GObject, Gtk, Gedit
+from gi.repository import GLib, Gio, GObject, Gtk, Gedit, Tepl
 from .library import ToolLibrary
 from .outputpanel import OutputPanel
 from .capture import Capture
@@ -122,8 +122,10 @@ class WindowActivatable(GObject.Object, Gedit.WindowActivatable):
 
         self.actions = ToolActions(self._library, self.window, self._output_buffer)
 
+        self.panel_item = Tepl.PanelItem.new(self._output_buffer.panel,
+            "GeditExternalToolsShellOutput", _("Tool Output"), None, 0)
         bottom = self.window.get_bottom_panel()
-        bottom.add_titled(self._output_buffer.panel, "GeditExternalToolsShellOutput", _("Tool Output"))
+        bottom.add(self.panel_item)
 
     def do_update_state(self):
         if self.actions is not None:
@@ -132,7 +134,8 @@ class WindowActivatable(GObject.Object, Gedit.WindowActivatable):
     def do_deactivate(self):
         self.actions.deactivate()
         bottom = self.window.get_bottom_panel()
-        bottom.remove(self._output_buffer.panel)
+        bottom.remove(self.panel_item)
+        self.panel_item = None
         self.window.external_tools_window_activatable = None
 
     def update_actions(self):
