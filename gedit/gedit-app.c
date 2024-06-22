@@ -712,10 +712,10 @@ gedit_app_startup (GApplication *application)
 
 	setup_theme_extensions (GEDIT_APP (application));
 
-	g_action_map_add_action_entries (G_ACTION_MAP (application),
-	                                 app_entries,
-	                                 G_N_ELEMENTS (app_entries),
-	                                 application);
+	amtk_action_map_add_action_entries_check_dups (G_ACTION_MAP (application),
+						       app_entries,
+						       G_N_ELEMENTS (app_entries),
+						       application);
 
 	/* menus */
 	if (!show_menubar ())
