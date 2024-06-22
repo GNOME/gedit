@@ -21,7 +21,11 @@ option(
   description: 'Build user documentation'
 )
 
-option('plugin_externaltools', type: 'boolean', value: true)
+option(
+  'buggy_plugins',
+  type: 'boolean', value: false,
+  description: 'Enable plugins that are known to be buggy and can crash the application'
+)
 
 # Whether to have a GtkHeaderBar (instead of the default window titlebar).
 # 'auto' will choose a value depending on the platform.

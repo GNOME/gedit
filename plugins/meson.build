@@ -26,6 +26,6 @@ subdir('sort')
 subdir('spell')
 subdir('time')
 
-if get_option('plugin_externaltools')
+if get_option('buggy_plugins')
   subdir('externaltools')
 endif
