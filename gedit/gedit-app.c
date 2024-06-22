@@ -457,12 +457,12 @@ about_activated (GSimpleAction  *action,
 }
 
 static GActionEntry app_entries[] = {
-	{ "new-window", new_window_activated, NULL, NULL, NULL },
-	{ "new-document", new_document_activated, NULL, NULL, NULL },
-	{ "preferences", preferences_activated, NULL, NULL, NULL },
-	{ "help", help_activated, NULL, NULL, NULL },
-	{ "about", about_activated, NULL, NULL, NULL },
-	{ "quit", _gedit_cmd_file_quit, NULL, NULL, NULL }
+	{ "new-window", new_window_activated },
+	{ "new-document", new_document_activated },
+	{ "preferences", preferences_activated },
+	{ "help", help_activated },
+	{ "about", about_activated },
+	{ "quit", _gedit_cmd_file_quit }
 };
 
 static void
