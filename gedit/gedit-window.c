@@ -2041,9 +2041,9 @@ setup_side_panel (GeditWindow *window)
 }
 
 static void
-bottom_panel_visibility_changed (GtkWidget   *bottom_panel,
-                                 GParamSpec  *pspec,
-                                 GeditWindow *window)
+bottom_panel_visible_notify_cb (GtkWidget   *bottom_panel,
+				GParamSpec  *pspec,
+				GeditWindow *window)
 {
 	gboolean visible;
 	GAction *action;
@@ -2054,11 +2054,13 @@ bottom_panel_visibility_changed (GtkWidget   *bottom_panel,
 				GEDIT_SETTINGS_BOTTOM_PANEL_VISIBLE,
 				visible);
 
-	/* sync the action state if the panel visibility was changed programmatically */
+	/* Sync the action state if the panel visibility was changed
+	 * programmatically.
+	 */
 	action = g_action_map_lookup_action (G_ACTION_MAP (window), "bottom-panel");
 	g_simple_action_set_state (G_SIMPLE_ACTION (action), g_variant_new_boolean (visible));
 
-	/* focus the right widget */
+	/* Focus the right widget */
 	if (visible)
 	{
 		gtk_widget_grab_focus (GTK_WIDGET (window->priv->bottom_panel));
@@ -2113,10 +2115,10 @@ bottom_panel_add_item_cb (TeplPanelSimple *panel_simple,
 static void
 setup_bottom_panel (GeditWindow *window)
 {
-	g_signal_connect_after (window->priv->bottom_panel,
-	                        "notify::visible",
-	                        G_CALLBACK (bottom_panel_visibility_changed),
-	                        window);
+	g_signal_connect (window->priv->bottom_panel,
+			  "notify::visible",
+			  G_CALLBACK (bottom_panel_visible_notify_cb),
+			  window);
 }
 
 static void
