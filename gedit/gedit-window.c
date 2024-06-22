@@ -2162,11 +2162,17 @@ static void
 init_bottom_panel_visibility (GeditWindow *window)
 {
 	TeplPanelSimple *panel_simple;
+	GList *items;
+	guint n_items;
 
 	panel_simple = _gedit_bottom_panel_get_panel_simple (window->priv->bottom_panel);
 
+	items = tepl_panel_simple_get_items (panel_simple);
+	n_items = g_list_length (items);
+	g_list_free_full (items, g_object_unref);
+
 	/* The bottom panel can be empty, in which case it isn't shown. */
-	if (tepl_panel_simple_get_active_item (panel_simple) != NULL)
+	if (n_items > 0)
 	{
 		gchar *item_name;
 		gboolean bottom_panel_visible;
@@ -2185,7 +2191,7 @@ init_bottom_panel_visibility (GeditWindow *window)
 		}
 	}
 
-	/* start track sensitivity after the initial state is set */
+	/* Start track sensitivity after the initial state is set. */
 	window->priv->bottom_panel_remove_item_handler_id =
 		g_signal_connect_after (panel_simple,
 					"remove-item",
