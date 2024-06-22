@@ -66,7 +66,7 @@ struct _GeditWindowPrivate
 
 	GeditSidePanel *side_panel;
 	GeditBottomPanel *bottom_panel;
-	gint bottom_panel_remove_item_handler_id;
+	gulong bottom_panel_remove_item_handler_id;
 
 	GtkWidget *hpaned;
 	GtkWidget *vpaned;
