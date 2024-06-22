@@ -2109,7 +2109,8 @@ bottom_panel_add_item_after_cb (TeplPanelSimple *panel_simple,
 		gboolean show;
 
 		show = g_settings_get_boolean (window->priv->ui_settings,
-					       "bottom-panel-visible");
+					       GEDIT_SETTINGS_BOTTOM_PANEL_VISIBLE);
+
 		if (show)
 		{
 			gtk_widget_show (GTK_WIDGET (window->priv->bottom_panel));
