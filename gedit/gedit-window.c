@@ -2072,11 +2072,18 @@ bottom_panel_visible_notify_cb (GtkWidget   *bottom_panel,
 }
 
 static void
-bottom_panel_remove_item_cb (TeplPanelSimple *panel_simple,
-			     TeplPanelItem   *item,
-			     GeditWindow     *window)
+bottom_panel_remove_item_after_cb (TeplPanelSimple *panel_simple,
+				   TeplPanelItem   *item,
+				   GeditWindow     *window)
 {
-	if (tepl_panel_simple_get_active_item (panel_simple) == NULL)
+	GList *items;
+	guint n_items;
+
+	items = tepl_panel_simple_get_items (panel_simple);
+	n_items = g_list_length (items);
+	g_list_free_full (items, g_object_unref);
+
+	if (n_items == 0)
 	{
 		gtk_widget_hide (GTK_WIDGET (window->priv->bottom_panel));
 	}
@@ -2085,9 +2092,9 @@ bottom_panel_remove_item_cb (TeplPanelSimple *panel_simple,
 }
 
 static void
-bottom_panel_add_item_cb (TeplPanelSimple *panel_simple,
-			  TeplPanelItem   *item,
-			  GeditWindow     *window)
+bottom_panel_add_item_after_cb (TeplPanelSimple *panel_simple,
+				TeplPanelItem   *item,
+				GeditWindow     *window)
 {
 	GList *items;
 	gint n_items;
@@ -2102,7 +2109,7 @@ bottom_panel_add_item_cb (TeplPanelSimple *panel_simple,
 		gboolean show;
 
 		show = g_settings_get_boolean (window->priv->ui_settings,
-		                               "bottom-panel-visible");
+					       "bottom-panel-visible");
 		if (show)
 		{
 			gtk_widget_show (GTK_WIDGET (window->priv->bottom_panel));
@@ -2195,12 +2202,12 @@ init_bottom_panel_visibility (GeditWindow *window)
 	window->priv->bottom_panel_remove_item_handler_id =
 		g_signal_connect_after (panel_simple,
 					"remove-item",
-					G_CALLBACK (bottom_panel_remove_item_cb),
+					G_CALLBACK (bottom_panel_remove_item_after_cb),
 					window);
 
 	g_signal_connect_object (panel_simple,
 				 "add-item",
-				 G_CALLBACK (bottom_panel_add_item_cb),
+				 G_CALLBACK (bottom_panel_add_item_after_cb),
 				 window,
 				 G_CONNECT_AFTER);
 }
