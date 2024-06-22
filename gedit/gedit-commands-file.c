@@ -2107,16 +2107,15 @@ _gedit_cmd_file_quit (GSimpleAction *action,
 		      GVariant      *parameter,
 		      gpointer       user_data)
 {
-	GApplication *app;
+	GeditApp *app = GEDIT_APP (user_data);
 	GList *windows;
 	GList *l;
 
-	app = g_application_get_default ();
-	windows = gedit_app_get_main_windows (GEDIT_APP (app));
+	windows = gedit_app_get_main_windows (app);
 
 	if (windows == NULL)
 	{
-		g_application_quit (app);
+		g_application_quit (G_APPLICATION (app));
 		return;
 	}
 
