@@ -2476,20 +2476,14 @@ gedit_window_init (GeditWindow *window)
 {
 	GtkTargetList *tl;
 
-	gedit_debug (DEBUG_WINDOW);
-
 	window->priv = gedit_window_get_instance_private (window);
 
-	window->priv->removing_tabs = FALSE;
 	window->priv->state = GEDIT_WINDOW_STATE_NORMAL;
-	window->priv->inhibition_cookie = 0;
-	window->priv->dispose_has_run = FALSE;
-	window->priv->direct_save_uri = NULL;
-	window->priv->closed_docs_stack = NULL;
 	window->priv->ui_settings = g_settings_new ("org.gnome.gedit.preferences.ui");
 
 	/* window settings are applied only once the window is closed. We do not
-	   want to keep writing to disk when the window is dragged around */
+	 * want to keep writing to disk when the window is dragged around.
+	 */
 	window->priv->window_settings = g_settings_new ("org.gnome.gedit.state.window");
 	g_settings_delay (window->priv->window_settings);
 
@@ -2508,9 +2502,9 @@ gedit_window_init (GeditWindow *window)
 	create_fullscreen_headerbar (window);
 
 	g_action_map_add_action_entries (G_ACTION_MAP (window),
-	                                 win_entries,
-	                                 G_N_ELEMENTS (win_entries),
-	                                 window);
+					 win_entries,
+					 G_N_ELEMENTS (win_entries),
+					 window);
 
 	window->priv->window_group = gtk_window_group_new ();
 	gtk_window_group_add_window (window->priv->window_group, GTK_WINDOW (window));
@@ -2608,45 +2602,48 @@ gedit_window_init (GeditWindow *window)
 
 	gtk_target_list_add_uri_targets (tl, TARGET_URI_LIST);
 
-	/* connect instead of override, so that we can
-	 * share the cb code with the view */
+	/* Connect instead of override, so that we can share the cb code with
+	 * the view.
+	 */
 	g_signal_connect (window,
 			  "drag_data_received",
-	                  G_CALLBACK (drag_data_received_cb),
-	                  NULL);
+			  G_CALLBACK (drag_data_received_cb),
+			  NULL);
+
 	g_signal_connect (window,
 			  "drag_drop",
-	                  G_CALLBACK (drag_drop_cb),
-	                  NULL);
+			  G_CALLBACK (drag_drop_cb),
+			  NULL);
 
-	/* we can get the clipboard only after the widget
-	 * is realized */
+	/* We can get the clipboard only after the widget is realized. */
 	g_signal_connect (window,
 			  "realize",
 			  G_CALLBACK (window_realized),
 			  NULL);
+
 	g_signal_connect (window,
 			  "unrealize",
 			  G_CALLBACK (window_unrealized),
 			  NULL);
 
-	gedit_debug_message (DEBUG_WINDOW, "Update plugins ui");
-
 	window->priv->extensions = peas_extension_set_new (PEAS_ENGINE (gedit_plugins_engine_get_default ()),
 							   GEDIT_TYPE_WINDOW_ACTIVATABLE,
 							   "window", window,
 							   NULL);
+
 	g_signal_connect (window->priv->extensions,
 			  "extension-added",
 			  G_CALLBACK (extension_added),
 			  window);
+
 	g_signal_connect (window->priv->extensions,
 			  "extension-removed",
 			  G_CALLBACK (extension_removed),
 			  window);
+
 	peas_extension_set_foreach (window->priv->extensions,
-	                            (PeasExtensionSetForeachFunc) extension_added,
-	                            window);
+				    (PeasExtensionSetForeachFunc) extension_added,
+				    window);
 
 	/* Set visibility of panels. This needs to be done after plugins
 	 * activatation.
@@ -2655,8 +2652,6 @@ gedit_window_init (GeditWindow *window)
 	init_bottom_panel_visibility (window);
 
 	update_actions_sensitivity (window);
-
-	gedit_debug_message (DEBUG_WINDOW, "END");
 }
 
 /**
