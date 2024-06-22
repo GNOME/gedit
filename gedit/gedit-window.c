@@ -2501,10 +2501,10 @@ gedit_window_init (GeditWindow *window)
 
 	create_fullscreen_headerbar (window);
 
-	g_action_map_add_action_entries (G_ACTION_MAP (window),
-					 win_entries,
-					 G_N_ELEMENTS (win_entries),
-					 window);
+	amtk_action_map_add_action_entries_check_dups (G_ACTION_MAP (window),
+						       win_entries,
+						       G_N_ELEMENTS (win_entries),
+						       window);
 
 	window->priv->window_group = gtk_window_group_new ();
 	gtk_window_group_add_window (window->priv->window_group, GTK_WINDOW (window));
