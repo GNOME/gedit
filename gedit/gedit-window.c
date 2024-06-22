@@ -2502,7 +2502,6 @@ gedit_window_init (GeditWindow *window)
 	setup_fullscreen_eventbox (window);
 	sync_fullscreen_actions (window, FALSE);
 
-	/* Setup status bar */
 	setup_statusbar (window);
 
 	/* Setup main area */
@@ -2510,6 +2509,7 @@ gedit_window_init (GeditWindow *window)
 			  "notebook-removed",
 			  G_CALLBACK (on_notebook_removed),
 			  window);
+
 	g_signal_connect (window->priv->multi_notebook,
 			  "notify::active-notebook",
 			  G_CALLBACK (on_notebook_changed),
@@ -2541,16 +2541,16 @@ gedit_window_init (GeditWindow *window)
 			  window);
 
 	g_signal_connect (window->priv->multi_notebook,
-	                  "create-window",
-	                  G_CALLBACK (on_notebook_create_window),
-	                  window);
+			  "create-window",
+			  G_CALLBACK (on_notebook_create_window),
+			  window);
 
 	g_signal_connect (window->priv->multi_notebook,
 			  "show-popup-menu",
 			  G_CALLBACK (on_show_popup_menu),
 			  window);
 
-	/* side and bottom panels */
+	/* Panels */
 	setup_side_panel (window);
 	setup_bottom_panel (window);
 
