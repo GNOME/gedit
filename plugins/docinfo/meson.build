@@ -1,23 +1,16 @@
-libdocinfo_sources = files(
+plugin_docinfo_sources = files(
   'gedit-docinfo-plugin.c',
 )
 
-libdocinfo_deps = [
-  libgedit_dep,
-]
-
 subdir('resources')
 
-libdocinfo_sha = shared_module(
+shared_module(
   'docinfo',
-  sources: libdocinfo_sources,
+  sources: plugin_docinfo_sources,
   include_directories: root_include_dir,
-  dependencies: libdocinfo_deps,
+  dependencies: libgedit_dep,
   install: true,
-  install_dir: join_paths(
-    pkglibdir,
-    'plugins',
-  ),
+  install_dir: get_option('libdir') / 'gedit/plugins',
   name_suffix: module_suffix,
 )
 
@@ -27,8 +20,5 @@ custom_target(
   output: 'docinfo.plugin',
   command: msgfmt_plugin_cmd,
   install: true,
-  install_dir: join_paths(
-    pkglibdir,
-    'plugins',
-  )
+  install_dir: get_option('libdir') / 'gedit/plugins',
 )

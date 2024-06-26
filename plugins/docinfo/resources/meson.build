@@ -1,8 +1,8 @@
-libdocinfo_res = gnome.compile_resources(
+plugin_docinfo_gresources = gnome.compile_resources(
   'gedit-docinfo-resources',
   'gedit-docinfo.gresource.xml',
 )
 
-libdocinfo_sources += [
-  libdocinfo_res.get(0),
+plugin_docinfo_sources += [
+  plugin_docinfo_gresources[0],
 ]
