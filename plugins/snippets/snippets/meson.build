@@ -21,19 +21,10 @@ snippets_sources = [
 
 install_data(
   snippets_sources,
-  install_dir: join_paths(
-    pkglibdir,
-    'plugins',
-    'snippets',
-  )
+  install_dir: get_option('libdir') / 'gedit/plugins/snippets',
 )
 
 install_data(
   'snippets.ui',
-  install_dir: join_paths(
-    pkgdatadir,
-    'plugins',
-    'snippets',
-    'ui',
-  )
+  install_dir: get_option('datadir') / 'gedit/plugins/snippets/ui',
 )

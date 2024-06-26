@@ -3,11 +3,7 @@ subdir('snippets')
 install_subdir(
   'data',
   strip_directory : true,
-  install_dir: join_paths(
-    pkgdatadir,
-    'plugins',
-    'snippets',
-  )
+  install_dir: get_option('datadir') / 'gedit/plugins/snippets',
 )
 
 custom_target(
@@ -16,8 +12,5 @@ custom_target(
   output: 'snippets.plugin',
   command: msgfmt_plugin_cmd,
   install: true,
-  install_dir: join_paths(
-    pkglibdir,
-    'plugins',
-  )
+  install_dir: get_option('libdir') / 'gedit/plugins',
 )
