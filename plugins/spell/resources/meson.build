@@ -1,8 +1,6 @@
-libspell_res = gnome.compile_resources(
+plugin_spell_gresources = gnome.compile_resources(
   'gedit-spell-resources',
   'gedit-spell.gresource.xml',
 )
 
-libspell_sources += [
-  libspell_res.get(0),
-]
+plugin_spell_sources += plugin_spell_gresources[0]
