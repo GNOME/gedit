@@ -214,7 +214,7 @@ pkg_config.generate(
   libgedit_shared_lib,
   filebase: 'gedit',
   name: 'gedit',
-  description: 'GNOME text editor',
+  description: 'Text editor',
   subdirs: 'gedit-@0@'.format(api_version),
   libraries: libgedit_public_deps,
   install_dir: get_option('libdir') / 'pkgconfig'
