@@ -1,5 +1,6 @@
 # Keep the autotools convention for shared module suffix because GModule
 # depends on it: https://gitlab.gnome.org/GNOME/glib/issues/520
+# TODO: the GLib issue is fixed/closed, so adapt the build instructions accordingly.
 module_suffix = []
 if host_machine.system() == 'darwin'
   module_suffix = 'so'
