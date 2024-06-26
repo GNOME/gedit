@@ -2,12 +2,7 @@ externaltools_tests = {
   'LinkParser': files('testlinkparsing.py'),
 }
 
-externaltools_srcdir = join_paths(
-  srcdir,
-  'plugins',
-  'externaltools',
-  'tools',
-)
+externaltools_srcdir = srcdir / 'plugins/externaltools/tools'
 
 foreach test_name, test_script : externaltools_tests
   test(

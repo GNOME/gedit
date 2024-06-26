@@ -13,11 +13,7 @@ externaltools_sources = files(
 
 install_data(
   externaltools_sources,
-  install_dir: join_paths(
-    pkglibdir,
-    'plugins',
-    'externaltools',
-  )
+  install_dir: get_option('libdir') / 'gedit/plugins/externaltools',
 )
 
 externaltools_data = files(
@@ -27,10 +23,5 @@ externaltools_data = files(
 
 install_data(
   externaltools_data,
-  install_dir: join_paths(
-    pkgdatadir,
-    'plugins',
-    'externaltools',
-    'ui',
-  )
+  install_dir: get_option('datadir') / 'gedit/plugins/externaltools/ui',
 )

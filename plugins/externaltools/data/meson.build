@@ -36,11 +36,6 @@ foreach tool_name: externaltools_tools
     ],
     capture: true,
     install: true,
-    install_dir: join_paths(
-      pkgdatadir,
-      'plugins',
-      'externaltools',
-      'tools',
-    )
+    install_dir: get_option('datadir') / 'gedit/plugins/externaltools/tools',
   )
 endforeach

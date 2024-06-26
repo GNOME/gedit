@@ -8,6 +8,4 @@ msgfmt_externaltools_cmd = [
   '--output=@OUTPUT@'
 ]
 
-merge_tool_prg = find_program(
-  files('gedit-tool-merge.pl'),
-)
+merge_tool_prg = find_program(files('gedit-tool-merge.pl'))
