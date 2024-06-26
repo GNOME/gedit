@@ -37,68 +37,6 @@
 #include "gedit-factory.h"
 #include "gedit-settings.h"
 
-#ifdef G_OS_WIN32
-#include <gmodule.h>
-static GModule *libgedit_dll = NULL;
-
-/* This code must live in gedit.exe, not in libgedit.dll, since the whole
- * point is to find and load libgedit.dll.
- */
-static gboolean
-gedit_w32_load_private_dll (void)
-{
-	gchar *dllpath;
-	gchar *prefix;
-
-	prefix = g_win32_get_package_installation_directory_of_module (NULL);
-
-	if (prefix != NULL)
-	{
-		/* Instead of g_module_open () it may be possible to do any of the
-		 * following:
-		 * A) Change PATH to "${dllpath}/lib/gedit;$PATH"
-		 * B) Call SetDllDirectory ("${dllpath}/lib/gedit")
-		 * C) Call AddDllDirectory ("${dllpath}/lib/gedit")
-		 * But since we only have one library, and its name is known, may as well
-		 * use gmodule.
-		 */
-		dllpath = g_build_filename (prefix, "lib", "gedit", "lib" PACKAGE_STRING ".dll", NULL);
-		g_free (prefix);
-
-		libgedit_dll = g_module_open (dllpath, 0);
-		if (libgedit_dll == NULL)
-		{
-			g_printerr ("Failed to load '%s': %s\n",
-			            dllpath, g_module_error ());
-		}
-
-		g_free (dllpath);
-	}
-
-	if (libgedit_dll == NULL)
-	{
-		libgedit_dll = g_module_open ("lib" PACKAGE_STRING ".dll", 0);
-		if (libgedit_dll == NULL)
-		{
-			g_printerr ("Failed to load 'lib" PACKAGE_STRING ".dll': %s\n",
-			            g_module_error ());
-		}
-	}
-
-	return (libgedit_dll != NULL);
-}
-
-static void
-gedit_w32_unload_private_dll (void)
-{
-	if (libgedit_dll)
-	{
-		g_module_close (libgedit_dll);
-		libgedit_dll = NULL;
-	}
-}
-#endif /* G_OS_WIN32 */
-
 static void
 setup_i18n_first_part (void)
 {
@@ -158,19 +96,11 @@ main (int argc, char *argv[])
 #if OS_MACOS
 	type = GEDIT_TYPE_APP_OSX;
 #elif defined G_OS_WIN32
-	if (!gedit_w32_load_private_dll ())
-	{
-		return 1;
-	}
-
 	type = GEDIT_TYPE_APP_WIN32;
 #else
 	type = GEDIT_TYPE_APP;
 #endif
 
-	/* NOTE: we should not make any calls to the gedit API before the
-	 * private library is loaded.
-	 */
 	gedit_dirs_init ();
 
 	setup_i18n_second_part ();
@@ -204,10 +134,6 @@ main (int argc, char *argv[])
 
 	tepl_finalize ();
 	gedit_dirs_shutdown ();
-
-#ifdef G_OS_WIN32
-	gedit_w32_unload_private_dll ();
-#endif
 
 	return status;
 }

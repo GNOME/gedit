@@ -164,6 +164,12 @@ libgedit_private_headers += 'gedit-enum-types-private.h'
 
 subdir('resources')
 
+if host_machine.system() == 'windows'
+  libgedit_shared_lib_install_dir = get_option('libdir')
+else
+  libgedit_shared_lib_install_dir = get_option('libdir') / 'gedit'
+endif
+
 libgedit_shared_lib = shared_library(
   'gedit-@0@'.format(api_version),
   [libgedit_public_c_files,
@@ -175,7 +181,7 @@ libgedit_shared_lib = shared_library(
   dependencies: libgedit_deps,
   link_args: libgedit_link_args,
   install: true,
-  install_dir: get_option('libdir') / 'gedit',
+  install_dir: libgedit_shared_lib_install_dir,
 )
 
 # GObject Introspection
