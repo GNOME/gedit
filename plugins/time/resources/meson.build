@@ -1,8 +1,6 @@
-libtime_res = gnome.compile_resources(
+plugin_time_gresources = gnome.compile_resources(
   'gedit-time-resources',
   'gedit-time.gresource.xml',
 )
 
-libtime_sources += [
-  libtime_res.get(0),
-]
+plugin_time_sources += plugin_time_gresources[0]

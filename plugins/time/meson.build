@@ -1,14 +1,10 @@
-libtime_sources = files(
+plugin_time_sources = files(
   'gedit-time-plugin.c',
 )
 
-libtime_deps = [
-  libgedit_dep,
-]
-
 gnome.mkenums(
   'org.gnome.gedit.plugins.time.enums.xml',
-  sources: libtime_sources,
+  sources: plugin_time_sources,
   comments: '<!-- @comment@ -->',
   fhead: '<schemalist>',
   vhead: '  <@type@ id="org.gnome.gedit.plugins.time.@EnumName@">',
@@ -16,31 +12,25 @@ gnome.mkenums(
   vtail: '  </@type@>',
   ftail: '</schemalist>',
   install_header: true,
-  install_dir: join_paths(
-    glibdir,
-    'schemas',
-  )
+  install_dir: get_option('datadir') / 'glib-2.0/schemas',
 )
 
 subdir('resources')
 
-libtime_sha = shared_module(
+shared_module(
   'time',
-  sources: libtime_sources,
+  sources: plugin_time_sources,
   include_directories: root_include_dir,
-  dependencies: libtime_deps,
+  dependencies: libgedit_dep,
   install: true,
-  install_dir: join_paths(
-    pkglibdir,
-    'plugins',
-  ),
+  install_dir: get_option('libdir') / 'gedit/plugins',
   name_suffix: module_suffix,
 )
 
-time_gschema_file = files('org.gnome.gedit.plugins.time.gschema.xml')
+plugin_time_gschema_file = files('org.gnome.gedit.plugins.time.gschema.xml')
 install_data(
-  time_gschema_file,
-  install_dir: join_paths(get_option('prefix'), get_option('datadir'), 'glib-2.0/schemas')
+  plugin_time_gschema_file,
+  install_dir: get_option('datadir') / 'glib-2.0/schemas'
 )
 
 if xmllint.found()
@@ -50,7 +40,7 @@ if xmllint.found()
     args: [
       '--noout',
       '--dtdvalid', gschema_dtd,
-      time_gschema_file,
+      plugin_time_gschema_file,
     ]
   )
 endif
@@ -61,8 +51,5 @@ custom_target(
   output: 'time.plugin',
   command: msgfmt_plugin_cmd,
   install: true,
-  install_dir: join_paths(
-    pkglibdir,
-    'plugins',
-  )
+  install_dir: get_option('libdir') / 'gedit/plugins',
 )
