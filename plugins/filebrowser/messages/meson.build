@@ -1,4 +1,4 @@
-libfilebrowser_public_h += files(
+plugin_filebrowser_headers += files(
   'gedit-file-browser-message-activation.h',
   'gedit-file-browser-message-add-filter.h',
   'gedit-file-browser-message-extend-context-menu.h',
@@ -11,7 +11,7 @@ libfilebrowser_public_h += files(
   'gedit-file-browser-message-set-root.h',
 )
 
-libfilebrowser_sources += files(
+plugin_filebrowser_c_files += files(
   'gedit-file-browser-message-activation.c',
   'gedit-file-browser-message-add-filter.c',
   'gedit-file-browser-message-extend-context-menu.c',

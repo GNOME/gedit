@@ -1,4 +1,4 @@
-libfilebrowser_public_h = files(
+plugin_filebrowser_headers = files(
   'gedit-file-bookmarks-store.h',
   'gedit-file-browser-error.h',
   'gedit-file-browser-store.h',
@@ -9,7 +9,7 @@ libfilebrowser_public_h = files(
   'gedit-file-browser-messages.h',
 )
 
-libfilebrowser_sources = files(
+plugin_filebrowser_c_files = files(
   'gedit-file-bookmarks-store.c',
   'gedit-file-browser-messages.c',
   'gedit-file-browser-plugin.c',
@@ -19,22 +19,18 @@ libfilebrowser_sources = files(
   'gedit-file-browser-widget.c',
 )
 
-libfilebrowser_deps = [
-  libgedit_dep,
-]
-
 subdir('messages')
 
 libfilebrowser_register_enums = gnome.mkenums(
   'gedit-file-browser-enum-register',
-  sources: libfilebrowser_public_h,
+  sources: plugin_filebrowser_headers,
   c_template: 'gedit-file-browser-enum-register.c.template',
 )
 
 libfilebrowser_type_enums = gnome.mkenums(
   'gedit-file-browser-enum-types',
   depends : [libfilebrowser_register_enums],
-  sources: libfilebrowser_public_h,
+  sources: plugin_filebrowser_headers,
   h_template: 'gedit-file-browser-enum-types.h.template',
   c_template: 'gedit-file-browser-enum-types-stage1.c.template',
 )
@@ -53,7 +49,7 @@ libfilebrowser_enums_c = custom_target('libfilebrowser_enums_c',
   capture: true,
 )
 
-libfilebrowser_sources += [
+plugin_filebrowser_c_files += [
   libfilebrowser_enums_c,
   libfilebrowser_type_enums.get(1),
 ]
@@ -62,9 +58,9 @@ subdir('resources')
 
 libfilebrowser_sha = shared_module(
   'filebrowser',
-  sources: libfilebrowser_sources,
+  sources: plugin_filebrowser_c_files,
   include_directories: root_include_dir,
-  dependencies: libfilebrowser_deps,
+  dependencies: libgedit_dep,
   install: true,
   install_dir: join_paths(
     pkglibdir,
@@ -76,7 +72,7 @@ libfilebrowser_sha = shared_module(
 # FIXME: https://github.com/mesonbuild/meson/issues/1687
 custom_target(
   'org.gnome.gedit.plugins.filebrowser.enums.xml',
-  input : libfilebrowser_sources + libfilebrowser_public_h,
+  input : plugin_filebrowser_c_files + plugin_filebrowser_headers,
   output: 'org.gnome.gedit.plugins.filebrowser.enums.xml',
   capture: true,
   command: [
