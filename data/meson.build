@@ -20,7 +20,7 @@ if appstreamcli.found()
   test(
     'validate-metainfo',
     appstreamcli,
-    args: ['validate', metainfo_file]
+    args: ['validate', '--no-net', metainfo_file]
   )
 endif
 
