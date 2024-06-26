@@ -1,9 +1,6 @@
 install_subdir(
   'quickopen',
-  install_dir: join_paths(
-    pkglibdir,
-    'plugins',
-  )
+  install_dir: get_option('libdir') / 'gedit/plugins',
 )
 
 custom_target(
@@ -12,8 +9,5 @@ custom_target(
   output: 'quickopen.plugin',
   command: msgfmt_plugin_cmd,
   install: true,
-  install_dir: join_paths(
-    pkglibdir,
-    'plugins',
-  )
+  install_dir: get_option('libdir') / 'gedit/plugins',
 )
