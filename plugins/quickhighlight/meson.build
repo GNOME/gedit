@@ -1,21 +1,14 @@
-libquickhighlight_sources = files(
+plugin_quickhighlight_sources = files(
   'gedit-quick-highlight-plugin.c',
 )
 
-libquickhighlight_deps = [
-  libgedit_dep,
-]
-
-libquickhighlight_sha = shared_module(
+shared_module(
   'quickhighlight',
-  sources: libquickhighlight_sources,
+  sources: plugin_quickhighlight_sources,
   include_directories: root_include_dir,
-  dependencies: libquickhighlight_deps,
+  dependencies: libgedit_dep,
   install: true,
-  install_dir: join_paths(
-    pkglibdir,
-    'plugins',
-  ),
+  install_dir: get_option('libdir') / 'gedit/plugins',
   name_suffix: module_suffix,
 )
 
@@ -25,8 +18,5 @@ custom_target(
   output: 'quickhighlight.plugin',
   command: msgfmt_plugin_cmd,
   install: true,
-  install_dir: join_paths(
-    pkglibdir,
-    'plugins',
-  )
+  install_dir: get_option('libdir') / 'gedit/plugins',
 )
