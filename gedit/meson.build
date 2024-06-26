@@ -17,7 +17,7 @@ libgedit_public_headers = [
   'gedit-window.h',
 ]
 
-libgedit_public_sources = [
+libgedit_public_c_files = [
   'gedit-app-activatable.c',
   'gedit-app.c',
   'gedit-commands-file.c',
@@ -74,7 +74,7 @@ libgedit_private_headers = [
   'gedit-window-titles.h',
 ]
 
-libgedit_private_sources = [
+libgedit_private_c_files = [
   'gedit-bottom-panel.c',
   'gedit-close-confirmation-dialog.c',
   'gedit-commands-documents.c',
@@ -125,7 +125,7 @@ libgedit_deps = [
 ]
 
 if host_machine.system() == 'darwin'
-  libgedit_private_sources += [
+  libgedit_private_c_files += [
     'gedit-app-osx.m',
     'gedit-recent-osx.c',
   ]
@@ -137,7 +137,7 @@ if host_machine.system() == 'darwin'
     dependency('gtk-mac-integration-gtk3'),
   ]
 elif host_machine.system() == 'windows'
-  libgedit_private_sources += [
+  libgedit_private_c_files += [
     'gedit-app-win32.c',
   ]
 endif
@@ -166,8 +166,8 @@ subdir('resources')
 
 libgedit_shared_lib = shared_library(
   'gedit-@0@'.format(api_version),
-  [libgedit_public_sources,
-   libgedit_private_sources,
+  [libgedit_public_c_files,
+   libgedit_private_c_files,
    libgedit_public_enum_types,
    libgedit_private_enum_types,
    libgedit_gresources],
@@ -183,7 +183,7 @@ gnome.generate_gir(
   libgedit_shared_lib,
   sources: [
     libgedit_public_headers,
-    libgedit_public_sources,
+    libgedit_public_c_files,
     libgedit_public_enum_types,
   ],
   nsversion: '3.0',
