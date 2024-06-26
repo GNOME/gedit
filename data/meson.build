@@ -1,6 +1,10 @@
 subdir('icons')
 
+# Man page
+
 install_man('gedit.1')
+
+# AppStream metainfo
 
 metainfo = 'org.gnome.gedit.metainfo.xml'
 metainfo_file = i18n.merge_file(
@@ -19,6 +23,8 @@ if appstreamcli.found()
     args: ['validate', metainfo_file]
   )
 endif
+
+# Desktop file
 
 desktop_file = 'org.gnome.gedit.desktop'
 desktop_output_file = i18n.merge_file(
@@ -39,26 +45,15 @@ if desktop_file_validate.found()
   )
 endif
 
-active_plugins = [
-  'docinfo',
-  'filebrowser',
-  'modelines',
-  'sort',
-  'spell',
-]
+# GSettings schema
 
-quoted_plugins = []
-foreach plugin_name : active_plugins
-  quoted_plugins += '\'@0@\''.format(plugin_name)
-endforeach
-
-gschema_in = configuration_data()
-gschema_in.set('ACTIVE_PLUGINS', ', '.join(quoted_plugins))
+gschema_config_data = configuration_data()
+gschema_config_data.set('ACTIVE_PLUGINS', '\'filebrowser\', \'sort\', \'spell\'')
 
 gschema_file = configure_file(
   input: 'org.gnome.gedit.gschema.xml.in',
   output: 'org.gnome.gedit.gschema.xml',
-  configuration: gschema_in,
+  configuration: gschema_config_data,
   install_dir: get_option('datadir') / 'glib-2.0/schemas'
 )
 
@@ -84,12 +79,14 @@ if host_machine.system() == 'windows'
   )
 endif
 
-service_in = configuration_data()
-service_in.set('bindir', get_option('prefix') / get_option('bindir'))
+# D-Bus service
+
+service_config_data = configuration_data()
+service_config_data.set('bindir', get_option('prefix') / get_option('bindir'))
 
 configure_file(
   input: 'org.gnome.gedit.service.in',
   output: 'org.gnome.gedit.service',
-  configuration: service_in,
+  configuration: service_config_data,
   install_dir: get_option('datadir') / 'dbus-1/services'
 )
