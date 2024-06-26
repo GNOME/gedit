@@ -1,9 +1,9 @@
 subdir('pythonconsole')
 
-pythonconsole_gschema_file = files('org.gnome.gedit.plugins.pythonconsole.gschema.xml')
+plugin_pythonconsole_gschema_file = files('org.gnome.gedit.plugins.pythonconsole.gschema.xml')
 install_data(
-  pythonconsole_gschema_file,
-  install_dir: join_paths(get_option('prefix'), get_option('datadir'), 'glib-2.0/schemas')
+  plugin_pythonconsole_gschema_file,
+  install_dir: get_option('datadir') / 'glib-2.0/schemas',
 )
 
 if xmllint.found()
@@ -13,7 +13,7 @@ if xmllint.found()
     args: [
       '--noout',
       '--dtdvalid', gschema_dtd,
-      pythonconsole_gschema_file,
+      plugin_pythonconsole_gschema_file,
     ]
   )
 endif
@@ -24,8 +24,5 @@ custom_target(
   output: 'pythonconsole.plugin',
   command: msgfmt_plugin_cmd,
   install: true,
-  install_dir: join_paths(
-    pkglibdir,
-    'plugins',
-  )
+  install_dir: get_option('libdir') / 'gedit/plugins',
 )
