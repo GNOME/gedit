@@ -79,12 +79,7 @@ add_global_arguments(supported_warning_cflags, language: 'c')
 
 # Paths
 root_include_dir = include_directories('.')
-
 srcdir = meson.current_source_dir()
-
-pkglibdir = get_option('prefix') / get_option('libdir') / 'gedit'
-pkgdatadir = get_option('prefix') / get_option('datadir') / 'gedit'
-glibdir = get_option('prefix') / get_option('datadir') / 'glib-2.0'
 
 # Subprojects
 if fs.is_dir('.git')
