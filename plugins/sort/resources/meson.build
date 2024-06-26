@@ -1,8 +1,8 @@
-libsort_res = gnome.compile_resources(
+plugin_sort_gresources = gnome.compile_resources(
   'gedit-sort-resources',
   'gedit-sort.gresource.xml',
 )
 
-libsort_sources += [
-  libsort_res.get(0),
+plugin_sort_sources += [
+  plugin_sort_gresources[0],
 ]
