@@ -38,17 +38,7 @@
 #include "gedit-settings.h"
 
 static void
-setup_i18n_first_part (void)
-{
-	/* Disable translations because some underlying modules are not on
-	 * l10n.gnome.org or equivalent.
-	 * See the docs of g_setenv(), needs to be called very early in main().
-	 */
-	g_setenv ("LC_ALL", "C.UTF-8", TRUE);
-}
-
-static void
-setup_i18n_second_part (void)
+setup_i18n (void)
 {
 	const gchar *dir;
 
@@ -91,8 +81,6 @@ main (int argc, char *argv[])
 	GeditApp *app;
 	gint status;
 
-	setup_i18n_first_part ();
-
 #if OS_MACOS
 	type = GEDIT_TYPE_APP_OSX;
 #elif defined G_OS_WIN32
@@ -102,10 +90,10 @@ main (int argc, char *argv[])
 #endif
 
 	gedit_dirs_init ();
-
-	setup_i18n_second_part ();
+	setup_i18n ();
 	setup_pango ();
 	tepl_init ();
+
 	factory = gedit_factory_new ();
 	tepl_abstract_factory_set_singleton (TEPL_ABSTRACT_FACTORY (factory));
 
