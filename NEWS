@@ -1,4 +1,4 @@
-News in 48.beta, yyyy-mm-dd (Pre-release)
+News in 48.beta, yyyy-mm-dd (Pre-release) (not yet released)
 -----------------------------------------
 New features:
 * Full support of light/dark GTK theme variants. Configuration is done in the
@@ -6,6 +6,8 @@ New features:
 
 Visible improvements:
 * Add missing tooltips to some buttons (Sabri Ünal).
+* The Text Size plugin has been moved from gedit-plugins to this repository, and
+  is now enabled by default.
 
 Bug fixes:
 * Fix some warning messages that appeared at runtime.
@@ -13,11 +15,14 @@ Bug fixes:
 For Microsoft Windows:
 * Add Portable Executable resource icon, to associate an icon with the
   executable (Hernan Martinez, gwillems and Sébastien Wilmet).
+* Make gedit work without patches for MINGW-packages.
 
 Misc:
 * Some code refactorings.
 * Update the user manual for the new feature ("Change the color scheme" page).
 * Side panel: adapt to latest libgedit-tepl API.
+* Bottom panel: port to TeplPanel.
+* Build instructions: Meson refactorings.
 * Translation updates (GNOME Translation Project contributors).
 
 -- Sébastien Wilmet (main contributor and reviewer).
