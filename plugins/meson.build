@@ -25,6 +25,7 @@ subdir('quickopen')
 subdir('snippets')
 subdir('sort')
 subdir('spell')
+subdir('textsize')
 subdir('time')
 
 if get_option('buggy_plugins')
