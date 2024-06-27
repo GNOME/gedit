@@ -48,7 +48,10 @@ endif
 # GSettings schema
 
 gschema_config_data = configuration_data()
-gschema_config_data.set('ACTIVE_PLUGINS', '\'filebrowser\', \'sort\', \'spell\'')
+gschema_config_data.set(
+  'ACTIVE_PLUGINS',
+  '\'filebrowser\', \'sort\', \'spell\', \'textsize\''
+)
 
 gschema_file = configure_file(
   input: 'org.gnome.gedit.gschema.xml.in',
