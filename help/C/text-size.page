@@ -1,0 +1,72 @@
+<page xmlns="http://projectmallard.org/1.0/"
+      xmlns:its="http://www.w3.org/2005/11/its"
+      type="topic" style="task"
+      id="plugin-text-size">
+
+  <info>
+    <link type="guide" xref="gedit-plugin-guide#gedit-additional-plugins"/>
+    <link type="seealso" xref="gedit-change-default-font"/>
+    <revision version="3.4" date="2013-02-24" status="review"/>
+    <revision pkgversion="3.34" date="2020-02-09" status="review"/>
+
+    <credit type="author">
+      <name>Jim Campbell</name>
+      <email its:translate="no">jwcampbell@gmail.com</email>
+    </credit>
+    <credit type="author">
+      <name>Sindhu S</name>
+      <email its:translate="no">sindhus@live.in</email>
+    </credit>
+
+    <include href="legal-plugins.xml" xmlns="http://www.w3.org/2001/XInclude"/>
+
+    <desc>Increase or decrease text size.</desc>
+  </info>
+
+  <title>Text Size</title>
+
+  <p>The text size plugin allows you to temporarily change the text size for
+  better readability in <app>gedit</app> without changing the program's default
+  text size.</p>
+
+<section id="enable-text-size">
+  <title>Enable Text Size Plugin</title>
+
+  <steps>
+    <title>To enable the plugin:</title>
+    <item>
+      <p>Press the menu button in the top-right corner of the window and select
+      <guiseq><gui style="menuitem">Preferences</gui>
+      <gui style="tab">Plugins</gui></guiseq>.</p>
+    </item>
+    <item>
+      <p>Select <gui style="menuitem">Text Size</gui> to enable the plugin.</p>
+    </item>
+  </steps>
+
+</section>
+
+<section id="use-text-size">
+  <title>Use the <app>Text Size</app> plugin</title>
+
+  <p>Once you have enabled the plugin, do any of the following to change the
+  text size in <app>gedit</app>:</p>
+
+  <list>
+    <item>
+      <p>To <em>increase</em> the text size, press
+      <keyseq><key>Ctrl</key><key>+</key></keyseq>.</p>
+    </item>
+    <item>
+      <p>To <em>decrease</em> the text size, press
+      <keyseq><key>Ctrl</key><key>-</key></keyseq>.</p>
+    </item>
+    <item>
+      <p>To <em>reset</em> the text size to the default size, press
+      <keyseq><key>Ctrl</key><key>0</key></keyseq>.</p>
+    </item>
+  </list>
+
+</section>
+
+</page>
