@@ -24,6 +24,7 @@ gedit_help_sources = [
   'gedit-plugins-quick-open.page',
   'gedit-plugins-snippets.page',
   'gedit-plugins-sort.page',
+  'gedit-plugins-text-size.page',
   'gedit-printing.page',
   'gedit-save-file.page',
   'gedit-search.page',
