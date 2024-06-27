@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gedit manual\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-04 21:06+0000\n"
-"PO-Revision-Date: 2024-06-05 09:39+0300\n"
+"POT-Creation-Date: 2024-06-27 03:34+0000\n"
+"PO-Revision-Date: 2024-06-27 23:42+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian\n"
 "Language: uk\n"
@@ -139,14 +139,13 @@ msgid ""
 "to choose when a dark theme is applied. The <gui>Preferences</gui> dialog "
 "allows you to configure both."
 msgstr ""
-"Фактично існує два варіанти схеми кольорів: одна схема кольорів, яку має"
-" бути вибрано, коли до всієї програми застосовується світла тема, і одна"
-" схема кольорів, яку слід вибрати, коли застосована темна тема. Діалогове"
-" вікно <gui>Параметри</gui> надає змогу налаштувати обидва варіанти."
+"Фактично існує два варіанти схеми кольорів: одна схема кольорів, яку має "
+"бути вибрано, коли до всієї програми застосовується світла тема, і одна "
+"схема кольорів, яку слід вибрати, коли застосована темна тема. Діалогове "
+"вікно <gui>Параметри</gui> надає змогу налаштувати обидва варіанти."
 
 #. (itstool) path: section/title
 #: C/gedit-change-color-scheme.page:42
-#| msgid "Choose your desired color scheme."
 msgid "About unsupported color schemes"
 msgstr "Про непідтримувані схеми кольорів"
 
@@ -157,9 +156,9 @@ msgid ""
 "dark). When that is the case, the color scheme cannot be selected and is "
 "marked explicitly as unsupported."
 msgstr ""
-"Підтримки деяких схем кольорів для використаного варіанта теми (світлий або"
-" темний) може бути не передбачено. У цьому випадку схему кольорів не можна"
-" вибрати, і вона явно позначена як непідтримувана."
+"Підтримки деяких схем кольорів для використаного варіанта теми (світлий або "
+"темний) може бути не передбачено. У цьому випадку схему кольорів не можна "
+"вибрати, і вона явно позначена як непідтримувана."
 
 #. (itstool) path: section/p
 #: C/gedit-change-color-scheme.page:48
@@ -169,15 +168,14 @@ msgid ""
 "apply such a color scheme when the wrong theme is used, it would appear that "
 "the color scheme has bugs and some of the text would be unreadable."
 msgstr ""
-"Це трапляється, коли схема кольорів успадковує деякі кольори з теми, і"
-" передбачено, що тема є або світлою, або темною. Якби можна було застосувати"
-" таку схему кольорів, коли використовується неправильна тема, здавалося б,"
-" що схема кольорів містить помилки, і частина тексту було б непридатною до"
-" читання."
+"Це трапляється, коли схема кольорів успадковує деякі кольори з теми, і "
+"передбачено, що тема є або світлою, або темною. Якби можна було застосувати "
+"таку схему кольорів, коли використовується неправильна тема, здавалося б, що "
+"схема кольорів містить помилки, і частина тексту було б непридатною до "
+"читання."
 
 #. (itstool) path: section/title
 #: C/gedit-change-color-scheme.page:57
-#| msgid "Use a Custom Color Scheme"
 msgid "Use a custom color scheme"
 msgstr "Використання нетипової схеми кольорів"
 
@@ -1252,12 +1250,12 @@ msgstr ""
 "gui> надає вам змогу вставити дату і/або час до поточної позиції курсора."
 
 #. (itstool) path: steps/title
-#: C/gedit-plugins-insert-date-time.page:17
+#: C/gedit-plugins-insert-date-time.page:17 C/gedit-plugins-text-size.page:21
 msgid "To enable the plugin:"
 msgstr "Щоб увімкнути додаток:"
 
 #. (itstool) path: item/p
-#: C/gedit-plugins-insert-date-time.page:19
+#: C/gedit-plugins-insert-date-time.page:19 C/gedit-plugins-text-size.page:23
 msgid ""
 "Press the menu button in the top-right corner of the window and select "
 "<guiseq><gui style=\"menuitem\">Preferences</gui> <gui "
@@ -2255,6 +2253,90 @@ msgstr ""
 #: C/gedit-plugins-sort.page:69
 msgid "To perform the sort operation, click <gui>Sort</gui>."
 msgstr "Для запуску операції сортування, клацніть на «<gui>Сортувати</gui>»."
+
+#. (itstool) path: info/desc
+#: C/gedit-plugins-text-size.page:8
+msgid "Increase or decrease text size."
+msgstr "Збільшити або зменшити розмір символів тексту."
+
+#. (itstool) path: page/title
+#: C/gedit-plugins-text-size.page:11
+msgid "Text Size"
+msgstr "Розмір тексту"
+
+#. (itstool) path: page/p
+#: C/gedit-plugins-text-size.page:13
+msgid ""
+"The text size plugin allows you to temporarily change the text size for "
+"better readability in <app>gedit</app> without changing the program's "
+"default text size."
+msgstr ""
+"Додаток розмірів символів тексту надає вам змогу тимчасово змінити розмір"
+" символів тексту для зручнішого читання у <app>gedit</app> без зміни"
+" типового розміру символів тексту програми."
+
+#. (itstool) path: section/title
+#: C/gedit-plugins-text-size.page:18
+#| msgid "Enable Snippets Plugin"
+msgid "Enable Text Size Plugin"
+msgstr "Увімкнення додатка «Розмір тексту»"
+
+#. (itstool) path: item/p
+#: C/gedit-plugins-text-size.page:28
+#| msgid "Select <gui style=\"menuitem\">Snippets</gui> to enable the plugin."
+msgid "Select <gui style=\"menuitem\">Text Size</gui> to enable the plugin."
+msgstr ""
+"Виберіть «<gui style=\"menuitem\">Розмір тексту</gui>», щоб увімкнути"
+" додаток."
+
+#. (itstool) path: section/title
+#: C/gedit-plugins-text-size.page:34
+#| msgid "To enable the <app>Sort</app> plugin:"
+msgid "Use the <app>Text Size</app> plugin"
+msgstr "Використання додатка <app>Розмір тексту</app>"
+
+#. (itstool) path: section/p
+#: C/gedit-plugins-text-size.page:36
+msgid ""
+"Once you have enabled the plugin, do any of the following to change the text "
+"size in <app>gedit</app>:"
+msgstr ""
+"Після вмикання додатка ви можете виконати будь-яку з вказаних нижче дій для"
+" зміни розмірів символів тексту у <app>gedit</app>:"
+
+#. (itstool) path: item/p
+#: C/gedit-plugins-text-size.page:41
+#| msgid "Or press <keyseq><key>Ctrl</key><key>P</key></keyseq>."
+msgid ""
+"To <em>increase</em> the text size, press <keyseq><key>Ctrl</key><key>+</"
+"key></keyseq>."
+msgstr ""
+"Щоб <em>збільшити</em> розмір символів тексту, натисніть комбінацію клавіш <"
+"keyseq><key>Ctrl</key><key>+</"
+"key></keyseq>."
+
+#. (itstool) path: item/p
+#: C/gedit-plugins-text-size.page:45
+#| msgid "Or press <keyseq><key>Ctrl</key><key>P</key></keyseq>."
+msgid ""
+"To <em>decrease</em> the text size, press <keyseq><key>Ctrl</key><key>-</"
+"key></keyseq>."
+msgstr ""
+"Щоб <em>зменшити</em> розмір символів тексту, натисніть комбінацію клавіш <"
+"keyseq><key>Ctrl</key><key>-</"
+"key></keyseq>."
+
+#. (itstool) path: item/p
+#: C/gedit-plugins-text-size.page:49
+#| msgid ""
+#| "To redo the change that was undone, press <keyseq><key>Ctrl</"
+#| "key><key>Shift</key><key>Z</key></keyseq>."
+msgid ""
+"To <em>reset</em> the text size to the default size, press "
+"<keyseq><key>Ctrl</key><key>0</key></keyseq>."
+msgstr ""
+"Щоб <em>відновити</em> типовий розмір символів тексту, натисніть комбінацію"
+" клавіш <keyseq><key>Ctrl</key><key>0</key></keyseq>."
 
 #. (itstool) path: info/desc
 #: C/gedit-printing.page:7
