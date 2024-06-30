@@ -23,7 +23,6 @@
 #include <libpeas/peas-extension-set.h>
 #include "gedit-view-activatable.h"
 #include "gedit-plugins-engine.h"
-#include "gedit-debug.h"
 #include "gedit-utils.h"
 #include "gedit-settings.h"
 
@@ -118,8 +117,6 @@ static void
 gedit_view_init (GeditView *view)
 {
 	GtkTargetList *target_list;
-
-	gedit_debug (DEBUG_VIEW);
 
 	view->priv = gedit_view_get_instance_private (view);
 
