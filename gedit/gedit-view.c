@@ -64,6 +64,26 @@ static guint signals[N_SIGNALS];
 G_DEFINE_TYPE_WITH_PRIVATE (GeditView, gedit_view, TEPL_TYPE_VIEW)
 
 static void
+update_font (GeditView *view)
+{
+	TeplSettings *settings;
+	gchar *selected_font;
+
+	settings = tepl_settings_get_singleton ();
+
+	selected_font = tepl_settings_get_selected_font (settings);
+	tepl_utils_override_font_string (GTK_WIDGET (view), selected_font);
+	g_free (selected_font);
+}
+
+static void
+font_changed_cb (TeplSettings *settings,
+		 GeditView    *view)
+{
+	update_font (view);
+}
+
+static void
 update_editable (GeditView *view)
 {
 	GeditDocument *doc;
@@ -111,146 +131,6 @@ buffer_notify_cb (GeditView  *view,
 		  gpointer    user_data)
 {
 	buffer_changed (view);
-}
-
-static void
-gedit_view_init (GeditView *view)
-{
-	GtkTargetList *target_list;
-
-	view->priv = gedit_view_get_instance_private (view);
-
-	/* Drag and drop support */
-	view->priv->direct_save_uri = NULL;
-	target_list = gtk_drag_dest_get_target_list (GTK_WIDGET (view));
-
-	if (target_list != NULL)
-	{
-		gtk_target_list_add (target_list,
-		                     gdk_atom_intern ("XdndDirectSave0", FALSE),
-		                     0,
-		                     TARGET_XDNDDIRECTSAVE);
-		gtk_target_list_add_uri_targets (target_list, TARGET_URI_LIST);
-	}
-
-	/* GeditViewActivatable */
-	view->priv->extensions =
-		peas_extension_set_new (PEAS_ENGINE (gedit_plugins_engine_get_default ()),
-		                        GEDIT_TYPE_VIEW_ACTIVATABLE,
-		                        "view", view,
-		                        NULL);
-
-	/* Act on buffer changes */
-	buffer_changed (view);
-	g_signal_connect (view,
-			  "notify::buffer",
-			  G_CALLBACK (buffer_notify_cb),
-			  NULL);
-
-	/* Useful for on screen keyboards */
-	gtk_text_view_set_input_hints (GTK_TEXT_VIEW (view), GTK_INPUT_HINT_WORD_COMPLETION);
-}
-
-static void
-gedit_view_dispose (GObject *object)
-{
-	GeditView *view = GEDIT_VIEW (object);
-
-	g_clear_object (&view->priv->extensions);
-	tepl_signal_group_clear (&view->priv->file_signal_group);
-
-	/* Disconnect notify buffer because the destroy of the textview will set
-	 * the buffer to NULL, and we call get_buffer in the notify which would
-	 * reinstate a buffer which we don't want.
-	 * There is no problem calling g_signal_handlers_disconnect_by_func()
-	 * several times (if dispose() is called several times).
-	 */
-	g_signal_handlers_disconnect_by_func (view, buffer_notify_cb, NULL);
-
-	G_OBJECT_CLASS (gedit_view_parent_class)->dispose (object);
-}
-
-static void
-update_font (GeditView *view)
-{
-	TeplSettings *settings;
-	gchar *selected_font;
-
-	settings = tepl_settings_get_singleton ();
-
-	selected_font = tepl_settings_get_selected_font (settings);
-	tepl_utils_override_font_string (GTK_WIDGET (view), selected_font);
-	g_free (selected_font);
-}
-
-static void
-font_changed_cb (TeplSettings *settings,
-		 GeditView    *view)
-{
-	update_font (view);
-}
-
-static void
-gedit_view_constructed (GObject *object)
-{
-	GeditView *view = GEDIT_VIEW (object);
-	GeditSettings *gedit_settings;
-	TeplSettings *tepl_settings;
-	GSettings *editor_settings;
-
-	G_OBJECT_CLASS (gedit_view_parent_class)->constructed (object);
-
-	gedit_settings = _gedit_settings_get_singleton ();
-	tepl_settings = tepl_settings_get_singleton ();
-
-	editor_settings = _gedit_settings_peek_editor_settings (gedit_settings);
-
-	update_font (view);
-	g_signal_connect_object (tepl_settings,
-				 "font-changed",
-				 G_CALLBACK (font_changed_cb),
-				 view,
-				 0);
-
-	g_settings_bind (editor_settings, GEDIT_SETTINGS_DISPLAY_LINE_NUMBERS,
-			 view, "show-line-numbers",
-			 G_SETTINGS_BIND_GET | G_SETTINGS_BIND_NO_SENSITIVITY);
-
-	g_settings_bind (editor_settings, GEDIT_SETTINGS_AUTO_INDENT,
-			 view, "auto-indent",
-			 G_SETTINGS_BIND_GET | G_SETTINGS_BIND_NO_SENSITIVITY);
-
-	g_settings_bind (editor_settings, GEDIT_SETTINGS_TABS_SIZE,
-			 view, "tab-width",
-			 G_SETTINGS_BIND_GET | G_SETTINGS_BIND_NO_SENSITIVITY);
-
-	g_settings_bind (editor_settings, GEDIT_SETTINGS_INSERT_SPACES,
-			 view, "insert-spaces-instead-of-tabs",
-			 G_SETTINGS_BIND_GET | G_SETTINGS_BIND_NO_SENSITIVITY);
-
-	g_settings_bind (editor_settings, GEDIT_SETTINGS_DISPLAY_RIGHT_MARGIN,
-			 view, "show-right-margin",
-			 G_SETTINGS_BIND_GET | G_SETTINGS_BIND_NO_SENSITIVITY);
-
-	g_settings_bind (editor_settings, GEDIT_SETTINGS_BACKGROUND_PATTERN,
-			 view, "background-pattern",
-			 G_SETTINGS_BIND_GET | G_SETTINGS_BIND_NO_SENSITIVITY);
-
-	g_settings_bind (editor_settings, GEDIT_SETTINGS_RIGHT_MARGIN_POSITION,
-			 view, "right-margin-position",
-			 G_SETTINGS_BIND_GET | G_SETTINGS_BIND_NO_SENSITIVITY);
-
-	g_settings_bind (editor_settings, GEDIT_SETTINGS_HIGHLIGHT_CURRENT_LINE,
-			 view, "highlight-current-line",
-			 G_SETTINGS_BIND_GET | G_SETTINGS_BIND_NO_SENSITIVITY);
-
-	g_settings_bind (editor_settings, GEDIT_SETTINGS_WRAP_MODE,
-			 view, "wrap-mode",
-			 G_SETTINGS_BIND_GET | G_SETTINGS_BIND_NO_SENSITIVITY);
-
-	g_settings_bind (editor_settings, GEDIT_SETTINGS_SMART_HOME_END,
-			 view, "smart-home-end",
-			 G_SETTINGS_BIND_GET | G_SETTINGS_BIND_NO_SENSITIVITY);
 }
 
 static GdkAtom
@@ -497,6 +377,88 @@ gedit_view_create_buffer (GtkTextView *text_view)
 }
 
 static void
+gedit_view_constructed (GObject *object)
+{
+	GeditView *view = GEDIT_VIEW (object);
+	GeditSettings *gedit_settings;
+	TeplSettings *tepl_settings;
+	GSettings *editor_settings;
+
+	G_OBJECT_CLASS (gedit_view_parent_class)->constructed (object);
+
+	gedit_settings = _gedit_settings_get_singleton ();
+	tepl_settings = tepl_settings_get_singleton ();
+
+	editor_settings = _gedit_settings_peek_editor_settings (gedit_settings);
+
+	update_font (view);
+	g_signal_connect_object (tepl_settings,
+				 "font-changed",
+				 G_CALLBACK (font_changed_cb),
+				 view,
+				 0);
+
+	g_settings_bind (editor_settings, GEDIT_SETTINGS_DISPLAY_LINE_NUMBERS,
+			 view, "show-line-numbers",
+			 G_SETTINGS_BIND_GET | G_SETTINGS_BIND_NO_SENSITIVITY);
+
+	g_settings_bind (editor_settings, GEDIT_SETTINGS_AUTO_INDENT,
+			 view, "auto-indent",
+			 G_SETTINGS_BIND_GET | G_SETTINGS_BIND_NO_SENSITIVITY);
+
+	g_settings_bind (editor_settings, GEDIT_SETTINGS_TABS_SIZE,
+			 view, "tab-width",
+			 G_SETTINGS_BIND_GET | G_SETTINGS_BIND_NO_SENSITIVITY);
+
+	g_settings_bind (editor_settings, GEDIT_SETTINGS_INSERT_SPACES,
+			 view, "insert-spaces-instead-of-tabs",
+			 G_SETTINGS_BIND_GET | G_SETTINGS_BIND_NO_SENSITIVITY);
+
+	g_settings_bind (editor_settings, GEDIT_SETTINGS_DISPLAY_RIGHT_MARGIN,
+			 view, "show-right-margin",
+			 G_SETTINGS_BIND_GET | G_SETTINGS_BIND_NO_SENSITIVITY);
+
+	g_settings_bind (editor_settings, GEDIT_SETTINGS_BACKGROUND_PATTERN,
+			 view, "background-pattern",
+			 G_SETTINGS_BIND_GET | G_SETTINGS_BIND_NO_SENSITIVITY);
+
+	g_settings_bind (editor_settings, GEDIT_SETTINGS_RIGHT_MARGIN_POSITION,
+			 view, "right-margin-position",
+			 G_SETTINGS_BIND_GET | G_SETTINGS_BIND_NO_SENSITIVITY);
+
+	g_settings_bind (editor_settings, GEDIT_SETTINGS_HIGHLIGHT_CURRENT_LINE,
+			 view, "highlight-current-line",
+			 G_SETTINGS_BIND_GET | G_SETTINGS_BIND_NO_SENSITIVITY);
+
+	g_settings_bind (editor_settings, GEDIT_SETTINGS_WRAP_MODE,
+			 view, "wrap-mode",
+			 G_SETTINGS_BIND_GET | G_SETTINGS_BIND_NO_SENSITIVITY);
+
+	g_settings_bind (editor_settings, GEDIT_SETTINGS_SMART_HOME_END,
+			 view, "smart-home-end",
+			 G_SETTINGS_BIND_GET | G_SETTINGS_BIND_NO_SENSITIVITY);
+}
+
+static void
+gedit_view_dispose (GObject *object)
+{
+	GeditView *view = GEDIT_VIEW (object);
+
+	g_clear_object (&view->priv->extensions);
+	tepl_signal_group_clear (&view->priv->file_signal_group);
+
+	/* Disconnect notify buffer because the destroy of the textview will set
+	 * the buffer to NULL, and we call get_buffer in the notify which would
+	 * reinstate a buffer which we don't want.
+	 * There is no problem calling g_signal_handlers_disconnect_by_func()
+	 * several times (if dispose() is called several times).
+	 */
+	g_signal_handlers_disconnect_by_func (view, buffer_notify_cb, NULL);
+
+	G_OBJECT_CLASS (gedit_view_parent_class)->dispose (object);
+}
+
+static void
 gedit_view_class_init (GeditViewClass *klass)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
@@ -504,8 +466,8 @@ gedit_view_class_init (GeditViewClass *klass)
 	GtkTextViewClass *text_view_class = GTK_TEXT_VIEW_CLASS (klass);
 	GtkBindingSet *binding_set;
 
-	object_class->dispose = gedit_view_dispose;
 	object_class->constructed = gedit_view_constructed;
+	object_class->dispose = gedit_view_dispose;
 
 	/* Override the gtk_text_view_drag_motion and drag_drop
 	 * functions to get URIs
@@ -588,6 +550,44 @@ gedit_view_class_init (GeditViewClass *klass)
 	                              GDK_CONTROL_MASK,
 	                              "change-case", 1,
 	                              G_TYPE_ENUM, GTK_SOURCE_CHANGE_CASE_TOGGLE);
+}
+
+static void
+gedit_view_init (GeditView *view)
+{
+	GtkTargetList *target_list;
+
+	view->priv = gedit_view_get_instance_private (view);
+
+	/* Drag and drop support */
+	view->priv->direct_save_uri = NULL;
+	target_list = gtk_drag_dest_get_target_list (GTK_WIDGET (view));
+
+	if (target_list != NULL)
+	{
+		gtk_target_list_add (target_list,
+		                     gdk_atom_intern ("XdndDirectSave0", FALSE),
+		                     0,
+		                     TARGET_XDNDDIRECTSAVE);
+		gtk_target_list_add_uri_targets (target_list, TARGET_URI_LIST);
+	}
+
+	/* GeditViewActivatable */
+	view->priv->extensions =
+		peas_extension_set_new (PEAS_ENGINE (gedit_plugins_engine_get_default ()),
+		                        GEDIT_TYPE_VIEW_ACTIVATABLE,
+		                        "view", view,
+		                        NULL);
+
+	/* Act on buffer changes */
+	buffer_changed (view);
+	g_signal_connect (view,
+			  "notify::buffer",
+			  G_CALLBACK (buffer_notify_cb),
+			  NULL);
+
+	/* Useful for on screen keyboards */
+	gtk_text_view_set_input_hints (GTK_TEXT_VIEW (view), GTK_INPUT_HINT_WORD_COMPLETION);
 }
 
 /**
