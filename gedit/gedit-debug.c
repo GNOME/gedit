@@ -1,5 +1,4 @@
 /*
- * gedit-debug.c
  * This file is part of gedit
  *
  * Copyright (C) 1998, 1999 Alex Roberts, Evan Lawrence
@@ -60,10 +59,6 @@ gedit_debug_init (void)
 		goto out;
 	}
 
-	if (g_getenv ("GEDIT_DEBUG_VIEW") != NULL)
-	{
-		enabled_sections |= GEDIT_DEBUG_VIEW;
-	}
 	if (g_getenv ("GEDIT_DEBUG_PREFS") != NULL)
 	{
 		enabled_sections |= GEDIT_DEBUG_PREFS;

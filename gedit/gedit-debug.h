@@ -1,5 +1,4 @@
 /*
- * gedit-debug.h
  * This file is part of gedit
  *
  * Copyright (C) 1998, 1999 Alex Roberts, Evan Lawrence
@@ -38,19 +37,17 @@
  */
 typedef enum {
 	GEDIT_NO_DEBUG       = 0,
-	GEDIT_DEBUG_VIEW     = 1 << 0,
-	GEDIT_DEBUG_PREFS    = 1 << 1,
-	GEDIT_DEBUG_WINDOW   = 1 << 2,
-	GEDIT_DEBUG_PANEL    = 1 << 3,
-	GEDIT_DEBUG_PLUGINS  = 1 << 4,
-	GEDIT_DEBUG_TAB      = 1 << 5,
-	GEDIT_DEBUG_DOCUMENT = 1 << 6,
-	GEDIT_DEBUG_COMMANDS = 1 << 7,
-	GEDIT_DEBUG_APP      = 1 << 8,
-	GEDIT_DEBUG_UTILS    = 1 << 9,
+	GEDIT_DEBUG_PREFS    = 1 << 0,
+	GEDIT_DEBUG_WINDOW   = 1 << 1,
+	GEDIT_DEBUG_PANEL    = 1 << 2,
+	GEDIT_DEBUG_PLUGINS  = 1 << 3,
+	GEDIT_DEBUG_TAB      = 1 << 4,
+	GEDIT_DEBUG_DOCUMENT = 1 << 5,
+	GEDIT_DEBUG_COMMANDS = 1 << 6,
+	GEDIT_DEBUG_APP      = 1 << 7,
+	GEDIT_DEBUG_UTILS    = 1 << 8,
 } GeditDebugSection;
 
-#define	DEBUG_VIEW	GEDIT_DEBUG_VIEW,    __FILE__, __LINE__, G_STRFUNC
 #define	DEBUG_PREFS	GEDIT_DEBUG_PREFS,   __FILE__, __LINE__, G_STRFUNC
 #define	DEBUG_WINDOW	GEDIT_DEBUG_WINDOW,  __FILE__, __LINE__, G_STRFUNC
 #define	DEBUG_PANEL	GEDIT_DEBUG_PANEL,   __FILE__, __LINE__, G_STRFUNC
